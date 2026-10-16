@@ -48,17 +48,21 @@ void Player::init()
         });
 
         Msg msg = rpc::make_request(Method::GetPlaybackStatus, RpcPacker::pack(m_sequenceId));
-        channel()->send(msg, [this](const Msg& res) {
+        channel()->send(msg, [weakThis = weak_from_this()](const Msg& res) {
             ONLY_AUDIO_MAIN_THREAD;
+            const auto self = weakThis.lock();
+            if (!self) {
+                return;
+            }
             PlaybackStatus status = PlaybackStatus::Stopped;
             StreamId streamId = 0;
             IF_ASSERT_FAILED(RpcPacker::unpack(res.data, status, streamId)) {
                 return;
             }
 
-            channel()->addReceiveStream(StreamName::PlaybackStatusStream, streamId, m_playbackStatusChanged);
+            self->channel()->addReceiveStream(StreamName::PlaybackStatusStream, streamId, self->m_playbackStatusChanged);
             //! NOTE Send initial state
-            m_playbackStatusChanged.send(status);
+            self->m_playbackStatusChanged.send(status);
         });
     }
 
@@ -68,17 +72,21 @@ void Player::init()
         });
 
         Msg msg = rpc::make_request(Method::GetPlaybackPosition, RpcPacker::pack(m_sequenceId));
-        channel()->send(msg, [this](const Msg& res) {
+        channel()->send(msg, [weakThis = weak_from_this()](const Msg& res) {
             ONLY_AUDIO_MAIN_THREAD;
+            const auto self = weakThis.lock();
+            if (!self) {
+                return;
+            }
             secs_t pos = 0.0;
             StreamId streamId = 0;
             IF_ASSERT_FAILED(RpcPacker::unpack(res.data, pos, streamId)) {
                 return;
             }
 
-            channel()->addReceiveStream(StreamName::PlaybackPositionStream, streamId, m_playbackPositionChanged);
+            self->channel()->addReceiveStream(StreamName::PlaybackPositionStream, streamId, self->m_playbackPositionChanged);
             //! NOTE Send initial state
-            m_playbackPositionChanged.send(pos);
+            self->m_playbackPositionChanged.send(pos);
         });
     }
 }

@@ -42,7 +42,7 @@ public:
     const project::ProjectFile& startupScoreFile() const override;
     void setStartupScoreFile(const std::optional<project::ProjectFile>& file) override;
 
-    muse::async::Promise<muse::Ret> runOnSplashScreen() override;
+    void runOnSplashScreen() override;
     void runAfterSplashScreen() override;
     bool startupCompleted() const override;
 

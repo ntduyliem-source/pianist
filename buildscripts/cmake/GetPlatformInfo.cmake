@@ -22,7 +22,7 @@ if (PLATFORM_DETECTED)
     return()
 endif()
 
-if(${CMAKE_CXX_COMPILER} MATCHES "/em\\+\\+(-[a-zA-Z0-9.])?$")
+if(CMAKE_SYSTEM_NAME STREQUAL "Emscripten" OR EMSCRIPTEN)
     set(OS_IS_WASM 1)
 elseif(${CMAKE_HOST_SYSTEM_NAME} MATCHES "Windows")
     set(OS_IS_WIN 1)

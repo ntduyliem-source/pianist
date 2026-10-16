@@ -1,6 +1,8 @@
 //import MuseAudio_entry from '../MuseAudio.js';
 
 let MuseAudio = {
+    print: message => globalThis.debugLog(message),
+    printErr: message => globalThis.debugLog('audio error: ' + message),
     preRun: [],
     postRun: [],
     locateFile: function(path, prefix) { 

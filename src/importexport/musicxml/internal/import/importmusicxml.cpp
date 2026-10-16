@@ -61,6 +61,13 @@ namespace mu::iex::musicxml {
 #ifndef MUSICXML_NO_INTERACTIVE
 static IInteractive::Button musicXmlImportErrorDialog(const String& text, const String& detailedText)
 {
+#ifdef Q_OS_WASM
+    // The browser cannot run Qt's nested synchronous dialog loop. Reject a
+    // partial import and let the web bridge report failure without losing the
+    // current project. A recover/import-anyway UI needs an asynchronous flow.
+    LOGE() << text << "\n" << detailedText;
+    return IInteractive::Button::No;
+#else
     auto interactive = modularity::fixmeIoc()->resolve<IInteractive>("musicxml");
 
     std::string msg = text.toStdString();
@@ -77,6 +84,7 @@ static IInteractive::Button musicXmlImportErrorDialog(const String& text, const 
                                                          );
 
     return ret.standardButton();
+#endif
 }
 
 #endif
@@ -183,7 +191,7 @@ static bool extractRootfile(const String& name, ByteArray& data)
     }
 
     data = zip.fileData(rootfile.toStdString());
-    return true;
+    return !data.empty();
 }
 
 //---------------------------------------------------------

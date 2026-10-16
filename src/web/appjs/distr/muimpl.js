@@ -143,16 +143,27 @@ const MuImpl = {
         if (!file) {
             return
         }
-
+        if (file.size === 0 || file.size > 32 * 1024 * 1024) {
+            throw new Error('File must contain between 1 byte and 32 MiB.');
+        }
         const buffer = await file.arrayBuffer();
-        this.loadScoreData(new Uint8Array(buffer)) 
+        return this.loadScoreData(new Uint8Array(buffer), file.name)
     },
 
-    loadScoreData: function(data) {
+    loadScoreData: function(data, filename = 'score.mscz') {
+        if (!(data instanceof Uint8Array) || !data.length || data.length > 32 * 1024 * 1024) {
+            throw new Error('File must contain between 1 byte and 32 MiB.');
+        }
         const ptr = this.Module._malloc(data.length);
-        this.Module.HEAPU8.set(data, ptr);
-        this.Module._load(ptr, data.length);
-        this.Module._free(ptr);
+        if (!ptr) throw new Error('Not enough memory to open this score.');
+        try {
+            this.Module.HEAPU8.set(data, ptr);
+            const ok = this.Module.ccall('load', 'number', ['number', 'number', 'string'], [ptr, data.length, filename]);
+            if (!ok) throw new Error('Cannot open this score. Check its format and contents.');
+            return true;
+        } finally {
+            this.Module._free(ptr);
+        }
     },
 
     startAudioProcessing: async function() {

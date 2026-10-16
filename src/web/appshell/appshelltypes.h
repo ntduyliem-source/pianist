@@ -20,38 +20,7 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef MU_APPSHELL_APPSHELLTYPES_H
-#define MU_APPSHELL_APPSHELLTYPES_H
+#pragma once
 
-#include <QString>
-
-namespace mu::appshell {
-using DockName = QString;
-
-// Panels:
-static const DockName PALETTES_PANEL_NAME("palettesPanel");
-static const DockName LAYOUT_PANEL_NAME("instrumentsPanel"); // old name for backwards compatibility
-static const DockName INSPECTOR_PANEL_NAME("inspectorPanel");
-static const DockName SELECTION_FILTERS_PANEL_NAME("selectionFiltersPanel");
-static const DockName UNDO_HISTORY_PANEL_NAME("undoHistoryPanel");
-
-static const DockName NOTATION_NAVIGATOR_PANEL_NAME("notationNavigatorPanel");
-static const DockName NOTATION_BRAILLE_PANEL_NAME("notationBraillePanel");
-
-static const DockName MIXER_PANEL_NAME("mixerPanel");
-static const DockName PIANO_KEYBOARD_PANEL_NAME("pianoKeyboardPanel");
-static const DockName TIMELINE_PANEL_NAME("timelinePanel");
-static const DockName DRUMSET_PANEL_NAME("drumsetPanel");
-static const DockName PERCUSSION_PANEL_NAME("percussionPanel");
-
-// Toolbars:
-static const DockName NOTATION_TOOLBAR_NAME("notationToolBar");
-static const DockName UNDO_REDO_TOOLBAR_NAME("undoRedoToolBar");
-static const DockName NOTE_INPUT_BAR_NAME("noteInputBar");
-static const DockName PLAYBACK_TOOLBAR_NAME("playbackToolBar");
-
-// Other:
-static const DockName NOTATION_STATUSBAR_NAME("notationStatusBar");
-}
-
-#endif // MU_APPSHELL_APPSHELLTYPES_H
+// Share the interface with the engine; divergent virtual layouts break WASM calls.
+#include "appshell/appshelltypes.h"

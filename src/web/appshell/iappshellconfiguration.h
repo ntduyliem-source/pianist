@@ -19,27 +19,8 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-#ifndef MU_APPSHELL_IAPPSHELLCONFIGURATION_H
-#define MU_APPSHELL_IAPPSHELLCONFIGURATION_H
 
-#include "modularity/imoduleinterface.h"
-#include "async/notification.h"
+#pragma once
 
-namespace mu::appshell {
-class IAppShellConfiguration : MODULE_GLOBAL_INTERFACE
-{
-    INTERFACE_ID(IAppshellConfiguration)
-
-public:
-    virtual ~IAppShellConfiguration() = default;
-
-    virtual std::string museScoreVersion() const = 0;
-    virtual std::string museScoreRevision() const = 0;
-
-    virtual bool isNotationNavigatorVisible() const = 0;
-    virtual void setIsNotationNavigatorVisible(bool visible) const = 0;
-    virtual muse::async::Notification isNotationNavigatorVisibleChanged() const = 0;
-};
-}
-
-#endif // MU_APPSHELL_IAPPSHELLCONFIGURATION_H
+// Share the interface with the engine; divergent virtual layouts break WASM calls.
+#include "appshell/iappshellconfiguration.h"

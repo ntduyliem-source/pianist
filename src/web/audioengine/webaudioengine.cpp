@@ -24,6 +24,8 @@
 #include "global/modularity/ioc.h"
 
 #include "global/runtime.h"
+#include "global/async/processevents.h"
+#include "audio/common/workmode.h"
 
 #include "audio/common/rpc/platform/web/webrpcchannel.h"
 
@@ -57,6 +59,7 @@ void WebAudioEngine::init()
 {
     muse::runtime::mainThreadId(); //! NOTE Needs only call
     muse::runtime::setThreadName("audio_engine");
+    workmode::load();
 
     //! --- Setup logger ---
     using namespace muse::logger;
@@ -64,7 +67,7 @@ void WebAudioEngine::init()
     logger->clearDests();
 
     //! Console
-    if (muse::runtime::isDebug()) {
+    {
         class ThreadNameProvider : public IThreadNameProvider
         {
         public:
@@ -81,7 +84,7 @@ void WebAudioEngine::init()
     m_rpcChannel->setupOnEngine();
     ioc()->registerExport<IRpcChannel>(moduleName(), m_rpcChannel);
 
-    m_controller = std::make_shared<EngineController>(m_rpcChannel);
+    m_controller = std::make_shared<EngineController>(m_rpcChannel, std::make_shared<modularity::Context>(0));
     m_controller->registerExports();
     m_controller->onStartRunning();
 
@@ -90,5 +93,7 @@ void WebAudioEngine::init()
 
 void WebAudioEngine::process(float* stream, unsigned samplesPerChannel)
 {
+    // The worklet has no Qt event loop to deliver deferred engine callbacks.
+    async::processMessages();
     m_controller->process(stream, samplesPerChannel);
 }

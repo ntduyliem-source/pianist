@@ -29,12 +29,12 @@
 #include "audio/common/rpc/irpcchannel.h"
 
 namespace muse::audio {
-class WebSoundFontController : public ISoundFontController, public async::Asyncable
+class WebSoundFontController : public ISoundFontController, public async::Asyncable, public muse::Contextable
 {
-    ContextInject<rpc::IRpcChannel> channel;
+    ContextInject<rpc::IRpcChannel> channel = { this };
 
 public:
-    WebSoundFontController() = default;
+    explicit WebSoundFontController(const muse::modularity::ContextPtr& ctx) : muse::Contextable(ctx) {}
 
     void loadSoundFonts() override;
 

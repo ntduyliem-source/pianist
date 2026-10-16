@@ -33,4 +33,16 @@ void ApplicationActionController::preInit()
 
 void ApplicationActionController::init()
 {
+    // Same focus-based global shortcut routing as the native shell.
+    for (const std::string command : { "copy", "cut", "paste", "undo", "redo", "delete", "cancel" }) {
+        dispatcher()->reg(this, "action://" + command, [this, command]() {
+            const bool focused = globalContext()->currentProject()
+                                 && uiContextResolver()->currentUiContext() == context::UiCtxProjectFocused;
+            if (focused) {
+                dispatcher()->dispatch("action://notation/" + command);
+            } else if (command == "cancel") {
+                dispatcher()->dispatch("nav-escape");
+            }
+        });
+    }
 }

@@ -369,7 +369,11 @@ muse::modularity::ContextPtr GuiApp::setupNewContext()
 
     QQmlApplicationEngine* engine = muse::modularity::globalIoc()->resolve<muse::ui::IUiEngine>("app")->qmlAppEngine();
 
+#ifdef MUE_CONFIGURATION_IS_APPWEB
+    QString path = QString(":/qml/Main.qml");
+#else
     QString path = QString(":/qt/qml/MuseScore/AppShell/platform/%1/Main.qml").arg(platform);
+#endif
     QQmlComponent component = QQmlComponent(engine, path);
     if (!component.isReady()) {
         LOGE() << "Failed to load main qml file, err: " << component.errorString();

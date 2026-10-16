@@ -1,0 +1,6 @@
+{
+  "name": "pianist-m0-browser-checks",
+  "private": true,
+  "scripts": { "test": "node m0-smoke.cjs" },
+  "devDependencies": { "playwright": "1.62.1" }
+}

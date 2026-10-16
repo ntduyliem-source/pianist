@@ -18,20 +18,20 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-declare_module(appshell)
+muse_create_module(appshell)
 
-set(MODULE_QRC appshell.qrc)
-set(MODULE_QML_IMPORT ${CMAKE_CURRENT_LIST_DIR}/qml)
+muse_module_add_qrc(appshell appshell.qrc)
+add_qml_import_path(${CMAKE_CURRENT_LIST_DIR}/qml)
 
-set(MODULE_SRC
+target_sources(appshell PRIVATE
     ${CMAKE_CURRENT_LIST_DIR}/appshellmodule.cpp
     ${CMAKE_CURRENT_LIST_DIR}/appshellmodule.h
     ${CMAKE_CURRENT_LIST_DIR}/iappshellconfiguration.h
     ${CMAKE_CURRENT_LIST_DIR}/appshelltypes.h
     ${CMAKE_CURRENT_LIST_DIR}/internal/applicationuiactions.cpp
     ${CMAKE_CURRENT_LIST_DIR}/internal/applicationuiactions.h
-    ${CMAKE_CURRENT_LIST_DIR}/internal/appshellconfiguration.cpp
-    ${CMAKE_CURRENT_LIST_DIR}/internal/appshellconfiguration.h
+    ${PROJECT_SOURCE_DIR}/src/appshell/internal/appshellconfiguration.cpp
+    ${PROJECT_SOURCE_DIR}/src/appshell/internal/appshellconfiguration.h
     ${CMAKE_CURRENT_LIST_DIR}/internal/applicationactioncontroller.cpp
     ${CMAKE_CURRENT_LIST_DIR}/internal/applicationactioncontroller.h
     ${CMAKE_CURRENT_LIST_DIR}/internal/istartupscenario.h
@@ -47,13 +47,12 @@ set(MODULE_SRC
     ${CMAKE_CURRENT_LIST_DIR}/view/navigableappmenumodel.h
     )
 
-set(MODULE_LINK
+target_link_libraries(appshell PRIVATE
     muse::ui
     muse::uicomponents
     Qt::Quick
     )
 
 # we use QKeyMapper to fix https://github.com/musescore/MuseScore/issues/10181
-set(MODULE_INCLUDE_PRIVATE ${Qt6Gui_PRIVATE_INCLUDE_DIRS} )
-
-setup_module()
+find_package(Qt6 REQUIRED COMPONENTS GuiPrivate)
+target_link_libraries(appshell PRIVATE Qt6::GuiPrivate)

@@ -118,16 +118,16 @@ async::Notification WebAudioDriver::outputDeviceSampleRateChanged() const
     return n;
 }
 
-std::vector<unsigned int> WebAudioDriver::availableOutputDeviceBufferSizes() const
+std::vector<samples_t> WebAudioDriver::availableOutputDeviceBufferSizes() const
 {
-    std::vector<unsigned int> sizes;
+    std::vector<samples_t> sizes;
     sizes.push_back(m_activeSpec.output.samplesPerChannel);
     return sizes;
 }
 
-std::vector<unsigned int> WebAudioDriver::availableOutputDeviceSampleRates() const
+std::vector<sample_rate_t> WebAudioDriver::availableOutputDeviceSampleRates() const
 {
-    std::vector<unsigned int> sizes;
+    std::vector<sample_rate_t> sizes;
     sizes.push_back(m_activeSpec.output.sampleRate);
     return sizes;
 }

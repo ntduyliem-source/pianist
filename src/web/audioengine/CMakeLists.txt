@@ -49,6 +49,7 @@ set(CMAKE_MODULE_PATH
 include(MuseCreateModule)
 include(SetupCompileWarnings)
 include(GetBuildType)
+include(GetPlatformInfo)
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${MU_ROOT}/build.artifacts)
 
@@ -62,11 +63,11 @@ else()
 endif()
 
 set(AUDIO_ROOT ${MU_ROOT}/src/framework/audio)
+set(MUSE_MODULE_AUDIO_WORKMODE 2)
+add_compile_definitions(NO_QT_SUPPORT Q_OS_WASM)
 add_subdirectory(${AUDIO_ROOT}/common common)
-set(WEBWORKER_FACADE_MODE OFF)
+set(WEBENGINE_FACADE_MODE OFF)
 add_subdirectory(${AUDIO_ROOT}/engine engine)
-
-target_link_libraries(MuseAudio PRIVATE muse_audio_common muse_audio_engine)
 
 add_executable(MuseAudio
     ${CMAKE_CURRENT_LIST_DIR}/engine_export.cpp
@@ -105,6 +106,8 @@ configure_file(${MU_ROOT}/src/framework/cmake/muse_framework_config.h.in muse_fr
 add_subdirectory(${MU_ROOT}/src/framework/global global)
 
 target_link_libraries(MuseAudio PRIVATE
+    muse_audio_common
+    muse_audio_engine
     embind
     muse::global
 )
@@ -117,7 +120,7 @@ target_link_options(MuseAudio PRIVATE "SHELL:-s MODULARIZE=1")
 target_link_options(MuseAudio PRIVATE "SHELL:-s FETCH=1")
 target_link_options(MuseAudio PRIVATE "SHELL:-s INITIAL_MEMORY=50MB")
 target_link_options(MuseAudio PRIVATE "SHELL:-s ALLOW_MEMORY_GROWTH=1")
-target_link_options(MuseAudio PRIVATE "SHELL:-s EXPORTED_RUNTIME_METHODS=ccall,cwrap")
+target_link_options(MuseAudio PRIVATE "SHELL:-s EXPORTED_RUNTIME_METHODS=ccall,cwrap,HEAPU8")
 target_link_options(MuseAudio PRIVATE "SHELL:-s EXPORTED_FUNCTIONS=[_main,_malloc,_free,_Init,_process]")
 
 if (MUSE_MODULE_AUDIO_WORKER)

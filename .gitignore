@@ -17,6 +17,13 @@
 # Build output
 build
 build-*
+!buildscripts/pianist/build-web.ps1
+/.tools/
+/build.m0/
+/build.audio.m0/
+/artifacts/
+/aqtinstall.log
+tests/browser/pianist/node_modules/
 build.artifacts
 build.debug
 build.install

@@ -30,7 +30,7 @@
 #include "actions/iactionsdispatcher.h"
 #include "context/iglobalcontext.h"
 #include "iappshellconfiguration.h"
-#include "notation/inotationconfiguration.h"
+#include "notationscene/inotationsceneconfiguration.h"
 #include "braille/ibrailleconfiguration.h"
 #include "dockwindow/idockwindowprovider.h"
 
@@ -43,7 +43,7 @@ class NotationPageModel : public QObject, public muse::Contextable, public muse:
     Q_PROPERTY(bool isBraillePanelVisible READ isBraillePanelVisible NOTIFY isBraillePanelVisibleChanged)
 
     muse::GlobalInject<IAppShellConfiguration> configuration;
-    muse::GlobalInject<notation::INotationConfiguration> notationConfiguration;
+    muse::GlobalInject<notation::INotationSceneConfiguration> notationSceneConfiguration;
     muse::GlobalInject<braille::IBrailleConfiguration> brailleConfiguration;
     muse::ContextInject<muse::actions::IActionsDispatcher> dispatcher = { this };
     muse::ContextInject<context::IGlobalContext> globalContext = { this };

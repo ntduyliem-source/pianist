@@ -35,7 +35,7 @@ std::string AppJsModule::moduleName() const
 
 void AppJsModule::onInit(const muse::IApplication::RunMode&)
 {
-    WebApi::instance()->init();
+    WebApi::instance(iocContext())->init();
 }
 
 void AppJsModule::onDeinit()

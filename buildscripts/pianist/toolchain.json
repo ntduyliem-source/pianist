@@ -1,0 +1,13 @@
+{
+  "upstream": "https://github.com/musescore/MuseScore.git",
+  "upstreamTag": "v4.7.5",
+  "upstreamCommit": "3654226c2e99289916916953a98e585a3d3b315a",
+  "emsdkCommit": "fb4a370163946039f9b51e3ddc9939ce78cb5a41",
+  "emscripten": "4.0.7",
+  "qt": "6.10.2",
+  "qtTarget": "wasm_singlethread",
+  "qtHostWindows": "win64_mingw",
+  "aqtinstall": "3.3.0",
+  "cmake": "4.4.0",
+  "ninja": "1.11.1.4"
+}

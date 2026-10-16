@@ -136,7 +136,7 @@ int main(int argc, char** argv)
     using namespace mu::app;
 
     auto fixSslBackend = []() {
-#ifdef Q_OS_WIN
+#if defined(Q_OS_WIN) && QT_CONFIG(ssl)
         // NOTE: Force schannel backend. Qt prefers OpenSSL when qopensslbackend.dll
         //       is present, which can crash on ABI mismatch with bundled OpenSSL.
         //       see https://github.com/musescore/MuseScore/issues/33401
@@ -182,12 +182,14 @@ int main(int argc, char** argv)
 
     app->setupNewContext();
 
+#if QT_CONFIG(ssl)
     LOGI() << QString("SSL Info: supported: %1, build: %2, runtime: %3, active backend: %4, available backends: %5")
         .arg(QSslSocket::supportsSsl())
         .arg(QSslSocket::sslLibraryBuildVersionString())
         .arg(QSslSocket::sslLibraryVersionString())
         .arg(QSslSocket::activeBackend())
         .arg(QSslSocket::availableBackends().join(", "));
+#endif
 
     // ====================================================
     // Run main loop

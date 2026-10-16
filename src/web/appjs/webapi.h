@@ -29,30 +29,37 @@
 #include "context/iglobalcontext.h"
 #include "audio/main/istartaudiocontroller.h"
 #include "audio/main/isoundfontcontroller.h"
+#include "project/iprojectcreator.h"
+#include "project/inotationwritersregister.h"
 
 namespace mu::appjs {
-class WebApi : public muse::async::Asyncable
+class WebApi : public muse::async::Asyncable, public muse::Contextable
 {
-    inline static muse::GlobalInject<muse::IInteractive> interactive;
-    inline static muse::GlobalInject<muse::actions::IActionsDispatcher> dispatcher;
-    inline static muse::GlobalInject<mu::context::IGlobalContext> globalContext;
-    inline static muse::GlobalInject<muse::audio::IStartAudioController> startAudioController;
-    inline static muse::GlobalInject<muse::audio::ISoundFontController> soundFontController;
+    muse::ContextInject<muse::IInteractive> interactive = { this };
+    muse::ContextInject<muse::actions::IActionsDispatcher> dispatcher = { this };
+    muse::ContextInject<mu::context::IGlobalContext> globalContext = { this };
+    muse::ContextInject<muse::audio::IStartAudioController> startAudioController = { this };
+    muse::ContextInject<muse::audio::ISoundFontController> soundFontController = { this };
+    muse::ContextInject<project::INotationWritersRegister> writers = { this };
+    muse::GlobalInject<project::IProjectCreator> projectCreator;
 
 public:
 
-    static WebApi* instance();
+    static WebApi* instance(const muse::modularity::ContextPtr& ctx = nullptr);
 
     void init();
     void deinit();
 
-    void load(const void* source, unsigned int len);
+    bool load(const void* source, unsigned int len, const std::string& filename);
+    bool saveProject();
+    bool exportScore(const std::string& format);
+    bool dispatchAction(const std::string& action);
     void addSoundFont(const std::string& uri);
     void startAudioProcessing();
 
 private:
 
-    WebApi() = default;
+    explicit WebApi(const muse::modularity::ContextPtr& ctx) : muse::Contextable(ctx) {}
 
     void onProjectSaved(const muse::io::path_t& path, mu::project::SaveMode mode);
 

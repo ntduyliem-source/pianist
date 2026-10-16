@@ -5,8 +5,12 @@ const DEFAULT_SOUNDFONT = "sound/MS%20Basic.sf3"
 const MuApi = {
 
     // Load score
-    loadScoreFile: MuImpl.loadScoreFile,
-    loadScoreData: MuImpl.loadScoreData,
+    loadScoreFile: MuImpl.loadScoreFile.bind(MuImpl),
+    loadScoreData: MuImpl.loadScoreData.bind(MuImpl),
+
+    saveProject: () => MuImpl.Module.ccall('saveProject', 'number', [], []),
+    exportScore: (format = 'mxl') => MuImpl.Module.ccall('exportScore', 'number', ['string'], [format]),
+    dispatchAction: (action) => MuImpl.Module.ccall('dispatchAction', 'number', ['string'], [action]),
 
     // Start audio
     startAudioProcessing: MuImpl.startAudioProcessing.bind(MuImpl),
@@ -15,8 +19,7 @@ const MuApi = {
 async function createMuApi(config) {
 
     if (!config.soundFont) {
-        const directoryUrl = new URL('./', window.location.href).toString();
-        config.soundFont = directoryUrl + "/" + DEFAULT_SOUNDFONT
+        config.soundFont = new URL(DEFAULT_SOUNDFONT, window.location.href).toString();
     }
 
     MuApi.Module = await MuImpl.loadModule(config)
@@ -27,6 +30,9 @@ async function createMuApi(config) {
             config.onProjectSaved(data)
         }
     }
+
+    MuApi.Module.onMxlExported = data => config.onMxlExported?.(new Uint8Array(data));
+    MuApi.Module.onXmlExported = data => config.onXmlExported?.(new Uint8Array(data));
 
     return MuApi
 }

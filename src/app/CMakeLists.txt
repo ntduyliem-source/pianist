@@ -302,7 +302,14 @@ target_link_libraries(MuseScoreStudio PRIVATE ${LINK_LIB} ${COVERAGE_LINK_FLAGS}
 if (CC_IS_EMCC)
     include(exported_functions.cmake)
     target_link_options(MuseScoreStudio PRIVATE ${EMCC_LINKER_FLAGS})
+    if (PIANIST_WASM_FAST_LINK)
+        # Keep C++ Release optimization, skip Binaryen's lengthy release passes
+        # while iterating on the browser port. Not a production size baseline.
+        target_link_options(MuseScoreStudio PRIVATE -O0 --profiling-funcs --emit-symbol-map)
+    endif()
     target_link_options(MuseScoreStudio PRIVATE ${EXPORTED_FUNCTIONS})
+    # Emscripten 4 no longer exposes heap views on Module by default.
+    set_property(TARGET MuseScoreStudio PROPERTY QT_WASM_EXTRA_EXPORTED_METHODS "ccall,HEAPU8")
 endif()
 
 

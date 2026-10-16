@@ -31,7 +31,7 @@
 
 #include "internal/applicationuiactions.h"
 #include "internal/applicationactioncontroller.h"
-#include "internal/appshellconfiguration.h"
+#include "appshell/internal/appshellconfiguration.h"
 #include "internal/applicationactioncontroller.h"
 #include "internal/startupscenario.h"
 

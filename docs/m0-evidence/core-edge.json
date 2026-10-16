@@ -1,0 +1,76 @@
+{
+  "passed": true,
+  "readyMs": 5682,
+  "metrics": {
+    "wasmHeapBytes": 524877824,
+    "jsHeapUsedBytes": 66704253,
+    "resources": [
+      {
+        "name": "http://127.0.0.1:8787/MuseScoreStudio.js",
+        "bytes": 510600,
+        "durationMs": 13
+      },
+      {
+        "name": "http://127.0.0.1:8787/distr/muapi.js",
+        "bytes": 1305,
+        "durationMs": 3
+      },
+      {
+        "name": "http://127.0.0.1:8787/distr/muimpl.js",
+        "bytes": 5725,
+        "durationMs": 2
+      },
+      {
+        "name": "http://127.0.0.1:8787/distr/config.js",
+        "bytes": 85,
+        "durationMs": 3
+      },
+      {
+        "name": "http://127.0.0.1:8787/distr/qtloader.js",
+        "bytes": 10752,
+        "durationMs": 5
+      },
+      {
+        "name": "http://127.0.0.1:8787/distr/audiodriver.js",
+        "bytes": 3066,
+        "durationMs": 5
+      },
+      {
+        "name": "http://127.0.0.1:8787/MuseScoreStudio.wasm",
+        "bytes": 133709138,
+        "durationMs": 676
+      },
+      {
+        "name": "http://127.0.0.1:8787/MuseAudio.js",
+        "bytes": 2108283,
+        "durationMs": 10
+      },
+      {
+        "name": "http://127.0.0.1:8787/distr/audio_worklet_processor.js",
+        "bytes": 6203,
+        "durationMs": 4
+      },
+      {
+        "name": "http://127.0.0.1:8787/sound/MS%20Basic.sf3",
+        "bytes": 51278610,
+        "durationMs": 152
+      }
+    ]
+  },
+  "browser": "155.0.4283.45",
+  "checks": [
+    "real WASM editor initialized",
+    "MXL and plain MusicXML import preserve fixture content",
+    "editor pitch command changes exported score",
+    "undo and redo restore the expected musical content",
+    "saved MSCZ reopens with edits",
+    "exported MXL reimports with edits",
+    "bad import keeps current project",
+    "malformed XML is rejected without aborting the runtime",
+    "canvas selection, pitch shortcut and Ctrl+Z work",
+    "changing note duration through the keyboard works",
+    "Delete removes selected notes",
+    "note entry adds C/D quarter notes and survives save/reopen"
+  ],
+  "errors": []
+}

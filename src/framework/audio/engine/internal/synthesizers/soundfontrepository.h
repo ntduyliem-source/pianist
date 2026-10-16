@@ -23,9 +23,10 @@
 #pragma once
 
 #include "audio/engine/isoundfontrepository.h"
+#include "global/async/asyncable.h"
 
 namespace muse::audio::synth {
-class SoundFontRepository : public ISoundFontRepository
+class SoundFontRepository : public ISoundFontRepository, public async::Asyncable
 {
 public:
     void loadSoundFonts(const std::vector<SoundFontUri>& uris) override;

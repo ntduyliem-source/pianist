@@ -70,7 +70,7 @@ void AudioModule::registerExports()
 
 #ifdef Q_OS_WASM
     m_rpcChannel = std::make_shared<rpc::WebRpcChannel>();
-    m_soundFontController = std::make_shared<WebSoundFontController>();
+    m_soundFontController = std::make_shared<WebSoundFontController>(iocContext());
 #else
     m_rpcChannel = std::make_shared<rpc::GeneralRpcChannel>();
     m_soundFontController = std::make_shared<GeneralSoundFontController>(iocContext());

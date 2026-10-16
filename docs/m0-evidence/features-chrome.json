@@ -1,0 +1,24 @@
+{
+  "browser": "154.0.8037.17",
+  "inspector": {
+    "passed": true,
+    "check": "Hide a note, export its visibility, undo and export again"
+  },
+  "panels": "Properties, layout and palette screenshots captured for visual review.",
+  "palette": {
+    "passed": true,
+    "check": "Apply staccato to a note, verify MusicXML, undo"
+  },
+  "clipboard": {
+    "passed": true,
+    "permissions": "clipboard-read/write explicitly granted in the isolated test context"
+  },
+  "zoom": "Screenshot captured for visual review.",
+  "audio": {
+    "passed": true,
+    "peak": 0.0702400654554367,
+    "state": "running",
+    "sampleRate": 48000
+  },
+  "runtimeErrors": []
+}

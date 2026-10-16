@@ -27,6 +27,11 @@
 #endif
 
 #include "global/io/file.h"
+#include "global/io/buffer.h"
+#include <algorithm>
+#include <cctype>
+#include <map>
+#include <set>
 
 #include "log.h"
 
@@ -52,9 +57,9 @@ static void callJsWithBytes(const char*, const uint8_t*, size_t)
 
 #endif
 
-WebApi* WebApi::instance()
+WebApi* WebApi::instance(const muse::modularity::ContextPtr& ctx)
 {
-    static WebApi a;
+    static WebApi a(ctx);
 
     return &a;
 }
@@ -63,7 +68,7 @@ void WebApi::init()
 {
     auto onProjectChanged = [this]() {
         if (m_currentProject) {
-            m_currentProject->saveComplited().resetOnReceive(this);
+            m_currentProject->saveComplited().disconnect(this);
         }
 
         m_currentProject = globalContext()->currentProject();
@@ -83,23 +88,86 @@ void WebApi::init()
 void WebApi::deinit()
 {
     if (m_currentProject) {
-        m_currentProject->saveComplited().resetOnReceive(this);
+        m_currentProject->saveComplited().disconnect(this);
     }
 }
 
-void WebApi::load(const void* source, unsigned int len)
+bool WebApi::load(const void* source, unsigned int len, const std::string& filename)
 {
-    LOGI() << source << ", len: " << len;
+    // Use an allowlisted suffix, never a user-controlled virtual filesystem path.
+    std::string format = io::suffix(io::path_t(filename));
+    std::transform(format.begin(), format.end(), format.begin(), [](unsigned char c) { return std::tolower(c); });
+    static const std::set<std::string> formats { "mxl", "xml", "musicxml", "mscz", "mscx" };
+    if (!source || len == 0 || len > 32 * 1024 * 1024 || !formats.count(format)) {
+        LOGE() << "Unsupported format or file size";
+        return false;
+    }
     ByteArray data = ByteArray::fromRawData(reinterpret_cast<const char*>(source), len);
-    io::path_t tempFilePath = "/mu/temp/current.mscz";
-
-    //! NOTE Remove last previous
+    const io::path_t tempFilePath = std::string("/mu/temp/input.") + format;
+    if (!io::File::writeFile(tempFilePath, data)) {
+        return false;
+    }
+    auto project = projectCreator()->newProject(iocContext());
+    const Ret ret = project->load(tempFilePath, {}, format);
     io::File::remove(tempFilePath);
+    if (!ret) {
+        LOGE() << "Open failed: " << ret.toString();
+        return false;
+    }
+    // Publish only after successful parsing; a bad file keeps the current score.
+    globalContext()->setCurrentProject(project);
+    interactive()->open("musescore://notation");
+    return true;
+}
 
-    //! NOTE Write new project
-    io::File::writeFile(tempFilePath, data);
+bool WebApi::saveProject()
+{
+    if (!m_currentProject) {
+        return false;
+    }
+    return m_currentProject->save("/mu/temp/pianist.mscz", project::SaveMode::SaveAs, false).success();
+}
 
-    dispatcher()->dispatch("file-open", actions::ActionData::make_arg1(QUrl::fromLocalFile(tempFilePath.toQString())));
+bool WebApi::exportScore(const std::string& format)
+{
+    if (!m_currentProject || (format != "mxl" && format != "musicxml")) {
+        return false;
+    }
+    const auto writer = writers()->writer(format);
+    if (!writer) {
+        return false;
+    }
+    io::Buffer buffer;
+    buffer.open(io::IODevice::WriteOnly);
+    const Ret ret = writer->write(m_currentProject->masterNotation()->notation(), buffer);
+    if (!ret) {
+        return false;
+    }
+    callJsWithBytes(format == "mxl" ? "onMxlExported" : "onXmlExported", buffer.data().constData(), buffer.data().size());
+    return true;
+}
+
+bool WebApi::dispatchAction(const std::string& action)
+{
+    // Keep browser commands stable when upstream action identifiers change.
+    static const std::map<std::string, std::string> actions {
+        { "undo", "action://notation/undo" },
+        { "redo", "action://notation/redo" },
+        { "select-all", "notation-select-all" },
+        { "pitch-up", "pitch-up" },
+        { "pitch-down", "pitch-down" },
+        { "delete", "action://notation/delete" }
+    };
+    const auto command = actions.find(action);
+    if (!m_currentProject || command == actions.end()) {
+        return false;
+    }
+    const auto registered = dispatcher()->actionList();
+    if (std::find(registered.begin(), registered.end(), command->second) == registered.end()) {
+        return false;
+    }
+    dispatcher()->dispatch(command->second);
+    return true;
 }
 
 void WebApi::addSoundFont(const std::string& uri)

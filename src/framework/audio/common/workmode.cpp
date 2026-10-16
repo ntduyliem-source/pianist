@@ -22,7 +22,9 @@
 
 #include "workmode.h"
 
+#ifndef NO_QT_SUPPORT
 #include "global/settings.h"
+#endif
 
 #include "muse_framework_config.h"
 
@@ -32,10 +34,13 @@ using namespace muse::audio;
 workmode::Mode workmode::m_mode = workmode::Mode::Undefined;
 workmode::Mode workmode::m_desiredMode = workmode::Mode::Undefined;
 
+#ifndef NO_QT_SUPPORT
 static const Settings::Key WORKMODE_KEY("audio", "dev/workmode");
+#endif
 
 void workmode::load()
 {
+#ifndef NO_QT_SUPPORT
     int val = settings()->value(WORKMODE_KEY).toInt();
     if (val > 0 && val <= 3) {
         m_mode = static_cast<Mode>(val);
@@ -43,6 +48,9 @@ void workmode::load()
         m_mode = defaultMode();
     }
 
+#else
+    m_mode = defaultMode();
+#endif
     m_desiredMode = m_mode;
 }
 
@@ -59,7 +67,9 @@ workmode::Mode workmode::mode()
 void workmode::setMode(Mode m)
 {
     //! NOTE Need restart
+#ifndef NO_QT_SUPPORT
     settings()->setLocalValue(WORKMODE_KEY, Val(static_cast<int>(m)));
+#endif
     m_desiredMode = m;
 }
 

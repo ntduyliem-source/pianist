@@ -31,7 +31,7 @@
 #include "audio/common/rpc/irpcchannel.h"
 
 namespace muse::audio {
-class Player : public IPlayer, public async::Asyncable, public Contextable
+class Player : public IPlayer, public async::Asyncable, public Contextable, public std::enable_shared_from_this<Player>
 {
     ContextInject<rpc::IRpcChannel> channel = { this };
 

@@ -7,7 +7,7 @@ console.log("args:", args)
 console.log("__dirname:", __dirname);
 
 const HERE=__dirname
-const ROOT=HERE+"/../.."
+const ROOT=HERE+"/../../.."
 const OUTPUT_DIR = args.length > 0 ? args[0] : "./out"
 const MUSE_MODULE_AUDIO_WORKER = "OFF"
 
@@ -16,7 +16,7 @@ function copyFile(src, dst) {
       fs.copyFileSync(src, dst);
       console.info("success: coped " + src + " => " + dst)
     } catch (err) {
-      console.error("error: failed coped " + src + " => " + dst)
+      throw new Error("Failed to copy " + src + " => " + dst, { cause: err });
     }
 }
 
@@ -49,6 +49,7 @@ copyFile(HERE+"/distr/audio_worklet_processor.js", OUTPUT_DIR+"/distr/audio_work
 
 // Copy viewer
 copyFile(HERE+"/viewer/viewer.html", OUTPUT_DIR+"/viewer.html");
+copyFile(HERE+"/viewer/pianist.html", OUTPUT_DIR+"/pianist.html");
 copyFile(HERE+"/viewer/index.html", OUTPUT_DIR+"/index.html");
 copyFile(HERE+"/viewer/index.html", OUTPUT_DIR+"/MuseScoreStudio.html"); 
 
@@ -62,4 +63,8 @@ if (!fs.existsSync(SF_DST)) {
   fs.mkdirSync(OUTPUT_DIR+"/sound", { recursive: true });
   copyFile(SF_SRC, SF_DST);
 }
+
+copyFile(ROOT+"/LICENSE.txt", OUTPUT_DIR+"/LICENSE.txt");
+copyFile(ROOT+"/share/sound/MS Basic_License.md", OUTPUT_DIR+"/sound/MS Basic_License.md");
+copyFile(ROOT+"/share/sound/MS Basic_Readme.md", OUTPUT_DIR+"/sound/MS Basic_Readme.md");
 

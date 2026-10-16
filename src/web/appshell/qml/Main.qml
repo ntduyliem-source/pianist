@@ -39,7 +39,10 @@ AppWindow {
         topParent: root
 
         onRequestedDockPage: function(uri, params) {
-            Qt.callLater(interactiveProvider.onPageOpened)
+            Qt.callLater(function() {
+                interactiveProvider.onPageOpened()
+                root.opacity = 1.0
+            })
         }
     }
 

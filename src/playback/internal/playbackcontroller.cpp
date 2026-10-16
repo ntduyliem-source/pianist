@@ -144,7 +144,14 @@ void PlaybackController::init()
 
         m_loadingProgress.start();
 
-        playback()->addSequence().onResolve(this, [this](const TrackSequenceId& sequenceId) {
+        // On the web, audio may start after several projects have been opened.
+        // Discard sequences requested for a project that is no longer current.
+        const std::weak_ptr expectedProject = globalContext()->currentProject();
+        playback()->addSequence().onResolve(this, [this, expectedProject](const TrackSequenceId& sequenceId) {
+            if (expectedProject.expired() || expectedProject.lock() != globalContext()->currentProject()) {
+                playback()->removeSequence(sequenceId);
+                return;
+            }
             setupNewCurrentSequence(sequenceId);
         });
     });
@@ -250,7 +257,8 @@ void PlaybackController::seekRawTick(const midi::tick_t tick, const bool flushSo
 
 void PlaybackController::seek(const audio::secs_t secs, const bool flushSound)
 {
-    IF_ASSERT_FAILED(currentPlayer()) {
+    // Selecting notes is valid before the browser's audio gesture has occurred.
+    if (!currentPlayer()) {
         return;
     }
 

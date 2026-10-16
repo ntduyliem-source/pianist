@@ -47,11 +47,8 @@ void StartupScenario::setStartupScoreFile(const std::optional<project::ProjectFi
     NOT_IMPLEMENTED;
 }
 
-muse::async::Promise<Ret> StartupScenario::runOnSplashScreen()
+void StartupScenario::runOnSplashScreen()
 {
-    return async::make_promise<Ret>([](auto resolve) {
-        return resolve(muse::make_ok());
-    });
 }
 
 void StartupScenario::runAfterSplashScreen()

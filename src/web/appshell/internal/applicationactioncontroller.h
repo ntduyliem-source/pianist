@@ -29,12 +29,16 @@
 
 #include "modularity/ioc.h"
 #include "actions/iactionsdispatcher.h"
+#include "context/iglobalcontext.h"
+#include "context/iuicontextresolver.h"
 
 namespace mu::appshell {
 class ApplicationActionController : public QObject, public muse::Contextable, public muse::actions::Actionable,
     public muse::async::Asyncable
 {
     muse::ContextInject<muse::actions::IActionsDispatcher> dispatcher = { this };
+    muse::ContextInject<context::IGlobalContext> globalContext = { this };
+    muse::ContextInject<context::IUiContextResolver> uiContextResolver = { this };
 
 public:
     ApplicationActionController(const muse::modularity::ContextPtr& iocCtx)

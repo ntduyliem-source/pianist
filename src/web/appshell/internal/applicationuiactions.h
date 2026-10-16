@@ -29,7 +29,7 @@
 #include "modularity/ioc.h"
 #include "ui/imainwindow.h"
 #include "braille/ibrailleconfiguration.h"
-#include "notation/inotationconfiguration.h"
+#include "notationscene/inotationsceneconfiguration.h"
 #include "dockwindow/idockwindowprovider.h"
 #include "../iappshellconfiguration.h"
 
@@ -41,7 +41,7 @@ class ApplicationUiActions : public muse::ui::IUiActionsModule, public muse::Con
 {
     muse::GlobalInject<IAppShellConfiguration> configuration;
     muse::GlobalInject<braille::IBrailleConfiguration> brailleConfiguration;
-    muse::GlobalInject<mu::notation::INotationConfiguration> notationConfiguration;
+    muse::GlobalInject<mu::notation::INotationSceneConfiguration> notationSceneConfiguration;
     muse::ContextInject<muse::ui::IMainWindow> mainWindow = { this };
     muse::ContextInject<muse::dock::IDockWindowProvider> dockWindowProvider = { this };
 

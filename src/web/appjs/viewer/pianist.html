@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Pianist · Editor M0</title>
+  <link rel="icon" href="data:,">
+  <style>
+    :root{font:14px system-ui,sans-serif;color:#e9edf5;background:#10141b;color-scheme:dark}
+    *{box-sizing:border-box}body{margin:0;height:100vh;display:flex;flex-direction:column}
+    header{padding:14px 20px;display:flex;gap:20px;align-items:center;border-bottom:1px solid #344052}
+    .brand{font-size:21px;font-weight:700;letter-spacing:.02em}.badge{font-size:12px;color:#9cb2ce}
+    nav{display:flex;gap:8px;align-items:center;flex-wrap:wrap}button,label.button{font:inherit;padding:8px 12px;border:1px solid #4a576c;border-radius:6px;background:#222d3c;color:inherit;cursor:pointer}
+    button:disabled{opacity:.4;cursor:wait}button:hover:enabled,label.button:hover{background:#34445a}
+    #status{margin:0;padding:10px 20px;color:#b5c7de;min-height:40px}#screen{flex:1;min-height:0;background:#f3f4f6}
+    details{padding:9px 20px;border-top:1px solid #344052}summary{cursor:pointer;color:#9cb2ce}#log{max-height:100px;overflow:auto;white-space:pre-wrap;font-size:12px}
+    #file{display:none}.checks{display:flex;gap:8px;margin-top:10px}a{color:#9fc2ed}
+  </style>
+</head>
+<body>
+  <header><div><div class="brand">Pianist</div><span class="badge">Editor web · M0</span></div>
+    <nav aria-label="Thao tác bản nhạc">
+      <button id="open" disabled>Mở MXL / MSCZ</button><input id="file" type="file" accept=".mxl,.xml,.musicxml,.mscz,.mscx">
+      <button id="sample" disabled>Mở bài mẫu</button>
+      <button id="undo" disabled>Hoàn tác</button><button id="redo" disabled>Làm lại</button>
+      <button id="save" disabled>Tải MSCZ</button><button id="mxl" disabled>Xuất MXL</button>
+      <button id="audio" disabled>Bật âm thanh</button>
+    </nav>
+  </header>
+  <p id="status" role="status" aria-live="polite">Đang tải editor MuseScore…</p>
+  <div id="screen" role="main" aria-label="Trình chỉnh sửa bản nhạc MuseScore"></div>
+  <details><summary>Kiểm tra M0</summary><div class="checks">
+    <button id="select" disabled>Chọn tất cả</button><button id="up" disabled>Tăng cao độ</button>
+    <button id="xml" disabled>Xuất MusicXML</button>
+  </div><pre id="log"></pre></details>
+  <script src="MuseScoreStudio.js"></script>
+  <script type="module">
+    import createMuApi from './distr/muapi.js';
+    const $ = id => document.getElementById(id);
+    let api, name = 'pianist', hasScore = false;
+    const started = performance.now();
+    const log = message => { $('log').textContent += message + '\n'; };
+    const status = message => { $('status').textContent = message; log(message); };
+    // Qt 6.10 uses a focus helper in its shadow DOM. The canvas itself cannot
+    // receive browser keyboard focus after a user clicks the surrounding HTML.
+    function focusEditor(windowElement) {
+      const root = $('screen').querySelector('#qt-shadow-container')?.shadowRoot;
+      const window = windowElement ?? root?.querySelector('.qt-decorated-window:not(.inactive) .qt-window');
+      if (window && !window.contains(root.activeElement)) {
+        window.querySelector('.qt-window-focus-helper')?.focus({preventScroll:true});
+      }
+    }
+    $('screen').addEventListener('pointerdown', event => {
+      focusEditor(event.composedPath().find(element => element.classList?.contains('qt-window')));
+    });
+    const scoreButtons = ['undo','redo','save','mxl','select','up','xml'];
+    function setLoaded(filename) {
+      name = filename.replace(/\.[^.]+$/, ''); hasScore = true;
+      scoreButtons.forEach(id => $(id).disabled = false);
+      status('Đã mở ' + filename + '. Chỉnh sửa trực tiếp trên khuông nhạc, rồi tải file để giữ thay đổi.');
+    }
+    function download(bytes, extension) {
+      const blob = new Blob([bytes], {type: extension === 'musicxml' ? 'application/xml' : 'application/octet-stream'});
+      const url = URL.createObjectURL(blob), a = document.createElement('a');
+      a.href = url; a.download = name + '.' + extension; a.click();
+      setTimeout(() => URL.revokeObjectURL(url), 30000);
+      status('Đã tạo file ' + a.download + ' (' + bytes.length.toLocaleString('vi') + ' byte).');
+    }
+    const run = fn => async () => {
+      try { await fn(); }
+      catch(e) { console.error(e); status('Lỗi: ' + e.message); }
+      finally { focusEditor(); }
+    };
+    const check = ok => { if (!ok) throw new Error('Thao tác chưa thực hiện được.'); };
+    try {
+      api = await createMuApi({screen:$('screen'),
+        onLoaded:() => log('Qt đã tải sau ' + Math.round(performance.now()-started) + ' ms.'),
+        onExit: data => status('Editor đã dừng: ' + (data.text ?? data.code ?? 'unknown')),
+        onProjectSaved: bytes => download(bytes,'mscz'),
+        onMxlExported: bytes => download(bytes,'mxl'),
+        onXmlExported: bytes => download(bytes,'musicxml')
+      });
+      window.pianist = api;
+      ['open','sample','audio'].forEach(id => $(id).disabled = false);
+      status('Editor sẵn sàng. Mở một file MXL hoặc bài mẫu để bắt đầu.');
+      $('open').onclick = () => $('file').click();
+      $('file').onchange = run(async () => {
+        const file = $('file').files[0]; if (!file) return;
+        status('Đang mở ' + file.name + '…');
+        try { await api.loadScoreFile(file); setLoaded(file.name); }
+        finally { $('file').value = ''; }
+      });
+      $('sample').onclick = run(async () => {
+        const response = await fetch('fixtures/piano.mxl');
+        if (!response.ok) throw new Error('Không tải được bài mẫu.');
+        await api.loadScoreData(new Uint8Array(await response.arrayBuffer()), 'piano.mxl');
+        setLoaded('piano.mxl');
+      });
+      for (const [id,action] of [['undo','undo'],['redo','redo'],['select','select-all'],['up','pitch-up']]) {
+        $(id).onclick = run(() => { check(api.dispatchAction(action)); log('Lệnh editor: ' + action); });
+      }
+      $('save').onclick = run(() => check(api.saveProject()));
+      $('mxl').onclick = run(() => check(api.exportScore('mxl')));
+      $('xml').onclick = run(() => check(api.exportScore('musicxml')));
+      $('audio').onclick = run(async () => {
+        $('audio').disabled = true;
+        try {
+          await api.startAudioProcessing();
+          status('Đã yêu cầu bật âm thanh. Dùng nút Play trong editor để nghe.');
+        } catch(e) { $('audio').disabled = false; throw e; }
+      });
+    } catch(e) { console.error(e); status('Không khởi động được editor: ' + e.message); }
+    window.addEventListener('beforeunload', event => {
+      if (hasScore) { event.preventDefault(); event.returnValue = ''; }
+    });
+  </script>
+</body>
+</html>
