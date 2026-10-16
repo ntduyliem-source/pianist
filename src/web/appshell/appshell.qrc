@@ -5,6 +5,7 @@
         <file>qml/AppButtonBackground.qml</file>
         <file>qml/AppMenuBar.qml</file>
         <file>qml/NotationFrame.qml</file>
+        <file>qml/WebStatusBar.qml</file>
         <file>qml/DevFrame.qml</file>
     </qresource>
 </RCC>

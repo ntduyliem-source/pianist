@@ -41,7 +41,9 @@ const summary = file => {
   };
   let result;
   try {
-    await page.goto(process.env.PIANIST_URL || 'http://127.0.0.1:8787/pianist.html', {waitUntil:'domcontentloaded',timeout:120000});
+    const url = new URL(process.env.PIANIST_URL || 'http://127.0.0.1:8787/pianist.html');
+    url.searchParams.set('diagnostics','1');
+    await page.goto(url.toString(), {waitUntil:'domcontentloaded',timeout:120000});
     await page.locator('#sample').waitFor({state:'visible'});
     await page.waitForFunction(() => !document.querySelector('#sample').disabled || document.querySelector('#status').textContent.startsWith('Không khởi động'), null, {timeout:120000});
     assert.equal(await page.locator('#sample').isDisabled(), false, await page.locator('#status').textContent());
@@ -49,7 +51,6 @@ const summary = file => {
     assert.ok(await page.locator('#screen canvas').count(), 'MuseScore canvas must exist');
     record('real WASM editor initialized');
     await open(fixture);
-    await page.locator('summary').click();
     const original = summary(path.join(root,'tests/fixtures/pianist/m0/piano.musicxml'));
     const imported = summary(await save('#xml','01-imported.musicxml'));
     assert.deepEqual(imported, original, 'MXL import must preserve pitch, rhythm and staves');
@@ -100,7 +101,8 @@ const summary = file => {
     assert.deepEqual(summary(await save('#xml','12-keyboard-undo.musicxml')), original);
     record('canvas selection, pitch shortcut and Ctrl+Z work');
 
-    await page.mouse.click(617,477); // First C4 note; Ctrl+Home selects the clef.
+    await key('Control+Home'); // Select the clef, then advance to the first note.
+    await key('ArrowRight');
     await key('4'); // MuseScore eighth-note duration shortcut.
     const shorter = summary(await save('#xml','13-duration.musicxml'));
     assert.equal(shorter.find(n => n.staff===1 && n.midi!==null && n.onset==='0').duration,'1/2');

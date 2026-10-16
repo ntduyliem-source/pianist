@@ -1,0 +1,43 @@
+{
+  "date": "2026-10-16",
+  "method": "Interactive checks in Codex in-app browser via CUA, followed by independent comparison of downloaded MusicXML with score-summary.py.",
+  "baselineCommit": "d005272da1dbbd1ce873e2b7448d5bdaa75dd5dd",
+  "headlessTestsRerun": false,
+  "build": "app-web Release FastLink succeeded; updated browser scripts passed node --check",
+  "passed": true,
+  "checks": [
+    "Normal launch opens a real blank 16-measure piano score without developer controls.",
+    "File/Open and Ctrl+O import MXL and plain MusicXML.",
+    "Selected pitches increase by one semitone; rhythms, rests and staves are preserved.",
+    "Ctrl+Z restores original data; Ctrl+Y restores the edit.",
+    "Saved MSCZ reopens with edited content.",
+    "Exported MXL reimports with edited content.",
+    "Invalid ZIP input is rejected while the current project remains available.",
+    "Malformed MusicXML is rejected without abort; the current project still exports correctly.",
+    "Native canvas selection and keyboard editing work.",
+    "The 4 shortcut changes a selected quarter note to an eighth note.",
+    "Delete removes the original notes; N/5/C/D enters two new quarter notes.",
+    "The two new notes survive save/reopen.",
+    "Properties visibility and palette staccato changes are present in exported XML.",
+    "Save/Discard/Cancel work before New/Open.",
+    "Parts and Page settings open; Landscape changes exported page dimensions.",
+    "Mixer and piano keyboard open from the real MuseScore components.",
+    "Playback cursor advances and Mixer signal meters show audio.",
+    "Status bar zoom and Page/Continuous mode controls work."
+  ],
+  "limitations": [
+    "No new headless Chrome/Edge run is claimed for this shell revision.",
+    "Desktop floating docking, full score corpus, physical MIDI/audio latency, and practice modes remain outside this acceptance.",
+    "Recorded baseline heap/startup values predate the new shell and dialogs."
+  ],
+  "evidenceFiles": [
+    "shell-editor.png",
+    "shell-imported.musicxml",
+    "shell-edited.musicxml",
+    "shell-reopened.musicxml",
+    "shell-new-notes-reopened.musicxml",
+    "shell-after-invalid.musicxml",
+    "shell-landscape.musicxml",
+    "shell-saved.mscz"
+  ]
+}

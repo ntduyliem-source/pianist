@@ -41,19 +41,25 @@ const summary = file => JSON.parse(spawnSync(process.env.PIANIST_PYTHON || 'pyth
     return summary(file);
   };
   try {
-    await page.goto(process.env.PIANIST_URL || 'http://127.0.0.1:8787/pianist.html');
+    const url = new URL(process.env.PIANIST_URL || 'http://127.0.0.1:8787/pianist.html');
+    url.searchParams.set('diagnostics','1');
+    await page.goto(url.toString());
     await page.waitForFunction(()=>!document.querySelector('#sample').disabled,null,{timeout:120000});
     await page.locator('#sample').click();
     await page.waitForFunction(()=>document.querySelector('#status').textContent.startsWith('Đã mở'));
-    await page.locator('summary').click();
-    await page.mouse.click(617,477);
+    await page.mouse.click(600,400);
+    const firstNote = async () => {
+      await page.keyboard.press('Control+Home');
+      await page.keyboard.press('ArrowRight');
+    };
+    await firstNote();
     await page.waitForTimeout(400); // Qt canvas renders asynchronously.
     await page.screenshot({path:path.join(output,'01-selection.png')});
-    await page.mouse.click(230,242);
+    await page.mouse.click(222,130);
     await page.waitForTimeout(400);
     await page.screenshot({path:path.join(output,'02-properties.png')});
     try {
-      await page.mouse.click(20,315); // Properties: Visible.
+      await page.mouse.click(20,205); // Properties: Visible.
       await save('02-properties-hidden.musicxml');
       assert.ok((await fs.readFile(path.join(output,'02-properties-hidden.musicxml'),'utf8')).includes('<notehead>none</notehead>'), 'Hidden notehead must be serialized');
       await page.keyboard.press('Control+z');
@@ -61,16 +67,16 @@ const summary = file => JSON.parse(spawnSync(process.env.PIANIST_PYTHON || 'pyth
       assert.ok(!(await fs.readFile(path.join(output,'02-properties-undo.musicxml'),'utf8')).includes('<notehead>none</notehead>'), 'Undo must restore the notehead');
       results.inspector={passed:true,check:'Hide a note, export its visibility, undo and export again'};
     } catch(e) { results.inspector={passed:false,error:String(e)}; }
-    await page.mouse.click(123,242);
+    await page.mouse.click(114,130);
     await page.waitForTimeout(400);
     await page.screenshot({path:path.join(output,'03-layout.png')});
-    await page.mouse.click(46,242);
-    await page.mouse.click(70,533);
+    await page.mouse.click(38,130);
+    await page.mouse.click(70,421);
     await page.waitForTimeout(400);
     await page.screenshot({path:path.join(output,'04-palettes.png')});
     results.panels='Properties, layout and palette screenshots captured for visual review.';
     try {
-      await page.mouse.dblclick(124,562); // Articulations: staccato.
+      await page.mouse.dblclick(124,450); // Articulations: staccato.
       await save('04-staccato.musicxml');
       assert.match(await fs.readFile(path.join(output,'04-staccato.musicxml'),'utf8'), /<staccato\b/);
       await page.keyboard.press('Control+z');
@@ -80,7 +86,8 @@ const summary = file => JSON.parse(spawnSync(process.env.PIANIST_PYTHON || 'pyth
     } catch(e) { results.palette={passed:false,error:String(e)}; }
 
     try {
-      await page.mouse.click(617,477);
+      await page.mouse.click(600,400);
+      await firstNote();
       await page.keyboard.press('Control+c');
       await page.waitForTimeout(300);
       await page.keyboard.press('ArrowRight');
@@ -91,10 +98,10 @@ const summary = file => JSON.parse(spawnSync(process.env.PIANIST_PYTHON || 'pyth
       results.clipboard={passed:true,permissions:'clipboard-read/write explicitly granted in the isolated test context'};
     } catch(e) {
       results.clipboard={passed:false,error:String(e)};
-      await page.mouse.click(55,130);
+      await page.mouse.click(55,13);
       await page.waitForTimeout(400);
       await page.screenshot({path:path.join(output,'05-edit-menu.png')});
-      await page.mouse.click(92,326); // Edit > Paste, observed in the Qt menu.
+      await page.mouse.click(92,177); // Edit > Paste.
       await page.waitForTimeout(400);
       const notes=await save('05-menu-paste.musicxml');
       results.clipboard.menuPassed=notes.find(n=>n.staff===1&&n.measure===0&&n.onset==='1').midi===60;
@@ -118,7 +125,7 @@ const summary = file => JSON.parse(spawnSync(process.env.PIANIST_PYTHON || 'pyth
       await page.waitForTimeout(1500); // Allow asynchronous engine/track setup.
       await page.mouse.click(800,600); // Restore the notation window after menus.
       await page.keyboard.press('Control+Home');
-      await page.mouse.click(381,161); // Real Play button in the playback toolbar.
+      await page.mouse.click(1440-429,51); // Playback toolbar is aligned to the right.
       await page.waitForFunction(()=>{
         const values=new Float32Array(window.m0Meter.fftSize);
         window.m0Meter.getFloatTimeDomainData(values);
@@ -127,12 +134,12 @@ const summary = file => JSON.parse(spawnSync(process.env.PIANIST_PYTHON || 'pyth
         return Number.isFinite(peak) && peak>0.0001;
       },null,{timeout:12000});
       results.audio=await page.evaluate(()=>({passed:!window.m0ProcessorFailed,peak:window.m0Peak,state:window.m0AudioContext.state,sampleRate:window.m0AudioContext.sampleRate}));
-      await page.mouse.click(381,161); // Pause after observing non-silent output.
+      await page.mouse.click(1440-429,51);
     } catch(e) {
       results.audio={passed:false,error:String(e),...await page.evaluate(()=>({peak:window.m0Peak,processorFailed:!!window.m0ProcessorFailed,state:window.m0AudioContext?.state}))};
     }
     await page.screenshot({path:path.join(output,'07-audio.png')});
-    await page.mouse.click(920,205); // Note-input toolbar settings.
+    await page.mouse.click(1032,94); // Note-input toolbar settings.
     await page.waitForTimeout(400);
     await page.screenshot({path:path.join(output,'08-settings.png')});
     await page.keyboard.press('Escape');

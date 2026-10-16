@@ -36,6 +36,18 @@ namespace mu::appshell {
 class ApplicationActionController : public QObject, public muse::Contextable, public muse::actions::Actionable,
     public muse::async::Asyncable
 {
+    Q_OBJECT
+    Q_PROPERTY(QString documentName READ documentName NOTIFY documentChanged)
+    Q_PROPERTY(bool documentDirty READ documentDirty NOTIFY documentChanged)
+    Q_PROPERTY(int sidebarTab READ sidebarTab NOTIFY viewStateChanged)
+    Q_PROPERTY(bool sidebarVisible READ sidebarVisible NOTIFY viewStateChanged)
+    Q_PROPERTY(bool navigatorVisible READ navigatorVisible NOTIFY viewStateChanged)
+    Q_PROPERTY(bool pianoVisible READ pianoVisible NOTIFY viewStateChanged)
+    Q_PROPERTY(bool mixerVisible READ mixerVisible NOTIFY viewStateChanged)
+    Q_PROPERTY(bool noteInputVisible READ noteInputVisible NOTIFY viewStateChanged)
+    Q_PROPERTY(bool playbackVisible READ playbackVisible NOTIFY viewStateChanged)
+    Q_PROPERTY(bool statusBarVisible READ statusBarVisible NOTIFY viewStateChanged)
+
     muse::ContextInject<muse::actions::IActionsDispatcher> dispatcher = { this };
     muse::ContextInject<context::IGlobalContext> globalContext = { this };
     muse::ContextInject<context::IUiContextResolver> uiContextResolver = { this };
@@ -47,7 +59,40 @@ public:
     void preInit();
     void init();
 
+    QString documentName() const;
+    bool documentDirty() const;
+    int sidebarTab() const { return m_sidebarTab; }
+    bool sidebarVisible() const { return m_sidebarVisible; }
+    bool navigatorVisible() const { return m_navigatorVisible; }
+    bool pianoVisible() const { return m_pianoVisible; }
+    bool mixerVisible() const { return m_mixerVisible; }
+    bool noteInputVisible() const { return m_noteInputVisible; }
+    bool playbackVisible() const { return m_playbackVisible; }
+    bool statusBarVisible() const { return m_statusBarVisible; }
+    bool isViewChecked(const muse::actions::ActionCode& code) const;
+    muse::async::Notification viewStateChangedNotification() const { return m_viewStateChanged; }
+    muse::async::Notification documentStateChangedNotification() const { return m_documentStateChanged; }
+
+    Q_INVOKABLE void selectSidebarTab(int index);
+    Q_INVOKABLE void hideSidebar();
+    Q_INVOKABLE void requestFileAction(const QString& command);
+
+signals:
+    void documentChanged();
+    void viewStateChanged();
+
 private:
+    void notifyViewState();
+    int m_sidebarTab = 0;
+    bool m_sidebarVisible = true;
+    bool m_navigatorVisible = false;
+    bool m_pianoVisible = false;
+    bool m_mixerVisible = false;
+    bool m_noteInputVisible = true;
+    bool m_playbackVisible = true;
+    bool m_statusBarVisible = true;
+    muse::async::Notification m_viewStateChanged;
+    muse::async::Notification m_documentStateChanged;
 };
 }
 

@@ -9,6 +9,25 @@ Ngày kiểm chứng: 16/10/2026.
 - Chạy tại máy phát triển: `http://127.0.0.1:8787/pianist.html`, sau khi bật server theo [runbook](M0_RUNBOOK.md).
 - Bản đo: C++ Release, Qt 6.10.2 `wasm_singlethread`, Emscripten 4.0.7, liên kết app bằng `-FastLink`. Chưa nghiệm thu bản tối ưu phát hành hoặc hosting công khai.
 
+## Nghiệm thu giao diện editor
+
+Sau phản hồi về giao diện, M0 được hoàn thiện thêm shell editor theo bố cục MuseScore Studio. Trang bình thường mở thẳng bản piano trống 16 ô nhịp; không có header/nút/log thử nghiệm. Các thành phần NoteInputBar, NotationToolBar, PlaybackToolBar, UndoRedoToolBar, PalettesPanel, InspectorForm, LayoutPanel, MixerPanel, PianoKeyboardPanel, ZoomControl và ViewModeControl được dùng từ upstream. Sidebar và panel dưới có đường chia kéo để đổi kích thước; chưa có toàn bộ cơ chế floating dock của desktop.
+
+File có New/Open/Save/Export, phím Ctrl+N/O/S/Shift+E, và hộp Save/Discard/Cancel khi thay project chưa lưu. Tên file và dấu sửa lấy từ project thật. Âm thanh được chuẩn bị trước, mở khóa bằng thao tác người dùng và điều khiển qua toolbar MuseScore. `/` và `/pianist.html` đều mở cùng editor. Công cụ kiểm chứng chỉ hiện khi có `?diagnostics=1`.
+
+Đã kiểm tra trực tiếp trên trình duyệt trong ứng dụng bằng thao tác chuột/phím, mở/tải file thật, rồi đối chiếu MusicXML bằng parser Python độc lập:
+
+- File → Open MXL và MusicXML; sửa cao độ một bán cung; undo/redo; Save MSCZ; Export MXL; mở lại cả hai giữ đúng nội dung.
+- Đổi trường độ, xóa các nốt cũ, nhập hai nốt C/D bằng N/5/C/D và mở lại MSCZ giữ hai nốt mới.
+- File ZIP/XML lỗi bị từ chối; project giữ nguyên và vẫn xuất được dữ liệu sau lỗi.
+- Sửa Visible trong Properties; thêm staccato từ palette; xác nhận trong MusicXML và hoàn tác.
+- Save/Discard/Cancel trước New/Open; mở Parts; Page settings đổi Landscape và xác nhận chiều trang trong MusicXML.
+- Mở Mixer và bàn phím; Play chạy cursor và có mức tín hiệu trên Mixer; tăng zoom, chuyển Continuous view và thay đổi kích thước cửa sổ.
+
+Bằng chứng mới ở `artifacts/m0/shell` và `docs/m0-evidence/shell-*`. Các JSON 12 ca trên Chrome/Edge dưới đây là baseline của commit `d005272d`, trước khi thay shell. Script browser đã được cập nhật cho shell mới và kiểm tra cú pháp; lượt hoàn thiện này dùng kiểm tra tương tác trong trình duyệt và file tải xuống, không ghi nhận là đã chạy lại script headless trên Chrome/Edge.
+
+![Editor MuseScore web sau khi hoàn thiện shell](m0-evidence/shell-editor.png)
+
 ## Bằng chứng nghiệm thu
 
 `tests/browser/pianist/m0-smoke.cjs` thực hiện 12 kiểm tra trên editor thật. Dữ liệu xuất được đọc bằng Python/XML độc lập với bridge JavaScript. Không dùng engine giả hoặc chỉ kiểm tra thông báo thành công.
@@ -46,9 +65,9 @@ Bằng chứng cục bộ: `artifacts/m0/chrome`, `artifacts/m0/msedge`, `artifa
 | Layout panel | Hiển thị và chọn panel được | Thấy nhạc cụ Piano; chưa nghiệm thu thêm/bớt/đổi nhạc cụ hoặc part |
 | Selection, phím nhập nốt, font | Đạt các ca trên | Tiêu đề tiếng Việt và glyph ký âm hiển thị đúng ở fixture; IME/accessibility chưa thử |
 | Clipboard | Đạt Ctrl+C/Ctrl+V trên Chrome và Edge được cấp quyền | Chromium 151 trong bộ test không phát lệnh Ctrl+V; **Edit → Paste** vẫn thay nốt đúng. Cần thử permission prompt và clipboard bên ngoài app |
-| Zoom | Có thay đổi tỷ lệ khi Ctrl+wheel | Wheel delta lớn có thể phóng quá mức; cần chuẩn hóa và thử chuột/trackpad thật |
-| Audio | Có PCM khác 0 tại 48 kHz trên Chrome và Edge | Phải bấm Bật âm thanh rồi nút Play; chưa đo độ trễ, dropout, loa/đàn thật hoặc độ chính xác BPM |
-| Dialog/file menu | Một phần | Popup Customize toolbar mở được; nút HTML mở/tải file đã kiểm chứng. Những luồng gọi dialog đồng bộ của Qt cần chuyển sang bất đồng bộ; không coi mọi menu upstream đều dùng được |
+| Zoom | Nút zoom, menu Page/Continuous và Ctrl+wheel hoạt động | Wheel delta lớn có thể phóng quá mức; cần chuẩn hóa và thử chuột/trackpad thật |
+| Audio | Baseline PCM khác 0 tại 48 kHz trên Chrome/Edge; shell mới có Play/cursor/Mixer meter | Shell chuẩn bị engine và mở khóa bằng thao tác người dùng; chưa đo độ trễ, dropout, loa/đàn thật hoặc độ chính xác BPM |
+| Dialog/file menu | Đạt các luồng đã thử | Menu File web, hộp Export và Save/Discard/Cancel; dialog MuseScore Parts và Page settings mở được. Các dialog khác còn cần kiểm tra; không coi mọi menu upstream đều dùng được |
 | MIDI, luyện Đúng nốt/Theo BPM | Chưa triển khai trong M0 | Giữ trong lộ trình M3–M5; không suy ra từ việc editor/audio chạy được |
 
 `m0-panels.cjs` là khảo sát bổ sung: tự xác nhận sửa Properties, palette, nội dung paste và PCM; screenshot hỗ trợ xem layout/zoom/settings. Exit code của khảo sát chỉ phản ánh lỗi runtime/top-level; phải đọc từng cờ `passed`, đặc biệt clipboard. Test core trả mã lỗi nếu bất kỳ kiểm tra cốt lõi thất bại.
@@ -57,7 +76,7 @@ Audio được kiểm tra bằng AnalyserNode nối quan sát đầu ra thực c
 
 ## Tải và bộ nhớ
 
-Số đo từ build M0, server loopback không nén và context trình duyệt mới, trên máy phát triển khoảng 48 GB RAM. Đây là số đo phát triển, không phải SLA hoặc benchmark máy phổ thông.
+Số đo baseline từ commit `d005272d` trước khi hoàn thiện shell, server loopback không nén và context trình duyệt mới, trên máy phát triển khoảng 48 GB RAM. Đây là số đo phát triển, không phải SLA hoặc benchmark máy phổ thông; chưa đo lại heap sau khi mở các panel/dialog mới.
 
 | Tài nguyên | Bytes | Xấp xỉ |
 | --- | ---: | ---: |

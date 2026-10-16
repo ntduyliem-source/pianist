@@ -23,6 +23,7 @@
 #include "appshellmodule.h"
 
 #include <qqml.h>
+#include <QQmlEngine>
 
 #include "modularity/ioc.h"
 
@@ -86,6 +87,11 @@ void AppShellModule::registerResources()
 
 void AppShellModule::registerUiTypes()
 {
+    qmlRegisterSingletonType<ApplicationActionController>("MuseScore.AppShell", 1, 0, "WebShell",
+        [this](QQmlEngine*, QJSEngine*) -> QObject* {
+            QQmlEngine::setObjectOwnership(m_applicationActionController.get(), QQmlEngine::CppOwnership);
+            return m_applicationActionController.get();
+        });
     qmlRegisterType<NavigableAppMenuModel>("MuseScore.AppShell", 1, 0, "AppMenuModel");
     qmlRegisterType<NotationPageModel>("MuseScore.AppShell", 1, 0, "NotationPageModel");
     qmlRegisterType<NotationStatusBarModel>("MuseScore.AppShell", 1, 0, "NotationStatusBarModel");

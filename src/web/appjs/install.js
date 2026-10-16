@@ -50,7 +50,7 @@ copyFile(HERE+"/distr/audio_worklet_processor.js", OUTPUT_DIR+"/distr/audio_work
 // Copy viewer
 copyFile(HERE+"/viewer/viewer.html", OUTPUT_DIR+"/viewer.html");
 copyFile(HERE+"/viewer/pianist.html", OUTPUT_DIR+"/pianist.html");
-copyFile(HERE+"/viewer/index.html", OUTPUT_DIR+"/index.html");
+copyFile(HERE+"/viewer/pianist.html", OUTPUT_DIR+"/index.html");
 copyFile(HERE+"/viewer/index.html", OUTPUT_DIR+"/MuseScoreStudio.html"); 
 
 // Copy tools
@@ -67,4 +67,6 @@ if (!fs.existsSync(SF_DST)) {
 copyFile(ROOT+"/LICENSE.txt", OUTPUT_DIR+"/LICENSE.txt");
 copyFile(ROOT+"/share/sound/MS Basic_License.md", OUTPUT_DIR+"/sound/MS Basic_License.md");
 copyFile(ROOT+"/share/sound/MS Basic_Readme.md", OUTPUT_DIR+"/sound/MS Basic_Readme.md");
+fs.mkdirSync(OUTPUT_DIR+"/templates", { recursive: true });
+copyFile(HERE+"/templates/blank-piano.mscz", OUTPUT_DIR+"/templates/blank-piano.mscz");
 

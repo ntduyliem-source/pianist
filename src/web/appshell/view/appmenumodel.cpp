@@ -62,11 +62,15 @@ void AppMenuModel::load()
         makeToolsMenu()
     };
 
-    if (globalConfiguration()->devModeEnabled()) {
-        items << makeDiagnosticsMenu();
-    }
+    items << makeMenu(TranslatableString("appshell/menu/help", "&Help"),
+                      { makeMenuItem("web-file-about") }, "menu-help");
 
     setItems(items);
+    // These file shortcuts are handled by the HTML host before Qt receives them.
+    findItem(ActionCode("web-file-new")).setShortcuts({ "Ctrl+N" });
+    findItem(ActionCode("web-file-open")).setShortcuts({ "Ctrl+O" });
+    findItem(ActionCode("web-file-save")).setShortcuts({ "Ctrl+S" });
+    findItem(ActionCode("web-file-export")).setShortcuts({ "Ctrl+Shift+E" });
 
     setupConnections();
 }
@@ -114,8 +118,16 @@ MenuItem* AppMenuModel::makeMenuItem(const ActionCode& actionCode, MenuItemRole 
 muse::uicomponents::MenuItem* AppMenuModel::makeFileMenu()
 {
     MenuItemList fileItems {
-        makeMenuItem("file-save")
+        makeMenuItem("web-file-new"),
+        makeMenuItem("web-file-open"),
+        makeSeparator(),
+        makeMenuItem("web-file-save"),
+        makeMenuItem("web-file-export")
     };
+    fileItems[0]->setShortcuts({ "Ctrl+N" });
+    fileItems[1]->setShortcuts({ "Ctrl+O" });
+    fileItems[3]->setShortcuts({ "Ctrl+S" });
+    fileItems[4]->setShortcuts({ "Ctrl+Shift+E" });
 
     return makeMenu(TranslatableString("appshell/menu/file", "&File"), fileItems, "menu-file");
 }
@@ -125,7 +137,6 @@ MenuItem* AppMenuModel::makeEditMenu()
     MenuItemList editItems {
         makeMenuItem("action://notation/undo"),
         makeMenuItem("action://notation/redo"),
-        makeMenuItem(TOGGLE_UNDO_HISTORY_PANEL_CODE),
         makeSeparator(),
         makeMenuItem("action://notation/cut"),
         makeMenuItem("action://notation/copy"),
@@ -168,33 +179,21 @@ void AppMenuModel::updateUndoRedoItems()
 
 MenuItem* AppMenuModel::makeViewMenu()
 {
-    MenuItem* historyItem = makeMenuItem(TOGGLE_UNDO_HISTORY_PANEL_CODE);
-    historyItem->setId(VIEW_TOGGLE_UNDO_HISTORY_PANEL_ITEM_ID);
-
     MenuItemList viewItems {
         makeMenuItem("toggle-palettes"),
-        makeMenuItem("masterpalette"),
         makeMenuItem("toggle-instruments"),
         makeMenuItem("inspector"),
-        makeMenuItem("toggle-selection-filter"),
-        historyItem,
-        makeMenuItem("toggle-navigator"),
-        makeMenuItem("toggle-braille-panel"),
-        makeMenuItem("toggle-timeline"),
-        makeMenuItem("toggle-piano-keyboard"),
-        makeMenuItem("toggle-percussion-panel"),
         makeSeparator(),
-        makeMenu(TranslatableString("appshell/menu/view", "&Toolbars"), makeToolbarsItems(), "menu-toolbars")
+        makeMenuItem("toggle-navigator"),
+        makeMenuItem("toggle-piano-keyboard"),
+        makeMenuItem("toggle-mixer"),
+        makeSeparator(),
+        makeMenu(TranslatableString("appshell/menu/view", "&Toolbars"),
+                 { makeMenuItem("toggle-noteinput"), makeMenuItem("toggle-transport") }, "menu-toolbars"),
+        makeMenuItem("toggle-statusbar"),
+        makeSeparator(),
+        makeMenuItem("dock-restore-default-layout")
     };
-
-#ifdef MUSE_MODULE_WORKSPACE
-    viewItems << makeMenu(TranslatableString("appshell/menu/view", "W&orkspaces"), m_workspacesMenuModel->items(), "menu-workspaces"),
-#endif
-
-    viewItems << makeSeparator()
-              << makeMenu(TranslatableString("appshell/menu/view", "&Show"), makeShowItems(), "menu-show")
-              << makeSeparator()
-              << makeMenuItem("dock-restore-default-layout");
 
     return makeMenu(TranslatableString("appshell/menu/view", "&View"), viewItems, "menu-view");
 }

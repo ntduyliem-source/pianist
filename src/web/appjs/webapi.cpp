@@ -115,6 +115,7 @@ bool WebApi::load(const void* source, unsigned int len, const std::string& filen
         return false;
     }
     // Publish only after successful parsing; a bad file keeps the current score.
+    project->setPath(std::string("/mu/documents/") + io::filename(io::path_t(filename)).toStdString());
     globalContext()->setCurrentProject(project);
     interactive()->open("musescore://notation");
     return true;
@@ -125,7 +126,10 @@ bool WebApi::saveProject()
     if (!m_currentProject) {
         return false;
     }
-    return m_currentProject->save("/mu/temp/pianist.mscz", project::SaveMode::SaveAs, false).success();
+    const auto originalPath = m_currentProject->path();
+    const bool saved = m_currentProject->save("/mu/temp/pianist.mscz", project::SaveMode::SaveAs, false).success();
+    m_currentProject->setPath(originalPath);
+    return saved;
 }
 
 bool WebApi::exportScore(const std::string& format)

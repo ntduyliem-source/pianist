@@ -20,24 +20,21 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 import QtQuick
-import QtQuick.Controls
 import QtQuick.Layouts
-
-import Muse.Ui 1.0
+import Muse.Ui
 import Muse.UiComponents
-
-import MuseScore.AppShell 1.0
-import MuseScore.Playback 1.0
+import MuseScore.AppShell
+import MuseScore.NotationScene
+import MuseScore.Playback
 
 AppWindow {
     id: root
-
     flags: Qt.FramelessWindowHint
+    title: WebShell.documentName + (WebShell.documentDirty ? " *" : "") + " — Pianist"
 
     InteractiveProvider {
         id: interactiveProvider
         topParent: root
-
         onRequestedDockPage: function(uri, params) {
             Qt.callLater(function() {
                 interactiveProvider.onPageOpened()
@@ -46,56 +43,84 @@ AppWindow {
         }
     }
 
-    AppMenuBar {
-        id: appMenuBar
-        anchors.top: parent.top
-        anchors.left: parent.left
-        anchors.right: parent.right
-    }
-
-    Item {
-        id: contentItem
-        anchors.top: appMenuBar.bottom
-        anchors.left: parent.left
-        anchors.right: parent.right
-        anchors.bottom: parent.bottom
-
-        StyledTabBar {
-            id: bar
-            anchors.left: parent.left
-            anchors.margins: 16
-            width: 300
-
-            StyledTabButton {
-                text: "Notation"
-            }
-            StyledTabButton {
-                text: "Dev"
+    ColumnLayout {
+        anchors.fill: parent
+        spacing: 0
+        Rectangle {
+            Layout.fillWidth: true
+            Layout.preferredHeight: 28
+            color: ui.theme.backgroundPrimaryColor
+            AppMenuBar { anchors.left: parent.left; anchors.verticalCenter: parent.verticalCenter }
+        }
+        SeparatorLine { Layout.fillWidth: true }
+        Rectangle {
+            Layout.fillWidth: true
+            Layout.preferredHeight: 44
+            color: ui.theme.backgroundPrimaryColor
+            RowLayout {
+                anchors.fill: parent
+                anchors.leftMargin: 12
+                anchors.rightMargin: 8
+                spacing: 6
+                Item {
+                    Layout.preferredWidth: 96
+                    visible: root.width >= 900
+                    Layout.fillHeight: true
+                    StyledTextLabel {
+                        anchors.centerIn: parent
+                        text: qsTrc("appshell", "Score")
+                        font.bold: true
+                    }
+                    Rectangle {
+                        anchors.bottom: parent.bottom
+                        width: parent.width; height: 2
+                        color: ui.theme.accentColor
+                    }
+                }
+                FlatButton {
+                    icon: IconCode.NEW_FILE; transparent: true
+                    accessible.name: "New score"
+                    onClicked: WebShell.requestFileAction("new")
+                }
+                FlatButton {
+                    icon: IconCode.OPEN_FILE; transparent: true
+                    accessible.name: "Open score"
+                    onClicked: WebShell.requestFileAction("open")
+                }
+                FlatButton {
+                    icon: IconCode.SAVE; transparent: true
+                    accessible.name: "Save score"
+                    onClicked: WebShell.requestFileAction("save")
+                }
+                Item { Layout.fillWidth: true }
+                Item {
+                    Layout.preferredWidth: notationTools.width
+                    Layout.preferredHeight: 32
+                    visible: root.width >= 1100
+                    NotationToolBar { id: notationTools }
+                }
+                SeparatorLine { orientation: Qt.Vertical; Layout.preferredHeight: 26 }
+                Item {
+                    visible: WebShell.playbackVisible
+                    Layout.preferredWidth: playbackTools.width
+                    Layout.preferredHeight: 32
+                    PlaybackToolBar { id: playbackTools }
+                }
+                SeparatorLine { orientation: Qt.Vertical; Layout.preferredHeight: 26 }
+                Item {
+                    Layout.preferredWidth: undoTools.width
+                    Layout.preferredHeight: 32
+                    UndoRedoToolBar { id: undoTools }
+                }
             }
         }
-
-        PlaybackToolBar {
-            anchors.left: bar.right
-            anchors.right: parent.right
-            anchors.leftMargin: 16
-        }
-
-        StackLayout {
-            anchors.top: bar.bottom
-            anchors.topMargin: 8
-            anchors.bottom: parent.bottom
-            anchors.left: parent.left
-            anchors.right: parent.right
-            currentIndex: bar.currentIndex
-
-            NotationFrame {
-
-            }
-
-            DevFrame {
-
-            }
-
+        SeparatorLine { Layout.fillWidth: true }
+        NotationFrame { Layout.fillWidth: true; Layout.fillHeight: true }
+        SeparatorLine { Layout.fillWidth: true; visible: WebShell.statusBarVisible }
+        WebStatusBar {
+            Layout.fillWidth: true
+            Layout.preferredHeight: 32
+            visible: WebShell.statusBarVisible
         }
     }
 }

@@ -22,87 +22,101 @@
 import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
-
-import Muse.Ui 1.0
+import Muse.Ui
 import Muse.UiComponents
-
-import MuseScore.NotationScene 1.0
-import MuseScore.Palette 1.0
-import MuseScore.InstrumentsScene 1.0
+import MuseScore.AppShell
+import MuseScore.NotationScene
+import MuseScore.Palette
+import MuseScore.InstrumentsScene
 import MuseScore.Inspector
+import MuseScore.Playback
 
-Item {
-
+ColumnLayout {
+    id: root
+    spacing: 0
     Item {
-        id: toolbars
+        Layout.fillWidth: true
+        Layout.preferredHeight: 40
+        visible: WebShell.noteInputVisible
+        clip: true
+        NoteInputBar { maximumWidth: parent.width; maximumHeight: parent.height }
+    }
+    SeparatorLine { Layout.fillWidth: true; visible: WebShell.noteInputVisible }
 
-        anchors.left: parent.left
-        anchors.right: parent.right
-        height: notToolBar.height
-
-        NoteInputBar {
-            id: notToolBar
+    SplitView {
+        Layout.fillWidth: true
+        Layout.fillHeight: true
+        orientation: Qt.Horizontal
+        handle: Rectangle { implicitWidth: 1; color: ui.theme.strokeColor }
+        Item {
+            id: sidebar
+            visible: WebShell.sidebarVisible
+            SplitView.preferredWidth: 300
+            SplitView.minimumWidth: 280
+            SplitView.maximumWidth: 440
+            StyledTabBar {
+                id: bar
+                anchors.left: parent.left
+                anchors.right: closeSidebar.left
+                height: 36
+                currentIndex: WebShell.sidebarTab
+                onCurrentIndexChanged: {
+                    if (currentIndex !== WebShell.sidebarTab) WebShell.selectSidebarTab(currentIndex)
+                }
+                StyledTabButton { text: qsTrc("appshell", "Palettes") }
+                StyledTabButton { text: qsTrc("appshell", "Layout") }
+                StyledTabButton { text: qsTrc("appshell", "Properties") }
+            }
+            FlatButton {
+                id: closeSidebar
+                anchors.right: parent.right
+                anchors.top: parent.top
+                width: 24; height: 34
+                icon: IconCode.CLOSE_X
+                transparent: true
+                accessible.name: "Close panel"
+                onClicked: WebShell.hideSidebar()
+            }
+            StackLayout {
+                anchors.top: bar.bottom
+                anchors.bottom: parent.bottom
+                anchors.left: parent.left
+                anchors.right: parent.right
+                anchors.topMargin: 4
+                currentIndex: WebShell.sidebarTab
+                PalettesPanel { }
+                LayoutPanel { }
+                InspectorForm { notationView: notationView.paintView }
+            }
+        }
+        SplitView {
+            SplitView.fillWidth: true
+            SplitView.fillHeight: true
+            orientation: Qt.Vertical
+            handle: Rectangle { implicitHeight: 1; color: ui.theme.strokeColor }
+            NotationView {
+                id: notationView
+                name: "MainNotationView"
+                SplitView.fillWidth: true
+                SplitView.fillHeight: true
+                isNavigatorVisible: WebShell.navigatorVisible
+                isBraillePanelVisible: false
+                isMainView: true
+            }
+            Loader {
+                active: WebShell.mixerVisible
+                visible: active
+                SplitView.preferredHeight: 260
+                SplitView.minimumHeight: 150
+                sourceComponent: MixerPanel { }
+            }
+            Loader {
+                active: WebShell.pianoVisible
+                visible: active
+                SplitView.preferredHeight: 160
+                SplitView.minimumHeight: 100
+                sourceComponent: PianoKeyboardPanel { }
+            }
         }
     }
-
-    Item {
-        id: leftPanel
-        anchors.top: toolbars.bottom
-        anchors.bottom: parent.bottom
-        anchors.left: parent.left
-        width: 300
-
-        StyledTabBar {
-            id: bar
-            anchors.left: parent.left
-            anchors.right: parent.right
-            anchors.margins: 16
-
-            StyledTabButton {
-                text: qsTrc("appshell", "Palettes")
-            }
-            StyledTabButton {
-                text: qsTrc("appshell", "Layout")
-            }
-            StyledTabButton {
-                text:  qsTrc("appshell", "Properties")
-            }
-        }
-
-        StackLayout {
-            anchors.top: bar.bottom
-            anchors.topMargin: 8
-            anchors.bottom: parent.bottom
-            anchors.left: parent.left
-            anchors.right: parent.right
-            currentIndex: bar.currentIndex
-
-            PalettesPanel {
-
-            }
-
-            LayoutPanel {
-
-            }
-
-            InspectorForm {
-                notationView: notationView.paintView
-            }
-        }
-    }
-
-    NotationView {
-        id: notationView
-        name: "MainNotationView"
-
-        anchors.top: toolbars.bottom
-        anchors.left: leftPanel.right
-        anchors.right: parent.right
-        anchors.bottom: parent.bottom
-
-        isNavigatorVisible: false
-        isBraillePanelVisible: false
-        isMainView: true
-    }
-
 }

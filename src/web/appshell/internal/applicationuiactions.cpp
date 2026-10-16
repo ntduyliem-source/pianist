@@ -41,6 +41,18 @@ static const ActionCode TOGGLE_BRAILLE_ACTION_CODE("toggle-braille-panel");
 static const ActionCode TOGGLE_PERCUSSION_PANEL_ACTION_CODE("toggle-percussion-panel");
 
 const UiActionList ApplicationUiActions::m_actions = {
+    UiAction("web-file-new", mu::context::UiCtxAny, mu::context::CTX_ANY,
+             TranslatableString("action", "&New…"), TranslatableString("action", "New piano score"), IconCode::Code::NEW_FILE),
+    UiAction("web-file-open", mu::context::UiCtxAny, mu::context::CTX_ANY,
+             TranslatableString("action", "&Open…"), TranslatableString("action", "Open a score"), IconCode::Code::OPEN_FILE),
+    UiAction("web-file-save", mu::context::UiCtxProjectOpened, mu::context::CTX_ANY,
+             TranslatableString("action", "&Save"), TranslatableString("action", "Download MuseScore project"), IconCode::Code::SAVE),
+    UiAction("web-file-export", mu::context::UiCtxProjectOpened, mu::context::CTX_ANY,
+             TranslatableString("action", "&Export…"), TranslatableString("action", "Export MusicXML")),
+    UiAction("web-file-about", mu::context::UiCtxAny, mu::context::CTX_ANY,
+             TranslatableString("action", "&About Pianist")),
+    UiAction("dock-restore-default-layout", mu::context::UiCtxAny, mu::context::CTX_ANY,
+             TranslatableString("action", "Restore default layout")),
     // Toolbars
     UiAction("toggle-transport",
              mu::context::UiCtxProjectOpened,
@@ -220,6 +232,15 @@ ApplicationUiActions::ApplicationUiActions(std::shared_ptr<ApplicationActionCont
 
 void ApplicationUiActions::init()
 {
+    m_controller->documentStateChangedNotification().onNotify(this, [this]() {
+        ActionCodeList codes;
+        for (const auto& action : m_actions) { codes.push_back(action.code); }
+        m_actionEnabledChanged.send(codes);
+    });
+    m_controller->viewStateChangedNotification().onNotify(this, [this]() {
+        const auto keys = toggleDockActions().keys();
+        m_actionCheckedChanged.send(ActionCodeList(keys.begin(), keys.end()));
+    });
     configuration()->isNotationNavigatorVisibleChanged().onNotify(this, [this]() {
         m_actionCheckedChanged.send({ TOGGLE_NAVIGATOR_ACTION_CODE });
     });
@@ -272,22 +293,7 @@ bool ApplicationUiActions::actionEnabled(const UiAction& act) const
 
 bool ApplicationUiActions::actionChecked(const UiAction& act) const
 {
-    QMap<ActionCode, DockName> toggleDockActions = ApplicationUiActions::toggleDockActions();
-    DockName dockName = toggleDockActions.value(act.code, DockName());
-
-    if (dockName.isEmpty()) {
-        return false;
-    }
-
-    if (dockName == NOTATION_NAVIGATOR_PANEL_NAME) {
-        return configuration()->isNotationNavigatorVisible();
-    }
-
-    if (dockName == NOTATION_BRAILLE_PANEL_NAME) {
-        return brailleConfiguration()->braillePanelEnabled();
-    }
-
-    return false;
+    return m_controller->isViewChecked(act.code);
 }
 
 muse::async::Channel<ActionCodeList> ApplicationUiActions::actionEnabledChanged() const

@@ -41,16 +41,19 @@ node src/web/appjs/install.js build.artifacts
 
 ## Thao tác trong trình duyệt
 
-1. Chờ trạng thái editor sẵn sàng, mở bài mẫu hoặc chọn `.mxl`, `.musicxml`, `.xml`, `.mscz`, `.mscx`.
-2. Chọn nốt và sửa trong vùng editor; dùng thanh nhập nốt và các panel được kế thừa từ MuseScore.
-3. `Tải MSCZ` tải project xuống máy. `Xuất MXL` tạo bản trao đổi MusicXML nén. Chưa có autosave hay lưu thư viện trình duyệt ở M0.
-4. Mở lại file vừa tải để xác minh thay đổi. Mở file khác thay thế project hiện tại; hãy tải bản đang sửa trước.
-5. Phần `Kiểm tra M0` chứa các lệnh kiểm chứng dữ liệu: chọn tất cả, tăng cao độ và xuất MusicXML đọc được bằng công cụ độc lập.
-6. Bấm `Bật âm thanh`, chờ soundfont sẵn sàng rồi dùng nút tam giác Play trên thanh công cụ. Test M0 xác nhận có PCM, chưa đo độ trễ hoặc chất lượng trên loa thật.
+1. Mở trang: editor hiển thị trực tiếp bản piano trống 16 ô nhịp, hai khuông. Thanh công cụ, palette, Properties, Mixer, bàn phím và các dialog được dùng lại từ MuseScore.
+2. **File → Open… / Ctrl+O** để chọn `.mxl`, `.musicxml`, `.xml`, `.mscz`, `.mscx`. **File → New… / Ctrl+N** tạo bản piano trống khác.
+3. Chọn nốt và sửa trong vùng editor. Dùng **View → Palettes / Layout / Properties**, hoặc F9/F7/F8. Kéo đường chia để thay đổi kích thước panel.
+4. **File → Save / Ctrl+S** tải MSCZ. **File → Export… / Ctrl+Shift+E** mở hộp chọn MXL hoặc MusicXML. Chưa có autosave hay thư viện trình duyệt trong M0.
+5. Trước khi đổi bài có thay đổi chưa lưu, chọn **Save / Discard / Cancel**. Mở lại file vừa tải để xác minh thay đổi. Dấu `*` phản ánh trạng thái project từ engine, bao gồm thiết lập âm thanh.
+6. Dùng Play, rewind, metronome và tempo trên toolbar MuseScore. Web Audio được chuẩn bị trước và mở khóa khi có thao tác người dùng; không cần nút bật tiếng riêng. Đã thấy con trỏ chạy và Mixer có tín hiệu; chưa đo latency/loa thật.
+7. Thanh dưới cùng có thông tin nốt đang chọn, Concert pitch, Page/Continuous view và zoom. **View → Piano keyboard / Mixer / Navigator** mở các panel; **Restore default layout** khôi phục bố cục.
+
+Giao diện bình thường không hiển thị nút/log kỹ thuật. Chỉ khi thêm `?diagnostics=1` vào URL mới có các nút nghiệm thu bridge. Test tự động tự thêm tham số này; luồng menu và dialog của người dùng được kiểm tra riêng trong [báo cáo M0](M0_RESULTS.md).
 
 Các phím đã kiểm tra: Ctrl+A, ArrowUp, Ctrl+Z, Delete, N, 5, C, D, Escape; phím 4 đổi sang móc đơn. Ctrl+C/Ctrl+V đạt trên Chrome/Edge khi có quyền clipboard. Nếu Ctrl+V không nhận trên bản Chromium khác, dùng Edit → Paste; chưa đảm bảo clipboard giữa các ứng dụng.
 
-Giới hạn bridge hiện tại: 32 MiB cho file đầu vào; đây là giới hạn bytes nén, chưa phải ngân sách giải nén hay chính sách hỗ trợ mọi score. File lỗi không được thay thế project đang mở nếu importer trả về lỗi. Các dialog/file menu upstream chưa mặc định có cùng mức hỗ trợ với nút HTML.
+Giới hạn bridge hiện tại: 32 MiB cho file đầu vào; đây là giới hạn bytes nén, chưa phải ngân sách giải nén hay chính sách hỗ trợ mọi score. File lỗi không được thay thế project đang mở nếu importer trả về lỗi. Parts và Page settings đã được mở thử; chưa nghiệm thu toàn bộ dialog hoặc tính năng MuseScore.
 
 ## Nghiệm thu tự động
 

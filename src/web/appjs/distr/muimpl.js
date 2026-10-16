@@ -112,6 +112,8 @@ const MuImpl = {
             },
 
             soundFont: opt.soundFont,
+            onWebCommand: opt.onWebCommand,
+            onDocumentState: opt.onDocumentState,
 
             // called from cpp
             onStartApp: this._onStartApp.bind(this)
@@ -167,7 +169,9 @@ const MuImpl = {
     },
 
     startAudioProcessing: async function() {
-        if (this.Module.driver.inited) {
+        if (this.Module.audioRequested) return;
+        this.Module.audioRequested = true;
+        if (this.Module.driver?.inited) {
             this.Module._startAudioProcessing()
         } else {
             console.log("driver not inited, start audio will be later")

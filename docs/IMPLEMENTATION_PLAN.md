@@ -132,6 +132,7 @@ Checkbox đã đánh dấu có bằng chứng trong báo cáo M0; các ô còn t
 - [x] Build `app-web` và audio worklet; mở qua localhost có COOP/COEP trên Chromium, Chrome và Edge. Ghi payload, WASM heap, JS heap ước lượng, startup và console. Chưa đo toàn bộ RSS hoặc mạng WAN.
 - [x] Bridge nhập theo filename/format MXL/MusicXML/MSCZ, không đổi đuôi; input lỗi giữ project hiện tại.
 - [x] Thêm/sửa/xóa nốt, đổi trường độ, undo/redo, tải MSCZ rồi mở lại; xuất MXL rồi nhập lại. So sánh dữ liệu nốt bằng parser độc lập.
+- [x] Hoàn thiện shell editor theo bố cục MuseScore: mở trực tiếp piano trống; menu File và phím tắt; toolbar, sidebar, status/zoom, Mixer, bàn phím piano; ẩn giao diện kiểm thử khỏi luồng sử dụng bình thường. Kiểm tra tương tác và file tải xuống trong trình duyệt.
 - [x] Khảo sát palette, inspector, selection, clipboard, phím tắt, font tiếng Việt, zoom, audio và popup; ghi rõ giới hạn của các dialog đồng bộ chưa port.
 - [x] Lập ma trận [M0_RESULTS.md](M0_RESULTS.md), phạm vi trình duyệt/corpus và bằng chứng. Chưa đồng nghĩa toàn bộ chức năng trong ma trận sản phẩm đã đạt.
 - [x] Chốt tiếp tục engine MuseScore WASM; dự trù công port còn thiếu theo từng nhóm trong báo cáo M0 trước khi mở rộng.
