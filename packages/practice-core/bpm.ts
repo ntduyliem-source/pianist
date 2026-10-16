@@ -25,7 +25,7 @@ export function align(targets: Attack[], events: InputEvent[], offset: number, w
 
 export class BpmCore {
   readonly assessments: Assessment[] = []; readonly extras: Extra[] = []; readonly faults: string[] = [];
-  private blocks = new Map<number, Block[]>(); private orphan: InputEvent[] = []; private seen = new Set<number>();
+  private blocks = new Map<number, Block[]>(); private seen = new Set<number>();
   private held = new Set<string>(); private now = -Infinity; private totalEvents = 0;
   constructor(readonly plan: Plan) {
     const pitches = new Map<number, Attack[]>();
@@ -64,7 +64,12 @@ export class BpmCore {
       while (lo < hi) {const mid = (lo + hi) >> 1; if (at < blocks[mid].upper) hi = mid; else lo = mid + 1;}
       block = blocks[lo];
     }
-    if (!block) { this.orphan.push(e); return; }
+    // An input outside every candidate window is an extra, even if that pitch
+    // appeared earlier. It is not evidence of a delayed MIDI delivery.
+    if (!block) { this.extra(e, 'no-pitch-target'); return; }
+    if (at < block.targets[0].atMs - this.plan.config.windowMs || at > block.targets.at(-1)!.atMs + this.plan.config.windowMs) {
+      this.extra(e, 'outside-pitch-window'); return;
+    }
     if (block.closed) { this.faults.push('late-after-finalization'); return; }
     if (block.inputs.length >= 256) { this.faults.push('queue-overflow'); return; }
     block.inputs.push(e);
@@ -73,15 +78,9 @@ export class BpmCore {
     this.now = Math.max(this.now, now);
     if (!this.faults.length) {
       for (const blocks of this.blocks.values()) for (const b of blocks) {
-        if (b.closed || b.targets.at(-1)!.atMs + this.plan.config.windowMs + this.plan.config.deliveryMs > this.now) continue;
+        if (b.closed || b.targets.at(-1)!.atMs + this.finalizationLag >= this.now) continue;
         this.close(b);
       }
-      const waiting: InputEvent[] = [];
-      for (const e of this.orphan) {
-        if (e.atMs + this.plan.config.windowMs + this.plan.config.deliveryMs <= this.now) this.extra(e, 'no-pitch-target');
-        else waiting.push(e);
-      }
-      this.orphan = waiting;
     }
     return this.state();
   }
@@ -102,11 +101,14 @@ export class BpmCore {
     b.inputs.forEach((e, j) => { if (!used.has(j)) this.extra(e, 'unmatched-onset'); }); b.inputs = [];
   }
   private extra(e: InputEvent, reason: string): void { this.extras.push({seq: e.seq, pitch: e.pitch, atMs: e.atMs, reason}); }
+  // Input timestamps are offset-corrected for matching; deadlines still live
+  // on the uncorrected transport clock. Keep the inclusive boundary open.
+  private get finalizationLag(): number {return this.plan.config.windowMs + this.plan.config.deliveryMs + Math.max(0, this.plan.config.offsetMs);}
   clearHeld(): void { this.held.clear(); }
   state(): CoreState {
     return {assessments: [...this.assessments].sort((a, b) => a.atMs - b.atMs || a.targetId.localeCompare(b.targetId)),
       extras: [...this.extras].sort((a, b) => a.seq - b.seq), cursor: Math.max(0, this.now),
-      done: !this.faults.length && this.now >= this.plan.durationMs + this.plan.config.windowMs + this.plan.config.deliveryMs && this.assessments.length === this.plan.targets.length,
+      done: !this.faults.length && this.now > this.plan.durationMs + this.finalizationLag && this.assessments.length === this.plan.targets.length,
       faults: [...new Set(this.faults)], firstTry: 0, groupsDone: 0, corrections: 0, held: [...this.held].map(k => Number(k.split('/').at(-1))), missing: []};
   }
 }

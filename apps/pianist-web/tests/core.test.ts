@@ -70,6 +70,51 @@ test('T17–18: extra keys reduce precision; silence completes with all misses',
   assert.equal(summarize(p, finish(core), '', 'complete', 3000, '').precision, 2 / 3);
   const silent = finish(new BpmCore(p)); assert.equal(silent.done, true); assert.equal(silent.assessments.filter(a => a.status === 'missed').length, 2);
 });
+
+test('an extra attack of a previously finalized pitch does not interrupt the timeline', () => {
+  const p = makePlan([[1000, 60], [3000, 62]]), core = new BpmCore(p);
+  hit(core, 1000, 60); core.advance(2000);
+  hit(core, 2400, 60); hit(core, 3000, 62);
+  const s = finish(core), r = summarize(p, s, 'Extra after closed pitch', 'complete', 4000, 'test');
+  assert.deepEqual(s.faults, []); assert.equal(s.done, true);
+  assert.equal(r.matched, 2); assert.equal(r.extras, 1); assert.equal(r.precision, 2 / 3);
+});
+
+test('an unmatched pitch near the end is counted before the result completes', () => {
+  const p = makePlan([[1000, 60]]), core = new BpmCore(p);
+  hit(core, 1000, 60); core.advance(1200); hit(core, p.durationMs + 200, 61);
+  const s = core.advance(p.durationMs + p.config.windowMs + p.config.deliveryMs + 1);
+  assert.equal(s.done, true); assert.equal(s.extras.length, 1);
+  assert.equal(summarize(p, s, 'Late extra', 'complete', 2000, 'test').precision, .5);
+});
+
+test('positive calibration keeps valid late-window inputs open until their delivery deadline', () => {
+  const p = makePlan([[1000, 60], [3000, 62]]); p.config.offsetMs = 80;
+  const core = new BpmCore(p); core.advance(1400);
+  assert.equal(core.state().assessments.length, 0);
+  core.input(e(1330, 60, 'on', 120)); core.input(e(1350, 60, 'off', 120));
+  core.advance(1451); hit(core, 3080, 62);
+  const s = finish(core); assert.deepEqual(s.faults, []);
+  assert.equal(s.assessments[0].status, 'matched'); assert.equal(s.assessments[0].deltaMs, 250);
+  assert.equal(s.assessments[0].grade, 'outside'); assert.equal(s.assessments[1].deltaMs, 0);
+});
+
+test('inclusive delivery boundary is not finalized before an input at that same boundary', () => {
+  const p = makePlan([[1000, 60]]), core = new BpmCore(p);
+  core.advance(1370); core.input(e(1250, 60, 'on', 120));
+  const s = finish(core); assert.deepEqual(s.faults, []);
+  assert.equal(s.assessments[0].status, 'matched'); assert.equal(s.assessments[0].deltaMs, 250);
+});
+
+test('positive offset extends completion through the last permitted input delivery', () => {
+  const p = makePlan([[1000, 60]]); p.config.offsetMs = 80;
+  const core = new BpmCore(p); hit(core, 1080, 60);
+  const uncalibratedEnd = p.durationMs + p.config.windowMs + p.config.deliveryMs;
+  assert.equal(core.advance(uncalibratedEnd + 1).done, false);
+  core.input(e(p.durationMs + p.config.windowMs + 80, 61, 'on', 120));
+  const s = core.advance(uncalibratedEnd + 81);
+  assert.equal(s.done, true); assert.equal(s.extras.length, 1); assert.deepEqual(s.faults, []);
+});
 test('T06: wait requires complete held chord; wrong notes never advance', () => {
   const p = makePlan([[0, 60], [0, 64], [500, 67]]); p.config.mode = 'wait'; const core = new WaitCore(p);
   hit(core, 0, 61); core.input(e(10, 60)); assert.equal(core.state().groupsDone, 0);
@@ -130,6 +175,11 @@ test('replay includes pause key-state boundaries and matches the worker command 
   const s = replay(p, [{kind: 'event', event: first}, {kind: 'advance', atMs: 20},
     {kind: 'clearHeld', atMs: 20}, {kind: 'event', event: second}, {kind: 'advance', atMs: 120}]);
   assert.equal(s.done, true); assert.equal(s.assessments.length, 2); assert.equal(s.firstTry, 2);
+});
+
+test('replay refuses a different algorithm version instead of silently regrading old history', () => {
+  const p = makePlan([[0, 60]]); p.config.algorithmVersion = 'pianist-onset-1.0.0';
+  assert.throws(() => replay(p, []), /matching source release/);
 });
 test('a boundary input can score only one occurrence across repeated loops', () => {
   const p = makePlan([[500, 60], [800, 60]]); p.targets[1].loop = 1;

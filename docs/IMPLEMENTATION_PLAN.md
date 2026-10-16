@@ -122,7 +122,7 @@ Worker không loại bỏ được mọi độ trễ: nếu main thread hoặc h
 
 **5. Lộ trình code và điều kiện qua mốc**
 
-Checkbox đã đánh dấu có bằng chứng trong báo cáo M0; các ô còn trống là backlog. M0–M2 đi trước phần luyện tích hợp.
+Checkbox đã đánh dấu có bằng chứng trong báo cáo tương ứng M0 hoặc M1–M6; các ô còn trống là backlog. Lộ trình đặt M0–M2 trước phần luyện tích hợp. Thực tế đã triển khai M3–M6 khi M2 chưa hoàn tất toàn bộ ma trận editor; đây là phần chưa tuân thủ cổng nghiệm thu, không có nghĩa M2 được bỏ qua. Xem [đối chiếu triển khai và repo tham khảo](IMPLEMENTATION_AUDIT.md).
 
 **M0 — Chứng minh editor MuseScore chạy và lưu được trên web**
 

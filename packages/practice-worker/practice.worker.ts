@@ -1,4 +1,4 @@
-import type { CoreState, InputEvent, Plan } from '../score-contracts/index';
+import { ALGORITHM_VERSION, type CoreState, type InputEvent, type Plan } from '../score-contracts/index';
 import { BpmCore } from '../practice-core/bpm';
 import { WaitCore } from '../practice-core/wait';
 const port = self as unknown as {postMessage(data: unknown): void; onmessage: ((event: MessageEvent) => void) | null};
@@ -6,7 +6,11 @@ let core: BpmCore | WaitCore | undefined, epoch = 0, stopped = false;
 let sent = new Set<string>(), extraSent = new Set<number>();
 port.onmessage = ({data}: MessageEvent) => {
   try {
-    if (data.type === 'init') {epoch = data.epoch; core = data.plan.config.mode === 'bpm' ? new BpmCore(data.plan as Plan) : new WaitCore(data.plan as Plan); sent = new Set(); extraSent = new Set(); stopped = false;}
+    if (data.type === 'init') {
+      epoch = data.epoch;
+      if (data.plan.schemaVersion !== 1 || data.plan.config.algorithmVersion !== ALGORITHM_VERSION) throw Error('Phiên bản bộ chấm không tương thích. Hãy tải lại trang.');
+      core = data.plan.config.mode === 'bpm' ? new BpmCore(data.plan as Plan) : new WaitCore(data.plan as Plan); sent = new Set(); extraSent = new Set(); stopped = false;
+    }
     if (!core || data.epoch !== epoch) return;
     if (data.type === 'event' && !stopped) core.input(data.event as InputEvent);
     if (data.type === 'pause') {stopped = true; core.clearHeld();}

@@ -1,5 +1,5 @@
 export const SCHEMA_VERSION = 1;
-export const ALGORITHM_VERSION = 'pianist-onset-1.0.0';
+export const ALGORITHM_VERSION = 'pianist-onset-1.0.1';
 export type Role = 'left' | 'right' | 'off';
 export type Mode = 'wait' | 'bpm';
 export interface Box {x: number; y: number; width: number; height: number}

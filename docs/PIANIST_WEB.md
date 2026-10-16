@@ -53,7 +53,8 @@ không được biến thành lỗi 0 ms.
 Matcher chia các mục tiêu cùng pitch thành cụm tối đa 8 nốt hoặc 1,5 giây;
 biên cụm được cố định ở trung điểm hai onset để không tái sử dụng input.
 Trong cụm dùng đối sánh có thứ tự: ưu tiên số khớp, rồi sai lệch tuyệt đối.
-Kết quả chốt sau cửa sổ muộn + ngân sách giao event 120 ms; phản hồi có thể
+Kết quả chốt sau cửa sổ muộn + ngân sách giao event 120 ms + phần offset dương;
+biên thời gian được giữ mở đến sau hạn này. Phản hồi có thể
 chậm hơn cursor ở đoạn lặp dày. Event quá trễ/queue quá lớn làm lượt gián đoạn,
 không âm thầm sửa kết quả đã chốt.
 
@@ -100,6 +101,10 @@ Chọn **Lưu event log để replay** trước khi tập. Log chứa input, cá
 đồng hồ và ranh giới clear-held khi pause/resume. CLI đối chiếu lại assessments
 và extras với kết quả đã lưu. Log quá lớn bị bỏ; 20 lượt mới nhất giữ replay
 tùy dung lượng, các summary cũ vẫn còn. Xem [bằng chứng](M1_M6_RESULTS.md).
+
+Replay chỉ chạy cùng `algorithmVersion`. Bản hiện tại là `pianist-onset-1.0.1`;
+log 1.0.0 cần source tương ứng (commit `33b68f61`). Tập lại từ lịch sử tạo lượt
+mới với phiên bản bộ chấm hiện tại, không thay kết quả đã lưu.
 
 ## Đóng gói và phát hành
 

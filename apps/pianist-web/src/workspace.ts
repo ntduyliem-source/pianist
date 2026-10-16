@@ -1,6 +1,6 @@
 import { EngineBridge, type NativeApi } from '../../../packages/engine-bridge/index';
 import { defaultConfig } from '../../../packages/practice-core/plan';
-import type { ScoreSnapshot, SessionConfig, SessionResult } from '../../../packages/score-contracts/index';
+import { ALGORITHM_VERSION, type ScoreSnapshot, type SessionConfig, type SessionResult } from '../../../packages/score-contracts/index';
 import { download, fingerprint, validateFile } from './platform/files';
 import { MidiRouter } from './platform/midi';
 import * as storage from './platform/storage';
@@ -228,6 +228,7 @@ export class Workspace {
       const calibration = await storage.get<{id: string; offsetMs: number}>('settings', 'calibration:' + this.midi.deviceId);
       const prior = this.state.snapshot?.fingerprint === snapshot.fingerprint ? this.state.config : undefined;
       const config = {...defaultConfig(snapshot), ...prior, ...overrides};
+      config.algorithmVersion = ALGORITHM_VERSION; // Retrying old history creates a new result with the current grader.
       config.fromMeasure = Math.max(0, Math.min(snapshot.measures.length - 1, config.fromMeasure));
       config.toMeasure = Math.max(config.fromMeasure, Math.min(snapshot.measures.length - 1, config.toMeasure));
       config.deviceId = this.midi.deviceId; config.inputSource = this.midi.deviceId === 'virtual' ? 'virtual' : 'midi'; config.offsetMs = overrides?.offsetMs ?? prior?.offsetMs ?? calibration?.offsetMs ?? 0;

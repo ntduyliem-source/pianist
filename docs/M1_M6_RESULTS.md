@@ -33,7 +33,10 @@ tài khoản/đồng bộ) chưa triển khai. Pedal hiện chỉ được nhậ
 
 ## Kiểm thử tự động
 
-`npm test`: **30/30 đạt**, không skip. TypeScript strict và Vite build đạt.
+`npm test`: ban đầu **30/30 đạt**. Rà soát sau phản hồi của người dùng phát hiện
+thêm lỗi ngoài phạm vi bộ test đó; bản sửa có **36/36 đạt**, không skip.
+Xem [đối chiếu và ca hồi quy](IMPLEMENTATION_AUDIT.md).
+TypeScript strict và Vite build đạt.
 Native notation WASM build đạt sau bridge/SVG/PDF/font changes; audio dùng binary
 M0 đã build. Bản native đang phục vụ dùng FastLink phát triển, chưa có phép đo
 performance của build tối ưu.
@@ -47,13 +50,18 @@ audio output clock, IndexedDB migration/recovery/lease và vòng đời session.
 Finish đồng thời chỉ tạo một kết quả; Worker lỗi vẫn kết thúc được với trạng
 thái interrupted; input không sẵn sàng bị chặn trước khi tạo audio/Worker.
 
+Bộ chấm `pianist-onset-1.0.1` sửa extra sau pitch đã chốt, extra sát cuối bài,
+deadline khi offset dương và biên thời gian bao hàm. Replay yêu cầu đúng phiên
+bản thuật toán; kết quả cũ không bị sửa. Ca replay UI trong bảng dưới được đo
+với 1.0.0 tại commit `33b68f61`, không được coi là ca replay 1.0.1.
+
 Fixture CC0 `tempo-repeat-tie.musicxml` có kỳ vọng tính độc lập: 3 ô nhịp viết,
 pickup 1/8, 2/4, tempo 80→120, triplet, tie qua vạch, repeat và unison. Snapshot
 lấy từ WASM thật có 11 nốt viết, 20 notehead thực hiện và 16 attack vật lý,
 5 occurrence; tổng thời gian 4.375 ms trong sai số số thực. Test không tự tạo
 expected bằng chính plan builder.
 
-Tên Txx trong các test domain là nhãn cục bộ; 30 test này không có nghĩa toàn
+Tên Txx trong các test domain là nhãn cục bộ; bộ test này không có nghĩa toàn
 bộ 29 dòng nghiệm thu của kế hoạch sản phẩm đã được kiểm đủ.
 
 ## Luồng đã kiểm qua giao diện thật
