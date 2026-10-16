@@ -10,28 +10,34 @@ export function defaultConfig(snapshot: ScoreSnapshot): SessionConfig {
   return {mode: 'wait', bpm: Math.round(snapshot.baseQuarterBpm || 80), beatQuarter: 1, countIn: 4, metronome: true,
     fromMeasure: 0, toMeasure: Math.max(0, snapshot.measures.length - 1), hand: 'both', roles, voices: [0, 1, 2, 3],
     loops: 1, offsetMs: 0, perfectMs: 50, goodMs: 120, windowMs: 250, deliveryMs: 120,
-    inputSource: 'virtual', deviceId: 'virtual', algorithmVersion: ALGORITHM_VERSION};
+    inputSource: 'virtual', deviceId: 'virtual', algorithmVersion: ALGORITHM_VERSION, accompaniment: false};
 }
 
 export function buildPlan(snapshot: ScoreSnapshot, input: SessionConfig): Plan {
   const config = structuredClone(input);
   if (snapshot.schemaVersion !== 1 || !Number.isFinite(snapshot.baseQuarterBpm) || snapshot.baseQuarterBpm <= 0) throw Error('Snapshot/tempo không hợp lệ.');
   if (config.algorithmVersion !== ALGORITHM_VERSION || !['wait', 'bpm'].includes(config.mode)) throw Error('Phiên bản bộ chấm không tương thích.');
+  if (![config.bpm, config.offsetMs, config.perfectMs, config.goodMs, config.windowMs, config.deliveryMs, config.countIn].every(Number.isFinite)
+    || ![config.fromMeasure, config.toMeasure, config.countIn].every(Number.isInteger)
+    || !config.voices.length || config.voices.some(v => !Number.isInteger(v) || v < 0 || v > 3)) throw Error('Tempo, timing hoặc voice không hợp lệ.');
   if (!(config.bpm >= 20 && config.bpm <= 300) || ![0.5, 1, 1.5].includes(config.beatQuarter)
     || !Number.isInteger(config.loops) || config.loops < 1 || config.loops > 10 || config.fromMeasure > config.toMeasure
     || config.fromMeasure < 0 || config.toMeasure >= snapshot.measures.length || !Number.isFinite(config.offsetMs) || Math.abs(config.offsetMs) > 500
     || config.perfectMs < 0 || config.goodMs < config.perfectMs || config.windowMs < config.goodMs || config.windowMs > 300
     || config.deliveryMs < 0 || config.deliveryMs > 500 || config.countIn < 0 || config.countIn > 8) throw Error('Cấu hình tập nằm ngoài giới hạn.');
-  const scale = snapshot.baseQuarterBpm / (config.bpm * config.beatQuarter);
+  const step = config.mode === 'bpm' ? config.loopBpmStep ?? 0 : 0;
+  const lastBpm = config.bpm + (config.loops - 1) * step;
+  if (!Number.isInteger(step) || Math.abs(step) > 20 || lastBpm < 20 || lastBpm > 300) throw Error('BPM từng lượt phải nằm trong 20–300, mức đổi tối đa 20 BPM/lượt.');
   const anchors = new Map(snapshot.anchors.map(a => [a.id, a]));
   const notesByOccurrence = new Map<number, typeof snapshot.performed>();
   for (const p of snapshot.performed) {
     const list = notesByOccurrence.get(p.occurrence) ?? []; list.push(p); notesByOccurrence.set(p.occurrence, list);
   }
   const selected = snapshot.occurrences.filter(o => o.measure >= config.fromMeasure && o.measure <= config.toMeasure);
-  const targets: Attack[] = [], beats: Plan['beats'] = [], loops: Plan['loops'] = [];
-  let cursor = 0;
+  const targets: Attack[] = [], beats: Plan['beats'] = [], loops: Plan['loops'] = [], visits: NonNullable<Plan['visits']> = [];
+  let cursor = 0, pass = -1;
   for (let loop = 0; loop < config.loops; ++loop) {
+    const bpm = config.bpm + loop * step, scale = snapshot.baseQuarterBpm / (bpm * config.beatQuarter);
     const startMs = cursor;
     // Tie chains follow the *performed* path, and only merge when contiguous.
     const tails = new Map<string, {target: Attack; endMs: number}>();
@@ -39,6 +45,9 @@ export function buildPlan(snapshot: ScoreSnapshot, input: SessionConfig): Plan {
       const from = cursor;
       const length = (o.endMs - o.startMs) * scale;
       if (!Number.isFinite(length) || length <= 0) throw Error('Ô nhịp có thời lượng không hợp lệ.');
+      const previous = visits.at(-1);
+      if (!previous || previous.loop !== loop || o.measure <= previous.measure) ++pass;
+      visits.push({measure: o.measure, occurrence: o.index, loop, pass, startMs: from, endMs: from + length});
       for (const p of notesByOccurrence.get(o.index) ?? []) {
         const a = anchors.get(p.anchor); if (!a) throw Error('Snapshot thiếu score anchor.');
         const role = config.roles[a.staff] ?? 'off';
@@ -50,11 +59,12 @@ export function buildPlan(snapshot: ScoreSnapshot, input: SessionConfig): Plan {
         if (tail && tail.target.pitch === a.pitch && Math.abs(tail.endMs - atMs) < 0.1) {
           tail.target.endMs = Math.max(tail.target.endMs, endMs);
           tail.target.anchors.push(a.id);
+          tail.target.spans!.push({anchor: a.id, occurrence: o.index, atMs, endMs});
           if (!tail.target.roles.includes(role)) tail.target.roles.push(role);
           tails.set(a.id, {target: tail.target, endMs});
         } else {
           const attack: Attack = {id: `l${loop}-o${o.index}-${a.id}`, pitch: a.pitch, atMs, endMs,
-            anchors: [a.id], roles: [role], measure: a.measure, occurrence: o.index, loop};
+            anchors: [a.id], roles: [role], measure: a.measure, occurrence: o.index, loop, spans: [{anchor: a.id, occurrence: o.index, atMs, endMs}]};
           targets.push(attack); tails.set(a.id, {target: attack, endMs});
         }
       }
@@ -78,8 +88,8 @@ export function buildPlan(snapshot: ScoreSnapshot, input: SessionConfig): Plan {
       }
       cursor += length;
     }
-    loops.push({index: loop, startMs, endMs: cursor});
-    if (loop + 1 < config.loops) cursor += 60000 / config.bpm; // explicit rest at each loop boundary
+    loops.push({index: loop, startMs, endMs: cursor, bpm});
+    if (loop + 1 < config.loops) cursor += 60000 / bpm; // one beat at the preceding loop tempo
   }
   targets.sort((a, b) => a.atMs - b.atMs || a.pitch - b.pitch || a.id.localeCompare(b.id));
   const merged: Attack[] = [];
@@ -87,6 +97,7 @@ export function buildPlan(snapshot: ScoreSnapshot, input: SessionConfig): Plan {
     const last = merged.at(-1);
     if (last && last.pitch === t.pitch && Math.abs(last.atMs - t.atMs) < 0.01 && last.loop === t.loop) {
       last.anchors.push(...t.anchors); last.roles = [...new Set([...last.roles, ...t.roles])]; last.endMs = Math.max(last.endMs, t.endMs);
+      last.spans!.push(...t.spans!);
     } else merged.push(t);
   }
   if (!merged.length) throw Error('Đoạn này không có nốt cho tay/bè đã chọn. Hãy nhập bài hoặc chọn đoạn khác.');
@@ -97,6 +108,16 @@ export function buildPlan(snapshot: ScoreSnapshot, input: SessionConfig): Plan {
     if (g && Math.abs(g.atMs - t.atMs) < 0.01) { g.targets.push(t); g.endMs = Math.max(g.endMs, t.endMs); }
     else groups.push({atMs: t.atMs, endMs: t.endMs, targets: [t]});
   }
+  let accompaniment: Attack[] = [];
+  if (config.accompaniment && config.mode === 'bpm' && config.hand !== 'both') {
+    const otherHand = config.hand === 'left' ? 'right' : 'left';
+    const selectedIndices = new Set(selected.map(o => o.index));
+    if (snapshot.performed.some(p => {const a = anchors.get(p.anchor); return selectedIndices.has(p.occurrence) && a && config.roles[a.staff] === otherHand && config.voices.includes(a.voice);})) {
+      const guide = buildPlan(snapshot, {...config, hand: otherHand, accompaniment: false});
+      const practiced = new Set(merged.map(t => `${t.loop}/${t.atMs.toFixed(2)}/${t.pitch}`));
+      accompaniment = guide.targets.filter(t => !practiced.has(`${t.loop}/${t.atMs.toFixed(2)}/${t.pitch}`));
+    }
+  }
   return {schemaVersion: 1, projectId: snapshot.projectId, revision: snapshot.revision, fingerprint: snapshot.fingerprint,
-    targets: merged, durationMs: cursor, config, beats, groups, loops};
+    targets: merged, durationMs: cursor, config, beats, groups, loops, visits, accompaniment};
 }

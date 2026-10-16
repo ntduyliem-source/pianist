@@ -1,0 +1,285 @@
+{
+  "anchors": [
+    {
+      "box": {
+        "height": 91.6484375,
+        "width": 111.4921875,
+        "x": 2304.585989891305,
+        "y": 2812.443497785433
+      },
+      "durationTicks": 480,
+      "id": "m0-t480-v0-n0",
+      "measure": 0,
+      "page": 0,
+      "pitch": 62,
+      "play": true,
+      "staff": 0,
+      "tick": 480,
+      "track": 0,
+      "visible": true,
+      "visualStaff": 1,
+      "voice": 0
+    },
+    {
+      "box": {
+        "height": 93.30078125,
+        "width": 127.37109375,
+        "x": 2007.276458026147,
+        "y": 3142.3259873277557
+      },
+      "durationTicks": 1920,
+      "id": "m0-t0-v4-n0",
+      "measure": 0,
+      "page": 0,
+      "pitch": 48,
+      "play": true,
+      "staff": 1,
+      "tick": 0,
+      "track": 4,
+      "visible": true,
+      "visualStaff": 1,
+      "voice": 0
+    },
+    {
+      "box": {
+        "height": 91.6484375,
+        "width": 111.4921875,
+        "x": 2593.9560686314626,
+        "y": 2399.05767101378
+      },
+      "durationTicks": 480,
+      "id": "m0-t960-v0-n0",
+      "measure": 0,
+      "page": 0,
+      "pitch": 64,
+      "play": true,
+      "staff": 0,
+      "tick": 960,
+      "track": 0,
+      "visible": true,
+      "visualStaff": 0,
+      "voice": 0
+    },
+    {
+      "box": {
+        "height": 91.6484375,
+        "width": 111.4921875,
+        "x": 2883.32614737162,
+        "y": 2729.7663324311025
+      },
+      "durationTicks": 480,
+      "id": "m0-t1440-v0-n0",
+      "measure": 0,
+      "page": 0,
+      "pitch": 65,
+      "play": true,
+      "staff": 0,
+      "tick": 1440,
+      "track": 0,
+      "visible": true,
+      "visualStaff": 1,
+      "voice": 0
+    },
+    {
+      "box": {
+        "height": 91.6484375,
+        "width": 111.4921875,
+        "x": 2015.215911151147,
+        "y": 2481.734836368111
+      },
+      "durationTicks": 480,
+      "id": "m0-t0-v0-n0",
+      "measure": 0,
+      "page": 0,
+      "pitch": 60,
+      "play": true,
+      "staff": 0,
+      "tick": 0,
+      "track": 0,
+      "visible": true,
+      "visualStaff": 0,
+      "voice": 0
+    }
+  ],
+  "baseQuarterBpm": 60,
+  "beats": [
+    {
+      "accent": true,
+      "atMs": 0,
+      "beatQuarter": 0.5,
+      "occurrence": 0
+    },
+    {
+      "accent": false,
+      "atMs": 500,
+      "beatQuarter": 0.5,
+      "occurrence": 0
+    },
+    {
+      "accent": false,
+      "atMs": 1000,
+      "beatQuarter": 0.5,
+      "occurrence": 0
+    },
+    {
+      "accent": false,
+      "atMs": 1500,
+      "beatQuarter": 0.5,
+      "occurrence": 0
+    },
+    {
+      "accent": false,
+      "atMs": 2000,
+      "beatQuarter": 0.5,
+      "occurrence": 0
+    },
+    {
+      "accent": false,
+      "atMs": 2500,
+      "beatQuarter": 0.5,
+      "occurrence": 0
+    },
+    {
+      "accent": false,
+      "atMs": 3000,
+      "beatQuarter": 0.5,
+      "occurrence": 0
+    },
+    {
+      "accent": false,
+      "atMs": 3500,
+      "beatQuarter": 0.5,
+      "occurrence": 0
+    },
+    {
+      "accent": true,
+      "atMs": 0,
+      "beatQuarter": 1,
+      "occurrence": 0
+    },
+    {
+      "accent": false,
+      "atMs": 1000,
+      "beatQuarter": 1,
+      "occurrence": 0
+    },
+    {
+      "accent": false,
+      "atMs": 2000,
+      "beatQuarter": 1,
+      "occurrence": 0
+    },
+    {
+      "accent": false,
+      "atMs": 3000,
+      "beatQuarter": 1,
+      "occurrence": 0
+    },
+    {
+      "accent": true,
+      "atMs": 0,
+      "beatQuarter": 1.5,
+      "occurrence": 0
+    },
+    {
+      "accent": false,
+      "atMs": 1500,
+      "beatQuarter": 1.5,
+      "occurrence": 0
+    },
+    {
+      "accent": false,
+      "atMs": 3000,
+      "beatQuarter": 1.5,
+      "occurrence": 0
+    }
+  ],
+  "durationMs": 4000,
+  "measures": [
+    {
+      "box": {
+        "height": 1198.818897637795,
+        "width": 1858.4631520669295,
+        "x": 1331.1149638086272,
+        "y": 2114.173228346457
+      },
+      "denominator": 4,
+      "endTick": 1920,
+      "index": 0,
+      "label": 1,
+      "numerator": 4,
+      "page": 0,
+      "tick": 0
+    }
+  ],
+  "occurrences": [
+    {
+      "endMs": 4000,
+      "index": 0,
+      "measure": 0,
+      "startMs": 0,
+      "utick": 0
+    }
+  ],
+  "pages": [
+    {
+      "displayWidth": 793.92,
+      "height": 14028,
+      "index": 0,
+      "offsetX": 0,
+      "offsetY": 0,
+      "svg": "",
+      "width": 9924
+    }
+  ],
+  "performed": [
+    {
+      "anchor": "m0-t0-v0-n0",
+      "atMs": 0,
+      "endMs": 1000,
+      "occurrence": 0
+    },
+    {
+      "anchor": "m0-t0-v4-n0",
+      "atMs": 0,
+      "endMs": 4000,
+      "occurrence": 0
+    },
+    {
+      "anchor": "m0-t480-v0-n0",
+      "atMs": 1000,
+      "endMs": 2000,
+      "occurrence": 0
+    },
+    {
+      "anchor": "m0-t960-v0-n0",
+      "atMs": 2000,
+      "endMs": 3000,
+      "occurrence": 0
+    },
+    {
+      "anchor": "m0-t1440-v0-n0",
+      "atMs": 3000,
+      "endMs": 4000,
+      "occurrence": 0
+    }
+  ],
+  "revision": 1,
+  "schemaVersion": 1,
+  "staves": [
+    {
+      "id": 0,
+      "part": "Piano",
+      "partId": "1"
+    },
+    {
+      "id": 1,
+      "part": "Piano",
+      "partId": "1"
+    }
+  ],
+  "title": "cross-staff",
+  "warnings": [],
+  "projectId": "fixture-cross-staff",
+  "fingerprint": "fa87b27ed38eeec4ec7c61bd9344ed86b8bc81597c6f43433fb4b91aab641b7a"
+}

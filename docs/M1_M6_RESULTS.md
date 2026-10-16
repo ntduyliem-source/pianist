@@ -1,21 +1,22 @@
 # Pianist Web — kết quả triển khai M1–M6
 
 Ngày kiểm tra: 16/10/2026. Đây là bản chạy local, chưa nghiệm thu phát hành v1.
-M0 trước đó ở commit `73b82fe`; báo cáo này mô tả phần bổ sung sau M0.
+M0 trước đó ở commit `73b82fe`; báo cáo này bao gồm đợt hoàn thiện sau `c52e83ce`.
 
 ## Trạng thái
 
 | Mốc | Phần đã chạy | Cổng còn mở |
 | --- | --- | --- |
-| M1 | React/TypeScript shell; thư viện IndexedDB; nguồn file; save/save-as/download; autosave/recovery; bridge version/revision; giữ editor và undo khi đổi màn hình | Importer C++ đồng bộ chưa hỗ trợ hủy giữa lúc parse; kiểm thử quota/kill-tab diện rộng còn thiếu |
-| M2 | Snapshot trực tiếp từ score đang sửa, native SVG/geometry, staff/voice, tie/unison, performed repeat timeline và tempo map; xuất PDF | Chưa nghiệm thu toàn bộ ma trận editor; corpus volta/jump/cross-staff/fermata còn cần mở rộng |
+| M1 | React/TypeScript shell; IndexedDB, autosave/recovery; version/revision; nút hủy ở preflight/tải engine; test rollback transaction, bỏ snapshot cũ; giữ undo khi đổi màn hình | Importer C++ đồng bộ chưa hỗ trợ hủy giữa lúc parse; quota/kill-tab thật diện rộng còn thiếu |
+| M2 | Snapshot/SVG/geometry, staff/voice, tie/unison, tempo; corpus native volta, DC/Fine, DS/Coda, cross-staff và ký hiệu đặc biệt; PDF đã render kiểm tra | Chưa nghiệm thu toàn bộ ma trận editor và mọi biến thể jump/text-only |
 | M3 | MIDI router; nguồn ảo riêng; Worker; state machine; Đúng nốt có lỗi lần đầu, hợp âm, nốt lặp và rest | Quyền MIDI/rút cắm đàn thực chưa kiểm tra |
 | M4 | Audio clock, count-in/metronome, BPM timeline độc lập, matcher có giới hạn, timing từng nốt, calibration và replay | Chưa đo calibration/jitter/drift trên thiết bị thực |
-| M5 | Màn tập chỉ đọc riêng; chọn tay/voice, đoạn A–B, loop, zoom/cuộn, pause/resume, kết quả và tập lại đoạn yếu | Chưa benchmark score ở giới hạn tối đa hoặc đủ máy/trình duyệt |
-| M6 | Lịch sử/config/revision; JSON/CSV/replay; build helper; release manifest SHA-256; offline; mẫu cấu hình HTTPS và notices | Chưa publish HTTPS; build tối ưu, ma trận Chrome/Edge mới, toàn bộ giấy phép phân phối và nghiệm thu v1 còn mở |
+| M5 | Màn tập chỉ đọc; highlight ngay nốt/phím, partial chord, đúng occurrence; A–B/loop/zoom/cuộn; chỉ mount overlay gần viewport; kết quả/tập lại | Chưa benchmark score tối đa trên đủ máy/trình duyệt |
+| M6 | Build tối ưu, hash JS/WASM trước chạy, staged link; lịch sử, JSON/CSV, release manifest/offline, notices runtime thực | Chưa publish HTTPS; ma trận Chrome/Edge mới, giấy phép/source phân phối đầy đủ và nghiệm thu v1 còn mở |
+| M7 | Phát tay còn lại bằng âm hướng dẫn; BPM đổi theo mức đặt trước sau mỗi loop; so sánh lượt tương thích | Duration/pedal và profile ký hiệu nâng cao chưa triển khai; tài khoản/tablet/đồng bộ là phần mở rộng có điều kiện |
 
-M7 (chấm độ dài/pedal, accompaniment từng tay, profile ornament nâng cao,
-tài khoản/đồng bộ) chưa triển khai. Pedal hiện chỉ được nhận/hiển thị, không chấm.
+Pedal hiện được nhận/hiển thị theo channel và giải phóng đúng khi pause/reset,
+nhưng chưa chấm cách dùng pedal hoặc độ dài âm.
 
 ## Bài mẫu Phố Xa
 
@@ -33,13 +34,15 @@ tài khoản/đồng bộ) chưa triển khai. Pedal hiện chỉ được nhậ
 
 ## Kiểm thử tự động
 
-`npm test`: ban đầu **30/30 đạt**. Rà soát sau phản hồi của người dùng phát hiện
-thêm lỗi ngoài phạm vi bộ test đó; bản sửa có **36/36 đạt**, không skip.
+`npm test`: hiện **73/73 đạt**, không skip (ban đầu 30, lần audit trước 36).
+Rà soát phát hiện thêm lỗi ngoài phạm vi bộ test cũ và bổ sung hồi quy.
 Xem [đối chiếu và ca hồi quy](IMPLEMENTATION_AUDIT.md).
 TypeScript strict và Vite build đạt.
 Native notation WASM build đạt sau bridge/SVG/PDF/font changes; audio dùng binary
-M0 đã build. Bản native đang phục vụ dùng FastLink phát triển, chưa có phép đo
-performance của build tối ưu.
+M0 đã build. Main engine đã link tối ưu, WASM khoảng 80 MiB, JS khoảng 264 KB;
+gói 54 tài nguyên khoảng 134,5 MiB, giảm từ 180,1 MiB của gói phát triển.
+Build vào staging rồi publish khi link xong; loader kiểm SHA/length JS/WASM
+trước chạy. Không được coi giảm dung lượng là đã đo latency đàn thật.
 
 Các nhóm test gồm matching pitch/onset, hợp âm -100/+100 ms, nốt lặp thiếu ở
 giữa, tay trái thiếu không ngăn tay phải, extra/precision, im lặng trong BPM,
@@ -50,16 +53,34 @@ audio output clock, IndexedDB migration/recovery/lease và vòng đời session.
 Finish đồng thời chỉ tạo một kết quả; Worker lỗi vẫn kết thúc được với trạng
 thái interrupted; input không sẵn sàng bị chặn trước khi tạo audio/Worker.
 
-Bộ chấm `pianist-onset-1.0.1` sửa extra sau pitch đã chốt, extra sát cuối bài,
+Bộ chấm `pianist-onset-1.0.1` trước đó sửa extra sau pitch đã chốt, extra sát cuối bài,
 deadline khi offset dương và biên thời gian bao hàm. Replay yêu cầu đúng phiên
 bản thuật toán; kết quả cũ không bị sửa. Ca replay UI trong bảng dưới được đo
-với 1.0.0 tại commit `33b68f61`, không được coi là ca replay 1.0.1.
+với 1.0.0 tại commit `33b68f61`, không được coi là ca replay 1.1.0.
+
+`pianist-onset-1.1.0` thêm live feedback tức thì và chốt điểm tách biệt,
+timestamp chord spread trong wait, extra theo nhóm/ô/lượt, null khi không có
+mẫu số; chữa offset âm ở đầu lượt, nguồn MIDI/held-key/reset, hủy audio và
+calibration. Worker thực đã chạy qua test adapter MIDI giả lập, không chỉ gọi
+core trực tiếp. Bộ test bảo vệ việc dừng rồi không tự khởi động lại vì callback cũ.
 
 Fixture CC0 `tempo-repeat-tie.musicxml` có kỳ vọng tính độc lập: 3 ô nhịp viết,
 pickup 1/8, 2/4, tempo 80→120, triplet, tie qua vạch, repeat và unison. Snapshot
 lấy từ WASM thật có 11 nốt viết, 20 notehead thực hiện và 16 attack vật lý,
 5 occurrence; tổng thời gian 4.375 ms trong sai số số thực. Test không tự tạo
 expected bằng chính plan builder.
+
+Corpus mở rộng dùng quarter=60: volta [1,2,1,3] = 4 giây; DC/Fine
+[1,2,3,1,2] = 5 giây; DS/Coda [1,2,3,4,2,3,5] = 7 giây. Cả ba đã xuất MXL và
+nhập lại với fingerprint/timeline không đổi. DC ban đầu chỉ đi [1,2,3] do
+default text inference; đường import WASM đã sửa giữ explicit sound navigation.
+Cross-staff giữ role theo staff nguồn và geometry theo staff hiển thị. Fixture
+grace/arpeggio/trill/fermata phát đủ bốn cảnh báo; có 5 attack, grace B3 bị bỏ;
+fermata giữ duration native 6.000 − 1.000/480 ms. Xem [corpus](../tests/fixtures/pianist/practice/README.md).
+
+Stress domain Node: 50.000 nốt, 100.000 event, 50.000 match/0 fault;
+build plan 112,5 ms, replay 316,1 ms, P99 bước 0,0209 ms, heap Node 94,7 MiB.
+`artifacts/m1-m6/core-stress.json` ghi phạm vi; không bao gồm DOM/browser audio/MIDI thật.
 
 Tên Txx trong các test domain là nhãn cục bộ; bộ test này không có nghĩa toàn
 bộ 29 dòng nghiệm thu của kế hoạch sản phẩm đã được kiểm đủ.
@@ -77,12 +98,32 @@ Chrome/Edge trong báo cáo M0 thuộc commit cũ, không được tính là lư
 | Autosave/recovery | Sửa mà không bấm Save → báo tự lưu → reload → mở lại có thông báo phục hồi; snapshot đúng nội dung đã sửa |
 | Save As | ID project mới; undo của native editor vẫn dùng được; snapshot giữ nội dung tương ứng |
 | Nhiều tab | Tab thứ hai bị từ chối mở cùng project trước khi load engine; tab đầu giữ nội dung/undo |
-| PDF | Xuất PDF fixture thật 37.358 byte, `%PDF`/EOF hợp lệ và có 1 trang; chưa render soát layout PDF |
+| PDF | Đợt mới: special-symbols xuất PDF thật 29.741 byte, 1 trang A4; Poppler render kiểm tra title/khuông/grace/arpeggio/trill/fermata rõ, không thiếu glyph |
 | Đúng nốt, Phố Xa ô đầu/tay trái | Bấm sai không tiến; sau 8 mục tiêu đúng: coverage 8/8, precision 89%, đúng lần đầu 7/8, 1 lần sửa; không báo tất cả chỉ số 100% |
 | BPM, Phố Xa ô đầu/hai tay | 120 BPM, không bấm: hoàn tất khoảng 2 giây; 20/20 mục tiêu đã đánh giá, 20 miss, 0 extra |
 | Pause/resume và bỏ dở | Fixture 20 BPM: vị trí 0:04 và 7/16 mục tiêu đã chốt đứng yên khi pause; resume rồi dừng ra aborted, không tính 9 mục tiêu tương lai thành miss |
 | Replay log từ UI | CLI replay đúng kết quả pause/resume ở trên: `same: true`, evaluated 7, extra 1, không fault |
 | Lịch sử/tập lại | Kết quả còn sau reload, giữ nguồn ảo/revision/fingerprint; tập lại giữ đoạn và config |
+
+Kiểm tra bổ sung trên build tối ưu bằng UI và parse file xuất độc lập:
+
+| Ca | Kết quả |
+| --- | --- |
+| Highlight wait | C4 đang giữ trong hợp âm C/E/G có màu xanh/ghi nhận tạm, E/G vẫn thiếu; C♯4 đỏ và tăng extra. Phố Xa: B2 đúng hiện ✓, cursor chuyển F♯3; lỗi trước đó vẫn được giữ |
+| Highlight BPM | C4 trễ 151 ms hiện vàng/“lệch”; JSON cuối: 1/5 khớp, 4 miss, 0 extra, timing 0/5 |
+| Loop thay đổi BPM | DS/Coda, 2 lượt, +10: giao diện lượt hai hiện 70 BPM từ mức đầu 60; 14 mục tiêu riêng |
+| Octave/undo | Ctrl+A/Ctrl+Up tăng cả 6 pitch (gồm grace) 12 semitone; undo phục hồi |
+| Chord symbol/slur | Ctrl+K nhập Am7 tạo harmony A/minor-seventh; S tạo slur start/stop; undo dùng được |
+| Palette | Double-click mf tạo dynamics mf; pedal tạo start/stop; XML xuất xác nhận |
+| Ô nhịp | Ctrl+B thêm ô thứ 6 vào score 5 ô; XML xuất xác nhận, undo dùng được |
+| Hóa biểu/nhịp | Palette đổi C major → G major (`fifths=1`), 4/4 → 3/4; file MusicXML xác nhận, undo dùng được |
+| Instrument | Dialog I thêm Flute: XML có Piano + Flute; undo về Piano |
+| Runtime | Phát hiện một lỗi native memory khi đổi liên tiếp bài có jump; bổ sung context rỗng trước publish bài mới và giữ đời bài cũ. Chạy lại hai vòng DC XML → DC MXL → DS/Coda (6 lần nhập/chuyển practice), không tái hiện lỗi; snapshot cuối giữ fingerprint. Lỗi native có đường tải lại trang, ngăn autosave chạm memory hỏng |
+| Đổi bài trong session | Mở volta khi đang tập DS/Coda bị từ chối ngay; title/score hiện tại không đổi. New/Save As/đổi project/rename cũng được chặn bằng test |
+
+Các file `editor-*.musicxml`, `live-bpm-result.json`, `*-snapshot.json` và ảnh
+trong `artifacts/m1-m6` là bằng chứng local. Các thao tác trên không phủ mọi
+palette/property/dialog hoặc nhập từ đàn vật lý.
 
 JSON kết quả, snapshots, PDF và ảnh kiểm tra tại máy này ở
 `artifacts/m1-m6/` (gitignored). Snapshot fixture CC0 đã bỏ SVG nằm trong
@@ -90,7 +131,16 @@ JSON kết quả, snapshots, PDF và ảnh kiểm tra tại máy này ở
 
 ## Offline
 
-Đã cài một release 39 tài nguyên, khoảng 180,1 MiB qua nút chuẩn bị offline.
+Đợt cuối đã cài release `3c83840d508d87b1daff`: **54 tài nguyên, 134,5 MiB**.
+Tắt hẳn server (0 listener ở cổng 8787), reload trang qua Service Worker;
+mở Phố Xa vào native engine, tạo snapshot 50 ô/7 trang/1.179 mục tiêu.
+Chọn tay trái/ô đầu, khởi động Worker Đúng nốt: C3 sai giữ nguyên mục tiêu,
+B2 đúng hiện ✓ trên score và phím xanh, thống kê 1 match/1 extra/1 trong 8 nhóm.
+Đây là kiểm tra thực của loader kiểm hash với release manifest được worker giữ
+cùng phiên bản; không phụ thuộc server đang chạy. Ảnh `pho-xa-offline-highlight.png`.
+Sau kiểm tra đã bật lại server, dùng **Dùng online** rồi reload giao diện bình thường.
+
+Lần kiểm tra trước đây đã cài một release 39 tài nguyên, khoảng 180,1 MiB qua nút chuẩn bị offline.
 Service Worker kiểm SHA-256 và cache nguyên bộ. Tắt preview server, xác nhận
 HTTP không đáp ứng, rồi reload thư viện: mở lại Phố Xa vào native engine,
 chuyển practice 7 trang/1.179 mục tiêu và khởi động BPM Worker được.
@@ -105,9 +155,9 @@ giúp preview tiếp tục phản ánh thay đổi source. Thư viện IndexedDB
 
 1. Thử đàn MIDI thực: quyền truy cập, chọn cổng/rút cắm, timestamp, 12-click
    calibration, jitter/drift, pedal state; lưu model đàn/OS/browser/audio output.
-2. Chạy lại ma trận editor đầy đủ và corpus volta/jump/cross-staff/ký hiệu khó,
-   kiểm round-trip import/export; sửa các dialog upstream còn phụ thuộc desktop.
-3. Build tối ưu; đo tải lạnh/ấm, RAM và score dài trên Chrome/Edge mục tiêu.
+2. Chạy ma trận editor đầy đủ; mở rộng biến thể jump/text-only, voice, signatures,
+   layout và round-trip; sửa các dialog upstream còn phụ thuộc desktop.
+3. Đo tải lạnh/ấm, RAM và score dài trên Chrome/Edge mục tiêu với build tối ưu mới.
 4. Chọn domain/host, deploy nguyên release qua HTTPS và kiểm trên máy sạch;
    rà đủ source/build/notices/giấy phép trước phân phối công khai.
 

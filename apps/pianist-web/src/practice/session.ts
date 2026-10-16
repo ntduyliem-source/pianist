@@ -11,12 +11,14 @@ export class PracticeSession {
   private log(step: ReplayStep): void {if (this.commands.length < 250000) this.commands.push(step); else this.replayComplete = false;}
   private finishing?: {outcome: SessionResult['outcome']; resolve: (result: SessionResult) => void};
   private finishPromise?: Promise<SessionResult>; private finalResult?: SessionResult; private workerFailed = false;
+  private transportOperation = 0; private starting = false; private transportReady = false;
   onChange: () => void = () => {}; onComplete: (result: SessionResult) => void = () => {};
   constructor(readonly plan: Plan, readonly title: string, readonly inputAvailable: () => boolean = () => true) {this.transport.onSuspend = () => this.pause('Âm thanh bị tạm dừng. Bấm Tiếp tục để đếm vào lại.', true);}
   get countInRemainingMs(): number {return Math.max(0, this.resumeAt - this.position);}
   async start(): Promise<void> {
-    if (this.status !== 'ready') return;
+    if (this.status !== 'ready' || this.starting) return;
     if (!this.inputAvailable()) throw Error('Chọn đúng thiết bị đầu vào trước khi bắt đầu.');
+    this.starting = true;
     this.worker?.terminate(); ++this.epoch;
     this.worker = new Worker(new URL('../../../../packages/practice-worker/practice.worker.ts', import.meta.url), {type: 'module'});
     this.worker.onmessage = ({data}) => {
@@ -32,10 +34,18 @@ export class PracticeSession {
     };
     this.worker.onerror = () => this.workerError('Bộ chấm gặp lỗi. Hãy kết thúc lượt này rồi bắt đầu lượt mới.');
     this.worker.postMessage({type: 'init', epoch: this.epoch, plan: this.plan});
-    await this.beginTransport(0);
+    try {await this.beginTransport(0);} finally {this.starting = false;}
   }
   private async beginTransport(at: number): Promise<void> {
-    await this.transport.start(this.plan, at); this.resumeAt = at; this.position = at; this.reason = ''; this.status = 'counting';
+    const operation = ++this.transportOperation;
+    this.transportReady = false;
+    this.resumeAt = at; this.position = at; this.reason = ''; this.status = 'counting'; this.onChange();
+    try {await this.transport.start(this.plan, at);} catch (error) {
+      if (operation === this.transportOperation) {this.transport.stop(); this.status = 'interrupted'; this.reason = 'Không khởi động được âm thanh. Bấm Tiếp tục để thử lại.'; this.onChange();}
+      throw error;
+    }
+    if (operation !== this.transportOperation || this.workerFailed) {this.transport.stop(); return;}
+    this.transportReady = true;
     this.log({kind: 'clearHeld', atMs: at}); this.worker?.postMessage({type: 'resume', epoch: this.epoch});
     this.lastWake = performance.now(); clearInterval(this.timer);
     this.timer = window.setInterval(() => {
@@ -52,15 +62,21 @@ export class PracticeSession {
   }
   input(event: InputEvent): void {
     if (event.source !== this.plan.config.inputSource || event.deviceId !== this.plan.config.deviceId || !['running', 'counting'].includes(this.status)) return;
-    const e = {...event, epoch: this.epoch, atMs: this.transport.relative(event.atMs), receivedMs: this.transport.relative(event.receivedMs)};
+    if (!this.transportReady) return;
+    // Convert both timestamps with the same clock pair, preserving delivery delay.
+    const receivedMs = this.transport.relative(event.receivedMs);
+    const e = {...event, epoch: this.epoch, atMs: receivedMs + event.atMs - event.receivedMs, receivedMs};
+    const corrected = e.atMs - (this.plan.config.mode === 'bpm' ? this.plan.config.offsetMs : 0);
     const earliest = this.resumeAt === 0 && this.plan.config.mode === 'bpm' ? -this.plan.config.windowMs : this.resumeAt;
-    if (e.atMs < earliest) return;
+    if (corrected < earliest) return;
     if (this.events.length < 200000) this.events.push(e);
     this.log({kind: 'event', event: e});
     this.worker?.postMessage({type: 'event', epoch: this.epoch, event: e});
   }
   pause(reason = 'Đã tạm dừng. Tiếp tục sẽ đếm vào lại.', interrupted = false): void {
     if (!['running', 'counting'].includes(this.status)) return;
+    ++this.transportOperation;
+    this.transportReady = false;
     this.position = Math.max(this.resumeAt, this.transport.position());
     this.status = interrupted ? 'interrupted' : 'paused'; this.reason = reason;
     this.log({kind: 'clearHeld', atMs: this.position});
@@ -70,7 +86,8 @@ export class PracticeSession {
     if (!['paused', 'interrupted'].includes(this.status)) return;
     if (!this.inputAvailable()) throw Error('Kết nối và chọn lại đúng thiết bị của lượt này, hoặc Kết thúc để đổi đàn.');
     if (this.state.faults.length) throw Error('Lượt này có dữ liệu MIDI không đủ tin cậy. Bấm Kết thúc rồi tập lại.');
-    await this.beginTransport(this.position);
+    if (this.starting) return;
+    this.starting = true; try {await this.beginTransport(this.position);} finally {this.starting = false;}
   }
   finish(outcome: SessionResult['outcome'] = 'aborted'): Promise<SessionResult> {
     if (this.finalResult) return Promise.resolve(this.finalResult);
@@ -81,8 +98,9 @@ export class PracticeSession {
   }
   private workerError(message: string): void {
     this.workerFailed = true; this.state.faults = [...this.state.faults, 'worker-error']; this.pause(message, true);
+    if (this.status === 'ready') {++this.transportOperation; this.status = 'interrupted'; this.reason = message; this.onChange();}
     if (this.finishing) {const pending = this.finishing; this.finishing = undefined; this.finalResult = this.result('interrupted'); pending.resolve(this.finalResult);}
   }
   private result(outcome: SessionResult['outcome']): SessionResult {return summarize(this.plan, this.state, this.title, outcome, Math.max(0, this.position), this.transport.source);}
-  dispose(): void {clearInterval(this.timer); ++this.epoch; this.worker?.terminate(); this.worker = undefined; this.transport.stop(); void this.transport.context?.close();}
+  dispose(): void {clearInterval(this.timer); ++this.epoch; ++this.transportOperation; this.worker?.terminate(); this.worker = undefined; this.transport.stop(); void this.transport.context?.close();}
 }

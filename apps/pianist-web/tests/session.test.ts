@@ -13,8 +13,10 @@ class AudioStub {
 }
 class WorkerStub {
   static last: WorkerStub; onmessage?: (event: {data: unknown}) => void; onerror?: () => void; finishes = 0; epoch = 0;
+  messages: any[] = [];
   constructor() {WorkerStub.last = this;}
   postMessage(data: {type: string; epoch: number}) {
+    this.messages.push(data);
     this.epoch = data.epoch;
     if (data.type === 'finish') {++this.finishes; queueMicrotask(() => this.onmessage?.({data: {type: 'final', epoch: this.epoch, state: {
       assessments: [], extras: [], cursor: 0, done: false, faults: [], firstTry: 0, groupsDone: 0, corrections: 0, held: [], missing: [],
@@ -43,3 +45,21 @@ test('unavailable session input is rejected before audio/worker setup', async ()
   const session = new PracticeSession(buildPlan(score, defaultConfig(score)), 'Test', () => false);
   await assert.rejects(() => session.start(), /thiết bị/); assert.equal(session.status, 'ready');
 });
+test('worker failure while audio is starting cannot resurrect a running session', () => withBrowserStubs(async session => {
+  let unblock!: () => void;
+  session.transport.start = () => new Promise<void>(resolve => {unblock = resolve;});
+  const starting = session.start(), worker = WorkerStub.last;
+  await session.start(); assert.equal(WorkerStub.last, worker, 'double start does not create a second worker');
+  worker.onerror?.(); unblock(); await starting;
+  assert.equal(session.status, 'interrupted'); assert.equal(worker.messages.some(m => m.type === 'resume'), false);
+  assert.equal((await session.finish()).outcome, 'interrupted');
+}));
+test('negative calibration accepts a valid early note during the initial BPM count-in', () => withBrowserStubs(async session => {
+  session.plan.config.mode = 'bpm'; session.plan.config.offsetMs = -200;
+  await session.start(); session.transport.relative = time => time;
+  session.input({seq: 1, epoch: 0, type: 'on', pitch: 60, velocity: 90, channel: 0, deviceId: 'virtual', source: 'virtual', atMs: -400, receivedMs: -380});
+  const event = WorkerStub.last.messages.find(m => m.type === 'event')?.event;
+  assert.ok(event); assert.equal(event.atMs, -400); assert.equal(event.receivedMs - event.atMs, 20);
+  session.input({seq: 2, epoch: 0, type: 'on', pitch: 62, velocity: 90, channel: 0, deviceId: 'virtual', source: 'virtual', atMs: -451, receivedMs: -431});
+  assert.equal(WorkerStub.last.messages.filter(m => m.type === 'event').length, 1);
+}));

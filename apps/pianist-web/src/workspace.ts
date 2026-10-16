@@ -5,6 +5,7 @@ import { download, fingerprint, validateFile } from './platform/files';
 import { MidiRouter } from './platform/midi';
 import * as storage from './platform/storage';
 import { PracticeSession } from './practice/session';
+import { loadEngineAssets } from './platform/engine-assets';
 
 type View = 'library' | 'editor' | 'practice' | 'results' | 'history';
 export interface WorkspaceState {
@@ -12,6 +13,8 @@ export interface WorkspaceState {
   current?: storage.ProjectRecord; snapshot?: ScoreSnapshot; config?: SessionConfig; result?: SessionResult;
   revision: number; savedRevision: number; recoveryRevision: number; saveState: string; engineReady: boolean; midiVersion: number;
   exampleTitle: string;
+  canCancelOpen?: boolean;
+  engineFailed?: boolean;
 }
 export class Workspace {
   state: WorkspaceState = {view: 'library', busy: '', error: '', toast: '', projects: [], history: [], revision: 0, savedRevision: 0, recoveryRevision: 0, saveState: '', engineReady: false, midiVersion: 0, exampleTitle: 'Piano khởi động'};
@@ -26,8 +29,16 @@ export class Workspace {
   patch(patch: Partial<WorkspaceState>): void {this.state = {...this.state, ...patch}; this.listeners.forEach(fn => fn());}
   notice(message: string): void {this.patch({toast: message}); clearTimeout(this.toastTimer); this.toastTimer = window.setTimeout(() => this.patch({toast: ''}), 5000);}
   private diagnostic(message: string): void {const status = document.getElementById('status'); if (status) status.textContent = message;}
-  fail(e: unknown): void {console.error(e); const message = storage.storageError(e); this.diagnostic('Lỗi: ' + message); this.patch({error: message});}
-  async run(action: () => unknown | Promise<unknown>): Promise<void> {try {await action();} catch (e) {this.fail(e);} finally {this.focusEditor();}}
+  fail(e: unknown): void {
+    console.error(e);
+    if (e instanceof WebAssembly.RuntimeError) {
+      clearTimeout(this.autosaveTimer); this.session?.pause('Engine ký âm bị gián đoạn.', true);
+      this.patch({engineFailed: true, busy: '', canCancelOpen: false});
+    }
+    const message = this.state.engineFailed ? 'MuseScore bị gián đoạn. Tải lại trang để mở bản đã lưu gần nhất; thư viện và bản tự lưu đã ghi vẫn được giữ.' : storage.storageError(e);
+    this.diagnostic('Lỗi: ' + message); this.patch({error: message});
+  }
+  async run(action: () => unknown | Promise<unknown>): Promise<void> {try {if (this.state.engineFailed) return; await action();} catch (e) {this.fail(e);} finally {this.focusEditor();}}
   async init(): Promise<void> {
     const catalog = await fetch('examples/catalog.json').then(r => r.ok ? r.json() : null).catch(() => null);
     if (catalog?.examples?.[0]?.title) this.patch({exampleTitle: catalog.examples[0].title});
@@ -47,7 +58,9 @@ export class Workspace {
     } catch (e) {this.fail(e);}
     this.midi.onChange = () => this.patch({midiVersion: this.state.midiVersion + 1});
     this.midi.onDisconnect = () => {this.session?.pause('Đàn MIDI đã ngắt kết nối. Kết nối/chọn lại thiết bị rồi Tiếp tục.', true); this.notice('Thiết bị MIDI đã ngắt kết nối.');};
+    this.midi.onReset = () => {this.session?.pause('Đàn gửi lệnh xóa trạng thái phím. Nhả phím rồi bấm Tiếp tục.', true);};
     this.midi.onInput = (e, bytes) => {
+      if (this.state.engineFailed) return;
       if (this.state.view === 'editor') this.bridge?.api.midiInput(bytes[0], bytes[1], bytes[2]);
       if (this.state.view === 'practice') {
         if (e.source === 'virtual') this.session?.transport.tone(e.pitch, e.type === 'on');
@@ -65,22 +78,21 @@ export class Workspace {
     this.patch({projects: projects.sort((a, b) => b.updatedAt - a.updatedAt), history: history.sort((a, b) => b.createdAt - a.createdAt)});
   }
   focusEditor = (element?: Element): void => {
-    if (this.state.view !== 'editor' || document.querySelector('dialog[open]')) return;
+    if (this.state.engineFailed || this.state.view !== 'editor' || document.querySelector('dialog[open]')) return;
     const root = document.querySelector('#screen #qt-shadow-container')?.shadowRoot;
     const win = element ?? root?.querySelector('.qt-decorated-window:not(.inactive) .qt-window');
     if (win && !win.contains(root?.activeElement ?? null)) (win.querySelector('.qt-window-focus-helper') as HTMLElement)?.focus({preventScroll: true});
   };
   async ensureEngine(): Promise<EngineBridge> {
+    if (this.state.engineFailed) throw Error('Tải lại trang để khởi động lại MuseScore.');
     if (this.bridge) return this.bridge;
     if (this.engineLoading) return this.engineLoading;
     this.patch({busy: 'Đang tải MuseScore… Lần đầu cần tải bộ ký âm và tiếng piano.'});
     this.engineLoading = (async () => {
-      if (!(window as any).MuseScoreStudio_entry) await new Promise<void>((resolve, reject) => {
-        const script = document.createElement('script'); script.src = 'MuseScoreStudio.js'; script.onload = () => resolve(); script.onerror = () => reject(Error('Không tải được engine MuseScore. Kiểm tra kết nối rồi tải lại trang.')); document.head.append(script);
-      });
+      const wasmBinary = await loadEngineAssets();
       const url = new URL('distr/muapi.js', location.href).href;
       const createMuApi = (await import(/* @vite-ignore */ url)).default;
-      const api: NativeApi = await createMuApi({screen: document.getElementById('screen'),
+      const api: NativeApi = await createMuApi({screen: document.getElementById('screen'), wasmBinary,
         onWebCommand: (command: string) => {
           if (this.state.view !== 'editor') return;
           void this.run(() => command === 'new' ? this.newProject() : command === 'open' ? this.chooseFile() : command === 'save' ? this.saveLibrary() : command === 'save-as' ? this.showSaveAs() : command === 'export' ? this.showExport() : this.showAbout());
@@ -97,7 +109,7 @@ export class Workspace {
             clearTimeout(this.autosaveTimer); this.autosaveTimer = window.setTimeout(() => void this.autosave(), 1600);
           }
         },
-        onExit: (data: {text?: string}) => this.fail(Error('Engine đã dừng: ' + (data.text ?? 'Hãy tải lại trang.'))),
+        onExit: (data: {text?: string}) => {this.patch({engineFailed: true}); this.fail(Error('Engine đã dừng: ' + (data.text ?? 'Hãy tải lại trang.')));},
         onProjectSaved: (bytes: Uint8Array) => download(bytes, `${this.state.current?.title ?? 'score'}.mscz`),
         onMxlExported: (bytes: Uint8Array) => download(bytes, `${this.state.current?.title ?? 'score'}.mxl`),
         onXmlExported: (bytes: Uint8Array) => download(bytes, `${this.state.current?.title ?? 'score'}.musicxml`, 'application/xml'),
@@ -116,7 +128,8 @@ export class Workspace {
     const old = this.state.current;
     try {
       const bridge = await this.ensureEngine();
-      this.loadingDocument = true; bridge.setPractice(false); bridge.api.loadScoreData(data, filename);
+      this.loadingDocument = true; bridge.setPractice(false);
+      if (!bridge.api.loadScoreData(data, filename)) throw Error('Không mở được bản nhạc. Bài đang mở vẫn được giữ.');
       this.nativeBase = bridge.revision; this.revisionBase = record.revision;
       this.source = {bytes: record.source ?? data, filename: record.sourceName ?? filename};
       if (old && old.id !== record.id) await storage.releaseProject(old.id);
@@ -126,7 +139,11 @@ export class Workspace {
     } catch (e) {if (old?.id !== record.id) await storage.releaseProject(record.id); throw e;}
     finally {this.loadingDocument = false;}
   }
+  private requireInactiveSession(): void {
+    if (this.session && !['ready', 'finished'].includes(this.session.status)) throw Error('Kết thúc lượt tập trước khi mở hoặc đổi bản nhạc.');
+  }
   async newProject(): Promise<void> {
+    this.requireInactiveSession();
     await this.autosave(true); this.patch({busy: 'Đang tạo bản nhạc…'});
     try {
       const response = await fetch('templates/blank-piano.mscz'); if (!response.ok) throw Error('Không tải được mẫu piano.');
@@ -137,22 +154,28 @@ export class Workspace {
     } finally {this.patch({busy: ''});}
   }
   async importFile(file: File): Promise<void> {
+    this.requireInactiveSession();
     if (!file) return; this.diagnostic('Đang mở ' + file.name + '…'); await this.autosave(true); const token = ++this.operation;
     this.fileAbort?.abort(); this.fileAbort = new AbortController();
-    this.patch({busy: 'Đang kiểm tra và mở ' + file.name + '…'});
+    this.patch({busy: 'Đang kiểm tra và mở ' + file.name + '…', canCancelOpen: true});
     try {
       if (file.size > 32 * 1024 * 1024) throw Error('File vượt giới hạn 32 MiB.');
       const data = new Uint8Array(await file.arrayBuffer()); await validateFile(data, file.name, this.fileAbort.signal);
       if (token !== this.operation) return;
+      await this.ensureEngine();
+      if (token !== this.operation) return;
+      this.patch({busy: 'Đang nhập bản nhạc vào MuseScore…', canCancelOpen: false});
       const record: storage.ProjectRecord = {id: crypto.randomUUID(), title: file.name.replace(/\.[^.]+$/, ''), filename: file.name, bytes: data, source: data, sourceName: file.name, revision: 1, createdAt: Date.now(), updatedAt: Date.now()};
       await this.switchDocument(record, data, file.name, false); this.navigate('editor');
       record.bytes = this.bridge!.serialize(); record.filename = `${record.title}.mscz`;
       await storage.saveProject(record); this.patch({current: record, savedRevision: record.revision, recoveryRevision: record.revision, saveState: 'Đã lưu trong thư viện'}); await this.refresh(); this.notice('Đã nhập bài và giữ bản nguồn trong thư viện.');
       this.diagnostic('Đã mở ' + file.name + '.');
-    } finally {if (token === this.operation) this.patch({busy: ''});}
+    } catch (error) {if (token === this.operation) throw error;}
+    finally {if (token === this.operation) this.patch({busy: '', canCancelOpen: false});}
   }
-  cancelOpen(): void {++this.operation; this.fileAbort?.abort(); this.bridge?.cancel(); this.patch({busy: ''});}
+  cancelOpen(): void {++this.operation; this.fileAbort?.abort(); this.bridge?.cancel(); this.patch({busy: '', canCancelOpen: false});}
   async openProject(id: string, practice = false): Promise<void> {
+    this.requireInactiveSession();
     if (this.state.current?.id === id && this.bridge) {if (practice) await this.practice(); else this.navigate('editor'); return;}
     await this.autosave(true); this.patch({busy: 'Đang mở bản nhạc…'});
     try {
@@ -186,6 +209,7 @@ export class Workspace {
     await this.refresh(); this.notice('Đã lưu bản nhạc trong thư viện trên thiết bị này.');
   }
   async saveAs(title: string): Promise<void> {
+    this.requireInactiveSession();
     await this.autosave(true); if (!this.state.current || !this.bridge || !title.trim()) return;
     const old = this.state.current, bridge = this.bridge, bytes = bridge.serialize();
     const record: storage.ProjectRecord = {...old, id: crypto.randomUUID(), title: title.trim().slice(0, 150), bytes,
@@ -198,7 +222,7 @@ export class Workspace {
   }
   async autosave(strict = false): Promise<void> {
     if (this.autosaving) {await this.autosaving; if (this.state.recoveryRevision < this.state.revision) return this.autosave(strict); return;}
-    if (this.loadingDocument || !this.state.current || !this.bridge || this.state.recoveryRevision >= this.state.revision) return;
+    if (this.state.engineFailed || this.loadingDocument || !this.state.current || !this.bridge || this.state.recoveryRevision >= this.state.revision) return;
     const current = this.state.current, bridge = this.bridge;
     clearTimeout(this.autosaveTimer);
     const operation = (async () => {
@@ -237,6 +261,7 @@ export class Workspace {
     finally {this.patch({busy: ''});}
   }
   navigate(view: View): void {
+    if (this.state.engineFailed) return;
     if (this.session && !['ready', 'finished'].includes(this.session.status) && view !== 'practice') {
       this.notice('Bấm Kết thúc lượt tập trước khi chuyển màn hình.'); return;
     }
@@ -255,6 +280,7 @@ export class Workspace {
     this.patch({result}); this.navigate('results');
   }
   async rename(title: string): Promise<void> {
+    this.requireInactiveSession();
     if (!this.state.current || !title.trim()) return;
     this.patch({current: {...this.state.current, title: title.trim().slice(0, 150)}, revision: this.state.revision + 1});
     this.revisionBase += 1; await this.saveLibrary();

@@ -35,6 +35,9 @@ $arguments = @('-S', $sourceDir, '-B', $buildDir, '-G', 'Ninja',
     "-DCMAKE_TOOLCHAIN_FILE=$qtRoot/wasm_singlethread/lib/cmake/Qt6/qt.toolchain.cmake",
     "-DQT_HOST_PATH=$qtRoot/mingw_64")
 if ($Target -eq 'app') {
+    # Link outside the live preview directory. Publish only completed binaries.
+    $stage = Join-Path $root '.tools/web-stage-app'
+    $arguments += "-DCMAKE_RUNTIME_OUTPUT_DIRECTORY=$($stage.Replace('\', '/'))"
     $arguments += @('-DMUSESCORE_BUILD_CONFIGURATION=app-web', '-DMUSE_APP_BUILD_MODE=dev',
         '-DMUSE_COMPILE_USE_COMPILER_CACHE=OFF', '-DMUE_DOWNLOAD_SOUNDFONT=OFF',
         '-DMUSE_COMPILE_USE_UNITY=ON', '-DMUSESCORE_REVISION=3654226c2e-pianist')
@@ -54,3 +57,9 @@ Write-Output "Building $Target with $Jobs jobs. Log: $buildLog"
 if ($LASTEXITCODE -ne 0) { Get-Content $buildLog -Tail 90; throw "Build failed: $Target" }
 Get-Content $buildLog -Tail 8
 Write-Output "Build succeeded: $Target"
+$runtimeSetting = Select-String -LiteralPath "$buildDir/CMakeCache.txt" -Pattern '^CMAKE_RUNTIME_OUTPUT_DIRECTORY:[^=]+='
+if ($Target -eq 'app' -and $runtimeSetting -and ($runtimeSetting.Line.Split('=', 2)[1] -eq $stage.Replace('\', '/'))) {
+    foreach ($name in @('MuseScoreStudio.wasm', 'MuseScoreStudio.js')) {
+        Copy-Item -LiteralPath (Join-Path $stage $name) -Destination (Join-Path $root "build.artifacts/$name") -Force
+    }
+}

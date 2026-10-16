@@ -25,6 +25,9 @@ self.addEventListener('activate', event => event.waitUntil(report({type:'offline
 self.addEventListener('fetch', event => {
   const url = new URL(event.request.url);
   if (event.request.method !== 'GET' || url.origin !== base.origin) return;
+  if (url.pathname === new URL('release.json', base).pathname) {
+    event.respondWith(new Response(JSON.stringify(RELEASE), {headers: {'Content-Type': 'application/json'}})); return;
+  }
   if (url.pathname === base.pathname) url.pathname += 'pianist.html';
   if (!paths.has(url.pathname)) return;
   url.search = '';

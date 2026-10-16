@@ -1,5 +1,8 @@
 import { Unzip, UnzipInflate } from 'fflate';
 const MAX = 32 * 1024 * 1024, EXPANDED = 64 * 1024 * 1024;
+function checkEntities(text: string): void {
+  if (/<!ENTITY\s/i.test(text) || /<!DOCTYPE[^>]*(?:SYSTEM|PUBLIC)\s+(?!["']-\/\/Recordare)/i.test(text)) throw Error('Không hỗ trợ XML có external entity.');
+}
 export async function validateFile(bytes: Uint8Array, filename: string, signal?: AbortSignal): Promise<void> {
   if (!bytes.length || bytes.length > MAX) throw Error('File phải từ 1 byte đến 32 MiB.');
   const ext = filename.split('.').at(-1)?.toLowerCase();
@@ -11,9 +14,11 @@ export async function validateFile(bytes: Uint8Array, filename: string, signal?:
     const unzip = new Unzip(file => {
       if (++entries > 2048 || file.originalSize && file.originalSize > EXPANDED
         || file.name.startsWith('/') || file.name.includes('\\') || file.name.split('/').includes('..') || /^[a-z]:/i.test(file.name)) throw Error('Cấu trúc file ZIP không an toàn hoặc quá lớn.');
-      file.ondata = (err, data) => {
+      const xml = /\.(?:xml|musicxml|mscx)$/i.test(file.name), decoder = new TextDecoder(); let tail = '';
+      file.ondata = (err, data, final) => {
         if (err) throw err; total += data.length;
         if (total > EXPANDED) throw Error('File giải nén vượt giới hạn 64 MiB.');
+        if (xml) {const text = tail + decoder.decode(data, {stream: !final}); checkEntities(text); tail = text.slice(-4096);}
       };
       file.start();
     });
@@ -26,7 +31,7 @@ export async function validateFile(bytes: Uint8Array, filename: string, signal?:
     if (!entries || !total) throw Error('File ZIP rỗng hoặc bị hỏng.');
   } else {
     const text = new TextDecoder().decode(bytes);
-    if (/<!ENTITY\s/i.test(text) || /<!DOCTYPE[^>]*(?:SYSTEM|PUBLIC)\s+(?!["']-\/\/Recordare)/i.test(text)) throw Error('Không hỗ trợ XML có external entity.');
+    checkEntities(text);
     if (!/<(?:score-partwise|score-timewise|museScore)\b/.test(text)) throw Error('Không tìm thấy nội dung bản nhạc.');
   }
 }

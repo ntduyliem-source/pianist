@@ -5,6 +5,8 @@ import { WaitCore } from '../../../packages/practice-core/wait';
 import { buildPlan, defaultConfig } from '../../../packages/practice-core/plan';
 import { summarize } from '../../../packages/practice-core/results';
 import { replay } from '../../../packages/practice-core/replay';
+import { FeedbackIndex } from '../src/practice/feedback';
+import { comparable } from '../../../packages/practice-core/comparison';
 import { ALGORITHM_VERSION, type Attack, type InputEvent, type Plan, type ScoreSnapshot } from '../../../packages/score-contracts/index';
 
 const config = {mode: 'bpm' as const, bpm: 120, beatQuarter: 1, countIn: 0, metronome: false, fromMeasure: 0, toMeasure: 0,
@@ -22,6 +24,62 @@ const e = (atMs: number, pitch: number, type: InputEvent['type'] = 'on', delay =
 function hit(core: BpmCore | WaitCore, at: number, pitch: number) {core.input(e(at, pitch)); core.input(e(at + 20, pitch, 'off'));}
 const finish = (core: BpmCore) => core.advance(core.plan.durationMs + 1000);
 
+test('partial held chords highlight immediately and release removes provisional credit', () => {
+  const p = makePlan([[0, 60], [0, 64], [1000, 67]]); p.config.mode = 'wait'; const core = new WaitCore(p);
+  core.input(e(20, 60));
+  let state = core.state(); assert.equal(state.assessments.length, 0); assert.deepEqual(state.missing, [64]);
+  assert.equal(state.live?.[0].targetId, '0'); assert.equal(state.live?.[0].provisional, true);
+  const index = new FeedbackIndex(p); assert.equal(index.markers(0, p.groups[0], state).get('0')?.kind, 'pending');
+  core.input(e(40, 60, 'off')); state = core.state();
+  assert.deepEqual(state.missing, [60, 64]); assert.equal(index.markers(0, p.groups[0], state).get('0')?.kind, 'current');
+  core.input(e(100, 60)); core.input(e(180, 64)); state = core.state();
+  assert.equal(index.markers(0, p.groups[1], state).get('0')?.kind, 'hit');
+  assert.equal(summarize(p, state, '', 'aborted', 180, '').chords[0].spreadMs, 80);
+  assert.ok(state.assessments.every(a => a.deltaMs === undefined), 'wait mode does not grade BPM');
+});
+
+test('BPM feedback is provisional immediately, can realign, and never counts as a finalized score', () => {
+  const p = makePlan([[1000, 60], [1200, 60]]), core = new BpmCore(p);
+  const late = e(1140, 60); core.input(late);
+  let state = core.state(); assert.equal(state.assessments.length, 0); assert.equal(state.live?.[0].targetId, '1');
+  assert.equal(state.live?.[0].deltaMs, -60); assert.equal(state.live?.[0].provisional, true);
+  core.input(e(1150, 60, 'off')); core.input(e(1210, 60)); state = core.state();
+  assert.equal(state.live?.find(f => f.seq === late.seq)?.targetId, '0', 'additional attack disambiguates repeated pitches');
+  assert.equal(state.live?.find(f => f.seq === late.seq)?.grade, 'outside');
+  assert.equal(summarize(p, state, '', 'aborted', 1210, '').evaluated, 0);
+  state = finish(core); assert.equal(state.assessments.length, 2); assert.equal(state.live?.some(f => f.provisional), false);
+});
+
+test('wrong held notes highlight red immediately; pause clears held feedback', () => {
+  for (const mode of ['wait', 'bpm'] as const) {
+    const p = makePlan([[0, 60], [0, 64]]); p.config.mode = mode;
+    const core = mode === 'wait' ? new WaitCore(p) : new BpmCore(p);
+    core.input(e(0, 61)); assert.equal(core.state().live?.[0].state, 'extra');
+    assert.equal(core.state().extras.length, 1); core.clearHeld();
+    assert.deepEqual(core.state().held, []); assert.equal(core.state().live?.some(f => f.held), false);
+  }
+});
+
+test('highlight cursor stays on the sounding group and resets written anchors on the next loop', () => {
+  const p = makePlan([[0, 60], [1000, 62], [2000, 60], [3000, 62]]);
+  p.targets.forEach(t => {t.endMs = t.atMs + 500;}); p.groups.forEach(g => {g.endMs = g.atMs + 500;});
+  p.targets[2].anchors = ['0']; p.targets[3].anchors = ['1']; p.targets[2].loop = p.targets[3].loop = 1;
+  p.loops = [{index: 0, startMs: 0, endMs: 1500}, {index: 1, startMs: 2000, endMs: 3500}];
+  const core = new BpmCore(p); hit(core, 0, 60); core.advance(500);
+  const index = new FeedbackIndex(p);
+  assert.equal(index.frame(250).focus, p.groups[0]); assert.equal(index.frame(600).focus, undefined);
+  assert.equal(index.markers(0, p.groups[0], core.state()).get('0')?.kind, 'hit', 'final feedback takes precedence over cursor');
+  const frame = index.frame(2000); assert.equal(frame.pass, 1);
+  assert.equal(index.markers(frame.pass, frame.focus, core.state()).get('0')?.kind, 'current');
+  assert.equal(index.markers(frame.pass, frame.focus, core.state()).has('1'), false);
+});
+
+test('same pitch on two MIDI channels still has a valid held chord after one channel releases', () => {
+  const p = makePlan([[0, 60], [0, 64]]); p.config.mode = 'wait'; const core = new WaitCore(p);
+  core.input(e(0, 60)); core.input({...e(5, 60), channel: 1}); core.input(e(10, 60, 'off'));
+  assert.deepEqual(core.state().missing, [64]); core.input(e(20, 64)); assert.equal(core.state().done, true);
+});
+
 test('T01–03: exact onsets, inclusive timing thresholds and pitch errors', () => {
   const p = makePlan([[1000, 60], [2000, 62], [3000, 64], [4000, 65]]), core = new BpmCore(p);
   hit(core, 1000, 60); hit(core, 2050, 62); hit(core, 3120, 64); hit(core, 4000, 66);
@@ -34,6 +92,13 @@ test('T04–05: chord -100/+100 is not perfect or zero-error', () => {
   const r = summarize(p, finish(core), 'Chord', 'complete', 2000, 'test');
   assert.equal(r.medianAbsMs, 100); assert.equal(r.signedMeanMs, 0); assert.equal(r.chords[0].spreadMs, 200);
   assert.equal(r.assessments.filter(a => a.grade === 'perfect').length, 0);
+});
+
+test('median timing averages both central values for an even number of notes', () => {
+  const p = makePlan([[1000, 60], [2000, 62], [3000, 64], [4000, 65]]), core = new BpmCore(p);
+  [-10, 30, -50, 70].forEach((delta, i) => hit(core, p.targets[i].atMs + delta, p.targets[i].pitch));
+  const result = summarize(p, finish(core), '', 'complete', 5000, 'clock');
+  assert.equal(result.medianAbsMs, 40); assert.equal(result.p90AbsMs, 70);
 });
 test('T11: missing middle repeated pitch does not shift subsequent notes', () => {
   const p = makePlan([[1000, 60], [1200, 60], [1400, 60], [1600, 60]]), core = new BpmCore(p);
@@ -163,6 +228,52 @@ test('starting inside a tie creates an explicit first attack, roles follow sourc
 test('practice tempo/beat unit does not mutate the source snapshot', () => {
   const s = snapshot(), before = JSON.stringify(s), c = defaultConfig(s); c.bpm = 80; c.beatQuarter = 1.5;
   const p = buildPlan(s, c); assert.equal(p.durationMs, 1500); assert.equal(JSON.stringify(s), before);
+});
+test('accompaniment contains only the other hand, removes unison and never becomes a scoring target', () => {
+  const s = snapshot(), c = defaultConfig(s); c.mode = 'bpm'; c.hand = 'right'; c.accompaniment = true; c.loops = 2;
+  const p = buildPlan(s, c);
+  assert.deepEqual(p.targets.map(t => t.pitch), [60, 60]);
+  assert.deepEqual(p.accompaniment?.map(t => t.pitch), [62, 62]);
+  assert.ok(p.accompaniment?.every(t => t.roles.every(r => r === 'left')));
+  assert.equal(p.accompaniment?.[1].atMs, 2833.333);
+  assert.equal(finish(new BpmCore(p)).assessments.length, 2);
+  c.mode = 'wait'; assert.deepEqual(buildPlan(s, c).accompaniment, []);
+});
+test('zero denominators are no data, not a zero-percent result; wait timing is not applicable', () => {
+  const p = makePlan([[1000, 60]]), empty = new BpmCore(p).state();
+  const result = summarize(p, empty, '', 'aborted', 0, 'test');
+  assert.equal(result.coverage, null); assert.equal(result.precision, null); assert.equal(result.timingRate, null);
+  p.config.mode = 'wait'; const core = new WaitCore(p); hit(core, 1000, 60);
+  assert.equal(summarize(p, core.state(), '', 'complete', 1000, 'test').timingRate, null);
+});
+test('slow wait-mode errors stay with the active bar and loop, independent of elapsed score time', () => {
+  const p = makePlan([[0, 60], [500, 62]]); p.config.mode = 'wait'; const core = new WaitCore(p);
+  hit(core, 5000, 61); hit(core, 6000, 60);
+  const r = summarize(p, core.state(), '', 'aborted', 6000, 'test');
+  assert.equal(r.perLoop[0].extras, 1); assert.equal(r.weakMeasures[0].extras, 1); assert.equal(r.weakMeasures[0].measure, 0);
+});
+test('non-finite timing configuration cannot create a grader that never finalizes', () => {
+  const s = snapshot(), c = defaultConfig(s); c.windowMs = NaN;
+  assert.throws(() => buildPlan(s, c), /không hợp lệ/);
+});
+test('loop tempo changes are scheduled beforehand and preserve each repeat occurrence', () => {
+  const s = snapshot(), c = defaultConfig(s); c.mode = 'bpm'; c.loops = 2; c.loopBpmStep = 10;
+  const p = buildPlan(s, c);
+  assert.deepEqual(p.loops.map(l => l.bpm), [120, 130]);
+  assert.equal(p.loops[1].startMs, 2000);
+  assert.ok(Math.abs(p.loops[1].endMs - 2000 - 1500 * 120 / 130) < .0001);
+  assert.ok(Math.abs(p.targets[3].atMs - 2000 - 833.333 * 120 / 130) < .0001);
+  c.bpm = 295; assert.throws(() => buildPlan(s, c), /20–300/);
+});
+test('progress comparison rejects changed score, input source, tempo, offset or incomplete sessions', () => {
+  const p = makePlan([[0, 60]]), core = new BpmCore(p); hit(core, 0, 60);
+  const a = summarize(p, finish(core), '', 'complete', 1000, 'clock'), b = structuredClone(a); b.id = 'different';
+  assert.equal(comparable(a, b), true);
+  for (const change of [(r: typeof b) => {r.config.bpm += 1;}, (r: typeof b) => {r.config.offsetMs += 1;},
+    (r: typeof b) => {r.config.inputSource = 'midi';}, (r: typeof b) => {r.fingerprint = 'edited-score';},
+    (r: typeof b) => {r.outcome = 'aborted';}, (r: typeof b) => {r.config.accompaniment = true;}]) {
+    const other = structuredClone(b); change(other); assert.equal(comparable(a, other), false);
+  }
 });
 test('high-density blocks remain bounded and cannot reuse events across boundaries', () => {
   const p = makePlan(Array.from({length: 100}, (_, i) => [500 + i * 30, 60])); const core = new BpmCore(p);

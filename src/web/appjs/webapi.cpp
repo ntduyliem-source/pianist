@@ -125,6 +125,14 @@ bool WebApi::load(const void* source, unsigned int len, const std::string& filen
     }
     // Publish only after successful parsing; a bad file keeps the current score.
     project->setPath(std::string("/mu/documents/") + io::filename(io::path_t(filename)).toStdString());
+    // Desktop closes the old document before publishing a new one. Web reuses
+    // one window, so give notation/playback observers the same empty-context
+    // transition while keeping the old score alive through their callbacks.
+    const auto previousProject = globalContext()->currentProject();
+    if (previousProject) {
+        interactive()->closeAllDialogsSync();
+        globalContext()->setCurrentProject(nullptr);
+    }
     globalContext()->setCurrentProject(project);
     interactive()->open("musescore://notation");
     return true;

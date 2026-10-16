@@ -4650,9 +4650,19 @@ static String countSegno(const String& plainWords)
 void MusicXmlParserDirection::handleRepeats(Measure* measure, const Fraction tick, bool& measureHasCoda,
                                             SegnoStack& segnos, DelayedDirectionsList& delayedDirections)
 {
+#ifdef Q_OS_WASM
+    // Explicit MusicXML playback navigation is score data, not optional text
+    // inference. Web practice must retain it even with the default inference off.
+    const bool explicitNavigation = !m_sndCoda.empty() || !m_sndDacapo.empty() || !m_sndDalsegno.empty()
+                                    || !m_sndFine.empty() || !m_sndSegno.empty() || !m_sndToCoda.empty();
+    if (!configuration()->inferTextType() && !explicitNavigation) {
+        return;
+    }
+#else
     if (!configuration()->inferTextType()) {
         return;
     }
+#endif
     // Try to recognize the various repeats
     String repeat;
     const String plainWords = MScoreTextToMusicXml::toPlainText(m_wordsText.toLower().simplified());
@@ -4660,8 +4670,16 @@ void MusicXmlParserDirection::handleRepeats(Measure* measure, const Fraction tic
         repeat = u"coda";
     } else if (!m_sndDacapo.empty()) {
         repeat = u"daCapo";
+#ifdef Q_OS_WASM
+        const String described = matchRepeat(plainWords);
+        if (described.startsWith(u"daCapo")) { repeat = described; }
+#endif
     } else if (!m_sndDalsegno.empty()) {
         repeat = u"dalSegno";
+#ifdef Q_OS_WASM
+        const String described = matchRepeat(plainWords);
+        if (described.startsWith(u"dalSegno")) { repeat = described; }
+#endif
     } else if (!m_sndFine.empty()) {
         repeat = u"fine";
     } else if (!m_sndSegno.empty()) {

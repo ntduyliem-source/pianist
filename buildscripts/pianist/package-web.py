@@ -2,6 +2,7 @@
 from pathlib import Path
 import hashlib
 import json
+import subprocess
 
 ROOT = Path(__file__).resolve().parents[2]
 OUT = ROOT / 'build.artifacts'
@@ -22,7 +23,12 @@ for name in sorted(set(paths)):
             digest.update(chunk)
     files.append({'path': name, 'bytes': path.stat().st_size, 'sha256': digest.hexdigest()})
 version = hashlib.sha256(json.dumps(files, sort_keys=True).encode()).hexdigest()[:20]
-release = {'schemaVersion': 1, 'version': version, 'engineBase': '3654226c2e99289916916953a98e585a3d3b315a', 'files': files}
+source_commit = subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip()
+source_dirty = bool(subprocess.check_output(['git', 'status', '--porcelain'], cwd=ROOT, text=True).strip())
+cache = (ROOT / 'build.m0/CMakeCache.txt').read_text(encoding='utf-8')
+fast_link = any(line.startswith('PIANIST_WASM_FAST_LINK:') and line.endswith('=ON') for line in cache.splitlines())
+release = {'schemaVersion': 1, 'version': version, 'engineBase': '3654226c2e99289916916953a98e585a3d3b315a',
+           'sourceCommit': source_commit, 'sourceDirty': source_dirty, 'optimizedLink': not fast_link, 'files': files}
 (OUT / 'release.json').write_text(json.dumps(release, indent=2), encoding='utf-8')
 template = (ROOT / 'src/web/appjs/viewer/sw-template.js').read_text(encoding='utf-8')
 (OUT / 'sw.js').write_text(template.replace('__PIANIST_RELEASE__', json.dumps(release)), encoding='utf-8')

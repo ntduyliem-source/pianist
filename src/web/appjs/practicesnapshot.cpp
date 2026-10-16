@@ -81,6 +81,9 @@ bool WebApi::getSnapshot()
                                     {"endTick", measure->endTick().ticks()}, {"page", page}, {"box", box(r)},
                                     {"numerator", measure->timesig().numerator()}, {"denominator", measure->timesig().denominator()}});
         for (auto* segment = measure->first(); segment; segment = segment->next()) {
+            for (const auto* annotation : segment->annotations()) {
+                if (annotation && annotation->isFermata()) { warnings.insert("fermata"); }
+            }
             if (!segment->isChordRestType()) { continue; }
             for (const auto* element : segment->elist()) {
                 if (!element || !element->isChord()) { continue; }

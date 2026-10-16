@@ -151,7 +151,7 @@ Các ô đã đánh dấu dưới đây thể hiện phần triển khai và ki�
 - [x] Thêm autosave theo revision đã commit, phục hồi sau reload, xử lý quota và khóa ghi khi mở cùng project ở nhiều tab.
 - [x] Kiểm tra snapshot và chuyển màn hình với score có thay đổi chưa tải về; không buộc người dùng xuất rồi nhập lại để tập.
 
-Bridge đã có version/revision và hủy response snapshot cũ; hủy importer C++ đang chạy đồng bộ chưa được port thành tác vụ có thể ngắt.
+Bridge đã có version/revision, hủy response snapshot cũ và nút hủy trong lúc kiểm tra file/tải engine. Hủy importer C++ đang chạy đồng bộ chưa được port thành tác vụ có thể ngắt.
 
 Nghiệm thu: mở MXL → sửa → lưu thư viện → reload → mở lại được; tải MSCZ/MXL mang nội dung đã sửa. Bộ nhớ filesystem tạm của WASM không được coi là đã lưu bền vững.
 
@@ -159,12 +159,17 @@ Nghiệm thu: mở MXL → sửa → lưu thư viện → reload → mở lại 
 
 - [ ] Đạt các nhóm editor trong ma trận dưới đây; giữ nguyên các lệnh MuseScore tái sử dụng được, port những phần phụ thuộc desktop.
 - [x] Xây `ScoreSnapshotBuilder` lấy nội dung đang mở, không phụ thuộc file trên đĩa.
-- [ ] Xử lý nhiều voice, chord, rest, tie, tuplets, pickup, chuyển tempo, repeats, volta và jumps; tách tick ký âm khỏi thời gian thực hiện.
+- [x] Xử lý nhiều voice, chord, rest, tie, tuplets, pickup, chuyển tempo, repeats, volta và jumps có navigation rõ trong corpus; tách tick ký âm khỏi thời gian thực hiện.
 - [x] Gộp unison cùng pitch/onset thành một mục tiêu vật lý có nhiều anchor; các lần đánh cùng pitch về sau vẫn là mục tiêu riêng.
 - [x] Phân vai trò trái/phải theo part/staff/voice và cho chỉnh; nhận diện cross-staff. Không dùng một điểm chia cao độ cho mọi bài.
-- [ ] Quy định cách xử lý grace note, ornament, arpeggio, fermata; trường hợp chưa hỗ trợ phải được giải thích trước khi tập.
+- [x] Quy định cách xử lý grace note, ornament, arpeggio, fermata; trường hợp chưa hỗ trợ phải được giải thích trước khi tập.
 - [x] Xuất geometry/semantic anchors dùng cho highlight, chọn ô nhịp và cuộn; vô hiệu hóa geometry cũ khi layout thay đổi.
-- [ ] Viết test score adapter và corpus import/export với kết quả âm nhạc độc lập, tách lỗi layout khỏi lỗi nội dung.
+- [x] Viết test score adapter và corpus import/export với kết quả âm nhạc độc lập, tách lỗi layout khỏi lỗi nội dung.
+
+Corpus hiện có pickup/tuplet/tempo/tie/unison, volta, D.C. al Fine, D.S. al Coda,
+cross-staff và ký hiệu đặc biệt. Volta/DC/DS đã qua vòng MXL xuất–nhập với
+fingerprint không đổi. Đây là corpus ban đầu; ma trận editor và mọi biến thể
+navigation/text-only chưa được coi là đã nghiệm thu.
 
 Nghiệm thu: snapshot của project đã sửa tạo đúng lịch mục tiêu và ánh xạ lại score. Những nhóm editor chưa đạt vẫn là backlog bắt buộc, không mất đi vì đã có hai chế độ tập.
 
@@ -248,11 +253,16 @@ IndexedDB có cơ chế quota và eviction phụ thuộc trình duyệt; thiết
 
 - [ ] Chấm giữ phím/pedal với policy cho staccato, legato, tie, rest theo bè; MIDI không đo được chính xác lúc âm piano vật lý tắt.
 - [ ] Thêm profile cho grace/arpeggio/ornament/fermata và bộ fixture được người chơi kiểm tra.
-- [ ] Phát riêng bè/tay còn lại bằng lọc role/event; hai tay piano có thể chung instrument track.
-- [ ] Tăng/giảm BPM giữa các lượt loop theo tiêu chí đã hiển thị; phân biệt bài kiểm tra nhịp cố định với mode đi theo người chơi.
+- [x] Phát riêng bè/tay còn lại bằng lọc role/event; hai tay piano có thể chung instrument track.
+- [x] Tăng/giảm BPM giữa các lượt loop theo mức đặt trước đã hiển thị; timeline được lập trước, không tự kéo theo người chơi.
 - [ ] Mở rộng browser/tablet sau đo hiệu năng và thiết bị thực tế.
 - [ ] Nếu cần tài khoản: thêm API xác thực, object storage cho file, database metadata/lịch sử, revision conflict và đồng bộ. Chấm thời gian vẫn ở trình duyệt.
-- [ ] Chỉ so sánh tiến bộ giữa những lượt có cấu hình tương thích; bổ sung nhập/xuất thư viện khi cần chuyển thiết bị.
+- [x] Chỉ so sánh tiến bộ giữa những lượt hoàn thành có cấu hình, score, nguồn input, clock và phiên bản thuật toán tương thích.
+- [ ] Bổ sung nhập/xuất toàn bộ thư viện khi cần chuyển thiết bị; hiện có tải từng MSCZ và JSON/CSV kết quả.
+
+Âm tay còn lại hiện là âm hướng dẫn tổng hợp, không phải tiếng piano MS Basic.
+Chấm duration/pedal và profile ký hiệu nâng cao vẫn chưa triển khai; tài khoản,
+tablet và đồng bộ là nhánh mở rộng có điều kiện, chưa được nghiệm thu.
 
 **6. Quy tắc chấm phải khóa trước khi viết thuật toán**
 

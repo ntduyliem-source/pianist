@@ -1,5 +1,5 @@
 export const SCHEMA_VERSION = 1;
-export const ALGORITHM_VERSION = 'pianist-onset-1.0.1';
+export const ALGORITHM_VERSION = 'pianist-onset-1.1.0';
 export type Role = 'left' | 'right' | 'off';
 export type Mode = 'wait' | 'bpm';
 export interface Box {x: number; y: number; width: number; height: number}
@@ -18,22 +18,27 @@ export interface SessionConfig {
   fromMeasure: number; toMeasure: number; hand: 'both' | 'left' | 'right'; roles: Record<number, Role>; voices: number[];
   loops: number; offsetMs: number; perfectMs: number; goodMs: number; windowMs: number; deliveryMs: number;
   inputSource: 'midi' | 'virtual'; deviceId: string; algorithmVersion: string;
+  accompaniment?: boolean;
+  loopBpmStep?: number;
 }
-export interface Attack {id: string; pitch: number; atMs: number; endMs: number; anchors: string[]; roles: Role[]; measure: number; occurrence: number; loop: number}
-export interface Plan {schemaVersion: 1; projectId: string; revision: number; fingerprint: string; targets: Attack[]; durationMs: number; config: SessionConfig; beats: {atMs: number; accent: boolean}[]; groups: {atMs: number; endMs: number; targets: Attack[]}[]; loops: {index: number; startMs: number; endMs: number}[]}
+export interface Attack {id: string; pitch: number; atMs: number; endMs: number; anchors: string[]; roles: Role[]; measure: number; occurrence: number; loop: number; spans?: {anchor: string; occurrence: number; atMs: number; endMs: number}[]}
+export interface Visit {measure: number; occurrence: number; loop: number; pass: number; startMs: number; endMs: number}
+export interface Plan {schemaVersion: 1; projectId: string; revision: number; fingerprint: string; targets: Attack[]; durationMs: number; config: SessionConfig; beats: {atMs: number; accent: boolean}[]; groups: {atMs: number; endMs: number; targets: Attack[]}[]; loops: {index: number; startMs: number; endMs: number; bpm?: number}[]; visits?: Visit[]; accompaniment?: Attack[]}
 export interface InputEvent {seq: number; epoch: number; type: 'on' | 'off' | 'pedal'; pitch: number; velocity: number; channel: number; deviceId: string; atMs: number; receivedMs: number; source: 'midi' | 'virtual'}
-export interface Assessment {targetId: string; status: 'matched' | 'missed'; eventSeq?: number; deltaMs?: number; grade?: 'perfect' | 'good' | 'outside'; atMs: number}
-export interface Extra {seq: number; pitch: number; atMs: number; reason: string}
-export interface CoreState {assessments: Assessment[]; extras: Extra[]; cursor: number; done: boolean; faults: string[]; firstTry: number; groupsDone: number; corrections: number; held: number[]; missing: number[]}
+export interface Assessment {targetId: string; status: 'matched' | 'missed'; eventSeq?: number; deltaMs?: number; performedAtMs?: number; grade?: 'perfect' | 'good' | 'outside'; atMs: number}
+export interface Extra {seq: number; pitch: number; atMs: number; reason: string; loop?: number; measure?: number}
+// Live feedback never contributes to a result until the matcher finalizes it.
+export interface LiveNote {seq: number; pitch: number; held: boolean; targetId?: string; state: 'matched' | 'extra' | 'ignored'; provisional: boolean; deltaMs?: number; grade?: Assessment['grade']}
+export interface CoreState {assessments: Assessment[]; extras: Extra[]; cursor: number; done: boolean; faults: string[]; firstTry: number; groupsDone: number; corrections: number; held: number[]; missing: number[]; live?: LiveNote[]; restMs?: number}
 export type ReplayStep = {kind: 'event'; event: InputEvent} | {kind: 'advance'; atMs: number} | {kind: 'clearHeld'; atMs: number};
 export type SessionStatus = 'ready' | 'counting' | 'running' | 'paused' | 'interrupted' | 'finished';
 export interface SessionResult {
   id: string; schemaVersion: 1; createdAt: number; projectId: string; revision: number; fingerprint: string; title: string; config: SessionConfig;
   outcome: 'complete' | 'aborted' | 'interrupted'; elapsedMs: number; planned: number; evaluated: number; matched: number; missed: number; extras: number; good: number;
-  coverage: number; precision: number; timingRate: number; medianAbsMs: number | null; p90AbsMs: number | null; signedMeanMs: number | null;
+  coverage: number | null; precision: number | null; timingRate: number | null; medianAbsMs: number | null; p90AbsMs: number | null; signedMeanMs: number | null;
   firstTry: number; groupsDone: number; corrections: number; assessments: Assessment[]; extraEvents: Extra[]; targets: Attack[];
   chords: {ids: string[]; spreadMs: number | null; complete: boolean}[];
-  weakMeasures: {measure: number; missed: number; badTiming: number; evaluated: number}[];
+  weakMeasures: {measure: number; missed: number; badTiming: number; evaluated: number; extras?: number}[];
   perLoop: {loop: number; matched: number; evaluated: number; extras: number}[]; faults: string[]; clock: string;
   replay?: {events: InputEvent[]; plan: Plan; commands: ReplayStep[]};
 }

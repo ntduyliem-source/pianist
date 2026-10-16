@@ -3,23 +3,27 @@ import { BpmCore } from '../practice-core/bpm';
 import { WaitCore } from '../practice-core/wait';
 const port = self as unknown as {postMessage(data: unknown): void; onmessage: ((event: MessageEvent) => void) | null};
 let core: BpmCore | WaitCore | undefined, epoch = 0, stopped = false;
-let sent = new Set<string>(), extraSent = new Set<number>();
+let sent = 0, extraSent = 0;
+let lastSignature = '';
 port.onmessage = ({data}: MessageEvent) => {
   try {
     if (data.type === 'init') {
       epoch = data.epoch;
       if (data.plan.schemaVersion !== 1 || data.plan.config.algorithmVersion !== ALGORITHM_VERSION) throw Error('Phiên bản bộ chấm không tương thích. Hãy tải lại trang.');
-      core = data.plan.config.mode === 'bpm' ? new BpmCore(data.plan as Plan) : new WaitCore(data.plan as Plan); sent = new Set(); extraSent = new Set(); stopped = false;
+      core = data.plan.config.mode === 'bpm' ? new BpmCore(data.plan as Plan) : new WaitCore(data.plan as Plan); sent = 0; extraSent = 0; stopped = false; lastSignature = '';
     }
     if (!core || data.epoch !== epoch) return;
     if (data.type === 'event' && !stopped) core.input(data.event as InputEvent);
     if (data.type === 'pause') {stopped = true; core.clearHeld();}
     if (data.type === 'resume') {stopped = false; core.clearHeld();}
-    if (data.type === 'tick' && !stopped || data.type === 'finish' || data.type === 'init') {
-      const state: CoreState = data.type === 'tick' ? core.advance(data.now) : core.state();
-      const delta = {...state, assessments: state.assessments.filter(a => !sent.has(a.targetId)), extras: state.extras.filter(e => !extraSent.has(e.seq))};
-      delta.assessments.forEach(a => sent.add(a.targetId)); delta.extras.forEach(e => extraSent.add(e.seq));
-      port.postMessage({type: data.type === 'finish' ? 'final' : 'progress', epoch, state: delta});
+    if (data.type === 'tick' && !stopped || ['event', 'pause', 'resume', 'finish', 'init'].includes(data.type)) {
+      const state: CoreState = data.type === 'tick' ? core.advance(data.now, sent, extraSent) : core.state(sent, extraSent);
+      const signature = JSON.stringify([core.assessments.length, core.extras.length, state.done, state.faults,
+        state.groupsDone, Math.ceil((state.restMs ?? 0) / 100), state.live]);
+      if (data.type === 'tick' && signature === lastSignature) return;
+      lastSignature = signature;
+      sent = core.assessments.length; extraSent = core.extras.length;
+      port.postMessage({type: data.type === 'finish' ? 'final' : 'progress', epoch, state});
     }
   } catch (e) {port.postMessage({type: 'error', epoch, message: e instanceof Error ? e.message : String(e)});}
 };

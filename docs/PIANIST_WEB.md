@@ -50,12 +50,18 @@ Perfect ≤50 ms, Good ≤120 ms; đây là tham số thử nghiệm, chưa đư
 bằng đo đàn thật. Hợp âm giữ delta từng nốt và độ trải onset; -100/+100 ms
 không được biến thành lỗi 0 ms.
 
+Nốt và phím nhận phản hồi ngay: xanh là đúng pitch, vàng là ngoài ngưỡng timing,
+đỏ là phím thừa/sai. Viền đứt/dấu chấm là kết quả đang ghép; dấu ✓ là đã chốt.
+Trong Đúng nốt, hợp âm thiếu hiển thị riêng từng pitch đang giữ; nhả phím trước
+khi đủ hợp âm sẽ bỏ phần ghi nhận tạm. Khi repeat/loop quay lại, highlight dùng
+đúng occurrence mới; nốt đã chấm không bị màu cursor che mất.
+
 Matcher chia các mục tiêu cùng pitch thành cụm tối đa 8 nốt hoặc 1,5 giây;
 biên cụm được cố định ở trung điểm hai onset để không tái sử dụng input.
 Trong cụm dùng đối sánh có thứ tự: ưu tiên số khớp, rồi sai lệch tuyệt đối.
 Kết quả chốt sau cửa sổ muộn + ngân sách giao event 120 ms + phần offset dương;
-biên thời gian được giữ mở đến sau hạn này. Phản hồi có thể
-chậm hơn cursor ở đoạn lặp dày. Event quá trễ/queue quá lớn làm lượt gián đoạn,
+biên thời gian được giữ mở đến sau hạn này. Phản hồi tạm hiện ngay và có thể
+đổi ứng viên khi gặp chuỗi cùng pitch; điểm chính thức đợi hết cụm. Event quá trễ/queue quá lớn làm lượt gián đoạn,
 không âm thầm sửa kết quả đã chốt.
 
 Timestamp gốc MIDI được giữ và đổi về cùng trục performance; xem
@@ -69,7 +75,15 @@ cần ít nhất 8 mẫu. Chưa có kết quả đo thiết bị thực trong l�
 Tie liên tục gộp thành một lần đánh; bắt đầu giữa tie thì đánh lại nốt đầu đoạn.
 Unison cùng onset/pitch được gộp, giữ tất cả anchor/vai khuông. Grace được bỏ
 qua, ornament chấm nốt chính và arpeggio chấm như hợp âm thường; score có các
-ký hiệu này yêu cầu xác nhận quy tắc trước khi tập. Chưa chấm giữ phím/pedal.
+ký hiệu này yêu cầu xác nhận quy tắc trước khi tập. Fermata giữ thời gian phát
+native MuseScore, không tự chờ người chơi. Chưa chấm giữ phím/pedal.
+
+Khi tập một tay theo BPM, có thể bật **Phát tay còn lại** bằng âm hướng dẫn tổng
+hợp; các nốt này không được tính vào điểm và unison với tay đang tập bị loại khỏi
+âm hướng dẫn. **Sau mỗi lượt** đặt mức đổi BPM cố định, có một phách nghỉ giữa
+hai lượt. Lịch được lập trước khi bắt đầu; giao diện hiện BPM của lượt đang chạy.
+Kết quả chỉ so sánh với lượt hoàn thành gần nhất có cùng score/cấu hình/nguồn
+input/clock; không trộn lượt bỏ dở hoặc MIDI thật với bàn phím ảo.
 
 ## Lưu, phục hồi và nhiều tab
 
@@ -102,23 +116,31 @@ Chọn **Lưu event log để replay** trước khi tập. Log chứa input, cá
 và extras với kết quả đã lưu. Log quá lớn bị bỏ; 20 lượt mới nhất giữ replay
 tùy dung lượng, các summary cũ vẫn còn. Xem [bằng chứng](M1_M6_RESULTS.md).
 
-Replay chỉ chạy cùng `algorithmVersion`. Bản hiện tại là `pianist-onset-1.0.1`;
-log 1.0.0 cần source tương ứng (commit `33b68f61`). Tập lại từ lịch sử tạo lượt
+Replay chỉ chạy cùng `algorithmVersion`. Bản hiện tại là `pianist-onset-1.1.0`;
+log 1.0.0 cần commit `33b68f61`, log 1.0.1 cần commit `c52e83ce`. Tập lại từ lịch sử tạo lượt
 mới với phiên bản bộ chấm hiện tại, không thay kết quả đã lưu.
 
 ## Đóng gói và phát hành
 
 `package-web.py` tạo manifest SHA-256 và một service worker gắn với đúng bộ
 binary/JS/CSS. **Chuẩn bị dùng offline** tải và kiểm hash toàn bộ bộ tài nguyên
-khoảng 180 MiB. Mỗi worker giữ một phiên bản; không `skipWaiting` giữa session.
+khoảng 134,5 MiB với build tối ưu đã kiểm tra. Mỗi worker giữ một phiên bản, kể
+cả release manifest; không `skipWaiting` giữa session. JS/WASM được kiểm hash
+trước khi khởi tạo, tránh chạy cặp binary đang cập nhật dở.
 Đóng các tab rồi mở lại để dùng bản mới. Cache không thay thế thư viện IndexedDB.
 
 `deploy/Caddyfile` có mẫu HTTPS, WASM MIME, COOP/COEP và policy MIDI cùng origin.
+Build native mặc định tối ưu; `-FastLink` dành cho phát triển. Link app vào
+`.tools/web-stage-app` rồi mới copy cặp JS/WASM hoàn tất, sau đó chạy lại
+`build-pianist.ps1 -SkipEngine -SkipInstall` để đóng gói manifest/shell.
+Manifest ghi source commit, trạng thái source có sửa và kiểu link.
+
 Chưa chọn domain/host và chưa publish. Phải triển khai thư mục release nguyên
 bộ, không thay từng binary đang được phục vụ. Đóng gói source/build tương ứng
 và hoàn tất [notices](THIRD_PARTY_NOTICES.md) trước phân phối công khai.
 
 Giới hạn hiện tại: snapshot tối đa 40 trang/50.000 nốt viết/24 MiB SVG;
 plan tối đa 100.000 mục tiêu/2 giờ và 10 loop. Đã thử bài 50 ô nhịp Phố Xa,
-chưa đo giới hạn này trên đủ cấu hình máy/đàn. M7 (duration/pedal nâng cao,
-accompaniment từng tay, tài khoản/đồng bộ) vẫn là phần mở rộng của lộ trình.
+chưa đo giới hạn này trên đủ cấu hình máy/đàn. Stress test domain 50.000 nốt
+không thay thế benchmark toàn bộ browser/âm thanh. M7 còn duration/pedal,
+profile ornament nâng cao và các phần mở rộng tài khoản/tablet/đồng bộ.

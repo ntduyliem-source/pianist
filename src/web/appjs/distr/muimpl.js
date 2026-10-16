@@ -103,6 +103,7 @@ const MuImpl = {
 
         this.Module = {
             config: config, // static configuration
+            wasmBinary: opt.wasmBinary,
 
             qt: {
                 onLoaded: opt.onLoaded,
@@ -126,6 +127,7 @@ const MuImpl = {
         console.info("STEP 0.2: End setupInternalCallbacks")
 
         this.Module = await qtLoad(this.Module);
+        this.Module.wasmBinary = undefined;
         console.info("STEP 0.3: End load main module")
 
         return this.Module;

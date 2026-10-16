@@ -9,7 +9,7 @@ export async function prepareOffline(progress: (message: string) => void): Promi
     if (d.type === 'offline-ready') progress('Đã lưu bộ tài nguyên offline. Đóng rồi mở lại Pianist để sử dụng.');
   };
   navigator.serviceWorker.addEventListener('message', listener);
-  progress('Đang chuẩn bị offline · khoảng 180 MiB…');
+  progress('Đang chuẩn bị bộ tài nguyên offline…');
   const registration = await navigator.serviceWorker.register('sw.js', {scope: './', updateViaCache: 'none'});
   if (registration.active && !registration.installing && !registration.waiting) progress('Bộ offline đã sẵn sàng. Mỗi phiên giữ nguyên một phiên bản ứng dụng.');
   if (registration.waiting) progress('Bản offline mới đã sẵn sàng. Đóng tất cả tab Pianist rồi mở lại để dùng bản mới.');
