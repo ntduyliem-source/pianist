@@ -34,7 +34,7 @@ nhưng chưa chấm cách dùng pedal hoặc độ dài âm.
 
 ## Kiểm thử tự động
 
-`npm test`: hiện **73/73 đạt**, không skip (ban đầu 30, lần audit trước 36).
+`npm test`: hiện **85/85 đạt**, không skip (ban đầu 30, các đợt audit trước 36 và 73).
 Rà soát phát hiện thêm lỗi ngoài phạm vi bộ test cũ và bổ sung hồi quy.
 Xem [đối chiếu và ca hồi quy](IMPLEMENTATION_AUDIT.md).
 TypeScript strict và Vite build đạt.
@@ -84,6 +84,40 @@ build plan 112,5 ms, replay 316,1 ms, P99 bước 0,0209 ms, heap Node 94,7 MiB.
 
 Tên Txx trong các test domain là nhãn cục bộ; bộ test này không có nghĩa toàn
 bộ 29 dòng nghiệm thu của kế hoạch sản phẩm đã được kiểm đủ.
+
+## Nghiệm thu bằng MIDI mô phỏng trước khi có đàn
+
+Người dùng xác nhận chưa có đàn MIDI. Đợt này thêm **12/12 ca tích hợp đạt**
+trong [midi-simulation.test.ts](../apps/pianist-web/tests/midi-simulation.test.ts).
+Chạy lại từ `apps/pianist-web` bằng `npm run test:midi`; các ca cũng được chạy
+trong `npm test`. Log test/build local:
+`artifacts/m1-m6/midi-simulation-build.log`.
+
+Đường chạy là `MIDIPort.onmidimessage` giả lập → router production → session
+production → transport/đổi clock production → **worker module production chạy
+trong Node worker thread** → matcher → summary. Chỉ MIDIAccess/MIDIPort,
+AudioContext và timer là giả lập. Callback ngắt cổng/reset được nối như workspace;
+không khởi động native editor, UI hay xin quyền Web MIDI của trình duyệt.
+Mọi ca đều đối chiếu kết quả mong đợi độc lập rồi replay command log của session;
+toàn bộ trường kết quả (trừ UUID/ngày tạo) phải khớp chính xác.
+
+| Ca mô phỏng | Kết quả |
+| --- | --- |
+| Hợp âm chờ đủ, sai phím, sustain, Note On lặp, velocity 0 | Nốt đang giữ có feedback tạm ngay; sustain không giữ credit của phím đã nhả; nốt lặp cần attack mới. 4 match, 1 extra, precision 80%, timing không áp dụng |
+| Hợp âm −100/+100 ms, bỏ một nốt lặp, sai pitch và nốt trễ 180 ms | 5 match, 2 miss, 1 extra; median abs 100 ms, spread 200 ms; 4/7 đúng timing |
+| Nốt lặp mơ hồ | Highlight tạm đổi ứng viên khi có attack tiếp theo; chốt 2 match với grade outside/perfect, không đếm tạm thành điểm |
+| Hai channel cùng pitch, CC123 ở một channel | Router giữ phím/pedal ở channel kia, session gián đoạn và xóa credit tạm; giữ phím cũ không nhận điểm sau resume |
+| Rút/cắm cổng khi giữ phím và pedal | Nhả trạng thái, đóng băng session; từ chối resume khi thiếu cổng; chọn lại mới resume/đếm vào; không hoàn tất hợp âm bằng phím cũ |
+| Pause BPM trong 30 giây mô phỏng | Không tính khoảng pause thành miss; input lúc pause bị bỏ, resume chốt 3/3 đúng |
+| Offset −200 ms và +80 ms (2 ca) | Offset áp dụng một lần; delivery 0/119/35 ms và timestamp dạng epoch vẫn khớp 3/3, delta gần 0 ms |
+| Delivery 121 ms và timestamp đi trước 11 ms (2 ca) | Session interrupted, không tự chấm miss/credit, không cho resume với dữ liệu lỗi; kết quả partial có mẫu số rỗng |
+| Message epoch cũ | Event/final/error cũ không đổi session hiện tại; lượt đúng vẫn hoàn thành |
+| Fixture native repeat/tie/unison, timer 16/40/100 ms | Cùng 16 mục tiêu, 14 match, 2 miss, 0 extra, không fault; kết quả chấm giống nhau ở cả ba nhịp callback |
+
+Mô phỏng không ghi lượt giả vào IndexedDB của người dùng. Đợt này không đổi
+thuật toán `pianist-onset-1.1.0`. Các con số timestamp/delivery là dữ liệu thử
+có chủ ý, **không phải số đo latency/jitter đàn hoặc audio thật**. Kiểm thử này
+cũng không thay thế quyền thiết bị, USB/driver hay kiểm tra UI bằng đàn thật.
 
 ## Luồng đã kiểm qua giao diện thật
 

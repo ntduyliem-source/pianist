@@ -107,6 +107,7 @@ phím đang giữ không thành lần đánh mới. Đổi lịch tạo session/
 cd apps/pianist-web
 npm ci
 npm test
+npm run test:midi
 npm run build
 node --import tsx scripts/replay.ts C:\path\to\result.json
 ```
@@ -115,6 +116,13 @@ Chọn **Lưu event log để replay** trước khi tập. Log chứa input, cá
 đồng hồ và ranh giới clear-held khi pause/resume. CLI đối chiếu lại assessments
 và extras với kết quả đã lưu. Log quá lớn bị bỏ; 20 lượt mới nhất giữ replay
 tùy dung lượng, các summary cũ vẫn còn. Xem [bằng chứng](M1_M6_RESULTS.md).
+
+Chưa có đàn thì chạy `npm run test:midi`: 12 ca xuyên suốt từ cổng Web MIDI
+giả lập qua router, session, transport và Worker thật đến kết quả/replay.
+Các ca gồm highlight hợp âm, nốt lặp, pedal/channel, rút/cắm lại, pause,
+bù trễ và timestamp, dữ liệu giao trễ và timer chạy không đều. Clock/audio
+và thiết bị được mô phỏng có kiểm soát; lệnh này không cần USB, không phát
+âm thanh và không ghi các kết quả giả lập vào thư viện của người dùng.
 
 Replay chỉ chạy cùng `algorithmVersion`. Bản hiện tại là `pianist-onset-1.1.0`;
 log 1.0.0 cần commit `33b68f61`, log 1.0.1 cần commit `c52e83ce`. Tập lại từ lịch sử tạo lượt

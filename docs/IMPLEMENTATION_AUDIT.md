@@ -11,7 +11,7 @@ Ngày 16/10/2026, rà soát theo phản hồi của người dùng. Source trư�
 | M0 | Fork MuseScore; native editor WASM; MXL → sửa → undo/redo → lưu/mở lại; xuất MXL | Đây là proof of concept, không phải đầy đủ chức năng desktop |
 | M1 | Thư viện, lưu riêng MSCZ, giữ nguồn, autosave/recovery, lease, version/revision, giữ undo khi đổi màn hình | Importer C++ đồng bộ chưa hủy giữa lúc parse; quota/kill-tab chưa kiểm đủ tình huống |
 | M2 | Snapshot/geometry từ score đang sửa; tie/unison; thêm corpus volta, DC/Fine, DS/Coda, cross-staff, fermata; kiểm MXL round-trip và PDF render | Chưa đạt toàn bộ ma trận editor hoặc mọi biến thể navigation |
-| M3 | Router MIDI, held keys/CC64, Worker và Đúng nốt; đã thử bằng event/keyboard ảo | Quyền/rút cắm/chơi đàn MIDI thật chưa nghiệm thu |
+| M3 | Router MIDI, held keys/CC64, Worker và Đúng nốt; 12 ca tích hợp với cổng Web MIDI giả lập, gồm ngắt/kết nối lại và replay | Quyền/rút cắm/chơi đàn MIDI thật chưa nghiệm thu |
 | M4 | Timeline BPM cố định, matcher onset, bù trễ, calibration, replay | Bộ test ban đầu bỏ sót các ca bên dưới; chưa đo jitter/drift/calibration thật |
 | M5 | Practice riêng chỉ đọc; highlight tức thì từng nốt/phím, partial chord, repeat/loop reset, A–B, tay/voice, zoom/cuộn; chỉ mount overlay trang gần viewport | Bài rất dài và đủ máy/browser chưa kiểm đủ |
 | M6 | Build tối ưu, release hash trước khởi tạo, staged link, notices thực từ dependency, lịch sử/version, JSON/CSV, offline và mẫu HTTPS | Chưa deploy HTTPS, audit phân phối hoặc nghiệm thu browser/đàn đầy đủ |
@@ -89,13 +89,21 @@ Các sửa bổ sung:
   mới publish. Gói tối ưu khoảng 134,5 MiB, so với 180,1 MiB phát triển trước đó.
   Runtime notices thực được đóng gói; chưa thay thế audit phân phối đầy đủ.
 
-Hiện có **73 test đạt**, không skip, gồm domain, actual Worker với MIDI giả lập,
+Hiện có **85 test đạt**, không skip, gồm domain, actual Worker với MIDI giả lập,
 storage rollback, bridge, loader/offline và lifecycle. Build TypeScript/Vite và
 native tối ưu đã chạy. Bằng chứng UI: C4 trong hợp âm C/E/G chuyển xanh ngay,
 C♯4 báo đỏ; BPM C4 trễ 151 ms hiện vàng và kết quả khớp 1/5, 4 miss, 0 extra.
 Đàn vật lý vẫn chưa được nghiệm thu. Offline trên gói tối ưu đã được thử khi
 server tắt: native engine/snapshot/Worker và highlight B2 của Phố Xa đều chạy.
 Xem [báo cáo kiểm tra](M1_M6_RESULTS.md).
+
+Theo xác nhận của người dùng, chưa có đàn nên đợt tiếp theo nghiệm thu bằng
+MIDI mô phỏng trước. Thêm 12 ca tích hợp dùng `MidiRouter`, `PracticeSession`,
+`PracticeTransport`, worker entry point và bộ chấm production; giả lập cổng
+Web MIDI, AudioContext và timer ở biên ngoài. Mỗi ca kiểm cả kết quả mong đợi
+và replay lại toàn bộ command log. Fixture native repeat/tie/unison chạy qua
+ba chu kỳ timer 16/40/100 ms cho cùng kết quả. Đây là kiểm tra logic tích hợp,
+không phải đo độ trễ hoặc xác nhận quyền thiết bị của trình duyệt thật.
 
 ## Lỗi phát hiện trong lượt rà soát trước (`1.0.1`)
 

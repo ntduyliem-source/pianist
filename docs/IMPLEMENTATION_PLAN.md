@@ -199,7 +199,7 @@ Ma trận editor tối thiểu để nghiệm thu sản phẩm theo yêu cầu:
 - [x] Chốt chính sách nghỉ trong Đúng nốt: giữ chỉ dẫn nghỉ theo tốc độ tham chiếu rồi chuyển nhóm; không chấm timing như chế độ BPM.
 - [x] Hiển thị nốt thiếu/thừa, bàn phím, số nhóm đúng ngay lần đầu và số lần sửa; kiểm thử bằng event replay trước khi thử đàn thật.
 
-Đường MIDI đã kiểm bằng event giả lập và kiểm thử router; quyền thiết bị/rút cắm đàn vật lý vẫn cần nghiệm thu thực tế.
+Đường MIDI đã kiểm bằng event giả lập và kiểm thử router; thêm 12 ca qua cổng Web MIDI giả lập → router → session/transport → Worker thật → kết quả/replay (`npm run test:midi`). Người dùng xác nhận chưa có đàn, ưu tiên mô phỏng trước; quyền thiết bị/rút cắm đàn vật lý vẫn cần nghiệm thu thực tế.
 
 Nghiệm thu: nốt sai không tiến; đủ nốt đúng mới tiến; hoàn thành bài sau nhiều lần sửa không bị báo “độ chính xác 100%”.
 
