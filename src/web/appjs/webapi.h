@@ -52,6 +52,10 @@ public:
 
     bool load(const void* source, unsigned int len, const std::string& filename);
     bool saveProject();
+    bool serializeProject();
+    bool getSnapshot();
+    bool setPracticeActive(bool active);
+    bool midiInput(int status, int data1, int data2);
     bool exportScore(const std::string& format);
     bool dispatchAction(const std::string& action);
     void addSoundFont(const std::string& uri);
@@ -62,7 +66,10 @@ private:
     explicit WebApi(const muse::modularity::ContextPtr& ctx) : muse::Contextable(ctx) {}
 
     void onProjectSaved(const muse::io::path_t& path, mu::project::SaveMode mode);
+    void bumpRevision();
 
     project::INotationProjectPtr m_currentProject;
+    unsigned int m_revision = 0;
+    bool m_practiceActive = false;
 };
 }

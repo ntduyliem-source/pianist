@@ -1,4 +1,4 @@
-"""Local-only M0 server. Usage: python buildscripts/pianist/serve-web.py"""
+"""Local-only Pianist server. Usage: python buildscripts/pianist/serve-web.py"""
 from functools import partial
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
@@ -13,6 +13,7 @@ class Handler(SimpleHTTPRequestHandler):
         self.send_header('Cross-Origin-Resource-Policy', 'same-origin')
         self.send_header('Cache-Control', 'no-store')
         self.send_header('X-Content-Type-Options', 'nosniff')
+        self.send_header('Permissions-Policy', 'midi=(self), microphone=(), camera=()')
         super().end_headers()
 
 parser = argparse.ArgumentParser()

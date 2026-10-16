@@ -25,4 +25,5 @@ target_sources(appjs PRIVATE
     appjsmodule.h
     webapi.cpp
     webapi.h
+    practicesnapshot.cpp
 )

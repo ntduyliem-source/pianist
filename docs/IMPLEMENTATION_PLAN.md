@@ -1,6 +1,6 @@
 # Kế hoạch code Pianist Web
 
-Cập nhật: 16/10/2026. Nền tảng được người dùng xác nhận: **web chạy trong trình duyệt**. Tài liệu này thay thế kế hoạch desktop trước đó. M0 đã có fork, toolchain được khóa phiên bản và editor WebAssembly chạy thật. Luồng MXL → sửa → lưu/mở lại đã vượt qua kiểm thử trình duyệt. Xem [kết quả M0](M0_RESULTS.md) và [hướng dẫn chạy](M0_RUNBOOK.md). Chưa triển khai M1–M6 hoặc kiểm thử đàn thật.
+Cập nhật: 16/10/2026. Nền tảng được người dùng xác nhận: **web chạy trong trình duyệt**. M0 đã có fork và editor WebAssembly chạy thật. M1–M6 đã có mã nguồn cho shell, lưu/phục hồi, snapshot native, hai chế độ tập, kết quả/lịch sử và gói offline; các cổng nghiệm thu còn thiếu được ghi dưới đây. Màn tập là chức năng riêng, chỉ đọc bản nhạc, không có notation edit. Xem [hướng dẫn hiện tại](PIANIST_WEB.md), [kết quả M1–M6](M1_M6_RESULTS.md) và [bằng chứng M0 trước đó](M0_RESULTS.md). Chưa nghiệm thu đàn MIDI thật, toàn bộ ma trận editor hoặc phát hành HTTPS công khai.
 
 Mục tiêu sản phẩm: mở website → nhập MXL → chỉnh sửa bản nhạc → lưu/mở lại hoặc tải file về → tập piano theo **Đúng nốt** hoặc **Theo BPM** → xem kết quả và tập lại đoạn yếu. Editor và màn hình tập dùng cùng nội dung bản nhạc, kể cả thay đổi chưa xuất file. “Pianist” là tên làm việc.
 
@@ -48,7 +48,7 @@ M0 phải chứng minh nhập → sửa → undo/redo → lưu → mở lại ng
 | Lưu dữ liệu | IndexedDB, Blob; tải file qua trình duyệt | Project, bản tự lưu, cấu hình và kết quả. |
 | Phân phối | Static hosting/CDN qua HTTPS, headers phù hợp WASM | Tải app, engine, font và âm thanh theo phiên bản. |
 
-Đây là stack dự kiến để triển khai sau M0; phiên bản công cụ được khóa theo build đã kiểm chứng. C++/Qt là công cụ xây engine chạy trong trình duyệt, không phải yêu cầu cài phần mềm trên máy người dùng.
+Stack này đã được triển khai; phiên bản công cụ được khóa trong toolchain và lockfile. C++/Qt là công cụ xây engine chạy trong trình duyệt, không phải yêu cầu cài phần mềm trên máy người dùng.
 
 Luồng dữ liệu:
 
@@ -72,20 +72,19 @@ Practice view ưu tiên lấy bản vẽ và tọa độ từ cùng engine. Brid
 
 Qt WASM có thể được nhúng vào vùng DOM. Build dùng threads cần HTTPS và cấu hình cross-origin isolation; phải xác minh đúng cấu hình của bản engine đã build. [Qt for WebAssembly](https://doc.qt.io/qt-6/wasm.html).
 
-Cấu trúc bổ sung dự kiến trong fork MuseScore; các đường dẫn dưới đây chưa được tạo:
+Cấu trúc hiện tại trong fork MuseScore:
 
 ```text
 apps/pianist-web/
-  src/library/              thư viện, mở/lưu file
-  src/editor/               mount editor, focus và phím tắt
-  src/practice/             UI tập, bàn phím, overlay
-  src/results/              kết quả và lịch sử
+  src/main.tsx              màn thư viện/editor/tập/kết quả/lịch sử
+  src/workspace.ts          project, mount editor, focus, lưu/phục hồi
+  src/practice/             vòng đời session
   src/platform/             MIDI, audio, storage, capabilities
 packages/score-contracts/    schema/version dữ liệu qua bridge
 packages/practice-core/     plan, state machine, matcher, metrics
 packages/practice-worker/   protocol worker và xử lý event
 packages/engine-bridge/     TypeScript adapter cho WASM
-src/web/pianistbridge/      API C++ bổ sung trong fork
+src/web/appjs/              API C++/JS và practicesnapshot.cpp
 tests/fixtures/             score và chuỗi MIDI có kết quả chuẩn
 tests/browser/              luồng web tích hợp
 docs/                       kế hoạch, quyết định, ma trận tính năng
@@ -141,26 +140,30 @@ Nghiệm thu: có bản chạy trong trình duyệt và bằng chứng file sau 
 
 **M1 — Vỏ web và vòng đời project**
 
-- [ ] Tạo shell TypeScript với các màn Thư viện → Editor → Tập → Kết quả và trạng thái engine loading/error.
-- [ ] Nhúng editor WASM; quản lý focus, resize, bàn phím và vòng đời module, giữ undo khi đổi màn hình.
+Các ô đã đánh dấu dưới đây thể hiện phần triển khai và kiểm tra được ghi trong báo cáo; không thay thế các cổng nghiệm thu v1 với đàn thật/hosting. Một mục gồm cả code và phép đo chưa làm vẫn để mở.
+
+- [x] Tạo shell TypeScript với các màn Thư viện → Editor → Tập → Kết quả và trạng thái engine loading/error.
+- [x] Nhúng editor WASM; quản lý focus, resize, bàn phím và vòng đời module, giữ undo khi đổi màn hình.
 - [ ] Xây bridge có version/revision, cancel và bỏ response cũ; gom điểm sửa upstream vào module nhỏ.
-- [ ] Mở bằng chọn file/kéo thả; giữ bản nguồn. Giới hạn tài nguyên giải nén MXL, xử lý file lỗi mà không phá project đang mở.
-- [ ] Tạo repository IndexedDB cho project bytes, metadata, recovery và migration. Chỉ báo “đã lưu” sau khi transaction thành công.
-- [ ] Tách “Lưu trong thư viện”, “Tải MSCZ” và “Xuất MXL”. Có fallback download; File System Access chỉ là tăng tiện lợi khi hỗ trợ.
-- [ ] Thêm autosave theo revision đã commit, phục hồi sau reload, xử lý quota và khóa ghi khi mở cùng project ở nhiều tab.
-- [ ] Kiểm tra snapshot và chuyển màn hình với score có thay đổi chưa tải về; không buộc người dùng xuất rồi nhập lại để tập.
+- [x] Mở bằng chọn file/kéo thả; giữ bản nguồn. Giới hạn tài nguyên giải nén MXL, xử lý file lỗi mà không phá project đang mở.
+- [x] Tạo repository IndexedDB cho project bytes, metadata, recovery và migration. Chỉ báo “đã lưu” sau khi transaction thành công.
+- [x] Tách “Lưu trong thư viện”, “Tải MSCZ” và “Xuất MXL”. Có fallback download; File System Access chỉ là tăng tiện lợi khi hỗ trợ.
+- [x] Thêm autosave theo revision đã commit, phục hồi sau reload, xử lý quota và khóa ghi khi mở cùng project ở nhiều tab.
+- [x] Kiểm tra snapshot và chuyển màn hình với score có thay đổi chưa tải về; không buộc người dùng xuất rồi nhập lại để tập.
+
+Bridge đã có version/revision và hủy response snapshot cũ; hủy importer C++ đang chạy đồng bộ chưa được port thành tác vụ có thể ngắt.
 
 Nghiệm thu: mở MXL → sửa → lưu thư viện → reload → mở lại được; tải MSCZ/MXL mang nội dung đã sửa. Bộ nhớ filesystem tạm của WASM không được coi là đã lưu bền vững.
 
 **M2 — Hoàn thiện editor và tạo dữ liệu luyện**
 
 - [ ] Đạt các nhóm editor trong ma trận dưới đây; giữ nguyên các lệnh MuseScore tái sử dụng được, port những phần phụ thuộc desktop.
-- [ ] Xây `ScoreSnapshotBuilder` lấy nội dung đang mở, không phụ thuộc file trên đĩa.
+- [x] Xây `ScoreSnapshotBuilder` lấy nội dung đang mở, không phụ thuộc file trên đĩa.
 - [ ] Xử lý nhiều voice, chord, rest, tie, tuplets, pickup, chuyển tempo, repeats, volta và jumps; tách tick ký âm khỏi thời gian thực hiện.
-- [ ] Gộp unison cùng pitch/onset thành một mục tiêu vật lý có nhiều anchor; các lần đánh cùng pitch về sau vẫn là mục tiêu riêng.
-- [ ] Phân vai trò trái/phải theo part/staff/voice và cho chỉnh; nhận diện cross-staff. Không dùng một điểm chia cao độ cho mọi bài.
+- [x] Gộp unison cùng pitch/onset thành một mục tiêu vật lý có nhiều anchor; các lần đánh cùng pitch về sau vẫn là mục tiêu riêng.
+- [x] Phân vai trò trái/phải theo part/staff/voice và cho chỉnh; nhận diện cross-staff. Không dùng một điểm chia cao độ cho mọi bài.
 - [ ] Quy định cách xử lý grace note, ornament, arpeggio, fermata; trường hợp chưa hỗ trợ phải được giải thích trước khi tập.
-- [ ] Xuất geometry/semantic anchors dùng cho highlight, chọn ô nhịp và cuộn; vô hiệu hóa geometry cũ khi layout thay đổi.
+- [x] Xuất geometry/semantic anchors dùng cho highlight, chọn ô nhịp và cuộn; vô hiệu hóa geometry cũ khi layout thay đổi.
 - [ ] Viết test score adapter và corpus import/export với kết quả âm nhạc độc lập, tách lỗi layout khỏi lỗi nội dung.
 
 Nghiệm thu: snapshot của project đã sửa tạo đúng lịch mục tiêu và ánh xạ lại score. Những nhóm editor chưa đạt vẫn là backlog bắt buộc, không mất đi vì đã có hai chế độ tập.
@@ -182,54 +185,58 @@ Ma trận editor tối thiểu để nghiệm thu sản phẩm theo yêu cầu:
 
 **M3 — Web MIDI và chế độ Đúng nốt**
 
-- [ ] Kết nối bằng hành động người dùng, kiểm tra Web MIDI và quyền truy cập; không xin SysEx khi không dùng.
-- [ ] Normalize Note On velocity 0 thành Note Off; theo dõi held keys và CC64; chuyển timestamp, sequence, epoch vào Worker.
-- [ ] Route input độc quyền tới editor hoặc session. Rút thiết bị thì pause và giải phóng trạng thái hợp lý; kết nối lại cần xác nhận thiết bị và đếm vào.
-- [ ] Xây state machine `Ready → CountingIn → Running ↔ Paused → Completing → Finished`, cùng cancel/error/interrupted.
-- [ ] Với nốt đơn, đúng pitch mới tiến. Với hợp âm thường, đủ các phím yêu cầu đang giữ hợp lệ mới tiến; lưu lỗi và độ trải các lần đánh.
-- [ ] Mục tiêu đánh lại đòi Note On mới; tie liên tục không đòi đánh lại. Phím giữ từ trước session không tự nhận điểm.
-- [ ] Chốt chính sách nghỉ trong Đúng nốt: giữ chỉ dẫn nghỉ theo tốc độ tham chiếu rồi chuyển nhóm; không chấm timing như chế độ BPM.
-- [ ] Hiển thị nốt thiếu/thừa, bàn phím, số nhóm đúng ngay lần đầu và số lần sửa; kiểm thử bằng event replay trước khi thử đàn thật.
+- [x] Kết nối bằng hành động người dùng, kiểm tra Web MIDI và quyền truy cập; không xin SysEx khi không dùng.
+- [x] Normalize Note On velocity 0 thành Note Off; theo dõi held keys và CC64; chuyển timestamp, sequence, epoch vào Worker.
+- [x] Route input độc quyền tới editor hoặc session. Rút thiết bị thì pause và giải phóng trạng thái hợp lý; kết nối lại cần xác nhận thiết bị và đếm vào.
+- [x] Xây state machine `Ready → CountingIn → Running ↔ Paused → Completing → Finished`, cùng cancel/error/interrupted.
+- [x] Với nốt đơn, đúng pitch mới tiến. Với hợp âm thường, đủ các phím yêu cầu đang giữ hợp lệ mới tiến; lưu lỗi và độ trải các lần đánh.
+- [x] Mục tiêu đánh lại đòi Note On mới; tie liên tục không đòi đánh lại. Phím giữ từ trước session không tự nhận điểm.
+- [x] Chốt chính sách nghỉ trong Đúng nốt: giữ chỉ dẫn nghỉ theo tốc độ tham chiếu rồi chuyển nhóm; không chấm timing như chế độ BPM.
+- [x] Hiển thị nốt thiếu/thừa, bàn phím, số nhóm đúng ngay lần đầu và số lần sửa; kiểm thử bằng event replay trước khi thử đàn thật.
+
+Đường MIDI đã kiểm bằng event giả lập và kiểm thử router; quyền thiết bị/rút cắm đàn vật lý vẫn cần nghiệm thu thực tế.
 
 Nghiệm thu: nốt sai không tiến; đủ nốt đúng mới tiến; hoàn thành bài sau nhiều lần sửa không bị báo “độ chính xác 100%”.
 
 **M4 — Chế độ Theo BPM và bộ chấm thời gian**
 
-- [ ] Xây `PracticeTransport`: tempo/đơn vị phách, count-in, lịch audio và chuyển đồng hồ. Đổi tốc độ luyện không sửa tempo ký âm.
-- [ ] Chạy timeline liên tục dù sai hoặc thiếu nốt. Metronome đặt lịch trước trên Web Audio; rAF chỉ cập nhật cursor.
-- [ ] Viết matcher theo pitch và occurrence, dùng bộ đệm đối sánh cục bộ có thứ tự; hỗ trợ bỏ lỡ và input thừa thay vì chỉ kiểm tra nốt tại cursor.
-- [ ] Giữ kết quả tạm khi còn ứng viên nhập nhằng; chốt sau cửa sổ trễ và giới hạn giao event. Event quá muộn được ghi rõ, không âm thầm sửa điểm đã công bố.
-- [ ] Chấm delta từng nốt; phân biệt đúng pitch, đúng thời điểm và độ đồng thời hợp âm. Không lấy trung bình có dấu làm độ chính xác.
-- [ ] Hoàn tất mục tiêu cuối sau khi hết cửa sổ nhận hợp lệ; mọi input chỉ được dùng một lần.
+- [x] Xây `PracticeTransport`: tempo/đơn vị phách, count-in, lịch audio và chuyển đồng hồ. Đổi tốc độ luyện không sửa tempo ký âm.
+- [x] Chạy timeline liên tục dù sai hoặc thiếu nốt. Metronome đặt lịch trước trên Web Audio; rAF chỉ cập nhật cursor.
+- [x] Viết matcher theo pitch và occurrence, dùng bộ đệm đối sánh cục bộ có thứ tự; hỗ trợ bỏ lỡ và input thừa thay vì chỉ kiểm tra nốt tại cursor.
+- [x] Giữ kết quả tạm khi còn ứng viên nhập nhằng; chốt sau cửa sổ trễ và giới hạn giao event. Event quá muộn được ghi rõ, không âm thầm sửa điểm đã công bố.
+- [x] Chấm delta từng nốt; phân biệt đúng pitch, đúng thời điểm và độ đồng thời hợp âm. Không lấy trung bình có dấu làm độ chính xác.
+- [x] Hoàn tất mục tiêu cuối sau khi hết cửa sổ nhận hợp lệ; mọi input chỉ được dùng một lần.
 - [ ] Có giới hạn queue và phát hiện dữ liệu thất lạc/jank nghiêm trọng. Đo ảnh hưởng GUI/WASM/audio trên MIDI thật.
 - [ ] Thêm hiệu chuẩn input/audio, lưu config và phiên bản thuật toán; tách dữ liệu đàn thật khỏi input ảo và MIDI loopback.
-- [ ] Viết replay harness để cùng snapshot/config/event log cho cùng kết quả bất kể frame rate.
+- [x] Viết replay harness để cùng snapshot/config/event log cho cùng kết quả bất kể frame rate.
+
+Đã có queue limit, phát hiện jank và bài calibration 12 click; chưa đo bù trễ/jitter với đàn thật nên hai mục có phép đo vẫn mở.
 
 Nghiệm thu: bài vẫn chạy khi người chơi im lặng; thiếu một nốt không làm sai dây chuyền cả bài; lỗi hợp âm sớm/trễ và timing từng tay được ghi đúng.
 
 **M5 — Trải nghiệm luyện hoàn chỉnh**
 
-- [ ] Score làm trung tâm; có chọn tay/bè, mode, tempo, count-in, metronome, play/pause/restart và bàn phím.
-- [ ] Highlight theo semantic anchor, có chữ/ký hiệu ngoài màu; hiển thị sớm/trễ theo ms khi hữu ích.
-- [ ] Chọn đoạn A–B/ô nhịp, tự cuộn, zoom và chuyển hệ khuông ổn định.
-- [ ] Loop có occurrence riêng từng lượt; giữ cửa sổ đối sánh ở hai phía biên loop để một input không nhận điểm hai lần.
-- [ ] Khi bắt đầu giữa một chuỗi tie, công khai quy tắc đánh lại nốt đầu đoạn để thiết lập âm.
-- [ ] Pause/resume không biến phím đang giữ thành Note On mới; seek/restart/đổi lịch cấp epoch mới và hủy công việc cũ.
-- [ ] Khi tab ẩn, audio suspend hoặc thiết bị mất kết nối, chuyển trạng thái gián đoạn; resume có đếm vào và không chấm thời gian gián đoạn là miss.
-- [ ] Kết quả chỉ rõ nốt sai/thiếu/thừa, timing, hợp âm, ô nhịp yếu và nút tập lại; dừng session trước khi sửa score hoặc đổi phân bè.
-- [ ] Chỉnh UI, phím tắt và tiếng Việt; hoàn thiện luồng lỗi tải engine/thiết bị/lưu file ngay tại nơi thao tác.
+- [x] Score làm trung tâm; có chọn tay/bè, mode, tempo, count-in, metronome, play/pause/restart và bàn phím.
+- [x] Highlight theo semantic anchor, có chữ/ký hiệu ngoài màu; hiển thị sớm/trễ theo ms khi hữu ích.
+- [x] Chọn đoạn A–B/ô nhịp, tự cuộn, zoom và chuyển hệ khuông ổn định.
+- [x] Loop có occurrence riêng từng lượt; giữ cửa sổ đối sánh ở hai phía biên loop để một input không nhận điểm hai lần.
+- [x] Khi bắt đầu giữa một chuỗi tie, công khai quy tắc đánh lại nốt đầu đoạn để thiết lập âm.
+- [x] Pause/resume không biến phím đang giữ thành Note On mới; seek/restart/đổi lịch cấp epoch mới và hủy công việc cũ.
+- [x] Khi tab ẩn, audio suspend hoặc thiết bị mất kết nối, chuyển trạng thái gián đoạn; resume có đếm vào và không chấm thời gian gián đoạn là miss.
+- [x] Kết quả chỉ rõ nốt sai/thiếu/thừa, timing, hợp âm, ô nhịp yếu và nút tập lại; dừng session trước khi sửa score hoặc đổi phân bè.
+- [x] Chỉnh UI, phím tắt và tiếng Việt; hoàn thiện luồng lỗi tải engine/thiết bị/lưu file ngay tại nơi thao tác.
 
 Nghiệm thu: người dùng đi hết luồng sửa → tập → kết quả → sửa trên cùng bài, không mất undo/nội dung, không kẹt âm và không dùng anchor cũ.
 
 **M6 — Lịch sử, kiểm thử web và phát hành v1**
 
-- [ ] Lưu session/config/calibration/algorithm version/fingerprint và từng lượt loop trong IndexedDB; phân biệt complete/aborted/interrupted.
-- [ ] Lịch sử bám revision, không gắn nhầm nốt sau khi sửa bài; có xuất kết quả JSON/CSV và replay log tùy chọn, giới hạn dung lượng.
-- [ ] Xử lý quota, lỗi ghi, migration và recovery. Tải file về luôn là đường sao lưu độc lập với dữ liệu trình duyệt.
+- [x] Lưu session/config/calibration/algorithm version/fingerprint và từng lượt loop trong IndexedDB; phân biệt complete/aborted/interrupted.
+- [x] Lịch sử bám revision, không gắn nhầm nốt sau khi sửa bài; có xuất kết quả JSON/CSV và replay log tùy chọn, giới hạn dung lượng.
+- [x] Xử lý quota, lỗi ghi, migration và recovery. Tải file về luôn là đường sao lưu độc lập với dữ liệu trình duyệt.
 - [ ] Kiểm thử browser integration và MIDI/audio thật; đo lần tải lạnh/ấm, RAM và bài dài trên máy mục tiêu.
-- [ ] Đóng gói WASM/font/sound có version/hash; lazy-load tài nguyên. Không tải lại engine hay activate bản cập nhật giữa session.
+- [x] Đóng gói WASM/font/sound có version/hash; lazy-load tài nguyên. Không tải lại engine hay activate bản cập nhật giữa session.
 - [ ] Cấu hình HTTPS, WASM MIME, cache, COOP/COEP khi build yêu cầu và chính sách thiết bị phù hợp; thử ở trang top-level cùng origin.
-- [ ] PWA/offline là bước hoàn thiện sau khi tải tài nguyên thành công: cache có version, không trộn JS/engine cũ mới, không coi cache là nơi lưu project.
+- [x] PWA/offline là bước hoàn thiện sau khi tải tài nguyên thành công: cache có version, không trộn JS/engine cũ mới, không coi cache là nơi lưu project.
 - [ ] Kiểm tra giấy phép mã nguồn, Qt, font và soundfont; chuẩn bị notices và source/build tương ứng với bản phân phối.
 - [ ] Nghiệm thu toàn bộ ma trận editor và các ca bắt buộc. Mục chưa đạt được ghi thành lỗi chặn hoặc giới hạn công khai, không coi bản alpha là hoàn thành yêu cầu.
 

@@ -37,6 +37,18 @@ EMSCRIPTEN_KEEPALIVE
 bool saveProject() { return WebApi::instance()->saveProject(); }
 
 EMSCRIPTEN_KEEPALIVE
+bool serializeProject() { return WebApi::instance()->serializeProject(); }
+
+EMSCRIPTEN_KEEPALIVE
+bool getPracticeSnapshot() { return WebApi::instance()->getSnapshot(); }
+
+EMSCRIPTEN_KEEPALIVE
+bool setPracticeActive(bool active) { return WebApi::instance()->setPracticeActive(active); }
+
+EMSCRIPTEN_KEEPALIVE
+bool webMidiInput(int status, int data1, int data2) { return WebApi::instance()->midiInput(status, data1, data2); }
+
+EMSCRIPTEN_KEEPALIVE
 bool exportScore(const char* format) { return format && WebApi::instance()->exportScore(format); }
 
 EMSCRIPTEN_KEEPALIVE

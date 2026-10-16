@@ -48,7 +48,7 @@ void ApplicationActionController::init()
         }
 #endif
     });
-    for (const std::string command : { "new", "open", "save", "export", "about" }) {
+    for (const std::string command : { "new", "open", "save", "save-as", "export", "about" }) {
         dispatcher()->reg(this, "web-file-" + command, [this, command]() {
             requestFileAction(QString::fromStdString(command));
         });

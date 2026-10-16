@@ -1,5 +1,9 @@
 # Chạy bản thử Pianist Web M0
 
+> Tài liệu này lưu quy trình M0. Shell hiện đã có Thư viện/Editor/Tập/Kết quả;
+> dùng [hướng dẫn hiện tại](PIANIST_WEB.md). Sau khi build engine, cần build
+> React/TypeScript bằng `build-pianist.ps1 -SkipEngine` trước khi mở trang.
+
 M0 kiểm chứng editor MuseScore thực sự trong trình duyệt. Đây là bản kỹ thuật cục bộ, chưa có thư viện IndexedDB, chế độ tập, chấm BPM hay tài khoản. Xem [kết quả và giới hạn đã kiểm chứng](M0_RESULTS.md).
 
 ## Nền mã và công cụ

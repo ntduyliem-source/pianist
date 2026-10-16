@@ -70,6 +70,7 @@ void AppMenuModel::load()
     findItem(ActionCode("web-file-new")).setShortcuts({ "Ctrl+N" });
     findItem(ActionCode("web-file-open")).setShortcuts({ "Ctrl+O" });
     findItem(ActionCode("web-file-save")).setShortcuts({ "Ctrl+S" });
+    findItem(ActionCode("web-file-save-as")).setShortcuts({ "Ctrl+Shift+S" });
     findItem(ActionCode("web-file-export")).setShortcuts({ "Ctrl+Shift+E" });
 
     setupConnections();
@@ -122,12 +123,14 @@ muse::uicomponents::MenuItem* AppMenuModel::makeFileMenu()
         makeMenuItem("web-file-open"),
         makeSeparator(),
         makeMenuItem("web-file-save"),
+        makeMenuItem("web-file-save-as"),
         makeMenuItem("web-file-export")
     };
     fileItems[0]->setShortcuts({ "Ctrl+N" });
     fileItems[1]->setShortcuts({ "Ctrl+O" });
     fileItems[3]->setShortcuts({ "Ctrl+S" });
-    fileItems[4]->setShortcuts({ "Ctrl+Shift+E" });
+    fileItems[4]->setShortcuts({ "Ctrl+Shift+S" });
+    fileItems[5]->setShortcuts({ "Ctrl+Shift+E" });
 
     return makeMenu(TranslatableString("appshell/menu/file", "&File"), fileItems, "menu-file");
 }

@@ -47,6 +47,7 @@ const summary = file => {
     await page.locator('#sample').waitFor({state:'visible'});
     await page.waitForFunction(() => !document.querySelector('#sample').disabled || document.querySelector('#status').textContent.startsWith('Không khởi động'), null, {timeout:120000});
     assert.equal(await page.locator('#sample').isDisabled(), false, await page.locator('#status').textContent());
+    await open(fixture); // The shell now loads WASM lazily on the first document.
     const readyMs = Date.now()-start;
     assert.ok(await page.locator('#screen canvas').count(), 'MuseScore canvas must exist');
     record('real WASM editor initialized');

@@ -18,6 +18,7 @@
 build
 build-*
 !buildscripts/pianist/build-web.ps1
+!buildscripts/pianist/build-pianist.ps1
 /.tools/
 /build.m0/
 /build.audio.m0/
@@ -90,3 +91,8 @@ __pycache__/
 /mscore/revision.h
 /share/sound/MuseScore_General*
 /VERSION
+
+# Pianist browser application
+apps/pianist-web/node_modules/
+apps/pianist-web/.test-dist/
+/examples/local/

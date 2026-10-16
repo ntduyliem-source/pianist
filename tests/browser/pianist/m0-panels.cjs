@@ -40,6 +40,7 @@ const summary = file => JSON.parse(spawnSync(process.env.PIANIST_PYTHON || 'pyth
     await (await pending).saveAs(file);
     return summary(file);
   };
+  const clickEditor = (x,y) => page.mouse.click(x,y+91); // HTML navigation + document bar above Qt.
   try {
     const url = new URL(process.env.PIANIST_URL || 'http://127.0.0.1:8787/pianist.html');
     url.searchParams.set('diagnostics','1');
@@ -47,7 +48,7 @@ const summary = file => JSON.parse(spawnSync(process.env.PIANIST_PYTHON || 'pyth
     await page.waitForFunction(()=>!document.querySelector('#sample').disabled,null,{timeout:120000});
     await page.locator('#sample').click();
     await page.waitForFunction(()=>document.querySelector('#status').textContent.startsWith('Đã mở'));
-    await page.mouse.click(600,400);
+    await clickEditor(600,400);
     const firstNote = async () => {
       await page.keyboard.press('Control+Home');
       await page.keyboard.press('ArrowRight');
@@ -55,11 +56,11 @@ const summary = file => JSON.parse(spawnSync(process.env.PIANIST_PYTHON || 'pyth
     await firstNote();
     await page.waitForTimeout(400); // Qt canvas renders asynchronously.
     await page.screenshot({path:path.join(output,'01-selection.png')});
-    await page.mouse.click(222,130);
+    await clickEditor(222,130);
     await page.waitForTimeout(400);
     await page.screenshot({path:path.join(output,'02-properties.png')});
     try {
-      await page.mouse.click(20,205); // Properties: Visible.
+      await clickEditor(20,205); // Properties: Visible.
       await save('02-properties-hidden.musicxml');
       assert.ok((await fs.readFile(path.join(output,'02-properties-hidden.musicxml'),'utf8')).includes('<notehead>none</notehead>'), 'Hidden notehead must be serialized');
       await page.keyboard.press('Control+z');
@@ -67,11 +68,11 @@ const summary = file => JSON.parse(spawnSync(process.env.PIANIST_PYTHON || 'pyth
       assert.ok(!(await fs.readFile(path.join(output,'02-properties-undo.musicxml'),'utf8')).includes('<notehead>none</notehead>'), 'Undo must restore the notehead');
       results.inspector={passed:true,check:'Hide a note, export its visibility, undo and export again'};
     } catch(e) { results.inspector={passed:false,error:String(e)}; }
-    await page.mouse.click(114,130);
+    await clickEditor(114,130);
     await page.waitForTimeout(400);
     await page.screenshot({path:path.join(output,'03-layout.png')});
-    await page.mouse.click(38,130);
-    await page.mouse.click(70,421);
+    await clickEditor(38,130);
+    await clickEditor(70,421);
     await page.waitForTimeout(400);
     await page.screenshot({path:path.join(output,'04-palettes.png')});
     results.panels='Properties, layout and palette screenshots captured for visual review.';
@@ -86,7 +87,7 @@ const summary = file => JSON.parse(spawnSync(process.env.PIANIST_PYTHON || 'pyth
     } catch(e) { results.palette={passed:false,error:String(e)}; }
 
     try {
-      await page.mouse.click(600,400);
+      await clickEditor(600,400);
       await firstNote();
       await page.keyboard.press('Control+c');
       await page.waitForTimeout(300);
@@ -98,10 +99,10 @@ const summary = file => JSON.parse(spawnSync(process.env.PIANIST_PYTHON || 'pyth
       results.clipboard={passed:true,permissions:'clipboard-read/write explicitly granted in the isolated test context'};
     } catch(e) {
       results.clipboard={passed:false,error:String(e)};
-      await page.mouse.click(55,13);
+      await clickEditor(55,13);
       await page.waitForTimeout(400);
       await page.screenshot({path:path.join(output,'05-edit-menu.png')});
-      await page.mouse.click(92,177); // Edit > Paste.
+      await clickEditor(92,177); // Edit > Paste.
       await page.waitForTimeout(400);
       const notes=await save('05-menu-paste.musicxml');
       results.clipboard.menuPassed=notes.find(n=>n.staff===1&&n.measure===0&&n.onset==='1').midi===60;
@@ -110,7 +111,7 @@ const summary = file => JSON.parse(spawnSync(process.env.PIANIST_PYTHON || 'pyth
     // Reset musical content before measuring zoom and playback.
     await page.locator('#sample').click();
     await page.waitForFunction(()=>document.querySelector('#status').textContent.startsWith('Đã mở'));
-    await page.mouse.click(800,600);
+    await clickEditor(800,600);
     await page.keyboard.down('Control');
     await page.mouse.wheel(0,-2);
     await page.keyboard.up('Control');
@@ -123,9 +124,9 @@ const summary = file => JSON.parse(spawnSync(process.env.PIANIST_PYTHON || 'pyth
       await page.locator('#audio').click();
       await page.waitForFunction(()=>window.m0AudioContext?.state==='running');
       await page.waitForTimeout(1500); // Allow asynchronous engine/track setup.
-      await page.mouse.click(800,600); // Restore the notation window after menus.
+      await clickEditor(800,600); // Restore the notation window after menus.
       await page.keyboard.press('Control+Home');
-      await page.mouse.click(1440-429,51); // Playback toolbar is aligned to the right.
+      await clickEditor(1440-429,51); // Playback toolbar is aligned to the right.
       await page.waitForFunction(()=>{
         const values=new Float32Array(window.m0Meter.fftSize);
         window.m0Meter.getFloatTimeDomainData(values);
@@ -134,12 +135,12 @@ const summary = file => JSON.parse(spawnSync(process.env.PIANIST_PYTHON || 'pyth
         return Number.isFinite(peak) && peak>0.0001;
       },null,{timeout:12000});
       results.audio=await page.evaluate(()=>({passed:!window.m0ProcessorFailed,peak:window.m0Peak,state:window.m0AudioContext.state,sampleRate:window.m0AudioContext.sampleRate}));
-      await page.mouse.click(1440-429,51);
+      await clickEditor(1440-429,51);
     } catch(e) {
       results.audio={passed:false,error:String(e),...await page.evaluate(()=>({peak:window.m0Peak,processorFailed:!!window.m0ProcessorFailed,state:window.m0AudioContext?.state}))};
     }
     await page.screenshot({path:path.join(output,'07-audio.png')});
-    await page.mouse.click(1032,94); // Note-input toolbar settings.
+    await clickEditor(1032,94); // Note-input toolbar settings.
     await page.waitForTimeout(400);
     await page.screenshot({path:path.join(output,'08-settings.png')});
     await page.keyboard.press('Escape');

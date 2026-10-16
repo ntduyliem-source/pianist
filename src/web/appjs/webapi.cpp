@@ -28,6 +28,8 @@
 
 #include "global/io/file.h"
 #include "global/io/buffer.h"
+#include "midi/midievent.h"
+#include "notation/inotation.h"
 #include <algorithm>
 #include <cctype>
 #include <map>
@@ -69,6 +71,8 @@ void WebApi::init()
     auto onProjectChanged = [this]() {
         if (m_currentProject) {
             m_currentProject->saveComplited().disconnect(this);
+            m_currentProject->masterNotation()->notation()->undoStack()->stackChanged().disconnect(this);
+            m_currentProject->masterNotation()->notation()->notationChanged().disconnect(this);
         }
 
         m_currentProject = globalContext()->currentProject();
@@ -77,7 +81,11 @@ void WebApi::init()
             m_currentProject->saveComplited().onReceive(this, [this](const muse::io::path_t& path, project::SaveMode mode) {
                 onProjectSaved(path, mode);
             });
+            const auto notation = m_currentProject->masterNotation()->notation();
+            notation->undoStack()->stackChanged().onNotify(this, [this]() { bumpRevision(); });
+            notation->notationChanged().onNotify(this, [this]() { bumpRevision(); });
         }
+        bumpRevision();
     };
 
     globalContext()->currentProjectChanged().onNotify(this, onProjectChanged);
@@ -94,6 +102,7 @@ void WebApi::deinit()
 
 bool WebApi::load(const void* source, unsigned int len, const std::string& filename)
 {
+    if (m_practiceActive) { return false; }
     // Use an allowlisted suffix, never a user-controlled virtual filesystem path.
     std::string format = io::suffix(io::path_t(filename));
     std::transform(format.begin(), format.end(), format.begin(), [](unsigned char c) { return std::tolower(c); });
@@ -134,7 +143,7 @@ bool WebApi::saveProject()
 
 bool WebApi::exportScore(const std::string& format)
 {
-    if (!m_currentProject || (format != "mxl" && format != "musicxml")) {
+    if (!m_currentProject || (format != "mxl" && format != "musicxml" && format != "pdf")) {
         return false;
     }
     const auto writer = writers()->writer(format);
@@ -147,7 +156,57 @@ bool WebApi::exportScore(const std::string& format)
     if (!ret) {
         return false;
     }
-    callJsWithBytes(format == "mxl" ? "onMxlExported" : "onXmlExported", buffer.data().constData(), buffer.data().size());
+    callJsWithBytes(format == "pdf" ? "onPdfExported" : format == "mxl" ? "onMxlExported" : "onXmlExported",
+                    buffer.data().constData(), buffer.data().size());
+    return true;
+}
+
+bool WebApi::serializeProject()
+{
+    if (!m_currentProject) { return false; }
+    // AutoSave writes a native project without marking the editor's undo stack clean.
+    const io::path_t path = "/mu/temp/pianist-recovery.mscz";
+    if (!m_currentProject->save(path, project::SaveMode::AutoSave, false)) { return false; }
+    ByteArray data;
+    if (!io::File::readFile(path, data)) { return false; }
+    callJsWithBytes("onProjectSerialized", data.constData(), data.size());
+    io::File::remove(path);
+    return true;
+}
+
+void WebApi::bumpRevision()
+{
+    ++m_revision;
+#ifdef Q_OS_WASM
+    const auto callback = emscripten::val::module_property("onRevisionChanged");
+    if (!callback.isUndefined() && !callback.isNull()) { callback(m_revision); }
+#endif
+}
+
+bool WebApi::setPracticeActive(bool active)
+{
+    if (active) {
+        // Native playback must not keep running behind the practice transport.
+        dispatcher()->dispatch("stop");
+        dispatcher()->dispatch("escape");
+    }
+    m_practiceActive = active;
+    return true;
+}
+
+bool WebApi::midiInput(int status, int data1, int data2)
+{
+    if (m_practiceActive || !m_currentProject || status < 0x80 || status > 0xef
+        || data1 < 0 || data1 > 127 || data2 < 0 || data2 > 127) { return false; }
+    const int opcode = status >> 4;
+    if (opcode != 8 && opcode != 9 && opcode != 11) { return false; }
+    auto event = muse::midi::Event(static_cast<muse::midi::Event::Opcode>(opcode), muse::midi::Event::MessageType::ChannelVoice10);
+    event.setChannel(status & 15);
+    event.setNote(data1);
+    if (opcode == 11) { event.setData(data2); } else { event.setVelocity7(data2); }
+    const auto notation = globalContext()->currentNotation();
+    if (!notation) { return false; }
+    notation->midiInput()->onMidiEventReceived(event);
     return true;
 }
 
@@ -163,7 +222,7 @@ bool WebApi::dispatchAction(const std::string& action)
         { "delete", "action://notation/delete" }
     };
     const auto command = actions.find(action);
-    if (!m_currentProject || command == actions.end()) {
+    if (m_practiceActive || !m_currentProject || command == actions.end()) {
         return false;
     }
     const auto registered = dispatcher()->actionList();
@@ -184,8 +243,9 @@ void WebApi::startAudioProcessing()
     startAudioController()->startAudioProcessing(IApplication::RunMode::GuiApp);
 }
 
-void WebApi::onProjectSaved(const muse::io::path_t& path, mu::project::SaveMode)
+void WebApi::onProjectSaved(const muse::io::path_t& path, mu::project::SaveMode mode)
 {
+    if (mode == project::SaveMode::AutoSave || mode == project::SaveMode::SaveCopy) { return; }
     IF_ASSERT_FAILED(io::File::exists(path)) {
         LOGE() << "file does not exist, path: " << path;
         return;

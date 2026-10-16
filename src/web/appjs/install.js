@@ -51,6 +51,8 @@ copyFile(HERE+"/distr/audio_worklet_processor.js", OUTPUT_DIR+"/distr/audio_work
 copyFile(HERE+"/viewer/viewer.html", OUTPUT_DIR+"/viewer.html");
 copyFile(HERE+"/viewer/pianist.html", OUTPUT_DIR+"/pianist.html");
 copyFile(HERE+"/viewer/pianist.html", OUTPUT_DIR+"/index.html");
+copyFile(HERE+"/viewer/manifest.webmanifest", OUTPUT_DIR+"/manifest.webmanifest");
+copyFile(HERE+"/viewer/icon.svg", OUTPUT_DIR+"/icon.svg");
 copyFile(HERE+"/viewer/index.html", OUTPUT_DIR+"/MuseScoreStudio.html"); 
 
 // Copy tools
@@ -67,6 +69,29 @@ if (!fs.existsSync(SF_DST)) {
 copyFile(ROOT+"/LICENSE.txt", OUTPUT_DIR+"/LICENSE.txt");
 copyFile(ROOT+"/share/sound/MS Basic_License.md", OUTPUT_DIR+"/sound/MS Basic_License.md");
 copyFile(ROOT+"/share/sound/MS Basic_Readme.md", OUTPUT_DIR+"/sound/MS Basic_Readme.md");
+copyFile(ROOT+"/docs/THIRD_PARTY_NOTICES.md", OUTPUT_DIR+"/THIRD_PARTY_NOTICES.md");
+function copyFontNotices(directory) {
+  for (const entry of fs.readdirSync(directory, {withFileTypes:true})) {
+    const path = require('path');
+    const source = path.join(directory, entry.name);
+    if (entry.isDirectory()) copyFontNotices(source);
+    else if (/license|copying|ofl/i.test(entry.name)) {
+      const target = path.join(OUTPUT_DIR, 'notices', 'fonts', path.relative(ROOT+'/fonts', source));
+      fs.mkdirSync(path.dirname(target), {recursive:true}); fs.copyFileSync(source, target);
+    }
+  }
+}
+copyFontNotices(ROOT+'/fonts');
 fs.mkdirSync(OUTPUT_DIR+"/templates", { recursive: true });
 copyFile(HERE+"/templates/blank-piano.mscz", OUTPUT_DIR+"/templates/blank-piano.mscz");
+
+// Optional user-provided local example. The public source still works with the CC0 fixture.
+fs.mkdirSync(OUTPUT_DIR+"/examples", { recursive: true });
+const localExample = ROOT+"/examples/local/pho-xa.mxl";
+const example = fs.existsSync(localExample)
+  ? { title: "Phố Xa", filename: "Phố Xa — piano.mxl", url: "examples/pho-xa.mxl" }
+  : { title: "Piano khởi động", filename: "Piano khởi động.mxl", url: "fixtures/piano.mxl" };
+if (fs.existsSync(localExample)) copyFile(localExample, OUTPUT_DIR+"/examples/pho-xa.mxl");
+fs.writeFileSync(OUTPUT_DIR+"/examples/catalog.json", JSON.stringify({examples:[example]}, null, 2));
+fs.cpSync(ROOT+"/tests/fixtures/pianist/practice", OUTPUT_DIR+"/fixtures/practice", {recursive:true});
 

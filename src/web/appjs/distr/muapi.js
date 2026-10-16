@@ -9,6 +9,10 @@ const MuApi = {
     loadScoreData: MuImpl.loadScoreData.bind(MuImpl),
 
     saveProject: () => MuImpl.Module.ccall('saveProject', 'number', [], []),
+    serializeProject: () => MuImpl.Module.ccall('serializeProject', 'number', [], []),
+    getPracticeSnapshot: () => MuImpl.Module.ccall('getPracticeSnapshot', 'number', [], []),
+    setPracticeActive: active => MuImpl.Module.ccall('setPracticeActive', 'number', ['number'], [Number(active)]),
+    midiInput: (status, data1, data2) => MuImpl.Module.ccall('webMidiInput', 'number', ['number', 'number', 'number'], [status, data1, data2]),
     exportScore: (format = 'mxl') => MuImpl.Module.ccall('exportScore', 'number', ['string'], [format]),
     dispatchAction: (action) => MuImpl.Module.ccall('dispatchAction', 'number', ['string'], [action]),
 
@@ -33,6 +37,7 @@ async function createMuApi(config) {
 
     MuApi.Module.onMxlExported = data => config.onMxlExported?.(new Uint8Array(data));
     MuApi.Module.onXmlExported = data => config.onXmlExported?.(new Uint8Array(data));
+    MuApi.Module.onPdfExported = data => config.onPdfExported?.(new Uint8Array(data));
 
     return MuApi
 }

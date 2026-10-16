@@ -162,6 +162,14 @@ void Font::setHinting(Hinting hinting)
 QFont Font::toQFont() const
 {
     QFont qf(family().id());
+#ifdef Q_OS_WASM
+    // Browser system fonts have no bundled glyph outlines for SVG export.
+    // Use the same bundled fallback as the engraving font database, while
+    // preserving the imported family name in the score and MusicXML export.
+    if (family().id().isEqualIgnoreCase(u"Courier New")) {
+        qf.setFamily(QStringLiteral("Edwin"));
+    }
+#endif
 
     if (pointSizeF() > 0) {
         qf.setPointSizeF(pointSizeF());

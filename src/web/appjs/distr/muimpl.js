@@ -114,6 +114,7 @@ const MuImpl = {
             soundFont: opt.soundFont,
             onWebCommand: opt.onWebCommand,
             onDocumentState: opt.onDocumentState,
+            onRevisionChanged: opt.onRevisionChanged,
 
             // called from cpp
             onStartApp: this._onStartApp.bind(this)

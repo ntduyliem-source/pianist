@@ -2,6 +2,9 @@
 
 Ngày kiểm chứng: 16/10/2026.
 
+> Đây là bằng chứng của M0. Các thay đổi Thư viện/Tập piano sau đó được ghi
+> riêng trong [M1–M6](M1_M6_RESULTS.md); số đo M0 không được coi là số đo build mới.
+
 **M0 đạt mục tiêu chứng minh editor MuseScore chạy, sửa và lưu được trong trình duyệt.** Có thể tiếp tục kiến trúc React/TypeScript bao quanh engine Qt/WebAssembly. Đây chưa phải bản phát hành có đầy đủ chức năng MuseScore, thư viện project hoặc hai chế độ tập piano.
 
 - Fork: [ntduyliem-source/pianist](https://github.com/ntduyliem-source/pianist), nhánh `pianist/m0-web`.

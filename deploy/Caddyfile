@@ -1,0 +1,21 @@
+# Set PIANIST_DOMAIN to your real domain and PIANIST_WEB_ROOT to build.artifacts.
+# Serve the release directory atomically; do not replace engine files in-place.
+{$PIANIST_DOMAIN} {
+    root * {$PIANIST_WEB_ROOT}
+    encode zstd gzip
+    header {
+        Cross-Origin-Opener-Policy same-origin
+        Cross-Origin-Embedder-Policy require-corp
+        Cross-Origin-Resource-Policy same-origin
+        Permissions-Policy "midi=(self), microphone=(), camera=()"
+        X-Content-Type-Options nosniff
+        Referrer-Policy same-origin
+    }
+    @wasm path *.wasm
+    header @wasm Content-Type application/wasm
+    @versioned path /app/assets/*
+    header @versioned Cache-Control "public, max-age=31536000, immutable"
+    @entry path / /pianist.html /index.html /sw.js /release.json /app/pianist.js /app/pianist.css /MuseScoreStudio.js /MuseScoreStudio.wasm /distr/*
+    header @entry Cache-Control "no-cache"
+    file_server
+}
