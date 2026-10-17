@@ -1,4 +1,5 @@
 import type { Attack, Assessment, CoreState, Extra, InputEvent, LiveNote, Plan } from '../score-contracts/index';
+import {ReleaseTracker} from './release';
 
 interface Block {targets: Attack[]; lower: number; upper: number; closed: boolean; inputs: InputEvent[]}
 // Ordered one-to-one alignment. Maximize coverage first, then minimize absolute error.
@@ -29,7 +30,9 @@ export class BpmCore {
   private held = new Map<string, InputEvent>(); private now = -Infinity; private totalEvents = 0;
   private feedback = new Map<number, LiveNote>();
   private deadlines: Block[] = []; private deadlineIndex = 0;
+  readonly releases: ReleaseTracker;
   constructor(readonly plan: Plan) {
+    this.releases = new ReleaseTracker(plan);
     const pitches = new Map<number, Attack[]>();
     for (const t of plan.targets) { const list = pitches.get(t.pitch) ?? []; list.push(t); pitches.set(t.pitch, list); }
     for (const [pitch, list] of pitches) {
@@ -54,6 +57,8 @@ export class BpmCore {
     if (++this.totalEvents > 200000) { this.faults.push('event-limit'); return; }
     this.seen.add(e.seq);
     const key = `${e.deviceId}/${e.channel}/${e.pitch}`;
+    if (this.releases.enabled && (e.receivedMs - e.atMs > this.plan.config.deliveryMs || e.atMs - e.receivedMs > 10)) {this.faults.push('delivery-delay'); return;}
+    if (e.type !== 'on' || !this.held.has(key)) this.releases.input(e);
     if (e.type === 'off') {
       const on = this.held.get(key); this.held.delete(key);
       if (on) {const value = this.feedback.get(on.seq); if (value?.provisional) value.held = false; else this.feedback.delete(on.seq);}
@@ -84,7 +89,7 @@ export class BpmCore {
     block.inputs.push(e);
     this.preview(block);
   }
-  advance(now: number, assessmentsFrom = 0, extrasFrom = 0): CoreState {
+  advance(now: number, assessmentsFrom = 0, extrasFrom = 0, releasesFrom = 0): CoreState {
     this.now = Math.max(this.now, now);
     if (!this.faults.length) {
       while (this.deadlineIndex < this.deadlines.length) {
@@ -92,8 +97,9 @@ export class BpmCore {
         if (b.targets.at(-1)!.atMs + this.finalizationLag >= this.now) break;
         ++this.deadlineIndex; this.close(b);
       }
+      this.releases.advance(this.now);
     }
-    return this.state(assessmentsFrom, extrasFrom);
+    return this.state(assessmentsFrom, extrasFrom, releasesFrom);
   }
   private close(b: Block): void {
     b.closed = true;
@@ -107,6 +113,7 @@ export class BpmCore {
         const e = b.inputs[j], deltaMs = e.atMs - this.plan.config.offsetMs - t.atMs;
         const grade = this.grade(deltaMs);
         this.assessments.push({targetId: t.id, status: 'matched', eventSeq: e.seq, deltaMs, atMs: t.atMs, performedAtMs: e.atMs, grade});
+        this.releases.match(t, e);
         const held = this.feedback.get(e.seq)?.held ?? false;
         if (held) this.feedback.set(e.seq, {seq: e.seq, pitch: e.pitch, targetId: t.id, state: 'matched', provisional: false, held, deltaMs, grade});
         else this.feedback.delete(e.seq);
@@ -125,6 +132,7 @@ export class BpmCore {
     });
   }
   private extra(e: InputEvent, reason: string): void {
+    this.releases.discard(e.seq);
     const at = e.atMs - this.plan.config.offsetMs, visits = this.plan.visits ?? [];
     let low = 0, high = visits.length;
     while (low < high) {const middle = (low + high) >>> 1; if (visits[middle].startMs <= at) low = middle + 1; else high = middle;}
@@ -137,14 +145,16 @@ export class BpmCore {
   // on the uncorrected transport clock. Keep the inclusive boundary open.
   private get finalizationLag(): number {return this.plan.config.windowMs + this.plan.config.deliveryMs + Math.max(0, this.plan.config.offsetMs);}
   clearHeld(): void {
+    this.releases.clearHeld();
     this.held.clear();
     for (const [seq, f] of this.feedback) {if (f.provisional) f.held = false; else this.feedback.delete(seq);}
   }
-  state(assessmentsFrom = 0, extrasFrom = 0): CoreState {
+  state(assessmentsFrom = 0, extrasFrom = 0, releasesFrom = 0): CoreState {
     return {assessments: this.assessments.slice(assessmentsFrom).sort((a, b) => a.atMs - b.atMs || a.targetId.localeCompare(b.targetId)),
       extras: this.extras.slice(extrasFrom).sort((a, b) => a.seq - b.seq), cursor: Math.max(0, this.now),
-      done: !this.faults.length && this.now > this.plan.durationMs + this.finalizationLag && this.assessments.length === this.plan.targets.length,
+      done: !this.faults.length && this.now > this.plan.durationMs + this.finalizationLag && this.assessments.length === this.plan.targets.length && this.releases.done,
       faults: [...new Set(this.faults)], firstTry: 0, groupsDone: 0, corrections: 0, held: [...this.held.values()].map(e => e.pitch), missing: [],
-      live: [...this.feedback.values()].sort((a, b) => a.seq - b.seq).map(f => ({...f}))};
+      live: [...this.feedback.values()].sort((a, b) => a.seq - b.seq).map(f => ({...f})),
+      ...(this.releases.enabled ? {releases: this.releases.assessments.slice(releasesFrom)} : {})};
   }
 }

@@ -1,9 +1,9 @@
 export const SCHEMA_VERSION = 1;
-export const ALGORITHM_VERSION = 'pianist-onset-1.1.0';
+export const ALGORITHM_VERSION = 'pianist-onset-1.2.0';
 export type Role = 'left' | 'right' | 'off';
 export type Mode = 'wait' | 'bpm';
 export interface Box {x: number; y: number; width: number; height: number}
-export interface Anchor {id: string; pitch: number; tick: number; durationTicks: number; measure: number; staff: number; visualStaff: number; track: number; voice: number; page: number; visible: boolean; play: boolean; box: Box; tieBack?: string}
+export interface Anchor {id: string; pitch: number; tick: number; durationTicks: number; measure: number; staff: number; visualStaff: number; track: number; voice: number; page: number; visible: boolean; play: boolean; box: Box; tieBack?: string; releaseRatio?: number; releaseUnsupported?: boolean; arpeggio?: 'up' | 'down'; arpeggioGroup?: string}
 export interface ScorePage {index: number; width: number; height: number; displayWidth: number; offsetX: number; offsetY: number; svg: string}
 export interface Measure {index: number; label: number; tick: number; endTick: number; page: number; box: Box; numerator: number; denominator: number}
 export interface Occurrence {index: number; measure: number; startMs: number; endMs: number; utick: number}
@@ -20,16 +20,19 @@ export interface SessionConfig {
   inputSource: 'midi' | 'virtual'; deviceId: string; algorithmVersion: string;
   accompaniment?: boolean;
   loopBpmStep?: number;
+  releaseMode?: 'off' | 'key' | 'sustain';
+  arpeggioMs?: number;
 }
-export interface Attack {id: string; pitch: number; atMs: number; endMs: number; anchors: string[]; roles: Role[]; measure: number; occurrence: number; loop: number; spans?: {anchor: string; occurrence: number; atMs: number; endMs: number}[]}
+export interface Attack {id: string; pitch: number; atMs: number; endMs: number; anchors: string[]; roles: Role[]; measure: number; occurrence: number; loop: number; spans?: {anchor: string; occurrence: number; atMs: number; endMs: number}[]; releaseRatio?: number; releaseUnsupported?: boolean}
 export interface Visit {measure: number; occurrence: number; loop: number; pass: number; startMs: number; endMs: number}
 export interface Plan {schemaVersion: 1; projectId: string; revision: number; fingerprint: string; targets: Attack[]; durationMs: number; config: SessionConfig; beats: {atMs: number; accent: boolean}[]; groups: {atMs: number; endMs: number; targets: Attack[]}[]; loops: {index: number; startMs: number; endMs: number; bpm?: number}[]; visits?: Visit[]; accompaniment?: Attack[]}
-export interface InputEvent {seq: number; epoch: number; type: 'on' | 'off' | 'pedal'; pitch: number; velocity: number; channel: number; deviceId: string; atMs: number; receivedMs: number; source: 'midi' | 'virtual'}
+export interface InputEvent {seq: number; epoch: number; type: 'on' | 'off' | 'pedal'; pitch: number; velocity: number; channel: number; deviceId: string; atMs: number; receivedMs: number; source: 'midi' | 'virtual'; synthetic?: boolean}
 export interface Assessment {targetId: string; status: 'matched' | 'missed'; eventSeq?: number; deltaMs?: number; performedAtMs?: number; grade?: 'perfect' | 'good' | 'outside'; atMs: number}
 export interface Extra {seq: number; pitch: number; atMs: number; reason: string; loop?: number; measure?: number}
 // Live feedback never contributes to a result until the matcher finalizes it.
 export interface LiveNote {seq: number; pitch: number; held: boolean; targetId?: string; state: 'matched' | 'extra' | 'ignored'; provisional: boolean; deltaMs?: number; grade?: Assessment['grade']}
-export interface CoreState {assessments: Assessment[]; extras: Extra[]; cursor: number; done: boolean; faults: string[]; firstTry: number; groupsDone: number; corrections: number; held: number[]; missing: number[]; live?: LiveNote[]; restMs?: number}
+export interface ReleaseAssessment {targetId: string; eventSeq: number; expectedMs: number; heldMs?: number; deltaMs?: number; status: 'good' | 'short' | 'long' | 'unreleased' | 'interrupted' | 'unscored'}
+export interface CoreState {assessments: Assessment[]; extras: Extra[]; cursor: number; done: boolean; faults: string[]; firstTry: number; groupsDone: number; corrections: number; held: number[]; missing: number[]; live?: LiveNote[]; restMs?: number; releases?: ReleaseAssessment[]}
 export type ReplayStep = {kind: 'event'; event: InputEvent} | {kind: 'advance'; atMs: number} | {kind: 'clearHeld'; atMs: number};
 export type SessionStatus = 'ready' | 'counting' | 'running' | 'paused' | 'interrupted' | 'finished';
 export interface SessionResult {
@@ -41,4 +44,6 @@ export interface SessionResult {
   weakMeasures: {measure: number; missed: number; badTiming: number; evaluated: number; extras?: number}[];
   perLoop: {loop: number; matched: number; evaluated: number; extras: number}[]; faults: string[]; clock: string;
   replay?: {events: InputEvent[]; plan: Plan; commands: ReplayStep[]};
+  releases?: ReleaseAssessment[];
+  releaseRate?: number | null;
 }

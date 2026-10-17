@@ -1,6 +1,6 @@
 # Pianist Web — kết quả triển khai M1–M6
 
-Ngày kiểm tra: 16/10/2026. Đây là bản chạy local, chưa nghiệm thu phát hành v1.
+Ngày kiểm tra: 16–17/10/2026. Đây là bản chạy local, chưa nghiệm thu phát hành v1.
 M0 trước đó ở commit `73b82fe`; báo cáo này bao gồm đợt hoàn thiện sau `c52e83ce`.
 
 ## Trạng thái
@@ -12,11 +12,11 @@ M0 trước đó ở commit `73b82fe`; báo cáo này bao gồm đợt hoàn thi
 | M3 | MIDI router; nguồn ảo riêng; Worker; state machine; Đúng nốt có lỗi lần đầu, hợp âm, nốt lặp và rest | Quyền MIDI/rút cắm đàn thực chưa kiểm tra |
 | M4 | Audio clock, count-in/metronome, BPM timeline độc lập, matcher có giới hạn, timing từng nốt, calibration và replay | Chưa đo calibration/jitter/drift trên thiết bị thực |
 | M5 | Màn tập chỉ đọc; highlight ngay nốt/phím, partial chord, đúng occurrence; A–B/loop/zoom/cuộn; chỉ mount overlay gần viewport; kết quả/tập lại | Chưa benchmark score tối đa trên đủ máy/trình duyệt |
-| M6 | Build tối ưu, hash JS/WASM trước chạy, staged link; lịch sử, JSON/CSV, release manifest/offline, notices runtime thực | Chưa publish HTTPS; ma trận Chrome/Edge mới, giấy phép/source phân phối đầy đủ và nghiệm thu v1 còn mở |
-| M7 | Phát tay còn lại bằng âm hướng dẫn; BPM đổi theo mức đặt trước sau mỗi loop; so sánh lượt tương thích | Duration/pedal và profile ký hiệu nâng cao chưa triển khai; tài khoản/tablet/đồng bộ là phần mở rộng có điều kiện |
+| M6 | Build tối ưu, hash JS/WASM, staged link; lịch sử, JSON/CSV, offline; notices/hash/source đúng commit; Caddy/Compose và verifier | Chưa publish HTTPS; ma trận Chrome/Edge mới, audit dependency/source đầy đủ và nghiệm thu v1 còn mở |
+| M7 | Âm hướng dẫn, BPM theo loop, so sánh; độ dài giữ phím/CC64, profile arpeggio; sao lưu toàn thư viện | Diễn cảm/legato theo câu, grace/trill/arpeggio xuyên khuông; tài khoản/tablet/đồng bộ là phần mở rộng có điều kiện |
 
-Pedal hiện được nhận/hiển thị theo channel và giải phóng đúng khi pause/reset,
-nhưng chưa chấm cách dùng pedal hoặc độ dài âm.
+Pedal được nhận theo channel và có tùy chọn chấm độ dài âm sustain trong BPM.
+Chưa chấm pedal theo ký hiệu riêng, half-pedal hoặc sự tắt âm của piano vật lý.
 
 ## Bài mẫu Phố Xa
 
@@ -34,13 +34,14 @@ nhưng chưa chấm cách dùng pedal hoặc độ dài âm.
 
 ## Kiểm thử tự động
 
-`npm test`: hiện **85/85 đạt**, không skip (ban đầu 30, các đợt audit trước 36 và 73).
+`npm test`: hiện **99/99 đạt**, không skip (các đợt trước 30, 36, 73 và 85).
 Rà soát phát hiện thêm lỗi ngoài phạm vi bộ test cũ và bổ sung hồi quy.
 Xem [đối chiếu và ca hồi quy](IMPLEMENTATION_AUDIT.md).
 TypeScript strict và Vite build đạt.
 Native notation WASM build đạt sau bridge/SVG/PDF/font changes; audio dùng binary
 M0 đã build. Main engine đã link tối ưu, WASM khoảng 80 MiB, JS khoảng 264 KB;
-gói 54 tài nguyên khoảng 134,5 MiB, giảm từ 180,1 MiB của gói phát triển.
+gói hiện khoảng 135 MiB; số file tăng do thu thập thêm notice nguồn. Bản 1.1.0
+có 54 tài nguyên/134,5 MiB, giảm từ 180,1 MiB của gói phát triển.
 Build vào staging rồi publish khi link xong; loader kiểm SHA/length JS/WASM
 trước chạy. Không được coi giảm dung lượng là đã đo latency đàn thật.
 
@@ -185,15 +186,59 @@ Sau đó bật lại server; không dùng kết quả này để tuyên bố c�
 Đã dùng nút **Dùng online** để bỏ cache thử nghiệm trước khi nạp build cuối,
 giúp preview tiếp tục phản ánh thay đổi source. Thư viện IndexedDB được giữ.
 
+## Bổ sung 17/10/2026: duration, backup và release bundle
+
+Các phần code mới dùng `pianist-onset-1.2.0`. Thêm 14 test so với 85 trước đó:
+backup/atomic restore, document race, duration/sustain/retrigger, synthetic
+disconnect, late release deadline, native articulation/arpeggio fixture,
+comparison policy và CSV. TypeScript/Vite và native build được chạy lại.
+
+| Luồng UI / kiểm độc lập | Kết quả |
+| --- | --- |
+| Native duration fixture | 7 anchor, staccato 0.5, staccatissimo 0.25, normal 1; hướng arpeggio down và ornament excluded đúng |
+| BPM giữ phím, ô đầu, 60 BPM | C4 trễ 103 ms vẫn good onset, giữ khoảng 5 ms so với 500 ms kỳ vọng: short −495 ms; tổng 1/3 match, 2 miss, 0 extra, releaseRate 0/1 |
+| Tải thư viện thực | Decode/hash/validate được 21 project, 5 recovery, 14 session |
+| Restore fixture CC0 | Preview 1 bài/1 recovery/1 history; tạo ID mới; export lại xác nhận toàn bộ 21 project cũ không đổi; history duration được giữ |
+| Recovery cùng timestamp | Revision 2 thắng revision 1; XML sau mở lại đúng nội dung đã chuyển D trưởng |
+| Transpose / undo | Tools → Transpose C → D: 7 pitch tăng 2 semitone, fifths 2; Undo trả toàn bộ pitch gốc; Redo lưu MSCZ được |
+| Tuplet | Ctrl+3 từ quarter: XML có 3 time-modification tỷ lệ 3:2; undo dùng được |
+| Lyrics | Ctrl+L nhập La: XML có lyric/text La |
+| Voice / layout | Note input voice 2 thêm một C5; XML giữ voice 1 và 2. Enter tạo system break, bar 2 có print new-system=yes |
+| Tie | T nối C5 bè 2 vào nốt kế tiếp; XML có tie/tied start và stop đúng pitch |
+| Style | Sửa hộp Style bị tràn chiều cao trên WASM bằng vùng cuộn. OK/Cancel thấy được ở viewport 1600×900; tắt first-system indentation, tải MSCZ và đọc .mss xác nhận giá trị 0; reload mở lại vẫn giữ |
+| Replay duration CLI | Chuỗi MIDI mô phỏng qua router/session/Worker: 2 match, sustain đúng và nhả sớm; CLI trả same=true, 2 release, 0 fault |
+| Caddy runtime | Official Caddy 2.11.7 kiểm checksum vendor rồi chạy loopback; 85 resource hash/bytes, MIME WASM, cache và isolation/MIDI headers đạt. HTTPS chưa kiểm |
+
+Bằng chứng local: `advanced-editor-check.json`, các `advanced-*.musicxml`,
+`duration-ui-result.json`, `duration-result-ui.png`, `caddy-release-check.json`,
+`advanced-web-build.log`, `style-dialog-fixed.png`, `local-performance.json`,
+`replay-duration-result.json`. Fixture và snapshot native đã vào source để tái lập.
+Thư viện sao lưu của người dùng giữ local, không vào source hoặc public bundle.
+
+Số đo diagnostics trên Chromium in-app, localhost, một lần chạy build tối ưu:
+engine ready 3.900 ms; import MSCZ CC0 171 ms; mở Phố Xa 95.969 byte 482 ms;
+snapshot Phố Xa 7 trang/1.282 anchor 1.430 ms. WASM heap được cấp phát tăng từ
+130.547.712 lên 521.797.632 byte; JS heap tại snapshot 116.752.530 byte. Đây là
+điểm đo local sau thao tác editor, không phải peak RSS, cold-cache benchmark,
+tốc độ WAN hoặc cam kết cho thiết bị khác. Diagnostics chỉ chạy khi URL có
+`?diagnostics=1`, không thu thập/đẩy telemetry ra ngoài.
+
+Gói triển khai ở `artifacts/releases/pianist-web-2026-10-17/`; gồm `site/`, web
+ZIP, source ZIP, SHA256SUMS, SOURCE/toolchain metadata và Caddy/Compose/DEPLOY.
+`stage-release.py` yêu cầu clean commit và optimized engine, từ chối ghi đè
+output; bỏ toàn bộ ví dụ local và dùng fixture piano CC0. Gói được chuẩn bị
+theo lựa chọn của người dùng, chưa có domain/hosting và chưa publish.
+
 ## Các bước nghiệm thu còn lại
 
-1. Thử đàn MIDI thực: quyền truy cập, chọn cổng/rút cắm, timestamp, 12-click
+1. Thử đàn MIDI thực **để sau theo người dùng**: quyền truy cập, chọn cổng/rút cắm, timestamp, 12-click
    calibration, jitter/drift, pedal state; lưu model đàn/OS/browser/audio output.
 2. Chạy ma trận editor đầy đủ; mở rộng biến thể jump/text-only, voice, signatures,
    layout và round-trip; sửa các dialog upstream còn phụ thuộc desktop.
 3. Đo tải lạnh/ấm, RAM và score dài trên Chrome/Edge mục tiêu với build tối ưu mới.
-4. Chọn domain/host, deploy nguyên release qua HTTPS và kiểm trên máy sạch;
-   rà đủ source/build/notices/giấy phép trước phân phối công khai.
+4. Khi người dùng có hosting: deploy nguyên release qua HTTPS và kiểm trên máy
+   sạch; rà dependency/source/Qt static trước phân phối công khai. Gói source,
+   notices và hướng dẫn triển khai đã có, chưa thay thế audit toàn bộ.
 
 Không gắn nhãn v1 nghiệm thu hoàn tất trước các bước này. Hướng dẫn build,
 sử dụng và các giới hạn hiện tại ở [PIANIST_WEB.md](PIANIST_WEB.md).

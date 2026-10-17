@@ -74,9 +74,25 @@ cần ít nhất 8 mẫu. Chưa có kết quả đo thiết bị thực trong l�
 
 Tie liên tục gộp thành một lần đánh; bắt đầu giữa tie thì đánh lại nốt đầu đoạn.
 Unison cùng onset/pitch được gộp, giữ tất cả anchor/vai khuông. Grace được bỏ
-qua, ornament chấm nốt chính và arpeggio chấm như hợp âm thường; score có các
+qua, ornament chấm nốt chính và arpeggio mặc định chấm như hợp âm thường; score có các
 ký hiệu này yêu cầu xác nhận quy tắc trước khi tập. Fermata giữ thời gian phát
-native MuseScore, không tự chờ người chơi. Chưa chấm giữ phím/pedal.
+native MuseScore, không tự chờ người chơi.
+
+Trong **Theo BPM → Giữ phím & ký hiệu**, có thể bật chấm độ dài riêng:
+
+- **Độ dài giữ phím**: đo Note On → Note Off; staccato 50%, staccatissimo 25%,
+  nốt thường/tie 100% trường độ. Tie liên tục không đòi bấm lại.
+- **Âm ngân · có pedal CC64**: sau Note Off, chờ nhả pedal đúng device/channel
+  hoặc đánh lại cùng pitch; kỳ vọng 100% trường độ. Không mô phỏng half-pedal
+  hay đo acoustic decay. Không kiểm thời điểm đạp pedal theo ký hiệu pedal.
+- Dung sai 20% độ dài, tối thiểu 80 và tối đa 200 ms. Đây là tham số luyện tập,
+  cần kiểm với người chơi; không phải chuẩn diễn cảm. Điểm onset độc lập.
+- Pause/disconnect loại nốt đang giữ khỏi mẫu số độ dài. Ornament không chấm
+  độ dài. Kết quả phân biệt đủ độ dài, nhả sớm, giữ dài, chưa nhả và gián đoạn.
+- **Rải arpeggio**: 80/120/200 ms theo hướng ký hiệu trong từng chord, không quá
+  nửa trường độ. Chưa realize arpeggio xuyên nhiều chord/khuông hoặc grace/trill.
+
+Mặc định chấm độ dài tắt. Đúng nốt giữ quy tắc chờ hợp âm và không chấm độ dài.
 
 Khi tập một tay theo BPM, có thể bật **Phát tay còn lại** bằng âm hướng dẫn tổng
 hợp; các nốt này không được tính vào điểm và unison với tay đang tập bị loại khỏi
@@ -97,6 +113,16 @@ Lỗi quota không được coi là lưu thành công; đường tải MSCZ vẫ
 Lưu trữ bài là thao tác có thể khôi phục, giữ cả recovery; không xóa vĩnh viễn.
 Không dựa vào filesystem tạm WASM hay cache PWA làm nơi lưu project.
 
+**Tải toàn bộ thư viện** tạo file `.pianist.zip`, gồm project, nguồn nhập,
+recovery, lịch sử/replay còn giữ và thiết lập. **Khôi phục từ file…** kiểm cấu
+trúc, giới hạn giải nén và SHA-256, rồi hiện số bài/lượt trước khi ghi.
+Khôi phục luôn thêm bản riêng với ID mới; transaction lỗi không để lại bản dở
+và không ghi đè bài đang có. Bản tự lưu có revision cao hơn được ưu tiên dù
+timestamp trùng nhau. Calibration máy cũ chỉ giữ làm metadata, cần đo lại.
+Giới hạn gói 256 MiB (nén và giải nén), 1.000 bài và 10.000 lượt/thiết lập;
+vượt giới hạn thì tải riêng MSCZ và kết quả. Bản sao lưu chứa dữ liệu cá nhân
+của thư viện, không nằm trong gói website phát hành.
+
 Ẩn tab, mất focus, audio suspend, rút đàn hoặc jank trên 500 ms làm buổi tập
 tạm dừng/gián đoạn. Resume dùng lại vị trí đã đóng băng và đếm vào theo cấu hình;
 phím đang giữ không thành lần đánh mới. Đổi lịch tạo session/epoch mới.
@@ -114,7 +140,8 @@ node --import tsx scripts/replay.ts C:\path\to\result.json
 
 Chọn **Lưu event log để replay** trước khi tập. Log chứa input, các lần tiến
 đồng hồ và ranh giới clear-held khi pause/resume. CLI đối chiếu lại assessments
-và extras với kết quả đã lưu. Log quá lớn bị bỏ; 20 lượt mới nhất giữ replay
+và extras, độ dài, faults với kết quả đã lưu. JSON và CSV có kết quả giữ/nhả;
+CSV cũng có dòng input thừa. Log quá lớn bị bỏ; 20 lượt mới nhất giữ replay
 tùy dung lượng, các summary cũ vẫn còn. Xem [bằng chứng](M1_M6_RESULTS.md).
 
 Chưa có đàn thì chạy `npm run test:midi`: 12 ca xuyên suốt từ cổng Web MIDI
@@ -124,15 +151,16 @@ bù trễ và timestamp, dữ liệu giao trễ và timer chạy không đều. 
 và thiết bị được mô phỏng có kiểm soát; lệnh này không cần USB, không phát
 âm thanh và không ghi các kết quả giả lập vào thư viện của người dùng.
 
-Replay chỉ chạy cùng `algorithmVersion`. Bản hiện tại là `pianist-onset-1.1.0`;
-log 1.0.0 cần commit `33b68f61`, log 1.0.1 cần commit `c52e83ce`. Tập lại từ lịch sử tạo lượt
+Replay chỉ chạy cùng `algorithmVersion`. Bản hiện tại là `pianist-onset-1.2.0`;
+log 1.0.0 cần commit `33b68f61`, log 1.0.1 cần commit `c52e83ce`, log 1.1.0 cần
+commit `77b75306`. Tập lại từ lịch sử tạo lượt
 mới với phiên bản bộ chấm hiện tại, không thay kết quả đã lưu.
 
 ## Đóng gói và phát hành
 
 `package-web.py` tạo manifest SHA-256 và một service worker gắn với đúng bộ
 binary/JS/CSS. **Chuẩn bị dùng offline** tải và kiểm hash toàn bộ bộ tài nguyên
-khoảng 134,5 MiB với build tối ưu đã kiểm tra. Mỗi worker giữ một phiên bản, kể
+khoảng 135 MiB với build tối ưu đã kiểm tra. Mỗi worker giữ một phiên bản, kể
 cả release manifest; không `skipWaiting` giữa session. JS/WASM được kiểm hash
 trước khi khởi tạo, tránh chạy cặp binary đang cập nhật dở.
 Đóng các tab rồi mở lại để dùng bản mới. Cache không thay thế thư viện IndexedDB.
@@ -143,12 +171,28 @@ Build native mặc định tối ưu; `-FastLink` dành cho phát triển. Link 
 `build-pianist.ps1 -SkipEngine -SkipInstall` để đóng gói manifest/shell.
 Manifest ghi source commit, trạng thái source có sửa và kiểu link.
 
-Chưa chọn domain/host và chưa publish. Phải triển khai thư mục release nguyên
-bộ, không thay từng binary đang được phục vụ. Đóng gói source/build tương ứng
-và hoàn tất [notices](THIRD_PARTY_NOTICES.md) trước phân phối công khai.
+Theo yêu cầu người dùng, **chuẩn bị gói triển khai, chưa có hosting**:
+
+```powershell
+# Sau build tối ưu, kiểm thử và commit source sạch:
+python buildscripts/pianist/package-web.py
+python buildscripts/pianist/stage-release.py --output artifacts/releases/pianist-web-2026-10-17
+python buildscripts/pianist/verify-release.py --directory artifacts/releases/pianist-web-2026-10-17/site --public
+# Khi có domain, kiểm HTTPS thật (không bỏ kiểm chứng chỉ):
+python buildscripts/pianist/verify-release.py --url https://YOUR_DOMAIN --public
+```
+
+Gói có `site/`, `pianist-web.zip`, mã nguồn đúng commit, toolchain, SHA-256,
+Caddyfile, Docker Compose và hướng dẫn `DEPLOY.txt`. Script từ chối source bẩn,
+manifest sai commit/hash, binary FastLink và output đã tồn tại. Bài Phố Xa local
+không đi vào gói public; catalog thay bằng bài piano CC0. Serve nguyên thư mục
+release, giữ bản trước để rollback. Chuyển origin cần dùng sao lưu thư viện.
+Caddy đã chạy và qua kiểm hash/MIME/cache/headers trên HTTP loopback; đây không
+phải bằng chứng HTTPS, chứng chỉ hoặc đàn thật. Hoàn tất [notices/source audit](THIRD_PARTY_NOTICES.md)
+trước phân phối công khai.
 
 Giới hạn hiện tại: snapshot tối đa 40 trang/50.000 nốt viết/24 MiB SVG;
 plan tối đa 100.000 mục tiêu/2 giờ và 10 loop. Đã thử bài 50 ô nhịp Phố Xa,
 chưa đo giới hạn này trên đủ cấu hình máy/đàn. Stress test domain 50.000 nốt
-không thay thế benchmark toàn bộ browser/âm thanh. M7 còn duration/pedal,
-profile ornament nâng cao và các phần mở rộng tài khoản/tablet/đồng bộ.
+không thay thế benchmark toàn bộ browser/âm thanh. M7 còn policy diễn cảm,
+realization ornament nâng cao và các phần mở rộng tài khoản/tablet/đồng bộ.

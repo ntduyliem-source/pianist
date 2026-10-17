@@ -40,7 +40,7 @@ export class MidiRouter {
     }
     this.onChange();
   }
-  receive(bytes: number[], timestamp: number, deviceId = 'virtual', source: InputEvent['source'] = 'virtual'): void {
+  receive(bytes: number[], timestamp: number, deviceId = 'virtual', source: InputEvent['source'] = 'virtual', synthetic = false): void {
     if (bytes.length < 3) return;
     if (source === 'midi' && deviceId !== this.deviceId || source === 'virtual' && this.deviceId !== 'virtual') return;
     const [status, pitch, velocity] = bytes, op = status >> 4;
@@ -50,7 +50,7 @@ export class MidiRouter {
     // Some legacy implementations expose epoch timestamps. Preserve the input receipt time.
     const atMs = timestamp > 1e12 ? timestamp - performance.timeOrigin : timestamp;
     const type = op === 11 ? 'pedal' : op === 8 || velocity === 0 ? 'off' : 'on';
-    const e: InputEvent = {seq: ++this.sequence, epoch: 0, type, pitch, velocity, channel: status & 15, deviceId, source, atMs, receivedMs};
+    const e: InputEvent = {seq: ++this.sequence, epoch: 0, type, pitch, velocity, channel: status & 15, deviceId, source, atMs, receivedMs, ...(synthetic ? {synthetic: true} : {})};
     const key = `${deviceId}/${e.channel}/${pitch}`;
     if (type === 'off') this.blocked.delete(key);
     if (type === 'on' && this.blocked.has(key)) return;
@@ -68,14 +68,14 @@ export class MidiRouter {
   virtual(pitch: number, on: boolean): void {this.receive([on ? 0x90 : 0x80, pitch, on ? 90 : 0], performance.now());}
   release(channel?: number): void {
     for (const e of [...this.held.values()].filter(e => channel === undefined || e.channel === channel)) {
-      this.receive([0x80 | e.channel, e.pitch, 0], performance.now(), e.deviceId, e.source);
+      this.receive([0x80 | e.channel, e.pitch, 0], performance.now(), e.deviceId, e.source, true);
       // A focus/session boundary releases app voices, but the physical key must
       // actually come up before another Note On can receive credit.
       if (e.source === 'midi') this.blocked.add(`${e.deviceId}/${e.channel}/${e.pitch}`);
     }
     for (const key of [...this.pedals]) {
       const split = key.lastIndexOf('/'), device = key.slice(0, split), ch = +key.slice(split + 1);
-      if (channel === undefined || channel === ch) this.receive([0xb0 | ch, 64, 0], performance.now(), device, device === 'virtual' ? 'virtual' : 'midi');
+      if (channel === undefined || channel === ch) this.receive([0xb0 | ch, 64, 0], performance.now(), device, device === 'virtual' ? 'virtual' : 'midi', true);
     }
     this.onChange();
   }

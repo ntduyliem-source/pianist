@@ -10,11 +10,13 @@ export function defaultConfig(snapshot: ScoreSnapshot): SessionConfig {
   return {mode: 'wait', bpm: Math.round(snapshot.baseQuarterBpm || 80), beatQuarter: 1, countIn: 4, metronome: true,
     fromMeasure: 0, toMeasure: Math.max(0, snapshot.measures.length - 1), hand: 'both', roles, voices: [0, 1, 2, 3],
     loops: 1, offsetMs: 0, perfectMs: 50, goodMs: 120, windowMs: 250, deliveryMs: 120,
-    inputSource: 'virtual', deviceId: 'virtual', algorithmVersion: ALGORITHM_VERSION, accompaniment: false};
+    inputSource: 'virtual', deviceId: 'virtual', algorithmVersion: ALGORITHM_VERSION, accompaniment: false, releaseMode: 'off', arpeggioMs: 0};
 }
 
 export function buildPlan(snapshot: ScoreSnapshot, input: SessionConfig): Plan {
   const config = structuredClone(input);
+  if (!['off', 'key', 'sustain'].includes(config.releaseMode ?? 'off') || ![0, 80, 120, 200].includes(config.arpeggioMs ?? 0)) throw Error('Profile giữ phím/arpeggio không hợp lệ.');
+  if (config.mode === 'wait') {config.releaseMode = 'off'; config.arpeggioMs = 0;}
   if (snapshot.schemaVersion !== 1 || !Number.isFinite(snapshot.baseQuarterBpm) || snapshot.baseQuarterBpm <= 0) throw Error('Snapshot/tempo không hợp lệ.');
   if (config.algorithmVersion !== ALGORITHM_VERSION || !['wait', 'bpm'].includes(config.mode)) throw Error('Phiên bản bộ chấm không tương thích.');
   if (![config.bpm, config.offsetMs, config.perfectMs, config.goodMs, config.windowMs, config.deliveryMs, config.countIn].every(Number.isFinite)
@@ -58,13 +60,15 @@ export function buildPlan(snapshot: ScoreSnapshot, input: SessionConfig): Plan {
         const tail = a.tieBack ? tails.get(a.tieBack) : undefined;
         if (tail && tail.target.pitch === a.pitch && Math.abs(tail.endMs - atMs) < 0.1) {
           tail.target.endMs = Math.max(tail.target.endMs, endMs);
+          tail.target.releaseRatio = 1; tail.target.releaseUnsupported ||= a.releaseUnsupported;
           tail.target.anchors.push(a.id);
           tail.target.spans!.push({anchor: a.id, occurrence: o.index, atMs, endMs});
           if (!tail.target.roles.includes(role)) tail.target.roles.push(role);
           tails.set(a.id, {target: tail.target, endMs});
         } else {
           const attack: Attack = {id: `l${loop}-o${o.index}-${a.id}`, pitch: a.pitch, atMs, endMs,
-            anchors: [a.id], roles: [role], measure: a.measure, occurrence: o.index, loop, spans: [{anchor: a.id, occurrence: o.index, atMs, endMs}]};
+            anchors: [a.id], roles: [role], measure: a.measure, occurrence: o.index, loop, spans: [{anchor: a.id, occurrence: o.index, atMs, endMs}],
+            releaseRatio: a.releaseRatio ?? 1, releaseUnsupported: a.releaseUnsupported};
           targets.push(attack); tails.set(a.id, {target: attack, endMs});
         }
       }
@@ -96,9 +100,25 @@ export function buildPlan(snapshot: ScoreSnapshot, input: SessionConfig): Plan {
   for (const t of targets) {
     const last = merged.at(-1);
     if (last && last.pitch === t.pitch && Math.abs(last.atMs - t.atMs) < 0.01 && last.loop === t.loop) {
+      const releaseMs = Math.max((last.endMs - last.atMs) * (last.releaseRatio ?? 1), (t.endMs - t.atMs) * (t.releaseRatio ?? 1));
       last.anchors.push(...t.anchors); last.roles = [...new Set([...last.roles, ...t.roles])]; last.endMs = Math.max(last.endMs, t.endMs);
       last.spans!.push(...t.spans!);
+      last.releaseRatio = last.endMs > last.atMs ? releaseMs / (last.endMs - last.atMs) : 1; last.releaseUnsupported ||= t.releaseUnsupported;
     } else merged.push(t);
+  }
+  if (config.arpeggioMs) {
+    const rolls = new Map<string, {direction: 'up' | 'down'; targets: Attack[]}>();
+    for (const target of merged) {
+      const a = anchors.get(target.anchors[0]); if (!a?.arpeggio || !a.arpeggioGroup) continue;
+      const key = `${target.loop}/${target.occurrence}/${a.arpeggioGroup}`;
+      const roll = rolls.get(key) ?? {direction: a.arpeggio, targets: []}; roll.targets.push(target); rolls.set(key, roll);
+    }
+    for (const roll of rolls.values()) {
+      roll.targets.sort((a, b) => roll.direction === 'up' ? a.pitch - b.pitch : b.pitch - a.pitch);
+      const spread = Math.min(config.arpeggioMs, ...roll.targets.map(t => (t.endMs - t.atMs) / 2));
+      roll.targets.forEach((target, i) => {target.atMs += roll.targets.length > 1 ? i * spread / (roll.targets.length - 1) : 0;});
+    }
+    merged.sort((a, b) => a.atMs - b.atMs || a.pitch - b.pitch);
   }
   if (!merged.length) throw Error('Đoạn này không có nốt cho tay/bè đã chọn. Hãy nhập bài hoặc chọn đoạn khác.');
   if (merged.length > 100000 || cursor > 2 * 60 * 60 * 1000) throw Error('Bài/loop vượt giới hạn 100.000 nốt hoặc 2 giờ.');

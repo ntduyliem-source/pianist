@@ -48,9 +48,9 @@ export class WaitCore {
     const next = this.plan.groups[this.index];
     this.readyAt = this.now + (next ? Math.max(0, next.atMs - group.endMs) : 0);
   }
-  advance(now: number, assessmentsFrom = 0, extrasFrom = 0): CoreState { this.now = Math.max(this.now, now); return this.state(assessmentsFrom, extrasFrom); }
+  advance(now: number, assessmentsFrom = 0, extrasFrom = 0, _releasesFrom = 0): CoreState { this.now = Math.max(this.now, now); return this.state(assessmentsFrom, extrasFrom); }
   clearHeld(): void { this.held.clear(); this.accepted.clear(); this.feedback.clear(); }
-  state(assessmentsFrom = 0, extrasFrom = 0): CoreState {
+  state(assessmentsFrom = 0, extrasFrom = 0, _releasesFrom = 0): CoreState {
     const g = this.plan.groups[this.index];
     return {assessments: this.assessments.slice(assessmentsFrom), extras: this.extras.slice(extrasFrom), cursor: g?.atMs ?? this.plan.durationMs,
       done: !g && !this.faults.length, faults: [...new Set(this.faults)], firstTry: this.firstTry, groupsDone: this.index,

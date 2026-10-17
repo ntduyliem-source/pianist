@@ -8,7 +8,7 @@ export function comparable(a: SessionResult, b: SessionResult): boolean {
     const c = r.config;
     return JSON.stringify([r.projectId, r.fingerprint, r.clock, r.planned, c.algorithmVersion, c.mode, c.bpm, c.beatQuarter,
       c.countIn, c.metronome, c.fromMeasure, c.toMeasure, c.hand, Object.entries(c.roles).sort(([a], [b]) => a.localeCompare(b)), [...c.voices].sort(),
-      c.loops, c.offsetMs, c.perfectMs, c.goodMs, c.windowMs, c.deliveryMs, c.inputSource, c.deviceId, !!c.accompaniment, c.loopBpmStep ?? 0]);
+      c.loops, c.offsetMs, c.perfectMs, c.goodMs, c.windowMs, c.deliveryMs, c.inputSource, c.deviceId, !!c.accompaniment, c.loopBpmStep ?? 0, c.releaseMode ?? 'off', c.arpeggioMs ?? 0]);
   };
   return key(a) === key(b);
 }

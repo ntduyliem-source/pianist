@@ -2,10 +2,24 @@
 from pathlib import Path
 import json
 import shutil
+import subprocess
+import hashlib
 
 ROOT = Path(__file__).resolve().parents[2]
 OUT = ROOT / 'build.artifacts/notices'
 inventory = []
+# Include notices shipped in the pinned source tree, preserving their paths so
+# the recipient can locate the relevant component in the source archive.
+tracked = subprocess.check_output(['git', 'ls-files', '-z'], cwd=ROOT).decode().split('\0')
+for name in tracked:
+    source = ROOT / name
+    if not source.is_file() or source.name.lower() not in {'license', 'license.txt', 'license.md', 'copying', 'copying.txt', 'copying.lesser', 'notice', 'notice.txt'}:
+        continue
+    destination = OUT / 'source' / name
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    shutil.copy2(source, destination)
+    inventory.append({'package': source.parent.relative_to(ROOT).as_posix(), 'file': destination.relative_to(OUT).as_posix(),
+                      'sha256': hashlib.sha256(source.read_bytes()).hexdigest(), 'sourceNotice': True})
 for package in ('react', 'react-dom', 'scheduler', 'fflate'):
     source = ROOT / 'apps/pianist-web/node_modules' / package
     metadata = json.loads((source / 'package.json').read_text(encoding='utf-8'))

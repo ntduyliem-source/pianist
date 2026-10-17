@@ -24,7 +24,8 @@ export class PracticeSession {
     this.worker.onmessage = ({data}) => {
       if (data.epoch !== this.epoch) return;
       if (data.type === 'error') {this.workerError(data.message); return;}
-      this.state = {...data.state, assessments: [...this.state.assessments, ...data.state.assessments], extras: [...this.state.extras, ...data.state.extras]};
+      this.state = {...data.state, assessments: [...this.state.assessments, ...data.state.assessments], extras: [...this.state.extras, ...data.state.extras],
+        releases: [...this.state.releases ?? [], ...data.state.releases ?? []]};
       if (this.state.faults.length && !['paused', 'interrupted', 'finished'].includes(this.status)) this.pause('Luồng MIDI bị trễ/thất lạc. Buổi tập đã gián đoạn để tránh chấm sai.', true);
       if (data.type === 'final' && this.finishing) {
         const pending = this.finishing; this.finishing = undefined; const result = this.finalResult = this.result(pending.outcome); pending.resolve(result); return;

@@ -23,12 +23,22 @@ export class Workspace {
   private nativeBase = 0; private revisionBase = 0; private nativeRevision = 0; private autosaveTimer?: number; private leaseTimer?: number; private toastTimer?: number;
   private operation = 0; private fileAbort?: AbortController; private source?: {bytes: Uint8Array; filename: string}; private recovery?: storage.RecoveryRecord;
   private autosaving?: Promise<void>;
+  private documentChange?: symbol;
+  private diagnosticSamples: object[] = [];
   chooseFile: () => void = () => {}; showExport: () => void = () => {}; showAbout: () => void = () => {}; showSaveAs: () => void = () => {};
   subscribe = (listener: () => void) => {this.listeners.add(listener); return () => this.listeners.delete(listener);};
   snapshot = () => this.state;
   patch(patch: Partial<WorkspaceState>): void {this.state = {...this.state, ...patch}; this.listeners.forEach(fn => fn());}
   notice(message: string): void {this.patch({toast: message}); clearTimeout(this.toastTimer); this.toastTimer = window.setTimeout(() => this.patch({toast: ''}), 5000);}
   private diagnostic(message: string): void {const status = document.getElementById('status'); if (status) status.textContent = message;}
+  private measureDiagnostic(operation: string, started: number, details: object = {}): void {
+    if (!new URLSearchParams(location.search).has('diagnostics')) return;
+    const jsMemory = (performance as Performance & {memory?: {usedJSHeapSize: number}}).memory;
+    this.diagnosticSamples.push({operation, elapsedMs: Math.round(performance.now() - started),
+      wasmHeapBytes: this.bridge?.api.Module.HEAPU8?.byteLength ?? null, jsUsedHeapBytes: jsMemory?.usedJSHeapSize ?? null, ...details});
+    this.diagnosticSamples = this.diagnosticSamples.slice(-12);
+    const log = document.getElementById('log'); if (log) log.textContent = JSON.stringify(this.diagnosticSamples);
+  }
   fail(e: unknown): void {
     console.error(e);
     if (e instanceof WebAssembly.RuntimeError) {
@@ -89,6 +99,7 @@ export class Workspace {
     if (this.engineLoading) return this.engineLoading;
     this.patch({busy: 'Đang tải MuseScore… Lần đầu cần tải bộ ký âm và tiếng piano.'});
     this.engineLoading = (async () => {
+      const started = performance.now();
       const wasmBinary = await loadEngineAssets();
       const url = new URL('distr/muapi.js', location.href).href;
       const createMuApi = (await import(/* @vite-ignore */ url)).default;
@@ -118,6 +129,7 @@ export class Workspace {
       this.bridge = new EngineBridge(api); this.bridge.revision = this.nativeRevision;
       if (new URLSearchParams(location.search).has('diagnostics')) (window as any).pianist = api;
       await api.startAudioProcessing();
+      this.measureDiagnostic('engine-ready', started);
       document.getElementById('screen')!.addEventListener('pointerdown', e => {api.Module.driver?.resume(); this.focusEditor(e.composedPath().find((x: any) => x.classList?.contains('qt-window')) as Element);}, true);
       this.patch({engineReady: true}); return this.bridge;
     })();
@@ -129,7 +141,9 @@ export class Workspace {
     try {
       const bridge = await this.ensureEngine();
       this.loadingDocument = true; bridge.setPractice(false);
+      const started = performance.now();
       if (!bridge.api.loadScoreData(data, filename)) throw Error('Không mở được bản nhạc. Bài đang mở vẫn được giữ.');
+      this.measureDiagnostic('native-import', started, {inputBytes: data.length});
       this.nativeBase = bridge.revision; this.revisionBase = record.revision;
       this.source = {bytes: record.source ?? data, filename: record.sourceName ?? filename};
       if (old && old.id !== record.id) await storage.releaseProject(old.id);
@@ -142,7 +156,17 @@ export class Workspace {
   private requireInactiveSession(): void {
     if (this.session && !['ready', 'finished'].includes(this.session.status)) throw Error('Kết thúc lượt tập trước khi mở hoặc đổi bản nhạc.');
   }
+  private async changeDocument(action: () => Promise<void>): Promise<void> {
+    this.requireInactiveSession();
+    if (this.documentChange) throw Error('Đang xử lý một bản nhạc. Hãy chờ hoàn tất hoặc hủy mở file.');
+    const owner = this.documentChange = Symbol(); this.patch({busy: 'Đang chuẩn bị bản nhạc…'});
+    try {await action();}
+    finally {if (this.documentChange === owner) {this.documentChange = undefined; this.patch({busy: '', canCancelOpen: false});}}
+  }
   async newProject(): Promise<void> {
+    return this.changeDocument(() => this.createNewProject());
+  }
+  private async createNewProject(): Promise<void> {
     this.requireInactiveSession();
     await this.autosave(true); this.patch({busy: 'Đang tạo bản nhạc…'});
     try {
@@ -154,6 +178,9 @@ export class Workspace {
     } finally {this.patch({busy: ''});}
   }
   async importFile(file: File): Promise<void> {
+    return this.changeDocument(() => this.importDocument(file));
+  }
+  private async importDocument(file: File): Promise<void> {
     this.requireInactiveSession();
     if (!file) return; this.diagnostic('Đang mở ' + file.name + '…'); await this.autosave(true); const token = ++this.operation;
     this.fileAbort?.abort(); this.fileAbort = new AbortController();
@@ -173,15 +200,18 @@ export class Workspace {
     } catch (error) {if (token === this.operation) throw error;}
     finally {if (token === this.operation) this.patch({busy: '', canCancelOpen: false});}
   }
-  cancelOpen(): void {++this.operation; this.fileAbort?.abort(); this.bridge?.cancel(); this.patch({busy: '', canCancelOpen: false});}
+  cancelOpen(): void {if (!this.state.canCancelOpen) return; ++this.operation; this.documentChange = undefined; this.fileAbort?.abort(); this.bridge?.cancel(); this.patch({busy: '', canCancelOpen: false});}
   async openProject(id: string, practice = false): Promise<void> {
+    return this.changeDocument(() => this.openStoredProject(id, practice));
+  }
+  private async openStoredProject(id: string, practice = false): Promise<void> {
     this.requireInactiveSession();
     if (this.state.current?.id === id && this.bridge) {if (practice) await this.practice(); else this.navigate('editor'); return;}
     await this.autosave(true); this.patch({busy: 'Đang mở bản nhạc…'});
     try {
       const record = await storage.get<storage.ProjectRecord>('projects', id); if (!record) throw Error('Không tìm thấy bài trong thư viện.');
       const recovery = await storage.get<storage.RecoveryRecord>('recovery', id);
-      const useRecovery = recovery && recovery.updatedAt > record.updatedAt;
+      const useRecovery = recovery && (recovery.revision > record.revision || recovery.revision === record.revision && recovery.updatedAt > record.updatedAt);
       const loaded = useRecovery ? {...record, revision: recovery.revision, title: recovery.title} : record;
       await this.switchDocument(loaded, useRecovery ? recovery.bytes : record.bytes, useRecovery ? recovery.filename : record.filename);
       if (useRecovery) {this.patch({savedRevision: record.revision, saveState: 'Đã phục hồi bản tự lưu'}); this.notice('Đã phục hồi thay đổi gần nhất. Bấm Lưu thư viện để giữ bản này.');}
@@ -209,6 +239,9 @@ export class Workspace {
     await this.refresh(); this.notice('Đã lưu bản nhạc trong thư viện trên thiết bị này.');
   }
   async saveAs(title: string): Promise<void> {
+    return this.changeDocument(() => this.saveCopy(title));
+  }
+  private async saveCopy(title: string): Promise<void> {
     this.requireInactiveSession();
     await this.autosave(true); if (!this.state.current || !this.bridge || !title.trim()) return;
     const old = this.state.current, bridge = this.bridge, bytes = bridge.serialize();
@@ -248,7 +281,9 @@ export class Workspace {
       // Drain the native MIDI input timer and pending layout before taking the immutable snapshot.
       await new Promise<void>(resolve => setTimeout(resolve, 40));
       await this.autosave(true); this.bridge.setPractice(true);
+      const started = performance.now();
       const snapshot = await this.bridge.cancellableSnapshot(this.state.current.id, fingerprint); snapshot.revision = this.state.revision;
+      this.measureDiagnostic('practice-snapshot', started, {pages: snapshot.pages.length, anchors: snapshot.anchors.length});
       const calibration = await storage.get<{id: string; offsetMs: number}>('settings', 'calibration:' + this.midi.deviceId);
       const prior = this.state.snapshot?.fingerprint === snapshot.fingerprint ? this.state.config : undefined;
       const config = {...defaultConfig(snapshot), ...prior, ...overrides};

@@ -45,6 +45,11 @@ if ($Target -eq 'app') {
     else { $arguments += '-DPIANIST_WASM_FAST_LINK=OFF' }
 }
 $configLog = Join-Path $root "artifacts/m0/configure-$Target.log"
+if ($SkipConfigure -and $Target -eq 'app') {
+    $cachedMode = Select-String -LiteralPath "$buildDir/CMakeCache.txt" -Pattern '^PIANIST_WASM_FAST_LINK:[^=]+='
+    $cachedFast = $cachedMode -and $cachedMode.Line.EndsWith('=ON')
+    if ([bool]$FastLink -ne [bool]$cachedFast) { throw 'Requested link mode differs from the CMake cache. Run without -SkipConfigure to apply the requested mode.' }
+}
 if (!$SkipConfigure) {
     Write-Output "Configuring $Target. Log: $configLog"
     & $cmakeExe @arguments *> $configLog

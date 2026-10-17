@@ -3,9 +3,13 @@ from pathlib import Path
 import hashlib
 import json
 import subprocess
+import argparse
 
 ROOT = Path(__file__).resolve().parents[2]
-OUT = ROOT / 'build.artifacts'
+parser = argparse.ArgumentParser(description=__doc__)
+parser.add_argument('--directory', type=Path, default=ROOT / 'build.artifacts')
+args = parser.parse_args()
+OUT = args.directory.resolve()
 paths = ['pianist.html', 'index.html', 'MuseScoreStudio.js', 'MuseScoreStudio.wasm',
          'MuseAudio.js', 'manifest.webmanifest', 'icon.svg', 'LICENSE.txt', 'THIRD_PARTY_NOTICES.md',
          'sound/MS Basic.sf3', 'sound/MS Basic_License.md', 'sound/MS Basic_Readme.md',

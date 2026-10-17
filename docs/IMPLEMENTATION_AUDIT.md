@@ -9,13 +9,13 @@ Ngày 16/10/2026, rà soát theo phản hồi của người dùng. Source trư�
 | Mốc | Đã có bằng chứng | Chưa đủ/khác kế hoạch |
 | --- | --- | --- |
 | M0 | Fork MuseScore; native editor WASM; MXL → sửa → undo/redo → lưu/mở lại; xuất MXL | Đây là proof of concept, không phải đầy đủ chức năng desktop |
-| M1 | Thư viện, lưu riêng MSCZ, giữ nguồn, autosave/recovery, lease, version/revision, giữ undo khi đổi màn hình | Importer C++ đồng bộ chưa hủy giữa lúc parse; quota/kill-tab chưa kiểm đủ tình huống |
+| M1 | Thư viện, lưu riêng MSCZ, giữ nguồn, autosave/recovery, lease, version/revision, giữ undo; chặn thao tác đổi document chồng nhau; ưu tiên recovery theo revision | Importer C++ đồng bộ chưa hủy giữa lúc parse; quota/kill-tab chưa kiểm đủ tình huống |
 | M2 | Snapshot/geometry từ score đang sửa; tie/unison; thêm corpus volta, DC/Fine, DS/Coda, cross-staff, fermata; kiểm MXL round-trip và PDF render | Chưa đạt toàn bộ ma trận editor hoặc mọi biến thể navigation |
 | M3 | Router MIDI, held keys/CC64, Worker và Đúng nốt; 12 ca tích hợp với cổng Web MIDI giả lập, gồm ngắt/kết nối lại và replay | Quyền/rút cắm/chơi đàn MIDI thật chưa nghiệm thu |
 | M4 | Timeline BPM cố định, matcher onset, bù trễ, calibration, replay | Bộ test ban đầu bỏ sót các ca bên dưới; chưa đo jitter/drift/calibration thật |
 | M5 | Practice riêng chỉ đọc; highlight tức thì từng nốt/phím, partial chord, repeat/loop reset, A–B, tay/voice, zoom/cuộn; chỉ mount overlay trang gần viewport | Bài rất dài và đủ máy/browser chưa kiểm đủ |
-| M6 | Build tối ưu, release hash trước khởi tạo, staged link, notices thực từ dependency, lịch sử/version, JSON/CSV, offline và mẫu HTTPS | Chưa deploy HTTPS, audit phân phối hoặc nghiệm thu browser/đàn đầy đủ |
-| M7 | Âm hướng dẫn tay còn lại; BPM tăng/giảm theo mức đặt trước; so sánh lượt tương thích | Chấm độ dài/pedal, profile ký hiệu nâng cao; tablet/tài khoản/đồng bộ theo nhu cầu vẫn mở |
+| M6 | Build tối ưu, release hash, staged link, notices/source archive đúng commit; JSON/CSV, offline; gói Caddy/Compose và script kiểm release qua HTTP/HTTPS | Chưa deploy HTTPS, audit phân phối hoặc nghiệm thu browser/đàn đầy đủ |
+| M7 | Âm hướng dẫn; BPM theo loop; so sánh lượt tương thích; độ dài Note Off/CC64; profile arpeggio; sao lưu/khôi phục cả thư viện | Diễn cảm/legato theo câu, grace/trill, arpeggio xuyên khuông; tablet/tài khoản/đồng bộ theo nhu cầu vẫn mở |
 
 Lộ trình đặt M0–M2 trước phần luyện tích hợp. Thực tế M3–M6 đã được triển khai
 khi M2 còn thiếu ma trận editor. Đó là lệch thứ tự cổng nghiệm thu; phần code
@@ -48,6 +48,40 @@ Nguồn code tại đây:
 - [Kế hoạch theo score](../packages/practice-core/plan.ts).
 - [Transport/audio clock](../apps/pianist-web/src/platform/transport.ts).
 - [Bộ test domain](../apps/pianist-web/tests/core.test.ts).
+
+## Đợt tiếp tục `pianist-onset-1.2.0`, 17/10/2026
+
+Theo yêu cầu người dùng: tiếp tục code, nghiệm thu bằng MIDI mô phỏng, đàn thật
+để sau; chưa có hosting nên chuẩn bị gói triển khai. **99 test đạt**, không skip.
+Các nguyên tắc onset tham khảo ba repo được giữ; phần duration dưới đây là
+policy mới của Pianist, không tuyên bố đã port một bộ chấm diễn cảm từ các repo.
+
+- Duration tách khỏi timing: lấy độ dài từ onset đã chơi, tránh phạt onset trễ
+  hai lần. Có key mode và CC64 sustain mode, trạng thái độc lập device/channel.
+  Note Off do pause/disconnect là synthetic, không bị chấm nhả sớm. Deadline
+  giữ mở cho nốt cuối đánh trễ; Worker truyền delta duration, replay kiểm lại.
+- Native snapshot lấy staccato/staccatissimo, arpeggio direction và ornament.
+  Fixture gốc CC0 xác nhận gate 0.5/0.25/1, arpeggio xuống G/E/C ở
+  4000/4060/4120 ms với profile 120 ms. Grace/trill realization và legato theo
+  câu vẫn chưa được hiện thực; policy và dung sai hiển thị trước khi tập.
+- Sao lưu thư viện kiểm hash và actual decompressed size, phục hồi có preview,
+  ID mới và transaction chung. UI thử trên thư viện thực: 21 project có sẵn
+  giữ nguyên bytes/metadata; project khôi phục lấy recovery revision 2 khi
+  timestamp bằng bản revision 1; lịch sử và release result vẫn đúng.
+- Thao tác đổi document được serialize; request hủy cũ không xóa busy state
+  của request mới. IndexedDB open lỗi không bị cache vô hạn.
+- UI native kiểm thêm transpose C → D, undo/redo, tuplet 3:2, lyric La,
+  nhập voice 2 và system break; file MusicXML được parse độc lập. Khi thử
+  Style phát hiện nút dưới đáy bị khuất; bản web thêm scroll viewport cho
+  trang style và giới hạn dialog theo màn hình.
+- Gói triển khai tách khỏi build preview: chỉ tài nguyên manifest, bài CC0,
+  source archive đúng commit, notices/hash/toolchain, Caddy/Compose/rollback.
+  Caddy thật đã qua kiểm 85 resource trên loopback, gồm MIME/cache/isolation
+  headers. Kiểm tra bắt được và sửa URL có dấu cách và CRLF trong service worker.
+  HTTP loopback không được ghi thành đã kiểm HTTPS.
+
+Các mục còn mở được giữ rõ trong [kế hoạch](IMPLEMENTATION_PLAN.md), không
+đánh dấu toàn bộ M2/M6/v1 đã nghiệm thu chỉ vì các test mới đã pass.
 
 ## Đợt hoàn thiện `pianist-onset-1.1.0`
 
@@ -89,7 +123,7 @@ Các sửa bổ sung:
   mới publish. Gói tối ưu khoảng 134,5 MiB, so với 180,1 MiB phát triển trước đó.
   Runtime notices thực được đóng gói; chưa thay thế audit phân phối đầy đủ.
 
-Hiện có **85 test đạt**, không skip, gồm domain, actual Worker với MIDI giả lập,
+Đợt 1.1.0 có **85 test đạt**, không skip, gồm domain, actual Worker với MIDI giả lập,
 storage rollback, bridge, loader/offline và lifecycle. Build TypeScript/Vite và
 native tối ưu đã chạy. Bằng chứng UI: C4 trong hợp âm C/E/G chuyển xanh ngay,
 C♯4 báo đỏ; BPM C4 trễ 151 ms hiện vàng và kết quả khớp 1/5, 4 miss, 0 extra.
@@ -136,4 +170,5 @@ algorithmVersion 1.0.1 và reason `outside-pitch-window`; lưu local trong
 
 Các test không chứng minh mọi bài piano hoặc mọi thiết bị đã đúng. Cần hoàn
 tất corpus/M2, chấm đàn thật/M4 và release gates/M6 trước khi gọi là v1 đạt.
-Onset đúng chưa chứng minh nhả phím/giữ phím/pedal/diễn cảm đúng.
+Onset đúng chưa chứng minh nhả phím/giữ phím/pedal/diễn cảm đúng; 1.2.0 chấm
+độ dài MIDI theo policy riêng, vẫn chưa xác nhận diễn cảm hoặc âm thanh đàn thật.

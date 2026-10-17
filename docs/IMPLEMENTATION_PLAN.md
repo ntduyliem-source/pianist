@@ -1,6 +1,6 @@
 # Kế hoạch code Pianist Web
 
-Cập nhật: 16/10/2026. Nền tảng được người dùng xác nhận: **web chạy trong trình duyệt**. M0 đã có fork và editor WebAssembly chạy thật. M1–M6 đã có mã nguồn cho shell, lưu/phục hồi, snapshot native, hai chế độ tập, kết quả/lịch sử và gói offline; các cổng nghiệm thu còn thiếu được ghi dưới đây. Màn tập là chức năng riêng, chỉ đọc bản nhạc, không có notation edit. Xem [hướng dẫn hiện tại](PIANIST_WEB.md), [kết quả M1–M6](M1_M6_RESULTS.md) và [bằng chứng M0 trước đó](M0_RESULTS.md). Chưa nghiệm thu đàn MIDI thật, toàn bộ ma trận editor hoặc phát hành HTTPS công khai.
+Cập nhật: 17/10/2026. Nền tảng được người dùng xác nhận: **web chạy trong trình duyệt**. M0 đã có fork và editor WebAssembly chạy thật. M1–M6 đã có mã nguồn cho shell, lưu/phục hồi, snapshot native, hai chế độ tập, kết quả/lịch sử và gói offline; M7 đã có sao lưu cả thư viện, chấm độ dài tùy chọn và profile arpeggio. Các cổng nghiệm thu còn thiếu được ghi dưới đây. Màn tập là chức năng riêng, chỉ đọc bản nhạc, không có notation edit. Xem [hướng dẫn hiện tại](PIANIST_WEB.md), [kết quả M1–M6](M1_M6_RESULTS.md) và [bằng chứng M0 trước đó](M0_RESULTS.md). Theo yêu cầu người dùng, thử đàn MIDI thật để sau và chỉ chuẩn bị gói triển khai khi chưa có hosting.
 
 Mục tiêu sản phẩm: mở website → nhập MXL → chỉnh sửa bản nhạc → lưu/mở lại hoặc tải file về → tập piano theo **Đúng nốt** hoặc **Theo BPM** → xem kết quả và tập lại đoạn yếu. Editor và màn hình tập dùng cùng nội dung bản nhạc, kể cả thay đổi chưa xuất file. “Pianist” là tên làm việc.
 
@@ -240,9 +240,11 @@ Nghiệm thu: người dùng đi hết luồng sửa → tập → kết quả �
 - [x] Xử lý quota, lỗi ghi, migration và recovery. Tải file về luôn là đường sao lưu độc lập với dữ liệu trình duyệt.
 - [ ] Kiểm thử browser integration và MIDI/audio thật; đo lần tải lạnh/ấm, RAM và bài dài trên máy mục tiêu.
 - [x] Đóng gói WASM/font/sound có version/hash; lazy-load tài nguyên. Không tải lại engine hay activate bản cập nhật giữa session.
-- [ ] Cấu hình HTTPS, WASM MIME, cache, COOP/COEP khi build yêu cầu và chính sách thiết bị phù hợp; thử ở trang top-level cùng origin.
+- [x] Chuẩn bị Caddy/Docker Compose, WASM MIME, cache, COOP/COEP và MIDI cùng origin; chạy Caddy thật trên loopback và kiểm hash/headers bằng script.
+- [ ] Thử domain HTTPS top-level với chứng chỉ hợp lệ. Người dùng chưa có hosting; gói triển khai được chuẩn bị, chưa publish.
 - [x] PWA/offline là bước hoàn thiện sau khi tải tài nguyên thành công: cache có version, không trộn JS/engine cũ mới, không coi cache là nơi lưu project.
-- [ ] Kiểm tra giấy phép mã nguồn, Qt, font và soundfont; chuẩn bị notices và source/build tương ứng với bản phân phối.
+- [x] Đóng gói notices có inventory/hash, source archive đúng Git commit, toolchain và hướng dẫn build; gói public dùng bài tự tạo CC0, bỏ ví dụ local.
+- [ ] Hoàn tất kiểm kê dependency đã link và corresponding source/điều kiện phân phối Qt static cho đúng artifact trước phát hành công khai.
 - [ ] Nghiệm thu toàn bộ ma trận editor và các ca bắt buộc. Mục chưa đạt được ghi thành lỗi chặn hoặc giới hạn công khai, không coi bản alpha là hoàn thành yêu cầu.
 
 Nghiệm thu v1: mở URL trên máy chưa cài MuseScore → nhập MXL → sửa → lưu/tải/mở lại → dùng đàn MIDI tập cả hai chế độ → xem lịch sử → xuất MXL. Chốt triển khai hosting khi bắt đầu thực hiện phát hành; lượt lập kế hoạch này chưa tạo hay publish website.
@@ -251,18 +253,21 @@ IndexedDB có cơ chế quota và eviction phụ thuộc trình duyệt; thiết
 
 **M7 — Luyện nâng cao và đồng bộ tùy nhu cầu**
 
-- [ ] Chấm giữ phím/pedal với policy cho staccato, legato, tie, rest theo bè; MIDI không đo được chính xác lúc âm piano vật lý tắt.
-- [ ] Thêm profile cho grace/arpeggio/ornament/fermata và bộ fixture được người chơi kiểm tra.
+- [x] Chấm độ dài riêng theo Note Off hoặc sustain CC64 từng device/channel; gate staccato 50%, staccatissimo 25%, nốt thường/tie 100%; pause/disconnect không tạo lỗi nhả sớm giả. Mặc định tắt, chỉ có trong BPM.
+- [x] Profile arpeggio lên/xuống trong từng hợp âm: 80/120/200 ms, tối đa nửa trường độ; snapshot native có fixture kiểm chứng.
+- [ ] Kiểm policy độ dài với người chơi/đàn thật; chấm legato theo câu nhạc, rest theo từng bè và pedal theo ký hiệu riêng. MIDI không đo được chính xác lúc âm piano vật lý tắt.
+- [ ] Realization grace/ornament và arpeggio xuyên khuông; fermata diễn cảm. Hiện công khai policy bỏ grace, chấm nốt ornament chính, không chấm độ dài ornament và fermata theo native timeline.
 - [x] Phát riêng bè/tay còn lại bằng lọc role/event; hai tay piano có thể chung instrument track.
 - [x] Tăng/giảm BPM giữa các lượt loop theo mức đặt trước đã hiển thị; timeline được lập trước, không tự kéo theo người chơi.
 - [ ] Mở rộng browser/tablet sau đo hiệu năng và thiết bị thực tế.
 - [ ] Nếu cần tài khoản: thêm API xác thực, object storage cho file, database metadata/lịch sử, revision conflict và đồng bộ. Chấm thời gian vẫn ở trình duyệt.
 - [x] Chỉ so sánh tiến bộ giữa những lượt hoàn thành có cấu hình, score, nguồn input, clock và phiên bản thuật toán tương thích.
-- [ ] Bổ sung nhập/xuất toàn bộ thư viện khi cần chuyển thiết bị; hiện có tải từng MSCZ và JSON/CSV kết quả.
+- [x] Nhập/xuất toàn bộ thư viện, bản nguồn, recovery và lịch sử; xem trước/kiểm hash trước khôi phục; tạo ID mới và commit một transaction. Không tự áp dụng calibration của máy cũ.
 
 Âm tay còn lại hiện là âm hướng dẫn tổng hợp, không phải tiếng piano MS Basic.
-Chấm duration/pedal và profile ký hiệu nâng cao vẫn chưa triển khai; tài khoản,
-tablet và đồng bộ là nhánh mở rộng có điều kiện, chưa được nghiệm thu.
+Chấm độ dài là policy luyện tập có phiên bản, chưa phải đánh giá diễn cảm hay
+âm thanh piano vật lý. Tài khoản, tablet và đồng bộ là nhánh mở rộng có điều
+kiện, chưa được nghiệm thu.
 
 **6. Quy tắc chấm phải khóa trước khi viết thuật toán**
 

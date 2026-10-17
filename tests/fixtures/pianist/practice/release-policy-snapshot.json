@@ -1,0 +1,457 @@
+{
+  "anchors": [
+    {
+      "arpeggio": "down",
+      "arpeggioGroup": "m1-t1920-v0",
+      "box": {
+        "height": 91.6484375,
+        "width": 111.4921875,
+        "x": 5660.617356668306,
+        "y": 2481.734836368111
+      },
+      "durationTicks": 480,
+      "id": "m1-t1920-v0-n0",
+      "measure": 1,
+      "page": 0,
+      "pitch": 60,
+      "play": true,
+      "releaseRatio": 1,
+      "releaseUnsupported": false,
+      "staff": 0,
+      "tick": 1920,
+      "track": 0,
+      "visible": true,
+      "visualStaff": 0,
+      "voice": 0
+    },
+    {
+      "box": {
+        "height": 91.6484375,
+        "width": 111.4921875,
+        "x": 2899.431379183071,
+        "y": 2440.3962536909453
+      },
+      "durationTicks": 480,
+      "id": "m0-t480-v0-n0",
+      "measure": 0,
+      "page": 0,
+      "pitch": 62,
+      "play": true,
+      "releaseRatio": 0.25,
+      "releaseUnsupported": false,
+      "staff": 0,
+      "tick": 480,
+      "track": 0,
+      "visible": true,
+      "visualStaff": 0,
+      "voice": 0
+    },
+    {
+      "arpeggio": "down",
+      "arpeggioGroup": "m1-t1920-v0",
+      "box": {
+        "height": 91.6484375,
+        "width": 111.4921875,
+        "x": 5660.617356668306,
+        "y": 2399.05767101378
+      },
+      "durationTicks": 480,
+      "id": "m1-t1920-v0-n1",
+      "measure": 1,
+      "page": 0,
+      "pitch": 64,
+      "play": true,
+      "releaseRatio": 1,
+      "releaseUnsupported": false,
+      "staff": 0,
+      "tick": 1920,
+      "track": 0,
+      "visible": true,
+      "visualStaff": 0,
+      "voice": 0
+    },
+    {
+      "arpeggio": "down",
+      "arpeggioGroup": "m1-t1920-v0",
+      "box": {
+        "height": 91.6484375,
+        "width": 111.4921875,
+        "x": 5660.617356668306,
+        "y": 2316.380505659449
+      },
+      "durationTicks": 480,
+      "id": "m1-t1920-v0-n2",
+      "measure": 1,
+      "page": 0,
+      "pitch": 67,
+      "play": true,
+      "releaseRatio": 1,
+      "releaseUnsupported": false,
+      "staff": 0,
+      "tick": 1920,
+      "track": 0,
+      "visible": true,
+      "visualStaff": 0,
+      "voice": 0
+    },
+    {
+      "box": {
+        "height": 91.6484375,
+        "width": 111.4921875,
+        "x": 6671.428595595471,
+        "y": 2440.3962536909453
+      },
+      "durationTicks": 480,
+      "id": "m1-t2400-v0-n0",
+      "measure": 1,
+      "page": 0,
+      "pitch": 62,
+      "play": true,
+      "releaseRatio": 1,
+      "releaseUnsupported": true,
+      "staff": 0,
+      "tick": 2400,
+      "track": 0,
+      "visible": true,
+      "visualStaff": 0,
+      "voice": 0
+    },
+    {
+      "box": {
+        "height": 91.6484375,
+        "width": 111.4921875,
+        "x": 1888.6201402559057,
+        "y": 2481.734836368111
+      },
+      "durationTicks": 480,
+      "id": "m0-t0-v0-n0",
+      "measure": 0,
+      "page": 0,
+      "pitch": 60,
+      "play": true,
+      "releaseRatio": 0.5,
+      "releaseUnsupported": false,
+      "staff": 0,
+      "tick": 0,
+      "track": 0,
+      "visible": true,
+      "visualStaff": 0,
+      "voice": 0
+    },
+    {
+      "box": {
+        "height": 91.6484375,
+        "width": 111.4921875,
+        "x": 3910.2426181102355,
+        "y": 2399.05767101378
+      },
+      "durationTicks": 960,
+      "id": "m0-t960-v0-n0",
+      "measure": 0,
+      "page": 0,
+      "pitch": 64,
+      "play": true,
+      "releaseRatio": 1,
+      "releaseUnsupported": false,
+      "staff": 0,
+      "tick": 960,
+      "track": 0,
+      "visible": true,
+      "visualStaff": 0,
+      "voice": 0
+    }
+  ],
+  "baseQuarterBpm": 60,
+  "beats": [
+    {
+      "accent": true,
+      "atMs": 0,
+      "beatQuarter": 0.5,
+      "occurrence": 0
+    },
+    {
+      "accent": false,
+      "atMs": 500,
+      "beatQuarter": 0.5,
+      "occurrence": 0
+    },
+    {
+      "accent": false,
+      "atMs": 1000,
+      "beatQuarter": 0.5,
+      "occurrence": 0
+    },
+    {
+      "accent": false,
+      "atMs": 1500,
+      "beatQuarter": 0.5,
+      "occurrence": 0
+    },
+    {
+      "accent": false,
+      "atMs": 2000,
+      "beatQuarter": 0.5,
+      "occurrence": 0
+    },
+    {
+      "accent": false,
+      "atMs": 2500,
+      "beatQuarter": 0.5,
+      "occurrence": 0
+    },
+    {
+      "accent": false,
+      "atMs": 3000,
+      "beatQuarter": 0.5,
+      "occurrence": 0
+    },
+    {
+      "accent": false,
+      "atMs": 3500,
+      "beatQuarter": 0.5,
+      "occurrence": 0
+    },
+    {
+      "accent": true,
+      "atMs": 0,
+      "beatQuarter": 1,
+      "occurrence": 0
+    },
+    {
+      "accent": false,
+      "atMs": 1000,
+      "beatQuarter": 1,
+      "occurrence": 0
+    },
+    {
+      "accent": false,
+      "atMs": 2000,
+      "beatQuarter": 1,
+      "occurrence": 0
+    },
+    {
+      "accent": false,
+      "atMs": 3000,
+      "beatQuarter": 1,
+      "occurrence": 0
+    },
+    {
+      "accent": true,
+      "atMs": 0,
+      "beatQuarter": 1.5,
+      "occurrence": 0
+    },
+    {
+      "accent": false,
+      "atMs": 1500,
+      "beatQuarter": 1.5,
+      "occurrence": 0
+    },
+    {
+      "accent": false,
+      "atMs": 3000,
+      "beatQuarter": 1.5,
+      "occurrence": 0
+    },
+    {
+      "accent": true,
+      "atMs": 4000,
+      "beatQuarter": 0.5,
+      "occurrence": 1
+    },
+    {
+      "accent": false,
+      "atMs": 4500,
+      "beatQuarter": 0.5,
+      "occurrence": 1
+    },
+    {
+      "accent": false,
+      "atMs": 5000,
+      "beatQuarter": 0.5,
+      "occurrence": 1
+    },
+    {
+      "accent": false,
+      "atMs": 5500,
+      "beatQuarter": 0.5,
+      "occurrence": 1
+    },
+    {
+      "accent": false,
+      "atMs": 6000,
+      "beatQuarter": 0.5,
+      "occurrence": 1
+    },
+    {
+      "accent": false,
+      "atMs": 6500,
+      "beatQuarter": 0.5,
+      "occurrence": 1
+    },
+    {
+      "accent": false,
+      "atMs": 7000,
+      "beatQuarter": 0.5,
+      "occurrence": 1
+    },
+    {
+      "accent": false,
+      "atMs": 7500,
+      "beatQuarter": 0.5,
+      "occurrence": 1
+    },
+    {
+      "accent": true,
+      "atMs": 4000,
+      "beatQuarter": 1,
+      "occurrence": 1
+    },
+    {
+      "accent": false,
+      "atMs": 5000,
+      "beatQuarter": 1,
+      "occurrence": 1
+    },
+    {
+      "accent": false,
+      "atMs": 6000,
+      "beatQuarter": 1,
+      "occurrence": 1
+    },
+    {
+      "accent": false,
+      "atMs": 7000,
+      "beatQuarter": 1,
+      "occurrence": 1
+    },
+    {
+      "accent": true,
+      "atMs": 4000,
+      "beatQuarter": 1.5,
+      "occurrence": 1
+    },
+    {
+      "accent": false,
+      "atMs": 5500,
+      "beatQuarter": 1.5,
+      "occurrence": 1
+    },
+    {
+      "accent": false,
+      "atMs": 7000,
+      "beatQuarter": 1.5,
+      "occurrence": 1
+    }
+  ],
+  "durationMs": 8000,
+  "measures": [
+    {
+      "box": {
+        "height": 330.70866141732284,
+        "width": 4216.002783587597,
+        "x": 1227.3385826771655,
+        "y": 2114.173228346457
+      },
+      "denominator": 4,
+      "endTick": 1920,
+      "index": 0,
+      "label": 1,
+      "numerator": 4,
+      "page": 0,
+      "tick": 0
+    },
+    {
+      "box": {
+        "height": 330.70866141732284,
+        "width": 3771.9972164124006,
+        "x": 5443.341366264763,
+        "y": 2114.173228346457
+      },
+      "denominator": 4,
+      "endTick": 3840,
+      "index": 1,
+      "label": 2,
+      "numerator": 4,
+      "page": 0,
+      "tick": 1920
+    }
+  ],
+  "occurrences": [
+    {
+      "endMs": 4000,
+      "index": 0,
+      "measure": 0,
+      "startMs": 0,
+      "utick": 0
+    },
+    {
+      "endMs": 8000,
+      "index": 1,
+      "measure": 1,
+      "startMs": 4000,
+      "utick": 1920
+    }
+  ],
+  "pages": [],
+  "performed": [
+    {
+      "anchor": "m0-t0-v0-n0",
+      "atMs": 0,
+      "endMs": 1000,
+      "occurrence": 0
+    },
+    {
+      "anchor": "m0-t480-v0-n0",
+      "atMs": 1000,
+      "endMs": 2000,
+      "occurrence": 0
+    },
+    {
+      "anchor": "m0-t960-v0-n0",
+      "atMs": 2000,
+      "endMs": 4000,
+      "occurrence": 0
+    },
+    {
+      "anchor": "m1-t1920-v0-n0",
+      "atMs": 4000,
+      "endMs": 5000,
+      "occurrence": 1
+    },
+    {
+      "anchor": "m1-t1920-v0-n1",
+      "atMs": 4000,
+      "endMs": 5000,
+      "occurrence": 1
+    },
+    {
+      "anchor": "m1-t1920-v0-n2",
+      "atMs": 4000,
+      "endMs": 5000,
+      "occurrence": 1
+    },
+    {
+      "anchor": "m1-t2400-v0-n0",
+      "atMs": 5000,
+      "endMs": 6000,
+      "occurrence": 1
+    }
+  ],
+  "revision": 1,
+  "schemaVersion": 1,
+  "staves": [
+    {
+      "id": 0,
+      "part": "Piano",
+      "partId": "1"
+    }
+  ],
+  "title": "Giữ phím và arpeggio",
+  "warnings": [
+    "arpeggio",
+    "ornament"
+  ],
+  "projectId": "native-release-policy",
+  "fingerprint": "680601ea917f7add624547598177a67398834a75d21a6eba39340fcee8a47170"
+}

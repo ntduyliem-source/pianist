@@ -1,0 +1,19 @@
+services:
+  web:
+    image: ${CADDY_IMAGE:?Set CADDY_IMAGE to a tested caddy image tag or digest}
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+    environment:
+      PIANIST_DOMAIN: ${PIANIST_DOMAIN:?Set your domain}
+      PIANIST_WEB_ROOT: /srv/pianist
+    volumes:
+      - ./site:/srv/pianist:ro
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+volumes:
+  caddy_data:
+  caddy_config:

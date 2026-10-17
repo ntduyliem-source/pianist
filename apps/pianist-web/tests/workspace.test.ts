@@ -25,3 +25,13 @@ test('file drop and project commands cannot replace the score of an active or pa
     await assert.rejects(workspace.rename('Another name'), /Kết thúc lượt/);
   }
 });
+
+test('overlapping document changes cannot publish different scores or hide the active busy state', async () => {
+  const workspace = new Workspace(); let unblock!: () => void;
+  workspace.autosave = () => new Promise<void>(resolve => {unblock = resolve;});
+  const first = workspace.saveAs('copy');
+  await assert.rejects(workspace.newProject(), /Đang xử lý/);
+  await assert.rejects(workspace.openProject('other'), /Đang xử lý/);
+  assert.ok(workspace.state.busy); unblock(); await first; assert.equal(workspace.state.busy, '');
+  workspace.autosave = async () => {}; await workspace.saveAs('no project'); assert.equal(workspace.state.busy, '');
+});

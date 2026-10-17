@@ -12,6 +12,7 @@
 
 #include "global/io/buffer.h"
 #include "engraving/dom/articulation.h"
+#include "engraving/dom/arpeggio.h"
 #include "engraving/dom/chord.h"
 #include "engraving/dom/measure.h"
 #include "engraving/dom/note.h"
@@ -90,8 +91,12 @@ bool WebApi::getSnapshot()
                 const auto* chord = engraving::toChord(element);
                 if (!chord->graceNotes().empty()) { warnings.insert("grace"); }
                 if (chord->arpeggio()) { warnings.insert("arpeggio"); }
+                double releaseRatio = 1.0;
+                bool releaseUnsupported = false;
                 for (const auto* articulation : chord->articulations()) {
-                    if (articulation->isOrnament()) { warnings.insert("ornament"); }
+                    if (articulation->isOrnament()) { warnings.insert("ornament"); releaseUnsupported = true; }
+                    if (articulation->articulationName().toQString() == "staccatissimo") { releaseRatio = std::min(releaseRatio, 0.25); }
+                    else if (articulation->isStaccato()) { releaseRatio = std::min(releaseRatio, 0.5); }
                 }
                 int n = 0;
                 for (const auto* note : chord->notes()) {
@@ -103,8 +108,16 @@ bool WebApi::getSnapshot()
                                      {"staff", static_cast<int>(chord->staffIdx())}, {"visualStaff", static_cast<int>(chord->vStaffIdx())},
                                      {"voice", static_cast<int>(chord->voice())}, {"track", static_cast<int>(chord->track())},
                                      {"page", page}, {"visible", note->visible()}, {"play", note->play()},
+                                     {"releaseRatio", releaseRatio}, {"releaseUnsupported", releaseUnsupported},
                                      {"box", box(muse::RectF(pos.x() - 2, pos.y() - note->headHeight() / 2 - 2,
                                                             note->headWidth() + 4, note->headHeight() + 4))}};
+                    if (const auto* arpeggio = chord->arpeggio()) {
+                        const auto type = arpeggio->arpeggioType();
+                        if (type != engraving::ArpeggioType::BRACKET) {
+                            data["arpeggio"] = type == engraving::ArpeggioType::DOWN || type == engraving::ArpeggioType::DOWN_STRAIGHT ? "down" : "up";
+                            data["arpeggioGroup"] = QString("m%1-t%2-v%3").arg(measureIndex).arg(segment->tick().ticks()).arg(chord->track());
+                        }
+                    }
                     notes[note] = data;
                     if (notes.size() > 50000) { return false; }
                 }

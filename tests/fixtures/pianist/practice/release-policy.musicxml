@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Original Pianist test composition, CC0. -->
+<score-partwise version="4.0">
+  <work><work-title>Giữ phím và arpeggio</work-title></work>
+  <identification><rights>CC0</rights></identification>
+  <part-list><score-part id="P1"><part-name>Piano</part-name></score-part></part-list>
+  <part id="P1">
+    <measure number="1">
+      <attributes><divisions>4</divisions><key><fifths>0</fifths></key><time><beats>4</beats><beat-type>4</beat-type></time><clef><sign>G</sign><line>2</line></clef></attributes>
+      <direction><direction-type><metronome><beat-unit>quarter</beat-unit><per-minute>60</per-minute></metronome></direction-type><sound tempo="60"/></direction>
+      <note><pitch><step>C</step><octave>4</octave></pitch><duration>4</duration><type>quarter</type><notations><articulations><staccato/></articulations></notations></note>
+      <note><pitch><step>D</step><octave>4</octave></pitch><duration>4</duration><type>quarter</type><notations><articulations><staccatissimo/></articulations></notations></note>
+      <note><pitch><step>E</step><octave>4</octave></pitch><duration>8</duration><type>half</type></note>
+    </measure>
+    <measure number="2">
+      <note><pitch><step>C</step><octave>4</octave></pitch><duration>4</duration><type>quarter</type><notations><arpeggiate direction="down"/></notations></note>
+      <note><chord/><pitch><step>E</step><octave>4</octave></pitch><duration>4</duration><type>quarter</type><notations><arpeggiate direction="down"/></notations></note>
+      <note><chord/><pitch><step>G</step><octave>4</octave></pitch><duration>4</duration><type>quarter</type><notations><arpeggiate direction="down"/></notations></note>
+      <note><pitch><step>D</step><octave>4</octave></pitch><duration>4</duration><type>quarter</type><notations><ornaments><trill-mark/></ornaments></notations></note>
+      <note><rest/><duration>8</duration><type>half</type></note>
+    </measure>
+  </part>
+</score-partwise>

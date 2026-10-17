@@ -1,5 +1,23 @@
 import type { CoreState, Plan, SessionResult } from '../score-contracts/index';
 
+export function resultCsv(result: SessionResult): string {
+  const targets = new Map(result.targets.map(t => [t.id, t])), releases = new Map(result.releases?.map(r => [r.targetId, r]));
+  const rows: (string | number)[][] = [['target', 'loop', 'measure', 'pitch', 'status', 'delta_ms', 'grade', 'release_mode', 'release_status', 'expected_hold_ms', 'held_ms', 'release_delta_ms', 'event_seq']];
+  for (const a of [...result.assessments].sort((a, b) => a.atMs - b.atMs)) {
+    const t = targets.get(a.targetId), r = releases.get(a.targetId);
+    rows.push([a.targetId, t ? t.loop + 1 : '', t ? t.measure + 1 : '', t?.pitch ?? '', a.status, a.deltaMs ?? '', a.grade ?? '', result.config.releaseMode ?? 'off', r?.status ?? '', r?.expectedMs ?? '', r?.heldMs ?? '', r?.deltaMs ?? '', a.eventSeq ?? '']);
+  }
+  for (const e of result.extraEvents) rows.push(['', e.loop === undefined ? '' : e.loop + 1, e.measure === undefined ? '' : e.measure + 1, e.pitch, 'extra', '', '', '', '', '', '', '', e.seq]);
+  const cell = (value: string | number) => {
+    let text = String(value);
+    // Imported backups may contain arbitrary identifiers. Keep spreadsheet
+    // formula prefixes inert while retaining numeric timing values as numbers.
+    if (typeof value === 'string' && /^[\s]*[=+@-]/.test(text)) text = "'" + text;
+    return /[",\r\n]/.test(text) ? '"' + text.replaceAll('"', '""') + '"' : text;
+  };
+  return '\ufeff' + rows.map(row => row.map(cell).join(',')).join('\r\n');
+}
+
 export function summarize(plan: Plan, state: CoreState, title: string, outcome: SessionResult['outcome'], elapsedMs: number, clock: string): SessionResult {
   const matched = state.assessments.filter(a => a.status === 'matched');
   const deltas = matched.flatMap(a => a.deltaMs === undefined ? [] : [a.deltaMs]);
@@ -7,6 +25,7 @@ export function summarize(plan: Plan, state: CoreState, title: string, outcome: 
   const quantile = (q: number) => absolute.length ? absolute[Math.min(absolute.length - 1, Math.ceil(q * absolute.length) - 1)] : null;
   const good = matched.filter(a => a.grade === 'perfect' || a.grade === 'good').length;
   const assessments = new Map(state.assessments.map(a => [a.targetId, a]));
+  const releases = state.releases ?? [], scoredReleases = releases.filter(r => !['interrupted', 'unscored'].includes(r.status));
   const weak = new Map<number, {measure: number; missed: number; badTiming: number; evaluated: number; extras: number}>();
   for (const t of plan.targets) {
     const a = assessments.get(t.id); if (!a) continue;
@@ -40,5 +59,7 @@ export function summarize(plan: Plan, state: CoreState, title: string, outcome: 
       const evaluated = state.assessments.filter(a => ids.has(a.targetId));
       return {loop: l.index, evaluated: evaluated.length, matched: evaluated.filter(a => a.status === 'matched').length,
         extras: state.extras.filter(e => e.loop !== undefined ? e.loop === l.index : e.atMs >= l.startMs && e.atMs <= l.endMs).length};
-    }), faults: state.faults, clock};
+    }), faults: state.faults, clock,
+    ...(plan.config.mode === 'bpm' && plan.config.releaseMode && plan.config.releaseMode !== 'off'
+      ? {releases: [...releases].sort((a, b) => a.targetId.localeCompare(b.targetId)), releaseRate: scoredReleases.length ? scoredReleases.filter(r => r.status === 'good').length / scoredReleases.length : null} : {})};
 }

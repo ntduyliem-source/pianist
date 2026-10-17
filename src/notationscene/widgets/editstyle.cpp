@@ -30,6 +30,10 @@
 #include <QSignalMapper>
 #include <QStringBuilder>
 #include <QStringLiteral>
+#ifdef Q_OS_WASM
+#include <QScreen>
+#include <QScrollArea>
+#endif
 
 #include "translation.h"
 #include "types/translatablestring.h"
@@ -1252,6 +1256,16 @@ EditStyle::EditStyle(QWidget* parent)
         resetStyleValue(int(StyleId::lyricsMaxDashCount));
     });
 
+#ifdef Q_OS_WASM
+    // The browser editor is smaller than the desktop work area. Keep the
+    // style pages' natural minimum sizes inside a scrollable viewport so the
+    // dialog's OK/Cancel row remains reachable, including on shorter screens.
+    auto pageViewport = new QScrollArea(this);
+    pageViewport->setWidgetResizable(true);
+    pageViewport->setFrameShape(QFrame::NoFrame);
+    splitter->replaceWidget(splitter->indexOf(pageStack), pageViewport);
+    pageViewport->setWidget(pageStack);
+#endif
     adjustPagesStackSize(0);
 
     // Consistency checks
@@ -1272,6 +1286,13 @@ void EditStyle::showEvent(QShowEvent* ev)
     buttonApplyToAllParts->setEnabled(globalContext()->currentNotation()->style()->canApplyToAllParts());
 
     WidgetStateStore::restoreGeometry(this);
+#ifdef Q_OS_WASM
+    if (screen()) {
+        const QRect available = screen()->availableGeometry().adjusted(12, 28, -12, -12);
+        resize(size().boundedTo(available.size()));
+        move(available.center() - rect().center());
+    }
+#endif
     QWidget::showEvent(ev);
 }
 

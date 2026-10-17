@@ -2,6 +2,7 @@ import type { SessionResult } from '../../../../packages/score-contracts/index';
 
 export interface ProjectRecord {id: string; title: string; filename: string; bytes: Uint8Array; source?: Uint8Array; sourceName?: string; revision: number; fingerprint?: string; updatedAt: number; createdAt: number; archived?: boolean}
 export interface RecoveryRecord {id: string; bytes: Uint8Array; revision: number; updatedAt: number; title: string; filename: string}
+export interface LibraryData {projects: ProjectRecord[]; recovery: RecoveryRecord[]; sessions: SessionResult[]; settings: {id: string; [key: string]: unknown}[]}
 const OWNER = crypto.randomUUID(), LEASE_MS = 20000;
 const browserLocks = new Map<string, () => void>();
 const pendingLocks = new Map<string, Promise<void>>();
@@ -21,18 +22,25 @@ async function browserLock(id: string): Promise<boolean> {
   }
   return true;
 }
-let database: Promise<IDBDatabase>;
+let database: Promise<IDBDatabase> | undefined;
 export function openDatabase(): Promise<IDBDatabase> {
-  return database ??= new Promise((resolve, reject) => {
+  if (database) return database;
+  const opening = new Promise<IDBDatabase>((resolve, reject) => {
+    let failed = false;
     const req = indexedDB.open('pianist-library', 2);
     req.onupgradeneeded = () => {
       const db = req.result;
       for (const store of ['projects', 'recovery', 'sessions', 'settings', 'leases']) if (!db.objectStoreNames.contains(store)) db.createObjectStore(store, {keyPath: 'id'});
     };
-    req.onblocked = () => reject(Error('Hãy đóng tab Pianist cũ để nâng cấp thư viện.'));
-    req.onerror = () => reject(req.error);
-    req.onsuccess = () => { req.result.onversionchange = () => req.result.close(); resolve(req.result); };
+    req.onblocked = () => {failed = true; reject(Error('Hãy đóng tab Pianist cũ để nâng cấp thư viện.'));};
+    req.onerror = () => {failed = true; reject(req.error);};
+    req.onsuccess = () => {
+      if (failed) {req.result.close(); return;}
+      req.result.onversionchange = () => {req.result.close(); if (database === pending) database = undefined;}; resolve(req.result);
+    };
   });
+  const pending = database = opening.catch(error => {if (database === pending) database = undefined; throw error;});
+  return pending;
 }
 const request = <T,>(req: IDBRequest<T>) => new Promise<T>((resolve, reject) => {req.onsuccess = () => resolve(req.result); req.onerror = () => reject(req.error);});
 const committed = (tx: IDBTransaction) => new Promise<void>((resolve, reject) => {tx.oncomplete = () => resolve(); tx.onabort = tx.onerror = () => reject(tx.error ?? Error('Không commit được dữ liệu.'));});
@@ -69,6 +77,21 @@ export async function saveSession(result: SessionResult): Promise<void> {
   all.sort((a, b) => b.createdAt - a.createdAt);
   // Do not silently remove results: trim optional event logs from older sessions only.
   for (const session of all.slice(20)) if (session.replay) { delete session.replay; store.put(session); }
+  await done;
+}
+export async function librarySnapshot(): Promise<LibraryData> {
+  const db = await openDatabase(), names = ['projects', 'recovery', 'sessions', 'settings'] as const;
+  const tx = db.transaction([...names]), done = committed(tx);
+  const [projects, recovery, sessions, settings] = await Promise.all(names.map(name => request(tx.objectStore(name).getAll())));
+  await done; return {projects, recovery, sessions, settings};
+}
+// Restores only fresh identities. add(), one transaction, and no lease writes
+// ensure that a restore cannot replace a project open in another tab.
+export async function restoreLibrary(data: LibraryData): Promise<void> {
+  const db = await openDatabase(), names = ['projects', 'recovery', 'sessions', 'settings'] as const;
+  const tx = db.transaction([...names], 'readwrite'), done = committed(tx);
+  try {for (const name of names) for (const record of data[name]) tx.objectStore(name).add(record);}
+  catch (error) {tx.abort(); await done.catch(() => {}); throw error;}
   await done;
 }
 export function storageError(e: unknown): string {
