@@ -35,10 +35,10 @@ function Icon({name}: {name: string}) {
   return <svg className="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">{paths[name] ?? paths.score}</svg>;
 }
 function App() {
-  const state = useSyncExternalStore(ws.subscribe, ws.snapshot), file = useRef<HTMLInputElement>(null), exportDialog = useRef<HTMLDialogElement>(null), about = useRef<HTMLDialogElement>(null), saveAsDialog = useRef<HTMLDialogElement>(null);
+  const state = useSyncExternalStore(ws.subscribe, ws.snapshot), file = useRef<HTMLInputElement>(null), practiceFile = useRef(false), exportDialog = useRef<HTMLDialogElement>(null), about = useRef<HTMLDialogElement>(null), saveAsDialog = useRef<HTMLDialogElement>(null);
   const [format, setFormat] = useState('mxl'), [dragging, setDragging] = useState(false), [copyTitle, setCopyTitle] = useState('');
   useEffect(() => {
-    ws.chooseFile = () => file.current?.click(); ws.showExport = () => exportDialog.current?.showModal(); ws.showAbout = () => about.current?.showModal(); ws.showSaveAs = () => {setCopyTitle((ws.state.current?.title ?? 'Bản nhạc') + ' — bản sao'); saveAsDialog.current?.showModal();};
+    ws.chooseFile = (practice = ws.state.view === 'practice') => {practiceFile.current = practice; file.current?.click();}; ws.showExport = () => exportDialog.current?.showModal(); ws.showAbout = () => about.current?.showModal(); ws.showSaveAs = () => {setCopyTitle((ws.state.current?.title ?? 'Bản nhạc') + ' — bản sao'); saveAsDialog.current?.showModal();};
     void ws.init(); document.querySelectorAll('dialog').forEach(dialog => dialog.addEventListener('close', () => ws.focusEditor()));
     const shortcut = (event: KeyboardEvent) => {
       if (state.view !== 'editor' || !(event.ctrlKey || event.metaKey) || document.querySelector('dialog[open]')) return;
@@ -60,13 +60,13 @@ function App() {
     for (const [id, action] of Object.entries(actions)) {const el = document.getElementById(id) as HTMLButtonElement; if (el) {el.disabled = ['open', 'sample'].includes(id) ? false : !state.engineReady; el.onclick = run(action);}}
   }, [state.engineReady]);
   const active = ws.session && !['ready', 'finished'].includes(ws.session.status);
-  return <div className={'application view-' + state.view} onDragOver={e => {if (e.dataTransfer.types.includes('Files')) {e.preventDefault(); setDragging(true);}}} onDragLeave={e => {if (!e.currentTarget.contains(e.relatedTarget as Node)) setDragging(false);}} onDrop={e => {e.preventDefault(); setDragging(false); if (!active && e.dataTransfer.files[0]) void ws.run(() => ws.importFile(e.dataTransfer.files[0]));}}>
+  return <div className={'application view-' + state.view} onDragOver={e => {if (e.dataTransfer.types.includes('Files')) {e.preventDefault(); setDragging(true);}}} onDragLeave={e => {if (!e.currentTarget.contains(e.relatedTarget as Node)) setDragging(false);}} onDrop={e => {e.preventDefault(); setDragging(false); if (!active && e.dataTransfer.files[0]) void ws.run(() => ws.importFile(e.dataTransfer.files[0], ws.state.view === 'practice'));}}>
     <header className="appbar">
       <a className="brand" href="#/library" onClick={e => {e.preventDefault(); ws.navigate('library');}}><span className="brand-symbol">p</span>Pianist<span className="edition">WEB</span></a>
       <nav aria-label="Chức năng chính">
         <button className={state.view === 'library' ? 'selected' : ''} onClick={() => ws.navigate('library')} disabled={!!active}><Icon name="folder"/>Thư viện</button>
-        <button className={state.view === 'editor' ? 'selected' : ''} disabled={!state.current || !!active} onClick={() => ws.navigate('editor')}><Icon name="score"/>Editor</button>
-        <button className={state.view === 'practice' ? 'selected' : ''} disabled={!state.current || !!active && state.view !== 'practice'} onClick={run(() => state.view === 'practice' ? undefined : ws.practice())}><Icon name="piano"/>Tập piano</button>
+        <button className={state.view === 'editor' ? 'selected' : ''} disabled={!!active} onClick={run(() => ws.openEditor())}><Icon name="score"/>Editor</button>
+        <button className={state.view === 'practice' ? 'selected' : ''} disabled={!!active && state.view !== 'practice'} onClick={run(() => ws.openPractice())}><Icon name="piano"/>Tập piano</button>
       </nav>
       <div className="appbar-end"><span className="local-tag"><span/>Lưu trên thiết bị</span><button className="icon-button" title="Giới thiệu và giấy phép" aria-label="Giới thiệu" onClick={() => about.current?.showModal()}>?</button></div>
     </header>
@@ -74,13 +74,13 @@ function App() {
     {state.engineFailed && <div className="loading-overlay" role="alert"><h2>{state.error}</h2><button className="primary" onClick={() => location.reload()}>Tải lại trang</button></div>}
     {state.view === 'editor' && <div className="editor-meta"><strong>{state.current?.title}</strong><span data-testid="save-state">{state.saveState}</span><button onClick={run(() => ws.saveLibrary())}><Icon name="save"/>Lưu thư viện</button><button onClick={() => ws.showSaveAs()}>Lưu bản mới…</button><button onClick={run(() => ws.downloadProject())}>Tải MSCZ</button><button onClick={() => exportDialog.current?.showModal()}>Xuất…</button><button className="primary" onClick={run(() => ws.practice())}><Icon name="piano"/>Tập bài này</button></div>}
     {state.view === 'library' && <Library/>}
-    {state.view === 'practice' && state.snapshot && state.config && <Practice key={state.snapshot.fingerprint + ':' + state.snapshot.revision} snapshot={state.snapshot} config={state.config}/>}
+    {state.view === 'practice' && (state.practicePicker || !state.snapshot || !state.config ? <PracticeHome/> : <Practice key={state.snapshot.fingerprint + ':' + state.snapshot.revision} snapshot={state.snapshot} config={state.config}/>)}
     {state.view === 'results' && state.result && <Results result={state.result}/>}
     {state.view === 'history' && <History/>}
     {state.busy && <div className="loading-overlay" role="status"><span className="brand-symbol">p</span><h2>{state.busy}</h2><div className="loading-bar"/><p>File được xử lý ngay trong trình duyệt.</p>{state.canCancelOpen && <button onClick={() => ws.cancelOpen()}>Hủy mở file</button>}</div>}
     {dragging && <div className="drop-overlay"><Icon name="upload"/><h2>Thả bản nhạc để mở</h2><p>MXL · MusicXML · MSCZ</p></div>}
     {state.toast && <div className="toast" role="status"><Icon name="check"/>{state.toast}</div>}
-    <input id="file" ref={file} type="file" accept=".mxl,.xml,.musicxml,.mscz,.mscx" aria-label="Mở file bản nhạc" hidden onChange={e => {const f = e.target.files?.[0]; if (f) void ws.run(() => ws.importFile(f)); e.target.value = '';}}/>
+    <input id="file" ref={file} type="file" accept=".mxl,.xml,.musicxml,.mscz,.mscx" aria-label="Mở file bản nhạc" hidden onChange={e => {const f = e.target.files?.[0]; if (f) void ws.run(() => ws.importFile(f, practiceFile.current)); e.target.value = '';}}/>
     <dialog ref={exportDialog} aria-labelledby="export-title"><h2 id="export-title">Xuất bản nhạc</h2><label htmlFor="export-format">Định dạng</label><select id="export-format" value={format} onChange={e => setFormat(e.target.value)}><option value="mxl">MusicXML nén (.mxl)</option><option value="musicxml">MusicXML (.musicxml)</option><option value="pdf">PDF · bản in</option></select><p>Xuất nội dung đang mở. MSCZ giữ đầy đủ thiết lập và dữ liệu MuseScore.</p><div className="dialog-actions"><button onClick={() => exportDialog.current?.close()}>Hủy</button><button className="primary" onClick={run(() => {exportDialog.current?.close(); ws.export(format);})}>Xuất file</button></div></dialog>
     <dialog ref={saveAsDialog} aria-labelledby="save-as-title"><h2 id="save-as-title">Lưu thành bản nhạc mới</h2><label htmlFor="copy-title">Tên trong thư viện</label><input id="copy-title" aria-label="Tên bản mới" autoFocus value={copyTitle} maxLength={150} onChange={e => setCopyTitle(e.target.value)}/><p>Bản mới có lịch sử luyện tập riêng. Các thay đổi và undo hiện tại của editor được giữ lại.</p><div className="dialog-actions"><button onClick={() => saveAsDialog.current?.close()}>Hủy</button><button className="primary" disabled={!copyTitle.trim()} onClick={run(async () => {await ws.saveAs(copyTitle); saveAsDialog.current?.close();})}>Lưu bản mới</button></div></dialog>
     <dialog ref={about}><h2>Pianist Web</h2><p>Editor dựa trên MuseScore Studio 4.7.5. Tập piano là chức năng riêng, sử dụng bản nhạc chỉ đọc.</p><p><a href="LICENSE.txt" target="_blank" rel="noreferrer">GPL v3</a> · <a href="https://github.com/ntduyliem-source/pianist" target="_blank" rel="noreferrer">Mã nguồn & hướng dẫn build</a></p><p className="muted">Chấm nốt/nhịp, tùy chọn giữ phím hoặc âm ngân theo MIDI CC64. Tối ưu cho Chrome/Edge trên máy tính. Không cần cài MuseScore.</p><div className="dialog-actions"><button onClick={() => about.current?.close()}>Đóng</button></div></dialog>
@@ -101,6 +101,34 @@ function Library() {
       <p className="storage-note">Thư viện và bản tự lưu nằm trong trình duyệt này. Tải MSCZ hoặc sao lưu cả thư viện để giữ trên máy.</p>
       <LibraryTransfer/>
       <div className="offline-controls"><button onClick={run(() => prepareOffline(setOffline))}>Chuẩn bị dùng offline</button><button onClick={run(async () => {await useOnline(); setOffline('Đã chuyển sang dùng online. Tải lại trang để áp dụng.');})}>Dùng online</button><span role="status">{offline}</span></div>
+    </section>
+  </main>;
+}
+
+function PracticeHome() {
+  const state = useSyncExternalStore(ws.subscribe, ws.snapshot), [search, setSearch] = useState('');
+  const projects = state.projects.filter(p => !p.archived && p.title.toLowerCase().includes(search.toLowerCase()));
+  return <main className="practice-home page">
+    <section className="library-content">
+      <div className="page-title">
+        <div><div className="eyebrow">PIANO PRACTICE</div><h1 id="view-heading" tabIndex={-1}>Chọn bài để tập</h1><p>Mở bài trong thư viện hoặc nhập bản nhạc để bắt đầu.</p></div>
+        <button className="primary" onClick={() => ws.chooseFile(true)}><Icon name="upload"/>Nhập bản nhạc để tập</button>
+      </div>
+      <div className="practice-intro">
+        <div><h2>Mỗi buổi tập, một bước tiến.</h2><p>Chọn cách tập phù hợp, rồi luyện từng đoạn theo nhịp của bạn.</p>
+          <div className="practice-modes"><div><Icon name="check"/><span><strong>Đúng nốt</strong>Đủ nốt mới chuyển tiếp.</span></div><div><Icon name="piano"/><span><strong>Theo BPM</strong>Luyện nhịp và xem sai lệch từng nốt.</span></div></div>
+          <button onClick={run(() => ws.sample(true))}><Icon name="play"/>Tập bài mẫu {state.exampleTitle}</button>
+        </div>
+        <Icon name="piano"/>
+      </div>
+      {state.current && <div className="practice-current"><div><span className="eyebrow">BẢN NHẠC ĐANG MỞ</span><strong>{state.current.title}</strong></div><button className="primary-light" onClick={run(() => ws.practice())}><Icon name="play"/>Tập bài đang mở</button></div>}
+      <div className="section-top"><h2>Bài trong thư viện <span>{projects.length}</span></h2><input type="search" aria-label="Tìm bài để tập" placeholder="Tìm tên bản nhạc…" value={search} onChange={e => setSearch(e.target.value)}/></div>
+      <div className="score-grid">{projects.map(project => <article className="score-card" key={project.id}>
+        <button className="score-cover" aria-label={'Tập ' + project.title} onClick={run(() => ws.openProject(project.id, true))}><Icon name="score"/><span>{project.title}</span><div className="cover-lines">━━━━━━━━━━<br/>━━━━━━━━━━<br/>━━━━━━━━━━</div></button>
+        <div className="score-card-body"><h3>{project.title}</h3><p>{date(project.updatedAt)} · {Math.round(project.bytes.length / 1024)} KB</p><button className="primary-light" aria-label={'Bắt đầu với ' + project.title} onClick={run(() => ws.openProject(project.id, true))}><Icon name="play"/>Tập bài này</button></div>
+      </article>)}</div>
+      {!projects.length && <p className="practice-empty">{search ? 'Không tìm thấy bài phù hợp.' : 'Thư viện chưa có bài. Nhập file hoặc thử bài mẫu để bắt đầu.'}</p>}
+      <p className="storage-note">Màn tập sử dụng bản nhạc chỉ đọc. MXL · MusicXML · MSCZ · tối đa 32 MiB.</p>
     </section>
   </main>;
 }

@@ -23,6 +23,39 @@ test('file drop and project commands cannot replace the score of an active or pa
     await assert.rejects(workspace.openProject('another-project'), /Kết thúc lượt/);
     await assert.rejects(workspace.saveAs('New identity'), /Kết thúc lượt/);
     await assert.rejects(workspace.rename('Another name'), /Kết thúc lượt/);
+    await assert.rejects(workspace.openEditor(), /Kết thúc lượt/);
+  }
+});
+
+test('Editor navbar opens a blank document on first use and reuses the open score afterward', async () => {
+  const workspace = new Workspace(); let created = 0;
+  workspace.newProject = async () => {
+    created++;
+    workspace.patch({current: {id: 'blank', title: 'Bản nhạc mới', filename: 'blank.mscz', bytes: new Uint8Array(), revision: 1, createdAt: 0, updatedAt: 0}});
+    workspace.bridge = {} as EngineBridge;
+  };
+  workspace.navigate = view => {workspace.patch({view});};
+  await workspace.openEditor(); await workspace.openEditor();
+  assert.equal(created, 1); assert.equal(workspace.state.view, 'editor'); assert.equal(workspace.state.current?.id, 'blank');
+});
+
+test('Practice navbar is available before opening any score and does not load the engine', async () => {
+  const workspace = new Workspace();
+  workspace.ensureEngine = async () => {throw Error('Choosing a practice score must not require WASM');};
+  workspace.navigate = view => {workspace.patch({view});};
+  await workspace.practice();
+  assert.equal(workspace.state.view, 'practice'); assert.equal(workspace.state.practicePicker, true);
+  assert.equal(workspace.state.current, undefined); assert.equal(workspace.bridge, undefined);
+});
+
+test('reselecting the Practice navbar during a session preserves held input and its current screen', () => {
+  const workspace = new Workspace();
+  workspace.patch({view: 'practice', practicePicker: false});
+  workspace.navigate = () => {throw Error('Navigating again would release MIDI keys');};
+  for (const status of ['counting', 'running', 'paused', 'interrupted'] as const) {
+    workspace.session = {status} as PracticeSession;
+    workspace.openPractice();
+    assert.equal(workspace.state.practicePicker, false); assert.equal(workspace.session.status, status);
   }
 });
 

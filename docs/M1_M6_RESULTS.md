@@ -229,6 +229,17 @@ ZIP, source ZIP, SHA256SUMS, SOURCE/toolchain metadata và Caddy/Compose/DEPLOY.
 output; bỏ toàn bộ ví dụ local và dùng fixture piano CC0. Gói được chuẩn bị
 theo lựa chọn của người dùng, chưa có domain/hosting và chưa publish.
 
+## Sửa điều hướng sau phản hồi
+
+Sửa navbar sau phản hồi người dùng: bỏ điều kiện bắt buộc đã mở bài cho
+Editor/Tập piano. Editor khởi tạo piano trống một lần; Tập piano có trang
+chọn/nhập bài riêng, không tải engine chỉ để chọn bài. Import MXL trong màn
+tập đi thẳng đến snapshot/luyện, không chuyển sang editor. Chạy **102/102**
+test và build TypeScript/Vite; kiểm trên trình duyệt từ lần tải mới: cả hai
+nút khả dụng, Editor mở piano trống, bấm lại không tạo bản thứ hai, nhập MXL
+từ trang tập được 10 mục tiêu và `#screen` vẫn hidden. Ảnh local:
+`navbar-practice-home.png`, `navbar-editor.png`, `navbar-import-practice.png`.
+
 ## Các bước nghiệm thu còn lại
 
 1. Thử đàn MIDI thực **để sau theo người dùng**: quyền truy cập, chọn cổng/rút cắm, timestamp, 12-click

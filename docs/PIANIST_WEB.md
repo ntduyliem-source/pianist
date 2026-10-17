@@ -20,6 +20,12 @@ Từ checkout sạch, chạy `setup-web.ps1` trước rồi chạy `build-pianis
 
 ## Luồng sử dụng
 
+Thanh điều hướng dùng được ngay khi chưa mở bài: **Editor** tạo khuông piano
+trống ở lần đầu, sau đó quay lại bài đang mở; **Tập piano** mở trang chọn bài.
+Từ trang tập có thể chọn bài trong thư viện, tập bài mẫu hoặc nhập/kéo MXL trực
+tiếp vào màn luyện. Editor được ẩn trong luồng nhập để tập. Bấm lại mục Tập
+piano khi đang chạy một lượt giữ nguyên lượt và các phím đang giữ.
+
 1. Nhập MXL/XML/MSCZ bằng nút nhập hoặc kéo file vào trang; tối đa 32 MiB.
    File nguồn được giữ riêng trong thư viện trên thiết bị.
 2. Chỉnh sửa trong editor MuseScore. **Lưu thư viện/Ctrl+S** lưu bền vững vào

@@ -14,3 +14,14 @@
 
 .comparison-note{padding:15px 20px;margin:0 0 20px;background:#edf4fa;border:1px solid #d7e4ee;border-radius:8px;font-size:13px;color:#536f8e;line-height:1.7}
 .library-transfer{margin:24px 0;padding:20px;border:1px solid var(--line);border-radius:12px;background:white}.library-transfer p{font-size:12px;line-height:1.6;color:#687d96}.library-transfer .button-row{flex-wrap:wrap}.library-transfer dialog p{font-size:14px}
+.appbar nav button:not(:disabled):not(.selected){color:#566981}
+.practice-home>.library-content{max-width:1280px;margin:0 auto;padding:36px 42px 32px}
+.practice-home .page-title{align-items:center}.practice-home .page-title>button{font-size:12px}
+.practice-intro{display:flex;align-items:center;justify-content:space-between;gap:32px;padding:30px 34px;margin-bottom:28px;border:1px solid #dbe5f2;border-radius:12px;background:linear-gradient(115deg,#edf4ff,#f8fbff)}
+.practice-intro h2{font-size:26px;color:#304b71}.practice-intro p{font-size:13px;color:#6e829e;line-height:1.7;margin-top:10px}
+.practice-intro>.icon{width:140px;height:140px;color:#7d9fc9;stroke-width:.8;flex:none}
+.practice-modes{display:flex;gap:30px;margin:22px 0}.practice-modes>div{display:flex;align-items:center;gap:10px;color:#557594;font-size:12px;line-height:1.7}.practice-modes .icon{color:#477ab9}.practice-modes strong{display:block;font-size:13px;color:#345579}
+.practice-intro button{font-size:12px;background:#ffffffb3;color:#355f96;border-color:#cdddf0}
+.practice-current{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:18px 22px;margin-bottom:28px;border:1px solid var(--line);background:#fff;border-radius:8px}.practice-current .eyebrow{display:block;font-size:9px}.practice-current strong{font-size:14px}.practice-current button{font-size:12px}
+.practice-home .score-grid{grid-template-columns:repeat(auto-fill,minmax(230px,1fr))}.practice-home .score-card-body .primary-light{width:100%}.practice-empty{padding:32px 20px;text-align:center;color:#71839c;background:#fff;border:1px dashed #cdd9e8;border-radius:8px;font-size:13px}
+@media(max-width:760px){.practice-home>.library-content{padding:24px 18px}.practice-intro{padding:24px;gap:16px}.practice-intro>.icon{display:none}.practice-intro h2{font-size:23px}.practice-modes{flex-direction:column;gap:14px}.practice-current{align-items:flex-start;flex-direction:column}}
