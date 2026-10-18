@@ -8,6 +8,10 @@ import hashlib
 ROOT = Path(__file__).resolve().parents[2]
 OUT = ROOT / 'build.artifacts/notices'
 inventory = []
+# Practice source pins/licenses are part of the offline source offer as well.
+practice = ROOT / 'third_party/practice-sources'
+if practice.exists():
+    shutil.copytree(practice, ROOT / 'build.artifacts/practice-sources', dirs_exist_ok=True)
 # Include notices shipped in the pinned source tree, preserving their paths so
 # the recipient can locate the relevant component in the source archive.
 tracked = subprocess.check_output(['git', 'ls-files', '-z'], cwd=ROOT).decode().split('\0')

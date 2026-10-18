@@ -1,0 +1,37 @@
+[
+  {
+    "source": "osu.Game.Rulesets.Mania/Objects/Drawables/DrawableNote.cs",
+    "signature": "protected override void CheckForResult(bool userTriggered, double timeOffset)",
+    "sha256": "92b435ccd5952aa2ab3d03038d3d1cfb6a15879c91f39e271d59821aa2b1c48a"
+  },
+  {
+    "source": "osu.Game.Rulesets.Mania/Objects/Drawables/DrawableNote.cs",
+    "signature": "public virtual bool OnPressed(KeyBindingPressEvent<ManiaAction> e)",
+    "sha256": "b8930172d1c63350f4e248ca333d953eec90ab5a21fc5cfbf3effa7708b7cbde"
+  },
+  {
+    "source": "osu.Game/Rulesets/Objects/Drawables/DrawableHitObject.cs",
+    "signature": "protected bool UpdateResult(bool userTriggered)",
+    "sha256": "4809aac41ad3797b41f2e03deb1fd38e8d587010006241dc43b60c0f13ebcdec"
+  },
+  {
+    "source": "osu.Game/Rulesets/Objects/Drawables/DrawableHitObject.cs",
+    "signature": "protected void ApplyResult<T>(Action<JudgementResult, T> application, T state)",
+    "sha256": "fd1da0e9582adc56b73e7f7d3570a6e72f2df8a5da03a072e27b209b8bb25177"
+  },
+  {
+    "source": "osu.Game/Rulesets/Scoring/ScoreProcessor.cs",
+    "signature": "public virtual int GetBaseScoreForResult(HitResult result)",
+    "sha256": "b6fbeb8c99f0bbc691869578cfebd4446294dc0d89204388e25b0c4d084d6dea"
+  },
+  {
+    "source": "osu.Game.Rulesets.Mania/Scoring/ManiaScoreProcessor.cs",
+    "signature": "public override int GetBaseScoreForResult(HitResult result)",
+    "sha256": "63f14362b41749fada4aca0aab348ced6c363bac8de0bdf4d329a0b23399f810"
+  },
+  {
+    "source": "osu.Game.Rulesets.Mania/Objects/Drawables/DrawableHoldNoteTail.cs",
+    "signature": "protected override HitResult GetCappedResult(HitResult result)",
+    "sha256": "99454fe27842b106142efdb8cbe23544a8fc899ef63b6b8c409ae7a515258cf8"
+  }
+]

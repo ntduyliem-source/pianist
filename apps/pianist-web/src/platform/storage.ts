@@ -1,8 +1,8 @@
-import type { SessionResult } from '../../../../packages/score-contracts/index';
+import type { SavedAttempt } from '../../../../packages/practice-engine-v2/model';
 
 export interface ProjectRecord {id: string; title: string; filename: string; bytes: Uint8Array; source?: Uint8Array; sourceName?: string; revision: number; fingerprint?: string; updatedAt: number; createdAt: number; archived?: boolean}
 export interface RecoveryRecord {id: string; bytes: Uint8Array; revision: number; updatedAt: number; title: string; filename: string}
-export interface LibraryData {projects: ProjectRecord[]; recovery: RecoveryRecord[]; sessions: SessionResult[]; settings: {id: string; [key: string]: unknown}[]}
+export interface LibraryData {projects: ProjectRecord[]; recovery: RecoveryRecord[]; sessions: SavedAttempt[]; settings: {id: string; [key: string]: unknown}[]}
 const OWNER = crypto.randomUUID(), LEASE_MS = 20000;
 const browserLocks = new Map<string, () => void>();
 const pendingLocks = new Map<string, Promise<void>>();
@@ -68,12 +68,12 @@ export async function saveProject(project: ProjectRecord | RecoveryRecord, recov
   if (!recovery && clearRecovery) tx.objectStore('recovery').delete(project.id);
   await done; // Only now may the UI claim this revision was stored.
 }
-export async function saveSession(result: SessionResult): Promise<void> {
+export async function saveSession(result: SavedAttempt): Promise<void> {
   // Keep complete summaries, cap optional replay data and history storage.
-  if (result.replay && (result.replay.events.length > 50000 || result.replay.commands.length > 80000)) delete result.replay;
+  if (result.schemaVersion===2 && result.replay && result.replay.commands.length > 400000) delete result.replay;
   const db = await openDatabase(), tx = db.transaction('sessions', 'readwrite'), done = committed(tx), store = tx.objectStore('sessions');
   store.put(result);
-  const all = await request(store.getAll()) as SessionResult[];
+  const all = await request(store.getAll()) as SavedAttempt[];
   all.sort((a, b) => b.createdAt - a.createdAt);
   // Do not silently remove results: trim optional event logs from older sessions only.
   for (const session of all.slice(20)) if (session.replay) { delete session.replay; store.put(session); }

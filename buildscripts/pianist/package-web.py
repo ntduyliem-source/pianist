@@ -18,6 +18,7 @@ paths += [p.relative_to(OUT).as_posix() for d in ['app', 'distr'] for p in (OUT 
           if p.is_file() and p.suffix in ('.js', '.css')]
 paths += [p.relative_to(OUT).as_posix() for p in (OUT / 'examples').glob('*') if p.is_file()]
 paths += [p.relative_to(OUT).as_posix() for p in (OUT / 'notices').rglob('*') if p.is_file()]
+paths += [p.relative_to(OUT).as_posix() for p in (OUT / 'practice-sources').rglob('*') if p.is_file()]
 files = []
 for name in sorted(set(paths)):
     path = OUT / name

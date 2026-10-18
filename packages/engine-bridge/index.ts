@@ -27,8 +27,8 @@ export class EngineBridge {
   }
   async cancellableSnapshot(projectId: string, hash: (value: unknown) => Promise<string>): Promise<ScoreSnapshot> {
     const request = ++this.request, raw = this.snapshot(), revision = this.revision;
-    const content = raw.anchors.map(({id, pitch, tick, durationTicks, staff, track, voice, tieBack, play, releaseRatio, releaseUnsupported, arpeggio, arpeggioGroup}) =>
-      ({id, pitch, tick, durationTicks, staff, track, voice, tieBack, play, releaseRatio, releaseUnsupported, arpeggio, arpeggioGroup})).sort((a, b) => a.id.localeCompare(b.id));
+    const content = raw.anchors.map(({id, pitch, tick, durationTicks, staff, track, voice, tieBack, play, articulations, arpeggio, arpeggioGroup}) =>
+      ({id, pitch, tick, durationTicks, staff, track, voice, tieBack, play, articulations, arpeggio, arpeggioGroup})).sort((a, b) => a.id.localeCompare(b.id));
     const fingerprint = await hash({anchors: content, performed: raw.performed, occurrences: raw.occurrences, beats: raw.beats});
     if (request !== this.request || revision !== this.revision) throw Error('Đã hủy snapshot cũ.');
     return {...raw, projectId, fingerprint};

@@ -1,14 +1,9 @@
 import {readFileSync} from 'node:fs';
-import {replay} from '../../../packages/practice-core/replay';
-import type {SessionResult} from '../../../packages/score-contracts/index';
-const filename = process.argv[2];
-if (!filename) throw Error('Usage: node --import tsx scripts/replay.ts result.json');
-const result = JSON.parse(readFileSync(filename, 'utf8')) as SessionResult;
-if (!result.replay?.commands) throw Error('This result has no complete replay log.');
-const state = replay(result.replay.plan, result.replay.commands);
-const same = JSON.stringify(state.assessments) === JSON.stringify(result.assessments)
-  && JSON.stringify(state.extras) === JSON.stringify(result.extraEvents)
-  && JSON.stringify(state.releases?.sort((a, b) => a.targetId.localeCompare(b.targetId))) === JSON.stringify(result.releases)
-  && JSON.stringify(state.faults) === JSON.stringify(result.faults);
-console.log(JSON.stringify({same, evaluated: state.assessments.length, extras: state.extras.length, releases: state.releases?.length ?? 0, faults: state.faults}, null, 2));
-if (!same) process.exitCode = 1;
+import {replayAttempt} from '../../../packages/practice-engine-v2/results';
+import type {AttemptResult} from '../../../packages/practice-engine-v2/model';
+const filename=process.argv[2];if(!filename)throw Error('Usage: node --import tsx scripts/replay.ts result.json');
+const result=JSON.parse(readFileSync(filename,'utf8')) as AttemptResult;
+if(result.schemaVersion!==2||!result.replay)throw Error('Only v2 results with a complete event log can replay.');
+const view=replayAttempt(result.timeline,result.replay.commands);
+const same=['judgements','extras','intervals','faults'].every(k=>JSON.stringify(view[k as keyof typeof view])===JSON.stringify(result[k as keyof typeof result]));
+console.log(JSON.stringify({same,evaluated:view.judgements.length,extras:view.extras.length,faults:view.faults},null,2));if(!same)process.exitCode=1;

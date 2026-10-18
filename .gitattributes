@@ -1,6 +1,12 @@
 # Normalise text files by default
 *               text=auto
 
+# Pinned upstream source must retain its exact Git blob/SHA-256 on Windows too.
+third_party/practice-sources/** -text -whitespace
+# Verbatim upstream method bodies retain upstream whitespace as well.
+packages/practice-engine-v2/upstream/studio-wait.js -whitespace
+tests/reference-runners/osu/GeneratedMethods.cs -whitespace
+
 # Shell scripts with shebang lines must have LF line endings
 *.sh            text            eol=lf
 *.py            text            eol=lf

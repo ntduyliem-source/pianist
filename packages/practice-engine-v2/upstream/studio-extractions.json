@@ -1,0 +1,22 @@
+[
+  {
+    "source": "js/feedback-engine.js",
+    "signature": "function findExpectedMatchForMidi(midi)",
+    "sha256": "231536ebb7ba5df114865bb5820e63bb422bd44e5e2f5f24b8030a4d0aa16ed9"
+  },
+  {
+    "source": "js/trainer-core.js",
+    "signature": "function findSatisfiedOrSustainedMatchForMidi(midi)",
+    "sha256": "3bf5ba4d59cb21dc1bb0242b9d99d8a524f9eeba354c15522c0c253f6400cb09"
+  },
+  {
+    "source": "js/trainer-core.js",
+    "signature": "function triggerVirtualKey(midi, isPressed, source = 'midi', velocity = 100)",
+    "sha256": "d316bd1cbbe74dab73ef6bb6c7dd9bf5ae4b6966a47365337a1c3548136ea831"
+  },
+  {
+    "source": "js/trainer-core.js",
+    "signature": "function checkWaitModeAdvance()",
+    "sha256": "f5d63e498fec803eaeae6b884beb460f49a0036e37a400a9b6656caa6048c522"
+  }
+]

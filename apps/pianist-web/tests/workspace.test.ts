@@ -2,7 +2,24 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {Workspace} from '../src/workspace';
 import type {EngineBridge} from '../../../packages/engine-bridge/index';
-import type {PracticeSession} from '../src/practice/session';
+import type {PracticeController} from '../src/practice/controller-v2';
+import 'fake-indexeddb/auto';
+import {scoreFixture} from './helpers/fixtures-v2';
+import {settingsFor} from '../../../packages/practice-engine-v2/score-adapter';
+import * as storage from '../src/platform/storage';
+
+test('retrying foreign-device history retains local calibration; device change resets it',async()=>{
+  const workspace=new Workspace(),snapshot=scoreFixture();
+  workspace.patch({snapshot,config:{...settingsFor(snapshot),offsetMs:35}});
+  workspace.updatePracticeSettings({deviceId:'other-piano',inputSource:'midi',offsetMs:150,bpm:75});
+  assert.equal(workspace.state.config!.deviceId,'virtual');assert.equal(workspace.state.config!.inputSource,'virtual');
+  assert.equal(workspace.state.config!.offsetMs,35);assert.equal(workspace.state.config!.bpm,75);
+  workspace.midi.deviceId='my-piano';workspace.updatePracticeSettings({deviceId:'my-piano',offsetMs:0});
+  assert.equal(workspace.state.config!.offsetMs,0);assert.equal(workspace.state.config!.inputSource,'midi');
+  workspace.updatePracticeSettings({offsetMs:60});
+  assert.equal((await storage.get<{offsetMs:number}>('settings','calibration-v2:my-piano'))?.offsetMs,60);
+  assert.equal((await storage.get<{config:{bpm:number}}>('settings','practice-v2:'+snapshot.projectId))?.config.bpm,75);
+});
 
 test('an unavailable native engine cannot overwrite recovery or accept further editor actions', async () => {
   const workspace = new Workspace();
@@ -17,7 +34,7 @@ test('an unavailable native engine cannot overwrite recovery or accept further e
 test('file drop and project commands cannot replace the score of an active or paused practice session', async () => {
   const workspace = new Workspace();
   for (const status of ['counting', 'running', 'paused', 'interrupted'] as const) {
-    workspace.session = {status} as PracticeSession;
+    workspace.session = {status} as PracticeController;
     await assert.rejects(workspace.importFile(new File(['bad'], 'new.musicxml')), /Kết thúc lượt/);
     await assert.rejects(workspace.newProject(), /Kết thúc lượt/);
     await assert.rejects(workspace.openProject('another-project'), /Kết thúc lượt/);
@@ -53,7 +70,7 @@ test('reselecting the Practice navbar during a session preserves held input and 
   workspace.patch({view: 'practice', practicePicker: false});
   workspace.navigate = () => {throw Error('Navigating again would release MIDI keys');};
   for (const status of ['counting', 'running', 'paused', 'interrupted'] as const) {
-    workspace.session = {status} as PracticeSession;
+    workspace.session = {status} as PracticeController;
     workspace.openPractice();
     assert.equal(workspace.state.practicePicker, false); assert.equal(workspace.session.status, status);
   }

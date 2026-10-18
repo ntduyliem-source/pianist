@@ -21,7 +21,16 @@ self.addEventListener('install', event => event.waitUntil((async () => {
     await report({type:'offline-ready', version:RELEASE.version});
   } catch (error) {await caches.delete(CACHE); await report({type:'offline-error', message:String(error)}); throw error;}
 })()));
-self.addEventListener('activate', event => event.waitUntil(report({type:'offline-active', version:RELEASE.version})));
+self.addEventListener('activate', event => event.waitUntil((async()=>{
+  // Activation waits for the previous worker's clients to close. At that point
+  // remove its executable cache, restricted to this app's URL scope.
+  for(const key of await caches.keys()){
+    if(key===CACHE||!key.startsWith('pianist-release-'))continue;
+    const cache=await caches.open(key);
+    if(await cache.match(new URL('pianist.html',base)))await caches.delete(key);
+  }
+  await report({type:'offline-active',version:RELEASE.version});
+})()));
 self.addEventListener('fetch', event => {
   const url = new URL(event.request.url);
   if (event.request.method !== 'GET' || url.origin !== base.origin) return;

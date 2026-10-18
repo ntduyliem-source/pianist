@@ -1,16 +1,17 @@
 import { EngineBridge, type NativeApi } from '../../../packages/engine-bridge/index';
-import { defaultConfig } from '../../../packages/practice-core/plan';
-import { ALGORITHM_VERSION, type ScoreSnapshot, type SessionConfig, type SessionResult } from '../../../packages/score-contracts/index';
+import {settingsFor} from '../../../packages/practice-engine-v2/score-adapter';
+import type {PracticeSettings,AttemptResult,SavedAttempt} from '../../../packages/practice-engine-v2/model';
+import type {ScoreSnapshot} from '../../../packages/score-contracts';
 import { download, fingerprint, validateFile } from './platform/files';
-import { MidiRouter } from './platform/midi';
+import { MidiRouter } from './platform/midi-v2';
 import * as storage from './platform/storage';
-import { PracticeSession } from './practice/session';
+import {PracticeController} from './practice/controller-v2';
 import { loadEngineAssets } from './platform/engine-assets';
 
 type View = 'library' | 'editor' | 'practice' | 'results' | 'history';
 export interface WorkspaceState {
-  view: View; busy: string; error: string; toast: string; projects: storage.ProjectRecord[]; history: SessionResult[];
-  current?: storage.ProjectRecord; snapshot?: ScoreSnapshot; config?: SessionConfig; result?: SessionResult;
+  view: View; busy: string; error: string; toast: string; projects: storage.ProjectRecord[]; history: SavedAttempt[];
+  current?: storage.ProjectRecord; snapshot?: ScoreSnapshot; config?: PracticeSettings; result?: SavedAttempt;
   revision: number; savedRevision: number; recoveryRevision: number; saveState: string; engineReady: boolean; midiVersion: number;
   exampleTitle: string;
   practicePicker: boolean;
@@ -19,7 +20,7 @@ export interface WorkspaceState {
 }
 export class Workspace {
   state: WorkspaceState = {view: 'library', busy: '', error: '', toast: '', projects: [], history: [], revision: 0, savedRevision: 0, recoveryRevision: 0, saveState: '', engineReady: false, midiVersion: 0, exampleTitle: 'Piano khởi động', practicePicker: true};
-  bridge?: EngineBridge; session?: PracticeSession; readonly midi = new MidiRouter();
+  bridge?: EngineBridge; session?: PracticeController; readonly midi = new MidiRouter();
   private listeners = new Set<() => void>(); private engineLoading?: Promise<EngineBridge>; private loadingDocument = false;
   private nativeBase = 0; private revisionBase = 0; private nativeRevision = 0; private autosaveTimer?: number; private leaseTimer?: number; private toastTimer?: number;
   private operation = 0; private fileAbort?: AbortController; private source?: {bytes: Uint8Array; filename: string}; private recovery?: storage.RecoveryRecord;
@@ -59,7 +60,7 @@ export class Workspace {
       if (view === this.state.view) return;
       if (['library', 'editor', 'practice', 'results', 'history'].includes(view)) {
         if (view === 'editor' && !this.state.current) void this.run(() => this.openEditor());
-        else if (view === 'practice' && !this.state.snapshot) this.openPractice();
+        else if (view === 'practice') void this.run(() => this.enterPractice());
         else if (view === 'results' && !this.state.result) this.navigate('library');
         else this.navigate(view);
       }
@@ -69,14 +70,23 @@ export class Workspace {
       this.recovery = recoveries.sort((a, b) => b.updatedAt - a.updatedAt)[0];
       if (this.recovery) this.notice('Có bản tự lưu. Mở bài trong thư viện sẽ phục hồi các thay đổi gần nhất.');
     } catch (e) {this.fail(e);}
-    this.midi.onChange = () => this.patch({midiVersion: this.state.midiVersion + 1});
+    this.midi.onChange = () => {
+      if(this.state.config&&this.state.config.deviceId!==this.midi.deviceId&&(!this.session||['ready','finished'].includes(this.session.status))){
+        const deviceId=this.midi.deviceId;
+        this.updatePracticeSettings({deviceId,offsetMs:0});
+        void storage.get<{id:string;offsetMs:number}>('settings','calibration-v2:'+deviceId).then(profile=>{
+          if(profile&&this.midi.deviceId===deviceId&&(!this.session||['ready','finished'].includes(this.session.status)))this.updatePracticeSettings({offsetMs:profile.offsetMs});
+        }).catch(e=>this.fail(e));
+      }
+      this.patch({midiVersion: this.state.midiVersion + 1});
+    };
     this.midi.onDisconnect = () => {this.session?.pause('Đàn MIDI đã ngắt kết nối. Kết nối/chọn lại thiết bị rồi Tiếp tục.', true); this.notice('Thiết bị MIDI đã ngắt kết nối.');};
     this.midi.onReset = () => {this.session?.pause('Đàn gửi lệnh xóa trạng thái phím. Nhả phím rồi bấm Tiếp tục.', true);};
     this.midi.onInput = (e, bytes) => {
       if (this.state.engineFailed) return;
       if (this.state.view === 'editor') this.bridge?.api.midiInput(bytes[0], bytes[1], bytes[2]);
       if (this.state.view === 'practice') {
-        if (e.source === 'virtual') this.session?.transport.tone(e.pitch, e.type === 'on');
+        if (e.source === 'virtual') this.session?.transport.tone(e.pitch, e.kind === 'on');
         this.session?.input(e);
       }
     };
@@ -87,7 +97,7 @@ export class Workspace {
     window.addEventListener('pageshow', e => {if (e.persisted && this.state.current) void this.run(() => storage.claimProject(this.state.current!.id));});
   }
   async refresh(): Promise<void> {
-    const [projects, history] = await Promise.all([storage.list<storage.ProjectRecord>('projects'), storage.list<SessionResult>('sessions')]);
+    const [projects, history] = await Promise.all([storage.list<storage.ProjectRecord>('projects'), storage.list<SavedAttempt>('sessions')]);
     this.patch({projects: projects.sort((a, b) => b.updatedAt - a.updatedAt), history: history.sort((a, b) => b.createdAt - a.createdAt)});
   }
   focusEditor = (element?: Element): void => {
@@ -177,6 +187,25 @@ export class Workspace {
     if (this.session && !['ready', 'finished'].includes(this.session.status)) return;
     this.patch({practicePicker: true});
     this.navigate('practice');
+  }
+  async enterPractice(): Promise<void> {
+    if (this.session && !['ready','finished'].includes(this.session.status)) {this.navigate('practice');return;}
+    if (!this.state.current || !this.bridge) {this.openPractice();return;}
+    await this.practice();
+  }
+  updatePracticeSettings(patch: Partial<PracticeSettings>): void {
+    if (!this.state.config || !this.state.snapshot || this.session && !['ready','finished'].includes(this.session.status)) return;
+    const config = {...this.state.config,...patch,version:2 as const};
+    if(this.state.config.deviceId!==this.midi.deviceId)config.offsetMs=0;
+    else if(patch.deviceId!==undefined&&patch.deviceId!==this.midi.deviceId)config.offsetMs=this.state.config.offsetMs;
+    config.fromMeasure=Math.max(0,Math.min(this.state.snapshot.measures.length-1,config.fromMeasure));
+    config.toMeasure=Math.max(config.fromMeasure,Math.min(this.state.snapshot.measures.length-1,config.toMeasure));
+    config.roles={...settingsFor(this.state.snapshot).roles,...config.roles};
+    config.deviceId=this.midi.deviceId;config.inputSource=this.midi.deviceId==='virtual'?'virtual':'midi';
+    this.patch({config});
+    void storage.put('settings',{id:'practice-v2:'+this.state.snapshot.projectId,config}).catch(e=>this.fail(e));
+    if(patch.offsetMs!==undefined&&patch.deviceId===undefined&&Number.isFinite(config.offsetMs)&&Math.abs(config.offsetMs)<=500)
+      void storage.put('settings',{id:'calibration-v2:'+this.midi.deviceId,offsetMs:config.offsetMs}).catch(e=>this.fail(e));
   }
   async newProject(): Promise<void> {
     return this.changeDocument(() => this.createNewProject());
@@ -287,7 +316,7 @@ export class Workspace {
   }
   downloadProject(): void {if (this.bridge && this.state.current) {download(this.bridge.serialize(), `${this.state.current.title}.mscz`); this.notice('Đã tải bản sao MSCZ.');}}
   export(format: string): void {if (!this.bridge?.api.exportScore(format)) throw Error('Không xuất được định dạng này.');}
-  async practice(overrides?: Partial<SessionConfig>): Promise<void> {
+  async practice(overrides?: Partial<PracticeSettings>): Promise<void> {
     if (!this.state.current || !this.bridge) {this.openPractice(); return;}
     if (this.session && !['ready', 'finished'].includes(this.session.status)) throw Error('Kết thúc lượt tập trước khi thay đổi bản nhạc.');
     this.session?.dispose(); this.session = undefined;
@@ -300,13 +329,14 @@ export class Workspace {
       const started = performance.now();
       const snapshot = await this.bridge.cancellableSnapshot(this.state.current.id, fingerprint); snapshot.revision = this.state.revision;
       this.measureDiagnostic('practice-snapshot', started, {pages: snapshot.pages.length, anchors: snapshot.anchors.length});
-      const calibration = await storage.get<{id: string; offsetMs: number}>('settings', 'calibration:' + this.midi.deviceId);
-      const prior = this.state.snapshot?.fingerprint === snapshot.fingerprint ? this.state.config : undefined;
-      const config = {...defaultConfig(snapshot), ...prior, ...overrides};
-      config.algorithmVersion = ALGORITHM_VERSION; // Retrying old history creates a new result with the current grader.
+      const saved = await storage.get<{id:string; config:PracticeSettings}>('settings','practice-v2:'+snapshot.projectId);
+      const calibration=await storage.get<{id:string;offsetMs:number}>('settings','calibration-v2:'+this.midi.deviceId);
+      const prior = this.state.snapshot?.projectId === snapshot.projectId ? this.state.config : saved?.config;
+      const config = {...settingsFor(snapshot), ...prior, ...overrides, version:2 as const};
+      config.roles={...settingsFor(snapshot).roles,...config.roles};
       config.fromMeasure = Math.max(0, Math.min(snapshot.measures.length - 1, config.fromMeasure));
       config.toMeasure = Math.max(config.fromMeasure, Math.min(snapshot.measures.length - 1, config.toMeasure));
-      config.deviceId = this.midi.deviceId; config.inputSource = this.midi.deviceId === 'virtual' ? 'virtual' : 'midi'; config.offsetMs = overrides?.offsetMs ?? prior?.offsetMs ?? calibration?.offsetMs ?? 0;
+      config.deviceId = this.midi.deviceId; config.inputSource = this.midi.deviceId === 'virtual' ? 'virtual' : 'midi'; config.offsetMs = overrides?.offsetMs ?? calibration?.offsetMs ?? (prior?.deviceId===this.midi.deviceId?prior.offsetMs:0);
       this.patch({snapshot, config, practicePicker: snapshot.anchors.length === 0}); this.navigate('practice');
       if (!snapshot.anchors.length) this.notice('Bản nhạc đang mở chưa có nốt. Chọn hoặc nhập một bài để tập.');
     } catch (e) {this.bridge.setPractice(false); throw e;}
@@ -314,7 +344,9 @@ export class Workspace {
   }
   navigate(view: View): void {
     if (this.state.engineFailed) return;
+    if (view==='practice' && !this.state.practicePicker && this.state.snapshot && (this.state.snapshot.projectId!==this.state.current?.id || this.state.snapshot.revision!==this.state.revision)) {void this.run(()=>this.enterPractice());return;}
     if (this.session && !['ready', 'finished'].includes(this.session.status) && view !== 'practice') {
+      location.hash='/'+this.state.view;
       this.notice('Bấm Kết thúc lượt tập trước khi chuyển màn hình.'); return;
     }
     this.midi.release();
@@ -325,8 +357,8 @@ export class Workspace {
     if (view === 'editor') requestAnimationFrame(() => {window.dispatchEvent(new Event('resize')); this.focusEditor();});
     else (document.getElementById('view-heading') as HTMLElement)?.focus({preventScroll: true});
   }
-  async recordResult(result: SessionResult, keepReplay = false): Promise<void> {
-    if (keepReplay && this.session?.replayComplete) result.replay = {events: this.session.events, plan: this.session.plan, commands: this.session.commands};
+  async recordResult(result: AttemptResult, keepReplay = false): Promise<void> {
+    if (!keepReplay) delete result.replay;
     try {await storage.saveSession(result); await this.refresh();}
     catch (e) {this.fail(e); this.notice('Chưa lưu được kết quả. Có thể tải JSON để giữ lại.');}
     this.patch({result}); this.navigate('results');

@@ -4,16 +4,16 @@ import 'fake-indexeddb/auto';
 import {zipSync, unzipSync, strToU8, strFromU8} from 'fflate';
 import {encodeLibrary, decodeLibrary, restoredCopies} from '../src/platform/library-backup';
 import * as storage from '../src/platform/storage';
-import {midiPlan} from './helpers/midi-simulation';
-import {BpmCore} from '../../../packages/practice-core/bpm';
-import {summarize} from '../../../packages/practice-core/results';
+import {timeline} from './helpers/fixtures-v2';
+import {PracticeEngine} from '../../../packages/practice-engine-v2/engine';
+import {resultFor} from '../../../packages/practice-engine-v2/results';
 
 const score = zipSync({'score.mscx': strToU8('<museScore version="4.0"><Score/></museScore>')});
 const source = strToU8('<score-partwise version="4.0"><part-list/></score-partwise>');
 function library(): storage.LibraryData {
-  const plan = midiPlan([[0, 60]]), core = new BpmCore(plan);
-  const result = summarize(plan, core.advance(1000), 'History', 'complete', 1000, 'simulated');
-  result.replay = {plan, commands: [{kind: 'advance', atMs: 1000}], events: []};
+  const plan=timeline([0]),core=new PracticeEngine(plan);core.clock(1000);
+  const result=resultFor(plan,core.view(),'History','complete',1000);
+  result.replay={engine:plan.engine,commands:[{type:'clock',atMs:1000}]};
   return {projects: [{id: plan.projectId, title: 'Bài gốc', filename: 'score.mscz', bytes: score, source, sourceName: 'score.musicxml', revision: 1, updatedAt: 10, createdAt: 1, archived: true}],
     recovery: [{id: plan.projectId, title: 'Bài đang sửa', filename: 'recovery.mscz', bytes: score, revision: 2, updatedAt: 20}], sessions: [result], settings: [{id: 'calibration:piano', offsetMs: 80}]};
 }
@@ -23,10 +23,15 @@ test('library backup round-trips original bytes, recovery, history/replay and se
   const copies = restoredCopies(backup);
   assert.notEqual(copies.projects[0].id, data.projects[0].id); assert.match(copies.projects[0].title, /khôi phục/);
   assert.equal(copies.recovery[0].id, copies.projects[0].id); assert.equal(copies.sessions[0].projectId, copies.projects[0].id);
-  assert.equal(copies.sessions[0].replay?.plan.projectId, copies.projects[0].id);
+  assert.equal(copies.sessions[0].schemaVersion===2 && copies.sessions[0].timeline.projectId, copies.projects[0].id);
   assert.equal(copies.sessions[0].fingerprint, data.sessions[0].fingerprint);
   assert.equal(copies.settings.some(s => s.id === 'calibration:piano'), false, 'foreign device calibration is retained as backup metadata, not activated');
   assert.equal(backup.data.projects[0].title, 'Bài gốc');
+});
+test('a long imported title can restore its own backup; historical records stay read-only data',async()=>{
+  const data=library();data.projects[0].title='Bài piano '.repeat(25);data.projects[0].filename=data.projects[0].title+'.mscz';
+  data.sessions.push({id:'archived-v1',schemaVersion:1,projectId:data.projects[0].id,title:'Bản cũ',createdAt:1,config:{algorithmVersion:'archived'},untouched:{value:17}});
+  assert.deepEqual((await decodeLibrary(await encodeLibrary(data))).data,data);
 });
 test('tampered content, malformed manifest, traversal and unknown archive files are rejected before any writes', async () => {
   const bytes = await encodeLibrary(library());

@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsc --noEmit && vite build",
     "test": "node --import tsx --test tests/*.test.ts",
-    "test:midi": "node --import tsx --test tests/midi-simulation.test.ts"
+    "test:midi": "node --import tsx --test tests/engine-v2.test.ts tests/integration-v2.test.ts"
   },
   "dependencies": {
     "fflate": "0.8.3",

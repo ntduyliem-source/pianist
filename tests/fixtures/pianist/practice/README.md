@@ -46,13 +46,10 @@ navigation sound attributes. Text-only and numbered/multiple jump variants
 remain outside this small corpus. Cross-staff tests distinguish source staff
 for hand attribution from visual staff for highlight geometry.
 
-## Duration policy fixture, 17 October 2026
+## Articulation input fixture, updated 18 October 2026
 
-`release-policy.musicxml` is another original CC0 composition. Its native
-snapshot records staccato C4 (gate 0.5), staccatissimo D4 (0.25), half-note E4
-(1), a descending C/E/G arpeggio, and a trill on D4 with duration excluded.
-At quarter=60 the first three key-hold expectations are 500/250/2000 ms.
-The 120 ms arpeggio profile expects G4/E4/C4 at 4000/4060/4120 ms.
-These fractions are explicit product practice policies, not an authoritative
-rule for interpreting articulation in every piece. The fixture was imported
-through the real browser engine and exported with the diagnostic snapshot UI.
+`release-policy.musicxml` remains an original CC0 input with staccato C4,
+staccatissimo D4, half-note E4, a descending C/E/G arpeggio and trill D4.
+The obsolete snapshot and invented duration/arpeggio expectations were removed
+with the V2 cutover. Native now exports raw articulations. This file supplies
+notation input, not an oracle for musical duration or expression judgement.

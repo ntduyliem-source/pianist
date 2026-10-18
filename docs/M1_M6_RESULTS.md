@@ -1,5 +1,9 @@
 # Pianist Web — kết quả triển khai M1–M6
 
+> Báo cáo lịch sử trước lần thay engine 18/10/2026. Các mô tả matcher,
+> ngưỡng, duration/arpeggio và số test ở đây không phải nghiệm thu bản hiện tại.
+> Xem [R0–R7 V2](R0_R7_RESULTS.md) và [hướng dẫn hiện tại](PIANIST_WEB.md).
+
 Ngày kiểm tra: 16–17/10/2026. Đây là bản chạy local, chưa nghiệm thu phát hành v1.
 M0 trước đó ở commit `73b82fe`; báo cáo này bao gồm đợt hoàn thiện sau `c52e83ce`.
 

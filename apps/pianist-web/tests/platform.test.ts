@@ -3,8 +3,7 @@ import assert from 'node:assert/strict';
 import 'fake-indexeddb/auto';
 import {zipSync, strToU8} from 'fflate';
 import {validateFile} from '../src/platform/files';
-import {MidiRouter} from '../src/platform/midi';
-import {PracticeTransport} from '../src/platform/transport';
+import {MidiRouter} from '../src/platform/midi-v2';
 import {checkedAsset} from '../src/platform/engine-assets';
 import * as storage from '../src/platform/storage';
 
@@ -34,7 +33,7 @@ test('Web MIDI normalizes velocity-zero, duplicate Note On and sustain without i
   const midi = new MidiRouter(), events: any[] = []; midi.onInput = e => events.push(e);
   const now = performance.now();
   midi.receive([0x92, 60, 70], now); midi.receive([0x92, 60, 70], now + 1); midi.receive([0x92, 60, 0], now + 2);
-  assert.deepEqual(events.map(e => e.type), ['on', 'off']); assert.equal(events[0].channel, 2);
+  assert.deepEqual(events.map(e => e.kind), ['on', 'off']); assert.equal(events[0].channel, 2);
   midi.receive([0xb2, 64, 127], now + 3); assert.equal(midi.pedal, true); assert.deepEqual(midi.heldPitches(), []);
   midi.receive([0xb2, 64, 0], now + 4); assert.equal(midi.pedal, false);
   midi.receive([0x90, 62, 80], now + 5); midi.release(); assert.deepEqual(midi.heldPitches(), []);
@@ -42,14 +41,14 @@ test('Web MIDI normalizes velocity-zero, duplicate Note On and sustain without i
 test('MIDI retains normalized original timestamp, independent of callback receipt time', () => {
   const midi = new MidiRouter(); let recorded: any; midi.onInput = e => recorded = e;
   const timestamp = performance.now() - 80; midi.receive([0x90, 60, 90], timestamp + performance.timeOrigin);
-  assert.ok(Math.abs(recorded.atMs - timestamp) < .01); assert.ok(recorded.receivedMs - recorded.atMs >= 79);
+  assert.ok(Math.abs(recorded.timestampMs - timestamp) < .01); assert.ok(recorded.receivedMs - recorded.timestampMs >= 79);
 });
 test('physical MIDI keys held across start/blur must be released before another attack is accepted', () => {
   const midi = new MidiRouter(), events: any[] = []; midi.deviceId = 'piano'; midi.onInput = e => events.push(e);
   const send = (status: number, pitch = 60, velocity = 80) => midi.receive([status, pitch, velocity], performance.now(), 'piano', 'midi');
-  send(0x90); midi.release(); send(0x90); assert.deepEqual(midi.heldPitches(), []);
-  assert.deepEqual(events.map(e => e.type), ['on', 'off']); send(0x80); send(0x90);
-  assert.deepEqual(midi.heldPitches(), [60]); assert.equal(events.filter(e => e.type === 'on').length, 2);
+  send(0x90); midi.release(); send(0x90); assert.deepEqual(midi.heldPitches(), [60]);
+  assert.deepEqual(events.map(e => e.kind), ['on', 'off']); send(0x80); send(0x90);
+  assert.deepEqual(midi.heldPitches(), [60]); assert.equal(events.filter(e => e.kind === 'on').length, 2);
   midi.virtual(67, true); assert.deepEqual(midi.heldPitches(), [60], 'virtual keyboard cannot contaminate a MIDI session');
   midi.receive([0x90, 70, 80], performance.now(), 'other-piano', 'midi'); assert.deepEqual(midi.heldPitches(), [60]);
 });
@@ -58,7 +57,7 @@ test('pedal is tracked per MIDI channel and release emits CC64 off even without 
   midi.receive([0xb0, 64, 127], performance.now()); midi.receive([0xb1, 64, 127], performance.now());
   midi.receive([0xb0, 64, 0], performance.now()); assert.equal(midi.pedal, true);
   midi.release(); assert.equal(midi.pedal, false);
-  assert.equal(events.at(-1).channel, 1); assert.equal(events.at(-1).type, 'pedal'); assert.equal(events.at(-1).velocity, 0);
+  assert.equal(events.at(-1).channel, 1); assert.equal(events.at(-1).kind, 'pedal'); assert.equal(events.at(-1).value, 0);
 });
 test('malformed MIDI bytes and non-finite timestamps never enter held state', () => {
   const midi = new MidiRouter(); midi.receive([0x90, NaN, 80], performance.now()); midi.receive([0x90, 60, 80], NaN);
@@ -90,12 +89,6 @@ test('All Notes Off releases only its MIDI channel and is distinguished from a d
   midi.receive([0x90, 60, 80], performance.now()); midi.receive([0x91, 62, 80], performance.now());
   midi.receive([0xb0, 123, 0], performance.now());
   assert.deepEqual(midi.heldPitches(), [62]); assert.equal(resets, 1); assert.equal(disconnected, 0);
-});
-test('Audio output timestamp conversion uses the performance/context pair without double latency', () => {
-  const transport = new PracticeTransport(); transport.context = {currentTime: 3, baseLatency: .01, outputLatency: .1,
-    getOutputTimestamp: () => ({contextTime: 2, performanceTime: performance.now()})} as any;
-  const now = performance.now(); assert.ok(Math.abs(transport.relative(now) - 2000) < 5);
-  assert.equal(transport.source, 'AudioContext.getOutputTimestamp');
 });
 test('IndexedDB migration, recovery commit, explicit save and cross-tab lease conflict', async () => {
   await new Promise<void>((resolve, reject) => {

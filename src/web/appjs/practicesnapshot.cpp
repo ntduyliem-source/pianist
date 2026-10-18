@@ -91,12 +91,10 @@ bool WebApi::getSnapshot()
                 const auto* chord = engraving::toChord(element);
                 if (!chord->graceNotes().empty()) { warnings.insert("grace"); }
                 if (chord->arpeggio()) { warnings.insert("arpeggio"); }
-                double releaseRatio = 1.0;
-                bool releaseUnsupported = false;
+                QJsonArray articulations;
                 for (const auto* articulation : chord->articulations()) {
-                    if (articulation->isOrnament()) { warnings.insert("ornament"); releaseUnsupported = true; }
-                    if (articulation->articulationName().toQString() == "staccatissimo") { releaseRatio = std::min(releaseRatio, 0.25); }
-                    else if (articulation->isStaccato()) { releaseRatio = std::min(releaseRatio, 0.5); }
+                    if (articulation->isOrnament()) { warnings.insert("ornament"); }
+                    articulations.append(articulation->articulationName().toQString());
                 }
                 int n = 0;
                 for (const auto* note : chord->notes()) {
@@ -108,7 +106,7 @@ bool WebApi::getSnapshot()
                                      {"staff", static_cast<int>(chord->staffIdx())}, {"visualStaff", static_cast<int>(chord->vStaffIdx())},
                                      {"voice", static_cast<int>(chord->voice())}, {"track", static_cast<int>(chord->track())},
                                      {"page", page}, {"visible", note->visible()}, {"play", note->play()},
-                                     {"releaseRatio", releaseRatio}, {"releaseUnsupported", releaseUnsupported},
+                                     {"articulations", articulations},
                                      {"box", box(muse::RectF(pos.x() - 2, pos.y() - note->headHeight() / 2 - 2,
                                                             note->headWidth() + 4, note->headHeight() + 4))}};
                     if (const auto* arpeggio = chord->arpeggio()) {

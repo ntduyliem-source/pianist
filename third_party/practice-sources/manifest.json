@@ -1,0 +1,159 @@
+{
+  "format": 1,
+  "sources": [
+    {
+      "name": "osu",
+      "repository": "ppy/osu",
+      "commit": "676f3b01f28841ebd97ab583e178f2d7b99fe48c",
+      "license": "MIT",
+      "files": [
+        {
+          "path": "LICENCE",
+          "gitBlob": "9ffcc70c132b8f05cbbc199ca2af257600b40ee3",
+          "sha256": "2e73c7c4295cc3da18697ac982f64a4ec449e0781e8f4c59318216e13998864a"
+        },
+        {
+          "path": "osu.Game/Beatmaps/IBeatmapDifficultyInfo.cs",
+          "gitBlob": "0875a60d751041867496e2e2aa5486c596fac726",
+          "sha256": "6bad98edb969e717922468f4a0f3ea3f8344d715fec720ae47c6c32fef06d423"
+        },
+        {
+          "path": "osu.Game/Rulesets/Scoring/HitWindows.cs",
+          "gitBlob": "f4d1fe1e1435f034f10899b1acd048d32b0ba84f",
+          "sha256": "ec37acc67a4656dddc68dbddce8dc21eea6cd0fee64129dd18c0a977f0583b88"
+        },
+        {
+          "path": "osu.Game/Rulesets/Scoring/HitResult.cs",
+          "gitBlob": "46c0371d9f9aca8a172fa4dfdbe68f615606cce5",
+          "sha256": "8270b84c41327f8c861624c4bd9eab634a564e707d8580816cc353969e8b113b"
+        },
+        {
+          "path": "osu.Game/Rulesets/Scoring/ScoreProcessor.cs",
+          "gitBlob": "0dbb5b2000db82934a749b7d92c24ce4edfbae2a",
+          "sha256": "bb00c8281fdbd9cabf9f7e14165fa313b1187f791771054f1f6d7fcb744e0678"
+        },
+        {
+          "path": "osu.Game/Rulesets/Objects/Drawables/DrawableHitObject.cs",
+          "gitBlob": "a012c34e26ec05fedf6fbdfba245846af37b9715",
+          "sha256": "c214e191766cdbb44aaa69b3c3aa4ed6ca37dd6884569796edea2f14b57140b2"
+        },
+        {
+          "path": "osu.Game/Rulesets/UI/HitObjectContainer.cs",
+          "gitBlob": "c2879e6d87f0f0a7464e7604fd3fc996f780ca09",
+          "sha256": "aa70d145df3e767369d55ee4e556715b529b91999960d85270bde27fd906209b"
+        },
+        {
+          "path": "osu.Game.Rulesets.Mania/Scoring/ManiaHitWindows.cs",
+          "gitBlob": "abff91926a1d0a048303a2b623c1ee88b7cc6eea",
+          "sha256": "58985770cb8730d4315cce86c966bc751fcf2947edc1da483200c464ac331b70"
+        },
+        {
+          "path": "osu.Game.Rulesets.Mania/Scoring/ManiaScoreProcessor.cs",
+          "gitBlob": "dfd6ed6dd2456ebf3b680f321cb18be4f61c7dcd",
+          "sha256": "50d40d2441966750f0590e1194f574f11075f22d3657719694ab7bef669e7213"
+        },
+        {
+          "path": "osu.Game.Rulesets.Mania/UI/OrderedHitPolicy.cs",
+          "gitBlob": "b6e8fb7191e952db283591b19278650a289e317f",
+          "sha256": "e6999bba58a117bd83aa1c13da07664dd89381dcc96aff792aba0c269e1e18fd"
+        },
+        {
+          "path": "osu.Game.Rulesets.Mania/Objects/Drawables/DrawableNote.cs",
+          "gitBlob": "f6b92ab4059ee64635b66d03c3a5c9348835b1a3",
+          "sha256": "e0785eb0354776e217040393d032378402051c8146443b3c3cf12e121668501c"
+        },
+        {
+          "path": "osu.Game.Rulesets.Mania/Objects/Drawables/DrawableManiaHitObject.cs",
+          "gitBlob": "e98622b8bf2123ad91af25f89dbdf13729a267bf",
+          "sha256": "bf54fc68b15d79e7a272d75edc92d1d2688502db054fe91259e4046ab65db305"
+        },
+        {
+          "path": "osu.Game.Rulesets.Mania/Objects/Drawables/DrawableHoldNote.cs",
+          "gitBlob": "7a9fb1377ee6806f3fa8db59f7bc24b0b7a87984",
+          "sha256": "1ea29c3d14c3527b69976f9888023d978d52d8aa098822c0f9a6df6e6f6b2a58"
+        },
+        {
+          "path": "osu.Game.Rulesets.Mania/Objects/Drawables/DrawableHoldNoteHead.cs",
+          "gitBlob": "bd70094e9d95f1a72ee4500ad52976dafe370d93",
+          "sha256": "c7a826da69cf8115400aa8efbcb079742d47f6678d297dd37cf7743c3db72fc2"
+        },
+        {
+          "path": "osu.Game.Rulesets.Mania/Objects/Drawables/DrawableHoldNoteTail.cs",
+          "gitBlob": "f435fcacb30f76ca5fc9f686eced730e948ffb54",
+          "sha256": "e12e0efe2e823430090e5d09e945ccb29708b37511833cb68578bbc0f95bd9a7"
+        },
+        {
+          "path": "osu.Game.Rulesets.Mania/Objects/Drawables/DrawableHoldNoteBody.cs",
+          "gitBlob": "6259033235aab4258d6bb748ca51b3314b8bfebe",
+          "sha256": "3fb34e177494d5d28c3c2168dab9e36f231037f282c9045c890a6e33451e3da3"
+        },
+        {
+          "path": "osu.Game.Rulesets.Mania/Judgements/HoldNoteJudgementResult.cs",
+          "gitBlob": "d1453cb7ad068f99abffe47f83beba339c970443",
+          "sha256": "0b5edaa7abb293e39e4dccdee91e632022ec4f1db4e7f3408c3b0e891458ba1c"
+        },
+        {
+          "path": "osu.Game.Rulesets.Mania/Objects/TailNote.cs",
+          "gitBlob": "def32880f195587c5efac646ae14c772dc4537c6",
+          "sha256": "f8699c22af34f47273da91eb7af0cf705d630019ce4b5cbd258ca921bd443797"
+        },
+        {
+          "path": "osu.Game.Rulesets.Mania.Tests/TestSceneOutOfOrderHits.cs",
+          "gitBlob": "3dc82e09e74beb7d46315849743ebecdc06d0e45",
+          "sha256": "e0167d78086dca6ac49c7e0229cdbb4434d9318b76c980d17964831bc6ed4000"
+        },
+        {
+          "path": "osu.Game.Rulesets.Mania.Tests/TestSceneHoldNoteInput.cs",
+          "gitBlob": "d0b5174748c14ef8c19e665a76d2b57393ab87e8",
+          "sha256": "36bfe5eeef01d5acd2ab3db04c212541baee9982d1850d8058e19fcde2da8aeb"
+        }
+      ]
+    },
+    {
+      "name": "piano-trainer-studio",
+      "repository": "ztbishop/piano-trainer-studio",
+      "commit": "b40e412ccbc701094a9bb4bfe91ef45c32065704",
+      "license": "AGPL-3.0",
+      "files": [
+        {
+          "path": "LICENSE",
+          "gitBlob": "0ad25db4bd1d86c452db3f9602ccdbe172438f52",
+          "sha256": "8486a10c4393cee1c25392769ddd3b2d6c242d6ec7928e1414efff7dfb2f07ef"
+        },
+        {
+          "path": "js/trainer-core.js",
+          "gitBlob": "ba92d2500e6189720b910b5dbf9e49d319b2abb4",
+          "sha256": "002c165ca6de503be04b72dbd8ed49557291bdbc5c4732aff569b149e0e91898"
+        },
+        {
+          "path": "js/feedback-engine.js",
+          "gitBlob": "6ae5865b89056c5611ef641a68ae9f6b2284d7cd",
+          "sha256": "46cd6ff80df90625fcbd36a54dbcef311bca330d526bd5f46f0bf8c7e5f5ffc5"
+        },
+        {
+          "path": "js/trainer-timing.js",
+          "gitBlob": "b926bc23109b4d4361ac8694bdd1a47e59a8c3a4",
+          "sha256": "7e29f11a29fc1f4f1f4eb7cc1e800e1bbeb09523d0884de707cfae5802ddf63d"
+        }
+      ]
+    },
+    {
+      "name": "eran_reaper_jsfx",
+      "repository": "erangithub/eran_reaper_jsfx",
+      "commit": "23bbc5c62c421fdd69dda7baca6609b704910ff6",
+      "license": "GPL-3.0-or-later",
+      "files": [
+        {
+          "path": "LICENSE",
+          "gitBlob": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7",
+          "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+        },
+        {
+          "path": "midi_rhythm_trainer",
+          "gitBlob": "88032d8d2e5fd51d02b2d28a7bb178bb93a4bc23",
+          "sha256": "5d4e9578810e230149f02ebacb6c2e2e280600f42b36cae147021dffcfc78c93"
+        }
+      ]
+    }
+  ]
+}

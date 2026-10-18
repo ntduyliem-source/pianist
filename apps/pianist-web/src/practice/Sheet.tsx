@@ -1,7 +1,7 @@
 import React, {memo, useEffect, useMemo, useRef, useState} from 'react';
 import type {ScoreSnapshot} from '../../../../packages/score-contracts/index';
-import {noteName} from '../platform/midi';
-import type {Marker} from './feedback';
+import {noteName} from '../platform/midi-v2';
+import type {Marker} from './feedback-v2';
 
 interface Props {
   snapshot: ScoreSnapshot; markers: Map<string, Marker>; currentAnchors: string[]; zoom: number; autoScroll: boolean;

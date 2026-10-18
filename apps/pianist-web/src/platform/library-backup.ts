@@ -1,6 +1,6 @@
 import {Unzip, UnzipInflate, zip, strToU8, strFromU8} from 'fflate';
 import type {LibraryData, ProjectRecord, RecoveryRecord} from './storage';
-import type {SessionResult} from '../../../../packages/score-contracts/index';
+import type {SavedAttempt} from '../../../../packages/practice-engine-v2/model';
 import {validateFile} from './files';
 
 const LIMIT = 256 * 1024 * 1024;
@@ -15,34 +15,26 @@ const text = (x: unknown, max = 500): x is string => typeof x === 'string' && x.
 const number = (x: unknown): x is number => typeof x === 'number' && Number.isFinite(x);
 function fail(): never {throw Error('Gói sao lưu không hợp lệ hoặc bị hỏng. Thư viện hiện tại được giữ nguyên.');}
 function metadata(record: unknown): asserts record is SavedProject {
-  if (!object(record) || !text(record.id) || !text(record.title, 150) || !text(record.filename)
+  if (!object(record) || !text(record.id) || !text(record.title, 4096) || !text(record.filename, 4096)
     || !Number.isSafeInteger(record.revision) || record.revision < 0 || !number(record.updatedAt)) fail();
 }
-function resultValid(r: any): r is SessionResult {
-  if (!object(r) || r.schemaVersion !== 1 || !text(r.id) || !text(r.projectId) || typeof r.title !== 'string'
-    || !text(r.fingerprint) || !number(r.createdAt) || !number(r.revision) || !['complete', 'aborted', 'interrupted'].includes(r.outcome)
-    || !object(r.config) || !['wait', 'bpm'].includes(r.config.mode) || !['midi', 'virtual'].includes(r.config.inputSource)
-    || !text(r.config.deviceId) || !text(r.config.algorithmVersion) || !object(r.config.roles) || !Array.isArray(r.config.voices)
-    || !['bpm', 'beatQuarter', 'countIn', 'fromMeasure', 'toMeasure', 'loops', 'offsetMs', 'perfectMs', 'goodMs', 'windowMs', 'deliveryMs'].every(k => number(r.config[k]))
-    || !r.config.voices.every((v: unknown) => Number.isInteger(v) && Number(v) >= 0 && Number(v) <= 3)
-    || !Object.values(r.config.roles).every(v => ['left', 'right', 'off'].includes(String(v))) || typeof r.clock !== 'string'
-    || !['elapsedMs', 'planned', 'evaluated', 'matched', 'missed', 'extras', 'good', 'firstTry', 'groupsDone', 'corrections'].every(k => number(r[k]) && r[k] >= 0)
-    || !['coverage', 'precision', 'timingRate', 'medianAbsMs', 'p90AbsMs', 'signedMeanMs'].every(k => r[k] === null || number(r[k]))) return false;
-  for (const name of ['targets', 'assessments', 'extraEvents', 'chords', 'weakMeasures', 'perLoop', 'faults']) if (!Array.isArray(r[name]) || r[name].length > 200000) return false;
-  if (!r.targets.every((t: any) => object(t) && text(t.id) && Number.isInteger(t.pitch) && t.pitch >= 0 && t.pitch <= 127
-    && number(t.atMs) && number(t.endMs) && number(t.measure) && number(t.loop) && Array.isArray(t.roles) && t.roles.every((v: unknown) => ['left', 'right', 'off'].includes(String(v))) && Array.isArray(t.anchors))) return false;
-  const ids = new Set(r.targets.map((t: any) => t.id));
-  if (ids.size !== r.targets.length || new Set(r.assessments.map((a: any) => a?.targetId)).size !== r.assessments.length) return false;
-  if (!r.assessments.every((a: any) => object(a) && ids.has(a.targetId) && ['matched', 'missed'].includes(a.status) && number(a.atMs))) return false;
-  if (!r.chords.every((c: any) => object(c) && Array.isArray(c.ids) && (c.spreadMs === null || number(c.spreadMs)))
-    || !r.weakMeasures.every((m: any) => object(m) && ['measure', 'missed', 'badTiming', 'evaluated'].every(k => number(m[k])))
-    || !r.perLoop.every((l: any) => object(l) && ['loop', 'evaluated', 'matched', 'extras'].every(k => number(l[k])))) return false;
-  if (r.releases !== undefined && (!Array.isArray(r.releases) || r.releases.length > r.targets.length
-    || !r.releases.every((a: any) => object(a) && ids.has(a.targetId) && number(a.expectedMs) && ['good', 'short', 'long', 'unreleased', 'interrupted', 'unscored'].includes(a.status))
-    || !(r.releaseRate === null || number(r.releaseRate)))) return false;
-  if (r.replay && (!object(r.replay) || !object(r.replay.plan) || r.replay.plan.projectId !== r.projectId
-    || !Array.isArray(r.replay.events) || r.replay.events.length > 50000 || !Array.isArray(r.replay.commands) || r.replay.commands.length > 80000)) return false;
-  return true;
+function resultValid(r: any): r is SavedAttempt {
+  if (!object(r) || !text(r.id) || !text(r.projectId) || !text(r.title,4096) || !number(r.createdAt)) return false;
+  // Archived JSON is read-only data; no old evaluator or replay is loaded.
+  if (r.schemaVersion === 1) return true;
+  if (r.schemaVersion !== 2 || !text(r.engine) || !object(r.settings) || r.settings.version!==2
+    || !object(r.timeline) || r.timeline.projectId!==r.projectId || !object(r.metrics)
+    || !['complete','aborted','interrupted'].includes(r.outcome)) return false;
+  for (const name of ['judgements','extras','intervals','faults']) if(!Array.isArray(r[name]) || r[name].length>250000) return false;
+  if(!Array.isArray(r.timeline.targets) || r.timeline.targets.length>100000) return false;
+  const ids=new Set(r.timeline.targets.map((t:any)=>t?.id));
+  if(ids.size!==r.timeline.targets.length || !r.timeline.targets.every((t:any)=>object(t)&&text(t.id)&&number(t.atMs)&&number(t.pitch)&&number(t.measure)&&Array.isArray(t.anchors)))return false;
+  if(!r.judgements.every((j:any)=>object(j)&&ids.has(j.id)&&['miss','meh','ok','good','great','perfect'].includes(j.grade)&&number(j.delta)&&number(j.at)))return false;
+  if(!['accuracy','coverage','precision','medianAbsMs','p90AbsMs','signedMeanMs'].every(k=>r.metrics[k]===null||number(r.metrics[k])))return false;
+  if(!text(r.fingerprint)||!number(r.revision)||!number(r.elapsedMs)||!['wait','bpm'].includes(r.settings.mode)||!number(r.settings.bpm))return false;
+  if(!r.faults.every((f:unknown)=>typeof f==='string'))return false;
+  if(r.replay && (!object(r.replay)||r.replay.engine!==r.engine||!Array.isArray(r.replay.commands)||r.replay.commands.length>400000))return false;
+  return ['planned','evaluated','hits','misses','extras'].every(k=>number(r.metrics[k])&&r.metrics[k]>=0);
 }
 
 export async function encodeLibrary(data: LibraryData): Promise<Uint8Array> {
@@ -119,7 +111,7 @@ export async function decodeLibrary(bytes: Uint8Array): Promise<LibraryBackup> {
     const {data, ...meta} = saved, content = await read(data); await validateFile(content, meta.filename); recovery.push({...meta, bytes: content});
   }
   await read(manifest.sessions); await read(manifest.settings);
-  const sessions: SessionResult[] = json(manifest.sessions.path), settings: LibraryData['settings'] = json(manifest.settings.path);
+  const sessions: SavedAttempt[] = json(manifest.sessions.path), settings: LibraryData['settings'] = json(manifest.settings.path);
   if (!Array.isArray(sessions) || sessions.length > 10000 || !sessions.every(resultValid) || new Set(sessions.map(s => s.id)).size !== sessions.length
     || !Array.isArray(settings) || settings.length > 10000 || !settings.every(s => object(s) && text(s.id)) || used.size !== files.size) fail();
   return {createdAt: manifest.createdAt, data: {projects, recovery, sessions, settings}, bytes: bytes.length};
@@ -132,7 +124,7 @@ export function restoredCopies(backup: LibraryBackup): LibraryData {
   for (const id of [...data.projects.map(p => p.id), ...data.sessions.map(s => s.projectId)]) if (!ids.has(id)) ids.set(id, crypto.randomUUID());
   for (const project of data.projects) {project.id = ids.get(project.id)!; project.title = (project.title + ' — khôi phục').slice(0, 150);}
   for (const recovery of data.recovery) {recovery.id = ids.get(recovery.id)!; recovery.title = (recovery.title + ' — khôi phục').slice(0, 150);}
-  for (const session of data.sessions) {session.id = crypto.randomUUID(); session.projectId = ids.get(session.projectId)!; if (session.replay) session.replay.plan.projectId = session.projectId;}
+  for (const session of data.sessions) {session.id = crypto.randomUUID(); session.projectId = ids.get(session.projectId)!; if (session.schemaVersion===2) session.timeline.projectId=session.projectId; else {const replay=session.replay as any;if(replay?.plan) replay.plan.projectId=session.projectId;}}
   // Calibration belongs to the original MIDI/audio path. Keep it in the backup
   // record, but never silently activate it on a different computer.
   data.settings = [{id: 'restored-settings:' + crypto.randomUUID(), createdAt: backup.createdAt, settings: data.settings.filter(s => !s.id.startsWith('restored-settings:'))}];

@@ -1,8 +1,203 @@
 # Kế hoạch code Pianist Web
 
-Cập nhật: 17/10/2026. Nền tảng được người dùng xác nhận: **web chạy trong trình duyệt**. M0 đã có fork và editor WebAssembly chạy thật. M1–M6 đã có mã nguồn cho shell, lưu/phục hồi, snapshot native, hai chế độ tập, kết quả/lịch sử và gói offline; M7 đã có sao lưu cả thư viện, chấm độ dài tùy chọn và profile arpeggio. Các cổng nghiệm thu còn thiếu được ghi dưới đây. Màn tập là chức năng riêng, chỉ đọc bản nhạc, không có notation edit. Xem [hướng dẫn hiện tại](PIANIST_WEB.md), [kết quả M1–M6](M1_M6_RESULTS.md) và [bằng chứng M0 trước đó](M0_RESULTS.md). Theo yêu cầu người dùng, thử đàn MIDI thật để sau và chỉ chuẩn bị gói triển khai khi chưa có hosting.
+Cập nhật: 18/10/2026. Nền tảng: **web chạy trong trình duyệt**. M0/editor MuseScore và thư viện được giữ. Bộ chấm cũ đã xóa khỏi source sản phẩm, thay bằng engine V2 đối chiếu code gốc. Màn tập riêng, chỉ đọc, không notation edit. **Phần M7 chấm trường độ/arpeggio cũ đã gỡ; không dùng việc gỡ này để tuyên bố M7 hoàn tất.** Xem [hướng dẫn hiện tại](PIANIST_WEB.md), [nghiệm thu R0–R7](R0_R7_RESULTS.md), [bằng chứng M0](M0_RESULTS.md). MIDI thật và hosting HTTPS để sau theo yêu cầu người dùng.
 
 Mục tiêu sản phẩm: mở website → nhập MXL → chỉnh sửa bản nhạc → lưu/mở lại hoặc tải file về → tập piano theo **Đúng nốt** hoặc **Theo BPM** → xem kết quả và tập lại đoạn yếu. Editor và màn hình tập dùng cùng nội dung bản nhạc, kể cả thay đổi chưa xuất file. “Pianist” là tên làm việc.
+
+**Kế hoạch thay toàn bộ bộ chấm ngày 18/10/2026**
+
+Yêu cầu: thay 100% mã chấm tự xây, ưu tiên tuyệt đối khả năng kiểm tra giữ BPM.
+Đã triển khai engine `pianist-v2.osu-676f3b0.pts-b40e412.1`, schema kết quả 2.
+Bản cũ tại `8a9674403d9fc0d67e133842b6854620be39ac29` chỉ còn trong lịch sử Git.
+Kế hoạch này thay thế lựa chọn matcher, ngưỡng và công thức điểm của bản trước.
+Các phần M0–M7 phía dưới ghi lại phạm vi sản phẩm và tình trạng triển khai cũ.
+
+**Trạng thái thực hiện R0–R7**
+
+| Bước | Trạng thái / bằng chứng |
+| --- | --- |
+| R0 | Đã ghim 26 source/license; runner C# chạy phương thức upstream nguyên văn, không lấy TS làm oracle. |
+| R1 | 329 scenario khớp code C# ở kernel và host event-time, gồm 9 nốt −120 ms, octave, hợp âm, miss, biên OD và random có seed. |
+| R2 | Adapter/clock/MIDI/Worker mới; native corpus, MIDI mô phỏng qua production Worker, count-in CC64, offset và replay đạt. |
+| R3 | 4 hàm Wait PTS giữ nguyên; kiểm latch hợp âm, nốt lặp, sai octave, count-in; browser 8 hit + 1 input thừa. |
+| R4 | Đã gỡ duration/arpeggio tự đặt, ghi raw Note Off/CC64, đối chiếu 68 probe hold-tail. **Còn mở toàn lifecycle hold và chấm diễn cảm piano; UI công bố chưa hỗ trợ. M7 chưa hoàn tất.** |
+| R5 | UI/results/history chỉ dùng V2; browser kiểm snapshot sau edit/Back, giữ A–B/BPM/vòng, mở đúng project; highlight từ input/judgement. |
+| R6 | Đã xóa module/Worker/controller/MIDI/transport cũ, contract/CLI/test chuyển V2, native bỏ hệ số release. Audit bundle/map/WASM và cache scope có cổng kiểm riêng. |
+| R7 | Corpus, build, unit/integration, replay, stress và browser đã có bằng chứng; đóng gói/kiểm offline ghi tại báo cáo R0_R7_RESULTS. MIDI thật/HTTPS chưa nghiệm thu. |
+
+Các phân tích và tiêu chí bên dưới giữ lại để truy nguyên quyết định. Những
+câu “chưa chạy” trong mục nghiên cứu mô tả thời điểm lập kế hoạch; kết quả
+runner và giới hạn hiện tại nằm trong [PROVENANCE](../third_party/practice-sources/PROVENANCE.md).
+
+**Nguồn đã kiểm tra và quyết định sử dụng**
+
+| Repo và commit ghim | Logic có trong source | Vai trò trong bản thay thế |
+| --- | --- | --- |
+| [Piano Trainer Studio](https://github.com/ztbishop/piano-trainer-studio/tree/b40e412ccbc701094a9bb4bfe91ef45c32065704), AGPL-3.0 | Wait/Realtime/Follow, nốt mong đợi theo tay/bè, bộ đếm đúng/sai, traversal và metronome | Nguồn port chế độ Đúng nốt; đối chiếu bài hai bè. Không dùng nguyên Realtime làm tiêu chuẩn BPM nghiêm ngặt. |
+| [MusicLearn Trainer](https://github.com/LachlanB96/musiclearn-trainer/tree/e2c0fe01215c67cb8c4544b1e2220f4844cad297), AGPL-3.0 | Songs chạy theo tempo; ghép vào hit gần nhất; phân loại Perfect/Good/sớm/trễ | Nguồn so sánh hành vi và phản ví dụ. Không chọn hàm chấm hợp âm làm lõi. |
+| [MIDI Rhythm Trainer](https://github.com/erangithub/eran_reaper_jsfx/tree/23bbc5c62c421fdd69dda7baca6609b704910ff6), GPL-3.0-or-later | Note On so với lưới beat, subdivision/swing/phase, error bound 1–250 ms, latency compensation −200…+200 ms | Nguồn kiểm tra độc lập phép đổi beat/thời gian, sớm/trễ và bù trễ; không quyết định pitch/miss của bản piano. |
+| [osu!lazer / osu!mania](https://github.com/ppy/osu/tree/676f3b01f28841ebd97ab583e178f2d7b99fe48c), MIT | Hit windows, judgement từng note, thứ tự nốt cùng phím, tự miss, hold head/tail; có test replay cho các tình huống này | **Nguồn chính được chọn để port lõi BPM**, với cổng đối chiếu bắt buộc trước tích hợp. Chỉ lấy phần luật và dependency cần thiết, không lấy giao diện/game assets. |
+| [PianoBooster](https://github.com/pianobooster/PianoBooster/tree/6dafdcbdfc5d35d12cecb051c30632d0f5be5806), GPL-3.0-or-later | `CConductor::pianistInput`, `followPlaying`, chế độ Play Along và Follow You, `CRating` | Đối chiếu bổ sung về luyện MIDI. Không chọn làm lõi BPM của đợt này: mô hình chord/follow/rating khác yêu cầu đánh giá từng onset. |
+
+Các giới hạn có ảnh hưởng trực tiếp đến lựa chọn:
+
+- MusicLearn [`songNote` / `resolveHit`](https://github.com/LachlanB96/musiclearn-trainer/blob/e2c0fe01215c67cb8c4544b1e2220f4844cad297/ui/index.html#L904)
+  dùng pitch class trong hợp âm và trung bình offset có dấu. Probe chạy nguyên
+  hàm `resolveHit` với hai nốt −100/+100 ms trả về `perfect`, offset 0. Vì vậy
+  không thể copy nguyên hàm này để đánh giá độ đồng đều của từng nốt piano.
+- Piano Trainer Studio [`tryReserveRealtimeUpcomingHeldNote`](https://github.com/ztbishop/piano-trainer-studio/blob/b40e412ccbc701094a9bb4bfe91ef45c32065704/js/trainer-core.js#L1635)
+  cho đặt trước nốt đang giữ trong khoảng nhìn trước 1,1 beat;
+  [`buildExpectedNotesFromEntries`](https://github.com/ztbishop/piano-trainer-studio/blob/b40e412ccbc701094a9bb4bfe91ef45c32065704/js/feedback-engine.js#L1059)
+  có thể chuyển reservation thành hit. Đây là hành vi hỗ trợ tập, không phải
+  quy tắc chấm onset theo cửa sổ ms cố định. Probe hàm reservation xác nhận
+  trường hợp trước một beat được nhận; chưa chạy toàn ứng dụng upstream.
+- MIDI Rhythm Trainer [`isHit`](https://github.com/erangithub/eran_reaper_jsfx/blob/23bbc5c62c421fdd69dda7baca6609b704910ff6/midi_rhythm_trainer#L445)
+  chấm theo lưới nhịp tuần hoàn trong REAPER. Nó không ánh xạ một input vào
+  một nốt cụ thể của MusicXML; không được dùng nó thay matcher của bản nhạc.
+- osu!mania [`HitWindows`](https://github.com/ppy/osu/blob/676f3b01f28841ebd97ab583e178f2d7b99fe48c/osu.Game/Rulesets/Scoring/HitWindows.cs),
+  [`DrawableNote`](https://github.com/ppy/osu/blob/676f3b01f28841ebd97ab583e178f2d7b99fe48c/osu.Game.Rulesets.Mania/Objects/Drawables/DrawableNote.cs)
+  và [`OrderedHitPolicy`](https://github.com/ppy/osu/blob/676f3b01f28841ebd97ab583e178f2d7b99fe48c/osu.Game.Rulesets.Mania/UI/OrderedHitPolicy.cs)
+  là code C#. Cần port cả đường xử lý input, thứ tự xét và chốt kết quả liên quan;
+  chỉ chép bảng hit windows sẽ không tạo thành bộ chấm đúng. Policy của upstream
+  không cho cửa sổ muộn của nốt trước kéo qua onset nốt kế tiếp cùng làn.
+  [Test nốt sai thứ tự](https://github.com/ppy/osu/blob/676f3b01f28841ebd97ab583e178f2d7b99fe48c/osu.Game.Rulesets.Mania.Tests/TestSceneOutOfOrderHits.cs)
+  và [test hold](https://github.com/ppy/osu/blob/676f3b01f28841ebd97ab583e178f2d7b99fe48c/osu.Game.Rulesets.Mania.Tests/TestSceneHoldNoteInput.cs)
+  là đầu vào của cổng kiểm chứng. Chưa chạy các suite upstream này trong lượt lập kế hoạch.
+
+Không repo nào ở trên đã được xác nhận là bộ chấm piano hoàn chỉnh gồm onset,
+trường độ, pedal và diễn cảm. Chọn osu!mania là quyết định kỹ thuật dựa trên
+source và test hiện có, chưa phải tuyên bố bản port hay tích hợp MIDI đã đạt.
+Các source đã tải được đối chiếu Git blob với tree của commit ghim. Bằng chứng
+nghiên cứu local: `artifacts/reference-audit-2026-10-18/`, gồm probe nguyên hàm
+và kết quả JSON; đây không phải test nghiệm thu engine mới.
+
+**Phạm vi xóa và thay thế**
+
+| Mã hiện tại | Hành động trong đợt thay thế |
+| --- | --- |
+| Toàn bộ `packages/practice-core/`: `bpm.ts`, `wait.ts`, `release.ts`, `plan.ts`, `results.ts`, `replay.ts`, `comparison.ts` | Xóa toàn bộ sau khi engine mới qua kiểm chứng; không copy helper, matcher DP, cách chia block 8 nốt/1.500 ms, các rule hay công thức ngầm sang tên mới. |
+| `packages/practice-worker/practice.worker.ts` | Xóa và thay Worker/protocol mới, nhận duy nhất engine mới. |
+| `apps/pianist-web/src/practice/session.ts`, `feedback.ts` | Thay bộ điều khiển lượt và bộ chuyển kết quả thành highlight; UI chỉ hiển thị judgement từ engine. |
+| `apps/pianist-web/src/platform/transport.ts`, `calibration.ts`; phần xử lý event/phím/pedal trong `midi.ts` | Thay lớp clock, calibration và trạng thái MIDI phục vụ luyện; quyền thiết bị vẫn qua Web MIDI. Không để filter count-in hay cách bù trễ cũ quyết định kết quả mới. |
+| Các kiểu `Plan`, config, judgement, result/replay và `ALGORITHM_VERSION` trong `packages/score-contracts/index.ts` | Contract mới độc lập; tách dữ liệu snapshot của MuseScore khỏi kiểu của bộ chấm cũ. |
+| Rule `releaseRatio` 0,5/0,25 và các quyết định chấm trong `src/web/appjs/practicesnapshot.cpp` | Xóa các hệ số chấm tự đặt. Bridge cung cấp dữ liệu score/playback đã xác minh và ký hiệu gốc; không tự gán dung sai hoặc điểm. |
+| Các nhánh tạo plan/session, đổi config, xem kết quả/lịch sử trong `workspace.ts`, `main.tsx`, backup/export | Nối vào API mới; không giữ đường gọi bộ chấm cũ hoặc tự tính lại màu/điểm trong component. |
+| Test/helper/CLI replay/stress còn import engine cũ; JS/Worker build, source map và service-worker cache của bản phát hành mới | Thay test bằng dữ liệu chuẩn độc lập; loại bỏ mọi dependency và artifact cũ khỏi gói mới. Không giữ engine cũ làm oracle. |
+
+M0/editor MuseScore, nhập/xuất, thư viện và bản nhạc của người dùng nằm ngoài
+phạm vi xóa bộ chấm. Dữ liệu lịch sử giữ nguyên như bản ghi chỉ đọc, có nhãn
+phiên bản cũ; bản mới không chạy lại grader cũ hoặc so điểm cũ với điểm mới.
+Đây là thay mã chạy và artifact phát hành, không viết lại lịch sử Git hay xóa
+dữ liệu thư viện. Không có fallback, feature flag hay thư mục `legacy` chứa
+grader cũ trong source sản phẩm mới.
+
+**Kiến trúc thay thế**
+
+`MuseScore snapshot → score adapter mới → danh sách target theo thời gian thực diễn`
+
+`Web MIDI → MIDI state/clock adapter mới → engine BPM hoặc Wait → judgement log → UI/kết quả`
+
+- `third_party/practice-sources/`: source tối thiểu được ghim, LICENSE, SHA-256,
+  mapping symbol nguồn → symbol port, danh sách thay đổi bắt buộc cho web.
+- `packages/practice-engine-v2/`: contract mới, bản port osu!mania cho BPM,
+  bản port Wait của Piano Trainer Studio, adapter dữ liệu và bộ kết quả mới.
+- `packages/practice-worker-v2/`: host của engine, event/protocol và lifecycle mới.
+- `tests/reference-runners/`: chạy source gốc độc lập với bản port. Với osu!
+  dùng C# và các dependency cần thiết; stub chỉ được thay I/O/UI, không thay
+  thuật toán quyết định hit/miss. Nếu chưa tách được thì chạy suite trong
+  checkout upstream, không dùng bản TypeScript mới để tự xác nhận chính nó.
+
+Mỗi đoạn luật có nguồn là một trong ba loại: giữ nguyên upstream, port cơ học,
+hoặc phần thích nghi có đặc tả/test riêng. Phần chưa có nguồn phù hợp phải được
+ghi rõ; không gọi code tự viết mới là code đã port. Lớp adapter có nhiệm vụ đổi
+schema, clock, MIDI và ID, không được tự có matcher hoặc grader thứ hai.
+
+**Luật BPM phải thể hiện bằng test trước khi nối UI**
+
+1. Timeline chạy theo tempo đã chọn hoặc tempo map của score. Không kéo tempo
+   theo người chơi, tự dừng chờ nốt hay tự hiệu chỉnh offset trong lúc chấm.
+   Nhãn BPM phải nói rõ đơn vị phách, kể cả nhịp ghép như 6/8.
+2. Cùng một mốc thời gian cho metronome, target và input. Dùng timestamp nhận
+   từ Web MIDI và ánh xạ sang audio clock; UI frame hay thời điểm Worker nhận
+   message không được thay timestamp bấm phím. Offset hiệu chuẩn áp dụng đúng
+   một lần; dấu của offset phải có ca kiểm chứng cụ thể.
+3. Mỗi pitch MIDI là một làn logic, hỗ trợ dải MIDI 0–127; khác octave là khác
+   pitch. Chuyển hợp âm/hai tay thành các target đồng thời; tie/unison/repeat
+   có ID lần diễn riêng. Hand attribution lấy từ score, không suy đoán tay thật.
+4. Port luật xét nốt cùng làn và chốt hit/miss của osu!mania, gồm thứ tự dispatch.
+   Bỏ hoàn toàn tối ưu coverage bằng DP và ranh giới block tự đặt của bản cũ.
+   Chốt rõ hành vi bỏ nốt, bấm thừa, nốt dày, bấm sớm trước nốt kế; không hứa
+   suy ra ý định người chơi trong các chuỗi cùng pitch vốn có thể nhập nhằng.
+5. Bản parity đầu dùng đúng hit windows/profile upstream. Một profile học piano
+   khác chỉ được thêm như thay đổi có tên, phiên bản, bảng ms và test; không
+   mặc nhiên kế thừa bộ 50/120/250 ms hay trọng số điểm cũ.
+6. Chấm delta từng onset; thống kê độ lệch tuyệt đối riêng với xu hướng sớm/trễ.
+   Hai offset −100/+100 ms không được làm cả hợp âm thành Perfect. Mỗi event
+   chỉ tiêu thụ một target vật lý; input không được tiêu thụ được ghi riêng.
+7. Count-in vẫn cập nhật pedal, Note Off và trạng thái thiết bị. Attack ngoài
+   phạm vi chấm không được ghi điểm, nhưng không được làm mất trạng thái CC64.
+   Pause, mất focus, disconnect và reset tạo ranh giới lượt rõ ràng; event cũ
+   không được làm thay đổi kết quả mới.
+8. Event log và replay giữ timestamp, seq, port/channel, tempo map, config,
+   revision score và phiên bản nguồn. Đổi cách chia batch hoặc tốc độ render
+   không làm đổi kết quả. Quá hạn giao input phải báo gián đoạn có lý do, không
+   lặng lẽ đổi thành người chơi đánh sai.
+
+Tổng điểm timing nếu có lấy luật/weights đã port của nguồn đã chọn. Tỷ lệ nốt,
+input thừa, delta và tiến độ là báo cáo riêng, công bố mẫu số; phải ghi rõ
+accuracy của upstream có phạt input thừa hay không. Không tái dùng công thức
+điểm ngầm của Pianist cũ hoặc để bấm loạn trông giống chơi chính xác.
+
+**Các bước thực hiện và cổng nghiệm thu**
+
+| Bước | Công việc cụ thể | Điều kiện xong |
+| --- | --- | --- |
+| R0 — Khóa nguồn và hành vi | Đóng băng commit/source hash/license; xác định toàn bộ dependency của judgement; dựng runner upstream và corpus đầu vào/đầu ra. | Chạy được code gốc cho hit windows, nốt cùng pitch, missed/extra và hai tay. Ghi kết quả và giới hạn; nếu nguồn không đạt corpus thì đánh giá nguồn khác, không quay lại grader cũ. |
+| R1 — Port BPM trước | Port HitWindows, ManiaHitWindows, OrderedHitPolicy, note judgement và đường dispatch/finalization cần thiết. Chạy độc lập khỏi React/MuseScore. | Cùng event stream/profile cho cùng target association, judgement, delta và thời điểm chốt như source gốc. Sai khác số thực chỉ cho sai số biểu diễn đã ghi; phân loại/ID phải khớp. |
+| R2 — Nối timeline và MIDI | Adapter mới cho score/repeat/tempo/A–B/loop; Web MIDI timestamp, audio clock, calibration, CC64/device/channel, Worker. | Corpus native MusicXML/MXL và MIDI mô phỏng đi hết đường production, không dùng adapter giả thay phần đang nghiệm thu; sửa tận gốc mất pedal trong count-in. |
+| R3 — Port Đúng nốt | Tách Wait của Piano Trainer Studio, expected group/match/advance và dependency; bỏ Follow/Realtime reservation khỏi mode này. | Kiểm hợp âm thiếu nốt, pitch/octave sai, Note On lặp, nhả/đánh lại và tie. Ghi rõ Wait upstream ghi nhận nốt đã đánh hay yêu cầu giữ đồng thời; mọi khác biệt với yêu cầu Pianist phải có fixture, không sao lại `WaitCore`. |
+| R4 — Trường độ và pedal | Port/test hold judgement upstream cho bài luyện giữ phím được định nghĩa rõ; xác minh dữ liệu MIDI CC64 theo nguồn chuẩn, cùng thời điểm onset và release. Đặc tả riêng pedal/articulation/legato của piano. | Không đồng nhất hold-note game với diễn cảm piano. Xóa grader duration cũ; nhánh sustain chưa có nguồn/expected output đủ phải hiện chưa hỗ trợ, không cho điểm phỏng đoán. Chỉ đánh dấu M7 hoàn tất khi nhánh này có corpus đạt, không dùng việc tắt tính năng để nghiệm thu M7. |
+| R5 — UI và kết quả | API/controller/feedback/history/replay mới; mọi lối vào practice kiểm project/revision; config thuộc đúng bài; nút từ kết quả mở đúng project. | Highlight khi nhận phím, màu judgement từ engine, repeat không dính màu cũ; Browser Back sau sửa bài dùng snapshot mới; đoạn/BPM không tự reset; history không mở nhầm bài. |
+| R6 — Xóa engine cũ và chuyển hẳn | Xóa các module trong bảng phạm vi, test/helper/import/fallback; chuyển dữ liệu lịch sử chỉ đọc; làm sạch build và tạo release cache mới. | Build graph, bundle, source map, Worker và offline cache mới không chứa implementation grader cũ; mở/restore history không tải grader cũ. Không duy trì hai engine trong bản phát hành. |
+| R7 — Nghiệm thu lại và đóng gói | Chạy corpus độc lập, browser/MIDI mô phỏng, replay/stress/offline; build/typecheck; kiểm gói triển khai và báo cáo khoảng còn mở. | Tất cả cổng BPM đạt; không còn P1/P2 về chấm hoặc state của lượt trong phạm vi đã xác minh; số đo có file bằng chứng. MIDI thật và HTTPS chờ điều kiện đã thống nhất, không ghi thành đã kiểm. |
+
+Thứ tự bắt buộc: R0 → R1 → R2, sau đó R3/R4 → R5 → R6 → R7.
+Các quyết định luật R4 phải được chốt trong đặc tả trước khi công bố tính năng;
+không tự thêm thuật toán chấm pedal để đẩy nhanh mốc. Khi triển khai có thể
+phát triển engine mới trong vùng cách ly trước cutover; R6 bắt buộc xóa hẳn mã
+cũ, không để vùng cách ly thành cơ chế chạy song song trong sản phẩm.
+
+**Corpus tối thiểu để nghiệm thu BPM và tích hợp**
+
+| Ca | Kỳ vọng phải chứng minh độc lập |
+| --- | --- |
+| 9 C4 tại 500…2.100 ms, cách 200 ms; tất cả input sớm 120 ms | Với cửa sổ upstream cho phép: 9 association đúng thứ tự, delta −120 ms, không tự chuyển thành +80 ms hoặc rơi mất nốt ở ranh giới block. |
+| Bỏ nốt đầu chuỗi C4 dày rồi chơi các nốt sau đúng lịch | Miss đúng mục tiêu; không kéo lệch toàn bộ chuỗi để tối đa số match. |
+| Biên từng hit window | Kiểm ngay trong/đúng biên/ngay ngoài ở cả hai phía; giữ đúng quy tắc bao hàm của upstream. |
+| Bấm trước onset 1 beat, giữ phím qua onset | BPM không ghi Perfect do phím đã giữ; không nhập reservation hỗ trợ của PTS vào luật BPM. |
+| Hợp âm với −100/+100 ms; hợp âm thiếu/thừa nốt | Delta từng nốt còn nguyên, không triệt tiêu nhau; một input không thành hai lần đánh. |
+| Note On velocity 0, Note On trùng, Note Off nhiều kênh/cổng | Phân loại theo trạng thái MIDI được đặc tả; không đếm nốt mới từ phím còn giữ hoặc tắt nhầm nốt cổng khác. |
+| Pedal ON −500 ms, note ON 0, OFF 100, pedal OFF 1.000 | Ghi đúng key interval 100 ms và sustain interval 1.000 ms cho ca không retrigger; đánh giá duration là cổng R4 riêng, không sửa onset theo pedal. |
+| Hai tay khác mật độ; unison, tie, voice/cross-staff | Pitch/occurrence đúng, chỉ tiêu thụ một physical attack khi thực sự cùng mục tiêu; không yêu cầu attack ở tie continuation. |
+| Pickup, rest, triplet, tempo change, 6/8, repeat/volta/DC/DS, A–B/loop | Lịch target đối chiếu dữ liệu phát MuseScore và thời gian tính độc lập; UI đổi frame không đổi lịch. |
+| Offset ±, count-in, pause/resume, disconnect/reconnect | Bù đúng một lần; state pedal đúng; không biến reset thành lỗi nhả; event của epoch cũ không được ghi điểm. |
+| Tick 16/40/100 ms, batch MIDI và giao trễ trong giới hạn | Cùng target ID/grade/delta và kết quả cuối; ghi rõ ordering/watermark ở thời điểm chốt. |
+| Phiên bỏ dở, nhiều loop, BPM tăng từng loop | Mẫu số dựa trên phần đủ điều kiện đã đánh giá; không chấm nốt tương lai thành miss; không so lượt khác profile thành cùng chuẩn. |
+| Sửa bài → Browser Back; đổi trang; mở kết quả bài khác | Snapshot/revision/config/project đúng, tất cả lối vào dùng controller mới. |
+| Score dài và input dày | Đo memory/jitter/throughput; không thêm ranh giới cắt matcher để đạt số đo; quá giới hạn báo rõ trước/chuyển interrupted, không trả điểm sai. |
+| Clean release, update từ bản cũ, offline, restore backup | Chỉ engine mới được nạp; dữ liệu lịch sử vẫn đọc được; backup của chính app phải restore được, gồm title dài (B06). |
+
+Giá trị expected đến từ source gốc và các fixture tính độc lập. Replay của chính
+engine mới chỉ kiểm tính lặp lại, không thay thế bằng chứng chấm đúng. Các test
+cũ có thể cung cấp dữ liệu tình huống sau khi bỏ mọi import/helper grader cũ,
+nhưng expected phải được xét lại theo luật mới; không dùng 102 test cũ làm
+bằng chứng thay thế đã hoàn tất.
+
+Theo dõi thêm lỗi WebGL/native abort R01 trong báo cáo
+[audit hệ thống](BUG_AUDIT_2026-10-18.md): đây là lỗi engine/lifecycle cần điều tra
+riêng, thay grader không tự chứng minh đã sửa. Các lỗi B01–B05 phải có ca nghiệm
+thu ở các bước trên; B06 thuộc backup được kiểm ở R7. Bản kế hoạch không đóng
+bất kỳ lỗi nào chỉ vì đã nêu hướng xử lý.
 
 **1. Quyết định nền tảng và phạm vi**
 
@@ -269,7 +464,11 @@ Chấm độ dài là policy luyện tập có phiên bản, chưa phải đánh
 âm thanh piano vật lý. Tài khoản, tablet và đồng bộ là nhánh mở rộng có điều
 kiện, chưa được nghiệm thu.
 
-**6. Quy tắc chấm phải khóa trước khi viết thuật toán**
+**6. Quy tắc của thiết kế cũ — được thay thế bởi kế hoạch ngày 18/10/2026**
+
+Các ngưỡng và công thức dưới đây mô tả thiết kế trước. Khi viết bản thay thế,
+dùng nguồn ghim, luật BPM và các cổng R0–R7 ở đầu tài liệu; không lấy phần này
+làm đặc tả để chép lại engine cũ.
 
 - Cửa sổ ghép và ngưỡng đúng nhịp là hai khái niệm riêng. Một nốt có thể đúng pitch nhưng ngoài ngưỡng timing.
 - Giá trị thử nghiệm ban đầu: Perfect 50 ms, Good 120 ms, cửa sổ ghép tối đa 250 ms mỗi phía. Đây là tham số sản phẩm cần kiểm thử đàn thật, không phải chuẩn âm nhạc.
