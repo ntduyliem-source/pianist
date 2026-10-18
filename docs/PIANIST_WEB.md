@@ -87,8 +87,8 @@ node --import tsx scripts/replay.ts C:\path\to\result-v2.json
 ```powershell
 # Sau build tối ưu, test và commit source sạch:
 python buildscripts/pianist/package-web.py
-python buildscripts/pianist/stage-release.py --output artifacts/releases/pianist-web-2026-10-18-v2
-python buildscripts/pianist/verify-release.py --directory artifacts/releases/pianist-web-2026-10-18-v2/site --public
+python buildscripts/pianist/stage-release.py --output artifacts/releases/pianist-web-2026-10-18-v2-final
+python buildscripts/pianist/verify-release.py --directory artifacts/releases/pianist-web-2026-10-18-v2-final/site --public
 ```
 
 Gói có site, zip web, source đúng commit, toolchain/lockfile, hash, Caddy/Compose và DEPLOY.txt. Chưa phát hành hosting. Phải cung cấp source tương ứng và notices của PTS AGPL, osu! MIT, MuseScore/Qt khi phân phối; xem [inventory](THIRD_PARTY_NOTICES.md). Đàn thật/HTTPS chưa kiểm theo phạm vi đã thống nhất. Giới hạn snapshot 40 trang/50.000 nốt viết/24 MiB SVG, timeline 100.000 target/2 giờ/10 vòng; stress Node không thay benchmark máy/đàn.

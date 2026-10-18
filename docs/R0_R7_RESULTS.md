@@ -59,6 +59,7 @@ và script đối chiếu nằm trong source phát hành. Artifact local dưới
 | `before-edit.json`, `after-back.json` | Revision/pitch/A–B/BPM/vòng trước/sau sửa |
 | `browser-history-project.txt` | Kết quả mở đúng project |
 | `native-v2-snapshot.json` | Snapshot từ WASM mới, 9 anchor, raw articulations |
+| `practice-v2-final.png` | Màn tập Phố Xa; khung dưới navbar và bàn phím trong viewport sau sửa layout |
 | `cutover.json` | 13 module cũ vắng mặt; source/build/map/WASM đã kiểm |
 | `stress.json` | 50.000 target, 100.000 MIDI event, 50.000 judgement, 0 extra/fault |
 | `local-release-check.json`, `public-release-check.json` | Hash/size và headers theo phạm vi ghi trong từng report |
@@ -75,7 +76,7 @@ và thư viện vẫn hoạt động. Test SW kiểm manifest ghim theo release 
 lớp duyệt tự động chặn cả lệnh tạm dừng server hiện có và khởi động server thử
 riêng, không trả lý do chi tiết. Không coi việc cài cache thành thử mất mạng.
 
-Gói chuẩn bị tại `artifacts/releases/pianist-web-2026-10-18-v2/`. `SOURCE.json`
+Gói chuẩn bị tại `artifacts/releases/pianist-web-2026-10-18-v2-final/`. `SOURCE.json`
 và `site/release.json` ghi chính xác commit, version, hash; có zip web, source,
 notices, Caddy/Compose và DEPLOY.txt. Không phát hành domain/hosting. Phố Xa
 local không vào gói public; public dùng fixture CC0. Đàn USB MIDI thật, latency
