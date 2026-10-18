@@ -34,6 +34,19 @@ function resultValid(r: any): r is SavedAttempt {
   if(!text(r.fingerprint)||!number(r.revision)||!number(r.elapsedMs)||!['wait','bpm'].includes(r.settings.mode)||!number(r.settings.bpm))return false;
   if(!r.faults.every((f:unknown)=>typeof f==='string'))return false;
   if(r.replay && (!object(r.replay)||r.replay.engine!==r.engine||!Array.isArray(r.replay.commands)||r.replay.commands.length>400000))return false;
+  if(r.r4!==undefined){
+    const a=r.r4;
+    if(!object(a)||a.profile!=='mir_eval-offset+note-seq+pedal-200ms'||!object(a.pedal))return false;
+    for(const list of [a.key,a.sound])if(!Array.isArray(list)||list.length>100000||!list.every((n:any)=>object(n)&&ids.has(n.id)
+      &&['correct','early','late','unreleased','interrupted','no-attack','unavailable','pending'].includes(n.status)
+      &&['expectedMs','actualMs','deltaMs','toleranceMs'].every(k=>n[k]===null||number(n[k]))))return false;
+    const p=a.pedal;
+    if(!['scored','disabled','no-reference','wait','partial'].includes(p.status)||!['reference','performed','interrupted','precision','recall','f1','overlap'].every(k=>number(p[k]))
+      ||!Array.isArray(p.targets)||p.targets.length>100000||!p.targets.every((t:any)=>object(t)&&text(t.id)&&number(t.atMs)&&number(t.endMs)&&t.endMs>t.atMs&&number(t.loop))
+      ||!Array.isArray(p.intervals)||p.intervals.length>250000||!p.intervals.every((i:any)=>object(i)&&number(i.onMs)&&number(i.offMs)&&i.offMs>i.onMs)
+      ||!Array.isArray(p.matching)||p.matching.length>100000||!p.matching.every((m:any)=>Array.isArray(m)&&m.length===2&&Number.isInteger(m[0])&&m[0]>=0&&m[0]<p.targets.length&&Number.isInteger(m[1])&&m[1]>=0&&m[1]<p.intervals.length))return false;
+    if(!Array.isArray(r.pedalIntervals)||r.pedalIntervals.length>250000||!Array.isArray(r.controls)||r.controls.length>250000)return false;
+  }
   return ['planned','evaluated','hits','misses','extras'].every(k=>number(r.metrics[k])&&r.metrics[k]>=0);
 }
 

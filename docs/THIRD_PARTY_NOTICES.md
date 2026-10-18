@@ -21,6 +21,8 @@ The following components are included in the software/build workflow:
 | osu!lazer / osu!mania judgement port | MIT, commit `676f3b01f28841ebd97ab583e178f2d7b99fe48c`; original copyright/license and source in `third_party/practice-sources/osu/` |
 | Piano Trainer Studio Wait functions | AGPL-3.0, commit `b40e412ccbc701094a9bb4bfe91ef45c32065704`; unchanged function bodies plus adapted host in `packages/practice-engine-v2/upstream/studio-wait.js` |
 | MIDI Rhythm Trainer reference expressions | GPL-3.0-or-later, commit `23bbc5c62c421fdd69dda7baca6609b704910ff6`; reference/test source only, not a production matcher |
+| mir_eval offset and pedal metrics | MIT, commit `fe73b3533737814f83dbd9739f06e90f5f82f758`; source/license in `third_party/practice-sources/mir_eval`, port and independent Python runner |
+| Magenta note-seq sustain | Apache-2.0, commit `35825508885343fb06f93dc87ff491dbbf034505`; modified/ported `apply_sustain_control_changes`, original files and license in `third_party/practice-sources/note-seq` |
 | Vite / tsx / TypeScript and test dependencies | Build/test tools; their package licenses remain in their source distributions |
 
 The local Phố Xa arrangement supplied for testing is not included in the public

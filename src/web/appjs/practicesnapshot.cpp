@@ -18,6 +18,8 @@
 #include "engraving/dom/note.h"
 #include "engraving/dom/page.h"
 #include "engraving/dom/part.h"
+#include "engraving/dom/pedal.h"
+#include "engraving/compat/midi/compatmidirender.h"
 #include "engraving/dom/repeatlist.h"
 #include "engraving/dom/score.h"
 #include "engraving/dom/segment.h"
@@ -42,7 +44,7 @@ bool WebApi::getSnapshot()
     const auto svgWriter = writers()->writer("svg");
     if (!score || !svgWriter || score->pages().empty() || score->pages().size() > 40) { return false; }
 
-    QJsonArray pages, measures, staves, occurrences, performed, beats;
+    QJsonArray pages, measures, staves, occurrences, performed, beats, pedals, keyReleases;
     std::map<const engraving::Note*, QString> noteIds;
     std::map<const engraving::Measure*, int> measureIds;
     std::map<const engraving::Note*, QJsonObject> notes;
@@ -132,6 +134,39 @@ bool WebApi::getSnapshot()
     }
     // MuseScore expands repeats, voltas and jumps. Do not reimplement that interpreter in JS.
     const auto& repeats = score->repeatList(true);
+    // R4 references use MuseScore's MIDI renderer, including its articulation
+    // gate times and ties. No release percentage or grading rule lives here.
+    engraving::EventsHolder midi;
+    engraving::CompatMidiRendererInternal::Context midiContext;
+    midiContext.harmonyChannelSetting = engraving::CompatMidiRendererInternal::HarmonyChannelSetting::DISABLED;
+    engraving::CompatMidiRender::renderScore(score, midi, midiContext, true);
+    for (size_t channel = 0; channel < midi.size(); ++channel) {
+        std::map<std::pair<const engraving::Note*, int>, int> starts;
+        for (const auto& [tick, event] : midi[channel]) {
+            if (event.type() != engraving::ME_NOTEON || !event.note() || event.discard()) { continue; }
+            const auto identity = std::make_pair(event.note(), static_cast<int>(event.pitch()));
+            if (event.velo()) { starts[identity] = tick; continue; }
+            const auto start = starts.find(identity);
+            const auto anchor = noteIds.find(event.note());
+            if (start != starts.end()) {
+                if (anchor != noteIds.end() && tick > start->second) {
+                    keyReleases.append(QJsonObject{{"anchor", anchor->second}, {"pitch", event.pitch()},
+                        {"utick", start->second}, {"endUtick", tick},
+                        {"atMs", repeats.utick2utime(start->second) * 1000},
+                        {"endMs", repeats.utick2utime(tick) * 1000}});
+                }
+                starts.erase(start);
+            }
+            if (keyReleases.size() > 200000) { return false; }
+        }
+    }
+    // Export notated pedal spans, with native repeat traversal and tempo below.
+    // These are score instructions, not inferred pedal marks or acoustic decay.
+    std::vector<const engraving::Spanner*> pedalSpans;
+    for (const auto& entry : score->spannerMap().map()) {
+        const auto* span = entry.second;
+        if (span->isPedal() && span->staff()->isPrimaryStaff()) { pedalSpans.push_back(span); }
+    }
     int occurrence = 0;
     for (const auto* repeat : repeats) {
         for (const auto* measure : repeat->measureList()) {
@@ -143,6 +178,16 @@ bool WebApi::getSnapshot()
             const double to = repeats.utick2utime(end + shift) * 1000;
             occurrences.append(QJsonObject{{"index", occurrence}, {"measure", measureIds[measure]},
                                            {"startMs", from}, {"endMs", to}, {"utick", start + shift}});
+            for (size_t p = 0; p < pedalSpans.size(); ++p) {
+                const auto* span = pedalSpans[p];
+                const int a = std::max(start, span->tick().ticks());
+                const int b = std::min(end, span->tick2().ticks());
+                if (b <= a) { continue; }
+                pedals.append(QJsonObject{{"id", static_cast<int>(p)}, {"occurrence", occurrence},
+                    {"partId", QString::number(span->part()->id().toUint64())},
+                    {"tick", a}, {"endTick", b}, {"atMs", repeats.utick2utime(a + shift) * 1000},
+                    {"endMs", repeats.utick2utime(b + shift) * 1000}});
+            }
             for (const int beatTicks : {240, 480, 720}) {
                 for (int tick = start, beat = 0; tick < end; tick += beatTicks, ++beat) {
                     beats.append(QJsonObject{{"atMs", repeats.utick2utime(tick + shift) * 1000},
@@ -175,7 +220,8 @@ bool WebApi::getSnapshot()
                              {"title", notation->workTitle()}, {"baseQuarterBpm", score->tempo(engraving::Fraction(0, 1)).val * 60},
                              {"durationMs", repeats.utick2utime(repeats.ticks()) * 1000}, {"staves", staves},
                              {"pages", pages}, {"measures", measures}, {"anchors", anchors}, {"occurrences", occurrences},
-                             {"performed", performed}, {"beats", beats}, {"warnings", warningList}};
+                             {"performed", performed}, {"beats", beats}, {"warnings", warningList},
+                             {"durationReference", "musescore-midi"}, {"keyReleases", keyReleases}, {"pedals", pedals}};
     const auto json = QJsonDocument(result).toJson(QJsonDocument::Compact);
     emscripten::val::module_property("onPracticeSnapshot")(json.toStdString());
     return true;

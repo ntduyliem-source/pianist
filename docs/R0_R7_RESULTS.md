@@ -1,6 +1,6 @@
 # Pianist Web V2 — nghiệm thu R0–R7
 
-Ngày 18/10/2026. Engine `pianist-v2.osu-676f3b0.pts-b40e412.1`, schema kết quả 2.
+Ngày 18/10/2026. Báo cáo đợt thay lõi BPM; phần R4 đã được bổ sung ở [R4_RESULTS](R4_RESULTS.md), engine hiện tại `pianist-v2.osu-676f3b0.pts-b40e412.mir-fe73b35.ns-3582550.2`, schema kết quả 2. Số liệu 56 test và artifact v2-final bên dưới là mốc trước R4; không dùng để mô tả bản R4 mới.
 Bản này thay toàn bộ bộ chấm tự viết cũ, ưu tiên onset theo BPM. Editor
 MuseScore, nhập/xuất, thư viện và dữ liệu người dùng được giữ.
 
@@ -12,7 +12,7 @@ MuseScore, nhập/xuất, thư viện và dữ liệu người dùng được gi
 | R1 | Port hit windows, dispatch/notelock, hit/miss và weights modern osu!mania. | 329 scenario khớp ID/grade/delta/thời điểm/seq/extra ở kernel; cùng 329 ca khớp ở host event-time. Đây là 329 ca độc lập kiểm hai tầng. |
 | R2 | Timeline, MIDI state, audio clock, calibration, Worker và controller mới. | Native corpus repeat/volta/DC/DS/tie/tempo/tuplets/cross-staff; MIDI mô phỏng xuyên router/controller/Worker production; count-in CC64, bù offset, pause/hold/resume, replay. |
 | R3 | 4 hàm Wait của Piano Trainer Studio giữ nguyên body, host Wait riêng. | Latch đủ pitch, sai octave, duplicate, nhả/đánh lại, count-in; browser 8 hit, 1 input thừa, replay khớp. |
-| R4 | Xóa grader duration/arpeggio cũ; giữ raw Note Off/CC64; 68 probe hold-tail khớp C#. | **Chưa hoàn tất lifecycle hold và chấm trường độ/diễn cảm piano.** Probe game không chứng minh pedal/articulation piano. UI ghi chưa hỗ trợ, không có điểm đoán. M7 còn mở. |
+| R4 | Đã thay bằng mir_eval offset + note-seq sustain/retrigger + pedal profile piano_transcription. Mốc nhả gọi renderer MuseScore. Có công tắc pedal. | 535 ca khớp code Python gốc; native corpus và browser MIDI giả lập, replay. Xem [nghiệm thu mới](R4_RESULTS.md). Phạm vi CC64 nhị phân/nhả phím, không diễn cảm/half-pedal/arpeggio. |
 | R5 | UI/results/history/replay mới, highlight từ input/judgement, bảo vệ project/revision/cấu hình. | Browser sửa bài → Back đổi đủ 9 pitch theo snapshot mới; A–B 2–2, BPM 65, 2 vòng vẫn giữ; lịch sử mở đúng project. |
 | R6 | Xóa 13 module grader/Worker/controller/MIDI/transport/calibration cũ; contract, tests, CLI, stress chuyển V2. Native bỏ releaseRatio/releaseUnsupported. | Audit source, bundle, source map và WASM không có các symbol/implementation cũ. Snapshot live xuất raw articulations, không hệ số release. SW activation chỉ xóa cache cũ trong đúng scope. |
 | R7 | Build tối ưu native + shell/typecheck, 56 test, browser/MIDI giả lập, replay, stress, hash/header check, chuẩn bị gói deploy. | Offline install đã báo sẵn sàng; xem giới hạn thử mất mạng bên dưới. MIDI thật và HTTPS chưa thử theo yêu cầu. |
@@ -84,5 +84,5 @@ thực và HTTPS/chứng chỉ chờ môi trường đã thống nhất.
 
 R01 WebGL/native abort trong audit cũ chưa có bằng chứng sửa tận gốc. Không
 quan sát abort trong các lượt browser mới; guard chặn thao tác ghi sau lỗi
-native được test. Nhánh trường độ/diễn cảm R4/M7 cần source/specification và
-corpus piano riêng; không bật lại thuật toán cũ để lấp chỗ trống.
+native được test. Nhả phím/pedal R4 đã có source và corpus riêng ở báo cáo bổ sung;
+M7 diễn cảm/half-pedal/arpeggio còn mở, không bật lại thuật toán cũ để lấp chỗ trống.

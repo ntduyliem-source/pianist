@@ -1,0 +1,1109 @@
+{
+  "anchors": [
+    {
+      "articulations": [],
+      "box": {
+        "height": 91.6484375,
+        "width": 111.4921875,
+        "x": 3492.8897673780275,
+        "y": 2440.3962536909453
+      },
+      "durationTicks": 960,
+      "id": "m0-t960-v0-n0",
+      "measure": 0,
+      "page": 0,
+      "pitch": 62,
+      "play": true,
+      "staff": 0,
+      "tick": 960,
+      "track": 0,
+      "visible": true,
+      "visualStaff": 0,
+      "voice": 0
+    },
+    {
+      "articulations": [
+        "staccato"
+      ],
+      "box": {
+        "height": 91.6484375,
+        "width": 111.4921875,
+        "x": 2241.097108862761,
+        "y": 2481.734836368111
+      },
+      "durationTicks": 480,
+      "id": "m0-t0-v0-n0",
+      "measure": 0,
+      "page": 0,
+      "pitch": 60,
+      "play": true,
+      "staff": 0,
+      "tick": 0,
+      "track": 0,
+      "visible": true,
+      "visualStaff": 0,
+      "voice": 0
+    },
+    {
+      "articulations": [],
+      "box": {
+        "height": 91.6484375,
+        "width": 111.4921875,
+        "x": 2866.993438120395,
+        "y": 2481.734836368111
+      },
+      "durationTicks": 480,
+      "id": "m0-t480-v0-n0",
+      "measure": 0,
+      "page": 0,
+      "pitch": 60,
+      "play": true,
+      "staff": 0,
+      "tick": 480,
+      "track": 0,
+      "visible": true,
+      "visualStaff": 0,
+      "voice": 0
+    },
+    {
+      "articulations": [],
+      "box": {
+        "height": 91.6484375,
+        "width": 111.4921875,
+        "x": 7946.664034398117,
+        "y": 2481.734836368111
+      },
+      "durationTicks": 480,
+      "id": "m2-t4800-v0-n0",
+      "measure": 2,
+      "page": 0,
+      "pitch": 60,
+      "play": true,
+      "staff": 0,
+      "tick": 4800,
+      "track": 0,
+      "visible": true,
+      "visualStaff": 0,
+      "voice": 0
+    },
+    {
+      "articulations": [],
+      "box": {
+        "height": 91.6484375,
+        "width": 111.4921875,
+        "x": 7007.819540511667,
+        "y": 3143.152159202756
+      },
+      "durationTicks": 960,
+      "id": "m2-t3840-v4-n0",
+      "measure": 2,
+      "page": 0,
+      "pitch": 48,
+      "play": true,
+      "staff": 1,
+      "tick": 3840,
+      "track": 4,
+      "visible": true,
+      "visualStaff": 1,
+      "voice": 0
+    },
+    {
+      "articulations": [],
+      "box": {
+        "height": 93.30078125,
+        "width": 127.37109375,
+        "x": 2233.157655737761,
+        "y": 3142.325987327756
+      },
+      "durationTicks": 1920,
+      "id": "m0-t0-v4-n0",
+      "measure": 0,
+      "page": 0,
+      "pitch": 48,
+      "play": true,
+      "staff": 1,
+      "tick": 0,
+      "track": 4,
+      "visible": true,
+      "visualStaff": 1,
+      "voice": 0
+    },
+    {
+      "articulations": [],
+      "box": {
+        "height": 91.6484375,
+        "width": 111.4921875,
+        "x": 4557.902060846171,
+        "y": 2440.3962536909453
+      },
+      "durationTicks": 960,
+      "id": "m1-t1920-v0-n0",
+      "measure": 1,
+      "page": 0,
+      "pitch": 62,
+      "play": true,
+      "staff": 0,
+      "tick": 1920,
+      "tieBack": "m0-t960-v0-n0",
+      "track": 0,
+      "visible": true,
+      "visualStaff": 0,
+      "voice": 0
+    },
+    {
+      "articulations": [
+        "staccatissimo"
+      ],
+      "box": {
+        "height": 91.6484375,
+        "width": 111.4921875,
+        "x": 5496.74655473262,
+        "y": 2399.05767101378
+      },
+      "durationTicks": 480,
+      "id": "m1-t2880-v0-n0",
+      "measure": 1,
+      "page": 0,
+      "pitch": 64,
+      "play": true,
+      "staff": 0,
+      "tick": 2880,
+      "track": 0,
+      "visible": true,
+      "visualStaff": 0,
+      "voice": 0
+    },
+    {
+      "articulations": [],
+      "box": {
+        "height": 91.6484375,
+        "width": 111.4921875,
+        "x": 6122.642883990254,
+        "y": 2357.7190883366147
+      },
+      "durationTicks": 480,
+      "id": "m1-t3360-v0-n0",
+      "measure": 1,
+      "page": 0,
+      "pitch": 65,
+      "play": true,
+      "staff": 0,
+      "tick": 3360,
+      "track": 0,
+      "visible": true,
+      "visualStaff": 0,
+      "voice": 0
+    },
+    {
+      "articulations": [],
+      "box": {
+        "height": 93.30078125,
+        "width": 127.37109375,
+        "x": 4549.962607721171,
+        "y": 3266.341735359252
+      },
+      "durationTicks": 1920,
+      "id": "m1-t1920-v4-n0",
+      "measure": 1,
+      "page": 0,
+      "pitch": 43,
+      "play": true,
+      "staff": 1,
+      "tick": 1920,
+      "track": 4,
+      "visible": true,
+      "visualStaff": 1,
+      "voice": 0
+    },
+    {
+      "articulations": [],
+      "box": {
+        "height": 91.6484375,
+        "width": 111.4921875,
+        "x": 7007.819540511667,
+        "y": 2481.734836368111
+      },
+      "durationTicks": 960,
+      "id": "m2-t3840-v0-n0",
+      "measure": 2,
+      "page": 0,
+      "pitch": 60,
+      "play": true,
+      "staff": 0,
+      "tick": 3840,
+      "track": 0,
+      "visible": true,
+      "visualStaff": 0,
+      "voice": 0
+    }
+  ],
+  "baseQuarterBpm": 120,
+  "beats": [
+    {
+      "accent": true,
+      "atMs": 0,
+      "beatQuarter": 0.5,
+      "occurrence": 0
+    },
+    {
+      "accent": false,
+      "atMs": 250,
+      "beatQuarter": 0.5,
+      "occurrence": 0
+    },
+    {
+      "accent": false,
+      "atMs": 500,
+      "beatQuarter": 0.5,
+      "occurrence": 0
+    },
+    {
+      "accent": false,
+      "atMs": 750,
+      "beatQuarter": 0.5,
+      "occurrence": 0
+    },
+    {
+      "accent": false,
+      "atMs": 1000,
+      "beatQuarter": 0.5,
+      "occurrence": 0
+    },
+    {
+      "accent": false,
+      "atMs": 1250,
+      "beatQuarter": 0.5,
+      "occurrence": 0
+    },
+    {
+      "accent": false,
+      "atMs": 1500,
+      "beatQuarter": 0.5,
+      "occurrence": 0
+    },
+    {
+      "accent": false,
+      "atMs": 1750,
+      "beatQuarter": 0.5,
+      "occurrence": 0
+    },
+    {
+      "accent": true,
+      "atMs": 0,
+      "beatQuarter": 1,
+      "occurrence": 0
+    },
+    {
+      "accent": false,
+      "atMs": 500,
+      "beatQuarter": 1,
+      "occurrence": 0
+    },
+    {
+      "accent": false,
+      "atMs": 1000,
+      "beatQuarter": 1,
+      "occurrence": 0
+    },
+    {
+      "accent": false,
+      "atMs": 1500,
+      "beatQuarter": 1,
+      "occurrence": 0
+    },
+    {
+      "accent": true,
+      "atMs": 0,
+      "beatQuarter": 1.5,
+      "occurrence": 0
+    },
+    {
+      "accent": false,
+      "atMs": 750,
+      "beatQuarter": 1.5,
+      "occurrence": 0
+    },
+    {
+      "accent": false,
+      "atMs": 1500,
+      "beatQuarter": 1.5,
+      "occurrence": 0
+    },
+    {
+      "accent": true,
+      "atMs": 2000,
+      "beatQuarter": 0.5,
+      "occurrence": 1
+    },
+    {
+      "accent": false,
+      "atMs": 2250,
+      "beatQuarter": 0.5,
+      "occurrence": 1
+    },
+    {
+      "accent": false,
+      "atMs": 2500,
+      "beatQuarter": 0.5,
+      "occurrence": 1
+    },
+    {
+      "accent": false,
+      "atMs": 2750,
+      "beatQuarter": 0.5,
+      "occurrence": 1
+    },
+    {
+      "accent": false,
+      "atMs": 3000,
+      "beatQuarter": 0.5,
+      "occurrence": 1
+    },
+    {
+      "accent": false,
+      "atMs": 3250,
+      "beatQuarter": 0.5,
+      "occurrence": 1
+    },
+    {
+      "accent": false,
+      "atMs": 3500,
+      "beatQuarter": 0.5,
+      "occurrence": 1
+    },
+    {
+      "accent": false,
+      "atMs": 3750,
+      "beatQuarter": 0.5,
+      "occurrence": 1
+    },
+    {
+      "accent": true,
+      "atMs": 2000,
+      "beatQuarter": 1,
+      "occurrence": 1
+    },
+    {
+      "accent": false,
+      "atMs": 2500,
+      "beatQuarter": 1,
+      "occurrence": 1
+    },
+    {
+      "accent": false,
+      "atMs": 3000,
+      "beatQuarter": 1,
+      "occurrence": 1
+    },
+    {
+      "accent": false,
+      "atMs": 3500,
+      "beatQuarter": 1,
+      "occurrence": 1
+    },
+    {
+      "accent": true,
+      "atMs": 2000,
+      "beatQuarter": 1.5,
+      "occurrence": 1
+    },
+    {
+      "accent": false,
+      "atMs": 2750,
+      "beatQuarter": 1.5,
+      "occurrence": 1
+    },
+    {
+      "accent": false,
+      "atMs": 3500,
+      "beatQuarter": 1.5,
+      "occurrence": 1
+    },
+    {
+      "accent": true,
+      "atMs": 4000,
+      "beatQuarter": 0.5,
+      "occurrence": 2
+    },
+    {
+      "accent": false,
+      "atMs": 4250,
+      "beatQuarter": 0.5,
+      "occurrence": 2
+    },
+    {
+      "accent": false,
+      "atMs": 4500,
+      "beatQuarter": 0.5,
+      "occurrence": 2
+    },
+    {
+      "accent": false,
+      "atMs": 4750,
+      "beatQuarter": 0.5,
+      "occurrence": 2
+    },
+    {
+      "accent": false,
+      "atMs": 5000,
+      "beatQuarter": 0.5,
+      "occurrence": 2
+    },
+    {
+      "accent": false,
+      "atMs": 5250,
+      "beatQuarter": 0.5,
+      "occurrence": 2
+    },
+    {
+      "accent": false,
+      "atMs": 5500,
+      "beatQuarter": 0.5,
+      "occurrence": 2
+    },
+    {
+      "accent": false,
+      "atMs": 5750,
+      "beatQuarter": 0.5,
+      "occurrence": 2
+    },
+    {
+      "accent": true,
+      "atMs": 4000,
+      "beatQuarter": 1,
+      "occurrence": 2
+    },
+    {
+      "accent": false,
+      "atMs": 4500,
+      "beatQuarter": 1,
+      "occurrence": 2
+    },
+    {
+      "accent": false,
+      "atMs": 5000,
+      "beatQuarter": 1,
+      "occurrence": 2
+    },
+    {
+      "accent": false,
+      "atMs": 5500,
+      "beatQuarter": 1,
+      "occurrence": 2
+    },
+    {
+      "accent": true,
+      "atMs": 4000,
+      "beatQuarter": 1.5,
+      "occurrence": 2
+    },
+    {
+      "accent": false,
+      "atMs": 4750,
+      "beatQuarter": 1.5,
+      "occurrence": 2
+    },
+    {
+      "accent": false,
+      "atMs": 5500,
+      "beatQuarter": 1.5,
+      "occurrence": 2
+    },
+    {
+      "accent": true,
+      "atMs": 6000,
+      "beatQuarter": 0.5,
+      "occurrence": 3
+    },
+    {
+      "accent": false,
+      "atMs": 6250,
+      "beatQuarter": 0.5,
+      "occurrence": 3
+    },
+    {
+      "accent": false,
+      "atMs": 6500,
+      "beatQuarter": 0.5,
+      "occurrence": 3
+    },
+    {
+      "accent": false,
+      "atMs": 6750,
+      "beatQuarter": 0.5,
+      "occurrence": 3
+    },
+    {
+      "accent": false,
+      "atMs": 7000,
+      "beatQuarter": 0.5,
+      "occurrence": 3
+    },
+    {
+      "accent": false,
+      "atMs": 7250,
+      "beatQuarter": 0.5,
+      "occurrence": 3
+    },
+    {
+      "accent": false,
+      "atMs": 7500,
+      "beatQuarter": 0.5,
+      "occurrence": 3
+    },
+    {
+      "accent": false,
+      "atMs": 7750,
+      "beatQuarter": 0.5,
+      "occurrence": 3
+    },
+    {
+      "accent": true,
+      "atMs": 6000,
+      "beatQuarter": 1,
+      "occurrence": 3
+    },
+    {
+      "accent": false,
+      "atMs": 6500,
+      "beatQuarter": 1,
+      "occurrence": 3
+    },
+    {
+      "accent": false,
+      "atMs": 7000,
+      "beatQuarter": 1,
+      "occurrence": 3
+    },
+    {
+      "accent": false,
+      "atMs": 7500,
+      "beatQuarter": 1,
+      "occurrence": 3
+    },
+    {
+      "accent": true,
+      "atMs": 6000,
+      "beatQuarter": 1.5,
+      "occurrence": 3
+    },
+    {
+      "accent": false,
+      "atMs": 6750,
+      "beatQuarter": 1.5,
+      "occurrence": 3
+    },
+    {
+      "accent": false,
+      "atMs": 7500,
+      "beatQuarter": 1.5,
+      "occurrence": 3
+    },
+    {
+      "accent": true,
+      "atMs": 8000,
+      "beatQuarter": 0.5,
+      "occurrence": 4
+    },
+    {
+      "accent": false,
+      "atMs": 8250,
+      "beatQuarter": 0.5,
+      "occurrence": 4
+    },
+    {
+      "accent": false,
+      "atMs": 8500,
+      "beatQuarter": 0.5,
+      "occurrence": 4
+    },
+    {
+      "accent": false,
+      "atMs": 8750,
+      "beatQuarter": 0.5,
+      "occurrence": 4
+    },
+    {
+      "accent": false,
+      "atMs": 9000,
+      "beatQuarter": 0.5,
+      "occurrence": 4
+    },
+    {
+      "accent": false,
+      "atMs": 9250,
+      "beatQuarter": 0.5,
+      "occurrence": 4
+    },
+    {
+      "accent": false,
+      "atMs": 9500,
+      "beatQuarter": 0.5,
+      "occurrence": 4
+    },
+    {
+      "accent": false,
+      "atMs": 9750,
+      "beatQuarter": 0.5,
+      "occurrence": 4
+    },
+    {
+      "accent": true,
+      "atMs": 8000,
+      "beatQuarter": 1,
+      "occurrence": 4
+    },
+    {
+      "accent": false,
+      "atMs": 8500,
+      "beatQuarter": 1,
+      "occurrence": 4
+    },
+    {
+      "accent": false,
+      "atMs": 9000,
+      "beatQuarter": 1,
+      "occurrence": 4
+    },
+    {
+      "accent": false,
+      "atMs": 9500,
+      "beatQuarter": 1,
+      "occurrence": 4
+    },
+    {
+      "accent": true,
+      "atMs": 8000,
+      "beatQuarter": 1.5,
+      "occurrence": 4
+    },
+    {
+      "accent": false,
+      "atMs": 8750,
+      "beatQuarter": 1.5,
+      "occurrence": 4
+    },
+    {
+      "accent": false,
+      "atMs": 9500,
+      "beatQuarter": 1.5,
+      "occurrence": 4
+    }
+  ],
+  "durationMs": 10000,
+  "durationReference": "musescore-midi",
+  "keyReleases": [
+    {
+      "anchor": "m0-t0-v0-n0",
+      "atMs": 0,
+      "endMs": 248.95833333333334,
+      "endUtick": 239,
+      "pitch": 60,
+      "utick": 0
+    },
+    {
+      "anchor": "m0-t480-v0-n0",
+      "atMs": 500,
+      "endMs": 973.9583333333334,
+      "endUtick": 935,
+      "pitch": 60,
+      "utick": 480
+    },
+    {
+      "anchor": "m0-t0-v4-n0",
+      "atMs": 0,
+      "endMs": 1898.9583333333333,
+      "endUtick": 1823,
+      "pitch": 48,
+      "utick": 0
+    },
+    {
+      "anchor": "m0-t960-v0-n0",
+      "atMs": 1000,
+      "endMs": 2898.9583333333335,
+      "endUtick": 2783,
+      "pitch": 62,
+      "utick": 960
+    },
+    {
+      "anchor": "m1-t2880-v0-n0",
+      "atMs": 3000,
+      "endMs": 3163.5416666666665,
+      "endUtick": 3037,
+      "pitch": 64,
+      "utick": 2880
+    },
+    {
+      "anchor": "m1-t1920-v4-n0",
+      "atMs": 2000,
+      "endMs": 3898.9583333333335,
+      "endUtick": 3743,
+      "pitch": 43,
+      "utick": 1920
+    },
+    {
+      "anchor": "m1-t3360-v0-n0",
+      "atMs": 3500,
+      "endMs": 3973.9583333333335,
+      "endUtick": 3815,
+      "pitch": 65,
+      "utick": 3360
+    },
+    {
+      "anchor": "m0-t0-v0-n0",
+      "atMs": 4000,
+      "endMs": 4248.958333333333,
+      "endUtick": 4079,
+      "pitch": 60,
+      "utick": 3840
+    },
+    {
+      "anchor": "m0-t480-v0-n0",
+      "atMs": 4500,
+      "endMs": 4973.958333333333,
+      "endUtick": 4775,
+      "pitch": 60,
+      "utick": 4320
+    },
+    {
+      "anchor": "m0-t0-v4-n0",
+      "atMs": 4000,
+      "endMs": 5898.958333333333,
+      "endUtick": 5663,
+      "pitch": 48,
+      "utick": 3840
+    },
+    {
+      "anchor": "m0-t960-v0-n0",
+      "atMs": 5000,
+      "endMs": 6898.958333333333,
+      "endUtick": 6623,
+      "pitch": 62,
+      "utick": 4800
+    },
+    {
+      "anchor": "m1-t2880-v0-n0",
+      "atMs": 7000,
+      "endMs": 7163.541666666667,
+      "endUtick": 6877,
+      "pitch": 64,
+      "utick": 6720
+    },
+    {
+      "anchor": "m1-t1920-v4-n0",
+      "atMs": 6000,
+      "endMs": 7898.958333333333,
+      "endUtick": 7583,
+      "pitch": 43,
+      "utick": 5760
+    },
+    {
+      "anchor": "m1-t3360-v0-n0",
+      "atMs": 7500,
+      "endMs": 7973.958333333334,
+      "endUtick": 7655,
+      "pitch": 65,
+      "utick": 7200
+    },
+    {
+      "anchor": "m2-t3840-v0-n0",
+      "atMs": 8000,
+      "endMs": 8948.958333333334,
+      "endUtick": 8591,
+      "pitch": 60,
+      "utick": 7680
+    },
+    {
+      "anchor": "m2-t3840-v4-n0",
+      "atMs": 8000,
+      "endMs": 8948.958333333334,
+      "endUtick": 8591,
+      "pitch": 48,
+      "utick": 7680
+    },
+    {
+      "anchor": "m2-t4800-v0-n0",
+      "atMs": 9000,
+      "endMs": 9473.958333333332,
+      "endUtick": 9095,
+      "pitch": 60,
+      "utick": 8640
+    }
+  ],
+  "measures": [
+    {
+      "box": {
+        "height": 1198.818897637795,
+        "width": 3117.5011872196296,
+        "x": 1331.1149638086272,
+        "y": 2114.173228346457
+      },
+      "denominator": 4,
+      "endTick": 1920,
+      "index": 0,
+      "label": 1,
+      "numerator": 4,
+      "page": 0,
+      "tick": 0
+    },
+    {
+      "box": {
+        "height": 1198.818897637795,
+        "width": 2457.8569327904966,
+        "x": 4448.616151028257,
+        "y": 2114.173228346457
+      },
+      "denominator": 4,
+      "endTick": 3840,
+      "index": 1,
+      "label": 2,
+      "numerator": 4,
+      "page": 0,
+      "tick": 1920
+    },
+    {
+      "box": {
+        "height": 1198.818897637795,
+        "width": 2308.8654988584094,
+        "x": 6906.473083818753,
+        "y": 2114.173228346457
+      },
+      "denominator": 4,
+      "endTick": 5760,
+      "index": 2,
+      "label": 3,
+      "numerator": 4,
+      "page": 0,
+      "tick": 3840
+    }
+  ],
+  "occurrences": [
+    {
+      "endMs": 2000,
+      "index": 0,
+      "measure": 0,
+      "startMs": 0,
+      "utick": 0
+    },
+    {
+      "endMs": 4000,
+      "index": 1,
+      "measure": 1,
+      "startMs": 2000,
+      "utick": 1920
+    },
+    {
+      "endMs": 6000,
+      "index": 2,
+      "measure": 0,
+      "startMs": 4000,
+      "utick": 3840
+    },
+    {
+      "endMs": 8000,
+      "index": 3,
+      "measure": 1,
+      "startMs": 6000,
+      "utick": 5760
+    },
+    {
+      "endMs": 10000,
+      "index": 4,
+      "measure": 2,
+      "startMs": 8000,
+      "utick": 7680
+    }
+  ],
+  "pages": [
+    {
+      "displayWidth": 793.92,
+      "height": 14028,
+      "index": 0,
+      "offsetX": 0,
+      "offsetY": 0,
+      "svg": "",
+      "width": 9924
+    }
+  ],
+  "pedals": [
+    {
+      "atMs": 0,
+      "endMs": 2000,
+      "endTick": 1920,
+      "id": 0,
+      "occurrence": 0,
+      "partId": "1",
+      "tick": 0
+    },
+    {
+      "atMs": 2000,
+      "endMs": 3000,
+      "endTick": 2880,
+      "id": 0,
+      "occurrence": 1,
+      "partId": "1",
+      "tick": 1920
+    },
+    {
+      "atMs": 4000,
+      "endMs": 6000,
+      "endTick": 1920,
+      "id": 0,
+      "occurrence": 2,
+      "partId": "1",
+      "tick": 0
+    },
+    {
+      "atMs": 6000,
+      "endMs": 7000,
+      "endTick": 2880,
+      "id": 0,
+      "occurrence": 3,
+      "partId": "1",
+      "tick": 1920
+    },
+    {
+      "atMs": 8000,
+      "endMs": 9500,
+      "endTick": 5280,
+      "id": 1,
+      "occurrence": 4,
+      "partId": "1",
+      "tick": 3840
+    }
+  ],
+  "performed": [
+    {
+      "anchor": "m0-t0-v0-n0",
+      "atMs": 0,
+      "endMs": 500,
+      "occurrence": 0
+    },
+    {
+      "anchor": "m0-t0-v4-n0",
+      "atMs": 0,
+      "endMs": 2000,
+      "occurrence": 0
+    },
+    {
+      "anchor": "m0-t480-v0-n0",
+      "atMs": 500,
+      "endMs": 1000,
+      "occurrence": 0
+    },
+    {
+      "anchor": "m0-t960-v0-n0",
+      "atMs": 1000,
+      "endMs": 2000,
+      "occurrence": 0
+    },
+    {
+      "anchor": "m1-t1920-v0-n0",
+      "atMs": 2000,
+      "endMs": 3000,
+      "occurrence": 1
+    },
+    {
+      "anchor": "m1-t1920-v4-n0",
+      "atMs": 2000,
+      "endMs": 4000,
+      "occurrence": 1
+    },
+    {
+      "anchor": "m1-t2880-v0-n0",
+      "atMs": 3000,
+      "endMs": 3500,
+      "occurrence": 1
+    },
+    {
+      "anchor": "m1-t3360-v0-n0",
+      "atMs": 3500,
+      "endMs": 4000,
+      "occurrence": 1
+    },
+    {
+      "anchor": "m0-t0-v0-n0",
+      "atMs": 4000,
+      "endMs": 4500,
+      "occurrence": 2
+    },
+    {
+      "anchor": "m0-t0-v4-n0",
+      "atMs": 4000,
+      "endMs": 6000,
+      "occurrence": 2
+    },
+    {
+      "anchor": "m0-t480-v0-n0",
+      "atMs": 4500,
+      "endMs": 5000,
+      "occurrence": 2
+    },
+    {
+      "anchor": "m0-t960-v0-n0",
+      "atMs": 5000,
+      "endMs": 6000,
+      "occurrence": 2
+    },
+    {
+      "anchor": "m1-t1920-v0-n0",
+      "atMs": 6000,
+      "endMs": 7000,
+      "occurrence": 3
+    },
+    {
+      "anchor": "m1-t1920-v4-n0",
+      "atMs": 6000,
+      "endMs": 8000,
+      "occurrence": 3
+    },
+    {
+      "anchor": "m1-t2880-v0-n0",
+      "atMs": 7000,
+      "endMs": 7500,
+      "occurrence": 3
+    },
+    {
+      "anchor": "m1-t3360-v0-n0",
+      "atMs": 7500,
+      "endMs": 8000,
+      "occurrence": 3
+    },
+    {
+      "anchor": "m2-t3840-v0-n0",
+      "atMs": 8000,
+      "endMs": 9000,
+      "occurrence": 4
+    },
+    {
+      "anchor": "m2-t3840-v4-n0",
+      "atMs": 8000,
+      "endMs": 9000,
+      "occurrence": 4
+    },
+    {
+      "anchor": "m2-t4800-v0-n0",
+      "atMs": 9000,
+      "endMs": 9500,
+      "occurrence": 4
+    }
+  ],
+  "revision": 1,
+  "schemaVersion": 1,
+  "staves": [
+    {
+      "id": 0,
+      "part": "Piano",
+      "partId": "1"
+    },
+    {
+      "id": 1,
+      "part": "Piano",
+      "partId": "1"
+    }
+  ],
+  "title": "R4 — Nhả phím và pedal",
+  "warnings": [],
+  "projectId": "fixture-r4-native",
+  "fingerprint": "cd97dd6b8936bf67af789afc8d2c01f3eb2880b9502c73878932a69fb6b029cb"
+}

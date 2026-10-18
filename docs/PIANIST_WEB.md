@@ -55,9 +55,13 @@ Phím/nốt đang bấm có màu xanh dương. Màu judgement trên bản nhạc
 
 ## Trường độ, pedal và ký hiệu
 
-**Chưa chấm diễn cảm/trường độ piano.** Bản này ghi key interval Note On/Off và cổng sustain CC64. `soundOffMs` trong JSON là thời điểm đóng cổng sustain, không phải âm lượng/âm ngân đo được; không mô phỏng acoustic decay hoặc half-pedal. Retrigger không tự cắt interval sustain trước đó.
+R4 chấm **nhả phím**, **âm ngân theo sustain** và **pedal CC64 nhị phân** riêng với điểm BPM. Bật/tắt **Chấm nhả phím · BPM** trong phần Đo thời gian. Công tắc **Dùng pedal** nằm ngay trên bàn phím; nút **Đạp pedal · ON / Nhả pedal · OFF** dùng với bàn phím ảo. Công tắc được khóa trong lượt để cấu hình chấm không thay đổi giữa chừng; kết thúc lượt để đổi. Cấu hình được lưu theo bài. Tắt pedal sẽ ngừng sustain ảo và chấm pedal/âm ngân; vẫn nhận Note Off và chấm nhả phím nếu được bật. Dữ liệu MIDI gốc vẫn được giữ.
 
-Đã xóa grader cũ cùng hệ số staccato 50%, staccatissimo 25%, dung sai release và độ trễ arpeggio tự đặt. Bridge chỉ xuất ký hiệu gốc. Có 68 ca đối chiếu riêng hold-tail của osu!, nhưng chưa phải toàn lifecycle hold hay diễn cảm piano; không dùng chúng để công bố M7 hoàn tất.
+Mốc nhả lấy trực tiếp từ `CompatMidiRender` của MuseScore, gồm staccato/staccatissimo và tie, không đặt lại tỷ lệ articulation trong JavaScript. Phép kiểm offset của **mir_eval** dùng sai lệch làm tròn 4 chữ số thập phân giây, dung sai `max(20% trường độ tham chiếu, 50 ms)`. Nốt được ghép bởi bộ BPM hiện có; bộ nhả không ghép lại để sửa điểm onset. Đây là so với cách MuseScore phát bài, không phải khẳng định chỉ có một cách diễn tấu đúng.
+
+**Magenta note-seq** xử lý sustain và đánh lại cùng cao độ. `soundOffMs` raw trong JSON vẫn là lúc đóng cổng sustain; phần `r4.sound` chứa offset do thuật toán note-seq suy ra, có cắt âm trước tại lần đánh lại. Cả hai không đo acoustic decay. Pedal so với ký hiệu rõ trong bản nhạc, đi theo repeat/A–B/loop; profile có nguồn từ piano_transcription sử dụng mir_eval, cửa sổ đạp 200 ms và nhả `max(20% đoạn pedal, 50 ms)`. Kết quả có matching/precision/recall/F1, không trộn thành một điểm tổng tự đặt.
+
+Không có ký hiệu pedal hoặc chọn nhiều part thì không suy đoán pedal đúng. Mốc nhả native thiếu/nhập nhằng, ornament nhiều attack hoặc arpeggio không được bù bằng hệ số đoán. Pause/disconnect/stop không được coi là nhả thật; pedal chưa nhả đủ không hiện F1 hoàn chỉnh. Chế độ Đúng nốt không chấm timing nhả/pedal. Half-pedal, legato theo câu, arpeggio và diễn cảm nâng cao vẫn chưa hỗ trợ. Xem [đối chiếu R4 và giới hạn](R4_RESULTS.md).
 
 Tie liên tục không cần attack mới; vào giữa tie/A–B hoặc vòng mới cần đánh lại. Unison cùng pitch/onset gộp một attack, giữ anchor của các bè. Grace bị bỏ qua, ornament chấm nốt chính; arpeggio chưa được realize thành onset rải. Các giới hạn hiển thị trong phần cảnh báo của lượt. Khi chọn một tay có thể phát tay còn lại bằng âm hướng dẫn tổng hợp; âm hướng dẫn không được chấm.
 
@@ -67,7 +71,7 @@ Thư viện, nguồn, recovery, kết quả và settings nằm trong IndexedDB v
 
 **Tải toàn bộ thư viện** tạo `.pianist.zip`; khôi phục kiểm hash/giới hạn và tạo ID mới, không ghi đè. Giới hạn 256 MiB nén/giải nén, 1.000 bài, 10.000 lượt/settings. Calibration thiết bị khác không được tự kích hoạt.
 
-Kết quả mới dùng schema 2, engine `pianist-v2.osu-676f3b0.pts-b40e412.1`. Lịch sử schema 1 giữ JSON chỉ đọc, không chạy lại hoặc so điểm qua grader cũ. Chọn lưu replay trước lượt tập; log gồm input gốc, clock, boundary và các mapping clock khi resume. JSON chứa đầy đủ; CSV chứa từng judgement, bảng UI hiển thị tối đa 1.000 nốt. Replay quá giới hạn không được giữ như log đầy đủ. Chỉ so lượt hoàn thành cùng engine/score/cấu hình/device/loại clock; lượt mô phỏng không tham gia so sánh tiến bộ.
+Kết quả mới dùng schema 2, engine `pianist-v2.osu-676f3b0.pts-b40e412.mir-fe73b35.ns-3582550.2`. Lịch sử khác engine giữ dữ liệu chỉ đọc, không chạy lại hoặc so điểm bằng bộ luật mới. Chọn lưu replay trước lượt tập; log gồm input gốc, clock, boundary và các mapping clock khi resume. JSON chứa đầy đủ; CSV có judgement BPM, mốc nhả/delta/dung sai và sustain; bảng UI hiển thị tối đa 1.000 nốt. Replay quá giới hạn không được giữ như log đầy đủ. Chỉ so lượt hoàn thành cùng engine/score/cấu hình/device/loại clock; lượt mô phỏng, nhả bị ngắt hoặc pedal chưa đầy đủ không tham gia so sánh tiến bộ.
 
 ```powershell
 cd apps/pianist-web
@@ -78,7 +82,7 @@ npm run build
 node --import tsx scripts/replay.ts C:\path\to\result-v2.json
 ```
 
-`test:midi` kiểm engine và đường router/controller/Worker production, chỉ thay phần I/O thiết bị, clock/audio có kiểm soát. Không cần đàn thật. Thêm `?diagnostics=1` vào URL sẽ có nút MIDI mô phỏng −120 ms: đi qua router production, ghi nhãn rõ trong kết quả. Đây không phải lượt người chơi.
+`test:midi` kiểm engine và đường router/controller/Worker production, chỉ thay phần I/O thiết bị, clock/audio có kiểm soát. Không cần đàn thật. Test R4 cần `python -m pip install --target .tools/r4-python -r tests/reference-runners/r4/requirements.txt` từ root để chạy code Python gốc. Thêm `?diagnostics=1` vào URL sẽ có nút MIDI mô phỏng −120 ms và **MIDI mô phỏng trường độ + pedal**: đi qua router production, ghi nhãn rõ trong kết quả. Đây không phải lượt người chơi. Bài kiểm CC0: `fixtures/pedal-duration.musicxml`.
 
 ## Offline và gói triển khai
 
@@ -87,8 +91,8 @@ node --import tsx scripts/replay.ts C:\path\to\result-v2.json
 ```powershell
 # Sau build tối ưu, test và commit source sạch:
 python buildscripts/pianist/package-web.py
-python buildscripts/pianist/stage-release.py --output artifacts/releases/pianist-web-2026-10-18-v2-final
-python buildscripts/pianist/verify-release.py --directory artifacts/releases/pianist-web-2026-10-18-v2-final/site --public
+python buildscripts/pianist/stage-release.py --output artifacts/releases/pianist-web-2026-10-18-r4
+python buildscripts/pianist/verify-release.py --directory artifacts/releases/pianist-web-2026-10-18-r4/site --public
 ```
 
 Gói có site, zip web, source đúng commit, toolchain/lockfile, hash, Caddy/Compose và DEPLOY.txt. Chưa phát hành hosting. Phải cung cấp source tương ứng và notices của PTS AGPL, osu! MIT, MuseScore/Qt khi phân phối; xem [inventory](THIRD_PARTY_NOTICES.md). Đàn thật/HTTPS chưa kiểm theo phạm vi đã thống nhất. Giới hạn snapshot 40 trang/50.000 nốt viết/24 MiB SVG, timeline 100.000 target/2 giờ/10 vòng; stress Node không thay benchmark máy/đàn.

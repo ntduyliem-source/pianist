@@ -2,6 +2,7 @@
 // Fixed tempo uses score ticks (480 PPQ); score tempo uses native performed times.
 import type {ScoreSnapshot} from '../score-contracts/index';
 import {ENGINE_ID, type Hand, type PracticeSettings, type Target, type Timeline} from './model';
+import {attachReleaseReferences} from './reference-adapter-r4';
 
 export function settingsFor(score: ScoreSnapshot): PracticeSettings {
   const roles: Record<number, Hand> = {};
@@ -9,7 +10,7 @@ export function settingsFor(score: ScoreSnapshot): PracticeSettings {
   return {version: 2, mode: 'wait', bpm: Math.round(score.baseQuarterBpm || 60), beatQuarter: 1,
     tempoMode: 'fixed', countIn: 4, metronome: true, fromMeasure: 0, toMeasure: Math.max(0, score.measures.length - 1),
     hand: 'both', roles, voices: [0, 1, 2, 3], loops: 1, loopBpmStep: 0, accompaniment: false,
-    difficulty: 5, offsetMs: 0, maxDeliveryMs: 150, inputSource: 'virtual', deviceId: 'virtual'};
+    difficulty: 5, offsetMs: 0, maxDeliveryMs: 150, inputSource: 'virtual', deviceId: 'virtual',durationEnabled:true,pedalEnabled:true};
 }
 
 export function validateSettings(c: PracticeSettings, score: ScoreSnapshot): void {
@@ -23,6 +24,7 @@ export function validateSettings(c: PracticeSettings, score: ScoreSnapshot): voi
       || ![0, 5, 10].includes(c.difficulty) || !['both', 'left', 'right'].includes(c.hand)
       || !c.voices.length || c.voices.some(v => !integer(v, 0, 3))
       || !['midi', 'virtual'].includes(c.inputSource) || !c.deviceId
+      || c.durationEnabled!==undefined&&typeof c.durationEnabled!=='boolean' || c.pedalEnabled!==undefined&&typeof c.pedalEnabled!=='boolean'
       || score.staves.some(s => !['off', 'left', 'right'].includes(c.roles[s.id]))) throw Error('Thiết lập luyện tập không hợp lệ.');
 }
 
@@ -120,5 +122,6 @@ export function createTimeline(score: ScoreSnapshot, settings: PracticeSettings)
     if (group && group.atMs === target.atMs) group.ids.push(target.id);
     else timeline.groups.push({atMs: target.atMs, ids: [target.id]});
   }
+  attachReleaseReferences(score,timeline);
   return timeline;
 }

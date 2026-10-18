@@ -86,7 +86,6 @@ export class Workspace {
       if (this.state.engineFailed) return;
       if (this.state.view === 'editor') this.bridge?.api.midiInput(bytes[0], bytes[1], bytes[2]);
       if (this.state.view === 'practice') {
-        if (e.source === 'virtual') this.session?.transport.tone(e.pitch, e.kind === 'on');
         this.session?.input(e);
       }
     };

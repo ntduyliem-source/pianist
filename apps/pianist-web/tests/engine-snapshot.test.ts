@@ -8,6 +8,31 @@ const score = JSON.parse(readFileSync(new URL('../../../tests/fixtures/pianist/p
 const near = (actual: number, expected: number) => assert.ok(Math.abs(actual - expected) < .01, `${actual} != ${expected}`);
 const fixture = (name: string) => JSON.parse(readFileSync(new URL(`../../../tests/fixtures/pianist/practice/${name}-snapshot.json`, import.meta.url), 'utf8')) as ScoreSnapshot;
 
+// Captured from the optimized WASM through Snapshot JSON. Only SVG pixels and
+// the local project ID were removed/replaced; native timing is unmodified.
+test('native R4 renderer supplies staccato/staccatissimo, tied key offsets and repeated pedal spans',()=>{
+  const s=fixture('pedal-duration'),p=createTimeline(s,{...settingsFor(s),mode:'bpm',bpm:120});
+  assert.equal(s.durationReference,'musescore-midi');assert.equal(s.keyReleases!.length,17);
+  assert.equal(p.targets.length,17);assert(p.targets.every(n=>n.releaseMs!==undefined));
+  const staccato=p.targets.find(n=>n.pitch===60&&n.atMs===0)!;
+  near(staccato.releaseMs!,239/480*500);assert.equal(staccato.endMs,500);
+  const staccatissimo=p.targets.find(n=>n.pitch===64)!;near(staccatissimo.releaseMs!,3037/480*500);
+  const tie=p.targets.find(n=>n.pitch===62)!;assert.equal(tie.anchors.length,2);near(tie.releaseMs!,2783/480*500);
+  assert.deepEqual(p.pedals!.map(p=>[p.atMs,p.endMs]),[[0,3000],[4000,7000],[8000,9500]]);
+  const tempo=createTimeline(s,{...p.settings,tempoMode:'score'});
+  tempo.targets.forEach((n,i)=>near(n.releaseMs!,p.targets[i].releaseMs!));
+});
+
+test('native R4 A/B cut enters tie with a fresh attack, clips pedal and rescales the next loop',()=>{
+  const s=fixture('pedal-duration'),p=createTimeline(s,{...settingsFor(s),mode:'bpm',bpm:120,fromMeasure:1,toMeasure:1,loops:2,loopBpmStep:20});
+  assert.equal(p.targets.filter(n=>n.pitch===62).length,4);
+  const first=p.targets.find(n=>n.pitch===62)!;assert.equal(first.atMs,0);near(first.releaseMs!,863/480*500);
+  // Existing transport inserts one 120-BPM beat (500 ms) between loops.
+  const expected=[[0,1000],[2000,3000],[4500,4500+6000/7],[4500+12000/7,4500+18000/7]];
+  p.pedals!.forEach((p,i)=>{near(p.atMs,expected[i][0]);near(p.endMs,expected[i][1]);});assert.equal(p.pedals!.length,4);
+  const next=p.targets.find(n=>n.pitch===62&&n.loop===1)!;near(next.releaseMs!-next.atMs,(first.releaseMs!-first.atMs)*6/7);
+});
+
 test('native first/second endings perform 1,2,1,3 with a fresh grading pass on return', () => {
   const s = fixture('volta'), p = createTimeline(s, ({...settingsFor(s),tempoMode:"score" as const}));
   assert.deepEqual(s.occurrences.map(o => o.measure), [0, 1, 0, 2]);

@@ -1,13 +1,13 @@
 # Kế hoạch code Pianist Web
 
-Cập nhật: 18/10/2026. Nền tảng: **web chạy trong trình duyệt**. M0/editor MuseScore và thư viện được giữ. Bộ chấm cũ đã xóa khỏi source sản phẩm, thay bằng engine V2 đối chiếu code gốc. Màn tập riêng, chỉ đọc, không notation edit. **Phần M7 chấm trường độ/arpeggio cũ đã gỡ; không dùng việc gỡ này để tuyên bố M7 hoàn tất.** Xem [hướng dẫn hiện tại](PIANIST_WEB.md), [nghiệm thu R0–R7](R0_R7_RESULTS.md), [bằng chứng M0](M0_RESULTS.md). MIDI thật và hosting HTTPS để sau theo yêu cầu người dùng.
+Cập nhật: 18/10/2026. Nền tảng: **web chạy trong trình duyệt**. M0/editor MuseScore và thư viện được giữ. Bộ chấm cũ đã xóa khỏi source sản phẩm, thay bằng engine V2 đối chiếu code gốc. Màn tập riêng, chỉ đọc, không notation edit. **R4 đã thay bằng mir_eval + Magenta note-seq, mốc Note Off từ MuseScore; có công tắc pedal. Arpeggio/diễn cảm nâng cao của M7 vẫn chưa hoàn tất.** Xem [nghiệm thu R4](R4_RESULTS.md), [hướng dẫn hiện tại](PIANIST_WEB.md), [nghiệm thu R0–R7](R0_R7_RESULTS.md), [bằng chứng M0](M0_RESULTS.md). MIDI thật và hosting HTTPS để sau theo yêu cầu người dùng.
 
 Mục tiêu sản phẩm: mở website → nhập MXL → chỉnh sửa bản nhạc → lưu/mở lại hoặc tải file về → tập piano theo **Đúng nốt** hoặc **Theo BPM** → xem kết quả và tập lại đoạn yếu. Editor và màn hình tập dùng cùng nội dung bản nhạc, kể cả thay đổi chưa xuất file. “Pianist” là tên làm việc.
 
 **Kế hoạch thay toàn bộ bộ chấm ngày 18/10/2026**
 
 Yêu cầu: thay 100% mã chấm tự xây, ưu tiên tuyệt đối khả năng kiểm tra giữ BPM.
-Đã triển khai engine `pianist-v2.osu-676f3b0.pts-b40e412.1`, schema kết quả 2.
+Đã triển khai engine `pianist-v2.osu-676f3b0.pts-b40e412.mir-fe73b35.ns-3582550.2`, schema kết quả 2.
 Bản cũ tại `8a9674403d9fc0d67e133842b6854620be39ac29` chỉ còn trong lịch sử Git.
 Kế hoạch này thay thế lựa chọn matcher, ngưỡng và công thức điểm của bản trước.
 Các phần M0–M7 phía dưới ghi lại phạm vi sản phẩm và tình trạng triển khai cũ.
@@ -16,11 +16,11 @@ Các phần M0–M7 phía dưới ghi lại phạm vi sản phẩm và tình tr�
 
 | Bước | Trạng thái / bằng chứng |
 | --- | --- |
-| R0 | Đã ghim 26 source/license; runner C# chạy phương thức upstream nguyên văn, không lấy TS làm oracle. |
+| R0 | Đã ghim 33 source/license; runner C# và Python chạy code upstream, không lấy TS làm oracle. |
 | R1 | 329 scenario khớp code C# ở kernel và host event-time, gồm 9 nốt −120 ms, octave, hợp âm, miss, biên OD và random có seed. |
 | R2 | Adapter/clock/MIDI/Worker mới; native corpus, MIDI mô phỏng qua production Worker, count-in CC64, offset và replay đạt. |
 | R3 | 4 hàm Wait PTS giữ nguyên; kiểm latch hợp âm, nốt lặp, sai octave, count-in; browser 8 hit + 1 input thừa. |
-| R4 | Đã gỡ duration/arpeggio tự đặt, ghi raw Note Off/CC64, đối chiếu 68 probe hold-tail. **Còn mở toàn lifecycle hold và chấm diễn cảm piano; UI công bố chưa hỗ trợ. M7 chưa hoàn tất.** |
+| R4 | **Đạt phạm vi nhả phím và pedal CC64 nhị phân**: mir_eval offset, pedal profile piano_transcription, sustain note-seq; 535 ca đối chiếu Python gốc. Mốc Note Off từ MuseScore, native corpus và MIDI giả lập qua Worker/browser/replay. Bật/tắt pedal riêng; không chấm half-pedal, arpeggio/diễn cảm. Xem R4_RESULTS. |
 | R5 | UI/results/history chỉ dùng V2; browser kiểm snapshot sau edit/Back, giữ A–B/BPM/vòng, mở đúng project; highlight từ input/judgement. |
 | R6 | Đã xóa module/Worker/controller/MIDI/transport cũ, contract/CLI/test chuyển V2, native bỏ hệ số release. Audit bundle/map/WASM và cache scope có cổng kiểm riêng. |
 | R7 | Corpus, build, unit/integration, replay, stress và browser đã có bằng chứng; đóng gói/kiểm offline ghi tại báo cáo R0_R7_RESULTS. MIDI thật/HTTPS chưa nghiệm thu. |
@@ -156,7 +156,7 @@ accuracy của upstream có phạt input thừa hay không. Không tái dùng c�
 | R1 — Port BPM trước | Port HitWindows, ManiaHitWindows, OrderedHitPolicy, note judgement và đường dispatch/finalization cần thiết. Chạy độc lập khỏi React/MuseScore. | Cùng event stream/profile cho cùng target association, judgement, delta và thời điểm chốt như source gốc. Sai khác số thực chỉ cho sai số biểu diễn đã ghi; phân loại/ID phải khớp. |
 | R2 — Nối timeline và MIDI | Adapter mới cho score/repeat/tempo/A–B/loop; Web MIDI timestamp, audio clock, calibration, CC64/device/channel, Worker. | Corpus native MusicXML/MXL và MIDI mô phỏng đi hết đường production, không dùng adapter giả thay phần đang nghiệm thu; sửa tận gốc mất pedal trong count-in. |
 | R3 — Port Đúng nốt | Tách Wait của Piano Trainer Studio, expected group/match/advance và dependency; bỏ Follow/Realtime reservation khỏi mode này. | Kiểm hợp âm thiếu nốt, pitch/octave sai, Note On lặp, nhả/đánh lại và tie. Ghi rõ Wait upstream ghi nhận nốt đã đánh hay yêu cầu giữ đồng thời; mọi khác biệt với yêu cầu Pianist phải có fixture, không sao lại `WaitCore`. |
-| R4 — Trường độ và pedal | Port/test hold judgement upstream cho bài luyện giữ phím được định nghĩa rõ; xác minh dữ liệu MIDI CC64 theo nguồn chuẩn, cùng thời điểm onset và release. Đặc tả riêng pedal/articulation/legato của piano. | Không đồng nhất hold-note game với diễn cảm piano. Xóa grader duration cũ; nhánh sustain chưa có nguồn/expected output đủ phải hiện chưa hỗ trợ, không cho điểm phỏng đoán. Chỉ đánh dấu M7 hoàn tất khi nhánh này có corpus đạt, không dùng việc tắt tính năng để nghiệm thu M7. |
+| R4 — Trường độ và pedal | Profile đã chọn: mir_eval chấm offset; note-seq xử lý sustain/retrigger; profile pedal 200 ms của piano_transcription. MuseScore cung cấp mốc nhả thật từ renderer và ký hiệu pedal theo RepeatList. | Đối chiếu độc lập code Python gốc; corpus native staccato/staccatissimo/tie/repeat/A–B; kiểm pause/stop/device/channel/replay và công tắc pedal. Chỉ nghiệm thu nhả phím và CC64 nhị phân; M7 diễn cảm/half-pedal/arpeggio còn mở. |
 | R5 — UI và kết quả | API/controller/feedback/history/replay mới; mọi lối vào practice kiểm project/revision; config thuộc đúng bài; nút từ kết quả mở đúng project. | Highlight khi nhận phím, màu judgement từ engine, repeat không dính màu cũ; Browser Back sau sửa bài dùng snapshot mới; đoạn/BPM không tự reset; history không mở nhầm bài. |
 | R6 — Xóa engine cũ và chuyển hẳn | Xóa các module trong bảng phạm vi, test/helper/import/fallback; chuyển dữ liệu lịch sử chỉ đọc; làm sạch build và tạo release cache mới. | Build graph, bundle, source map, Worker và offline cache mới không chứa implementation grader cũ; mở/restore history không tải grader cũ. Không duy trì hai engine trong bản phát hành. |
 | R7 — Nghiệm thu lại và đóng gói | Chạy corpus độc lập, browser/MIDI mô phỏng, replay/stress/offline; build/typecheck; kiểm gói triển khai và báo cáo khoảng còn mở. | Tất cả cổng BPM đạt; không còn P1/P2 về chấm hoặc state của lượt trong phạm vi đã xác minh; số đo có file bằng chứng. MIDI thật và HTTPS chờ điều kiện đã thống nhất, không ghi thành đã kiểm. |
@@ -448,9 +448,9 @@ IndexedDB có cơ chế quota và eviction phụ thuộc trình duyệt; thiết
 
 **M7 — Luyện nâng cao và đồng bộ tùy nhu cầu**
 
-- [x] Chấm độ dài riêng theo Note Off hoặc sustain CC64 từng device/channel; gate staccato 50%, staccatissimo 25%, nốt thường/tie 100%; pause/disconnect không tạo lỗi nhả sớm giả. Mặc định tắt, chỉ có trong BPM.
-- [x] Profile arpeggio lên/xuống trong từng hợp âm: 80/120/200 ms, tối đa nửa trường độ; snapshot native có fixture kiểm chứng.
-- [ ] Kiểm policy độ dài với người chơi/đàn thật; chấm legato theo câu nhạc, rest theo từng bè và pedal theo ký hiệu riêng. MIDI không đo được chính xác lúc âm piano vật lý tắt.
+- [x] R4 thay toàn bộ policy duration cũ: mốc nhả native MuseScore, mir_eval offset, Magenta sustain, pedal theo ký hiệu và profile có nguồn. Cấu hình chấm nhả và dùng pedal riêng, mặc định bật cho lượt mới; chỉ chấm timing trong BPM.
+- [ ] Arpeggio lên/xuống: implementation ngưỡng tự đặt 80/120/200 ms đã xóa; chưa có realization/source đủ để chấm.
+- [ ] Kiểm profile độ dài với người chơi/đàn thật; chấm legato theo câu nhạc, rest theo từng bè và half-pedal. MIDI không đo được chính xác lúc âm piano vật lý tắt.
 - [ ] Realization grace/ornament và arpeggio xuyên khuông; fermata diễn cảm. Hiện công khai policy bỏ grace, chấm nốt ornament chính, không chấm độ dài ornament và fermata theo native timeline.
 - [x] Phát riêng bè/tay còn lại bằng lọc role/event; hai tay piano có thể chung instrument track.
 - [x] Tăng/giảm BPM giữa các lượt loop theo mức đặt trước đã hiển thị; timeline được lập trước, không tự kéo theo người chơi.

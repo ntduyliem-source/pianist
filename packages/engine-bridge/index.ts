@@ -29,7 +29,8 @@ export class EngineBridge {
     const request = ++this.request, raw = this.snapshot(), revision = this.revision;
     const content = raw.anchors.map(({id, pitch, tick, durationTicks, staff, track, voice, tieBack, play, articulations, arpeggio, arpeggioGroup}) =>
       ({id, pitch, tick, durationTicks, staff, track, voice, tieBack, play, articulations, arpeggio, arpeggioGroup})).sort((a, b) => a.id.localeCompare(b.id));
-    const fingerprint = await hash({anchors: content, performed: raw.performed, occurrences: raw.occurrences, beats: raw.beats});
+    const fingerprint = await hash({anchors: content, performed: raw.performed, occurrences: raw.occurrences, beats: raw.beats,
+      durationReference:raw.durationReference,keyReleases:raw.keyReleases,pedals:raw.pedals});
     if (request !== this.request || revision !== this.revision) throw Error('Đã hủy snapshot cũ.');
     return {...raw, projectId, fingerprint};
   }

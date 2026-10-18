@@ -1,11 +1,12 @@
-import type {Timeline} from '../../../../packages/practice-engine-v2/model';
+import type {Timeline,MidiEvent} from '../../../../packages/practice-engine-v2/model';
 
 // One affine mapping from performance timestamps to Web Audio time per run.
 // It never follows the player's tempo or silently adjusts calibration.
 export class AudioClock {
   context?:AudioContext; private origin=0; private audioMinusPerf=0;
   private scheduled=new Set<number>();private nodes=new Set<AudioScheduledSourceNode>();
-  private monitors=new Map<number,{osc:OscillatorNode;gain:GainNode}>();
+  private monitors=new Map<string,{osc:OscillatorNode;gain:GainNode;held:boolean;channel:number}>();
+  private monitorPedals=new Set<number>();
   private timeline?:Timeline;private resumeAt=0;private count=0;
   private source:'output-timestamp'|'audio-current-time'='audio-current-time';
   get mapping(){return{originPerformanceMs:this.origin,audioMinusPerformanceSeconds:this.audioMinusPerf,source:this.source,resumeAtMs:this.resumeAt};}
@@ -52,11 +53,26 @@ export class AudioClock {
     schedule(beats,0,i=>this.sound(beats[i].atMs,45,beats[i].accent?88:81,.09));
     schedule(t.guide,1000000,i=>this.sound(t.guide[i].atMs,t.guide[i].endMs-t.guide[i].atMs,t.guide[i].pitch,.035));
   }
-  tone(pitch:number,on:boolean){
-    const ctx=this.context;if(!ctx||ctx.state!=='running')return;
-    const prior=this.monitors.get(pitch);if(prior){prior.gain.gain.setTargetAtTime(.0001,ctx.currentTime,.015);prior.osc.stop(ctx.currentTime+.1);this.monitors.delete(pitch);}
-    if(!on)return;const osc=ctx.createOscillator(),gain=ctx.createGain();osc.type='triangle';osc.frequency.value=440*2**((pitch-69)/12);gain.gain.value=.055;osc.connect(gain).connect(ctx.destination);osc.start();this.monitors.set(pitch,{osc,gain});osc.onended=()=>{osc.disconnect();gain.disconnect();};
+  monitor(event:MidiEvent){
+    if(event.source!=='virtual')return;
+    if(event.kind==='pedal'){
+      if(event.value>=64&&this.timeline?.settings.pedalEnabled!==false&&!event.synthetic)this.monitorPedals.add(event.channel);
+      else{this.monitorPedals.delete(event.channel);for(const [key,n] of this.monitors)if(n.channel===event.channel&&!n.held)this.stopMonitor(key);}
+    }else if(!event.stateOnly)this.tone(event.pitch,event.kind==='on',event.channel,!!event.synthetic);
   }
-  silence(){for(const n of this.nodes){try{n.stop();}catch{}}this.nodes.clear();for(const [pitch] of this.monitors)this.tone(pitch,false);this.timeline=undefined;}
+  private stopMonitor(key:string){
+    const prior=this.monitors.get(key),ctx=this.context;if(!prior||!ctx)return;
+    prior.gain.gain.setTargetAtTime(.0001,ctx.currentTime,.015);prior.osc.stop(ctx.currentTime+.1);this.monitors.delete(key);
+  }
+  // Live voice adapter follows note-seq's sustain/re-strike event semantics.
+  // The audible envelope below does not participate in duration assessment.
+  tone(pitch:number,on:boolean,channel=0,force=false){
+    const ctx=this.context;if(!ctx||ctx.state!=='running')return;
+    const key=`${channel}/${pitch}`,prior=this.monitors.get(key);
+    if(!on&&prior&&!force&&this.monitorPedals.has(channel)){prior.held=false;return;}
+    this.stopMonitor(key);
+    if(!on)return;const osc=ctx.createOscillator(),gain=ctx.createGain();osc.type='triangle';osc.frequency.value=440*2**((pitch-69)/12);gain.gain.value=.055;osc.connect(gain).connect(ctx.destination);osc.start();this.monitors.set(key,{osc,gain,held:true,channel});osc.onended=()=>{osc.disconnect();gain.disconnect();};
+  }
+  silence(){for(const n of this.nodes){try{n.stop();}catch{}}this.nodes.clear();for(const key of this.monitors.keys())this.stopMonitor(key);this.monitorPedals.clear();this.timeline=undefined;}
   async dispose(){this.silence();await this.context?.close();this.context=undefined;}
 }

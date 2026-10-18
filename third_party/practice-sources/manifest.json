@@ -2,6 +2,57 @@
   "format": 1,
   "sources": [
     {
+      "name": "mir_eval",
+      "repository": "mir-evaluation/mir_eval",
+      "commit": "fe73b3533737814f83dbd9739f06e90f5f82f758",
+      "license": "MIT",
+      "files": [
+        {
+          "path": "LICENSE.txt",
+          "gitBlob": "ae0c0b8eb2b3ac302264f925c4c58892c7759722",
+          "sha256": "220f461a41157a81832520a84d95bfa5c4616f553dbf3ef8ac1fb9562244c069"
+        },
+        {
+          "path": "mir_eval/transcription.py",
+          "gitBlob": "4008e73c7a608f558fabda57bb62d871120c84f9",
+          "sha256": "04f63d0bd102a9c1280ec056950b1746b4ffaafa8e0adc379b41f81b7e5a402c"
+        },
+        {
+          "path": "mir_eval/util.py",
+          "gitBlob": "a439ccb4d3e26ba8e3660be1777e34f54497b8cc",
+          "sha256": "42563edb09c8c442353ca34c0245b10c61674f39d46677a3fcf1938db0f8469f"
+        },
+        {
+          "path": "tests/test_transcription.py",
+          "gitBlob": "b8b6c009bec27966e53adab5076f9edcb8e7b162",
+          "sha256": "9bb1499524c1d75dbdd58f3b26abf8f35f0a88093eb8aecd1e3ee598be55a014"
+        }
+      ]
+    },
+    {
+      "name": "note-seq",
+      "repository": "magenta/note-seq",
+      "commit": "35825508885343fb06f93dc87ff491dbbf034505",
+      "license": "Apache-2.0",
+      "files": [
+        {
+          "path": "LICENSE",
+          "gitBlob": "7a4a3ea2424c09fbe48d455aed1eaa94d9124835",
+          "sha256": "58d1e17ffe5109a7ae296caafcadfdbe6a7d176f0bc4ab01e12a689b0499d8bd"
+        },
+        {
+          "path": "note_seq/sequences_lib.py",
+          "gitBlob": "b452a0eed5d3130665fd5a231142d61bd5c698b0",
+          "sha256": "2ddfbb6b5897e6586154d126a47e3c0396be360bf15e1f4202f0b82e522fb3ed"
+        },
+        {
+          "path": "note_seq/sequences_lib_test.py",
+          "gitBlob": "ebee1ac614a5f5d870d3890aa8d45057ef770b99",
+          "sha256": "15c64eddd933bb7ad827f820fd69109706c4ec0ea76b23d95c57a88b8cd9fc6e"
+        }
+      ]
+    },
+    {
       "name": "osu",
       "repository": "ppy/osu",
       "commit": "676f3b01f28841ebd97ab583e178f2d7b99fe48c",

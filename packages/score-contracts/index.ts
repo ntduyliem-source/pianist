@@ -9,4 +9,7 @@ export interface ScoreSnapshot {
   staves: {id: number; part: string; partId: string}[]; pages: ScorePage[]; measures: Measure[]; anchors: Anchor[];
   occurrences: Occurrence[]; performed: {anchor: string; occurrence: number; atMs: number; endMs: number}[];
   beats: {atMs: number; accent: boolean; occurrence: number; beatQuarter?: number}[]; warnings: string[];
+  durationReference?: 'musescore-midi';
+  keyReleases?: {anchor:string; pitch:number; utick:number; endUtick:number; atMs:number; endMs:number}[];
+  pedals?: {id:number; partId:string; occurrence:number; tick:number; endTick:number; atMs:number; endMs:number}[];
 }

@@ -13,7 +13,7 @@ OUT = args.directory.resolve()
 paths = ['pianist.html', 'index.html', 'MuseScoreStudio.js', 'MuseScoreStudio.wasm',
          'MuseAudio.js', 'manifest.webmanifest', 'icon.svg', 'LICENSE.txt', 'THIRD_PARTY_NOTICES.md',
          'sound/MS Basic.sf3', 'sound/MS Basic_License.md', 'sound/MS Basic_Readme.md',
-         'templates/blank-piano.mscz', 'fixtures/piano.mxl']
+         'templates/blank-piano.mscz', 'fixtures/piano.mxl', 'fixtures/pedal-duration.musicxml']
 paths += [p.relative_to(OUT).as_posix() for d in ['app', 'distr'] for p in (OUT / d).rglob('*')
           if p.is_file() and p.suffix in ('.js', '.css')]
 paths += [p.relative_to(OUT).as_posix() for p in (OUT / 'examples').glob('*') if p.is_file()]

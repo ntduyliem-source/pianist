@@ -1,12 +1,14 @@
 # Practice V2 — source provenance and supported profile
 
-The manifest pins 26 original files by Git blob and SHA-256. Files in the three source subdirectories are unchanged. Do not edit them to make a test pass: update pins explicitly and regenerate the independent corpus.
+The manifest pins 33 original files by Git blob and SHA-256. Files in the five source subdirectories are unchanged. Do not edit them to make a test pass: update pins explicitly and regenerate the independent corpus.
 
 | Source | Pin | License | Use |
 | --- | --- | --- | --- |
 | [ppy/osu](https://github.com/ppy/osu/tree/676f3b01f28841ebd97ab583e178f2d7b99fe48c) | `676f3b01f28841ebd97ab583e178f2d7b99fe48c` | MIT, `osu/LICENCE` | BPM judgement |
 | [ztbishop/piano-trainer-studio](https://github.com/ztbishop/piano-trainer-studio/tree/b40e412ccbc701094a9bb4bfe91ef45c32065704) | `b40e412ccbc701094a9bb4bfe91ef45c32065704` | AGPL-3.0, `piano-trainer-studio/LICENSE` | Wait functions |
 | [erangithub/eran_reaper_jsfx](https://github.com/erangithub/eran_reaper_jsfx/tree/23bbc5c62c421fdd69dda7baca6609b704910ff6) | `23bbc5c62c421fdd69dda7baca6609b704910ff6` | GPL-3.0-or-later, source header/license | Independent beat/phase/offset expression checks |
+| [mir-evaluation/mir_eval](https://github.com/mir-evaluation/mir_eval/tree/fe73b3533737814f83dbd9739f06e90f5f82f758) | `fe73b3533737814f83dbd9739f06e90f5f82f758` | MIT | Note-offset predicate and pedal interval maximum matching/P/R/F1/overlap |
+| [magenta/note-seq](https://github.com/magenta/note-seq/tree/35825508885343fb06f93dc87ff491dbbf034505) | `35825508885343fb06f93dc87ff491dbbf034505` | Apache-2.0 | Sustain control application, repeated pitch, per-instrument separation |
 
 ## Symbol mapping
 
@@ -22,6 +24,10 @@ Source paths are relative to the original repositories. Destinations are relativ
 | PTS `findExpectedMatchForMidi`, `findSatisfiedOrSustainedMatchForMidi`, `triggerVirtualKey`, `checkWaitModeAdvance` | `upstream/studio-wait.js` | Whole bodies extracted unchanged, explicit Wait-only host |
 | `DrawableHoldNoteTail.GetCappedResult`, release expression, `TailNote.RELEASE_WINDOW_LENIENCE` | `upstream/hold-tail-probe.ts` and C# runner | Isolated test probe; not product duration scoring |
 | JSFX beat period, phase wrap, offset expressions | `tests/reference-v2.test.ts` | Original arithmetic expressions; not whole REAPER or `isHit` |
+| mir_eval `match_note_offsets` | `upstream/mir-eval.ts::offsetMatches/offsetTolerance` | Singleton offset predicate applied to the note already associated by osu; no new note matcher |
+| mir_eval `match_notes`, `_bipartite_match`, `precision_recall_f1_overlap`, `f_measure`, `average_overlap_ratio` | `upstream/mir-eval.ts` | Mechanical port, Python dict order and NumPy round-to-even retained. Sparse enumeration skips only certainly-false onset pairs; source matching order unchanged |
+| note-seq `apply_sustain_control_changes` and four event-order constants | `upstream/note-seq.ts::applySustain` | Whole event algorithm ported. Protobuf fields renamed; caller supplies instrument identity as port/channel |
+| MuseScore `CompatMidiRender::renderScore`, `RepeatList`, pedal Spanner DOM | `practicesnapshot.cpp`, `reference-adapter-r4.ts` | Call existing native renderer; export identities/ticks/times, no handwritten articulation factors |
 
 No Classic/Convert/clock-rate mods, bonus/tick/hold score, combo, rank or full osu total-score formula is claimed. No osu assets/UI are used. Extra presses do not lower upstream accuracy; the product reports them and input precision separately. Equal-onset same-pitch score notes are merged into one physical target before the kernel.
 
@@ -39,7 +45,50 @@ The full osu application, upstream NUnit suites, PTS browser application and REA
 - MIDI 1.0 Note On velocity zero is Note Off; CC64 ≥64 is on, state per device/channel. Sources: [message summary](https://midi.org/summary-of-midi-1-0-messages), [CC table](https://midi.org/midi-1-0-control-change-messages).
 - [Web MIDI timestamps](https://www.w3.org/TR/webmidi/) refer to system receipt. Audio/performance mapping is fixed per start/resume and recorded. Offset is subtracted once. The 150 ms delivery bound is a transport limit: exceeding it interrupts, never widens hit windows or invents a wrong note.
 - Automatic expiry uses the first representable time after the original Meh deadline. The C# event-host corpus receives those same steps so UI frames cannot change judgement time. Original source still decides hit/miss and notelock.
-- Pedal is raw sustain-gate state, not acoustic decay, piano phrasing or half-pedal. No old release ratios/tolerance/arpeggio delays survive. Piano-expression scoring remains unsupported pending a suitable source/specification and independent musical corpus.
+- Raw `soundOffMs` still means sustain-gate closure. R4 separately derives sounding offsets through note-seq, which cuts a repeated pitch at the new attack. Neither is an acoustic-decay measurement. No old release ratios/tolerance/arpeggio delays survive.
+
+## R4 piano release and pedal profile
+
+The source map and function-body SHA-256 values are in `r4-symbols.json`.
+The independent runner `tests/reference-runners/r4/oracle.py` imports the original
+mir_eval modules and compiles the complete, unchanged note-seq function AST.
+Only protobuf data containers and the unquantized flag are supplied by its host.
+It does not load product TypeScript. `reference-r4.test.ts` passes 535 deterministic
+boundary/random cases to Python and compares results, including actual matching
+pairs rather than F1 alone. This is not a run of the full Magenta training stack.
+
+Note release uses mir_eval's default offset rule: absolute distance rounded to
+4 decimals in seconds, inclusive comparison against max(0.2 × reference
+duration, 0.05 seconds). Association is the existing osu judgement sequence.
+The reference offset is MuseScore MIDI output, including its native articulation
+gate times and ties; it is not a pedagogical claim that every pianist must play
+one interpretation. Ambiguous/missing native release or expanded ornaments are
+marked unavailable. No substitute percentage is guessed.
+
+Pedal uses the profile demonstrated by
+[piano_transcription calculate_score_for_paper.py, lines 270–284](https://github.com/bytedance/piano_transcription/blob/1ade7dcd4348add669a67c6e6282456c8c6633bd/pytorch/calculate_score_for_paper.py#L270):
+mir_eval interval matching with constant pitches, onset tolerance 0.2 seconds,
+offset ratio 0.2 and minimum offset tolerance 0.05 seconds. This source is a
+parameter-selection reference only, not a vendored unlicensed implementation.
+No neural inference model or trained weights are used. This is a reproducible
+binary pedal timing profile, not a universal piano-expression score.
+
+Reference pedal intervals come from explicit MuseScore pedal spanners, expanded
+by the native repeat traversal, clipped to the selected segment and joined by
+spanner identity only across contiguous visits. A new loop/cut starts fresh.
+One piano part may use both staves. Multiple selected parts or no pedal marks
+produce `no-reference`, not invented pedal instructions. The user's pedal toggle disables
+sounding/pedal assessment and the virtual sustain voice while retaining raw
+events; key-release assessment remains separately selectable. Wait has no
+duration or pedal timing score.
+
+Transport adaptations are explicit: milliseconds/seconds conversion, one common
+origin for negative count-in timestamps, device/channel grouping, and censoring
+synthetic/pause/stop closures. A forced boundary cannot certify a real release.
+Partial/unreleased pedal recordings suppress the final F1 display. Natural
+completion waits beyond all source-derived offset windows. No new weighted
+composite mixes onset, duration and pedal. Pre-R4 results remain saved data;
+the engine ID changes and only identical-version replays are executable.
 
 ## Reproduce
 
@@ -50,6 +99,7 @@ python buildscripts/pianist/prepare-reference-sources.py
 python buildscripts/pianist/extract-reference-methods.py
 python buildscripts/pianist/extract-wait-source.py
 python buildscripts/pianist/reference-corpus.py
+python -m pip install --target .tools/r4-python -r tests/reference-runners/r4/requirements.txt
 npm --prefix apps/pianist-web test
 npm --prefix apps/pianist-web run build
 python buildscripts/pianist/audit-practice-cutover.py

@@ -1,0 +1,66 @@
+{
+  "symbols": [
+    {
+      "path": "mir_eval/mir_eval/transcription.py",
+      "symbol": "match_note_offsets",
+      "line": 169,
+      "endLine": 259,
+      "sha256": "73cb943dd58cce03fde320eef605e9dce00f2e1048394fa8af0de8e1e0b7a070"
+    },
+    {
+      "path": "mir_eval/mir_eval/transcription.py",
+      "symbol": "match_notes",
+      "line": 335,
+      "endLine": 473,
+      "sha256": "6408926e201adb150d3b1381b2820e0682c56c26a8a9d27dd9f341180021c765"
+    },
+    {
+      "path": "mir_eval/mir_eval/transcription.py",
+      "symbol": "precision_recall_f1_overlap",
+      "line": 476,
+      "endLine": 588,
+      "sha256": "d386711181ad5b117bd67dad87ea54e6034294a22e66f433b1c090a282e29fd7"
+    },
+    {
+      "path": "mir_eval/mir_eval/transcription.py",
+      "symbol": "average_overlap_ratio",
+      "line": 591,
+      "endLine": 640,
+      "sha256": "c8ddd0ccab811d4c8791617580eea249b6351fa69756a429735f83bed8e86b3d"
+    },
+    {
+      "path": "mir_eval/mir_eval/util.py",
+      "symbol": "f_measure",
+      "line": 197,
+      "endLine": 218,
+      "sha256": "3e97b014aa17acff0d9fb477c4f5363dfbb168293ddee736b22dd5c4b8c3cc08"
+    },
+    {
+      "path": "mir_eval/mir_eval/util.py",
+      "symbol": "_bipartite_match",
+      "line": 528,
+      "endLine": 615,
+      "sha256": "f6b725059107695e963f18d81416cac4f94a083b73a3e29b094686cbc43489f4"
+    },
+    {
+      "path": "note-seq/note_seq/sequences_lib.py",
+      "symbol": "apply_sustain_control_changes",
+      "line": 1546,
+      "endLine": 1665,
+      "sha256": "646e9556c2a489786c38a7e7073c714c75e436cc3b7400f0581d2efa25c2f03e"
+    }
+  ],
+  "pedalProfile": {
+    "repository": "bytedance/piano_transcription",
+    "commit": "1ade7dcd4348add669a67c6e6282456c8c6633bd",
+    "path": "pytorch/calculate_score_for_paper.py",
+    "lines": [
+      270,
+      284
+    ],
+    "onsetTolerance": 0.2,
+    "offsetRatio": 0.2,
+    "offsetMinTolerance": 0.05,
+    "use": "reference to mir_eval parameter selection only; no unlicensed module copied into product"
+  }
+}

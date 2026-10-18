@@ -7,6 +7,12 @@ import urllib.request
 ROOT = Path(__file__).resolve().parents[2]
 DEST = ROOT / 'third_party/practice-sources'
 SOURCES = {
+    'mir_eval': ('mir-evaluation/mir_eval', 'fe73b3533737814f83dbd9739f06e90f5f82f758', 'MIT', [
+        'LICENSE.txt', 'mir_eval/transcription.py', 'mir_eval/util.py', 'tests/test_transcription.py',
+    ]),
+    'note-seq': ('magenta/note-seq', '35825508885343fb06f93dc87ff491dbbf034505', 'Apache-2.0', [
+        'LICENSE', 'note_seq/sequences_lib.py', 'note_seq/sequences_lib_test.py',
+    ]),
     'osu': ('ppy/osu', '676f3b01f28841ebd97ab583e178f2d7b99fe48c', 'MIT', [
         'LICENCE', 'osu.Game/Beatmaps/IBeatmapDifficultyInfo.cs',
         'osu.Game/Rulesets/Scoring/HitWindows.cs', 'osu.Game/Rulesets/Scoring/HitResult.cs',

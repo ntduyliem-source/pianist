@@ -26,7 +26,8 @@ export class PracticeController {
       if(data.generation!==this.generation)return;
       if(data.type==='failure'){const error=Error(data.message);this.rejectReady?.(error);this.rejectClose?.(error);this.pause(error.message,true);return;}
       const incoming=data.view as EngineView;
-      this.view={...incoming,judgements:[...this.view.judgements,...incoming.judgements],extras:[...this.view.extras,...incoming.extras],intervals:incoming.intervals.length?incoming.intervals:this.view.intervals};
+      this.view={...incoming,judgements:[...this.view.judgements,...incoming.judgements],extras:[...this.view.extras,...incoming.extras],intervals:incoming.intervals.length?incoming.intervals:this.view.intervals,
+        pedalIntervals:incoming.pedalIntervals?.length?incoming.pedalIntervals:this.view.pedalIntervals,controls:incoming.controls?.length?incoming.controls:this.view.controls};
       this.ready?.();this.ready=undefined;this.rejectReady=undefined;
       if(data.type==='closed'){this.closed?.(this.view);this.closed=undefined;return;}
       this.onChange();
@@ -68,6 +69,7 @@ export class PracticeController {
   input(event:MidiEvent){
     if(!['counting','running'].includes(this.status)||!this.transport.context)return;
     if(this.transport.context.state!=='running'){this.pause('Đồng hồ âm thanh bị ngắt.',true);return;}
+    this.transport.monitor(event);
     const e={...event,timestampMs:this.transport.at(event.timestampMs),receivedMs:this.transport.at(event.receivedMs)};
     if(this.resuming&&e.timestampMs<this.resumeAt){e.timestampMs=this.resumeAt;e.receivedMs=Math.max(e.receivedMs,this.resumeAt);e.stateOnly=true;}
     this.log({type:'input',event:e});

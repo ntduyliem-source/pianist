@@ -6,6 +6,7 @@ import {pathToFileURL} from 'node:url';
 import {PracticeController} from '../src/practice/controller-v2';
 import {MidiRouter} from '../src/platform/midi-v2';
 import {replayAttempt} from '../../../packages/practice-engine-v2/results';
+import {assessReleases} from '../../../packages/practice-engine-v2/release-assessment';
 import {timeline} from './helpers/fixtures-v2';
 import type {AttemptResult} from '../../../packages/practice-engine-v2/model';
 
@@ -68,6 +69,21 @@ test('simulated Web MIDI → production controller/Worker: count-in, pedal, dela
     assert.deepEqual(resumed.judgements.map(j=>j.delta),[0,50]);assert.equal(resumed.metrics.hits,2);
     assert.equal(resumed.clock!.segments.length,2);assert.equal(resumed.intervals[0].interrupted,true);
     assert.deepEqual(replayAttempt(resumed.timeline,resumed.replay!.commands).judgements,resumed.judgements);
+    // R4 uses the same production Worker and timestamp adapter, including CC64.
+    for(const pedalEnabled of [true,false]){
+      session.dispose();const duration=timeline([500,1100]);duration.targets.forEach((n,i)=>{n.releaseMs=n.endMs=i?1500:900;});
+      duration.durationMs=2000;duration.pedalReference=true;duration.pedals=[{id:'p',atMs:100,endMs:1700,loop:0}];
+      Object.assign(duration.settings,{inputSource:'midi',deviceId:port.id,countIn:1,offsetMs:75,pedalEnabled});
+      session=new PracticeController(duration,'R4 MIDI');const result=new Promise<AttemptResult>(resolve=>session!.onComplete=resolve);
+      await session.start(()=>router.stateEvents());const origin=now-session.transport.now;
+      for(const [at,bytes] of [[100,[0xb0,64,127]],[500,[0x90,60,90]],[900,[0x80,60,0]],[1100,[0x90,60,90]],[1500,[0x80,60,0]],[1700,[0xb0,64,0]]] as [number,number[]][]){
+        move(origin+at+75+30);port.onmidimessage({data:new Uint8Array(bytes),timeStamp:origin+at+75});tick();
+      }
+      move(origin+2800);tick();const r=await result;
+      assert.deepEqual(r.judgements.map(j=>j.delta),[0,0]);assert.deepEqual(r.r4!.key.map(n=>n.status),['correct','correct']);
+      assert.equal(r.r4!.pedal.status,pedalEnabled?'scored':'disabled');if(pedalEnabled){assert.equal(r.r4!.pedal.f1,1);assert(r.r4!.sound.every(n=>n.status==='correct'));}
+      assert.deepEqual(assessReleases(r.timeline,replayAttempt(r.timeline,r.replay!.commands),r.outcome),r.r4);
+    }
   }finally{
     session?.dispose();for(const [key,descriptor] of restore){if(descriptor)Object.defineProperty(globalThis,key,descriptor);else Reflect.deleteProperty(globalThis,key);}
     if(nav)Object.defineProperty(navigator,'requestMIDIAccess',nav);else Reflect.deleteProperty(navigator,'requestMIDIAccess');

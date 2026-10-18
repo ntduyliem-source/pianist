@@ -33,6 +33,13 @@ test('a long imported title can restore its own backup; historical records stay 
   data.sessions.push({id:'archived-v1',schemaVersion:1,projectId:data.projects[0].id,title:'Bản cũ',createdAt:1,config:{algorithmVersion:'archived'},untouched:{value:17}});
   assert.deepEqual((await decodeLibrary(await encodeLibrary(data))).data,data);
 });
+
+test('R4 restores its report and rejects forged pedal matches before rendering',async()=>{
+  const data=library();const saved=data.sessions[0];assert.equal(saved.schemaVersion,2);if(saved.schemaVersion!==2)return;
+  assert(saved.r4);const good=await decodeLibrary(await encodeLibrary(data));assert.deepEqual(good.data.sessions[0],saved);
+  saved.r4.pedal.matching=[[0,999]];
+  await assert.rejects(decodeLibrary(await encodeLibrary(data)),/không hợp lệ/);
+});
 test('tampered content, malformed manifest, traversal and unknown archive files are rejected before any writes', async () => {
   const bytes = await encodeLibrary(library());
   const changed = unzipSync(bytes); changed['projects/0.mscz'] = score.slice(); changed['projects/0.mscz'][40] ^= 1;

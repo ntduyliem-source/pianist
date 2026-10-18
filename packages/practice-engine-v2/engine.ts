@@ -4,6 +4,7 @@ import {ENGINE_ID, type EngineView, type MidiEvent, type ReplayCommand, type Tim
 import {ManiaKernel, type Judgement} from './upstream/mania';
 import {createStudioWait} from './upstream/studio-wait.js';
 import {MidiState} from './midi-state';
+import {releaseDeadline,releaseJudgement} from './release-assessment';
 
 function nextFloat(value: number): number {
   const bytes = new DataView(new ArrayBuffer(8));
@@ -28,10 +29,13 @@ export class PracticeEngine {
   private processed = -Number.MAX_VALUE;
   private attackFrom: number;
   private complete = false;
+  private readonly finishAfter:number;
+  private lastRelease:EngineView['releaseFeedback'];
   constructor(readonly timeline: Timeline) {
     if (timeline.version !== 2 || timeline.engine !== ENGINE_ID || !timeline.targets.length) throw Error('Bản tập không tương thích với engine mới.');
     this.targets = new Map(timeline.targets.map(t => [t.id, t]));
     this.bpm = new ManiaKernel(timeline.targets.map(t => ({id: t.id, pitch: t.pitch, at: t.atMs})), timeline.settings.difficulty);
+    this.finishAfter=Math.max(timeline.durationMs+this.bpm.windows.values.miss,releaseDeadline(timeline));
     this.attackFrom = timeline.settings.mode==='wait'?0:-this.bpm.windows.values.miss;
     this.loadWaitGroup();
   }
@@ -76,6 +80,11 @@ export class PracticeEngine {
     this.runClock(e.timestampMs);
     const fresh = this.midi.input(e);
     const c = this.timeline.settings;
+    if(c.mode==='bpm'&&c.durationEnabled!==false&&e.kind==='off'){
+      const n=this.midi.intervals.findLast(n=>n.portId===e.portId&&n.channel===e.channel&&n.pitch===e.pitch);
+      const j=n?this.judgements.findLast(j=>j.seq===n.sequence):undefined;
+      if(j)this.lastRelease=releaseJudgement(this.targets.get(j.id)!,j,n,this.processed);
+    }
     if (c.mode === 'wait' && e.kind === 'off') this.wait.input(e.pitch, false);
     if (this.complete || !fresh || e.kind !== 'on' || e.synthetic || e.stateOnly || e.timestampMs < this.attackFrom) return;
     if (c.mode === 'bpm') {
@@ -105,13 +114,13 @@ export class PracticeEngine {
     const watermark = now - c.maxDeliveryMs - (c.mode === 'bpm' ? c.offsetMs : 0);
     if (watermark < this.processed) return;
     this.drain(watermark, false);
-    if (c.mode === 'bpm' && watermark > this.timeline.durationMs + this.bpm.windows.values.miss) this.complete = true;
+    if (c.mode === 'bpm' && watermark > this.finishAfter) this.complete = true;
   }
   boundary(atMs: number, kind: 'pause' | 'resume' | 'stop'): void {
     const at = atMs - (this.timeline.settings.mode === 'bpm' ? this.timeline.settings.offsetMs : 0);
     if (kind !== 'resume') this.drain(Math.max(this.processed, at), true);
     this.queue = [];
-    this.midi.reset(Math.max(this.processed, at)); this.wait.resetKeys();
+    this.midi.reset(Math.max(this.processed, at),kind==='stop'?'stop':'pause'); this.wait.resetKeys();
     this.attackFrom = kind === 'resume' ? Math.max(0, at) : this.attackFrom;
     // A pause never counts future targets as misses, and state-only resume
     // messages can restore physical pedal/key state without earning a new hit.
@@ -124,6 +133,6 @@ export class PracticeEngine {
   view(): EngineView {
     return {judgements: this.judgements, extras: this.extras, intervals: this.midi.intervals,
       held: this.midi.held, pedal: this.midi.pedal, group: this.groupIndex, done: this.complete,
-      processedMs: this.processed, faults: this.faults};
+      processedMs: this.processed, faults: this.faults,pedalIntervals:this.midi.pedalIntervals,controls:this.midi.controls,releaseFeedback:this.lastRelease};
   }
 }
