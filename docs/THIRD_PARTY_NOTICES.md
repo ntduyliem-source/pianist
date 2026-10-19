@@ -18,6 +18,8 @@ The following components are included in the software/build workflow:
 | MS Basic soundfont | `share/sound/MS Basic_License.md` and `MS Basic_Readme.md`, copied beside the soundfont |
 | React / React DOM / scheduler | MIT; versions and integrity in `apps/pianist-web/package-lock.json` |
 | fflate | MIT; version and integrity in the same lockfile |
+| abc2xml 2.68 / xml2abc 1.77 | Original Willem G. Vree Python sources, LGPL version unspecified by the source headers; release URLs, hashes and verbatim license texts in `third_party/score-format-sources/` |
+| Pyodide 314.0.7 / CPython 3.14.2 | Same-origin minimal runtime, MPL-2.0 and the supplied Python PSF/history notices; pinned archive/core files and source links in the same directory. No optional Python packages are loaded. |
 | osu!lazer / osu!mania judgement port | MIT, commit `676f3b01f28841ebd97ab583e178f2d7b99fe48c`; original copyright/license and source in `third_party/practice-sources/osu/` |
 | Piano Trainer Studio Wait functions | AGPL-3.0, commit `b40e412ccbc701094a9bb4bfe91ef45c32065704`; unchanged function bodies plus adapted host in `packages/practice-engine-v2/upstream/studio-wait.js` |
 | MIDI Rhythm Trainer reference expressions | GPL-3.0-or-later, commit `23bbc5c62c421fdd69dda7baca6609b704910ff6`; reference/test source only, not a production matcher |
@@ -46,6 +48,13 @@ by the native web installer. This collection does not replace verification of
 the complete linked dependency graph or availability of corresponding source.
 Public release remains gated on a complete upstream/Qt/dependency notice and
 corresponding-source check for the exact optimized artifact being distributed.
+
+ABC converter source, the Python I/O adapter, original licenses and the minimal
+Pyodide core are included under `site/score-formats/`; the exact app/source
+archive contains the pinned upstream files and reproducible downloader.
+`prepare-notices.py` also lists the converter/runtime notices and pin manifest
+under `notices/score-formats/`. Runtime bytes are verified before execution;
+release verification checks their hashes against those pins.
 
 `stage-release.py` creates a source archive from the exact clean Git commit,
 records its SHA-256 in `SOURCE.json`, and supplies the locked build scripts and

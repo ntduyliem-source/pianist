@@ -11,6 +11,7 @@ import shutil
 import subprocess
 import sys
 import zipfile
+from score_format_release import verify_formats
 
 ROOT = Path(__file__).resolve().parents[2]
 
@@ -23,6 +24,9 @@ def digest(path):
 
 def verify(directory):
     release = json.loads((directory / 'release.json').read_text(encoding='utf-8'))
+    formats = verify_formats(lambda name: (directory / name).read_bytes())
+    if release.get('scoreFormats') != formats['version']:
+        raise ValueError('Release is missing the pinned ABC runtime')
     seen = set()
     for entry in release['files']:
         path = (directory / entry['path']).resolve()
@@ -69,6 +73,7 @@ def main():
         'sourceSha256': digest(source_zip), 'toolchain': json.loads((ROOT / 'buildscripts/pianist/toolchain.json').read_text()),
         'qtSource': 'https://download.qt.io/official_releases/qt/6.10/6.10.2/single/',
         'npmSourceLock': 'apps/pianist-web/package-lock.json', 'vendorSources': 'Included in source archive under src/**/thirdparty and thirdparty',
+        'scoreFormats': public['scoreFormats'], 'scoreFormatSourcePins': 'third_party/score-format-sources/manifest.json',
         'deploymentStatus': 'prepared-not-published', 'localScoresIncluded': False}
     (output / 'SOURCE.json').write_text(json.dumps(source_inventory, indent=2), encoding='utf-8')
     with zipfile.ZipFile(output / 'pianist-web.zip', 'w', compression=zipfile.ZIP_DEFLATED, compresslevel=6) as archive:

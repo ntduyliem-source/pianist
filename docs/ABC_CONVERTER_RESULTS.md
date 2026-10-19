@@ -225,6 +225,8 @@ remain byte-identical; no custom pitch, rhythm, release or pedal repair was adde
 
 When ABC export is rejected, **MSCZ preserves the native working document**.
 MXL export remains available, but is not advertised as preserving every native
-instrument/playback setting. A5's complete practice-equivalence matrix, A6
-offline preparation and A7 final release acceptance remain pending. Real MIDI
-hardware and hosting HTTPS are still deferred.
+instrument/playback setting. A5 practice equivalence and A6 offline preparation
+are now tested; see [A5–A7 results and release acceptance](ABC_MUSICXML_RESULTS.md)
+for the current evidence. These stages do not expand the verified converter
+profile or repair upstream musical losses. Real MIDI hardware and hosting HTTPS
+are still deferred.

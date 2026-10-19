@@ -1,6 +1,6 @@
 # Kế hoạch hỗ trợ ABC và MusicXML trong Pianist Web
 
-Cập nhật: 19/10/2026. Trạng thái: **A1 đạt profile giới hạn; A2–A3 hoàn thành; A4 hoàn thành trong profile đã đối chiếu; A5–A7 chưa hoàn thành**. Bằng chứng và giới hạn: [ABC_CONVERTER_RESULTS.md](ABC_CONVERTER_RESULTS.md). Commit A1: `fb526afc`; A3: `ac14354f`, nghiệm thu `80cd335a`.
+Cập nhật: 19/10/2026. Trạng thái: **A1 đạt profile giới hạn; A2–A3 hoàn thành; A4–A6 hoàn thành trong profile đã đối chiếu; A7 đang chốt nghiệm thu gói phát hành**. Bằng chứng và giới hạn: [ABC_CONVERTER_RESULTS.md](ABC_CONVERTER_RESULTS.md), [ABC_MUSICXML_RESULTS.md](ABC_MUSICXML_RESULTS.md). Commit A1: `fb526afc`; A3: `ac14354f`, nghiệm thu `80cd335a`; A4: `8ad8b2be`; A5: `83e07db1`.
 
 Mục tiêu: người dùng nhập ABC hoặc MXL/MusicXML vào cùng thư viện, mở bằng editor MuseScore, sửa và lưu, rồi tập bằng chế độ Đúng nốt hoặc BPM. Màn tập riêng, chỉ đọc. Dữ liệu sau chỉnh sửa là nội dung được dùng để tập và xuất file.
 
@@ -21,7 +21,7 @@ Kiểm tra lại ngày 19/10/2026:
 
 Commit lưu mã nguồn và tài liệu được Git theo dõi. Các thư mục bị ignore như `build.artifacts`, `artifacts`, `examples/local` và dữ liệu thư viện IndexedDB không nằm trong commit. Phố Xa local vẫn được giữ ở máy, không đưa vào gói public.
 
-Ở mốc A0, `platform/files.ts` và bộ chọn file chỉ nhận MXL/XML/MusicXML/MSCZ/MSCX. Sau A2, mọi điểm mở/kéo thả nhận thêm ABC một bài, chuyển qua Worker rồi lưu MSCZ và giữ nguyên bytes nguồn. A3 bổ sung chọn nhiều bài theo index, chuẩn bị native độc lập và commit cả lô nguyên tử. A4 xuất ABC từ revision đang sửa và chỉ cho tải khi nhập lại giữ đúng dữ liệu nhạc được đối chiếu. Chuẩn bị offline cho runtime vẫn thuộc A6.
+Ở mốc A0, `platform/files.ts` và bộ chọn file chỉ nhận MXL/XML/MusicXML/MSCZ/MSCX. Sau A2, mọi điểm mở/kéo thả nhận thêm ABC một bài, chuyển qua Worker rồi lưu MSCZ và giữ nguyên bytes nguồn. A3 bổ sung chọn nhiều bài theo index, chuẩn bị native độc lập và commit cả lô nguyên tử. A4 xuất ABC từ revision đang sửa và chỉ cho tải khi nhập lại giữ đúng dữ liệu nhạc được đối chiếu. A5 đối chiếu tập qua bộ chấm production; A6 đưa runtime vào bộ offline được kiểm hash.
 
 ## 2. Phạm vi cần hoàn thành
 
@@ -145,7 +145,7 @@ Nếu một bài không hợp lệ, báo bài đó để người dùng bỏ ch�
 
 **Đạt khi:** mở ABC/MXL → đổi cao độ, trường độ, thêm nốt, sửa pedal → lưu/reload → nội dung đúng; xuất ABC/MXL lấy revision mới nhất; xuất ABC rồi nhập lại khớp các thuộc tính được profile bảo toàn. Không xuất nguồn cũ, không tải XML phụ, không làm bẩn hoặc mất undo history chỉ vì xuất file.
 
-### A5 — Tập cùng bộ chấm và highlight native
+### A5 — Tập cùng bộ chấm và highlight native · Đã hoàn thành trong profile
 
 **Làm:** dùng `Workspace.practice()` tạo snapshot mới từ score đã nhập/chỉnh sửa. Đối chiếu hai nguồn bằng tập sự kiện âm nhạc, rồi đưa cùng MIDI mô phỏng qua router/controller/Worker hiện có. Không thêm thuật toán chấm vào adapter chuyển đổi.
 
@@ -155,7 +155,7 @@ Nếu một bài không hợp lệ, báo bài đó để người dùng bỏ ch�
 
 **Giới hạn có sẵn:** mốc native không cung cấp được vẫn là `unavailable`; Phố Xa trước đây có 33 target thiếu mốc nhả trong demo A4–B10. Không biến các target đó thành nhả đúng hoặc suy ra pedal từ âm thanh.
 
-### A6 — Đóng gói và offline
+### A6 — Đóng gói và offline · Đã triển khai và kiểm trên trình duyệt
 
 **Làm:** đưa runtime/converter vào manifest bằng SHA-256; cập nhật `package-web.py`, `stage-release.py`, `verify-release.py`, `prepare-notices.py`, `platform/offline.ts` và service worker khi cần. Chỉ tải converter khi nhập/xuất ABC ở chế độ online; khi người dùng chuẩn bị offline thì tải đủ runtime được ghim. Tính dung lượng cần thiết theo manifest thay vì dựa vào ngưỡng 250 MiB cũ.
 

@@ -9,6 +9,7 @@ import json
 from pathlib import Path, PurePosixPath
 from urllib.parse import quote, urljoin, urlparse
 from urllib.request import Request, urlopen
+from score_format_release import verify_formats
 
 HEADERS = {'Cross-Origin-Opener-Policy': 'same-origin', 'Cross-Origin-Embedder-Policy': 'require-corp',
            'Cross-Origin-Resource-Policy': 'same-origin', 'X-Content-Type-Options': 'nosniff'}
@@ -41,7 +42,7 @@ def main():
                 if 'midi=(self)' not in response.headers.get('Permissions-Policy', ''):
                     raise ValueError(name + ': missing MIDI permission policy')
                 if name.endswith('.wasm') and response.headers.get_content_type() != 'application/wasm': raise ValueError('Wrong WASM MIME')
-                if name in {'release.json', 'sw.js', 'pianist.html', 'app/pianist.js', 'MuseScoreStudio.js', 'MuseScoreStudio.wasm'}:
+                if name in {'release.json', 'sw.js', 'pianist.html', 'app/pianist.js', 'MuseScoreStudio.js', 'MuseScoreStudio.wasm'} or name.startswith('score-formats/'):
                     if not any(value in response.headers.get('Cache-Control', '') for value in ['no-cache', 'no-store']): raise ValueError(name + ': mutable URL must revalidate')
                 return response.read()
         path = (args.directory / name).resolve()
@@ -49,7 +50,7 @@ def main():
         return path.read_bytes()
     release = json.loads(read('release.json'))
     if release.get('schemaVersion') != 1 or not release.get('optimizedLink'): raise ValueError('Not an optimized release')
-    expected_version = hashlib.sha256(json.dumps(release['files'], sort_keys=True).encode()).hexdigest()[:20]
+    expected_version = hashlib.sha256(json.dumps({'files': release['files'], 'workerTemplateSha256': release.get('workerTemplateSha256')}, sort_keys=True).encode()).hexdigest()[:20]
     if release.get('version') != expected_version: raise ValueError('Release version does not match its manifest')
     if args.public and release.get('sourceDirty') is not False: raise ValueError('Public bundle must reference clean source')
     seen = set(); total = 0
@@ -63,6 +64,11 @@ def main():
     sw = read('sw.js').decode('utf-8')
     embedded, _ = json.JSONDecoder().raw_decode(sw.split('const RELEASE = ', 1)[1])
     if embedded != release: raise ValueError('Service worker/manifest version mismatch')
+    template = sw.replace('const RELEASE = ' + json.dumps(embedded) + ';', 'const RELEASE = __PIANIST_RELEASE__;')
+    if hashlib.sha256(template.encode()).hexdigest() != release.get('workerTemplateSha256'): raise ValueError('Service worker template hash mismatch')
+    formats = verify_formats(read)
+    if release.get('scoreFormats') != formats['version']: raise ValueError('ABC runtime version mismatch')
+    if not {'score-formats/manifest.json', *('score-formats/' + e['path'] for e in formats['files'])}.issubset(seen): raise ValueError('ABC files missing from release/offline manifest')
     if args.public:
         catalog = json.loads(read('examples/catalog.json'))
         if any(e['url'] != 'fixtures/piano.mxl' for e in catalog['examples']): raise ValueError('Non-public sample catalog')
@@ -70,7 +76,7 @@ def main():
             actual = {p.relative_to(args.directory).as_posix() for p in args.directory.rglob('*') if p.is_file()}
             if actual != seen | {'release.json', 'sw.js'}: raise ValueError('Public web root contains unlisted or missing files')
     report = {'passed': True, 'version': release['version'], 'sourceCommit': release['sourceCommit'], 'sourceDirty': release['sourceDirty'],
-              'resources': len(seen), 'bytes': total, 'headersChecked': bool(base), 'httpsChecked': bool(base and urlparse(base).scheme == 'https'), 'publicExamplesChecked': args.public}
+              'resources': len(seen), 'bytes': total, 'scoreFormats': formats['version'], 'headersChecked': bool(base), 'httpsChecked': bool(base and urlparse(base).scheme == 'https'), 'publicExamplesChecked': args.public}
     if args.report: args.report.write_text(json.dumps(report, indent=2), encoding='utf-8')
     print(json.dumps(report, indent=2))
 

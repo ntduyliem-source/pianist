@@ -15,7 +15,7 @@
     header @wasm Content-Type application/wasm
     @versioned path /app/assets/*
     header @versioned Cache-Control "public, max-age=31536000, immutable"
-    @entry path / /pianist.html /index.html /sw.js /release.json /app/pianist.js /app/pianist.css /MuseScoreStudio.js /MuseScoreStudio.wasm /distr/*
+    @entry path / /pianist.html /index.html /sw.js /release.json /app/pianist.js /app/pianist.css /MuseScoreStudio.js /MuseScoreStudio.wasm /distr/* /score-formats/*
     header @entry Cache-Control "no-cache"
     file_server
 }

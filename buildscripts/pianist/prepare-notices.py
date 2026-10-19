@@ -8,6 +8,18 @@ import hashlib
 ROOT = Path(__file__).resolve().parents[2]
 OUT = ROOT / 'build.artifacts/notices'
 inventory = []
+# Explicit ABC notices include LGPL variants and the Pyodide/stdlib notice text;
+# their filenames do not all match the generic LICENSE/COPYING scan below.
+formats = ROOT / 'third_party/score-format-sources'
+pins = json.loads((formats / 'manifest.json').read_text(encoding='utf-8'))
+for source in sorted((formats / 'licenses').glob('*')):
+    if not source.is_file(): continue
+    destination = OUT / 'score-formats' / source.name
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    shutil.copy2(source, destination)
+    inventory.append({'package': 'ABC converters / Pyodide', 'file': destination.relative_to(OUT).as_posix(),
+                      'sha256': hashlib.sha256(source.read_bytes()).hexdigest(), 'sourceNotice': True})
+(OUT / 'score-formats/pins.json').write_text(json.dumps(pins, indent=2), encoding='utf-8')
 # Practice source pins/licenses are part of the offline source offer as well.
 practice = ROOT / 'third_party/practice-sources'
 if practice.exists():

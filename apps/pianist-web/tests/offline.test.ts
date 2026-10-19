@@ -2,6 +2,12 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {runInNewContext} from 'node:vm';
+import {offlineBytes} from '../src/platform/offline';
+
+test('offline size follows the full manifest including ABC, not a fixed quota',()=>{
+  assert.equal(offlineBytes({files:[{bytes:100},{bytes:13000000}]}),13000100);
+  assert.throws(()=>offlineBytes({files:[{bytes:NaN}]}),/Manifest/);
+});
 
 test('offline worker serves its own release manifest, even if a new server release is deployed', async () => {
   const source = readFileSync(new URL('../../../src/web/appjs/viewer/sw-template.js', import.meta.url), 'utf8');
@@ -13,6 +19,21 @@ test('offline worker serves its own release manifest, even if a new server relea
   let response!: Response;
   listeners.fetch({request: {method: 'GET', url: 'https://example.test/pianist/release.json'}, respondWith: (value: Response) => response = value});
   assert.deepEqual(await response.json(), release);
+});
+
+test('missing pinned code fails closed without fetching a newer release',async()=>{
+  const source=readFileSync(new URL('../../../src/web/appjs/viewer/sw-template.js',import.meta.url),'utf8'),listeners:Record<string,(e:any)=>void>={};
+  let fetched=false;
+  runInNewContext(source.replace('__PIANIST_RELEASE__',JSON.stringify({version:'old',files:[{path:'score-formats/pyodide/pyodide.mjs'}]})),{URL,Response,fetch:()=>{fetched=true;},self:{location:{href:'https://example.test/pianist/sw.js'},addEventListener:(n:string,f:any)=>listeners[n]=f},caches:{open:async()=>({match:async()=>undefined})}});
+  let work!:Promise<Response>;listeners.fetch({request:{method:'GET',url:'https://example.test/pianist/score-formats/pyodide/pyodide.mjs'},respondWith:(p:Promise<Response>)=>work=p});
+  assert.equal((await work).status,503);assert.equal(fetched,false);
+});
+
+test('offline install rejects a corrupt ABC runtime and removes only the incomplete new cache',async()=>{
+  const source=readFileSync(new URL('../../../src/web/appjs/viewer/sw-template.js',import.meta.url),'utf8'),listeners:Record<string,(e:any)=>void>={},deleted:string[]=[],puts:string[]=[];
+  const hash=Buffer.from(await crypto.subtle.digest('SHA-256',new TextEncoder().encode('good'))).toString('hex');
+  runInNewContext(source.replace('__PIANIST_RELEASE__',JSON.stringify({version:'new',files:[{path:'score-formats/pyodide/pyodide.asm.wasm',bytes:4,sha256:hash}]})),{URL,Response,crypto,fetch:async()=>new Response('evil'),self:{location:{href:'https://example.test/pianist/sw.js'},addEventListener:(n:string,f:any)=>listeners[n]=f,clients:{matchAll:async()=>[]}},caches:{has:async()=>false,open:async()=>({match:async()=>undefined,delete:async()=>true,put:async(u:URL)=>puts.push(u.href)}),delete:async(k:string)=>deleted.push(k)}});
+  let work!:Promise<void>;listeners.install({waitUntil:(p:Promise<void>)=>work=p});await assert.rejects(work,/sai hash/);assert.deepEqual(puts,[]);assert.deepEqual(deleted,['pianist-release-new-%2Fpianist%2F']);
 });
 test('activating the new release removes obsolete code caches only for its own scope',async()=>{
   const source=readFileSync(new URL('../../../src/web/appjs/viewer/sw-template.js',import.meta.url),'utf8'),listeners:Record<string,(e:any)=>void>={},deleted:string[]=[];

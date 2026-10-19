@@ -1,26 +1,44 @@
 // SPDX-License-Identifier: GPL-3.0-only
 // Each installed worker pins a complete release. No skipWaiting/client takeover mid-session.
 const RELEASE = __PIANIST_RELEASE__;
-const CACHE = 'pianist-release-' + RELEASE.version;
 const base = new URL('./', self.location.href);
+const CACHE = 'pianist-release-' + RELEASE.version + '-' + encodeURIComponent(base.pathname);
 const paths = new Set(RELEASE.files.map(f => new URL(f.path, base).pathname));
-const report = async (data) => {for (const client of await self.clients.matchAll({includeUncontrolled:true})) client.postMessage(data);};
-self.addEventListener('install', event => event.waitUntil((async () => {
+const report = async (data) => {for (const client of await self.clients.matchAll({includeUncontrolled:true})) if(client.url?.startsWith(base.href))client.postMessage({...data,version:RELEASE.version});};
+const valid = async (response,file) => {
+  if(!response?.ok)return false;
+  const bytes=await response.arrayBuffer();
+  const hash=[...new Uint8Array(await crypto.subtle.digest('SHA-256',bytes))].map(x=>x.toString(16).padStart(2,'0')).join('');
+  return bytes.byteLength===file.bytes&&hash===file.sha256;
+};
+let preparing;
+const prepare = () => preparing ??= (async () => {
+  const existed=await caches.has(CACHE);
   const cache = await caches.open(CACHE); let done = 0;
   try {
+    const missing=[];
+    for(const file of RELEASE.files){const url=new URL(file.path,base);if(!await valid(await cache.match(url),file)){await cache.delete(url);missing.push(file);}}
+    const required=Math.ceil(missing.reduce((n,f)=>n+f.bytes,0)*1.1);
+    const estimate=await self.navigator?.storage?.estimate();
+    if(estimate?.quota&&estimate.quota-(estimate.usage??0)<required)throw Error(`Cần khoảng ${Math.ceil(required/1024**2)} MiB bộ nhớ trống cho bản offline này.`);
     for (const file of RELEASE.files) {
       const url = new URL(file.path, base);
-      const response = await fetch(url, {cache:'no-store'});
-      if (!response.ok) throw Error('Không tải được ' + file.path);
-      const bytes = await response.arrayBuffer();
-      const hash = [...new Uint8Array(await crypto.subtle.digest('SHA-256', bytes))].map(x=>x.toString(16).padStart(2,'0')).join('');
-      if (hash !== file.sha256) throw Error('Bản phát hành đã đổi trong lúc tải. Hãy thử lại.');
-      await cache.put(url, new Response(bytes, {status:200,headers:response.headers}));
+      if(missing.includes(file)){
+        const response = await fetch(url, {cache:'no-store'});
+        if (!response.ok) throw Error('Không tải được ' + file.path);
+        if(!await valid(response.clone(),file))throw Error('Tài nguyên sai hash/phiên bản: '+file.path+'. Hãy thử lại.');
+        await cache.put(url, response);
+      }
       await report({type:'offline-progress', done:++done, total:RELEASE.files.length});
     }
     await report({type:'offline-ready', version:RELEASE.version});
-  } catch (error) {await caches.delete(CACHE); await report({type:'offline-error', message:String(error)}); throw error;}
-})()));
+  } catch (error) {if(!existed)await caches.delete(CACHE);await report({type:'offline-error', message:String(error)});throw error;}
+})().finally(()=>{preparing=undefined;});
+self.addEventListener('install', event => event.waitUntil(prepare()));
+self.addEventListener('message',event=>{
+  if(event.data?.type!=='offline-verify')return;
+  event.waitUntil(prepare().then(()=>event.ports[0]?.postMessage({ok:true,version:RELEASE.version,bytes:RELEASE.files.reduce((n,f)=>n+f.bytes,0)}),error=>event.ports[0]?.postMessage({ok:false,message:String(error)})));
+});
 self.addEventListener('activate', event => event.waitUntil((async()=>{
   // Activation waits for the previous worker's clients to close. At that point
   // remove its executable cache, restricted to this app's URL scope.
@@ -40,5 +58,7 @@ self.addEventListener('fetch', event => {
   if (url.pathname === base.pathname) url.pathname += 'pianist.html';
   if (!paths.has(url.pathname)) return;
   url.search = '';
-  event.respondWith(caches.open(CACHE).then(cache=>cache.match(url)).then(response=>response || fetch(event.request)));
+  // Never fill a missing pinned file with code from a different server release.
+  // Explicit offline preparation can repair it with the same expected hash.
+  event.respondWith(caches.open(CACHE).then(cache=>cache.match(url)).then(response=>response || new Response('Bộ offline thiếu tài nguyên. Kết nối mạng và chuẩn bị offline lại.',{status:503,headers:{'Content-Type':'text/plain; charset=utf-8'}})));
 });

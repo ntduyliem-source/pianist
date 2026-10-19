@@ -18,10 +18,12 @@ class Handler(SimpleHTTPRequestHandler):
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--port', type=int, default=8787)
+parser.add_argument('--directory', type=Path, default=ROOT, help='Build directory or staged release site')
 args = parser.parse_args()
-if not (ROOT / 'MuseScoreStudio.wasm').is_file():
+directory = args.directory.resolve()
+if not (directory / 'MuseScoreStudio.wasm').is_file():
     raise SystemExit('Build the actual MuseScore WebAssembly engine first.')
-server = ThreadingHTTPServer(('127.0.0.1', args.port), partial(Handler, directory=str(ROOT)))
+server = ThreadingHTTPServer(('127.0.0.1', args.port), partial(Handler, directory=str(directory)))
 print(f'Local: http://127.0.0.1:{args.port}/pianist.html', flush=True)
 try:
     server.serve_forever()

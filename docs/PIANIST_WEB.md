@@ -14,23 +14,27 @@ Mở <http://127.0.0.1:8787/pianist.html>. Server phục vụ loopback, port 878
 
 ## Luồng sử dụng
 
-1. Nhập ABC một bài hoặc MXL/MusicXML/MSCZ (tối đa 32 MiB), hay mở bài trong thư viện. Thanh **Tập piano** mở trang chọn bài, dùng được cả khi chưa mở editor.
-2. **Lưu thư viện/Ctrl+S** lưu IndexedDB. **Lưu bản mới/Ctrl+Shift+S** tạo project riêng. Tải MSCZ/xuất MXL, XML, PDF tạo file trên máy.
+1. Nhập ABC hoặc MXL/MusicXML/MSCZ (tối đa 32 MiB), hay mở bài trong thư viện. Với ABC nhiều bài, chọn các bài cần nhập và bài sẽ mở. Thanh **Tập piano** mở trang chọn bài, dùng được cả khi chưa mở editor.
+2. **Lưu thư viện/Ctrl+S** lưu IndexedDB. **Lưu bản mới/Ctrl+Shift+S** tạo project riêng. Tải MSCZ/xuất MXL, XML, PDF hoặc ABC tạo file trên máy.
 3. **Tập bài này** lấy snapshot hiện tại, gồm sửa đổi chưa xuất file. Chọn A/B bằng ô nhịp trên bản nhạc hoặc trường số, tay/khuông/voice, BPM/đơn vị phách, tempo cố định hoặc tempo score, số vòng và mức tăng BPM.
 4. Kết nối/chọn đàn MIDI hoặc dùng phím ảo/phím máy tính A W S E D F T G Y H U J. Bàn phím hiển thị một quãng có thể đổi, nhận toàn dải MIDI 0–127.
 5. Bắt đầu, tạm dừng/tiếp tục hoặc kết thúc. Kết quả có delta từng nốt, miss, input thừa, JSON, CSV và replay. Nút tập lại ô nhịp mở đúng project.
 
 Cấu hình đoạn/BPM thuộc từng bài. Quay lại từ editor, kể cả Browser Back, tạo snapshot mới. Lượt đang chạy/đang tạm dừng khóa thao tác đổi bài. Phố Xa do người dùng cung cấp là ví dụ local; gói public dùng bài CC0.
 
-## Nhập ABC — A1/A2
+## Nhập, sửa và xuất ABC
 
 Nút mở file và kéo thả nhận `.abc` UTF-8. abc2xml 2.68 nguyên bản chạy trong Worker Pyodide cùng website, rồi MusicXML đi vào editor MuseScore. Có thể sửa, undo/redo, lưu thư viện, tải MSCZ/MXL và tập như bài nhập từ MXL. Bài đã lưu mở bằng MSCZ, không chuyển ABC lại. Màn tập giữ bộ chấm BPM/Đúng nốt/R4 hiện có.
 
 Lần mở ABC đầu tải thêm khoảng 13,5 MB runtime; MXL không tải phần này. `build-pianist.ps1` chuẩn bị runtime tự động; nếu chỉ build web bằng npm, chạy thêm `python buildscripts/pianist/prepare-score-format-sources.py`. Tất cả xử lý tại máy, không gửi bản nhạc đi.
 
-ABC nhiều bài hiện báo lỗi để người dùng tách file; chọn bài là A3. Converter có giới hạn: các ca mất trường độ, tie, D.C./D.S./Coda và bè xuyên khuông đã phát hiện sẽ bị từ chối, giữ nguyên bài đang mở. Với Phố Xa, tiếp tục dùng **MXL gốc**; bản ABC chưa đạt kiểm chứng âm nhạc. Xem [profile và bằng chứng](ABC_CONVERTER_RESULTS.md).
+ABC nhiều bài mở hộp chọn theo từng bài, kể cả khi trùng `X:` hoặc tên. Toàn bộ bài được chọn phải chuyển đổi và chuẩn bị thành công trước khi lưu cùng một lượt. Thư viện giữ bytes nguồn, bài đã chọn và phiên bản converter; lưu bản sao và backup/restore giữ các thông tin này. File backup v1 và project cũ vẫn đọc được.
 
-Hủy khi đang đọc/chuyển ABC dừng Worker. Chọn file khác trong giai đoạn có thể hủy sẽ thay lượt mở cũ; bước nhập native cuối khóa thay file. Chưa có nút xuất ABC (A4), chưa tích hợp runtime ABC vào gói offline/phát hành (A6); chuẩn bị offline hiện tại không bảo đảm mở ABC mới khi mất mạng.
+**Editor → Xuất… → ABC notation (.abc)** chuyển nội dung đang sửa bằng xml2abc 1.77 nguyên bản. Ứng dụng nhập lại kết quả vào project native tạm để kiểm dữ liệu nhạc trước khi cho tải. ABC có thể thay đổi trình bày; nếu cao độ, nhịp, trường độ, bè, repeat, nhả phím hoặc pedal không được giữ đúng, xuất sẽ bị từ chối và bài đang sửa vẫn còn nguyên. Dùng MSCZ để giữ dự án native; MXL tiếp tục dùng để trao đổi notation.
+
+Converter có giới hạn: trường độ bị làm tròn, tie/jump/cross-staff ngoài profile, một số biểu cảm và pedal có offset. ABC ngoài không có bản gốc đối chiếu không được gắn nhãn tương đương nguồn. Với **Phố Xa, tiếp tục dùng MXL gốc**; bản ABC hiện bị từ chối vì trường độ/tie. Xem [profile và code upstream](ABC_CONVERTER_RESULTS.md), [nghiệm thu A5–A7](ABC_MUSICXML_RESULTS.md).
+
+Hủy khi đang đọc/chuyển ABC dừng Worker. Chọn file khác trong giai đoạn có thể hủy sẽ thay lượt mở cũ; bước nhập native cuối khóa thay file. Sau **Chuẩn bị dùng offline** hoàn tất và mở lại app, có thể nhập ABC mới, sửa, xuất ABC/MXL và tập khi mất mạng. Mẫu ABC CC0 nằm ở `fixtures/piano.abc` trong gói web.
 
 ## Màn tập v2 và toàn màn hình
 
@@ -112,13 +116,17 @@ node --import tsx scripts/replay.ts C:\path\to\result-v2.json
 
 ## Offline và gói triển khai
 
-**Chuẩn bị dùng offline** tải và kiểm SHA-256 bộ JS/WASM/tài nguyên khoảng 135 MiB. Mỗi service worker giữ một release; không đổi code giữa lượt. Đóng tab cũ rồi mở lại để kích hoạt release mới. Khi kích hoạt, cache code cũ trong cùng scope bị xóa; IndexedDB/thư viện không bị xóa.
+**Chuẩn bị dùng offline** tải và kiểm SHA-256 toàn bộ JS/WASM/tài nguyên, gồm bộ đọc/xuất ABC, khoảng 150 MiB. Dung lượng chính xác lấy từ manifest; cần đủ chỗ cho phần còn thiếu cộng 10% dự phòng. Chờ thông báo hoàn tất rồi đóng tất cả tab Pianist và mở lại. Mỗi service worker giữ một release; bản cập nhật chờ tab cũ đóng, giữ nguyên IndexedDB/thư viện.
+
+Nếu cache thiếu file, ứng dụng chặn dùng code khác phiên bản. Kết nối lại mạng và bấm **Chuẩn bị dùng offline** để kiểm/khôi phục đúng bytes. File sai hash không được cài; bản cập nhật lỗi không thay bản đang dùng. Offline là lựa chọn của người dùng: mở thư viện/MXL online không tự tải runtime ABC.
 
 ```powershell
 # Sau build tối ưu, test và commit source sạch:
 python buildscripts/pianist/package-web.py
-python buildscripts/pianist/stage-release.py --output artifacts/releases/pianist-web-2026-10-18-r4
-python buildscripts/pianist/verify-release.py --directory artifacts/releases/pianist-web-2026-10-18-r4/site --public
+python buildscripts/pianist/stage-release.py --output artifacts/releases/pianist-web-2026-10-19-abc
+python buildscripts/pianist/verify-release.py --directory artifacts/releases/pianist-web-2026-10-19-abc/site --public
+# Chạy thử chính gói đã đóng, trên port riêng:
+python buildscripts/pianist/serve-web.py --directory artifacts/releases/pianist-web-2026-10-19-abc/site --port 8788
 ```
 
 Gói có site, zip web, source đúng commit, toolchain/lockfile, hash, Caddy/Compose và DEPLOY.txt. Chưa phát hành hosting. Phải cung cấp source tương ứng và notices của PTS AGPL, osu! MIT, MuseScore/Qt khi phân phối; xem [inventory](THIRD_PARTY_NOTICES.md). Đàn thật/HTTPS chưa kiểm theo phạm vi đã thống nhất. Giới hạn snapshot 40 trang/50.000 nốt viết/24 MiB SVG, timeline 100.000 target/2 giờ/10 vòng; stress Node không thay benchmark máy/đàn.

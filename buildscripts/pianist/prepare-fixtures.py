@@ -17,4 +17,5 @@ dest.mkdir(parents=True, exist_ok=True)
 for suffix in ('mxl', 'musicxml'):
     shutil.copy2(FIXTURES / f'piano.{suffix}', dest)
 shutil.copy2(ROOT / 'tests/fixtures/pianist/practice/pedal-duration.musicxml', dest)
+shutil.copy2(ROOT / 'tests/fixtures/pianist/abc/piano-core-midi.abc', dest / 'piano.abc')
 print(f'Prepared original CC0 fixtures in {dest}')

@@ -16,6 +16,12 @@ LGPL-3.0. Both license texts and GPL-3.0 are included under `licenses/` alongsid
 the original Pyodide license/notices. Pyodide's LICENSE was fetched from its
 314.0.7 tag: https://github.com/pyodide/pyodide/blob/314.0.7/LICENSE.
 
+The runtime lock identifies CPython 3.14.2. Its verbatim notice is retained as
+`licenses/CPYTHON-3.14.2-LICENSE`, from
+https://raw.githubusercontent.com/python/cpython/v3.14.2/LICENSE, SHA-256
+`b0e25a78cffb43f4d92de8b61ccfa1f1f98ecbc22330b54b5251e7b6ba010231`.
+No CPython/Pyodide implementation is modified by this project.
+
 Run `python buildscripts/pianist/prepare-score-format-sources.py` to verify the
 checked-in converters, fetch the pinned runtime archive into `.tools/`, and
 stage only the five required core files and notices in `build.artifacts/score-formats`.
