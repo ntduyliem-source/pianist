@@ -34,6 +34,11 @@
 #include <cctype>
 #include <map>
 #include <set>
+#include <cmath>
+#include <QJsonDocument>
+#include <QJsonObject>
+#include "context/iplaybackstate.h"
+#include "actions/actiontypes.h"
 
 #include "log.h"
 
@@ -263,6 +268,66 @@ bool WebApi::dispatchAction(const std::string& action)
         return false;
     }
     dispatcher()->dispatch(command->second);
+    return true;
+}
+
+bool WebApi::getEditorPlayback()
+{
+    const auto state = globalContext()->playbackState();
+    const auto status = state ? state->playbackStatus() : audio::PlaybackStatus::Stopped;
+    const bool loaded = m_currentProject && playbackController()->isPlayAllowed();
+    const QJsonObject data {
+        { "available", loaded && !m_practiceActive },
+        { "status", status == audio::PlaybackStatus::Running ? "playing"
+                    : status == audio::PlaybackStatus::Paused ? "paused" : "stopped" },
+        { "positionSeconds", state ? double(state->playbackPosition()) : 0.0 },
+        { "durationSeconds", m_currentProject ? double(playbackController()->totalPlayTime()) : 0.0 },
+        { "tempoMultiplier", m_currentProject ? playbackController()->tempoMultiplier() : 1.0 }
+    };
+#ifdef Q_OS_WASM
+    const auto callback = emscripten::val::module_property("onEditorPlayback");
+    if (callback.isUndefined() || callback.isNull()) { return false; }
+    callback(QJsonDocument(data).toJson(QJsonDocument::Compact).toStdString());
+#endif
+    return true;
+}
+
+void WebApi::checkAudioReady()
+{
+    const auto notify = [](bool ready) {
+#ifdef Q_OS_WASM
+        const auto callback = emscripten::val::module_property("onAudioReady");
+        if (!callback.isUndefined() && !callback.isNull()) { callback(ready); }
+#endif
+    };
+    if (!audioPlayback()->isAudioStarted()) { notify(false); return; }
+    // The driver's "inited" flag precedes asynchronous soundfont installation.
+    // Ask the actual audio engine's resource list before creating score tracks.
+    audioPlayback()->availableInputResources().onResolve(this, [notify](const audio::AudioResourceMetaList& resources) {
+        notify(std::any_of(resources.begin(), resources.end(), [](const audio::AudioResourceMeta& resource) {
+            return resource.id == "MS Basic";
+        }));
+    }).onReject(this, [notify](int, const std::string&) { notify(false); });
+}
+
+bool WebApi::editorPlayback(const std::string& command, double value)
+{
+    if (m_practiceActive || !m_currentProject || !std::isfinite(value)) { return false; }
+    // Use MuseScore's controller/actions for sequencing, repeat, tempo and cursor.
+    // These are the same entry points as PlaybackToolBarModel, not a JS scheduler.
+    if (command == "tempo") {
+        if (value < 0.25 || value > 2.0) { return false; }
+        playbackController()->setTempoMultiplier(value);
+    } else if (command == "seek") {
+        dispatcher()->dispatch("rewind", actions::ActionData::make_arg1<audio::secs_t>(value));
+    } else if (command == "play" || command == "toggle") {
+        if (!playbackController()->isPlayAllowed()) { return false; }
+        if (command == "toggle" || !playbackController()->isPlaying()) { dispatcher()->dispatch("play"); }
+    } else if (command == "pause" || command == "stop") {
+        dispatcher()->dispatch(command);
+    } else {
+        return false;
+    }
     return true;
 }
 

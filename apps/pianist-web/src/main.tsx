@@ -6,6 +6,7 @@ import {prepareOffline, useOnline} from './platform/offline';
 import {LibraryTransfer} from './platform/LibraryTransfer';
 import {TuneImportDialog, SourceLabel} from './platform/TuneImportDialog';
 import {Practice,Results,History} from './practice/PracticeView';
+import {EditorPlayback} from './EditorPlayback';
 import './style.css';
 
 const run = (fn: () => unknown | Promise<unknown>) => () => void ws.run(fn);
@@ -37,6 +38,13 @@ function App() {
     // This handler reads the current view without reinstalling the application lifecycle.
     const handler = (e: KeyboardEvent) => {if (ws.state.view === 'editor') shortcutForEditor(e);};
     function shortcutForEditor(event: KeyboardEvent) {
+      if(event.code==='Space'&&!event.ctrlKey&&!event.metaKey&&!event.altKey&&!document.querySelector('dialog[open]')){
+        const target=event.composedPath()[0] as HTMLElement;
+        if(target?.closest?.('button,input,textarea,select,[contenteditable=true]')&&!target.classList.contains('qt-window-focus-helper'))return;
+        event.preventDefault();event.stopImmediatePropagation();
+        if(!event.repeat&&!ws.state.busy&&ws.bridge)void ws.run(()=>{ws.bridge!.api.Module.driver?.resume();ws.bridge!.playback('toggle');});
+        return;
+      }
       if (!(event.ctrlKey || event.metaKey) || document.querySelector('dialog[open]')) return;
       const k = event.key.toLowerCase(), command = k === 's' ? event.shiftKey ? ws.showSaveAs : () => ws.saveLibrary() : k === 'o' ? ws.chooseFile : k === 'n' ? () => ws.newProject() : k === 'e' && event.shiftKey ? ws.showExport : undefined;
       if (command) {event.preventDefault(); event.stopImmediatePropagation(); void ws.run(command);}
@@ -63,6 +71,7 @@ function App() {
     {!!state.importDiagnostics?.length && !state.error && !state.busy && <div className="error-banner import-notice" role="status"><details><summary>Đã mở ABC · có thay đổi trình bày</summary><ul>{state.importDiagnostics.map((d, i) => <li key={i}>{d.message}</li>)}</ul></details><button onClick={() => ws.patch({importDiagnostics: undefined})}>Đóng</button></div>}
     {state.engineFailed && <div className="loading-overlay" role="alert"><h2>{state.error}</h2><button className="primary" onClick={() => location.reload()}>Tải lại trang</button></div>}
     {state.view === 'editor' && <div className="editor-meta"><strong>{state.current?.title}</strong><span data-testid="save-state">{state.saveState}</span><button onClick={run(() => ws.saveLibrary())}><Icon name="save"/>Lưu thư viện</button><button onClick={() => ws.showSaveAs()}>Lưu bản mới…</button><button onClick={run(() => ws.downloadProject())}>Tải MSCZ</button><button onClick={() => exportDialog.current?.showModal()}>Xuất…</button><button className="primary" onClick={run(() => ws.practice())}><Icon name="piano"/>Tập bài này</button></div>}
+    {state.view === 'editor' && state.engineReady && state.current && <EditorPlayback key={state.current.id}/>}
     {state.view === 'library' && <Library/>}
     {state.view === 'practice' && (state.practicePicker || !state.snapshot || !state.config ? <PracticeHome/> : <Practice key={state.snapshot.fingerprint + ':' + state.snapshot.revision} snapshot={state.snapshot} config={state.config}/>)}
     {state.view === 'results' && state.result && <Results result={state.result}/>}
@@ -74,7 +83,7 @@ function App() {
     <input id="file" ref={file} type="file" accept=".abc,.mxl,.xml,.musicxml,.mscz,.mscx" aria-label="Mở file bản nhạc" hidden onChange={e => {const f = e.target.files?.[0]; if (f) void ws.run(() => ws.importFile(f, practiceFile.current)); e.target.value = '';}}/>
     <dialog ref={exportDialog} aria-labelledby="export-title"><h2 id="export-title">Xuất bản nhạc</h2><label htmlFor="export-format">Định dạng</label><select id="export-format" value={format} onChange={e => setFormat(e.target.value)}><option value="mxl">MusicXML nén (.mxl)</option><option value="musicxml">MusicXML (.musicxml)</option><option value="pdf">PDF · bản in</option><option value="abc">ABC notation (.abc)</option></select><p>Xuất nội dung đang mở. MSCZ giữ đầy đủ thiết lập và dữ liệu MuseScore.</p>{format === 'abc' && <p className="abc-export-warning" role="note">ABC có thể thay đổi bố cục trang, font, khoảng cách và cách trình bày. Ứng dụng sẽ mở lại bản chuyển đổi để đối chiếu nốt, bè, nhịp, lặp, nhả phím và pedal; nếu không bảo toàn được sẽ dừng xuất và báo lý do.</p>}<div className="dialog-actions"><button onClick={() => exportDialog.current?.close()}>Hủy</button><button className="primary" onClick={run(() => {exportDialog.current?.close(); return ws.export(format);})}>Xuất file</button></div></dialog>
     <dialog ref={saveAsDialog} aria-labelledby="save-as-title"><h2 id="save-as-title">Lưu thành bản nhạc mới</h2><label htmlFor="copy-title">Tên trong thư viện</label><input id="copy-title" aria-label="Tên bản mới" autoFocus value={copyTitle} maxLength={150} onChange={e => setCopyTitle(e.target.value)}/><p>Bản mới có lịch sử luyện tập riêng. Các thay đổi và undo hiện tại của editor được giữ lại.</p><div className="dialog-actions"><button onClick={() => saveAsDialog.current?.close()}>Hủy</button><button className="primary" disabled={!copyTitle.trim()} onClick={run(async () => {await ws.saveAs(copyTitle); saveAsDialog.current?.close();})}>Lưu bản mới</button></div></dialog>
-    <dialog ref={about}><h2>Pianist Web</h2><p>Editor dựa trên MuseScore Studio 4.7.5. Tập piano là chức năng riêng, sử dụng bản nhạc chỉ đọc.</p><p><a href="LICENSE.txt" target="_blank" rel="noreferrer">GPL v3</a> · <a href="practice-sources/piano-trainer-studio/LICENSE" target="_blank" rel="noreferrer">AGPL v3 · Wait</a> · <a href="https://github.com/ntduyliem-source/pianist" target="_blank" rel="noreferrer">Mã nguồn & hướng dẫn build</a></p><p className="muted">BPM dùng osu!mania; Đúng nốt dùng Piano Trainer Studio. Nhả phím và pedal dùng mir_eval, Magenta note-seq và mốc MuseScore. Chưa chấm half-pedal hoặc diễn cảm nâng cao. Tối ưu cho Chrome/Edge trên máy tính.</p><div className="dialog-actions"><button onClick={() => about.current?.close()}>Đóng</button></div></dialog>
+    <dialog ref={about}><h2>Pianist Web</h2><p>Editor dựa trên MuseScore Studio 4.7.5. Tập piano là chức năng riêng, sử dụng bản nhạc chỉ đọc.</p><p><a href="LICENSE.txt" target="_blank" rel="noreferrer">GPL v3</a> · <a href="practice-sources/piano-trainer-studio/LICENSE" target="_blank" rel="noreferrer">AGPL v3 · Wait</a> · <a href="https://github.com/ntduyliem-source/pianist/tree/pianist/m0-web" target="_blank" rel="noreferrer">Mã nguồn & hướng dẫn build</a></p><p className="muted">BPM dùng osu!mania; Đúng nốt dùng Piano Trainer Studio. Nhả phím và pedal dùng mir_eval, Magenta note-seq và mốc MuseScore. Chưa chấm half-pedal hoặc diễn cảm nâng cao. Tối ưu cho Chrome/Edge trên máy tính.</p><div className="dialog-actions"><button onClick={() => about.current?.close()}>Đóng</button></div></dialog>
   </div>;
 }
 
@@ -88,12 +97,19 @@ function Library() {
       {!trash && <div className="library-hero"><div><span className="hero-label">TỪ BẢN NHẠC ĐẾN PHÍM ĐÀN</span><h2>Mỗi nốt đúng.<br/>Mỗi nhịp vững hơn.</h2><p>Hai cách tập: chờ đúng nốt, hoặc giữ nhịp theo BPM.<br/>Bài tập luôn lấy từ phiên bản bạn vừa chỉnh sửa.</p><button onClick={run(() => ws.sample())}>Mở bài mẫu {state.exampleTitle} <Icon name="arrow"/></button></div><div className="hero-staff" aria-hidden="true"><div className="staff-lines"/><span className="clef">𝄞</span><span className="hero-note n1">♩</span><span className="hero-note n2">♪</span><span className="hero-note n3">♩</span><span className="hero-note n4">♫</span><div className="mini-keys">{Array.from({length: 13}, (_, i) => <i key={i} className={[1, 2, 4, 5, 6, 8, 9, 11, 12].includes(i) ? 'with-black' : ''}/>)}</div></div></div>}
       <div className="section-top"><h2>{trash ? 'Có thể khôi phục bất cứ lúc nào' : 'Gần đây'} <span>{projects.length}</span></h2><input type="search" aria-label="Tìm bản nhạc" placeholder="Tìm tên bản nhạc…" value={search} onChange={e => setSearch(e.target.value)}/></div>
       <div className="score-grid">{projects.map(project => <article className="score-card" key={project.id}><button className="score-cover" aria-label={'Mở ' + project.title} onClick={run(() => ws.openProject(project.id))}><Icon name="score"/><span>{project.title}</span><div className="cover-lines">━━━━━━━━━━<br/>━━━━━━━━━━<br/>━━━━━━━━━━</div></button><div className="score-card-body"><h3>{project.title}</h3><SourceLabel project={project}/><p>{date(project.updatedAt)} · {Math.round(project.bytes.length / 1024)} KB</p><div className="button-row">{trash ? <button onClick={run(() => ws.archive(project))}>Khôi phục</button> : <><button onClick={run(() => ws.openProject(project.id))}>Chỉnh sửa</button><button className="primary-light" onClick={run(() => ws.openProject(project.id, true))}><Icon name="play"/>Tập</button><button className="archive" title="Lưu trữ bài (có thể khôi phục)" aria-label={'Lưu trữ ' + project.title} onClick={run(() => ws.archive(project))}>···</button></>}</div></div></article>)}{!trash && <button className="import-card" onClick={() => ws.chooseFile()}><Icon name="upload"/><strong>Thêm bản nhạc</strong><span>Thả file vào đây hoặc chọn file</span><small>ABC · MXL · MusicXML · MSCZ · tối đa 32 MiB</small></button>}</div>
-      {!projects.length && search && <p>Không tìm thấy bài phù hợp.</p>}
+      {!trash && <BundledSongs search={search}/>}
+      {!projects.length && search && !state.bundledScores.some(s=>s.title.toLowerCase().includes(search.toLowerCase())) && <p>Không tìm thấy bài phù hợp.</p>}
       <p className="storage-note">Thư viện và bản tự lưu nằm trong trình duyệt này. Tải MSCZ hoặc sao lưu cả thư viện để giữ trên máy.</p>
       <LibraryTransfer/>
       <div className="offline-controls"><button onClick={run(() => prepareOffline(setOffline))}>Chuẩn bị dùng offline</button><button onClick={run(async () => {await useOnline(); setOffline('Đã chuyển sang dùng online. Tải lại trang để áp dụng.');})}>Dùng online</button><span role="status">{offline}</span></div>
     </section>
   </main>;
+}
+
+function BundledSongs({search='',practice=false}:{search?:string;practice?:boolean}){
+  const state=useSyncExternalStore(ws.subscribe,ws.snapshot),songs=state.bundledScores.filter(s=>s.title.toLowerCase().includes(search.toLowerCase()));
+  if(!songs.length)return null;
+  return <section className="bundled-library" aria-label="Bài hát có sẵn"><div className="section-top"><h2>Bài hát có sẵn <span>{songs.length}</span></h2><span className="muted">Mở một bài để lưu bản riêng trên thiết bị</span></div><div className="score-grid">{songs.map(song=><article className="score-card" key={song.id}><button className="score-cover" aria-label={'Mở bài có sẵn '+song.title} onClick={run(()=>ws.openBundledScore(song,practice))}><Icon name="score"/><span>{song.title}</span><div className="cover-lines">━━━━━━━━━━<br/>━━━━━━━━━━<br/>━━━━━━━━━━</div></button><div className="score-card-body"><h3>{song.title}</h3><span className="source-label">MXL · Có sẵn</span><p>{song.composer||'Bản piano'}</p><div className="button-row"><button onClick={run(()=>ws.openBundledScore(song))}>Chỉnh sửa</button><button className="primary-light" onClick={run(()=>ws.openBundledScore(song,true))}><Icon name="play"/>Tập</button></div></div></article>)}</div></section>;
 }
 
 function PracticeHome() {
@@ -118,7 +134,8 @@ function PracticeHome() {
         <button className="score-cover" aria-label={'Tập ' + project.title} onClick={run(() => ws.openProject(project.id, true))}><Icon name="score"/><span>{project.title}</span><div className="cover-lines">━━━━━━━━━━<br/>━━━━━━━━━━<br/>━━━━━━━━━━</div></button>
         <div className="score-card-body"><h3>{project.title}</h3><SourceLabel project={project}/><p>{date(project.updatedAt)} · {Math.round(project.bytes.length / 1024)} KB</p><button className="primary-light" aria-label={'Bắt đầu với ' + project.title} onClick={run(() => ws.openProject(project.id, true))}><Icon name="play"/>Tập bài này</button></div>
       </article>)}</div>
-      {!projects.length && <p className="practice-empty">{search ? 'Không tìm thấy bài phù hợp.' : 'Thư viện chưa có bài. Nhập file hoặc thử bài mẫu để bắt đầu.'}</p>}
+      <BundledSongs search={search} practice/>
+      {!projects.length && !state.bundledScores.some(s=>s.title.toLowerCase().includes(search.toLowerCase())) && <p className="practice-empty">{search ? 'Không tìm thấy bài phù hợp.' : 'Thư viện chưa có bài. Nhập file hoặc thử bài mẫu để bắt đầu.'}</p>}
       <p className="storage-note">Màn tập sử dụng bản nhạc chỉ đọc. ABC · MXL · MusicXML · MSCZ · tối đa 32 MiB.</p>
     </section>
   </main>;

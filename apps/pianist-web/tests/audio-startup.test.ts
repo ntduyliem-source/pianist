@@ -22,7 +22,7 @@ test('cold audio waits for real output position before mapping count-in or MIDI 
     await new Promise(r=>setTimeout(r,30));assert.equal(resolved,false);assert.equal(clock.mapping.originPerformanceMs,0);
     ready();await start;assert.equal(clock.mapping.source,'output-timestamp');assert.equal(clock.coherent(),true);
     assert.ok(Math.abs(clock.mapping.audioMinusPerformanceSeconds+.04)<.001);
-    const at=750;assert.equal(clock.at(clock.performanceAt(at)),at);
+    const at=750;assert.ok(Math.abs(clock.at(clock.performanceAt(at))-at)<1e-9);
   });
 });
 test('closing a context while its output clock is unavailable aborts startup without scheduling',async()=>{

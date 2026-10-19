@@ -7,11 +7,24 @@ export interface NativeApi {
   getScoreSemantics(): number;
   getPracticeSnapshot(): number; setPracticeActive(active: boolean): number; midiInput(status: number, data1: number, data2: number): number;
   startAudioProcessing(): Promise<void>;
+  getEditorPlayback?(): number;
+  editorPlayback?(command: string, value?: number): number;
+}
+export interface EditorPlaybackState {
+  available: boolean; status: 'playing' | 'paused' | 'stopped';
+  positionSeconds: number; durationSeconds: number; tempoMultiplier: number;
 }
 export class EngineBridge {
   readonly schemaVersion = 1;
-  revision = 0; practiceActive = false; private request = 0;
+  revision = 0; practiceActive = false; private request = 0; private editorTempo = 1;
   constructor(readonly api: NativeApi) {}
+  playbackState(): EditorPlaybackState {
+    return this.capture('onEditorPlayback', () => this.api.getEditorPlayback?.() ?? 0,
+      value => JSON.parse(value), 'Không đọc được trạng thái phát nhạc MuseScore.');
+  }
+  playback(command: 'play'|'toggle'|'pause'|'stop'|'seek'|'tempo', value = 0): void {
+    if (this.practiceActive || !this.api.editorPlayback?.(command, value)) throw Error('MuseScore chưa sẵn sàng phát bài này.');
+  }
   private capture<T>(callback: string, call: () => number, copy: (value: any) => T, message: string): T {
     const previous = this.api.Module[callback], revision = this.revision;
     let result: T | undefined;
@@ -60,7 +73,15 @@ export class EngineBridge {
   cancel(): void { ++this.request; }
   setPractice(active: boolean): void {
     if (this.practiceActive === active) return;
+    // MuseScore's playback speed changes its tempo map. Practice snapshots must
+    // use the written tempo; keep the editor's speed separate from grading.
+    if (active && this.api.getEditorPlayback && this.api.editorPlayback) {
+      this.editorTempo = this.playbackState().tempoMultiplier;
+      this.api.editorPlayback('stop');
+      if (this.editorTempo !== 1) this.playback('tempo', 1);
+    }
     if (!this.api.setPracticeActive(active)) throw Error('Không chuyển được chế độ editor.');
     this.practiceActive = active;
+    if (!active && this.editorTempo !== 1) this.api.editorPlayback?.('tempo', this.editorTempo);
   }
 }

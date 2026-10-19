@@ -29,8 +29,10 @@
 #include "context/iglobalcontext.h"
 #include "audio/main/istartaudiocontroller.h"
 #include "audio/main/isoundfontcontroller.h"
+#include "audio/main/iplayback.h"
 #include "project/iprojectcreator.h"
 #include "project/inotationwritersregister.h"
+#include "playback/iplaybackcontroller.h"
 
 namespace mu::appjs {
 class WebApi : public muse::async::Asyncable, public muse::Contextable
@@ -41,6 +43,8 @@ class WebApi : public muse::async::Asyncable, public muse::Contextable
     muse::ContextInject<muse::audio::IStartAudioController> startAudioController = { this };
     muse::ContextInject<muse::audio::ISoundFontController> soundFontController = { this };
     muse::ContextInject<project::INotationWritersRegister> writers = { this };
+    muse::ContextInject<playback::IPlaybackController> playbackController = { this };
+    muse::ContextInject<muse::audio::IPlayback> audioPlayback = { this };
     muse::GlobalInject<project::IProjectCreator> projectCreator;
 
 public:
@@ -60,6 +64,9 @@ public:
     bool midiInput(int status, int data1, int data2);
     bool exportScore(const std::string& format);
     bool dispatchAction(const std::string& action);
+    bool getEditorPlayback();
+    bool editorPlayback(const std::string& command, double value);
+    void checkAudioReady();
     void addSoundFont(const std::string& uri);
     void startAudioProcessing();
 

@@ -17,6 +17,8 @@ const MuApi = {
     midiInput: (status, data1, data2) => MuImpl.Module.ccall('webMidiInput', 'number', ['number', 'number', 'number'], [status, data1, data2]),
     exportScore: (format = 'mxl') => MuImpl.Module.ccall('exportScore', 'number', ['string'], [format]),
     dispatchAction: (action) => MuImpl.Module.ccall('dispatchAction', 'number', ['string'], [action]),
+    getEditorPlayback: () => MuImpl.Module.ccall('getEditorPlayback', 'number', [], []),
+    editorPlayback: (command, value = 0) => MuImpl.Module.ccall('editorPlayback', 'number', ['string', 'number'], [command, value]),
 
     // Start audio
     startAudioProcessing: MuImpl.startAudioProcessing.bind(MuImpl),

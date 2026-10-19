@@ -45,6 +45,7 @@ copyFile(HERE+"/distr/muimpl.js", OUTPUT_DIR+"/distr/muimpl.js");
 copyFile(HERE+"/distr/qtloader.js", OUTPUT_DIR+"/distr/qtloader.js");
 copyFile(HERE+"/distr/audioworker.js", OUTPUT_DIR+"/distr/audioworker.js");
 copyFile(HERE+"/distr/audiodriver.js", OUTPUT_DIR+"/distr/audiodriver.js"); 
+copyFile(HERE+"/distr/audio-ready.js", OUTPUT_DIR+"/distr/audio-ready.js");
 copyFile(HERE+"/distr/audio_worklet_processor.js", OUTPUT_DIR+"/distr/audio_worklet_processor.js");
 
 // Copy viewer
@@ -93,5 +94,16 @@ const example = fs.existsSync(localExample)
   : { title: "Piano khởi động", filename: "Piano khởi động.mxl", url: "fixtures/piano.mxl" };
 if (fs.existsSync(localExample)) copyFile(localExample, OUTPUT_DIR+"/examples/pho-xa.mxl");
 fs.writeFileSync(OUTPUT_DIR+"/examples/catalog.json", JSON.stringify({examples:[example]}, null, 2));
+// Public scores are an explicit curated catalog, independent of private examples.
+const library = ROOT+"/scores/library";
+if (fs.existsSync(library+"/catalog.json")) {
+    const catalog = JSON.parse(fs.readFileSync(library+"/catalog.json", "utf8"));
+    fs.mkdirSync(OUTPUT_DIR+"/library/songs", {recursive:true});
+    copyFile(library+"/catalog.json", OUTPUT_DIR+"/library/catalog.json");
+    for (const song of catalog.songs) {
+        const filename = song.url.split('/').pop();
+        copyFile(library+"/songs/"+filename, OUTPUT_DIR+"/library/songs/"+filename);
+    }
+}
 fs.cpSync(ROOT+"/tests/fixtures/pianist/practice", OUTPUT_DIR+"/fixtures/practice", {recursive:true});
 

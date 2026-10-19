@@ -13,6 +13,7 @@ import { MidiRouter } from './platform/midi-v2';
 import * as storage from './platform/storage';
 import {PracticeController} from './practice/controller-v2';
 import { loadEngineAssets } from './platform/engine-assets';
+import {loadBundledCatalog,loadBundledScore,type BundledScore} from './platform/bundled-library';
 
 type View = 'library' | 'editor' | 'practice' | 'results' | 'history';
 export interface TuneSelection {
@@ -24,6 +25,7 @@ export interface WorkspaceState {
   current?: storage.ProjectRecord; snapshot?: ScoreSnapshot; config?: PracticeSettings; result?: SavedAttempt;
   revision: number; savedRevision: number; recoveryRevision: number; saveState: string; engineReady: boolean; midiVersion: number;
   exampleTitle: string;
+  bundledScores: BundledScore[];
   practicePicker: boolean;
   canCancelOpen?: boolean;
   cancelOpenLabel?: string;
@@ -32,7 +34,7 @@ export interface WorkspaceState {
   tuneSelection?: TuneSelection;
 }
 export class Workspace {
-  state: WorkspaceState = {view: 'library', busy: '', error: '', toast: '', projects: [], history: [], revision: 0, savedRevision: 0, recoveryRevision: 0, saveState: '', engineReady: false, midiVersion: 0, exampleTitle: 'Piano khởi động', practicePicker: true};
+  state: WorkspaceState = {view: 'library', busy: '', error: '', toast: '', projects: [], history: [], bundledScores: [], revision: 0, savedRevision: 0, recoveryRevision: 0, saveState: '', engineReady: false, midiVersion: 0, exampleTitle: 'Piano khởi động', practicePicker: true};
   bridge?: EngineBridge; session?: PracticeController; readonly midi = new MidiRouter();
   private listeners = new Set<() => void>(); private engineLoading?: Promise<EngineBridge>; private loadingDocument = false;
   private nativeBase = 0; private revisionBase = 0; private nativeRevision = 0; private autosaveTimer?: number; private leaseTimer?: number; private toastTimer?: number;
@@ -69,6 +71,7 @@ export class Workspace {
   async init(): Promise<void> {
     const catalog = await fetch('examples/catalog.json').then(r => r.ok ? r.json() : null).catch(() => null);
     if (catalog?.examples?.[0]?.title) this.patch({exampleTitle: catalog.examples[0].title});
+    this.patch({bundledScores:await loadBundledCatalog().catch(()=>[])});
     history.replaceState(null, '', location.pathname + location.search + '#/library');
     window.addEventListener('hashchange', () => {
       const view = location.hash.slice(2) as View;
@@ -153,9 +156,9 @@ export class Workspace {
         onXmlExported: (bytes: Uint8Array) => download(bytes, `${this.state.current?.title ?? 'score'}.musicxml`, 'application/xml'),
         onPdfExported: (bytes: Uint8Array) => download(bytes, `${this.state.current?.title ?? 'score'}.pdf`, 'application/pdf'),
       });
-      this.bridge = new EngineBridge(api); this.bridge.revision = this.nativeRevision;
       if (new URLSearchParams(location.search).has('diagnostics')) (window as any).pianist = api;
-      await api.startAudioProcessing();
+      try {await api.startAudioProcessing();} catch(e) {this.patch({engineFailed:true});throw e;}
+      this.bridge = new EngineBridge(api); this.bridge.revision = this.nativeRevision;
       this.measureDiagnostic('engine-ready', started);
       document.getElementById('screen')!.addEventListener('pointerdown', e => {api.Module.driver?.resume(); this.focusEditor(e.composedPath().find((x: any) => x.classList?.contains('qt-window')) as Element);}, true);
       this.patch({engineReady: true}); return this.bridge;
@@ -387,6 +390,13 @@ export class Workspace {
       && p.source?.length === bytes.length && p.source.every((byte, i) => byte === bytes[i]));
     if (existing) {await this.openProject(existing.id, practice); return;}
     await this.importFile(new File([bytes], example.filename), practice);
+  }
+  async openBundledScore(score:BundledScore,practice=false):Promise<void>{
+    this.requireInactiveSession();
+    const bytes=await loadBundledScore(score);
+    const existing=this.state.projects.find(p=>!p.archived&&p.sourceName===score.filename&&p.source?.length===bytes.length&&p.source.every((b,i)=>b===bytes[i]));
+    if(existing){await this.openProject(existing.id,practice);return;}
+    await this.importFile(new File([bytes.buffer as ArrayBuffer],score.filename),practice);
   }
   async saveLibrary(): Promise<void> {
     await this.autosaving; clearTimeout(this.autosaveTimer);

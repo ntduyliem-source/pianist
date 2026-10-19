@@ -1,0 +1,41 @@
+# Phát hành Pianist Web qua GitHub Pages
+
+Địa chỉ: https://ntduyliem-source.github.io/pianist/
+
+Source ứng dụng ở nhánh `pianist/m0-web`. Native WASM được build tối ưu trên
+Windows bằng toolchain đã ghim; GitHub Actions nhận gói release đúng hash,
+xác minh toàn bộ tài nguyên rồi xuất bản. Không đưa binary WASM vào lịch sử Git.
+
+## Chuẩn bị một phiên bản
+
+1. Chạy test, build native/web và kiểm browser. Commit source sạch.
+2. Chạy `package-web.py`, `stage-release.py` và `verify-release.py --public`.
+3. Push source commit lên `origin/pianist/m0-web`.
+4. Tạo GitHub Release trỏ đúng source commit; upload `pianist-web.zip`, source
+   archive, `SOURCE.json`, `SHA256SUMS.json` và các file cấu hình triển khai.
+5. Cập nhật `deploy/pages-release.json` với `tag`, SHA-256 của web ZIP,
+   `sourceCommit` và `version` lấy từ release đã xác minh. Commit/push file này.
+
+Workflow `Publish Pianist Web` chỉ tự chạy khi manifest triển khai thay đổi.
+Nó dùng các action Pages chính thức, quyền `pages:write`/`id-token:write` và
+environment `github-pages`. Source commit trong ZIP phải khớp manifest;
+archive sai hash, path không an toàn hoặc tài nguyên sai byte đều dừng triển khai.
+
+## Xác minh online
+
+```powershell
+python buildscripts/pianist/verify-release.py --url https://ntduyliem-source.github.io/pianist/ --public --github-pages
+```
+
+GitHub Pages phục vụ static và không cho đặt các header tùy ý như Caddy.
+`--github-pages` giữ kiểm HTTPS, WASM MIME, hash, source/pins, thư viện và
+inventory; không yêu cầu header riêng. Build này dùng Qt/WASM single-thread,
+đã được kiểm chạy thực tế trên host không có COOP/COEP. Với hosting Caddy,
+tiếp tục dùng chế độ kiểm header mặc định.
+
+Kiểm thêm trên browser thật: mở thư viện, mở bài đầu tiên, nghe được MS Basic,
+tạm dừng/tua/dừng, đổi sang tập và thử ABC. Đàn MIDI thật cần người dùng cấp
+quyền trên origin HTTPS; các lượt nghiệm thu tự động dùng MIDI mô phỏng.
+
+Các bài đóng gói chỉ lấy từ `scores/library/catalog.json`; report ghi rõ bản
+được nhận/bỏ. Phố Xa và file trong `examples/local/` vẫn thuộc ví dụ local.

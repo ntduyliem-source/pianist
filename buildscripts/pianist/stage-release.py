@@ -12,6 +12,7 @@ import subprocess
 import sys
 import zipfile
 from score_format_release import verify_formats
+from library_release import verify_library
 
 ROOT = Path(__file__).resolve().parents[2]
 
@@ -35,6 +36,8 @@ def verify(directory):
         seen.add(entry['path'])
         if not path.is_file() or path.stat().st_size != entry['bytes'] or digest(path) != entry['sha256']:
             raise ValueError('Release integrity failed: ' + entry['path'])
+    if release.get('libraryScores', 0) != verify_library(lambda name: (directory / name).read_bytes(), seen):
+        raise ValueError('Bundled library count differs from the manifest')
     return release
 
 def main():
@@ -74,7 +77,7 @@ def main():
         'qtSource': 'https://download.qt.io/official_releases/qt/6.10/6.10.2/single/',
         'npmSourceLock': 'apps/pianist-web/package-lock.json', 'vendorSources': 'Included in source archive under src/**/thirdparty and thirdparty',
         'scoreFormats': public['scoreFormats'], 'scoreFormatSourcePins': 'third_party/score-format-sources/manifest.json',
-        'deploymentStatus': 'prepared-not-published', 'localScoresIncluded': False}
+        'deploymentStatus': 'prepared-not-published', 'localScoresIncluded': False, 'publishedLibraryScores': public['libraryScores']}
     (output / 'SOURCE.json').write_text(json.dumps(source_inventory, indent=2), encoding='utf-8')
     with zipfile.ZipFile(output / 'pianist-web.zip', 'w', compression=zipfile.ZIP_DEFLATED, compresslevel=6) as archive:
         for path in sorted(site.rglob('*')):

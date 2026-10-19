@@ -1,90 +1,41 @@
-# ![MuseScore Studio](share/icons/musescore_logo_full.png)
+# Pianist Web
 
-Music notation and composition software
+Pianist là ứng dụng web chỉnh sửa và tập piano, fork từ MuseScore Studio 4.7.5.
 
-[![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.en.html)
-[![Coverage](https://s3.us-east-1.amazonaws.com/extensions.musescore.org/test/code_coverage/coverage_badge.svg?)](https://github.com/musescore/MuseScore/actions/workflows/check_unit_tests.yml)
+**[Mở ứng dụng online](https://ntduyliem-source.github.io/pianist/)**
 
-MuseScore Studio is an open source and free music notation software. For support, contribution, and bug reports visit MuseScore.org. Fork and make pull requests!
+- Thư viện nhận MXL/MusicXML, MSCZ/MSCX và ABC; có bộ bài piano được kiểm trước khi đóng gói.
+- Editor MuseScore chỉnh sửa, lưu, xuất và phát bản nhạc bằng tiếng MS Basic. Phát/tạm dừng bằng Space; có nút dừng và thanh tua.
+- Màn tập riêng: Đúng nốt hoặc BPM, nhả phím/pedal, A–B, full sheet, highlight native và cuộn theo bài.
+- Xử lý trong trình duyệt. Bản chỉnh sửa lưu bằng MSCZ trên thiết bị; hỗ trợ sao lưu/khôi phục và chuẩn bị offline.
 
-## Features
+## Hướng dẫn
 
-- WYSIWYG design, notes are entered on a "virtual notepaper"
-- TrueType font(s) for printing & display allows for high quality scaling to all sizes
-- Easy & fast note entry
-- Many editing functions
-- MusicXML import/export
-- MIDI (SMF) import/export
-- MEI import/export
-- MuseData import
-- MIDI input for note entry
-- Integrated sequencer and software synthesizer to play the score
-- Print or create PDF files
+- [Sử dụng và build](docs/PIANIST_WEB.md)
+- [Bộ bài được nhận và các file bị loại](scores/library/IMPORT_REPORT.md)
+- [Nguồn thuật toán chấm](third_party/practice-sources/PROVENANCE.md)
+- [Profile ABC và giới hạn chuyển đổi](docs/ABC_CONVERTER_RESULTS.md)
+- [Phát hành bằng GitHub Pages](deploy/PAGES.md)
 
-## More info
+## Build trên Windows
 
-- [MuseScore Homepage](https://musescore.org)
-- [MuseScore Git workflow instructions](https://musescore.org/en/developers-handbook/git-workflow)
-- [How to compile MuseScore?](https://github.com/musescore/MuseScore/wiki/Set-up-developer-environment)
+Checkout mới cần chạy `buildscripts/pianist/setup-web.ps1`, sau đó:
 
-## License
+```powershell
+.\buildscripts\pianist\build-pianist.ps1
+python buildscripts/pianist/serve-web.py
+```
 
-MuseScore Studio is licensed under GPL version 3.0. See [license file](https://github.com/musescore/MuseScore/blob/master/LICENSE.txt) in the same directory.
+Mở `http://127.0.0.1:8787/pianist.html`. Khi đã có native engine đúng phiên bản, dùng `-SkipEngine` để chỉ build lại web.
 
-## Packages
+```powershell
+cd apps/pianist-web
+npm test
+npm run build
+```
 
-See [Code Structure on Wiki](https://github.com/musescore/MuseScore/wiki/CodeStructure)
+## Mã nguồn và giấy phép
 
-## Building
+Native editor/playback dựa trên [MuseScore](https://github.com/musescore/MuseScore), base commit được ghim trong `buildscripts/pianist/toolchain.json`. README upstream được giữ tại [README-MuseScore.md](README-MuseScore.md).
 
-**Read the [Compilation section](https://github.com/musescore/MuseScore/wiki/Set-up-developer-environment) of the [MuseScore Wiki](https://github.com/musescore/MuseScore/wiki) for a complete build walkthrough and a list of dependencies.**
-
-### Getting sources
-
-If using git to download repo of entire code history, type:
-
-    git clone https://github.com/musescore/MuseScore.git
-    cd MuseScore
-
-Otherwise, you can just download the latest source release tarball from the [Releases page](https://github.com/musescore/MuseScore/releases), and then from your download directory type:
-
-    tar xzf MuseScore-x.x.x.tar.gz
-    cd MuseScore-x.x.x
-
-### Release Build
-
-To compile MuseScore Studio for release, type:
-
-    cmake -P build.cmake -DCMAKE_BUILD_TYPE=Release
-
-If something goes wrong, append the word "clean" to the above command to delete the build subdirectory:
-
-    cmake -P build.cmake -DCMAKE_BUILD_TYPE=Release clean
-
-Then try running the first command again.
-
-### Running
-
-To start MuseScore Studio, type:
-
-    cmake -P build.cmake -DCMAKE_BUILD_TYPE=Release run
-
-Or run the compiled executable directly.
-
-### Debug Build
-
-A debug version can be built and run by replacing `-DCMAKE_BUILD_TYPE=Release`
-with `-DCMAKE_BUILD_TYPE=Debug` in the above commands.
-
-If you omit the `-DCMAKE_BUILD_TYPE` option entirely then `RelWithDebInfo` is
-used by default, as it provides a useful compromise between Release and Debug.
-
-### Testing
-
-See the [Unit tests section](https://github.com/musescore/MuseScore/wiki/Unit-tests) of the [MuseScore Wiki](https://github.com/musescore/MuseScore/wiki) for instructions on how to run the test suite.
-
-### Code Formatting
-
-Run `./hooks/install.sh` to install a pre-commit hook that will format your staged files. Requires that you install `uncrustify`.
-
-If you have problems, please report them. To uninstall, run `./hooks/uninstall.sh`.
+Xem [GPL v3](LICENSE.txt), [third-party notices](docs/THIRD_PARTY_NOTICES.md) và giấy phép trong từng thư mục nguồn tham khảo. Release gồm mã nguồn đúng commit, pins, notices và hướng dẫn build.

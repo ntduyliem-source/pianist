@@ -2,6 +2,8 @@
 
 Cập nhật 19/10/2026. **Thư viện**, **Editor MuseScore** và **Tập piano** là ba màn riêng. Màn tập chỉ đọc bản nhạc; nhập/sửa/lưu vẫn dùng MuseScore WASM. Bộ chấm cũ đã bị xóa. Xem [nguồn và symbol](../third_party/practice-sources/PROVENANCE.md), [báo cáo R0–R7](R0_R7_RESULTS.md).
 
+Mở bản online tại **https://ntduyliem-source.github.io/pianist/**. Hướng dẫn đóng gói và triển khai ở [GitHub Pages](../deploy/PAGES.md).
+
 ## Chạy local và build
 
 ```powershell
@@ -20,7 +22,15 @@ Mở <http://127.0.0.1:8787/pianist.html>. Server phục vụ loopback, port 878
 4. Kết nối/chọn đàn MIDI hoặc dùng phím ảo/phím máy tính A W S E D F T G Y H U J. Bàn phím hiển thị một quãng có thể đổi, nhận toàn dải MIDI 0–127.
 5. Bắt đầu, tạm dừng/tiếp tục hoặc kết thúc. Kết quả có delta từng nốt, miss, input thừa, JSON, CSV và replay. Nút tập lại ô nhịp mở đúng project.
 
-Cấu hình đoạn/BPM thuộc từng bài. Quay lại từ editor, kể cả Browser Back, tạo snapshot mới. Lượt đang chạy/đang tạm dừng khóa thao tác đổi bài. Phố Xa do người dùng cung cấp là ví dụ local; gói public dùng bài CC0.
+Cấu hình đoạn/BPM thuộc từng bài. Quay lại từ editor, kể cả Browser Back, tạo snapshot mới. Lượt đang chạy/đang tạm dừng khóa thao tác đổi bài. Phố Xa là ví dụ local. Gói public có bài khởi động CC0 và **18 bài người dùng cung cấp**, đã kiểm nhập native, ánh xạ nốt và playback. Xem [danh sách nhận/bỏ](../scores/library/IMPORT_REPORT.md).
+
+## Nghe bản nhạc trong editor
+
+Mở bài rồi bấm **Phát nhạc**, **Tạm dừng**, **Dừng** hoặc kéo thanh vị trí. Khi con trỏ đang ở editor, **Space** phát/tạm dừng. Khi đang đặt focus vào nút hay ô nhập, phím giữ hành vi bàn phím thông thường của control đó. Thanh phát phản ánh thời gian từ playback native MuseScore, dùng tiếng MS Basic và cả các sửa đổi hiện tại của bản nhạc.
+
+Lần mở đầu tiên chờ bộ tiếng được tải và đăng ký vào audio engine trước khi tạo bài; giao diện hiện tiến trình chuẩn bị. Chuyển sang Thư viện/Tập piano sẽ dừng playback editor. Nếu tốc độ nghe được thay đổi qua công cụ native, màn tập vẫn dùng tempo viết trong bản nhạc; tốc độ editor được khôi phục khi quay lại. Playback editor không tạo lượt tập hay điểm.
+
+Phần **Bài hát có sẵn** hiện ở Thư viện và trang chọn bài tập. Mỗi bài chỉ tải khi mở, được kiểm dung lượng/SHA-256 rồi nhập vào thư viện trên thiết bị. Mở lại dùng bản đã lưu, giữ các sửa đổi của bạn. Bộ MXL 18 bài chỉ khoảng 211 KiB; phần tải lớn của ứng dụng là engine và tiếng đàn.
 
 ## Nhập, sửa và xuất ABC
 
@@ -46,7 +56,7 @@ Bản nhạc dùng SVG do MuseScore xuất, xếp liên tục theo system và gi
 
 **Chọn đoạn** mở A–B theo ô nhịp; nhập đủ số rồi Enter/rời trường hoặc chọn A/B trực tiếp trên sheet. **Nghe đoạn** phát âm hướng dẫn theo timeline, không tạo kết quả chấm. **Lại đoạn** lưu lượt hiện tại với trạng thái dừng sớm rồi bắt đầu lượt mới tại A, giữ màn tập. **Thiết lập** gom MIDI, tay/bè, count-in, vòng tập, tempo, trường độ, pedal và hiệu chuẩn; mở thiết lập khi đang chơi sẽ tạm dừng lượt.
 
-Kiểm tra v2: 83 test tự động, gồm oracle C#/Python của BPM/R4 và các ca camera, repeat, A–B, lưu lượt khi restart, màu nốt và giữ/nhả đúng lần đánh; build TypeScript/Vite và audit loại bỏ bộ chấm cũ đạt. Kiểm trình duyệt local với Phố Xa: nhập A–B nhiều chữ số, nghe đoạn và chạy BPM, di chuyển viewport, cuộn tay/quay lại, tạm dừng/restart, fullscreen và ẩn thanh. Đàn MIDI thật và HTTPS vẫn để sau.
+Kiểm tra v2 ban đầu: 83 test tự động, gồm oracle C#/Python của BPM/R4 và các ca camera, repeat, A–B, lưu lượt khi restart, màu nốt và giữ/nhả đúng lần đánh; build TypeScript/Vite và audit loại bỏ bộ chấm cũ đạt. Kiểm trình duyệt local với Phố Xa: nhập A–B nhiều chữ số, nghe đoạn và chạy BPM, di chuyển viewport, cuộn tay/quay lại, tạm dừng/restart, fullscreen và ẩn thanh. Đàn MIDI thật chưa kiểm; kiểm thử bổ sung ghi tại [playback và thư viện](EDITOR_PLAYBACK_LIBRARY.md).
 
 ## Đúng nốt — Piano Trainer Studio
 
@@ -129,4 +139,4 @@ python buildscripts/pianist/verify-release.py --directory artifacts/releases/pia
 python buildscripts/pianist/serve-web.py --directory artifacts/releases/pianist-web-2026-10-19-abc-r2/site --port 8788
 ```
 
-Gói có site, zip web, source đúng commit, toolchain/lockfile, hash, Caddy/Compose và DEPLOY.txt. Chưa phát hành hosting. Phải cung cấp source tương ứng và notices của PTS AGPL, osu! MIT, MuseScore/Qt khi phân phối; xem [inventory](THIRD_PARTY_NOTICES.md). Đàn thật/HTTPS chưa kiểm theo phạm vi đã thống nhất. Giới hạn snapshot 40 trang/50.000 nốt viết/24 MiB SVG, timeline 100.000 target/2 giờ/10 vòng; stress Node không thay benchmark máy/đàn.
+Gói có site, zip web, source đúng commit, toolchain/lockfile, hash, Caddy/Compose và DEPLOY.txt. Hosting hiện dùng [GitHub Pages](../deploy/PAGES.md), phát hành đúng gói tối ưu đã kiểm. Phải cung cấp source tương ứng và notices của PTS AGPL, osu! MIT, MuseScore/Qt khi phân phối; xem [inventory](THIRD_PARTY_NOTICES.md). Đàn MIDI thật chưa kiểm. Giới hạn snapshot 40 trang/50.000 nốt viết/24 MiB SVG, timeline 100.000 target/2 giờ/10 vòng; stress Node không thay benchmark máy/đàn.

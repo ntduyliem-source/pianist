@@ -64,6 +64,15 @@ EMSCRIPTEN_KEEPALIVE
 bool dispatchAction(const char* action) { return action && WebApi::instance()->dispatchAction(action); }
 
 EMSCRIPTEN_KEEPALIVE
+bool getEditorPlayback() { return WebApi::instance()->getEditorPlayback(); }
+
+EMSCRIPTEN_KEEPALIVE
+void checkAudioReady() { WebApi::instance()->checkAudioReady(); }
+
+EMSCRIPTEN_KEEPALIVE
+bool editorPlayback(const char* command, double value) { return command && WebApi::instance()->editorPlayback(command, value); }
+
+EMSCRIPTEN_KEEPALIVE
 void addSoundFont(const char* uri)
 {
     WebApi::instance()->addSoundFont(std::string(uri));

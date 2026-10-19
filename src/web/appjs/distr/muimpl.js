@@ -1,6 +1,7 @@
 import config from "./config.js";
 import qtLoad from "./qtloader.js";
 import AudioDriver from "./audiodriver.js";
+import {waitForAudioReady} from "./audio-ready.js";
 
 function setupInternalCallbacks(Module) {
 
@@ -182,14 +183,16 @@ const MuImpl = {
     },
 
     startAudioProcessing: async function() {
-        if (this.Module.audioRequested) return;
-        this.Module.audioRequested = true;
-        if (this.Module.driver?.inited) {
-            this.Module._startAudioProcessing()
-        } else {
-            console.log("driver not inited, start audio will be later")
-            this.Module.isNeedStartAudio = true;
+        if (!this.Module.audioRequested) {
+            this.Module.audioRequested = true;
+            if (this.Module.driver?.inited) {
+                this.Module._startAudioProcessing()
+            } else {
+                console.log("driver not inited, start audio will be later")
+                this.Module.isNeedStartAudio = true;
+            }
         }
+        await waitForAudioReady(this.Module);
     }
 }
 
