@@ -155,6 +155,16 @@ const MuImpl = {
         return this.loadScoreData(new Uint8Array(buffer), file.name)
     },
 
+    prepareProject: function(data, filename, semantics = false) {
+        if (!(data instanceof Uint8Array) || !data.length || data.length > 64 * 1024 * 1024) throw Error('Invalid temporary score size.');
+        const ptr = this.Module._malloc(data.length);
+        if (!ptr) throw Error('Cannot allocate temporary score.');
+        try {
+            this.Module.HEAPU8.set(data, ptr);
+            return this.Module.ccall('prepareProject', 'number', ['number', 'number', 'string', 'number'], [ptr, data.length, filename, Number(semantics)]);
+        } finally { this.Module._free(ptr); }
+    },
+
     loadScoreData: function(data, filename = 'score.mscz') {
         if (!(data instanceof Uint8Array) || !data.length || data.length > 32 * 1024 * 1024) {
             throw new Error('File must contain between 1 byte and 32 MiB.');

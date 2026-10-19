@@ -126,3 +126,24 @@ Production app: 539.84 kB raw JS / 143.11 kB gzip, converter Worker 14.78 kB raw
 the separate practice Worker remains byte-identical at 16.11 kB. Native WASM and
 the original grading algorithms were not changed. A3 multi-tune UI, A4 ABC export,
 A5 complete practice equivalence and A6 offline/release work remain pending.
+
+## A3 — Tunebook and durable source metadata
+
+Implementation checkpoint, 2026-10-19. Node suite: **103/103**, including
+atomic batch rollback on duplicate keys, quota exceptions and cancellation.
+ABC selections convert completely before sequential native temporary projects
+are prepared. No global score publication occurs until a single IndexedDB
+transaction has committed all fresh identities. A post-commit open failure
+explicitly reports that the imported scores are already saved.
+
+Source bytes, SHA-256, tune index/ID/title, converter version and diagnostics
+travel with each project. Backup manifest v2 validates these fields, source
+hashes and tune identity; legacy v1 remains readable. Source duplication and
+compiled output count toward a 128 MiB batch limit, with quota preflight.
+The chooser defaults to one tune, reports errors by tune, and lets the user
+deselect/retry or cancel. The native temporary-project/semantic capture API
+is also the foundation for A4 fidelity checks.
+
+Browser acceptance runner: `node tests/browser/pianist/abc-library.cjs`.
+At this checkpoint its run is pending the optimized native build; later
+acceptance results below supersede this checkpoint status.

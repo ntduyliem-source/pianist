@@ -1,6 +1,6 @@
 # Kế hoạch hỗ trợ ABC và MusicXML trong Pianist Web
 
-Cập nhật: 19/10/2026. Trạng thái: **A1 đạt profile giới hạn; A2 đã tích hợp và kiểm thử; A3–A7 chưa hoàn thành**. Bằng chứng và giới hạn: [ABC_CONVERTER_RESULTS.md](ABC_CONVERTER_RESULTS.md). Commit A1: `fb526afc`.
+Cập nhật: 19/10/2026. Trạng thái: **A1 đạt profile giới hạn; A2 đã tích hợp; A3 đã triển khai, đang nghiệm thu browser; A4–A7 chưa hoàn thành**. Bằng chứng và giới hạn: [ABC_CONVERTER_RESULTS.md](ABC_CONVERTER_RESULTS.md). Commit A1: `fb526afc`.
 
 Mục tiêu: người dùng nhập ABC hoặc MXL/MusicXML vào cùng thư viện, mở bằng editor MuseScore, sửa và lưu, rồi tập bằng chế độ Đúng nốt hoặc BPM. Màn tập riêng, chỉ đọc. Dữ liệu sau chỉnh sửa là nội dung được dùng để tập và xuất file.
 
@@ -21,7 +21,7 @@ Kiểm tra lại ngày 19/10/2026:
 
 Commit lưu mã nguồn và tài liệu được Git theo dõi. Các thư mục bị ignore như `build.artifacts`, `artifacts`, `examples/local` và dữ liệu thư viện IndexedDB không nằm trong commit. Phố Xa local vẫn được giữ ở máy, không đưa vào gói public.
 
-Ở mốc A0, `platform/files.ts` và bộ chọn file chỉ nhận MXL/XML/MusicXML/MSCZ/MSCX. Sau A2, mọi điểm mở/kéo thả nhận thêm ABC một bài, chuyển qua Worker rồi lưu MSCZ và giữ nguyên bytes nguồn. ABC nhiều bài được từ chối rõ ràng, chờ phần chọn bài A3. Xuất ABC và chuẩn bị offline cho runtime vẫn thuộc A4/A6.
+Ở mốc A0, `platform/files.ts` và bộ chọn file chỉ nhận MXL/XML/MusicXML/MSCZ/MSCX. Sau A2, mọi điểm mở/kéo thả nhận thêm ABC một bài, chuyển qua Worker rồi lưu MSCZ và giữ nguyên bytes nguồn. A3 bổ sung chọn nhiều bài theo index, chuẩn bị native độc lập và commit cả lô nguyên tử. Xuất ABC và chuẩn bị offline cho runtime vẫn thuộc A4/A6.
 
 ## 2. Phạm vi cần hoàn thành
 

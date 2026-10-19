@@ -6,12 +6,18 @@ import { download, fingerprint, prepareScoreFile } from './platform/files';
 import {ScoreFormatClient} from '../../../packages/score-formats/client';
 import type {ScoreConverter} from '../../../packages/score-formats';
 import type {FormatDiagnostic} from '../../../packages/score-formats/model';
+import {CONVERTER_VERSION, type AbcTune} from '../../../packages/score-formats/model';
+import {inspectAbc} from '../../../packages/score-formats/abc';
 import { MidiRouter } from './platform/midi-v2';
 import * as storage from './platform/storage';
 import {PracticeController} from './practice/controller-v2';
 import { loadEngineAssets } from './platform/engine-assets';
 
 type View = 'library' | 'editor' | 'practice' | 'results' | 'history';
+export interface TuneSelection {
+  filename: string; tunes: AbcTune[]; sourceBytes: number; practice: boolean;
+  selected: number[]; openIndex: number; errors: Record<number, string>; error?: string;
+}
 export interface WorkspaceState {
   view: View; busy: string; error: string; toast: string; projects: storage.ProjectRecord[]; history: SavedAttempt[];
   current?: storage.ProjectRecord; snapshot?: ScoreSnapshot; config?: PracticeSettings; result?: SavedAttempt;
@@ -21,6 +27,7 @@ export interface WorkspaceState {
   canCancelOpen?: boolean;
   engineFailed?: boolean;
   importDiagnostics?: FormatDiagnostic[];
+  tuneSelection?: TuneSelection;
 }
 export class Workspace {
   state: WorkspaceState = {view: 'library', busy: '', error: '', toast: '', projects: [], history: [], revision: 0, savedRevision: 0, recoveryRevision: 0, saveState: '', engineReady: false, midiVersion: 0, exampleTitle: 'Piano khởi động', practicePicker: true};
@@ -30,6 +37,7 @@ export class Workspace {
   private operation = 0; private fileAbort?: AbortController; private source?: {bytes: Uint8Array; filename: string}; private recovery?: storage.RecoveryRecord;
   private autosaving?: Promise<void>;
   private documentChange?: symbol;
+  private resolveTunes?: (choice: {indices: number[]; openIndex: number}) => void;
   private diagnosticSamples: object[] = [];
   constructor(private readonly scoreConverter: ScoreConverter = new ScoreFormatClient()) {}
   chooseFile: (practice?: boolean) => void = () => {}; showExport: () => void = () => {}; showAbout: () => void = () => {}; showSaveAs: () => void = () => {};
@@ -241,6 +249,10 @@ export class Workspace {
       if (file.size > 32 * 1024 * 1024) throw Error('File vượt giới hạn 32 MiB.');
       const data = new Uint8Array(await file.arrayBuffer());
       if (token !== this.operation) return;
+      if (/\.abc$/i.test(file.name)) {
+        await this.importAbc(data, file.name, practice, abort.signal, token);
+        return;
+      }
       if (/\.abc$/i.test(file.name)) this.patch({busy: 'Đang chuẩn bị bộ đọc ABC…'});
       const prepared = await prepareScoreFile(data, file.name, this.scoreConverter, abort.signal,
         () => {if (token === this.operation) this.patch({busy: 'Đang chuyển ABC thành bản nhạc…'});});
@@ -260,7 +272,93 @@ export class Workspace {
     } catch (error) {if (token === this.operation) throw error;}
     finally {if (token === this.operation) this.patch({busy: '', canCancelOpen: false});}
   }
-  cancelOpen(): void {if (!this.state.canCancelOpen) return; ++this.operation; this.documentChange = undefined; this.fileAbort?.abort(); this.bridge?.cancel(); this.patch({busy: '', canCancelOpen: false}); this.diagnostic('Đã hủy mở file.');}
+  cancelOpen(): void {if (!this.state.canCancelOpen) return; ++this.operation; this.documentChange = undefined; this.fileAbort?.abort(); this.bridge?.cancel(); this.patch({busy: '', canCancelOpen: false, tuneSelection: undefined}); this.diagnostic('Đã hủy thao tác.');}
+  selectTunes(indices: number[], openIndex: number): void {
+    const selection = this.state.tuneSelection;
+    if (!selection || !indices.length || new Set(indices).size !== indices.length
+      || indices.some(i => !Number.isInteger(i) || !selection.tunes[i]) || !indices.includes(openIndex)) return;
+    this.resolveTunes?.({indices: [...indices], openIndex});
+  }
+  private chooseTunes(selection: TuneSelection, signal: AbortSignal): Promise<{indices: number[]; openIndex: number}> {
+    signal.throwIfAborted();
+    return new Promise((resolve, reject) => {
+      const cleanup = () => {signal.removeEventListener('abort', cancel); this.resolveTunes = undefined; this.patch({tuneSelection: undefined});};
+      const cancel = () => {cleanup(); reject(signal.reason);};
+      this.resolveTunes = choice => {cleanup(); resolve(choice);};
+      signal.addEventListener('abort', cancel, {once: true});
+      this.patch({tuneSelection: selection, busy: 'Chọn bài trong file ABC'});
+    });
+  }
+  private async importAbc(data: Uint8Array, filename: string, practice: boolean, signal: AbortSignal, token: number): Promise<void> {
+    const {tunes} = inspectAbc(data);
+    const sourceHash = [...new Uint8Array(await crypto.subtle.digest('SHA-256', data.slice().buffer))].map(n => n.toString(16).padStart(2, '0')).join('');
+    let choice = {indices: [0], openIndex: 0}, errors: Record<number, string> = {}, batchError: string | undefined;
+    while (true) {
+      signal.throwIfAborted();
+      if (tunes.length > 1) choice = await this.chooseTunes({filename, tunes, sourceBytes: data.length, practice,
+        selected: choice.indices, openIndex: choice.openIndex, errors, error: batchError}, signal);
+      errors = {}; batchError = undefined;
+      const records: storage.ProjectRecord[] = [];
+      try {
+        await storage.checkImportCapacity(data.length * choice.indices.length);
+        // Validate every selection before constructing any native project. The
+        // original tunebook/preamble goes to upstream skip/num on each request.
+        const converted = [];
+        let transientBytes = data.length * choice.indices.length;
+        for (const index of choice.indices) {
+          signal.throwIfAborted();
+          this.patch({busy: `Đang chuyển bài ${index + 1}: ${tunes[index].title}…`});
+          try {
+            const prepared = await prepareScoreFile(data, filename, this.scoreConverter, signal, undefined, index);
+            transientBytes += prepared.bytes.length;
+            if (transientBytes > storage.MAX_IMPORT_BATCH_BYTES) throw Error('Lô chuyển đổi vượt 128 MiB. Hãy chọn ít bài hơn.');
+            converted.push({index, prepared});
+          } catch (error) {signal.throwIfAborted(); errors[index] = storage.storageError(error);}
+        }
+        if (Object.keys(errors).length) throw Error(tunes.length === 1 ? errors[0] : 'Bỏ chọn bài lỗi hoặc sửa nguồn rồi nhập lại.');
+        const bridge = await this.ensureEngine(); signal.throwIfAborted(); this.requireInactiveSession();
+        for (const {index, prepared} of converted) {
+          this.patch({busy: `Đang chuẩn bị ${prepared.title} trong MuseScore…`});
+          // Yield between native calls so cancel can run. Each call owns and
+          // releases its temporary project before the next one starts.
+          await new Promise(resolve => setTimeout(resolve, 0)); signal.throwIfAborted();
+          let bytes: Uint8Array;
+          try {bytes = bridge.prepare(prepared.bytes, prepared.filename);}
+          catch (error) {errors[index] = storage.storageError(error); throw error;}
+          prepared.bytes = new Uint8Array();
+          const title = prepared.title!, tune = tunes[index], now = Date.now();
+          records.push({id: crypto.randomUUID(), title, filename: title + '.mscz', bytes, source: data, sourceName: filename,
+            sourceFormat: 'abc', sourceHash, sourceTuneIndex: index, sourceTuneId: tune.id.slice(0, 4096),
+            sourceTuneTitle: tune.title.slice(0, 4096), converterVersion: CONVERTER_VERSION,
+            importDiagnostics: prepared.diagnostics, revision: 1, createdAt: now, updatedAt: now});
+          await storage.checkImportCapacity(records.reduce((sum, p) => sum + p.bytes.length + data.length, 0));
+        }
+        signal.throwIfAborted(); this.requireInactiveSession();
+        this.patch({busy: `Đang lưu ${records.length} bài vào thư viện…`, canCancelOpen: false});
+        await storage.insertProjects(records, signal);
+      } catch (error) {
+        signal.throwIfAborted();
+        if (error instanceof WebAssembly.RuntimeError || tunes.length === 1) throw error;
+        batchError = storage.storageError(error); this.patch({canCancelOpen: true}); continue;
+      }
+      // Commit succeeded. Opening is deliberately separate: an opening error
+      // must never tell the user the already durable batch was rolled back.
+      const record = records.find(p => p.sourceTuneIndex === choice.openIndex)!;
+      try {
+        await this.refresh();
+        await this.switchDocument(record, record.bytes, record.filename);
+        this.patch({importDiagnostics: record.importDiagnostics?.length ? record.importDiagnostics : undefined});
+        if (practice) await this.practice(); else this.navigate('editor');
+        this.notice(`Đã nhập ${records.length} bài và giữ nguyên file ABC nguồn.`);
+        this.diagnostic('Đã mở ' + filename + '.');
+      } catch (error) {
+        if (error instanceof WebAssembly.RuntimeError) throw error;
+        throw Error(`Đã lưu đủ ${records.length} bài trong thư viện, nhưng chưa mở được bài đã chọn: ${storage.storageError(error)}`);
+      }
+      if (token === this.operation) this.patch({canCancelOpen: false});
+      return;
+    }
+  }
   async openProject(id: string, practice = false): Promise<void> {
     return this.changeDocument(() => this.openStoredProject(id, practice));
   }

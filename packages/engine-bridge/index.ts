@@ -3,6 +3,8 @@ import type { ScoreSnapshot } from '../score-contracts/index';
 export interface NativeApi {
   Module: any; loadScoreData(bytes: Uint8Array, filename: string): boolean; saveProject(): number;
   serializeProject(): number; exportScore(format: string): number; dispatchAction(action: string): number;
+  prepareProject(bytes: Uint8Array, filename: string, semantics?: boolean): number;
+  getScoreSemantics(): number;
   getPracticeSnapshot(): number; setPracticeActive(active: boolean): number; midiInput(status: number, data1: number, data2: number): number;
   startAudioProcessing(): Promise<void>;
 }
@@ -10,6 +12,27 @@ export class EngineBridge {
   readonly schemaVersion = 1;
   revision = 0; practiceActive = false; private request = 0;
   constructor(readonly api: NativeApi) {}
+  private capture<T>(callback: string, call: () => number, copy: (value: any) => T, message: string): T {
+    const previous = this.api.Module[callback], revision = this.revision;
+    let result: T | undefined;
+    this.api.Module[callback] = (value: any) => {result = copy(value);};
+    try {
+      if (!call() || result === undefined) throw Error(message);
+      if (revision !== this.revision) throw Error('Bản nhạc thay đổi trong lúc xử lý. Hãy thử lại.');
+      return result;
+    } finally {this.api.Module[callback] = previous;}
+  }
+  prepare(bytes: Uint8Array, filename: string): Uint8Array {
+    return this.capture('onProjectPrepared', () => this.api.prepareProject(bytes, filename), value => new Uint8Array(value), 'MuseScore không chuẩn bị được bài này (MSCZ tối đa 32 MiB).');
+  }
+  musicXml(): Uint8Array {
+    return this.capture('onXmlExported', () => this.api.exportScore('musicxml'), value => new Uint8Array(value), 'Không lấy được MusicXML đang chỉnh sửa.');
+  }
+  semantics(bytes?: Uint8Array, filename = 'roundtrip.musicxml'): ScoreSnapshot {
+    return this.capture(bytes ? 'onPreparedSemantics' : 'onScoreSemantics',
+      () => bytes ? this.api.prepareProject(bytes, filename, true) : this.api.getScoreSemantics(),
+      value => JSON.parse(value), 'Không lấy được dữ liệu nhạc để đối chiếu ABC. Hãy xuất MXL hoặc MSCZ.');
+  }
   serialize(): Uint8Array {
     let result: Uint8Array | undefined;
     this.api.Module.onProjectSerialized = (bytes: Uint8Array) => { result = new Uint8Array(bytes); };

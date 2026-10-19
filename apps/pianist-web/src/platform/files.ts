@@ -40,9 +40,9 @@ export async function validateFile(bytes: Uint8Array, filename: string, signal?:
   }
 }
 export async function prepareScoreFile(bytes: Uint8Array, filename: string, converter: ScoreConverter,
-  signal?: AbortSignal, onReady?: () => void): Promise<PreparedScore> {
+  signal?: AbortSignal, onReady?: () => void, tuneIndex?: number): Promise<PreparedScore> {
   await validateFile(bytes, filename, signal);
-  const prepared = await prepareImport(bytes, filename, converter, signal, onReady);
+  const prepared = await prepareImport(bytes, filename, converter, signal, onReady, tuneIndex);
   if (/\.abc$/i.test(filename)) {
     // Generated XML has a separate 64 MiB limit; source files remain 32 MiB.
     if (!prepared.bytes.length || prepared.bytes.length > EXPANDED) throw Error('MusicXML sinh ra rỗng hoặc vượt giới hạn 64 MiB.');

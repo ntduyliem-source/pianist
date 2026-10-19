@@ -38,11 +38,21 @@ static QJsonObject box(const muse::RectF& r)
 
 bool WebApi::getSnapshot()
 {
-    if (!m_currentProject) { return false; }
-    const auto notation = m_currentProject->masterNotation()->notation();
+    return snapshotFor(m_currentProject, true, "onPracticeSnapshot");
+}
+
+bool WebApi::getScoreSemantics()
+{
+    return snapshotFor(m_currentProject, false, "onScoreSemantics");
+}
+
+bool WebApi::snapshotFor(const project::INotationProjectPtr& project, bool drawings, const char* callback)
+{
+    if (!project) { return false; }
+    const auto notation = project->masterNotation()->notation();
     auto* score = notation->elements()->msScore();
     const auto svgWriter = writers()->writer("svg");
-    if (!score || !svgWriter || score->pages().empty() || score->pages().size() > 40) { return false; }
+    if (!score || (drawings && (!svgWriter || score->pages().empty() || score->pages().size() > 40))) { return false; }
 
     QJsonArray pages, measures, staves, occurrences, performed, beats, pedals, keyReleases;
     std::map<const engraving::Note*, QString> noteIds;
@@ -52,7 +62,7 @@ bool WebApi::getSnapshot()
     auto imageConfig = muse::modularity::globalIoc()->resolve<iex::imagesexport::IImagesExportConfiguration>("appjs");
     const int trim = imageConfig ? imageConfig->trimMarginPixelSize() : -1;
     size_t svgBytes = 0;
-    for (size_t p = 0; p < score->pages().size(); ++p) {
+    for (size_t p = 0; drawings && p < score->pages().size(); ++p) {
         muse::io::Buffer buffer;
         buffer.open(muse::io::IODevice::WriteOnly);
         project::INotationWriter::Options options;
@@ -119,6 +129,7 @@ bool WebApi::getSnapshot()
                         }
                     }
                     notes[note] = data;
+                    if (!drawings) { notes[note]["spelling"] = note->tpc(); }
                     if (notes.size() > 50000) { return false; }
                 }
             }
@@ -223,6 +234,6 @@ bool WebApi::getSnapshot()
                              {"performed", performed}, {"beats", beats}, {"warnings", warningList},
                              {"durationReference", "musescore-midi"}, {"keyReleases", keyReleases}, {"pedals", pedals}};
     const auto json = QJsonDocument(result).toJson(QJsonDocument::Compact);
-    emscripten::val::module_property("onPracticeSnapshot")(json.toStdString());
+    emscripten::val::module_property(callback)(json.toStdString());
     return true;
 }

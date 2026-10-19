@@ -182,6 +182,31 @@ bool WebApi::serializeProject()
     return true;
 }
 
+bool WebApi::prepareProject(const void* source, unsigned int len, const std::string& filename, bool semantics)
+{
+    // Parse and serialize without publishing to globalContext. The live score,
+    // its undo stack, selection and revision remain owned by the editor.
+    std::string format = io::suffix(io::path_t(filename));
+    std::transform(format.begin(), format.end(), format.begin(), [](unsigned char c) { return std::tolower(c); });
+    static const std::set<std::string> formats { "mxl", "xml", "musicxml", "mscz", "mscx" };
+    if (!source || !len || len > 64 * 1024 * 1024 || !formats.count(format)) { return false; }
+    const io::path_t input = std::string("/mu/temp/pianist-prepare.") + format;
+    const io::path_t output = "/mu/temp/pianist-prepared.mscz";
+    if (!io::File::writeFile(input, ByteArray::fromRawData(reinterpret_cast<const char*>(source), len))) { return false; }
+    auto project = projectCreator()->newProject(iocContext());
+    const Ret loaded = project->load(input, {}, format);
+    io::File::remove(input);
+    if (!loaded) { return false; }
+    if (semantics) { return snapshotFor(project, false, "onPreparedSemantics"); }
+    const Ret saved = project->save(output, project::SaveMode::AutoSave, false);
+    ByteArray data;
+    const bool read = saved && io::File::readFile(output, data);
+    io::File::remove(output);
+    if (!read || data.empty() || data.size() > 32 * 1024 * 1024) { return false; }
+    callJsWithBytes("onProjectPrepared", data.constData(), data.size());
+    return true; // Local shared_ptr releases the temporary project here.
+}
+
 void WebApi::bumpRevision()
 {
     ++m_revision;

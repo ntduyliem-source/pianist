@@ -1,6 +1,11 @@
 import type { SavedAttempt } from '../../../../packages/practice-engine-v2/model';
+import type {FormatDiagnostic} from '../../../../packages/score-formats/model';
 
-export interface ProjectRecord {id: string; title: string; filename: string; bytes: Uint8Array; source?: Uint8Array; sourceName?: string; revision: number; fingerprint?: string; updatedAt: number; createdAt: number; archived?: boolean}
+export interface SourceMetadata {
+  sourceFormat?: string; sourceHash?: string; sourceTuneIndex?: number; sourceTuneId?: string;
+  sourceTuneTitle?: string; converterVersion?: string; importDiagnostics?: FormatDiagnostic[];
+}
+export interface ProjectRecord extends SourceMetadata {id: string; title: string; filename: string; bytes: Uint8Array; source?: Uint8Array; sourceName?: string; revision: number; fingerprint?: string; updatedAt: number; createdAt: number; archived?: boolean}
 export interface RecoveryRecord {id: string; bytes: Uint8Array; revision: number; updatedAt: number; title: string; filename: string}
 export interface LibraryData {projects: ProjectRecord[]; recovery: RecoveryRecord[]; sessions: SavedAttempt[]; settings: {id: string; [key: string]: unknown}[]}
 const OWNER = crypto.randomUUID(), LEASE_MS = 20000;
@@ -93,6 +98,27 @@ export async function restoreLibrary(data: LibraryData): Promise<void> {
   try {for (const name of names) for (const record of data[name]) tx.objectStore(name).add(record);}
   catch (error) {tx.abort(); await done.catch(() => {}); throw error;}
   await done;
+}
+export const MAX_IMPORT_BATCH_BYTES = 128 * 1024 * 1024;
+export async function checkImportCapacity(bytes: number): Promise<void> {
+  if (bytes > MAX_IMPORT_BATCH_BYTES) throw Error('Lô nhập vượt 128 MiB (gồm bản nguồn trong từng bài). Hãy chọn ít bài hơn.');
+  const estimate = typeof navigator !== 'undefined' ? await navigator.storage?.estimate?.() : undefined;
+  if (estimate?.quota !== undefined && estimate.usage !== undefined && bytes > estimate.quota - estimate.usage)
+    throw new DOMException('Không đủ chỗ lưu lô bài.', 'QuotaExceededError');
+}
+/** Fresh identities only; abort rolls back every add, including quota failures. */
+export async function insertProjects(projects: ProjectRecord[], signal?: AbortSignal): Promise<void> {
+  signal?.throwIfAborted();
+  await checkImportCapacity(projects.reduce((sum, p) => sum + p.bytes.length + (p.source?.length ?? 0), 0));
+  const db = await openDatabase(); signal?.throwIfAborted();
+  const tx = db.transaction('projects', 'readwrite'), done = committed(tx);
+  const abort = () => {try {tx.abort();} catch { /* Already committed. */ }};
+  signal?.addEventListener('abort', abort, {once: true});
+  try {
+    for (const project of projects) tx.objectStore('projects').add(project);
+    await done;
+  } catch (error) {abort(); await done.catch(() => {}); throw error;}
+  finally {signal?.removeEventListener('abort', abort);}
 }
 export function storageError(e: unknown): string {
   return e instanceof DOMException && e.name === 'QuotaExceededError'

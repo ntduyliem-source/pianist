@@ -2,7 +2,7 @@ export const CONVERTER_VERSION = 'abc2xml-2.68+xml2abc-1.77';
 export const MAX_INPUT_BYTES = 32 * 1024 * 1024;
 export const MAX_OUTPUT_BYTES = 64 * 1024 * 1024;
 export interface FormatDiagnostic {level: 'warning' | 'error'; code: string; message: string}
-export interface AbcTune {index: number; id: string; title: string}
+export interface AbcTune {index: number; id: string; title: string; hasTitle?: boolean}
 export type FormatOperation = 'inspect-abc' | 'abc-to-xml' | 'xml-to-abc';
 export interface FormatJob {operation: FormatOperation; text: string; tuneIndex?: number}
 export interface FormatResult {

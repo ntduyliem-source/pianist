@@ -53,6 +53,8 @@ public:
     bool load(const void* source, unsigned int len, const std::string& filename);
     bool saveProject();
     bool serializeProject();
+    bool prepareProject(const void* source, unsigned int len, const std::string& filename, bool semantics);
+    bool getScoreSemantics();
     bool getSnapshot();
     bool setPracticeActive(bool active);
     bool midiInput(int status, int data1, int data2);
@@ -67,6 +69,7 @@ private:
 
     void onProjectSaved(const muse::io::path_t& path, mu::project::SaveMode mode);
     void bumpRevision();
+    bool snapshotFor(const project::INotationProjectPtr& project, bool drawings, const char* callback);
 
     project::INotationProjectPtr m_currentProject;
     unsigned int m_revision = 0;

@@ -14,5 +14,6 @@ export function inspectAbc(bytes: Uint8Array): {text: string; tunes: AbcTune[]} 
   const fragments = text.split(/^\s*X:/m), bodies = fragments.length > 1 ? fragments.slice(1) : ['1\n' + text];
   if (bodies.length > 1000) throw Error('File ABC vượt giới hạn 1.000 bài; hãy chia thành file nhỏ hơn.');
   return {text, tunes: bodies.map((body, index) => ({index, id: body.split('\n', 1)[0].trim(),
-    title: /^\s*T:\s*([^\n]*)/m.exec(body)?.[1].trim() || `Bài ${index + 1}`}))};
+    title: /^\s*T:\s*([^\n]*)/m.exec(body)?.[1].trim() || `Bài ${index + 1}`,
+    hasTitle: !!/^\s*T:\s*([^\n]*)/m.exec(body)?.[1].trim()}))};
 }

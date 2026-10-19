@@ -39,7 +39,8 @@ function setup(t:TestContext, formats:ScoreConverter=converter) {
   (ws as any).diagnostic=()=>{};(ws as any).measureDiagnostic=()=>{};ws.notice=()=>{};ws.autosave=async()=>{};
   ws.navigate=view=>ws.patch({view});
   const api={Module:{},loadScoreData(bytes:Uint8Array,filename:string){calls.push({filename,bytes});return true;},setPracticeActive(){return 1;},
-    serializeProject(){(api.Module as any).onProjectSerialized(Uint8Array.of(80,75,1,2));return 1;}};
+    serializeProject(){(api.Module as any).onProjectSerialized(Uint8Array.of(80,75,1,2));return 1;},
+    prepareProject(){(api.Module as any).onProjectPrepared(Uint8Array.of(80,75,1,2));return 1;}};
   const bridge=ws.bridge=new EngineBridge(api as unknown as NativeApi);ws.ensureEngine=async()=>bridge;
   t.after(async()=>{if(ws.state.current)await storage.releaseProject(ws.state.current.id);});
   return {ws,calls,bridge,api};
@@ -49,7 +50,7 @@ const tick=()=>new Promise<void>(resolve=>setImmediate(resolve));
 test('ABC imports once into native, retains source, saves MSCZ and reopens without reconversion',async t=>{
   let count=0;const {ws,calls}=setup(t,{run:async()=>{count++;return success;}});
   await ws.importFile(new File([abc],'source.abc'));
-  assert.equal(count,1);assert.equal(calls[0].filename,'source.musicxml');assert.equal(ws.state.view,'editor');
+  assert.equal(count,1);assert.equal(calls[0].filename,'Bài tiếng Việt.mscz');assert.equal(ws.state.view,'editor');
   const record=await storage.get<storage.ProjectRecord>('projects',ws.state.current!.id);
   assert.equal(record!.title,'Bài tiếng Việt');assert.equal(record!.filename,'Bài tiếng Việt.mscz');
   assert.equal(record!.sourceName,'source.abc');assert.deepEqual(record!.source,encode(abc));assert.deepEqual(record!.bytes,Uint8Array.of(80,75,1,2));
@@ -73,10 +74,10 @@ test('a newer import supersedes cancellable preparation; the old response cannot
   const resolves:((r:FormatResult)=>void)[]=[];
   const {ws,calls}=setup(t,{run:()=>new Promise(r=>resolves.push(r))});
   const a=ws.importFile(new File([abc],'first.abc'));while(resolves.length<1)await tick();
-  const b=ws.importFile(new File([abc],'second.abc'));while(resolves.length<2)await tick();
+  const b=ws.importFile(new File([abc.replace('T:Bài tiếng Việt','T:Second')],'second.abc'));while(resolves.length<2)await tick();
   resolves[0](success);await a;assert.ok(ws.state.busy);assert.equal(calls.length,0);
   resolves[1]({...success,title:'Second'});await b;
-  assert.equal(ws.state.current!.title,'Second');assert.equal(calls.length,1);assert.equal(calls[0].filename,'second.musicxml');assert.equal(ws.state.busy,'');
+  assert.equal(ws.state.current!.title,'Second');assert.equal(calls.length,1);assert.equal(calls[0].filename,'Second.mscz');assert.equal(ws.state.busy,'');
 });
 test('active practice locks all ABC entry points, including a session that starts during conversion',async t=>{
   let resolve!:(r:FormatResult)=>void;
@@ -87,9 +88,47 @@ test('active practice locks all ABC entry points, including a session that start
   ws.session={status:'paused'} as PracticeController;resolve(success);await assert.rejects(pending,/Kết thúc lượt/);assert.equal(calls.length,0);
 });
 test('native import rejection retains prior project, read-only practice mode and project count',async t=>{
-  const {ws,api,bridge}=setup(t);api.loadScoreData=()=>false;bridge.practiceActive=true;
+  const {ws,api,bridge}=setup(t);api.prepareProject=()=>0;bridge.practiceActive=true;
   const current:storage.ProjectRecord={id:'old-native',title:'Old',filename:'old.mscz',bytes:Uint8Array.of(1),revision:4,createdAt:0,updatedAt:0};
   ws.patch({current});const count=(await storage.list('projects')).length;
-  await assert.rejects(ws.importFile(new File([abc],'native-error.abc')),/Không mở/);
+  await assert.rejects(ws.importFile(new File([abc],'native-error.abc')),/không chuẩn bị/);
   assert.equal(ws.state.current,current);assert.equal(bridge.practiceActive,true);assert.equal((await storage.list('projects')).length,count);
+});
+
+const book=abc+'\n'+abc.replace('C D E F','G A B c')+'\nX:1\nM:4/4\nL:1/4\nK:C\nC4|';
+test('tunebook selects by index, validates all before native work, commits fresh identities and opens chosen tune',async t=>{
+  const jobs:number[]=[];const {ws,api,calls}=setup(t,{run:async job=>{jobs.push(job.tuneIndex!);return success;}});
+  let prepared=0;api.prepareProject=()=>{assert.deepEqual(jobs,[1,2]);prepared++;(api.Module as any).onProjectPrepared(Uint8Array.of(80,75,prepared));return 1;};
+  const before=(await storage.list('projects')).length;
+  const importing=ws.importFile(new File([book],'tuyển tập.abc'));while(!ws.state.tuneSelection)await tick();
+  assert.deepEqual(ws.state.tuneSelection.selected,[0]);ws.selectTunes([1,2],2);await importing;
+  const records=(await storage.list<storage.ProjectRecord>('projects')).filter(p=>p.sourceName==='tuyển tập.abc');
+  assert.equal((await storage.list('projects')).length,before+2);assert.equal(records.length,2);assert.equal(prepared,2);assert.equal(calls.length,1);
+  assert.equal(ws.state.current!.title,'tuyển tập — 3');assert.equal(ws.state.current!.sourceTuneIndex,2);
+  for(const p of records){assert.equal(p.sourceFormat,'abc');assert.match(p.sourceHash!,/^[a-f0-9]{64}$/);assert.deepEqual(p.source,encode(book));assert.equal(p.sourceTuneId,'1');assert.equal(p.converterVersion,CONVERTER_VERSION);}
+  assert.equal(new Set(records.map(p=>p.id)).size,2);
+});
+
+test('bad selected tune permits deselect/retry, with no partial projects and no native call before validation',async t=>{
+  const {ws,api,calls}=setup(t,{run:async job=>{if(job.tuneIndex===1)throw Error('bad tune rhythm');return success;}});
+  const before=(await storage.list('projects')).length;let prepared=0;
+  api.prepareProject=()=>{prepared++;(api.Module as any).onProjectPrepared(Uint8Array.of(80,75));return 1;};
+  const importing=ws.importFile(new File([book],'retry.abc'));while(!ws.state.tuneSelection)await tick();
+  ws.selectTunes([0,1],0);while(!ws.state.tuneSelection?.error)await tick();
+  assert.match(ws.state.tuneSelection.errors[1],/bad tune/);assert.equal(prepared,0);assert.equal(calls.length,0);assert.equal((await storage.list('projects')).length,before);
+  ws.selectTunes([0],0);await importing;assert.equal(prepared,1);assert.equal((await storage.list('projects')).length,before+1);
+});
+
+test('cancel after one prepared native project writes nothing and leaves old score/revision untouched',async t=>{
+  const {ws,api,calls}=setup(t);const old:storage.ProjectRecord={id:'cancel-prepared',title:'Old',filename:'old.mscz',bytes:Uint8Array.of(1),revision:9,createdAt:0,updatedAt:0};
+  ws.patch({current:old,revision:9});const before=await storage.list('projects');
+  api.prepareProject=()=>{(api.Module as any).onProjectPrepared(Uint8Array.of(80,75));ws.cancelOpen();return 1;};
+  const pending=ws.importFile(new File([book],'cancel-prepared.abc'));while(!ws.state.tuneSelection)await tick();
+  ws.selectTunes([0,1],1);await pending;assert.equal(ws.state.current,old);assert.equal(ws.state.revision,9);assert.equal(calls.length,0);assert.deepEqual(await storage.list('projects'),before);
+});
+
+test('opening failure after commit reports that the selected batch was saved',async t=>{
+  const {ws,api}=setup(t);api.loadScoreData=()=>false;const before=(await storage.list('projects')).length;
+  await assert.rejects(ws.importFile(new File([abc],'opening-failure.abc')),/Đã lưu đủ 1 bài/);
+  assert.equal((await storage.list('projects')).length,before+1);
 });

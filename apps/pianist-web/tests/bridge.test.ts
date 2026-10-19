@@ -29,3 +29,12 @@ test('serialized bytes are copied before native memory can change', () => {
   const saved = new EngineBridge(api).serialize(); bytes[0] = 255;
   assert.deepEqual([...saved], [1, 2, 3]); assert.equal(Module.onProjectSerialized, undefined);
 });
+
+test('temporary projects and XML capture copy native memory and restore callbacks on success/failure',()=>{
+  const old=()=>{},Module:any={onXmlExported:old,onProjectPrepared:old},bytes=Uint8Array.of(1,2);
+  const api={Module,prepareProject(){Module.onProjectPrepared(bytes);return 1;},exportScore(){Module.onXmlExported(bytes);return 1;}} as unknown as NativeApi;
+  const bridge=new EngineBridge(api),prepared=bridge.prepare(bytes,'a.musicxml'),xml=bridge.musicXml();bytes[0]=9;
+  assert.deepEqual([...prepared],[1,2]);assert.deepEqual([...xml],[1,2]);assert.equal(Module.onXmlExported,old);assert.equal(Module.onProjectPrepared,old);
+  api.exportScore=()=>{throw Error('export failed');};assert.throws(()=>bridge.musicXml(),/export failed/);assert.equal(Module.onXmlExported,old);
+  api.prepareProject=()=>0;assert.throws(()=>bridge.prepare(bytes,'bad.musicxml'));assert.equal(Module.onProjectPrepared,old);
+});

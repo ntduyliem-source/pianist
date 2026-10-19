@@ -32,3 +32,6 @@
 .import-notice{background:#f0f6ff;border-color:#b4cbea;color:#355680}.import-notice details{max-height:35vh;overflow:auto;overflow-wrap:anywhere}.import-notice summary{cursor:pointer}.import-notice ul{padding-left:20px;margin:10px 0 0}
 
 .error-banner>span{white-space:pre-wrap;max-height:45vh;overflow:auto;overflow-wrap:anywhere}
+
+/* Tunebook selection keeps the current editor underneath the modal. */
+.tune-dialog {width:min(760px,90vw);max-height:88vh}.tune-list {max-height:45vh;overflow:auto;border-block:1px solid #e2e5ea}.tune-row {display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;padding:12px 4px;border-bottom:1px solid #eceef2}.tune-row label {display:flex;align-items:center;gap:10px;margin:0}.tune-row input {width:auto;margin:0}.tune-row small {display:block;color:#677080;margin-top:3px}.tune-row label:first-child {flex:1;min-width:180px}.tune-open {font-size:13px}.tune-error {color:#9c3131;white-space:pre-wrap;overflow-wrap:anywhere}.tune-row .tune-error {width:100%;margin:0}.source-label {display:inline-block;font-size:11px;color:#5b5779;background:#f0eef8;border-radius:4px;padding:3px 7px}

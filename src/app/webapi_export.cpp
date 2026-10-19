@@ -40,6 +40,15 @@ EMSCRIPTEN_KEEPALIVE
 bool serializeProject() { return WebApi::instance()->serializeProject(); }
 
 EMSCRIPTEN_KEEPALIVE
+bool prepareProject(const void* source, unsigned int len, const char* filename, bool semantics)
+{
+    return filename && WebApi::instance()->prepareProject(source, len, filename, semantics);
+}
+
+EMSCRIPTEN_KEEPALIVE
+bool getScoreSemantics() { return WebApi::instance()->getScoreSemantics(); }
+
+EMSCRIPTEN_KEEPALIVE
 bool getPracticeSnapshot() { return WebApi::instance()->getSnapshot(); }
 
 EMSCRIPTEN_KEEPALIVE

@@ -60,3 +60,28 @@ test('restore is atomic on a duplicate-key failure and never overwrites existing
   assert.equal(after.recovery[0].revision, 2); assert.equal(after.sessions[0].id, copies.sessions[0].id);
   await storage.releaseProject(data.projects[0].id);
 });
+
+test('backup v2 preserves selected ABC source metadata; v1 remains readable and forged tune/hash is rejected',async()=>{
+  const data=library(),abc=strToU8('X:7\nT:Trùng\nK:C\nC4|\nX:7\nT:Trùng\nK:C\nD4|');
+  Object.assign(data.projects[0],{source:abc,sourceName:'book.abc',sourceFormat:'abc',sourceTuneIndex:1,sourceTuneId:'7',sourceTuneTitle:'Trùng',
+    sourceHash:Buffer.from(await crypto.subtle.digest('SHA-256',abc.slice().buffer)).toString('hex'),converterVersion:'abc2xml-2.68+xml2abc-1.77',importDiagnostics:[{level:'warning',code:'upstream',message:'layout'}]});
+  const bytes=await encodeLibrary(data);assert.deepEqual((await decodeLibrary(bytes)).data,data);
+  const copy=restoredCopies(await decodeLibrary(bytes));assert.deepEqual(copy.projects[0].source,abc);assert.equal(copy.projects[0].sourceTuneIndex,1);
+  for(const patch of [{sourceTuneIndex:2},{sourceHash:'0'.repeat(64)},{sourceTuneId:'8'},{sourceFormat:3},{importDiagnostics:[{level:'warning',message:3}]}]) {
+    const files=unzipSync(bytes),m=JSON.parse(strFromU8(files['manifest.json']));Object.assign(m.projects[0],patch);files['manifest.json']=strToU8(JSON.stringify(m));
+    await assert.rejects(decodeLibrary(zipSync(files)),/không hợp lệ/);
+  }
+  const legacy=library(),old=unzipSync(await encodeLibrary(legacy)),m=JSON.parse(strFromU8(old['manifest.json']));m.version=1;old['manifest.json']=strToU8(JSON.stringify(m));assert.deepEqual((await decodeLibrary(zipSync(old))).data,legacy);
+});
+
+test('import batch is atomic on quota, duplicate key and cancellation; caps include source copies',async t=>{
+  const before=await storage.list('projects'),p=library().projects[0];
+  const first={...p,id:crypto.randomUUID()},second={...p,id:crypto.randomUUID()};
+  await assert.rejects(storage.insertProjects([first,first]));assert.deepEqual(await storage.list('projects'),before);
+  const original=IDBObjectStore.prototype.add;let adds=0;
+  t.mock.method(IDBObjectStore.prototype,'add',function(this:IDBObjectStore,value:unknown,key?:IDBValidKey){if(++adds===2)throw new DOMException('Quota','QuotaExceededError');return original.call(this,value,key);});
+  await assert.rejects(storage.insertProjects([first,second]),{name:'QuotaExceededError'});assert.deepEqual(await storage.list('projects'),before);t.mock.restoreAll();
+  const abort=new AbortController();t.mock.method(IDBObjectStore.prototype,'add',function(this:IDBObjectStore,value:unknown,key?:IDBValidKey){const req=original.call(this,value,key);abort.abort();return req;});
+  await assert.rejects(storage.insertProjects([first],abort.signal));assert.deepEqual(await storage.list('projects'),before);t.mock.restoreAll();
+  await assert.rejects(storage.checkImportCapacity(storage.MAX_IMPORT_BATCH_BYTES+1),/128 MiB/);
+});

@@ -2,12 +2,13 @@ import {Unzip, UnzipInflate, zip, strToU8, strFromU8} from 'fflate';
 import type {LibraryData, ProjectRecord, RecoveryRecord} from './storage';
 import type {SavedAttempt} from '../../../../packages/practice-engine-v2/model';
 import {validateFile} from './files';
+import {inspectAbc} from '../../../../packages/score-formats/abc';
 
 const LIMIT = 256 * 1024 * 1024;
 type FileRef = {path: string; bytes: number; sha256: string};
 type SavedProject = Omit<ProjectRecord, 'bytes' | 'source'> & {data: FileRef; sourceData?: FileRef};
 type SavedRecovery = Omit<RecoveryRecord, 'bytes'> & {data: FileRef};
-interface Manifest {format: 'pianist-library'; version: 1; createdAt: number; projects: SavedProject[]; recovery: SavedRecovery[]; sessions: FileRef; settings: FileRef}
+interface Manifest {format: 'pianist-library'; version: 1 | 2; createdAt: number; projects: SavedProject[]; recovery: SavedRecovery[]; sessions: FileRef; settings: FileRef}
 export interface LibraryBackup {createdAt: number; data: LibraryData; bytes: number}
 const hash = async (data: Uint8Array) => [...new Uint8Array(await crypto.subtle.digest('SHA-256', data.slice().buffer))].map(n => n.toString(16).padStart(2, '0')).join('');
 const object = (x: unknown): x is Record<string, any> => !!x && typeof x === 'object' && !Array.isArray(x);
@@ -17,6 +18,15 @@ function fail(): never {throw Error('Gói sao lưu không hợp lệ hoặc bị
 function metadata(record: unknown): asserts record is SavedProject {
   if (!object(record) || !text(record.id) || !text(record.title, 4096) || !text(record.filename, 4096)
     || !Number.isSafeInteger(record.revision) || record.revision < 0 || !number(record.updatedAt)) fail();
+}
+function sourceMetadata(record: SavedProject): void {
+  if (record.sourceFormat !== undefined && !['abc','mxl','musicxml','xml','mscz','mscx'].includes(record.sourceFormat)) fail();
+  if (record.sourceHash !== undefined && (typeof record.sourceHash !== 'string' || !/^[a-f0-9]{64}$/.test(record.sourceHash))) fail();
+  if (record.sourceTuneIndex !== undefined && (!Number.isInteger(record.sourceTuneIndex) || record.sourceTuneIndex < 0 || record.sourceTuneIndex >= 1000)) fail();
+  for (const key of ['sourceTuneId','sourceTuneTitle','converterVersion'] as const)
+    if (record[key] !== undefined && (typeof record[key] !== 'string' || record[key]!.length > 4096)) fail();
+  if (record.importDiagnostics !== undefined && (!Array.isArray(record.importDiagnostics) || record.importDiagnostics.length > 100
+    || !record.importDiagnostics.every(d => object(d) && ['warning','error'].includes(d.level) && text(d.code) && text(d.message,4096)))) fail();
 }
 function resultValid(r: any): r is SavedAttempt {
   if (!object(r) || !text(r.id) || !text(r.projectId) || !text(r.title,4096) || !number(r.createdAt)) return false;
@@ -63,7 +73,7 @@ export async function encodeLibrary(data: LibraryData): Promise<Uint8Array> {
     projects.push({...meta, data: await add(`projects/${i}.mscz`, bytes), ...(source ? {sourceData: await add(`sources/${i}.bin`, source)} : {})});
   }
   for (const [i, item] of data.recovery.entries()) {const {bytes, ...meta} = item; recovery.push({...meta, data: await add(`recovery/${i}.mscz`, bytes)});}
-  const manifest: Manifest = {format: 'pianist-library', version: 1, createdAt: Date.now(), projects, recovery,
+  const manifest: Manifest = {format: 'pianist-library', version: 2, createdAt: Date.now(), projects, recovery,
     sessions: await add('sessions.json', strToU8(JSON.stringify(data.sessions))), settings: await add('settings.json', strToU8(JSON.stringify(data.settings)))};
   files['manifest.json'] = strToU8(JSON.stringify(manifest));
   if (files['manifest.json'].length > 4 * 1024 * 1024 || total + files['manifest.json'].length > LIMIT) throw Error('Dữ liệu và danh mục sao lưu vượt giới hạn 256 MiB.');
@@ -102,7 +112,7 @@ export async function decodeLibrary(bytes: Uint8Array): Promise<LibraryBackup> {
   const files = await boundedUnzip(bytes);
   const json = (path: string) => {const file = files.get(path); if (!file) fail(); try {return JSON.parse(strFromU8(file));} catch {return fail();}};
   const manifest = json('manifest.json') as Manifest;
-  if (!object(manifest) || manifest.format !== 'pianist-library' || manifest.version !== 1 || !number(manifest.createdAt)
+  if (!object(manifest) || manifest.format !== 'pianist-library' || ![1,2].includes(manifest.version) || !number(manifest.createdAt)
     || !Array.isArray(manifest.projects) || manifest.projects.length > 1000 || !Array.isArray(manifest.recovery) || manifest.recovery.length > 1000) fail();
   const used = new Set(['manifest.json']);
   const read = async (ref: FileRef) => {
@@ -112,11 +122,19 @@ export async function decodeLibrary(bytes: Uint8Array): Promise<LibraryBackup> {
   };
   const projects: ProjectRecord[] = [], recovery: RecoveryRecord[] = [], ids = new Set<string>(), recoveryIds = new Set<string>();
   for (const saved of manifest.projects) {
-    metadata(saved); if (ids.has(saved.id) || !number(saved.createdAt)) fail(); ids.add(saved.id);
+    metadata(saved); sourceMetadata(saved); if (ids.has(saved.id) || !number(saved.createdAt)) fail(); ids.add(saved.id);
     const {data, sourceData, ...meta} = saved, content = await read(data);
     await validateFile(content, meta.filename);
     const source = sourceData ? await read(sourceData) : undefined;
     if (source) {if (!text(meta.sourceName)) fail(); await validateFile(source, meta.sourceName);}
+    if (meta.sourceHash !== undefined && (!source || await hash(source) !== meta.sourceHash)) fail();
+    if (meta.sourceFormat !== undefined && (!source || meta.sourceName?.split('.').at(-1)?.toLowerCase() !== meta.sourceFormat)) fail();
+    if (meta.sourceTuneIndex !== undefined) {
+      if (!source || meta.sourceFormat !== 'abc') fail();
+      const tune = inspectAbc(source).tunes[meta.sourceTuneIndex];
+      if (!tune || meta.sourceTuneId !== undefined && meta.sourceTuneId !== tune.id.slice(0,4096)
+        || meta.sourceTuneTitle !== undefined && meta.sourceTuneTitle !== tune.title.slice(0,4096)) fail();
+    }
     projects.push({...meta, bytes: content, source});
   }
   for (const saved of manifest.recovery) {
