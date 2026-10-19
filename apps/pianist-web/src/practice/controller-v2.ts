@@ -67,7 +67,7 @@ export class PracticeController {
     if(performance.now()-this.lastPaint>=80){this.lastPaint=performance.now();this.onChange();}
   }
   input(event:MidiEvent){
-    if(!['counting','running'].includes(this.status)||!this.transport.context)return;
+    if(!['counting','running'].includes(this.status)||!this.transport.context||!this.transport.mapping.originPerformanceMs)return;
     if(this.transport.context.state!=='running'){this.pause('Đồng hồ âm thanh bị ngắt.',true);return;}
     this.transport.monitor(event);
     const e={...event,timestampMs:this.transport.at(event.timestampMs),receivedMs:this.transport.at(event.receivedMs)};

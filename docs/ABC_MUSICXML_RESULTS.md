@@ -87,7 +87,7 @@ nhận đây là một lần biên dịch native mới. Source converter gốc v
 không thêm công thức thời gian, matcher hoặc cách sửa dữ liệu âm nhạc.
 
 Gói triển khai cuối đặt tại
-`artifacts/releases/pianist-web-2026-10-19-abc-r1/`. Release web
+`artifacts/releases/pianist-web-2026-10-19-abc-r2/`. Release web
 có **151 tài nguyên (~149,6 MiB)**; version và số byte chính xác ở `site/release.json`;
 zip web khoảng 79,5 MiB. Phần runtime/source/license ABC gồm 17 file,
 14.257.744 byte; core tải lúc conversion ít hơn tổng này. Gói public chỉ có
@@ -109,6 +109,8 @@ và render quantum 128 frame của Web Audio. Adapter giờ chờ output đi qua
 đầu tiên trước khi chốt mapping, thay vì nhận mốc 0 hoặc phần lẻ sát 0 khi
 pipeline mới mở. Chờ tối đa hai giây, báo lỗi nếu clock không sẵn sàng; đóng
 context giữa chừng hủy startup. Trình duyệt không có API giữ đường fallback.
+MIDI đến trong lúc chờ chỉ cập nhật state ở router, chưa đi vào Worker bằng
+timestamp chưa khởi tạo; integration test gửi Note On/Off ngay trong khoảng này.
 Mapping vẫn cố định trong lượt; không làm trơn, đổi offset, nới guard 25 ms,
 thay cửa sổ BPM hay kết quả matcher. Đây là sửa lifecycle Web Audio, không phải
 một thuật toán chấm mới.
@@ -153,7 +155,7 @@ node tests/browser/pianist/abc-offline.cjs
 node tests/browser/pianist/abc-limits.cjs
 # Lặp các browser runner với PIANIST_BROWSER_CHANNEL=chrome.
 # Kiểm chính gói public:
-$env:PIANIST_SITE = 'D:\duan\pianist\artifacts\releases\pianist-web-2026-10-19-abc-r1\site'
+$env:PIANIST_SITE = 'D:\duan\pianist\artifacts\releases\pianist-web-2026-10-19-abc-r2\site'
 node tests/browser/pianist/abc-offline.cjs
 python buildscripts/pianist/verify-release.py --directory $env:PIANIST_SITE --public
 ```

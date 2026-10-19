@@ -15,10 +15,10 @@ import type {AttemptResult} from '../../../packages/practice-engine-v2/model';
 test('simulated Web MIDI → production controller/Worker: count-in, pedal, delay, 9 early hits, replay',async()=>{
   const restore=new Map<string,PropertyDescriptor|undefined>();
   const put=(k:string,v:unknown)=>{restore.set(k,Object.getOwnPropertyDescriptor(globalThis,k));Object.defineProperty(globalThis,k,{value:v,configurable:true,writable:true});};
-  let now=10000,callback=()=>{};const sounds:{at:number}[]=[];
+  let now=10000,audioReady=false,callback=()=>{};const sounds:{at:number}[]=[];
   class FakeAudio {
     state='running';destination={};get currentTime(){return now/1000;}
-    getOutputTimestamp(){return{contextTime:now/1000-.04,performanceTime:now};}
+    getOutputTimestamp(){return audioReady?{contextTime:now/1000-.04,performanceTime:now}:{contextTime:0,performanceTime:0};}
     async resume(){}async close(){this.state='closed';}
     createOscillator(){return{frequency:{value:0},type:'',onended:null,connect:(x:unknown)=>x,start:(at:number)=>sounds.push({at}),stop(){},disconnect(){}};}
     createGain(){return{gain:{value:0,setValueAtTime(){},linearRampToValueAtTime(){},exponentialRampToValueAtTime(){},setTargetAtTime(){}},connect(){},disconnect(){}};}
@@ -43,7 +43,14 @@ test('simulated Web MIDI → production controller/Worker: count-in, pedal, dela
     const router=new MidiRouter();await router.connect();const t=timeline(Array.from({length:9},(_,i)=>500+i*200));
     Object.assign(t.settings,{inputSource:'midi',deviceId:port.id,countIn:2});session=new PracticeController(t,'Simulated MIDI');router.onInput=e=>session!.input(e);
     const result=new Promise<AttemptResult>((resolve,reject)=>{session!.onComplete=resolve;setTimeout(()=>reject(Error('result timeout')),15000).unref();});
-    await session.start(()=>router.stateEvents());const origin=now-session.transport.now;
+    const starting=session.start(()=>router.stateEvents());
+    while(!session.transport.context)await new Promise(r=>setTimeout(r,5));
+    // Router state may change while the output device starts. There is no valid
+    // run timestamp yet, so these bytes must not enter the grading Worker.
+    port.onmidimessage({data:new Uint8Array([0x90,60,90]),timeStamp:now});
+    port.onmidimessage({data:new Uint8Array([0x80,60,0]),timeStamp:now});
+    assert.equal(session.commands.some(c=>c.type==='input'),false);
+    audioReady=true;await starting;const origin=now-session.transport.now;
     const move=(target:number)=>{while(now+20<target){now+=20;tick();}now=target;};
     const send=(at:number,bytes:number[],delay=0)=>{move(origin+at+delay);port.onmidimessage({data:new Uint8Array(bytes),timeStamp:origin+at});tick();};
     send(-500,[0xb0,64,127]);
