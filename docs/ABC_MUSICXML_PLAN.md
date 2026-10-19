@@ -1,6 +1,6 @@
 # Kế hoạch hỗ trợ ABC và MusicXML trong Pianist Web
 
-Cập nhật: 19/10/2026. Trạng thái: **A1 đạt profile giới hạn; A2 đã tích hợp; A3 đã nghiệm thu browser; A4–A7 chưa hoàn thành**. Bằng chứng và giới hạn: [ABC_CONVERTER_RESULTS.md](ABC_CONVERTER_RESULTS.md). Commit A1: `fb526afc`.
+Cập nhật: 19/10/2026. Trạng thái: **A1 đạt profile giới hạn; A2–A3 hoàn thành; A4 hoàn thành trong profile đã đối chiếu; A5–A7 chưa hoàn thành**. Bằng chứng và giới hạn: [ABC_CONVERTER_RESULTS.md](ABC_CONVERTER_RESULTS.md). Commit A1: `fb526afc`; A3: `ac14354f`, nghiệm thu `80cd335a`.
 
 Mục tiêu: người dùng nhập ABC hoặc MXL/MusicXML vào cùng thư viện, mở bằng editor MuseScore, sửa và lưu, rồi tập bằng chế độ Đúng nốt hoặc BPM. Màn tập riêng, chỉ đọc. Dữ liệu sau chỉnh sửa là nội dung được dùng để tập và xuất file.
 
@@ -21,7 +21,7 @@ Kiểm tra lại ngày 19/10/2026:
 
 Commit lưu mã nguồn và tài liệu được Git theo dõi. Các thư mục bị ignore như `build.artifacts`, `artifacts`, `examples/local` và dữ liệu thư viện IndexedDB không nằm trong commit. Phố Xa local vẫn được giữ ở máy, không đưa vào gói public.
 
-Ở mốc A0, `platform/files.ts` và bộ chọn file chỉ nhận MXL/XML/MusicXML/MSCZ/MSCX. Sau A2, mọi điểm mở/kéo thả nhận thêm ABC một bài, chuyển qua Worker rồi lưu MSCZ và giữ nguyên bytes nguồn. A3 bổ sung chọn nhiều bài theo index, chuẩn bị native độc lập và commit cả lô nguyên tử. Xuất ABC và chuẩn bị offline cho runtime vẫn thuộc A4/A6.
+Ở mốc A0, `platform/files.ts` và bộ chọn file chỉ nhận MXL/XML/MusicXML/MSCZ/MSCX. Sau A2, mọi điểm mở/kéo thả nhận thêm ABC một bài, chuyển qua Worker rồi lưu MSCZ và giữ nguyên bytes nguồn. A3 bổ sung chọn nhiều bài theo index, chuẩn bị native độc lập và commit cả lô nguyên tử. A4 xuất ABC từ revision đang sửa và chỉ cho tải khi nhập lại giữ đúng dữ liệu nhạc được đối chiếu. Chuẩn bị offline cho runtime vẫn thuộc A6.
 
 ## 2. Phạm vi cần hoàn thành
 
@@ -127,7 +127,7 @@ Mỗi mốc có một hoặc vài commit riêng, đạt kiểm tra liên quan m�
 
 **Kiểm:** validator và worker timeout/cancel; integration nhập ABC và MXL; lỗi native load; file giả đuôi; giới hạn mở rộng; Unicode tiếng Việt; hồi quy các test workspace.
 
-### A3 — Thư viện, tunebook và phục hồi
+### A3 — Thư viện, tunebook và phục hồi · Đã hoàn thành
 
 **Làm:** thêm chọn bài trong file ABC nhiều bài, metadata nguồn, lưu project từng bài, hiển thị nhãn định dạng nguồn; bổ sung lưu bản sao, recovery, backup/restore. Tên bài ưu tiên `T:`; thiếu tên dùng tên file kèm số bài. Không mặc định chọn mọi bài trong tunebook lớn.
 
@@ -137,7 +137,7 @@ Nếu một bài không hợp lệ, báo bài đó để người dùng bỏ ch�
 
 **Đạt khi:** refresh/mở lại/offline giữ đúng bài đã chọn; backup/restore giữ nguồn và metadata; backup v1 và project cũ vẫn đọc được; lỗi quota/transaction không mất bài cũ hoặc tạo lô thiếu. Việc sửa một bản sao không sửa nguồn hay project khác.
 
-### A4 — Chỉnh sửa, lưu và xuất cả hai định dạng
+### A4 — Chỉnh sửa, lưu và xuất cả hai định dạng · Đã hoàn thành trong profile giới hạn
 
 **Làm:** thêm API lấy MusicXML hiện tại qua bridge và xuất ABC bằng upstream; bổ sung định dạng vào dialog Xuất. Giữ autosave, explicit save, undo/redo, recovery bằng MSCZ. Diagnostics xuất chỉ rõ mất trình bày hay mất nội dung âm nhạc.
 

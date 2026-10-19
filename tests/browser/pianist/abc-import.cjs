@@ -52,14 +52,14 @@ const base=process.env.PIANIST_URL || 'http://127.0.0.1:8787/pianist.html?diagno
     assert.deepEqual((await native()).anchors,edited.anchors);
     await open(saved);assert.deepEqual((await native()).anchors,edited.anchors);check('ABC supports edit/undo/redo, save and reopening native MSCZ');
     const before=await countProjects();
-    for(const filename of ['invalid.abc','unsupported-64th.abc','tunebook.abc']){
+    for(const filename of ['invalid.abc','unsupported-64th.abc']){
       await page.locator('#file').setInputFiles(path.join(root,'tests/fixtures/pianist/abc',filename));
       await page.locator('.error-banner:not(.import-notice)').waitFor({state:'visible'});
       await page.locator('.loading-overlay').waitFor({state:'hidden'});
       assert.deepEqual((await native()).anchors,edited.anchors);assert.equal(await countProjects(),before);
       await page.locator('.error-banner').getByRole('button',{name:'Đóng',exact:true}).click();
     }
-    check('invalid ABC, rounded rhythm and tunebook cannot replace the score or add projects');
+    check('invalid ABC and rounded rhythm cannot replace the score or add projects');
     // Cancel a real cold Worker boot, then let the old fetch finish. Nothing may publish.
     let release;const held=new Promise(r=>{release=r;});
     await page.route('**/score-formats/pyodide/pyodide.asm.wasm',async route=>{await held;await route.continue().catch(()=>{});});

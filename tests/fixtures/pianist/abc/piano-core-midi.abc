@@ -1,0 +1,15 @@
+%abc-2.1
+X:1
+T:Piano có nhạc cụ MIDI
+C:Pianist test fixture CC0
+M:4/4
+L:1/4
+Q:1/4=80
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+%%MIDI program 0
+V:LH clef=bass
+%%MIDI program 0
+K:C
+[V:RH] !ped![CEG]2 .D E | F-F G2 !ped-up! |]
+[V:LH] C,2 G,,2 | A,,2 B,,2 |]

@@ -24,6 +24,8 @@ test('all native formats bypass Python; ABC goes through conversion and generate
   }
   const prepared=await prepareScoreFile(encode(abc),'Nhạc.ABC',converter);
   assert.equal(prepared.filename,'Nhạc.musicxml');assert.equal(prepared.title,'Bài tiếng Việt');assert.equal(new TextDecoder().decode(prepared.bytes),xml);
+  const untitled=await prepareScoreFile(encode('X:1\nT: \nM:4/4\nL:1/4\nK:C\nC4|'),'untitled.abc',converter);
+  assert.equal(untitled.title,'untitled — 1','an empty T: cannot consume the next header as a title');
   await assert.rejects(prepareScoreFile(encode(abc+'\n'+abc),'book.abc',noPython),/2 bài/);
   await assert.rejects(prepareScoreFile(encode(xml),'fake.abc',noPython),/ABC hợp lệ/);
   await assert.rejects(prepareScoreFile(encode(abc),'fake.mxl',noPython),/ZIP/);

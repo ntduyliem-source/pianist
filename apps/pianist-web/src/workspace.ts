@@ -8,6 +8,7 @@ import type {ScoreConverter} from '../../../packages/score-formats';
 import type {FormatDiagnostic} from '../../../packages/score-formats/model';
 import {CONVERTER_VERSION, type AbcTune} from '../../../packages/score-formats/model';
 import {inspectAbc} from '../../../packages/score-formats/abc';
+import {exportAbc} from '../../../packages/score-formats/export';
 import { MidiRouter } from './platform/midi-v2';
 import * as storage from './platform/storage';
 import {PracticeController} from './practice/controller-v2';
@@ -15,7 +16,7 @@ import { loadEngineAssets } from './platform/engine-assets';
 
 type View = 'library' | 'editor' | 'practice' | 'results' | 'history';
 export interface TuneSelection {
-  filename: string; tunes: AbcTune[]; sourceBytes: number; practice: boolean;
+  requestId: number; filename: string; tunes: AbcTune[]; sourceBytes: number; practice: boolean;
   selected: number[]; openIndex: number; errors: Record<number, string>; error?: string;
 }
 export interface WorkspaceState {
@@ -25,6 +26,7 @@ export interface WorkspaceState {
   exampleTitle: string;
   practicePicker: boolean;
   canCancelOpen?: boolean;
+  cancelOpenLabel?: string;
   engineFailed?: boolean;
   importDiagnostics?: FormatDiagnostic[];
   tuneSelection?: TuneSelection;
@@ -272,7 +274,7 @@ export class Workspace {
     } catch (error) {if (token === this.operation) throw error;}
     finally {if (token === this.operation) this.patch({busy: '', canCancelOpen: false});}
   }
-  cancelOpen(): void {if (!this.state.canCancelOpen) return; ++this.operation; this.documentChange = undefined; this.fileAbort?.abort(); this.bridge?.cancel(); this.patch({busy: '', canCancelOpen: false, tuneSelection: undefined}); this.diagnostic('Đã hủy thao tác.');}
+  cancelOpen(): void {if (!this.state.canCancelOpen) return; ++this.operation; this.documentChange = undefined; this.fileAbort?.abort(); this.bridge?.cancel(); this.patch({busy: '', canCancelOpen: false, cancelOpenLabel: undefined, tuneSelection: undefined}); this.diagnostic('Đã hủy thao tác.');}
   selectTunes(indices: number[], openIndex: number): void {
     const selection = this.state.tuneSelection;
     if (!selection || !indices.length || new Set(indices).size !== indices.length
@@ -295,7 +297,7 @@ export class Workspace {
     let choice = {indices: [0], openIndex: 0}, errors: Record<number, string> = {}, batchError: string | undefined;
     while (true) {
       signal.throwIfAborted();
-      if (tunes.length > 1) choice = await this.chooseTunes({filename, tunes, sourceBytes: data.length, practice,
+      if (tunes.length > 1) choice = await this.chooseTunes({requestId: token, filename, tunes, sourceBytes: data.length, practice,
         selected: choice.indices, openIndex: choice.openIndex, errors, error: batchError}, signal);
       errors = {}; batchError = undefined;
       const records: storage.ProjectRecord[] = [];
@@ -427,7 +429,27 @@ export class Workspace {
     finally {if (this.autosaving === operation) this.autosaving = undefined;}
   }
   downloadProject(): void {if (this.bridge && this.state.current) {download(this.bridge.serialize(), `${this.state.current.title}.mscz`); this.notice('Đã tải bản sao MSCZ.');}}
-  export(format: string): void {if (!this.bridge?.api.exportScore(format)) throw Error('Không xuất được định dạng này.');}
+  async export(format: string): Promise<void> {
+    if (format !== 'abc') {if (!this.bridge?.api.exportScore(format)) throw Error('Không xuất được định dạng này.'); return;}
+    await this.changeDocument(async () => {
+      if (!this.bridge || !this.state.current) throw Error('Mở bản nhạc trước khi xuất ABC.');
+      const token = ++this.operation, abort = this.fileAbort = new AbortController();
+      const current = this.state.current, revision = this.state.revision;
+      this.patch({busy: 'Đang xuất ABC và đối chiếu với bản đang sửa…', canCancelOpen: true, cancelOpenLabel: 'Hủy xuất ABC', error: ''});
+      try {
+        const result = await exportAbc(this.bridge, this.scoreConverter, abort.signal);
+        abort.signal.throwIfAborted();
+        if (this.state.current?.id !== current.id || this.state.revision !== revision) throw Error('Bản nhạc đã thay đổi. Hãy xuất lại.');
+        download(result.text, current.title + '.abc', 'text/vnd.abc;charset=utf-8');
+        this.notice('Đã xuất ABC từ bản hiện tại và đối chiếu dữ liệu nhạc khi mở lại.');
+      } catch (error) {
+        if (!abort.signal.aborted) {
+          if (error instanceof WebAssembly.RuntimeError) throw error;
+          throw Error(`Chưa xuất ABC: ${storage.storageError(error)} Bạn vẫn có thể xuất MXL; tải MSCZ để giữ đầy đủ dữ liệu đang sửa.`);
+        }
+      } finally {if (token === this.operation) {this.fileAbort = undefined; this.patch({busy: '', canCancelOpen: false, cancelOpenLabel: undefined});}}
+    });
+  }
   async practice(overrides?: Partial<PracticeSettings>): Promise<void> {
     if (!this.state.current || !this.bridge) {this.openPractice(); return;}
     if (this.session && !['ready', 'finished'].includes(this.session.status)) throw Error('Kết thúc lượt tập trước khi thay đổi bản nhạc.');

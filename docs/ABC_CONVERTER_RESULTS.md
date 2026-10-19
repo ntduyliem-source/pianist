@@ -29,6 +29,10 @@ performed events, occurrences, beats, native key-off and pedal spans. Rational
 fixture times are exact; native millisecond comparisons use <= 1e-6 ms.
 Repeat-volta independently asserts occurrence order `[0,1,0,2]`.
 
+Those A1 conversions read the original fixture XML. A4 additionally exports the
+edited native document to MusicXML first; that path can change representation
+and exposes the release/pedal limits documented under A4 below.
+
 Real Worker cancellation, conversion timeout, retry and sequential A/B/A calls
 pass. Seven automated Node tests also cover UTF-8, BOM/CRLF, tunebook boundaries,
 blocked file/script includes, oversize input, stale worker replies, boot timeout
@@ -157,3 +161,70 @@ selected-tune practice all pass. The recovery test waits for the completed
 transaction and accepts the native before-unload confirmation; it does not
 reload while the UI merely says it is waiting to autosave. Fresh offline app
 startup/conversion remains A6.
+
+## A4 — Export from the edited revision
+
+The editor export dialog now offers ABC. Before confirmation it explains that
+page layout, fonts, spacing and presentation can change. Export captures the
+current native MusicXML without downloading an intermediate XML, runs the
+original pinned xml2abc, runs the generated ABC back through original abc2xml,
+and loads that result in a temporary native project for comparison. No original
+ABC bytes are used as the export document. Capture restores the previous callback
+in `finally`, copies native memory and checks revision before accepting output.
+
+The comparison strips regenerated IDs and page geometry, then checks spelled
+pitches, duration ticks, staff/voice/part grouping, ties, articulations, arpeggio
+groups, rests, key signatures, slur endpoints, measures, repeat occurrences,
+beats, tempo, native MIDI key-offs and notated pedal spans. Millisecond fields
+allow only 1e-6 ms floating-point error; ticks and other musical values must
+match exactly. This is a conversion check, separate from all practice grading.
+
+Grace notes, ornaments, fermatas and custom/atonal keys are rejected for A4
+export because this native reference does not completely certify their musical
+content. A1's special-symbols snapshot match alone does not prove those features
+lossless. Downward arpeggios, rounded durations, cross-staff moves and jumps are
+also subject to the existing upstream/profile guards or the native comparison.
+If a check fails, the working score remains open and MXL/MSCZ remain available.
+This is a limited verified profile, not a claim of arbitrary MusicXML fidelity.
+
+Use **Editor → Xuất… → ABC notation (.abc)**. The export can be canceled;
+a score changed during conversion must be exported again. It does not mark the
+score saved or reset undo. Importing the result creates a new library identity.
+
+Acceptance runner: `node tests/browser/pianist/abc-export.cjs`. Edge
+155.0.4283.62: **10/10 groups pass**, no page errors
+(`artifacts/abc/a4/result.json`). The actual editor changes pitch, duration,
+adds a chord note, deletes one pedal and extends another using MuseScore grip
+commands. ABC/MXL export, save/reload, undo/redo, a clean native dirty flag,
+tempo/tie/volta/voice fixtures and cold-worker cancel/retry all pass. No
+intermediate XML download or replacement of the live score occurs. The clean
+baseline test waits for native audio initialization before saving: MuseScore
+updates audio settings asynchronously after opening a document, independently
+of export. No production code clears or overrides that dirty flag.
+
+Final Node suite: **107/107**; TypeScript/Vite build and optimized native WASM
+build pass. The original converter corpus now includes one explicit MIDI-piano
+fixture: **31/31 browser results match CPython**, 24 accepted, seven rejected;
+eight hand-counted ABC fixtures reach native notation. Practice cutover audit
+still passes (13 obsolete grading files absent); grading source and algorithms
+are unchanged.
+
+### Additional native-export limits confirmed in A4
+
+| Case | Observed behavior and policy |
+| --- | --- |
+| External ABC without a MIDI program | `piano-core.abc` imports with native default instrument semantics. Export/reimport assigns piano and changes the native key release of a 960-tick note from tick 959 to 911. A4 rejects the mismatch; it does not invent a gate percentage or remove MIDI metadata. `piano-core-midi.abc` explicitly declares `%%MIDI program 0` for its voices and passes edit/export/reimport. |
+| Pedal direction with MusicXML offset | Native export of `pedal-duration.musicxml` places a pedal stop in a direction with an offset. Original xml2abc ignores that direction offset: the second pedal stop changes from tick 5280 to 5760 (9500 to 10000 ms). A4 rejects it. The positive edited fixture extends the stop to the actual bar end through native editing and roundtrips exactly; it is not a converter repair. |
+| Unsupported expression / local Phố Xa | Grace/ornament/fermata/custom-key content outside the verified reference is blocked. The local Phố Xa export is also rejected in the browser check, with its working score preserved. Its source and derived files stay local. |
+
+Upstream code inspected: `third_party/score-format-sources/xml2abc/xml2abc.py`
+`doDirection()` at line 1368 uses the current measure time for pedal directions;
+its separate harmony path reads offset at line 1498. MIDI program numbering is
+converted at xml2abc line 442 and abc2xml line 2091. Both pinned converter files
+remain byte-identical; no custom pitch, rhythm, release or pedal repair was added.
+
+When ABC export is rejected, **MSCZ preserves the native working document**.
+MXL export remains available, but is not advertised as preserving every native
+instrument/playback setting. A5's complete practice-equivalence matrix, A6
+offline preparation and A7 final release acceptance remain pending. Real MIDI
+hardware and hosting HTTPS are still deferred.

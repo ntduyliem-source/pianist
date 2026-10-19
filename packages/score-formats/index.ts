@@ -20,5 +20,5 @@ export async function prepareImport(bytes: Uint8Array, filename: string, convert
   const output = new TextEncoder().encode(result.text);
   if (output.length > MAX_OUTPUT_BYTES) throw Error('MusicXML chuyển từ ABC vượt giới hạn 64 MiB.');
   return {bytes: output, filename: filename.replace(/\.abc$/i, '.musicxml'),
-    title: (tune.hasTitle ? tune.title : `${filename.replace(/\.abc$/i, '')} — ${index + 1}`).trim().slice(0, 150), diagnostics: result.diagnostics};
+    title: (tune.hasTitle ? result.title || tune.title : `${filename.replace(/\.abc$/i, '')} — ${index + 1}`).trim().slice(0, 150), diagnostics: result.diagnostics};
 }

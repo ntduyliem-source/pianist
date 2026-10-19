@@ -14,6 +14,8 @@
 #include "engraving/dom/articulation.h"
 #include "engraving/dom/arpeggio.h"
 #include "engraving/dom/chord.h"
+#include "engraving/dom/keysig.h"
+#include "engraving/dom/rest.h"
 #include "engraving/dom/measure.h"
 #include "engraving/dom/note.h"
 #include "engraving/dom/page.h"
@@ -55,6 +57,7 @@ bool WebApi::snapshotFor(const project::INotationProjectPtr& project, bool drawi
     if (!score || (drawings && (!svgWriter || score->pages().empty() || score->pages().size() > 40))) { return false; }
 
     QJsonArray pages, measures, staves, occurrences, performed, beats, pedals, keyReleases;
+    QJsonArray rests, keys, slurs;
     std::map<const engraving::Note*, QString> noteIds;
     std::map<const engraving::Measure*, int> measureIds;
     std::map<const engraving::Note*, QJsonObject> notes;
@@ -94,6 +97,20 @@ bool WebApi::snapshotFor(const project::INotationProjectPtr& project, bool drawi
                                     {"endTick", measure->endTick().ticks()}, {"page", page}, {"box", box(r)},
                                     {"numerator", measure->timesig().numerator()}, {"denominator", measure->timesig().denominator()}});
         for (auto* segment = measure->first(); segment; segment = segment->next()) {
+            if (!drawings) {
+                for (const auto* element : segment->elist()) {
+                    if (!element) { continue; }
+                    if (element->isRest()) {
+                        const auto* rest = engraving::toRest(element);
+                        rests.append(QJsonArray{segment->tick().ticks(), rest->actualTicks().ticks(),
+                            static_cast<int>(rest->staffIdx()), static_cast<int>(rest->voice())});
+                    } else if (element->isKeySig() && !element->generated()) {
+                        const auto* key = engraving::toKeySig(element);
+                        if (key->isCustom() || key->isAtonal()) { warnings.insert("custom-key"); }
+                        keys.append(QJsonArray{segment->tick().ticks(), static_cast<int>(key->staffIdx()), static_cast<int>(key->key())});
+                    }
+                }
+            }
             for (const auto* annotation : segment->annotations()) {
                 if (annotation && annotation->isFermata()) { warnings.insert("fermata"); }
             }
@@ -176,6 +193,10 @@ bool WebApi::snapshotFor(const project::INotationProjectPtr& project, bool drawi
     std::vector<const engraving::Spanner*> pedalSpans;
     for (const auto& entry : score->spannerMap().map()) {
         const auto* span = entry.second;
+        if (!drawings && span->isSlur()) {
+            slurs.append(QJsonArray{span->tick().ticks(), span->tick2().ticks(),
+                static_cast<int>(span->track()), static_cast<int>(span->track2())});
+        }
         if (span->isPedal() && span->staff()->isPrimaryStaff()) { pedalSpans.push_back(span); }
     }
     int occurrence = 0;
@@ -227,12 +248,13 @@ bool WebApi::snapshotFor(const project::INotationProjectPtr& project, bool drawi
     }
     QJsonArray warningList;
     for (const auto& warning : warnings) { warningList.append(warning); }
-    const QJsonObject result{{"schemaVersion", 1}, {"revision", static_cast<int>(m_revision)},
+    QJsonObject result{{"schemaVersion", 1}, {"revision", static_cast<int>(m_revision)},
                              {"title", notation->workTitle()}, {"baseQuarterBpm", score->tempo(engraving::Fraction(0, 1)).val * 60},
                              {"durationMs", repeats.utick2utime(repeats.ticks()) * 1000}, {"staves", staves},
                              {"pages", pages}, {"measures", measures}, {"anchors", anchors}, {"occurrences", occurrences},
                              {"performed", performed}, {"beats", beats}, {"warnings", warningList},
                              {"durationReference", "musescore-midi"}, {"keyReleases", keyReleases}, {"pedals", pedals}};
+    if (!drawings) { result["rests"] = rests; result["keys"] = keys; result["slurs"] = slurs; }
     const auto json = QJsonDocument(result).toJson(QJsonDocument::Compact);
     emscripten::val::module_property(callback)(json.toStdString());
     return true;
