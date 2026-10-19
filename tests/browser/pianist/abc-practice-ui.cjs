@@ -41,7 +41,9 @@ const root=path.resolve(__dirname,'../../..'),channel=process.env.PIANIST_BROWSE
       assert.equal(r.metrics.planned,90);assert.equal(r.metrics.hits,90);assert.equal(r.metrics.misses,0);assert.equal(r.r4.pedal.f1,1);assert.ok(r.r4.key.every(k=>k.status==='correct'));
       const frames=trace.frames.filter(f=>f.playhead);assert.ok(new Set(frames.map(f=>f.playhead)).size>=2,'camera spans systems');assert.ok(Math.max(...frames.map(f=>f.top))>100,'camera scrolls');
       const loops=[1,2,3].map(n=>frames.filter(f=>f.context?.includes('Vòng '+n+'/3')));assert.ok(loops.every(f=>f.length),'all three loops visible');
-      for(let i=1;i<3;i++){assert.equal(loops[i][0].playhead,loops[0][0].playhead,'camera returns to A');assert.ok(loops[i][0].top<Math.max(...loops[i-1].map(f=>f.top))-50,'camera returns upwards');}
+      // The label/cursor commit can be sampled before Sheet's scroll effect.
+      // Allow one 80 ms UI update + 50 ms sample + one paint, still inside A.
+      for(let i=1;i<3;i++){assert.equal(loops[i][0].playhead,loops[0][0].playhead,'camera returns to A');const priorBottom=Math.max(...loops[i-1].map(f=>f.top));assert.ok(loops[i].some(f=>f.at-loops[i][0].at<=150&&f.top<priorBottom-50),'camera returns upwards within 150 ms of loop A');}
       const anchors=new Map(r.timeline.targets.flatMap(n=>n.anchors.map(id=>[id,n])));
       let heldGlyphs=0;
       for(const frame of frames)for(const g of frame.glyphs.filter(g=>g.held==='true'&&g.part==='Note'))for(const id of g.ids.split(' ')){heldGlyphs++;assert.ok(anchors.has(id),'highlight belongs to this import');const measure=Number(/Ô (\d+)/.exec(frame.context)?.[1])-1;assert.ok(anchors.get(id).measure<=measure,'same pitch in a future measure is never held');}
@@ -64,6 +66,6 @@ const root=path.resolve(__dirname,'../../..'),channel=process.env.PIANIST_BROWSE
     await page.getByRole('button',{name:/Tạm dừng/}).click();assert.equal(await page.locator('.note-marker[data-held=true]').count(),0);await page.getByRole('button',{name:/Tiếp tục/,exact:false}).first().click();await page.waitForFunction(()=>document.querySelector('.v2-title')?.textContent.includes('Đang tập'));assert.equal(await page.evaluate(()=>window.a5.view.group),1);
     await page.getByRole('button',{name:'Kết thúc lượt tập',exact:true}).click();const wait=await report('wait-pause');assert.equal(wait.metrics.hits,first.length);assert.equal(wait.r4.pedal.status,'wait');checks.push('Wait rejects octave, latches chord, ignores duplicate down, clears hold on pause and resumes without extra credit');
     assert.deepEqual(errors,[]);result.passed=true;
-  }catch(e){result.passed=false;result.error=String(e);process.exitCode=1;console.error(e);await page.screenshot({path:path.join(out,'failure.png')}).catch(()=>{});}
+  }catch(e){result.passed=false;result.error=String(e);process.exitCode=1;console.error(e);await fs.writeFile(path.join(out,'failure-trace.json'),JSON.stringify(await page.evaluate(()=>window.a5).catch(()=>null)));await page.screenshot({path:path.join(out,'failure.png')}).catch(()=>{});}
   finally{await fs.writeFile(path.join(out,'ui-result.json'),JSON.stringify(result,null,2));await browser.close();}console.log(result);
 })();

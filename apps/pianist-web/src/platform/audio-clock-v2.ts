@@ -22,8 +22,19 @@ export class AudioClock {
   async start(timeline:Timeline,resumeAt=0){
     this.silence();this.context??=new AudioContext({latencyHint:'interactive'});await this.context.resume();
     if(this.context.state!=='running')throw Error('Chưa bật được âm thanh. Bấm Bắt đầu lại.');
+    const ctx=this.context;let pair=ctx.getOutputTimestamp?.();
+    // Web Audio returns zero timestamps before its first rendered block.
+    // Wait for one 128-frame render quantum at the output before pinning the mapping;
+    // sampling currentTime=0 here includes device startup delay in every beat.
+    // https://www.w3.org/TR/webaudio-1.0/#dom-audiocontext-getoutputtimestamp
+    const deadline=performance.now()+2000;
+    while(typeof ctx.getOutputTimestamp==='function'&&(!pair?.contextTime||pair.contextTime<128/ctx.sampleRate||!pair.performanceTime)){
+      if(this.context!==ctx||ctx.state!=='running')throw Error('Khởi động âm thanh đã bị ngắt. Bấm Bắt đầu lại.');
+      if(performance.now()>=deadline)throw Error('Thiết bị âm thanh chưa cung cấp đồng hồ đầu ra. Bấm Bắt đầu lại.');
+      await new Promise<void>(resolve=>setTimeout(resolve,10));pair=ctx.getOutputTimestamp();
+    }
+    if(this.context!==ctx||ctx.state!=='running')throw Error('Khởi động âm thanh đã bị ngắt. Bấm Bắt đầu lại.');
     this.timeline=timeline;this.resumeAt=resumeAt;this.count=timeline.settings.countIn;
-    const ctx=this.context,pair=ctx.getOutputTimestamp?.();
     this.source=pair?.contextTime&&pair.performanceTime?'output-timestamp':'audio-current-time';
     this.audioMinusPerf=pair?.contextTime&&pair.performanceTime?pair.contextTime-pair.performanceTime/1000:ctx.currentTime-performance.now()/1000;
     this.origin=performance.now()+160+this.count*60000/timeline.settings.bpm-resumeAt;

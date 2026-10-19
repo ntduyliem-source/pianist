@@ -123,10 +123,10 @@ Nếu cache thiếu file, ứng dụng chặn dùng code khác phiên bản. K�
 ```powershell
 # Sau build tối ưu, test và commit source sạch:
 python buildscripts/pianist/package-web.py
-python buildscripts/pianist/stage-release.py --output artifacts/releases/pianist-web-2026-10-19-abc
-python buildscripts/pianist/verify-release.py --directory artifacts/releases/pianist-web-2026-10-19-abc/site --public
+python buildscripts/pianist/stage-release.py --output artifacts/releases/pianist-web-2026-10-19-abc-r1
+python buildscripts/pianist/verify-release.py --directory artifacts/releases/pianist-web-2026-10-19-abc-r1/site --public
 # Chạy thử chính gói đã đóng, trên port riêng:
-python buildscripts/pianist/serve-web.py --directory artifacts/releases/pianist-web-2026-10-19-abc/site --port 8788
+python buildscripts/pianist/serve-web.py --directory artifacts/releases/pianist-web-2026-10-19-abc-r1/site --port 8788
 ```
 
 Gói có site, zip web, source đúng commit, toolchain/lockfile, hash, Caddy/Compose và DEPLOY.txt. Chưa phát hành hosting. Phải cung cấp source tương ứng và notices của PTS AGPL, osu! MIT, MuseScore/Qt khi phân phối; xem [inventory](THIRD_PARTY_NOTICES.md). Đàn thật/HTTPS chưa kiểm theo phạm vi đã thống nhất. Giới hạn snapshot 40 trang/50.000 nốt viết/24 MiB SVG, timeline 100.000 target/2 giờ/10 vòng; stress Node không thay benchmark máy/đàn.

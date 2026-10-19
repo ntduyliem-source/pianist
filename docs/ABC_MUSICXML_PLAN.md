@@ -217,6 +217,11 @@ Các đường dẫn mới dưới đây là kế hoạch, chưa tồn tại ở
 
 Không dự kiến thay scoring kernel, MIDI clock, thuật toán R4 hay renderer SVG. Nếu cần sửa bridge/native để chuẩn bị project tạm hoặc lấy bytes export thì tách commit, build lại WASM và chạy kiểm thử native tương ứng.
 
+Ngoại lệ phát hiện lúc nghiệm thu A7: sửa bước khởi động Web Audio để đợi output
+timestamp hợp lệ trước khi chốt mapping. Không đổi công thức mapping trong lượt,
+offset, guard đồng hồ, cửa sổ BPM hoặc matcher. Lỗi cold-start trên Chrome và bằng
+chứng đối chiếu đặc tả/kiểm thử được ghi trong `ABC_MUSICXML_RESULTS.md`.
+
 ## 7. Dung lượng và điều kiện dừng
 
 Phép thử Phố Xa bằng `xml2abc` 1.77: MusicXML 593.425 byte; MXL 25.903 byte; ABC 7.837 byte; ABC gzip mức 9 là 2.844 byte. Đây là số liệu một file và chưa có nghiệm thu tương đương âm nhạc. Không suy rộng thành toàn bộ kho luôn giảm 89%.
