@@ -1,6 +1,6 @@
 # Kế hoạch hỗ trợ ABC và MusicXML trong Pianist Web
 
-Cập nhật: 19/10/2026. Trạng thái: **đã tạo mốc an toàn; A1–A7 chưa triển khai**.
+Cập nhật: 19/10/2026. Trạng thái: **A1 đạt profile giới hạn; A2 đang tích hợp; A3–A7 chưa triển khai**. Bằng chứng và giới hạn: [ABC_CONVERTER_RESULTS.md](ABC_CONVERTER_RESULTS.md).
 
 Mục tiêu: người dùng nhập ABC hoặc MXL/MusicXML vào cùng thư viện, mở bằng editor MuseScore, sửa và lưu, rồi tập bằng chế độ Đúng nốt hoặc BPM. Màn tập riêng, chỉ đọc. Dữ liệu sau chỉnh sửa là nội dung được dùng để tập và xuất file.
 
@@ -109,7 +109,7 @@ Mỗi mốc có một hoặc vài commit riêng, đạt kiểm tra liên quan m�
 - Commit `f87189ee`, chạy 83 test và build web như mục 1.
 - Lưu kế hoạch này trong commit tài liệu riêng, sau mốc an toàn.
 
-### A1 — Chứng minh bộ chuyển đổi chạy đúng trong trình duyệt
+### A1 — Chứng minh bộ chuyển đổi chạy đúng trong trình duyệt · Đã đạt profile giới hạn
 
 **Làm:** ghim source/license/hash của hai converter tại `third_party/score-format-sources/`; thêm manifest/provenance và script chuẩn bị nguồn. Dựng mẫu Worker Pyodide tối thiểu, chạy cùng source Python trên CPython và trong trình duyệt. Gọi API upstream có tham số rõ, khởi tạo lại state parser cho từng request để file trước không ảnh hưởng file sau.
 

@@ -1,0 +1,15 @@
+%abc-2.1
+X:4
+T:Bè độc lập và hai đầu bàn phím
+C:Pianist test fixture CC0
+M:4/4
+L:1/4
+Q:1/4=72
+%%score { (R1 R2) | L }
+V:R1 clef=treble name="Piano"
+V:R2 clef=treble
+V:L clef=bass
+K:G
+[V:R1] c'''2 ^F =F |]
+[V:R2] c2 D E |]
+[V:L] A,,,,2 z2 |]

@@ -1,0 +1,8 @@
+X:1
+T:Tie across bar and repeated pitch
+M:4/4
+L:1/4
+Q:1/4=60
+K:C
+%%MIDI program 0
+(C4-|C2) .C C |]

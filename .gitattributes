@@ -22,3 +22,6 @@ buildscripts/packaging/Windows/PortableApps/**/*.ini eol=crlf
 buildscripts/packaging/Windows/PortableApps/**/*.txt eol=crlf
 buildscripts/packaging/Windows/PortableApps/**/*.ini.in eol=crlf
 buildscripts/packaging/Windows/PortableApps/**/*.html eol=crlf
+
+# Converter releases are verified against the original archive bytes.
+third_party/score-format-sources/** -text -whitespace

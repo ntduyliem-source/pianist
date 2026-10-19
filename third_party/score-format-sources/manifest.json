@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "converters": [
+    {
+      "name": "abc2xml",
+      "version": "2.68",
+      "url": "https://wim.vree.org/svgParse/abc2xml.py-268.zip",
+      "archiveSha256": "7beb1483e1a5c1f744a1faff71dda8f6cd68e1e9c75ab5b44eeeadc30754461f",
+      "license": "LGPL (version not specified in source header)",
+      "files": [
+        {
+          "path": "abc2xml/abc2xml.py",
+          "sha256": "76cd2c5c4fc44b28ab2ce923f196d23d09b93fcefa8cfa90a10754d38e15b56e",
+          "bytes": 148887
+        },
+        {
+          "path": "abc2xml/abc2xml.html",
+          "sha256": "52bed3845d318178085531e3e5c82810b99800275c0a208e7811ea777b2b60b5",
+          "bytes": 339380
+        },
+        {
+          "path": "abc2xml/abc2xml_changelog.html",
+          "sha256": "09da8cf24bd19833abed6c8f15ae74225caecba8b3856f96ef9fc63193d803ef",
+          "bytes": 5230
+        }
+      ]
+    },
+    {
+      "name": "xml2abc",
+      "version": "1.77",
+      "url": "https://wim.vree.org/svgParse/xml2abc.py-177.zip",
+      "archiveSha256": "158ae6ac87c34b7f170a7a57712206fac756e0434806e38a280f6fd968c8816d",
+      "license": "LGPL (version not specified in source header)",
+      "files": [
+        {
+          "path": "xml2abc/xml2abc.py",
+          "sha256": "6957bd88cdeedafa7a7cc5e2eec3f3ffc6449ef84e5337c46f0aa673f83725b4",
+          "bytes": 105832
+        },
+        {
+          "path": "xml2abc/xml2abc.html",
+          "sha256": "d09caa86484181e30ccb40af7023ffae873d57c54e472dfa6fdccc5e4fef37dc",
+          "bytes": 9851
+        },
+        {
+          "path": "xml2abc/xml2abc_changelog.html",
+          "sha256": "621784793ffc981db4d57e3e2e0d7392ea7b5e27cb9ce6e39dad097d3184a2c5",
+          "bytes": 5104
+        }
+      ]
+    }
+  ],
+  "runtime": {
+    "name": "pyodide",
+    "version": "314.0.7",
+    "url": "https://registry.npmjs.org/pyodide/-/pyodide-314.0.7.tgz",
+    "archiveSha256": "66b7949e5a0cba2250b586d7e368bf12fb482800748d182c4618254b685ffaa0",
+    "license": "MPL-2.0",
+    "files": [
+      {
+        "path": "pyodide.mjs",
+        "sha256": "6f1d60f7bf529beb300f0f47983c921d3982363640ba20af0e38efdddbc66109",
+        "bytes": 17931
+      },
+      {
+        "path": "pyodide.asm.mjs",
+        "sha256": "f7cdc8ece80678ceb712f8e65ebe6d3a83203a180c399865f49612a051693635",
+        "bytes": 1250344
+      },
+      {
+        "path": "pyodide.asm.wasm",
+        "sha256": "cc36e3cab04fdfc9a63ff13eb52eae2b911bf46c025cc7b281f394bd3de1d5e6",
+        "bytes": 9598218
+      },
+      {
+        "path": "python_stdlib.zip",
+        "sha256": "fa1957e5777068fc4f7437f96d860ae2fbe9c19732ba06c84e004ec16dd7dd7a",
+        "bytes": 2545637
+      },
+      {
+        "path": "pyodide-lock.json",
+        "sha256": "5dc2fc119108bc148c7457dc86e7675b5c87e1cafd420b9c34c1eaef7b36c010",
+        "bytes": 119077
+      }
+    ]
+  }
+}
