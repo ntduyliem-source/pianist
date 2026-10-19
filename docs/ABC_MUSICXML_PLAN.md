@@ -1,6 +1,6 @@
 # Kế hoạch hỗ trợ ABC và MusicXML trong Pianist Web
 
-Cập nhật: 19/10/2026. Trạng thái: **A1 đạt profile giới hạn; A2–A3 hoàn thành; A4–A6 hoàn thành trong profile đã đối chiếu; A7 đang chốt nghiệm thu gói phát hành**. Bằng chứng và giới hạn: [ABC_CONVERTER_RESULTS.md](ABC_CONVERTER_RESULTS.md), [ABC_MUSICXML_RESULTS.md](ABC_MUSICXML_RESULTS.md). Commit A1: `fb526afc`; A3: `ac14354f`, nghiệm thu `80cd335a`; A4: `8ad8b2be`; A5: `83e07db1`.
+Cập nhật: 19/10/2026. Trạng thái: **A1 đạt profile giới hạn; A2–A3 hoàn thành; A4–A7 hoàn thành trong profile đã đối chiếu**. Bằng chứng và giới hạn: [ABC_CONVERTER_RESULTS.md](ABC_CONVERTER_RESULTS.md), [ABC_MUSICXML_RESULTS.md](ABC_MUSICXML_RESULTS.md). Commit A1: `fb526afc`; A3: `ac14354f`, nghiệm thu `80cd335a`; A4: `8ad8b2be`; A5: `83e07db1`; A6: `9834e38b`. Phố Xa ABC không đạt fidelity; MXL gốc vẫn dùng bình thường. MIDI thật và HTTPS tiếp tục để sau.
 
 Mục tiêu: người dùng nhập ABC hoặc MXL/MusicXML vào cùng thư viện, mở bằng editor MuseScore, sửa và lưu, rồi tập bằng chế độ Đúng nốt hoặc BPM. Màn tập riêng, chỉ đọc. Dữ liệu sau chỉnh sửa là nội dung được dùng để tập và xuất file.
 
@@ -102,7 +102,7 @@ Xuất ABC phải lấy bytes MusicXML của revision hiện tại. `Workspace` 
 
 ## 4. Các mốc triển khai và điều kiện hoàn thành
 
-Mỗi mốc có một hoặc vài commit riêng, đạt kiểm tra liên quan mới chuyển tiếp. A0 đã hoàn thành; các mốc sau là việc cần làm.
+Mỗi mốc có một hoặc vài commit riêng, đạt kiểm tra liên quan mới chuyển tiếp. Các mục dưới giữ tiêu chí kế hoạch; trạng thái và báo cáo kết quả nêu phạm vi đã nghiệm thu.
 
 ### A0 — Chốt bản trước ABC · Đã xong
 
@@ -155,7 +155,7 @@ Nếu một bài không hợp lệ, báo bài đó để người dùng bỏ ch�
 
 **Giới hạn có sẵn:** mốc native không cung cấp được vẫn là `unavailable`; Phố Xa trước đây có 33 target thiếu mốc nhả trong demo A4–B10. Không biến các target đó thành nhả đúng hoặc suy ra pedal từ âm thanh.
 
-### A6 — Đóng gói và offline · Đã triển khai và kiểm trên trình duyệt
+### A6 — Đóng gói và offline · Đã hoàn thành
 
 **Làm:** đưa runtime/converter vào manifest bằng SHA-256; cập nhật `package-web.py`, `stage-release.py`, `verify-release.py`, `prepare-notices.py`, `platform/offline.ts` và service worker khi cần. Chỉ tải converter khi nhập/xuất ABC ở chế độ online; khi người dùng chuẩn bị offline thì tải đủ runtime được ghim. Tính dung lượng cần thiết theo manifest thay vì dựa vào ngưỡng 250 MiB cũ.
 
@@ -163,7 +163,7 @@ Nếu một bài không hợp lệ, báo bài đó để người dùng bỏ ch�
 
 **Gói phát hành:** gồm mã nguồn ứng với commit, converter source/license/notices, runtime đúng phiên bản, fixture CC0 và tài liệu build. Không thêm Phố Xa local vào gói public. Chưa deploy hosting/HTTPS.
 
-### A7 — Nghiệm thu và chốt commit hỗ trợ ABC
+### A7 — Nghiệm thu và chốt commit hỗ trợ ABC · Đã hoàn thành trong profile
 
 **Làm:** chạy kiểm tra hiện có và bộ mới, browser Chrome/Edge, offline, export/reimport, backup/restore. Kiểm lại sơ đồ mất dữ liệu so với A1; ghi hạn chế cụ thể thay vì chỉ tổng số test.
 
