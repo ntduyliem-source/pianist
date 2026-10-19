@@ -147,3 +147,13 @@ is also the foundation for A4 fidelity checks.
 Browser acceptance runner: `node tests/browser/pianist/abc-library.cjs`.
 At this checkpoint its run is pending the optimized native build; later
 acceptance results below supersede this checkpoint status.
+
+A3 browser acceptance completed on Edge 155.0.4283.62: **7/7 groups pass**,
+no page errors (`artifacts/abc/a3/result.json`). Actual native preparation of
+the first tune followed by a failed second tune leaves the live score, revision,
+undo and library unchanged. Reload recovery, independent copy edits, offline
+opening of an already stored MSCZ with the engine loaded, backup/restore and
+selected-tune practice all pass. The recovery test waits for the completed
+transaction and accepts the native before-unload confirmation; it does not
+reload while the UI merely says it is waiting to autosave. Fresh offline app
+startup/conversion remains A6.

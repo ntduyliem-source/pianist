@@ -11,7 +11,7 @@ const base=process.env.PIANIST_URL||'http://127.0.0.1:8787/pianist.html?diagnost
   const context=await browser.newContext({viewport:{width:1440,height:1000},acceptDownloads:true}),page=await context.newPage();
   const checks=[],errors=[],result={checks,errors,browser:browser.version()};
   const check=s=>{checks.push(s);console.log(s);};
-  page.on('pageerror',e=>errors.push(String(e)));page.on('dialog',d=>d.dismiss());
+  page.on('pageerror',e=>errors.push(String(e)));page.on('dialog',d=>d.type()==='beforeunload'?d.accept():d.dismiss());
   const idle=()=>page.locator('.loading-overlay').waitFor({state:'hidden',timeout:120000});
   const records=()=>page.evaluate(()=>new Promise((resolve,reject)=>{const r=indexedDB.open('pianist-library');r.onsuccess=()=>{const db=r.result,q=db.transaction('projects').objectStore('projects').getAll();q.onsuccess=()=>{resolve(q.result.map(p=>({...p,bytes:[...p.bytes],source:p.source?[...p.source]:undefined})));db.close();};q.onerror=()=>reject(q.error);};}));
   const score=()=>page.evaluate(()=>{const a=window.pianist,old=a.Module.onScoreSemantics;let s;a.Module.onScoreSemantics=j=>s=JSON.parse(j);try{if(!a.getScoreSemantics())throw Error('semantics unavailable');return {revision:s.revision,notes:s.anchors.map(n=>[n.tick,n.pitch,n.durationTicks,n.staff,n.voice]).sort((a,b)=>JSON.stringify(a).localeCompare(JSON.stringify(b)))};}finally{a.Module.onScoreSemantics=old;}});
@@ -45,9 +45,10 @@ const base=process.env.PIANIST_URL||'http://127.0.0.1:8787/pianist.html?diagnost
     const chosen=await score();assert.deepEqual(chosen.notes.map(n=>n[1]),[60]);check('duplicate X/title and missing title create independent MSCZ projects; chosen tune opens');
     await page.getByRole('button',{name:'Lưu bản mới…',exact:true}).click();await page.getByLabel('Tên bản mới').fill('Bản sao ABC');await page.getByRole('button',{name:'Lưu bản mới',exact:true}).click();await idle();
     await page.locator('#select').click();await page.locator('#up').click();const copyNotes=(await score()).notes;
-    await page.waitForFunction(()=>document.querySelector('[data-testid=save-state]')?.textContent.includes('tự lưu'),null,{timeout:15000});
+    await page.waitForFunction(()=>document.querySelector('[data-testid=save-state]')?.textContent.startsWith('Đã tự lưu'),null,{timeout:15000});
     // Reload only after the actual recovery transaction has finished.
-    await page.waitForFunction(()=>new Promise(resolve=>{const r=indexedDB.open('pianist-library');r.onsuccess=()=>{const db=r.result,q=db.transaction('recovery').objectStore('recovery').getAll();q.onsuccess=()=>{resolve(q.result.some(p=>p.title==='Bản sao ABC'));db.close();};};}));
+    result.beforeReload=await page.evaluate(()=>new Promise(resolve=>{const r=indexedDB.open('pianist-library');r.onsuccess=async()=>{const db=r.result;const get=name=>new Promise(res=>{const q=db.transaction(name).objectStore(name).getAll();q.onsuccess=()=>res(q.result.map(({bytes,source,...meta})=>({...meta,bytes:bytes?.length})));});resolve({projects:await get('projects'),recovery:await get('recovery')});db.close();};}));
+    assert.ok(result.beforeReload.recovery.some(p=>p.title==='Bản sao ABC'&&p.revision>1));
     await page.reload();await page.getByRole('button',{name:'Mở Bản sao ABC',exact:true}).click();await page.locator('#screen canvas').waitFor({state:'visible',timeout:120000});await idle();assert.deepEqual((await score()).notes,copyNotes);
     await page.getByRole('button',{name:'Thư viện',exact:true}).click();await context.setOffline(true);await page.getByRole('button',{name:'Mở book — 3',exact:true}).click();await idle();assert.deepEqual((await score()).notes,chosen.notes);await context.setOffline(false);
     const copies=(await records()).filter(p=>p.title==='Bản sao ABC');assert.equal(copies[0].sourceTuneIndex,2);assert.deepEqual(copies[0].source,[...book]);
