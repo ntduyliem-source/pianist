@@ -356,11 +356,11 @@ export class Workspace {
     if (view === 'editor') requestAnimationFrame(() => {window.dispatchEvent(new Event('resize')); this.focusEditor();});
     else (document.getElementById('view-heading') as HTMLElement)?.focus({preventScroll: true});
   }
-  async recordResult(result: AttemptResult, keepReplay = false): Promise<void> {
+  async recordResult(result: AttemptResult, keepReplay = false, showResult = true): Promise<void> {
     if (!keepReplay) delete result.replay;
     try {await storage.saveSession(result); await this.refresh();}
     catch (e) {this.fail(e); this.notice('Chưa lưu được kết quả. Có thể tải JSON để giữ lại.');}
-    this.patch({result}); this.navigate('results');
+    if (showResult) {this.patch({result}); this.navigate('results');}
   }
   async rename(title: string): Promise<void> {
     this.requireInactiveSession();

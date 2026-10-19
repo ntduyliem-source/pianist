@@ -4,9 +4,21 @@ import {Workspace} from '../src/workspace';
 import type {EngineBridge} from '../../../packages/engine-bridge/index';
 import type {PracticeController} from '../src/practice/controller-v2';
 import 'fake-indexeddb/auto';
-import {scoreFixture} from './helpers/fixtures-v2';
+import {scoreFixture,timeline} from './helpers/fixtures-v2';
+import {PracticeEngine} from '../../../packages/practice-engine-v2/engine';
+import {resultFor} from '../../../packages/practice-engine-v2/results';
 import {settingsFor} from '../../../packages/practice-engine-v2/score-adapter';
 import * as storage from '../src/platform/storage';
+
+test('restart saves the aborted attempt without navigating away or replacing the active result',async()=>{
+  const workspace=new Workspace(),t=timeline();workspace.patch({view:'practice'});
+  workspace.navigate=()=>{throw Error('A restart must remain on the practice screen');};
+  const result=resultFor(t,new PracticeEngine(t).view(),'Restart UI check','aborted',100);
+  await workspace.recordResult(result,false,false);
+  assert.equal(workspace.state.view,'practice');assert.equal(workspace.state.result,undefined);
+  assert(workspace.state.history.some(r=>r.id===result.id));
+  assert.equal((await storage.get<{outcome:string}>('sessions',result.id))?.outcome,'aborted');
+});
 
 test('retrying foreign-device history retains local calibration; device change resets it',async()=>{
   const workspace=new Workspace(),snapshot=scoreFixture();

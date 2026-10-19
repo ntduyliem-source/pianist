@@ -16,6 +16,7 @@ export class MidiRouter {
   subscribe=(fn:(e:MidiEvent)=>void)=>{this.listeners.add(fn);return()=>{this.listeners.delete(fn);};};
   get pedal(){return this.pedals.size>0;}
   heldPitches(){return [...new Set([...this.keys.values()].map(e=>e.pitch))];}
+  heldNotes():readonly MidiEvent[]{return [...this.keys.values()];}
   async connect(autoSelect=true){
     const nav=navigator as Navigator&{requestMIDIAccess?:(o:{sysex:boolean})=>Promise<unknown>};
     if(!isSecureContext||!nav.requestMIDIAccess)throw Error('MIDI cần Chrome/Edge trên HTTPS hoặc localhost.');

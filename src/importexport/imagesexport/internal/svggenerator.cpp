@@ -33,6 +33,8 @@
 #include "svggenerator.h"
 #include "types/bytearray.h"
 #include "engraving/dom/engravingitem.h"
+#include "engraving/dom/chord.h"
+#include "engraving/dom/note.h"
 #include "engraving/dom/image.h"
 #include "engraving/dom/imageStore.h"
 #include "engraving/dom/mscore.h"
@@ -148,6 +150,34 @@ static QString getClass(const mu::engraving::EngravingItem* e)
     // Future sub-typing code goes here
 
     return eName;
+}
+
+// Written-note identity, shared with the t/voice/note suffix in the practice
+// snapshot. Emit it from the native owner, never infer it from SVG geometry.
+// A stem/hook belongs to the whole chord; heads, dots and accidentals keep
+// their individual note identity. Grace notes are not practice targets.
+static QString practiceNoteKeys(const mu::engraving::EngravingItem* e)
+{
+    using namespace mu::engraving;
+    if (!e) { return {}; }
+    const EngravingObject* owner = e;
+    if (e->isAccidental() || e->isNoteDot()) { owner = e->explicitParent(); }
+    if (!owner) { return {}; }
+    const Note* note = owner->isNote() ? toNote(owner) : nullptr;
+    const Chord* chord = note ? note->chord() : nullptr;
+    if (!chord && (e->isStem() || e->isHook()) && e->explicitParent() && e->explicitParent()->isChord()) {
+        chord = toChord(e->explicitParent());
+    }
+    if (!chord || chord->isGrace()) { return {}; }
+    QStringList keys;
+    int index = 0;
+    for (const auto* n : chord->notes()) {
+        if ((!note || note == n) && n->visible()) {
+            keys.append(QString("t%1-v%2-n%3").arg(chord->tick().ticks()).arg(chord->track()).arg(index));
+        }
+        ++index;
+    }
+    return keys.join(' ');
 }
 
 class SvgPaintEnginePrivate
@@ -1185,6 +1215,10 @@ void SvgPaintEngine::updateState(const QPaintEngineState& s)
 
     // SVG class attribute, based on mu::engraving::ElementType
     stateStream << SVG_CLASS << getClass(_element) << SVG_QUOTE;
+    const QString noteKeys = practiceNoteKeys(_element);
+    if (!noteKeys.isEmpty()) {
+        stateStream << " data-practice-notes=\"" << noteKeys << SVG_QUOTE;
+    }
 
     // Brush and Pen attributes
     stateStream << qbrushToSvg(s.brush());

@@ -22,6 +22,18 @@ Mở <http://127.0.0.1:8787/pianist.html>. Server phục vụ loopback, port 878
 
 Cấu hình đoạn/BPM thuộc từng bài. Quay lại từ editor, kể cả Browser Back, tạo snapshot mới. Lượt đang chạy/đang tạm dừng khóa thao tác đổi bài. Phố Xa do người dùng cung cấp là ví dụ local; gói public dùng bài CC0.
 
+## Màn tập v2 và toàn màn hình
+
+**Chỉ bản nhạc** mở fullscreen nếu trình duyệt hỗ trợ, hoặc phủ vùng ứng dụng khi fullscreen không khả dụng. Thanh điều khiển trên cùng cao khoảng 39 px ở desktop; **Ẩn thanh điều khiển** dành toàn bộ viewport cho sheet. Nút nhỏ **Hiện điều khiển** đưa thanh trở lại. Bấm **Thoát toàn màn hình** hoặc Escape để về bố cục thường. Không có thao tác chỉnh sửa notation trong màn tập.
+
+Bản nhạc dùng SVG do MuseScore xuất, xếp liên tục theo system và giữ cả hai khuông piano, dynamics/pedal, tên nhạc cụ. Không ký âm lại bằng một renderer khác. **Vừa chiều rộng** tự thích ứng kích thước cửa sổ; có các mức zoom 60–180%. Bàn phím hỗ trợ có thể thu gọn; phím máy tính vẫn hoạt động khi ẩn bàn phím hoặc mở fullscreen.
+
+**Cuộn theo nhạc** giữ system đang chơi trong vùng đọc, chừa chỗ nhìn trước. BPM đi theo thời gian diễn tấu của bản nhạc kể cả khi người chơi bỏ nốt hoặc gặp dấu nghỉ; Đúng nốt đi theo nhóm hiện tại của engine. Repeat, A–B và vòng tập quay về đúng vị trí. Cuộn tay bằng chuột, cảm ứng hoặc phím điều hướng tạm ngưng bám bài; **Tiếp tục theo bài** khôi phục. Đây là logic trình bày, không thay matcher, clock hoặc điểm của engine.
+
+**Chọn đoạn** mở A–B theo ô nhịp; nhập đủ số rồi Enter/rời trường hoặc chọn A/B trực tiếp trên sheet. **Nghe đoạn** phát âm hướng dẫn theo timeline, không tạo kết quả chấm. **Lại đoạn** lưu lượt hiện tại với trạng thái dừng sớm rồi bắt đầu lượt mới tại A, giữ màn tập. **Thiết lập** gom MIDI, tay/bè, count-in, vòng tập, tempo, trường độ, pedal và hiệu chuẩn; mở thiết lập khi đang chơi sẽ tạm dừng lượt.
+
+Kiểm tra v2: 83 test tự động, gồm oracle C#/Python của BPM/R4 và các ca camera, repeat, A–B, lưu lượt khi restart, màu nốt và giữ/nhả đúng lần đánh; build TypeScript/Vite và audit loại bỏ bộ chấm cũ đạt. Kiểm trình duyệt local với Phố Xa: nhập A–B nhiều chữ số, nghe đoạn và chạy BPM, di chuyển viewport, cuộn tay/quay lại, tạm dừng/restart, fullscreen và ẩn thanh. Đàn MIDI thật và HTTPS vẫn để sau.
+
 ## Đúng nốt — Piano Trainer Studio
 
 Dùng bốn hàm Wait nguyên văn của upstream ghim `b40e412`. Mỗi nhóm yêu cầu đúng pitch MIDI, gồm octave. Nhóm tiến khi đã ghi nhận đủ nốt; **không bắt buộc giữ đồng thời toàn bộ hợp âm**. Đây là hành vi latch của nguồn gốc. Nốt lặp cần nhả rồi đánh lại; Note On trùng khi còn giữ được router chuẩn hóa. Phím giữ từ count-in/resume không tự ghi thêm điểm. Chế độ này không cho điểm timing và không áp dụng Follow/Realtime reservation của upstream.
@@ -51,11 +63,15 @@ Input giữ timestamp Web MIDI, đổi về cùng trục với target/metronome 
 
 Count-in vẫn nhận Note Off/CC64. CC64 ≥64 bật, ≤63 tắt, tách từng channel/port. Đổi thiết bị không mang offset của đàn cũ. Pause/ẩn tab/disconnect/audio suspend hoặc lịch audio bị trễ trên 250 ms đóng băng lượt; resume đếm vào lại và chỉ phục hồi phím đang giữ dưới dạng state, không tự tạo attack.
 
-Phím/nốt đang bấm có màu xanh dương. Màu judgement trên bản nhạc lấy từ engine; UI không có matcher tạm hay công thức điểm riêng. Repeat/loop bỏ màu của lần diễn trước khi quay lại, vẫn giữ màu nốt đã chấm trong cùng lần diễn.
+Highlight tô trực tiếp **nét nốt MuseScore** theo cách trình bày của HTML Liem Piano Coach được cung cấp (`assets/js/render.js`, `assets/css/components.css`), không phủ khung chữ nhật. Nốt cần chơi xanh lam, đúng xanh lá, timing chưa tốt vàng, Miss đỏ. Phím đang giữ có quầng sáng nhẹ, nối đúng sequence của lần Note On đã được engine chấm với trạng thái Note Off từ MIDI router; không dùng giới hạn 250 ms hoặc so pitch để làm sáng nốt tương lai. Bàn phím hỗ trợ vẫn hiện phím đang giữ bằng xanh lam. Nghe đoạn tô màu theo từng span/trường độ native và không tạo judgement.
+
+SVG exporter gắn `data-practice-notes` từ chính Note/Chord vào đầu nốt, dấu hóa, dấu chấm, thân/móc nốt. UI dùng định danh tick/track/note tương ứng snapshot để vẽ lại đúng path gốc bằng màu phản hồi; không suy đoán vị trí từ bounding box. Các đầu nốt trong hợp âm giữ màu độc lập; thân chung hiện vàng nếu trạng thái các nốt khác nhau. Đúng nốt hiển thị đỏ tại bước có input thừa, nhưng không ghi Miss giả cho target. Màu judgement lấy từ engine; UI không có matcher tạm hay công thức điểm riêng. Repeat/loop bỏ màu của lần diễn trước khi A bắt đầu, giữ màu cuối vòng trong khoảng nghỉ giữa hai vòng.
+
+Kiểm trình duyệt ngày 18/10/2026: Phố Xa có đủ 1.282 đầu nốt khớp định danh SVG; anchors, performed, keyReleases, pedal, beats và occurrences trước/sau thay đổi giống nhau. Chạy MIDI mô phỏng 80 BPM, A4–B10, 3 vòng hoàn thành 273/273 onset, không Miss/input thừa. Nốt giữ dài có hiệu ứng giữ phím; đổi hệ 4–7 sang 8–10 và quay A đưa camera về đúng hệ, xóa màu vòng cũ. R4 có 240 mốc nhả đúng và 33 target thiếu mốc native (giới hạn đã ghi nhận), không diễn giải thành đủ 273 nhả đúng. Bằng chứng local ở `artifacts/practice-v2/demo/` (snapshot, audit, MIDI result và ảnh).
 
 ## Trường độ, pedal và ký hiệu
 
-R4 chấm **nhả phím**, **âm ngân theo sustain** và **pedal CC64 nhị phân** riêng với điểm BPM. Bật/tắt **Chấm nhả phím · BPM** trong phần Đo thời gian. Công tắc **Dùng pedal** nằm ngay trên bàn phím; nút **Đạp pedal · ON / Nhả pedal · OFF** dùng với bàn phím ảo. Công tắc được khóa trong lượt để cấu hình chấm không thay đổi giữa chừng; kết thúc lượt để đổi. Cấu hình được lưu theo bài. Tắt pedal sẽ ngừng sustain ảo và chấm pedal/âm ngân; vẫn nhận Note Off và chấm nhả phím nếu được bật. Dữ liệu MIDI gốc vẫn được giữ.
+R4 chấm **nhả phím**, **âm ngân theo sustain** và **pedal CC64 nhị phân** riêng với điểm BPM. Bật/tắt **Chấm nhả phím khi tập BPM** trong Thiết lập. Công tắc **Pedal** nằm ngay trên bàn phím, trong Thiết lập và trên thanh fullscreen; nút **Đạp pedal / Nhả pedal** dùng với bàn phím ảo. Công tắc được khóa trong lượt để cấu hình chấm không thay đổi giữa chừng; kết thúc lượt để đổi. Cấu hình được lưu theo bài. Tắt pedal sẽ ngừng sustain ảo và chấm pedal/âm ngân; vẫn nhận Note Off và chấm nhả phím nếu được bật. Dữ liệu MIDI gốc vẫn được giữ.
 
 Mốc nhả lấy trực tiếp từ `CompatMidiRender` của MuseScore, gồm staccato/staccatissimo và tie, không đặt lại tỷ lệ articulation trong JavaScript. Phép kiểm offset của **mir_eval** dùng sai lệch làm tròn 4 chữ số thập phân giây, dung sai `max(20% trường độ tham chiếu, 50 ms)`. Nốt được ghép bởi bộ BPM hiện có; bộ nhả không ghép lại để sửa điểm onset. Đây là so với cách MuseScore phát bài, không phải khẳng định chỉ có một cách diễn tấu đúng.
 
