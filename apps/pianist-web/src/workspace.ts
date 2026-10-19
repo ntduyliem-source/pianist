@@ -2,7 +2,10 @@ import { EngineBridge, type NativeApi } from '../../../packages/engine-bridge/in
 import {settingsFor} from '../../../packages/practice-engine-v2/score-adapter';
 import type {PracticeSettings,AttemptResult,SavedAttempt} from '../../../packages/practice-engine-v2/model';
 import type {ScoreSnapshot} from '../../../packages/score-contracts';
-import { download, fingerprint, validateFile } from './platform/files';
+import { download, fingerprint, prepareScoreFile } from './platform/files';
+import {ScoreFormatClient} from '../../../packages/score-formats/client';
+import type {ScoreConverter} from '../../../packages/score-formats';
+import type {FormatDiagnostic} from '../../../packages/score-formats/model';
 import { MidiRouter } from './platform/midi-v2';
 import * as storage from './platform/storage';
 import {PracticeController} from './practice/controller-v2';
@@ -17,6 +20,7 @@ export interface WorkspaceState {
   practicePicker: boolean;
   canCancelOpen?: boolean;
   engineFailed?: boolean;
+  importDiagnostics?: FormatDiagnostic[];
 }
 export class Workspace {
   state: WorkspaceState = {view: 'library', busy: '', error: '', toast: '', projects: [], history: [], revision: 0, savedRevision: 0, recoveryRevision: 0, saveState: '', engineReady: false, midiVersion: 0, exampleTitle: 'Piano khởi động', practicePicker: true};
@@ -27,6 +31,7 @@ export class Workspace {
   private autosaving?: Promise<void>;
   private documentChange?: symbol;
   private diagnosticSamples: object[] = [];
+  constructor(private readonly scoreConverter: ScoreConverter = new ScoreFormatClient()) {}
   chooseFile: (practice?: boolean) => void = () => {}; showExport: () => void = () => {}; showAbout: () => void = () => {}; showSaveAs: () => void = () => {};
   subscribe = (listener: () => void) => {this.listeners.add(listener); return () => this.listeners.delete(listener);};
   snapshot = () => this.state;
@@ -149,9 +154,10 @@ export class Workspace {
   }
   private async switchDocument(record: storage.ProjectRecord, data: Uint8Array, filename: string, durable = true): Promise<void> {
     await storage.claimProject(record.id);
-    const old = this.state.current;
+    const old = this.state.current, wasPractice = this.bridge?.practiceActive;
     try {
       const bridge = await this.ensureEngine();
+      this.requireInactiveSession();
       this.loadingDocument = true; bridge.setPractice(false);
       const started = performance.now();
       if (!bridge.api.loadScoreData(data, filename)) throw Error('Không mở được bản nhạc. Bài đang mở vẫn được giữ.');
@@ -160,9 +166,9 @@ export class Workspace {
       this.source = {bytes: record.source ?? data, filename: record.sourceName ?? filename};
       if (old && old.id !== record.id) await storage.releaseProject(old.id);
       this.patch({current: record, revision: record.revision, savedRevision: durable ? record.revision : 0,
-        recoveryRevision: durable ? record.revision : 0, saveState: durable ? 'Đã lưu trong thư viện' : 'Chưa lưu trong thư viện', snapshot: undefined, config: undefined});
+        recoveryRevision: durable ? record.revision : 0, saveState: durable ? 'Đã lưu trong thư viện' : 'Chưa lưu trong thư viện', snapshot: undefined, config: undefined, importDiagnostics: undefined});
       clearInterval(this.leaseTimer); this.leaseTimer = window.setInterval(() => {const id = this.state.current?.id; if (id) void storage.claimProject(id).catch(e => {this.session?.pause('Tab khác đã giữ quyền ghi bài này.', true); this.fail(e); this.navigate('library');});}, 5000);
-    } catch (e) {if (old?.id !== record.id) await storage.releaseProject(record.id); throw e;}
+    } catch (e) {if (old?.id !== record.id) await storage.releaseProject(record.id); if (wasPractice && !this.state.engineFailed) this.bridge?.setPractice(true); throw e;}
     finally {this.loadingDocument = false;}
   }
   private requireInactiveSession(): void {
@@ -221,31 +227,40 @@ export class Workspace {
     } finally {this.patch({busy: ''});}
   }
   async importFile(file: File, practice = false): Promise<void> {
+    // A later file replaces only a cancellable preparation, never native commit.
+    this.requireInactiveSession();
+    if (this.state.canCancelOpen) this.cancelOpen();
     return this.changeDocument(() => this.importDocument(file, practice));
   }
   private async importDocument(file: File, practice: boolean): Promise<void> {
     this.requireInactiveSession();
     if (!file) return; this.diagnostic('Đang mở ' + file.name + '…'); await this.autosave(true); const token = ++this.operation;
-    this.fileAbort?.abort(); this.fileAbort = new AbortController();
-    this.patch({busy: 'Đang kiểm tra và mở ' + file.name + '…', canCancelOpen: true});
+    this.fileAbort?.abort(); const abort = this.fileAbort = new AbortController();
+    this.patch({busy: 'Đang kiểm tra và mở ' + file.name + '…', canCancelOpen: true, error: ''});
     try {
       if (file.size > 32 * 1024 * 1024) throw Error('File vượt giới hạn 32 MiB.');
-      const data = new Uint8Array(await file.arrayBuffer()); await validateFile(data, file.name, this.fileAbort.signal);
+      const data = new Uint8Array(await file.arrayBuffer());
+      if (token !== this.operation) return;
+      if (/\.abc$/i.test(file.name)) this.patch({busy: 'Đang chuẩn bị bộ đọc ABC…'});
+      const prepared = await prepareScoreFile(data, file.name, this.scoreConverter, abort.signal,
+        () => {if (token === this.operation) this.patch({busy: 'Đang chuyển ABC thành bản nhạc…'});});
       if (token !== this.operation) return;
       await this.ensureEngine();
       if (token !== this.operation) return;
+      this.requireInactiveSession();
       this.patch({busy: 'Đang nhập bản nhạc vào MuseScore…', canCancelOpen: false});
-      const record: storage.ProjectRecord = {id: crypto.randomUUID(), title: file.name.replace(/\.[^.]+$/, ''), filename: file.name, bytes: data, source: data, sourceName: file.name, revision: 1, createdAt: Date.now(), updatedAt: Date.now()};
-      await this.switchDocument(record, data, file.name, false);
+      const record: storage.ProjectRecord = {id: crypto.randomUUID(), title: prepared.title || file.name.replace(/\.[^.]+$/, ''), filename: prepared.filename, bytes: prepared.bytes, source: data, sourceName: file.name, revision: 1, createdAt: Date.now(), updatedAt: Date.now()};
+      await this.switchDocument(record, prepared.bytes, prepared.filename, false);
       if (!practice) this.navigate('editor');
       record.bytes = this.bridge!.serialize(); record.filename = `${record.title}.mscz`;
       await storage.saveProject(record); this.patch({current: record, savedRevision: record.revision, recoveryRevision: record.revision, saveState: 'Đã lưu trong thư viện'}); await this.refresh(); this.notice('Đã nhập bài và giữ bản nguồn trong thư viện.');
+      this.patch({importDiagnostics: prepared.diagnostics.length ? prepared.diagnostics : undefined});
       this.diagnostic('Đã mở ' + file.name + '.');
       if (practice) await this.practice();
     } catch (error) {if (token === this.operation) throw error;}
     finally {if (token === this.operation) this.patch({busy: '', canCancelOpen: false});}
   }
-  cancelOpen(): void {if (!this.state.canCancelOpen) return; ++this.operation; this.documentChange = undefined; this.fileAbort?.abort(); this.bridge?.cancel(); this.patch({busy: '', canCancelOpen: false});}
+  cancelOpen(): void {if (!this.state.canCancelOpen) return; ++this.operation; this.documentChange = undefined; this.fileAbort?.abort(); this.bridge?.cancel(); this.patch({busy: '', canCancelOpen: false}); this.diagnostic('Đã hủy mở file.');}
   async openProject(id: string, practice = false): Promise<void> {
     return this.changeDocument(() => this.openStoredProject(id, practice));
   }

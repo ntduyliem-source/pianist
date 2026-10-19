@@ -1,6 +1,6 @@
 # Pianist Web — sử dụng bản V2
 
-Cập nhật 18/10/2026. **Thư viện**, **Editor MuseScore** và **Tập piano** là ba màn riêng. Màn tập chỉ đọc bản nhạc; nhập/sửa/lưu vẫn dùng MuseScore WASM. Bộ chấm cũ đã bị xóa. Xem [nguồn và symbol](../third_party/practice-sources/PROVENANCE.md), [báo cáo R0–R7](R0_R7_RESULTS.md).
+Cập nhật 19/10/2026. **Thư viện**, **Editor MuseScore** và **Tập piano** là ba màn riêng. Màn tập chỉ đọc bản nhạc; nhập/sửa/lưu vẫn dùng MuseScore WASM. Bộ chấm cũ đã bị xóa. Xem [nguồn và symbol](../third_party/practice-sources/PROVENANCE.md), [báo cáo R0–R7](R0_R7_RESULTS.md).
 
 ## Chạy local và build
 
@@ -14,13 +14,23 @@ Mở <http://127.0.0.1:8787/pianist.html>. Server phục vụ loopback, port 878
 
 ## Luồng sử dụng
 
-1. Nhập MXL/MusicXML/MSCZ (tối đa 32 MiB) hoặc mở bài trong thư viện. Thanh **Tập piano** mở trang chọn bài, dùng được cả khi chưa mở editor.
+1. Nhập ABC một bài hoặc MXL/MusicXML/MSCZ (tối đa 32 MiB), hay mở bài trong thư viện. Thanh **Tập piano** mở trang chọn bài, dùng được cả khi chưa mở editor.
 2. **Lưu thư viện/Ctrl+S** lưu IndexedDB. **Lưu bản mới/Ctrl+Shift+S** tạo project riêng. Tải MSCZ/xuất MXL, XML, PDF tạo file trên máy.
 3. **Tập bài này** lấy snapshot hiện tại, gồm sửa đổi chưa xuất file. Chọn A/B bằng ô nhịp trên bản nhạc hoặc trường số, tay/khuông/voice, BPM/đơn vị phách, tempo cố định hoặc tempo score, số vòng và mức tăng BPM.
 4. Kết nối/chọn đàn MIDI hoặc dùng phím ảo/phím máy tính A W S E D F T G Y H U J. Bàn phím hiển thị một quãng có thể đổi, nhận toàn dải MIDI 0–127.
 5. Bắt đầu, tạm dừng/tiếp tục hoặc kết thúc. Kết quả có delta từng nốt, miss, input thừa, JSON, CSV và replay. Nút tập lại ô nhịp mở đúng project.
 
 Cấu hình đoạn/BPM thuộc từng bài. Quay lại từ editor, kể cả Browser Back, tạo snapshot mới. Lượt đang chạy/đang tạm dừng khóa thao tác đổi bài. Phố Xa do người dùng cung cấp là ví dụ local; gói public dùng bài CC0.
+
+## Nhập ABC — A1/A2
+
+Nút mở file và kéo thả nhận `.abc` UTF-8. abc2xml 2.68 nguyên bản chạy trong Worker Pyodide cùng website, rồi MusicXML đi vào editor MuseScore. Có thể sửa, undo/redo, lưu thư viện, tải MSCZ/MXL và tập như bài nhập từ MXL. Bài đã lưu mở bằng MSCZ, không chuyển ABC lại. Màn tập giữ bộ chấm BPM/Đúng nốt/R4 hiện có.
+
+Lần mở ABC đầu tải thêm khoảng 13,5 MB runtime; MXL không tải phần này. `build-pianist.ps1` chuẩn bị runtime tự động; nếu chỉ build web bằng npm, chạy thêm `python buildscripts/pianist/prepare-score-format-sources.py`. Tất cả xử lý tại máy, không gửi bản nhạc đi.
+
+ABC nhiều bài hiện báo lỗi để người dùng tách file; chọn bài là A3. Converter có giới hạn: các ca mất trường độ, tie, D.C./D.S./Coda và bè xuyên khuông đã phát hiện sẽ bị từ chối, giữ nguyên bài đang mở. Với Phố Xa, tiếp tục dùng **MXL gốc**; bản ABC chưa đạt kiểm chứng âm nhạc. Xem [profile và bằng chứng](ABC_CONVERTER_RESULTS.md).
+
+Hủy khi đang đọc/chuyển ABC dừng Worker. Chọn file khác trong giai đoạn có thể hủy sẽ thay lượt mở cũ; bước nhập native cuối khóa thay file. Chưa có nút xuất ABC (A4), chưa tích hợp runtime ABC vào gói offline/phát hành (A6); chuẩn bị offline hiện tại không bảo đảm mở ABC mới khi mất mạng.
 
 ## Màn tập v2 và toàn màn hình
 

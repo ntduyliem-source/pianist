@@ -1,12 +1,16 @@
 import { Unzip, UnzipInflate } from 'fflate';
+import {inspectAbc} from '../../../../packages/score-formats/abc';
+import {prepareImport, type ScoreConverter, type PreparedScore} from '../../../../packages/score-formats';
 const MAX = 32 * 1024 * 1024, EXPANDED = 64 * 1024 * 1024;
 function checkEntities(text: string): void {
   if (/<!ENTITY\s/i.test(text) || /<!DOCTYPE[^>]*(?:SYSTEM|PUBLIC)\s+(?!["']-\/\/Recordare)/i.test(text)) throw Error('Không hỗ trợ XML có external entity.');
 }
 export async function validateFile(bytes: Uint8Array, filename: string, signal?: AbortSignal): Promise<void> {
+  signal?.throwIfAborted();
   if (!bytes.length || bytes.length > MAX) throw Error('File phải từ 1 byte đến 32 MiB.');
   const ext = filename.split('.').at(-1)?.toLowerCase();
-  if (!['mxl', 'xml', 'musicxml', 'mscz', 'mscx'].includes(ext ?? '')) throw Error('Chọn file MXL, MusicXML hoặc MuseScore.');
+  if (!['abc', 'mxl', 'xml', 'musicxml', 'mscz', 'mscx'].includes(ext ?? '')) throw Error('Chọn file ABC, MXL, MusicXML hoặc MuseScore.');
+  if (ext === 'abc') {inspectAbc(bytes); return;}
   if (ext === 'mxl' || ext === 'mscz') {
     if (bytes[0] !== 0x50 || bytes[1] !== 0x4b) throw Error('File nén không phải ZIP hợp lệ.');
     let total = 0, entries = 0;
@@ -34,6 +38,23 @@ export async function validateFile(bytes: Uint8Array, filename: string, signal?:
     checkEntities(text);
     if (!/<(?:score-partwise|score-timewise|museScore)\b/.test(text)) throw Error('Không tìm thấy nội dung bản nhạc.');
   }
+}
+export async function prepareScoreFile(bytes: Uint8Array, filename: string, converter: ScoreConverter,
+  signal?: AbortSignal, onReady?: () => void): Promise<PreparedScore> {
+  await validateFile(bytes, filename, signal);
+  const prepared = await prepareImport(bytes, filename, converter, signal, onReady);
+  if (/\.abc$/i.test(filename)) {
+    // Generated XML has a separate 64 MiB limit; source files remain 32 MiB.
+    if (!prepared.bytes.length || prepared.bytes.length > EXPANDED) throw Error('MusicXML sinh ra rỗng hoặc vượt giới hạn 64 MiB.');
+    const text = new TextDecoder().decode(prepared.bytes); checkEntities(text);
+    if (!/<score-partwise\b/.test(text)) throw Error('Converter không tạo được bản nhạc MusicXML.');
+    if (typeof DOMParser !== 'undefined') {
+      const parsed = new DOMParser().parseFromString(text, 'application/xml');
+      if (parsed.querySelector('parsererror') || parsed.documentElement.localName !== 'score-partwise') throw Error('MusicXML do converter tạo ra không hợp lệ.');
+    }
+  }
+  signal?.throwIfAborted();
+  return prepared;
 }
 export function download(bytes: Uint8Array | string, filename: string, type = 'application/octet-stream'): void {
   const blob = new Blob([typeof bytes === 'string' ? bytes : bytes.slice().buffer as ArrayBuffer], {type});

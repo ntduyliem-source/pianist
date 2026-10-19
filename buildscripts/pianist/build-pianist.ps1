@@ -20,6 +20,8 @@ try {
 } finally { Pop-Location }
 python buildscripts/pianist/prepare-fixtures.py
 if ($LASTEXITCODE -ne 0) { throw 'Fixture preparation failed' }
+python buildscripts/pianist/prepare-score-format-sources.py
+if ($LASTEXITCODE -ne 0) { throw 'ABC runtime preparation failed' }
 node src/web/appjs/install.js build.artifacts
 if ($LASTEXITCODE -ne 0) { throw 'Web resource installation failed' }
 python buildscripts/pianist/prepare-notices.py

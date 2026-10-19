@@ -90,3 +90,39 @@ offline preparation; a local staged runtime is not an offline-release claim.
 References: [abc2xml source/documentation](https://wim.vree.org/svgParse/abc2xml.html),
 [xml2abc options](https://wim.vree.org/svgParse/xml2abc.html),
 [Pyodide Workers](https://pyodide.org/en/stable/usage/webworker.html).
+
+## A2 — Product integration
+
+Completed 2026-10-19. `prepareScoreFile` is the shared entry for file picker and
+drop: validate source → pass native formats through, or prepare ABC → validate
+generated MusicXML → existing native document import. Original ABC bytes stay in
+`source/sourceName`; editable saved bytes are MSCZ. There is no alternate scorer.
+
+`npm test`: **96/96**, no skipped tests. `npm run build`: TypeScript/Vite pass.
+New tests cover source spoofing, XML entities, native bypass, source retention,
+save/reopen without conversion, overlapping opens, cancellation/stale completion,
+active-session guards and native failure preserving read-only practice mode.
+The old scoring cutover audit passes: 13 obsolete files absent, zero old grader
+matches in source, bundles/maps or native policy.
+
+Real Edge UI: `node tests/browser/pianist/abc-import.cjs` passes. It checks MXL
+does not fetch Python, imports ABC into the native editor, edits pitches,
+undo/redo, saves MSCZ/MXL, reloads the library and saved MSCZ, rejects invalid,
+rounded and multi-tune input without adding projects, cancels a blocked runtime
+download, and imports by drag/drop with a visible layout warning.
+
+The imported ABC then uses the separate practice view and the existing simulated
+MIDI path: **11/11 perfect attacks, zero extras/misses, 11/11 correct key releases,
+pedal F1 = 1**. Full-sheet mode shows the held native note glyphs during the run;
+the practice file picker also opens ABC directly into its read-only view. This is the basic A2 end-to-end
+check; the complete two-format A–B/fullscreen/camera/replay matrix remains A5.
+Local artifacts: `artifacts/abc/a2/result.json`, `practice-result.json`, `results.png`.
+
+The existing `m0-smoke.cjs` also passes on Edge: native MXL/XML import,
+MSCZ/MXL reopen, keyboard editing/duration/note entry, and malformed XML retaining
+the open score without aborting WASM (`artifacts/m0/msedge/result.json`).
+
+Production app: 539.84 kB raw JS / 143.11 kB gzip, converter Worker 14.78 kB raw;
+the separate practice Worker remains byte-identical at 16.11 kB. Native WASM and
+the original grading algorithms were not changed. A3 multi-tune UI, A4 ABC export,
+A5 complete practice equivalence and A6 offline/release work remain pending.
