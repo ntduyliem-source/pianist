@@ -46,6 +46,12 @@ bool prepareProject(const void* source, unsigned int len, const char* filename, 
 }
 
 EMSCRIPTEN_KEEPALIVE
+bool preparePracticeSnapshot(const void* source, unsigned int len, const char* filename)
+{
+    return filename && WebApi::instance()->prepareSnapshot(source, len, filename);
+}
+
+EMSCRIPTEN_KEEPALIVE
 bool getScoreSemantics() { return WebApi::instance()->getScoreSemantics(); }
 
 EMSCRIPTEN_KEEPALIVE

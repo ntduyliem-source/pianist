@@ -59,6 +59,7 @@ public:
     bool saveProject();
     bool serializeProject();
     bool prepareProject(const void* source, unsigned int len, const std::string& filename, bool semantics);
+    bool prepareSnapshot(const void* source, unsigned int len, const std::string& filename);
     bool getScoreSemantics();
     bool getSnapshot();
     bool setPracticeActive(bool active);
@@ -83,6 +84,9 @@ private:
     void resetPracticePlayback();
     void applyPracticePlaybackRange();
     void preparePracticePlayback();
+
+    enum class PreparedOutput { Project, Semantics, Snapshot };
+    bool prepareTemporaryProject(const void* source, unsigned int len, const std::string& filename, PreparedOutput outputKind);
 
     project::INotationProjectPtr m_currentProject;
     unsigned int m_revision = 0;

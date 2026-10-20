@@ -1,0 +1,80 @@
+{
+  "candidate": "webmscore@1.2.1",
+  "browser": "155.0.4283.62",
+  "errors": [],
+  "probe": {
+    "cpuRate": 4,
+    "workerLifecycle": "fresh-per-request",
+    "coldMs": 1182.784999847412,
+    "metadata": {
+      "composer": "Pianist original curriculum prototype",
+      "duration": 32,
+      "excerpts": [],
+      "fileVersion": 400,
+      "hasHarmonies": "false",
+      "hasLyrics": "false",
+      "keysig": 0,
+      "lyrics": "",
+      "measures": 8,
+      "mscoreVersion": "",
+      "pageFormat": {
+        "height": 297,
+        "twosided": "true",
+        "width": 210
+      },
+      "pages": 1,
+      "parts": [
+        {
+          "harmonyCount": 0,
+          "hasDrumStaff": "false",
+          "hasPitchedStaff": "true",
+          "hasTabStaff": "false",
+          "instrumentId": "piano",
+          "instrumentName": "Piano",
+          "isVisible": "true",
+          "lyricCount": 0,
+          "name": "Piano",
+          "program": 0
+        }
+      ],
+      "poet": "",
+      "previousSource": "",
+      "subtitle": "",
+      "tempo": 60,
+      "tempoText": "<sym>metNoteQuarterUp</sym> = 60",
+      "textFramesData": {
+        "composers": [
+          "Pianist original curriculum prototype"
+        ],
+        "poets": [],
+        "subtitles": [],
+        "titles": [
+          "K008 Đổi hai nốt tay phải"
+        ]
+      },
+      "timesig": "4/4",
+      "title": "K008 Đổi hai nốt tay phải"
+    },
+    "requestMs": [
+      1192.0099992752075,
+      1186.039999961853,
+      1223.505000114441,
+      1198.8450002670288,
+      1183.6349992752075,
+      1192.130000114441,
+      1169.920000076294,
+      1211.1799993515015,
+      1185.5250005722046,
+      1185.130000114441
+    ],
+    "longTasksMs": [],
+    "svgBytes": 126750,
+    "perNotePracticeIds": 0,
+    "positionKind": "segment",
+    "positionElements": null,
+    "positionsError": "RuntimeError: function signature mismatch",
+    "currentSnapshotApi": false
+  },
+  "executionPassed": true,
+  "acceptedForProduction": false
+}

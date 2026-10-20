@@ -38,3 +38,32 @@ test('temporary projects and XML capture copy native memory and restore callback
   api.exportScore=()=>{throw Error('export failed');};assert.throws(()=>bridge.musicXml(),/export failed/);assert.equal(Module.onXmlExported,old);
   api.prepareProject=()=>0;assert.throws(()=>bridge.prepare(bytes,'bad.musicxml'));assert.equal(Module.onProjectPrepared,old);
 });
+
+test('temporary snapshot does not reset active audition or publish an editor change; callbacks survive errors', () => {
+  const previous = () => {}, Module: any = {onPreparedSnapshot: previous};
+  const raw = {schemaVersion: 1, revision: 7, pages: [{svg: '<svg/>'}], anchors: [], performed: []};
+  const api = {Module, preparePracticeSnapshot() {Module.onPreparedSnapshot(JSON.stringify(raw)); return 1;},
+    practicePlayback() {throw Error('Must not interrupt current audition');},
+    loadScoreData() {throw Error('Must not replace the editor');}} as unknown as NativeApi;
+  const bridge = new EngineBridge(api); bridge.revision = 7; bridge.practiceActive = true;
+  const snapshot = bridge.preparedSnapshot(Uint8Array.of(1), 'next.mxl');
+  assert.deepEqual(snapshot, raw); assert.equal(Module.onPreparedSnapshot, previous);
+  assert.equal(bridge.revision, 7); assert.equal(bridge.practiceActive, true);
+  raw.pages[0].svg = 'changed'; assert.equal(snapshot.pages[0].svg, '<svg/>');
+  raw.revision = 8;
+  assert.throws(() => bridge.preparedSnapshot(Uint8Array.of(1), 'stale.mxl'), /không hợp lệ/);
+  assert.equal(Module.onPreparedSnapshot, previous);
+  for (const json of ['null', '{}', '{bad JSON']) {
+    let nativeReturned = false;
+    api.preparePracticeSnapshot = () => {Module.onPreparedSnapshot(json); nativeReturned = true; return 1;};
+    assert.throws(() => bridge.preparedSnapshot(Uint8Array.of(1), 'bad-result.mxl'));
+    assert.equal(nativeReturned, true, 'validation happens after native project cleanup');
+    assert.equal(Module.onPreparedSnapshot, previous);
+  }
+  api.preparePracticeSnapshot = () => {throw Error('native failed');};
+  assert.throws(() => bridge.preparedSnapshot(Uint8Array.of(1), 'bad.mxl'), /native failed/);
+  assert.equal(Module.onPreparedSnapshot, previous);
+  delete api.preparePracticeSnapshot;
+  assert.throws(() => bridge.preparedSnapshot(Uint8Array.of(1), 'old-engine.mxl'), /MuseScore/);
+  assert.equal(Module.onPreparedSnapshot, previous);
+});

@@ -1,0 +1,20 @@
+{
+  "recordedAt": "2026-10-20T15:09:02.7585537Z",
+  "safetyCommit": "494c94cf74de137dee568cafa623e73f13354ec8",
+  "unitTests": {
+    "passed": 122,
+    "failed": 0
+  },
+  "frontendBuild": "passed",
+  "nativeBuild": "Release optimized, passed",
+  "scoringFilesChecked": 15,
+  "scoringFilesChanged": 0,
+  "obsoleteGraderMatches": 0,
+  "nativeFunctionalPassed": true,
+  "rendererGatePassed": false,
+  "q0Status": "renderer-gate-open",
+  "wasmSha256": "6faf0ad73f9d78b0540edb95dbce7797a8739eb5aa77511ac79c61fdee9acfbc",
+  "glueSha256": "b3e30f63c6cab305b3c93a26db5aea8549a4007a2e9cfc9740cbbcc042939d98",
+  "localPackageVersion": "37bdd8521ac34d1b416a",
+  "wasmBytes": 84007689
+}

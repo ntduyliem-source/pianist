@@ -157,12 +157,22 @@ const MuImpl = {
     },
 
     prepareProject: function(data, filename, semantics = false) {
+        return this.prepareScoreData(data, filename, 'prepareProject', Number(semantics));
+    },
+
+    prepareSnapshot: function(data, filename) {
+        return this.prepareScoreData(data, filename, 'preparePracticeSnapshot');
+    },
+
+    prepareScoreData: function(data, filename, operation, semantics = 0) {
         if (!(data instanceof Uint8Array) || !data.length || data.length > 64 * 1024 * 1024) throw Error('Invalid temporary score size.');
         const ptr = this.Module._malloc(data.length);
         if (!ptr) throw Error('Cannot allocate temporary score.');
         try {
             this.Module.HEAPU8.set(data, ptr);
-            return this.Module.ccall('prepareProject', 'number', ['number', 'number', 'string', 'number'], [ptr, data.length, filename, Number(semantics)]);
+            const types = ['number', 'number', 'string'], args = [ptr, data.length, filename];
+            if (operation === 'prepareProject') { types.push('number'); args.push(semantics); }
+            return this.Module.ccall(operation, 'number', types, args);
         } finally { this.Module._free(ptr); }
     },
 

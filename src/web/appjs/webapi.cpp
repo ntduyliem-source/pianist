@@ -195,6 +195,17 @@ bool WebApi::serializeProject()
 
 bool WebApi::prepareProject(const void* source, unsigned int len, const std::string& filename, bool semantics)
 {
+    return prepareTemporaryProject(source, len, filename,
+                                   semantics ? PreparedOutput::Semantics : PreparedOutput::Project);
+}
+
+bool WebApi::prepareSnapshot(const void* source, unsigned int len, const std::string& filename)
+{
+    return prepareTemporaryProject(source, len, filename, PreparedOutput::Snapshot);
+}
+
+bool WebApi::prepareTemporaryProject(const void* source, unsigned int len, const std::string& filename, PreparedOutput outputKind)
+{
     // Parse and serialize without publishing to globalContext. The live score,
     // its undo stack, selection and revision remain owned by the editor.
     std::string format = io::suffix(io::path_t(filename));
@@ -208,7 +219,8 @@ bool WebApi::prepareProject(const void* source, unsigned int len, const std::str
     const Ret loaded = project->load(input, {}, format);
     io::File::remove(input);
     if (!loaded) { return false; }
-    if (semantics) { return snapshotFor(project, false, "onPreparedSemantics"); }
+    if (outputKind == PreparedOutput::Semantics) { return snapshotFor(project, false, "onPreparedSemantics"); }
+    if (outputKind == PreparedOutput::Snapshot) { return snapshotFor(project, true, "onPreparedSnapshot"); }
     const Ret saved = project->save(output, project::SaveMode::AutoSave, false);
     ByteArray data;
     const bool read = saved && io::File::readFile(output, data);

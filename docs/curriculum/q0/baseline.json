@@ -1,0 +1,115 @@
+{
+  "recordedAt": "2026-10-20T14:27:47.9630890Z",
+  "sourceCommit": "494c94cf74de137dee568cafa623e73f13354ec8",
+  "sourceBeforeCheckpoint": "274d128d7b",
+  "branch": "codex/sight-reading",
+  "tests": {
+    "failed": 0,
+    "total": 119,
+    "passed": 119
+  },
+  "frontendBuild": "passed",
+  "nativeBuild": {
+    "fastLink": false,
+    "status": "existing release binary before Q0 changes",
+    "type": "Release",
+    "qt": "6.10.2/wasm_singlethread"
+  },
+  "files": [
+    {
+      "sha256": "a23be123516898a9e942b8560a0e45636abe42c40d32a4b5e58e2ed3eb14faa4",
+      "path": "build.artifacts/MuseScoreStudio.wasm",
+      "bytes": 84007345
+    },
+    {
+      "sha256": "823088a16257f2b01993ebf655a1ee9d4145094aed76b2b7256beaf56c108bda",
+      "path": "build.artifacts/MuseScoreStudio.js",
+      "bytes": 264995
+    },
+    {
+      "sha256": "7d637ba0e5a2cffd176e31f184b009f7c455844c9ddb566f4d1cd9e53d959f6b",
+      "path": "src/app/exported_functions.cmake",
+      "bytes": 270
+    },
+    {
+      "sha256": "9d79b33660727ff298a5e3ad649c18f1d6425195a8158a82c0079dcd8f9fc0c4",
+      "path": "apps/pianist-web/package-lock.json",
+      "bytes": 56136
+    },
+    {
+      "sha256": "6d26b9c770767b808b662a7c7c90abf8e947413a105aa622857c6e5fbda32590",
+      "path": "packages/practice-engine-v2/engine.ts",
+      "bytes": 7846
+    },
+    {
+      "sha256": "df40f33b65f7c9cf8456412d8b78fe2ebb5bc2f40aecc6ab70ee0328db642b83",
+      "path": "packages/practice-engine-v2/midi-state.ts",
+      "bytes": 3851
+    },
+    {
+      "sha256": "4ca06a709f440478deb8fae2dafb987c6761a8da7e2a8b70bc86f831151ca0ca",
+      "path": "packages/practice-engine-v2/model.ts",
+      "bytes": 5185
+    },
+    {
+      "sha256": "307a710f54fe3ff6ccd4051d0683f769fea90226530577743028db46725e7d85",
+      "path": "packages/practice-engine-v2/package.json",
+      "bytes": 88
+    },
+    {
+      "sha256": "c2aebcad7fa6ada124dc41ad1bb895c270acdc945722692f808263e7e3287d7c",
+      "path": "packages/practice-engine-v2/reference-adapter-r4.ts",
+      "bytes": 4387
+    },
+    {
+      "sha256": "d963f51cfb2e6fdcf4a65e4c41f396308448a9dafdc35301f458e36dde4e836b",
+      "path": "packages/practice-engine-v2/release-assessment.ts",
+      "bytes": 5453
+    },
+    {
+      "sha256": "8b2c8f4c3f946df526d15c015ea74de56a35b3253a50786af30e0e2b421360dc",
+      "path": "packages/practice-engine-v2/results.ts",
+      "bytes": 5082
+    },
+    {
+      "sha256": "e5916bea551ac842cc1900a87f6ffae80cc1b499c9a437d00f5065593a54d5c7",
+      "path": "packages/practice-engine-v2/score-adapter.ts",
+      "bytes": 9089
+    },
+    {
+      "sha256": "3f693c4f4dea55901333613649c474d4e7dfa6ee2d7a0700e0dd0c0d46456dbb",
+      "path": "packages/practice-engine-v2/upstream/hold-tail-probe.ts",
+      "bytes": 905
+    },
+    {
+      "sha256": "d95516da5d8c0b83f3e530b89b8e7349061aec72c556b77dd52bdd103616150c",
+      "path": "packages/practice-engine-v2/upstream/mania.ts",
+      "bytes": 5754
+    },
+    {
+      "sha256": "90c9198005e0d0da574962ed902e92de779e30d29ba3062fd2c4edf2a8ea5857",
+      "path": "packages/practice-engine-v2/upstream/mir-eval.ts",
+      "bytes": 5098
+    },
+    {
+      "sha256": "0d343afcaf1a91e54b18335157d65612704a294374b46c0c8941f16e084b8f62",
+      "path": "packages/practice-engine-v2/upstream/note-seq.ts",
+      "bytes": 2442
+    },
+    {
+      "sha256": "cf6e37908600e7cf45f1a56082929dac19d6faa87048002d7e13a5f333e284ed",
+      "path": "packages/practice-engine-v2/upstream/studio-extractions.json",
+      "bytes": 813
+    },
+    {
+      "sha256": "7836da208e2d43ab7be3730dbf4217b1ca50dbe6c430215e5201cba4c7752be5",
+      "path": "packages/practice-engine-v2/upstream/studio-wait.d.ts",
+      "bytes": 282
+    },
+    {
+      "sha256": "6aed8426db545871adabb9b25a6fbd2bef8383a363215c3febefbb333457b33c",
+      "path": "packages/practice-engine-v2/upstream/studio-wait.js",
+      "bytes": 13674
+    }
+  ]
+}

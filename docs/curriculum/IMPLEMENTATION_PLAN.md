@@ -71,6 +71,8 @@ Trước khi chạy đủ kho, dùng **100 đoạn ứng viên/grade** làm pilo
 
 ## Q0 Chốt hợp đồng dữ liệu và kiểm rủi ro native
 
+**Cập nhật triển khai 20/10/2026:** đã có mốc an toàn, schema nháp, API snapshot tạm và kiểm tra native. **Gate renderer còn mở**: render trên main thread gây long task và ngắt phiên BPM ở phép thử CPU 4×. Xem [báo cáo Q0 và phần việc còn lại](Q0.md); chưa đánh dấu Q0 hoàn tất hoặc chuyển sang triển khai quiz liên tục.
+
 **Công việc**
 
 - Tạo nhánh `codex/sight-reading`, lưu mốc an toàn cho code đang hoạt động; chọn file để commit rõ ràng, không đưa archive nghiên cứu vào Git.

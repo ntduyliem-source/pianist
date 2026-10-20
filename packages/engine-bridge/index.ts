@@ -4,6 +4,7 @@ export interface NativeApi {
   Module: any; loadScoreData(bytes: Uint8Array, filename: string): boolean; saveProject(): number;
   serializeProject(): number; exportScore(format: string): number; dispatchAction(action: string): number;
   prepareProject(bytes: Uint8Array, filename: string, semantics?: boolean): number;
+  preparePracticeSnapshot?(bytes: Uint8Array, filename: string): number;
   getScoreSemantics(): number;
   getPracticeSnapshot(): number; setPracticeActive(active: boolean): number; midiInput(status: number, data1: number, data2: number): number;
   startAudioProcessing(): Promise<void>;
@@ -48,6 +49,20 @@ export class EngineBridge {
   }
   prepare(bytes: Uint8Array, filename: string): Uint8Array {
     return this.capture('onProjectPrepared', () => this.api.prepareProject(bytes, filename), value => new Uint8Array(value), 'MuseScore không chuẩn bị được bài này (MSCZ tối đa 32 MiB).');
+  }
+  /** Synchronous native call. Only schedule outside timed play until the renderer gate passes. */
+  preparedSnapshot(bytes: Uint8Array, filename: string): Omit<ScoreSnapshot, 'projectId' | 'fingerprint'> {
+    // Validate after C++ has destroyed the temporary project, so a JS exception
+    // cannot escape through its synchronous callback and skip native cleanup.
+    const json = this.capture('onPreparedSnapshot', () => this.api.preparePracticeSnapshot?.(bytes, filename) ?? 0,
+      value => String(value), 'MuseScore chưa tạo được hình và nốt cho câu tập tạm.');
+    const snapshot = JSON.parse(json);
+    if (snapshot?.schemaVersion !== this.schemaVersion || snapshot.revision !== this.revision
+      || !Array.isArray(snapshot.pages) || !snapshot.pages.length
+      || !Array.isArray(snapshot.anchors) || !Array.isArray(snapshot.performed)) {
+      throw Error('Snapshot câu tập không hợp lệ hoặc không cùng phiên bản engine.');
+    }
+    return snapshot;
   }
   musicXml(): Uint8Array {
     return this.capture('onXmlExported', () => this.api.exportScore('musicxml'), value => new Uint8Array(value), 'Không lấy được MusicXML đang chỉnh sửa.');

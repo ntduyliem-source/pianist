@@ -8,6 +8,7 @@ const MuApi = {
     loadScoreFile: MuImpl.loadScoreFile.bind(MuImpl),
     loadScoreData: MuImpl.loadScoreData.bind(MuImpl),
     prepareProject: MuImpl.prepareProject.bind(MuImpl),
+    preparePracticeSnapshot: MuImpl.prepareSnapshot.bind(MuImpl),
     getScoreSemantics: () => MuImpl.Module.ccall('getScoreSemantics', 'number', [], []),
 
     saveProject: () => MuImpl.Module.ccall('saveProject', 'number', [], []),
