@@ -1,0 +1,45 @@
+{
+  "recordedAt": "2026-10-20T17:16:48.061920+00:00",
+  "sourceBaseBeforeFix": "888c20c614f8bc5cf672b846ff4da127c7ce71e6",
+  "unitTests": {
+    "passed": 131,
+    "failed": 0
+  },
+  "frontendBuild": "passed",
+  "nativeRendererBuild": "Release optimized",
+  "scoringFilesChecked": 15,
+  "scoringFilesChanged": [],
+  "obsoleteGraderMatches": 0,
+  "nativeFunctionalPassed": true,
+  "rendererGatePassed": true,
+  "q0Status": "foundation-gate-passed-for-tested-fixtures-and-profile",
+  "localPackageVersion": "ac82ba485548cb1c55eb",
+  "scope": "Local Q0 renderer; no quiz UI/catalog rollout. CDP 4x throttles page main thread, not renderer Worker.",
+  "rendererBuild": {
+    "files": [
+      {
+        "path": "PianistRenderer.mjs",
+        "bytes": 171233,
+        "sha256": "ccc60b02311d16dfd9620f30ada3d6e85649b51f453632d42731514a1bb3d420"
+      },
+      {
+        "path": "PianistRenderer.wasm",
+        "bytes": 79325776,
+        "sha256": "bfe586f5d67e57d9a7aa26f8c13c9826269a40ff4d6d5e4960cbe3b1bdfce63d"
+      }
+    ],
+    "qt": "6.10.2",
+    "optimizedLink": true,
+    "schemaVersion": 1
+  },
+  "editorAssets": [
+    {
+      "path": "MuseScoreStudio.js",
+      "sha256": "b3e30f63c6cab305b3c93a26db5aea8549a4007a2e9cfc9740cbbcc042939d98"
+    },
+    {
+      "path": "MuseScoreStudio.wasm",
+      "sha256": "6faf0ad73f9d78b0540edb95dbce7797a8739eb5aa77511ac79c61fdee9acfbc"
+    }
+  ]
+}

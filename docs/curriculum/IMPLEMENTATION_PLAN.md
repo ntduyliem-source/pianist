@@ -71,7 +71,7 @@ Trước khi chạy đủ kho, dùng **100 đoạn ứng viên/grade** làm pilo
 
 ## Q0 Chốt hợp đồng dữ liệu và kiểm rủi ro native
 
-**Cập nhật triển khai 20/10/2026:** đã có mốc an toàn, schema nháp, API snapshot tạm và kiểm tra native. **Gate renderer còn mở**: render trên main thread gây long task và ngắt phiên BPM ở phép thử CPU 4×. Xem [báo cáo Q0 và phần việc còn lại](Q0.md); chưa đánh dấu Q0 hoàn tất hoặc chuyển sang triển khai quiz liên tục.
+**Cập nhật triển khai 20/10/2026:** Q0 đã qua gate renderer với bộ fixture/profile thử nghiệm. Renderer MuseScore riêng trong Worker dựng 60 câu mới mỗi cấu hình trong lúc MIDI mô phỏng chạy; cả desktop và viewport mobile với main thread chậm 4× đều hoàn tất 32/32 nốt, không có long task UI giao với render. 9 oracle khớp dữ liệu nhạc/glyph/tọa độ, editor giữ nguyên bytes/undo. Xem [bản sửa và giới hạn số đo](Q0_RENDERER_WORKER.md). Q1–Q9, UI quiz và kiểm refill từng profile/BPM thật vẫn là phần tiếp theo.
 
 [Điều tra hiệu năng](Q0_RENDER_INVESTIGATION.md) đã tách các đường API: SVG và phần chữ trang giấy là chi phí lớn; chuyển renderer sang Worker vẫn cần thiết. Câu quiz nên giữ tên bài/nguồn trong UI, dùng sheet trích đoạn gọn và cache có định danh đầy đủ. Việc này không thay đổi bản gốc trong editor hoặc thuật toán chấm.
 

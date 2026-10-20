@@ -1,0 +1,680 @@
+{
+  "browser": "155.0.4283.62",
+  "channel": "msedge",
+  "cpu": "Intel(R) Xeon(R) CPU E5-2680 v4 @ 2.40GHz",
+  "cores": 56,
+  "memoryGiB": 47.90518569946289,
+  "renderer": "independent-worker",
+  "optimizedRenderer": true,
+  "release": "ac82ba485548cb1c55eb",
+  "checks": [
+    "Existing temporary MSCZ preparation and ABC semantics API still match native musical data",
+    "Worker rejects malformed input, remains usable and returns content/version-keyed cached data",
+    "Temporary SVG snapshots and malformed-input failure preserve editor bytes, revision, dirty state and undo/redo",
+    "Nine temporary snapshots (including 4/16/64 attacks) match direct MuseScore imports and their own SVG glyphs"
+  ],
+  "fixtures": [
+    {
+      "file": "docs/curriculum/starter-scores/K001.mxl",
+      "sha256": "9287c1fc65c450398c5c8633ede785ec05df02141b5033cfec2898e95e170f61",
+      "counts": {
+        "targets": 32,
+        "onsets": 32
+      },
+      "anchors": 32,
+      "pages": 1,
+      "glyphs": 32,
+      "coldMs": 319.75,
+      "rendererVersion": "bfe586f5d67e57d9a7aa26f8c13c9826269a40ff4d6d5e4960cbe3b1bdfce63d",
+      "sourceHash": "9287c1fc65c450398c5c8633ede785ec05df02141b5033cfec2898e95e170f61",
+      "rendererHeapBytes": 134217728,
+      "exactNoteGlyphs": 64,
+      "fullSvgByteEqual": false
+    },
+    {
+      "file": "docs/curriculum/starter-scores/K008.mxl",
+      "sha256": "feb2502aaf2c1a1fd4860cc439785d206f6d0675f9b7b2ca62ab49b24057712e",
+      "counts": {
+        "targets": 32,
+        "onsets": 32
+      },
+      "anchors": 32,
+      "pages": 1,
+      "glyphs": 32,
+      "coldMs": 103.14000034332275,
+      "rendererVersion": "bfe586f5d67e57d9a7aa26f8c13c9826269a40ff4d6d5e4960cbe3b1bdfce63d",
+      "sourceHash": "feb2502aaf2c1a1fd4860cc439785d206f6d0675f9b7b2ca62ab49b24057712e",
+      "rendererHeapBytes": 134217728,
+      "exactNoteGlyphs": 64,
+      "fullSvgByteEqual": false
+    },
+    {
+      "file": "docs/curriculum/starter-scores/K012.mxl",
+      "sha256": "5e4bcf54e6698efdb1667a0201789cd5b085e5b9939b2d963b6d5845f689d0d3",
+      "counts": {
+        "targets": 18,
+        "onsets": 18
+      },
+      "anchors": 18,
+      "pages": 1,
+      "glyphs": 18,
+      "coldMs": 81.53999996185303,
+      "rendererVersion": "bfe586f5d67e57d9a7aa26f8c13c9826269a40ff4d6d5e4960cbe3b1bdfce63d",
+      "sourceHash": "5e4bcf54e6698efdb1667a0201789cd5b085e5b9939b2d963b6d5845f689d0d3",
+      "rendererHeapBytes": 134217728,
+      "exactNoteGlyphs": 36,
+      "fullSvgByteEqual": false
+    },
+    {
+      "file": "tests/fixtures/pianist/practice/tempo-repeat-tie.musicxml",
+      "sha256": "37eb371386298e78510ead0430103fb1c283fe5dce7ced43433982b75a2feae0",
+      "counts": {
+        "targets": 16,
+        "onsets": 13
+      },
+      "anchors": 11,
+      "pages": 1,
+      "glyphs": 11,
+      "coldMs": 54.739999771118164,
+      "rendererVersion": "bfe586f5d67e57d9a7aa26f8c13c9826269a40ff4d6d5e4960cbe3b1bdfce63d",
+      "sourceHash": "37eb371386298e78510ead0430103fb1c283fe5dce7ced43433982b75a2feae0",
+      "rendererHeapBytes": 134217728,
+      "exactNoteGlyphs": 23,
+      "fullSvgByteEqual": false
+    },
+    {
+      "file": "tests/fixtures/pianist/practice/pedal-duration.musicxml",
+      "sha256": "d13c8715d6fff223277678f31391d9adcef6762f43636078986af10098d83bd5",
+      "counts": {
+        "targets": 17,
+        "onsets": 14
+      },
+      "anchors": 11,
+      "pages": 1,
+      "glyphs": 11,
+      "coldMs": 53.234999656677246,
+      "rendererVersion": "bfe586f5d67e57d9a7aa26f8c13c9826269a40ff4d6d5e4960cbe3b1bdfce63d",
+      "sourceHash": "d13c8715d6fff223277678f31391d9adcef6762f43636078986af10098d83bd5",
+      "rendererHeapBytes": 134217728,
+      "exactNoteGlyphs": 20,
+      "fullSvgByteEqual": false
+    },
+    {
+      "file": "tests/fixtures/pianist/practice/same-staff-voices.musicxml",
+      "sha256": "b74d5180cd5eb54c2c2bc433007dd58f3b1e20154a58d78fe1cdcccec7d55eaa",
+      "counts": {
+        "targets": 5,
+        "onsets": 4
+      },
+      "anchors": 5,
+      "pages": 1,
+      "glyphs": 5,
+      "coldMs": 22.175000190734863,
+      "rendererVersion": "bfe586f5d67e57d9a7aa26f8c13c9826269a40ff4d6d5e4960cbe3b1bdfce63d",
+      "sourceHash": "b74d5180cd5eb54c2c2bc433007dd58f3b1e20154a58d78fe1cdcccec7d55eaa",
+      "rendererHeapBytes": 134217728,
+      "exactNoteGlyphs": 9,
+      "fullSvgByteEqual": false
+    },
+    {
+      "file": "artifacts/q0/test-4.mxl",
+      "sha256": "92904a177ad17161131a029286d1cc5afca72579e1f5eb333b7d21e33b9e03b7",
+      "counts": {
+        "targets": 4,
+        "onsets": 4
+      },
+      "anchors": 4,
+      "pages": 1,
+      "glyphs": 4,
+      "coldMs": 18.309999465942383,
+      "rendererVersion": "bfe586f5d67e57d9a7aa26f8c13c9826269a40ff4d6d5e4960cbe3b1bdfce63d",
+      "sourceHash": "92904a177ad17161131a029286d1cc5afca72579e1f5eb333b7d21e33b9e03b7",
+      "rendererHeapBytes": 134217728,
+      "exactNoteGlyphs": 8,
+      "fullSvgByteEqual": false
+    },
+    {
+      "file": "artifacts/q0/test-16.mxl",
+      "sha256": "5b9dfcb8e9e5c94eb75cc4b6685f3081f04ffb3d6e2d26b1e186c4bf897e8ecd",
+      "counts": {
+        "targets": 16,
+        "onsets": 16
+      },
+      "anchors": 16,
+      "pages": 1,
+      "glyphs": 16,
+      "coldMs": 27.285000801086426,
+      "rendererVersion": "bfe586f5d67e57d9a7aa26f8c13c9826269a40ff4d6d5e4960cbe3b1bdfce63d",
+      "sourceHash": "5b9dfcb8e9e5c94eb75cc4b6685f3081f04ffb3d6e2d26b1e186c4bf897e8ecd",
+      "rendererHeapBytes": 134217728,
+      "exactNoteGlyphs": 32,
+      "fullSvgByteEqual": false
+    },
+    {
+      "file": "artifacts/q0/test-64.mxl",
+      "sha256": "f4bdca7fa870b7f24f3b985fe0285103f176523d6164900928eabfe95a65967c",
+      "counts": {
+        "targets": 64,
+        "onsets": 64
+      },
+      "anchors": 64,
+      "pages": 1,
+      "glyphs": 64,
+      "coldMs": 70.98999977111816,
+      "rendererVersion": "bfe586f5d67e57d9a7aa26f8c13c9826269a40ff4d6d5e4960cbe3b1bdfce63d",
+      "sourceHash": "f4bdca7fa870b7f24f3b985fe0285103f176523d6164900928eabfe95a65967c",
+      "rendererHeapBytes": 134217728,
+      "exactNoteGlyphs": 128,
+      "fullSvgByteEqual": false
+    }
+  ],
+  "benchmarks": [
+    {
+      "scenario": {
+        "name": "desktop",
+        "width": 1440,
+        "height": 1000,
+        "rate": 1
+      },
+      "throttleScope": "CDP page main thread; renderer Worker is not CPU-throttled",
+      "baseline": {
+        "status": "finished",
+        "message": "",
+        "plannedPackets": 64,
+        "packets": 64,
+        "nativeSamplesMs": {
+          "n": 0
+        },
+        "renderMode": "sync",
+        "roundtripMs": {
+          "n": 0
+        },
+        "dispatchMs": {
+          "n": 0
+        },
+        "cacheHits": [],
+        "rendererHeapBytes": {
+          "n": 0
+        },
+        "deliveryMs": {
+          "n": 64,
+          "min": 0.049902915954589844,
+          "p50": 0.06503963470458984,
+          "p95": 0.10994148254394531,
+          "max": 0.3299999237060547
+        },
+        "longTasksMs": {
+          "n": 0
+        },
+        "renderLongTasksMs": {
+          "n": 0
+        },
+        "frameGapsMs": {
+          "n": 919,
+          "min": 4.1119999999991705,
+          "p50": 10.034999999999854,
+          "p95": 10.084999999999127,
+          "max": 10.149999999997817
+        },
+        "sheetUnchanged": true,
+        "editorRevisionUnchanged": true,
+        "planned": 32,
+        "metrics": {
+          "planned": 32,
+          "evaluated": 32,
+          "hits": 32,
+          "misses": 0,
+          "extras": 0,
+          "inputs": 32,
+          "accuracy": 1,
+          "coverage": 1,
+          "precision": 1,
+          "medianAbsMs": 1.0950727462768555,
+          "p90AbsMs": 1.6000776290893555,
+          "signedMeanMs": 1.0903043746948242,
+          "grades": {
+            "miss": 0,
+            "meh": 0,
+            "ok": 0,
+            "good": 0,
+            "great": 0,
+            "perfect": 32
+          }
+        },
+        "faults": [],
+        "outcome": "complete",
+        "wasmHeapBytes": 520880128
+      },
+      "withNative": {
+        "status": "finished",
+        "message": "",
+        "plannedPackets": 64,
+        "packets": 64,
+        "nativeSamplesMs": {
+          "n": 60,
+          "min": 12.59000015258789,
+          "p50": 63.420000076293945,
+          "p95": 84.44999980926514,
+          "max": 86.06999969482422
+        },
+        "renderMode": "worker",
+        "roundtripMs": {
+          "n": 60,
+          "min": 12.835000038146973,
+          "p50": 64.39999961853027,
+          "p95": 85.13000011444092,
+          "max": 87.02500057220459
+        },
+        "dispatchMs": {
+          "n": 60,
+          "min": 0,
+          "p50": 0.005000114440917969,
+          "p95": 0.010000228881835938,
+          "max": 0.024999618530273438
+        },
+        "cacheHits": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "rendererHeapBytes": {
+          "n": 60,
+          "min": 134217728,
+          "p50": 134217728,
+          "p95": 134217728,
+          "max": 134217728
+        },
+        "deliveryMs": {
+          "n": 64,
+          "min": 0.045020103454589844,
+          "p50": 0.07007789611816406,
+          "p95": 0.10021495819091797,
+          "max": 0.1451272964477539
+        },
+        "longTasksMs": {
+          "n": 0
+        },
+        "renderLongTasksMs": {
+          "n": 0
+        },
+        "frameGapsMs": {
+          "n": 914,
+          "min": 0.5610000000015134,
+          "p50": 10.034999999999854,
+          "p95": 10.084999999999127,
+          "max": 10.145000000000437
+        },
+        "sheetUnchanged": true,
+        "editorRevisionUnchanged": true,
+        "planned": 32,
+        "metrics": {
+          "planned": 32,
+          "evaluated": 32,
+          "hits": 32,
+          "misses": 0,
+          "extras": 0,
+          "inputs": 32,
+          "accuracy": 1,
+          "coverage": 1,
+          "precision": 1,
+          "medianAbsMs": 0.5648584365844727,
+          "p90AbsMs": 0.8948144912719727,
+          "signedMeanMs": 0.40987491607666016,
+          "grades": {
+            "miss": 0,
+            "meh": 0,
+            "ok": 0,
+            "good": 0,
+            "great": 0,
+            "perfect": 32
+          }
+        },
+        "faults": [],
+        "outcome": "complete",
+        "wasmHeapBytes": 520880128
+      },
+      "refill": {
+        "profile": "four sequential quarters at 240 BPM",
+        "durationMs": 1000,
+        "roundtripMs": {
+          "n": 20,
+          "min": 14.110000610351562,
+          "p50": 14.630000114440918,
+          "p95": 16.130000114440918,
+          "max": 16.90499973297119
+        },
+        "workerMs": {
+          "n": 20,
+          "min": 13.809999465942383,
+          "p50": 14.360000610351562,
+          "p95": 15.774999618530273,
+          "max": 16.609999656677246
+        },
+        "gate": true
+      },
+      "gate": true
+    },
+    {
+      "scenario": {
+        "name": "mobile-viewport-main-thread-4x",
+        "width": 390,
+        "height": 844,
+        "rate": 4
+      },
+      "throttleScope": "CDP page main thread; renderer Worker is not CPU-throttled",
+      "baseline": {
+        "status": "finished",
+        "message": "",
+        "plannedPackets": 64,
+        "packets": 64,
+        "nativeSamplesMs": {
+          "n": 0
+        },
+        "renderMode": "sync",
+        "roundtripMs": {
+          "n": 0
+        },
+        "dispatchMs": {
+          "n": 0
+        },
+        "cacheHits": [],
+        "rendererHeapBytes": {
+          "n": 0
+        },
+        "deliveryMs": {
+          "n": 64,
+          "min": 0.04499053955078125,
+          "p50": 0.2100200653076172,
+          "p95": 0.9399805068969727,
+          "max": 2.1700096130371094
+        },
+        "longTasksMs": {
+          "n": 0
+        },
+        "renderLongTasksMs": {
+          "n": 0
+        },
+        "frameGapsMs": {
+          "n": 919,
+          "min": 8.209000000002561,
+          "p50": 10.034999999996217,
+          "p95": 10.084999999999127,
+          "max": 30.110000000000582
+        },
+        "sheetUnchanged": true,
+        "editorRevisionUnchanged": true,
+        "planned": 32,
+        "metrics": {
+          "planned": 32,
+          "evaluated": 32,
+          "hits": 32,
+          "misses": 0,
+          "extras": 0,
+          "inputs": 32,
+          "accuracy": 1,
+          "coverage": 1,
+          "precision": 1,
+          "medianAbsMs": 0.910029411315918,
+          "p90AbsMs": 1.365107536315918,
+          "signedMeanMs": 0.8134565353393555,
+          "grades": {
+            "miss": 0,
+            "meh": 0,
+            "ok": 0,
+            "good": 0,
+            "great": 0,
+            "perfect": 32
+          }
+        },
+        "faults": [],
+        "outcome": "complete",
+        "wasmHeapBytes": 520880128
+      },
+      "withNative": {
+        "status": "finished",
+        "message": "",
+        "plannedPackets": 64,
+        "packets": 64,
+        "nativeSamplesMs": {
+          "n": 60,
+          "min": 13.8100004196167,
+          "p50": 60.375,
+          "p95": 80.52500057220459,
+          "max": 82.42000007629395
+        },
+        "renderMode": "worker",
+        "roundtripMs": {
+          "n": 60,
+          "min": 14.695000648498535,
+          "p50": 64.02500057220459,
+          "p95": 83.38499927520752,
+          "max": 84.65999984741211
+        },
+        "dispatchMs": {
+          "n": 60,
+          "min": 0,
+          "p50": 0.005000114440917969,
+          "p95": 0.16000080108642578,
+          "max": 0.16499996185302734
+        },
+        "cacheHits": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "rendererHeapBytes": {
+          "n": 60,
+          "min": 134217728,
+          "p50": 134217728,
+          "p95": 134217728,
+          "max": 134217728
+        },
+        "deliveryMs": {
+          "n": 64,
+          "min": 0.045029640197753906,
+          "p50": 0.18500041961669922,
+          "p95": 1.2651662826538086,
+          "max": 7.895009994506836
+        },
+        "longTasksMs": {
+          "n": 0
+        },
+        "renderLongTasksMs": {
+          "n": 0
+        },
+        "frameGapsMs": {
+          "n": 915,
+          "min": 9.775000000001455,
+          "p50": 10.034999999996217,
+          "p95": 10.099999999998545,
+          "max": 20.060000000004948
+        },
+        "sheetUnchanged": true,
+        "editorRevisionUnchanged": true,
+        "planned": 32,
+        "metrics": {
+          "planned": 32,
+          "evaluated": 32,
+          "hits": 32,
+          "misses": 0,
+          "extras": 0,
+          "inputs": 32,
+          "accuracy": 1,
+          "coverage": 1,
+          "precision": 1,
+          "medianAbsMs": 0.6923971176147461,
+          "p90AbsMs": 1.204970359802246,
+          "signedMeanMs": 0.6388463973999023,
+          "grades": {
+            "miss": 0,
+            "meh": 0,
+            "ok": 0,
+            "good": 0,
+            "great": 0,
+            "perfect": 32
+          }
+        },
+        "faults": [],
+        "outcome": "complete",
+        "wasmHeapBytes": 520880128
+      },
+      "refill": {
+        "profile": "four sequential quarters at 240 BPM",
+        "durationMs": 1000,
+        "roundtripMs": {
+          "n": 20,
+          "min": 14.329999923706055,
+          "p50": 14.929999351501465,
+          "p95": 15.495000839233398,
+          "max": 16.645000457763672
+        },
+        "workerMs": {
+          "n": 20,
+          "min": 13.47499942779541,
+          "p50": 14.110000610351562,
+          "p95": 14.63499927520752,
+          "max": 15.105000495910645
+        },
+        "gate": true
+      },
+      "gate": true
+    }
+  ],
+  "errors": [],
+  "workerColdBootMs": 1956.2200002670288,
+  "editorBytes": {
+    "archiveByteEqual": false,
+    "beforeEntries": {
+      "score_style.mss": "1a73badcbf7d667b809202cdae838c42ccf9bf1ceb79bb36031c1882dd80e6d5",
+      "pianist-recovery.mscx": "9d12c7518be8de0d3f18c9f29e89cf63dffc64720d923bb217cb50bca25c7700",
+      "automation.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "audiosettings.json": "4c93a09a48005e1cc2f4527094b3a852a74832f681e61cfad09b63bce0daecab",
+      "viewsettings.json": "47e64f09cae0e2278f615c508a9fd933738ac854193fa472a412e75498fd81c9",
+      "META-INF/container.xml": "b20625e4a9afde3ff2c2a414c643ffba19e483bc8b310ac338cc9124386556ac"
+    },
+    "afterEntries": {
+      "score_style.mss": "1a73badcbf7d667b809202cdae838c42ccf9bf1ceb79bb36031c1882dd80e6d5",
+      "pianist-recovery.mscx": "9d12c7518be8de0d3f18c9f29e89cf63dffc64720d923bb217cb50bca25c7700",
+      "automation.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "audiosettings.json": "4c93a09a48005e1cc2f4527094b3a852a74832f681e61cfad09b63bce0daecab",
+      "viewsettings.json": "47e64f09cae0e2278f615c508a9fd933738ac854193fa472a412e75498fd81c9",
+      "META-INF/container.xml": "b20625e4a9afde3ff2c2a414c643ffba19e483bc8b310ac338cc9124386556ac"
+    }
+  },
+  "functionalPassed": true,
+  "rendererGatePassed": true
+}

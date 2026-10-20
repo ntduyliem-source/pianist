@@ -9,6 +9,8 @@ if (!$SkipEngine) {
     if ($LASTEXITCODE -ne 0) { throw 'Audio engine build failed' }
     & "$PSScriptRoot/build-web.ps1" -FastLink:$FastLink -Jobs $Jobs
     if ($LASTEXITCODE -ne 0) { throw 'Notation engine build failed' }
+    & "$PSScriptRoot/build-renderer.ps1" -FastLink:$FastLink -Jobs $Jobs -Publish
+    if ($LASTEXITCODE -ne 0) { throw 'Exercise renderer build failed' }
 }
 Push-Location (Join-Path $root 'apps/pianist-web')
 try {

@@ -1,0 +1,23 @@
+{
+  "checks": [
+    "rejects corrupt renderer before instantiating WASM",
+    "retries boot successfully with the verified pair",
+    "renders without any editor instance",
+    "keeps source bytes intact",
+    "cache hit returns the same score",
+    "bad input and active cancellation leave the renderer usable"
+  ],
+  "result": {
+    "notes": 32,
+    "pages": 1,
+    "firstCache": false,
+    "secondCache": true,
+    "sourceIntact": true,
+    "rejected": true,
+    "abortName": "AbortError",
+    "afterNotes": 32,
+    "editorAbsent": true,
+    "heapBytes": 134217728
+  },
+  "passed": true
+}

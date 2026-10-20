@@ -6,6 +6,7 @@ import {PracticeController} from '../../../apps/pianist-web/src/practice/control
 import {MidiRouter} from '../../../apps/pianist-web/src/platform/midi-v2';
 import type {ScoreSnapshot} from '../../../packages/score-contracts/index';
 import type {AttemptResult} from '../../../packages/practice-engine-v2/model';
+import {ExerciseRenderer} from '../../../packages/exercise-renderer/index';
 
 type Input = {name: string; bytes: number[]};
 const api = () => (window as any).pianist as NativeApi;
@@ -18,7 +19,10 @@ function prepared(input: Input) {
   const b = bridge(), start = performance.now();
   const raw = b.preparedSnapshot(new Uint8Array(input.bytes), input.name);
   const elapsedMs = performance.now() - start;
-  const snapshot: ScoreSnapshot = {...raw, projectId: 'q0:' + input.name, fingerprint: input.name};
+  return inspect(raw, input.name, elapsedMs);
+}
+function inspect(raw:Omit<ScoreSnapshot,'projectId'|'fingerprint'>,name:string,elapsedMs:number){
+  const snapshot: ScoreSnapshot = {...raw, projectId: 'q0:' + name, fingerprint: name};
   const keys = new Set(snapshot.pages.flatMap(p => [...new DOMParser().parseFromString(p.svg, 'image/svg+xml')
     .querySelectorAll('[data-practice-notes]')].flatMap(n => n.getAttribute('data-practice-notes')!.split(/\s+/))));
   const missing = snapshot.anchors.filter(n => n.visible && !keys.has(n.id.replace(/^m\d+-/, '')));
@@ -27,9 +31,22 @@ function prepared(input: Input) {
   return {snapshot, elapsedMs, counts: exerciseCounts(timeline), targets: timeline.targets,
     wasmHeapBytes: api().Module.HEAPU8.byteLength, glyphs: keys.size};
 }
+let renderer=new ExerciseRenderer();
+async function preparedWorker(input:Input){
+  const start=performance.now(),result=await renderer.prepare(new Uint8Array(input.bytes),input.name);
+  return {...inspect(result.snapshot,input.name,performance.now()-start),
+    workerMs:result.elapsedMs,cacheHit:result.cacheHit,sourceHash:result.sourceHash,
+    rendererVersion:result.rendererVersion,rendererHeapBytes:result.heapBytes};
+}
+const warmRenderer=async()=>{
+  const start=performance.now();await renderer.warm();return performance.now()-start;
+};
+const resetRenderer=()=>{renderer.dispose();renderer=new ExerciseRenderer();};
 const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
+let renderSerial=0;
 
-async function midiProbe(inputs: Input[], renderCount: number) {
+async function midiProbe(inputs: Input[], renderCount: number, renderMode:'sync'|'worker'='sync') {
+  if(renderMode==='worker')await renderer.warm();
   const b = bridge(), raw = b.snapshot();
   const score: ScoreSnapshot = {...raw, projectId: 'q0-current', fingerprint: 'q0-current'};
   const settings = {...settingsFor(score), mode: 'bpm' as const, bpm: 240, countIn: 2, metronome: true};
@@ -44,6 +61,7 @@ async function midiProbe(inputs: Input[], renderCount: number) {
   sheet.innerHTML = score.pages.map(p => p.svg).join('');
   document.body.append(sheet);
   const sheetBefore = sheet.innerHTML, samples: number[] = [], frames: number[] = [];
+  const roundtrips:number[]=[],dispatchMs:number[]=[],cacheHits:boolean[]=[],rendererHeapBytes:number[]=[];
   const renderWindows: {start: number; end: number}[] = [], longTasks: {start: number; duration: number}[] = [];
   const observer = new PerformanceObserver(list => list.getEntries().forEach(e => longTasks.push({start: e.startTime, duration: e.duration})));
   let lastFrame: number | undefined, frame = 0;
@@ -72,16 +90,28 @@ async function midiProbe(inputs: Input[], renderCount: number) {
       // Keep native work inside actual timed play, not just the count-in.
       if (session.status === 'running' && i < renderCount) {
         const input = inputs[i % inputs.length], start = performance.now();
-        b.preparedSnapshot(new Uint8Array(input.bytes), input.name);
+        if(renderMode==='worker'){
+          // Unique filename forces a fresh native import/layout/SVG; a cache hit
+          // would not prove that live rendering is safe during timed MIDI.
+          const source=new Uint8Array(input.bytes),name=`probe-${++renderSerial}-${input.name}`;
+          const dispatchAt=performance.now(),pending=renderer.prepare(source,name);
+          dispatchMs.push(performance.now()-dispatchAt);
+          const rendered=await pending;samples.push(rendered.elapsedMs);cacheHits.push(rendered.cacheHit);
+          rendererHeapBytes.push(rendered.heapBytes);
+        }else{
+          b.preparedSnapshot(new Uint8Array(input.bytes), input.name);
+          samples.push(performance.now()-start);
+        }
         const end = performance.now();
-        samples.push(end - start); renderWindows.push({start, end}); i++;
+        roundtrips.push(end-start);renderWindows.push({start, end}); i++;
       }
-      await delay(80);
+      await delay(renderMode==='worker'?0:80);
     }
     const status = session.status, message = session.message;
     if (!result) {await session.finish('interrupted'); await delay(80);}
     await delay(80);
     return {status, message, plannedPackets: events.length, packets, nativeSamplesMs: samples,
+      renderMode,roundtripMs:roundtrips,dispatchMs,cacheHits,rendererHeapBytes,
       deliveryMs: deliveries, longTasksMs: longTasks.map(t => t.duration),
       renderLongTasksMs: longTasks.filter(t => renderWindows.some(w => w.start < t.start + t.duration && w.end > t.start)).map(t => t.duration),
       frameGapsMs: frames,
@@ -93,4 +123,4 @@ async function midiProbe(inputs: Input[], renderCount: number) {
     observer.disconnect(); cancelAnimationFrame(frame); sheet.remove(); session.dispose();
   }
 }
-(window as any).q0Lab = {prepared, midiProbe, bridge};
+(window as any).q0Lab = {prepared,preparedWorker,warmRenderer,resetRenderer,midiProbe,bridge};

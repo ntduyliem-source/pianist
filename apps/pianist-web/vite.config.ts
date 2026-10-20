@@ -5,7 +5,10 @@ export default defineConfig({
   define: {'process.env.NODE_ENV': JSON.stringify('production')},
   build: {
     outDir: '../../build.artifacts/app', emptyOutDir: true, sourcemap: true,
-    lib: {entry: resolve(import.meta.dirname, 'src/main.tsx'), formats: ['es'], fileName: () => 'pianist.js', cssFileName: 'pianist'},
+    lib: {entry: {
+      pianist: resolve(import.meta.dirname, 'src/main.tsx'),
+      'exercise-renderer': resolve(import.meta.dirname, '../../packages/exercise-renderer/index.ts'),
+    }, formats: ['es'], fileName: (_format,name) => name+'.js', cssFileName: 'pianist'},
   },
   worker: {format: 'es'},
 });

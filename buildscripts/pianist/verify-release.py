@@ -52,6 +52,8 @@ def main():
         return path.read_bytes()
     release = json.loads(read('release.json'))
     if release.get('schemaVersion') != 1 or not release.get('optimizedLink'): raise ValueError('Not an optimized release')
+    if release.get('renderer') and not release['renderer'].get('optimizedLink'):
+        raise ValueError('Exercise renderer is not an optimized release')
     expected_version = hashlib.sha256(json.dumps({'files': release['files'], 'workerTemplateSha256': release.get('workerTemplateSha256')}, sort_keys=True).encode()).hexdigest()[:20]
     if release.get('version') != expected_version: raise ValueError('Release version does not match its manifest')
     if args.public and release.get('sourceDirty') is not False: raise ValueError('Public bundle must reference clean source')
@@ -73,6 +75,12 @@ def main():
     if release.get('libraryScores', 0) != library_count: raise ValueError('Bundled library count mismatch')
     if release.get('scoreFormats') != formats['version']: raise ValueError('ABC runtime version mismatch')
     if not {'score-formats/manifest.json', *('score-formats/' + e['path'] for e in formats['files'])}.issubset(seen): raise ValueError('ABC files missing from release/offline manifest')
+    if release.get('renderer'):
+        if not {'renderer/build.json', 'renderer/PianistRenderer.mjs', 'renderer/PianistRenderer.wasm'}.issubset(seen):
+            raise ValueError('Renderer files missing from release/offline manifest')
+        renderer_build = json.loads(read('renderer/build.json').decode('utf-8-sig'))
+        if not renderer_build.get('optimizedLink'):
+            raise ValueError('Renderer build stamp is not optimized')
     if args.public:
         catalog = json.loads(read('examples/catalog.json'))
         if any(e['url'] != 'fixtures/piano.mxl' for e in catalog['examples']): raise ValueError('Non-public sample catalog')

@@ -310,6 +310,9 @@ if (CC_IS_EMCC)
     target_link_options(MuseScoreStudio PRIVATE ${EXPORTED_FUNCTIONS})
     # Emscripten 4 no longer exposes heap views on Module by default.
     set_property(TARGET MuseScoreStudio PROPERTY QT_WASM_EXTRA_EXPORTED_METHODS "ccall,HEAPU8")
+    if(MUE_CONFIGURATION_IS_APPWEB)
+        add_subdirectory(../web/renderer "${CMAKE_CURRENT_BINARY_DIR}/renderer")
+    endif()
 endif()
 
 

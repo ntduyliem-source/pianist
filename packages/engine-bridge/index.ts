@@ -50,7 +50,7 @@ export class EngineBridge {
   prepare(bytes: Uint8Array, filename: string): Uint8Array {
     return this.capture('onProjectPrepared', () => this.api.prepareProject(bytes, filename), value => new Uint8Array(value), 'MuseScore không chuẩn bị được bài này (MSCZ tối đa 32 MiB).');
   }
-  /** Synchronous native call. Only schedule outside timed play until the renderer gate passes. */
+  /** Editor-only synchronous oracle. Use ExerciseRenderer.prepare during timed play. */
   preparedSnapshot(bytes: Uint8Array, filename: string): Omit<ScoreSnapshot, 'projectId' | 'fingerprint'> {
     // Validate after C++ has destroyed the temporary project, so a JS exception
     // cannot escape through its synchronous callback and skip native cleanup.

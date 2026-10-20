@@ -55,6 +55,8 @@ def main():
     release = verify(source)
     if release['sourceCommit'] != commit or release['sourceDirty'] or not release['optimizedLink']:
         raise SystemExit('Build/package an optimized release from the current clean commit first.')
+    if release.get('renderer') and not release['renderer'].get('optimizedLink'):
+        raise SystemExit('Build an optimized exercise renderer before staging.')
     site = output / 'site'; site.mkdir(parents=True)
     for entry in release['files']:
         name = entry['path']
