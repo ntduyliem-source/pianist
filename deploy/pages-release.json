@@ -1,6 +1,6 @@
 {
-  "tag": "pianist-web-2026-10-19-playback",
-  "sha256": "048a4489b759f01494659b88ebb2d94fca3acbd2dee25727165cf4eeb362615d",
-  "sourceCommit": "f4284ea7d514ab5f707c1b861118d8abaaff2bb9",
-  "version": "afa6be03e131612e67d3"
+  "tag": "pianist-web-2026-10-20-mobile",
+  "sha256": "4e6ae912e81d18326abb2114b757ab684b0f1a9e93884cb0b8907b12a678fd65",
+  "sourceCommit": "62a3e7733d2bcb31fe54cf5e608d1c5cf1678da7",
+  "version": "a037b9ef239ce8110722"
 }
