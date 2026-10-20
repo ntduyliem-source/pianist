@@ -1,0 +1,201 @@
+{
+  "schemaVersion": 1,
+  "stage": "Q1",
+  "status": "complete",
+  "verifiedAt": "2026-10-20T18:12:54.153189+00:00",
+  "baseCommit": "75b727727b5dd107bddb9fb75653311c76e9bb61",
+  "manifestSha256": "e8ef53696fef3ceaf89d24c3c6b9fb334d42c319c435fc05ff7a734ef6e4788d",
+  "summary": {
+    "sourceRows": 37631,
+    "uniqueMxlFiles": 37630,
+    "validUniqueMxlFiles": 37629,
+    "catalogContentSha256": "7e079fdeafc021109545fb9391a951d8207966db927b9b9a8e9c60948e43bd46",
+    "duplicateContentGroups": 1,
+    "validContainerRows": 37630,
+    "rowsWithErrors": 1,
+    "unaccountedRows": 0,
+    "reviewQueueRows": 37630,
+    "reviewQueueUniqueFiles": 37629,
+    "publicApprovedRows": 0,
+    "acceptedGradeFragments": 0
+  },
+  "collections": {
+    "openscore-lieder": {
+      "sourceRows": 1462,
+      "uniqueMxlFiles": 1461,
+      "validContainers": 1462,
+      "validUniqueMxlFiles": 1461,
+      "withExplicitPianoName": 1432,
+      "withErrors": 0,
+      "metadata": {
+        "not-applicable": 1462
+      },
+      "visibility": {
+        "pending-review": 1462
+      }
+    },
+    "pdmx": {
+      "sourceRows": 36150,
+      "uniqueMxlFiles": 36150,
+      "validContainers": 36149,
+      "validUniqueMxlFiles": 36149,
+      "withExplicitPianoName": 16565,
+      "withErrors": 1,
+      "metadata": {
+        "verified": 36150
+      },
+      "visibility": {
+        "pending-review": 36150
+      }
+    },
+    "user-library": {
+      "sourceRows": 19,
+      "uniqueMxlFiles": 19,
+      "validContainers": 19,
+      "validUniqueMxlFiles": 19,
+      "withExplicitPianoName": 19,
+      "withErrors": 0,
+      "metadata": {
+        "not-applicable": 19
+      },
+      "visibility": {
+        "personal": 19
+      }
+    }
+  },
+  "pdmxFilter": {
+    "allRows": 254077,
+    "noLicenseConflict": 222856,
+    "alsoAllValid": 222820,
+    "alsoDeduplicated": 77321,
+    "pianoMetadataCandidates": 36150
+  },
+  "mxlContentBytesByValidation": {
+    "invalid": 1134880,
+    "valid": 247518423
+  },
+  "initialAssetAcquisition": [
+    {
+      "id": "pdmx-PDMX.csv",
+      "path": "raw/pdmx/PDMX.csv",
+      "bytes": 225399738,
+      "sha256": "fc2187e7e09185f4b28be57b6478a96a1243a037f8fd13624f17de2d8bfd44bd",
+      "md5": "30392ccf38bb63ce70e7afae70f9c88c",
+      "gitBlob": "a5ce96a9694a87851792651a7cf723c20cc7c9f8",
+      "status": "seeded",
+      "networkBytes": 0,
+      "resumedBytes": 0
+    },
+    {
+      "id": "pdmx-mxl.tar.gz",
+      "path": "raw/pdmx/mxl.tar.gz",
+      "bytes": 1894335797,
+      "sha256": "01949cc0d9215e2f30924eadc8b1dd148aca90c02e2cf1999bb83df5ffe4d7a4",
+      "md5": "49ffd75ecf5489c0be6d41182eb11ff7",
+      "gitBlob": "954739f0e6a304408334372e809cce02f34af280",
+      "status": "downloaded",
+      "networkBytes": 1894335797,
+      "resumedBytes": 0
+    },
+    {
+      "id": "pdmx-metadata.tar.gz",
+      "path": "raw/pdmx/metadata.tar.gz",
+      "bytes": 159444765,
+      "sha256": "325b57ad69c34d45b05b8f307d88ebd10ff67554a7a9b4c183676e7586deffa3",
+      "md5": "5bc79445090dd2fe5e96cffa77a3461c",
+      "gitBlob": "807ecf3b2f1f07363b6f68e92af7d1651d5483b5",
+      "status": "downloaded",
+      "networkBytes": 159444765,
+      "resumedBytes": 0
+    },
+    {
+      "id": "openscore-LICENSE.txt",
+      "path": "raw/openscore/LICENSE.txt",
+      "bytes": 7048,
+      "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499",
+      "md5": "65d3616852dbf7b1a6d4b53b00626032",
+      "gitBlob": "0e259d42c996742e9e3cba14c677129b2c1b6311",
+      "status": "seeded",
+      "networkBytes": 0,
+      "resumedBytes": 0
+    },
+    {
+      "id": "openscore-README.md",
+      "path": "raw/openscore/README.md",
+      "bytes": 9046,
+      "sha256": "e747f52bad805fc2044fda17d529d9d3668b5a28cad11f780286172ce5e38794",
+      "md5": "55d16b5b1225869eb74682e53e7b094a",
+      "gitBlob": "c88b2d7d969e5a9c984201c14beb061355defcc1",
+      "status": "seeded",
+      "networkBytes": 0,
+      "resumedBytes": 0
+    }
+  ],
+  "offlineRerun": {
+    "allArchivesReused": true,
+    "openscoreUniqueFilesReused": 1461,
+    "allExtractedFilesRehashed": true,
+    "bothExtractionsReused": true,
+    "networkPayloadBytes": 0,
+    "catalogContentUnchanged": true,
+    "firstCatalogContentSha256": "7e079fdeafc021109545fb9391a951d8207966db927b9b9a8e9c60948e43bd46",
+    "finalCatalogContentSha256": "7e079fdeafc021109545fb9391a951d8207966db927b9b9a8e9c60948e43bd46"
+  },
+  "tests": {
+    "tests": 26,
+    "passed": true,
+    "seconds": 2.391,
+    "testedFiles": {
+      "buildscripts/pianist/curriculum_io.py": "e9c32aac92f17a861881c4c135b2f22cfe00b72e7bcaa10a61fc785f57956463",
+      "buildscripts/pianist/curriculum_catalog.py": "ac9a7431e437a2966e7346b034599f4486fe498c0d71ecc8c12ade0ad6232bb8",
+      "buildscripts/pianist/collect-curriculum.py": "a92fa118f886c81c0cd5a840bedf37be9dffbb7037ea5aeadf8c7fedfefb7032",
+      "tests/curriculum/test_corpus.py": "2f2a37b20e30b20adfffd93d5183ee00507adc26363e842b4c10d6b19085e21c"
+    }
+  },
+  "catalogIntegrity": "ok",
+  "inspectionWorkers": 4,
+  "sqliteWriters": 1,
+  "checkpointResume": {
+    "previouslyCommittedPdmxFiles": 3000,
+    "completed": true
+  },
+  "errors": [
+    {
+      "collection": "pdmx",
+      "source_path": "mxl/9/8/QmR9rTNRXwFHHbSTksRpk9WHUngBXNcJgP88QeRdoYzRd4.mxl",
+      "rejection_json": "[\"CorpusError: xml-size-limit\"]"
+    }
+  ],
+  "excludedXml": {
+    "sha256": "c0d2db6c5d0c30dfb11ffe96aae5db3e111ee32e83dea49b8b2b4b59ec4ab2c3",
+    "expandedBytes": 36359515,
+    "maxXmlBytes": 33554432,
+    "reason": "resource admission limit; musical validity not assessed"
+  },
+  "duplicateContent": [
+    {
+      "sha256": "efead179d5cee97871431f573a58cf724dd2b6ae980b76748d60eb0e1715f4ae",
+      "origins": [
+        {
+          "collection": "openscore-lieder",
+          "source_path": "scores/Obradors,_Fernando/Canciones_Clásicas_Españolas,_Vol.1/1_La_mi_sola,_Laureola/lc30888626.mxl",
+          "title": "1 La mi sola, Laureola",
+          "visibility": "pending-review"
+        },
+        {
+          "collection": "openscore-lieder",
+          "source_path": "scores/Zemlinsky,_Alexander_von/Walzer-Gesänge,_Op.6/1_Liebe_Schwalbe/lc30893834.mxl",
+          "title": "1 Liebe Schwalbe",
+          "visibility": "pending-review"
+        }
+      ]
+    }
+  ],
+  "unchangedCodeScopes": [
+    "apps/pianist-web",
+    "packages/practice-engine-v2",
+    "packages/exercise-renderer",
+    "src/web"
+  ],
+  "limits": "Container/XML validation only. Musical analysis, true piano classification and grade selection are pending Q2."
+}

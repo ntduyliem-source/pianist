@@ -4,13 +4,15 @@ Thiết kế hiện hành là [grade và quiz liên tục](GRADE_DESIGN.md). Kho
 
 Kiểm tra ngày 20 tháng 10 năm 2026. Phân biệt **file đã tải**, **ứng viên đã lọc metadata**, **đoạn đã đọc cấu trúc** và **bài đã nghiệm thu trong app**. Số file không mặc nhiên là số tác phẩm khác nhau hoặc số bài đúng level.
 
+**Cập nhật Q1:** công cụ thu thập chính thức đã nhập 37.631 mục nguồn, có 37.630 hash MXL riêng và 37.629 nội dung qua kiểm ZIP/XML. Một file bị chặn vì vượt giới hạn XML, mọi mục đều có trạng thái hoặc lý do cụ thể. Xem [báo cáo Q1](Q1_CORPUS.md) và [manifest](../../scores/curriculum/sources.lock.json). Các kết quả phân tích đoạn nghiên cứu bên dưới vẫn là tư liệu thử nghiệm; chưa thay cho phân tích và duyệt Q2–Q3.
+
 ## Những gì đã có trên máy
 
 | Kho | Số lượng thực tế | Trạng thái | Vị trí |
 |---|---:|---|---|
 | OpenScore Lieder | 1.462 file MXL; 18.585.785 byte trước khi đóng gói thêm | Đã tải, đối chiếu Git blob, đọc ZIP và parse XML tất cả. 1.432 file có part tên piano theo bộ lọc tên bảo thủ. | [Gói MXL và giấy phép](D:/duan/pianist/artifacts/curriculum-research/openscore-lieder-1462-mxl.zip) |
-| PDMX | Metadata 254.077 dòng | Đã tải CSV, MD5 khớp bản Zenodo. Chưa tải archive chứa toàn bộ MXL. | [PDMX.csv](D:/duan/pianist/artifacts/curriculum-research/PDMX.csv) |
-| PDMX một part mã piano | 36.150 ứng viên | Metadata đồng thời thuộc no_license_conflict, all_valid, deduplicated, n_tracks=1 và tracks=0. Chưa duyệt score. | [Ứng viên piano](D:/duan/pianist/artifacts/curriculum-research/pdmx-piano-metadata.json) |
+| PDMX | Metadata 254.077 dòng, hai archive MXL/metadata | Đã tải CSV và archive, đối chiếu MD5 công bố và khóa thêm SHA256. | [Kho PDMX Q1](D:/duan/pianist/artifacts/curriculum-corpus/raw/pdmx) |
+| PDMX một part mã piano | 36.150 ứng viên đã trích MXL và metadata | Metadata đồng thời thuộc no_license_conflict, all_valid, deduplicated, n_tracks=1 và tracks=0. 36.149 MXL qua kiểm ZIP/XML; một file vượt ngưỡng XML. Chờ phân tích nội dung nhạc ở Q2. | [Catalog Q1](D:/duan/pianist/artifacts/curriculum-corpus/catalog.sqlite) |
 | Thư viện người dùng | 18 file MXL trong catalog hiện tại | Đã đọc lại cấu trúc; có cả nhạc Việt và bài quen thuộc quốc tế. | [Catalog nguồn](D:/duan/pianist/scores/library/catalog.json) |
 | MXL mở đầu | 12 bài gốc do chương trình soạn | Đã nhập native MuseScore của app, đối chiếu số nốt và glyph, khởi động playback thành công. | [Gói K001–K012](D:/duan/pianist/docs/curriculum/starter-scores.zip) |
 | Đoạn nhạc thật được chọn mẫu | 24 đoạn từ 24 file | 18 đoạn OpenScore, 6 đoạn trong thư viện người dùng; đã định danh part/staff/ô, chờ duyệt câu nhạc và excerpt trong app. | [Danh sách chi tiết](D:/duan/pianist/docs/curriculum/REAL_EXCERPTS.md) |

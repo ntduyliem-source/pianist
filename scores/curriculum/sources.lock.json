@@ -1,0 +1,274 @@
+{
+  "schemaVersion": 1,
+  "corpusVersion": "q1-2026-10-20",
+  "createdAt": "2026-10-20",
+  "assets": [
+    {
+      "id": "pdmx-PDMX.csv",
+      "url": "https://zenodo.org/api/records/15571083/files/PDMX.csv/content",
+      "bytes": 225399738,
+      "checksums": {
+        "md5": "30392ccf38bb63ce70e7afae70f9c88c",
+        "sha256": "fc2187e7e09185f4b28be57b6478a96a1243a037f8fd13624f17de2d8bfd44bd"
+      },
+      "destination": "pdmx/PDMX.csv",
+      "seed": "PDMX.csv"
+    },
+    {
+      "id": "pdmx-mxl.tar.gz",
+      "url": "https://zenodo.org/api/records/15571083/files/mxl.tar.gz/content",
+      "bytes": 1894335797,
+      "checksums": {
+        "md5": "49ffd75ecf5489c0be6d41182eb11ff7",
+        "sha256": "01949cc0d9215e2f30924eadc8b1dd148aca90c02e2cf1999bb83df5ffe4d7a4"
+      },
+      "destination": "pdmx/mxl.tar.gz",
+      "seed": "mxl.tar.gz"
+    },
+    {
+      "id": "pdmx-metadata.tar.gz",
+      "url": "https://zenodo.org/api/records/15571083/files/metadata.tar.gz/content",
+      "bytes": 159444765,
+      "checksums": {
+        "md5": "5bc79445090dd2fe5e96cffa77a3461c",
+        "sha256": "325b57ad69c34d45b05b8f307d88ebd10ff67554a7a9b4c183676e7586deffa3"
+      },
+      "destination": "pdmx/metadata.tar.gz",
+      "seed": "metadata.tar.gz"
+    },
+    {
+      "id": "openscore-LICENSE.txt",
+      "url": "https://raw.githubusercontent.com/OpenScore/Lieder/38c5db510224d9facdc4b08d741fc788cfb58ea8/LICENSE.txt",
+      "bytes": 7048,
+      "checksums": {
+        "gitBlob": "0e259d42c996742e9e3cba14c677129b2c1b6311",
+        "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499"
+      },
+      "destination": "openscore/LICENSE.txt",
+      "seed": "OpenScore-Lieder-LICENSE.txt"
+    },
+    {
+      "id": "openscore-README.md",
+      "url": "https://raw.githubusercontent.com/OpenScore/Lieder/38c5db510224d9facdc4b08d741fc788cfb58ea8/README.md",
+      "bytes": 9046,
+      "checksums": {
+        "gitBlob": "c88b2d7d969e5a9c984201c14beb061355defcc1",
+        "sha256": "e747f52bad805fc2044fda17d529d9d3668b5a28cad11f780286172ce5e38794"
+      },
+      "destination": "openscore/README.md",
+      "seed": "OpenScore-Lieder-README.md"
+    }
+  ],
+  "openscore": {
+    "id": "openscore-lieder",
+    "revision": "38c5db510224d9facdc4b08d741fc788cfb58ea8",
+    "index": "openscore.index.json",
+    "indexSha256": "eeaa72f4f5325e97adcfb62c8e3a6dc13dc427c4b06b7aa8b3c101f2a822c1aa",
+    "expectedRows": 1462,
+    "license": "CC0-1.0",
+    "evidenceUrl": "https://github.com/OpenScore/Lieder/blob/38c5db510224d9facdc4b08d741fc788cfb58ea8/LICENSE.txt",
+    "visibility": "pending-review"
+  },
+  "pdmx": {
+    "id": "pdmx",
+    "revision": "15571083",
+    "evidenceUrl": "https://zenodo.org/records/15571083",
+    "expectedRows": 254077,
+    "expectedCandidates": 36150,
+    "filter": {
+      "subset:no_license_conflict": "True",
+      "subset:all_valid": "True",
+      "subset:deduplicated": "True",
+      "n_tracks": "1",
+      "tracks": "0"
+    },
+    "visibility": "pending-review"
+  },
+  "local": {
+    "id": "user-library",
+    "revision": "75b727727b5dd107bddb9fb75653311c76e9bb61",
+    "entries": [
+      {
+        "id": "354280a125c519cd319aa232e7adad413fc98f73ab62d4c70f452260da95eb46",
+        "path": "scores/library/songs/tinh-dau-qua-chen-erik-quang-hung-masterd-negav-phap-kieu.mxl",
+        "bytes": 7149,
+        "sha256": "354280a125c519cd319aa232e7adad413fc98f73ab62d4c70f452260da95eb46",
+        "title": "Tình đầu quá chén",
+        "composer": "Soạn: Thảo Chi",
+        "visibility": "personal"
+      },
+      {
+        "id": "ec15898245d922abc02d620fac52f3b9b50776720110bbe2c900edb8cfe4ac76",
+        "path": "scores/library/songs/va-the-la-het-chillies.mxl",
+        "bytes": 5396,
+        "sha256": "ec15898245d922abc02d620fac52f3b9b50776720110bbe2c900edb8cfe4ac76",
+        "title": "Và thế là hết",
+        "composer": "Sáng tác: Chillies",
+        "visibility": "personal"
+      },
+      {
+        "id": "2e2490f9a94ccdc7fa42642af6ec9ee25830604e817bf433932d3fc488cab9c3",
+        "path": "scores/library/songs/chi-la-trang-phap.mxl",
+        "bytes": 15145,
+        "sha256": "2e2490f9a94ccdc7fa42642af6ec9ee25830604e817bf433932d3fc488cab9c3",
+        "title": "Chỉ là",
+        "composer": "Composer / arranger",
+        "visibility": "personal"
+      },
+      {
+        "id": "5bdeefdb654f36998ebdc961430b10746c4b5629bb2d6927791d2f5fde9cba8d",
+        "path": "scores/library/songs/tinh-em-la-dai-duong.mxl",
+        "bytes": 3948,
+        "sha256": "5bdeefdb654f36998ebdc961430b10746c4b5629bb2d6927791d2f5fde9cba8d",
+        "title": "Tình em là đại dương — bản ngắn",
+        "composer": "Duy Mạnh",
+        "visibility": "personal"
+      },
+      {
+        "id": "81f4fbcc40582825325196446a4e75916bf3a46a1347bf3b49258f8e01af7b34",
+        "path": "scores/library/songs/trieu-doa-hoa-hong-misc-tunes-trieu-doa-hong-trieu-doa-hong-alpha-music.mxl",
+        "bytes": 7444,
+        "sha256": "81f4fbcc40582825325196446a4e75916bf3a46a1347bf3b49258f8e01af7b34",
+        "title": "Triệu Đoá Hồng",
+        "composer": "",
+        "visibility": "personal"
+      },
+      {
+        "id": "0fd610db5589836820b84a83b8018fee665e660682ec974d8122993661b61c38",
+        "path": "scores/library/songs/merry-go-round-of-life-easy-piano-excerpt.mxl",
+        "bytes": 5550,
+        "sha256": "0fd610db5589836820b84a83b8018fee665e660682ec974d8122993661b61c38",
+        "title": "Merry Go Round of Life",
+        "composer": "Joe Hishashi",
+        "visibility": "personal"
+      },
+      {
+        "id": "c67bad42a95fbbcfc5118f38148d37840ed6a1d1be3c44b193b1d31a2d85dcfe",
+        "path": "scores/library/songs/noi-nay-co-anh.mxl",
+        "bytes": 6098,
+        "sha256": "c67bad42a95fbbcfc5118f38148d37840ed6a1d1be3c44b193b1d31a2d85dcfe",
+        "title": "Nơi này có anh",
+        "composer": "",
+        "visibility": "personal"
+      },
+      {
+        "id": "3ecf0d22910c8d5617a6015146be78f8f28669aa4cedf4e1fa6263142fc29e4b",
+        "path": "scores/library/songs/tinh-don-phuong-xin-yao-rang-ni-ting-jian-cover-by-vu-le.mxl",
+        "bytes": 14385,
+        "sha256": "3ecf0d22910c8d5617a6015146be78f8f28669aa4cedf4e1fa6263142fc29e4b",
+        "title": "Tình Đơn Phương",
+        "composer": "Transcribed by Lê Mạnh Hùng",
+        "visibility": "personal"
+      },
+      {
+        "id": "7e4e2f99588844d726c7704a497c6f7d65ab5f58126eabdd98a7dd666a5b1a07",
+        "path": "scores/library/songs/roi-toi-luon-nal.mxl",
+        "bytes": 6122,
+        "sha256": "7e4e2f99588844d726c7704a497c6f7d65ab5f58126eabdd98a7dd666a5b1a07",
+        "title": "Rồi tới luôn",
+        "composer": "",
+        "visibility": "personal"
+      },
+      {
+        "id": "5888886405974ec933bb2b7ee1f212c554affe1eb6f5ef45cbe9d8f2384cc516",
+        "path": "scores/library/songs/xuan-nay-con-khong-ve.mxl",
+        "bytes": 12748,
+        "sha256": "5888886405974ec933bb2b7ee1f212c554affe1eb6f5ef45cbe9d8f2384cc516",
+        "title": "Xuân Này Con Không Về",
+        "composer": "",
+        "visibility": "personal"
+      },
+      {
+        "id": "18a73f7bc69dbac6ef6115bb67028edb5633dba59ab76c37344dd047e7a74de5",
+        "path": "scores/library/songs/giot-le-dai-trang-chau-ky.mxl",
+        "bytes": 35466,
+        "sha256": "18a73f7bc69dbac6ef6115bb67028edb5633dba59ab76c37344dd047e7a74de5",
+        "title": "Giọt Lệ Đài Trang",
+        "composer": "Châu Kỳ",
+        "visibility": "personal"
+      },
+      {
+        "id": "8d3f63fa5365229cc0eb98c2db3e3f88b6a86fbed5b53bdd70e7e187bcb99393",
+        "path": "scores/library/songs/thich-em-hoi-nhieu.mxl",
+        "bytes": 14398,
+        "sha256": "8d3f63fa5365229cc0eb98c2db3e3f88b6a86fbed5b53bdd70e7e187bcb99393",
+        "title": "Thích em hơi nhiều",
+        "composer": "Wrem Evans",
+        "visibility": "personal"
+      },
+      {
+        "id": "1f6e6721c79f695b43cb13e1d293e9c3581ed196f8efd4645b64a997fe12c356",
+        "path": "scores/library/songs/vet-mua.mxl",
+        "bytes": 15448,
+        "sha256": "1f6e6721c79f695b43cb13e1d293e9c3581ed196f8efd4645b64a997fe12c356",
+        "title": "Vết Mưa",
+        "composer": "Piano arranged by Phương Thy",
+        "visibility": "personal"
+      },
+      {
+        "id": "ffc42452ea013611d99c014eb24206d69111436233800af5a0b6e941cb0554bb",
+        "path": "scores/library/songs/co-khong-giu-mat-dung-tim.mxl",
+        "bytes": 17131,
+        "sha256": "ffc42452ea013611d99c014eb24206d69111436233800af5a0b6e941cb0554bb",
+        "title": "Có không giữ mất đừng tìm",
+        "composer": "Piang arranged by Phương Thy",
+        "visibility": "personal"
+      },
+      {
+        "id": "125424fdf3e0d13da5d2dde285113189b813fdfdd8c5b6c9338ccf1db5c076cc",
+        "path": "scores/library/songs/sao-minh-chua-nam-tay-nhau-yan-nguyen.mxl",
+        "bytes": 10460,
+        "sha256": "125424fdf3e0d13da5d2dde285113189b813fdfdd8c5b6c9338ccf1db5c076cc",
+        "title": "Sao mình chưa nắm tay nhau",
+        "composer": "Compositeur / Arrangeur",
+        "visibility": "personal"
+      },
+      {
+        "id": "b24471ea6c8e8e4165631ca7d1fabc00cc03308a792b7989db0467bd96c496ba",
+        "path": "scores/library/songs/dua-em-ve-nha-dua-em-ve-nha.mxl",
+        "bytes": 15690,
+        "sha256": "b24471ea6c8e8e4165631ca7d1fabc00cc03308a792b7989db0467bd96c496ba",
+        "title": "Đưa Em Về Nhà",
+        "composer": "Piano arranged by Phương Thy",
+        "visibility": "personal"
+      },
+      {
+        "id": "999afa808786cf98610fcd4929025d5a2558f618ba9741afd47637cbb491ef38",
+        "path": "scores/library/songs/sau-tat-ca-erik-st-319-sau-tat-ca.mxl",
+        "bytes": 15726,
+        "sha256": "999afa808786cf98610fcd4929025d5a2558f618ba9741afd47637cbb491ef38",
+        "title": "Sau Tất Cả",
+        "composer": "Khắc Hưng Piano arranged by Phương Thy",
+        "visibility": "personal"
+      },
+      {
+        "id": "8bdbe9269ccd490d9165734928ab45d84856b183728e0eaa74907bfbe8b6d8b2",
+        "path": "scores/library/songs/tran-bo-nho-duong-domic.mxl",
+        "bytes": 7101,
+        "sha256": "8bdbe9269ccd490d9165734928ab45d84856b183728e0eaa74907bfbe8b6d8b2",
+        "title": "Tràn bộ nhớ",
+        "composer": "Soạn: Thảo Chi",
+        "visibility": "personal"
+      },
+      {
+        "id": "pho-xa",
+        "path": "examples/local/pho-xa.mxl",
+        "bytes": 25903,
+        "sha256": "319dee74d098e16af5ffafeae76e4fc6821397f8e18363cf16282157d4734a97",
+        "title": "Phố Xa",
+        "composer": "",
+        "visibility": "personal"
+      }
+    ]
+  },
+  "publicationPolicy": "No Q1 imports are automatically approved for public quiz packs. Local entries remain personal; remote entries require source and musical review.",
+  "limits": {
+    "maxMxlBytes": 16777216,
+    "maxXmlBytes": 33554432,
+    "maxZipEntries": 256,
+    "maxZipExpandedBytes": 67108864,
+    "maxMetadataBytes": 4194304,
+    "maxTarMembers": 400000,
+    "maxTarExpandedBytes": 8589934592
+  }
+}

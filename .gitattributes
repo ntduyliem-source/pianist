@@ -25,3 +25,6 @@ buildscripts/packaging/Windows/PortableApps/**/*.html eol=crlf
 
 # Converter releases are verified against the original archive bytes.
 third_party/score-format-sources/** -text -whitespace
+
+# Corpus indices are byte-hashed by the lock manifest on Windows and Linux.
+scores/curriculum/*.json text eol=lf

@@ -71,7 +71,7 @@ Trước khi chạy đủ kho, dùng **100 đoạn ứng viên/grade** làm pilo
 
 ## Q0 Chốt hợp đồng dữ liệu và kiểm rủi ro native
 
-**Cập nhật triển khai 20/10/2026:** Q0 đã qua gate renderer với bộ fixture/profile thử nghiệm. Renderer MuseScore riêng trong Worker dựng 60 câu mới mỗi cấu hình trong lúc MIDI mô phỏng chạy; cả desktop và viewport mobile với main thread chậm 4× đều hoàn tất 32/32 nốt, không có long task UI giao với render. 9 oracle khớp dữ liệu nhạc/glyph/tọa độ, editor giữ nguyên bytes/undo. Xem [bản sửa và giới hạn số đo](Q0_RENDERER_WORKER.md). Q1–Q9, UI quiz và kiểm refill từng profile/BPM thật vẫn là phần tiếp theo.
+**Cập nhật triển khai 20/10/2026:** Q0 đã qua gate renderer với bộ fixture/profile thử nghiệm. Renderer MuseScore riêng trong Worker dựng 60 câu mới mỗi cấu hình trong lúc MIDI mô phỏng chạy; cả desktop và viewport mobile với main thread chậm 4× đều hoàn tất 32/32 nốt, không có long task UI giao với render. 9 oracle khớp dữ liệu nhạc/glyph/tọa độ, editor giữ nguyên bytes/undo. Xem [bản sửa và giới hạn số đo](Q0_RENDERER_WORKER.md). Q1 đã thu thập và lập danh mục nguồn như báo cáo bên dưới. Q2–Q9, UI quiz và kiểm refill từng profile/BPM thật vẫn là phần tiếp theo.
 
 [Điều tra hiệu năng](Q0_RENDER_INVESTIGATION.md) đã tách các đường API: SVG và phần chữ trang giấy là chi phí lớn; chuyển renderer sang Worker vẫn cần thiết. Câu quiz nên giữ tên bài/nguồn trong UI, dùng sheet trích đoạn gọn và cache có định danh đầy đủ. Việc này không thay đổi bản gốc trong editor hoặc thuật toán chấm.
 
@@ -93,6 +93,8 @@ Lời gọi native hiện đồng bộ. “Project tạm” chưa đồng nghĩa
 **Xong khi:** snapshot/anchor khớp MIDI; editor không đổi bytes/revision/undo; đường tạo câu được chọn có bằng chứng đủ khả năng phục vụ queue. Nếu renderer chưa đạt, xử lý ở mốc này trước khi cam kết trải nghiệm BPM liên tục.
 
 ## Q1 Tải kho và lập danh mục nguồn
+
+**Kết quả 20/10/2026:** đã có 37.631 mục nguồn / 37.630 nội dung MXL riêng từ PDMX, OpenScore và thư viện hiện có. 37.629 nội dung qua kiểm ZIP/XML; một file vượt giới hạn XML 32 MiB được giữ nguyên kèm lý do chặn. Chỉ mục, archive và file đều được kiểm checksum, nguồn trùng được giữ đủ provenance. Có công cụ resume, catalog SQLite, kiểm file song song và 26 kiểm thử. Xem [báo cáo Q1](Q1_CORPUS.md). Chưa gọi các nguồn này là bài đúng grade: phân tích nhạc và phân đoạn bắt đầu ở Q2.
 
 **Công việc**
 
