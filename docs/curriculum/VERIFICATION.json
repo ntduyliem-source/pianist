@@ -1,0 +1,30 @@
+{
+  "date": "2026-10-20",
+  "scope": "Verification of the prior fixed-course assets and source inventory; does not validate the continuous-quiz grade design.",
+  "lessonSpecifications": 96,
+  "stages": 8,
+  "originalStarterScores": 12,
+  "nativeAccepted": 12,
+  "nativeNotes": 302,
+  "nativePageErrors": [],
+  "excerpts": 24,
+  "excerptSourceFiles": 24,
+  "downloadedMxl": 1462,
+  "downloadedXmlParsed": 1462,
+  "pitchCoverage": {
+    "min": 21,
+    "max": 108,
+    "distinct": 88
+  },
+  "localLinksChecked": 42,
+  "noPhysicalMidiTest": true,
+  "gradingEngineChanged": false,
+  "curriculumUiImplemented": false,
+  "researchMetadataOnlyPdmxCandidates": 36150,
+  "nativeAudit": "artifacts/curriculum-research/native-audit.json",
+  "limits": [
+    "MXL prototype QA does not validate teaching efficacy",
+    "Real excerpt structure verified; engraving, phrase and playback approval pending",
+    "Course pass rules and quizzes are proposals, not existing UI"
+  ]
+}

@@ -1,0 +1,1414 @@
+[
+  {
+    "id": "E01",
+    "stage": 0,
+    "title": "Les langueurs",
+    "composer": "Gail, Sophie",
+    "source": "https://raw.githubusercontent.com/OpenScore/Lieder/38c5db510224d9facdc4b08d741fc788cfb58ea8/scores/Gail%2C_Sophie/_/Les_langueurs/lc6604179.mxl",
+    "local": "artifacts/curriculum-research/openscore-lieder/60bdeae0b66d57e660007a533a746d1dfd5d7790.mxl",
+    "sha256": "8bf01757c7c1ead5b7b663f4a56d2ebd892c9cca2689fc1934d1720f4c3330a1",
+    "license": "CC0-1.0",
+    "candidate": {
+      "part": "P3",
+      "staff": "2",
+      "first": 20,
+      "last": 23,
+      "labels": [
+        "19",
+        "20",
+        "21",
+        "22"
+      ],
+      "notes": 8,
+      "range": [
+        "D3",
+        "D3"
+      ],
+      "midiRange": [
+        50,
+        50
+      ],
+      "minDuration": 1.0,
+      "maxLeap": 0,
+      "maxChord": 1,
+      "key": 1,
+      "meter": "4/4",
+      "pattern": [
+        [
+          "D3@0/1",
+          "D3@1/1",
+          "D3@2/1"
+        ],
+        [
+          "D3@0/1",
+          "D3@2/1"
+        ],
+        [
+          "D3@0/1",
+          "D3@2/1"
+        ],
+        [
+          "D3@0/1"
+        ]
+      ],
+      "cost": 8
+    },
+    "bpm": 60,
+    "goal": "Đếm và đánh bass một cao độ, giữ nhịp ở những khoảng nghỉ.",
+    "status": "structure verified; editorial phrase, engraving and native import approval pending"
+  },
+  {
+    "id": "E02",
+    "stage": 1,
+    "title": "4 Mignonne",
+    "composer": "Grandval, Clémence de",
+    "source": "https://raw.githubusercontent.com/OpenScore/Lieder/38c5db510224d9facdc4b08d741fc788cfb58ea8/scores/Grandval%2C_Cl%C3%A9mence_de/6_Nouvelles_m%C3%A9lodies/4_Mignonne/lc6614717.mxl",
+    "local": "artifacts/curriculum-research/openscore-lieder/b94233a9bb2b60522697f22bd439509374c9527f.mxl",
+    "sha256": "264a54b34e0a500c458a97d594cf3381448310df03c081dab81355ab17b61c99",
+    "license": "CC0-1.0",
+    "candidate": {
+      "part": "P2",
+      "staff": "2",
+      "first": 14,
+      "last": 17,
+      "labels": [
+        "13",
+        "14",
+        "15",
+        "16"
+      ],
+      "notes": 14,
+      "range": [
+        "C3",
+        "C3"
+      ],
+      "midiRange": [
+        48,
+        48
+      ],
+      "minDuration": 1.0,
+      "maxLeap": 0,
+      "maxChord": 1,
+      "key": -1,
+      "meter": "4/4",
+      "pattern": [
+        [
+          "C3@0/1",
+          "C3@1/1",
+          "C3@2/1",
+          "C3@3/1"
+        ],
+        [
+          "C3@0/1",
+          "C3@1/1",
+          "C3@2/1",
+          "C3@3/1"
+        ],
+        [
+          "C3@0/1",
+          "C3@1/1",
+          "C3@2/1",
+          "C3@3/1"
+        ],
+        [
+          "C3@0/2",
+          "C3@2/2"
+        ]
+      ],
+      "cost": 14
+    },
+    "bpm": 66,
+    "goal": "Nhận nốt C3 lặp trong bối cảnh một tác phẩm thật.",
+    "status": "structure verified; editorial phrase, engraving and native import approval pending"
+  },
+  {
+    "id": "E03",
+    "stage": 2,
+    "title": "18 Trockne Blumen",
+    "composer": "Schubert, Franz",
+    "source": "https://raw.githubusercontent.com/OpenScore/Lieder/38c5db510224d9facdc4b08d741fc788cfb58ea8/scores/Schubert%2C_Franz/Die_sch%C3%B6ne_M%C3%BCllerin%2C_D.795/18_Trockne_Blumen/lc4985949.mxl",
+    "local": "artifacts/curriculum-research/openscore-lieder/0921241820035d2c791d07102b18d68eea45829e.mxl",
+    "sha256": "90819a7347a167194ed2e4104f84b2c82a259d05594197b690179ce50925f5dc",
+    "license": "CC0-1.0",
+    "candidate": {
+      "part": "P2",
+      "staff": "2",
+      "first": 1,
+      "last": 4,
+      "labels": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "notes": 8,
+      "range": [
+        "E3",
+        "E3"
+      ],
+      "midiRange": [
+        52,
+        52
+      ],
+      "minDuration": 0.5,
+      "maxLeap": 0,
+      "maxChord": 1,
+      "key": 1,
+      "meter": "2/4",
+      "pattern": [
+        [
+          "E3@0/0.5",
+          "E3@1/0.5"
+        ],
+        [
+          "E3@0/0.5",
+          "E3@1/0.5"
+        ],
+        [
+          "E3@0/0.5",
+          "E3@1/0.5"
+        ],
+        [
+          "E3@0/0.5",
+          "E3@1/0.5"
+        ]
+      ],
+      "cost": 8
+    },
+    "bpm": 60,
+    "goal": "Đọc trường độ và khoảng nghỉ trên một cao độ E3.",
+    "status": "structure verified; editorial phrase, engraving and native import approval pending"
+  },
+  {
+    "id": "E04",
+    "stage": 2,
+    "title": "2 Morgenlied, MWV K 123",
+    "composer": "Mendelssohn, Felix",
+    "source": "https://raw.githubusercontent.com/OpenScore/Lieder/38c5db510224d9facdc4b08d741fc788cfb58ea8/scores/Mendelssohn%2C_Felix/6_Ges%C3%A4nge%2C_Op.86/2_Morgenlied%2C_MWV_K_123/lc6989204.mxl",
+    "local": "artifacts/curriculum-research/openscore-lieder/f1d1b38306539d2473b34cc19101265503fc3b6a.mxl",
+    "sha256": "376f291d6567fe722d997017ccb9a460711faeb31bad91cc3d4f3d68943323f4",
+    "license": "CC0-1.0",
+    "candidate": {
+      "part": "P2",
+      "staff": "1",
+      "first": 16,
+      "last": 17,
+      "labels": [
+        "15",
+        "16"
+      ],
+      "notes": 16,
+      "range": [
+        "D4",
+        "D4"
+      ],
+      "midiRange": [
+        62,
+        62
+      ],
+      "minDuration": 0.5,
+      "maxLeap": 0,
+      "maxChord": 1,
+      "key": 2,
+      "meter": "4/4",
+      "pattern": [
+        [
+          "D4@0/0.5",
+          "D4@0.5/0.5",
+          "D4@1/0.5",
+          "D4@1.5/0.5",
+          "D4@2/0.5",
+          "D4@2.5/0.5",
+          "D4@3/0.5",
+          "D4@3.5/0.5"
+        ],
+        [
+          "D4@0/0.5",
+          "D4@0.5/0.5",
+          "D4@1/0.5",
+          "D4@1.5/0.5",
+          "D4@2/0.5",
+          "D4@2.5/0.5",
+          "D4@3/0.5",
+          "D4@3.5/0.5"
+        ]
+      ],
+      "cost": 16
+    },
+    "bpm": 66,
+    "goal": "Đọc nốt D4 lặp có móc đơn, không tăng tốc.",
+    "status": "structure verified; editorial phrase, engraving and native import approval pending"
+  },
+  {
+    "id": "E05",
+    "stage": 2,
+    "title": "09 Aus Ariels Offenbarungen",
+    "composer": "Reichardt, Louise",
+    "source": "https://raw.githubusercontent.com/OpenScore/Lieder/38c5db510224d9facdc4b08d741fc788cfb58ea8/scores/Reichardt%2C_Louise/12_Deutsche_und_Itali%C3%A4nische_Romantische_Ges%C3%A4nge/09_Aus_Ariels_Offenbarungen/lc5002100.mxl",
+    "local": "artifacts/curriculum-research/openscore-lieder/2fd8f4a0b151a1e4f09f8aff0b3a440af7072027.mxl",
+    "sha256": "c5262eb618b54326652530b8e5ceb8bd2ebe2fdefc1a6c45323dc0d67264f233",
+    "license": "CC0-1.0",
+    "candidate": {
+      "part": "P2",
+      "staff": "2",
+      "first": 5,
+      "last": 8,
+      "labels": [
+        "5",
+        "6",
+        "7",
+        "8"
+      ],
+      "notes": 8,
+      "range": [
+        "B3",
+        "C4"
+      ],
+      "midiRange": [
+        59,
+        60
+      ],
+      "minDuration": 1.0,
+      "maxLeap": 1,
+      "maxChord": 1,
+      "key": -1,
+      "meter": "2/4",
+      "pattern": [
+        [
+          "C4@0/1",
+          "C4@1/1"
+        ],
+        [
+          "B3@0/1",
+          "C4@1/1"
+        ],
+        [
+          "C4@0/1",
+          "C4@1/1"
+        ],
+        [
+          "B3@0/1",
+          "C4@1/1"
+        ]
+      ],
+      "cost": 10
+    },
+    "bpm": 60,
+    "goal": "Hai cao độ liền nhau trong khóa Fa, có khoảng nghỉ.",
+    "status": "structure verified; editorial phrase, engraving and native import approval pending"
+  },
+  {
+    "id": "E06",
+    "stage": 3,
+    "title": "1 Frühlings-Glaube",
+    "composer": "Lang, Josephine",
+    "source": "https://raw.githubusercontent.com/OpenScore/Lieder/38c5db510224d9facdc4b08d741fc788cfb58ea8/scores/Lang%2C_Josephine/6_Lieder%2C_Op.25/1_Fr%C3%BChlings-Glaube/lc5105407.mxl",
+    "local": "artifacts/curriculum-research/openscore-lieder/ed1408b808187a99723e1945741fd4a30103e510.mxl",
+    "sha256": "4151a6dc88ab16675b517d005619e0a31bfad04608b2c1f5bdf40a7597cbd6b9",
+    "license": "CC0-1.0",
+    "candidate": {
+      "part": "P2",
+      "staff": "2",
+      "first": 19,
+      "last": 22,
+      "labels": [
+        "19",
+        "20",
+        "21",
+        "22"
+      ],
+      "notes": 8,
+      "range": [
+        "G3",
+        "B3"
+      ],
+      "midiRange": [
+        55,
+        59
+      ],
+      "minDuration": 0.5,
+      "maxLeap": 4,
+      "maxChord": 1,
+      "key": 0,
+      "meter": "2/4",
+      "pattern": [
+        [
+          "A3@0/1.5",
+          "G3@1.5/0.5"
+        ],
+        [
+          "A3@0/1.5",
+          "G3@1.5/0.5"
+        ],
+        [
+          "B3@0/1.5",
+          "G3@1.5/0.5"
+        ],
+        [
+          "G3@0/1.5",
+          "G3@1.5/0.5"
+        ]
+      ],
+      "cost": 16
+    },
+    "bpm": 60,
+    "goal": "Đọc nhịp chấm dôi ở bass G3–B3 trước khi ghép với bài hai tay.",
+    "status": "structure verified; editorial phrase, engraving and native import approval pending"
+  },
+  {
+    "id": "E07",
+    "stage": 4,
+    "title": "3 Liebe und Frühling II",
+    "composer": "Brahms, Johannes",
+    "source": "https://raw.githubusercontent.com/OpenScore/Lieder/38c5db510224d9facdc4b08d741fc788cfb58ea8/scores/Brahms%2C_Johannes/6_Songs%2C_Op.3/3_Liebe_und_Fr%C3%BChling_II/lc5004701.mxl",
+    "local": "artifacts/curriculum-research/openscore-lieder/6e29f6524e2b9a55f7cfb610354f41dc831c58b9.mxl",
+    "sha256": "bd1c438e2970cac244e8122d7d090c525d81b509a9e9d73a3b9a9bb1a7988aa5",
+    "license": "CC0-1.0",
+    "candidate": {
+      "part": "P2",
+      "staff": "2",
+      "first": 15,
+      "last": 18,
+      "labels": [
+        "14",
+        "15",
+        "16",
+        "17"
+      ],
+      "notes": 8,
+      "range": [
+        "G3",
+        "D4"
+      ],
+      "midiRange": [
+        55,
+        62
+      ],
+      "minDuration": 1.0,
+      "maxLeap": 3,
+      "maxChord": 1,
+      "key": 2,
+      "meter": "4/4",
+      "pattern": [
+        [
+          "G3@1/1",
+          "A3@2/1.5"
+        ],
+        [],
+        [
+          "Bb3@1/1",
+          "B3@2/1.5"
+        ],
+        [
+          "D4@0/1",
+          "C#4@1/1",
+          "B3@2/1",
+          "A3@3/1"
+        ]
+      ],
+      "cost": 14
+    },
+    "bpm": 60,
+    "goal": "Đọc hóa biểu hai thăng cùng các dấu hóa tạm ở bass.",
+    "status": "structure verified; editorial phrase, engraving and native import approval pending"
+  },
+  {
+    "id": "E08",
+    "stage": 4,
+    "title": "4 No More",
+    "composer": "Stanford, Charles Villiers",
+    "source": "https://raw.githubusercontent.com/OpenScore/Lieder/38c5db510224d9facdc4b08d741fc788cfb58ea8/scores/Stanford%2C_Charles_Villiers/Songs_of_a_Roving_Celt%2C_Op.157/4_No_More/lc6548281.mxl",
+    "local": "artifacts/curriculum-research/openscore-lieder/3fc94eb478fc60eaef83a19d674e15f011f2942c.mxl",
+    "sha256": "3ca59796a86baa3a95c291de592b6e4d227e8c13415f195e8d90fa1d5607b852",
+    "license": "CC0-1.0",
+    "candidate": {
+      "part": "P2",
+      "staff": "2",
+      "first": 34,
+      "last": 37,
+      "labels": [
+        "34",
+        "35",
+        "36",
+        "37"
+      ],
+      "notes": 8,
+      "range": [
+        "Bb3",
+        "D4"
+      ],
+      "midiRange": [
+        58,
+        62
+      ],
+      "minDuration": 1.0,
+      "maxLeap": 2,
+      "maxChord": 1,
+      "key": -1,
+      "meter": "2/4",
+      "pattern": [
+        [
+          "C4@0/1",
+          "Bb3@1/1"
+        ],
+        [
+          "C4@0/1",
+          "D4@1/1"
+        ],
+        [
+          "C4@0/1",
+          "Bb3@1/1"
+        ],
+        [
+          "C4@0/1",
+          "D4@1/1"
+        ]
+      ],
+      "cost": 12
+    },
+    "bpm": 60,
+    "goal": "Đọc bass gần Đô giữa trong hóa biểu một giáng.",
+    "status": "structure verified; editorial phrase, engraving and native import approval pending"
+  },
+  {
+    "id": "E09",
+    "stage": 4,
+    "title": "À Trianon",
+    "composer": "Holmès, Augusta Mary Anne",
+    "source": "https://raw.githubusercontent.com/OpenScore/Lieder/38c5db510224d9facdc4b08d741fc788cfb58ea8/scores/Holm%C3%A8s%2C_Augusta_Mary_Anne/_/%C3%80_Trianon/lc5930707.mxl",
+    "local": "artifacts/curriculum-research/openscore-lieder/0eefe5c84257e20a7e991280b24228a5361a8e6a.mxl",
+    "sha256": "6f70400839d78a0fcb5916a46c463fa154f3a4800d0b83520d76e378399102a7",
+    "license": "CC0-1.0",
+    "candidate": {
+      "part": "P2",
+      "staff": "1",
+      "first": 38,
+      "last": 41,
+      "labels": [
+        "38",
+        "39",
+        "40",
+        "41"
+      ],
+      "notes": 8,
+      "range": [
+        "G4",
+        "C5"
+      ],
+      "midiRange": [
+        67,
+        72
+      ],
+      "minDuration": 0.5,
+      "maxLeap": 3,
+      "maxChord": 1,
+      "key": -1,
+      "meter": "3/4",
+      "pattern": [
+        [
+          "Bb4@0/2",
+          "C5@2/1"
+        ],
+        [
+          "A4@0/1",
+          "G4@1/2"
+        ],
+        [
+          "Bb4@0/0.5",
+          "A4@0.5/0.5",
+          "Ab4@1/2"
+        ],
+        [
+          "A4@0/3"
+        ]
+      ],
+      "cost": 14
+    },
+    "bpm": 60,
+    "goal": "Đọc staff trên nhịp ba với dấu hóa tạm; nhận nhóm phách.",
+    "status": "structure verified; editorial phrase, engraving and native import approval pending"
+  },
+  {
+    "id": "E10",
+    "stage": 4,
+    "title": "2 O Ma Belle Rebelle!",
+    "composer": "Gounod, Charles",
+    "source": "https://raw.githubusercontent.com/OpenScore/Lieder/38c5db510224d9facdc4b08d741fc788cfb58ea8/scores/Gounod%2C_Charles/6_M%C3%A9lodies/2_O_Ma_Belle_Rebelle%21/lc5079373.mxl",
+    "local": "artifacts/curriculum-research/openscore-lieder/3711841860ee79d06d25c46c177f250805b53c69.mxl",
+    "sha256": "7655763e4f4dcc26f62a5564779b7d44ac72ce412557b50c54746342c3cfa3d1",
+    "license": "CC0-1.0",
+    "candidate": {
+      "part": "P2",
+      "staff": "2",
+      "first": 28,
+      "last": 31,
+      "labels": [
+        "27",
+        "28",
+        "29",
+        "30"
+      ],
+      "notes": 8,
+      "range": [
+        "C3",
+        "F3"
+      ],
+      "midiRange": [
+        48,
+        53
+      ],
+      "minDuration": 1.0,
+      "maxLeap": 3,
+      "maxChord": 1,
+      "key": -2,
+      "meter": "2/4",
+      "pattern": [
+        [
+          "Eb3@0/1",
+          "F3@1/1"
+        ],
+        [
+          "D3@0/1",
+          "Eb3@1/1"
+        ],
+        [
+          "C3@0/1",
+          "D3@1/1"
+        ],
+        [
+          "E3@0/1",
+          "D3@1/1"
+        ]
+      ],
+      "cost": 14
+    },
+    "bpm": 60,
+    "goal": "Đọc staff dưới ở hóa biểu hai giáng.",
+    "status": "structure verified; editorial phrase, engraving and native import approval pending"
+  },
+  {
+    "id": "E11",
+    "stage": 4,
+    "title": "3 Heidenröslein, D.257",
+    "composer": "Schubert, Franz",
+    "source": "https://raw.githubusercontent.com/OpenScore/Lieder/38c5db510224d9facdc4b08d741fc788cfb58ea8/scores/Schubert%2C_Franz/Op.3/3_Heidenr%C3%B6slein%2C_D.257/lc30321236.mxl",
+    "local": "artifacts/curriculum-research/openscore-lieder/eb1bac5760600c1d39ed926d4bc576285bead2ac.mxl",
+    "sha256": "3ca81e695fac504fddf87c7aaaea6d4354667e8352fc59cd563ed9975b675506",
+    "license": "CC0-1.0",
+    "candidate": {
+      "part": "P2",
+      "staff": "2",
+      "first": 5,
+      "last": 8,
+      "labels": [
+        "5",
+        "6",
+        "7",
+        "8"
+      ],
+      "notes": 8,
+      "range": [
+        "F#3",
+        "B3"
+      ],
+      "midiRange": [
+        54,
+        59
+      ],
+      "minDuration": 0.5,
+      "maxLeap": 2,
+      "maxChord": 1,
+      "key": 1,
+      "meter": "2/4",
+      "pattern": [
+        [
+          "G3@0/0.5",
+          "G3@1/0.5"
+        ],
+        [
+          "G3@0/0.5",
+          "G3@1/0.5"
+        ],
+        [
+          "F#3@0/0.5",
+          "G3@1/0.5"
+        ],
+        [
+          "A3@0/0.5",
+          "B3@1/0.5"
+        ]
+      ],
+      "cost": 12
+    },
+    "bpm": 60,
+    "goal": "Đọc F# và vị trí bass từ hóa biểu một thăng.",
+    "status": "structure verified; editorial phrase, engraving and native import approval pending"
+  },
+  {
+    "id": "E12",
+    "stage": 5,
+    "title": "1 Chanson d’amour",
+    "composer": "Fauré, Gabriel",
+    "source": "https://raw.githubusercontent.com/OpenScore/Lieder/38c5db510224d9facdc4b08d741fc788cfb58ea8/scores/Faur%C3%A9%2C_Gabriel/Op.27/1_Chanson_d%E2%80%99amour/lc29589143.mxl",
+    "local": "artifacts/curriculum-research/openscore-lieder/09da49a86520c1f8d92bfaa2a7b5d89cc50eea2f.mxl",
+    "sha256": "b99d09f52175096a8ee5e1d32ed9f119af83c27ed29ced0dd9d147f481469a62",
+    "license": "CC0-1.0",
+    "candidate": {
+      "part": "P2",
+      "staff": "2",
+      "first": 16,
+      "last": 19,
+      "labels": [
+        "16",
+        "17",
+        "18",
+        "19"
+      ],
+      "notes": 8,
+      "range": [
+        "F#2",
+        "D3"
+      ],
+      "midiRange": [
+        42,
+        50
+      ],
+      "minDuration": 2.0,
+      "maxLeap": 2,
+      "maxChord": 1,
+      "key": -1,
+      "meter": "4/4",
+      "pattern": [
+        [
+          "F#2@0/2",
+          "Ab2@2/2"
+        ],
+        [
+          "A2@0/2",
+          "Bb2@2/2"
+        ],
+        [
+          "B2@0/2",
+          "C3@2/2"
+        ],
+        [
+          "C#3@0/2",
+          "D3@2/2"
+        ]
+      ],
+      "cost": 12
+    },
+    "bpm": 56,
+    "goal": "Thực hiện F#2 dù hóa biểu một giáng; quan sát dấu hóa trong bản.",
+    "status": "structure verified; editorial phrase, engraving and native import approval pending"
+  },
+  {
+    "id": "E13",
+    "stage": 5,
+    "title": "07 Poesia di Metastasio (II)",
+    "composer": "Reichardt, Louise",
+    "source": "https://raw.githubusercontent.com/OpenScore/Lieder/38c5db510224d9facdc4b08d741fc788cfb58ea8/scores/Reichardt%2C_Louise/12_Deutsche_und_Itali%C3%A4nische_Romantische_Ges%C3%A4nge/07_Poesia_di_Metastasio_%28II%29/lc5101789.mxl",
+    "local": "artifacts/curriculum-research/openscore-lieder/e091bed712aa5885271cfeb76cf58d73cbd002bd.mxl",
+    "sha256": "2b00276cd0e44e67906050e49e6bdee2954732f72394d2a28f10669e62af5919",
+    "license": "CC0-1.0",
+    "candidate": {
+      "part": "P2",
+      "staff": "2",
+      "first": 19,
+      "last": 22,
+      "labels": [
+        "19",
+        "20",
+        "21",
+        "22"
+      ],
+      "notes": 8,
+      "range": [
+        "A2",
+        "D3"
+      ],
+      "midiRange": [
+        45,
+        50
+      ],
+      "minDuration": 2.0,
+      "maxLeap": 3,
+      "maxChord": 1,
+      "key": -2,
+      "meter": "4/4",
+      "pattern": [
+        [
+          "C3@0/2",
+          "C#3@2/2"
+        ],
+        [
+          "D3@0/2",
+          "C3@2/2"
+        ],
+        [
+          "A2@0/2",
+          "A2@2/2"
+        ],
+        [
+          "Bb2@0/2",
+          "Bb2@2/2"
+        ]
+      ],
+      "cost": 14
+    },
+    "bpm": 56,
+    "goal": "Nhả và đặt tay giữa A2 và D3 theo nhịp gốc.",
+    "status": "structure verified; editorial phrase, engraving and native import approval pending"
+  },
+  {
+    "id": "E14",
+    "stage": 5,
+    "title": "Souhait",
+    "composer": "Chaminade, Cécile",
+    "source": "https://raw.githubusercontent.com/OpenScore/Lieder/38c5db510224d9facdc4b08d741fc788cfb58ea8/scores/Chaminade%2C_C%C3%A9cile/_/Souhait/lc5004771.mxl",
+    "local": "artifacts/curriculum-research/openscore-lieder/ef4d810a9732a95ac2027c0d28d44ba0d2df7ba2.mxl",
+    "sha256": "9eb89aba3fc52bd301896a632a6dbe3bc79f69f78e562a7d49141e240bde173d",
+    "license": "CC0-1.0",
+    "candidate": {
+      "part": "P2",
+      "staff": "2",
+      "first": 10,
+      "last": 11,
+      "labels": [
+        "10",
+        "11"
+      ],
+      "notes": 9,
+      "range": [
+        "C#4",
+        "G4"
+      ],
+      "midiRange": [
+        61,
+        67
+      ],
+      "minDuration": 0.5,
+      "maxLeap": 3,
+      "maxChord": 1,
+      "key": 0,
+      "meter": "4/4",
+      "pattern": [
+        [
+          "E4@0/1",
+          "D4@1/1",
+          "E4@2/1",
+          "F4@3/1"
+        ],
+        [
+          "E4@0/1",
+          "D4@1/1",
+          "C#4@2/1",
+          "E4@3/0.5",
+          "G4@3.5/0.5"
+        ]
+      ],
+      "cost": 15
+    },
+    "bpm": 56,
+    "goal": "Dấu hóa tạm trong vùng C#4–G4.",
+    "status": "structure verified; editorial phrase, engraving and native import approval pending"
+  },
+  {
+    "id": "E15",
+    "stage": 5,
+    "title": "Please Say You Will",
+    "composer": "Joplin, Scott",
+    "source": "https://raw.githubusercontent.com/OpenScore/Lieder/38c5db510224d9facdc4b08d741fc788cfb58ea8/scores/Joplin%2C_Scott/_/Please_Say_You_Will/lc6304288.mxl",
+    "local": "artifacts/curriculum-research/openscore-lieder/d85eba361c8fe323ae969e3895eaadc5866304e0.mxl",
+    "sha256": "eae9ce987c3fef82551c6c1b74e3338bf000cb84cbd7d4f60828843254709944",
+    "license": "CC0-1.0",
+    "candidate": {
+      "part": "P2",
+      "staff": "1",
+      "first": 44,
+      "last": 47,
+      "labels": [
+        "44",
+        "45",
+        "46",
+        "47"
+      ],
+      "notes": 8,
+      "range": [
+        "G4",
+        "D5"
+      ],
+      "midiRange": [
+        67,
+        74
+      ],
+      "minDuration": 0.5,
+      "maxLeap": 4,
+      "maxChord": 1,
+      "key": -2,
+      "meter": "3/4",
+      "pattern": [
+        [
+          "D5@0/3"
+        ],
+        [
+          "C5@0/3"
+        ],
+        [
+          "Bb4@0/2",
+          "A4@2/1"
+        ],
+        [
+          "G4@0/1.5",
+          "G4@1.5/0.5",
+          "Bb4@2/0.5",
+          "D5@2.5/0.5"
+        ]
+      ],
+      "cost": 16
+    },
+    "bpm": 60,
+    "goal": "Staff trên ở nhịp ba; đây là trích đoạn bài hát, không tự gắn nhãn ragtime.",
+    "status": "structure verified; editorial phrase, engraving and native import approval pending"
+  },
+  {
+    "id": "E16",
+    "stage": 5,
+    "title": "16 La coccinelle",
+    "composer": "Bizet, Georges",
+    "source": "https://raw.githubusercontent.com/OpenScore/Lieder/38c5db510224d9facdc4b08d741fc788cfb58ea8/scores/Bizet%2C_Georges/20_M%C3%A9lodies%2C_Op.21/16_La_coccinelle/lc6903757.mxl",
+    "local": "artifacts/curriculum-research/openscore-lieder/f54756bf25c29f38ee4e504b425d131a1047b74b.mxl",
+    "sha256": "419996848e04348b894ad662bc5573cf414aa60fec353ef46b46f497a48914eb",
+    "license": "CC0-1.0",
+    "candidate": {
+      "part": "P2",
+      "staff": "1",
+      "first": 31,
+      "last": 34,
+      "labels": [
+        "30",
+        "31",
+        "32",
+        "33"
+      ],
+      "notes": 8,
+      "range": [
+        "C5",
+        "A5"
+      ],
+      "midiRange": [
+        72,
+        81
+      ],
+      "minDuration": 0.5,
+      "maxLeap": 4,
+      "maxChord": 1,
+      "key": -1,
+      "meter": "3/4",
+      "pattern": [
+        [],
+        [
+          "C5@1/1",
+          "C#5@2/1"
+        ],
+        [
+          "D5@0/1",
+          "Eb5@1/1",
+          "E5@2/1"
+        ],
+        [
+          "F5@0/1",
+          "F5@2/0.5",
+          "A5@2.5/0.5"
+        ]
+      ],
+      "cost": 16
+    },
+    "bpm": 60,
+    "goal": "Đọc vùng C5–A5 và dấu lặng theo bản gốc.",
+    "status": "structure verified; editorial phrase, engraving and native import approval pending"
+  },
+  {
+    "id": "E17",
+    "stage": 5,
+    "title": "5 In diesem Wetter",
+    "composer": "Mahler, Gustav",
+    "source": "https://raw.githubusercontent.com/OpenScore/Lieder/38c5db510224d9facdc4b08d741fc788cfb58ea8/scores/Mahler%2C_Gustav/Kindertotenlieder/5_In_diesem_Wetter/lc5052823.mxl",
+    "local": "artifacts/curriculum-research/openscore-lieder/c1dd9e94fe5608871c7d58f35fa22a3dbef3754b.mxl",
+    "sha256": "10d7e675bcdc9abf469dafae6483518733d27d32d4e607c41357be9ef70e3e0e",
+    "license": "CC0-1.0",
+    "candidate": {
+      "part": "P2",
+      "staff": "2",
+      "first": 54,
+      "last": 57,
+      "labels": [
+        "54",
+        "55",
+        "56",
+        "57"
+      ],
+      "notes": 8,
+      "range": [
+        "F2",
+        "Bb2"
+      ],
+      "midiRange": [
+        41,
+        46
+      ],
+      "minDuration": 1.0,
+      "maxLeap": 1,
+      "maxChord": 1,
+      "key": -1,
+      "meter": "4/4",
+      "pattern": [
+        [
+          "F2@0/2",
+          "F#2@2/2"
+        ],
+        [
+          "G2@0/4"
+        ],
+        [
+          "Ab2@0/2",
+          "G2@2/1",
+          "Ab2@3/1"
+        ],
+        [
+          "A2@0/3",
+          "Bb2@3/1"
+        ]
+      ],
+      "cost": 10
+    },
+    "bpm": 56,
+    "goal": "Chuyển trong vùng F2–Bb2; chỉ tập một staff bass.",
+    "status": "structure verified; editorial phrase, engraving and native import approval pending"
+  },
+  {
+    "id": "E18",
+    "stage": 5,
+    "title": "20 Der Wegweiser",
+    "composer": "Schubert, Franz",
+    "source": "https://raw.githubusercontent.com/OpenScore/Lieder/38c5db510224d9facdc4b08d741fc788cfb58ea8/scores/Schubert%2C_Franz/Winterreise%2C_D.911/20_Der_Wegweiser/lc5009900.mxl",
+    "local": "artifacts/curriculum-research/openscore-lieder/3a6d89149d1a7c2a7694e85e4868c66135e32491.mxl",
+    "sha256": "1dac59dbe25c80865543dafa6347bc14527d4f6a0cf4282ea3ca6fbe08a6e203",
+    "license": "CC0-1.0",
+    "candidate": {
+      "part": "P2",
+      "staff": "2",
+      "first": 58,
+      "last": 61,
+      "labels": [
+        "57",
+        "58",
+        "59",
+        "60"
+      ],
+      "notes": 10,
+      "range": [
+        "C#3",
+        "E3"
+      ],
+      "midiRange": [
+        49,
+        52
+      ],
+      "minDuration": 0.5,
+      "maxLeap": 1,
+      "maxChord": 1,
+      "key": -2,
+      "meter": "2/4",
+      "pattern": [
+        [
+          "C#3@0/2"
+        ],
+        [
+          "D3@0/0.5",
+          "D3@0.5/0.5",
+          "D3@1/0.5",
+          "D3@1.5/0.5"
+        ],
+        [
+          "Eb3@0/2"
+        ],
+        [
+          "E3@0/0.5",
+          "E3@0.5/0.5",
+          "E3@1/0.5",
+          "E3@1.5/0.5"
+        ]
+      ],
+      "cost": 12
+    },
+    "bpm": 56,
+    "goal": "Đọc C# trong bối cảnh hóa biểu hai giáng, không sửa về giọng dễ.",
+    "status": "structure verified; editorial phrase, engraving and native import approval pending"
+  },
+  {
+    "id": "E19",
+    "stage": 5,
+    "title": "Triệu Đoá Hồng",
+    "composer": "Theo metadata file người dùng; không suy quyền từ tên tác giả",
+    "source": null,
+    "local": "scores/library/songs/trieu-doa-hoa-hong-misc-tunes-trieu-doa-hong-trieu-doa-hong-alpha-music.mxl",
+    "sha256": "81f4fbcc40582825325196446a4e75916bf3a46a1347bf3b49258f8e01af7b34",
+    "license": "user supplied; no new redistribution conclusion",
+    "candidate": {
+      "part": "P1",
+      "staff": "1",
+      "first": 5,
+      "last": 8,
+      "labels": [
+        "5",
+        "6",
+        "7",
+        "8"
+      ],
+      "notes": 14,
+      "range": [
+        "E4",
+        "F5"
+      ],
+      "midiRange": [
+        64,
+        77
+      ],
+      "minDuration": 0.5,
+      "maxLeap": 5,
+      "maxChord": 1,
+      "key": 0,
+      "meter": "4/4",
+      "pattern": [
+        [
+          "E4@0/1",
+          "F4@1/0.5",
+          "E4@1.5/0.5",
+          "Ab4@2/1",
+          "Ab4@3/0.5",
+          "A4@3.5/0.5"
+        ],
+        [
+          "B4@0/1.5"
+        ],
+        [
+          "E5@0/1",
+          "F5@1/0.5",
+          "E5@1.5/0.5",
+          "D5@2/1",
+          "C5@3/0.5",
+          "B4@3.5/0.5"
+        ],
+        [
+          "A4@0/1.5"
+        ]
+      ],
+      "cost": 24
+    },
+    "bpm": 56,
+    "goal": "Đọc giai điệu một staff có móc đơn và mở rộng vùng E4–F5.",
+    "status": "structure verified; excerpt-specific editorial review pending"
+  },
+  {
+    "id": "E20",
+    "stage": 5,
+    "title": "Merry Go Round of Life",
+    "composer": "Theo metadata file người dùng; không suy quyền từ tên tác giả",
+    "source": null,
+    "local": "scores/library/songs/merry-go-round-of-life-easy-piano-excerpt.mxl",
+    "sha256": "0fd610db5589836820b84a83b8018fee665e660682ec974d8122993661b61c38",
+    "license": "user supplied; no new redistribution conclusion",
+    "candidate": {
+      "part": "P1",
+      "staff": "1",
+      "first": 15,
+      "last": 18,
+      "labels": [
+        "15",
+        "16",
+        "17",
+        "18"
+      ],
+      "notes": 9,
+      "range": [
+        "D5",
+        "A5"
+      ],
+      "midiRange": [
+        74,
+        81
+      ],
+      "minDuration": 1.0,
+      "maxLeap": 2,
+      "maxChord": 1,
+      "key": -2,
+      "meter": "3/4",
+      "pattern": [
+        [
+          "A5@0/2",
+          "G5@2/1"
+        ],
+        [
+          "F5@0/1",
+          "E5@1/1",
+          "F5@2/1"
+        ],
+        [
+          "G5@0/2",
+          "F5@2/1"
+        ],
+        [
+          "E5@0/2",
+          "D5@2/1"
+        ]
+      ],
+      "cost": 13
+    },
+    "bpm": 60,
+    "goal": "Đọc nhịp ba ở vùng D5–A5.",
+    "status": "structure verified; excerpt-specific editorial review pending"
+  },
+  {
+    "id": "E21",
+    "stage": 5,
+    "title": "Sao mình chưa nắm tay nhau",
+    "composer": "Theo metadata file người dùng; không suy quyền từ tên tác giả",
+    "source": null,
+    "local": "scores/library/songs/sao-minh-chua-nam-tay-nhau-yan-nguyen.mxl",
+    "sha256": "125424fdf3e0d13da5d2dde285113189b813fdfdd8c5b6c9338ccf1db5c076cc",
+    "license": "user supplied; no new redistribution conclusion",
+    "candidate": {
+      "part": "P1",
+      "staff": "1",
+      "first": 1,
+      "last": 4,
+      "labels": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "notes": 9,
+      "range": [
+        "D5",
+        "C6"
+      ],
+      "midiRange": [
+        74,
+        84
+      ],
+      "minDuration": 0.5,
+      "maxLeap": 5,
+      "maxChord": 1,
+      "key": -1,
+      "meter": "4/4",
+      "pattern": [
+        [
+          "D5@0.5/0.5"
+        ],
+        [
+          "F5@0/2",
+          "G5@2/2"
+        ],
+        [
+          "C6@0/1",
+          "C6@1/1",
+          "A5@2/1"
+        ],
+        [
+          "F5@0/2",
+          "G5@2/1",
+          "C6@3/1"
+        ]
+      ],
+      "cost": 19
+    },
+    "bpm": 56,
+    "goal": "Đọc câu cao D5–C6, giữ phách qua dấu lặng.",
+    "status": "structure verified; excerpt-specific editorial review pending"
+  },
+  {
+    "id": "E22",
+    "stage": 6,
+    "title": "Có không giữ mất đừng tìm",
+    "composer": "Theo metadata file người dùng; không suy quyền từ tên tác giả",
+    "source": null,
+    "local": "scores/library/songs/co-khong-giu-mat-dung-tim.mxl",
+    "sha256": "ffc42452ea013611d99c014eb24206d69111436233800af5a0b6e941cb0554bb",
+    "license": "user supplied; no new redistribution conclusion",
+    "candidate": {
+      "part": "P1",
+      "staff": "2",
+      "first": 8,
+      "last": 11,
+      "labels": [
+        "8",
+        "9",
+        "10",
+        "11"
+      ],
+      "notes": 16,
+      "range": [
+        "E2",
+        "G3"
+      ],
+      "midiRange": [
+        40,
+        55
+      ],
+      "minDuration": 1.0,
+      "maxLeap": 10,
+      "maxChord": 1,
+      "key": 0,
+      "meter": "4/4",
+      "pattern": [
+        [
+          "E2@0/1",
+          "B2@1/1",
+          "E2@2/1",
+          "B2@3/1"
+        ],
+        [
+          "F2@0/1",
+          "C3@1/1",
+          "G2@2/1",
+          "D3@3/1"
+        ],
+        [
+          "C3@0/1",
+          "G3@1/1",
+          "C3@2/1",
+          "G3@3/1"
+        ],
+        [
+          "A2@0/1",
+          "E3@1/1",
+          "A2@2/1",
+          "E3@3/1"
+        ]
+      ],
+      "cost": 36
+    },
+    "bpm": 56,
+    "goal": "Tập riêng bass E2–G3, đặt tay kịp các quãng nhảy.",
+    "status": "structure verified; excerpt-specific editorial review pending"
+  },
+  {
+    "id": "E23",
+    "stage": 7,
+    "title": "Tình đầu quá chén",
+    "composer": "Theo metadata file người dùng; không suy quyền từ tên tác giả",
+    "source": null,
+    "local": "scores/library/songs/tinh-dau-qua-chen-erik-quang-hung-masterd-negav-phap-kieu.mxl",
+    "sha256": "354280a125c519cd319aa232e7adad413fc98f73ab62d4c70f452260da95eb46",
+    "license": "user supplied; no new redistribution conclusion",
+    "candidate": {
+      "part": "P1",
+      "staff": "1",
+      "first": 3,
+      "last": 6,
+      "labels": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "notes": 9,
+      "range": [
+        "Ab4",
+        "F5"
+      ],
+      "midiRange": [
+        68,
+        77
+      ],
+      "minDuration": 1.0,
+      "maxLeap": 5,
+      "maxChord": 1,
+      "key": -5,
+      "meter": "4/4",
+      "pattern": [
+        [
+          "F5@1/1",
+          "C5@2/1",
+          "C#5@3/1"
+        ],
+        [
+          "Eb5@0/4"
+        ],
+        [
+          "F5@1/1",
+          "C5@2/1",
+          "C#5@3/1"
+        ],
+        [
+          "Bb4@0/2",
+          "Ab4@2/2"
+        ]
+      ],
+      "cost": 19
+    },
+    "bpm": 56,
+    "goal": "Đọc đúng hóa biểu năm giáng; ít nốt không đồng nghĩa ít khó về dấu hóa.",
+    "status": "structure verified; excerpt-specific editorial review pending"
+  },
+  {
+    "id": "E24",
+    "stage": 7,
+    "title": "Tràn bộ nhớ",
+    "composer": "Theo metadata file người dùng; không suy quyền từ tên tác giả",
+    "source": null,
+    "local": "scores/library/songs/tran-bo-nho-duong-domic.mxl",
+    "sha256": "8bdbe9269ccd490d9165734928ab45d84856b183728e0eaa74907bfbe8b6d8b2",
+    "license": "user supplied; no new redistribution conclusion",
+    "candidate": {
+      "part": "P1",
+      "staff": "2",
+      "first": 18,
+      "last": 21,
+      "labels": [
+        "18",
+        "19",
+        "20",
+        "21"
+      ],
+      "notes": 8,
+      "range": [
+        "F#2",
+        "Bb3"
+      ],
+      "midiRange": [
+        42,
+        58
+      ],
+      "minDuration": 2.0,
+      "maxLeap": 11,
+      "maxChord": 1,
+      "key": 6,
+      "meter": "4/4",
+      "pattern": [
+        [
+          "F#2@0/2",
+          "C#3@2/2"
+        ],
+        [
+          "C#3@0/2",
+          "Ab3@2/2"
+        ],
+        [
+          "Eb3@0/2",
+          "Bb3@2/2"
+        ],
+        [
+          "B2@0/2",
+          "F#3@2/2"
+        ]
+      ],
+      "cost": 30
+    },
+    "bpm": 56,
+    "goal": "Đọc staff bass trong hóa biểu sáu thăng; chuyển quãng lớn với nốt dài.",
+    "status": "structure verified; excerpt-specific editorial review pending"
+  }
+]

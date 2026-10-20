@@ -1,0 +1,110 @@
+[
+  {
+    "id": "K001",
+    "file": "K001.mxl",
+    "sha256": "9287c1fc65c450398c5c8633ede785ec05df02141b5033cfec2898e95e170f61",
+    "measures": 8,
+    "notes": 32,
+    "staff": 1,
+    "meter": "4/4"
+  },
+  {
+    "id": "K002",
+    "file": "K002.mxl",
+    "sha256": "f280b4790e452623c48a34bc0bdb12b182d2827bdc35b9cd1cc82f2182545d17",
+    "measures": 8,
+    "notes": 32,
+    "staff": 2,
+    "meter": "4/4"
+  },
+  {
+    "id": "K003",
+    "file": "K003.mxl",
+    "sha256": "de18ae195c6fca9194354c4d02b87b10885bc011b08cd10fdcf33794bb176154",
+    "measures": 8,
+    "notes": 16,
+    "staff": 1,
+    "meter": "4/4"
+  },
+  {
+    "id": "K004",
+    "file": "K004.mxl",
+    "sha256": "a56e9fe3d5c4df667716d484fd4a7b07d891d10c65da53fd761202b1af9ec288",
+    "measures": 8,
+    "notes": 16,
+    "staff": 1,
+    "meter": "4/4"
+  },
+  {
+    "id": "K005",
+    "file": "K005.mxl",
+    "sha256": "7adbb7adbffd49e8798356564e5c635fcdeab1aed902b06b65104070fccbc088",
+    "measures": 8,
+    "notes": 24,
+    "staff": 1,
+    "meter": "4/4"
+  },
+  {
+    "id": "K006",
+    "file": "K006.mxl",
+    "sha256": "89de44fb2e37f7a085fee0d56b5555c9a1890dbbf6f4ba3a04a696a65a812eda",
+    "measures": 8,
+    "notes": 24,
+    "staff": 1,
+    "meter": "3/4"
+  },
+  {
+    "id": "K007",
+    "file": "K007.mxl",
+    "sha256": "ca4fd34b4a83d6bdd0e5e46600285a83209a26df258b1039613dffc096ae40c5",
+    "measures": 16,
+    "notes": 16,
+    "staff": 2,
+    "meter": "2/4"
+  },
+  {
+    "id": "K008",
+    "file": "K008.mxl",
+    "sha256": "feb2502aaf2c1a1fd4860cc439785d206f6d0675f9b7b2ca62ab49b24057712e",
+    "measures": 8,
+    "notes": 32,
+    "staff": 1,
+    "meter": "4/4"
+  },
+  {
+    "id": "K009",
+    "file": "K009.mxl",
+    "sha256": "a94ad3d2ca53b2cb2cdabf1cac53b45ad9e9bb834ba16d7283f48fe548a078dd",
+    "measures": 8,
+    "notes": 32,
+    "staff": 2,
+    "meter": "4/4"
+  },
+  {
+    "id": "K010",
+    "file": "K010.mxl",
+    "sha256": "c228be1335229d5cd839f0c034809ba2b9b27e3d513209b4e857a997b7b7d674",
+    "measures": 8,
+    "notes": 28,
+    "staff": 1,
+    "meter": "4/4"
+  },
+  {
+    "id": "K011",
+    "file": "K011.mxl",
+    "sha256": "bfceff7f817daf699c78aa41ca148e34e9243dde88f472da229008926775519d",
+    "measures": 8,
+    "notes": 32,
+    "staff": 1,
+    "meter": "4/4"
+  },
+  {
+    "id": "K012",
+    "file": "K012.mxl",
+    "sha256": "5e4bcf54e6698efdb1667a0201789cd5b085e5b9939b2d963b6d5845f689d0d3",
+    "measures": 8,
+    "notes": 18,
+    "staff": 1,
+    "meter": "4/4"
+  }
+]
