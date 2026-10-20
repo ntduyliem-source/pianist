@@ -34,7 +34,7 @@ export function scoreSystems(snapshot:ScoreSnapshot):ScoreSystem[] {
   return systems;
 }
 function lastAt<T>(items:T[],position:number,time:(item:T)=>number){let lo=0,hi=items.length;while(lo<hi){const mid=(lo+hi)>>>1;if(time(items[mid])<=position)lo=mid+1;else hi=mid;}return lo-1;}
-export function scorePositions(snapshot:ScoreSnapshot,t:Timeline){
+export function scorePositions(snapshot:ScoreSnapshot,t:Pick<Timeline,'targets'|'guide'|'visits'|'groups'>){
   const anchors=new Map(snapshot.anchors.filter(a=>a.visible).map(a=>[a.id,a])),targets=new Map(t.targets.map(n=>[n.id,n]));
   const points=new Map<number,{at:number;x:number;anchors:string[]}[]>();
   for(const target of [...t.targets,...t.guide])for(const span of target.spans){const a=anchors.get(span.anchor);if(!a)continue;const list=points.get(span.visit)??[];list.push({at:span.atMs,x:a.box.x+a.box.width/2,anchors:[a.id]});points.set(span.visit,list);}

@@ -9,14 +9,18 @@ export interface NativeApi {
   startAudioProcessing(): Promise<void>;
   getEditorPlayback?(): number;
   editorPlayback?(command: string, value?: number): number;
+  getPracticePlayback?(): number;
+  practicePlayback?(command: string, value?: number, end?: number): number;
 }
 export interface EditorPlaybackState {
   available: boolean; status: 'playing' | 'paused' | 'stopped';
   positionSeconds: number; durationSeconds: number; tempoMultiplier: number;
 }
+export interface PracticePlaybackState extends EditorPlaybackState {preparing: boolean; error: string}
+export type AuditionCommand = 'range'|'play'|'pause'|'stop'|'seek'|'tempo'|'loop'|'reset';
 export class EngineBridge {
   readonly schemaVersion = 1;
-  revision = 0; practiceActive = false; private request = 0; private editorTempo = 1;
+  revision = 0; practiceActive = false; private request = 0;
   constructor(readonly api: NativeApi) {}
   playbackState(): EditorPlaybackState {
     return this.capture('onEditorPlayback', () => this.api.getEditorPlayback?.() ?? 0,
@@ -24,6 +28,13 @@ export class EngineBridge {
   }
   playback(command: 'play'|'toggle'|'pause'|'stop'|'seek'|'tempo', value = 0): void {
     if (this.practiceActive || !this.api.editorPlayback?.(command, value)) throw Error('MuseScore chưa sẵn sàng phát bài này.');
+  }
+  auditionState(): PracticePlaybackState {
+    return this.capture('onPracticePlayback', () => this.api.getPracticePlayback?.() ?? 0,
+      value => JSON.parse(value), 'Không đọc được trạng thái nghe MuseScore.');
+  }
+  audition(command: AuditionCommand, value = 0, end = 0): void {
+    if (!this.practiceActive || !this.api.practicePlayback?.(command, value, end)) throw Error('MuseScore chưa sẵn sàng nghe bài này.');
   }
   private capture<T>(callback: string, call: () => number, copy: (value: any) => T, message: string): T {
     const previous = this.api.Module[callback], revision = this.revision;
@@ -53,6 +64,7 @@ export class EngineBridge {
     finally { this.api.Module.onProjectSerialized = undefined; }
   }
   snapshot(): Omit<ScoreSnapshot, 'projectId' | 'fingerprint'> {
+    if (this.practiceActive && this.api.practicePlayback) this.audition('reset');
     let result: Omit<ScoreSnapshot, 'projectId' | 'fingerprint'> | undefined;
     this.api.Module.onPracticeSnapshot = (json: string) => {result = JSON.parse(json);};
     try {
@@ -73,15 +85,9 @@ export class EngineBridge {
   cancel(): void { ++this.request; }
   setPractice(active: boolean): void {
     if (this.practiceActive === active) return;
-    // MuseScore's playback speed changes its tempo map. Practice snapshots must
-    // use the written tempo; keep the editor's speed separate from grading.
-    if (active && this.api.getEditorPlayback && this.api.editorPlayback) {
-      this.editorTempo = this.playbackState().tempoMultiplier;
-      this.api.editorPlayback('stop');
-      if (this.editorTempo !== 1) this.playback('tempo', 1);
-    }
+    // Native transition preserves the editor speed and restores written tempo
+    // without scheduling the editor controller's asynchronous resume callback.
     if (!this.api.setPracticeActive(active)) throw Error('Không chuyển được chế độ editor.');
     this.practiceActive = active;
-    if (!active && this.editorTempo !== 1) this.api.editorPlayback?.('tempo', this.editorTempo);
   }
 }

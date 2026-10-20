@@ -30,6 +30,7 @@
 #include "audio/main/istartaudiocontroller.h"
 #include "audio/main/isoundfontcontroller.h"
 #include "audio/main/iplayback.h"
+#include "audio/main/iplayer.h"
 #include "project/iprojectcreator.h"
 #include "project/inotationwritersregister.h"
 #include "playback/iplaybackcontroller.h"
@@ -66,6 +67,8 @@ public:
     bool dispatchAction(const std::string& action);
     bool getEditorPlayback();
     bool editorPlayback(const std::string& command, double value);
+    bool getPracticePlayback();
+    bool practicePlayback(const std::string& command, double value, double end);
     void checkAudioReady();
     void addSoundFont(const std::string& uri);
     void startAudioProcessing();
@@ -77,9 +80,21 @@ private:
     void onProjectSaved(const muse::io::path_t& path, mu::project::SaveMode mode);
     void bumpRevision();
     bool snapshotFor(const project::INotationProjectPtr& project, bool drawings, const char* callback);
+    void resetPracticePlayback();
+    void applyPracticePlaybackRange();
+    void preparePracticePlayback();
 
     project::INotationProjectPtr m_currentProject;
     unsigned int m_revision = 0;
     bool m_practiceActive = false;
+    bool m_auditionConfigured = false;
+    bool m_auditionLoop = false;
+    bool m_auditionPreparing = false;
+    unsigned int m_auditionGeneration = 0;
+    double m_auditionStart = 0.0;
+    double m_auditionEnd = 0.0;
+    double m_editorTempo = 1.0;
+    QString m_auditionError;
+    muse::audio::IPlayerPtr m_auditionPlayer;
 };
 }

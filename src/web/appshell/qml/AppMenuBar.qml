@@ -32,6 +32,7 @@ ListView {
     width: contentWidth
 
     property alias appWindow: appMenuModel.appWindow
+    property bool compact: false
 
     orientation: Qt.Horizontal
 
@@ -129,6 +130,7 @@ ListView {
         buttonType: FlatButton.TextOnly
         isNarrow: true
         margins: 8
+        height: root.compact ? 44 : 28
         drawFocusBorderInsideRect: true
 
         transparent: !isMenuOpened

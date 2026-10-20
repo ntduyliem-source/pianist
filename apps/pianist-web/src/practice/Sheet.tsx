@@ -5,7 +5,7 @@ import {anchorBounds,followTarget,scoreSystems,type ScoreCursor,type ScoreSystem
 import {NoteInk} from './NoteInk';
 import {parseNativeGlyphs,type NativeGlyph} from './note-ink';
 interface Props {
-  snapshot:ScoreSnapshot;markers:Map<string,Marker>;cursor?:ScoreCursor;zoom:number|'fit';autoScroll:boolean;followToken:number;
+  snapshot:ScoreSnapshot;markers:Map<string,Marker>;cursor?:ScoreCursor;zoom:number|'fit'|'auto';autoScroll:boolean;followToken:number;
   fromMeasure:number;toMeasure:number;selecting:'a'|'b'|null;onMeasure:(index:number)=>void;
 }
 const System=memo(function System({snapshot,system,url,glyphs,markers,cursor,zoom,available,fromMeasure,toMeasure,selecting,onMeasure}:Props&{system:ScoreSystem;url:string;glyphs:NativeGlyph[];available:number}){
@@ -14,14 +14,16 @@ const System=memo(function System({snapshot,system,url,glyphs,markers,cursor,zoo
   const measures=useMemo(()=>system.measures.map(i=>snapshot.measures[i]),[snapshot,system]);
   useEffect(()=>{const observer=new IntersectionObserver(([entry])=>setVisible(entry.isIntersecting),{root:document.getElementById('sheet-scroll'),rootMargin:'700px'});if(element.current)observer.observe(element.current);return()=>observer.disconnect();},[]);
   const current=cursor&&system.measures.includes(cursor.measure);
-  const width=zoom==='fit'?available:crop.width*(page.displayWidth/page.width)*zoom/100;
+  const natural=crop.width*(page.displayWidth/page.width);
+  const width=zoom==='fit'?available:zoom==='auto'?Math.max(available,natural):natural*zoom/100;
+  const screenUnit=crop.width/width;
   return <div ref={element} className="practice-system" data-system={system.id} data-page={system.page} style={{width,aspectRatio:`${crop.width}/${crop.height}`}}>
     {(visible||current)&&<svg className="practice-system-svg" viewBox={`${crop.x} ${crop.y} ${crop.width} ${crop.height}`} role="img" aria-label={`Bản nhạc: ô ${measures[0].label} đến ${measures.at(-1)!.label}`}>
       <image href={url} x="0" y="0" width={page.width} height={page.height}/>
       {measures.map(m=><rect key={m.index} data-measure={m.index} className={'practice-measure'+(m.index>=fromMeasure&&m.index<=toMeasure?' in-range':'')} x={m.box.x-page.offsetX} y={m.box.y-page.offsetY} width={m.box.width} height={m.box.height} onClick={()=>onMeasure(m.index)}><title>Ô {m.label}{selecting?' · chọn '+selecting.toUpperCase():''}</title></rect>)}
       <NoteInk glyphs={glyphs} anchors={anchors} markers={markers}/>
       {current&&<line className="practice-playhead" data-testid="score-playhead" x1={cursor.x-page.offsetX} x2={cursor.x-page.offsetX} y1={system.box.y-page.offsetY-12} y2={system.box.y-page.offsetY+system.box.height+12} vectorEffect="non-scaling-stroke"/>}
-      {measures.filter(m=>m.index===fromMeasure||m.index===toMeasure).map(m=><g key={'range-'+m.index} className="practice-range-mark"><text x={m.box.x-page.offsetX+(m.index===fromMeasure?8:m.box.width-28)} y={system.box.y-page.offsetY-30} fontSize="95">{m.index===fromMeasure?'A':''}{m.index===fromMeasure&&m.index===toMeasure?'–B':m.index===toMeasure?'B':''}</text></g>)}
+      {measures.filter(m=>m.index===fromMeasure||m.index===toMeasure).map(m=><g key={'range-'+m.index} className="practice-range-mark"><text x={m.box.x-page.offsetX+(m.index===fromMeasure?6*screenUnit:m.box.width-18*screenUnit)} y={system.box.y-page.offsetY-6*screenUnit} fontSize={12*screenUnit}>{m.index===fromMeasure?'A':''}{m.index===fromMeasure&&m.index===toMeasure?'–B':m.index===toMeasure?'B':''}</text></g>)}
     </svg>}
     {selecting&&<div className="practice-measure-choices" aria-label="Chọn ô nhịp">{measures.map(m=><button key={m.index} onClick={()=>onMeasure(m.index)}>Ô {m.label} · {selecting.toUpperCase()}</button>)}</div>}
   </div>;

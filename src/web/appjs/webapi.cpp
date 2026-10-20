@@ -30,6 +30,7 @@
 #include "global/io/buffer.h"
 #include "midi/midievent.h"
 #include "notation/inotation.h"
+#include "notation/inotationplayback.h"
 #include <algorithm>
 #include <cctype>
 #include <map>
@@ -38,6 +39,7 @@
 #include <QJsonDocument>
 #include <QJsonObject>
 #include "context/iplaybackstate.h"
+#include "audio/main/iplayer.h"
 #include "actions/actiontypes.h"
 
 #include "log.h"
@@ -81,6 +83,10 @@ void WebApi::init()
         }
 
         m_currentProject = globalContext()->currentProject();
+        ++m_auditionGeneration;
+        m_auditionPlayer.reset();
+        m_auditionConfigured = false;
+        m_auditionPreparing = false;
 
         if (m_currentProject) {
             m_currentProject->saveComplited().onReceive(this, [this](const muse::io::path_t& path, project::SaveMode mode) {
@@ -223,10 +229,31 @@ void WebApi::bumpRevision()
 
 bool WebApi::setPracticeActive(bool active)
 {
+    if (m_practiceActive == active) { return true; }
+    resetPracticePlayback();
     if (active) {
         // Native playback must not keep running behind the practice transport.
+        m_editorTempo = playbackController()->tempoMultiplier();
         dispatcher()->dispatch("stop");
         dispatcher()->dispatch("escape");
+    }
+    if (m_currentProject) {
+        // Use the upstream tempo-map operation without the editor controller's
+        // asynchronous resume, which can otherwise run after stop/navigation.
+        const auto playback = m_currentProject->masterNotation()->playback();
+        playback->setTempoMultiplier(active ? 1.0 : m_editorTempo);
+        if (!active && m_auditionPlayer) {
+            // Restore the editor loop as PlaybackController::updateLoop does.
+            const auto& boundaries = playback->loopBoundaries();
+            if (boundaries.enabled) {
+                const auto from = playback->playPositionTickByRawTick(boundaries.loopInTick.ticks());
+                const auto to = playback->playPositionTickByRawTick(boundaries.loopOutTick.ticks());
+                if (from.ret && to.ret) {
+                    m_auditionPlayer->setLoop(audio::secsToMilisecs(playback->playedTickToSec(from.val)),
+                                             audio::secsToMilisecs(playback->playedTickToSec(to.val)));
+                }
+            }
+        }
     }
     m_practiceActive = active;
     return true;
@@ -328,6 +355,139 @@ bool WebApi::editorPlayback(const std::string& command, double value)
     } else {
         return false;
     }
+    return true;
+}
+
+void WebApi::resetPracticePlayback()
+{
+    ++m_auditionGeneration; // Invalidates prepareToPlay callbacks after navigation/stop.
+    m_auditionPreparing = false;
+    m_auditionError.clear();
+    if (!m_auditionConfigured) { return; }
+    const auto player = m_auditionPlayer;
+    if (player) {
+        player->stop();
+        player->resetLoop();
+    }
+    // The same tempo-map operation used by PlaybackController, without its
+    // asynchronous resume callback. A reset must never schedule another play.
+    m_currentProject->masterNotation()->playback()->setTempoMultiplier(1.0);
+    if (player) {
+        player->setDuration(audio::secsToMilisecs(playbackController()->totalPlayTime()));
+    }
+    m_auditionConfigured = false;
+}
+
+void WebApi::applyPracticePlaybackRange()
+{
+    const auto player = m_auditionPlayer;
+    if (!player || !m_auditionConfigured) { return; }
+    const double speed = playbackController()->tempoMultiplier();
+    player->setDuration(audio::secsToMilisecs(audio::secs_t(m_auditionEnd / speed)));
+    // These are the upstream PlaybackController::updateLoop / IPlayer APIs.
+    // The engine's audio Clock owns the boundary, including while JS is busy.
+    if (m_auditionLoop) {
+        player->setLoop(audio::secsToMilisecs(audio::secs_t(m_auditionStart / speed)),
+                        audio::secsToMilisecs(audio::secs_t(m_auditionEnd / speed)));
+    } else {
+        player->resetLoop();
+    }
+}
+
+void WebApi::preparePracticePlayback()
+{
+    const auto player = m_auditionPlayer;
+    m_auditionError.clear();
+    m_auditionPreparing = true;
+    const auto generation = ++m_auditionGeneration;
+    m_currentProject->masterNotation()->playback()->sendEventsForChangedTracks();
+    player->prepareToPlay().onResolve(this, [this, player, generation](const Ret& ret) {
+        if (generation != m_auditionGeneration || !m_practiceActive || !m_auditionConfigured) { return; }
+        m_auditionPreparing = false;
+        if (!ret) { m_auditionError = QString::fromStdString(ret.toString()); return; }
+        applyPracticePlaybackRange();
+        const double speed = playbackController()->tempoMultiplier();
+        const double pos = double(player->playbackPosition()) * speed;
+        if (pos < m_auditionStart || pos >= m_auditionEnd - 0.002) {
+            player->seek(audio::secs_t(m_auditionStart / speed));
+        }
+        player->play();
+    });
+}
+
+bool WebApi::getPracticePlayback()
+{
+    const auto state = globalContext()->playbackState();
+    const auto status = state ? state->playbackStatus() : audio::PlaybackStatus::Stopped;
+    const QJsonObject data {
+        { "available", m_practiceActive && m_currentProject && playbackController()->isPlayAllowed() },
+        { "status", status == audio::PlaybackStatus::Running ? "playing"
+                    : status == audio::PlaybackStatus::Paused ? "paused" : "stopped" },
+        { "positionSeconds", state ? double(state->playbackPosition()) : 0.0 },
+        { "durationSeconds", m_currentProject ? double(playbackController()->totalPlayTime()) : 0.0 },
+        { "tempoMultiplier", m_currentProject ? playbackController()->tempoMultiplier() : 1.0 },
+        { "preparing", m_auditionPreparing },
+        { "error", m_auditionError }
+    };
+#ifdef Q_OS_WASM
+    const auto callback = emscripten::val::module_property("onPracticePlayback");
+    if (callback.isUndefined() || callback.isNull()) { return false; }
+    callback(QJsonDocument(data).toJson(QJsonDocument::Compact).toStdString());
+#endif
+    return true;
+}
+
+bool WebApi::practicePlayback(const std::string& command, double value, double end)
+{
+    if (!m_practiceActive || !m_currentProject || !std::isfinite(value) || !std::isfinite(end)) { return false; }
+    if (command == "reset") { resetPracticePlayback(); return true; }
+    if (!playbackController()->isPlayAllowed()) { return false; }
+    const auto sequence = playbackController()->currentTrackSequenceId();
+    // Playback::player is a factory, not a getter. Retain its RPC subscriptions,
+    // as PlaybackController does; creating one per poll returns an initial state.
+    if (!m_auditionPlayer || m_auditionPlayer->sequenceId() != sequence) {
+        m_auditionPlayer = audioPlayback()->player(sequence);
+    }
+    const auto player = m_auditionPlayer;
+    if (!player) { return false; }
+    const double speed = playbackController()->tempoMultiplier();
+    if (command == "range") {
+        if (value < 0 || end <= value || end > double(playbackController()->totalPlayTime()) * speed + 0.01) { return false; }
+        resetPracticePlayback();
+        player->stop();
+        m_auditionConfigured = true;
+        m_auditionLoop = false;
+        m_auditionStart = value;
+        m_auditionEnd = end;
+        applyPracticePlaybackRange();
+        player->seek(audio::secs_t(value));
+        return true;
+    }
+    if (!m_auditionConfigured) { return false; }
+    if (command == "play") {
+        if (m_auditionPreparing || playbackController()->isPlaying()) { return true; }
+        preparePracticePlayback();
+    } else if (command == "pause" || command == "stop") {
+        ++m_auditionGeneration;
+        m_auditionPreparing = false;
+        if (command == "pause") { player->pause(); }
+        else { player->stop(); player->seek(audio::secs_t(m_auditionStart / speed)); }
+    } else if (command == "seek") {
+        player->seek(audio::secs_t(std::clamp(value, m_auditionStart, m_auditionEnd) / speed));
+    } else if (command == "tempo") {
+        if (value < 0.25 || value > 2.0 || m_auditionPreparing) { return false; }
+        const double position = double(player->playbackPosition()) * speed;
+        const bool playing = playbackController()->isPlaying();
+        if (playing) { player->pause(); }
+        m_currentProject->masterNotation()->playback()->setTempoMultiplier(value);
+        applyPracticePlaybackRange();
+        // Preserve the performed occurrence across repeats, not just the raw tick.
+        player->seek(audio::secs_t(std::clamp(position, m_auditionStart, m_auditionEnd) / value));
+        if (playing) { preparePracticePlayback(); }
+    } else if (command == "loop") {
+        m_auditionLoop = value != 0.0;
+        applyPracticePlaybackRange();
+    } else { return false; }
     return true;
 }
 

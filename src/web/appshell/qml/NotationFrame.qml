@@ -34,31 +34,53 @@ import MuseScore.Playback
 ColumnLayout {
     id: root
     spacing: 0
-    Item {
+    property bool compact: false
+    onCompactChanged: { if (compact) WebShell.hideSidebar() }
+    Component.onCompleted: { if (compact) WebShell.hideSidebar() }
+    Flickable {
         Layout.fillWidth: true
-        Layout.preferredHeight: 40
+        Layout.preferredHeight: root.compact && root.height > 240 ? 48 : 40
         visible: WebShell.noteInputVisible
         clip: true
-        NoteInputBar { maximumWidth: parent.width; maximumHeight: parent.height }
+        contentWidth: noteInput.width
+        contentHeight: height
+        flickableDirection: Flickable.HorizontalFlick
+        ScrollBar.horizontal: ScrollBar { }
+        NoteInputBar {
+            id: noteInput
+            anchors.verticalCenter: parent.verticalCenter
+            maximumWidth: Math.max(root.width, 1200)
+            maximumHeight: 40
+            floating: true
+        }
     }
     SeparatorLine { Layout.fillWidth: true; visible: WebShell.noteInputVisible }
 
-    SplitView {
+    Item {
+        id: content
         Layout.fillWidth: true
         Layout.fillHeight: true
-        orientation: Qt.Horizontal
-        handle: Rectangle { implicitWidth: 1; color: ui.theme.strokeColor }
-        Item {
+        Rectangle {
+            anchors.fill: parent
+            z: 1
+            visible: root.compact && WebShell.sidebarVisible
+            color: "#55000000"
+            MouseArea { anchors.fill: parent; onClicked: WebShell.hideSidebar() }
+        }
+        Rectangle {
             id: sidebar
+            z: 2
+            anchors.left: parent.left
+            anchors.top: parent.top
+            anchors.bottom: parent.bottom
+            width: Math.min(320, content.width)
+            color: ui.theme.backgroundPrimaryColor
             visible: WebShell.sidebarVisible
-            SplitView.preferredWidth: 300
-            SplitView.minimumWidth: 280
-            SplitView.maximumWidth: 440
             StyledTabBar {
                 id: bar
                 anchors.left: parent.left
                 anchors.right: closeSidebar.left
-                height: 36
+                height: root.compact ? 44 : 36
                 currentIndex: WebShell.sidebarTab
                 onCurrentIndexChanged: {
                     if (currentIndex !== WebShell.sidebarTab) WebShell.selectSidebarTab(currentIndex)
@@ -71,8 +93,8 @@ ColumnLayout {
                 id: closeSidebar
                 anchors.right: parent.right
                 anchors.top: parent.top
-                width: 24; height: 34
-                icon: IconCode.CLOSE_X
+                width: 44; height: 44
+                icon: IconCode.CLOSE_X_ROUNDED
                 transparent: true
                 accessible.name: "Close panel"
                 onClicked: WebShell.hideSidebar()
@@ -90,8 +112,8 @@ ColumnLayout {
             }
         }
         SplitView {
-            SplitView.fillWidth: true
-            SplitView.fillHeight: true
+            anchors.fill: parent
+            anchors.leftMargin: !root.compact && WebShell.sidebarVisible ? sidebar.width : 0
             orientation: Qt.Vertical
             handle: Rectangle { implicitHeight: 1; color: ui.theme.strokeColor }
             NotationView {
@@ -106,15 +128,15 @@ ColumnLayout {
             Loader {
                 active: WebShell.mixerVisible
                 visible: active
-                SplitView.preferredHeight: 260
-                SplitView.minimumHeight: 150
+                SplitView.preferredHeight: Math.min(260, content.height / 2)
+                SplitView.minimumHeight: 80
                 sourceComponent: MixerPanel { }
             }
             Loader {
                 active: WebShell.pianoVisible
                 visible: active
-                SplitView.preferredHeight: 160
-                SplitView.minimumHeight: 100
+                SplitView.preferredHeight: Math.min(160, content.height / 2)
+                SplitView.minimumHeight: 60
                 sourceComponent: PianoKeyboardPanel { }
             }
         }

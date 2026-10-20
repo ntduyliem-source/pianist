@@ -73,6 +73,12 @@ EMSCRIPTEN_KEEPALIVE
 bool editorPlayback(const char* command, double value) { return command && WebApi::instance()->editorPlayback(command, value); }
 
 EMSCRIPTEN_KEEPALIVE
+bool getPracticePlayback() { return WebApi::instance()->getPracticePlayback(); }
+
+EMSCRIPTEN_KEEPALIVE
+bool practicePlayback(const char* command, double value, double end) { return command && WebApi::instance()->practicePlayback(command, value, end); }
+
+EMSCRIPTEN_KEEPALIVE
 void addSoundFont(const char* uri)
 {
     WebApi::instance()->addSoundFont(std::string(uri));

@@ -7,6 +7,7 @@ import {LibraryTransfer} from './platform/LibraryTransfer';
 import {TuneImportDialog, SourceLabel} from './platform/TuneImportDialog';
 import {Practice,Results,History} from './practice/PracticeView';
 import {EditorPlayback} from './EditorPlayback';
+import {EditorActions} from './EditorActions';
 import './style.css';
 
 const run = (fn: () => unknown | Promise<unknown>) => () => void ws.run(fn);
@@ -70,7 +71,7 @@ function App() {
     {state.error && !state.engineFailed && <div className="error-banner" role="alert"><span>{state.error}</span><button onClick={() => ws.patch({error: ''})}>Đóng</button>{state.current && <button onClick={run(() => ws.downloadProject())}>Tải bản sao MSCZ</button>}</div>}
     {!!state.importDiagnostics?.length && !state.error && !state.busy && <div className="error-banner import-notice" role="status"><details><summary>Đã mở ABC · có thay đổi trình bày</summary><ul>{state.importDiagnostics.map((d, i) => <li key={i}>{d.message}</li>)}</ul></details><button onClick={() => ws.patch({importDiagnostics: undefined})}>Đóng</button></div>}
     {state.engineFailed && <div className="loading-overlay" role="alert"><h2>{state.error}</h2><button className="primary" onClick={() => location.reload()}>Tải lại trang</button></div>}
-    {state.view === 'editor' && <div className="editor-meta"><strong>{state.current?.title}</strong><span data-testid="save-state">{state.saveState}</span><button onClick={run(() => ws.saveLibrary())}><Icon name="save"/>Lưu thư viện</button><button onClick={() => ws.showSaveAs()}>Lưu bản mới…</button><button onClick={run(() => ws.downloadProject())}>Tải MSCZ</button><button onClick={() => exportDialog.current?.showModal()}>Xuất…</button><button className="primary" onClick={run(() => ws.practice())}><Icon name="piano"/>Tập bài này</button></div>}
+    {state.view === 'editor' && <EditorActions title={state.current?.title} saveState={state.saveState} onExport={()=>exportDialog.current?.showModal()}/>}
     {state.view === 'editor' && state.engineReady && state.current && <EditorPlayback key={state.current.id}/>}
     {state.view === 'library' && <Library/>}
     {state.view === 'practice' && (state.practicePicker || !state.snapshot || !state.config ? <PracticeHome/> : <Practice key={state.snapshot.fingerprint + ':' + state.snapshot.revision} snapshot={state.snapshot} config={state.config}/>)}
