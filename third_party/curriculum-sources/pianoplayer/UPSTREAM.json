@@ -1,0 +1,30 @@
+{
+  "repository": "https://github.com/marcomusy/pianoplayer",
+  "commit": "6fb0e2114d7b21f75c0be5208172e1243a57323e",
+  "license": "MIT",
+  "files": [
+    {
+      "path": "pianoplayer/__init__.py",
+      "sha256": "acb42c0bfc0da2dc6abda8e56dc4e209fa6f997598b90aae2f900f8305968eba"
+    },
+    {
+      "path": "pianoplayer/models.py",
+      "sha256": "e3152a3df7e06bd8c055c1c2d2f1ebc7eb86cdb980b7916b9459a5cc31f3b081"
+    },
+    {
+      "path": "pianoplayer/hand.py",
+      "sha256": "b77a739d4f28b6e137b068a62cf3f4ce6dedcffa9e0b1936566aa3d10ae89e9d"
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "3182f7778aaae2ec8c3ee1939be8c44db5aa17749afa87ddaf158c5667dd26b1"
+    }
+  ],
+  "routing": {
+    "sourcePath": "pianoplayer/core.py",
+    "sourceSha256": "4158c9c462dfb27be7f90c8d8e26275b087b67b9842258c3c8d81e311b987022",
+    "name": "_resolve_musicxml_routing",
+    "bodySha256": "35565981a9f348ceadf928386cb7db9d5836deb96eab6df039875ade343622c7"
+  },
+  "scope": "Hand optimizer, input model/key coordinates and automatic routing. Suggestions are not pedagogical or physiological certification."
+}

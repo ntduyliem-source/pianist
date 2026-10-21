@@ -46,7 +46,7 @@ Bản đầu dùng công cụ sẵn có **đúng phạm vi**, rồi kiểm chứ
 - Nguồn không có biên rõ được đưa vào hàng duyệt ngữ cảnh. Không cần tự viết một “điểm câu nhạc” cộng trọng số không có căn cứ.
 - Nếu bổ sung bộ phân đoạn khác: ghi paper/repo gốc, phiên bản/hash, phạm vi đơn âm/đa âm và cách đối chiếu; kiểm trên nguồn có biên tham chiếu trước khi dùng. Không gọi một thuật toán dự đoán boundary là bằng chứng chắc chắn về phrase.
 
-**Đã bổ sung đề xuất tự động LBDM:** [script theo lô](AUTO_SCRIPT.md) gọi chín hàm giữ nguyên từ MTCExtractFeatures, MIT, commit `faf310528ee27cfc1f60aaacb10c9545eaa0b301`. Ghi độ mạnh biên sau từng nốt và các cực đại; hai tay chỉ dùng biên thời gian chung, không làm tròn biên trong ô. Đây là `model-proposal-only`, chưa thay bằng chứng duyệt câu/ngón của K2. Lượt thử kỹ thuật trên bảy nguồn chưa phải benchmark độ chính xác phân câu piano.
+**Đã bổ sung đề xuất tự động LBDM:** [script theo lô](AUTO_SCRIPT.md) gọi chín hàm giữ nguyên từ MTCExtractFeatures, MIT, commit `faf310528ee27cfc1f60aaacb10c9545eaa0b301`, cùng phân đoạn rest của music21. Ghi độ mạnh biên sau từng nốt và các cực đại; hai tay chỉ dùng biên thời gian chung, không làm tròn biên trong ô. Dự đoán biên vẫn chưa là xác nhận trọn câu. K3 hiện có bộ tạo/kiểm bằng chứng máy cho giọng/routing/ngón cố định, phân biệt với người duyệt. Đối chiếu tìm lại 12/14 đơn vị accepted của lô local không chứng minh độ chính xác phân câu trên toàn kho.
 
 ### 2.3. Hồ sơ và quyết định duyệt
 
@@ -61,6 +61,8 @@ Mỗi ứng viên lưu **cả startBoundary và endBoundary** gồm:
 “Đã xác minh” phải có artifact/nguồn truy được, không chỉ một boolean do chương trình tự đặt. Người/công cụ duyệt phải được ghi đúng; kiểm tự động không được giả thành giáo viên đã duyệt. Chưa chắc thì pending. Nếu không có người chuyên môn, không gắn nhãn chuyên môn; việc này không ngăn tiếp tục xử lý các đơn vị có bằng chứng rõ.
 
 Một mô-típ nguyên vẹn có thể là bài ngắn hợp lệ dù chưa có cadence của cả câu; nó cần chứng cứ về cấu trúc và hai biên trong ngữ cảnh, được ghi là **mô-típ**, không quảng cáo “trọn câu”. Một khúc tùy ý vừa đủ N không được nhận dưới nhãn mô-típ để vượt kiểm.
+
+`complete-source-lines` là trường hợp khác: đoạn giữ **toàn bộ nốt của các dòng nguồn được chọn**, có thể bỏ phần ô hoàn toàn im lặng trước/sau phần biểu diễn của những dòng đó. Phải có biên ô, giữ rest nội đoạn, đủ bè thuộc tay và qua kiểm toàn vẹn; không gán nhãn câu/mô-típ suy đoán. Trạng thái này chỉ đưa đoạn đã đạt nội dung sang hàng kiểm native, chưa phát hành. Mọi đoạn con thiếu xác nhận ngữ cảnh vẫn pending dù K2 khớp.
 
 ### 2.4. Các điều kiện toàn vẹn bắt buộc
 
@@ -154,13 +156,15 @@ Các trường tối thiểu cần thêm vào hợp đồng Q0:
 | Phân cấp | primaryProfile, reviewProfiles, profileVersion, focus witnesses, từng rule verdict |
 | Độ dài | targets, onsets, số từng tay, lengthBucket, ô/phách, meter/beatUnit |
 | Thực hành | Khoảng BPM kiểm được, trạng thái đầu/cuối tay/pedal, cấu hình tay, nội dung không được chấm |
-| Kỹ thuật | MusicXML/hash; native semantics/timeline theo phách; layout/glyph anchors và renderer version |
+| Kỹ thuật | File MXL/hash, MusicXML bên trong; native semantics/timeline theo phách; layout/glyph anchors và renderer version |
 | Tái lập | parserVersion, boundaryRuleVersion, profileVersion, notationVersion, corpusVersion, transformation nếu có |
 | Kiểm | Source projection, native parity, boundary/hand/grade review, release eligibility |
 
 ID nhạc dựa trên nội dung/vị trí nguồn/cấu hình tay/phép biến đổi có version, không dựa vào vị trí trong mảng. Cùng nội dung được dùng ở nhiều grade là một exercise với nhiều nhãn phù hợp, không nhiều bài độc lập. Nếu thay nội dung hoặc biên, tạo revision/ID tương ứng và giữ quan hệ với bản cũ.
 
 Pilot đã tạo artifacts/curriculum-prepared/manifest.json và releases/<version>/catalog.json kèm tài nguyên từng bài. Catalog công khai curriculum/manifest.json và shard tải theo nhu cầu chưa triển khai. Giữ MXL gốc ngoài gói tải mặc định. Chỉ đóng gói các tài nguyên phục vụ tập và provenance cần thiết.
+
+Quyết định ngày 21/10/2026: đầu ra kho mới là một file MXL cho mỗi bài, không chuyển ABC. Bước xuất phải mở lại chính MXL bằng MuseScore để đối chiếu với đoạn nguồn; việc giữ cùng định dạng không thay thế kiểm tính đúng của phép trích đoạn. Đường dẫn đầu ra dự kiến và tiến độ ở [kế hoạch xây kho](GRADED_BANK_PLAN.md).
 
 ## 7. Trùng bài, đa dạng và số lượng
 

@@ -14,6 +14,7 @@ import json
 from pathlib import Path
 import sqlite3
 import zlib
+from bisect import bisect_left
 
 from curriculum_boundaries import propose,VERSION
 from curriculum_fragments import SourceIndex,line_features,q
@@ -21,6 +22,8 @@ from curriculum_grades import assess_profile,load_config,ALLOWED
 from curriculum_io import RunLock,within,write_json,CorpusError
 from curriculum_normalize import digest,encoded
 from curriculum_workers import results
+from curriculum_selection import make_selection, events as selected_events, integrity as selection_integrity, verified_scan, bounds
+from curriculum_evidence import builder, identity as evidence_identity, VERSION as EVIDENCE_VERSION
 
 ROOT=Path(__file__).resolve().parents[2]
 
@@ -28,14 +31,19 @@ ROOT=Path(__file__).resolve().parents[2]
 def rules_identity():
     paths=['buildscripts/pianist/curriculum_auto.py','buildscripts/pianist/curriculum_boundaries.py',
            'buildscripts/pianist/curriculum_grades.py','buildscripts/pianist/curriculum_fragments.py',
+           'buildscripts/pianist/curriculum_prepared.py',
            'buildscripts/pianist/curriculum_workers.py','scores/curriculum/grades.v3.json',
+           'buildscripts/pianist/curriculum_evidence.py','buildscripts/pianist/curriculum_selection.py',
            'third_party/curriculum-sources/mtc-lbdm/lbdm.py']
-    return digest(encoded({p:digest((ROOT/p).read_bytes()) for p in paths}).encode())
+    return digest(encoded({'files':{p:digest((ROOT/p).read_bytes()) for p in paths},
+                           'evidence':evidence_identity()}).encode())
 
 
-def check_profiles(index,selection,config):
+def check_profiles(index,selection,config,evidence_builder=None):
     lids=tuple(selection['lineHands']);start,end=selection['startMeasure'],selection['endMeasure']
-    intervals=[i for lid in lids for i in line_features(index.selected((lid,),start,end))['intervals']]
+    lo,_=bounds(index,selection)
+    contexts={lid:index.context(lid,lo) for lid in lids}
+    intervals=[i for lid in lids for i in line_features(selected_events(index,selection,(lid,)))['intervals']]
     verdicts=[]
     for p in config['profiles']:
         # Exact K2 predicates as early exits, with source witnesses. Full K2 is
@@ -49,9 +57,27 @@ def check_profiles(index,selection,config):
             verdicts.append({'profileId':p['id'],'grade':p['grade'],'status':'fail',
                 'failureRules':['spelled-interval-limit'],'reviewRules':[],
                 'witnessEventIds':sorted({e for i in bad for e in (i['from'],i['to'])})})
+        elif any(c.get('key',{}).get('fifths') not in p['fifths'] or
+                 c.get('meter',{}).get('ratio') not in p['meters'] for c in contexts.values()):
+            # These are the literal K2 signature/meter tests. A 2/2 source, for
+            # example, cannot fit the current profiles; no need to re-run every
+            # rhythm family/hand model to rediscover that same contradiction.
+            failures=[]
+            if any(c.get('key',{}).get('fifths') not in p['fifths'] for c in contexts.values()):failures.append('key-signature')
+            if any(c.get('meter',{}).get('ratio') not in p['meters'] for c in contexts.values()):failures.append('meter')
+            verdicts.append({'profileId':p['id'],'grade':p['grade'],'status':'fail',
+                             'failureRules':failures,'reviewRules':[],'witnessContext':contexts})
         else:
             r=assess_profile(index,selection,p,config=config)
-            verdicts.append({k:r[k] for k in ('profileId','grade','status','failureRules','reviewRules')})
+            evidence=None
+            if evidence_builder is not None and r['status']!='fail':
+                evidence=evidence_builder.for_profile(selection,p,config)
+                r=assess_profile(index,selection,p,evidence,config)
+            verdict={k:r[k] for k in ('profileId','grade','status','failureRules','reviewRules','evidenceKind')}
+            if evidence is not None:
+                verdict['evidenceSha256']=digest(encoded(evidence).encode())
+                verdict['modeledBpm']=r['bpm']
+            verdicts.append(verdict)
     return verdicts
 
 
@@ -72,28 +98,56 @@ def configurations(index):
 
 
 def scan(index,analysis_sha,config,max_targets):
+    with verified_scan(index,analysis_sha):
+        return _scan(index,analysis_sha,config,max_targets)
+
+
+def _scan(index,analysis_sha,config,max_targets):
     proposals={lid:propose(index,lid) for lid in index.a['lines']}
     candidates=[];outside=Counter();variant_count=0
     for hands in configurations(index):
         variant_count+=1;lids=tuple(sorted(hands));pid=index.a['lines'][lids[0]]['partId']
-        common=set.intersection(*(set(e['atMeasure'] for e in proposals[l]['barEdges']) for l in lids))
-        counts=[sum(e['kind']=='note' and not e.get('tieFrom') for l in lids for e in index.by_bar[(l,mi)])
-                for mi in range(len(index.measures[pid]))]
-        prefix=[0]
-        for n in counts:prefix.append(prefix[-1]+n)
-        for start,end in combinations(sorted(common),2):
-            count=prefix[end]-prefix[start]
-            if not 3<=count<=max_targets:
-                outside['below-min-targets' if count<3 else 'above-max-targets']+=1;continue
-            selection={'sourceSha256':index.a['sourceSha256'],'analysisSha256':analysis_sha,
-                'lineHands':hands,'startMeasure':start,'endMeasure':end}
-            verdicts=check_profiles(index,selection,config)
-            candidates.append({'id':digest(encoded(selection).encode()),'selection':selection,
-                'sourceAttackCount':count,'boundaryStatus':'model-proposal-only',
-                'handAssignmentStatus':'clef-based-hypothesis','integrityReasons':index.cut_reasons(lids,start,end),
-                'profileVerdicts':verdicts,
-                'potentialProfiles':[r['profileId'] for r in verdicts if r['status']!='fail'],
-                'approvedForPractice':False})
+        common=sorted(set.intersection(*(set(q(e['atQuarter']) for e in proposals[l]['exactEdges']) for l in lids)))
+        attacks=sorted(q(e['onset']) for l in lids for e in index.by_line[l] if e['kind']=='note' and not e.get('tieFrom'))
+        for ai,lo in enumerate(common):
+            left=bisect_left(attacks,lo)
+            for bi in range(ai+1,len(common)):
+                hi=common[bi];count=bisect_left(attacks,hi)-left
+                if count>max_targets:
+                    outside['above-max-targets']+=len(common)-bi;break
+                if count<3:
+                    outside['below-min-targets']+=1;continue
+                selection=make_selection(index,analysis_sha,hands,lo,hi)
+                verdicts=check_profiles(index,selection,config,builder(index))
+                reasons=selection_integrity(index,selection)
+                whole=(lo,hi)==index.boundaries(lids,0,len(index.measures[pid]))
+                boundary='source-extent-structurally-intact' if whole and not reasons else 'model-proposal-needs-context'
+                all_line_notes={e['id'] for lid in lids for e in index.by_line[lid] if e['kind']=='note'}
+                selected_note_ids={e['id'] for e in selected_events(index,selection) if e['kind']=='note'}
+                # Preserve every note in the selected source lines, allowing
+                # whole-bar leading/trailing silence to stay outside an exercise.
+                # This is a complete source line, not an inferred complete phrase.
+                if (not whole and not reasons and all_line_notes==selected_note_ids and
+                        (lo,hi)==index.boundaries(lids,selection['startMeasure'],selection['endMeasure'])):
+                    boundary='complete-source-lines-structurally-intact'
+                matched=[r['profileId'] for r in verdicts if r['status']=='pass']
+                packet=None
+                if any('evidenceSha256' in r for r in verdicts):
+                    claims,trace=builder(index).base(encoded(selection))
+                    packet={'kind':'machine','producer':EVIDENCE_VERSION,'producerSha256':evidence_identity(),
+                            'claims':claims,'trace':trace,'humanReviewed':False}
+                candidates.append({'id':digest(encoded(selection).encode()),'selection':selection,
+                    'sourceAttackCount':count,'boundaryStatus':boundary,
+                    'boundaryEvidence':{lid:{side:next(e for e in proposals[lid]['exactEdges'] if q(e['atQuarter'])==at)
+                        for side,at in (('start',lo),('end',hi))} for lid in lids},
+                    'handAssignmentStatus':packet['trace']['routing']['status'] if packet else 'clef-based-hypothesis',
+                    'integrityReasons':reasons,'profileVerdicts':verdicts,'machineEvidence':packet,
+                    'potentialProfiles':[r['profileId'] for r in verdicts if r['status']!='fail'],
+                    'contentPassedProfiles':matched,
+                    'unitKind':'complete-source-lines' if boundary=='complete-source-lines-structurally-intact' else
+                               'complete-source-span' if boundary=='source-extent-structurally-intact' else 'model-proposal',
+                    'readyForNativeProfiles':matched if boundary in ('source-extent-structurally-intact','complete-source-lines-structurally-intact') else [],
+                    'approvedForPractice':False})
     return {'sourceSha256':index.a['sourceSha256'],'analysisSha256':analysis_sha,
         'boundaryMethod':VERSION,'proposals':proposals,'handConfigurations':variant_count,
         'outsideLength':dict(outside),'candidates':candidates,'publishedExercises':0}
@@ -115,7 +169,10 @@ def summarize(payload):
         'profileChecks':len(vv),'profileOutcomes':dict(Counter(v['status'] for v in vv)),
         'potentialByGrade':dict(Counter(v['grade'] for c in potential for v in c['profileVerdicts'] if v['status']!='fail')),
         'reviewNeeds':dict(Counter(reason for v in vv if v['status']=='review' for reason in v['reviewRules'])),
-        'proposalEdges':sum(len(p['barEdges']) for p in payload['proposals'].values()),'approvedExercises':0}
+        'contentMatchedCandidates':sum(bool(c['contentPassedProfiles']) for c in payload['candidates']),
+        'nativeReadyCandidates':sum(bool(c['readyForNativeProfiles']) for c in payload['candidates']),
+        'contentByGrade':dict(Counter(v['grade'] for v in vv if v['status']=='pass')),
+        'proposalEdges':sum(len(p['exactEdges']) for p in payload['proposals'].values()),'approvedExercises':0}
 
 
 def scan_job(job,_max_notes):
@@ -189,6 +246,9 @@ def execute(args):
             'normalizationUnavailable':sum(r['status']=='normalization-unavailable' for r in rows),
             'errors':sum(r['status']=='error' for r in rows),'remaining':len(sources)-len(rows),'reused':reused,
             'candidates':sum(r['candidates'] for r in scanned),'potentialCandidates':sum(r['potentialCandidates'] for r in scanned),
+            'contentMatchedCandidates':sum(r['contentMatchedCandidates'] for r in scanned),
+            'nativeReadyCandidates':sum(r['nativeReadyCandidates'] for r in scanned),
+            'contentByGrade':dict(sum((Counter(r['contentByGrade']) for r in scanned),Counter())),
             'reviewNeeds':dict(sum((Counter(r['reviewNeeds']) for r in scanned),Counter())),
             'profileChecks':sum(r['profileChecks'] for r in scanned),'approvedExercises':0}
         write_json(out/'report.json',stats);write_json(out/'source-outcomes.json',{'entries':sorted(rows,key=lambda r:r['sourceSha256'])})

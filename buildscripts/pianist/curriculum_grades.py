@@ -14,6 +14,7 @@ import music21 as m21
 from curriculum_fragments import q, line_features, pitch_name, upstream_pitch
 from curriculum_normalize import digest, encoded, rational
 from curriculum_io import CorpusError
+from curriculum_selection import bounds as selection_bounds, events as selected_events, integrity as selection_integrity
 
 ROOT = Path(__file__).resolve().parents[2]
 VERSION = 'graded-content-rules-v3'
@@ -32,20 +33,31 @@ def load_config(path=None):
 
 
 def selection_digest(selection):
-    return digest(encoded({k:selection[k] for k in
-        ('sourceSha256','analysisSha256','lineHands','startMeasure','endMeasure')}).encode())
+    keys=('sourceSha256','analysisSha256','lineHands','startMeasure','endMeasure')
+    value={k:selection[k] for k in keys}
+    value.update({k:selection[k] for k in ('startQuarter','endQuarter') if k in selection})
+    return digest(encoded(value).encode())
 
 
 def context_digest(index, selection):
+    cached=getattr(index,'_grade_context_cache',None)
+    key=selection_digest(selection)
+    if cached is not None and key in cached:return cached[key]
     pid=index.a['lines'][next(iter(selection['lineHands']))]['partId']
     start,end=selection['startMeasure'],selection['endMeasure']
-    return digest(encoded({'selection':selection_digest(selection),
+    value=digest(encoded({'selection':key,
         'events':[e for e in index.a['events'] if e['partId']==pid and max(0,start-1)<=e['measureIndex']<=end],
         'contexts':index.a['contexts'],'pedals':index.a['pedals'],'slurs':index.a['slurs']}).encode())
+    if cached is not None:
+        if len(cached)>=1024:cached.pop(next(iter(cached)))
+        cached[key]=value
+    return value
 
 
 def validate_selection(index, selection):
-    if selection.get('sourceSha256') != index.a['sourceSha256'] or selection.get('analysisSha256') != digest(encoded(index.a).encode()):
+    verified=getattr(index,'_verified_scan_analysis',None)
+    sha=verified[1] if verified and verified[0] is index.a else digest(encoded(index.a).encode())
+    if selection.get('sourceSha256') != index.a['sourceSha256'] or selection.get('analysisSha256') != sha:
         raise CorpusError('grade-source-analysis-binding')
     hands=selection.get('lineHands',{})
     if not isinstance(hands,dict) or not hands or any(l not in index.a['lines'] or h not in ('left','right') for l,h in hands.items()):
@@ -55,17 +67,32 @@ def validate_selection(index, selection):
     start,end=selection.get('startMeasure'),selection.get('endMeasure')
     if type(start)!=int or type(end)!=int or not 0<=start<end<=len(index.measures[next(iter(pids))]):
         raise CorpusError('grade-invalid-span')
+    selection_bounds(index,selection)
 
 
-def rhythm_check(index,lid,start,end,family):
+def rhythm_check(index,lid,start,end,family,span=None):
+    cache=getattr(index,'_grade_rhythm_cache',None)
+    key=(lid,start,end,family,span)
+    if cache is not None and key in cache:return cache[key]
+    result=_rhythm_check(index,lid,start,end,family,span)
+    if cache is not None:
+        if len(cache)>=1024:cache.pop(next(iter(cache)))
+        cache[key]=result
+    return result
+
+
+def _rhythm_check(index,lid,start,end,family,span=None):
     """Return exact source witnesses; no duration approximation/tempo scoring."""
     all_events=index.selected((lid,),start,end)
+    if span:all_events=[e for e in all_events if span[0]<=q(e['onset'])<span[1]]
     ids=[e['id'] for e in all_events]
     witnesses=[]; errors=[]
     pid=index.a['lines'][lid]['partId']
     for mi in range(start,end):
         bar=index.measures[pid][mi]; lo=q(bar['start']); duration=q(bar['duration'])
-        ee=index.by_bar[(lid,mi)]; cursor=lo; i=0
+        begin=max(lo,span[0]) if span else lo
+        finish=min(lo+duration,span[1]) if span else lo+duration
+        ee=[e for e in index.by_bar[(lid,mi)] if begin<=q(e['onset'])<finish]; cursor=begin; i=0
         while i<len(ee):
             e=ee[i]; d=q(e['duration']); phase=cursor-lo
             if q(e['onset'])!=cursor or d<=0:
@@ -81,7 +108,7 @@ def rhythm_check(index,lid,start,end,family):
             for cell in cells:
                 grid=Fraction(3,2) if family=='R7' else 2 if family in ('R4','R6') else 1
                 part=ee[i:i+len(cell)]; at=cursor
-                if phase%grid or len(part)!=len(cell) or phase+sum(cell)>duration: continue
+                if phase%grid or len(part)!=len(cell) or cursor+sum(cell)>finish: continue
                 good=True
                 for item,length in zip(part,cell):
                     if item['kind']!='note' or q(item['onset'])!=at or q(item['duration'])!=length or item.get('tieFrom') or item.get('tieTo'):
@@ -119,12 +146,31 @@ def rhythm_check(index,lid,start,end,family):
                 if family=='R2': witnesses.append([e['id']])
             elif d>1 and family=='R1': witnesses.append([e['id']])
             cursor+=d;i+=1
-        if cursor!=lo+duration: errors.extend(n['id'] for n in ee)
+        if cursor!=finish: errors.extend(n['id'] for n in ee)
+        if cursor!=finish and not ee: errors.append('missing-voice-coverage:'+lid+':'+str(mi))
     if family in ('R4','R5','R6'):
         # Require source context on both sides of the teaching pattern.
         witnesses=[w for w in witnesses if ids.index(w[0])>0 and ids.index(w[-1])<len(ids)-1]
     return {'family':family,'passed':not errors and (family=='R0' or bool(witnesses)),
             'witnessEventIds':witnesses,'violatingEventIds':sorted(set(errors))}
+
+
+def selection_inputs(index,selection):
+    cache=getattr(index,'_grade_input_cache',None); key=selection_digest(selection)
+    if cache is not None and key in cache:return cache[key]
+    lids=tuple(sorted(selection['lineHands']));lo,hi=selection_bounds(index,selection)
+    events=selected_events(index,selection);notes=[e for e in events if e['kind']=='note']
+    by_line={lid:[e for e in events if e['lineId']==lid] for lid in lids}
+    features={lid:line_features(ee) for lid,ee in by_line.items()}
+    pid=index.a['lines'][lids[0]]['partId']
+    source_lines={e['lineId'] for e in index.a['events'] if e['partId']==pid and
+                  lo<=q(e['onset'])<hi and e['kind']=='note'}
+    result=(lo,hi,events,notes,[e['id'] for e in events],by_line,features,
+            selection_integrity(index,selection),source_lines)
+    if cache is not None:
+        if len(cache)>=1024:cache.pop(next(iter(cache)))
+        cache[key]=result
+    return result
 
 
 def assess_profile(index, selection, profile, evidence=None, config=None):
@@ -139,32 +185,34 @@ def assess_profile(index, selection, profile, evidence=None, config=None):
     def test(rule,condition,events=(),detail=None):
         record(rule,'pass' if condition else 'fail',events,detail)
     hands=selection['lineHands']; lids=tuple(sorted(hands)); start,end=selection['startMeasure'],selection['endMeasure']
-    lo,hi=index.boundaries(lids,start,end); events=index.selected(lids,start,end)
-    notes=[e for e in events if e['kind']=='note']; event_ids=[e['id'] for e in events]
-    by_line={lid:index.selected((lid,),start,end) for lid in lids}
-    features={lid:line_features(ee) for lid,ee in by_line.items()}
+    lo,hi,events,notes,event_ids,by_line,features,reasons,source_lines=selection_inputs(index,selection)
     test('hand-configuration',len(lids)==profile['lines'] and len(set(hands.values()))==len(lids),event_ids)
     test('monophony-and-held-notes',bool(notes) and all(f['monophonic'] for f in features.values()),event_ids)
     test('keyboard-range',all(21<=e['pitch']['midi']<=108 and int(e['pitch']['midi'])==e['pitch']['midi'] for e in notes),[e['id'] for e in notes])
-    reasons=index.cut_reasons(lids,start,end)
     for reason in reasons:
         # Unsupported interpretation is reviewable, never proof that a valid
         # source file is bad. Actual severed notation is an explicit failure.
         record('source-integrity:'+reason,'fail' if reason.startswith('cut-') else 'review',event_ids)
     if not reasons: record('source-integrity','pass',event_ids)
-    bound=(evidence.get('selectionSha256')==selection_digest(selection) and
+    bound=(evidence.get('kind') in (None,'human') and
+           evidence.get('selectionSha256')==selection_digest(selection) and
            evidence.get('contextSha256')==context_digest(index,selection) and
            evidence.get('rulesVersion')==VERSION and evidence.get('profileId')==profile['id'] and
            evidence.get('configSha256')==digest(encoded(config).encode()) and
            all(isinstance(evidence.get(k),str) and evidence[k].strip() for k in ('reviewer','reviewedAt','method','reference')))
-    record('evidence-binding','pass' if bound else 'review',event_ids)
     claims=evidence.get('claims',{}) if bound and isinstance(evidence.get('claims'),dict) else {}
+    if evidence.get('kind')=='machine':
+        from curriculum_evidence import verified_claims
+        verified=verified_claims(index,selection,profile,config,evidence)
+        bound=verified is not None
+        claims=verified or {}
+    record('evidence-binding','pass' if bound else 'review',event_ids,
+           {'kind':evidence.get('kind','human') if bound else 'unverified',
+            'producer':evidence.get('producer'),'humanReviewed':bound and evidence.get('kind')!='machine'})
     # A selected voice is not automatically the whole selected hand. Additional
     # voices require an explicit source-hand assignment; never omit a hard voice
     # to make the remaining line satisfy an easier profile.
     pid=index.a['lines'][lids[0]]['partId']
-    source_lines={e['lineId'] for e in index.a['events'] if e['partId']==pid and
-                  start<=e['measureIndex']<end and e['kind']=='note'}
     unselected=source_lines-set(lids)
     hand_map=claims.get('sourceLineHands',{})
     if not unselected:
@@ -174,14 +222,15 @@ def assess_profile(index, selection, profile, evidence=None, config=None):
     else:
         omitted={l for l in unselected if hand_map[l] in set(hands.values())}
         test('source-hand-completeness',not omitted and all(hand_map.get(l)==h for l,h in hands.items()),
-             [e['id'] for e in index.a['events'] if e['lineId'] in omitted and start<=e['measureIndex']<end],
+             [e['id'] for e in index.a['events'] if e['lineId'] in omitted and lo<=q(e['onset'])<hi],
              {'unselectedLines':sorted(unselected),'omittedSelectedHandLines':sorted(omitted)})
     for lid in lids:
         ctx=index.context(lid,lo); key=ctx.get('key',{}); meter=ctx.get('meter',{}); clef=ctx.get('clef',{})
         test('key-signature',key.get('fifths') in profile['fifths'],[e['id'] for e in by_line[lid]])
         mode=key.get('mode')
         mode=mode if mode else claims.get('tonality',{}).get(lid)
-        record('major-tonality','pass' if mode=='major' else 'review' if mode is None else 'fail',event_ids)
+        record('major-tonality','pass' if mode=='major' else 'review' if mode is None else 'fail',event_ids,
+               evidence.get('trace',{}).get('tonality',{}).get(lid) if bound and evidence.get('kind')=='machine' else None)
         test('meter',meter.get('ratio') in profile['meters'],event_ids)
         expected=('G',2,0) if hands[lid]=='right' else ('F',4,0)
         actual=tuple(clef.get(k) for k in ('sign','line','octaveChange'))
@@ -210,7 +259,7 @@ def assess_profile(index, selection, profile, evidence=None, config=None):
     melody=next((l for l in lids if hands[l]==profile.get('melodyHand')),None) if profile['lines']==2 else lids[0]
     for lid in lids:
         families=profile['rhythms'] if lid==melody else profile.get('accompanimentRhythms',profile['rhythms'])
-        rr=[rhythm_check(index,lid,start,end,r) for r in families]
+        rr=[rhythm_check(index,lid,start,end,r,(lo,hi)) for r in families]
         rhythm_results[lid]=rr
         test('rhythm:'+lid,any(r['passed'] for r in rr),[e['id'] for e in by_line[lid]],rr)
     focus=profile['focus']; sizes={abs(i['diatonic']) for i in intervals}
@@ -263,8 +312,8 @@ def assess_profile(index, selection, profile, evidence=None, config=None):
                 if q(a['onset'])<q(b['onset'])+q(b['duration']) and q(b['onset'])<q(a['onset'])+q(a['duration']) and a['pitch']['midi']>=b['pitch']['midi']:
                     conflicts.extend((a['id'],b['id']))
         test('crossing-or-shared-held-key',not conflicts,conflicts)
-    # Position/fingering witnesses are supplied by reviewed source evidence.
-    # No min/max-pitch heuristic invents a hand path.
+    # Human review or reproducibly checked upstream-model evidence. Model
+    # suggestions are distinguished in the result; no ergonomic claim is made.
     path=claims.get('handPath',{})
     complete=isinstance(path,dict) and bool(path) and all(isinstance(path.get(e['id']),dict) for e in notes)
     record('hand-path-evidence','pass' if complete else 'review',[e['id'] for e in notes])
@@ -335,7 +384,8 @@ def assess_profile(index, selection, profile, evidence=None, config=None):
     bpm_ok=(type(bpm.get('min')) in (int,float) and type(bpm.get('max')) in (int,float) and
             math.isfinite(bpm['min']) and math.isfinite(bpm['max']) and 0<bpm['min']<=bpm['max'] and
             bpm.get('beatQuarter')==profile['beatQuarter'] and bool(bpm.get('reference')))
-    record('reviewed-bpm-scope','pass' if bpm_ok else 'review',event_ids,bpm if bpm_ok else None)
+    bpm_rule='modeled-bpm-scope' if bound and evidence.get('kind')=='machine' else 'reviewed-bpm-scope'
+    record(bpm_rule,'pass' if bpm_ok else 'review',event_ids,bpm if bpm_ok else None)
     if focus=='leap':
         transitions.extend((index.events[i['from']],index.events[i['to']]) for i in focused if (index.events[i['from']],index.events[i['to']]) not in transitions)
     for a,b in transitions:
@@ -355,7 +405,8 @@ def assess_profile(index, selection, profile, evidence=None, config=None):
         'grade':profile['grade'],'status':status,'passed':status=='pass','failureRules':failures,'reviewRules':pending,
         'selectionSha256':selection_digest(selection),'contextSha256':context_digest(index,selection),
         'sourceEventIds':event_ids,'checks':checks,'rhythms':rhythm_results,
-        'bpm':bpm if bpm_ok else None,'admission':'K3/K4 boundary, source projection and native verification still required'}
+        'bpm':bpm if bpm_ok else None,'evidenceKind':evidence.get('kind','human') if bound else 'unverified',
+        'admission':'K3/K4 boundary, source projection and native verification still required'}
 
 
 def assess_all(index,selection,evidence_by_profile=None,config=None):

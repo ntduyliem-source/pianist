@@ -34,6 +34,8 @@ Phần thiết kế rút ra: luyện nhịp từ đầu; thêm yêu cầu theo h
 
 Hồ sơ thế tay phải nói rõ tay, cao độ có cách viết, ngón, vị trí, chuyển vị trí, ngón đang giữ, điều kiện legato/nhả và khoảng BPM đã kiểm. Ngón có sẵn trong nguồn là bằng chứng tham chiếu, không tự bảo đảm phù hợp mọi bàn tay. Đề xuất ngón phải ghi là đề xuất, không gán ngầm cho tác giả.
 
+K3 hiện bổ sung bằng chứng loại `machine` từ PianoPlayer nguyên bản, commit `6fb0e2114d7b21f75c0be5208172e1243a57323e`: chỉ nhận làm chứng cứ nội dung khi kết quả giữ ngón nguồn/tie và khớp một thế năm ngón cố định có thứ tự. Bằng chứng được tái tính/đối soát nguồn, không điền tên người duyệt. `modeled-bpm-scope` ghi đúng điểm chạy 60 BPM nốt đen và kích thước tay M của mô hình; không thay đánh giá tốc độ học, độ thoải mái hoặc xác nhận chuyên môn. Chuyển tay/nhảy xa và các ngữ cảnh chưa đủ bằng chứng giữ review. Chi tiết và giới hạn ở [AUTO_SCRIPT.md](AUTO_SCRIPT.md).
+
 21 mẫu của Q3 v1 chỉ là đề xuất vị trí. Việc mọi pitch nằm trong một mapping không chứng minh cả chuỗi chơi thoải mái. Mở rộng mẫu cần nguồn/đối chiếu và ví dụ đạt/lỗi; không dựng fingering từ min/max MIDI.
 
 Ở bài chuyển tay, xét từ lúc bàn tay/ngón được giải phóng đến lần đánh mới cùng trạng thái các ngón khác; nếu legato đòi một chuyển ngón, đường chuyển phải được duyệt. Thời gian từ onset trước tới onset sau không tự là toàn bộ thời gian di chuyển. Mức 750 ms của Q3 v1 không phải ngưỡng sinh lý đã được chứng minh và không được dùng một mình để duyệt.

@@ -4,7 +4,11 @@
 
 **K1–K2 đã hoàn thành ngày 21/10/2026:** 37.629/37.629 nguồn có kết quả, 17.926 có dữ liệu nhạc, 19.627 cần xác định phần piano, 76 gặp lỗi/giới hạn hỗ trợ; không còn file chờ. Bộ tiêu chí V3 có 25 profile G1–G8. Xem [báo cáo và bằng chứng](K1_K2_RESULTS.md). Bước tiếp theo là **K3 quét mọi đoạn**; lô 14 bài cũ chỉ dùng kiểm hồi quy.
 
-**Đã có script tự quét theo lô:** [AUTO_SCRIPT.md](AUTO_SCRIPT.md) dùng nguyên LBDM của MTCExtractFeatures để đề xuất biên mà không nhập hồ sơ từng bài, rồi kiểm K2 với cache/resume. Đã thử bảy nguồn; đây là ứng viên tự động, chưa hoàn tất duyệt biên/ngón hoặc K3/K4 toàn kho.
+**Đã có script tự quét theo lô:** [AUTO_SCRIPT.md](AUTO_SCRIPT.md) dùng nguyên LBDM của MTCExtractFeatures để đề xuất biên mà không nhập hồ sơ từng bài, rồi kiểm K2 với cache/resume. Lượt kiểm hiện tại: 39 nguồn, 10.828 đoạn ứng viên, 73 đoạn khớp tiêu chí nội dung, một đoạn chuyển được sang hàng kiểm native; chưa có bài MXL mới được phát hành và chưa hoàn tất K3/K4 toàn kho.
+
+**K3 đã bổ sung:** điểm cắt chính xác trong ô, phân đoạn rest bằng music21, bằng chứng máy riêng cho routing/tay/giọng/ngón cố định và đối chiếu với code PianoPlayer gốc. Grade nội dung đạt chưa đồng nghĩa bài đã qua kiểm biên/native. Biên mô hình tìm lại 12/14 đơn vị accepted trong tập tham chiếu cũ; K3 toàn kho còn chưa hoàn tất.
+
+**Quyết định định dạng ngày 21/10/2026:** theo yêu cầu người dùng, mỗi bài tập xuất thành MXL. Bỏ bước chuyển ABC và kiểm chuyển ngược trong quy trình xây kho này.
 
 ## Quy trình cho từng file
 
@@ -32,7 +36,7 @@ Biên phải có căn cứ theo [quy tắc phân đoạn](GENERATION_RULES.md#bo
 | **K1 Đọc toàn kho** | Đọc 37.629 file, dùng cache đúng phiên bản, có resume. Kiểm lại 295 trường hợp từng bị từ chối. | Mọi nguồn có kết quả: đọc được, lỗi file hoặc chưa hỗ trợ, kèm lý do. |
 | **K2 Hoàn thiện tiêu chí G1–G8** | Kiểm quãng, nhịp, bè/tay, đường ngón, ký âm và trọng tâm; có ví dụ đạt/không đạt cho từng rule. | Rule có phiên bản và sự kiện nốt chứng minh. Điều kiện chưa xác định trả về cần xem xét. |
 | **K3 Quét mọi đoạn** | Xét toàn bộ dòng piano, cấu hình tay, cặp biên hợp lệ và profile. Cache đặc điểm đã đọc. | Mọi đoạn được phân loại đạt/không đạt/cần xem xét; đầu vào là catalog toàn kho. |
-| **K4 Kiểm và nhập kho** | Đối chiếu nguyên tác → MusicXML → native MuseScore/timeline/glyph. Đếm nốt, xếp độ dài; thử ABC và kiểm nhập lại. | Bài có ID, nguồn/biên/tay, bằng chứng grade, định dạng/hash và kết quả kiểm. |
+| **K4 Kiểm và nhập kho** | Trích MusicXML từ nguyên tác, đóng gói MXL; mở lại chính file MXL bằng MuseScore và đối chiếu timeline/glyph với đoạn nguồn. Đếm nốt, xếp độ dài. | Mỗi bài có file MXL, ID, nguồn/biên/tay, bằng chứng grade, hash và kết quả kiểm. |
 | **K5 Tổng kiểm và đóng gói** | Đối soát từng nguồn/đoạn; kiểm bỏ sót; thống kê grade × profile × tay × độ dài. | Catalog theo phiên bản, số thực và phần còn thiếu. Chạy lại không nhân đôi; thêm nguồn chỉ xử lý phần mới/thay đổi. |
 
 ## Các grade cần xét
@@ -54,23 +58,23 @@ Grade là thiết kế Pianist có căn cứ tham chiếu, chưa được chứn
 
 **Độ dài:** 4/6/10/20/30/50/100 nốt tương ứng **3–5 / 6–8 / 9–14 / 15–24 / 25–39 / 40–69 / 70–120** lần đánh. Đếm sau kiểm native rồi xếp nhóm; không cắt câu cho đủ số. Hợp âm ba phím tính ba target; tie nối không thêm lần đánh.
 
-## Định dạng lưu được đề xuất
+## Việc triển khai tiếp theo
 
-**Ưu tiên mỗi bài một file `<id>.abc`**, dùng converter gốc đã tích hợp trong app. MXL nguồn giữ một bản trong kho gốc để truy xuất và build lại. Catalog nhỏ chứa grade/profile, tay, số nốt, nguồn/biên, định dạng và hash; hồ sơ kiểm chứng đầy đủ giữ ở kho build.
+1. **Hoàn thiện điều kiện tự nhận bài ở K3.** Đã có bộ kiểm dùng chung cho biên chính xác, đủ bè thuộc tay, đồng thuận giọng và gợi ý ngón cố định từ upstream. Còn cần mở rộng/kiểm căn cứ đơn vị nhạc, chuyển vị trí/nhảy xa, ngữ cảnh nhóm G3 và vùng ký âm G8. BPM của mô hình chỉ là thông số chạy kỹ thuật, không chứng nhận tốc độ người học. Tiếp tục đối chiếu trên mẫu đã kiểm, gồm đoạn bị bỏ và đề xuất thừa; không nới tiêu chí để tăng số lượng.
+2. **Chạy K3 trên toàn catalog.** Quét mọi nguồn có dữ liệu K1 bằng script, xét mọi cặp biên hợp lệ và mọi profile trong phạm vi hỗ trợ; lưu tiến độ. Hiện có 17.926 nguồn có dữ liệu, không đồng nghĩa tất cả đều đủ điều kiện xuất bài. Những nguồn cần xác định phần piano, lỗi hoặc chưa hỗ trợ phải có trạng thái và hướng xử lý riêng. Báo số đoạn đạt, không đạt và chưa đủ căn cứ theo từng grade; không đếm ứng viên thành bài hoàn chỉnh.
+3. **Nối K4 để tạo kho MXL dùng được.** Xuất mọi đoạn đạt thành file riêng, mở lại bằng MuseScore và so với đoạn nguồn; chỉ bài qua kiểm mới vào catalog. Xếp nhóm 4/6/10/20/30/50/100 theo số lần đánh thực tế, giữ trọn đơn vị nhạc. K5 tổng kiểm trước khi đưa catalog lên web.
 
-Đo cùng 14 đoạn G1–G2 hiện có, chỉ tính nội dung ký âm:
+**Đầu ra cần bàn giao:** báo cáo đủ trạng thái từng nguồn, catalog theo grade/tay/độ dài, các file MXL đã kiểm và danh sách trường hợp chưa giải quyết. Số lượng công bố lấy từ kết quả chạy; không cam kết trước số bài đạt.
 
-| Định dạng | Tổng byte |
-|---|---:|
-| MusicXML | 70.806 |
-| MXL nén từ chính các đoạn đó | 16.204 |
-| ABC | 2.680 |
+## Định dạng lưu đã chốt
 
-[Kết quả đo](../../artifacts/curriculum-bank-format-review/size-comparison.json): 14 đoạn ngắn một tay chuyển đi/về thành công, chưa kiểm lại native ở phép đo này. Không suy tỷ lệ cho toàn kho. Riêng snapshot/SVG của 14 bài chiếm 584.475 byte.
+**Mỗi bài một file `<id>.mxl`.** MXL là MusicXML nén; kho bài tập không qua ABC. MXL nguồn giữ nguyên một bản để truy xuất và build lại. Catalog nhỏ chứa grade/profile, tay, số nốt, nguồn/biên, đường dẫn MXL và hash; hồ sơ kiểm chứng đầy đủ giữ ở kho build.
 
-Web tải ABC và metadata, dùng luồng ABC → MusicXML → MuseScore để tạo sheet/timeline; tải trước và cache bài sắp tập. Đo cả độ trễ và runtime; không kèm toàn bộ snapshot/SVG/hồ sơ kiểm chứng trong gói mặc định.
+Đường dẫn dự kiến cho đầu ra K4: `artifacts/curriculum-prepared/releases/<version>/exercises/<id>.mxl`, cùng `catalog.json` tại thư mục phiên bản. Đây là đích triển khai tiếp theo; script K3 hiện chỉ xuất kết quả quét, chưa tạo các file bài tập này.
 
-ABC phải giữ cao độ, onset, trường độ/nhả phím, bè/tay, nhịp, repeat và pedal khi nhập lại. [xml2abc](https://wim.vree.org/svgParse/xml2abc.html) và [kiểm thử dự án](../ABC_CONVERTER_RESULTS.md) có giới hạn đã biết. Đoạn đạt grade nhưng ABC mất dữ liệu vẫn lưu `<id>.mxl`. Đây là đề xuất, chưa đổi catalog/app.
+Web tải MXL và metadata theo nhu cầu, dùng luồng MuseScore hiện có để tạo sheet/timeline; tải trước và cache bài sắp tập. Đo cả độ trễ và runtime; không kèm toàn bộ kho nguồn hoặc hồ sơ kiểm chứng trong gói mặc định.
+
+Giữ MXL loại bỏ bước chuyển qua ABC, nhưng vẫn phải kiểm lỗi khi trích đoạn: cao độ, onset, trường độ/nhả phím, rest/tie/slur, bè/tay, nhịp, dấu hóa, repeat và pedal. Đối chiếu sau khi mở lại chính MXL sẽ phát hành. Chức năng nhập ABC sẵn có của thư viện/editor nằm ngoài thay đổi định dạng kho này.
 
 ## Quy tắc để mở rộng mà không mất chất lượng
 

@@ -42,3 +42,6 @@ docs/curriculum/q2/*.json text eol=lf
 packages/exercise-generator/corpus-model.ts text eol=lf
 tests/browser/pianist/q3-* text eol=lf
 docs/curriculum/q3/*.json text eol=lf
+
+# K3 upstream copies are verified byte-for-byte, including the MIT license.
+third_party/curriculum-sources/pianoplayer/** -text -whitespace

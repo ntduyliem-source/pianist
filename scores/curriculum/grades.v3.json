@@ -14,7 +14,8 @@
   ],
   "evidenceDocument": "docs/curriculum/GRADE_DESIGN.md",
   "scope": "Content criteria only. Pass does not publish an exercise; K3 boundaries and K4 source/native parity remain required.",
-  "evidencePolicy": "Source-bound contextual hand/fingering/BPM review; unknown evidence returns review, not inferred fitness.",
+  "evidencePolicy": "Source-bound human review or reproducibly verified machine evidence. Machine key/finger suggestions and a single optimizer BPM are labelled explicitly; they do not certify learner speed or ergonomics. Unknown/unsupported evidence stays review. Boundary and native admission remain separate.",
+  "machineEvidenceVersion": "k3-machine-evidence-v1",
   "scientificStatus": "Product rules based on cited teaching/research references; numerical limits and grade ordering are not scientifically proven optima.",
   "profileReferences": {
     "G1": [

@@ -96,4 +96,4 @@ File đầu vào có dạng `{ "selections": [{ "selection": { ... }, "evidenceB
 
 ## Bước kế tiếp
 
-K3 nối catalog K1 với bộ tiêu chí V3: duyệt mọi nguồn, xác định biên có căn cứ và xét mọi đoạn liên tục/cấu hình tay phù hợp. K4 mới đối chiếu native và lưu từng bài, ưu tiên ABC nếu bảo toàn nhạc, MXL khi cần. Không đưa 37 nghìn MXL gốc vào gói tải của trình duyệt.
+K3 nối catalog K1 với bộ tiêu chí V3: duyệt mọi nguồn, xác định biên có căn cứ và xét mọi đoạn liên tục/cấu hình tay phù hợp. K4 mới đối chiếu native và lưu từng bài. **Cập nhật quyết định ngày 21/10/2026:** mỗi bài lưu MXL, bỏ bước chuyển ABC. Không đưa 37 nghìn MXL gốc vào gói tải của trình duyệt.

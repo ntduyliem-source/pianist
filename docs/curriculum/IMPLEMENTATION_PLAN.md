@@ -6,7 +6,7 @@ Kết quả cần đạt: **mở web → chọn grade, tay, độ dài, đúng n
 
 ## 1. Quyết định và phạm vi
 
-MXL gốc → phân tích offline → xác định đơn vị nhạc → kiểm grade → xuất/kiểm MuseScore → đếm nốt/xếp nhóm → duyệt → đóng gói → web chọn bài để tập.
+MXL gốc → phân tích offline → xác định đơn vị nhạc → kiểm grade → xuất từng bài thành MXL/mở lại kiểm MuseScore → đếm nốt/xếp nhóm → duyệt → đóng gói → web chọn bài để tập. Quyết định ngày 21/10/2026: giữ MXL cho kho bài tập, bỏ chuyển ABC.
 
 | Thành phần | Quyết định v2 |
 |---|---|
@@ -146,7 +146,7 @@ Rà các hạn chế v1: 21 mẫu tay chưa phải danh mục vận động đ�
 
 **Pilot đã chạy:** CLI `inspect → prepare → finalize`, schema bài cố định, nguồn/biên/grade review, kiểm nguồn/native/Worker, catalog có hash và coverage. Lô đầu có 14 bài; nhánh này cần hồ sơ duyệt từng đơn vị. Chưa tự động nhận câu từ toàn bộ 37 nghìn file, chưa có G3–G8. [Báo cáo Q4](Q4_PREPARED_PILOT.md) ghi rõ phần đã đạt và phần cần mở rộng.
 
-Thay nhiệm vụ “sinh câu trong phiên” bằng build kho tái lập. Xuất đơn vị từ một nguồn qua Q3; native xác nhận N, xếp n4–n100, duyệt, gộp gần trùng, tạo chỉ mục và gói. Lưu MusicXML, timeline theo phách, nguồn/biên, profile, N/điểm vào/tay, nhịp, phạm vi BPM đã kiểm và phiên bản.
+Thay nhiệm vụ “sinh câu trong phiên” bằng build kho tái lập. Xuất đơn vị từ một nguồn qua Q3 thành MXL; mở lại chính MXL bằng MuseScore, native xác nhận N, xếp n4–n100, duyệt, gộp gần trùng, tạo chỉ mục và gói. Lưu MXL, timeline theo phách, nguồn/biên, profile, N/điểm vào/tay, nhịp, phạm vi BPM đã kiểm và phiên bản. Kho bài tập không chuyển qua ABC.
 
 Chuyển vị, nếu bổ sung, được tạo/duyệt offline như bài riêng liên kết nguyên bản. Không dùng lặp đoạn hoặc đổi BPM để tăng số bài. Nhóm 100 nốt lấy đoạn liên tục/nhiều câu vốn liên tiếp, không nối mẩu rời.
 
@@ -209,7 +209,7 @@ Ghim app/native/schema/profile/corpus/layout tương thích trong session. Chỉ
 
 **Ưu tiên hiện tại theo yêu cầu mới:** hoàn thiện phần xây kho theo [kế hoạch riêng K1–K5](GRADED_BANK_PLAN.md). Đi qua từng nguồn, đọc toàn bộ, xét mọi đoạn có biên hợp lệ với mọi profile và đưa tất cả đoạn đạt vào kho. Không dùng lô 14 bài để kết thúc giai đoạn xây kho hoặc chuyển ngay sang màn quiz.
 
-**Đã xong K1 và K2:** 37.629 nguồn đã có kết quả; cache được đối soát; API/CLI V3 kiểm đủ 25 profile và trả đạt/không đạt/cần xem xét. **Tiếp theo K3:** nối toàn catalog với bộ quét mọi cặp biên/cấu hình tay, sau đó K4 kiểm và xuất từng bài. K2 chưa tự sinh bài hoặc thay bộ chấm khi tập.
+**Đã xong K1 và K2:** 37.629 nguồn đã có kết quả; cache được đối soát; API/CLI V3 kiểm đủ 25 profile và trả đạt/không đạt/cần xem xét. **Script K3 đã bổ sung bằng chứng máy:** biên LBDM/rest chính xác, routing, giọng và ngón cố định qua upstream; kết quả nội dung, biên và native tách riêng. **Tiếp theo:** mở rộng các bằng chứng còn thiếu, chạy K3 toàn catalog, rồi K4 kiểm và xuất từng bài MXL. Xem [thứ tự và đầu ra cụ thể](GRADED_BANK_PLAN.md#việc-triển-khai-tiếp-theo). Bộ chấm khi tập giữ nguyên.
 
 1. Đọc toàn bộ nguồn, dùng lại cache đúng phiên bản; ghi trạng thái và lý do từng file.
 2. Hoàn thiện các phép kiểm G1–G8 và quét mọi đơn vị phù hợp, không giới hạn số đoạn mỗi nguồn.

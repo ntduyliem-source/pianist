@@ -4,12 +4,13 @@ from pathlib import Path
 
 from curriculum_fragments import q, line_features
 from curriculum_normalize import rational
+from curriculum_prepared import upstream_rest_proposals
 
 ROOT=Path(__file__).resolve().parents[2]
 UPSTREAM=ROOT/'third_party/curriculum-sources/mtc-lbdm/lbdm.py'
 spec=importlib.util.spec_from_file_location('mtc_lbdm',UPSTREAM)
 lbdm=importlib.util.module_from_spec(spec);spec.loader.exec_module(lbdm)
-VERSION='mtc-lbdm-proposals-v1'
+VERSION='mtc-lbdm-and-music21-rest-exact-proposals-v3'
 
 
 def strengths(pitches,onsets,ends):
@@ -40,9 +41,18 @@ def propose(index,lid):
     edges[q(bars[-1]['start'])+q(bars[-1]['duration'])]=len(bars)
     base={'version':VERSION,'status':'model-proposal-only','lineId':lid,
         'barEdges':[{'atMeasure':0,'kind':'source-start'},{'atMeasure':len(bars),'kind':'source-end'}],
+        'exactEdges':[{'atQuarter':rational(q(bars[0]['start'])),'kind':'source-start'},
+                      {'atQuarter':rational(q(bars[-1]['start'])+q(bars[-1]['duration'])),'kind':'source-end'}],
         'points':[],'unsupported':[]}
     if not line_features(events)['monophonic']:
         base['unsupported']=['polyphonic-line'];return base
+    rest_proposals=upstream_rest_proposals(index,lid)
+    base['restSegments']=rest_proposals
+    for group in rest_proposals['segments']:
+        first,last=index.events[group[0]],index.events[group[-1]]
+        for side,at in (('start',q(first['onset'])),('end',q(last['onset'])+q(last['duration']))):
+            base['exactEdges'].append({'atQuarter':rational(at),'kind':'music21-rest-segment-'+side,
+                                      'eventIds':group,'upstream':rest_proposals['upstream']})
     attacks=[e for e in events if e['kind']=='note' and not e.get('tieFrom')]
     onsets=[];ends=[]
     for e in attacks:
@@ -63,9 +73,19 @@ def propose(index,lid):
              'nextOnset':rational(at) if at is not None else None,
              'atMeasure':edges.get(at),'noteEnd':rational(ends[i])}
         base['points'].append(row)
+        if i in peaks and at is not None:
+            base['exactEdges'].append({'atQuarter':rational(at),'kind':'lbdm-positive-peak',
+                                      'afterEvent':event['id'],'strength':value})
         if i in peaks and at in edges:
             base['barEdges'].append({'atMeasure':edges[at],'kind':'lbdm-positive-peak',
                                     'afterEvent':event['id'],'strength':value})
-    # Model peaks inside a bar remain in points, not snapped to a nearby bar.
-    base['barEdges']=sorted({e['atMeasure']:e for e in base['barEdges']}.values(),key=lambda e:e['atMeasure'])
+    # Interior peaks have exact source time. The legacy bar-only list remains
+    # for comparing previous trials, not for rounding away interior proposals.
+    combined={}
+    for row in base['exactEdges']:
+        at=q(row['atQuarter'])
+        if at not in combined:combined[at]={**row,'support':[]}
+        combined[at]['support'].append({k:v for k,v in row.items() if k!='atQuarter'})
+    base['exactEdges']=sorted(combined.values(),key=lambda e:q(e['atQuarter']))
+    base['barEdges']=[{**row,'atMeasure':edges[q(row['atQuarter'])]} for row in base['exactEdges'] if q(row['atQuarter']) in edges]
     return base
