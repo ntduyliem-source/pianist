@@ -49,6 +49,15 @@ class CliTests(unittest.TestCase):
             self.assertIn('1 cached',text)
             self.assertEqual(report2['pipeline'],report['pipeline'])
             self.assertEqual(catalog.read_bytes(),original_catalog)
+            shortlist=root/'shortlist.json'
+            shortlist.write_text(json.dumps({'sourceHashes':[sha]}))
+            text,_=run('--source-list',str(shortlist))
+            self.assertIn('1 cached',text)
+            shortlist.write_text(json.dumps({'sourceHashes':['0'*64]}))
+            rejected=subprocess.run([sys.executable,str(CLI),'normalize','--corpus',str(corpus),'--output',str(out),
+                '--source-list',str(shortlist)],cwd=ROOT,capture_output=True,text=True,timeout=20)
+            self.assertNotEqual(rejected.returncode,0)
+            self.assertIn('source-list-outside-review-queue',rejected.stderr)
             db=sqlite3.connect(out/'normalization.sqlite')
             first_hash=db.execute('SELECT analysis_sha FROM analyses').fetchone()[0]
             db.execute('UPDATE analyses SET blob=?',(b'corrupt local cache',));db.commit();db.close()

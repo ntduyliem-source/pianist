@@ -1,0 +1,1466 @@
+{
+  "pipeline": "5f7f0f4ea95570d4e2337655c12727436a79f55a6265603fa58e43dbddb0789e",
+  "release": "ac82ba485548cb1c55eb",
+  "kind": "technical-svg-review-packet",
+  "teacherReviewed": false,
+  "entries": [
+    {
+      "id": "9eeaf706ab4ad72be224f18cb296e6f473bff4d8e1e6d98a9134edf160d22bd1",
+      "counts": {
+        "targets": 8,
+        "onsets": 8
+      },
+      "pages": 1,
+      "glyphs": 8,
+      "images": [
+        "9eeaf706ab4ad72be224f18cb296e6f473bff4d8e1e6d98a9134edf160d22bd1-0.svg"
+      ],
+      "grades": "G2"
+    },
+    {
+      "id": "04052752b95e7d8c9f0446f944562e16ee0390fed0df9eff21427ef2a915676e",
+      "counts": {
+        "targets": 4,
+        "onsets": 4
+      },
+      "pages": 1,
+      "glyphs": 4,
+      "images": [
+        "04052752b95e7d8c9f0446f944562e16ee0390fed0df9eff21427ef2a915676e-0.svg"
+      ],
+      "grades": "G4"
+    },
+    {
+      "id": "c04b2dd48b5938d825814deeb458dc965a592d5607351e5ef019fbd36f46c5f2",
+      "counts": {
+        "targets": 4,
+        "onsets": 4
+      },
+      "pages": 1,
+      "glyphs": 4,
+      "images": [
+        "c04b2dd48b5938d825814deeb458dc965a592d5607351e5ef019fbd36f46c5f2-0.svg"
+      ],
+      "grades": "G7"
+    },
+    {
+      "id": "2925e9d150cdcbd1a20608279427aadb815a19a274d4745871968d220f517dfc",
+      "counts": {
+        "targets": 5,
+        "onsets": 5
+      },
+      "pages": 1,
+      "glyphs": 5,
+      "images": [
+        "2925e9d150cdcbd1a20608279427aadb815a19a274d4745871968d220f517dfc-0.svg"
+      ],
+      "grades": "G2"
+    },
+    {
+      "id": "6782973b2ee0c065bad60a613109349531f3e48609ee3fc14627455368bb95fa",
+      "counts": {
+        "targets": 5,
+        "onsets": 5
+      },
+      "pages": 1,
+      "glyphs": 5,
+      "images": [
+        "6782973b2ee0c065bad60a613109349531f3e48609ee3fc14627455368bb95fa-0.svg"
+      ],
+      "grades": "G1"
+    },
+    {
+      "id": "2f59adbbc0a26936dac3d6b73777a30130795dbe126cf7a5ed2c551be3157b48",
+      "counts": {
+        "targets": 4,
+        "onsets": 4
+      },
+      "pages": 1,
+      "glyphs": 4,
+      "images": [
+        "2f59adbbc0a26936dac3d6b73777a30130795dbe126cf7a5ed2c551be3157b48-0.svg"
+      ],
+      "grades": "G2"
+    },
+    {
+      "id": "3a77810db8224072344816a9b1874331c3d4eedb05deb6ac44f43ef7650cabbf",
+      "counts": {
+        "targets": 12,
+        "onsets": 12
+      },
+      "pages": 1,
+      "glyphs": 12,
+      "images": [
+        "3a77810db8224072344816a9b1874331c3d4eedb05deb6ac44f43ef7650cabbf-0.svg"
+      ],
+      "grades": "G7"
+    },
+    {
+      "id": "473d0355406f040836b96ad38836e7e82f83ce3bf642a5887a61e1abb78bef0c",
+      "counts": {
+        "targets": 8,
+        "onsets": 8
+      },
+      "pages": 1,
+      "glyphs": 8,
+      "images": [
+        "473d0355406f040836b96ad38836e7e82f83ce3bf642a5887a61e1abb78bef0c-0.svg"
+      ],
+      "grades": "G2"
+    },
+    {
+      "id": "4ccf854f8f9ead12db181df7cbc116fdd8f28c5d192ec78a8bcc92a1e647042f",
+      "counts": {
+        "targets": 8,
+        "onsets": 8
+      },
+      "pages": 1,
+      "glyphs": 8,
+      "images": [
+        "4ccf854f8f9ead12db181df7cbc116fdd8f28c5d192ec78a8bcc92a1e647042f-0.svg"
+      ],
+      "grades": "G3"
+    },
+    {
+      "id": "f1ae4aac2afd3523e863226dac9190f22ec2570e179bbc05534a4ca51b1a4003",
+      "counts": {
+        "targets": 6,
+        "onsets": 6
+      },
+      "pages": 1,
+      "glyphs": 6,
+      "images": [
+        "f1ae4aac2afd3523e863226dac9190f22ec2570e179bbc05534a4ca51b1a4003-0.svg"
+      ],
+      "grades": "G4"
+    },
+    {
+      "id": "70665625515d5141d08731af338fa5bb07f982cb093124bd74c579f98ac68884",
+      "counts": {
+        "targets": 4,
+        "onsets": 4
+      },
+      "pages": 1,
+      "glyphs": 4,
+      "images": [
+        "70665625515d5141d08731af338fa5bb07f982cb093124bd74c579f98ac68884-0.svg"
+      ],
+      "grades": "G7"
+    },
+    {
+      "id": "21c52cda41dcf81f204a4c114e772d98027d50fbf1fd85af2f36370d18618e8d",
+      "counts": {
+        "targets": 6,
+        "onsets": 6
+      },
+      "pages": 1,
+      "glyphs": 6,
+      "images": [
+        "21c52cda41dcf81f204a4c114e772d98027d50fbf1fd85af2f36370d18618e8d-0.svg"
+      ],
+      "grades": "G4"
+    },
+    {
+      "id": "28aeb42239e02cfa9e81b891ecbaf49fa8a5d528b64714a71f3a45b61d3218cc",
+      "counts": {
+        "targets": 4,
+        "onsets": 4
+      },
+      "pages": 1,
+      "glyphs": 4,
+      "images": [
+        "28aeb42239e02cfa9e81b891ecbaf49fa8a5d528b64714a71f3a45b61d3218cc-0.svg"
+      ],
+      "grades": "G4"
+    },
+    {
+      "id": "26daaf53682a2fba0285e438b215e8024611a004cfe78ed13b3b89c12df58ccc",
+      "counts": {
+        "targets": 4,
+        "onsets": 4
+      },
+      "pages": 1,
+      "glyphs": 4,
+      "images": [
+        "26daaf53682a2fba0285e438b215e8024611a004cfe78ed13b3b89c12df58ccc-0.svg"
+      ],
+      "grades": "G4"
+    },
+    {
+      "id": "db00ac2ba907995706ba3f3089658c8cccd87a9b57e42552761ad16a39fb6d77",
+      "counts": {
+        "targets": 4,
+        "onsets": 4
+      },
+      "pages": 1,
+      "glyphs": 4,
+      "images": [
+        "db00ac2ba907995706ba3f3089658c8cccd87a9b57e42552761ad16a39fb6d77-0.svg"
+      ],
+      "grades": "G4"
+    },
+    {
+      "id": "150f0482a4afabf6241845de53cfafb87f31ab47c6f91ba9d77aae2ddfa43841",
+      "counts": {
+        "targets": 9,
+        "onsets": 9
+      },
+      "pages": 1,
+      "glyphs": 9,
+      "images": [
+        "150f0482a4afabf6241845de53cfafb87f31ab47c6f91ba9d77aae2ddfa43841-0.svg"
+      ],
+      "grades": "G8"
+    },
+    {
+      "id": "275fb237ca5a2bffc375f82918d7bcc3e5d706e800b1c964b5a53b277f308a6a",
+      "counts": {
+        "targets": 9,
+        "onsets": 9
+      },
+      "pages": 1,
+      "glyphs": 9,
+      "images": [
+        "275fb237ca5a2bffc375f82918d7bcc3e5d706e800b1c964b5a53b277f308a6a-0.svg"
+      ],
+      "grades": "G8"
+    },
+    {
+      "id": "08d085b8a89a4c81022eaa18e3e70d3d7a84f34d1adf4d12a871ab72b57fef73",
+      "counts": {
+        "targets": 5,
+        "onsets": 5
+      },
+      "pages": 1,
+      "glyphs": 5,
+      "images": [
+        "08d085b8a89a4c81022eaa18e3e70d3d7a84f34d1adf4d12a871ab72b57fef73-0.svg"
+      ],
+      "grades": "G4"
+    },
+    {
+      "id": "cc6eaf0e467549a3668746be060f4287d751b46cc47da51d269978b73af047fe",
+      "counts": {
+        "targets": 4,
+        "onsets": 4
+      },
+      "pages": 1,
+      "glyphs": 4,
+      "images": [
+        "cc6eaf0e467549a3668746be060f4287d751b46cc47da51d269978b73af047fe-0.svg"
+      ],
+      "grades": "G2"
+    },
+    {
+      "id": "1722bfcc4745da77b20f4e99f4056b0761c8fad5caa4bd42e10242d7c4218d25",
+      "counts": {
+        "targets": 4,
+        "onsets": 4
+      },
+      "pages": 1,
+      "glyphs": 4,
+      "images": [
+        "1722bfcc4745da77b20f4e99f4056b0761c8fad5caa4bd42e10242d7c4218d25-0.svg"
+      ],
+      "grades": "G4"
+    },
+    {
+      "id": "0e44f58184231c11b7d34355db331d071b2f029ca4ee0cb5eced920eac87f70c",
+      "counts": {
+        "targets": 5,
+        "onsets": 5
+      },
+      "pages": 1,
+      "glyphs": 5,
+      "images": [
+        "0e44f58184231c11b7d34355db331d071b2f029ca4ee0cb5eced920eac87f70c-0.svg"
+      ],
+      "grades": "G4"
+    },
+    {
+      "id": "84bd83edf33dc92575fd345f08604c09b6b71bcd1a7c55501ad8f3884b8a5760",
+      "counts": {
+        "targets": 18,
+        "onsets": 18
+      },
+      "pages": 1,
+      "glyphs": 18,
+      "images": [
+        "84bd83edf33dc92575fd345f08604c09b6b71bcd1a7c55501ad8f3884b8a5760-0.svg"
+      ],
+      "grades": "G8"
+    },
+    {
+      "id": "e92218d6f3a60d69553e46a5461b00377f33dd236675de1452e0905db731c739",
+      "counts": {
+        "targets": 16,
+        "onsets": 16
+      },
+      "pages": 1,
+      "glyphs": 16,
+      "images": [
+        "e92218d6f3a60d69553e46a5461b00377f33dd236675de1452e0905db731c739-0.svg"
+      ],
+      "grades": "G4 / G8"
+    },
+    {
+      "id": "068bfcfaca4bc62def35ad22587a82dbf825e0b291e77e0d94808a7cfce64aa2",
+      "counts": {
+        "targets": 4,
+        "onsets": 4
+      },
+      "pages": 1,
+      "glyphs": 4,
+      "images": [
+        "068bfcfaca4bc62def35ad22587a82dbf825e0b291e77e0d94808a7cfce64aa2-0.svg"
+      ],
+      "grades": "G4"
+    },
+    {
+      "id": "2ea0efef25e656216a7e8931ece41fe7fb200d7ac0d54fc80114a1659465c3b4",
+      "counts": {
+        "targets": 4,
+        "onsets": 4
+      },
+      "pages": 1,
+      "glyphs": 4,
+      "images": [
+        "2ea0efef25e656216a7e8931ece41fe7fb200d7ac0d54fc80114a1659465c3b4-0.svg"
+      ],
+      "grades": "G7"
+    },
+    {
+      "id": "45ecd5bf1979306332ec4d0243c768534f931865a998ac2b1cbaae2952e69bf1",
+      "counts": {
+        "targets": 4,
+        "onsets": 4
+      },
+      "pages": 1,
+      "glyphs": 4,
+      "images": [
+        "45ecd5bf1979306332ec4d0243c768534f931865a998ac2b1cbaae2952e69bf1-0.svg"
+      ],
+      "grades": "G2 / G4"
+    },
+    {
+      "id": "7458ecbdab24f7953d5fa833f8e07291b847f54f354e19e1664961d1c01cfc5e",
+      "counts": {
+        "targets": 8,
+        "onsets": 8
+      },
+      "pages": 1,
+      "glyphs": 8,
+      "images": [
+        "7458ecbdab24f7953d5fa833f8e07291b847f54f354e19e1664961d1c01cfc5e-0.svg"
+      ],
+      "grades": "G8"
+    },
+    {
+      "id": "88189a1c72b292ab57f5b7cf150d57557027f648d771e23138768167a2943218",
+      "counts": {
+        "targets": 12,
+        "onsets": 12
+      },
+      "pages": 1,
+      "glyphs": 12,
+      "images": [
+        "88189a1c72b292ab57f5b7cf150d57557027f648d771e23138768167a2943218-0.svg"
+      ],
+      "grades": "G4"
+    },
+    {
+      "id": "91bfda75c77819b232728d9388f7490d3a16822b894bcad73c18a2e4cf88ea36",
+      "counts": {
+        "targets": 16,
+        "onsets": 16
+      },
+      "pages": 1,
+      "glyphs": 16,
+      "images": [
+        "91bfda75c77819b232728d9388f7490d3a16822b894bcad73c18a2e4cf88ea36-0.svg"
+      ],
+      "grades": "G2"
+    },
+    {
+      "id": "f67abc3866598ab0d2eacafffe39e05738dca243897728db96c05be883db6b2a",
+      "counts": {
+        "targets": 4,
+        "onsets": 4
+      },
+      "pages": 1,
+      "glyphs": 4,
+      "images": [
+        "f67abc3866598ab0d2eacafffe39e05738dca243897728db96c05be883db6b2a-0.svg"
+      ],
+      "grades": "G8"
+    },
+    {
+      "id": "190b7602accfe667abf2696d995a8011f863106b8ba582eeb77d59d7915d9449",
+      "counts": {
+        "targets": 4,
+        "onsets": 4
+      },
+      "pages": 1,
+      "glyphs": 4,
+      "images": [
+        "190b7602accfe667abf2696d995a8011f863106b8ba582eeb77d59d7915d9449-0.svg"
+      ],
+      "grades": "G4"
+    },
+    {
+      "id": "4af1089d51c0c85e9bc245d17c4b0eff4723c900ccbfb416ac5d350b0ad7847e",
+      "counts": {
+        "targets": 4,
+        "onsets": 4
+      },
+      "pages": 1,
+      "glyphs": 4,
+      "images": [
+        "4af1089d51c0c85e9bc245d17c4b0eff4723c900ccbfb416ac5d350b0ad7847e-0.svg"
+      ],
+      "grades": "G8"
+    },
+    {
+      "id": "1389f094864fc2c75031afec086665e8b868b574aa0490dacfeae3db05269df4",
+      "counts": {
+        "targets": 4,
+        "onsets": 4
+      },
+      "pages": 1,
+      "glyphs": 4,
+      "images": [
+        "1389f094864fc2c75031afec086665e8b868b574aa0490dacfeae3db05269df4-0.svg"
+      ],
+      "grades": "G2"
+    },
+    {
+      "id": "2ce38cf28f20e89c9b02047012e4529a117f8b3df555cf3760cdc65a8707a348",
+      "counts": {
+        "targets": 5,
+        "onsets": 5
+      },
+      "pages": 1,
+      "glyphs": 5,
+      "images": [
+        "2ce38cf28f20e89c9b02047012e4529a117f8b3df555cf3760cdc65a8707a348-0.svg"
+      ],
+      "grades": "G2"
+    },
+    {
+      "id": "1560df6c713d42a3add9a6895cdd18aeb6a087df1269f8af69bcee2193637930",
+      "counts": {
+        "targets": 19,
+        "onsets": 19
+      },
+      "pages": 1,
+      "glyphs": 19,
+      "images": [
+        "1560df6c713d42a3add9a6895cdd18aeb6a087df1269f8af69bcee2193637930-0.svg"
+      ],
+      "grades": "G4"
+    },
+    {
+      "id": "15b79fcbcdd3d4dea1cc1fd3b0d3c1d6aeb444092f389955d6a929724c231879",
+      "counts": {
+        "targets": 8,
+        "onsets": 8
+      },
+      "pages": 1,
+      "glyphs": 8,
+      "images": [
+        "15b79fcbcdd3d4dea1cc1fd3b0d3c1d6aeb444092f389955d6a929724c231879-0.svg"
+      ],
+      "grades": "G4"
+    },
+    {
+      "id": "7b71b46095bd321a7e050133342ac784a9cb8ea22683d9f8bebff6fc913b1147",
+      "counts": {
+        "targets": 8,
+        "onsets": 8
+      },
+      "pages": 1,
+      "glyphs": 8,
+      "images": [
+        "7b71b46095bd321a7e050133342ac784a9cb8ea22683d9f8bebff6fc913b1147-0.svg"
+      ],
+      "grades": "G2"
+    },
+    {
+      "id": "607318ec44356cd1f0022f6a59edbc391dbe68d9ef3cd101e28c040e3cfe7ed4",
+      "counts": {
+        "targets": 5,
+        "onsets": 5
+      },
+      "pages": 1,
+      "glyphs": 5,
+      "images": [
+        "607318ec44356cd1f0022f6a59edbc391dbe68d9ef3cd101e28c040e3cfe7ed4-0.svg"
+      ],
+      "grades": "G8"
+    },
+    {
+      "id": "ba1eeaee57fb707eb8c82a7b64f5ca15e5718b5f9f3d814e18656fa778e63ed0",
+      "counts": {
+        "targets": 25,
+        "onsets": 25
+      },
+      "pages": 1,
+      "glyphs": 25,
+      "images": [
+        "ba1eeaee57fb707eb8c82a7b64f5ca15e5718b5f9f3d814e18656fa778e63ed0-0.svg"
+      ],
+      "grades": "G8"
+    },
+    {
+      "id": "eacaf8ac9f8c605560d8952af0b7401673ec2c416f18f6fb53977dd2b352206a",
+      "counts": {
+        "targets": 16,
+        "onsets": 16
+      },
+      "pages": 1,
+      "glyphs": 16,
+      "images": [
+        "eacaf8ac9f8c605560d8952af0b7401673ec2c416f18f6fb53977dd2b352206a-0.svg"
+      ],
+      "grades": "G3"
+    },
+    {
+      "id": "0a7e2bc66ef9e5a88e86eebcdffa4ec2c67eeb8d3d322ba6932355612a8f7bb5",
+      "counts": {
+        "targets": 4,
+        "onsets": 4
+      },
+      "pages": 1,
+      "glyphs": 4,
+      "images": [
+        "0a7e2bc66ef9e5a88e86eebcdffa4ec2c67eeb8d3d322ba6932355612a8f7bb5-0.svg"
+      ],
+      "grades": "G4"
+    },
+    {
+      "id": "67394e406c1eee2facdf13da1ea40a153fecb6e6cab3d50ab980b4c7b2e35ce7",
+      "counts": {
+        "targets": 4,
+        "onsets": 4
+      },
+      "pages": 1,
+      "glyphs": 4,
+      "images": [
+        "67394e406c1eee2facdf13da1ea40a153fecb6e6cab3d50ab980b4c7b2e35ce7-0.svg"
+      ],
+      "grades": "G4 / G8"
+    },
+    {
+      "id": "89754fefc78c56d568f53067d7d7e7812a7242966fdb127954540554a61f8424",
+      "counts": {
+        "targets": 8,
+        "onsets": 8
+      },
+      "pages": 1,
+      "glyphs": 8,
+      "images": [
+        "89754fefc78c56d568f53067d7d7e7812a7242966fdb127954540554a61f8424-0.svg"
+      ],
+      "grades": "G8"
+    },
+    {
+      "id": "8cd7e9fb5e2e1e525526df4da5821ce790b980a0ec58db46b02d049f721e20b8",
+      "counts": {
+        "targets": 5,
+        "onsets": 5
+      },
+      "pages": 1,
+      "glyphs": 5,
+      "images": [
+        "8cd7e9fb5e2e1e525526df4da5821ce790b980a0ec58db46b02d049f721e20b8-0.svg"
+      ],
+      "grades": "G8"
+    },
+    {
+      "id": "dcb4a03650fbb90da88f01058ae65fca4acb9a9d8c7517b21a172751ba9ce3d4",
+      "counts": {
+        "targets": 6,
+        "onsets": 6
+      },
+      "pages": 1,
+      "glyphs": 6,
+      "images": [
+        "dcb4a03650fbb90da88f01058ae65fca4acb9a9d8c7517b21a172751ba9ce3d4-0.svg"
+      ],
+      "grades": "G8"
+    },
+    {
+      "id": "14890ae91015ba9c4c167743c1f33cc6cae356ba59bf353df45b65cb97284355",
+      "counts": {
+        "targets": 6,
+        "onsets": 6
+      },
+      "pages": 1,
+      "glyphs": 6,
+      "images": [
+        "14890ae91015ba9c4c167743c1f33cc6cae356ba59bf353df45b65cb97284355-0.svg"
+      ],
+      "grades": "G8"
+    },
+    {
+      "id": "1f33ede7d131ad0d91ec022f77104643b77e2258b68730f52037afc94556e59d",
+      "counts": {
+        "targets": 16,
+        "onsets": 16
+      },
+      "pages": 1,
+      "glyphs": 16,
+      "images": [
+        "1f33ede7d131ad0d91ec022f77104643b77e2258b68730f52037afc94556e59d-0.svg"
+      ],
+      "grades": "G4"
+    },
+    {
+      "id": "a68d186905f3a70ff47ac209f214b11fef31e417a8c463358170cefe09992427",
+      "counts": {
+        "targets": 5,
+        "onsets": 5
+      },
+      "pages": 1,
+      "glyphs": 5,
+      "images": [
+        "a68d186905f3a70ff47ac209f214b11fef31e417a8c463358170cefe09992427-0.svg"
+      ],
+      "grades": "G8"
+    },
+    {
+      "id": "e693f5f61b261f43f1372fee3d31f67ed461107beca14941188cca8e1dd9afba",
+      "counts": {
+        "targets": 4,
+        "onsets": 4
+      },
+      "pages": 1,
+      "glyphs": 4,
+      "images": [
+        "e693f5f61b261f43f1372fee3d31f67ed461107beca14941188cca8e1dd9afba-0.svg"
+      ],
+      "grades": "G4 / G8"
+    },
+    {
+      "id": "11644a7feaa6ad09ec32728245c8b5d204a7dce7ce1c6bfffe81435584cb0f61",
+      "counts": {
+        "targets": 23,
+        "onsets": 23
+      },
+      "pages": 1,
+      "glyphs": 23,
+      "images": [
+        "11644a7feaa6ad09ec32728245c8b5d204a7dce7ce1c6bfffe81435584cb0f61-0.svg"
+      ],
+      "grades": "G7"
+    },
+    {
+      "id": "8143c2091e996cfd3b012657a258847ee196155250691ba38b1d5010f74ed289",
+      "counts": {
+        "targets": 12,
+        "onsets": 12
+      },
+      "pages": 1,
+      "glyphs": 12,
+      "images": [
+        "8143c2091e996cfd3b012657a258847ee196155250691ba38b1d5010f74ed289-0.svg"
+      ],
+      "grades": "G1"
+    },
+    {
+      "id": "f01202b1e088ac95c3593e326f63daaf9389498de63ea1f95ab837e7278eb87f",
+      "counts": {
+        "targets": 5,
+        "onsets": 5
+      },
+      "pages": 1,
+      "glyphs": 5,
+      "images": [
+        "f01202b1e088ac95c3593e326f63daaf9389498de63ea1f95ab837e7278eb87f-0.svg"
+      ],
+      "grades": "G2"
+    },
+    {
+      "id": "58c718c3620d8165cd9b12e99ec8746432d2c10dc5e4fa8c99a70b9e37860d4f",
+      "counts": {
+        "targets": 31,
+        "onsets": 31
+      },
+      "pages": 1,
+      "glyphs": 31,
+      "images": [
+        "58c718c3620d8165cd9b12e99ec8746432d2c10dc5e4fa8c99a70b9e37860d4f-0.svg"
+      ],
+      "grades": "G8"
+    },
+    {
+      "id": "afad52c7b5707af37301635d02849e13248de216d68ebdae9bb7c3a78b005935",
+      "counts": {
+        "targets": 8,
+        "onsets": 8
+      },
+      "pages": 1,
+      "glyphs": 8,
+      "images": [
+        "afad52c7b5707af37301635d02849e13248de216d68ebdae9bb7c3a78b005935-0.svg"
+      ],
+      "grades": "G8"
+    },
+    {
+      "id": "6f12185ee73f556bc34d513dbccdbc6aa823f00b5ee54290ad0b50796d7fe6a5",
+      "counts": {
+        "targets": 17,
+        "onsets": 17
+      },
+      "pages": 1,
+      "glyphs": 17,
+      "images": [
+        "6f12185ee73f556bc34d513dbccdbc6aa823f00b5ee54290ad0b50796d7fe6a5-0.svg"
+      ],
+      "grades": "G4"
+    },
+    {
+      "id": "75b71f02ef8706d98fe8147b2c113c88ffb4d2b50cb65c248bee9db4efe9a828",
+      "counts": {
+        "targets": 8,
+        "onsets": 8
+      },
+      "pages": 1,
+      "glyphs": 8,
+      "images": [
+        "75b71f02ef8706d98fe8147b2c113c88ffb4d2b50cb65c248bee9db4efe9a828-0.svg"
+      ],
+      "grades": "G8"
+    },
+    {
+      "id": "ac165c0fa30ba37ad5d8d4f63ff78f997fd848ed26ee9ba01e09ba9fc4f43b5a",
+      "counts": {
+        "targets": 8,
+        "onsets": 8
+      },
+      "pages": 1,
+      "glyphs": 8,
+      "images": [
+        "ac165c0fa30ba37ad5d8d4f63ff78f997fd848ed26ee9ba01e09ba9fc4f43b5a-0.svg"
+      ],
+      "grades": "G3"
+    },
+    {
+      "id": "ebb852b545e739191950645cbc44d442e8beaad84545cdb0a1d791028e698dc8",
+      "counts": {
+        "targets": 18,
+        "onsets": 18
+      },
+      "pages": 1,
+      "glyphs": 18,
+      "images": [
+        "ebb852b545e739191950645cbc44d442e8beaad84545cdb0a1d791028e698dc8-0.svg"
+      ],
+      "grades": "G4"
+    },
+    {
+      "id": "0e1b48fa4d0f1ecc756d7705cc1a066f42293ed09a30519f0394472f4a867309",
+      "counts": {
+        "targets": 14,
+        "onsets": 14
+      },
+      "pages": 1,
+      "glyphs": 14,
+      "images": [
+        "0e1b48fa4d0f1ecc756d7705cc1a066f42293ed09a30519f0394472f4a867309-0.svg"
+      ],
+      "grades": "G2"
+    },
+    {
+      "id": "724760f1fc553e82749221e56d688a3b032aafe31e658f2789586935b12b1a2d",
+      "counts": {
+        "targets": 20,
+        "onsets": 20
+      },
+      "pages": 1,
+      "glyphs": 20,
+      "images": [
+        "724760f1fc553e82749221e56d688a3b032aafe31e658f2789586935b12b1a2d-0.svg"
+      ],
+      "grades": "G3"
+    },
+    {
+      "id": "b722e26941abae504b828e3f861423f4da37b7117e3909acfe4ff79dd35232d1",
+      "counts": {
+        "targets": 4,
+        "onsets": 4
+      },
+      "pages": 1,
+      "glyphs": 4,
+      "images": [
+        "b722e26941abae504b828e3f861423f4da37b7117e3909acfe4ff79dd35232d1-0.svg"
+      ],
+      "grades": "G8"
+    },
+    {
+      "id": "d04dc30f806839b465e908d7bbfe26310dc797ba36f03c78df7767fd875c14dc",
+      "counts": {
+        "targets": 4,
+        "onsets": 4
+      },
+      "pages": 1,
+      "glyphs": 4,
+      "images": [
+        "d04dc30f806839b465e908d7bbfe26310dc797ba36f03c78df7767fd875c14dc-0.svg"
+      ],
+      "grades": "G8"
+    },
+    {
+      "id": "34ec3d4c923d41ccee95b5859a74f822e185f06c9b98ab11aa775490a0256117",
+      "counts": {
+        "targets": 6,
+        "onsets": 6
+      },
+      "pages": 1,
+      "glyphs": 6,
+      "images": [
+        "34ec3d4c923d41ccee95b5859a74f822e185f06c9b98ab11aa775490a0256117-0.svg"
+      ],
+      "grades": "G1"
+    },
+    {
+      "id": "7848f75bd443b547f3ccfee091f12268e721562d62f20467776bebb1b3265cfd",
+      "counts": {
+        "targets": 12,
+        "onsets": 12
+      },
+      "pages": 1,
+      "glyphs": 12,
+      "images": [
+        "7848f75bd443b547f3ccfee091f12268e721562d62f20467776bebb1b3265cfd-0.svg"
+      ],
+      "grades": "G2"
+    },
+    {
+      "id": "e1ff00eff8b4746a45c12b82f54fb4bb5fc506cb30b6fa393a75413d141c1b08",
+      "counts": {
+        "targets": 12,
+        "onsets": 12
+      },
+      "pages": 1,
+      "glyphs": 12,
+      "images": [
+        "e1ff00eff8b4746a45c12b82f54fb4bb5fc506cb30b6fa393a75413d141c1b08-0.svg"
+      ],
+      "grades": "G1"
+    },
+    {
+      "id": "426d11b6d077ece65385f9bdf95214c70c2f017cfa31f1d1f404a9ddb969c8b7",
+      "counts": {
+        "targets": 17,
+        "onsets": 17
+      },
+      "pages": 1,
+      "glyphs": 17,
+      "images": [
+        "426d11b6d077ece65385f9bdf95214c70c2f017cfa31f1d1f404a9ddb969c8b7-0.svg"
+      ],
+      "grades": "G2"
+    },
+    {
+      "id": "e7d01998095ed1c3e61e25a90ebca7a26551f9f7a6995b79dae6b60b1ccf6ae2",
+      "counts": {
+        "targets": 8,
+        "onsets": 8
+      },
+      "pages": 1,
+      "glyphs": 8,
+      "images": [
+        "e7d01998095ed1c3e61e25a90ebca7a26551f9f7a6995b79dae6b60b1ccf6ae2-0.svg"
+      ],
+      "grades": "G8"
+    },
+    {
+      "id": "9ec7853c172596caeff27ac9368473a3964a6b8bc566435fcf7fb6d01331fe39",
+      "counts": {
+        "targets": 14,
+        "onsets": 14
+      },
+      "pages": 1,
+      "glyphs": 14,
+      "images": [
+        "9ec7853c172596caeff27ac9368473a3964a6b8bc566435fcf7fb6d01331fe39-0.svg"
+      ],
+      "grades": "G4"
+    },
+    {
+      "id": "bc4f9907231198b8228160c3518074bb98ee0bed9970f13f6b0625125a149902",
+      "counts": {
+        "targets": 4,
+        "onsets": 4
+      },
+      "pages": 1,
+      "glyphs": 4,
+      "images": [
+        "bc4f9907231198b8228160c3518074bb98ee0bed9970f13f6b0625125a149902-0.svg"
+      ],
+      "grades": "G1 / G4"
+    },
+    {
+      "id": "2c051957c2bc7fa9d4457e0ec8c70dcaca645b875b5efb61bf9f5b25865e5b0f",
+      "counts": {
+        "targets": 8,
+        "onsets": 8
+      },
+      "pages": 1,
+      "glyphs": 8,
+      "images": [
+        "2c051957c2bc7fa9d4457e0ec8c70dcaca645b875b5efb61bf9f5b25865e5b0f-0.svg"
+      ],
+      "grades": "G4"
+    },
+    {
+      "id": "4339d031e269a879b76da9abf9e6ae3d6bb92c322fb615697c4196832a1871ef",
+      "counts": {
+        "targets": 8,
+        "onsets": 8
+      },
+      "pages": 1,
+      "glyphs": 8,
+      "images": [
+        "4339d031e269a879b76da9abf9e6ae3d6bb92c322fb615697c4196832a1871ef-0.svg"
+      ],
+      "grades": "G2"
+    },
+    {
+      "id": "aa2e42104c16dfd07229bbe845225ab60394a84289e7d2974f695c7c554aa06d",
+      "counts": {
+        "targets": 8,
+        "onsets": 8
+      },
+      "pages": 1,
+      "glyphs": 8,
+      "images": [
+        "aa2e42104c16dfd07229bbe845225ab60394a84289e7d2974f695c7c554aa06d-0.svg"
+      ],
+      "grades": "G3"
+    },
+    {
+      "id": "31e1e03b8108094ba668ad0cd710da59cedb135ea851d8be51eaa0e081ad67ca",
+      "counts": {
+        "targets": 5,
+        "onsets": 5
+      },
+      "pages": 1,
+      "glyphs": 5,
+      "images": [
+        "31e1e03b8108094ba668ad0cd710da59cedb135ea851d8be51eaa0e081ad67ca-0.svg"
+      ],
+      "grades": "G1"
+    },
+    {
+      "id": "3713f01c43f43920aeb8af6367709f631096d886ecb8c5fc6ac9682b2b7a4956",
+      "counts": {
+        "targets": 5,
+        "onsets": 5
+      },
+      "pages": 1,
+      "glyphs": 5,
+      "images": [
+        "3713f01c43f43920aeb8af6367709f631096d886ecb8c5fc6ac9682b2b7a4956-0.svg"
+      ],
+      "grades": "G4 / G8"
+    },
+    {
+      "id": "f8a188b075f1849e1d9bf98c805fa6c52d160414c81b50dadd262c43cdc285ff",
+      "counts": {
+        "targets": 9,
+        "onsets": 9
+      },
+      "pages": 1,
+      "glyphs": 9,
+      "images": [
+        "f8a188b075f1849e1d9bf98c805fa6c52d160414c81b50dadd262c43cdc285ff-0.svg"
+      ],
+      "grades": "G3"
+    },
+    {
+      "id": "0a1ef7b2af3fd3a2f2ec1c8fffc23bae315e108be23714f053ea2378854653e8",
+      "counts": {
+        "targets": 12,
+        "onsets": 12
+      },
+      "pages": 1,
+      "glyphs": 12,
+      "images": [
+        "0a1ef7b2af3fd3a2f2ec1c8fffc23bae315e108be23714f053ea2378854653e8-0.svg"
+      ],
+      "grades": "G2"
+    },
+    {
+      "id": "b892e72c2a06414790bb6247244229a5e994dd8fe1b4f7d90275ac575171fd81",
+      "counts": {
+        "targets": 11,
+        "onsets": 11
+      },
+      "pages": 1,
+      "glyphs": 11,
+      "images": [
+        "b892e72c2a06414790bb6247244229a5e994dd8fe1b4f7d90275ac575171fd81-0.svg"
+      ],
+      "grades": "G4"
+    },
+    {
+      "id": "37ef5d5e5c02a96a237e85c06e789b6d683863f7fc6470888c304302a112d28c",
+      "counts": {
+        "targets": 6,
+        "onsets": 6
+      },
+      "pages": 1,
+      "glyphs": 6,
+      "images": [
+        "37ef5d5e5c02a96a237e85c06e789b6d683863f7fc6470888c304302a112d28c-0.svg"
+      ],
+      "grades": "G1"
+    },
+    {
+      "id": "a42cffd7a3ff3ddbf59b31bbcfd8143cfea3e658ed878613f69394edfadeb5dc",
+      "counts": {
+        "targets": 5,
+        "onsets": 5
+      },
+      "pages": 1,
+      "glyphs": 5,
+      "images": [
+        "a42cffd7a3ff3ddbf59b31bbcfd8143cfea3e658ed878613f69394edfadeb5dc-0.svg"
+      ],
+      "grades": "G1"
+    },
+    {
+      "id": "c28faeb85f80c2b26d78ce5696a6a465e1fb69cf4ff025c8fbce0e4588d61419",
+      "counts": {
+        "targets": 15,
+        "onsets": 15
+      },
+      "pages": 1,
+      "glyphs": 15,
+      "images": [
+        "c28faeb85f80c2b26d78ce5696a6a465e1fb69cf4ff025c8fbce0e4588d61419-0.svg"
+      ],
+      "grades": "G3"
+    },
+    {
+      "id": "3d826d58dc290742a1733b7f1c00b65a6a038bb7625e008c61a340ebc86e170a",
+      "counts": {
+        "targets": 9,
+        "onsets": 9
+      },
+      "pages": 1,
+      "glyphs": 9,
+      "images": [
+        "3d826d58dc290742a1733b7f1c00b65a6a038bb7625e008c61a340ebc86e170a-0.svg"
+      ],
+      "grades": "G3"
+    },
+    {
+      "id": "8ac0dd7501900cace4f95e64992847813ebf6c96bf0827d5bbd551a0b08db88e",
+      "counts": {
+        "targets": 18,
+        "onsets": 18
+      },
+      "pages": 1,
+      "glyphs": 18,
+      "images": [
+        "8ac0dd7501900cace4f95e64992847813ebf6c96bf0827d5bbd551a0b08db88e-0.svg"
+      ],
+      "grades": "G6"
+    },
+    {
+      "id": "8f5f6803f54f888c274b0569110701f0c9c2c54c6cd6e983e4254d5fddb03156",
+      "counts": {
+        "targets": 12,
+        "onsets": 12
+      },
+      "pages": 1,
+      "glyphs": 12,
+      "images": [
+        "8f5f6803f54f888c274b0569110701f0c9c2c54c6cd6e983e4254d5fddb03156-0.svg"
+      ],
+      "grades": "G1"
+    },
+    {
+      "id": "12dd470b0e3c5b4d8b5f7281f7ab3a8be9637ee088475963fed8b80e29c4a12d",
+      "counts": {
+        "targets": 4,
+        "onsets": 4
+      },
+      "pages": 1,
+      "glyphs": 4,
+      "images": [
+        "12dd470b0e3c5b4d8b5f7281f7ab3a8be9637ee088475963fed8b80e29c4a12d-0.svg"
+      ],
+      "grades": "G8"
+    },
+    {
+      "id": "17c41944b9c75885813ac10214ee728ec16a1c84f35cfca4f2601a42ab8690da",
+      "counts": {
+        "targets": 6,
+        "onsets": 6
+      },
+      "pages": 1,
+      "glyphs": 6,
+      "images": [
+        "17c41944b9c75885813ac10214ee728ec16a1c84f35cfca4f2601a42ab8690da-0.svg"
+      ],
+      "grades": "G8"
+    },
+    {
+      "id": "c820e0873c5180406634c8e3bddde7644bb7e2572ec1411de6c475286a7bcc92",
+      "counts": {
+        "targets": 6,
+        "onsets": 6
+      },
+      "pages": 1,
+      "glyphs": 6,
+      "images": [
+        "c820e0873c5180406634c8e3bddde7644bb7e2572ec1411de6c475286a7bcc92-0.svg"
+      ],
+      "grades": "G2"
+    },
+    {
+      "id": "d289eb6d03a8223a8c657c121bebe0f19a18970ce44c87d76600672ce7ece3bb",
+      "counts": {
+        "targets": 10,
+        "onsets": 10
+      },
+      "pages": 1,
+      "glyphs": 10,
+      "images": [
+        "d289eb6d03a8223a8c657c121bebe0f19a18970ce44c87d76600672ce7ece3bb-0.svg"
+      ],
+      "grades": "G4"
+    },
+    {
+      "id": "7c77c67a16adeaf868b6884b6d1d3b7e963211ae8c61d1c52667b618a4f8038c",
+      "counts": {
+        "targets": 8,
+        "onsets": 8
+      },
+      "pages": 1,
+      "glyphs": 8,
+      "images": [
+        "7c77c67a16adeaf868b6884b6d1d3b7e963211ae8c61d1c52667b618a4f8038c-0.svg"
+      ],
+      "grades": "G8"
+    },
+    {
+      "id": "11039b8ef546dfdd87cfe7778ac6866a084b77a5177d471174ee3a001d94b1d7",
+      "counts": {
+        "targets": 5,
+        "onsets": 5
+      },
+      "pages": 1,
+      "glyphs": 5,
+      "images": [
+        "11039b8ef546dfdd87cfe7778ac6866a084b77a5177d471174ee3a001d94b1d7-0.svg"
+      ],
+      "grades": "G4"
+    },
+    {
+      "id": "264c2aabc3f04a72aaf72a1747377ee94312a0d5cd2292ab84bf20d336f8dcd7",
+      "counts": {
+        "targets": 5,
+        "onsets": 5
+      },
+      "pages": 1,
+      "glyphs": 5,
+      "images": [
+        "264c2aabc3f04a72aaf72a1747377ee94312a0d5cd2292ab84bf20d336f8dcd7-0.svg"
+      ],
+      "grades": "G4"
+    },
+    {
+      "id": "24803b14d44a839caec2f407de7775b94a780d38e2d26a6a46c9e7b138b01a3c",
+      "counts": {
+        "targets": 15,
+        "onsets": 15
+      },
+      "pages": 1,
+      "glyphs": 15,
+      "images": [
+        "24803b14d44a839caec2f407de7775b94a780d38e2d26a6a46c9e7b138b01a3c-0.svg"
+      ],
+      "grades": "G4"
+    },
+    {
+      "id": "24af0497d494dc5d2a6a7e2e81a2e681bd3c081ab679f06694e81d4c896d5a11",
+      "counts": {
+        "targets": 8,
+        "onsets": 8
+      },
+      "pages": 1,
+      "glyphs": 8,
+      "images": [
+        "24af0497d494dc5d2a6a7e2e81a2e681bd3c081ab679f06694e81d4c896d5a11-0.svg"
+      ],
+      "grades": "G8"
+    },
+    {
+      "id": "7da17c55ead46e865a12233b1b5a3d352b38c0a95de51adef6d7276a5f079146",
+      "counts": {
+        "targets": 8,
+        "onsets": 8
+      },
+      "pages": 1,
+      "glyphs": 8,
+      "images": [
+        "7da17c55ead46e865a12233b1b5a3d352b38c0a95de51adef6d7276a5f079146-0.svg"
+      ],
+      "grades": "G8"
+    },
+    {
+      "id": "4ce30bc7770c9796b80a854399d14423fafe37dc6c0526734768e101a59eb2c0",
+      "counts": {
+        "targets": 34,
+        "onsets": 34
+      },
+      "pages": 1,
+      "glyphs": 34,
+      "images": [
+        "4ce30bc7770c9796b80a854399d14423fafe37dc6c0526734768e101a59eb2c0-0.svg"
+      ],
+      "grades": "G8"
+    },
+    {
+      "id": "06d9e9a4c8372175b3f42bd367e19ea7e84a2248c98cbe77b12dbd67651cf7d4",
+      "counts": {
+        "targets": 7,
+        "onsets": 5
+      },
+      "pages": 1,
+      "glyphs": 7,
+      "images": [
+        "06d9e9a4c8372175b3f42bd367e19ea7e84a2248c98cbe77b12dbd67651cf7d4-0.svg"
+      ],
+      "grades": "G5"
+    },
+    {
+      "id": "2439c75113189a282dee331a1d14033de415f7c7c73c94fb22350cfcadb86a45",
+      "counts": {
+        "targets": 4,
+        "onsets": 4
+      },
+      "pages": 1,
+      "glyphs": 4,
+      "images": [
+        "2439c75113189a282dee331a1d14033de415f7c7c73c94fb22350cfcadb86a45-0.svg"
+      ],
+      "grades": "G4"
+    },
+    {
+      "id": "38fad552bd1b8dea25833a101e7ea1f617ae428aa3a2fc0bb2eaee377dacf95e",
+      "counts": {
+        "targets": 4,
+        "onsets": 4
+      },
+      "pages": 1,
+      "glyphs": 4,
+      "images": [
+        "38fad552bd1b8dea25833a101e7ea1f617ae428aa3a2fc0bb2eaee377dacf95e-0.svg"
+      ],
+      "grades": "G1"
+    },
+    {
+      "id": "4c41b80c5cf12c4b60de76090ab67de1ae60c0c9a445c40ac98e9c57fc492569",
+      "counts": {
+        "targets": 5,
+        "onsets": 4
+      },
+      "pages": 1,
+      "glyphs": 5,
+      "images": [
+        "4c41b80c5cf12c4b60de76090ab67de1ae60c0c9a445c40ac98e9c57fc492569-0.svg"
+      ],
+      "grades": "G5"
+    },
+    {
+      "id": "89d50206db63e35d90ab7122aa6c5d5e7b3f90c2a05b76645142d5c4e19af88e",
+      "counts": {
+        "targets": 16,
+        "onsets": 16
+      },
+      "pages": 1,
+      "glyphs": 16,
+      "images": [
+        "89d50206db63e35d90ab7122aa6c5d5e7b3f90c2a05b76645142d5c4e19af88e-0.svg"
+      ],
+      "grades": "G3"
+    },
+    {
+      "id": "abbb5c3d9b3e8218791504cf6739d6d1b8eca962bb6b43bc366698068295c8f7",
+      "counts": {
+        "targets": 5,
+        "onsets": 5
+      },
+      "pages": 1,
+      "glyphs": 5,
+      "images": [
+        "abbb5c3d9b3e8218791504cf6739d6d1b8eca962bb6b43bc366698068295c8f7-0.svg"
+      ],
+      "grades": "G2"
+    },
+    {
+      "id": "b596dd0218788c23766654c0236fe78bbce00a34527bd3e833b7f9a4abccb93c",
+      "counts": {
+        "targets": 5,
+        "onsets": 5
+      },
+      "pages": 1,
+      "glyphs": 5,
+      "images": [
+        "b596dd0218788c23766654c0236fe78bbce00a34527bd3e833b7f9a4abccb93c-0.svg"
+      ],
+      "grades": "G2"
+    },
+    {
+      "id": "fde568b1eb308e7c0457485656afafef0e43df8068eb4703b7a06efa59481a62",
+      "counts": {
+        "targets": 5,
+        "onsets": 4
+      },
+      "pages": 1,
+      "glyphs": 5,
+      "images": [
+        "fde568b1eb308e7c0457485656afafef0e43df8068eb4703b7a06efa59481a62-0.svg"
+      ],
+      "grades": "G5"
+    },
+    {
+      "id": "aeaba48c10f282b73bfdbdef82a79c606dc08d1d40f0e2688ebf1dcb1ae86abd",
+      "counts": {
+        "targets": 9,
+        "onsets": 9
+      },
+      "pages": 1,
+      "glyphs": 9,
+      "images": [
+        "aeaba48c10f282b73bfdbdef82a79c606dc08d1d40f0e2688ebf1dcb1ae86abd-0.svg"
+      ],
+      "grades": "G4"
+    },
+    {
+      "id": "eb2faac38111269cf28d164df737f939d14fde35d0503b88a4a64f2759c887e1",
+      "counts": {
+        "targets": 8,
+        "onsets": 8
+      },
+      "pages": 1,
+      "glyphs": 8,
+      "images": [
+        "eb2faac38111269cf28d164df737f939d14fde35d0503b88a4a64f2759c887e1-0.svg"
+      ],
+      "grades": "G3"
+    },
+    {
+      "id": "1c39fef2f063e69d1efb9d3199c91fcc43bb5662a4fb99ec7ba0869ed97b5110",
+      "counts": {
+        "targets": 8,
+        "onsets": 8
+      },
+      "pages": 1,
+      "glyphs": 8,
+      "images": [
+        "1c39fef2f063e69d1efb9d3199c91fcc43bb5662a4fb99ec7ba0869ed97b5110-0.svg"
+      ],
+      "grades": "G2"
+    },
+    {
+      "id": "03ffdbb0642d9d84cf936a6b44089f72db096d0eb394c886623dc12140c9f8b7",
+      "counts": {
+        "targets": 8,
+        "onsets": 8
+      },
+      "pages": 1,
+      "glyphs": 8,
+      "images": [
+        "03ffdbb0642d9d84cf936a6b44089f72db096d0eb394c886623dc12140c9f8b7-0.svg"
+      ],
+      "grades": "G4"
+    },
+    {
+      "id": "104cecd469e62c7fae38f434a3dc48f0e3f0168c111e9a8a682caf555dd8a710",
+      "counts": {
+        "targets": 4,
+        "onsets": 4
+      },
+      "pages": 1,
+      "glyphs": 4,
+      "images": [
+        "104cecd469e62c7fae38f434a3dc48f0e3f0168c111e9a8a682caf555dd8a710-0.svg"
+      ],
+      "grades": "G4"
+    },
+    {
+      "id": "b9ab71ddf69eda097dd0c67e7b0232682ee29c3222768e63477a76736971040a",
+      "counts": {
+        "targets": 4,
+        "onsets": 4
+      },
+      "pages": 1,
+      "glyphs": 4,
+      "images": [
+        "b9ab71ddf69eda097dd0c67e7b0232682ee29c3222768e63477a76736971040a-0.svg"
+      ],
+      "grades": "G2"
+    },
+    {
+      "id": "4404e3e1ead2791ffa4be88e69866bc3f89e22c6ccb7192b020bef693629ff39",
+      "counts": {
+        "targets": 5,
+        "onsets": 5
+      },
+      "pages": 1,
+      "glyphs": 5,
+      "images": [
+        "4404e3e1ead2791ffa4be88e69866bc3f89e22c6ccb7192b020bef693629ff39-0.svg"
+      ],
+      "grades": "G8"
+    },
+    {
+      "id": "5ffd6f250850663a8f434170a6da05360a45399c70b4e126bacf4f96f973c3ab",
+      "counts": {
+        "targets": 7,
+        "onsets": 7
+      },
+      "pages": 1,
+      "glyphs": 7,
+      "images": [
+        "5ffd6f250850663a8f434170a6da05360a45399c70b4e126bacf4f96f973c3ab-0.svg"
+      ],
+      "grades": "G4"
+    },
+    {
+      "id": "606c9faa6be0e143d4ef158505db02e0ee20d1e275fd1ed8904ec201ec011f36",
+      "counts": {
+        "targets": 16,
+        "onsets": 16
+      },
+      "pages": 1,
+      "glyphs": 16,
+      "images": [
+        "606c9faa6be0e143d4ef158505db02e0ee20d1e275fd1ed8904ec201ec011f36-0.svg"
+      ],
+      "grades": "G3"
+    },
+    {
+      "id": "7db32f2fad02aea369603d7804cc36b75ba79ba912677ad73d67bc5b06bb4534",
+      "counts": {
+        "targets": 21,
+        "onsets": 21
+      },
+      "pages": 1,
+      "glyphs": 21,
+      "images": [
+        "7db32f2fad02aea369603d7804cc36b75ba79ba912677ad73d67bc5b06bb4534-0.svg"
+      ],
+      "grades": "G3"
+    }
+  ],
+  "errors": [],
+  "passed": true
+}

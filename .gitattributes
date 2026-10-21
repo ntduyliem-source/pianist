@@ -37,3 +37,8 @@ packages/exercise-generator/source-verification.ts text eol=lf
 apps/pianist-web/tests/source-verification.test.ts text eol=lf
 tests/browser/pianist/q2-* text eol=lf
 docs/curriculum/q2/*.json text eol=lf
+
+# Q3 content rules and review receipts are bound to byte hashes.
+packages/exercise-generator/corpus-model.ts text eol=lf
+tests/browser/pianist/q3-* text eol=lf
+docs/curriculum/q3/*.json text eol=lf

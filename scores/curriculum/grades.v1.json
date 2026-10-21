@@ -1,0 +1,1784 @@
+{
+  "schemaVersion": 1,
+  "version": "q3-profiles-v1",
+  "status": "offline-candidate-pilot",
+  "scienceClaim": "Product design constraints grounded in cited teaching progression; no validated optimum or repetition dose.",
+  "numberOfTargets": {
+    "min": 4,
+    "max": 64,
+    "authoritative": "existing createTimeline after native import"
+  },
+  "targets": {
+    "pilotPerGrade": 100,
+    "reviewSamplesPerGrade": 30,
+    "fullNearDuplicateGroups": 1000,
+    "fullVerifiedWorkGroups": 50,
+    "fullMotifs": 100
+  },
+  "nearDuplicateRule": {
+    "sourceOverlapFraction": 0.5,
+    "transitive": true,
+    "ignoreTransposition": true
+  },
+  "profiles": [
+    {
+      "id": "g1-direction-quarters",
+      "grade": 1,
+      "status": "candidate-rules-only",
+      "enabled": false,
+      "focusRule": "steps",
+      "maxInterval": 2,
+      "rhythms": [
+        "quarters"
+      ],
+      "positions": [
+        "home"
+      ],
+      "fifths": [
+        0
+      ],
+      "meters": [
+        "2/4",
+        "3/4",
+        "4/4"
+      ],
+      "lines": 1,
+      "bpm": {
+        "min": 40,
+        "max": 80,
+        "beatQuarter": 1
+      },
+      "movement": null,
+      "allowedTransforms": [
+        "original-excerpt"
+      ],
+      "allowedJoins": [],
+      "reviewRequirements": [
+        "source-projection",
+        "native-semantics",
+        "phrase-and-hand-review",
+        "30-stratified-examples-per-grade",
+        "every-template-family",
+        "rights-before-publication"
+      ]
+    },
+    {
+      "id": "g1-direction-long",
+      "grade": 1,
+      "status": "candidate-rules-only",
+      "enabled": false,
+      "focusRule": "steps",
+      "maxInterval": 2,
+      "rhythms": [
+        "long-notes"
+      ],
+      "positions": [
+        "home"
+      ],
+      "fifths": [
+        0
+      ],
+      "meters": [
+        "2/4",
+        "3/4",
+        "4/4"
+      ],
+      "lines": 1,
+      "bpm": {
+        "min": 40,
+        "max": 80,
+        "beatQuarter": 1
+      },
+      "movement": null,
+      "allowedTransforms": [
+        "original-excerpt"
+      ],
+      "allowedJoins": [],
+      "reviewRequirements": [
+        "source-projection",
+        "native-semantics",
+        "phrase-and-hand-review",
+        "30-stratified-examples-per-grade",
+        "every-template-family",
+        "rights-before-publication"
+      ]
+    },
+    {
+      "id": "g1-direction-rests",
+      "grade": 1,
+      "status": "candidate-rules-only",
+      "enabled": false,
+      "focusRule": "steps",
+      "maxInterval": 2,
+      "rhythms": [
+        "quarter-rests"
+      ],
+      "positions": [
+        "home"
+      ],
+      "fifths": [
+        0
+      ],
+      "meters": [
+        "2/4",
+        "3/4",
+        "4/4"
+      ],
+      "lines": 1,
+      "bpm": {
+        "min": 40,
+        "max": 80,
+        "beatQuarter": 1
+      },
+      "movement": null,
+      "allowedTransforms": [
+        "original-excerpt"
+      ],
+      "allowedJoins": [],
+      "reviewRequirements": [
+        "source-projection",
+        "native-semantics",
+        "phrase-and-hand-review",
+        "30-stratified-examples-per-grade",
+        "every-template-family",
+        "rights-before-publication"
+      ]
+    },
+    {
+      "id": "g2-third-known-rhythm",
+      "grade": 2,
+      "status": "candidate-rules-only",
+      "enabled": false,
+      "focusRule": "thirds",
+      "maxInterval": 3,
+      "rhythms": [
+        "quarters",
+        "long-notes",
+        "quarter-rests"
+      ],
+      "positions": [
+        "home"
+      ],
+      "fifths": [
+        0
+      ],
+      "meters": [
+        "2/4",
+        "3/4",
+        "4/4"
+      ],
+      "lines": 1,
+      "bpm": {
+        "min": 40,
+        "max": 80,
+        "beatQuarter": 1
+      },
+      "movement": null,
+      "allowedTransforms": [
+        "original-excerpt"
+      ],
+      "allowedJoins": [],
+      "reviewRequirements": [
+        "source-projection",
+        "native-semantics",
+        "phrase-and-hand-review",
+        "30-stratified-examples-per-grade",
+        "every-template-family",
+        "rights-before-publication"
+      ]
+    },
+    {
+      "id": "g2-paired-eighths-steps",
+      "grade": 2,
+      "status": "candidate-rules-only",
+      "enabled": false,
+      "focusRule": "steps",
+      "maxInterval": 2,
+      "rhythms": [
+        "paired-eighths"
+      ],
+      "positions": [
+        "home"
+      ],
+      "fifths": [
+        0
+      ],
+      "meters": [
+        "2/4",
+        "3/4",
+        "4/4"
+      ],
+      "lines": 1,
+      "bpm": {
+        "min": 40,
+        "max": 80,
+        "beatQuarter": 1
+      },
+      "movement": null,
+      "allowedTransforms": [
+        "original-excerpt"
+      ],
+      "allowedJoins": [],
+      "reviewRequirements": [
+        "source-projection",
+        "native-semantics",
+        "phrase-and-hand-review",
+        "30-stratified-examples-per-grade",
+        "every-template-family",
+        "rights-before-publication"
+      ]
+    },
+    {
+      "id": "g3-triad-fourth-fifth",
+      "grade": 3,
+      "status": "candidate-rules-only",
+      "enabled": false,
+      "focusRule": "triads",
+      "maxInterval": 5,
+      "rhythms": [
+        "quarters",
+        "long-notes",
+        "quarter-rests",
+        "paired-eighths"
+      ],
+      "positions": [
+        "home"
+      ],
+      "fifths": [
+        0
+      ],
+      "meters": [
+        "2/4",
+        "3/4",
+        "4/4"
+      ],
+      "lines": 1,
+      "bpm": {
+        "min": 40,
+        "max": 80,
+        "beatQuarter": 1
+      },
+      "movement": null,
+      "allowedTransforms": [
+        "original-excerpt"
+      ],
+      "allowedJoins": [],
+      "reviewRequirements": [
+        "source-projection",
+        "native-semantics",
+        "phrase-and-hand-review",
+        "30-stratified-examples-per-grade",
+        "every-template-family",
+        "rights-before-publication"
+      ]
+    },
+    {
+      "id": "g4-new-position",
+      "grade": 4,
+      "status": "candidate-rules-only",
+      "enabled": false,
+      "focusRule": "new-position",
+      "maxInterval": 5,
+      "rhythms": [
+        "quarters",
+        "long-notes",
+        "quarter-rests",
+        "paired-eighths"
+      ],
+      "positions": [
+        "new-position"
+      ],
+      "fifths": [
+        0,
+        1,
+        -1
+      ],
+      "meters": [
+        "2/4",
+        "3/4",
+        "4/4"
+      ],
+      "lines": 1,
+      "bpm": {
+        "min": 40,
+        "max": 80,
+        "beatQuarter": 1
+      },
+      "movement": null,
+      "allowedTransforms": [
+        "original-excerpt"
+      ],
+      "allowedJoins": [],
+      "reviewRequirements": [
+        "source-projection",
+        "native-semantics",
+        "phrase-and-hand-review",
+        "30-stratified-examples-per-grade",
+        "every-template-family",
+        "rights-before-publication"
+      ]
+    },
+    {
+      "id": "g5-melody-held-bass",
+      "grade": 5,
+      "status": "candidate-rules-only",
+      "enabled": false,
+      "focusRule": "two-hands",
+      "maxInterval": 5,
+      "rhythms": [
+        "quarters",
+        "long-notes",
+        "quarter-rests"
+      ],
+      "positions": [
+        "home"
+      ],
+      "fifths": [
+        0
+      ],
+      "meters": [
+        "2/4",
+        "3/4",
+        "4/4"
+      ],
+      "lines": 2,
+      "bpm": {
+        "min": 40,
+        "max": 80,
+        "beatQuarter": 1
+      },
+      "movement": null,
+      "allowedTransforms": [
+        "original-excerpt"
+      ],
+      "allowedJoins": [],
+      "reviewRequirements": [
+        "source-projection",
+        "native-semantics",
+        "phrase-and-hand-review",
+        "30-stratified-examples-per-grade",
+        "every-template-family",
+        "rights-before-publication"
+      ]
+    },
+    {
+      "id": "g6-prepared-leap",
+      "grade": 6,
+      "status": "candidate-rules-only",
+      "enabled": false,
+      "focusRule": "leaps",
+      "maxInterval": 8,
+      "rhythms": [
+        "quarters",
+        "long-notes",
+        "quarter-rests"
+      ],
+      "positions": [
+        "home",
+        "new-position"
+      ],
+      "fifths": [
+        0
+      ],
+      "meters": [
+        "2/4",
+        "3/4",
+        "4/4"
+      ],
+      "lines": 1,
+      "bpm": {
+        "min": 40,
+        "max": 80,
+        "beatQuarter": 1
+      },
+      "movement": {
+        "minPreparationMs": 750,
+        "template": "prepared-fixed-position-change"
+      },
+      "allowedTransforms": [
+        "original-excerpt"
+      ],
+      "allowedJoins": [],
+      "reviewRequirements": [
+        "source-projection",
+        "native-semantics",
+        "phrase-and-hand-review",
+        "30-stratified-examples-per-grade",
+        "every-template-family",
+        "rights-before-publication"
+      ]
+    },
+    {
+      "id": "g7-dotted-pair",
+      "grade": 7,
+      "status": "candidate-rules-only",
+      "enabled": false,
+      "focusRule": "rhythm",
+      "maxInterval": 3,
+      "rhythms": [
+        "dotted"
+      ],
+      "positions": [
+        "home"
+      ],
+      "fifths": [
+        0
+      ],
+      "meters": [
+        "2/4",
+        "3/4",
+        "4/4"
+      ],
+      "lines": 1,
+      "bpm": {
+        "min": 40,
+        "max": 80,
+        "beatQuarter": 1
+      },
+      "movement": null,
+      "allowedTransforms": [
+        "original-excerpt"
+      ],
+      "allowedJoins": [],
+      "reviewRequirements": [
+        "source-projection",
+        "native-semantics",
+        "phrase-and-hand-review",
+        "30-stratified-examples-per-grade",
+        "every-template-family",
+        "rights-before-publication"
+      ]
+    },
+    {
+      "id": "g7-offbeat-tie",
+      "grade": 7,
+      "status": "candidate-rules-only",
+      "enabled": false,
+      "focusRule": "rhythm",
+      "maxInterval": 3,
+      "rhythms": [
+        "tied-eighths"
+      ],
+      "positions": [
+        "home"
+      ],
+      "fifths": [
+        0
+      ],
+      "meters": [
+        "2/4",
+        "3/4",
+        "4/4"
+      ],
+      "lines": 1,
+      "bpm": {
+        "min": 40,
+        "max": 80,
+        "beatQuarter": 1
+      },
+      "movement": null,
+      "allowedTransforms": [
+        "original-excerpt"
+      ],
+      "allowedJoins": [],
+      "reviewRequirements": [
+        "source-projection",
+        "native-semantics",
+        "phrase-and-hand-review",
+        "30-stratified-examples-per-grade",
+        "every-template-family",
+        "rights-before-publication"
+      ]
+    },
+    {
+      "id": "g7-syncopated-cell",
+      "grade": 7,
+      "status": "candidate-rules-only",
+      "enabled": false,
+      "focusRule": "rhythm",
+      "maxInterval": 3,
+      "rhythms": [
+        "syncopated"
+      ],
+      "positions": [
+        "home"
+      ],
+      "fifths": [
+        0
+      ],
+      "meters": [
+        "2/4",
+        "3/4",
+        "4/4"
+      ],
+      "lines": 1,
+      "bpm": {
+        "min": 40,
+        "max": 80,
+        "beatQuarter": 1
+      },
+      "movement": null,
+      "allowedTransforms": [
+        "original-excerpt"
+      ],
+      "allowedJoins": [],
+      "reviewRequirements": [
+        "source-projection",
+        "native-semantics",
+        "phrase-and-hand-review",
+        "30-stratified-examples-per-grade",
+        "every-template-family",
+        "rights-before-publication"
+      ]
+    },
+    {
+      "id": "g7-compound-beat",
+      "grade": 7,
+      "status": "candidate-rules-only",
+      "enabled": false,
+      "focusRule": "rhythm",
+      "maxInterval": 3,
+      "rhythms": [
+        "compound"
+      ],
+      "positions": [
+        "home"
+      ],
+      "fifths": [
+        0
+      ],
+      "meters": [
+        "6/8"
+      ],
+      "lines": 1,
+      "bpm": {
+        "min": 40,
+        "max": 80,
+        "beatQuarter": 1.5
+      },
+      "movement": null,
+      "allowedTransforms": [
+        "original-excerpt"
+      ],
+      "allowedJoins": [],
+      "reviewRequirements": [
+        "source-projection",
+        "native-semantics",
+        "phrase-and-hand-review",
+        "30-stratified-examples-per-grade",
+        "every-template-family",
+        "rights-before-publication"
+      ]
+    },
+    {
+      "id": "g8-familiar-pattern-new-register",
+      "grade": 8,
+      "status": "candidate-rules-only",
+      "enabled": false,
+      "focusRule": "register",
+      "maxInterval": 5,
+      "rhythms": [
+        "quarters",
+        "long-notes",
+        "quarter-rests",
+        "paired-eighths"
+      ],
+      "positions": [
+        "outer-register"
+      ],
+      "fifths": [
+        0
+      ],
+      "meters": [
+        "2/4",
+        "3/4",
+        "4/4"
+      ],
+      "lines": 1,
+      "bpm": {
+        "min": 40,
+        "max": 80,
+        "beatQuarter": 1
+      },
+      "movement": null,
+      "allowedTransforms": [
+        "original-excerpt"
+      ],
+      "allowedJoins": [],
+      "reviewRequirements": [
+        "source-projection",
+        "native-semantics",
+        "phrase-and-hand-review",
+        "30-stratified-examples-per-grade",
+        "every-template-family",
+        "rights-before-publication"
+      ]
+    }
+  ],
+  "handTemplates": [
+    {
+      "id": "home-C4-right-key0",
+      "group": "home",
+      "hand": "right",
+      "clef": "G",
+      "fifths": 0,
+      "keys": [
+        {
+          "pitch": [
+            "C",
+            0,
+            4
+          ],
+          "finger": 1
+        },
+        {
+          "pitch": [
+            "D",
+            0,
+            4
+          ],
+          "finger": 2
+        },
+        {
+          "pitch": [
+            "E",
+            0,
+            4
+          ],
+          "finger": 3
+        },
+        {
+          "pitch": [
+            "F",
+            0,
+            4
+          ],
+          "finger": 4
+        },
+        {
+          "pitch": [
+            "G",
+            0,
+            4
+          ],
+          "finger": 5
+        }
+      ],
+      "reviewStatus": "design-proposal",
+      "sourceFingering": false,
+      "evidence": [
+        "docs/curriculum/GRADE_DESIGN.md",
+        "Requires actual excerpt/hand/phrase review; range match alone is insufficient"
+      ]
+    },
+    {
+      "id": "home-C3-left-key0",
+      "group": "home",
+      "hand": "left",
+      "clef": "F",
+      "fifths": 0,
+      "keys": [
+        {
+          "pitch": [
+            "C",
+            0,
+            3
+          ],
+          "finger": 5
+        },
+        {
+          "pitch": [
+            "D",
+            0,
+            3
+          ],
+          "finger": 4
+        },
+        {
+          "pitch": [
+            "E",
+            0,
+            3
+          ],
+          "finger": 3
+        },
+        {
+          "pitch": [
+            "F",
+            0,
+            3
+          ],
+          "finger": 2
+        },
+        {
+          "pitch": [
+            "G",
+            0,
+            3
+          ],
+          "finger": 1
+        }
+      ],
+      "reviewStatus": "design-proposal",
+      "sourceFingering": false,
+      "evidence": [
+        "docs/curriculum/GRADE_DESIGN.md",
+        "Requires actual excerpt/hand/phrase review; range match alone is insufficient"
+      ]
+    },
+    {
+      "id": "new-position-G3-right-key1",
+      "group": "new-position",
+      "hand": "right",
+      "clef": "G",
+      "fifths": 1,
+      "keys": [
+        {
+          "pitch": [
+            "G",
+            0,
+            3
+          ],
+          "finger": 1
+        },
+        {
+          "pitch": [
+            "A",
+            0,
+            3
+          ],
+          "finger": 2
+        },
+        {
+          "pitch": [
+            "B",
+            0,
+            3
+          ],
+          "finger": 3
+        },
+        {
+          "pitch": [
+            "C",
+            0,
+            4
+          ],
+          "finger": 4
+        },
+        {
+          "pitch": [
+            "D",
+            0,
+            4
+          ],
+          "finger": 5
+        }
+      ],
+      "reviewStatus": "design-proposal",
+      "sourceFingering": false,
+      "evidence": [
+        "docs/curriculum/GRADE_DESIGN.md",
+        "Requires actual excerpt/hand/phrase review; range match alone is insufficient"
+      ]
+    },
+    {
+      "id": "new-position-G4-right-key1",
+      "group": "new-position",
+      "hand": "right",
+      "clef": "G",
+      "fifths": 1,
+      "keys": [
+        {
+          "pitch": [
+            "G",
+            0,
+            4
+          ],
+          "finger": 1
+        },
+        {
+          "pitch": [
+            "A",
+            0,
+            4
+          ],
+          "finger": 2
+        },
+        {
+          "pitch": [
+            "B",
+            0,
+            4
+          ],
+          "finger": 3
+        },
+        {
+          "pitch": [
+            "C",
+            0,
+            5
+          ],
+          "finger": 4
+        },
+        {
+          "pitch": [
+            "D",
+            0,
+            5
+          ],
+          "finger": 5
+        }
+      ],
+      "reviewStatus": "design-proposal",
+      "sourceFingering": false,
+      "evidence": [
+        "docs/curriculum/GRADE_DESIGN.md",
+        "Requires actual excerpt/hand/phrase review; range match alone is insufficient"
+      ]
+    },
+    {
+      "id": "new-position-G2-left-key1",
+      "group": "new-position",
+      "hand": "left",
+      "clef": "F",
+      "fifths": 1,
+      "keys": [
+        {
+          "pitch": [
+            "G",
+            0,
+            2
+          ],
+          "finger": 5
+        },
+        {
+          "pitch": [
+            "A",
+            0,
+            2
+          ],
+          "finger": 4
+        },
+        {
+          "pitch": [
+            "B",
+            0,
+            2
+          ],
+          "finger": 3
+        },
+        {
+          "pitch": [
+            "C",
+            0,
+            3
+          ],
+          "finger": 2
+        },
+        {
+          "pitch": [
+            "D",
+            0,
+            3
+          ],
+          "finger": 1
+        }
+      ],
+      "reviewStatus": "design-proposal",
+      "sourceFingering": false,
+      "evidence": [
+        "docs/curriculum/GRADE_DESIGN.md",
+        "Requires actual excerpt/hand/phrase review; range match alone is insufficient"
+      ]
+    },
+    {
+      "id": "new-position-G3-left-key1",
+      "group": "new-position",
+      "hand": "left",
+      "clef": "F",
+      "fifths": 1,
+      "keys": [
+        {
+          "pitch": [
+            "G",
+            0,
+            3
+          ],
+          "finger": 5
+        },
+        {
+          "pitch": [
+            "A",
+            0,
+            3
+          ],
+          "finger": 4
+        },
+        {
+          "pitch": [
+            "B",
+            0,
+            3
+          ],
+          "finger": 3
+        },
+        {
+          "pitch": [
+            "C",
+            0,
+            4
+          ],
+          "finger": 2
+        },
+        {
+          "pitch": [
+            "D",
+            0,
+            4
+          ],
+          "finger": 1
+        }
+      ],
+      "reviewStatus": "design-proposal",
+      "sourceFingering": false,
+      "evidence": [
+        "docs/curriculum/GRADE_DESIGN.md",
+        "Requires actual excerpt/hand/phrase review; range match alone is insufficient"
+      ]
+    },
+    {
+      "id": "new-position-F3-right-key-1",
+      "group": "new-position",
+      "hand": "right",
+      "clef": "G",
+      "fifths": -1,
+      "keys": [
+        {
+          "pitch": [
+            "F",
+            0,
+            3
+          ],
+          "finger": 1
+        },
+        {
+          "pitch": [
+            "G",
+            0,
+            3
+          ],
+          "finger": 2
+        },
+        {
+          "pitch": [
+            "A",
+            0,
+            3
+          ],
+          "finger": 3
+        },
+        {
+          "pitch": [
+            "B",
+            -1,
+            3
+          ],
+          "finger": 4
+        },
+        {
+          "pitch": [
+            "C",
+            0,
+            4
+          ],
+          "finger": 5
+        }
+      ],
+      "reviewStatus": "design-proposal",
+      "sourceFingering": false,
+      "evidence": [
+        "docs/curriculum/GRADE_DESIGN.md",
+        "Requires actual excerpt/hand/phrase review; range match alone is insufficient"
+      ]
+    },
+    {
+      "id": "new-position-F4-right-key-1",
+      "group": "new-position",
+      "hand": "right",
+      "clef": "G",
+      "fifths": -1,
+      "keys": [
+        {
+          "pitch": [
+            "F",
+            0,
+            4
+          ],
+          "finger": 1
+        },
+        {
+          "pitch": [
+            "G",
+            0,
+            4
+          ],
+          "finger": 2
+        },
+        {
+          "pitch": [
+            "A",
+            0,
+            4
+          ],
+          "finger": 3
+        },
+        {
+          "pitch": [
+            "B",
+            -1,
+            4
+          ],
+          "finger": 4
+        },
+        {
+          "pitch": [
+            "C",
+            0,
+            5
+          ],
+          "finger": 5
+        }
+      ],
+      "reviewStatus": "design-proposal",
+      "sourceFingering": false,
+      "evidence": [
+        "docs/curriculum/GRADE_DESIGN.md",
+        "Requires actual excerpt/hand/phrase review; range match alone is insufficient"
+      ]
+    },
+    {
+      "id": "new-position-F2-left-key-1",
+      "group": "new-position",
+      "hand": "left",
+      "clef": "F",
+      "fifths": -1,
+      "keys": [
+        {
+          "pitch": [
+            "F",
+            0,
+            2
+          ],
+          "finger": 5
+        },
+        {
+          "pitch": [
+            "G",
+            0,
+            2
+          ],
+          "finger": 4
+        },
+        {
+          "pitch": [
+            "A",
+            0,
+            2
+          ],
+          "finger": 3
+        },
+        {
+          "pitch": [
+            "B",
+            -1,
+            2
+          ],
+          "finger": 2
+        },
+        {
+          "pitch": [
+            "C",
+            0,
+            3
+          ],
+          "finger": 1
+        }
+      ],
+      "reviewStatus": "design-proposal",
+      "sourceFingering": false,
+      "evidence": [
+        "docs/curriculum/GRADE_DESIGN.md",
+        "Requires actual excerpt/hand/phrase review; range match alone is insufficient"
+      ]
+    },
+    {
+      "id": "new-position-F3-left-key-1",
+      "group": "new-position",
+      "hand": "left",
+      "clef": "F",
+      "fifths": -1,
+      "keys": [
+        {
+          "pitch": [
+            "F",
+            0,
+            3
+          ],
+          "finger": 5
+        },
+        {
+          "pitch": [
+            "G",
+            0,
+            3
+          ],
+          "finger": 4
+        },
+        {
+          "pitch": [
+            "A",
+            0,
+            3
+          ],
+          "finger": 3
+        },
+        {
+          "pitch": [
+            "B",
+            -1,
+            3
+          ],
+          "finger": 2
+        },
+        {
+          "pitch": [
+            "C",
+            0,
+            4
+          ],
+          "finger": 1
+        }
+      ],
+      "reviewStatus": "design-proposal",
+      "sourceFingering": false,
+      "evidence": [
+        "docs/curriculum/GRADE_DESIGN.md",
+        "Requires actual excerpt/hand/phrase review; range match alone is insufficient"
+      ]
+    },
+    {
+      "id": "outer-register-C1-left-key0",
+      "group": "outer-register",
+      "hand": "left",
+      "clef": "F",
+      "fifths": 0,
+      "keys": [
+        {
+          "pitch": [
+            "C",
+            0,
+            1
+          ],
+          "finger": 5
+        },
+        {
+          "pitch": [
+            "D",
+            0,
+            1
+          ],
+          "finger": 4
+        },
+        {
+          "pitch": [
+            "E",
+            0,
+            1
+          ],
+          "finger": 3
+        },
+        {
+          "pitch": [
+            "F",
+            0,
+            1
+          ],
+          "finger": 2
+        },
+        {
+          "pitch": [
+            "G",
+            0,
+            1
+          ],
+          "finger": 1
+        }
+      ],
+      "reviewStatus": "design-proposal",
+      "sourceFingering": false,
+      "evidence": [
+        "docs/curriculum/GRADE_DESIGN.md",
+        "Requires actual excerpt/hand/phrase review; range match alone is insufficient"
+      ]
+    },
+    {
+      "id": "outer-register-C2-left-key0",
+      "group": "outer-register",
+      "hand": "left",
+      "clef": "F",
+      "fifths": 0,
+      "keys": [
+        {
+          "pitch": [
+            "C",
+            0,
+            2
+          ],
+          "finger": 5
+        },
+        {
+          "pitch": [
+            "D",
+            0,
+            2
+          ],
+          "finger": 4
+        },
+        {
+          "pitch": [
+            "E",
+            0,
+            2
+          ],
+          "finger": 3
+        },
+        {
+          "pitch": [
+            "F",
+            0,
+            2
+          ],
+          "finger": 2
+        },
+        {
+          "pitch": [
+            "G",
+            0,
+            2
+          ],
+          "finger": 1
+        }
+      ],
+      "reviewStatus": "design-proposal",
+      "sourceFingering": false,
+      "evidence": [
+        "docs/curriculum/GRADE_DESIGN.md",
+        "Requires actual excerpt/hand/phrase review; range match alone is insufficient"
+      ]
+    },
+    {
+      "id": "outer-register-C5-right-key0",
+      "group": "outer-register",
+      "hand": "right",
+      "clef": "G",
+      "fifths": 0,
+      "keys": [
+        {
+          "pitch": [
+            "C",
+            0,
+            5
+          ],
+          "finger": 1
+        },
+        {
+          "pitch": [
+            "D",
+            0,
+            5
+          ],
+          "finger": 2
+        },
+        {
+          "pitch": [
+            "E",
+            0,
+            5
+          ],
+          "finger": 3
+        },
+        {
+          "pitch": [
+            "F",
+            0,
+            5
+          ],
+          "finger": 4
+        },
+        {
+          "pitch": [
+            "G",
+            0,
+            5
+          ],
+          "finger": 5
+        }
+      ],
+      "reviewStatus": "design-proposal",
+      "sourceFingering": false,
+      "evidence": [
+        "docs/curriculum/GRADE_DESIGN.md",
+        "Requires actual excerpt/hand/phrase review; range match alone is insufficient"
+      ]
+    },
+    {
+      "id": "outer-register-C6-right-key0",
+      "group": "outer-register",
+      "hand": "right",
+      "clef": "G",
+      "fifths": 0,
+      "keys": [
+        {
+          "pitch": [
+            "C",
+            0,
+            6
+          ],
+          "finger": 1
+        },
+        {
+          "pitch": [
+            "D",
+            0,
+            6
+          ],
+          "finger": 2
+        },
+        {
+          "pitch": [
+            "E",
+            0,
+            6
+          ],
+          "finger": 3
+        },
+        {
+          "pitch": [
+            "F",
+            0,
+            6
+          ],
+          "finger": 4
+        },
+        {
+          "pitch": [
+            "G",
+            0,
+            6
+          ],
+          "finger": 5
+        }
+      ],
+      "reviewStatus": "design-proposal",
+      "sourceFingering": false,
+      "evidence": [
+        "docs/curriculum/GRADE_DESIGN.md",
+        "Requires actual excerpt/hand/phrase review; range match alone is insufficient"
+      ]
+    },
+    {
+      "id": "outer-register-C7-right-key0",
+      "group": "outer-register",
+      "hand": "right",
+      "clef": "G",
+      "fifths": 0,
+      "keys": [
+        {
+          "pitch": [
+            "C",
+            0,
+            7
+          ],
+          "finger": 1
+        },
+        {
+          "pitch": [
+            "D",
+            0,
+            7
+          ],
+          "finger": 2
+        },
+        {
+          "pitch": [
+            "E",
+            0,
+            7
+          ],
+          "finger": 3
+        },
+        {
+          "pitch": [
+            "F",
+            0,
+            7
+          ],
+          "finger": 4
+        },
+        {
+          "pitch": [
+            "G",
+            0,
+            7
+          ],
+          "finger": 5
+        }
+      ],
+      "reviewStatus": "design-proposal",
+      "sourceFingering": false,
+      "evidence": [
+        "docs/curriculum/GRADE_DESIGN.md",
+        "Requires actual excerpt/hand/phrase review; range match alone is insufficient"
+      ]
+    },
+    {
+      "id": "outer-register-A0-left-key0",
+      "group": "outer-register",
+      "hand": "left",
+      "clef": "F",
+      "fifths": 0,
+      "keys": [
+        {
+          "pitch": [
+            "A",
+            0,
+            0
+          ],
+          "finger": 5
+        },
+        {
+          "pitch": [
+            "B",
+            0,
+            0
+          ],
+          "finger": 4
+        },
+        {
+          "pitch": [
+            "C",
+            0,
+            1
+          ],
+          "finger": 3
+        },
+        {
+          "pitch": [
+            "D",
+            0,
+            1
+          ],
+          "finger": 2
+        },
+        {
+          "pitch": [
+            "E",
+            0,
+            1
+          ],
+          "finger": 1
+        }
+      ],
+      "reviewStatus": "design-proposal",
+      "sourceFingering": false,
+      "evidence": [
+        "docs/curriculum/GRADE_DESIGN.md",
+        "Requires actual excerpt/hand/phrase review; range match alone is insufficient"
+      ]
+    },
+    {
+      "id": "outer-register-F7-right-key0",
+      "group": "outer-register",
+      "hand": "right",
+      "clef": "G",
+      "fifths": 0,
+      "keys": [
+        {
+          "pitch": [
+            "F",
+            0,
+            7
+          ],
+          "finger": 1
+        },
+        {
+          "pitch": [
+            "G",
+            0,
+            7
+          ],
+          "finger": 2
+        },
+        {
+          "pitch": [
+            "A",
+            0,
+            7
+          ],
+          "finger": 3
+        },
+        {
+          "pitch": [
+            "B",
+            0,
+            7
+          ],
+          "finger": 4
+        },
+        {
+          "pitch": [
+            "C",
+            0,
+            8
+          ],
+          "finger": 5
+        }
+      ],
+      "reviewStatus": "design-proposal",
+      "sourceFingering": false,
+      "evidence": [
+        "docs/curriculum/GRADE_DESIGN.md",
+        "Requires actual excerpt/hand/phrase review; range match alone is insufficient"
+      ]
+    },
+    {
+      "id": "new-position-G4-right-key0",
+      "group": "new-position",
+      "hand": "right",
+      "clef": "G",
+      "fifths": 0,
+      "keys": [
+        {
+          "pitch": [
+            "G",
+            0,
+            4
+          ],
+          "finger": 1
+        },
+        {
+          "pitch": [
+            "A",
+            0,
+            4
+          ],
+          "finger": 2
+        },
+        {
+          "pitch": [
+            "B",
+            0,
+            4
+          ],
+          "finger": 3
+        },
+        {
+          "pitch": [
+            "C",
+            0,
+            5
+          ],
+          "finger": 4
+        },
+        {
+          "pitch": [
+            "D",
+            0,
+            5
+          ],
+          "finger": 5
+        }
+      ],
+      "reviewStatus": "design-proposal",
+      "sourceFingering": false,
+      "evidence": [
+        "docs/curriculum/GRADE_DESIGN.md",
+        "Requires actual excerpt/hand/phrase review; range match alone is insufficient"
+      ]
+    },
+    {
+      "id": "new-position-G2-left-key0",
+      "group": "new-position",
+      "hand": "left",
+      "clef": "F",
+      "fifths": 0,
+      "keys": [
+        {
+          "pitch": [
+            "G",
+            0,
+            2
+          ],
+          "finger": 5
+        },
+        {
+          "pitch": [
+            "A",
+            0,
+            2
+          ],
+          "finger": 4
+        },
+        {
+          "pitch": [
+            "B",
+            0,
+            2
+          ],
+          "finger": 3
+        },
+        {
+          "pitch": [
+            "C",
+            0,
+            3
+          ],
+          "finger": 2
+        },
+        {
+          "pitch": [
+            "D",
+            0,
+            3
+          ],
+          "finger": 1
+        }
+      ],
+      "reviewStatus": "design-proposal",
+      "sourceFingering": false,
+      "evidence": [
+        "docs/curriculum/GRADE_DESIGN.md",
+        "Requires actual excerpt/hand/phrase review; range match alone is insufficient"
+      ]
+    },
+    {
+      "id": "new-position-F4-right-key0",
+      "group": "new-position",
+      "hand": "right",
+      "clef": "G",
+      "fifths": 0,
+      "keys": [
+        {
+          "pitch": [
+            "F",
+            0,
+            4
+          ],
+          "finger": 1
+        },
+        {
+          "pitch": [
+            "G",
+            0,
+            4
+          ],
+          "finger": 2
+        },
+        {
+          "pitch": [
+            "A",
+            0,
+            4
+          ],
+          "finger": 3
+        },
+        {
+          "pitch": [
+            "B",
+            0,
+            4
+          ],
+          "finger": 4
+        },
+        {
+          "pitch": [
+            "C",
+            0,
+            5
+          ],
+          "finger": 5
+        }
+      ],
+      "reviewStatus": "design-proposal",
+      "sourceFingering": false,
+      "evidence": [
+        "docs/curriculum/GRADE_DESIGN.md",
+        "Requires actual excerpt/hand/phrase review; range match alone is insufficient"
+      ]
+    },
+    {
+      "id": "new-position-F2-left-key0",
+      "group": "new-position",
+      "hand": "left",
+      "clef": "F",
+      "fifths": 0,
+      "keys": [
+        {
+          "pitch": [
+            "F",
+            0,
+            2
+          ],
+          "finger": 5
+        },
+        {
+          "pitch": [
+            "G",
+            0,
+            2
+          ],
+          "finger": 4
+        },
+        {
+          "pitch": [
+            "A",
+            0,
+            2
+          ],
+          "finger": 3
+        },
+        {
+          "pitch": [
+            "B",
+            0,
+            2
+          ],
+          "finger": 2
+        },
+        {
+          "pitch": [
+            "C",
+            0,
+            3
+          ],
+          "finger": 1
+        }
+      ],
+      "reviewStatus": "design-proposal",
+      "sourceFingering": false,
+      "evidence": [
+        "docs/curriculum/GRADE_DESIGN.md",
+        "Requires actual excerpt/hand/phrase review; range match alone is insufficient"
+      ]
+    }
+  ],
+  "deferred": [
+    "minor-key profiles",
+    "simultaneous-chord profiles",
+    "octave-shift and hairpin clipping",
+    "phrase/hand approval",
+    "transposition",
+    "motif joins",
+    "web quiz queue"
+  ]
+}

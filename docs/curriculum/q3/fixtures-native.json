@@ -1,0 +1,838 @@
+{
+  "pipeline": "q3-original-fixtures-v1",
+  "passed": true,
+  "engineBuild": "f9f9eeb8cf7ece16f0ab1ab36bc687ffd2662e8ab2f1f61d838cb7f74f31eca4",
+  "verifierBuild": "e3bab83427f5efc8d2a002f17d726d319c6fa4ed0d3253aec45a3767c6dd6526",
+  "at": "2026-10-21T03:16:16.622Z",
+  "entries": [
+    {
+      "id": "01-g1-steps",
+      "analysisSha256": "dea875725e7e8e6f99dd4ece24ee3872db1131009fdd34f3b1004c84a59914c8",
+      "pianoXmlSha256": "b1d06e6ad4f6c4aa2a754943cd6985325cf2d683761ef0d8a851fdbdbe17bcda",
+      "snapshotSha256": "f927a3052f52684f382a1eaacd3020ac5cfe3546d5649ad3c9726bfcad76c883",
+      "verification": {
+        "passed": true,
+        "eligibleForFragmentReview": true,
+        "rejectionCodes": [],
+        "releaseBlockers": [],
+        "noteCount": 8,
+        "nativeNoteCount": 8,
+        "voiceMap": {
+          "P1:s1:v1": {
+            "staff": 0,
+            "voice": 0
+          }
+        },
+        "checks": [
+          "written pitch/spelling/onset/duration/staff/voice/ties",
+          "explicit rests, keys and meter",
+          "pedal spans",
+          "measure chronology",
+          "targets/ties/physical unisons via existing createTimeline"
+        ],
+        "counts": {
+          "targets": 8,
+          "onsets": 8
+        }
+      },
+      "notation": {
+        "clefs": [
+          [
+            0,
+            0,
+            "G"
+          ]
+        ],
+        "ottavas": []
+      }
+    },
+    {
+      "id": "02-g1-long",
+      "analysisSha256": "27be4dc633fceee6bc93d250d72c54dbcfef1a73c11d8fad2c8a1a3d1a4dbc83",
+      "pianoXmlSha256": "f1dcf6bc4fe60014d6ab856acb5cecb10524fd12d3d04cde81171fe8dbd32095",
+      "snapshotSha256": "c4ee0a7b5ed7b28bba14bbeb7fb43e53bfba7b871ccdbb4e28294ae69f69a1d3",
+      "verification": {
+        "passed": true,
+        "eligibleForFragmentReview": true,
+        "rejectionCodes": [],
+        "releaseBlockers": [],
+        "noteCount": 4,
+        "nativeNoteCount": 4,
+        "voiceMap": {
+          "P1:s1:v1": {
+            "staff": 0,
+            "voice": 0
+          }
+        },
+        "checks": [
+          "written pitch/spelling/onset/duration/staff/voice/ties",
+          "explicit rests, keys and meter",
+          "pedal spans",
+          "measure chronology",
+          "targets/ties/physical unisons via existing createTimeline"
+        ],
+        "counts": {
+          "targets": 4,
+          "onsets": 4
+        }
+      },
+      "notation": {
+        "clefs": [
+          [
+            0,
+            0,
+            "G"
+          ]
+        ],
+        "ottavas": []
+      }
+    },
+    {
+      "id": "03-g1-rest",
+      "analysisSha256": "f02e2d66c1785d8a07a44704de1ad4196ea991a5c1be54f9853907168fc87baf",
+      "pianoXmlSha256": "95ec11571d975b805cd759026ce586f1190ed59316006b39dd2c377d5a82bde9",
+      "snapshotSha256": "58aa5cd480c830c254e7d768e7786f6676d9f43f8531f9a6bf9a5a768b2c1723",
+      "verification": {
+        "passed": true,
+        "eligibleForFragmentReview": true,
+        "rejectionCodes": [],
+        "releaseBlockers": [],
+        "noteCount": 7,
+        "nativeNoteCount": 7,
+        "voiceMap": {
+          "P1:s1:v1": {
+            "staff": 0,
+            "voice": 0
+          }
+        },
+        "checks": [
+          "written pitch/spelling/onset/duration/staff/voice/ties",
+          "explicit rests, keys and meter",
+          "pedal spans",
+          "measure chronology",
+          "targets/ties/physical unisons via existing createTimeline"
+        ],
+        "counts": {
+          "targets": 7,
+          "onsets": 7
+        }
+      },
+      "notation": {
+        "clefs": [
+          [
+            0,
+            0,
+            "G"
+          ]
+        ],
+        "ottavas": []
+      }
+    },
+    {
+      "id": "04-g2-thirds",
+      "analysisSha256": "9e5de4ecbad3f9c4dd96ba88897f94fa28161cb9c309bde14d9400bdfdbde84a",
+      "pianoXmlSha256": "11d1eff1ca3a8dc51675b6902e31d5d9e7b68ec624c90b30ff1652b6741ea64a",
+      "snapshotSha256": "db8d4b50444d6e8fdc5a227356d6ab2825eb9ecc04a7e9acb09be45c7a38b2a7",
+      "verification": {
+        "passed": true,
+        "eligibleForFragmentReview": true,
+        "rejectionCodes": [],
+        "releaseBlockers": [],
+        "noteCount": 8,
+        "nativeNoteCount": 8,
+        "voiceMap": {
+          "P1:s1:v1": {
+            "staff": 0,
+            "voice": 0
+          }
+        },
+        "checks": [
+          "written pitch/spelling/onset/duration/staff/voice/ties",
+          "explicit rests, keys and meter",
+          "pedal spans",
+          "measure chronology",
+          "targets/ties/physical unisons via existing createTimeline"
+        ],
+        "counts": {
+          "targets": 8,
+          "onsets": 8
+        }
+      },
+      "notation": {
+        "clefs": [
+          [
+            0,
+            0,
+            "G"
+          ]
+        ],
+        "ottavas": []
+      }
+    },
+    {
+      "id": "05-g2-eighths",
+      "analysisSha256": "4c14f20951b6d0514203cccdb1c26272bd0304249842e93f3048964e4d681c75",
+      "pianoXmlSha256": "2bacc7eadaa426b74fe6e880df9416ce47d606d899cb31176f3be1ba607d64b5",
+      "snapshotSha256": "6bda2aebbcb9ef68a7e5c1b55a4bd571b8eea8cd112d03992c38824a5700e99e",
+      "verification": {
+        "passed": true,
+        "eligibleForFragmentReview": true,
+        "rejectionCodes": [],
+        "releaseBlockers": [],
+        "noteCount": 6,
+        "nativeNoteCount": 6,
+        "voiceMap": {
+          "P1:s1:v1": {
+            "staff": 0,
+            "voice": 0
+          }
+        },
+        "checks": [
+          "written pitch/spelling/onset/duration/staff/voice/ties",
+          "explicit rests, keys and meter",
+          "pedal spans",
+          "measure chronology",
+          "targets/ties/physical unisons via existing createTimeline"
+        ],
+        "counts": {
+          "targets": 6,
+          "onsets": 6
+        }
+      },
+      "notation": {
+        "clefs": [
+          [
+            0,
+            0,
+            "G"
+          ]
+        ],
+        "ottavas": []
+      }
+    },
+    {
+      "id": "06-g3-triad",
+      "analysisSha256": "421fa6507828f67f3f40bba72d0c207f25c7fa5fe01976e16ecdc1e219d545b3",
+      "pianoXmlSha256": "895ac00d0a57f73a07eaf6f341a5c9c872ee455c67fc609e962a8d6990ed0f0d",
+      "snapshotSha256": "0018022443a1b77bd9d05b861e8835ad075e1d2f06f6810434fecf7f475dbc02",
+      "verification": {
+        "passed": true,
+        "eligibleForFragmentReview": true,
+        "rejectionCodes": [],
+        "releaseBlockers": [],
+        "noteCount": 8,
+        "nativeNoteCount": 8,
+        "voiceMap": {
+          "P1:s1:v1": {
+            "staff": 0,
+            "voice": 0
+          }
+        },
+        "checks": [
+          "written pitch/spelling/onset/duration/staff/voice/ties",
+          "explicit rests, keys and meter",
+          "pedal spans",
+          "measure chronology",
+          "targets/ties/physical unisons via existing createTimeline"
+        ],
+        "counts": {
+          "targets": 8,
+          "onsets": 8
+        }
+      },
+      "notation": {
+        "clefs": [
+          [
+            0,
+            0,
+            "G"
+          ]
+        ],
+        "ottavas": []
+      }
+    },
+    {
+      "id": "07-g4-position",
+      "analysisSha256": "d67eaeb0684dc49779c4353c9791213094c4524048d6abf4f7ed2a1159ceece8",
+      "pianoXmlSha256": "75a62ae9085227d7b045e519b4fc80bbb199132b5832e976a63f1ca36fd1e919",
+      "snapshotSha256": "34f4aef614fdb1abcd5e6ff6302eefa5f6b1051b81391a858ba7806fc109c7c9",
+      "verification": {
+        "passed": true,
+        "eligibleForFragmentReview": true,
+        "rejectionCodes": [],
+        "releaseBlockers": [],
+        "noteCount": 8,
+        "nativeNoteCount": 8,
+        "voiceMap": {
+          "P1:s1:v1": {
+            "staff": 0,
+            "voice": 0
+          }
+        },
+        "checks": [
+          "written pitch/spelling/onset/duration/staff/voice/ties",
+          "explicit rests, keys and meter",
+          "pedal spans",
+          "measure chronology",
+          "targets/ties/physical unisons via existing createTimeline"
+        ],
+        "counts": {
+          "targets": 8,
+          "onsets": 8
+        }
+      },
+      "notation": {
+        "clefs": [
+          [
+            0,
+            0,
+            "G"
+          ]
+        ],
+        "ottavas": []
+      }
+    },
+    {
+      "id": "08-g5-both",
+      "analysisSha256": "8bff8422e33140a6a137b7f1ee06ece7bb9e8f01ea9f28852a5aa5ca5348a453",
+      "pianoXmlSha256": "9fb5bc7198a5c20bea36e79db2212ff13c9b9b13c3e952659db7919aebbdbcc7",
+      "snapshotSha256": "7b27df8eeef39eb512fc1904270b1bb88b8786e4fdb3c8b3c10a8432eeb7b024",
+      "verification": {
+        "passed": true,
+        "eligibleForFragmentReview": true,
+        "rejectionCodes": [],
+        "releaseBlockers": [],
+        "noteCount": 10,
+        "nativeNoteCount": 10,
+        "voiceMap": {
+          "P1:s1:v1": {
+            "staff": 0,
+            "voice": 0
+          },
+          "P1:s2:v5": {
+            "staff": 1,
+            "voice": 0
+          }
+        },
+        "checks": [
+          "written pitch/spelling/onset/duration/staff/voice/ties",
+          "explicit rests, keys and meter",
+          "pedal spans",
+          "measure chronology",
+          "targets/ties/physical unisons via existing createTimeline"
+        ],
+        "counts": {
+          "targets": 10,
+          "onsets": 8
+        }
+      },
+      "notation": {
+        "clefs": [
+          [
+            0,
+            0,
+            "G"
+          ],
+          [
+            1,
+            0,
+            "F"
+          ]
+        ],
+        "ottavas": []
+      }
+    },
+    {
+      "id": "09-g6-leap",
+      "analysisSha256": "c60dc15bd80b56c22b08617ad41e8eb3c37c796b4bd8b80e32a980064844c956",
+      "pianoXmlSha256": "0e38ccee534325a4b4b5c7cfcb668609f30eba6f5e7f98cacdedd7039c8e5e0c",
+      "snapshotSha256": "7bf226d30bd0eb2df0a9ece95e9d76374dd37ea0c0a11f7169503d1eb7c774df",
+      "verification": {
+        "passed": true,
+        "eligibleForFragmentReview": true,
+        "rejectionCodes": [],
+        "releaseBlockers": [],
+        "noteCount": 6,
+        "nativeNoteCount": 6,
+        "voiceMap": {
+          "P1:s1:v1": {
+            "staff": 0,
+            "voice": 0
+          }
+        },
+        "checks": [
+          "written pitch/spelling/onset/duration/staff/voice/ties",
+          "explicit rests, keys and meter",
+          "pedal spans",
+          "measure chronology",
+          "targets/ties/physical unisons via existing createTimeline"
+        ],
+        "counts": {
+          "targets": 6,
+          "onsets": 6
+        }
+      },
+      "notation": {
+        "clefs": [
+          [
+            0,
+            0,
+            "G"
+          ]
+        ],
+        "ottavas": []
+      }
+    },
+    {
+      "id": "10-g7-dotted",
+      "analysisSha256": "73c642a3d2f185f9dbb306fb111fb789eabc2a603f0b85380f5d1727e94fdc67",
+      "pianoXmlSha256": "85486752ae8f2d7542d0a7c875b63861304a9addd8234f26f27c36027aff2308",
+      "snapshotSha256": "6eaaa9a2c982ec7ffc06c0d135861be457c6b74ea8034e2d3523529712d3e986",
+      "verification": {
+        "passed": true,
+        "eligibleForFragmentReview": true,
+        "rejectionCodes": [],
+        "releaseBlockers": [],
+        "noteCount": 4,
+        "nativeNoteCount": 4,
+        "voiceMap": {
+          "P1:s1:v1": {
+            "staff": 0,
+            "voice": 0
+          }
+        },
+        "checks": [
+          "written pitch/spelling/onset/duration/staff/voice/ties",
+          "explicit rests, keys and meter",
+          "pedal spans",
+          "measure chronology",
+          "targets/ties/physical unisons via existing createTimeline"
+        ],
+        "counts": {
+          "targets": 4,
+          "onsets": 4
+        }
+      },
+      "notation": {
+        "clefs": [
+          [
+            0,
+            0,
+            "G"
+          ]
+        ],
+        "ottavas": []
+      }
+    },
+    {
+      "id": "11-g7-tied",
+      "analysisSha256": "32a4f367741f2d5d5cd6a9b118f2d48927c8525b9b4be050829f903f0d548728",
+      "pianoXmlSha256": "dc525502c6f7d06f4a713535259d8f9131fb85689836966d2828f21fd3e7271d",
+      "snapshotSha256": "1feb6719a9c0c1390eb1fbdec803d8b25c0dd8d1c4f43a30317a6aafefb2df2a",
+      "verification": {
+        "passed": true,
+        "eligibleForFragmentReview": true,
+        "rejectionCodes": [],
+        "releaseBlockers": [],
+        "noteCount": 6,
+        "nativeNoteCount": 6,
+        "voiceMap": {
+          "P1:s1:v1": {
+            "staff": 0,
+            "voice": 0
+          }
+        },
+        "checks": [
+          "written pitch/spelling/onset/duration/staff/voice/ties",
+          "explicit rests, keys and meter",
+          "pedal spans",
+          "measure chronology",
+          "targets/ties/physical unisons via existing createTimeline"
+        ],
+        "counts": {
+          "targets": 5,
+          "onsets": 5
+        }
+      },
+      "notation": {
+        "clefs": [
+          [
+            0,
+            0,
+            "G"
+          ]
+        ],
+        "ottavas": []
+      }
+    },
+    {
+      "id": "12-g7-syncopation",
+      "analysisSha256": "c2e2793a6301c0e680aec2f7d18d0a7ddadd35aade61635ace61d22cefffb293",
+      "pianoXmlSha256": "64a7d40cdc2052452feca26d176476e841dc7f2b226d74db103b70a4d27bf15c",
+      "snapshotSha256": "abdbeb07108f91dcbb800e3aa9dd606a5dff2e8caaa3dad13d326d26cd21025d",
+      "verification": {
+        "passed": true,
+        "eligibleForFragmentReview": true,
+        "rejectionCodes": [],
+        "releaseBlockers": [],
+        "noteCount": 5,
+        "nativeNoteCount": 5,
+        "voiceMap": {
+          "P1:s1:v1": {
+            "staff": 0,
+            "voice": 0
+          }
+        },
+        "checks": [
+          "written pitch/spelling/onset/duration/staff/voice/ties",
+          "explicit rests, keys and meter",
+          "pedal spans",
+          "measure chronology",
+          "targets/ties/physical unisons via existing createTimeline"
+        ],
+        "counts": {
+          "targets": 5,
+          "onsets": 5
+        }
+      },
+      "notation": {
+        "clefs": [
+          [
+            0,
+            0,
+            "G"
+          ]
+        ],
+        "ottavas": []
+      }
+    },
+    {
+      "id": "13-g7-compound",
+      "analysisSha256": "1ff253c110819337c63659d967cda2946bc7a821914e026efc84d5751370fe2a",
+      "pianoXmlSha256": "a7a61d0c5cb11e56fb83806113843680d03ec18514d8afce81fd3be45589b5f3",
+      "snapshotSha256": "df70252413d477f987e3517336d863f53445a7eca835e14d220eb40b0ad77f29",
+      "verification": {
+        "passed": true,
+        "eligibleForFragmentReview": true,
+        "rejectionCodes": [],
+        "releaseBlockers": [],
+        "noteCount": 5,
+        "nativeNoteCount": 5,
+        "voiceMap": {
+          "P1:s1:v1": {
+            "staff": 0,
+            "voice": 0
+          }
+        },
+        "checks": [
+          "written pitch/spelling/onset/duration/staff/voice/ties",
+          "explicit rests, keys and meter",
+          "pedal spans",
+          "measure chronology",
+          "targets/ties/physical unisons via existing createTimeline"
+        ],
+        "counts": {
+          "targets": 5,
+          "onsets": 5
+        }
+      },
+      "notation": {
+        "clefs": [
+          [
+            0,
+            0,
+            "G"
+          ]
+        ],
+        "ottavas": []
+      }
+    },
+    {
+      "id": "14-g8-register",
+      "analysisSha256": "9c11a75cc6aaf4873ed602be693cbf29b524fd6084b91f90ffa27c5e3bec4b90",
+      "pianoXmlSha256": "66d704e3ff87e3f963724d110c002d2edf5315400040c99bc528f7693b5727e3",
+      "snapshotSha256": "3be0066e17280c715587c0d7e0af62329e6105736a495ffa60207c2e1a4223a7",
+      "verification": {
+        "passed": true,
+        "eligibleForFragmentReview": true,
+        "rejectionCodes": [],
+        "releaseBlockers": [],
+        "noteCount": 8,
+        "nativeNoteCount": 8,
+        "voiceMap": {
+          "P1:s1:v1": {
+            "staff": 0,
+            "voice": 0
+          }
+        },
+        "checks": [
+          "written pitch/spelling/onset/duration/staff/voice/ties",
+          "explicit rests, keys and meter",
+          "pedal spans",
+          "measure chronology",
+          "targets/ties/physical unisons via existing createTimeline"
+        ],
+        "counts": {
+          "targets": 8,
+          "onsets": 8
+        }
+      },
+      "notation": {
+        "clefs": [
+          [
+            0,
+            0,
+            "G"
+          ]
+        ],
+        "ottavas": []
+      }
+    },
+    {
+      "id": "15-cut-tie",
+      "analysisSha256": "a02417672d352ba3f435d785c98ab54b79745664191f61012c2614d5c4bd9c90",
+      "pianoXmlSha256": "75be119b66424c950a5d1d4de3dba02347fa3bfe321ac31ded2cb0c16ed0efc9",
+      "snapshotSha256": "51e224aa3a367109cd979b123e40423c1f1d0ba4e436e5933fb38761cc23ef99",
+      "verification": {
+        "passed": true,
+        "eligibleForFragmentReview": true,
+        "rejectionCodes": [],
+        "releaseBlockers": [],
+        "noteCount": 8,
+        "nativeNoteCount": 8,
+        "voiceMap": {
+          "P1:s1:v1": {
+            "staff": 0,
+            "voice": 0
+          }
+        },
+        "checks": [
+          "written pitch/spelling/onset/duration/staff/voice/ties",
+          "explicit rests, keys and meter",
+          "pedal spans",
+          "measure chronology",
+          "targets/ties/physical unisons via existing createTimeline"
+        ],
+        "counts": {
+          "targets": 7,
+          "onsets": 7
+        }
+      },
+      "notation": {
+        "clefs": [
+          [
+            0,
+            0,
+            "G"
+          ]
+        ],
+        "ottavas": []
+      }
+    },
+    {
+      "id": "16-recover-clean-bar",
+      "analysisSha256": "67d1ecda1778904c0945a8df3a6bc14b76bd250f6fae1593c95afbe10097acfc",
+      "pianoXmlSha256": "0692454785c50dbf8ab8ed91919622f3c65f11ca2e1eb0ba4acdbb1def241da7",
+      "snapshotSha256": "f69059ddd8a3817b7019373a9259027d1f908b29fbe6d18cdee79c9acbe3ff53",
+      "verification": {
+        "passed": true,
+        "eligibleForFragmentReview": true,
+        "rejectionCodes": [],
+        "releaseBlockers": [],
+        "noteCount": 4,
+        "nativeNoteCount": 4,
+        "voiceMap": {
+          "P1:s1:v1": {
+            "staff": 0,
+            "voice": 0
+          }
+        },
+        "checks": [
+          "written pitch/spelling/onset/duration/staff/voice/ties",
+          "explicit rests, keys and meter",
+          "pedal spans",
+          "measure chronology",
+          "targets/ties/physical unisons via existing createTimeline"
+        ],
+        "counts": {
+          "targets": 4,
+          "onsets": 4
+        }
+      },
+      "notation": {
+        "clefs": [
+          [
+            0,
+            0,
+            "G"
+          ]
+        ],
+        "ottavas": []
+      }
+    },
+    {
+      "id": "17-g5-both",
+      "analysisSha256": "ff242eb0ed3043cbc6e7288bbd4ca0b6935f16734e310d0419fa3e7bc04aac7c",
+      "pianoXmlSha256": "29a653ba0c3dfd5448e76bfd3ccb77557529b52d04d46a87790480210fb37819",
+      "snapshotSha256": "e291da0fa87cbf3fd90634135b4255705fd9a9ab2b4393d964e87ebc5cc3ac90",
+      "verification": {
+        "passed": true,
+        "eligibleForFragmentReview": true,
+        "rejectionCodes": [],
+        "releaseBlockers": [],
+        "noteCount": 2,
+        "nativeNoteCount": 2,
+        "voiceMap": {
+          "P1:s1:v1": {
+            "staff": 0,
+            "voice": 0
+          }
+        },
+        "checks": [
+          "written pitch/spelling/onset/duration/staff/voice/ties",
+          "explicit rests, keys and meter",
+          "pedal spans",
+          "measure chronology",
+          "targets/ties/physical unisons via existing createTimeline"
+        ],
+        "counts": {
+          "targets": 2,
+          "onsets": 2
+        }
+      },
+      "notation": {
+        "clefs": [
+          [
+            0,
+            0,
+            "F"
+          ]
+        ],
+        "ottavas": []
+      }
+    },
+    {
+      "id": "18-inherited-tempo",
+      "analysisSha256": "292cc839e385a87efff83441764579b9d8d8118d5637dd2ca47fc006daa747db",
+      "pianoXmlSha256": "f8f26a3a6a5ce2c405828aaaa1f7d3afe876b38447caea345a80c520042a7f9d",
+      "snapshotSha256": "e8093ded9eb10be4622a12de785ebd55809b583cedf8f309bd545db262a3c25c",
+      "verification": {
+        "passed": true,
+        "eligibleForFragmentReview": true,
+        "rejectionCodes": [],
+        "releaseBlockers": [],
+        "noteCount": 1,
+        "nativeNoteCount": 1,
+        "voiceMap": {
+          "P1:s1:v1": {
+            "staff": 0,
+            "voice": 0
+          }
+        },
+        "checks": [
+          "written pitch/spelling/onset/duration/staff/voice/ties",
+          "explicit rests, keys and meter",
+          "pedal spans",
+          "measure chronology",
+          "targets/ties/physical unisons via existing createTimeline"
+        ],
+        "counts": {
+          "targets": 1,
+          "onsets": 1
+        }
+      },
+      "notation": {
+        "clefs": [
+          [
+            0,
+            0,
+            "F"
+          ]
+        ],
+        "ottavas": []
+      }
+    },
+    {
+      "id": "19-inherited-accidental",
+      "analysisSha256": "d2449799b9f24f570cc77b9b02e413213f4bab50e7250deb378a1aa7d93bba50",
+      "pianoXmlSha256": "470a2af337a136adc57f292bc68a627b40eb53b908dd459735c80daa9491b473",
+      "snapshotSha256": "62324da3fb322bc98c2492f8ae9f7894fa9fb9109d74e8ab43b148e7c919971d",
+      "verification": {
+        "passed": true,
+        "eligibleForFragmentReview": true,
+        "rejectionCodes": [],
+        "releaseBlockers": [],
+        "noteCount": 3,
+        "nativeNoteCount": 3,
+        "voiceMap": {
+          "P1:s1:v1": {
+            "staff": 0,
+            "voice": 0
+          }
+        },
+        "checks": [
+          "written pitch/spelling/onset/duration/staff/voice/ties",
+          "explicit rests, keys and meter",
+          "pedal spans",
+          "measure chronology",
+          "targets/ties/physical unisons via existing createTimeline"
+        ],
+        "counts": {
+          "targets": 3,
+          "onsets": 3
+        }
+      },
+      "notation": {
+        "clefs": [
+          [
+            0,
+            0,
+            "G"
+          ]
+        ],
+        "ottavas": []
+      }
+    },
+    {
+      "id": "20-64-target-boundary",
+      "analysisSha256": "0608cf6b4ed247229cc75d2855c792962380c5518523c3f0f23ae044c944bbb1",
+      "pianoXmlSha256": "b2087424150130d7ed206797de6efc8433bf31bd1619c0da544e7b05e9941ba2",
+      "snapshotSha256": "94c0827494440975580e6724cce60bc3543b5c39be4937884c27832840283811",
+      "verification": {
+        "passed": true,
+        "eligibleForFragmentReview": true,
+        "rejectionCodes": [],
+        "releaseBlockers": [],
+        "noteCount": 64,
+        "nativeNoteCount": 64,
+        "voiceMap": {
+          "P1:s1:v1": {
+            "staff": 0,
+            "voice": 0
+          }
+        },
+        "checks": [
+          "written pitch/spelling/onset/duration/staff/voice/ties",
+          "explicit rests, keys and meter",
+          "pedal spans",
+          "measure chronology",
+          "targets/ties/physical unisons via existing createTimeline"
+        ],
+        "counts": {
+          "targets": 64,
+          "onsets": 64
+        }
+      },
+      "notation": {
+        "clefs": [
+          [
+            0,
+            0,
+            "G"
+          ]
+        ],
+        "ottavas": []
+      }
+    }
+  ]
+}

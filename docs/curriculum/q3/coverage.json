@@ -1,0 +1,563 @@
+{
+  "schemaVersion": 1,
+  "stage": "Q3",
+  "status": "offline-candidate-pilot-review-pending",
+  "pipeline": "5f7f0f4ea95570d4e2337655c12727436a79f55a6265603fa58e43dbddb0789e",
+  "sourcesScanned": 528,
+  "candidateWindows": 1368,
+  "nativeChecked": 177,
+  "nativeVerified": 177,
+  "nativeBlocked": 0,
+  "enabledProfiles": 0,
+  "publicApproved": 0,
+  "teacherReviewed": 0,
+  "grades": [
+    {
+      "grade": 1,
+      "rawCandidateWindows": 45,
+      "rawNearDuplicateGroups": 10,
+      "nativeVerifiedFragments": 10,
+      "nativeNearDuplicateGroups": 10,
+      "sourceFiles": 8,
+      "verifiedWorkGroups": 0,
+      "motifs": 10,
+      "approvedPracticeFragments": 0,
+      "publicApproved": 0,
+      "pilotShortfall": 90,
+      "fullShortfall": 990,
+      "reviewSampleShortfall": 20,
+      "intervalDirections": {
+        "-2": 20,
+        "2": 22,
+        "1": 19
+      },
+      "assignedPracticeHands": {
+        "right": 6,
+        "left": 4
+      },
+      "rhythms": {
+        "long-notes": 5,
+        "quarters": 3,
+        "quarter-rests": 2
+      },
+      "registers": {
+        "middle-or-crossing": 10
+      },
+      "targetCounts": {
+        "5": 3,
+        "12": 3,
+        "6": 2,
+        "4": 2
+      },
+      "profiles": {
+        "g1-direction-long": 5,
+        "g1-direction-quarters": 3,
+        "g1-direction-rests": 2
+      },
+      "templates": {
+        "home-C4-right-key0": 6,
+        "home-C3-left-key0": 4
+      }
+    },
+    {
+      "grade": 2,
+      "rawCandidateWindows": 70,
+      "rawNearDuplicateGroups": 21,
+      "nativeVerifiedFragments": 21,
+      "nativeNearDuplicateGroups": 21,
+      "sourceFiles": 17,
+      "verifiedWorkGroups": 0,
+      "motifs": 21,
+      "approvedPracticeFragments": 0,
+      "publicApproved": 0,
+      "pilotShortfall": 79,
+      "fullShortfall": 979,
+      "reviewSampleShortfall": 9,
+      "intervalDirections": {
+        "2": 50,
+        "-2": 55,
+        "-3": 9,
+        "3": 7,
+        "1": 20
+      },
+      "assignedPracticeHands": {
+        "right": 15,
+        "left": 6
+      },
+      "rhythms": {
+        "paired-eighths": 10,
+        "long-notes": 4,
+        "quarters": 7
+      },
+      "registers": {
+        "middle-or-crossing": 21
+      },
+      "targetCounts": {
+        "8": 5,
+        "5": 5,
+        "4": 5,
+        "16": 1,
+        "14": 1,
+        "12": 2,
+        "17": 1,
+        "6": 1
+      },
+      "profiles": {
+        "g2-paired-eighths-steps": 10,
+        "g2-third-known-rhythm": 11
+      },
+      "templates": {
+        "home-C4-right-key0": 15,
+        "home-C3-left-key0": 6
+      }
+    },
+    {
+      "grade": 3,
+      "rawCandidateWindows": 180,
+      "rawNearDuplicateGroups": 12,
+      "nativeVerifiedFragments": 12,
+      "nativeNearDuplicateGroups": 12,
+      "sourceFiles": 11,
+      "verifiedWorkGroups": 0,
+      "motifs": 12,
+      "approvedPracticeFragments": 0,
+      "publicApproved": 0,
+      "pilotShortfall": 88,
+      "fullShortfall": 988,
+      "reviewSampleShortfall": 18,
+      "intervalDirections": {
+        "-2": 15,
+        "4": 6,
+        "1": 5,
+        "-5": 17,
+        "3": 31,
+        "5": 17,
+        "-3": 21,
+        "2": 22,
+        "-4": 8
+      },
+      "assignedPracticeHands": {
+        "right": 7,
+        "left": 5
+      },
+      "rhythms": {
+        "quarters": 3,
+        "paired-eighths": 7,
+        "quarter-rests": 1,
+        "long-notes": 1
+      },
+      "registers": {
+        "middle-or-crossing": 12
+      },
+      "targetCounts": {
+        "8": 4,
+        "16": 3,
+        "20": 1,
+        "9": 2,
+        "15": 1,
+        "21": 1
+      },
+      "profiles": {
+        "g3-triad-fourth-fifth": 12
+      },
+      "templates": {
+        "home-C4-right-key0": 7,
+        "home-C3-left-key0": 5
+      }
+    },
+    {
+      "grade": 4,
+      "rawCandidateWindows": 629,
+      "rawNearDuplicateGroups": 108,
+      "nativeVerifiedFragments": 101,
+      "nativeNearDuplicateGroups": 100,
+      "sourceFiles": 58,
+      "verifiedWorkGroups": 0,
+      "motifs": 101,
+      "approvedPracticeFragments": 0,
+      "publicApproved": 0,
+      "pilotShortfall": 0,
+      "fullShortfall": 900,
+      "reviewSampleShortfall": 0,
+      "intervalDirections": {
+        "-3": 57,
+        "1": 174,
+        "3": 48,
+        "-2": 144,
+        "-4": 13,
+        "2": 106,
+        "-5": 19,
+        "4": 13,
+        "5": 22
+      },
+      "assignedPracticeHands": {
+        "right": 68,
+        "left": 33
+      },
+      "rhythms": {
+        "quarters": 21,
+        "paired-eighths": 55,
+        "long-notes": 18,
+        "quarter-rests": 7
+      },
+      "registers": {
+        "middle-or-crossing": 94,
+        "low": 7
+      },
+      "targetCounts": {
+        "4": 33,
+        "9": 4,
+        "5": 16,
+        "6": 14,
+        "16": 4,
+        "8": 14,
+        "12": 3,
+        "19": 1,
+        "7": 5,
+        "14": 2,
+        "17": 1,
+        "18": 1,
+        "11": 1,
+        "10": 1,
+        "15": 1
+      },
+      "profiles": {
+        "g4-new-position": 101
+      },
+      "templates": {
+        "new-position-G4-right-key0": 39,
+        "new-position-G2-left-key1": 9,
+        "new-position-G2-left-key0": 9,
+        "new-position-F4-right-key-1": 11,
+        "new-position-F2-left-key-1": 3,
+        "new-position-G3-left-key1": 4,
+        "new-position-G4-right-key1": 12,
+        "new-position-F3-left-key-1": 4,
+        "new-position-F3-right-key-1": 1,
+        "new-position-F2-left-key0": 4,
+        "new-position-F4-right-key0": 5
+      }
+    },
+    {
+      "grade": 5,
+      "rawCandidateWindows": 5,
+      "rawNearDuplicateGroups": 3,
+      "nativeVerifiedFragments": 3,
+      "nativeNearDuplicateGroups": 3,
+      "sourceFiles": 1,
+      "verifiedWorkGroups": 0,
+      "motifs": 3,
+      "approvedPracticeFragments": 0,
+      "publicApproved": 0,
+      "pilotShortfall": 97,
+      "fullShortfall": 997,
+      "reviewSampleShortfall": 27,
+      "intervalDirections": {
+        "1": 3,
+        "-2": 6,
+        "-3": 1,
+        "-5": 1
+      },
+      "assignedPracticeHands": {
+        "right": 3,
+        "left": 3
+      },
+      "rhythms": {
+        "long-notes": 4,
+        "quarters": 2
+      },
+      "registers": {
+        "middle-or-crossing": 3
+      },
+      "targetCounts": {
+        "7": 1,
+        "5": 2
+      },
+      "profiles": {
+        "g5-melody-held-bass": 3
+      },
+      "templates": {
+        "home-C4-right-key0": 3,
+        "home-C3-left-key0": 3
+      }
+    },
+    {
+      "grade": 6,
+      "rawCandidateWindows": 64,
+      "rawNearDuplicateGroups": 1,
+      "nativeVerifiedFragments": 1,
+      "nativeNearDuplicateGroups": 1,
+      "sourceFiles": 1,
+      "verifiedWorkGroups": 0,
+      "motifs": 1,
+      "approvedPracticeFragments": 0,
+      "publicApproved": 0,
+      "pilotShortfall": 99,
+      "fullShortfall": 999,
+      "reviewSampleShortfall": 29,
+      "intervalDirections": {
+        "-2": 3,
+        "-4": 1,
+        "1": 11,
+        "2": 1,
+        "6": 1
+      },
+      "assignedPracticeHands": {
+        "right": 1
+      },
+      "rhythms": {
+        "quarter-rests": 1
+      },
+      "registers": {
+        "middle-or-crossing": 1
+      },
+      "targetCounts": {
+        "18": 1
+      },
+      "profiles": {
+        "g6-prepared-leap": 1
+      },
+      "templates": {
+        "prepared-fixed-position-change": 1
+      }
+    },
+    {
+      "grade": 7,
+      "rawCandidateWindows": 42,
+      "rawNearDuplicateGroups": 5,
+      "nativeVerifiedFragments": 5,
+      "nativeNearDuplicateGroups": 5,
+      "sourceFiles": 5,
+      "verifiedWorkGroups": 0,
+      "motifs": 5,
+      "approvedPracticeFragments": 0,
+      "publicApproved": 0,
+      "pilotShortfall": 95,
+      "fullShortfall": 995,
+      "reviewSampleShortfall": 25,
+      "intervalDirections": {
+        "-2": 12,
+        "1": 19,
+        "3": 2,
+        "2": 8,
+        "-3": 1
+      },
+      "assignedPracticeHands": {
+        "right": 3,
+        "left": 2
+      },
+      "rhythms": {
+        "compound": 3,
+        "dotted": 2
+      },
+      "registers": {
+        "middle-or-crossing": 5
+      },
+      "targetCounts": {
+        "4": 3,
+        "12": 1,
+        "23": 1
+      },
+      "profiles": {
+        "g7-compound-beat": 3,
+        "g7-dotted-pair": 2
+      },
+      "templates": {
+        "home-C4-right-key0": 3,
+        "home-C3-left-key0": 2
+      }
+    },
+    {
+      "grade": 8,
+      "rawCandidateWindows": 368,
+      "rawNearDuplicateGroups": 27,
+      "nativeVerifiedFragments": 30,
+      "nativeNearDuplicateGroups": 27,
+      "sourceFiles": 19,
+      "verifiedWorkGroups": 0,
+      "motifs": 30,
+      "approvedPracticeFragments": 0,
+      "publicApproved": 0,
+      "pilotShortfall": 73,
+      "fullShortfall": 973,
+      "reviewSampleShortfall": 0,
+      "intervalDirections": {
+        "2": 41,
+        "-2": 56,
+        "-3": 22,
+        "3": 30,
+        "-5": 7,
+        "1": 84,
+        "5": 2,
+        "4": 3,
+        "-4": 2
+      },
+      "assignedPracticeHands": {
+        "right": 25,
+        "left": 5
+      },
+      "rhythms": {
+        "quarters": 7,
+        "long-notes": 9,
+        "paired-eighths": 11,
+        "quarter-rests": 3
+      },
+      "registers": {
+        "middle-or-crossing": 25,
+        "low": 5
+      },
+      "targetCounts": {
+        "9": 2,
+        "18": 1,
+        "16": 1,
+        "8": 8,
+        "4": 7,
+        "5": 5,
+        "25": 1,
+        "6": 3,
+        "31": 1,
+        "34": 1
+      },
+      "profiles": {
+        "g8-familiar-pattern-new-register": 30
+      },
+      "templates": {
+        "outer-register-C5-right-key0": 25,
+        "outer-register-C2-left-key0": 5
+      }
+    }
+  ],
+  "gaps": [
+    {
+      "grade": 1,
+      "missingProfiles": [],
+      "missingIntervalDirections": [],
+      "missingHands": [],
+      "missingRegisters": [
+        "low",
+        "high"
+      ],
+      "neededForPilot": 90,
+      "neededForFullDistinct": 990,
+      "workIdentityReviewsNeeded": 50,
+      "nextSourceSearch": "Simple original piano method/folk excerpts with explicit piano identity, matching the missing profile. Inspect actual notes; composer/title is not a grade."
+    },
+    {
+      "grade": 2,
+      "missingProfiles": [],
+      "missingIntervalDirections": [],
+      "missingHands": [],
+      "missingRegisters": [
+        "low",
+        "high"
+      ],
+      "neededForPilot": 79,
+      "neededForFullDistinct": 979,
+      "workIdentityReviewsNeeded": 50,
+      "nextSourceSearch": "Simple original piano method/folk excerpts with explicit piano identity, matching the missing profile. Inspect actual notes; composer/title is not a grade."
+    },
+    {
+      "grade": 3,
+      "missingProfiles": [],
+      "missingIntervalDirections": [],
+      "missingHands": [],
+      "missingRegisters": [
+        "low",
+        "high"
+      ],
+      "neededForPilot": 88,
+      "neededForFullDistinct": 988,
+      "workIdentityReviewsNeeded": 50,
+      "nextSourceSearch": "Simple original piano method/folk excerpts with explicit piano identity, matching the missing profile. Inspect actual notes; composer/title is not a grade."
+    },
+    {
+      "grade": 4,
+      "missingProfiles": [],
+      "missingIntervalDirections": [],
+      "missingHands": [],
+      "missingRegisters": [
+        "high"
+      ],
+      "neededForPilot": 0,
+      "neededForFullDistinct": 900,
+      "workIdentityReviewsNeeded": 50,
+      "nextSourceSearch": "Simple original piano method/folk excerpts with explicit piano identity, matching the missing profile. Inspect actual notes; composer/title is not a grade."
+    },
+    {
+      "grade": 5,
+      "missingProfiles": [],
+      "missingIntervalDirections": [
+        2,
+        3
+      ],
+      "missingHands": [],
+      "missingRegisters": [
+        "low",
+        "high"
+      ],
+      "neededForPilot": 97,
+      "neededForFullDistinct": 997,
+      "workIdentityReviewsNeeded": 50,
+      "nextSourceSearch": "Simple original piano method/folk excerpts with explicit piano identity, matching the missing profile. Inspect actual notes; composer/title is not a grade."
+    },
+    {
+      "grade": 6,
+      "missingProfiles": [],
+      "missingIntervalDirections": [
+        -6,
+        7,
+        -7,
+        8,
+        -8
+      ],
+      "missingHands": [
+        "left"
+      ],
+      "missingRegisters": [
+        "low",
+        "high"
+      ],
+      "neededForPilot": 99,
+      "neededForFullDistinct": 999,
+      "workIdentityReviewsNeeded": 50,
+      "nextSourceSearch": "Simple original piano method/folk excerpts with explicit piano identity, matching the missing profile. Inspect actual notes; composer/title is not a grade."
+    },
+    {
+      "grade": 7,
+      "missingProfiles": [
+        "g7-offbeat-tie",
+        "g7-syncopated-cell"
+      ],
+      "missingIntervalDirections": [],
+      "missingHands": [],
+      "missingRegisters": [
+        "low",
+        "high"
+      ],
+      "neededForPilot": 95,
+      "neededForFullDistinct": 995,
+      "workIdentityReviewsNeeded": 50,
+      "nextSourceSearch": "Simple original piano method/folk excerpts with explicit piano identity, matching the missing profile. Inspect actual notes; composer/title is not a grade."
+    },
+    {
+      "grade": 8,
+      "missingProfiles": [],
+      "missingIntervalDirections": [],
+      "missingHands": [],
+      "missingRegisters": [
+        "high"
+      ],
+      "neededForPilot": 73,
+      "neededForFullDistinct": 973,
+      "workIdentityReviewsNeeded": 50,
+      "nextSourceSearch": "Simple original piano method/folk excerpts with explicit piano identity, matching the missing profile. Inspect actual notes; composer/title is not a grade."
+    }
+  ],
+  "limitations": [
+    "Not all Q1 sources normalized/scanned",
+    "Overlapping grade totals are not additive",
+    "Position matches are proposals, not original fingerings or ergonomic approval",
+    "Source files are not verified distinct works",
+    "All publication rights still gated"
+  ]
+}

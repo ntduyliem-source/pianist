@@ -71,7 +71,7 @@ Trước khi chạy đủ kho, dùng **100 đoạn ứng viên/grade** làm pilo
 
 ## Q0 Chốt hợp đồng dữ liệu và kiểm rủi ro native
 
-**Cập nhật triển khai 20/10/2026:** Q0 đã qua gate renderer với bộ fixture/profile thử nghiệm. Renderer MuseScore riêng trong Worker dựng 60 câu mới mỗi cấu hình trong lúc MIDI mô phỏng chạy; cả desktop và viewport mobile với main thread chậm 4× đều hoàn tất 32/32 nốt, không có long task UI giao với render. 9 oracle khớp dữ liệu nhạc/glyph/tọa độ, editor giữ nguyên bytes/undo. Xem [bản sửa và giới hạn số đo](Q0_RENDERER_WORKER.md). Q1 đã thu thập và lập danh mục nguồn như báo cáo bên dưới. Q2 đã có pipeline chuẩn hóa và gate đối chiếu native, nghiệm thu trên 627 file như báo cáo bên dưới. Q3–Q9, UI quiz và kiểm refill từng profile/BPM thật vẫn là phần tiếp theo.
+**Cập nhật triển khai 20/10/2026:** Q0 đã qua gate renderer với bộ fixture/profile thử nghiệm. Renderer MuseScore riêng trong Worker dựng 60 câu mới mỗi cấu hình trong lúc MIDI mô phỏng chạy; cả desktop và viewport mobile với main thread chậm 4× đều hoàn tất 32/32 nốt, không có long task UI giao với render. 9 oracle khớp dữ liệu nhạc/glyph/tọa độ, editor giữ nguyên bytes/undo. Xem [bản sửa và giới hạn số đo](Q0_RENDERER_WORKER.md). Q1 đã thu thập và lập danh mục nguồn như báo cáo bên dưới. Q2 đã có pipeline chuẩn hóa và gate đối chiếu native, nghiệm thu trên 627 file như báo cáo bên dưới. Q3 đã có pipeline và pilot như báo cáo bên dưới, còn thiếu nguồn và duyệt nội dung. Q4–Q9, UI quiz và kiểm refill từng profile/BPM thật vẫn là phần tiếp theo.
 
 [Điều tra hiệu năng](Q0_RENDER_INVESTIGATION.md) đã tách các đường API: SVG và phần chữ trang giấy là chi phí lớn; chuyển renderer sang Worker vẫn cần thiết. Câu quiz nên giữ tên bài/nguồn trong UI, dùng sheet trích đoạn gọn và cache có định danh đầy đủ. Việc này không thay đổi bản gốc trong editor hoặc thuật toán chấm.
 
@@ -139,6 +139,8 @@ artifacts/curriculum-corpus/download-report.json
 **Xong khi:** các fixture E–F/C–C♯/C–D♭, dấu hóa qua ô, tie, hợp âm khác trường độ, backup/forward, đổi khóa, 8va và nhiều bè đều có đối chiếu phù hợp. Không đưa kết quả từ parser khảo sát cũ thẳng vào production.
 
 ## Q3 Tách đoạn và phân loại grade
+
+**Cập nhật 21/10/2026:** đã code pipeline trích nguyên bản, 14 profile ứng viên, đối chiếu nguồn/MuseScore, gộp gần trùng và báo thiếu. Quét 528 nguồn đã chuẩn hóa, gồm đợt bổ sung có mục tiêu từ Q1. Các profile vẫn tắt, chờ đủ nguồn và duyệt nội dung; chưa gọi Q3 hoàn tất theo chỉ tiêu. Xem [kết quả và giới hạn Q3](Q3_EXTRACTION.md), [coverage](q3/coverage.json). Q4–Q9 và luồng quiz trên web chưa được triển khai tại mốc này.
 
 **Công việc**
 

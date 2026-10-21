@@ -1,0 +1,126 @@
+[
+  {
+    "grade": 1,
+    "missingProfiles": [],
+    "missingIntervalDirections": [],
+    "missingHands": [],
+    "missingRegisters": [
+      "low",
+      "high"
+    ],
+    "neededForPilot": 90,
+    "neededForFullDistinct": 990,
+    "workIdentityReviewsNeeded": 50,
+    "nextSourceSearch": "Simple original piano method/folk excerpts with explicit piano identity, matching the missing profile. Inspect actual notes; composer/title is not a grade."
+  },
+  {
+    "grade": 2,
+    "missingProfiles": [],
+    "missingIntervalDirections": [],
+    "missingHands": [],
+    "missingRegisters": [
+      "low",
+      "high"
+    ],
+    "neededForPilot": 79,
+    "neededForFullDistinct": 979,
+    "workIdentityReviewsNeeded": 50,
+    "nextSourceSearch": "Simple original piano method/folk excerpts with explicit piano identity, matching the missing profile. Inspect actual notes; composer/title is not a grade."
+  },
+  {
+    "grade": 3,
+    "missingProfiles": [],
+    "missingIntervalDirections": [],
+    "missingHands": [],
+    "missingRegisters": [
+      "low",
+      "high"
+    ],
+    "neededForPilot": 88,
+    "neededForFullDistinct": 988,
+    "workIdentityReviewsNeeded": 50,
+    "nextSourceSearch": "Simple original piano method/folk excerpts with explicit piano identity, matching the missing profile. Inspect actual notes; composer/title is not a grade."
+  },
+  {
+    "grade": 4,
+    "missingProfiles": [],
+    "missingIntervalDirections": [],
+    "missingHands": [],
+    "missingRegisters": [
+      "high"
+    ],
+    "neededForPilot": 0,
+    "neededForFullDistinct": 900,
+    "workIdentityReviewsNeeded": 50,
+    "nextSourceSearch": "Simple original piano method/folk excerpts with explicit piano identity, matching the missing profile. Inspect actual notes; composer/title is not a grade."
+  },
+  {
+    "grade": 5,
+    "missingProfiles": [],
+    "missingIntervalDirections": [
+      2,
+      3
+    ],
+    "missingHands": [],
+    "missingRegisters": [
+      "low",
+      "high"
+    ],
+    "neededForPilot": 97,
+    "neededForFullDistinct": 997,
+    "workIdentityReviewsNeeded": 50,
+    "nextSourceSearch": "Simple original piano method/folk excerpts with explicit piano identity, matching the missing profile. Inspect actual notes; composer/title is not a grade."
+  },
+  {
+    "grade": 6,
+    "missingProfiles": [],
+    "missingIntervalDirections": [
+      -6,
+      7,
+      -7,
+      8,
+      -8
+    ],
+    "missingHands": [
+      "left"
+    ],
+    "missingRegisters": [
+      "low",
+      "high"
+    ],
+    "neededForPilot": 99,
+    "neededForFullDistinct": 999,
+    "workIdentityReviewsNeeded": 50,
+    "nextSourceSearch": "Simple original piano method/folk excerpts with explicit piano identity, matching the missing profile. Inspect actual notes; composer/title is not a grade."
+  },
+  {
+    "grade": 7,
+    "missingProfiles": [
+      "g7-offbeat-tie",
+      "g7-syncopated-cell"
+    ],
+    "missingIntervalDirections": [],
+    "missingHands": [],
+    "missingRegisters": [
+      "low",
+      "high"
+    ],
+    "neededForPilot": 95,
+    "neededForFullDistinct": 995,
+    "workIdentityReviewsNeeded": 50,
+    "nextSourceSearch": "Simple original piano method/folk excerpts with explicit piano identity, matching the missing profile. Inspect actual notes; composer/title is not a grade."
+  },
+  {
+    "grade": 8,
+    "missingProfiles": [],
+    "missingIntervalDirections": [],
+    "missingHands": [],
+    "missingRegisters": [
+      "high"
+    ],
+    "neededForPilot": 73,
+    "neededForFullDistinct": 973,
+    "workIdentityReviewsNeeded": 50,
+    "nextSourceSearch": "Simple original piano method/folk excerpts with explicit piano identity, matching the missing profile. Inspect actual notes; composer/title is not a grade."
+  }
+]

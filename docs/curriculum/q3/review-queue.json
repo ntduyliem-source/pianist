@@ -1,0 +1,198 @@
+{
+  "pipeline": "5f7f0f4ea95570d4e2337655c12727436a79f55a6265603fa58e43dbddb0789e",
+  "grades": [
+    {
+      "grade": 1,
+      "requiredSamples": 30,
+      "availableSamples": 10,
+      "fragmentIds": [
+        "31e1e03b8108094ba668ad0cd710da59cedb135ea851d8be51eaa0e081ad67ca",
+        "37ef5d5e5c02a96a237e85c06e789b6d683863f7fc6470888c304302a112d28c",
+        "8143c2091e996cfd3b012657a258847ee196155250691ba38b1d5010f74ed289",
+        "38fad552bd1b8dea25833a101e7ea1f617ae428aa3a2fc0bb2eaee377dacf95e",
+        "34ec3d4c923d41ccee95b5859a74f822e185f06c9b98ab11aa775490a0256117",
+        "6782973b2ee0c065bad60a613109349531f3e48609ee3fc14627455368bb95fa",
+        "8f5f6803f54f888c274b0569110701f0c9c2c54c6cd6e983e4254d5fddb03156",
+        "bc4f9907231198b8228160c3518074bb98ee0bed9970f13f6b0625125a149902",
+        "a42cffd7a3ff3ddbf59b31bbcfd8143cfea3e658ed878613f69394edfadeb5dc",
+        "e1ff00eff8b4746a45c12b82f54fb4bb5fc506cb30b6fa393a75413d141c1b08"
+      ],
+      "status": "pending",
+      "teacherReviewed": false
+    },
+    {
+      "grade": 2,
+      "requiredSamples": 30,
+      "availableSamples": 21,
+      "fragmentIds": [
+        "0a1ef7b2af3fd3a2f2ec1c8fffc23bae315e108be23714f053ea2378854653e8",
+        "4339d031e269a879b76da9abf9e6ae3d6bb92c322fb615697c4196832a1871ef",
+        "0e1b48fa4d0f1ecc756d7705cc1a066f42293ed09a30519f0394472f4a867309",
+        "1389f094864fc2c75031afec086665e8b868b574aa0490dacfeae3db05269df4",
+        "2925e9d150cdcbd1a20608279427aadb815a19a274d4745871968d220f517dfc",
+        "426d11b6d077ece65385f9bdf95214c70c2f017cfa31f1d1f404a9ddb969c8b7",
+        "91bfda75c77819b232728d9388f7490d3a16822b894bcad73c18a2e4cf88ea36",
+        "c820e0873c5180406634c8e3bddde7644bb7e2572ec1411de6c475286a7bcc92",
+        "1c39fef2f063e69d1efb9d3199c91fcc43bb5662a4fb99ec7ba0869ed97b5110",
+        "2f59adbbc0a26936dac3d6b73777a30130795dbe126cf7a5ed2c551be3157b48",
+        "7848f75bd443b547f3ccfee091f12268e721562d62f20467776bebb1b3265cfd",
+        "7b71b46095bd321a7e050133342ac784a9cb8ea22683d9f8bebff6fc913b1147",
+        "9eeaf706ab4ad72be224f18cb296e6f473bff4d8e1e6d98a9134edf160d22bd1",
+        "abbb5c3d9b3e8218791504cf6739d6d1b8eca962bb6b43bc366698068295c8f7",
+        "b9ab71ddf69eda097dd0c67e7b0232682ee29c3222768e63477a76736971040a",
+        "cc6eaf0e467549a3668746be060f4287d751b46cc47da51d269978b73af047fe",
+        "f01202b1e088ac95c3593e326f63daaf9389498de63ea1f95ab837e7278eb87f",
+        "2ce38cf28f20e89c9b02047012e4529a117f8b3df555cf3760cdc65a8707a348",
+        "45ecd5bf1979306332ec4d0243c768534f931865a998ac2b1cbaae2952e69bf1",
+        "473d0355406f040836b96ad38836e7e82f83ce3bf642a5887a61e1abb78bef0c",
+        "b596dd0218788c23766654c0236fe78bbce00a34527bd3e833b7f9a4abccb93c"
+      ],
+      "status": "pending",
+      "teacherReviewed": false
+    },
+    {
+      "grade": 3,
+      "requiredSamples": 30,
+      "availableSamples": 12,
+      "fragmentIds": [
+        "3d826d58dc290742a1733b7f1c00b65a6a038bb7625e008c61a340ebc86e170a",
+        "606c9faa6be0e143d4ef158505db02e0ee20d1e275fd1ed8904ec201ec011f36",
+        "4ccf854f8f9ead12db181df7cbc116fdd8f28c5d192ec78a8bcc92a1e647042f",
+        "724760f1fc553e82749221e56d688a3b032aafe31e658f2789586935b12b1a2d",
+        "c28faeb85f80c2b26d78ce5696a6a465e1fb69cf4ff025c8fbce0e4588d61419",
+        "7db32f2fad02aea369603d7804cc36b75ba79ba912677ad73d67bc5b06bb4534",
+        "89d50206db63e35d90ab7122aa6c5d5e7b3f90c2a05b76645142d5c4e19af88e",
+        "aa2e42104c16dfd07229bbe845225ab60394a84289e7d2974f695c7c554aa06d",
+        "ac165c0fa30ba37ad5d8d4f63ff78f997fd848ed26ee9ba01e09ba9fc4f43b5a",
+        "eacaf8ac9f8c605560d8952af0b7401673ec2c416f18f6fb53977dd2b352206a",
+        "eb2faac38111269cf28d164df737f939d14fde35d0503b88a4a64f2759c887e1",
+        "f8a188b075f1849e1d9bf98c805fa6c52d160414c81b50dadd262c43cdc285ff"
+      ],
+      "status": "pending",
+      "teacherReviewed": false
+    },
+    {
+      "grade": 4,
+      "requiredSamples": 30,
+      "availableSamples": 30,
+      "fragmentIds": [
+        "03ffdbb0642d9d84cf936a6b44089f72db096d0eb394c886623dc12140c9f8b7",
+        "04052752b95e7d8c9f0446f944562e16ee0390fed0df9eff21427ef2a915676e",
+        "08d085b8a89a4c81022eaa18e3e70d3d7a84f34d1adf4d12a871ab72b57fef73",
+        "1560df6c713d42a3add9a6895cdd18aeb6a087df1269f8af69bcee2193637930",
+        "21c52cda41dcf81f204a4c114e772d98027d50fbf1fd85af2f36370d18618e8d",
+        "9ec7853c172596caeff27ac9368473a3964a6b8bc566435fcf7fb6d01331fe39",
+        "aeaba48c10f282b73bfdbdef82a79c606dc08d1d40f0e2688ebf1dcb1ae86abd",
+        "0a7e2bc66ef9e5a88e86eebcdffa4ec2c67eeb8d3d322ba6932355612a8f7bb5",
+        "1f33ede7d131ad0d91ec022f77104643b77e2258b68730f52037afc94556e59d",
+        "2439c75113189a282dee331a1d14033de415f7c7c73c94fb22350cfcadb86a45",
+        "24803b14d44a839caec2f407de7775b94a780d38e2d26a6a46c9e7b138b01a3c",
+        "5ffd6f250850663a8f434170a6da05360a45399c70b4e126bacf4f96f973c3ab",
+        "6f12185ee73f556bc34d513dbccdbc6aa823f00b5ee54290ad0b50796d7fe6a5",
+        "88189a1c72b292ab57f5b7cf150d57557027f648d771e23138768167a2943218",
+        "b892e72c2a06414790bb6247244229a5e994dd8fe1b4f7d90275ac575171fd81",
+        "d289eb6d03a8223a8c657c121bebe0f19a18970ce44c87d76600672ce7ece3bb",
+        "db00ac2ba907995706ba3f3089658c8cccd87a9b57e42552761ad16a39fb6d77",
+        "ebb852b545e739191950645cbc44d442e8beaad84545cdb0a1d791028e698dc8",
+        "f1ae4aac2afd3523e863226dac9190f22ec2570e179bbc05534a4ca51b1a4003",
+        "068bfcfaca4bc62def35ad22587a82dbf825e0b291e77e0d94808a7cfce64aa2",
+        "0e44f58184231c11b7d34355db331d071b2f029ca4ee0cb5eced920eac87f70c",
+        "104cecd469e62c7fae38f434a3dc48f0e3f0168c111e9a8a682caf555dd8a710",
+        "11039b8ef546dfdd87cfe7778ac6866a084b77a5177d471174ee3a001d94b1d7",
+        "15b79fcbcdd3d4dea1cc1fd3b0d3c1d6aeb444092f389955d6a929724c231879",
+        "1722bfcc4745da77b20f4e99f4056b0761c8fad5caa4bd42e10242d7c4218d25",
+        "190b7602accfe667abf2696d995a8011f863106b8ba582eeb77d59d7915d9449",
+        "264c2aabc3f04a72aaf72a1747377ee94312a0d5cd2292ab84bf20d336f8dcd7",
+        "26daaf53682a2fba0285e438b215e8024611a004cfe78ed13b3b89c12df58ccc",
+        "28aeb42239e02cfa9e81b891ecbaf49fa8a5d528b64714a71f3a45b61d3218cc",
+        "2c051957c2bc7fa9d4457e0ec8c70dcaca645b875b5efb61bf9f5b25865e5b0f"
+      ],
+      "status": "pending",
+      "teacherReviewed": false
+    },
+    {
+      "grade": 5,
+      "requiredSamples": 30,
+      "availableSamples": 3,
+      "fragmentIds": [
+        "06d9e9a4c8372175b3f42bd367e19ea7e84a2248c98cbe77b12dbd67651cf7d4",
+        "4c41b80c5cf12c4b60de76090ab67de1ae60c0c9a445c40ac98e9c57fc492569",
+        "fde568b1eb308e7c0457485656afafef0e43df8068eb4703b7a06efa59481a62"
+      ],
+      "status": "pending",
+      "teacherReviewed": false
+    },
+    {
+      "grade": 6,
+      "requiredSamples": 30,
+      "availableSamples": 1,
+      "fragmentIds": [
+        "8ac0dd7501900cace4f95e64992847813ebf6c96bf0827d5bbd551a0b08db88e"
+      ],
+      "status": "pending",
+      "teacherReviewed": false
+    },
+    {
+      "grade": 7,
+      "requiredSamples": 30,
+      "availableSamples": 5,
+      "fragmentIds": [
+        "11644a7feaa6ad09ec32728245c8b5d204a7dce7ce1c6bfffe81435584cb0f61",
+        "2ea0efef25e656216a7e8931ece41fe7fb200d7ac0d54fc80114a1659465c3b4",
+        "3a77810db8224072344816a9b1874331c3d4eedb05deb6ac44f43ef7650cabbf",
+        "70665625515d5141d08731af338fa5bb07f982cb093124bd74c579f98ac68884",
+        "c04b2dd48b5938d825814deeb458dc965a592d5607351e5ef019fbd36f46c5f2"
+      ],
+      "status": "pending",
+      "teacherReviewed": false
+    },
+    {
+      "grade": 8,
+      "requiredSamples": 30,
+      "availableSamples": 30,
+      "fragmentIds": [
+        "12dd470b0e3c5b4d8b5f7281f7ab3a8be9637ee088475963fed8b80e29c4a12d",
+        "84bd83edf33dc92575fd345f08604c09b6b71bcd1a7c55501ad8f3884b8a5760",
+        "14890ae91015ba9c4c167743c1f33cc6cae356ba59bf353df45b65cb97284355",
+        "150f0482a4afabf6241845de53cfafb87f31ab47c6f91ba9d77aae2ddfa43841",
+        "24af0497d494dc5d2a6a7e2e81a2e681bd3c081ab679f06694e81d4c896d5a11",
+        "3713f01c43f43920aeb8af6367709f631096d886ecb8c5fc6ac9682b2b7a4956",
+        "4ce30bc7770c9796b80a854399d14423fafe37dc6c0526734768e101a59eb2c0",
+        "58c718c3620d8165cd9b12e99ec8746432d2c10dc5e4fa8c99a70b9e37860d4f",
+        "ba1eeaee57fb707eb8c82a7b64f5ca15e5718b5f9f3d814e18656fa778e63ed0",
+        "4404e3e1ead2791ffa4be88e69866bc3f89e22c6ccb7192b020bef693629ff39",
+        "4af1089d51c0c85e9bc245d17c4b0eff4723c900ccbfb416ac5d350b0ad7847e",
+        "607318ec44356cd1f0022f6a59edbc391dbe68d9ef3cd101e28c040e3cfe7ed4",
+        "67394e406c1eee2facdf13da1ea40a153fecb6e6cab3d50ab980b4c7b2e35ce7",
+        "7458ecbdab24f7953d5fa833f8e07291b847f54f354e19e1664961d1c01cfc5e",
+        "75b71f02ef8706d98fe8147b2c113c88ffb4d2b50cb65c248bee9db4efe9a828",
+        "7c77c67a16adeaf868b6884b6d1d3b7e963211ae8c61d1c52667b618a4f8038c",
+        "b722e26941abae504b828e3f861423f4da37b7117e3909acfe4ff79dd35232d1",
+        "e693f5f61b261f43f1372fee3d31f67ed461107beca14941188cca8e1dd9afba",
+        "e7d01998095ed1c3e61e25a90ebca7a26551f9f7a6995b79dae6b60b1ccf6ae2",
+        "e92218d6f3a60d69553e46a5461b00377f33dd236675de1452e0905db731c739",
+        "17c41944b9c75885813ac10214ee728ec16a1c84f35cfca4f2601a42ab8690da",
+        "275fb237ca5a2bffc375f82918d7bcc3e5d706e800b1c964b5a53b277f308a6a",
+        "7da17c55ead46e865a12233b1b5a3d352b38c0a95de51adef6d7276a5f079146",
+        "89754fefc78c56d568f53067d7d7e7812a7242966fdb127954540554a61f8424",
+        "8cd7e9fb5e2e1e525526df4da5821ce790b980a0ec58db46b02d049f721e20b8",
+        "a68d186905f3a70ff47ac209f214b11fef31e417a8c463358170cefe09992427",
+        "afad52c7b5707af37301635d02849e13248de216d68ebdae9bb7c3a78b005935",
+        "d04dc30f806839b465e908d7bbfe26310dc797ba36f03c78df7767fd875c14dc",
+        "dcb4a03650fbb90da88f01058ae65fca4acb9a9d8c7517b21a172751ba9ce3d4",
+        "f67abc3866598ab0d2eacafffe39e05738dca243897728db96c05be883db6b2a"
+      ],
+      "status": "pending",
+      "teacherReviewed": false
+    }
+  ],
+  "checks": [
+    "source labels and exact line selection",
+    "musically sensible start/end",
+    "hand/finger template for actual phrase",
+    "notation and tonal mode",
+    "original versus altered content",
+    "license/work attribution"
+  ],
+  "allNewTemplateFamiliesRequired": true
+}

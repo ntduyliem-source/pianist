@@ -8,6 +8,8 @@ Kiểm tra ngày 20 tháng 10 năm 2026. Phân biệt **file đã tải**, **ứ
 
 **Cập nhật Q2:** đã có đường phân tích chính thức bằng music21 và đối chiếu với MuseScore, tách khỏi parser khảo sát bên dưới. Lượt nghiệm thu chạy 627 nội dung nguồn; không phải toàn kho và chưa có bài được gán grade. Xem [Q2_NORMALIZATION.md](Q2_NORMALIZATION.md).
 
+**Cập nhật Q3, 21/10/2026:** bổ sung có mục tiêu 196 nguồn từ kho đã tải, tổng 528 nguồn chuẩn hóa được quét. Bộ lọc cho 1.368 cửa sổ ứng viên; 177 trích đoạn đại diện đều khớp MuseScore. Sau gộp gần trùng, chỉ G4 đạt số lượng pilot 100 nhóm; mọi profile vẫn chờ duyệt nội dung, chưa bật quiz. Xem [báo cáo Q3](Q3_EXTRACTION.md) và [độ phủ từng grade](q3/coverage.json).
+
 ## Những gì đã có trên máy
 
 | Kho | Số lượng thực tế | Trạng thái | Vị trí |

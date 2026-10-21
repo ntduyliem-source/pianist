@@ -12,6 +12,7 @@ import gzip
 import json
 import multiprocessing as mp
 from pathlib import Path
+import re
 import sqlite3
 import time
 import zlib
@@ -130,6 +131,7 @@ def main():
     p.add_argument('--output', type=Path, default=ROOT / 'artifacts/curriculum-normalized')
     p.add_argument('--limit', type=int, default=0, help='0 = all matching files; deterministic hash order')
     p.add_argument('--collection', default='', help='Substring of collection ID; empty = all')
+    p.add_argument('--source-list', type=Path, help='JSON {sourceHashes:[sha256,...]} selected from the current Q1 queue')
     p.add_argument('--workers', type=int, choices=range(1,5), default=4)
     p.add_argument('--timeout', type=int, default=45)
     p.add_argument('--max-notes', type=int, default=20000)
@@ -146,6 +148,13 @@ def main():
 def execute(args):
     pipeline = sha(f'{identity()}:{args.max_notes}:{args.timeout}'.encode())
     queue = [r for r in jobs(args.corpus) if args.collection in r['collections']]
+    if args.source_list:
+        selected=json.loads(args.source_list.read_text(encoding='utf-8'))['sourceHashes']
+        if not selected or len(set(selected))!=len(selected) or any(not isinstance(s,str) or not re.fullmatch('[a-f0-9]{64}',s) for s in selected):
+            raise CorpusError('invalid-source-list')
+        if set(selected)-{r['sha'] for r in queue}:
+            raise CorpusError('source-list-outside-review-queue')
+        queue=[r for r in queue if r['sha'] in set(selected)]
     if args.limit:
         queue = queue[:args.limit]
     db = open_db(args.output)
