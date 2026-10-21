@@ -60,7 +60,7 @@ def main():
     site = output / 'site'; site.mkdir(parents=True)
     for entry in release['files']:
         name = entry['path']
-        if name.startswith('examples/'):
+        if name.startswith('examples/') or name.startswith('curriculum/'):
             continue
         target = site / name; target.parent.mkdir(parents=True, exist_ok=True)
         shutil.copy2(source / name, target)
@@ -68,6 +68,9 @@ def main():
     (site / 'examples/catalog.json').write_text(json.dumps({'examples': [{
         'title': 'Piano khởi động', 'filename': 'Piano khởi động.mxl', 'url': 'fixtures/piano.mxl'
     }]}, ensure_ascii=False, indent=2), encoding='utf-8')
+    if release.get('exerciseBank'):
+        subprocess.run([sys.executable, str(ROOT / 'buildscripts/pianist/web-reading-bank.py'), '--public',
+                        '--output', str(site / 'curriculum')], cwd=ROOT, check=True)
     subprocess.run([sys.executable, str(ROOT / 'buildscripts/pianist/package-web.py'), '--directory', str(site)], cwd=ROOT, check=True)
     public = verify(site)
     source_zip = output / 'source' / f'pianist-source-{commit[:12]}.zip'; source_zip.parent.mkdir()

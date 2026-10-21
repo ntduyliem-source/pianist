@@ -10,6 +10,36 @@ import {resultFor} from '../../../packages/practice-engine-v2/results';
 import {settingsFor} from '../../../packages/practice-engine-v2/score-adapter';
 import * as storage from '../src/platform/storage';
 
+test('reselecting Exercises navbar never releases held MIDI during a running attempt',()=>{
+  const workspace=new Workspace();workspace.patch({view:'exercises'});workspace.session={status:'running'} as PracticeController;
+  workspace.midi.release=()=>{throw Error('held input must survive');};
+  assert.doesNotThrow(()=>workspace.navigate('exercises'));assert.equal(workspace.state.view,'exercises');
+});
+
+test('exercise native audition borrows read-only audio and restores exact editor content without a library project',async()=>{
+  const workspace=new Workspace(),loads:Uint8Array[]=[];
+  const editor=new Uint8Array([1,2,3]),exercise=new Uint8Array([4,5]);let readOnly=false;
+  const bridge={revision:7,get practiceActive(){return readOnly;},serialize:()=>editor.slice(),setPractice:(v:boolean)=>{readOnly=v;},audition:()=>{},auditionState:()=>({available:true}),
+    api:{loadScoreData:(data:Uint8Array)=>{assert.equal(readOnly,false,'native requires write mode for document load');loads.push(data.slice());return true;}}} as unknown as EngineBridge;
+  workspace.bridge=bridge;
+  const project={id:'borrow-test',title:'Editor',filename:'edit.mscz',bytes:editor,revision:2,createdAt:0,updatedAt:0};
+  workspace.patch({view:'exercises',current:project,revision:2,recoveryRevision:2});
+  await workspace.exerciseAudition(exercise,new AbortController().signal);
+  assert.equal(workspace.state.current,project);assert.equal(readOnly,true);assert.equal(workspace.state.projects.length,0);
+  workspace.restoreExerciseEditor();assert.deepEqual(loads,[exercise,editor]);assert.equal(workspace.state.current,project);
+  workspace.restoreExerciseEditor();assert.equal(loads.length,2,'restoring twice is harmless');
+});
+
+test('leaving exercise screen while native audio boots cannot publish the old exercise',async()=>{
+  const workspace=new Workspace(),abort=new AbortController();workspace.patch({view:'exercises'});
+  let release!:(b:EngineBridge)=>void;
+  workspace.ensureEngine=()=>new Promise<EngineBridge>(resolve=>{release=resolve;});
+  const pending=workspace.exerciseAudition(new Uint8Array([1]),abort.signal);
+  await new Promise(resolve=>setTimeout(resolve,0));abort.abort();workspace.patch({view:'library'});
+  release({api:{loadScoreData:()=>{throw Error('stale load');}}} as unknown as EngineBridge);
+  await assert.rejects(pending,{name:'AbortError'});assert.equal(workspace.state.view,'library');
+});
+
 test('restart saves the aborted attempt without navigating away or replacing the active result',async()=>{
   const workspace=new Workspace(),t=timeline();workspace.patch({view:'practice'});
   workspace.navigate=()=>{throw Error('A restart must remain on the practice screen');};

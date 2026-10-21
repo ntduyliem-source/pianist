@@ -52,7 +52,21 @@ artifacts/curriculum-bank/
 
 Gói dành cho web không cần chứa SQLite, staging, nguồn MXL nguyên bài, ảnh render hoặc hồ sơ kiểm nặng. Web sau này có thể đọc `index.json`, tải chỉ mục đúng grade/độ dài, lọc tay, chọn ID rồi tải một MXL. `catalog.json` đầy đủ phục vụ kiểm kê, không bắt buộc tải toàn bộ khi mở màn luyện.
 
-K5 hiện bàn giao dữ liệu; `requiresAppIntegration: true` ghi rõ chưa nối vào màn quiz. Mọi bài trong gói đang là `local-only`; thuộc tính này không tự đổi khi có URL hoặc license trong metadata.
+Gói K5 gốc giữ nguyên `requiresAppIntegration: true` và `local-only` như tại thời điểm bàn giao; không sửa gói đã kiểm. Bản tích hợp web được tạo riêng bởi `web-reading-bank.py`, dùng nguyên byte MXL và bổ sung chỉ mục có hash, tay, nguồn, vị trí ô nhịp. Web local dùng đủ 5.460 bài tại `pianist.html#/exercises`. Chọn grade → tay → độ dài → chế độ → Mở bài tập → Tập. Tự chuyển có thể tắt; mỗi bài đếm vào riêng.
+
+```powershell
+python buildscripts/pianist/web-reading-bank.py
+```
+
+Lệnh mặc định đọc `artifacts/curriculum-bank/latest.json`, ghi `build.artifacts/curriculum/manifest.json` và thư mục `web-<hash>/indexes`, `exercises`. Chỉ manifest của bản kho mới thay đổi; phiên đang mở ghim bản đã tải. Thêm nguồn rồi chạy lại K và lệnh này để cập nhật web; không sửa luật grade để lấp ô thiếu.
+
+Trình duyệt chỉ tải chỉ mục cần dùng và chuẩn bị trước tối đa ba bài kế qua `ExerciseRenderer` Worker. Chống lặp ưu tiên ID chưa gặp, tránh nhóm mẫu/nguồn vừa gặp khi còn lựa chọn; hết một vòng thì dừng, không âm thầm lặp. IndexedDB `pianist-exercises-v1` tách biệt thư viện: lưu lựa chọn, tối đa 10.000 ID đã gặp và kết quả chi tiết gần nhất. Đổi màn/nhóm hủy tác vụ cũ; phím MIDI còn giữ đi vào lượt mới dưới dạng state-only theo router hiện hữu.
+
+Nút **Nhập gói K5 ZIP** nhận ZIP gốc, giới hạn giải nén, kiểm SHA-256 toàn bộ file rồi lưu trong một transaction. Không gửi file lên server. Kho cũ vẫn được giữ nếu import lỗi. Gói công khai chỉ gồm 42 bài từ 12 nguồn OpenScore/Lieder tại commit `38c5db510224d9facdc4b08d741fc788cfb58ea8`, đối chiếu [LICENSE CC0](https://github.com/OpenScore/Lieder/blob/38c5db510224d9facdc4b08d741fc788cfb58ea8/LICENSE.txt); không tự đổi trạng thái 685 nguồn PDMX đang pending-review hay 1 nguồn cá nhân. Khi dùng online, nhập ZIP K5 để có đủ 5.460 bài riêng trên thiết bị. `stage-release.py` luôn tạo lại tập công khai, loại kho local khỏi bundle; `verify-release.py --public` kiểm lại điều kiện nguồn. Service worker tải bài theo nhu cầu, cache tối đa 32 tài nguyên kho, không tải toàn kho lúc cài offline.
+
+Nghe mẫu dùng engine MuseScore khi bộ chấm đã dừng. Editor được tự lưu và giữ bản MSCZ để phục hồi nguyên nội dung sau khi nghe bài tập; thao tác tải lại native document **không giữ undo/selection cũ của editor**. Chấm thường dùng renderer riêng, không thay document editor. Chưa triển khai nghe đồng thời với chấm hoặc timeline liên tục xuyên nhiều bài.
+
+Kiểm tích hợp: `node tests/browser/pianist/exercises-web.cjs`; bằng chứng tại `artifacts/exercises-web/`. Test gồm route, ô rỗng, MIDI BPM và Đúng nốt, highlight, full sheet, pedal, audio native, phục hồi nội dung editor, nhập ZIP, refresh và viewport mobile. Đây là trình duyệt giả lập kích thước màn hình, chưa thay kiểm đàn MIDI/điện thoại thật.
 
 Kiểm lại một thư mục release cụ thể:
 

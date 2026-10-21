@@ -11,6 +11,7 @@ from urllib.parse import quote, urljoin, urlparse
 from urllib.request import Request, urlopen
 from score_format_release import verify_formats
 from library_release import verify_library
+from web_bank_release import verify_web_bank
 
 HEADERS = {'Cross-Origin-Opener-Policy': 'same-origin', 'Cross-Origin-Embedder-Policy': 'require-corp',
            'Cross-Origin-Resource-Policy': 'same-origin', 'X-Content-Type-Options': 'nosniff'}
@@ -51,6 +52,12 @@ def main():
         if not path.is_relative_to(args.directory.resolve()): raise ValueError('Unsafe release path')
         return path.read_bytes()
     release = json.loads(read('release.json'))
+    if release.get('exerciseBank'):
+        bank = verify_web_bank(read, public=args.public)
+        if {k: bank[k] for k in ['releaseId', 'count', 'visibility']} != release['exerciseBank']:
+            raise ValueError('Release/bank mismatch')
+        if not set(bank['paths']).issubset({f['path'] for f in release['files']}):
+            raise ValueError('Bank has files outside the release manifest')
     if release.get('schemaVersion') != 1 or not release.get('optimizedLink'): raise ValueError('Not an optimized release')
     if release.get('renderer') and not release['renderer'].get('optimizedLink'):
         raise ValueError('Exercise renderer is not an optimized release')

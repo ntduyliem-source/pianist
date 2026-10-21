@@ -15,7 +15,7 @@ import {PracticeController} from './practice/controller-v2';
 import { loadEngineAssets } from './platform/engine-assets';
 import {loadBundledCatalog,loadBundledScore,type BundledScore} from './platform/bundled-library';
 
-type View = 'library' | 'editor' | 'practice' | 'results' | 'history';
+type View = 'library' | 'editor' | 'practice' | 'results' | 'history' | 'exercises';
 export interface TuneSelection {
   requestId: number; filename: string; tunes: AbcTune[]; sourceBytes: number; practice: boolean;
   selected: number[]; openIndex: number; errors: Record<number, string>; error?: string;
@@ -41,6 +41,8 @@ export class Workspace {
   private operation = 0; private fileAbort?: AbortController; private source?: {bytes: Uint8Array; filename: string}; private recovery?: storage.RecoveryRecord;
   private autosaving?: Promise<void>;
   private documentChange?: symbol;
+  private exerciseNative = false;
+  private editorBeforeExercise?: Uint8Array;
   private resolveTunes?: (choice: {indices: number[]; openIndex: number}) => void;
   private diagnosticSamples: object[] = [];
   constructor(private readonly scoreConverter: ScoreConverter = new ScoreFormatClient()) {}
@@ -67,16 +69,18 @@ export class Workspace {
     const message = this.state.engineFailed ? 'MuseScore bị gián đoạn. Tải lại trang để mở bản đã lưu gần nhất; thư viện và bản tự lưu đã ghi vẫn được giữ.' : storage.storageError(e);
     this.diagnostic('Lỗi: ' + message); this.patch({error: message});
   }
-  async run(action: () => unknown | Promise<unknown>): Promise<void> {try {if (this.state.engineFailed) return; await action();} catch (e) {this.fail(e);} finally {this.focusEditor();}}
+  async run(action: () => unknown | Promise<unknown>): Promise<void> {try {if (this.state.engineFailed) return; await action();} catch (e) {if(!(e instanceof DOMException&&e.name==='AbortError'))this.fail(e);} finally {this.focusEditor();}}
   async init(): Promise<void> {
     const catalog = await fetch('examples/catalog.json').then(r => r.ok ? r.json() : null).catch(() => null);
     if (catalog?.examples?.[0]?.title) this.patch({exampleTitle: catalog.examples[0].title});
     this.patch({bundledScores:await loadBundledCatalog().catch(()=>[])});
-    history.replaceState(null, '', location.pathname + location.search + '#/library');
+    const initialView = location.hash.slice(2);
+    history.replaceState(null, '', location.pathname + location.search + (initialView === 'exercises' ? '#/exercises' : '#/library'));
+    if(initialView === 'exercises') this.navigate('exercises');
     window.addEventListener('hashchange', () => {
       const view = location.hash.slice(2) as View;
       if (view === this.state.view) return;
-      if (['library', 'editor', 'practice', 'results', 'history'].includes(view)) {
+      if (['library', 'editor', 'practice', 'results', 'history', 'exercises'].includes(view)) {
         if (view === 'editor' && !this.state.current) void this.run(() => this.openEditor());
         else if (view === 'practice') void this.run(() => this.enterPractice());
         else if (view === 'results' && !this.state.result) this.navigate('library');
@@ -89,7 +93,7 @@ export class Workspace {
       if (this.recovery) this.notice('Có bản tự lưu. Mở bài trong thư viện sẽ phục hồi các thay đổi gần nhất.');
     } catch (e) {this.fail(e);}
     this.midi.onChange = () => {
-      if(this.state.config&&this.state.config.deviceId!==this.midi.deviceId&&(!this.session||['ready','finished'].includes(this.session.status))){
+      if(this.state.view!=='exercises'&&this.state.config&&this.state.config.deviceId!==this.midi.deviceId&&(!this.session||['ready','finished'].includes(this.session.status))){
         const deviceId=this.midi.deviceId;
         this.updatePracticeSettings({deviceId,offsetMs:0});
         void storage.get<{id:string;offsetMs:number}>('settings','calibration-v2:'+deviceId).then(profile=>{
@@ -103,7 +107,7 @@ export class Workspace {
     this.midi.onInput = (e, bytes) => {
       if (this.state.engineFailed) return;
       if (this.state.view === 'editor') this.bridge?.api.midiInput(bytes[0], bytes[1], bytes[2]);
-      if (this.state.view === 'practice') {
+      if (this.state.view === 'practice' || this.state.view === 'exercises') {
         this.session?.input(e);
       }
     };
@@ -144,7 +148,7 @@ export class Workspace {
         },
         onRevisionChanged: (revision: number) => {
           this.nativeRevision = revision; if (this.bridge) this.bridge.revision = revision;
-          if (!this.loadingDocument && this.state.current && this.bridge) {
+          if (!this.loadingDocument && !this.exerciseNative && this.state.current && this.bridge) {
             const logical = this.revisionBase + revision - this.nativeBase;
             this.patch({revision: logical, saveState: 'Đang chờ tự lưu…'});
             clearTimeout(this.autosaveTimer); this.autosaveTimer = window.setTimeout(() => void this.autosave(), 1600);
@@ -189,6 +193,7 @@ export class Workspace {
   }
   private async changeDocument(action: () => Promise<void>): Promise<void> {
     this.requireInactiveSession();
+    this.restoreExerciseEditor();
     if (this.documentChange) throw Error('Đang xử lý một bản nhạc. Hãy chờ hoàn tất hoặc hủy mở file.');
     const owner = this.documentChange = Symbol(); this.patch({busy: 'Đang chuẩn bị bản nhạc…'});
     try {await action();}
@@ -424,7 +429,7 @@ export class Workspace {
   }
   async autosave(strict = false): Promise<void> {
     if (this.autosaving) {await this.autosaving; if (this.state.recoveryRevision < this.state.revision) return this.autosave(strict); return;}
-    if (this.state.engineFailed || this.loadingDocument || !this.state.current || !this.bridge || this.state.recoveryRevision >= this.state.revision) return;
+    if (this.state.engineFailed || this.loadingDocument || this.exerciseNative || !this.state.current || !this.bridge || this.state.recoveryRevision >= this.state.revision) return;
     const current = this.state.current, bridge = this.bridge;
     clearTimeout(this.autosaveTimer);
     const operation = (async () => {
@@ -438,7 +443,7 @@ export class Workspace {
     catch (e) {this.patch({saveState: 'Chưa lưu được'}); this.fail(e); if (strict) throw e;}
     finally {if (this.autosaving === operation) this.autosaving = undefined;}
   }
-  downloadProject(): void {if (this.bridge && this.state.current) {download(this.bridge.serialize(), `${this.state.current.title}.mscz`); this.notice('Đã tải bản sao MSCZ.');}}
+  downloadProject(): void {if (this.bridge && this.state.current) {download(this.editorBeforeExercise??this.bridge.serialize(), `${this.state.current.title}.mscz`); this.notice('Đã tải bản sao MSCZ.');}}
   async export(format: string): Promise<void> {
     if (format !== 'abc') {if (!this.bridge?.api.exportScore(format)) throw Error('Không xuất được định dạng này.'); return;}
     await this.changeDocument(async () => {
@@ -461,6 +466,7 @@ export class Workspace {
     });
   }
   async practice(overrides?: Partial<PracticeSettings>): Promise<void> {
+    this.restoreExerciseEditor();
     if (!this.state.current || !this.bridge) {this.openPractice(); return;}
     if (this.session && !['ready', 'finished'].includes(this.session.status)) throw Error('Kết thúc lượt tập trước khi thay đổi bản nhạc.');
     this.session?.dispose(); this.session = undefined;
@@ -488,11 +494,13 @@ export class Workspace {
   }
   navigate(view: View): void {
     if (this.state.engineFailed) return;
+    if(view===this.state.view&&this.session&&!['ready','finished'].includes(this.session.status))return;
     if (view==='practice' && !this.state.practicePicker && this.state.snapshot && (this.state.snapshot.projectId!==this.state.current?.id || this.state.snapshot.revision!==this.state.revision)) {void this.run(()=>this.enterPractice());return;}
-    if (this.session && !['ready', 'finished'].includes(this.session.status) && view !== 'practice') {
+    if (this.session && !['ready', 'finished'].includes(this.session.status) && view !== this.state.view) {
       location.hash='/'+this.state.view;
       this.notice('Bấm Kết thúc lượt tập trước khi chuyển màn hình.'); return;
     }
+    if(view!=='exercises')this.restoreExerciseEditor();
     this.midi.release();
     if (view === 'editor') this.bridge?.setPractice(false); else if (this.bridge) this.bridge.setPractice(true);
     this.patch({view}); location.hash = '/' + view;
@@ -506,6 +514,32 @@ export class Workspace {
     try {await storage.saveSession(result); await this.refresh();}
     catch (e) {this.fail(e); this.notice('Chưa lưu được kết quả. Có thể tải JSON để giữ lại.');}
     if (showResult) {this.patch({result}); this.navigate('results');}
+  }
+  /** Borrow the native audio engine only while idle. The exercise renderer and
+   * scorer remain independent; editor content is never written under this loan. */
+  async exerciseAudition(bytes:Uint8Array,signal:AbortSignal):Promise<EngineBridge>{
+    this.requireInactiveSession();signal.throwIfAborted();
+    await this.autosave(true);
+    const bridge=await this.ensureEngine();
+    signal.throwIfAborted();this.requireInactiveSession();
+    if(this.state.view!=='exercises')throw Error('Đã rời màn bài tập.');
+    if(!this.exerciseNative){this.editorBeforeExercise=this.state.current?bridge.serialize():undefined;this.exerciseNative=true;}
+    bridge.setPractice(false);
+    try{if(!bridge.api.loadScoreData(bytes,'exercise.mxl'))throw Error('MuseScore chưa mở được bài nghe.');}
+    finally{bridge.setPractice(true);}
+    const deadline=performance.now()+20000;
+    while(!bridge.auditionState().available){signal.throwIfAborted();if(performance.now()>deadline)throw Error('MuseScore chưa sẵn sàng phát bài. Bấm Nghe để thử lại.');await new Promise(resolve=>setTimeout(resolve,50));}
+    signal.throwIfAborted();this.patch({busy:''});
+    return bridge;
+  }
+  restoreExerciseEditor():void{
+    if(!this.exerciseNative||!this.bridge)return;
+    this.bridge.audition('reset');
+    this.bridge.setPractice(false);
+    try{if(this.editorBeforeExercise&&!this.bridge.api.loadScoreData(this.editorBeforeExercise,'editor.mscz'))throw Error('Chưa phục hồi được editor. Bản tự lưu vẫn còn trong thư viện.');}
+    finally{this.bridge.setPractice(true);}
+    this.nativeBase=this.bridge.revision;this.revisionBase=this.state.revision;
+    this.editorBeforeExercise=undefined;this.exerciseNative=false;
   }
   async rename(title: string): Promise<void> {
     this.requireInactiveSession();

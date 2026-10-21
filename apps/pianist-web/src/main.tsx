@@ -8,6 +8,7 @@ import {TuneImportDialog, SourceLabel} from './platform/TuneImportDialog';
 import {Practice,Results,History} from './practice/PracticeView';
 import {EditorPlayback} from './EditorPlayback';
 import {EditorActions} from './EditorActions';
+import {Exercises} from './exercises/Exercises';
 import './style.css';
 
 const run = (fn: () => unknown | Promise<unknown>) => () => void ws.run(fn);
@@ -65,6 +66,7 @@ function App() {
         <button className={state.view === 'library' ? 'selected' : ''} onClick={() => ws.navigate('library')} disabled={!!active}><Icon name="folder"/>Thư viện</button>
         <button className={state.view === 'editor' ? 'selected' : ''} disabled={!!active} onClick={run(() => ws.openEditor())}><Icon name="score"/>Editor</button>
         <button className={state.view === 'practice' ? 'selected' : ''} disabled={!!active && state.view !== 'practice'} onClick={run(() => ws.openPractice())}><Icon name="piano"/>Tập piano</button>
+        <button className={state.view === 'exercises' ? 'selected' : ''} disabled={!!active && state.view !== 'exercises'} onClick={() => ws.navigate('exercises')}><Icon name="play"/>Bài tập</button>
       </nav>
       <div className="appbar-end"><span className="local-tag"><span/>Lưu trên thiết bị</span><button className="icon-button" title="Giới thiệu và giấy phép" aria-label="Giới thiệu" onClick={() => about.current?.showModal()}>?</button></div>
     </header>
@@ -74,6 +76,7 @@ function App() {
     {state.view === 'editor' && <EditorActions title={state.current?.title} saveState={state.saveState} onExport={()=>exportDialog.current?.showModal()}/>}
     {state.view === 'editor' && state.engineReady && state.current && <EditorPlayback key={state.current.id}/>}
     {state.view === 'library' && <Library/>}
+    {state.view === 'exercises' && <Exercises/>}
     {state.view === 'practice' && (state.practicePicker || !state.snapshot || !state.config ? <PracticeHome/> : <Practice key={state.snapshot.fingerprint + ':' + state.snapshot.revision} snapshot={state.snapshot} config={state.config}/>)}
     {state.view === 'results' && state.result && <Results result={state.result}/>}
     {state.view === 'history' && <History/>}

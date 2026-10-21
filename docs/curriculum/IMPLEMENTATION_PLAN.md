@@ -2,7 +2,7 @@
 
 Cập nhật **21/10/2026 — đã hoàn tất lượt quét/kiểm/đóng gói K của kho hiện tại**: gói K5 có **5.460 MXL không trùng**, 9/56 lựa chọn đạt quota 300. Có 14.840 nguồn hiện giữ đã quét; 120 nguồn có lý do cần xác minh hoặc chưa xử lý được. Xem [báo cáo K5 và toàn bộ số lượng](K5_BANK_RESULTS.md), [lệnh build và thêm nguồn](BANK_BUILD.md). **Quota vẫn chưa hoàn tất.**
 
-Bản này thay kế hoạch sinh/biến đổi câu trong phiên ngày 20/10. Lô 14 bài Q3–Q4 là pilot lịch sử, không còn là toàn bộ kho đã chuẩn bị. Q5–Q9 — chọn bài, màn quiz, điều phối/chấm phiên và phát hành — chưa triển khai trong các bước xây kho K; bản online chưa thay đổi. [Kết quả pilot](Q4_PREPARED_PILOT.md) được giữ làm bằng chứng hồi quy.
+Bản này thay kế hoạch sinh/biến đổi câu trong phiên ngày 20/10. Lô 14 bài Q3–Q4 là pilot lịch sử, không còn là toàn bộ kho đã chuẩn bị. Kho K5 có 5.460 MXL. Màn `#/exercises` đã nối chỉ mục, chọn grade/tay/độ dài, chống lặp, chuẩn bị sheet bằng renderer Worker, nghe MuseScore và tự chuyển bài. Mỗi bài dùng một lượt chấm và đếm vào riêng; **Q6 nối nhiều bài trên một clock chưa hoàn thành**. Không gọi bản tích hợp này là nghiệm thu toàn bộ Q5–Q9. [Kết quả pilot](Q4_PREPARED_PILOT.md) được giữ làm bằng chứng hồi quy.
 
 Kết quả cần đạt: **mở web → chọn grade, tay, độ dài, đúng nốt/BPM → tập bài có sẵn đã kiểm → chuyển bài tiếp**. Bài có nguồn nhạc thật, highlight đúng, sheet chiếm phần lớn màn hình, nghe bằng MuseScore, bật/tắt pedal và full sheet. Màn tập không có notation editing. MIDI thật vẫn để sau; nghiệm thu trước bằng MIDI mô phỏng.
 
@@ -211,7 +211,7 @@ Ghim app/native/schema/profile/corpus/layout tương thích trong session. Chỉ
 
 **Kho offline K:** đã bàn giao gói MXL, 56 chỉ mục, thống kê profile/tay/độ dài và hồ sơ đối soát theo [K1–K5](GRADED_BANK_PLAN.md). Quota 300 cho mỗi lựa chọn còn thiếu; không lấy các ô vượt bù ô thiếu. Giữ nguyên mọi bài cũ, dùng luồng nhập nguồn mới và cache để mở rộng kho.
 
-**Phần web tiếp theo là Q5–Q9:** đọc chỉ mục K5 để chọn bài có sẵn theo grade/tay/độ dài, giữ chống lặp và nối vào màn tập độc lập. Đây là tích hợp dữ liệu đã kiểm, không phải cắt/sinh lại bài trong trình duyệt. Kho đọc nhạc hiện hành không chạy bộ tìm ngón; bộ chấm khi tập giữ nguyên.
+**Phần web đã nối:** `apps/pianist-web/src/exercises` đọc chỉ mục K5 theo grade/tay/độ dài; `#/exercises` dùng sheet/highlight/full sheet của màn tập, không sửa notation và không tạo project thư viện. Giữ bộ chấm; BPM chuyển sau timeline hoàn tất kể cả miss, Đúng nốt chuyển khi nhận đủ nhóm nốt. Mỗi bài đếm vào riêng. Không cắt/sinh lại nhạc trong trình duyệt hoặc chạy bộ tìm ngón. Q6 clock liên tục, soak 30 phút và 1.000 biên vẫn là công việc riêng chưa nghiệm thu.
 
 1. Đọc toàn bộ nguồn, dùng lại cache đúng phiên bản; ghi trạng thái và lý do từng file.
 2. Hoàn thiện các phép kiểm G1–G8 và quét mọi đơn vị phù hợp, không giới hạn số đoạn mỗi nguồn.
@@ -242,4 +242,4 @@ Test nâng kho chứng minh cùng bài không thành chưa gặp vì đổi ID n
 | [score-adapter.ts](../../packages/practice-engine-v2/score-adapter.ts), [controller-v2.ts](../../apps/pianist-web/src/practice/controller-v2.ts) | Target/kernel giữ nguyên; điều phối liên tục phải chứng minh parity. |
 | [PracticeScreen.tsx](../../apps/pianist-web/src/practice/PracticeScreen.tsx), [Sheet.tsx](../../apps/pianist-web/src/practice/Sheet.tsx), [NoteInk.tsx](../../apps/pianist-web/src/practice/NoteInk.tsx) | Sheet, highlight, full sheet, nghe và pedal. |
 
-**Đã tạo cho pilot:** scores/curriculum/grades.v2.json, length-buckets.v2.json, reviewed-units.v2.json; packages/exercise-generator/prepared-model.ts và prepared-contract.ts; buildscripts/pianist/prepare-curriculum.py; artifacts/curriculum-prepared/manifest.json và releases/<version>. **Chưa tạo:** catalog-selector.ts, apps/pianist-web/src/exercises và catalog công khai curriculum/manifest.json. Không sửa grades.v1.json/receipt Q0–Q3 cho giống đã đạt v2. Mỗi mốc triển khai lưu commit và bằng chứng riêng, tách dữ liệu/kỹ thuật/duyệt nội dung/trải nghiệm dùng được.
+**Đã tạo cho pilot:** scores/curriculum/grades.v2.json, length-buckets.v2.json, reviewed-units.v2.json; packages/exercise-generator/prepared-model.ts và prepared-contract.ts; buildscripts/pianist/prepare-curriculum.py; artifacts/curriculum-prepared/manifest.json và releases/<version>. **Tích hợp K5:** `apps/pianist-web/src/exercises/{bank,selector,settings,Exercises}`, `web-reading-bank.py` và `curriculum/manifest.json`. Không sửa grades.v1.json/receipt Q0–Q3 cho giống đã đạt v2. Mỗi mốc triển khai lưu commit và bằng chứng riêng, tách dữ liệu/kỹ thuật/duyệt nội dung/trải nghiệm dùng được.

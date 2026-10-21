@@ -28,6 +28,10 @@ node src/web/appjs/install.js build.artifacts
 if ($LASTEXITCODE -ne 0) { throw 'Web resource installation failed' }
 python buildscripts/pianist/prepare-notices.py
 if ($LASTEXITCODE -ne 0) { throw 'Runtime notice collection failed' }
+if (Test-Path 'artifacts/curriculum-bank/latest.json') {
+    python buildscripts/pianist/web-reading-bank.py
+    if ($LASTEXITCODE -ne 0) { throw 'Exercise bank web indexes failed' }
+}
 python buildscripts/pianist/package-web.py
 if ($LASTEXITCODE -ne 0) { throw 'Release packaging failed' }
 Write-Output 'Pianist ready. Run python buildscripts/pianist/serve-web.py and open its Local URL.'

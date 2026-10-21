@@ -10,6 +10,7 @@ export class PracticeController {
   private worker?:Worker;private generation=crypto.randomUUID();private timer?:number;private resumeAt=0;private resuming=false;
   private ready?:()=>void;private closed?:(v:EngineView)=>void;private rejectReady?:(e:Error)=>void;private rejectClose?:(e:Error)=>void;
   private finishing=false;
+  private disposed=false;
   private lastPaint=0;
   private lastTick=0;
   private clockSegments:NonNullable<AttemptResult['clock']>['segments']=[];
@@ -42,10 +43,12 @@ export class PracticeController {
   }
   async start(state:()=>MidiEvent[]){
     if(this.status!=='ready')return;this.status='counting';this.onChange();
-    try{await this.load();await this.begin(state,false);}catch(e){this.dispose();throw e;}
+    try{await this.load();if(this.disposed||this.finishing||this.status!=='counting')return;await this.begin(state,false);}
+    catch(e){if(this.disposed||this.finishing||(this.status as AttemptStatus)==='finished')return;this.dispose();throw e;}
   }
   private async begin(state:()=>MidiEvent[],resuming:boolean){
     this.resuming=resuming;await this.transport.start(this.timeline,this.resumeAt);
+    if(this.disposed||this.finishing||this.status==='finished'){this.transport.silence();return;}
     this.clockSegments.push(this.transport.mapping);this.lastClockCheck=performance.now();
     if(resuming)this.log({type:'boundary',atMs:this.resumeAt,kind:'resume'});
     this.status='counting';this.message='';
@@ -99,5 +102,5 @@ export class PracticeController {
     }catch(e){this.status='interrupted';this.message=String(e);this.onChange();}
     finally{this.finishing=false;}
   }
-  dispose(){clearInterval(this.timer);this.worker?.terminate();this.worker=undefined;void this.transport.dispose();this.status='finished';}
+  dispose(){this.disposed=true;clearInterval(this.timer);this.rejectReady?.(new DOMException('Đã hủy lượt tập.','AbortError'));this.rejectReady=undefined;this.ready=undefined;this.worker?.terminate();this.worker=undefined;void this.transport.dispose();this.status='finished';}
 }

@@ -6,6 +6,7 @@ import subprocess
 import argparse
 from score_format_release import verify_formats
 from library_release import verify_library
+from web_bank_release import verify_web_bank
 
 ROOT = Path(__file__).resolve().parents[2]
 parser = argparse.ArgumentParser(description=__doc__)
@@ -37,6 +38,10 @@ if (OUT / 'renderer').exists():
 if (OUT / 'library/catalog.json').exists():
     paths += ['library/catalog.json'] + [s['url'] for s in json.loads((OUT / 'library/catalog.json').read_text(encoding='utf-8'))['songs']]
 library_count = verify_library(lambda name: (OUT / name).read_bytes(), set(paths))
+bank = None
+if (OUT / 'curriculum/manifest.json').exists():
+    bank = verify_web_bank(lambda name: (OUT / name).read_bytes())
+    paths += bank['paths']
 files = []
 for name in sorted(set(paths)):
     path = OUT / name
@@ -44,7 +49,8 @@ for name in sorted(set(paths)):
     with path.open('rb') as stream:
         while chunk := stream.read(1024 * 1024):
             digest.update(chunk)
-    files.append({'path': name, 'bytes': path.stat().st_size, 'sha256': digest.hexdigest()})
+    files.append({'path': name, 'bytes': path.stat().st_size, 'sha256': digest.hexdigest(),
+                  **({'cache': 'lazy'} if name.startswith('curriculum/') and name != 'curriculum/manifest.json' else {})})
 template = (ROOT / 'src/web/appjs/viewer/sw-template.js').read_text(encoding='utf-8')
 worker_hash = hashlib.sha256(template.encode()).hexdigest()
 version = hashlib.sha256(json.dumps({'files': files, 'workerTemplateSha256': worker_hash}, sort_keys=True).encode()).hexdigest()[:20]
@@ -57,6 +63,8 @@ release = {'schemaVersion': 1, 'version': version, 'engineBase': '3654226c2e9928
            'scoreFormats': formats['version'], 'workerTemplateSha256': worker_hash, 'libraryScores': library_count}
 if renderer:
     release['renderer'] = {'optimizedLink': renderer['optimizedLink'], 'qt': renderer['qt']}
+if bank:
+    release['exerciseBank'] = {k: bank[k] for k in ['releaseId', 'count', 'visibility']}
 (OUT / 'release.json').write_text(json.dumps(release, indent=2), encoding='utf-8')
 (OUT / 'sw.js').write_text(template.replace('__PIANIST_RELEASE__', json.dumps(release)), encoding='utf-8', newline='\n')
 print(f'Packaged {version}: {len(files)} files, {sum(f["bytes"] for f in files)/1024**2:.1f} MiB')
