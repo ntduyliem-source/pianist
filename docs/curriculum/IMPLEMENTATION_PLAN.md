@@ -207,12 +207,12 @@ Ghim app/native/schema/profile/corpus/layout tương thích trong session. Chỉ
 
 ## 7. Thứ tự làm và mốc bàn giao
 
-Không chờ xử lý đủ 37 nghìn nguồn hoặc đạt quota mọi ô mới xây luồng tập:
+**Ưu tiên hiện tại theo yêu cầu mới:** hoàn thiện phần xây kho theo [kế hoạch riêng K1–K5](GRADED_BANK_PLAN.md). Đi qua từng nguồn, đọc toàn bộ, xét mọi đoạn có biên hợp lệ với mọi profile và đưa tất cả đoạn đạt vào kho. Không dùng lô 14 bài để kết thúc giai đoạn xây kho hoặc chuyển ngay sang màn quiz.
 
-1. Cập nhật schema/cache (Q0–Q2), chọn tập nguồn nhỏ có đơn vị nhạc rõ.
-2. Làm Q3–Q4 cho tập đó; giữ số thật, không hạ tiêu chuẩn nội dung.
-3. Nối **Q5–Q6–Q7 thành màn tập dùng được**, kiểm BPM qua biên ngay ở đây.
-4. Mở rộng chuẩn hóa/duyệt/build theo báo thiếu; Q8 và Q9.
+1. Đọc toàn bộ nguồn, dùng lại cache đúng phiên bản; ghi trạng thái và lý do từng file.
+2. Hoàn thiện các phép kiểm G1–G8 và quét mọi đơn vị phù hợp, không giới hạn số đoạn mỗi nguồn.
+3. Đối chiếu mọi đoạn đạt với native, xếp độ dài, giữ xuất xứ và thống kê toàn kho.
+4. Sau mốc bàn giao dữ liệu mới nối **Q5–Q6–Q7 thành màn tập dùng được**, kiểm BPM qua biên; tiếp tục mở rộng theo báo thiếu, Q8 và Q9.
 
 Demo có thể dùng vài bài đã kiểm, hiện rõ “kho nhỏ”; không chứng nhận đủ G1–G8. Mục tiêu mở rộng: 1.000 nhóm đoạn/grade, 50 nhóm tác phẩm đã xác minh, 100 motif/grade. Đây là mục tiêu sản phẩm cần đo, không dự báo chắc chắn. Mục tiêu tham khảo một tổ hợp thường dùng là 100 nhóm; ít hơn vẫn công bố số thật và khả năng gặp lại. Không nhồi mọi tổ hợp, nhất là nguyên câu 4 nốt hoặc đoạn 100 nốt rất đơn giản.
 
