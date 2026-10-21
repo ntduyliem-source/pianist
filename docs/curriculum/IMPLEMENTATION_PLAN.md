@@ -71,7 +71,7 @@ Trước khi chạy đủ kho, dùng **100 đoạn ứng viên/grade** làm pilo
 
 ## Q0 Chốt hợp đồng dữ liệu và kiểm rủi ro native
 
-**Cập nhật triển khai 20/10/2026:** Q0 đã qua gate renderer với bộ fixture/profile thử nghiệm. Renderer MuseScore riêng trong Worker dựng 60 câu mới mỗi cấu hình trong lúc MIDI mô phỏng chạy; cả desktop và viewport mobile với main thread chậm 4× đều hoàn tất 32/32 nốt, không có long task UI giao với render. 9 oracle khớp dữ liệu nhạc/glyph/tọa độ, editor giữ nguyên bytes/undo. Xem [bản sửa và giới hạn số đo](Q0_RENDERER_WORKER.md). Q1 đã thu thập và lập danh mục nguồn như báo cáo bên dưới. Q2–Q9, UI quiz và kiểm refill từng profile/BPM thật vẫn là phần tiếp theo.
+**Cập nhật triển khai 20/10/2026:** Q0 đã qua gate renderer với bộ fixture/profile thử nghiệm. Renderer MuseScore riêng trong Worker dựng 60 câu mới mỗi cấu hình trong lúc MIDI mô phỏng chạy; cả desktop và viewport mobile với main thread chậm 4× đều hoàn tất 32/32 nốt, không có long task UI giao với render. 9 oracle khớp dữ liệu nhạc/glyph/tọa độ, editor giữ nguyên bytes/undo. Xem [bản sửa và giới hạn số đo](Q0_RENDERER_WORKER.md). Q1 đã thu thập và lập danh mục nguồn như báo cáo bên dưới. Q2 đã có pipeline chuẩn hóa và gate đối chiếu native, nghiệm thu trên 627 file như báo cáo bên dưới. Q3–Q9, UI quiz và kiểm refill từng profile/BPM thật vẫn là phần tiếp theo.
 
 [Điều tra hiệu năng](Q0_RENDER_INVESTIGATION.md) đã tách các đường API: SVG và phần chữ trang giấy là chi phí lớn; chuyển renderer sang Worker vẫn cần thiết. Câu quiz nên giữ tên bài/nguồn trong UI, dùng sheet trích đoạn gọn và cache có định danh đầy đủ. Việc này không thay đổi bản gốc trong editor hoặc thuật toán chấm.
 
@@ -115,6 +115,8 @@ artifacts/curriculum-corpus/download-report.json
 **Xong khi:** mọi mục trong danh sách cần xử lý có file hợp lệ hoặc lý do thiếu cụ thể; chạy lại không tải trùng; checksum archive khớp; báo cáo phân biệt số mục, số file độc lập và số ứng viên piano. Không yêu cầu mọi ứng viên đều được chấp nhận.
 
 ## Q2 Chuẩn hóa nốt và đối chiếu MuseScore
+
+**Triển khai 20/10/2026:** đã có pipeline music21 10.5.0 với dependency khóa hash, kho kết quả riêng có resume và gate đối chiếu MuseScore native. 12 fixture kiểm quãng có cách viết khác nhau, accidentals, phân số, bè, tie/unison, clef, 8va, pedal và các ca phải từ chối; bộ đếm dùng lại `createTimeline()`. Pilot đã phân tích 627 file nguồn; còn 37.002 file Q1 chưa phân tích. Xem [kết quả Q2 và giới hạn phạm vi](Q2_NORMALIZATION.md), [bằng chứng nghiệm thu](q2/verification.json). Việc tuyển đoạn và phân grade là Q3; chưa có UI quiz hoặc kho grade được phát hành.
 
 **Công việc**
 

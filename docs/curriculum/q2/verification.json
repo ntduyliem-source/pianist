@@ -1,0 +1,234 @@
+{
+  "schemaVersion": 1,
+  "stage": "Q2",
+  "status": "normalization-and-fixture-gate-complete",
+  "scope": "pilot; not full corpus; no graded fragments",
+  "verifiedAt": "2026-10-21T01:20:33.329685+00:00",
+  "baseCommit": "d13a51b1662ecb80cffd3c25142a8374212eeedf",
+  "summary": {
+    "at": "2026-10-21T01:18:30.573736+00:00",
+    "pipeline": "18e302f8bf65be2d0fdeca377639ab879b35a136bee3de2e0527226f5c838f42",
+    "catalogFiles": 37629,
+    "processedFiles": 627,
+    "remainingFiles": 37002,
+    "allCatalogFilesProcessed": false,
+    "normalized": 334,
+    "parseRejected": 293,
+    "withoutParserBlockers": 166,
+    "rejectionCounts": {
+      "hidden-pitched-note": 3,
+      "invalid-backup": 2,
+      "invalid-forward": 1,
+      "jump-needs-excerpt-traversal": 8,
+      "missing-initial-meter": 1,
+      "music21-duration-mismatch": 48,
+      "music21-import-warning": 24,
+      "overlapping-pedal": 18,
+      "piano-not-explicit": 292,
+      "repeat-needs-excerpt-traversal": 52,
+      "text-direction-review": 128,
+      "unclosed-pedal": 1,
+      "unclosed-tie": 30,
+      "unmapped-music21-event": 16,
+      "unresolved-pedal": 16,
+      "unresolved-tie": 46,
+      "unsupported-arpeggio": 63,
+      "unsupported-cue": 1,
+      "unsupported-grace": 47,
+      "unsupported-notation:other-notation": 3,
+      "unsupported-ornament": 26,
+      "unsupported-pedal-discontinue": 7,
+      "unsupported-pedal-resume": 3,
+      "unsupported-slide": 1,
+      "unsupported-staff-count": 1
+    },
+    "nativeReceipts": 334,
+    "nativePassed": 234,
+    "fragmentReviewEligible": 161,
+    "publicApproved": 0,
+    "gradeAccepted": 0
+  },
+  "native": {
+    "engineBuild": "f9f9eeb8cf7ece16f0ab1ab36bc687ffd2662e8ab2f1f61d838cb7f74f31eca4",
+    "engine": {
+      "MuseScoreStudio.js": "b3e30f63c6cab305b3c93a26db5aea8549a4007a2e9cfc9740cbbcc042939d98",
+      "MuseScoreStudio.wasm": "6faf0ad73f9d78b0540edb95dbce7797a8739eb5aa77511ac79c61fdee9acfbc"
+    },
+    "verifierBuild": "e3bab83427f5efc8d2a002f17d726d319c6fa4ed0d3253aec45a3767c6dd6526",
+    "verifierHashes": {
+      "packages/exercise-generator/source-verification.ts": "cd00f51af01501885332606e563cdb88e9278042ec9fa1e6a3e75cb606332673",
+      "packages/practice-engine-v2/score-adapter.ts": "e5916bea551ac842cc1900a87f6ffae80cc1b499c9a437d00f5065593a54d5c7",
+      "packages/practice-engine-v2/reference-adapter-r4.ts": "c2aebcad7fa6ada124dc41ad1bb895c270acdc945722692f808263e7e3287d7c",
+      "tests/browser/pianist/q2-lab.ts": "5ec3c3c6c0d7f936e7a67e3803b274674af1ec7fd530d5c4aeed2df8655fa3b9",
+      "tests/browser/pianist/q2-native.cjs": "c8b55bd7180ac7772a3cf4aacbb52634d6fb18cc6563c94bcef7a30b1bf771e4"
+    },
+    "completed": 334,
+    "matched": 234,
+    "blocked": 100,
+    "importFailures": 1,
+    "byCollection": {
+      "pdmx": {
+        "checked": 223,
+        "matched": 207,
+        "fragmentReviewEligible": 155
+      },
+      "openscore-lieder": {
+        "checked": 92,
+        "matched": 14,
+        "fragmentReviewEligible": 1
+      },
+      "user-library": {
+        "checked": 19,
+        "matched": 13,
+        "fragmentReviewEligible": 5
+      }
+    },
+    "rejectionCounts": {
+      "native-note-count": 46,
+      "cross-staff-voice-review": 63,
+      "native-voice-pitch-onset-duration": 77,
+      "unmapped-native-voice": 77,
+      "native-explicit-rest": 29,
+      "native-tie-link": 31,
+      "native-measure-time": 3,
+      "native-nonplaying-note": 1,
+      "native-pedal-span": 19,
+      "native-import-error": 1,
+      "native-tick-resolution": 2,
+      "native-key-context": 4,
+      "native-meter-context": 1
+    }
+  },
+  "fixtures": {
+    "total": 12,
+    "positive": 8,
+    "negative": 4,
+    "expectationsPassed": true,
+    "liveNativeReport": "fixtures-native.json",
+    "sha256": "79c601338e1718156f126d8781312f2ce69b978c4f566c1e14d2bd3333b09434"
+  },
+  "tests": {
+    "python": {
+      "passed": 42,
+      "failed": 0,
+      "logSha256": "f5c5cce6544022919fbd6768a5d3218d89173e6813a2dc7edeebaf370ef60f60"
+    },
+    "web": {
+      "passed": 137,
+      "failed": 0,
+      "logSha256": "a19f8372f287f5b00526f89dafe54bf21d2af676cb633996ca1f07f01f563857"
+    },
+    "frontendBuild": "passed",
+    "dependencyCheck": "passed"
+  },
+  "cache": {
+    "normalizationReused": 627,
+    "newNormalizationJobs": 0,
+    "nativeReused": 334,
+    "newNativeJobs": 0,
+    "probeSha256": "6b2868bb3567477de6bd714d39cd2a547f03678b7dfb8f47d4e79dbf4e066d56"
+  },
+  "preservation": {
+    "scoringFilesChecked": 15,
+    "scoringFilesChanged": 0,
+    "scoringFiles": [
+      {
+        "path": "packages/practice-engine-v2/engine.ts",
+        "expected": "6d26b9c770767b808b662a7c7c90abf8e947413a105aa622857c6e5fbda32590",
+        "actual": "6d26b9c770767b808b662a7c7c90abf8e947413a105aa622857c6e5fbda32590"
+      },
+      {
+        "path": "packages/practice-engine-v2/midi-state.ts",
+        "expected": "df40f33b65f7c9cf8456412d8b78fe2ebb5bc2f40aecc6ab70ee0328db642b83",
+        "actual": "df40f33b65f7c9cf8456412d8b78fe2ebb5bc2f40aecc6ab70ee0328db642b83"
+      },
+      {
+        "path": "packages/practice-engine-v2/model.ts",
+        "expected": "4ca06a709f440478deb8fae2dafb987c6761a8da7e2a8b70bc86f831151ca0ca",
+        "actual": "4ca06a709f440478deb8fae2dafb987c6761a8da7e2a8b70bc86f831151ca0ca"
+      },
+      {
+        "path": "packages/practice-engine-v2/package.json",
+        "expected": "307a710f54fe3ff6ccd4051d0683f769fea90226530577743028db46725e7d85",
+        "actual": "307a710f54fe3ff6ccd4051d0683f769fea90226530577743028db46725e7d85"
+      },
+      {
+        "path": "packages/practice-engine-v2/reference-adapter-r4.ts",
+        "expected": "c2aebcad7fa6ada124dc41ad1bb895c270acdc945722692f808263e7e3287d7c",
+        "actual": "c2aebcad7fa6ada124dc41ad1bb895c270acdc945722692f808263e7e3287d7c"
+      },
+      {
+        "path": "packages/practice-engine-v2/release-assessment.ts",
+        "expected": "d963f51cfb2e6fdcf4a65e4c41f396308448a9dafdc35301f458e36dde4e836b",
+        "actual": "d963f51cfb2e6fdcf4a65e4c41f396308448a9dafdc35301f458e36dde4e836b"
+      },
+      {
+        "path": "packages/practice-engine-v2/results.ts",
+        "expected": "8b2c8f4c3f946df526d15c015ea74de56a35b3253a50786af30e0e2b421360dc",
+        "actual": "8b2c8f4c3f946df526d15c015ea74de56a35b3253a50786af30e0e2b421360dc"
+      },
+      {
+        "path": "packages/practice-engine-v2/score-adapter.ts",
+        "expected": "e5916bea551ac842cc1900a87f6ffae80cc1b499c9a437d00f5065593a54d5c7",
+        "actual": "e5916bea551ac842cc1900a87f6ffae80cc1b499c9a437d00f5065593a54d5c7"
+      },
+      {
+        "path": "packages/practice-engine-v2/upstream/hold-tail-probe.ts",
+        "expected": "3f693c4f4dea55901333613649c474d4e7dfa6ee2d7a0700e0dd0c0d46456dbb",
+        "actual": "3f693c4f4dea55901333613649c474d4e7dfa6ee2d7a0700e0dd0c0d46456dbb"
+      },
+      {
+        "path": "packages/practice-engine-v2/upstream/mania.ts",
+        "expected": "d95516da5d8c0b83f3e530b89b8e7349061aec72c556b77dd52bdd103616150c",
+        "actual": "d95516da5d8c0b83f3e530b89b8e7349061aec72c556b77dd52bdd103616150c"
+      },
+      {
+        "path": "packages/practice-engine-v2/upstream/mir-eval.ts",
+        "expected": "90c9198005e0d0da574962ed902e92de779e30d29ba3062fd2c4edf2a8ea5857",
+        "actual": "90c9198005e0d0da574962ed902e92de779e30d29ba3062fd2c4edf2a8ea5857"
+      },
+      {
+        "path": "packages/practice-engine-v2/upstream/note-seq.ts",
+        "expected": "0d343afcaf1a91e54b18335157d65612704a294374b46c0c8941f16e084b8f62",
+        "actual": "0d343afcaf1a91e54b18335157d65612704a294374b46c0c8941f16e084b8f62"
+      },
+      {
+        "path": "packages/practice-engine-v2/upstream/studio-extractions.json",
+        "expected": "cf6e37908600e7cf45f1a56082929dac19d6faa87048002d7e13a5f333e284ed",
+        "actual": "cf6e37908600e7cf45f1a56082929dac19d6faa87048002d7e13a5f333e284ed"
+      },
+      {
+        "path": "packages/practice-engine-v2/upstream/studio-wait.d.ts",
+        "expected": "7836da208e2d43ab7be3730dbf4217b1ca50dbe6c430215e5201cba4c7752be5",
+        "actual": "7836da208e2d43ab7be3730dbf4217b1ca50dbe6c430215e5201cba4c7752be5"
+      },
+      {
+        "path": "packages/practice-engine-v2/upstream/studio-wait.js",
+        "expected": "6aed8426db545871adabb9b25a6fbd2bef8383a363215c3febefbb333457b33c",
+        "actual": "6aed8426db545871adabb9b25a6fbd2bef8383a363215c3febefbb333457b33c"
+      }
+    ],
+    "q1CatalogLogicalHash": "7e079fdeafc021109545fb9391a951d8207966db927b9b9a8e9c60948e43bd46",
+    "q1CatalogUnchanged": true,
+    "python": "3.11.3 (tags/v3.11.3:f3909b8, Apr  4 2023, 23:49:59) [MSC v.1934 64 bit (AMD64)]",
+    "platform": "Windows-10-10.0.19045-SP0"
+  },
+  "implementationHashes": {
+    "buildscripts/pianist/curriculum_normalize.py": "3f4b1f5d06098c9b0922aecf5faf9e2a961e88759098cf6845a0607b3d8bba40",
+    "buildscripts/pianist/normalize-curriculum.py": "58df0d4ee62eaee39035091f8985a6dda4a5ada26edb492af651667e254e42c7",
+    "buildscripts/pianist/curriculum-normalize-win-py311.lock": "43a2f3fcfbc686f3106ec2268524afc34682ce3f4ef4e94ae3a73b1ddfc0bf66",
+    "buildscripts/pianist/setup-curriculum.ps1": "ba3d4f31db35c3eb675fd2c0f730d6d3f3bf14da0c8e3bc84d91b12fddd13edf",
+    "buildscripts/pianist/prepare-q2-fixtures.py": "8afebaaef39a778e1ac05d470d4a581ae8f1d22811994a035ce0e238b9c13989",
+    "packages/exercise-generator/source-verification.ts": "cd00f51af01501885332606e563cdb88e9278042ec9fa1e6a3e75cb606332673",
+    "tests/browser/pianist/q2-lab.ts": "5ec3c3c6c0d7f936e7a67e3803b274674af1ec7fd530d5c4aeed2df8655fa3b9",
+    "tests/browser/pianist/q2-native.cjs": "c8b55bd7180ac7772a3cf4aacbb52634d6fb18cc6563c94bcef7a30b1bf771e4",
+    "tests/curriculum/fixtures_q2.py": "08cbc9ef76b42bfe99d6d69ecd391e3ff0bac2ceee1fcd723b48d37b93d9538d",
+    "tests/curriculum/test_normalize.py": "532e02fffa03cc07e76f0d0d0974f36e2d6756ede4e48db1d04aa0dc347c018f",
+    "tests/curriculum/test_normalize_cli.py": "f1dab9fd4002dd599ab223249323c3a0ca5ee397e0b4e705c04b41dd10c0e60a",
+    "apps/pianist-web/tests/source-verification.test.ts": "e43222d9f269e8ba8be57d3c74b841051295fb4dade0820beaa19fd988bb3779"
+  },
+  "nativeCorpusReceipt": {
+    "path": "corpus-native.json",
+    "sha256": "f5ca06412246e9a2817bc9c7b517abde075d2ba89a2957a78d93b275a147011b"
+  }
+}

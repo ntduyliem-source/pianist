@@ -1,4 +1,5 @@
-// Q0 draft contracts. Grade rules and the corpus are populated by Q2–Q3.
+// Q0 exercise contracts; Q2's unreviewed source/voice data is deliberately kept
+// in source-verification.ts. Fragment hands and grade profiles require Q3 review.
 import type {ScoreSnapshot} from '../score-contracts/index';
 import type {PracticeSettings, AttemptResult, Timeline} from '../practice-engine-v2/model';
 

@@ -6,6 +6,8 @@ Kiểm tra ngày 20 tháng 10 năm 2026. Phân biệt **file đã tải**, **ứ
 
 **Cập nhật Q1:** công cụ thu thập chính thức đã nhập 37.631 mục nguồn, có 37.630 hash MXL riêng và 37.629 nội dung qua kiểm ZIP/XML. Một file bị chặn vì vượt giới hạn XML, mọi mục đều có trạng thái hoặc lý do cụ thể. Xem [báo cáo Q1](Q1_CORPUS.md) và [manifest](../../scores/curriculum/sources.lock.json). Các kết quả phân tích đoạn nghiên cứu bên dưới vẫn là tư liệu thử nghiệm; chưa thay cho phân tích và duyệt Q2–Q3.
 
+**Cập nhật Q2:** đã có đường phân tích chính thức bằng music21 và đối chiếu với MuseScore, tách khỏi parser khảo sát bên dưới. Lượt nghiệm thu chạy 627 nội dung nguồn; không phải toàn kho và chưa có bài được gán grade. Xem [Q2_NORMALIZATION.md](Q2_NORMALIZATION.md).
+
 ## Những gì đã có trên máy
 
 | Kho | Số lượng thực tế | Trạng thái | Vị trí |
