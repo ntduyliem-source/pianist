@@ -14,6 +14,8 @@ Kiểm tra ngày 20 tháng 10 năm 2026. Phân biệt **file đã tải**, **ứ
 
 ## Những gì đã có trên máy
 
+**Cập nhật Q4 pilot, 21/10/2026:** đã xét 19 đơn vị từ 7 file đã chuẩn hóa, nhận 14 bài G1–G2 từ 6 file để thử local; 5 đơn vị còn pending/bị loại có lý do. Có 12 motif hash, 4 cặp chồng lấn nguồn. Cache 823 phân tích được giữ lại qua migration đã kiểm. Chưa tích hợp quiz, chưa có bài G3–G8 và chưa công bố kho lên web. Xem [báo cáo Q4](Q4_PREPARED_PILOT.md).
+
 | Kho | Số lượng thực tế | Trạng thái | Vị trí |
 |---|---:|---|---|
 | OpenScore Lieder | 1.462 file MXL; 18.585.785 byte trước khi đóng gói thêm | Đã tải, đối chiếu Git blob, đọc ZIP và parse XML tất cả. 1.432 file có part tên piano theo bộ lọc tên bảo thủ. | [Gói MXL và giấy phép](D:/duan/pianist/artifacts/curriculum-research/openscore-lieder-1462-mxl.zip) |

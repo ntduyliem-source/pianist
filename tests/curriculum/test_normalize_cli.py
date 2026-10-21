@@ -49,6 +49,19 @@ class CliTests(unittest.TestCase):
             self.assertIn('1 cached',text)
             self.assertEqual(report2['pipeline'],report['pipeline'])
             self.assertEqual(catalog.read_bytes(),original_catalog)
+
+            # The first assertion above covers the initial run only; appending
+            # another file is tested after the corruption/configuration checks.
+            # Adding an origin and changing attribution leaves the same bytes
+            # cached; this used to invalidate everything through sources.lock.
+            c=sqlite3.connect(catalog)
+            c.execute('INSERT INTO review_queue VALUES(?,?,?,?,?)',
+                (sha,'source.mxl','collection-new','personal','Corrected attribution'))
+            c.commit();c.close()
+            text,after_origin=run()
+            self.assertIn('1 cached',text)
+            self.assertEqual(after_origin['pipeline'],report['pipeline'])
+            original_catalog=catalog.read_bytes()
             shortlist=root/'shortlist.json'
             shortlist.write_text(json.dumps({'sourceHashes':[sha]}))
             text,_=run('--source-list',str(shortlist))
@@ -75,6 +88,21 @@ class CliTests(unittest.TestCase):
             self.assertNotEqual(result.returncode,0)
             self.assertIn('source-checksum-mismatch',result.stderr)
             self.assertEqual(catalog.read_bytes(),original_catalog)
+            (corpus/'source.mxl').write_bytes(data)
+            run()  # Restore this parser/options cache after the max-notes run.
+            second=io.BytesIO()
+            with zipfile.ZipFile(second,'w') as archive:
+                archive.writestr('META-INF/container.xml','<container><rootfiles><rootfile full-path="score.musicxml"/></rootfiles></container>')
+                archive.writestr('score.musicxml',fixtures()['spelled-intervals'].replace(b'Q2 original fixture',b'Another source'))
+            new_data=second.getvalue();new_sha=hashlib.sha256(new_data).hexdigest()
+            (corpus/'second.mxl').write_bytes(new_data)
+            c=sqlite3.connect(catalog)
+            c.execute('INSERT INTO review_queue VALUES(?,?,?,?,?)',(new_sha,'second.mxl','collection-new','personal','New file'))
+            c.commit();c.close()
+            text,expanded=run()
+            self.assertIn('2 selected, 1 cached, 1 to normalize',text)
+            self.assertEqual(expanded['normalized'],2)
+            self.assertEqual(expanded['pipeline'],report['pipeline'])
 
 
 if __name__=='__main__':

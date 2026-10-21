@@ -61,7 +61,7 @@ Khoảng 40–80 BPM của cấu hình cũ là mặc định thử kỹ thuật,
 
 ## 3. Quy tắc từng grade
 
-Mỗi grade gồm các profile, không phải một bộ tối đa tùy ý trộn. Bài trọng tâm phải có dấu chứng cụ thể trong nhạc; bài ôn ghi riêng. Các điều kiện dưới đây là đặc tả v2 **chưa được triển khai vào grades.v1.json**.
+Mỗi grade gồm các profile, không phải một bộ tối đa tùy ý trộn. Bài trọng tâm phải có dấu chứng cụ thể trong nhạc; bài ôn ghi riêng. Bộ lọc G1–G2 và lô bài mẫu đã triển khai riêng trong grades.v2.json; G3–G8 vẫn là đặc tả. Giữ grades.v1.json làm bằng chứng cũ. [Báo cáo pilot](Q4_PREPARED_PILOT.md) ghi phạm vi và các ô coverage còn trống.
 
 ### G1 — Điểm mốc và hướng đi
 

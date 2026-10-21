@@ -1,6 +1,6 @@
 # Quy tắc xây kho bài tập sinh sẵn từ nhạc thật
 
-Cập nhật **21/10/2026, v2**. Đây là đặc tả cho triển khai tiếp, chưa phải chức năng đã hoạt động. Thay thiết kế tạo/biến đổi câu trong phiên bằng **tạo và duyệt bài offline; web chỉ chọn bài có sẵn**. Xem [kế hoạch Q](IMPLEMENTATION_PLAN.md) và [grade/căn cứ](GRADE_DESIGN.md).
+Cập nhật **21/10/2026, v2**. Thay thiết kế tạo/biến đổi câu trong phiên bằng **tạo và duyệt bài offline; web chỉ chọn bài có sẵn**. Đã triển khai nhánh build các đơn vị có hồ sơ xét nguồn cho lô G1–G2; phần chọn/nối bài trong web vẫn là đặc tả. Xem [kết quả pilot](Q4_PREPARED_PILOT.md), [kế hoạch Q](IMPLEMENTATION_PLAN.md) và [grade/căn cứ](GRADE_DESIGN.md).
 
 Nội dung nhạc của một bài phát hành là cố định. Layout có thể thay đổi theo màn hình; BPM luyện có thể chọn trong phạm vi đã kiểm. Cả hai không tạo ra bài nhạc mới và không làm tăng số lượng kho.
 
@@ -113,7 +113,7 @@ Các khoảng bao gồm hai đầu, không chồng lấn, là lựa chọn sản
 
 ## 5. Quy trình build offline có thể tái lập
 
-Luồng dự kiến, **chưa phải CLI đã triển khai**:
+Luồng tổng thể dự kiến bên dưới. CLI pilot đã thực hiện nhánh đơn vị có hồ sơ xét nguồn qua `inspect → prepare → finalize`; đề xuất từ segmentByRests không tự trở thành bài được nhận:
 
     for source in selected_catalog_sources:
         analysis = normalize_with_cache(source_hash, parser_version, options)
@@ -158,7 +158,7 @@ Các trường tối thiểu cần thêm vào hợp đồng Q0:
 
 ID nhạc dựa trên nội dung/vị trí nguồn/cấu hình tay/phép biến đổi có version, không dựa vào vị trí trong mảng. Cùng nội dung được dùng ở nhiều grade là một exercise với nhiều nhãn phù hợp, không nhiều bài độc lập. Nếu thay nội dung hoặc biên, tạo revision/ID tương ứng và giữ quan hệ với bản cũ.
 
-Các đường dẫn đề xuất chưa tồn tại: artifacts/curriculum-prepared/<version>, curriculum/manifest.json và các shard. Giữ MXL gốc ngoài gói tải mặc định. Chỉ đóng gói các tài nguyên phục vụ tập và provenance cần thiết.
+Pilot đã tạo artifacts/curriculum-prepared/manifest.json và releases/<version>/catalog.json kèm tài nguyên từng bài. Catalog công khai curriculum/manifest.json và shard tải theo nhu cầu chưa triển khai. Giữ MXL gốc ngoài gói tải mặc định. Chỉ đóng gói các tài nguyên phục vụ tập và provenance cần thiết.
 
 ## 7. Trùng bài, đa dạng và số lượng
 

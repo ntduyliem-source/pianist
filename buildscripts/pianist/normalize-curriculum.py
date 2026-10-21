@@ -20,6 +20,9 @@ import zlib
 from curriculum_io import within, write_json, CorpusError, RunLock
 
 ROOT = Path(__file__).resolve().parents[2]
+PARSER_FILES = ['buildscripts/pianist/curriculum_normalize.py',
+                'buildscripts/pianist/curriculum_catalog.py', 'buildscripts/pianist/curriculum_io.py',
+                'buildscripts/pianist/curriculum-normalize-win-py311.lock']
 VERIFIER_FILES = ['packages/exercise-generator/source-verification.ts',
                   'packages/practice-engine-v2/score-adapter.ts',
                   'packages/practice-engine-v2/reference-adapter-r4.ts',
@@ -31,10 +34,51 @@ def sha(data):
 
 
 def identity():
-    files = ['buildscripts/pianist/curriculum_normalize.py',
-             'buildscripts/pianist/curriculum_catalog.py', 'buildscripts/pianist/curriculum_io.py',
-             'buildscripts/pianist/curriculum-normalize-win-py311.lock', 'scores/curriculum/sources.lock.json']
-    return sha(json.dumps({name: sha((ROOT / name).read_bytes()) for name in files}, sort_keys=True).encode())
+    # Collection membership, download locations and attribution do not parse
+    # notes. Import limits DO affect parsing and must remain in this identity.
+    limits = json.loads((ROOT/'scores/curriculum/sources.lock.json').read_text(encoding='utf8'))['limits']
+    return sha(json.dumps({'cacheSchema': 2, 'limits': limits,
+        'components': {name: sha((ROOT/name).read_bytes()) for name in PARSER_FILES}}, sort_keys=True).encode())
+
+
+def migrate_cache(db, corpus, max_notes, timeout):
+    """One audited migration; never bless an arbitrary stale parser result."""
+    receipt = json.loads((ROOT/'scores/curriculum/parser-cache-migration.v2.json').read_text(encoding='utf8'))
+    components = {name: sha((ROOT/name).read_bytes()) for name in PARSER_FILES}
+    limits = json.loads((ROOT/'scores/curriculum/sources.lock.json').read_text(encoding='utf8'))['limits']
+    if components != receipt['componentHashes'] or limits != receipt['limits']:
+        raise CorpusError('migration-parser-changed-reparse-required')
+    if (max_notes, timeout) != (receipt['maxNotes'], receipt['timeout']):
+        raise CorpusError('migration-options-mismatch')
+    old_parts = {**components, 'scores/curriculum/sources.lock.json': receipt['legacySourcesLockSha256']}
+    old_identity = sha(json.dumps(old_parts, sort_keys=True).encode())
+    if sha(f'{old_identity}:{max_notes}:{timeout}'.encode()) != receipt['legacyPipeline']:
+        raise CorpusError('migration-receipt-unbound')
+    queue = {r['sha']: r for r in jobs(corpus)}
+    rows = db.execute('SELECT * FROM analyses WHERE pipeline=?', (receipt['legacyPipeline'],)).fetchall()
+    pipeline = sha(f'{identity()}:{max_notes}:{timeout}'.encode())
+    valid, corrupt = [], []
+    for row in rows:
+        item = queue.get(row['source_sha'])
+        if item is None or sha(within(corpus, item['path']).read_bytes()) != row['source_sha']:
+            raise CorpusError('migration-source-checksum-mismatch')
+        try:
+            if row['status'] == 'normalized':
+                raw = zlib.decompress(row['blob'])
+                if sha(raw) != row['analysis_sha'] or json.loads(raw)['sourceSha256'] != row['source_sha']:
+                    raise ValueError('analysis binding')
+            elif row['status'] != 'rejected':
+                raise ValueError('unknown status')
+            valid.append(row['source_sha'])
+        except (ValueError, TypeError, KeyError, zlib.error):
+            corrupt.append(row['source_sha'])
+    # Validate the complete migration before making any changes. Native rows
+    # still key on analysis hash + native/verifier build, and are not relabelled.
+    with db:
+        db.executemany('UPDATE analyses SET pipeline=? WHERE source_sha=? AND pipeline=?',
+                       [(pipeline, s, receipt['legacyPipeline']) for s in valid])
+    return {'from': receipt['legacyPipeline'], 'to': pipeline, 'migrated': len(valid),
+            'corruptRequireReparse': corrupt}
 
 
 def verifier_identity():
@@ -126,7 +170,7 @@ def run_one(job, timeout, max_notes):
 
 def main():
     p = argparse.ArgumentParser(description=__doc__)
-    p.add_argument('command', choices=['normalize', 'export-native', 'import-native', 'report'])
+    p.add_argument('command', choices=['normalize', 'migrate-cache', 'export-native', 'import-native', 'report'])
     p.add_argument('--corpus', type=Path, default=ROOT / 'artifacts/curriculum-corpus')
     p.add_argument('--output', type=Path, default=ROOT / 'artifacts/curriculum-normalized')
     p.add_argument('--limit', type=int, default=0, help='0 = all matching files; deterministic hash order')
@@ -158,7 +202,11 @@ def execute(args):
     if args.limit:
         queue = queue[:args.limit]
     db = open_db(args.output)
-    if args.command == 'normalize':
+    if args.command == 'migrate-cache':
+        migration = migrate_cache(db, args.corpus, args.max_notes, args.timeout)
+        write_json(args.output/'cache-migration.v2.json', migration)
+        print(json.dumps(migration), flush=True)
+    elif args.command == 'normalize':
         cached = set()
         for row in db.execute('SELECT source_sha,status,blob,analysis_sha FROM analyses WHERE pipeline=?', (pipeline,)):
             try:

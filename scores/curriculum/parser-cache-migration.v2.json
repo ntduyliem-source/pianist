@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "legacyPipeline": "18e302f8bf65be2d0fdeca377639ab879b35a136bee3de2e0527226f5c838f42",
+  "maxNotes": 20000,
+  "timeout": 45,
+  "componentHashes": {
+    "buildscripts/pianist/curriculum_normalize.py": "3f4b1f5d06098c9b0922aecf5faf9e2a961e88759098cf6845a0607b3d8bba40",
+    "buildscripts/pianist/curriculum_catalog.py": "ac9a7431e437a2966e7346b034599f4486fe498c0d71ecc8c12ade0ad6232bb8",
+    "buildscripts/pianist/curriculum_io.py": "e9c32aac92f17a861881c4c135b2f22cfe00b72e7bcaa10a61fc785f57956463",
+    "buildscripts/pianist/curriculum-normalize-win-py311.lock": "43a2f3fcfbc686f3106ec2268524afc34682ce3f4ef4e94ae3a73b1ddfc0bf66"
+  },
+  "legacySourcesLockSha256": "e8ef53696fef3ceaf89d24c3c6b9fb334d42c319c435fc05ff7a734ef6e4788d",
+  "limits": {
+    "maxMxlBytes": 16777216,
+    "maxXmlBytes": 33554432,
+    "maxZipEntries": 256,
+    "maxZipExpandedBytes": 67108864,
+    "maxMetadataBytes": 4194304,
+    "maxTarMembers": 400000,
+    "maxTarExpandedBytes": 8589934592
+  }
+}

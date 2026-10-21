@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 2,
+  "version": "whole-unit-lengths-v2",
+  "count": "existing-score-adapter-physical-targets",
+  "buckets": [
+    {"id":"n4","label":"Khoảng 4 nốt","min":3,"max":5},
+    {"id":"n6","label":"Khoảng 6 nốt","min":6,"max":8},
+    {"id":"n10","label":"Khoảng 10 nốt","min":9,"max":14},
+    {"id":"n20","label":"Khoảng 20 nốt","min":15,"max":24},
+    {"id":"n30","label":"Khoảng 30 nốt","min":25,"max":39},
+    {"id":"n50","label":"Khoảng 50 nốt","min":40,"max":69},
+    {"id":"n100","label":"Khoảng 100 nốt","min":70,"max":120}
+  ]
+}

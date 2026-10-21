@@ -1,0 +1,319 @@
+{
+  "schemaVersion": 2,
+  "version": "offline-g1-g2-pilot-v2",
+  "implementedGrades": [
+    1,
+    2
+  ],
+  "unimplementedGrades": [
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "evidenceDocument": "docs/curriculum/GRADE_DESIGN.md",
+  "bpmPolicy": "40-80 quarter BPM is a technical pilot range, not a validated learning optimum or hardware-tested ergonomic range",
+  "profiles": [
+    {
+      "id": "g1-direction-quarters",
+      "grade": 1,
+      "status": "per-exercise-review-required",
+      "focusRule": "steps",
+      "maxInterval": 2,
+      "rhythms": [
+        "quarters"
+      ],
+      "positions": [
+        "home"
+      ],
+      "fifths": [
+        0
+      ],
+      "meters": [
+        "2/4",
+        "3/4",
+        "4/4"
+      ],
+      "lines": 1,
+      "bpm": {
+        "min": 40,
+        "max": 80,
+        "beatQuarter": 1
+      },
+      "allowedTransforms": [
+        "original-excerpt"
+      ],
+      "allowedJoins": [],
+      "reviewRequirements": [
+        "source-boundaries",
+        "source-projection",
+        "native-parity",
+        "explicit-hand-fingering-review"
+      ]
+    },
+    {
+      "id": "g1-direction-long",
+      "grade": 1,
+      "status": "per-exercise-review-required",
+      "focusRule": "steps",
+      "maxInterval": 2,
+      "rhythms": [
+        "long-notes"
+      ],
+      "positions": [
+        "home"
+      ],
+      "fifths": [
+        0
+      ],
+      "meters": [
+        "2/4",
+        "3/4",
+        "4/4"
+      ],
+      "lines": 1,
+      "bpm": {
+        "min": 40,
+        "max": 80,
+        "beatQuarter": 1
+      },
+      "allowedTransforms": [
+        "original-excerpt"
+      ],
+      "allowedJoins": [],
+      "reviewRequirements": [
+        "source-boundaries",
+        "source-projection",
+        "native-parity",
+        "explicit-hand-fingering-review"
+      ]
+    },
+    {
+      "id": "g1-direction-rests",
+      "grade": 1,
+      "status": "per-exercise-review-required",
+      "focusRule": "steps",
+      "maxInterval": 2,
+      "rhythms": [
+        "quarter-rests"
+      ],
+      "positions": [
+        "home"
+      ],
+      "fifths": [
+        0
+      ],
+      "meters": [
+        "2/4",
+        "3/4",
+        "4/4"
+      ],
+      "lines": 1,
+      "bpm": {
+        "min": 40,
+        "max": 80,
+        "beatQuarter": 1
+      },
+      "allowedTransforms": [
+        "original-excerpt"
+      ],
+      "allowedJoins": [],
+      "reviewRequirements": [
+        "source-boundaries",
+        "source-projection",
+        "native-parity",
+        "explicit-hand-fingering-review"
+      ]
+    },
+    {
+      "id": "g2-third-known-rhythm",
+      "grade": 2,
+      "status": "per-exercise-review-required",
+      "focusRule": "thirds",
+      "maxInterval": 3,
+      "rhythms": [
+        "quarters",
+        "long-notes",
+        "quarter-rests"
+      ],
+      "positions": [
+        "home"
+      ],
+      "fifths": [
+        0
+      ],
+      "meters": [
+        "2/4",
+        "3/4",
+        "4/4"
+      ],
+      "lines": 1,
+      "bpm": {
+        "min": 40,
+        "max": 80,
+        "beatQuarter": 1
+      },
+      "allowedTransforms": [
+        "original-excerpt"
+      ],
+      "allowedJoins": [],
+      "reviewRequirements": [
+        "source-boundaries",
+        "source-projection",
+        "native-parity",
+        "explicit-hand-fingering-review"
+      ]
+    },
+    {
+      "id": "g2-paired-eighths-steps",
+      "grade": 2,
+      "status": "per-exercise-review-required",
+      "focusRule": "steps",
+      "maxInterval": 2,
+      "rhythms": [
+        "paired-eighths"
+      ],
+      "positions": [
+        "home"
+      ],
+      "fifths": [
+        0
+      ],
+      "meters": [
+        "2/4",
+        "3/4",
+        "4/4"
+      ],
+      "lines": 1,
+      "bpm": {
+        "min": 40,
+        "max": 80,
+        "beatQuarter": 1
+      },
+      "allowedTransforms": [
+        "original-excerpt"
+      ],
+      "allowedJoins": [],
+      "reviewRequirements": [
+        "source-boundaries",
+        "source-projection",
+        "native-parity",
+        "explicit-hand-fingering-review"
+      ]
+    }
+  ],
+  "handTemplates": [
+    {
+      "id": "home-C4-right-key0",
+      "group": "home",
+      "hand": "right",
+      "clef": "G",
+      "fifths": 0,
+      "keys": [
+        {
+          "pitch": [
+            "C",
+            0,
+            4
+          ],
+          "finger": 1
+        },
+        {
+          "pitch": [
+            "D",
+            0,
+            4
+          ],
+          "finger": 2
+        },
+        {
+          "pitch": [
+            "E",
+            0,
+            4
+          ],
+          "finger": 3
+        },
+        {
+          "pitch": [
+            "F",
+            0,
+            4
+          ],
+          "finger": 4
+        },
+        {
+          "pitch": [
+            "G",
+            0,
+            4
+          ],
+          "finger": 5
+        }
+      ],
+      "reviewStatus": "design-proposal",
+      "sourceFingering": false,
+      "evidence": [
+        "docs/curriculum/GRADE_DESIGN.md",
+        "Requires actual excerpt/hand/phrase review; range match alone is insufficient"
+      ]
+    },
+    {
+      "id": "home-C3-left-key0",
+      "group": "home",
+      "hand": "left",
+      "clef": "F",
+      "fifths": 0,
+      "keys": [
+        {
+          "pitch": [
+            "C",
+            0,
+            3
+          ],
+          "finger": 5
+        },
+        {
+          "pitch": [
+            "D",
+            0,
+            3
+          ],
+          "finger": 4
+        },
+        {
+          "pitch": [
+            "E",
+            0,
+            3
+          ],
+          "finger": 3
+        },
+        {
+          "pitch": [
+            "F",
+            0,
+            3
+          ],
+          "finger": 2
+        },
+        {
+          "pitch": [
+            "G",
+            0,
+            3
+          ],
+          "finger": 1
+        }
+      ],
+      "reviewStatus": "design-proposal",
+      "sourceFingering": false,
+      "evidence": [
+        "docs/curriculum/GRADE_DESIGN.md",
+        "Requires actual excerpt/hand/phrase review; range match alone is insufficient"
+      ]
+    }
+  ]
+}

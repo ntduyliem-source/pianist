@@ -1,0 +1,232 @@
+{
+  "schemaVersion": 2,
+  "date": "2026-10-21",
+  "stage": "Q4-local-pilot",
+  "corpusVersion": "629c21879b822966b0adec930123ac7d65b743f8f9195243ef345e6adecd40d6",
+  "pipeline": "638e4b01772f51a52ad128aed1618da58daf03d7d0632fd5af6dbbc2a84ed1d6",
+  "corpus": {
+    "approved": 14,
+    "reviewedUnits": 19,
+    "reviewedSourceFiles": 7,
+    "sourceFiles": 6,
+    "exactContents": 14,
+    "motifs": 12,
+    "overlapPairs": 4,
+    "pendingOrRejected": [
+      {
+        "label": "Czerny — câu đáp trở về C",
+        "sourceSha256": "7a74947508f61e2b09379a3275a1f1d3826d6ffd455942c1544e15c308292f9c",
+        "reasons": [
+          "boundary-hand-review-pending",
+          "notation-needs-profile"
+        ]
+      },
+      {
+        "label": "Frère Jacques — mô-típ câu hỏi",
+        "sourceSha256": "f4a6f440438282a9c56db45f6b40303067ef43d9cf1cb262d69664fef2dc7d35",
+        "reasons": [
+          "boundary-hand-review-pending",
+          "source-fingering-conflict"
+        ]
+      },
+      {
+        "label": "Frère Jacques — hai cặp mô-típ đầu",
+        "sourceSha256": "f4a6f440438282a9c56db45f6b40303067ef43d9cf1cb262d69664fef2dc7d35",
+        "reasons": [
+          "boundary-hand-review-pending",
+          "source-fingering-conflict"
+        ]
+      },
+      {
+        "label": "REJECT Ode to Joy — thiếu ô kết",
+        "sourceSha256": "42b3bd806aa5b28357f46bf45e1cd62ad64d71f02e1db4a15535f6ab3ef8d093",
+        "reasons": [
+          "boundary-hand-review-pending"
+        ]
+      },
+      {
+        "label": "REJECT Five Finger 1 — thiếu nốt trở về C",
+        "sourceSha256": "830ecd1087dd3184933fc714888483b80b43c69e6793b3f1138d497caed77b18",
+        "reasons": [
+          "boundary-hand-review-pending"
+        ]
+      }
+    ],
+    "nonemptyCoverage": [
+      {
+        "grade": 1,
+        "hand": "right",
+        "lengthBucket": "n6",
+        "exercises": 6,
+        "motifs": 6,
+        "sourceFiles": 3
+      },
+      {
+        "grade": 1,
+        "hand": "right",
+        "lengthBucket": "n10",
+        "exercises": 1,
+        "motifs": 1,
+        "sourceFiles": 1
+      },
+      {
+        "grade": 2,
+        "hand": "left",
+        "lengthBucket": "n10",
+        "exercises": 2,
+        "motifs": 2,
+        "sourceFiles": 2
+      },
+      {
+        "grade": 2,
+        "hand": "right",
+        "lengthBucket": "n4",
+        "exercises": 1,
+        "motifs": 1,
+        "sourceFiles": 1
+      },
+      {
+        "grade": 2,
+        "hand": "right",
+        "lengthBucket": "n10",
+        "exercises": 3,
+        "motifs": 3,
+        "sourceFiles": 3
+      },
+      {
+        "grade": 2,
+        "hand": "right",
+        "lengthBucket": "n30",
+        "exercises": 1,
+        "motifs": 1,
+        "sourceFiles": 1
+      }
+    ]
+  },
+  "cacheMigration": {
+    "from": "18e302f8bf65be2d0fdeca377639ab879b35a136bee3de2e0527226f5c838f42",
+    "to": "2673bdaa5f8a7903ec9a3111f19a083f2f83b3620bf469a692d9131959683467",
+    "migrated": 823,
+    "corruptRequireReparse": []
+  },
+  "checks": {
+    "python": {
+      "passed": 79,
+      "command": ".tools/curriculum-python/Scripts/python.exe -m unittest discover -s tests/curriculum -q"
+    },
+    "web": {
+      "passed": 141,
+      "command": "npm test (apps/pianist-web)",
+      "logPersisted": false
+    },
+    "typescript": {
+      "passed": true,
+      "command": "npx tsc --noEmit (apps/pianist-web)"
+    },
+    "native": {
+      "passed": true,
+      "entries": 14
+    },
+    "worker": {
+      "passed": true,
+      "entries": 14,
+      "limitFixtures": [
+        {
+          "name": "min-3",
+          "counts": {
+            "targets": 3,
+            "onsets": 3
+          },
+          "systems": 1,
+          "glyphsComplete": true,
+          "editorUnchanged": true
+        },
+        {
+          "name": "max-120",
+          "counts": {
+            "targets": 120,
+            "onsets": 120
+          },
+          "systems": 5,
+          "glyphsComplete": true,
+          "editorUnchanged": true
+        },
+        {
+          "name": "grand-120",
+          "counts": {
+            "targets": 120,
+            "onsets": 60
+          },
+          "systems": 3,
+          "glyphsComplete": true,
+          "editorUnchanged": true
+        },
+        {
+          "name": "pickup-3",
+          "counts": {
+            "targets": 3,
+            "onsets": 3
+          },
+          "systems": 1,
+          "glyphsComplete": true,
+          "editorUnchanged": true
+        }
+      ]
+    },
+    "httpCatalog": {
+      "passed": true,
+      "entries": 14
+    },
+    "releaseIntegrity": {
+      "sameInputsSameCatalog": true,
+      "priorReleaseUnchanged": true,
+      "tamperedReceipts": [
+        {
+          "mutation": "pipeline",
+          "rejected": true,
+          "reason": "curriculum_io.CorpusError: stale-build-pipeline"
+        },
+        {
+          "mutation": "input",
+          "rejected": true,
+          "reason": "curriculum_io.CorpusError: native-unit-not-verified:f1ecbe67a3285d77494218d616800483ddf4de7bb6889552c700705125e40bc8"
+        },
+        {
+          "mutation": "snapshot",
+          "rejected": true,
+          "reason": "curriculum_io.CorpusError: native-snapshot-hash"
+        },
+        {
+          "mutation": "count",
+          "rejected": true,
+          "reason": "curriculum_io.CorpusError: render-unit-not-verified:f1ecbe67a3285d77494218d616800483ddf4de7bb6889552c700705125e40bc8"
+        }
+      ]
+    }
+  },
+  "package": {
+    "path": "artifacts/curriculum-prepared/pianist-q4-g1-g2-pilot.zip",
+    "bytes": 294566,
+    "sha256": "b5d0a6d9eafbaaa65a1c27ae33e7eb6821f0382baa44280ae600c2f056a27784",
+    "fileCount": 72,
+    "uncompressedBytes": 1208808,
+    "allCatalogAssetsVerifiedInsideZip": true
+  },
+  "receipts": {
+    "artifacts/curriculum-normalized/cache-migration.v2.json": "b2077170a307b3b4d6666bbd0b98b6ec967395175ecfcc57249ab8a36ff17bac",
+    "artifacts/curriculum-prepared/native/report.json": "da8fef554927feaf94ba3a3ef6c15e885eac5ec20f1da1e1ea6c7e7b68bb4277",
+    "artifacts/curriculum-prepared/render/report.json": "008a9104fd9b35a7bcd4d580d9d32b3a1ee82ece377a9565d605b9c99fdb5c0a",
+    "artifacts/curriculum-prepared/catalog-check/report.json": "5f6998df977ca25c35b2f2ace6e5ca5eed61f2476139e597e183a4fc9524fdc6",
+    "artifacts/curriculum-prepared/release-integrity-check.json": "29ffc6a51f578087102fc50d078cd2fb306663ca1c124efc431260ead30fcab8",
+    "artifacts/curriculum-prepared/python-tests.log": "3fc95cd94f95fee4198cb30c0a61d301f3523e65d55072abb257d875bf1f36cf",
+    "artifacts/curriculum-prepared/report.json": "163bda771a4a5939438002b00ef9c2b4e5e94876cc1b9a9d20d22f9ffed39351",
+    "artifacts/curriculum-prepared/manifest.json": "7d821d6c6bceb5b65e2f49434380f6ff0425eee5895f940a1095511c6bd99390",
+    "artifacts/curriculum-prepared/releases/629c21879b822966b0adec930123ac7d65b743f8f9195243ef345e6adecd40d6/catalog.json": "0c4b558d8ff5d4d384252c69fc8050dfac8d5838fd07a593460c766d96902c9a"
+  },
+  "limitations": [
+    "assistant content review; no teacher or physical MIDI validation",
+    "local corpus only; publication not approved",
+    "G3-G8 and long buckets remain empty",
+    "Q5-Q7 session UI not implemented"
+  ]
+}

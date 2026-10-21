@@ -1,6 +1,6 @@
 # Kế hoạch Q0–Q9: kho bài tập piano sinh sẵn theo grade
 
-Cập nhật **21/10/2026 — quyết định v2**, theo yêu cầu chuyển sang chuẩn bị kho bài trước khi người dùng tập. Bản này thay kế hoạch sinh/biến đổi câu trong phiên ngày 20/10. Đây là cập nhật thiết kế; chưa có thêm bài được duyệt, chưa triển khai Q4–Q9 và chưa cập nhật bản online trong lần sửa tài liệu này.
+Cập nhật **21/10/2026 — triển khai pilot v2**, theo yêu cầu chuyển sang chuẩn bị kho bài trước khi người dùng tập. Bản này thay kế hoạch sinh/biến đổi câu trong phiên ngày 20/10. Đã có schema/cache v2 và lô Q3–Q4 gồm **14 bài G1–G2 dùng thử local**, có hồ sơ xét nguồn, biên, grade và kiểm MuseScore. Q5–Q9 chưa triển khai; bản online chưa thay đổi. Xem [kết quả và giới hạn pilot](Q4_PREPARED_PILOT.md).
 
 Kết quả cần đạt: **mở web → chọn grade, tay, độ dài, đúng nốt/BPM → tập bài có sẵn đã kiểm → chuyển bài tiếp**. Bài có nguồn nhạc thật, highlight đúng, sheet chiếm phần lớn màn hình, nghe bằng MuseScore, bật/tắt pedal và full sheet. Màn tập không có notation editing. MIDI thật vẫn để sau; nghiệm thu trước bằng MIDI mô phỏng.
 
@@ -23,7 +23,7 @@ Bản này quy định công việc và nghiệm thu; [GRADE_DESIGN.md](GRADE_DE
 
 ## 2. Hiện trạng đã kiểm
 
-Đối chiếu catalog và artifact ngày 21/10/2026, tại commit 51268eec37:
+Mốc v1 để đối chiếu: catalog và artifact ngày 21/10/2026, tại commit 51268eec37:
 
 | Tầng | Thực tế |
 |---|---:|
@@ -37,6 +37,8 @@ Bản này quy định công việc và nghiệm thu; [GRADE_DESIGN.md](GRADE_DE
 | Bài được duyệt cho tập / profile đã bật | 0 / 0 |
 
 528 file chuẩn hóa không có nghĩa toàn bộ nội dung đều được nhận. 295 file bị từ chối có thể do thiếu thông tin piano hoặc hạn chế hỗ trợ, không đồng nghĩa nhạc sai. Nguồn hợp lệ gồm 36.149 PDMX, 1.461 OpenScore và 19 file cá nhân/thư viện. Xem [Q1](Q1_CORPUS.md), [Q2](Q2_NORMALIZATION.md), [Q3](Q3_EXTRACTION.md), [verification](q3/verification.json).
+
+**Bổ sung v2:** giữ lại 823 kết quả phân tích qua migration đã kiểm hash; xét 19 đơn vị từ 7 file nguồn, nhận 14 bài từ 6 file (7 G1, 7 G2), giữ 5 đơn vị pending/bị loại. Có 12 motif hash và 4 cặp chồng lấn nguồn, nên không gọi 14 bài là 14 trải nghiệm độc lập. Đây là lô kiểm đường build, chưa phải kho lớn đủ mọi grade/độ dài. Các số và receipt v1 bên dưới được giữ nguyên.
 
 | Grade | Nhóm đoạn Q3 đã kiểm | Nhóm trong khoảng mặc định **cũ** |
 |---|---:|---:|
@@ -142,6 +144,8 @@ Rà các hạn chế v1: 21 mẫu tay chưa phải danh mục vận động đ�
 
 ### Q4 — Xây kho bài hoàn chỉnh offline
 
+**Pilot đã chạy:** CLI `inspect → prepare → finalize`, schema bài cố định, nguồn/biên/grade review, kiểm nguồn/native/Worker, catalog có hash và coverage. Lô đầu có 14 bài; nhánh này cần hồ sơ duyệt từng đơn vị. Chưa tự động nhận câu từ toàn bộ 37 nghìn file, chưa có G3–G8. [Báo cáo Q4](Q4_PREPARED_PILOT.md) ghi rõ phần đã đạt và phần cần mở rộng.
+
 Thay nhiệm vụ “sinh câu trong phiên” bằng build kho tái lập. Xuất đơn vị từ một nguồn qua Q3; native xác nhận N, xếp n4–n100, duyệt, gộp gần trùng, tạo chỉ mục và gói. Lưu MusicXML, timeline theo phách, nguồn/biên, profile, N/điểm vào/tay, nhịp, phạm vi BPM đã kiểm và phiên bản.
 
 Chuyển vị, nếu bổ sung, được tạo/duyệt offline như bài riêng liên kết nguyên bản. Không dùng lặp đoạn hoặc đổi BPM để tăng số bài. Nhóm 100 nốt lấy đoạn liên tục/nhiều câu vốn liên tiếp, không nối mẩu rời.
@@ -234,4 +238,4 @@ Test nâng kho chứng minh cùng bài không thành chưa gặp vì đổi ID n
 | [score-adapter.ts](../../packages/practice-engine-v2/score-adapter.ts), [controller-v2.ts](../../apps/pianist-web/src/practice/controller-v2.ts) | Target/kernel giữ nguyên; điều phối liên tục phải chứng minh parity. |
 | [PracticeScreen.tsx](../../apps/pianist-web/src/practice/PracticeScreen.tsx), [Sheet.tsx](../../apps/pianist-web/src/practice/Sheet.tsx), [NoteInk.tsx](../../apps/pianist-web/src/practice/NoteInk.tsx) | Sheet, highlight, full sheet, nghe và pedal. |
 
-Đường dẫn **dự kiến, chưa tạo**: scores/curriculum/grades.v2.json, length-buckets.v2.json; artifacts/curriculum-prepared; curriculum/manifest.json; packages/exercise-generator/catalog-selector.ts; apps/pianist-web/src/exercises. Không sửa grades.v1.json/receipt Q0–Q3 cho giống đã đạt v2. Mỗi mốc triển khai lưu commit và bằng chứng riêng, tách dữ liệu/kỹ thuật/duyệt nội dung/trải nghiệm dùng được.
+**Đã tạo cho pilot:** scores/curriculum/grades.v2.json, length-buckets.v2.json, reviewed-units.v2.json; packages/exercise-generator/prepared-model.ts và prepared-contract.ts; buildscripts/pianist/prepare-curriculum.py; artifacts/curriculum-prepared/manifest.json và releases/<version>. **Chưa tạo:** catalog-selector.ts, apps/pianist-web/src/exercises và catalog công khai curriculum/manifest.json. Không sửa grades.v1.json/receipt Q0–Q3 cho giống đã đạt v2. Mỗi mốc triển khai lưu commit và bằng chứng riêng, tách dữ liệu/kỹ thuật/duyệt nội dung/trải nghiệm dùng được.
