@@ -2,6 +2,8 @@
 
 Ngày 21/10/2026. Điều tra toàn bộ 19.627 nguồn mang mã `piano-not-explicit`, đọc lại XML và metadata gốc, kiểm hash cả hai. Không có lỗi hash/I/O trong lượt kiểm này. [Receipt](piano-identification/verification.json) lưu số đếm và hash các báo cáo chi tiết.
 
+**Trạng thái sau điều tra:** người dùng yêu cầu chỉ giữ sheet nguồn đủ hai staff piano. [Đã dọn kho nguồn còn 14.960 file](SOURCE_POOL_CLEANUP.md), giữ nguyên toàn bộ bài tập. Các số đếm bên dưới là snapshot trước khi dọn.
+
 **Kết luận:** bộ lọc lúc thu thập quá rộng, còn bộ nhận diện lúc xử lý quá hẹp. 19.627 nguồn này đã bị chặn trước khi music21 đọc nốt và trước khi xét grade. Vì vậy, việc hết hàng nguồn K3 hiện tại không chứng minh đã khai thác hết kho nhạc.
 
 ## Đã tải những gì

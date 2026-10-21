@@ -4,6 +4,8 @@ Cập nhật 21/10/2026 theo yêu cầu mới: **mỗi lựa chọn độ dài t
 
 Số bài đã xuất thực tế và tình trạng từng lựa chọn nằm trong [báo cáo K3](K3_BANK_RESULTS.md). Báo cáo phân biệt rõ kết thúc một lượt quét với đạt đủ quota.
 
+**Kho nguồn đã được dọn theo chỉ dẫn mới:** chỉ giữ sheet hai staff piano, còn 14.960 file nguồn. [Kết quả dọn](SOURCE_POOL_CLEANUP.md). Việc này chỉ áp dụng cho sheet nguồn; toàn bộ bài tập đã xuất được giữ nguyên, kể cả bài tập một tay/một staff. Lệnh thu thập bulk cũ bị chặn trên kho đã dọn để không tự nhập lại nguồn đã xóa.
+
 ## Cách chạy
 
 1. Lấy từng nguồn đã đọc ở K1; kiểm hash nguồn và dữ liệu phân tích.

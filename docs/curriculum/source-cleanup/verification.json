@@ -1,0 +1,49 @@
+{
+  "at": "2026-10-21T12:48:13.262860+00:00",
+  "status": "complete",
+  "planSha256": "d7bc022451f9384784ceb088ca1a5ac8413a61f6ce5fa602973920efe1fa757e",
+  "removedSources": 22670,
+  "remainingSources": 14960,
+  "scope": "downloaded-source-sheets-only",
+  "exercisesBefore": {
+    "files": 11956,
+    "sha256": "d6dbf0d92b0f27b295875d732634bff05c2fd39cfe96cf57a5f02fe25094ec1e"
+  },
+  "reasons": {
+    "not-two-staff-source": 22648,
+    "other-instrument-source": 22
+  },
+  "deletedSourceCopies": 2916,
+  "exerciseBankTouched": false,
+  "exercisesAfter": {
+    "files": 11956,
+    "sha256": "d6dbf0d92b0f27b295875d732634bff05c2fd39cfe96cf57a5f02fe25094ec1e"
+  },
+  "deletedBytes": 133413299,
+  "verifiedAt": "2026-10-21T12:51:28.096428+00:00",
+  "checks": {
+    "rawSourceInventoryMatches": true,
+    "allRejectedSourcesAbsent": true,
+    "exerciseSnapshotsIdentical": true,
+    "mainBankStill5284": true,
+    "legacyReimportBlocked": true
+  },
+  "physicalSourceMxlFiles": 14960,
+  "activeSourceQueue": 14959,
+  "sourceStatuses": {
+    "invalid": 1,
+    "removed-by-user": 22670,
+    "valid": 14959
+  },
+  "pythonTests": {
+    "cleanup": 6,
+    "existingCorpus": 26,
+    "passed": true
+  },
+  "artifactHashes": {
+    "artifacts/curriculum-corpus/source-cleanup.json": "2c4f6b99d0034df7a9a75cf1da4e9cded1baaf543ca42a100abc1c0914b43f87",
+    "artifacts/curriculum-source-two-staff-plan.json": "d7bc022451f9384784ceb088ca1a5ac8413a61f6ce5fa602973920efe1fa757e",
+    "artifacts/curriculum-source-cleanup-tests.log": "63cd37396009b8dd2c30e53ddfbad6659085bcf3d9a02126f3f89d80a4b0d62c",
+    "artifacts/curriculum-source-cleanup-corpus-tests.log": "65eb153911274b6e7de8536c8445650f7011be5b8eb7bb4324b486dc5590eb6e"
+  }
+}

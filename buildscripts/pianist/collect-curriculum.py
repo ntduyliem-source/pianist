@@ -25,6 +25,8 @@ def main():
     if lock["schemaVersion"] != 1:
         raise ValueError("Unsupported manifest")
     args.output = args.output.resolve()
+    from curriculum_source_cleanup import legacy_collection_guard
+    legacy_collection_guard(args.output)
     with RunLock(args.output / ".run.lock"):
         def state(status, **extra):
             write_json(args.output / "run-state.json",
