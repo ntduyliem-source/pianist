@@ -2,7 +2,7 @@
 
 **Mục tiêu:** đọc từng bài nguồn → tìm mọi đoạn phù hợp từng grade → kiểm và nhập toàn bộ đoạn đạt vào kho offline. Màn quiz triển khai sau.
 
-Hiện có **37.629 file hợp lệ; 823 đã phân tích, 36.806 chưa chạy**. Lô 14 bài chỉ dùng kiểm hồi quy.
+**K1–K2 đã hoàn thành ngày 21/10/2026:** 37.629/37.629 nguồn có kết quả, 17.926 có dữ liệu nhạc, 19.627 cần xác định phần piano, 76 gặp lỗi/giới hạn hỗ trợ; không còn file chờ. Bộ tiêu chí V3 có 25 profile G1–G8. Xem [báo cáo và bằng chứng](K1_K2_RESULTS.md). Bước tiếp theo là **K3 quét mọi đoạn**; lô 14 bài cũ chỉ dùng kiểm hồi quy.
 
 ## Quy trình cho từng file
 

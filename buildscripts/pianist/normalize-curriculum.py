@@ -5,19 +5,17 @@ Q1 catalog is opened read-only. Nothing in this tool publishes a score or grade.
 from __future__ import annotations
 import argparse
 from collections import Counter
-from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone
 import hashlib
 import gzip
 import json
-import multiprocessing as mp
 from pathlib import Path
 import re
 import sqlite3
 import time
 import zlib
 
-from curriculum_io import within, write_json, CorpusError, RunLock
+from curriculum_io import within, relative_name, write_json, CorpusError, RunLock
 
 ROOT = Path(__file__).resolve().parents[2]
 PARSER_FILES = ['buildscripts/pianist/curriculum_normalize.py',
@@ -122,68 +120,24 @@ def jobs(corpus):
     return result
 
 
-def child(connection, job, max_notes):
-    try:
-        from curriculum_normalize import normalize, encoded
-        data = Path(job['absolute']).read_bytes()
-        if sha(data) != job['sha']:
-            raise CorpusError('source-checksum-mismatch')
-        result = normalize(data, max_notes=max_notes)
-        raw = encoded(result).encode()
-        connection.send({'status': 'normalized', 'blob': zlib.compress(raw), 'analysis_sha': sha(raw),
-                         'blockers': result['releaseBlockers'], 'error': None})
-    except Exception as error:
-        connection.send({'status': 'rejected', 'blob': None, 'analysis_sha': None,
-                         'blockers': [str(error) if isinstance(error, CorpusError) else 'music21-parse-error'],
-                         'error': f'{type(error).__name__}: {error}'[:1500]})
-    finally:
-        connection.close()
-
-
-def run_one(job, timeout, max_notes):
-    # A killed/hung importer cannot poison the next score or leave a giant
-    # music21 object cache alive. Max four isolated processes on this machine.
-    started = time.monotonic()
-    ctx = mp.get_context('spawn')
-    parent, worker = ctx.Pipe(duplex=False)
-    process = ctx.Process(target=child, args=(worker, job, max_notes))
-    process.start()
-    worker.close()
-    try:
-        if parent.poll(timeout):
-            try:
-                result = parent.recv()
-            except EOFError:
-                result = {'status': 'rejected', 'blob': None, 'analysis_sha': None,
-                          'blockers': ['normalizer-crashed'], 'error': 'Worker closed without a result'}
-        else:
-            result = {'status': 'rejected', 'blob': None, 'analysis_sha': None,
-                      'blockers': ['normalizer-timeout'], 'error': f'exceeded {timeout} seconds'}
-    finally:
-        parent.close()
-        process.join(1)
-        if process.is_alive():
-            process.terminate()
-            process.join()
-    return job, result, time.monotonic() - started
-
-
 def main():
     p = argparse.ArgumentParser(description=__doc__)
-    p.add_argument('command', choices=['normalize', 'migrate-cache', 'export-native', 'import-native', 'report'])
+    p.add_argument('command', choices=['normalize', 'migrate-cache', 'export-native', 'import-native', 'report', 'audit'])
     p.add_argument('--corpus', type=Path, default=ROOT / 'artifacts/curriculum-corpus')
     p.add_argument('--output', type=Path, default=ROOT / 'artifacts/curriculum-normalized')
     p.add_argument('--limit', type=int, default=0, help='0 = all matching files; deterministic hash order')
     p.add_argument('--collection', default='', help='Substring of collection ID; empty = all')
     p.add_argument('--source-list', type=Path, help='JSON {sourceHashes:[sha256,...]} selected from the current Q1 queue')
-    p.add_argument('--workers', type=int, choices=range(1,5), default=4)
+    p.add_argument('--workers', type=int, choices=range(1,17), default=4)
+    p.add_argument('--retry-rejected', action='store_true', help='Re-audit rejected rows; preserve previous outcomes in retry-audit.json')
+    p.add_argument('--recycle', type=int, default=32, help='Restart each isolated importer after this many scores')
     p.add_argument('--timeout', type=int, default=45)
     p.add_argument('--max-notes', type=int, default=20000)
     p.add_argument('--jobs', type=Path, default=ROOT / 'artifacts/q2-native/jobs.json')
     p.add_argument('--report', type=Path, default=ROOT / 'artifacts/q2-native/report.json')
     p.add_argument('--refresh-native', action='store_true', help='Export even current native receipts again')
     args = p.parse_args()
-    if args.limit < 0 or args.timeout < 1 or args.max_notes < 1:
+    if args.limit < 0 or args.timeout < 1 or args.max_notes < 1 or args.recycle < 1:
         p.error('limit >= 0; timeout/max-notes > 0')
     with RunLock(args.output / '.run.lock'):
         execute(args)
@@ -207,30 +161,63 @@ def execute(args):
         write_json(args.output/'cache-migration.v2.json', migration)
         print(json.dumps(migration), flush=True)
     elif args.command == 'normalize':
+        from curriculum_workers import results
         cached = set()
-        for row in db.execute('SELECT source_sha,status,blob,analysis_sha FROM analyses WHERE pipeline=?', (pipeline,)):
+        retry_rows = []
+        selected_shas={item['sha'] for item in queue}
+        for row in db.execute('SELECT source_sha,status,blob,analysis_sha,blockers FROM analyses WHERE pipeline=?', (pipeline,)):
+            if row['source_sha'] not in selected_shas:continue
             try:
-                if row['status']=='rejected' or sha(zlib.decompress(row['blob']))==row['analysis_sha']:
+                if row['status']=='rejected' and args.retry_rejected:
+                    retry_rows.append(row['source_sha'])
+                    continue
+                if set(json.loads(row['blockers'])) & {'source-checksum-mismatch','source-io-error','normalizer-crashed','normalizer-timeout'}:
+                    continue  # Infrastructure/input failures are never a reusable musical verdict.
+                if row['status']=='rejected':
                     cached.add(row['source_sha'])
-            except (TypeError,zlib.error):
+                elif row['status']=='normalized':
+                    raw=zlib.decompress(row['blob'])
+                    if sha(raw)==row['analysis_sha'] and json.loads(raw).get('sourceSha256')==row['source_sha']:
+                        cached.add(row['source_sha'])
+            except (ValueError,TypeError,zlib.error):
                 pass  # Corrupt local result is rebuilt, never admitted on trust.
         todo = []
         for item in queue:
-            path = within(args.corpus, item['path'])
-            # Rehash input even on a cache hit; a stale catalog isn't proof.
-            if sha(path.read_bytes()) != item['sha']:
-                raise CorpusError('source-checksum-mismatch:' + item['sha'])
-            if item['sha'] not in cached:
-                todo.append({**item, 'absolute': str(path)})
+            if item['sha'] in cached:
+                # Rehash reused results; fresh sources are validated inside
+                # bounded workers instead of a serial whole-corpus preflight.
+                if sha(within(args.corpus,item['path']).read_bytes()) != item['sha']:
+                    raise CorpusError('source-checksum-mismatch:' + item['sha'])
+            else:
+                path=args.corpus.joinpath(*relative_name(item['path']).split('/'))
+                todo.append({**item,'absolute':str(path),'corpus':str(args.corpus)})
         print(f'Q2: {len(queue)} selected, {len(queue)-len(todo)} cached, {len(todo)} to normalize', flush=True)
-        with ThreadPoolExecutor(max_workers=args.workers) as pool:
-            for i, (item, result, elapsed) in enumerate(pool.map(lambda j: run_one(j,args.timeout,args.max_notes), todo),1):
-                db.execute('INSERT OR REPLACE INTO analyses VALUES(?,?,?,?,?,?,?,?)',
-                    (item['sha'], pipeline, result['status'], result['blob'], result['analysis_sha'],
-                     json.dumps(result['blockers']), result['error'], elapsed))
-                db.commit()
-                if i % 20 == 0 or i == len(todo):
-                    print(f'Q2: {i}/{len(todo)} saved ({result["status"]})', flush=True)
+        retry_set=set(retry_rows)&{j['sha'] for j in todo}
+        retry_audit = {r['source_sha']:dict(r) for r in db.execute(
+            'SELECT source_sha,status,blockers,error,elapsed FROM analyses WHERE pipeline=?', (pipeline,)) if r['source_sha'] in retry_set}
+        if retry_audit:
+            write_json(args.output/'retry-audit.json', {'pipeline':pipeline,'before':retry_audit,'after':{}})
+        retried = {}
+        started = time.monotonic()
+        stride=min(100,max(1,len(todo)//10))
+        write_json(args.output/'progress.json', {'at':datetime.now(timezone.utc).isoformat(),
+            'pipeline':pipeline,'selected':len(queue),'cached':len(queue)-len(todo),
+            'savedThisRun':0,'remainingThisRun':len(todo),'elapsedSeconds':0,
+            'workers':args.workers,'recycle':args.recycle})
+        for i, (item, result, elapsed) in enumerate(results(todo,args.workers,args.timeout,args.max_notes,args.recycle),1):
+            db.execute('INSERT OR REPLACE INTO analyses VALUES(?,?,?,?,?,?,?,?)',
+                (item['sha'], pipeline, result['status'], result['blob'], result['analysis_sha'],
+                 json.dumps(result['blockers']), result['error'], elapsed))
+            db.commit()
+            if item['sha'] in retry_audit:
+                retried[item['sha']]={k:result[k] for k in ('status','blockers','error')}
+                write_json(args.output/'retry-audit.json', {'pipeline':pipeline,'before':retry_audit,'after':retried})
+            if i % stride == 0 or i == len(todo):
+                print(f'Q2: {i}/{len(todo)} saved ({result["status"]})', flush=True)
+                write_json(args.output/'progress.json', {'at':datetime.now(timezone.utc).isoformat(),
+                    'pipeline':pipeline,'selected':len(queue),'cached':len(queue)-len(todo),
+                    'savedThisRun':i,'remainingThisRun':len(todo)-i,'elapsedSeconds':round(time.monotonic()-started,2),
+                    'workers':args.workers,'recycle':args.recycle})
     elif args.command == 'export-native':
         from curriculum_normalize import piano_xml
         out = args.jobs.parent
@@ -292,7 +279,31 @@ def execute(args):
             db.execute('INSERT OR REPLACE INTO native VALUES(?,?,?,?)',
                        (item['id'],row['analysis_sha'],report['engineBuild']+':'+report['verifierBuild'],json.dumps(item)))
         db.commit()
-    rows = db.execute('SELECT source_sha,status,blockers,elapsed FROM analyses WHERE pipeline=?', (pipeline,)).fetchall()
+    catalog_jobs = {r['sha']:r for r in jobs(args.corpus)}
+    rows = [r for r in db.execute('SELECT source_sha,status,blockers,error,elapsed FROM analyses WHERE pipeline=?', (pipeline,))
+            if r['source_sha'] in catalog_jobs]
+    audit_failures=[]
+    if args.command=='audit':
+        checked=0;logical=hashlib.sha256()
+        for row in db.execute('SELECT * FROM analyses WHERE pipeline=? ORDER BY source_sha',(pipeline,)):
+            if row['source_sha'] not in catalog_jobs:continue
+            try:
+                codes=json.loads(row['blockers'])
+                if not isinstance(codes,list) or not all(isinstance(c,str) for c in codes):raise ValueError('invalid reason codes')
+                if row['status']=='normalized':
+                    raw=zlib.decompress(row['blob']);data=json.loads(raw)
+                    if sha(raw)!=row['analysis_sha'] or data.get('sourceSha256')!=row['source_sha']:
+                        raise ValueError('analysis hash/source binding')
+                elif row['status']!='rejected' or not codes or not row['error']:
+                    raise ValueError('missing source outcome')
+                logical.update(json.dumps([row['source_sha'],row['status'],row['analysis_sha'],codes],separators=(',',':')).encode())
+                checked+=1
+            except (ValueError,TypeError,zlib.error) as error:
+                audit_failures.append({'sourceSha256':row['source_sha'],'error':str(error)})
+        write_json(args.output/'cache-audit.json',{'pipeline':pipeline,'scope':'Current catalog coverage + cached payload hashes/source bindings; not native/grade approval',
+            'catalogFiles':len(catalog_jobs),'checked':checked,'missing':sorted(set(catalog_jobs)-{r['source_sha'] for r in rows}),
+            'failures':audit_failures,'logicalSha256':logical.hexdigest(),
+            'passed':not audit_failures and checked==len(catalog_jobs)})
     counts = Counter(code for r in rows for code in json.loads(r['blockers']))
     current_native=(native_identity() or 'unavailable')+':'+verifier_identity()
     receipts = [json.loads(r[0]) for r in db.execute('''SELECT n.report FROM native n JOIN analyses a
@@ -309,8 +320,27 @@ def execute(args):
               'fragmentReviewEligible': sum(r.get('verification',{}).get('eligibleForFragmentReview',False) for r in receipts),
               'publicApproved': 0, 'gradeAccepted': 0}
     write_json(args.output / 'report.json',report)
+    # One deterministic row per current source; pending is explicit too. Musical
+    # blockers are not file corruption, and absence of a piano name is reviewable.
+    by_sha = {r['source_sha']:r for r in rows}
+    outcomes = args.output/'source-outcomes.jsonl'
+    temp = outcomes.with_suffix('.jsonl.tmp')
+    with temp.open('w',encoding='utf8') as stream:
+        for source, job in sorted(catalog_jobs.items()):
+            row = by_sha.get(source)
+            codes = json.loads(row['blockers']) if row else []
+            status = 'pending' if row is None else 'read' if row['status']=='normalized' else (
+                'needs-instrument-review' if 'piano-not-explicit' in codes else
+                'invalid-file' if 'source-checksum-mismatch' in codes else 'unsupported-or-parse-error')
+            stream.write(json.dumps({'sourceSha256':source,'path':job['path'],'collections':job['collections'],
+                'pipeline':pipeline,'status':status,'reasonCodes':codes,'error':row['error'] if row else None},ensure_ascii=False)+'\n')
+    temp.replace(outcomes)
     print(json.dumps(report, ensure_ascii=True))
     db.close()
+    if audit_failures or (args.command=='audit' and len(rows)!=len(catalog_jobs)):
+        raise CorpusError('normalization-cache-audit-failed: see cache-audit.json')
+    if args.command=='normalize' and any('source-checksum-mismatch' in json.loads(r['blockers']) for r in rows):
+        raise CorpusError('source-checksum-mismatch: see source-outcomes.jsonl; other sources were checkpointed')
 
 
 if __name__ == '__main__':

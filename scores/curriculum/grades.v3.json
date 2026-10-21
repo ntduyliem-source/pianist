@@ -1,0 +1,693 @@
+{
+  "schemaVersion": 3,
+  "rulesVersion": "graded-content-rules-v3",
+  "version": "offline-g1-g8-k2-v3",
+  "implementedGrades": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "evidenceDocument": "docs/curriculum/GRADE_DESIGN.md",
+  "scope": "Content criteria only. Pass does not publish an exercise; K3 boundaries and K4 source/native parity remain required.",
+  "evidencePolicy": "Source-bound contextual hand/fingering/BPM review; unknown evidence returns review, not inferred fitness.",
+  "scientificStatus": "Product rules based on cited teaching/research references; numerical limits and grade ordering are not scientifically proven optima.",
+  "profileReferences": {
+    "G1": [
+      "E2",
+      "E3",
+      "E4"
+    ],
+    "G2": [
+      "E2",
+      "E3",
+      "E4"
+    ],
+    "G3": [
+      "E1",
+      "E4"
+    ],
+    "G4": [
+      "E2",
+      "E3",
+      "E4"
+    ],
+    "G5": [
+      "E2",
+      "E3",
+      "E5"
+    ],
+    "G6": [
+      "E6"
+    ],
+    "G7": [
+      "E2",
+      "E3",
+      "E5"
+    ],
+    "G8": [
+      "E1",
+      "E2",
+      "E3",
+      "E6"
+    ]
+  },
+  "profiles": [
+    {
+      "id": "g1-direction-quarters",
+      "grade": 1,
+      "focus": "steps",
+      "movement": "home",
+      "maxInterval": 2,
+      "rhythms": [
+        "R0"
+      ],
+      "lines": 1,
+      "fifths": [
+        0
+      ],
+      "meters": [
+        "2/4",
+        "3/4",
+        "4/4"
+      ],
+      "beatQuarter": 1,
+      "focusIntervals": [
+        2
+      ]
+    },
+    {
+      "id": "g1-direction-long",
+      "grade": 1,
+      "focus": "steps",
+      "movement": "home",
+      "maxInterval": 2,
+      "rhythms": [
+        "R1"
+      ],
+      "lines": 1,
+      "fifths": [
+        0
+      ],
+      "meters": [
+        "2/4",
+        "3/4",
+        "4/4"
+      ],
+      "beatQuarter": 1,
+      "focusIntervals": [
+        2
+      ]
+    },
+    {
+      "id": "g1-direction-rests",
+      "grade": 1,
+      "focus": "steps",
+      "movement": "home",
+      "maxInterval": 2,
+      "rhythms": [
+        "R2"
+      ],
+      "lines": 1,
+      "fifths": [
+        0
+      ],
+      "meters": [
+        "2/4",
+        "3/4",
+        "4/4"
+      ],
+      "beatQuarter": 1,
+      "focusIntervals": [
+        2
+      ]
+    },
+    {
+      "id": "g1-direction-change",
+      "grade": 1,
+      "focus": "steps",
+      "movement": "home",
+      "maxInterval": 2,
+      "rhythms": [
+        "R0"
+      ],
+      "lines": 1,
+      "fifths": [
+        0
+      ],
+      "meters": [
+        "2/4",
+        "3/4",
+        "4/4"
+      ],
+      "beatQuarter": 1,
+      "focusIntervals": [
+        2
+      ],
+      "changeDirection": true
+    },
+    {
+      "id": "g2-third-known-rhythm",
+      "grade": 2,
+      "focus": "thirds",
+      "movement": "home",
+      "maxInterval": 3,
+      "rhythms": [
+        "R0",
+        "R1",
+        "R2"
+      ],
+      "lines": 1,
+      "fifths": [
+        0
+      ],
+      "meters": [
+        "2/4",
+        "3/4",
+        "4/4"
+      ],
+      "beatQuarter": 1,
+      "focusIntervals": [
+        3
+      ]
+    },
+    {
+      "id": "g2-paired-eighths-steps",
+      "grade": 2,
+      "focus": "steps",
+      "movement": "home",
+      "maxInterval": 2,
+      "rhythms": [
+        "R3"
+      ],
+      "lines": 1,
+      "fifths": [
+        0
+      ],
+      "meters": [
+        "2/4",
+        "3/4",
+        "4/4"
+      ],
+      "beatQuarter": 1,
+      "focusIntervals": [
+        2
+      ]
+    },
+    {
+      "id": "g3-melodic-fourth-fifth",
+      "grade": 3,
+      "focus": "melodic",
+      "movement": "home",
+      "maxInterval": 5,
+      "rhythms": [
+        "R0",
+        "R1",
+        "R2",
+        "R3"
+      ],
+      "lines": 1,
+      "fifths": [
+        0
+      ],
+      "meters": [
+        "2/4",
+        "3/4",
+        "4/4"
+      ],
+      "beatQuarter": 1,
+      "focusIntervals": [
+        4,
+        5
+      ]
+    },
+    {
+      "id": "g3-arpeggio-fourth-fifth",
+      "grade": 3,
+      "focus": "arpeggio",
+      "movement": "home",
+      "maxInterval": 5,
+      "rhythms": [
+        "R0",
+        "R1",
+        "R2",
+        "R3"
+      ],
+      "lines": 1,
+      "fifths": [
+        0
+      ],
+      "meters": [
+        "2/4",
+        "3/4",
+        "4/4"
+      ],
+      "beatQuarter": 1,
+      "focusIntervals": [
+        4,
+        5
+      ]
+    },
+    {
+      "id": "g4-new-position",
+      "grade": 4,
+      "focus": "position",
+      "movement": "new-position",
+      "maxInterval": 5,
+      "rhythms": [
+        "R0",
+        "R1",
+        "R2",
+        "R3"
+      ],
+      "lines": 1,
+      "fifths": [
+        -1,
+        0,
+        1
+      ],
+      "meters": [
+        "2/4",
+        "3/4",
+        "4/4"
+      ],
+      "beatQuarter": 1
+    },
+    {
+      "id": "g4-position-shift",
+      "grade": 4,
+      "focus": "position",
+      "movement": "shift",
+      "maxInterval": 5,
+      "rhythms": [
+        "R0",
+        "R1",
+        "R2",
+        "R3"
+      ],
+      "lines": 1,
+      "fifths": [
+        -1,
+        0,
+        1
+      ],
+      "meters": [
+        "2/4",
+        "3/4",
+        "4/4"
+      ],
+      "beatQuarter": 1
+    },
+    {
+      "id": "g5-right-melody",
+      "grade": 5,
+      "focus": "coordination",
+      "movement": "home",
+      "maxInterval": 5,
+      "rhythms": [
+        "R0",
+        "R1",
+        "R2"
+      ],
+      "lines": 2,
+      "fifths": [
+        0
+      ],
+      "meters": [
+        "2/4",
+        "3/4",
+        "4/4"
+      ],
+      "beatQuarter": 1,
+      "melodyHand": "right",
+      "accompanimentRhythms": [
+        "R0",
+        "R1",
+        "R2"
+      ]
+    },
+    {
+      "id": "g5-left-melody",
+      "grade": 5,
+      "focus": "coordination",
+      "movement": "home",
+      "maxInterval": 5,
+      "rhythms": [
+        "R0",
+        "R1",
+        "R2"
+      ],
+      "lines": 2,
+      "fifths": [
+        0
+      ],
+      "meters": [
+        "2/4",
+        "3/4",
+        "4/4"
+      ],
+      "beatQuarter": 1,
+      "melodyHand": "left",
+      "accompanimentRhythms": [
+        "R0",
+        "R1",
+        "R2"
+      ]
+    },
+    {
+      "id": "g6-6-up",
+      "grade": 6,
+      "focus": "leap",
+      "movement": "travel",
+      "maxInterval": 6,
+      "rhythms": [
+        "R0",
+        "R1",
+        "R2"
+      ],
+      "lines": 1,
+      "fifths": [
+        -1,
+        0,
+        1
+      ],
+      "meters": [
+        "2/4",
+        "3/4",
+        "4/4"
+      ],
+      "beatQuarter": 1,
+      "focusIntervals": [
+        6
+      ],
+      "direction": "up"
+    },
+    {
+      "id": "g6-6-down",
+      "grade": 6,
+      "focus": "leap",
+      "movement": "travel",
+      "maxInterval": 6,
+      "rhythms": [
+        "R0",
+        "R1",
+        "R2"
+      ],
+      "lines": 1,
+      "fifths": [
+        -1,
+        0,
+        1
+      ],
+      "meters": [
+        "2/4",
+        "3/4",
+        "4/4"
+      ],
+      "beatQuarter": 1,
+      "focusIntervals": [
+        6
+      ],
+      "direction": "down"
+    },
+    {
+      "id": "g6-7-up",
+      "grade": 6,
+      "focus": "leap",
+      "movement": "travel",
+      "maxInterval": 7,
+      "rhythms": [
+        "R0",
+        "R1",
+        "R2"
+      ],
+      "lines": 1,
+      "fifths": [
+        -1,
+        0,
+        1
+      ],
+      "meters": [
+        "2/4",
+        "3/4",
+        "4/4"
+      ],
+      "beatQuarter": 1,
+      "focusIntervals": [
+        7
+      ],
+      "direction": "up"
+    },
+    {
+      "id": "g6-7-down",
+      "grade": 6,
+      "focus": "leap",
+      "movement": "travel",
+      "maxInterval": 7,
+      "rhythms": [
+        "R0",
+        "R1",
+        "R2"
+      ],
+      "lines": 1,
+      "fifths": [
+        -1,
+        0,
+        1
+      ],
+      "meters": [
+        "2/4",
+        "3/4",
+        "4/4"
+      ],
+      "beatQuarter": 1,
+      "focusIntervals": [
+        7
+      ],
+      "direction": "down"
+    },
+    {
+      "id": "g6-8-up",
+      "grade": 6,
+      "focus": "leap",
+      "movement": "travel",
+      "maxInterval": 8,
+      "rhythms": [
+        "R0",
+        "R1",
+        "R2"
+      ],
+      "lines": 1,
+      "fifths": [
+        -1,
+        0,
+        1
+      ],
+      "meters": [
+        "2/4",
+        "3/4",
+        "4/4"
+      ],
+      "beatQuarter": 1,
+      "focusIntervals": [
+        8
+      ],
+      "direction": "up"
+    },
+    {
+      "id": "g6-8-down",
+      "grade": 6,
+      "focus": "leap",
+      "movement": "travel",
+      "maxInterval": 8,
+      "rhythms": [
+        "R0",
+        "R1",
+        "R2"
+      ],
+      "lines": 1,
+      "fifths": [
+        -1,
+        0,
+        1
+      ],
+      "meters": [
+        "2/4",
+        "3/4",
+        "4/4"
+      ],
+      "beatQuarter": 1,
+      "focusIntervals": [
+        8
+      ],
+      "direction": "down"
+    },
+    {
+      "id": "g7-dotted",
+      "grade": 7,
+      "focus": "rhythm",
+      "movement": "home",
+      "maxInterval": 3,
+      "rhythms": [
+        "R4"
+      ],
+      "lines": 1,
+      "fifths": [
+        0
+      ],
+      "meters": [
+        "2/4",
+        "3/4",
+        "4/4"
+      ],
+      "beatQuarter": 1
+    },
+    {
+      "id": "g7-tie",
+      "grade": 7,
+      "focus": "rhythm",
+      "movement": "home",
+      "maxInterval": 3,
+      "rhythms": [
+        "R5"
+      ],
+      "lines": 1,
+      "fifths": [
+        0
+      ],
+      "meters": [
+        "2/4",
+        "3/4",
+        "4/4"
+      ],
+      "beatQuarter": 1
+    },
+    {
+      "id": "g7-syncopation",
+      "grade": 7,
+      "focus": "rhythm",
+      "movement": "home",
+      "maxInterval": 3,
+      "rhythms": [
+        "R6"
+      ],
+      "lines": 1,
+      "fifths": [
+        0
+      ],
+      "meters": [
+        "2/4",
+        "3/4",
+        "4/4"
+      ],
+      "beatQuarter": 1
+    },
+    {
+      "id": "g7-compound",
+      "grade": 7,
+      "focus": "rhythm",
+      "movement": "home",
+      "maxInterval": 3,
+      "rhythms": [
+        "R7"
+      ],
+      "lines": 1,
+      "fifths": [
+        0
+      ],
+      "meters": [
+        "6/8"
+      ],
+      "beatQuarter": 1.5
+    },
+    {
+      "id": "g8-register",
+      "grade": 8,
+      "focus": "position",
+      "movement": "register",
+      "maxInterval": 5,
+      "rhythms": [
+        "R0",
+        "R1",
+        "R2",
+        "R3"
+      ],
+      "lines": 1,
+      "fifths": [
+        -1,
+        0,
+        1
+      ],
+      "meters": [
+        "2/4",
+        "3/4",
+        "4/4"
+      ],
+      "beatQuarter": 1
+    },
+    {
+      "id": "g8-right-melody-eighth-pairs",
+      "grade": 8,
+      "focus": "coordination",
+      "movement": "home",
+      "maxInterval": 3,
+      "rhythms": [
+        "R3"
+      ],
+      "lines": 2,
+      "fifths": [
+        0
+      ],
+      "meters": [
+        "2/4",
+        "3/4",
+        "4/4"
+      ],
+      "beatQuarter": 1,
+      "melodyHand": "right",
+      "accompanimentRhythms": [
+        "R0",
+        "R1",
+        "R2"
+      ],
+      "combines": [
+        "G5-coordination",
+        "G2-paired-eighths"
+      ]
+    },
+    {
+      "id": "g8-left-melody-eighth-pairs",
+      "grade": 8,
+      "focus": "coordination",
+      "movement": "home",
+      "maxInterval": 3,
+      "rhythms": [
+        "R3"
+      ],
+      "lines": 2,
+      "fifths": [
+        0
+      ],
+      "meters": [
+        "2/4",
+        "3/4",
+        "4/4"
+      ],
+      "beatQuarter": 1,
+      "melodyHand": "left",
+      "accompanimentRhythms": [
+        "R0",
+        "R1",
+        "R2"
+      ],
+      "combines": [
+        "G5-coordination",
+        "G2-paired-eighths"
+      ]
+    }
+  ]
+}

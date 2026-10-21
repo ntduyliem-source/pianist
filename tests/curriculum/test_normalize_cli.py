@@ -9,6 +9,7 @@ import sys
 import tempfile
 import unittest
 import zipfile
+import zlib
 from fixtures_q2 import fixtures
 
 ROOT=Path(__file__).resolve().parents[2]
@@ -78,10 +79,30 @@ class CliTests(unittest.TestCase):
             self.assertIn('0 cached',text)
             db=sqlite3.connect(out/'normalization.sqlite')
             self.assertEqual(db.execute('SELECT analysis_sha FROM analyses').fetchone()[0],first_hash);db.close()
+            db=sqlite3.connect(out/'normalization.sqlite')
+            mismatched=json.loads(zlib.decompress(db.execute('SELECT blob FROM analyses').fetchone()[0]))
+            mismatched['sourceSha256']='f'*64
+            wrong=json.dumps(mismatched).encode()
+            db.execute('UPDATE analyses SET blob=?,analysis_sha=?',(zlib.compress(wrong),hashlib.sha256(wrong).hexdigest()))
+            db.commit();db.close()
+            audit=subprocess.run([sys.executable,str(CLI),'audit','--corpus',str(corpus),'--output',str(out)],
+                cwd=ROOT,capture_output=True,text=True,timeout=20)
+            self.assertNotEqual(audit.returncode,0)
+            self.assertIn('normalization-cache-audit-failed',audit.stderr)
+            text,_=run()
+            self.assertIn('0 cached',text)  # Valid blob hash cannot bless the wrong source binding.
             text,limited=run('--max-notes','1')
             self.assertNotEqual(limited['pipeline'],report['pipeline'])
             self.assertEqual(limited['parseRejected'],1)
             self.assertEqual(limited['rejectionCounts'],{'normalization-note-limit':1})
+            retried_text,retried=run('--max-notes','1','--retry-rejected')
+            self.assertIn('0 cached',retried_text)
+            audit=json.loads((out/'retry-audit.json').read_text())
+            self.assertEqual(set(audit['before']),{sha});self.assertEqual(set(audit['after']),{sha})
+            self.assertEqual(audit['after'][sha]['blockers'],['normalization-note-limit'])
+            outcomes=[json.loads(line) for line in (out/'source-outcomes.jsonl').read_text().splitlines()]
+            self.assertEqual(len(outcomes),1)
+            self.assertEqual(outcomes[0]['status'],'unsupported-or-parse-error')
             (corpus/'source.mxl').write_bytes(b'changed since Q1')
             result=subprocess.run([sys.executable,str(CLI),'normalize','--corpus',str(corpus),'--output',str(out)],
                 cwd=ROOT,capture_output=True,text=True,timeout=20)

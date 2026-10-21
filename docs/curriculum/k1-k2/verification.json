@@ -1,0 +1,99 @@
+{
+  "date": "2026-10-21",
+  "scope": "K1 full-corpus ingestion outcomes and K2 content criteria, not K3/K4 exercise production",
+  "k1": {
+    "pipeline": "2673bdaa5f8a7903ec9a3111f19a083f2f83b3620bf469a692d9131959683467",
+    "catalogFiles": 37629,
+    "processedFiles": 37629,
+    "remainingFiles": 0,
+    "normalized": 17926,
+    "parseRejected": 19703,
+    "withoutParserBlockers": 10774
+  },
+  "sourceOutcomeCounts": {
+    "read": 17926,
+    "needs-instrument-review": 19627,
+    "unsupported-or-parse-error": 76
+  },
+  "parseRejectionCounts": {
+    "[\"music21-parse-error\"]": 26,
+    "[\"normalization-note-limit\"]": 10,
+    "[\"normalizer-timeout\"]": 28,
+    "[\"piano-not-explicit\"]": 19627,
+    "[\"unsupported-staff-count\"]": 12
+  },
+  "cacheAuditLogicalSha256": "e5ef6033c78b92f7746ce84f63c8d0d0c30f3c6cba728176aad6d81d295ff8e5",
+  "legacyRechecks": {
+    "before": 295,
+    "after": 295,
+    "sameReasonCodes": 295
+  },
+  "realSourceWorkerParity": {
+    "checked": 12,
+    "passed": true
+  },
+  "k2": {
+    "profiles": 25,
+    "profileCountByGrade": {
+      "1": 4,
+      "2": 2,
+      "3": 2,
+      "4": 2,
+      "5": 2,
+      "6": 6,
+      "7": 4,
+      "8": 3
+    },
+    "syntheticPolicyCases": 75,
+    "realSourceSpans": 19,
+    "realVerdicts": {
+      "fail": 436,
+      "review": 39
+    },
+    "rulesVersion": "graded-content-rules-v3",
+    "configSha256": "608e87ccef63749809819eb14b66c59bf28b786c24185a60dec910b1ae8a4d3c",
+    "graderSha256": "e0b6062595302a0fffb751d4b1cf1a786a9d68b885bfe49fd5cb5f98e7b3d7b0",
+    "upstream": {
+      "interval": {
+        "path": "D:\\duan\\pianist\\.tools\\curriculum-python\\Lib\\site-packages\\music21\\interval.py",
+        "sha256": "f6d14f95bc5ebd312d7a60c2f1029cfbe9b4158a820306b2ea2d678851b6ea35",
+        "version": "10.5.0"
+      },
+      "chord": {
+        "path": "D:\\duan\\pianist\\.tools\\curriculum-python\\Lib\\site-packages\\music21\\chord\\__init__.py",
+        "sha256": "c628b4732e7d1280457025a2680b97e2cfcde8b0047d0c8b340c3fe5b53a6d13",
+        "version": "10.5.0"
+      },
+      "key": {
+        "path": "D:\\duan\\pianist\\.tools\\curriculum-python\\Lib\\site-packages\\music21\\key.py",
+        "sha256": "2b52c7e21bbdb74fd94fac5d6b064f56b900c9433e9634e4309bcb015351b144",
+        "version": "10.5.0"
+      }
+    }
+  },
+  "pythonTests": {
+    "count": 102,
+    "passed": true,
+    "log": "artifacts/curriculum-k1-k2-tests.log"
+  },
+  "runtimeScoringChanged": false,
+  "newExercisesPublished": 0,
+  "artifactHashes": {
+    "artifacts/curriculum-normalized/report.json": "eb9d082786640451ef53299ae164943b4ff772ab81c984f9cc3b9ada970911f3",
+    "artifacts/curriculum-normalized/cache-audit.json": "d1717ccfff5d08bf2e56ddf4380a5f387249cd6154c8f37b3d402a57ca060343",
+    "artifacts/curriculum-normalized/retry-audit.json": "4a333fe2fb1c3174a6c7e90f454779b95f68bd88ad2d03a47b8b239e8c6124b5",
+    "artifacts/curriculum-normalized/source-outcomes.jsonl": "ea168acdd07769ca11c778d1a309ddc0c6a98047c13251503699a3bd3c875129",
+    "artifacts/curriculum-grades/fixture-verification.json": "cf85f57c58141b4fc01432dc85bcde82a4a21acc46e6d4d85e1d2cf1a8e09acf",
+    "artifacts/curriculum-grades/real-source-report.json": "691625c0694bbf531b09c1a5afb86319a943c2581471802502b6cb3d911c4454",
+    "artifacts/curriculum-k1-k2-tests.log": "24fc350c4fcff6470d9019cfb3f7f4b991825aad64cb4293b2d95a1467578b47"
+  },
+  "timeoutRecheck": {
+    "attempted": 30,
+    "workers": 4,
+    "timeoutSeconds": 45,
+    "recovered": 2,
+    "stillTimeout": 28,
+    "otherOutcome": 0,
+    "scope": "Reduced concurrency retry; remaining timeouts are resource-limit outcomes, not proof of invalid music."
+  }
+}

@@ -1,6 +1,6 @@
 # Kế hoạch Q0–Q9: kho bài tập piano sinh sẵn theo grade
 
-Cập nhật **21/10/2026 — triển khai pilot v2**, theo yêu cầu chuyển sang chuẩn bị kho bài trước khi người dùng tập. Bản này thay kế hoạch sinh/biến đổi câu trong phiên ngày 20/10. Đã có schema/cache v2 và lô Q3–Q4 gồm **14 bài G1–G2 dùng thử local**, có hồ sơ xét nguồn, biên, grade và kiểm MuseScore. Q5–Q9 chưa triển khai; bản online chưa thay đổi. Xem [kết quả và giới hạn pilot](Q4_PREPARED_PILOT.md).
+Cập nhật **21/10/2026 — hoàn thành K1–K2** của [kế hoạch xây kho](GRADED_BANK_PLAN.md): toàn bộ 37.629 nguồn có kết quả, 17.926 có dữ liệu nhạc; tiêu chí V3 có 25 profile G1–G8. Bước kế tiếp là K3 quét mọi đoạn. Xem [báo cáo K1–K2](K1_K2_RESULTS.md). Bản này thay kế hoạch sinh/biến đổi câu trong phiên ngày 20/10. Lô Q3–Q4 cũ vẫn gồm **14 bài G1–G2 dùng thử local**, có hồ sơ xét nguồn, biên, grade và kiểm MuseScore. Q5–Q9 chưa triển khai; bản online chưa thay đổi. Xem [kết quả và giới hạn pilot](Q4_PREPARED_PILOT.md).
 
 Kết quả cần đạt: **mở web → chọn grade, tay, độ dài, đúng nốt/BPM → tập bài có sẵn đã kiểm → chuyển bài tiếp**. Bài có nguồn nhạc thật, highlight đúng, sheet chiếm phần lớn màn hình, nghe bằng MuseScore, bật/tắt pedal và full sheet. Màn tập không có notation editing. MIDI thật vẫn để sau; nghiệm thu trước bằng MIDI mô phỏng.
 
@@ -208,6 +208,8 @@ Ghim app/native/schema/profile/corpus/layout tương thích trong session. Chỉ
 ## 7. Thứ tự làm và mốc bàn giao
 
 **Ưu tiên hiện tại theo yêu cầu mới:** hoàn thiện phần xây kho theo [kế hoạch riêng K1–K5](GRADED_BANK_PLAN.md). Đi qua từng nguồn, đọc toàn bộ, xét mọi đoạn có biên hợp lệ với mọi profile và đưa tất cả đoạn đạt vào kho. Không dùng lô 14 bài để kết thúc giai đoạn xây kho hoặc chuyển ngay sang màn quiz.
+
+**Đã xong K1 và K2:** 37.629 nguồn đã có kết quả; cache được đối soát; API/CLI V3 kiểm đủ 25 profile và trả đạt/không đạt/cần xem xét. **Tiếp theo K3:** nối toàn catalog với bộ quét mọi cặp biên/cấu hình tay, sau đó K4 kiểm và xuất từng bài. K2 chưa tự sinh bài hoặc thay bộ chấm khi tập.
 
 1. Đọc toàn bộ nguồn, dùng lại cache đúng phiên bản; ghi trạng thái và lý do từng file.
 2. Hoàn thiện các phép kiểm G1–G8 và quét mọi đơn vị phù hợp, không giới hạn số đoạn mỗi nguồn.
