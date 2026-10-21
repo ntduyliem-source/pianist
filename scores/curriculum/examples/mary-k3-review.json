@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "scope": "One-source assistant-reviewed demonstration; not an automatic phrase or fingering detector, not teacher approval",
+  "sourceSha256": "721d9c271afdda9cc586368dd7b11f02b6db57eaf83a130607f0c1419213a1fc",
+  "analysisSha256": "40428aec952d8124df81e6cc9aeaca752fd621bebd84e356d4b5cb4edd9b30e7",
+  "reviewer": "Codex (assistant)",
+  "teacherReviewed": false,
+  "reviewedAt": "2026-10-21",
+  "sourceScoreInspection": {
+    "snapshot": "artifacts/curriculum-prepared/inspection/render/snapshots/721d9c271afdda9cc586368dd7b11f02b6db57eaf83a130607f0c1419213a1fc.json",
+    "snapshotSha256": "c5dfb88e2f37d8e5d8b34294b1e41442e6004bb5c29b30dd8a45152b61c2b253",
+    "sourceXmlSha256": "e21e19d85245e9223559b582e0e3c8de6f0f1becdc608a3a0c928ca427e58ff6"
+  },
+  "sourceLineHands": {"P1:s1:v1": "right", "P1:s2:v5": "left"},
+  "handReason": "Đã xem cả hai khuông nguồn: một bè treble C4–G4 và một bè bass C3–G3, không chéo khuông hoặc chia bè. Tay phải được đề xuất C4=1,D4=2,E4=3,F4=4,G4=5; tay trái C3=5,D3=4,E3=3,F3=2,G3=1. Đây là mapping local do assistant xét, không phải ngón tác giả hay xác nhận phù hợp mọi người.",
+  "positions": {
+    "right:home": {"anchorFinger": 1, "reference": "mary-k3-review:handReason", "keys": [{"finger":1,"pitch":["C",0,4]},{"finger":2,"pitch":["D",0,4]},{"finger":3,"pitch":["E",0,4]},{"finger":4,"pitch":["F",0,4]},{"finger":5,"pitch":["G",0,4]}]},
+    "left:home": {"anchorFinger": 1, "reference": "mary-k3-review:handReason", "keys": [{"finger":5,"pitch":["C",0,3]},{"finger":4,"pitch":["D",0,3]},{"finger":3,"pitch":["E",0,3]},{"finger":2,"pitch":["F",0,3]},{"finger":1,"pitch":["G",0,3]}]}
+  },
+  "tonality": "major",
+  "tonalityReason": "Hóa biểu không dấu, giai điệu kết C, đệm C–G–E–G trở lại ở các ô 1,2,4,5,6,8. Xét nguồn cụ thể này là C major; không suy từ số dấu hóa cho mọi nguồn.",
+  "bpm": {"min":60,"max":60,"beatQuarter":1,"reference":"Local demonstration at quarter=60; technical rendering/timeline scope, not a scientifically validated learning tempo or real-piano assessment"},
+  "boundaries": {
+    "right": [
+      {"atMeasure":0,"reason":"Đầu tác phẩm; không có lấy đà."},
+      {"atMeasure":2,"reason":"Mô-típ E–D–C–D rồi E–E–E kết bằng E trắng. Ô 3 bắt đầu mẫu đáp D–D–D; đây là biên mô-típ do assistant xét, không tuyên bố cadence."},
+      {"atMeasure":4,"reason":"Câu mở bốn ô kết bằng E–G–G, G trắng; ô 5 bắt đầu lại E–D–C–D."},
+      {"atMeasure":8,"reason":"Cuối tác phẩm, giữ đủ C tròn của giai điệu và hết phần đệm."}
+    ],
+    "left": [
+      {"atMeasure":0,"reason":"Đầu phần đệm."},
+      {"atMeasure":1,"reason":"Hết mẫu đệm C–G–E–G một ô, mẫu được lặp nguyên ở ô 2."},
+      {"atMeasure":2,"reason":"Hết mẫu C–G–E–G; ô 3 đổi sang D–G–F–G."},
+      {"atMeasure":3,"reason":"Hết mẫu D–G–F–G; ô 4 trở về C–G–E–G. Biên mô-típ đệm, không nhãn hết câu giai điệu."},
+      {"atMeasure":4,"reason":"Hết mẫu C–G–E–G; khớp kết câu mở của giai điệu."},
+      {"atMeasure":5,"reason":"Hết mẫu C–G–E–G, lặp lại ở ô 6."},
+      {"atMeasure":6,"reason":"Hết mẫu C–G–E–G; ô 7 đổi sang D–G–F–G."},
+      {"atMeasure":7,"reason":"Hết mẫu D–G–F–G; ô 8 trở về C–G–E–G."},
+      {"atMeasure":8,"reason":"Hết mẫu đệm cuối và hết tác phẩm; không có tie/pedal vượt biên."}
+    ]
+  },
+  "harmonicGroups": [
+    {"lineId":"P1:s2:v5","measureIndices":[0,1,3,4,5,7],"expectedPitches":[["C",0,3],["G",0,3],["E",0,3],["G",0,3]],"kind":"arpeggio","reason":"Mẫu đệm C–G–E–G lặp lại trên nền C major đã xem ở sheet nguồn, đủ ba âm của hợp âm C trưởng; không lấy một triad tình cờ trong giai điệu."}
+  ]
+}

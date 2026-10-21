@@ -1,0 +1,82 @@
+{
+  "scope": "One source demonstration; exhaustive measure spans, not full K3 and not a released exercise catalog",
+  "pipeline": "5abce5080a6e820d806731e99246b9693fc85ad1f97dfdb3d981fcaa94b24b82",
+  "source": {
+    "sourceSha256": "721d9c271afdda9cc586368dd7b11f02b6db57eaf83a130607f0c1419213a1fc",
+    "analysisSha256": "40428aec952d8124df81e6cc9aeaca752fd621bebd84e356d4b5cb4edd9b30e7",
+    "origins": [
+      {
+        "id": "pdmx:data/3/46/Qmduj4rwk9Ftb4648ZXgTJM6emaj7E3V3MUKat9Jhr5fPx.json",
+        "collection": "pdmx",
+        "revision": "15571083",
+        "source_path": "mxl/3/46/Qmduj4rwk9Ftb4648ZXgTJM6emaj7E3V3MUKat9Jhr5fPx.mxl",
+        "source_url": "https://musescore.com/user/200832/scores/191215",
+        "title": "Mary Had A Little Lamb",
+        "composer": "NA",
+        "license_id": "cc-zero",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "visibility": "pending-review"
+      }
+    ]
+  },
+  "bars": 8,
+  "sourceNotes": 58,
+  "windowsPerHand": 36,
+  "handConfigurations": 3,
+  "candidates": 108,
+  "profileChecks": 2700,
+  "boundaryReviewed": 48,
+  "outcomes": {
+    "review": 28,
+    "pass-local": 40,
+    "fail": 40
+  },
+  "profileOutcomes": {
+    "pass": 72,
+    "fail": 2590,
+    "review": 38
+  },
+  "acceptedSelections": 40,
+  "distinctAcceptedContents": 28,
+  "publishedExercises": 0,
+  "acceptedByHand": {
+    "right": 6,
+    "left": 34
+  },
+  "acceptedByProfile": {
+    "g1-direction-long": 2,
+    "g2-third-known-rhythm": 4,
+    "g3-arpeggio-fourth-fifth": 34
+  },
+  "native": {
+    "passed": true,
+    "checked": 40,
+    "targetCountsMatch": true,
+    "rendererExamples": 3,
+    "glyphsComplete": true,
+    "editorUnchanged": true
+  },
+  "reviewMethod": "Explicit assistant review of THIS source, not inferred phrase/fingering approval; teacherReviewed=false; quarter=60 technical demo only",
+  "ruleChanges": false,
+  "hashes": {
+    "artifacts/curriculum-k3-one-song/report.json": "8875f2ea5f90b8b46397eeab73ae81d9a3c16372bcd0e5d2f4bda3128415ac09",
+    "artifacts/curriculum-k3-one-song/jobs.json": "5887a9d3739a0f80b6aa10ce2340d9ac7b1c8cc50d0cb2a9500ab0e8063331a8",
+    "artifacts/curriculum-k3-one-song/rest-proposals.json": "deda3b3cba25aae50c5b5f01ab774050b6a629bf083b41f6ac9361e86b4651f1",
+    "artifacts/curriculum-k3-one-song/native/report.json": "ace4807ceb2d8b74d82d9cff84c6b05f777ebfce6de12c6c969156dd20c89352",
+    "artifacts/curriculum-k3-one-song/render/report.json": "b247b5c813fa41d32e1eb8dd910652adcf9290d7efa8fc261389c4faee6b5c3d",
+    "scores/curriculum/examples/mary-k3-review.json": "e7901d65ca71576fa28651275605ebfa3c7d18b286c4dcf73d667491681edee6",
+    "buildscripts/pianist/curriculum_grades.py": "e0b6062595302a0fffb751d4b1cf1a786a9d68b885bfe49fd5cb5f98e7b3d7b0"
+  },
+  "ui": {
+    "passed": true,
+    "candidates": 108,
+    "profiles": 25,
+    "highlightNotes": 7,
+    "sourceAndThreeNativeExcerpts": true,
+    "errors": [],
+    "checkedWidths": [
+      320,
+      390
+    ]
+  }
+}
