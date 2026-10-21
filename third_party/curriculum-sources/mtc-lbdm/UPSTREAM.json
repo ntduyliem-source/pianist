@@ -1,0 +1,65 @@
+{
+  "repository": "https://github.com/pvankranenburg/MTCExtractFeatures",
+  "revision": "faf310528ee27cfc1f60aaacb10c9545eaa0b301",
+  "sourcePath": "src/mtc_to_seqs.py",
+  "sourceSha256": "36eff340bb745833bc10a14a265558e50272eab63508a9df7ab0cd14c5ac9664",
+  "license": "MIT",
+  "extraction": "Nine complete function bodies copied verbatim; Fraction import retained; no mathematical changes",
+  "moduleSha256": "84b2c1c95d66dc16abc366a802d9dcc7bae682c5645d1092584ed63dd316b4fd",
+  "functions": [
+    {
+      "name": "getOneDegreeChange",
+      "startLine": 907,
+      "endLine": 914,
+      "sha256": "f66d181ac75e770d5bea05325adf016232de42d0bd64ec3d9c1fabc6d04e60ac"
+    },
+    {
+      "name": "getDegreeChangeLBDMpitch",
+      "startLine": 917,
+      "endLine": 927,
+      "sha256": "d8be17dbc983e0ec3e7f60d53af900c092dc17b169556613b0229b8dca1ebc97"
+    },
+    {
+      "name": "getDegreeChangeLBDMioi",
+      "startLine": 931,
+      "endLine": 939,
+      "sha256": "a75b988eeda1fec8a0ceb74da86b7f6c1be0913cd45aef018fb95b12c1b484ea"
+    },
+    {
+      "name": "getDegreeChangeLBDMrest",
+      "startLine": 942,
+      "endLine": 950,
+      "sha256": "bc6df70a7347eb1a59a44c718c2ce0090aa7a97dee2b477e750ef3fb1d875c8f"
+    },
+    {
+      "name": "getBoundaryStrength",
+      "startLine": 953,
+      "endLine": 966,
+      "sha256": "9da4034ee52a097fe8fccf27fcce65e8aebc88e302e1f1150cba733948e21547"
+    },
+    {
+      "name": "getBoundaryStrengthPitch",
+      "startLine": 968,
+      "endLine": 976,
+      "sha256": "3f9c0818d642965a24ed699cfc676eb9ea8455f4c0114f8b5c5f21c13098eeb8"
+    },
+    {
+      "name": "getBoundaryStrengthIOI",
+      "startLine": 978,
+      "endLine": 984,
+      "sha256": "e2e7acd172bc976086e2c12f9aadfd46ba131bb2787bea595ab50e99f6a14724"
+    },
+    {
+      "name": "getBoundaryStrengthRest",
+      "startLine": 986,
+      "endLine": 992,
+      "sha256": "4a7d827f48ca744b464c1fab52b2dac6950818b391e898bdd151e60ca07262e7"
+    },
+    {
+      "name": "getLocalBoundaryStrength",
+      "startLine": 996,
+      "endLine": 1003,
+      "sha256": "f9680b545636c8a855dc087c0e6492ee6332746b429e06361e8ceef15bbb3e45"
+    }
+  ]
+}

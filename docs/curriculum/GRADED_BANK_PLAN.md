@@ -4,6 +4,8 @@
 
 **K1–K2 đã hoàn thành ngày 21/10/2026:** 37.629/37.629 nguồn có kết quả, 17.926 có dữ liệu nhạc, 19.627 cần xác định phần piano, 76 gặp lỗi/giới hạn hỗ trợ; không còn file chờ. Bộ tiêu chí V3 có 25 profile G1–G8. Xem [báo cáo và bằng chứng](K1_K2_RESULTS.md). Bước tiếp theo là **K3 quét mọi đoạn**; lô 14 bài cũ chỉ dùng kiểm hồi quy.
 
+**Đã có script tự quét theo lô:** [AUTO_SCRIPT.md](AUTO_SCRIPT.md) dùng nguyên LBDM của MTCExtractFeatures để đề xuất biên mà không nhập hồ sơ từng bài, rồi kiểm K2 với cache/resume. Đã thử bảy nguồn; đây là ứng viên tự động, chưa hoàn tất duyệt biên/ngón hoặc K3/K4 toàn kho.
+
 ## Quy trình cho từng file
 
 ```text

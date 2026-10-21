@@ -1,0 +1,138 @@
+{
+  "scope": "Automatic proposal and K2 batch filter, no per-source boundary/hand review input; not approved exercises",
+  "report": {
+    "at": "2026-10-21T08:04:30.978861+00:00",
+    "scope": "automatic proposals/K2 filtering; not exercise approval",
+    "rules": "151e8c8381cb35d53cf16c3d93c201146ec175af3e3b8096278ba5ad72e7024b",
+    "selectedSources": 7,
+    "scannedSources": 7,
+    "normalizationUnavailable": 0,
+    "errors": 0,
+    "remaining": 0,
+    "reused": 7,
+    "candidates": 290,
+    "potentialCandidates": 193,
+    "reviewNeeds": {
+      "evidence-binding": 474,
+      "source-hand-completeness": 467,
+      "major-tonality": 481,
+      "hand-path-evidence": 474,
+      "reviewed-bpm-scope": 474,
+      "musical-group-context": 82,
+      "source-integrity:source:repeat-needs-excerpt-traversal": 70,
+      "notation-scope": 24,
+      "register-reading-evidence": 61
+    },
+    "profileChecks": 7250,
+    "approvedExercises": 0
+  },
+  "sources": [
+    {
+      "sourceSha256": "42b3bd806aa5b28357f46bf45e1cd62ad64d71f02e1db4a15535f6ab3ef8d093",
+      "payloadSha256": "82e55a9e844977505b42b6eac347a8122f0445887b02f74c394d149ce0df4bff",
+      "candidates": 38
+    },
+    {
+      "sourceSha256": "721d9c271afdda9cc586368dd7b11f02b6db57eaf83a130607f0c1419213a1fc",
+      "payloadSha256": "777fb23a580d0c6a15a3446ffee80c71d48eaf0f7d3bb17ced04e009768bc76e",
+      "candidates": 37
+    },
+    {
+      "sourceSha256": "7a74947508f61e2b09379a3275a1f1d3826d6ffd455942c1544e15c308292f9c",
+      "payloadSha256": "948f0516bc51f49f49f054cb35ebda86d47668778a20c804bddfba544f57b4f5",
+      "candidates": 81
+    },
+    {
+      "sourceSha256": "830ecd1087dd3184933fc714888483b80b43c69e6793b3f1138d497caed77b18",
+      "payloadSha256": "e9276dd710ddaff95049ee6655a8eb3133300738944275baa43110c95a2e0993",
+      "candidates": 9
+    },
+    {
+      "sourceSha256": "90f0eca2d64709a9ed80e1b354a0e0fafe884c1abcdb4980cdc5c2b590ec42fa",
+      "payloadSha256": "175e994fffa017627ab4a1cdc657b7ec519be7029b516ab7622399c9e5abd63c",
+      "candidates": 97
+    },
+    {
+      "sourceSha256": "a53e4fdcb7e380db3611c181f534e79a55e8d071e157bc8dd245be65188693b1",
+      "payloadSha256": "01bda679b6a2836a034f769701caecefe0d7a71bfe33a23c4b2d8508879d722f",
+      "candidates": 9
+    },
+    {
+      "sourceSha256": "f4a6f440438282a9c56db45f6b40303067ef43d9cf1cb262d69664fef2dc7d35",
+      "payloadSha256": "920c31193ad7f930642aaa58a99efb85f979e8d56878b5561bb8481f7ee2d251",
+      "candidates": 19
+    }
+  ],
+  "tests": {
+    "count": 108,
+    "passed": true,
+    "logSha256": "85d2068f2da3a71a91a0933a01a589a3157fb50937a4b6f14d5a519231483d8b"
+  },
+  "upstream": {
+    "repository": "https://github.com/pvankranenburg/MTCExtractFeatures",
+    "revision": "faf310528ee27cfc1f60aaacb10c9545eaa0b301",
+    "sourcePath": "src/mtc_to_seqs.py",
+    "sourceSha256": "36eff340bb745833bc10a14a265558e50272eab63508a9df7ab0cd14c5ac9664",
+    "license": "MIT",
+    "extraction": "Nine complete function bodies copied verbatim; Fraction import retained; no mathematical changes",
+    "moduleSha256": "84b2c1c95d66dc16abc366a802d9dcc7bae682c5645d1092584ed63dd316b4fd",
+    "functions": [
+      {
+        "name": "getOneDegreeChange",
+        "startLine": 907,
+        "endLine": 914,
+        "sha256": "f66d181ac75e770d5bea05325adf016232de42d0bd64ec3d9c1fabc6d04e60ac"
+      },
+      {
+        "name": "getDegreeChangeLBDMpitch",
+        "startLine": 917,
+        "endLine": 927,
+        "sha256": "d8be17dbc983e0ec3e7f60d53af900c092dc17b169556613b0229b8dca1ebc97"
+      },
+      {
+        "name": "getDegreeChangeLBDMioi",
+        "startLine": 931,
+        "endLine": 939,
+        "sha256": "a75b988eeda1fec8a0ceb74da86b7f6c1be0913cd45aef018fb95b12c1b484ea"
+      },
+      {
+        "name": "getDegreeChangeLBDMrest",
+        "startLine": 942,
+        "endLine": 950,
+        "sha256": "bc6df70a7347eb1a59a44c718c2ce0090aa7a97dee2b477e750ef3fb1d875c8f"
+      },
+      {
+        "name": "getBoundaryStrength",
+        "startLine": 953,
+        "endLine": 966,
+        "sha256": "9da4034ee52a097fe8fccf27fcce65e8aebc88e302e1f1150cba733948e21547"
+      },
+      {
+        "name": "getBoundaryStrengthPitch",
+        "startLine": 968,
+        "endLine": 976,
+        "sha256": "3f9c0818d642965a24ed699cfc676eb9ea8455f4c0114f8b5c5f21c13098eeb8"
+      },
+      {
+        "name": "getBoundaryStrengthIOI",
+        "startLine": 978,
+        "endLine": 984,
+        "sha256": "e2e7acd172bc976086e2c12f9aadfd46ba131bb2787bea595ab50e99f6a14724"
+      },
+      {
+        "name": "getBoundaryStrengthRest",
+        "startLine": 986,
+        "endLine": 992,
+        "sha256": "4a7d827f48ca744b464c1fab52b2dac6950818b391e898bdd151e60ca07262e7"
+      },
+      {
+        "name": "getLocalBoundaryStrength",
+        "startLine": 996,
+        "endLine": 1003,
+        "sha256": "f9680b545636c8a855dc087c0e6492ee6332746b429e06361e8ceef15bbb3e45"
+      }
+    ]
+  },
+  "performanceScoringChanged": false,
+  "publishedExercises": 0
+}

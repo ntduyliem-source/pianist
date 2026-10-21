@@ -33,13 +33,21 @@ def parse_job(job, max_notes):
                 'error': f'{type(error).__name__}: {error}'[:1500]}
 
 
-def serve(connection, max_notes, recycle):
+def serve(connection, max_notes, recycle, handler=None):
+    # A dotted handler lets other offline scans reuse the same bounded process
+    # lifecycle. The normalization path continues to call parse_job unchanged.
+    if handler is None:
+        handle = parse_job
+    else:
+        import importlib
+        module, name = handler.rsplit(':', 1)
+        handle = getattr(importlib.import_module(module), name)
     try:
         for _ in range(recycle):
             job = connection.recv()
             if job is None:
                 break
-            result = parse_job(job, max_notes)
+            result = handle(job, max_notes)
             connection.send(result)
             del result
             gc.collect()
@@ -50,8 +58,9 @@ def serve(connection, max_notes, recycle):
 
 
 class Worker:
-    def __init__(self, timeout, max_notes, recycle):
+    def __init__(self, timeout, max_notes, recycle, handler=None):
         self.timeout, self.max_notes, self.recycle = timeout, max_notes, recycle
+        self.handler = handler
         self.process = self.connection = None
         self.used = 0
 
@@ -73,7 +82,7 @@ class Worker:
             self.close()
             ctx = mp.get_context('spawn')
             self.connection, child = ctx.Pipe()
-            self.process = ctx.Process(target=serve, args=(child, self.max_notes, self.recycle))
+            self.process = ctx.Process(target=serve, args=(child, self.max_notes, self.recycle, self.handler))
             self.process.start()
             child.close()
         try:
@@ -92,8 +101,8 @@ class Worker:
         return job, result, time.monotonic() - started
 
 
-def results(jobs, workers, timeout, max_notes, recycle=32):
-    workers = [Worker(timeout, max_notes, recycle) for _ in range(workers)]
+def results(jobs, workers, timeout, max_notes, recycle=32, handler=None):
+    workers = [Worker(timeout, max_notes, recycle, handler) for _ in range(workers)]
     queue = iter(jobs)
     pool = ThreadPoolExecutor(max_workers=len(workers))
     pending = {}

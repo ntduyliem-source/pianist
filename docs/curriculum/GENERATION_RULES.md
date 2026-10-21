@@ -46,6 +46,8 @@ Bản đầu dùng công cụ sẵn có **đúng phạm vi**, rồi kiểm chứ
 - Nguồn không có biên rõ được đưa vào hàng duyệt ngữ cảnh. Không cần tự viết một “điểm câu nhạc” cộng trọng số không có căn cứ.
 - Nếu bổ sung bộ phân đoạn khác: ghi paper/repo gốc, phiên bản/hash, phạm vi đơn âm/đa âm và cách đối chiếu; kiểm trên nguồn có biên tham chiếu trước khi dùng. Không gọi một thuật toán dự đoán boundary là bằng chứng chắc chắn về phrase.
 
+**Đã bổ sung đề xuất tự động LBDM:** [script theo lô](AUTO_SCRIPT.md) gọi chín hàm giữ nguyên từ MTCExtractFeatures, MIT, commit `faf310528ee27cfc1f60aaacb10c9545eaa0b301`. Ghi độ mạnh biên sau từng nốt và các cực đại; hai tay chỉ dùng biên thời gian chung, không làm tròn biên trong ô. Đây là `model-proposal-only`, chưa thay bằng chứng duyệt câu/ngón của K2. Lượt thử kỹ thuật trên bảy nguồn chưa phải benchmark độ chính xác phân câu piano.
+
 ### 2.3. Hồ sơ và quyết định duyệt
 
 Mỗi ứng viên lưu **cả startBoundary và endBoundary** gồm:
