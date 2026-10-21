@@ -1,332 +1,237 @@
-# Kế hoạch triển khai kho nhạc và quiz piano theo grade
+# Kế hoạch Q0–Q9: kho bài tập piano sinh sẵn theo grade
 
-Ngày 20 tháng 10 năm 2026. Kết quả cần đạt: **mở web → chọn grade → chọn đúng nốt/BPM và khoảng x–y nốt → chơi một luồng câu nhạc mới liên tục**, có nguồn nhạc thật, highlight đúng nốt và sheet chiếm phần lớn màn hình.
+Cập nhật **21/10/2026 — quyết định v2**, theo yêu cầu chuyển sang chuẩn bị kho bài trước khi người dùng tập. Bản này thay kế hoạch sinh/biến đổi câu trong phiên ngày 20/10. Đây là cập nhật thiết kế; chưa có thêm bài được duyệt, chưa triển khai Q4–Q9 và chưa cập nhật bản online trong lần sửa tài liệu này.
 
-Phương án: tải và phân tích kho trên máy phát triển; đưa các gói dữ liệu đã tuyển lên web; chọn câu và tạo biến thể theo yêu cầu trong trình duyệt. Mỗi câu dùng đường ký âm MuseScore và bộ chấm hiện có. Giữ [GRADE_DESIGN.md](GRADE_DESIGN.md) và [GENERATION_RULES.md](GENERATION_RULES.md) làm đặc tả sư phạm và điều kiện sinh câu.
+Kết quả cần đạt: **mở web → chọn grade, tay, độ dài, đúng nốt/BPM → tập bài có sẵn đã kiểm → chuyển bài tiếp**. Bài có nguồn nhạc thật, highlight đúng, sheet chiếm phần lớn màn hình, nghe bằng MuseScore, bật/tắt pedal và full sheet. Màn tập không có notation editing. MIDI thật vẫn để sau; nghiệm thu trước bằng MIDI mô phỏng.
 
-Đây là kế hoạch code Q0–Q9. Các chỉ tiêu dung lượng, số câu, giới hạn hiệu năng là mục tiêu sản phẩm cần kiểm chứng khi thực hiện, không phải số lượng hiện đã đạt hoặc liều tập được khoa học xác nhận. MIDI thật để sau; nghiệm thu kỹ thuật trước bằng MIDI mô phỏng. Đích phát hành là web GitHub Pages đang có.
+## 1. Quyết định và phạm vi
 
-## Quyết định triển khai
+MXL gốc → phân tích offline → xác định đơn vị nhạc → kiểm grade → xuất/kiểm MuseScore → đếm nốt/xếp nhóm → duyệt → đóng gói → web chọn bài để tập.
 
-| Thành phần | Quyết định |
+| Thành phần | Quyết định v2 |
 |---|---|
-| Nguồn gốc | Giữ MXL nguyên bản và nguồn/giấy phép/hash ở kho cục bộ. |
-| Phân tích | Dùng music21 cho đọc nhạc, quãng và chuyển vị; đối chiếu cao độ/thời gian/bè với MuseScore hiện có. Khóa phiên bản và checksum dependency. |
-| Dữ liệu đưa lên web | Chỉ mục nhỏ, đoạn nốt có cấu trúc và các phép biến đổi được duyệt; chia gói nén theo grade/profile. |
-| Sinh đề | Thuật toán chọn có ràng buộc và seed; không gọi LLM trong phiên tập. |
-| Câu đầu tiên | Đoạn nguyên bản hoặc chuyển vị. Câu tổ hợp chỉ được bật sau khi có các điểm nối đã duyệt. |
-| Giao diện | Thêm mục Bài tập trong Tập piano, route `#/exercises`; màn chơi dùng lại thành phần sheet, không có notation editing. |
-| Độ dài | User chọn khoảng bao gồm hai đầu, `4 ≤ x ≤ y ≤ 64`; số đếm cuối cùng là target phải nhấn sau chuyển đổi. |
-| Luồng chạy | Chuẩn bị trước câu tiếp theo; chế độ BPM dùng cùng mốc đồng hồ qua các câu. |
-| Chấm | Giữ thuật toán và cửa sổ hiện có của osu!mania, Piano Trainer Studio, mir_eval và note-seq. Phần thêm là dữ liệu và điều phối. |
-| Lưu trữ | Lưu lịch sử đề đã gặp và phiên quiz riêng; không tự biến mỗi câu thành một project trong thư viện. |
+| Tạo nội dung | Thực hiện offline. Mỗi bài phát hành có nội dung, nguồn, điểm đầu/cuối, grade và ID cố định. |
+| Trong phiên | Lọc/chọn bài đã duyệt, tránh lặp, tải tài nguyên và điều phối chơi. Không cắt nhạc, chuyển giọng hoặc ghép mô-típ trong phiên. |
+| Bản đầu | Đoạn nguyên bản liên tục từ một nguồn, chọn rõ một tay hoặc cả hai tay. Không xóa nốt khó để ép grade. |
+| Biến thể | Chuyển vị là phần mở rộng offline; mỗi biến thể phải kiểm và duyệt riêng. Ghép các nguồn khác nhau chưa thuộc bản đầu. |
+| Độ dài | Bảy nhóm khoảng 4, 6, 10, 20, 30, 50, 100 nốt **mỗi bài tập**, độc lập với grade. |
+| Layout | Số dòng/khuông phụ thuộc màn hình và mật độ ký âm. Hai tay giữ grand staff; bài một tay ghi rõ tay được trích. |
+| Chấm | Giữ kernel và cửa sổ chấm hiện có từ osu!mania, Piano Trainer Studio, mir_eval, note-seq; không viết lại bộ chấm. |
+| Người học | User tự chọn; không thêm hệ đo “phản xạ”, mô hình thích nghi hoặc tự cấp chứng nhận trình độ. |
 
-[music21 converter](https://music21.org/music21docs/moduleReference/moduleConverter.html) hỗ trợ đọc MusicXML; [module interval](https://music21.org/music21docs/moduleReference/moduleInterval.html) phân biệt các thuộc tính quãng. Không thay parser khảo sát cũ bằng một bộ tính quãng chỉ dựa trên khoảng cách MIDI khác.
+Bản này quy định công việc và nghiệm thu; [GRADE_DESIGN.md](GRADE_DESIGN.md) quy định grade và bằng chứng; [GENERATION_RULES.md](GENERATION_RULES.md) quy định cách lấy đoạn, kiểm, cập nhật kho và chọn bài. Các báo cáo Q0–Q3 và grades.v1.json là bằng chứng của lần triển khai cũ, không tự trở thành dữ liệu được duyệt theo v2.
 
-## Kho sẽ tải và cách xác định đủ lớn
+## 2. Hiện trạng đã kiểm
 
-### Nguồn đầu vào
+Đối chiếu catalog và artifact ngày 21/10/2026, tại commit 51268eec37:
 
-| Nguồn | Trạng thái đã xác minh tại máy | Việc cần làm |
-|---|---|---|
-| [OpenScore Lieder](https://github.com/OpenScore/Lieder/tree/38c5db510224d9facdc4b08d741fc788cfb58ea8) | 1.462 mục nguồn, **1.461 nội dung MXL khác SHA256**, khoảng 18,6 MB; đã tải. | Tái dùng file hiện có. Đối chiếu cặp trùng hash nhưng khác tên nguồn; giữ cả provenance, không đếm thành hai nội dung mới. Tuyển đúng phần piano. |
-| [PDMX bản Zenodo 15571083](https://zenodo.org/records/15571083) | CSV đã có; 36.150 dòng ứng viên một track mã piano sau bộ lọc metadata. MXL chưa tải. | Tải `mxl.tar.gz` khoảng **1,9 GB**, thêm `metadata.tar.gz` khoảng **159,4 MB** để đối chiếu thông tin nguồn khi cần. Giữ nguyên bản CSV đã kiểm. |
-| Thư viện hiện tại | 18 MXL, gồm bài Việt và quốc tế; Phố Xa là ví dụ riêng. | Phân tích cục bộ, nhận diện tác phẩm/bản chuyển soạn; chỉ phát hành công khai phần có nguồn và quyền phù hợp. |
-| Bổ sung có mục tiêu | Chưa có bộ MXL giáo trình dễ đã tuyển đầy đủ. | Khi báo cáo thiếu G1–G3, tìm trong PDMX và các nguồn có phép tải những bản piano nhập môn, dân ca đơn giản, mẫu từ Beyer/Czerny/Duvernoy/Gurlitt; kiểm file thực tế thay vì gán grade theo tên tác giả. |
+| Tầng | Thực tế |
+|---|---:|
+| Mục nguồn / hash MXL riêng | 37.631 / 37.630 |
+| File qua kiểm ZIP/XML | 37.629 |
+| Đã phân tích nhạc / còn chưa phân tích | 823 / 36.806 |
+| Có dữ liệu chuẩn hóa để xét đoạn / bị từ chối phân tích | 528 / 295 |
+| Cửa sổ ứng viên qua bộ lọc Q3 v1 | 1.368 |
+| Đoạn đã đối chiếu MuseScore | 177, từ 82 file nguồn |
+| Nhóm gần trùng trong toàn bộ 177 đoạn | 151, theo quy tắc gom hiện tại |
+| Bài được duyệt cho tập / profile đã bật | 0 / 0 |
 
-Phần tải thêm chính khoảng **2,1 GB** theo kích thước làm tròn của hai archive. Dự trù ban đầu 10 GB chỗ trống cho archive, MXL được tuyển, chỉ mục và cache; đo dung lượng thật trước khi mở rộng. Không cần tải PDF 9,6 GB hay dữ liệu âm thanh để làm pipeline này.
+528 file chuẩn hóa không có nghĩa toàn bộ nội dung đều được nhận. 295 file bị từ chối có thể do thiếu thông tin piano hoặc hạn chế hỗ trợ, không đồng nghĩa nhạc sai. Nguồn hợp lệ gồm 36.149 PDMX, 1.461 OpenScore và 19 file cá nhân/thư viện. Xem [Q1](Q1_CORPUS.md), [Q2](Q2_NORMALIZATION.md), [Q3](Q3_EXTRACTION.md), [verification](q3/verification.json).
 
-Manifest tải phải khóa record 15571083, URL từ record, kích thước và checksum:
+| Grade | Nhóm đoạn Q3 đã kiểm | Nhóm trong khoảng mặc định **cũ** |
+|---|---:|---:|
+| G1 | 10 | 3 trong 8–16 |
+| G2 | 21 | 10 trong 8–20 |
+| G3 | 12 | 6 trong 12–24 |
+| G4 | 100 | 13 trong 12–24 |
+| G5 | 3 | 0 trong 16–32 |
+| G6 | 1 | 1 trong 12–24 |
+| G7 | 5 | 1 trong 16–32 |
+| G8 | 27 | 3 trong 24–48 |
 
-| File PDMX | MD5 công bố để kiểm bản tải |
+Các grade chồng lấn; không cộng hàng thành tổng độc lập. V2 phải kiểm kê theo **grade × profile × tay × loại nhịp × nhóm độ dài × loại đơn vị nhạc**, sau duyệt. Các số trên không phải tồn kho phát hành.
+
+## 3. Quy tắc grade và căn cứ
+
+G1–G8 là các cấp kỹ năng Pianist, không tương đương ABRSM/Faber và chưa được thực nghiệm xác nhận là lộ trình tối ưu. Các giới hạn cụ thể là quyết định thiết kế. [Bảng bằng chứng](GRADE_DESIGN.md#evidence) tách nghiên cứu, giáo trình và suy luận; mỗi profile phải liên kết tới căn cứ của nó.
+
+- **E1–E3:** nghiên cứu về nhận mẫu, đọc trước và tương tác giữa trình độ với độ khó hỗ trợ xét nhiều yêu cầu cùng lúc; không cung cấp số grade, số nốt hay ngưỡng pass cho app.
+- **E4–E5:** Faber và ABRSM cung cấp khung kỹ năng tham chiếu; không phải thử nghiệm hiệu quả hệ Pianist.
+- **E6:** nghiên cứu nhận dạng quãng tám ở pianist có kỹ năng không chứng minh người mới nên nhảy quãng tám trước bước liền.
+
+| Grade / mục tiêu | Quy tắc nhận bài trọng tâm | Giới hạn | Lý do và mức bằng chứng |
+|---|---|---|---|
+| **G1 — điểm mốc, hướng đi** | Một dòng đơn âm; nốt lặp/quãng 2 và có bước liền thực sự. Profile đổi hướng có cả lên và xuống. Một vị trí 3–5 bậc đã kiểm. | Khởi đầu C major, khóa Sol/Fa chuẩn; không chuyển vị trí bàn tay giữa bài. Đen, nốt dài và lặng đen thành họ riêng; chưa móc đơn/đảo phách. | Đọc quan hệ theo E4; giảm yêu cầu đồng thời là suy luận E2–E3. Phạm vi/giọng là thiết kế. |
+| **G2 — quãng 3 và chia phách** | Họ A có quãng 3 xen bước liền, tối đa quãng 3, nhịp G1. Họ B có cặp móc đơn trọn phách với cao độ G1. | Một tay/một vị trí. Không đồng thời thêm quãng mới và tiết tấu mới vào bài giới thiệu. | E4 hỗ trợ bước liền/bước bỏ qua; tách hai họ là thiết kế theo E2–E3. |
+| **G3 — nhóm giai điệu, quãng 4–5** | Có quãng 4 hoặc 5 trong đường nét có tổ chức. Phân biệt họ hợp âm rải có ngữ cảnh hòa âm và họ giai điệu đã duyệt. Tối đa quãng 5. | Một tay, đơn âm, thế tay đã kiểm, nhịp đã học. Ba cao độ tình cờ tạo hợp âm không đủ. | E1 hỗ trợ nhận mẫu; E4 đặt quãng trong giai điệu/hòa âm. Tách G3 là thiết kế. |
+| **G4 — vị trí và giọng mới** | Họ A: mẫu G1–G3 ở điểm xuất phát mới trong C/G/F major. Họ B: chuyển vị trí trong bài theo đường ngón có chuẩn bị. | Họ A không chứng nhận chuyển tay. Họ B kiểm nhả/chuyển tại BPM cho phép. Không thêm nhịp mới; tối đa quãng 5. | E4 có chuyển vị; kiểm soát tải là suy luận E2–E3. Chuyển giọng không bảo đảm vận động dễ như cũ. |
+| **G5 — phối hợp hai tay** | Hai dòng đồng bộ: giai điệu đơn âm và bass thưa/giữ. Bản đầu bass tối đa một lần đánh mỗi ô, dài ít nhất hai phách đen; cùng phách ở điểm vào đầu. Đổi vai tay thành profile riêng. | Mỗi tay tối đa một nốt mới tại một điểm vào; kiểm cả âm giữ. Chưa đa bè trong một tay, chéo tay/chung phím. | E5 phân biệt tay riêng/tay cùng; giảm mật độ là thiết kế theo E2–E3. E5 không quy định chờ G5 của Pianist. |
+| **G6 — nhảy giai điệu 6–7–8** | Có quãng 6, 7 hoặc 8; chia profile theo quãng/hướng, tiếp tục bằng mẫu quen và có đường di chuyển tay kiểm được. | Ban đầu một tay, nhịp quen. Không biến thành hợp âm phải giữ rộng; onset cách xa không tự chứng minh tay được rảnh. | E6 giúp phân biệt nhận hình và vận động; trình tự/đường tay vẫn là thiết kế cần duyệt. |
+| **G7 — tiết tấu có trọng tâm** | Các họ riêng: chấm dôi, nối qua phách, đảo phách, 6/8. Phải có đúng cấu trúc nhịp đang luyện. | Giới thiệu nhịp mới trên cao độ G1–G2/vị trí quen. 6/8 dùng phách đen chấm dôi; chưa trộn tuplet/đổi nhịp/chuyển tay mới. | E5 xét nhịp riêng; giảm yêu cầu còn lại là suy luận E2–E3. Nhịp cơ bản đã có từ G1. |
+| **G8 — phối hợp và chuyển vùng** | Bài kết hợp các họ đã duyệt và vùng đàn trong A0–C8. Có nhãn vai trò tay, khóa/8va và thao tác cụ thể. | Giới thiệu vùng mới giảm mật độ. Không nhận mọi đoạn khó; hợp âm nhiều nốt, nhiều bè, pedal bắt buộc cần profile riêng. | E1–E3 hỗ trợ chuyển mẫu sang ngữ cảnh khác; phủ 88 phím là mục tiêu, không chứng nhận thành thạo. |
+
+[Quy tắc chi tiết](GRADE_DESIGN.md#rules) quy định họ nhịp, cách kiểm quãng/ngón và ví dụ nhận/loại. Không trộn mọi giá trị tối đa của grade. Bài ôn có nhãn riêng, không lấp số lượng trọng tâm. Mở vùng đàn bằng profile đã kiểm từ các grade trước; G8 không phải lần đầu ra khỏi vùng giữa.
+
+**Phủ 88 phím là nghiệm thu riêng:** C/G/F major của bản đầu còn thiếu các phím C♯/D♭, D♯/E♭, G♯/A♭. Mở thêm các họ giọng/vị trí theo cùng quy tắc duyệt, rồi báo coverage của từng MIDI pitch 21–108 trong bài approved và của các quan hệ đi vào/đi ra phím đó. Chưa đủ thì ghi rõ thiếu; một lần xuất hiện không chứng minh người học đã làm chủ phím. Không gán cả kho là “đủ 88 phím” chỉ vì min/max chạm A0/C8.
+
+## 4. Độ dài được chọn sau cấu trúc nhạc
+
+| ID | Nhãn web | N bao gồm hai đầu |
+|---|---|---:|
+| n4 | Khoảng 4 nốt | 3–5 |
+| n6 | Khoảng 6 nốt | 6–8 |
+| n10 | Khoảng 10 nốt | 9–14 |
+| n20 | Khoảng 20 nốt | 15–24 |
+| n30 | Khoảng 30 nốt | 25–39 |
+| n50 | Khoảng 50 nốt | 40–69 |
+| n100 | Khoảng 100 nốt | 70–120 |
+
+Đây là phân nhóm sản phẩm, không phải liều luyện khoa học. N là timeline.targets.length của tay/bè được chấm: hợp âm ba phím là ba target; chuỗi tie là một lần đánh; rest/pedal không cộng. Lưu thêm số điểm vào, số nốt từng tay, ô và thời lượng theo BPM. Không đếm XML note hoặc ép số nốt mỗi dòng sheet.
+
+Đơn vị trọn vẹn có 23 nốt thuộc n20, 29 nốt thuộc n30. Không cắt nốt kết để đúng 20, không lặp/đệm thêm để lên 100. Bài dưới 3/trên 120 giữ trong nguồn, ngoài nhóm bản đầu. Chỉ tách bài dài tại biên đơn vị nhạc đã xác nhận. Không tự đổi grade/nhóm khi hết bài.
+
+## 5. Điều kiện để không cắt đại
+
+1. **Chọn đơn vị trước N:** mô-típ nguyên vẹn, câu/tiểu câu đã xác định, hoặc đoạn liên tục nhiều câu. Ghi đúng loại; 4–6 nốt không tự là “nguyên câu”.
+2. **Hồ sơ cả hai biên:** nguồn, part/voice, ô/tick/note ID, ngữ cảnh trước/sau, lý do bắt đầu/kết thúc, cách kiểm. Vạch ô, rest, slur hoặc nốt chủ riêng lẻ không đủ chứng minh kết câu.
+3. **Code gốc đúng phạm vi:** music21.analysis.segmentByRests chỉ đề xuất nhóm đơn âm theo rest/clef. Chạy trên từng dòng đã tách; không flatten hai tay hoặc bỏ chord để coi là đã phân tích đủ. Ưu tiên nguồn có cấu trúc rõ; trường hợp chưa chắc phải duyệt ngữ cảnh sheet/âm thanh.
+4. **Bảo toàn nhạc:** giữ lấy đà/nốt kết, tie, khóa/giọng, lặng có chức năng, quan hệ hai tay, nhả/pedal. Mở rộng biên làm vượt nhóm thì phân sang nhóm đúng, không tự thêm rest vào nguyên tác.
+5. **Kiểm cả đơn vị:** không xóa nốt/bè/nhịp khó bên trong để ép grade. Chọn một tay nguyên vẹn được phép nếu khai báo rõ; không tráo bè giữa chừng.
+6. **Đúng nhạc khác đúng sư phạm:** khớp MuseScore chưa chứng minh câu có nghĩa/thế tay tốt. Hồ sơ duyệt ghi người/công cụ, phương pháp, bằng chứng và phạm vi thực đã kiểm; không tự gắn nhãn giáo viên.
+7. **Chưa chắc thì chưa phát hành:** giữ ứng viên kèm lý do; tiếp tục nguồn khác, không nới điều kiện để đạt quota.
+
+[GENERATION_RULES.md](GENERATION_RULES.md#boundaries) quy định thủ tục và phản chứng. Không yêu cầu người dùng tự cắt hoặc tự gán grade khi nhập nguồn.
+
+## 6. Các mốc Q và nghiệm thu mới
+
+### Q0 — Hợp đồng dữ liệu và renderer
+
+**Đã có:** Worker/MuseScore và kiểm không đổi editor, không chặn MIDI trong fixture Q0. [Báo cáo](Q0_RENDERER_WORKER.md).
+
+**Bổ sung v2:** schema PreparedExercise, BoundaryEvidence, GradeProfile, LengthBucket, CorpusRelease, ExerciseSession; thử 3 và 120 target, nhiều hệ khuông, grand staff, pickup/bài dài. Bỏ giả định mọi câu là 4–64 nốt hoặc được biến đổi trong phiên. Renderer phục vụ layout/preview của bài cố định.
+
+**Xong khi:** schema nhất quán, nội dung không đổi qua layout, native snapshot/anchor khớp timeline, editor nguyên vẹn. Bằng chứng Q0 cũ không tự xác nhận 120 nốt.
+
+### Q1 — Nguồn và cơ chế bổ sung
+
+**Đã có:** kho có hash/nguồn/resume; dùng lại 37.629 file hợp lệ trước khi tải thêm đại trà.
+
+**Cần làm:** nhập theo manifest có MXL, nguồn/URL, metadata, quyền sử dụng, hash. Nhận diện trùng byte và cùng tác phẩm/bản chuyển soạn khi xác minh được. Giữ bản gốc; bổ sung không xóa dữ liệu ngoài phạm vi thay đổi.
+
+**Xong khi:** nhập mới, nhập lại, đổi metadata và thay bytes có kết quả xác định; báo riêng file mới/trùng/cần phân tích lại. Không tự đưa bài import vào kho đã duyệt.
+
+### Q2 — Chuẩn hóa và sửa cache
+
+**Đã có:** music21 10.5.0 khóa dependency, dữ liệu thời gian chính xác/native gate; 823 file đã xử lý.
+
+Tách parserVersion khỏi corpusVersion/profileVersion. Q2 hiện hash toàn bộ sources.lock.json vào định danh parser nên thêm nguồn có thể làm mất hiệu lực cache toàn kho. Cache mới theo nội dung + parser/dependency/options; đổi grade chạy lại phân loại; đổi metadata chỉ làm mới provenance/quyền và quyết định phụ thuộc metadata.
+
+Chạy theo lô có resume trên 36.806 file còn lại; ưu tiên nhóm đang thiếu dựa trên dữ liệu nhạc. Tên “easy”, tác giả, mã nhạc cụ chỉ xếp thứ tự xét. Tách lỗi file, chưa hỗ trợ parser và không hợp profile.
+
+**Xong khi:** thêm manifest không bắt parse lại nguồn cũ không đổi; đổi parser kiểm lại đúng phần phụ thuộc. Fixture tie/bè/dấu hóa khớp native; có thời gian/bộ nhớ/tiến độ để tiếp tục sau gián đoạn.
+
+### Q3 — Phân đoạn có căn cứ và phân grade
+
+**Đã có một phần v1:** cửa sổ biên ô, 14 profile ứng viên, 177 đoạn khớp native; chưa có xác nhận biên câu/ngón, profile còn tắt.
+
+Triển khai mục 3–5; tìm đơn vị trước số nốt, lưu bằng chứng biên và loại mô-típ/câu/cụm câu. Kiểm trên mẫu nguồn đã định danh, gồm cả đoạn bị bộ lọc bỏ, để thấy nhận nhầm và loại nhầm. Không tự đưa mô hình phân đoạn mới vào dùng khi chưa đối chiếu code/paper gốc.
+
+Rà các hạn chế v1: 21 mẫu tay chưa phải danh mục vận động đầy đủ; ba cao độ tạo hợp âm chưa chứng minh motif hòa âm; đứng ở vị trí mới khác chuyển tay; khoảng onset không tự là thời gian tay được tự do. Không sửa quy tắc chỉ để tăng số ứng viên.
+
+**Xong khi:** mỗi bài nhận có bằng chứng hai biên, verdict từng điều kiện, vai trò tay, trọng tâm, đối chiếu nguồn/native. Mỗi profile có ví dụ đạt và phản chứng; chưa chắc thì cách ly. 177 đoạn cũ phải xét lại theo v2.
+
+### Q4 — Xây kho bài hoàn chỉnh offline
+
+Thay nhiệm vụ “sinh câu trong phiên” bằng build kho tái lập. Xuất đơn vị từ một nguồn qua Q3; native xác nhận N, xếp n4–n100, duyệt, gộp gần trùng, tạo chỉ mục và gói. Lưu MusicXML, timeline theo phách, nguồn/biên, profile, N/điểm vào/tay, nhịp, phạm vi BPM đã kiểm và phiên bản.
+
+Chuyển vị, nếu bổ sung, được tạo/duyệt offline như bài riêng liên kết nguyên bản. Không dùng lặp đoạn hoặc đổi BPM để tăng số bài. Nhóm 100 nốt lấy đoạn liên tục/nhiều câu vốn liên tiếp, không nối mẩu rời.
+
+**Xong khi:** cùng nguồn/phiên bản cho cùng nội dung/ID; mọi bài có kiểm nguồn/native; thuộc đúng một nhóm độ dài; có coverage theo tổ hợp và log reject. Không gọi 10.000 lần rút đề là 10.000 bài. Kho nghiên cứu lớn không mặc nhiên đưa vào Git.
+
+### Q5 — Tải gói, chọn bài và chuẩn bị sheet
+
+Chọn từ bài approved theo grade/profile/tay/độ dài/nhịp/BPM; ưu tiên chưa gặp, luân phiên nguồn. Seed chỉ tái hiện thứ tự với cùng phiên bản kho. Tải shard theo nhu cầu, kiểm hash, cache có giới hạn; không precache cả kho.
+
+Chuẩn bị bài hiện tại và ít nhất hai bài kế; độ sâu còn dựa trên thời gian nhạc sẵn sàng và thời gian chuẩn bị đo được. Dùng layout native đã tạo offline; nếu cần reflow, Worker chỉ đổi layout và kiểm anchors của bài cố định. Không mặc định SVG A4 thích hợp mọi màn hình.
+
+**Xong khi:** chỉ đặt lịch bài ready; đổi/hủy không nhận callback cũ; thiếu bài/mất mạng có xử lý rõ. Nghe bằng MuseScore đúng bài, tạm ngừng chấm và không tranh quyền audio với queue.
+
+### Q6 — Luồng chấm liên tục, ưu tiên BPM
+
+Sinh sẵn không tự giải quyết clock. Engine nhận timeline hữu hạn, AudioClock.start đặt lại origin; session phải giữ một mốc chung và điều phối bài đã chuẩn bị.
+
+- Đúng nốt chuyển sau các nhóm hoàn thành; phím còn giữ không thành lần đánh mới.
+- BPM chuyển theo lịch dù sai/miss; nốt cuối được hoàn tất hit window đúng. Không reset/count-in mỗi bài rồi gọi là liên tục.
+- Khối cùng BPM, đơn vị phách và meter. Khoảng chuẩn bị giữa bài được định lịch/hiển thị riêng; không sửa nguyên tác hoặc kéo dài vì tải chậm.
+- Kiểm tay, release/pedal tại biên; cùng grade chưa đủ để nối.
+- Queue cạn, audio suspend, tab ẩn, MIDI ngắt: báo gián đoạn, tắt âm treo; không chấm lỗi hệ thống thành miss.
+
+**Xong khi:** replay nhiều bài cho cùng judgements/extras/release/pedal như timeline tham chiếu chạy liền; kernel không đổi. Kiểm cả 3 và 120 nốt. Hướng host/replay cần đo và chứng minh parity, chưa phải chức năng đã có.
+
+### Q7 — Màn Bài tập trong web
+
+Route #/exercises: grade → tay → độ dài → đúng nốt/BPM → Bắt đầu. Họ bài/loại nhịp mô tả ngắn, gắn kho thực; không đổi meter trong khối ngầm. Mỗi tổ hợp hiện số bài/nhóm; 0 bài không cho bắt đầu và gợi ý lựa chọn có dữ liệu.
+
+Tái dùng sheet/highlight/camera. Hai tay hiện grand staff; một tay ghi rõ. Full sheet giữ pause, nghe, pedal, thoát; khóa cấu hình ảnh hưởng chấm theo quy tắc hiện có. Có đọc trước bài kế, không popup mỗi bài.
+
+DB bài tập riêng lưu lựa chọn, lịch sử chống trùng, session; không tự tạo project thư viện. Refresh/Back/đổi màn hình không làm mất editor. Không thêm đo phản xạ hoặc ép đạt pass mới được chọn grade.
+
+**Xong khi:** mở app chơi qua nhiều bài bằng MIDI mô phỏng; full sheet/nghe/pedal/nguồn/đổi cấu hình/hết kho hoạt động desktop và mobile. HTML kiểm mẫu nội bộ không thay nghiệm thu này.
+
+### Q8 — Kiểm nội dung, hồi quy và nâng kho
+
+| Nhóm | Ca bắt buộc |
 |---|---|
-| `mxl.tar.gz` | `49ffd75ecf5489c0be6d41182eb11ff7` |
-| `metadata.tar.gz` | `5bc79445090dd2fe5e96cffa77a3461c` |
-| `PDMX.csv` | `30392ccf38bb63ce70e7afae70f9c88c` |
+| Biên nhạc | Đủ N nhưng mất lấy đà/nốt kết; vạch ô giữa câu; rest nội câu; slur không phải nhãn phrase; tay kia còn giữ; tie/pedal qua biên; bài dài nhiều câu. |
+| Grade | Đủ maxInterval nhưng thiếu trọng tâm; sai cách viết quãng; nhịp mới cộng chuyển tay mới; bộ ba hợp âm tình cờ; ngón chưa xác nhận; BPM ngoài phạm vi. |
+| Độ dài | Ranh giới 3/5/6/8/9/14/15/24/25/39/40/69/70/120; 2 và 121 ngoài catalog; hợp âm/tie; đổi tay phải là bản đã kiểm riêng. |
+| BPM | Cùng cao độ sát biên, sớm/muộn, sai/thừa/miss, MIDI giao trễ hợp lệ, nhả/pedal, nối khối, queue cạn. |
+| Kho | Thêm nguồn không parse lại toàn bộ; đổi nhóm gần trùng không mất lịch sử; sai hash; ghim phiên bản; rollback. |
+| UI/hồi quy | Desktop, 360×800, 390×844, landscape; highlight/camera; native playback; editor mobile; MXL/ABC; thư viện/backup; A–B. |
 
-Sau tải tính thêm SHA256 nội bộ; không dùng checksum như bằng chứng tác quyền. PDMX khuyến nghị subset không có cờ xung đột giấy phép trong [README](https://github.com/pnlong/PDMX#updates-). Bộ lọc ứng viên tiếp tục dùng `no_license_conflict ∩ all_valid ∩ deduplicated`, rồi kiểm nội dung piano thực tế; mã chương trình piano không đủ xác nhận nhạc cụ hay trình độ.
+Mục tiêu kỹ thuật, không phải ngưỡng sư phạm: không có chuẩn bị bài gây main-thread stall ≥50 ms khi chơi trong cấu hình kiểm; soak 30 phút và replay ít nhất 1.000 biên ở nhiều BPM, ghi thiết bị/điều kiện. Bộ nhớ không tăng theo tổng số bài. Kiểm viewport không được gọi là kiểm đàn thật/mọi trình duyệt mobile.
 
-Archive có thể chứa toàn bộ kho nhưng chỉ giải nén các MXL nằm trong danh sách cần phân tích trước. Bộ tải hỗ trợ tiếp tục, kiểm checksum trước khi dùng, giới hạn số tác vụ; xử lý archive bằng đường dẫn đã kiểm nằm trong workspace, không cho symlink hoặc đường dẫn thoát thư mục.
+Tự động kiểm mọi bài; mọi hồ sơ biên/grade có quyết định duyệt thực. Rà thêm mẫu phân tầng ít nhất 30 bài/profile khi đủ, hoặc toàn bộ nếu ít hơn; 30 là ngân sách QA, không chứng minh hiệu quả học. Lỗi phát hiện thành fixture/điều kiện loại; kiểm cả các ứng viên bị loại, không chỉ mẫu được nhận.
 
-### Chỉ tiêu nội dung
+### Q9 — Phát hành gói và bản online
 
-**Mục tiêu bản đầy đủ:** mỗi grade có ít nhất **1.000 đoạn nguồn đạt điều kiện sau gộp gần trùng**, từ ít nhất **50 nhóm tác phẩm**, và ít nhất **100 mẫu hình cao độ–tiết tấu khác nhau sau chuẩn hóa chuyển vị**. Các đoạn cùng một tác phẩm hoặc hai bản chuyển soạn của nó phải được nhận diện khi có đủ metadata.
+Đích là GitHub Pages hiện tại khi triển khai tới mốc này. Manifest/shard có hash, nguồn/quyền; đo dung lượng và dùng kiểm release/deploy hiện có. Không tải toàn bộ kho gốc về trình duyệt. Xác minh giới hạn hosting/ngân sách tại lúc phát hành.
 
-Trên nền đó, mục tiêu khả năng sinh là **10.000 câu khác nội dung mỗi grade trong các khoảng nốt mặc định**, gồm trích đoạn, phép chuyển vị hợp lệ và câu tổ hợp được duyệt. Đây là chỉ tiêu kiểm thử, chưa phải dự báo kho hiện tại chắc chắn cung cấp được. Tăng số nốt, đổi BPM hoặc đổi giao diện không được dùng để khai tăng số câu.
+Ghim app/native/schema/profile/corpus/layout tương thích trong session. Chỉ đổi kho ở phiên sau; công bố manifest sau khi đủ shard. Giữ bản trước để rollback, không xóa lịch sử/project.
 
-| Grade | Khoảng nốt mặc định | Nội dung mới phải có trong phần luyện trọng tâm |
-|---|---:|---|
-| G1 | 8–16 | Hướng đi, nốt lặp, quãng 2; các họ nhịp cơ bản |
-| G2 | 8–20 | Quãng 3 xen quãng 2; cặp móc đơn trong họ luyện nhịp riêng |
-| G3 | 12–24 | Quãng 4–5 trong cụm giai điệu/hợp âm rải |
-| G4 | 12–24 | Chuyển vị trí hoặc giọng trong danh sách được duyệt |
-| G5 | 16–32 | Hai tay với giai điệu và bass thưa/giữ |
-| G6 | 12–24 | Quãng 6–7–8 giai điệu và chuẩn bị chuyển tay |
-| G7 | 16–32 | Các họ nhịp phức tạp, xét riêng từng họ |
-| G8 | 24–48 | Phối hợp các kỹ năng đã học tại nhiều vùng đàn |
+**Xong khi:** URL mở thẳng #/exercises; lựa chọn/số lượng đúng catalog; chơi/nghe/full sheet/pedal qua smoke test; không trộn version; có rollback. Ghi rõ grade/độ dài còn ít hoặc chưa có.
 
-Các chỉ tiêu phải được báo riêng cho nội dung mới của grade và bài ôn; không lấp đầy G6 bằng câu chỉ có quãng 2 rồi gọi đã đủ kho quãng lớn. Một đoạn có thể phù hợp nhiều grade, nên không cộng các cột để quảng cáo tổng số bài độc lập.
+## 7. Thứ tự làm và mốc bàn giao
 
-Trước khi chạy đủ kho, dùng **100 đoạn ứng viên/grade** làm pilot. Nếu grade thiếu nguồn, Q3 phải trả báo cáo thiếu theo từng quãng, tay, nhịp và vùng phím, rồi tuyển thêm đúng nhóm đó. Có thể phát hành beta các grade đủ điều kiện, nhưng chưa gọi Q0–Q9 hoàn tất cho toàn bộ G1–G8. Không nới grade hoặc nhân bản đổi quãng tám để vượt chỉ tiêu.
+Không chờ xử lý đủ 37 nghìn nguồn hoặc đạt quota mọi ô mới xây luồng tập:
 
-## Q0 Chốt hợp đồng dữ liệu và kiểm rủi ro native
+1. Cập nhật schema/cache (Q0–Q2), chọn tập nguồn nhỏ có đơn vị nhạc rõ.
+2. Làm Q3–Q4 cho tập đó; giữ số thật, không hạ tiêu chuẩn nội dung.
+3. Nối **Q5–Q6–Q7 thành màn tập dùng được**, kiểm BPM qua biên ngay ở đây.
+4. Mở rộng chuẩn hóa/duyệt/build theo báo thiếu; Q8 và Q9.
 
-**Cập nhật triển khai 20/10/2026:** Q0 đã qua gate renderer với bộ fixture/profile thử nghiệm. Renderer MuseScore riêng trong Worker dựng 60 câu mới mỗi cấu hình trong lúc MIDI mô phỏng chạy; cả desktop và viewport mobile với main thread chậm 4× đều hoàn tất 32/32 nốt, không có long task UI giao với render. 9 oracle khớp dữ liệu nhạc/glyph/tọa độ, editor giữ nguyên bytes/undo. Xem [bản sửa và giới hạn số đo](Q0_RENDERER_WORKER.md). Q1 đã thu thập và lập danh mục nguồn như báo cáo bên dưới. Q2 đã có pipeline chuẩn hóa và gate đối chiếu native, nghiệm thu trên 627 file như báo cáo bên dưới. Q3 đã có pipeline và pilot như báo cáo bên dưới, còn thiếu nguồn và duyệt nội dung. Q4–Q9, UI quiz và kiểm refill từng profile/BPM thật vẫn là phần tiếp theo.
+Demo có thể dùng vài bài đã kiểm, hiện rõ “kho nhỏ”; không chứng nhận đủ G1–G8. Mục tiêu mở rộng: 1.000 nhóm đoạn/grade, 50 nhóm tác phẩm đã xác minh, 100 motif/grade. Đây là mục tiêu sản phẩm cần đo, không dự báo chắc chắn. Mục tiêu tham khảo một tổ hợp thường dùng là 100 nhóm; ít hơn vẫn công bố số thật và khả năng gặp lại. Không nhồi mọi tổ hợp, nhất là nguyên câu 4 nốt hoặc đoạn 100 nốt rất đơn giản.
 
-[Điều tra hiệu năng](Q0_RENDER_INVESTIGATION.md) đã tách các đường API: SVG và phần chữ trang giấy là chi phí lớn; chuyển renderer sang Worker vẫn cần thiết. Câu quiz nên giữ tên bài/nguồn trong UI, dùng sheet trích đoạn gọn và cache có định danh đầy đủ. Việc này không thay đổi bản gốc trong editor hoặc thuật toán chấm.
+Chỉ báo “đủ các level” khi mọi profile cốt lõi G1–G8 công bố có nội dung được duyệt và coverage; không suy rằng mọi tay/nhịp/độ dài đều đủ. “Kho lớn theo độ dài” cần số từng tổ hợp. Bỏ nghiệm thu cũ “sinh 10.000 câu bằng seed”.
 
-**Công việc**
+## 8. Bổ sung nguồn về sau
 
-- Tạo nhánh `codex/sight-reading`, lưu mốc an toàn cho code đang hoạt động; chọn file để commit rõ ràng, không đưa archive nghiên cứu vào Git.
-- Ghi baseline build, bộ test hiện có, phiên bản WASM và checksum các tệp chấm trong `packages/practice-engine-v2/upstream/`.
-- Chốt schema `Source`, `Fragment`, `GradeProfile`, `Exercise`, `ExerciseSession` và quy ước tính N.
-- Làm prototype với vài MXL nhỏ: tạo snapshot câu kế trong khi câu hiện tại vẫn hiển thị và MIDI vẫn được nhận.
+Nhập nguồn → kiểm hash → parse mới/thay đổi → phân đoạn/grade offline → đối chiếu/duyệt → chống trùng/coverage → build bản kho mới → kiểm → phát hành.
 
-**Điểm cần đối chiếu code**
+Tách sourceHash, parserVersion, boundaryRuleVersion, profileVersion, notationVersion, corpusVersion. Thành phần đổi thì chỉ dùng lại bằng chứng còn đúng phạm vi phụ thuộc; không kế thừa duyệt cho nội dung đã đổi. ID nhóm gần trùng có thể thay: lịch sử lưu exercise ID, exact hash, motif hash và vị trí nguồn ổn định; nhóm có version/mapping riêng.
 
-`EngineBridge.snapshot()` hiện lấy tài liệu đang mở. Nhưng `WebApi::prepareProject()` đã có đường tạo project tạm, không công bố vào global context; nó hiện chỉ trả MSCZ hoặc semantics không có drawings. Hướng ưu tiên là mở rộng đường project tạm để trả snapshot có SVG và anchor, giữ tài liệu editor nguyên vẹn.
+Test nâng kho chứng minh cùng bài không thành chưa gặp vì đổi ID nhóm; không sửa bài đang chơi; không nới grade ngầm; rút bài catalog không phá project cá nhân.
 
-Lời gọi native hiện đồng bộ. “Project tạm” chưa đồng nghĩa chạy nền; cần đo độ chặn main thread. Nếu vượt ngân sách, khảo sát engine khắc nhạc tách worker phù hợp bản build. Cache snapshot được chuẩn bị trước là phương án dự phòng cho một số biến thể đã biết, nhưng không được gọi là đã đạt yêu cầu tạo biến thể bất kỳ khi đang chơi.
+## 9. Điểm chạm code
 
-**Đầu ra:** schema nháp, mẫu native, baseline và báo cáo quyết định renderer.
-
-**Xong khi:** snapshot/anchor khớp MIDI; editor không đổi bytes/revision/undo; đường tạo câu được chọn có bằng chứng đủ khả năng phục vụ queue. Nếu renderer chưa đạt, xử lý ở mốc này trước khi cam kết trải nghiệm BPM liên tục.
-
-## Q1 Tải kho và lập danh mục nguồn
-
-**Kết quả 20/10/2026:** đã có 37.631 mục nguồn / 37.630 nội dung MXL riêng từ PDMX, OpenScore và thư viện hiện có. 37.629 nội dung qua kiểm ZIP/XML; một file vượt giới hạn XML 32 MiB được giữ nguyên kèm lý do chặn. Chỉ mục, archive và file đều được kiểm checksum, nguồn trùng được giữ đủ provenance. Có công cụ resume, catalog SQLite, kiểm file song song và 26 kiểm thử. Xem [báo cáo Q1](Q1_CORPUS.md). Chưa gọi các nguồn này là bài đúng grade: phân tích nhạc và phân đoạn bắt đầu ở Q2.
-
-**Công việc**
-
-- Chuyển logic tải OpenScore từ script nghiên cứu sang công cụ có manifest, resume và báo cáo lỗi; tái dùng file có hash đúng.
-- Tải hai archive PDMX nêu trên; chọn ứng viên theo CSV; giữ đường dẫn gốc và trạng thái tải/giải nén/parse riêng.
-- Đếm trùng theo hash file trước, rồi nhóm trùng tác phẩm/bản chuyển soạn ở bước phân tích; gắn trạng thái công khai/cá nhân/chờ xác minh.
-- Ưu tiên ứng viên đơn giản bằng thông tin thật sau parse. Tên “easy” chỉ là gợi ý hàng đợi, không quyết định grade.
-
-**Đầu ra dự kiến**
-
-```text
-scores/curriculum/sources.lock.json          # manifest nhỏ được commit
-artifacts/curriculum-corpus/raw/             # archive và MXL gốc, không commit
-artifacts/curriculum-corpus/catalog.sqlite   # trạng thái, hash, nguồn
-artifacts/curriculum-corpus/download-report.json
-```
-
-**Xong khi:** mọi mục trong danh sách cần xử lý có file hợp lệ hoặc lý do thiếu cụ thể; chạy lại không tải trùng; checksum archive khớp; báo cáo phân biệt số mục, số file độc lập và số ứng viên piano. Không yêu cầu mọi ứng viên đều được chấp nhận.
-
-## Q2 Chuẩn hóa nốt và đối chiếu MuseScore
-
-**Triển khai 20/10/2026:** đã có pipeline music21 10.5.0 với dependency khóa hash, kho kết quả riêng có resume và gate đối chiếu MuseScore native. 12 fixture kiểm quãng có cách viết khác nhau, accidentals, phân số, bè, tie/unison, clef, 8va, pedal và các ca phải từ chối; bộ đếm dùng lại `createTimeline()`. Pilot đã phân tích 627 file nguồn; còn 37.002 file Q1 chưa phân tích. Xem [kết quả Q2 và giới hạn phạm vi](Q2_NORMALIZATION.md), [bằng chứng nghiệm thu](q2/verification.json). Việc tuyển đoạn và phân grade là Q3; chưa có UI quiz hoặc kho grade được phát hành.
-
-**Công việc**
-
-- Cài music21 vào môi trường build riêng, khóa phiên bản; trình duyệt không tải thư viện Python này.
-- Giữ nguyên tên bậc, alter, octave, khóa, hóa biểu, nhịp, part/staff/voice, tie, rest, pedal và thứ tự thời gian; dùng phân số cho nhịp, không làm tròn sớm.
-- Tách thông tin đọc trên khuông, quan hệ giai điệu, hợp âm và thao tác tay. Dùng mẫu đã duyệt để mô tả thế tay, không đoán thế ngón chỉ từ tầm âm.
-- Đối chiếu các đoạn định phát hành với native semantics: cao độ, onset, duration, bè, số target sau gộp tie/đồng âm.
-- Những ký hiệu chưa hỗ trợ, file sai cấu trúc hoặc khác biệt ngữ nghĩa phải có mã lỗi và bị loại khỏi gói phát hành.
-
-**Schema tối thiểu**
-
-| Bản ghi | Trường cần có |
+| Đã có | Vai trò |
 |---|---|
-| Source | ID, URL, commit/record, hash, title/composer/arranger khi có, license, visibility, trạng thái |
-| Fragment | sourceId, part/voice, ô và tick đầu/cuối, ngữ cảnh ký âm, nốt/rest, điểm cắt an toàn, targetCount, onsetCount |
-| GradeProfile | grade, kỹ năng trọng tâm, điều kiện đã học, mẫu nhịp/giọng/vùng tay cho phép, giới hạn tốc độ/chuyển tay, phép biến đổi |
-| Exercise | fragmentIds, seed, phiên bản profile/generator/corpus, phép biến đổi, hashes, snapshot/timeline tương ứng |
-| Session | settings, thứ tự câu, trạng thái, kết quả/replay chấm hiện có, phiên bản corpus và engine |
+| [collect-curriculum.py](../../buildscripts/pianist/collect-curriculum.py), [curriculum_catalog.py](../../buildscripts/pianist/curriculum_catalog.py) | Tải/nhập nguồn, provenance; thêm quy trình nhập theo lô. |
+| [normalize-curriculum.py](../../buildscripts/pianist/normalize-curriculum.py), [curriculum_normalize.py](../../buildscripts/pianist/curriculum_normalize.py) | Parser, cache mới, native gate. |
+| [curriculum_fragments.py](../../buildscripts/pianist/curriculum_fragments.py), [fragment-curriculum.py](../../buildscripts/pianist/fragment-curriculum.py) | Thay cách chọn/duyệt ứng viên, giữ đối chiếu nguồn. |
+| [model.ts](../../packages/exercise-generator/model.ts), [corpus-model.ts](../../packages/exercise-generator/corpus-model.ts) | Tách candidate, bài approved và catalog. Tên package không chứng minh generator realtime tồn tại. |
+| [exercise-renderer](../../packages/exercise-renderer), [source-verification.ts](../../packages/exercise-generator/source-verification.ts) | Render/glyph/timeline; kiểm 3–120 nốt và nhiều layout. |
+| [score-adapter.ts](../../packages/practice-engine-v2/score-adapter.ts), [controller-v2.ts](../../apps/pianist-web/src/practice/controller-v2.ts) | Target/kernel giữ nguyên; điều phối liên tục phải chứng minh parity. |
+| [PracticeScreen.tsx](../../apps/pianist-web/src/practice/PracticeScreen.tsx), [Sheet.tsx](../../apps/pianist-web/src/practice/Sheet.tsx), [NoteInk.tsx](../../apps/pianist-web/src/practice/NoteInk.tsx) | Sheet, highlight, full sheet, nghe và pedal. |
 
-**Xong khi:** các fixture E–F/C–C♯/C–D♭, dấu hóa qua ô, tie, hợp âm khác trường độ, backup/forward, đổi khóa, 8va và nhiều bè đều có đối chiếu phù hợp. Không đưa kết quả từ parser khảo sát cũ thẳng vào production.
-
-## Q3 Tách đoạn và phân loại grade
-
-**Cập nhật 21/10/2026:** đã code pipeline trích nguyên bản, 14 profile ứng viên, đối chiếu nguồn/MuseScore, gộp gần trùng và báo thiếu. Quét 528 nguồn đã chuẩn hóa, gồm đợt bổ sung có mục tiêu từ Q1. Các profile vẫn tắt, chờ đủ nguồn và duyệt nội dung; chưa gọi Q3 hoàn tất theo chỉ tiêu. Xem [kết quả và giới hạn Q3](Q3_EXTRACTION.md), [coverage](q3/coverage.json). Q4–Q9 và luồng quiz trên web chưa được triển khai tại mốc này.
-
-**Công việc**
-
-- Xét các điểm cắt hợp lệ thay vì cố định cửa sổ 4 ô; tìm nhiều độ dài trong 4–64 target.
-- Bắt đầu với đoạn ở biên ô rõ ràng; loại tie/pedal/nốt giữ vượt biên chưa được xử lý. Bổ sung pickup hoặc cắt theo mô-típ sau khi có kiểm chứng.
-- Chạy các điều kiện độc lập của từng profile; xuất `accept/reject` cùng lý do, không dùng một điểm trung bình che một yêu cầu vượt grade.
-- Phân biệt câu luyện trọng tâm và câu ôn. Duyệt tính thành câu/tiểu câu, thế tay và các mẫu nối dự định dùng.
-- Gộp cửa sổ chồng lấn/gần trùng, tạo nhóm motif sau chuẩn hóa chuyển vị, thống kê độ phủ theo tay, chiều quãng, nhịp, vùng phím và số nốt.
-
-**Duyệt nội dung**
-
-Kiểm tự động cho mọi đoạn; duyệt mẫu phân tầng tối thiểu 30 đoạn/grade và mọi họ mẫu mới. Mỗi trường hợp lỗi sư phạm phát hiện phải trở thành điều kiện loại hoặc fixture. Nhãn “giáo viên piano đã duyệt” chỉ được dùng nếu thực sự có người phù hợp duyệt; kiểm MIDI tự động không xác nhận cách đặt tay tốt.
-
-**Đầu ra:** `grades.v1.json`, `fragments` có version, `coverage.json`, `rejected.jsonl`, danh sách cần bổ sung nguồn.
-
-**Xong khi:** có pilot đủ để kiểm toàn hệ thống, mọi profile bật có ví dụ được duyệt, báo cáo cho biết chính xác mức đạt so với chỉ tiêu kho. Thiếu nguồn là công việc còn lại của Q3, không được che bằng đề tự soạn gắn nguồn thật.
-
-## Q4 Viết bộ sinh câu có ràng buộc
-
-**Thuật toán**
-
-```text
-generate(request, sessionHistory, seed):
-  kiểm grade, profile, tay, BPM, x và y
-  lấy các fragment phù hợp profile và khoảng targetCount
-  loại nguồn/câu đang trong cửa sổ chống trùng
-  chọn luân phiên nhóm tác phẩm, motif và vị trí được phép
-  chọn nguyên bản hoặc phép chuyển vị đã được duyệt
-  áp dụng phép biến đổi và kiểm lại toàn bộ điều kiện
-  kiểm điểm nối với câu trước, trạng thái tay/phách
-  dựng dữ liệu câu và xác nhận x <= targetCount <= y
-  trả Exercise kèm provenance và seed
-  nếu không có nghiệm: trả lý do và khoảng khả dụng
-```
-
-Chọn các nghiệm hợp lệ theo seed, không chọn N ngẫu nhiên rồi cắt cho đủ. `x=y` chỉ hoạt động nếu có câu đúng số đó. Cặp móc đơn, hợp âm và tie không bị bẻ để thỏa slider.
-
-**Chuyển vị**
-
-music21 tạo bảng biến đổi có cách viết nốt và hóa biểu đúng ở bước chuẩn bị; web dùng các biến đổi đã khai báo và kiểm lại grade. Native MuseScore là bước xác nhận trước khi xếp vào queue. Không transposition tùy ý theo MIDI rồi đoán dấu thăng/giáng.
-
-**Chống lặp**
-
-Lưu exact hash, hash đã chuẩn hóa chuyển vị, nhóm nguồn và vùng nguồn chồng lấn. Cấu hình ban đầu đề xuất: giữ 5.000 exact hash gần nhất theo grade; tránh lại cùng đoạn nguồn trong 100 câu và cùng cấu trúc chuẩn hóa trong 20 câu, khi kho đáp ứng được. Đây là thông số chống lặp của sản phẩm. Nếu thiếu tập ứng viên, trả `insufficient-variety`; không lặng lẽ bãi bỏ mọi giới hạn. User có thể chủ động bật dùng lại để tiếp tục.
-
-**Câu tổ hợp**
-
-Sau khi hai dạng đầu chạy đúng, bổ sung đồ thị nối mô-típ đã duyệt. Cạnh thể hiện điểm nối hợp lệ về giọng, nhịp, hòa âm khi có nhãn, vị trí tay và cách kết. Tìm đường có tổng N trong x–y bằng quy hoạch động/backtracking có giới hạn. Giữ nguyên nhịp của đơn vị nguồn; ghi provenance từng đoạn. Với motif chưa rõ hòa âm/điểm nối thì không tự tạo cạnh.
-
-**Xong khi:** cùng đầu vào và seed tái tạo cùng câu; các ràng buộc grade và x–y luôn đúng; không ghi nhãn câu tổ hợp thành nguyên tác; chạy kiểm kê sinh 10.000 câu/grade theo cấu hình mặc định và báo số unique thực tế, thiếu hụt và tỷ lệ loại. Chỉ tiêu chưa đạt vẫn phải được ghi là chưa đạt.
-
-## Q5 Ký âm và queue chuẩn bị trước
-
-**Công việc**
-
-- Tạo MusicXML chuẩn từ dữ liệu câu và ngữ cảnh đã duyệt; dùng snapshot có SVG và anchors theo phương án native đã chọn ở Q0.
-- Tách công việc chọn/biến đổi dữ liệu vào worker. Lệnh native có hàng đợi, hủy bằng generation ID; không gọi đồng thời qua các file tạm chung.
-- Queue có các trạng thái `selected → validated → rendered → ready → active → retired`; chỉ câu `ready` được đặt lịch.
-- Chuẩn bị ít nhất câu hiện tại và hai câu kế; refill theo thời gian nhạc còn sẵn sàng và thời gian render đo được, không chỉ theo số lượng câu.
-- Giới hạn cache SVG/native project; giải phóng câu đã qua nhưng giữ dữ liệu tối thiểu để lưu kết quả và tái hiện lỗi.
-
-**Nghe mẫu**
-
-Nút Nghe dùng native MuseScore với đúng câu được chọn. Khi nghe, ngừng chấm và khóa việc đổi project audio; dừng nghe rồi mới bắt đầu/tiếp tục chấm. Công việc render câu kế không được reset hoặc phát nhầm câu đang nghe. Không thay native audition bằng âm mô phỏng rồi gọi là playback MuseScore.
-
-**Xong khi:** editor hiện có không thay đổi; 100 lần sinh/hủy/đổi grade không rò project hoặc callback; native snapshot và timeline trùng số nốt/cao độ; queue kịp phục vụ câu ngắn trên thiết bị kiểm thử.
-
-## Q6 Nối câu với đồng hồ và bộ chấm hiện có
-
-**Ràng buộc hiện tại**
-
-`PracticeEngine` và `ManiaKernel` nhận danh sách target cố định khi tạo. `PracticeController` kết thúc khi engine báo done; `AudioClock.start()` thiết lập lại origin. Vì vậy chỉ mở một controller cho mỗi câu sẽ không đáp ứng BPM liên tục.
-
-**Hướng triển khai ưu tiên**
-
-- Một session giữ mốc Web Audio/performance chung. Các câu có ID riêng và thời điểm tuyệt đối trong cùng dòng nhạc.
-- Đưa nhiều câu đã sẵn sàng thành timeline phía trước. UI đổi câu theo mốc/group, độc lập thời điểm hoàn tất cửa sổ chấm nốt cuối.
-- Thêm lớp host cho timeline theo khối, giữ nguyên các kernel upstream. Hướng thử nghiệm là tạo engine với timeline được mở rộng trong worker, replay nhật ký đầu vào/clock và chuyển giao khi kết quả cũ khớp; phần được thêm phải còn ngoài khoảng thời gian có thể ảnh hưởng chấm hiện tại.
-- Khóa mốc cắt nhật ký, bổ sung các sự kiện đến trong lúc rebuild rồi mới chuyển generation. Kiểm không mất, nhân đôi hay phân lại target đã chấm.
-- Đối chiếu mỗi tình huống với một timeline hoàn chỉnh chạy từ đầu bằng engine hiện có. Nếu không đạt parity hoặc không đạt chi phí thời gian/bộ nhớ, tiếp tục xử lý host trước khi phát hành; không sửa thuật toán chọn nốt để làm test qua.
-- Thu gọn lịch sử ở điểm nghỉ và trạng thái trung tính đã xác nhận; các sự kiện nhả/pedal còn liên quan phải được giữ. Giới hạn phiên dài phải được hiển thị đúng, không để bộ đếm sự kiện chạm giới hạn rồi hỏng âm thầm.
-
-**Hành vi**
-
-Đúng nốt chuyển theo nhóm nốt đã hoàn tất, không đánh lại phím còn giữ như sự kiện mới. BPM chuyển theo lịch dù có sai/miss; không chờ “pass câu”. Tie và tham chiếu pedal không được cắt ở biên câu. Chuyển vùng xa có khoảng chuẩn bị được ký âm, không phải độ trễ tải trang.
-
-Khi tab ẩn, MIDI ngắt, audio suspend hoặc queue cạn: xử lý gián đoạn rõ ràng, ngừng âm treo, chuẩn bị lại và đếm vào khi tiếp tục. Khoảng bị gián đoạn không được ghi thành lỗi BPM của người học.
-
-**Xong khi:** replay theo khối và replay timeline hoàn chỉnh cho cùng judgements/extras/release/pedal trong các trường hợp kiểm; nguồn upstream giữ nguyên checksum; không gọi start/reset clock ở mỗi câu. Đây là một mốc bắt buộc, không được coi là chi tiết UI.
-
-## Q7 Tích hợp vào web và lưu dữ liệu
-
-**Màn chọn**
-
-Trong Tập piano có hai lối vào: bài trong thư viện và Bài tập theo grade. Route mới hỗ trợ mở trực tiếp, refresh và Back. Hiển thị grade, mục tiêu ngắn, khoảng số nốt, mode, BPM, tay phù hợp và nút Bắt đầu. Những cấu hình chưa có nguồn hiện thông tin rõ ràng thay vì lỗi tải.
-
-**Màn chơi**
-
-Tái dùng `Sheet`, `NoteInk`, `score-viewport` và các thành phần luyện tập; sheet hiện tại và câu tiếp theo đọc được trước. Full sheet giữ thanh nhỏ gồm tạm dừng, nghe, pedal và thoát. Cấu hình ảnh hưởng chấm như pedal vẫn theo quy tắc khóa khi lượt đang chạy. Không mở editor trong luồng quiz.
-
-Nguồn tác phẩm, số nốt/ô và loại câu nằm ở thông tin phụ. Kết quả ngắn hiện tại câu; không chèn popup mỗi câu. Tổng kết khi user dừng. Tách lịch sử quiz khỏi danh sách bản nhạc; chỉ lưu câu thành bài thư viện khi user chọn thao tác đó.
-
-**Lưu và cache**
-
-DB riêng `pianist-exercises` lưu cấu hình, lịch sử chống trùng, session và seed; không dùng migration này để thay đổi thư viện hiện tại. Gói corpus lưu theo version/hash, chỉ tải grade đang dùng, có quản lý dung lượng. Không đưa toàn bộ corpus vào service worker precache hiện đang cài nguyên release.
-
-**Xong khi:** route, dữ liệu lưu, nguồn, full sheet, nghe và pedal hoạt động trên desktop/mobile; vào/ra quiz không làm mất bản đang chỉnh; dữ liệu cá nhân không bị đẩy lên GitHub.
-
-## Q8 Kiểm nội dung và nghiệm thu kỹ thuật
-
-| Nhóm kiểm | Tình huống bắt buộc |
-|---|---|
-| Nhạc | Quãng theo cách viết; dấu hóa; khóa/8va; tie vào/ra biên; bè; hợp âm; nốt giữ qua phách; 3/4, 4/4, 6/8 |
-| Bộ sinh | x=y, không có nghiệm, 4 và 64 nốt, nhiều tay, nguồn thiếu, seed tái lập, hết độ đa dạng, chồng lấn nguồn, đổi quãng tám |
-| BPM | Nốt cùng cao độ sát biên; đánh sớm/muộn tại hit window; sai/thừa/miss; MIDI giao trễ hợp lệ; nhả và pedal qua biên; nối khối |
-| UI | Highlight trên đúng glyph; camera qua câu; thao tác cuộn tay; full sheet; nghe/đổi câu; đổi hướng màn hình |
-| Sự cố | Mạng mất, gói sai hash, render chậm, hủy công việc, native failure, audio suspend, tab ẩn, cache hết dung lượng |
-| Hồi quy | Editor mobile, import/export MXL/ABC, thư viện/backup, playback MuseScore, A–B và các test chấm đối chiếu upstream |
-
-Chạy các lệnh test/build hiện có từ `apps/pianist-web`; thêm test generator/stream và kịch bản browser riêng. Browser kiểm ở desktop, 360×800, 390×844 và landscape; giả lập kích thước không được ghi là đã kiểm đàn thật hay mọi trình duyệt mobile.
-
-Ngân sách kỹ thuật ban đầu: chọn/biến đổi dữ liệu p95 ≤ 50 ms trong worker; chuyển câu đã render ≤ 1 frame trong điều kiện đo; không có công việc khắc nhạc gây main-thread stall từ 50 ms khi đang chơi. Số này là tiêu chí kỹ thuật cần đo và công bố thiết bị, không phải mức dung sai chấm.
-
-Soak test tối thiểu 30 phút và 1.000 biên câu trong nhiều tốc độ bằng MIDI mô phỏng; các kịch bản có audio thực phải chạy thêm theo thời gian thật. Bộ nhớ sau warm-up và thu hồi cache phải ổn định trong giới hạn đo, không tăng theo tổng số câu. Khoảng nhìn trước đủ để người học chuẩn bị được duyệt qua UI; tốc độ render tốt không tự chứng minh giá trị sư phạm.
-
-**Xong khi:** test hiện có và test mới đều đạt; báo cáo giữ riêng kiểm tự động, kiểm nhìn/nghe thủ công và phần chưa kiểm MIDI thật. Không có lỗi grade, mất nguồn hay lệch clock còn biết mà vẫn đánh dấu hoàn thành.
-
-## Q9 Đóng gói và cập nhật bản online
-
-**Công việc**
-
-- Xuất `curriculum/manifest.json` và các shard có version/hash; gói khởi đầu nhỏ, nguồn MXL nghiên cứu giữ ở máy phát triển.
-- Ngân sách khởi đầu cho corpus phát hành: tối đa 128 MiB toàn bộ gói; mỗi shard nén khoảng 0,25–1 MiB và chỉ mục đầu vào không quá 256 KiB. Đo thật trước khi chốt.
-- Manifest release hiện tại của bản `2026-10-20-mobile` ghi 157.129.225 byte tài nguyên. Script deploy hiện giới hạn archive 250 MiB và giải nén 512 MiB; gói mới phải qua chính các kiểm này, không bỏ kiểm để phát hành.
-- GitHub Pages giới hạn site công bố 1 GB theo [tài liệu GitHub](https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits). Nếu kho tuyển vượt ngân sách, phát hành gói thiết yếu trước; mở rộng hosting gói dữ liệu là bước triển khai riêng.
-- Ghim một bộ app/corpus/rules/native version trong phiên; không trộn shard của bản mới khi user đang chơi.
-- Build release có nguồn, thông báo giấy phép và báo cáo coverage; chạy `verify-release.py`, chuẩn bị Pages bằng đường release đã có, rồi smoke test URL online.
-- Giữ release/manifest trước để rollback app và corpus cùng lúc. Không xóa project hay lịch sử người dùng khi rollback.
-
-**Xong khi:** mở link trực tiếp tới `#/exercises`, chọn grade/x–y, chơi đúng nốt/BPM, nghe và full sheet đều đạt trên bản online; các grade công bố đạt đúng chỉ tiêu ghi trong coverage. Chỉ báo hoàn tất bản đầy đủ khi cả G1–G8 đủ điều kiện.
-
-## File dự kiến thêm và phần code dùng lại
-
-Các đường dẫn chưa tồn tại dưới đây là đề xuất, không phải file đã được tạo:
-
-```text
-buildscripts/pianist/curriculum/
-  download.py       normalize.py       extract.py
-  classify.py       audit_native.py    package.py
-  requirements.lock
-scores/curriculum/
-  sources.lock.json grades.v1.json
-packages/exercise-generator/
-  model.ts          selector.ts        transforms.ts
-  constraints.ts    dedup.ts           musicxml.ts
-packages/exercise-worker/worker.ts
-packages/practice-stream-v2/
-  host.ts           replay-handoff.ts  model.ts
-apps/pianist-web/src/exercises/
-  ExerciseHome.tsx   ExerciseSession.tsx
-  controller.ts     queue.ts          storage.ts
-apps/pianist-web/tests/
-  exercise-generator.test.ts
-  exercise-stream.test.ts
-  exercise-storage.test.ts
-tests/browser/pianist/
-  exercise-flow.cjs  exercise-mobile.cjs
-```
-
-| Code đã có | Vai trò và thay đổi dự kiến |
-|---|---|
-| [main.tsx](../../apps/pianist-web/src/main.tsx), [workspace.ts](../../apps/pianist-web/src/workspace.ts) | Route/lối vào, vòng đời session, bảo toàn editor và MIDI routing |
-| [engine-bridge](../../packages/engine-bridge/index.ts), [webapi.cpp](../../src/web/appjs/webapi.cpp), [practicesnapshot.cpp](../../src/web/appjs/practicesnapshot.cpp) | Mở rộng snapshot project tạm theo kết quả Q0 |
-| [practice](../../apps/pianist-web/src/practice/PracticeScreen.tsx), [Sheet](../../apps/pianist-web/src/practice/Sheet.tsx), [NoteInk](../../apps/pianist-web/src/practice/NoteInk.tsx) | Tái dùng sheet, glyph highlight, camera; thêm biên câu và preview |
-| [score-adapter](../../packages/practice-engine-v2/score-adapter.ts), [engine](../../packages/practice-engine-v2/engine.ts) | Tái dùng tạo target và bộ chấm; host nối timeline phải chứng minh parity |
-| [controller](../../apps/pianist-web/src/practice/controller-v2.ts), [audio-clock](../../apps/pianist-web/src/platform/audio-clock-v2.ts) | Tách chức năng vòng đời để session quiz giữ một mốc đồng hồ |
-| [native-audition](../../apps/pianist-web/src/practice/native-audition.ts) | Nghe đúng câu MuseScore; kiểm quyền dùng native project |
-| [offline](../../apps/pianist-web/src/platform/offline.ts) và [deploy-pages](../../buildscripts/pianist/deploy-pages.py) | Thêm tải gói có lựa chọn, version/hash và kiểm release; giữ giới hạn hiện có |
-
-## Thứ tự thực hiện và mốc bàn giao
-
-`Q0 → Q1 → Q2 → Q3 → Q4 → Q5 → Q6 → Q7 → Q8 → Q9`.
-
-- **Bàn giao kho:** Q1–Q3 có MXL cục bộ, hash/nguồn, phân grade và báo cáo phần thiếu.
-- **Bàn giao bộ sinh:** Q4–Q5 có câu tái lập theo seed, đúng x–y, ký âm và hàng đợi.
-- **Bàn giao trải nghiệm tập:** Q6–Q7 có luồng liên tục và UI trên web.
-- **Bàn giao bản online:** Q8–Q9 có báo cáo kiểm, coverage công bố đúng và rollback.
-
-Sau mỗi mốc lưu commit riêng và cập nhật bảng done/pending bằng bằng chứng thực tế. Thời gian tải phụ thuộc mạng; thời gian tuyển đủ G1–G3 phụ thuộc tỷ lệ đoạn đạt sau lọc; thời gian nối native và timeline chỉ được ước lượng đáng tin sau Q0. Không đặt ngày hoàn thành trước khi đo các phần này.
+Đường dẫn **dự kiến, chưa tạo**: scores/curriculum/grades.v2.json, length-buckets.v2.json; artifacts/curriculum-prepared; curriculum/manifest.json; packages/exercise-generator/catalog-selector.ts; apps/pianist-web/src/exercises. Không sửa grades.v1.json/receipt Q0–Q3 cho giống đã đạt v2. Mỗi mốc triển khai lưu commit và bằng chứng riêng, tách dữ liệu/kỹ thuật/duyệt nội dung/trải nghiệm dùng được.

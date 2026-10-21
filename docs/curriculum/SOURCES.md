@@ -1,6 +1,6 @@
 # Kho nhạc và bằng chứng nguồn cho lộ trình
 
-Thiết kế hiện hành là [grade và quiz liên tục](GRADE_DESIGN.md). Kho này cung cấp mẫu và trích đoạn; số file nguồn không phải số câu đúng grade. Các chỉ tiêu thu thập và phân bổ theo lộ trình 96 bài bên dưới là tư liệu của đề xuất cũ, không phải điều kiện phải tải đủ trước khi triển khai bộ sinh.
+Thiết kế hiện hành từ **21/10/2026 là kho bài sinh sẵn theo grade**, với các nhóm khoảng 4/6/10/20/30/50/100 nốt mỗi bài. Xem [kế hoạch Q v2](IMPLEMENTATION_PLAN.md), [quy tắc grade và căn cứ](GRADE_DESIGN.md), [quy tắc trích/duyệt/build kho offline](GENERATION_RULES.md). Web chọn bài đã duyệt để tập liên tục; không cắt/chuyển vị câu trong phiên. Số file nguồn không phải số bài đúng grade. Phần lộ trình 96 bài và các mẫu khảo sát bên dưới được giữ làm tư liệu, không là điều kiện để trì hoãn luồng tập trên web.
 
 Kiểm tra ngày 20 tháng 10 năm 2026. Phân biệt **file đã tải**, **ứng viên đã lọc metadata**, **đoạn đã đọc cấu trúc** và **bài đã nghiệm thu trong app**. Số file không mặc nhiên là số tác phẩm khác nhau hoặc số bài đúng level.
 
@@ -9,6 +9,8 @@ Kiểm tra ngày 20 tháng 10 năm 2026. Phân biệt **file đã tải**, **ứ
 **Cập nhật Q2:** đã có đường phân tích chính thức bằng music21 và đối chiếu với MuseScore, tách khỏi parser khảo sát bên dưới. Lượt nghiệm thu chạy 627 nội dung nguồn; không phải toàn kho và chưa có bài được gán grade. Xem [Q2_NORMALIZATION.md](Q2_NORMALIZATION.md).
 
 **Cập nhật Q3, 21/10/2026:** bổ sung có mục tiêu 196 nguồn từ kho đã tải, tổng 528 nguồn chuẩn hóa được quét. Bộ lọc cho 1.368 cửa sổ ứng viên; 177 trích đoạn đại diện đều khớp MuseScore. Sau gộp gần trùng, chỉ G4 đạt số lượng pilot 100 nhóm; mọi profile vẫn chờ duyệt nội dung, chưa bật quiz. Xem [báo cáo Q3](Q3_EXTRACTION.md) và [độ phủ từng grade](q3/coverage.json).
+
+**Phạm vi thực tế khi đổi sang v2:** Q2 đã xử lý tổng 823 file (528 chuẩn hóa, 295 bị từ chối), còn 36.806 file hợp lệ chưa phân tích. 177 đoạn Q3 đến từ 82 file, gồm 151 nhóm gần trùng theo chính sách hiện tại; chưa đoạn nào được duyệt cho tập. Các nhóm này chưa có đầy đủ bằng chứng biên câu và grade/tay theo v2. Ưu tiên khai thác kho đã tải, bổ sung có mục tiêu khi biết phần thiếu. Không sửa các receipt Q0–Q3 hoặc gọi 37 nghìn file là kho bài tập đã sẵn sàng.
 
 ## Những gì đã có trên máy
 
