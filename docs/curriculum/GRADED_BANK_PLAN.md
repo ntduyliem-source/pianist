@@ -2,6 +2,8 @@
 
 Cập nhật 21/10/2026 theo yêu cầu mới: **mỗi lựa chọn độ dài trong mỗi grade phải có tối thiểu 300 bài**. Có 8 grade × 7 độ dài = **56 ô**, tối thiểu 16.800 lượt bài trong các ô. Không dùng tổng của grade để bù ô thiếu.
 
+Số bài đã xuất thực tế và tình trạng từng lựa chọn nằm trong [báo cáo K3](K3_BANK_RESULTS.md). Báo cáo phân biệt rõ kết thúc một lượt quét với đạt đủ quota.
+
 ## Cách chạy
 
 1. Lấy từng nguồn đã đọc ở K1; kiểm hash nguồn và dữ liệu phân tích.
