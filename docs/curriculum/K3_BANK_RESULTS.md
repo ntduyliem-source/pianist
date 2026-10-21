@@ -34,6 +34,8 @@ Mốc độ dài đếm lần đánh thực: 3–5 / 6–8 / 9–14 / 15–24 / 
 
 ## Phần còn thiếu
 
+**Điều tra bổ sung:** [bộ nhận diện nguồn đang bỏ sót dữ liệu](PIANO_SOURCE_DIAGNOSIS.md). Trong 18.784 file trống tên nhạc cụ ở XML, 18.770 vẫn có metadata MuseScore ghi Piano. Chúng bị chặn trước khi xét grade. Trạng thái hết hàng nguồn ở lượt này chỉ áp dụng cho dữ liệu được bộ nhận diện cũ cho qua, chưa chứng minh đã khai thác hết kho nhạc.
+
 Chạy lại cùng dữ liệu và cùng tiêu chí không tự tạo thêm bài cho 47 ô thiếu. Muốn đạt quota phải giải quyết các nguồn chưa nhận diện piano hoặc bổ sung nguồn phù hợp từng ô; nếu sửa phạm vi grade hay cách xử lý ký hiệu thì cần phiên bản mới và kiểm lại. Không tiếp tục quét vòng quanh những nguồn đã hoàn tất.
 
 Ví dụ, G5 hiện yêu cầu hai dòng/tay cùng điểm vào, giai điệu trong vùng C–G và đệm tối đa một lần đánh mỗi ô, giữ ít nhất hai phách đen. Nhánh này không nhận đệm hợp âm hoặc bass rải dày. Đây là giới hạn nội dung của chính sách hiện tại, không phải lỗi file và không được nới ngầm để đủ 300.

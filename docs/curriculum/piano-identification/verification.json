@@ -1,0 +1,139 @@
+{
+  "at": "2026-10-21T11:50:49.320650+00:00",
+  "scope": "Read-only diagnosis of all 19,627 sources rejected as piano-not-explicit. Raw MXL and metadata hashes verified; no musical parsing/grade acceptance rerun, no bank files changed.",
+  "total": 19627,
+  "xmlNameCategories": {
+    "other-or-generic-names": 830,
+    "all-names-empty": 18784,
+    "piano-name-present-but-not-selected": 13
+  },
+  "collections": {
+    "openscore-lieder": 30,
+    "pdmx": 19597
+  },
+  "metadataInstrumentsByFile": {
+    "missing": 30,
+    "Piano": 19314,
+    "Pipes": 3,
+    "Tenor": 4,
+    "Drum group": 199,
+    "Flute other": 3,
+    "Bass guitar": 1,
+    "Harpsichord": 1,
+    "Snare drum": 9,
+    "Cello": 1,
+    "Guitar": 4,
+    "Vocals": 10,
+    "Flute": 3,
+    "Soprano": 8,
+    "Viola": 1,
+    "Violin": 5,
+    "Organ": 1,
+    "Voice (other)": 7,
+    "Bass drum": 3,
+    "Tambura": 2,
+    "Recorder": 1,
+    "Hand clap": 3,
+    "Alto": 3,
+    "Claves": 2,
+    "Accordion": 1,
+    "Percussion bells": 1,
+    "Saxophone alto": 1,
+    "Slap": 1,
+    "Harp": 1,
+    "Trumpet in b-flat": 1,
+    "Celesta": 2,
+    "Piano (2)": 1,
+    "Bass voice": 1
+  },
+  "structure": {
+    "pitched-only": 19436,
+    "other-layout": 35,
+    "one-part-one-staff": 19222,
+    "one-part-two-staff": 370,
+    "unpitched-only": 191
+  },
+  "emptyXmlNames": {
+    "total": 18784,
+    "metadataPiano": 18770,
+    "onePartOneStaff": 18639,
+    "onePartTwoStaff": 144
+  },
+  "errors": [],
+  "sourceRecognitionCode": "buildscripts/pianist/curriculum_normalize.py:79",
+  "collectionFilterCode": "buildscripts/pianist/curriculum_catalog.py:259",
+  "examples": [
+    {
+      "sha": "072dfacefe107068f282ab7e4ebc17f6bf596e5caa9b9526284300e12331a231",
+      "title": "Donald Dow - The Bonny Lass of Fisherrow",
+      "collection": "pdmx",
+      "xmlNamesEmpty": true,
+      "parts": 1,
+      "stavesPerPart": [
+        1
+      ],
+      "clefs": [
+        "G"
+      ],
+      "pitchedNotes": 120,
+      "unpitchedNotes": 0,
+      "voices": 1,
+      "metadataInstruments": [
+        "Piano"
+      ],
+      "metadataPartNames": [
+        "-"
+      ]
+    },
+    {
+      "sha": "78fa08926af2fb6cc1bc5809346d0c2712526656a6f068391fa16b23df16180c",
+      "title": "The Maid Of Selma (air) 0250",
+      "collection": "pdmx",
+      "xmlNamesEmpty": true,
+      "parts": 1,
+      "stavesPerPart": [
+        1
+      ],
+      "clefs": [
+        "G"
+      ],
+      "pitchedNotes": 94,
+      "unpitchedNotes": 0,
+      "voices": 1,
+      "metadataInstruments": [
+        "Piano"
+      ],
+      "metadataPartNames": [
+        "-"
+      ]
+    },
+    {
+      "sha": "de5bc739c22bba456076caef665da503c7635f7cd13ab951b96d43cf942f18aa",
+      "title": "Banish Misfortune",
+      "collection": "pdmx",
+      "xmlNamesEmpty": true,
+      "parts": 1,
+      "stavesPerPart": [
+        1
+      ],
+      "clefs": [
+        "G"
+      ],
+      "pitchedNotes": 244,
+      "unpitchedNotes": 0,
+      "voices": 1,
+      "metadataInstruments": [
+        "Piano"
+      ],
+      "metadataPartNames": [
+        "-"
+      ]
+    }
+  ],
+  "bankCountUnchanged": 5284,
+  "artifactHashes": {
+    "artifacts/piano-identification-diagnosis.json": "3e2197e9f90f165de7cc9d3e15a35ca324981695779a203d3ab4bfbf6c7359d4",
+    "artifacts/piano-identification-structure.json": "25cc053f4b5fbce6f6ffd94d1661f7c905c80e929674b19651458846a35b5f46",
+    "artifacts/diagnose-piano-identification.py": "052898343a2fb8c7e374a98d0cf75819ddd59a92c33b3a53a6ec1329cdd58170"
+  }
+}
