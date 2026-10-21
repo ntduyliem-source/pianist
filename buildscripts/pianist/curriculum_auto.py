@@ -14,6 +14,7 @@ import json
 from pathlib import Path
 import sqlite3
 import zlib
+import time
 from bisect import bisect_left
 
 from curriculum_boundaries import propose,VERSION
@@ -24,6 +25,8 @@ from curriculum_normalize import digest,encoded
 from curriculum_workers import results
 from curriculum_selection import make_selection, events as selected_events, integrity as selection_integrity, verified_scan, bounds
 from curriculum_evidence import builder, identity as evidence_identity, VERSION as EVIDENCE_VERSION
+from curriculum_fast_checks import FastChecks
+from curriculum_scan_storage import pack_payload,unpack_payload
 
 ROOT=Path(__file__).resolve().parents[2]
 
@@ -34,18 +37,26 @@ def rules_identity():
            'buildscripts/pianist/curriculum_prepared.py',
            'buildscripts/pianist/curriculum_workers.py','scores/curriculum/grades.v3.json',
            'buildscripts/pianist/curriculum_evidence.py','buildscripts/pianist/curriculum_selection.py',
+           'buildscripts/pianist/curriculum_regions.py',
+           'buildscripts/pianist/curriculum_fast_checks.py',
+           'buildscripts/pianist/curriculum_scan_storage.py',
            'third_party/curriculum-sources/mtc-lbdm/lbdm.py']
     return digest(encoded({'files':{p:digest((ROOT/p).read_bytes()) for p in paths},
                            'evidence':evidence_identity()}).encode())
 
 
-def check_profiles(index,selection,config,evidence_builder=None):
+def check_profiles(index,selection,config,evidence_builder=None,fast=None):
     lids=tuple(selection['lineHands']);start,end=selection['startMeasure'],selection['endMeasure']
     lo,_=bounds(index,selection)
     contexts={lid:index.context(lid,lo) for lid in lids}
-    intervals=[i for lid in lids for i in line_features(selected_events(index,selection,(lid,)))['intervals']]
+    intervals=[i for lid in lids for i in line_features(selected_events(index,selection,(lid,)))['intervals']] if fast is None else []
+    view=fast.view(selection) if fast is not None else None
     verdicts=[]
     for p in config['profiles']:
+        if fast is not None:
+            contradiction=fast.contradiction(selection,p,view)
+            if contradiction is not None:
+                verdicts.append(contradiction);continue
         # Exact K2 predicates as early exits, with source witnesses. Full K2 is
         # run for every profile surviving these inexpensive contradictions.
         bad=[i for i in intervals if abs(i['diatonic'])>p['maxInterval'] or
@@ -104,11 +115,14 @@ def scan(index,analysis_sha,config,max_targets):
 
 def _scan(index,analysis_sha,config,max_targets):
     proposals={lid:propose(index,lid) for lid in index.a['lines']}
+    fast=FastChecks(index,config)
+    edge_maps={lid:{q(e['atQuarter']):e for e in p['exactEdges']} for lid,p in proposals.items()}
     candidates=[];outside=Counter();variant_count=0
     for hands in configurations(index):
         variant_count+=1;lids=tuple(sorted(hands));pid=index.a['lines'][lids[0]]['partId']
         common=sorted(set.intersection(*(set(q(e['atQuarter']) for e in proposals[l]['exactEdges']) for l in lids)))
         attacks=sorted(q(e['onset']) for l in lids for e in index.by_line[l] if e['kind']=='note' and not e.get('tieFrom'))
+        all_line_notes={e['id'] for lid in lids for e in index.by_line[lid] if e['kind']=='note'}
         for ai,lo in enumerate(common):
             left=bisect_left(attacks,lo)
             for bi in range(ai+1,len(common)):
@@ -118,16 +132,20 @@ def _scan(index,analysis_sha,config,max_targets):
                 if count<3:
                     outside['below-min-targets']+=1;continue
                 selection=make_selection(index,analysis_sha,hands,lo,hi)
-                verdicts=check_profiles(index,selection,config,builder(index))
-                reasons=selection_integrity(index,selection)
+                verdicts=check_profiles(index,selection,config,builder(index),fast)
+                potential=[r['profileId'] for r in verdicts if r['status']!='fail']
+                # A failed content profile cannot enter K4. Keep every failed
+                # candidate/verdict, but do not pretend its boundaries were
+                # reviewed or spend source-wide work on that second gate.
+                reasons=selection_integrity(index,selection) if potential else None
                 whole=(lo,hi)==index.boundaries(lids,0,len(index.measures[pid]))
-                boundary='source-extent-structurally-intact' if whole and not reasons else 'model-proposal-needs-context'
-                all_line_notes={e['id'] for lid in lids for e in index.by_line[lid] if e['kind']=='note'}
-                selected_note_ids={e['id'] for e in selected_events(index,selection) if e['kind']=='note'}
+                boundary=('not-evaluated-content-rejected' if not potential else
+                          'source-extent-structurally-intact' if whole and not reasons else 'model-proposal-needs-context')
+                selected_note_ids={e['id'] for e in selected_events(index,selection) if e['kind']=='note'} if potential else set()
                 # Preserve every note in the selected source lines, allowing
                 # whole-bar leading/trailing silence to stay outside an exercise.
                 # This is a complete source line, not an inferred complete phrase.
-                if (not whole and not reasons and all_line_notes==selected_note_ids and
+                if (potential and not whole and not reasons and all_line_notes==selected_note_ids and
                         (lo,hi)==index.boundaries(lids,selection['startMeasure'],selection['endMeasure'])):
                     boundary='complete-source-lines-structurally-intact'
                 matched=[r['profileId'] for r in verdicts if r['status']=='pass']
@@ -138,11 +156,11 @@ def _scan(index,analysis_sha,config,max_targets):
                             'claims':claims,'trace':trace,'humanReviewed':False}
                 candidates.append({'id':digest(encoded(selection).encode()),'selection':selection,
                     'sourceAttackCount':count,'boundaryStatus':boundary,
-                    'boundaryEvidence':{lid:{side:next(e for e in proposals[lid]['exactEdges'] if q(e['atQuarter'])==at)
+                    'boundaryEvidence':{lid:{side:edge_maps[lid][at]
                         for side,at in (('start',lo),('end',hi))} for lid in lids},
                     'handAssignmentStatus':packet['trace']['routing']['status'] if packet else 'clef-based-hypothesis',
                     'integrityReasons':reasons,'profileVerdicts':verdicts,'machineEvidence':packet,
-                    'potentialProfiles':[r['profileId'] for r in verdicts if r['status']!='fail'],
+                    'potentialProfiles':potential,
                     'contentPassedProfiles':matched,
                     'unitKind':'complete-source-lines' if boundary=='complete-source-lines-structurally-intact' else
                                'complete-source-span' if boundary=='source-extent-structurally-intact' else 'model-proposal',
@@ -156,14 +174,16 @@ def _scan(index,analysis_sha,config,max_targets):
 def read_scan(path,key):
     try:
         r=json.loads(gzip.decompress(path.read_bytes()))
-        if r['key']==key and r['payloadSha256']==digest(encoded(r['payload']).encode()):return r['payload']
-    except (OSError,ValueError,KeyError,EOFError,zlib.error):pass
+        if r['key']==key and r['payloadSha256']==digest(encoded(r['payload']).encode()):return unpack_payload(r['payload'])
+    except (OSError,ValueError,KeyError,IndexError,TypeError,EOFError,zlib.error):pass
     return None
 
 
 def summarize(payload):
     vv=[v for c in payload['candidates'] for v in c['profileVerdicts']]
     potential=[c for c in payload['candidates'] if c['potentialProfiles']]
+    by_profile={}
+    for v in vv:by_profile.setdefault(v['profileId'],Counter())[v['status']]+=1
     return {'sourceSha256':payload['sourceSha256'],'status':'scanned',
         'candidates':len(payload['candidates']),'potentialCandidates':len(potential),
         'profileChecks':len(vv),'profileOutcomes':dict(Counter(v['status'] for v in vv)),
@@ -172,6 +192,11 @@ def summarize(payload):
         'contentMatchedCandidates':sum(bool(c['contentPassedProfiles']) for c in payload['candidates']),
         'nativeReadyCandidates':sum(bool(c['readyForNativeProfiles']) for c in payload['candidates']),
         'contentByGrade':dict(Counter(v['grade'] for v in vv if v['status']=='pass')),
+        'profileBreakdown':{pid:dict(counts) for pid,counts in by_profile.items()},
+        'boundaryStatuses':dict(Counter(c['boundaryStatus'] for c in payload['candidates'])),
+        'boundaryPending':sum(bool(c['potentialProfiles']) and c['boundaryStatus']=='model-proposal-needs-context' for c in payload['candidates']),
+        'lineCount':len(payload['proposals']),
+        'modelExcludedEvents':sum(len(p.get('modelExcludedEventIds',[])) for p in payload['proposals'].values()),
         'proposalEdges':sum(len(p['exactEdges']) for p in payload['proposals'].values()),'approvedExercises':0}
 
 
@@ -191,7 +216,8 @@ def scan_job(job,_max_notes):
         reused=payload is not None
         if payload is None:
             payload=scan(SourceIndex(analysis,data),row[1],load_config(),job['maxTargets'])
-            blob=gzip.compress(encoded({'key':job['key'],'payloadSha256':digest(encoded(payload).encode()),'payload':payload}).encode(),mtime=0)
+            packed=pack_payload(payload)
+            blob=gzip.compress(encoded({'key':job['key'],'payloadSha256':digest(encoded(packed).encode()),'payload':packed}).encode(),compresslevel=6,mtime=0)
             temp=cache.with_suffix('.tmp');temp.write_bytes(blob);temp.replace(cache)
         return {'status':'scanned','summary':summarize(payload),'reused':reused,'error':None}
     except Exception as error:
@@ -205,7 +231,7 @@ def main():
     p.add_argument('--output',type=Path,default=ROOT/'artifacts/curriculum-auto')
     p.add_argument('--source-list',type=Path,help='JSON {sourceHashes:[...]} for a reproducible trial; omit to scan all sources')
     p.add_argument('--limit',type=int,default=0,help='0 means all; no per-source candidate cap')
-    p.add_argument('--workers',type=int,choices=range(1,17),default=4)
+    p.add_argument('--workers',type=int,choices=range(1,65),default=4)
     p.add_argument('--timeout',type=int,default=180,help='Per-source resource limit; timeout remains retryable')
     p.add_argument('--max-targets',type=int,default=120)
     args=p.parse_args()
@@ -238,7 +264,7 @@ def execute(args):
         jobs.append({**source,'corpus':str(args.corpus),'normalized':str(args.normalized),
             'normalizationPipeline':pipeline,'analysisSha256':a[1],'maxTargets':args.max_targets,
             'key':key,'cache':str(out/'scans'/(source['sha']+'.json.gz'))})
-    completed=0;reused=0
+    completed=0;reused=0;last_checkpoint=time.monotonic()
     def checkpoint():
         rows=list(outcomes.values());scanned=[r for r in rows if r['status']=='scanned']
         stats={'at':datetime.now(timezone.utc).isoformat(),'scope':'automatic proposals/K2 filtering; not exercise approval',
@@ -249,6 +275,13 @@ def execute(args):
             'contentMatchedCandidates':sum(r['contentMatchedCandidates'] for r in scanned),
             'nativeReadyCandidates':sum(r['nativeReadyCandidates'] for r in scanned),
             'contentByGrade':dict(sum((Counter(r['contentByGrade']) for r in scanned),Counter())),
+            'profileBreakdown':{pid:dict(sum((Counter(r.get('profileBreakdown',{}).get(pid,{})) for r in scanned),Counter()))
+                                for pid in (p['id'] for p in load_config()['profiles'])},
+            'boundaryStatuses':dict(sum((Counter(r.get('boundaryStatuses',{})) for r in scanned),Counter())),
+            'boundaryPending':sum(r.get('boundaryPending',0) for r in scanned),
+            'lineCount':sum(r.get('lineCount',0) for r in scanned),
+            'modelExcludedEvents':sum(r.get('modelExcludedEvents',0) for r in scanned),
+            'normalizationReasonCounts':dict(Counter(reason for r in rows if r['status']=='normalization-unavailable' for reason in r['reasonCodes'])),
             'reviewNeeds':dict(sum((Counter(r['reviewNeeds']) for r in scanned),Counter())),
             'profileChecks':sum(r['profileChecks'] for r in scanned),'approvedExercises':0}
         write_json(out/'report.json',stats);write_json(out/'source-outcomes.json',{'entries':sorted(rows,key=lambda r:r['sourceSha256'])})
@@ -259,7 +292,10 @@ def execute(args):
             'error':'scanner-timeout' if 'normalizer-timeout' in result.get('blockers',[]) else result.get('error','worker-crashed')}
         outcomes[job['sha']]={**row,'elapsedSeconds':round(elapsed,3)}
         reused+=bool(result.get('reused'));completed+=1
-        checkpoint()
+        # Source shards are atomic checkpoints. Bound large aggregate rewrites
+        # rather than rewriting all 37k outcomes after each completed source.
+        if time.monotonic()-last_checkpoint>=15 or completed==len(jobs):
+            checkpoint();last_checkpoint=time.monotonic()
         if completed%10==0 or completed==len(jobs):print(f'{completed}/{len(jobs)} saved; last={row["status"]}',flush=True)
     print(json.dumps(json.loads((out/'report.json').read_text()),ensure_ascii=False),flush=True)
     if any(r['status']=='error' for r in outcomes.values()):

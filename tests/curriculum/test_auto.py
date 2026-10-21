@@ -51,8 +51,9 @@ class AutoTests(unittest.TestCase):
     def test_polyphony_does_not_get_a_false_monophonic_model_result(self):
         raw=score([note('C')+note('E',extra='<chord/>')+note('D')+note('E')])
         index=SourceIndex(normalize(raw),raw);r=propose(index,'P1:s1:v1')
-        self.assertEqual(r['unsupported'],['polyphonic-line'])
-        self.assertEqual(r['points'],[])
+        self.assertEqual(r['unsupported'],['polyphonic-or-zero-duration-events'])
+        self.assertEqual(set(r['modelExcludedEventIds']),{'p0:m0:n0','p0:m0:n1'})
+        self.assertFalse(any(p['afterEvent'] in r['modelExcludedEventIds'] for p in r['points']))
 
     def test_fast_rejections_preserve_full_k2_status_for_every_profile_fixture(self):
         for p in CONFIG['profiles']:

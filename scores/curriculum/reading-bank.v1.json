@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "version": "reading-bank-v1",
+  "baseProfiles": "grades.v3.json",
+  "minimumPerOption": 300,
+  "quotaDimensions": ["grade", "lengthBucket"],
+  "grades": [1, 2, 3, 4, 5, 6, 7, 8],
+  "scope": "Notated sight-reading content, not certified fingering, motor technique or learner BPM. Preserve source fingering; never generate it.",
+  "stop": "After finishing a source, stop when all 56 grade x lengthBucket options have at least minimumPerOption unique native/render-verified MXL exercises, or the finite source queue is exhausted. Export for options below target at the start of that source; keep all matches for those options from that source, including overflow.",
+  "boundaries": "Exact bar-aligned source edges, original slur/section edges, music21 rest-segment edges or positive local LBDM peaks. Never round an interior edge, sever notation, trim to a note count, or claim a model boundary is a teacher-approved phrase.",
+  "uniqueness": "Exact written notes, register, rhythm, rests, ties, bar layout and hand assignment. Source filename, title, composer and fingering do not create a new exercise. Transposed motifs are additionally grouped, not described as independent musical ideas.",
+  "changedEvidenceGates": {
+    "fingering": "Not required or inferred. Existing source finger numbers remain untouched in MXL.",
+    "bpm": "No inferred safe/optimal BPM; keep beat unit and original tempo. Live practice scoring is unchanged.",
+    "tonality": "Keep explicit non-major exclusion from V3. An omitted mode stays unspecified; key signature and every spelled note must still match. Do not fabricate tonic evidence.",
+    "g3": "A melodic fourth/fifth needs literal interval witnesses. The arpeggio subprofile additionally needs a contiguous music21 major/minor triad; this labels note content, not harmonic function.",
+    "g4": "New-position content: outside the home C-G register and within five diatonic steps. Shift-content: span wider than five and at most eight diatonic steps. These are written pitch spans, not a prescribed hand path.",
+    "g8Register": "An actual note on/beyond the third ledger line of the unchanged G/F clef, with a local pitch span at most five diatonic steps. G4 excludes this register demand. No octave transposition.",
+    "handCompleteness": "Use existing source staff-routing checks, reject ambiguity/crossing, include every sounding voice of the selected hand. No hard voice is deleted to lower grade."
+  },
+  "scientificStatus": "300 is the user's collection milestone. Grade order, length buckets and written-span thresholds are versioned product rules, not experimentally established optimal training doses."
+}

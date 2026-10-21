@@ -53,8 +53,8 @@ def context_evidence(index, unit):
     return data
 
 
-def upstream_rest_proposals(index, lid):
-    events = index.by_line[lid]
+def upstream_rest_proposals(index, lid, source_events=None):
+    events = index.by_line[lid] if source_events is None else source_events
     if not line_features(events)['monophonic']:
         return {'status': 'unsupported-polyphony', 'segments': []}
     stream = m21.stream.Part()

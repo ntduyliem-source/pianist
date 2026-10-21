@@ -1,5 +1,7 @@
 # Grade cho kho bài piano sinh sẵn
 
+**Phạm vi đang chạy đã đổi theo yêu cầu mới:** [kế hoạch kho](GRADED_BANK_PLAN.md) và [reading-bank.v1.json](../../scores/curriculum/reading-bank.v1.json) quy định 300 bài cho **mỗi grade × độ dài**, xuất/kiểm MXL ngay theo từng nguồn và bỏ điều kiện tìm ngón/BPM mô hình. Các yêu cầu chứng nhận đường tay dưới đây mô tả thiết kế cũ, không còn là cửa chặn của kho đọc nhạc. Các sửa đổi cụ thể G3/G4/G8, mode chưa ghi và biên heuristic được ghi đầy đủ trong kế hoạch mới; không coi việc bỏ chứng nhận là đã chứng nhận.
+
 Cập nhật **21/10/2026, v2**. Thiết kế này dùng kho bài hoàn chỉnh được chuẩn bị/kiểm offline. Web chọn bài đã duyệt theo grade, tay, nhóm độ dài và mode; không tạo nốt mới trong phiên. [Kế hoạch Q](IMPLEMENTATION_PLAN.md) và [quy tắc xây kho](GENERATION_RULES.md) là hai tài liệu đi cùng.
 
 Người học mục tiêu đã đọc và chơi được nhưng chậm, căng thẳng khi đọc sheet và dễ mất nhịp. Grade tổ chức nội dung để luyện quan hệ ký âm–bàn phím–thời gian, không phải chẩn đoán người học. **G1–G8 là thiết kế Pianist có căn cứ tham chiếu, chưa phải hệ cấp độ được thực nghiệm chứng minh tối ưu và không tương đương cấp chứng chỉ.**
@@ -34,7 +36,7 @@ Phần thiết kế rút ra: luyện nhịp từ đầu; thêm yêu cầu theo h
 
 Hồ sơ thế tay phải nói rõ tay, cao độ có cách viết, ngón, vị trí, chuyển vị trí, ngón đang giữ, điều kiện legato/nhả và khoảng BPM đã kiểm. Ngón có sẵn trong nguồn là bằng chứng tham chiếu, không tự bảo đảm phù hợp mọi bàn tay. Đề xuất ngón phải ghi là đề xuất, không gán ngầm cho tác giả.
 
-K3 hiện bổ sung bằng chứng loại `machine` từ PianoPlayer nguyên bản, commit `6fb0e2114d7b21f75c0be5208172e1243a57323e`: chỉ nhận làm chứng cứ nội dung khi kết quả giữ ngón nguồn/tie và khớp một thế năm ngón cố định có thứ tự. Bằng chứng được tái tính/đối soát nguồn, không điền tên người duyệt. `modeled-bpm-scope` ghi đúng điểm chạy 60 BPM nốt đen và kích thước tay M của mô hình; không thay đánh giá tốc độ học, độ thoải mái hoặc xác nhận chuyên môn. Chuyển tay/nhảy xa và các ngữ cảnh chưa đủ bằng chứng giữ review. Chi tiết và giới hạn ở [AUTO_SCRIPT.md](AUTO_SCRIPT.md).
+Nhánh kiểm chứng lịch sử K3 bổ sung bằng chứng loại `machine` từ PianoPlayer nguyên bản, commit `6fb0e2114d7b21f75c0be5208172e1243a57323e`: chỉ nhận làm chứng cứ nội dung khi kết quả giữ ngón nguồn/tie và khớp một thế năm ngón cố định có thứ tự. Bằng chứng được tái tính/đối soát nguồn, không điền tên người duyệt. Thử nghiệm manual depth=5 đã dừng do upstream có thể trả ngón 0 ở đuôi; adapter lịch sử đã trở lại automatic depth nguyên bản. Kho đọc nhạc hiện hành không chạy bộ tối ưu ngón. `modeled-bpm-scope` ghi đúng điểm chạy 60 BPM nốt đen và kích thước tay M của mô hình; không thay đánh giá tốc độ học, độ thoải mái hoặc xác nhận chuyên môn. Chuyển tay/nhảy xa và các ngữ cảnh chưa đủ bằng chứng giữ review. Chi tiết và giới hạn ở [AUTO_SCRIPT.md](AUTO_SCRIPT.md).
 
 21 mẫu của Q3 v1 chỉ là đề xuất vị trí. Việc mọi pitch nằm trong một mapping không chứng minh cả chuỗi chơi thoải mái. Mở rộng mẫu cần nguồn/đối chiếu và ví dụ đạt/lỗi; không dựng fingering từ min/max MIDI.
 

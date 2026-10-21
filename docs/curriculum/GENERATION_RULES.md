@@ -1,5 +1,7 @@
 # Quy tắc xây kho bài tập sinh sẵn từ nhạc thật
 
+**Luồng xây kho hiện hành:** xem [GRADED_BANK_PLAN.md](GRADED_BANK_PLAN.md). Dùng `prepare-reading-bank.py`: mỗi nguồn → xuất/kiểm MXL ngay, tối thiểu 300 bài cho mỗi ô grade × độ dài (56 ô), không tìm ngón. Phần mô tả scanner/duyệt thủ công bên dưới được giữ làm lịch sử và kiểm hồi quy; không dùng lệnh quét toàn kho cũ làm điều kiện chờ xuất bài.
+
 Cập nhật **21/10/2026, v2**. Thay thiết kế tạo/biến đổi câu trong phiên bằng **tạo và duyệt bài offline; web chỉ chọn bài có sẵn**. Đã triển khai nhánh build các đơn vị có hồ sơ xét nguồn cho lô G1–G2; phần chọn/nối bài trong web vẫn là đặc tả. Xem [kết quả pilot](Q4_PREPARED_PILOT.md), [kế hoạch Q](IMPLEMENTATION_PLAN.md) và [grade/căn cứ](GRADE_DESIGN.md).
 
 Nội dung nhạc của một bài phát hành là cố định. Layout có thể thay đổi theo màn hình; BPM luyện có thể chọn trong phạm vi đã kiểm. Cả hai không tạo ra bài nhạc mới và không làm tăng số lượng kho.

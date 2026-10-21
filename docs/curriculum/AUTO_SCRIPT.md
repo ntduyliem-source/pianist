@@ -1,5 +1,7 @@
 # Script quét nguồn tự động
 
+**Luồng xây kho hiện hành:** xem [GRADED_BANK_PLAN.md](GRADED_BANK_PLAN.md). Dùng `prepare-reading-bank.py`: mỗi nguồn → xuất/kiểm MXL ngay, tối thiểu 300 bài cho mỗi ô grade × độ dài (56 ô), không tìm ngón. Phần mô tả scanner/duyệt thủ công bên dưới được giữ làm lịch sử và kiểm hồi quy; không dùng lệnh quét toàn kho cũ làm điều kiện chờ xuất bài.
+
 Ngày 21/10/2026. Script đã có ở [auto-curriculum.py](../../buildscripts/pianist/auto-curriculum.py). Đầu vào là catalog/cache K1; không yêu cầu điền biên, grade hoặc ngón cho từng tác phẩm. Bản hiện tại bổ sung bằng chứng máy có thể đối soát, điểm cắt trong ô và phân đoạn theo rest; chưa hoàn tất K3 toàn kho hoặc K4 xuất MXL.
 
 ## Logic bằng lời

@@ -17,6 +17,7 @@ import music21 as m21
 from curriculum_fragments import q, pitch_name, upstream_pitch, line_features
 from curriculum_normalize import digest, encoded, rational
 from curriculum_selection import bounds, events
+from curriculum_regions import monophonic_regions
 
 ROOT = Path(__file__).resolve().parents[2]
 VENDOR = ROOT / 'third_party/curriculum-sources/pianoplayer'
@@ -29,7 +30,7 @@ _spec = importlib.util.spec_from_file_location('pianist_upstream_routing', VENDO
 _routing = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(_routing)
 
-VERSION = 'k3-machine-evidence-v1'
+VERSION = 'k3-machine-evidence-v4'
 QUARTER_BPM = 60  # A single reproducible model input, NOT a teaching recommendation.
 HAND_SIZE = 'M'
 REFERENCE = 'https://github.com/marcomusy/pianoplayer/tree/6fb0e2114d7b21f75c0be5208172e1243a57323e'
@@ -38,6 +39,7 @@ REFERENCE = 'https://github.com/marcomusy/pianoplayer/tree/6fb0e2114d7b21f75c0be
 @lru_cache(maxsize=1)
 def identity():
     paths = [Path(__file__), ROOT / 'buildscripts/pianist/curriculum_selection.py',
+             ROOT / 'buildscripts/pianist/curriculum_regions.py',
              VENDOR / 'pianoplayer/hand.py', VENDOR / 'pianoplayer/models.py', VENDOR / 'routing.py']
     return digest(encoded({'version': VERSION, 'music21': m21.__version__,
                            'files': {p.relative_to(ROOT).as_posix(): digest(p.read_bytes()) for p in paths}}).encode())
@@ -198,6 +200,8 @@ class EvidenceBuilder:
         self.tonality = lru_cache(maxsize=256)(self.tonality)
         self.estimate_key = lru_cache(maxsize=128)(self.estimate_key)
         self.line_suggestion = lru_cache(maxsize=64)(self.line_suggestion)
+        self.region_suggestion = lru_cache(maxsize=64)(self.region_suggestion)
+        self.regions = lru_cache(maxsize=64)(self.regions)
         self.line_path = lru_cache(maxsize=512)(self.line_path)
         self.base = lru_cache(maxsize=512)(self.base)
 
@@ -241,7 +245,22 @@ class EvidenceBuilder:
     def line_path(self, lid, side, start, end, lo, hi):
         selection = {'lineHands': {lid: side}, 'startMeasure': start, 'endMeasure': end,
                      'startQuarter': rational(lo), 'endQuarter': rational(hi)}
-        return fingering(self.index, events(self.index, selection), side, self.line_suggestion(lid, side))
+        selected=events(self.index, selection)
+        groups,excluded=self.regions(lid)
+        if not excluded:
+            suggestion=self.line_suggestion(lid,side)
+        else:
+            ids={e['id'] for e in selected if e['kind']=='note'}
+            region=next((n for n,g in enumerate(groups) if ids and ids<={e['id'] for e in g}),None)
+            suggestion=self.region_suggestion(lid,side,region) if region is not None else {
+                'status':'review','reasons':['selection-crosses-polyphonic-region'],'notes':[]}
+        return fingering(self.index, selected, side, suggestion)
+
+    def regions(self,lid):
+        return monophonic_regions(self.index,lid)
+
+    def region_suggestion(self,lid,side,region):
+        return solve_line(self.index,self.regions(lid)[0][region],side)
 
     def line_suggestion(self, lid, side):
         return solve_line(self.index, self.index.by_line[lid], side)

@@ -15,6 +15,7 @@ import zlib
 from curriculum_fragments import q
 from curriculum_normalize import digest, encoded
 from curriculum_io import CorpusError, write_json
+from curriculum_scan_storage import unpack_payload
 
 ROOT = Path(__file__).resolve().parents[2]
 
@@ -31,6 +32,7 @@ def audit(scans, normalized, reference):
                 raw = path.read_bytes(); wrapper = json.loads(gzip.decompress(raw)); payload = wrapper['payload']
                 if digest(encoded(payload).encode()) != wrapper['payloadSha256'] or payload['sourceSha256'] != sha:
                     raise CorpusError('unbound-scan-payload:' + sha)
+                payload=unpack_payload(payload)
                 match = db.execute('SELECT blob FROM analyses WHERE source_sha=? AND analysis_sha=?',
                                    (sha, payload['analysisSha256'])).fetchone()
                 if not match:

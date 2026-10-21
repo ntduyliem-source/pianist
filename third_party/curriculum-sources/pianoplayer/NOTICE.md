@@ -14,6 +14,13 @@ converted to seconds at a single 60 quarter-BPM input. It keeps written finger
 anchors, records all suggested fingers, and verifies conservative fixed-position
 conditions. It never modifies the original MXL or the optimizer formula.
 
+The historical evidence adapter retains upstream automatic depth, hand size M
+and 60 quarter BPM. A trial of the documented manual depth=5 setting was stopped:
+the pinned implementation can return zero fingers at its look-ahead tail. The
+regression fixture records this; the vendored optimizer has not been modified.
+The current reading-bank exporter does not call this optimizer at all. It uses
+only the unchanged source-staff routing function, followed by ambiguity checks.
+
 PianoPlayer's effort score is a model output, not a piano-learning grade or a
 validated speed limit. Its onset-based cost is not evidence that a held finger
 has been released. K3 keeps source integrity/held-note checks and does not use
