@@ -56,6 +56,14 @@ Mốc 300 và các nhóm độ dài là yêu cầu thu thập/sản phẩm, **kh
 .tools/curriculum-python/Scripts/python.exe -X utf8 buildscripts/pianist/prepare-reading-bank.py --workers 8 --min-per-option 300
 ```
 
+Đối soát riêng các file đã ghi (có thể chạy trong lúc xuất):
+
+```powershell
+.tools/curriculum-python/Scripts/python.exe -X utf8 buildscripts/pianist/audit-reading-bank.py
+```
+
+Lệnh audit kiểm snapshot đã commit trong SQLite, file MXL, hash hồ sơ, bằng chứng native/render và cách đếm từng ô; không nhận file còn ở staging hoặc suy số bài từ số ứng viên.
+
 - Mỗi bài: `artifacts/curriculum-prepared/releases/reading-options-v1/exercises/<id>.mxl`.
 - Chỉ mục: `catalog.json` trong cùng thư mục; lưu grade/profile, tay, độ dài, nguồn, ô nhịp, hash.
 - Số thực từng ô và phần thiếu: `progress.json`, trường `verifiedUniqueByOption` và `remainingByOption`.
