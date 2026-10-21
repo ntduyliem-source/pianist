@@ -1,5 +1,7 @@
 # K3 — kho MXL đã xuất
 
+**Snapshot lịch sử:** lô này có 5.284 bài và được giữ nguyên. Lượt bổ sung, đối soát và đóng gói K5 đã nâng kho hợp nhất lên **5.460 bài**; xem [kết quả hiện tại](K5_BANK_RESULTS.md).
+
 Ngày 21/10/2026. **Đã xử lý hết hàng nguồn có dữ liệu K1; chưa đạt đủ quota.** Trạng thái máy: `source-queue-exhausted`.
 
 Có **5.284 file MXL** đã qua đối chiếu với nguồn, kiểm MuseScore và renderer; **9/56 lựa chọn** đạt tối thiểu 300. Còn **47 lựa chọn thiếu**, tổng thiếu **11.570 lượt bài theo ô**. Không dùng số vượt 300 của một ô để bù ô khác.

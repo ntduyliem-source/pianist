@@ -4,6 +4,8 @@ Ngày 21/10/2026. Điều tra toàn bộ 19.627 nguồn mang mã `piano-not-expl
 
 **Trạng thái sau điều tra:** người dùng yêu cầu chỉ giữ sheet nguồn đủ hai staff piano. [Đã dọn kho nguồn còn 14.960 file](SOURCE_POOL_CLEANUP.md), giữ nguyên toàn bộ bài tập. Các số đếm bên dưới là snapshot trước khi dọn.
 
+**Đã xử lý tiếp tại K5:** trong nhóm còn giữ, 299 nguồn có bản dành cho importer chỉ đổi nhãn nhạc cụ (152 tên dịch MuseScore, 147 theo metadata/cấu trúc grand staff). 291 nguồn trong nhóm chưa đọc được đã vào lượt quét bổ sung; 62 trường hợp nhận diện vẫn được ghi lý do. Xem [kết quả đầy đủ](K5_BANK_RESULTS.md).
+
 **Kết luận:** bộ lọc lúc thu thập quá rộng, còn bộ nhận diện lúc xử lý quá hẹp. 19.627 nguồn này đã bị chặn trước khi music21 đọc nốt và trước khi xét grade. Vì vậy, việc hết hàng nguồn K3 hiện tại không chứng minh đã khai thác hết kho nhạc.
 
 ## Đã tải những gì

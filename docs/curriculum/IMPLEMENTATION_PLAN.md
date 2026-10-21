@@ -1,6 +1,8 @@
 # Kế hoạch Q0–Q9: kho bài tập piano sinh sẵn theo grade
 
-Cập nhật **21/10/2026 — hoàn thành K1–K2** của [kế hoạch xây kho](GRADED_BANK_PLAN.md): toàn bộ 37.629 nguồn có kết quả, 17.926 có dữ liệu nhạc; tiêu chí V3 có 25 profile G1–G8. Bước kế tiếp là K3 quét mọi đoạn. Xem [báo cáo K1–K2](K1_K2_RESULTS.md). Bản này thay kế hoạch sinh/biến đổi câu trong phiên ngày 20/10. Lô Q3–Q4 cũ vẫn gồm **14 bài G1–G2 dùng thử local**, có hồ sơ xét nguồn, biên, grade và kiểm MuseScore. Q5–Q9 chưa triển khai; bản online chưa thay đổi. Xem [kết quả và giới hạn pilot](Q4_PREPARED_PILOT.md).
+Cập nhật **21/10/2026 — đã hoàn tất lượt quét/kiểm/đóng gói K của kho hiện tại**: gói K5 có **5.460 MXL không trùng**, 9/56 lựa chọn đạt quota 300. Có 14.840 nguồn hiện giữ đã quét; 120 nguồn có lý do cần xác minh hoặc chưa xử lý được. Xem [báo cáo K5 và toàn bộ số lượng](K5_BANK_RESULTS.md), [lệnh build và thêm nguồn](BANK_BUILD.md). **Quota vẫn chưa hoàn tất.**
+
+Bản này thay kế hoạch sinh/biến đổi câu trong phiên ngày 20/10. Lô 14 bài Q3–Q4 là pilot lịch sử, không còn là toàn bộ kho đã chuẩn bị. Q5–Q9 — chọn bài, màn quiz, điều phối/chấm phiên và phát hành — chưa triển khai trong các bước xây kho K; bản online chưa thay đổi. [Kết quả pilot](Q4_PREPARED_PILOT.md) được giữ làm bằng chứng hồi quy.
 
 Kết quả cần đạt: **mở web → chọn grade, tay, độ dài, đúng nốt/BPM → tập bài có sẵn đã kiểm → chuyển bài tiếp**. Bài có nguồn nhạc thật, highlight đúng, sheet chiếm phần lớn màn hình, nghe bằng MuseScore, bật/tắt pedal và full sheet. Màn tập không có notation editing. MIDI thật vẫn để sau; nghiệm thu trước bằng MIDI mô phỏng.
 
@@ -207,9 +209,9 @@ Ghim app/native/schema/profile/corpus/layout tương thích trong session. Chỉ
 
 ## 7. Thứ tự làm và mốc bàn giao
 
-**Ưu tiên hiện tại theo yêu cầu mới:** hoàn thiện phần xây kho theo [kế hoạch riêng K1–K5](GRADED_BANK_PLAN.md). Đi qua từng nguồn, đọc toàn bộ, xét mọi đoạn có biên hợp lệ với mọi profile và đưa tất cả đoạn đạt vào kho. Không dùng lô 14 bài để kết thúc giai đoạn xây kho hoặc chuyển ngay sang màn quiz.
+**Kho offline K:** đã bàn giao gói MXL, 56 chỉ mục, thống kê profile/tay/độ dài và hồ sơ đối soát theo [K1–K5](GRADED_BANK_PLAN.md). Quota 300 cho mỗi lựa chọn còn thiếu; không lấy các ô vượt bù ô thiếu. Giữ nguyên mọi bài cũ, dùng luồng nhập nguồn mới và cache để mở rộng kho.
 
-**Đã xong K1 và K2:** 37.629 nguồn đã có kết quả; cache được đối soát; API/CLI V3 kiểm đủ 25 profile và trả đạt/không đạt/cần xem xét. **Script K3 đã bổ sung bằng chứng máy:** biên LBDM/rest chính xác, routing, giọng và ngón cố định qua upstream; kết quả nội dung, biên và native tách riêng. **Tiếp theo:** mở rộng các bằng chứng còn thiếu, chạy K3 toàn catalog, rồi K4 kiểm và xuất từng bài MXL. Xem [thứ tự và đầu ra cụ thể](GRADED_BANK_PLAN.md#việc-triển-khai-tiếp-theo). Bộ chấm khi tập giữ nguyên.
+**Phần web tiếp theo là Q5–Q9:** đọc chỉ mục K5 để chọn bài có sẵn theo grade/tay/độ dài, giữ chống lặp và nối vào màn tập độc lập. Đây là tích hợp dữ liệu đã kiểm, không phải cắt/sinh lại bài trong trình duyệt. Kho đọc nhạc hiện hành không chạy bộ tìm ngón; bộ chấm khi tập giữ nguyên.
 
 1. Đọc toàn bộ nguồn, dùng lại cache đúng phiên bản; ghi trạng thái và lý do từng file.
 2. Hoàn thiện các phép kiểm G1–G8 và quét mọi đơn vị phù hợp, không giới hạn số đoạn mỗi nguồn.

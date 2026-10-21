@@ -1,0 +1,1652 @@
+{
+  "schemaVersion": 1,
+  "releaseId": "reading-mxl-v1-be09d10ff801b28a",
+  "package": "D:\\duan\\pianist\\artifacts\\curriculum-bank\\releases\\reading-mxl-v1-be09d10ff801b28a",
+  "archive": "D:\\duan\\pianist\\artifacts\\curriculum-bank\\reading-mxl-v1-be09d10ff801b28a.zip",
+  "archiveSha256": "136f96f6bc35e91f42791190340c9abf390f30d076b84e121dc577372d8dd389",
+  "archiveBytes": 11184156,
+  "verification": {
+    "passed": true,
+    "files": 5523,
+    "exercises": 5460,
+    "manifestSha256": "e08262a9801500326f779e0642552c32eda579e2301be9ffaadbb2ae13f46b6f"
+  },
+  "coverage": {
+    "minimumPerOption": 300,
+    "uniqueMxlFiles": 5460,
+    "verifiedUniqueByOption": {
+      "1": {
+        "n4": 159,
+        "n6": 83,
+        "n10": 32,
+        "n20": 15,
+        "n30": 0,
+        "n50": 0,
+        "n100": 0
+      },
+      "2": {
+        "n4": 128,
+        "n6": 125,
+        "n10": 97,
+        "n20": 64,
+        "n30": 11,
+        "n50": 2,
+        "n100": 1
+      },
+      "3": {
+        "n4": 112,
+        "n6": 136,
+        "n10": 175,
+        "n20": 210,
+        "n30": 174,
+        "n50": 62,
+        "n100": 3
+      },
+      "4": {
+        "n4": 344,
+        "n6": 336,
+        "n10": 340,
+        "n20": 326,
+        "n30": 304,
+        "n50": 301,
+        "n100": 323
+      },
+      "5": {
+        "n4": 0,
+        "n6": 3,
+        "n10": 0,
+        "n20": 1,
+        "n30": 0,
+        "n50": 0,
+        "n100": 0
+      },
+      "6": {
+        "n4": 127,
+        "n6": 223,
+        "n10": 305,
+        "n20": 318,
+        "n30": 255,
+        "n50": 168,
+        "n100": 33
+      },
+      "7": {
+        "n4": 16,
+        "n6": 19,
+        "n10": 5,
+        "n20": 8,
+        "n30": 4,
+        "n50": 0,
+        "n100": 0
+      },
+      "8": {
+        "n4": 47,
+        "n6": 21,
+        "n10": 19,
+        "n20": 15,
+        "n30": 4,
+        "n50": 5,
+        "n100": 1
+      }
+    },
+    "verifiedUniqueByGrade": {
+      "1": 289,
+      "2": 428,
+      "3": 872,
+      "4": 2274,
+      "5": 4,
+      "6": 1429,
+      "7": 52,
+      "8": 112
+    },
+    "remainingByOption": {
+      "1": {
+        "n4": 141,
+        "n6": 217,
+        "n10": 268,
+        "n20": 285,
+        "n30": 300,
+        "n50": 300,
+        "n100": 300
+      },
+      "2": {
+        "n4": 172,
+        "n6": 175,
+        "n10": 203,
+        "n20": 236,
+        "n30": 289,
+        "n50": 298,
+        "n100": 299
+      },
+      "3": {
+        "n4": 188,
+        "n6": 164,
+        "n10": 125,
+        "n20": 90,
+        "n30": 126,
+        "n50": 238,
+        "n100": 297
+      },
+      "4": {
+        "n4": 0,
+        "n6": 0,
+        "n10": 0,
+        "n20": 0,
+        "n30": 0,
+        "n50": 0,
+        "n100": 0
+      },
+      "5": {
+        "n4": 300,
+        "n6": 297,
+        "n10": 300,
+        "n20": 299,
+        "n30": 300,
+        "n50": 300,
+        "n100": 300
+      },
+      "6": {
+        "n4": 173,
+        "n6": 77,
+        "n10": 0,
+        "n20": 0,
+        "n30": 45,
+        "n50": 132,
+        "n100": 267
+      },
+      "7": {
+        "n4": 284,
+        "n6": 281,
+        "n10": 295,
+        "n20": 292,
+        "n30": 296,
+        "n50": 300,
+        "n100": 300
+      },
+      "8": {
+        "n4": 253,
+        "n6": 279,
+        "n10": 281,
+        "n20": 285,
+        "n30": 296,
+        "n50": 295,
+        "n100": 299
+      }
+    },
+    "optionsAtMinimum": 9,
+    "optionCount": 56,
+    "targetMet": false,
+    "distinctMotifGroups": 5172,
+    "gradeProfileHandLength": [
+      {
+        "grade": 1,
+        "profile": "g1-direction-change",
+        "hand": "left",
+        "lengthBucket": "n4",
+        "count": 4
+      },
+      {
+        "grade": 1,
+        "profile": "g1-direction-change",
+        "hand": "left",
+        "lengthBucket": "n6",
+        "count": 2
+      },
+      {
+        "grade": 1,
+        "profile": "g1-direction-change",
+        "hand": "right",
+        "lengthBucket": "n10",
+        "count": 4
+      },
+      {
+        "grade": 1,
+        "profile": "g1-direction-change",
+        "hand": "right",
+        "lengthBucket": "n20",
+        "count": 3
+      },
+      {
+        "grade": 1,
+        "profile": "g1-direction-change",
+        "hand": "right",
+        "lengthBucket": "n4",
+        "count": 9
+      },
+      {
+        "grade": 1,
+        "profile": "g1-direction-change",
+        "hand": "right",
+        "lengthBucket": "n6",
+        "count": 7
+      },
+      {
+        "grade": 1,
+        "profile": "g1-direction-long",
+        "hand": "left",
+        "lengthBucket": "n10",
+        "count": 11
+      },
+      {
+        "grade": 1,
+        "profile": "g1-direction-long",
+        "hand": "left",
+        "lengthBucket": "n20",
+        "count": 4
+      },
+      {
+        "grade": 1,
+        "profile": "g1-direction-long",
+        "hand": "left",
+        "lengthBucket": "n4",
+        "count": 31
+      },
+      {
+        "grade": 1,
+        "profile": "g1-direction-long",
+        "hand": "left",
+        "lengthBucket": "n6",
+        "count": 19
+      },
+      {
+        "grade": 1,
+        "profile": "g1-direction-long",
+        "hand": "right",
+        "lengthBucket": "n10",
+        "count": 10
+      },
+      {
+        "grade": 1,
+        "profile": "g1-direction-long",
+        "hand": "right",
+        "lengthBucket": "n4",
+        "count": 60
+      },
+      {
+        "grade": 1,
+        "profile": "g1-direction-long",
+        "hand": "right",
+        "lengthBucket": "n6",
+        "count": 26
+      },
+      {
+        "grade": 1,
+        "profile": "g1-direction-quarters",
+        "hand": "left",
+        "lengthBucket": "n10",
+        "count": 1
+      },
+      {
+        "grade": 1,
+        "profile": "g1-direction-quarters",
+        "hand": "left",
+        "lengthBucket": "n20",
+        "count": 1
+      },
+      {
+        "grade": 1,
+        "profile": "g1-direction-quarters",
+        "hand": "left",
+        "lengthBucket": "n4",
+        "count": 20
+      },
+      {
+        "grade": 1,
+        "profile": "g1-direction-quarters",
+        "hand": "left",
+        "lengthBucket": "n6",
+        "count": 5
+      },
+      {
+        "grade": 1,
+        "profile": "g1-direction-quarters",
+        "hand": "right",
+        "lengthBucket": "n10",
+        "count": 4
+      },
+      {
+        "grade": 1,
+        "profile": "g1-direction-quarters",
+        "hand": "right",
+        "lengthBucket": "n20",
+        "count": 3
+      },
+      {
+        "grade": 1,
+        "profile": "g1-direction-quarters",
+        "hand": "right",
+        "lengthBucket": "n4",
+        "count": 32
+      },
+      {
+        "grade": 1,
+        "profile": "g1-direction-quarters",
+        "hand": "right",
+        "lengthBucket": "n6",
+        "count": 14
+      },
+      {
+        "grade": 1,
+        "profile": "g1-direction-rests",
+        "hand": "left",
+        "lengthBucket": "n4",
+        "count": 1
+      },
+      {
+        "grade": 1,
+        "profile": "g1-direction-rests",
+        "hand": "left",
+        "lengthBucket": "n6",
+        "count": 3
+      },
+      {
+        "grade": 1,
+        "profile": "g1-direction-rests",
+        "hand": "right",
+        "lengthBucket": "n10",
+        "count": 6
+      },
+      {
+        "grade": 1,
+        "profile": "g1-direction-rests",
+        "hand": "right",
+        "lengthBucket": "n20",
+        "count": 7
+      },
+      {
+        "grade": 1,
+        "profile": "g1-direction-rests",
+        "hand": "right",
+        "lengthBucket": "n4",
+        "count": 15
+      },
+      {
+        "grade": 1,
+        "profile": "g1-direction-rests",
+        "hand": "right",
+        "lengthBucket": "n6",
+        "count": 16
+      },
+      {
+        "grade": 2,
+        "profile": "g2-paired-eighths-steps",
+        "hand": "left",
+        "lengthBucket": "n10",
+        "count": 3
+      },
+      {
+        "grade": 2,
+        "profile": "g2-paired-eighths-steps",
+        "hand": "left",
+        "lengthBucket": "n100",
+        "count": 1
+      },
+      {
+        "grade": 2,
+        "profile": "g2-paired-eighths-steps",
+        "hand": "left",
+        "lengthBucket": "n20",
+        "count": 5
+      },
+      {
+        "grade": 2,
+        "profile": "g2-paired-eighths-steps",
+        "hand": "left",
+        "lengthBucket": "n30",
+        "count": 1
+      },
+      {
+        "grade": 2,
+        "profile": "g2-paired-eighths-steps",
+        "hand": "left",
+        "lengthBucket": "n4",
+        "count": 12
+      },
+      {
+        "grade": 2,
+        "profile": "g2-paired-eighths-steps",
+        "hand": "left",
+        "lengthBucket": "n50",
+        "count": 1
+      },
+      {
+        "grade": 2,
+        "profile": "g2-paired-eighths-steps",
+        "hand": "left",
+        "lengthBucket": "n6",
+        "count": 19
+      },
+      {
+        "grade": 2,
+        "profile": "g2-paired-eighths-steps",
+        "hand": "right",
+        "lengthBucket": "n10",
+        "count": 23
+      },
+      {
+        "grade": 2,
+        "profile": "g2-paired-eighths-steps",
+        "hand": "right",
+        "lengthBucket": "n20",
+        "count": 15
+      },
+      {
+        "grade": 2,
+        "profile": "g2-paired-eighths-steps",
+        "hand": "right",
+        "lengthBucket": "n4",
+        "count": 49
+      },
+      {
+        "grade": 2,
+        "profile": "g2-paired-eighths-steps",
+        "hand": "right",
+        "lengthBucket": "n6",
+        "count": 38
+      },
+      {
+        "grade": 2,
+        "profile": "g2-third-known-rhythm",
+        "hand": "left",
+        "lengthBucket": "n10",
+        "count": 16
+      },
+      {
+        "grade": 2,
+        "profile": "g2-third-known-rhythm",
+        "hand": "left",
+        "lengthBucket": "n20",
+        "count": 4
+      },
+      {
+        "grade": 2,
+        "profile": "g2-third-known-rhythm",
+        "hand": "left",
+        "lengthBucket": "n4",
+        "count": 29
+      },
+      {
+        "grade": 2,
+        "profile": "g2-third-known-rhythm",
+        "hand": "left",
+        "lengthBucket": "n6",
+        "count": 18
+      },
+      {
+        "grade": 2,
+        "profile": "g2-third-known-rhythm",
+        "hand": "right",
+        "lengthBucket": "n10",
+        "count": 55
+      },
+      {
+        "grade": 2,
+        "profile": "g2-third-known-rhythm",
+        "hand": "right",
+        "lengthBucket": "n20",
+        "count": 40
+      },
+      {
+        "grade": 2,
+        "profile": "g2-third-known-rhythm",
+        "hand": "right",
+        "lengthBucket": "n30",
+        "count": 10
+      },
+      {
+        "grade": 2,
+        "profile": "g2-third-known-rhythm",
+        "hand": "right",
+        "lengthBucket": "n4",
+        "count": 38
+      },
+      {
+        "grade": 2,
+        "profile": "g2-third-known-rhythm",
+        "hand": "right",
+        "lengthBucket": "n50",
+        "count": 1
+      },
+      {
+        "grade": 2,
+        "profile": "g2-third-known-rhythm",
+        "hand": "right",
+        "lengthBucket": "n6",
+        "count": 50
+      },
+      {
+        "grade": 3,
+        "profile": "g3-arpeggio-fourth-fifth",
+        "hand": "left",
+        "lengthBucket": "n10",
+        "count": 46
+      },
+      {
+        "grade": 3,
+        "profile": "g3-arpeggio-fourth-fifth",
+        "hand": "left",
+        "lengthBucket": "n20",
+        "count": 64
+      },
+      {
+        "grade": 3,
+        "profile": "g3-arpeggio-fourth-fifth",
+        "hand": "left",
+        "lengthBucket": "n30",
+        "count": 68
+      },
+      {
+        "grade": 3,
+        "profile": "g3-arpeggio-fourth-fifth",
+        "hand": "left",
+        "lengthBucket": "n4",
+        "count": 17
+      },
+      {
+        "grade": 3,
+        "profile": "g3-arpeggio-fourth-fifth",
+        "hand": "left",
+        "lengthBucket": "n50",
+        "count": 15
+      },
+      {
+        "grade": 3,
+        "profile": "g3-arpeggio-fourth-fifth",
+        "hand": "left",
+        "lengthBucket": "n6",
+        "count": 26
+      },
+      {
+        "grade": 3,
+        "profile": "g3-arpeggio-fourth-fifth",
+        "hand": "right",
+        "lengthBucket": "n10",
+        "count": 12
+      },
+      {
+        "grade": 3,
+        "profile": "g3-arpeggio-fourth-fifth",
+        "hand": "right",
+        "lengthBucket": "n100",
+        "count": 3
+      },
+      {
+        "grade": 3,
+        "profile": "g3-arpeggio-fourth-fifth",
+        "hand": "right",
+        "lengthBucket": "n20",
+        "count": 41
+      },
+      {
+        "grade": 3,
+        "profile": "g3-arpeggio-fourth-fifth",
+        "hand": "right",
+        "lengthBucket": "n30",
+        "count": 67
+      },
+      {
+        "grade": 3,
+        "profile": "g3-arpeggio-fourth-fifth",
+        "hand": "right",
+        "lengthBucket": "n4",
+        "count": 6
+      },
+      {
+        "grade": 3,
+        "profile": "g3-arpeggio-fourth-fifth",
+        "hand": "right",
+        "lengthBucket": "n50",
+        "count": 42
+      },
+      {
+        "grade": 3,
+        "profile": "g3-arpeggio-fourth-fifth",
+        "hand": "right",
+        "lengthBucket": "n6",
+        "count": 14
+      },
+      {
+        "grade": 3,
+        "profile": "g3-melodic-fourth-fifth",
+        "hand": "left",
+        "lengthBucket": "n10",
+        "count": 101
+      },
+      {
+        "grade": 3,
+        "profile": "g3-melodic-fourth-fifth",
+        "hand": "left",
+        "lengthBucket": "n20",
+        "count": 122
+      },
+      {
+        "grade": 3,
+        "profile": "g3-melodic-fourth-fifth",
+        "hand": "left",
+        "lengthBucket": "n30",
+        "count": 101
+      },
+      {
+        "grade": 3,
+        "profile": "g3-melodic-fourth-fifth",
+        "hand": "left",
+        "lengthBucket": "n4",
+        "count": 67
+      },
+      {
+        "grade": 3,
+        "profile": "g3-melodic-fourth-fifth",
+        "hand": "left",
+        "lengthBucket": "n50",
+        "count": 20
+      },
+      {
+        "grade": 3,
+        "profile": "g3-melodic-fourth-fifth",
+        "hand": "left",
+        "lengthBucket": "n6",
+        "count": 77
+      },
+      {
+        "grade": 3,
+        "profile": "g3-melodic-fourth-fifth",
+        "hand": "right",
+        "lengthBucket": "n10",
+        "count": 74
+      },
+      {
+        "grade": 3,
+        "profile": "g3-melodic-fourth-fifth",
+        "hand": "right",
+        "lengthBucket": "n100",
+        "count": 3
+      },
+      {
+        "grade": 3,
+        "profile": "g3-melodic-fourth-fifth",
+        "hand": "right",
+        "lengthBucket": "n20",
+        "count": 88
+      },
+      {
+        "grade": 3,
+        "profile": "g3-melodic-fourth-fifth",
+        "hand": "right",
+        "lengthBucket": "n30",
+        "count": 73
+      },
+      {
+        "grade": 3,
+        "profile": "g3-melodic-fourth-fifth",
+        "hand": "right",
+        "lengthBucket": "n4",
+        "count": 45
+      },
+      {
+        "grade": 3,
+        "profile": "g3-melodic-fourth-fifth",
+        "hand": "right",
+        "lengthBucket": "n50",
+        "count": 42
+      },
+      {
+        "grade": 3,
+        "profile": "g3-melodic-fourth-fifth",
+        "hand": "right",
+        "lengthBucket": "n6",
+        "count": 59
+      },
+      {
+        "grade": 4,
+        "profile": "g4-new-position",
+        "hand": "left",
+        "lengthBucket": "n10",
+        "count": 63
+      },
+      {
+        "grade": 4,
+        "profile": "g4-new-position",
+        "hand": "left",
+        "lengthBucket": "n100",
+        "count": 141
+      },
+      {
+        "grade": 4,
+        "profile": "g4-new-position",
+        "hand": "left",
+        "lengthBucket": "n20",
+        "count": 44
+      },
+      {
+        "grade": 4,
+        "profile": "g4-new-position",
+        "hand": "left",
+        "lengthBucket": "n30",
+        "count": 27
+      },
+      {
+        "grade": 4,
+        "profile": "g4-new-position",
+        "hand": "left",
+        "lengthBucket": "n4",
+        "count": 115
+      },
+      {
+        "grade": 4,
+        "profile": "g4-new-position",
+        "hand": "left",
+        "lengthBucket": "n50",
+        "count": 28
+      },
+      {
+        "grade": 4,
+        "profile": "g4-new-position",
+        "hand": "left",
+        "lengthBucket": "n6",
+        "count": 75
+      },
+      {
+        "grade": 4,
+        "profile": "g4-new-position",
+        "hand": "right",
+        "lengthBucket": "n10",
+        "count": 144
+      },
+      {
+        "grade": 4,
+        "profile": "g4-new-position",
+        "hand": "right",
+        "lengthBucket": "n100",
+        "count": 106
+      },
+      {
+        "grade": 4,
+        "profile": "g4-new-position",
+        "hand": "right",
+        "lengthBucket": "n20",
+        "count": 131
+      },
+      {
+        "grade": 4,
+        "profile": "g4-new-position",
+        "hand": "right",
+        "lengthBucket": "n30",
+        "count": 123
+      },
+      {
+        "grade": 4,
+        "profile": "g4-new-position",
+        "hand": "right",
+        "lengthBucket": "n4",
+        "count": 174
+      },
+      {
+        "grade": 4,
+        "profile": "g4-new-position",
+        "hand": "right",
+        "lengthBucket": "n50",
+        "count": 151
+      },
+      {
+        "grade": 4,
+        "profile": "g4-new-position",
+        "hand": "right",
+        "lengthBucket": "n6",
+        "count": 159
+      },
+      {
+        "grade": 4,
+        "profile": "g4-position-shift",
+        "hand": "left",
+        "lengthBucket": "n10",
+        "count": 51
+      },
+      {
+        "grade": 4,
+        "profile": "g4-position-shift",
+        "hand": "left",
+        "lengthBucket": "n100",
+        "count": 45
+      },
+      {
+        "grade": 4,
+        "profile": "g4-position-shift",
+        "hand": "left",
+        "lengthBucket": "n20",
+        "count": 42
+      },
+      {
+        "grade": 4,
+        "profile": "g4-position-shift",
+        "hand": "left",
+        "lengthBucket": "n30",
+        "count": 19
+      },
+      {
+        "grade": 4,
+        "profile": "g4-position-shift",
+        "hand": "left",
+        "lengthBucket": "n4",
+        "count": 38
+      },
+      {
+        "grade": 4,
+        "profile": "g4-position-shift",
+        "hand": "left",
+        "lengthBucket": "n50",
+        "count": 59
+      },
+      {
+        "grade": 4,
+        "profile": "g4-position-shift",
+        "hand": "left",
+        "lengthBucket": "n6",
+        "count": 52
+      },
+      {
+        "grade": 4,
+        "profile": "g4-position-shift",
+        "hand": "right",
+        "lengthBucket": "n10",
+        "count": 82
+      },
+      {
+        "grade": 4,
+        "profile": "g4-position-shift",
+        "hand": "right",
+        "lengthBucket": "n100",
+        "count": 31
+      },
+      {
+        "grade": 4,
+        "profile": "g4-position-shift",
+        "hand": "right",
+        "lengthBucket": "n20",
+        "count": 109
+      },
+      {
+        "grade": 4,
+        "profile": "g4-position-shift",
+        "hand": "right",
+        "lengthBucket": "n30",
+        "count": 135
+      },
+      {
+        "grade": 4,
+        "profile": "g4-position-shift",
+        "hand": "right",
+        "lengthBucket": "n4",
+        "count": 17
+      },
+      {
+        "grade": 4,
+        "profile": "g4-position-shift",
+        "hand": "right",
+        "lengthBucket": "n50",
+        "count": 63
+      },
+      {
+        "grade": 4,
+        "profile": "g4-position-shift",
+        "hand": "right",
+        "lengthBucket": "n6",
+        "count": 50
+      },
+      {
+        "grade": 5,
+        "profile": "g5-right-melody",
+        "hand": "both",
+        "lengthBucket": "n20",
+        "count": 1
+      },
+      {
+        "grade": 5,
+        "profile": "g5-right-melody",
+        "hand": "both",
+        "lengthBucket": "n6",
+        "count": 3
+      },
+      {
+        "grade": 6,
+        "profile": "g6-6-down",
+        "hand": "left",
+        "lengthBucket": "n10",
+        "count": 75
+      },
+      {
+        "grade": 6,
+        "profile": "g6-6-down",
+        "hand": "left",
+        "lengthBucket": "n20",
+        "count": 85
+      },
+      {
+        "grade": 6,
+        "profile": "g6-6-down",
+        "hand": "left",
+        "lengthBucket": "n30",
+        "count": 38
+      },
+      {
+        "grade": 6,
+        "profile": "g6-6-down",
+        "hand": "left",
+        "lengthBucket": "n4",
+        "count": 18
+      },
+      {
+        "grade": 6,
+        "profile": "g6-6-down",
+        "hand": "left",
+        "lengthBucket": "n50",
+        "count": 11
+      },
+      {
+        "grade": 6,
+        "profile": "g6-6-down",
+        "hand": "left",
+        "lengthBucket": "n6",
+        "count": 52
+      },
+      {
+        "grade": 6,
+        "profile": "g6-6-down",
+        "hand": "right",
+        "lengthBucket": "n10",
+        "count": 37
+      },
+      {
+        "grade": 6,
+        "profile": "g6-6-down",
+        "hand": "right",
+        "lengthBucket": "n100",
+        "count": 7
+      },
+      {
+        "grade": 6,
+        "profile": "g6-6-down",
+        "hand": "right",
+        "lengthBucket": "n20",
+        "count": 48
+      },
+      {
+        "grade": 6,
+        "profile": "g6-6-down",
+        "hand": "right",
+        "lengthBucket": "n30",
+        "count": 57
+      },
+      {
+        "grade": 6,
+        "profile": "g6-6-down",
+        "hand": "right",
+        "lengthBucket": "n4",
+        "count": 20
+      },
+      {
+        "grade": 6,
+        "profile": "g6-6-down",
+        "hand": "right",
+        "lengthBucket": "n50",
+        "count": 67
+      },
+      {
+        "grade": 6,
+        "profile": "g6-6-down",
+        "hand": "right",
+        "lengthBucket": "n6",
+        "count": 23
+      },
+      {
+        "grade": 6,
+        "profile": "g6-6-up",
+        "hand": "left",
+        "lengthBucket": "n10",
+        "count": 22
+      },
+      {
+        "grade": 6,
+        "profile": "g6-6-up",
+        "hand": "left",
+        "lengthBucket": "n100",
+        "count": 13
+      },
+      {
+        "grade": 6,
+        "profile": "g6-6-up",
+        "hand": "left",
+        "lengthBucket": "n20",
+        "count": 20
+      },
+      {
+        "grade": 6,
+        "profile": "g6-6-up",
+        "hand": "left",
+        "lengthBucket": "n30",
+        "count": 24
+      },
+      {
+        "grade": 6,
+        "profile": "g6-6-up",
+        "hand": "left",
+        "lengthBucket": "n4",
+        "count": 17
+      },
+      {
+        "grade": 6,
+        "profile": "g6-6-up",
+        "hand": "left",
+        "lengthBucket": "n50",
+        "count": 19
+      },
+      {
+        "grade": 6,
+        "profile": "g6-6-up",
+        "hand": "left",
+        "lengthBucket": "n6",
+        "count": 25
+      },
+      {
+        "grade": 6,
+        "profile": "g6-6-up",
+        "hand": "right",
+        "lengthBucket": "n10",
+        "count": 44
+      },
+      {
+        "grade": 6,
+        "profile": "g6-6-up",
+        "hand": "right",
+        "lengthBucket": "n100",
+        "count": 13
+      },
+      {
+        "grade": 6,
+        "profile": "g6-6-up",
+        "hand": "right",
+        "lengthBucket": "n20",
+        "count": 51
+      },
+      {
+        "grade": 6,
+        "profile": "g6-6-up",
+        "hand": "right",
+        "lengthBucket": "n30",
+        "count": 101
+      },
+      {
+        "grade": 6,
+        "profile": "g6-6-up",
+        "hand": "right",
+        "lengthBucket": "n4",
+        "count": 17
+      },
+      {
+        "grade": 6,
+        "profile": "g6-6-up",
+        "hand": "right",
+        "lengthBucket": "n50",
+        "count": 77
+      },
+      {
+        "grade": 6,
+        "profile": "g6-6-up",
+        "hand": "right",
+        "lengthBucket": "n6",
+        "count": 32
+      },
+      {
+        "grade": 6,
+        "profile": "g6-7-down",
+        "hand": "left",
+        "lengthBucket": "n10",
+        "count": 33
+      },
+      {
+        "grade": 6,
+        "profile": "g6-7-down",
+        "hand": "left",
+        "lengthBucket": "n100",
+        "count": 2
+      },
+      {
+        "grade": 6,
+        "profile": "g6-7-down",
+        "hand": "left",
+        "lengthBucket": "n20",
+        "count": 40
+      },
+      {
+        "grade": 6,
+        "profile": "g6-7-down",
+        "hand": "left",
+        "lengthBucket": "n30",
+        "count": 21
+      },
+      {
+        "grade": 6,
+        "profile": "g6-7-down",
+        "hand": "left",
+        "lengthBucket": "n4",
+        "count": 2
+      },
+      {
+        "grade": 6,
+        "profile": "g6-7-down",
+        "hand": "left",
+        "lengthBucket": "n50",
+        "count": 7
+      },
+      {
+        "grade": 6,
+        "profile": "g6-7-down",
+        "hand": "left",
+        "lengthBucket": "n6",
+        "count": 18
+      },
+      {
+        "grade": 6,
+        "profile": "g6-7-down",
+        "hand": "right",
+        "lengthBucket": "n10",
+        "count": 12
+      },
+      {
+        "grade": 6,
+        "profile": "g6-7-down",
+        "hand": "right",
+        "lengthBucket": "n20",
+        "count": 7
+      },
+      {
+        "grade": 6,
+        "profile": "g6-7-down",
+        "hand": "right",
+        "lengthBucket": "n30",
+        "count": 5
+      },
+      {
+        "grade": 6,
+        "profile": "g6-7-down",
+        "hand": "right",
+        "lengthBucket": "n4",
+        "count": 1
+      },
+      {
+        "grade": 6,
+        "profile": "g6-7-down",
+        "hand": "right",
+        "lengthBucket": "n50",
+        "count": 10
+      },
+      {
+        "grade": 6,
+        "profile": "g6-7-down",
+        "hand": "right",
+        "lengthBucket": "n6",
+        "count": 9
+      },
+      {
+        "grade": 6,
+        "profile": "g6-7-up",
+        "hand": "left",
+        "lengthBucket": "n10",
+        "count": 6
+      },
+      {
+        "grade": 6,
+        "profile": "g6-7-up",
+        "hand": "left",
+        "lengthBucket": "n20",
+        "count": 3
+      },
+      {
+        "grade": 6,
+        "profile": "g6-7-up",
+        "hand": "left",
+        "lengthBucket": "n30",
+        "count": 6
+      },
+      {
+        "grade": 6,
+        "profile": "g6-7-up",
+        "hand": "left",
+        "lengthBucket": "n4",
+        "count": 7
+      },
+      {
+        "grade": 6,
+        "profile": "g6-7-up",
+        "hand": "left",
+        "lengthBucket": "n50",
+        "count": 3
+      },
+      {
+        "grade": 6,
+        "profile": "g6-7-up",
+        "hand": "left",
+        "lengthBucket": "n6",
+        "count": 4
+      },
+      {
+        "grade": 6,
+        "profile": "g6-7-up",
+        "hand": "right",
+        "lengthBucket": "n10",
+        "count": 11
+      },
+      {
+        "grade": 6,
+        "profile": "g6-7-up",
+        "hand": "right",
+        "lengthBucket": "n20",
+        "count": 21
+      },
+      {
+        "grade": 6,
+        "profile": "g6-7-up",
+        "hand": "right",
+        "lengthBucket": "n30",
+        "count": 6
+      },
+      {
+        "grade": 6,
+        "profile": "g6-7-up",
+        "hand": "right",
+        "lengthBucket": "n4",
+        "count": 7
+      },
+      {
+        "grade": 6,
+        "profile": "g6-7-up",
+        "hand": "right",
+        "lengthBucket": "n50",
+        "count": 2
+      },
+      {
+        "grade": 6,
+        "profile": "g6-7-up",
+        "hand": "right",
+        "lengthBucket": "n6",
+        "count": 15
+      },
+      {
+        "grade": 6,
+        "profile": "g6-8-down",
+        "hand": "left",
+        "lengthBucket": "n10",
+        "count": 31
+      },
+      {
+        "grade": 6,
+        "profile": "g6-8-down",
+        "hand": "left",
+        "lengthBucket": "n20",
+        "count": 28
+      },
+      {
+        "grade": 6,
+        "profile": "g6-8-down",
+        "hand": "left",
+        "lengthBucket": "n30",
+        "count": 6
+      },
+      {
+        "grade": 6,
+        "profile": "g6-8-down",
+        "hand": "left",
+        "lengthBucket": "n4",
+        "count": 7
+      },
+      {
+        "grade": 6,
+        "profile": "g6-8-down",
+        "hand": "left",
+        "lengthBucket": "n6",
+        "count": 15
+      },
+      {
+        "grade": 6,
+        "profile": "g6-8-down",
+        "hand": "right",
+        "lengthBucket": "n10",
+        "count": 2
+      },
+      {
+        "grade": 6,
+        "profile": "g6-8-down",
+        "hand": "right",
+        "lengthBucket": "n4",
+        "count": 2
+      },
+      {
+        "grade": 6,
+        "profile": "g6-8-down",
+        "hand": "right",
+        "lengthBucket": "n6",
+        "count": 2
+      },
+      {
+        "grade": 6,
+        "profile": "g6-8-up",
+        "hand": "left",
+        "lengthBucket": "n10",
+        "count": 32
+      },
+      {
+        "grade": 6,
+        "profile": "g6-8-up",
+        "hand": "left",
+        "lengthBucket": "n20",
+        "count": 25
+      },
+      {
+        "grade": 6,
+        "profile": "g6-8-up",
+        "hand": "left",
+        "lengthBucket": "n30",
+        "count": 25
+      },
+      {
+        "grade": 6,
+        "profile": "g6-8-up",
+        "hand": "left",
+        "lengthBucket": "n4",
+        "count": 22
+      },
+      {
+        "grade": 6,
+        "profile": "g6-8-up",
+        "hand": "left",
+        "lengthBucket": "n50",
+        "count": 4
+      },
+      {
+        "grade": 6,
+        "profile": "g6-8-up",
+        "hand": "left",
+        "lengthBucket": "n6",
+        "count": 30
+      },
+      {
+        "grade": 6,
+        "profile": "g6-8-up",
+        "hand": "right",
+        "lengthBucket": "n10",
+        "count": 9
+      },
+      {
+        "grade": 6,
+        "profile": "g6-8-up",
+        "hand": "right",
+        "lengthBucket": "n100",
+        "count": 1
+      },
+      {
+        "grade": 6,
+        "profile": "g6-8-up",
+        "hand": "right",
+        "lengthBucket": "n20",
+        "count": 2
+      },
+      {
+        "grade": 6,
+        "profile": "g6-8-up",
+        "hand": "right",
+        "lengthBucket": "n30",
+        "count": 3
+      },
+      {
+        "grade": 6,
+        "profile": "g6-8-up",
+        "hand": "right",
+        "lengthBucket": "n4",
+        "count": 7
+      },
+      {
+        "grade": 6,
+        "profile": "g6-8-up",
+        "hand": "right",
+        "lengthBucket": "n50",
+        "count": 5
+      },
+      {
+        "grade": 6,
+        "profile": "g6-8-up",
+        "hand": "right",
+        "lengthBucket": "n6",
+        "count": 3
+      },
+      {
+        "grade": 7,
+        "profile": "g7-compound",
+        "hand": "left",
+        "lengthBucket": "n4",
+        "count": 7
+      },
+      {
+        "grade": 7,
+        "profile": "g7-compound",
+        "hand": "left",
+        "lengthBucket": "n6",
+        "count": 3
+      },
+      {
+        "grade": 7,
+        "profile": "g7-compound",
+        "hand": "right",
+        "lengthBucket": "n10",
+        "count": 1
+      },
+      {
+        "grade": 7,
+        "profile": "g7-compound",
+        "hand": "right",
+        "lengthBucket": "n4",
+        "count": 8
+      },
+      {
+        "grade": 7,
+        "profile": "g7-compound",
+        "hand": "right",
+        "lengthBucket": "n6",
+        "count": 3
+      },
+      {
+        "grade": 7,
+        "profile": "g7-dotted",
+        "hand": "right",
+        "lengthBucket": "n10",
+        "count": 3
+      },
+      {
+        "grade": 7,
+        "profile": "g7-dotted",
+        "hand": "right",
+        "lengthBucket": "n20",
+        "count": 6
+      },
+      {
+        "grade": 7,
+        "profile": "g7-dotted",
+        "hand": "right",
+        "lengthBucket": "n30",
+        "count": 4
+      },
+      {
+        "grade": 7,
+        "profile": "g7-dotted",
+        "hand": "right",
+        "lengthBucket": "n6",
+        "count": 11
+      },
+      {
+        "grade": 7,
+        "profile": "g7-tie",
+        "hand": "left",
+        "lengthBucket": "n10",
+        "count": 1
+      },
+      {
+        "grade": 7,
+        "profile": "g7-tie",
+        "hand": "left",
+        "lengthBucket": "n20",
+        "count": 2
+      },
+      {
+        "grade": 7,
+        "profile": "g7-tie",
+        "hand": "left",
+        "lengthBucket": "n6",
+        "count": 1
+      },
+      {
+        "grade": 7,
+        "profile": "g7-tie",
+        "hand": "right",
+        "lengthBucket": "n4",
+        "count": 1
+      },
+      {
+        "grade": 7,
+        "profile": "g7-tie",
+        "hand": "right",
+        "lengthBucket": "n6",
+        "count": 1
+      },
+      {
+        "grade": 8,
+        "profile": "g8-register",
+        "hand": "left",
+        "lengthBucket": "n10",
+        "count": 4
+      },
+      {
+        "grade": 8,
+        "profile": "g8-register",
+        "hand": "left",
+        "lengthBucket": "n100",
+        "count": 1
+      },
+      {
+        "grade": 8,
+        "profile": "g8-register",
+        "hand": "left",
+        "lengthBucket": "n20",
+        "count": 6
+      },
+      {
+        "grade": 8,
+        "profile": "g8-register",
+        "hand": "left",
+        "lengthBucket": "n30",
+        "count": 4
+      },
+      {
+        "grade": 8,
+        "profile": "g8-register",
+        "hand": "left",
+        "lengthBucket": "n4",
+        "count": 13
+      },
+      {
+        "grade": 8,
+        "profile": "g8-register",
+        "hand": "left",
+        "lengthBucket": "n50",
+        "count": 5
+      },
+      {
+        "grade": 8,
+        "profile": "g8-register",
+        "hand": "left",
+        "lengthBucket": "n6",
+        "count": 6
+      },
+      {
+        "grade": 8,
+        "profile": "g8-register",
+        "hand": "right",
+        "lengthBucket": "n10",
+        "count": 15
+      },
+      {
+        "grade": 8,
+        "profile": "g8-register",
+        "hand": "right",
+        "lengthBucket": "n20",
+        "count": 9
+      },
+      {
+        "grade": 8,
+        "profile": "g8-register",
+        "hand": "right",
+        "lengthBucket": "n4",
+        "count": 34
+      },
+      {
+        "grade": 8,
+        "profile": "g8-register",
+        "hand": "right",
+        "lengthBucket": "n6",
+        "count": 14
+      },
+      {
+        "grade": 8,
+        "profile": "g8-right-melody-eighth-pairs",
+        "hand": "both",
+        "lengthBucket": "n6",
+        "count": 1
+      }
+    ],
+    "duplicateContentVariants": 1
+  },
+  "sourceProcessing": {
+    "sourceFiles": 14960,
+    "outcomes": {
+      "scanned": 14840,
+      "parser-unsupported": 57,
+      "identity-review": 62,
+      "container-unsupported": 1
+    },
+    "pending": 0,
+    "processingComplete": true,
+    "adapterManifestSha256": "3e2d23295f89c178f2c450361b2d00952a492d55a86aa8b8e8786597eb870452"
+  },
+  "mxlBytes": 7116370,
+  "banks": [
+    "reading-options-v1",
+    "reading-supplement-v1"
+  ],
+  "scope": "K3/K4 completed finite source queue; K5 audited local MXL package. App integration is separate.",
+  "quotaComplete": false,
+  "packagingComplete": true,
+  "checks": {
+    "originalBankUnchanged": true,
+    "provenanceBound": true,
+    "exportResumeCatalogsUnchanged": true,
+    "independentPackageRecheck": true,
+    "pythonTestsPassed": 158
+  },
+  "logs": {
+    "artifacts/k5-python-tests.log": "7f3001a85c86a343a13c56e7b0c5a23beb2d27791213ee14a8668383a4658dbd",
+    "artifacts/k5-adapter-resume.log": "c551dcedfc77d6ba9ce72ce64e0c699a509a3d75e0357b3567d0ada079d19cb4",
+    "artifacts/k5-export-resume.log": "aeee501a54de69c634db9245a24cf2039562c84d148970b8e90b91de9e61ba80",
+    "artifacts/k5-package-recheck.log": "6e9c6554e9115d4b5b607b4467289133cdfcc64e8c86128d07921c67fca6d584",
+    "artifacts/k5-provenance-audit.json": "4d0963c3124e61de45855f2bb07dc6fffab968c4ed9933e522c43b0da43ea48f",
+    "artifacts/k5-original-bank-preservation.json": "950ee5e15a6ab465dc16985b6e1cce4fa1c7c89ea716ff2cfa81ba7e5e78b41c",
+    "artifacts/k5-inbox-tests.log": "a4ffc8579eea5cbc55014ea2ab46b6108b0c441a3235c2cfbf18b1b040f14861",
+    "artifacts/k5-completion-tests.log": "5090ec20b1a3ef411941e5e34c53265907e51ec5a391668690330be7b0867b35"
+  },
+  "policyPipeline": "ca32cb0603844f11d8c545a7d350c626d77894b87c4db47e3dc36acffa1e456d",
+  "buildToolHashes": {
+    "buildscripts/pianist/complete-curriculum-bank.py": "83469cd7c3a44617f103a6ddb90617f910570da0d86b9c75fee2777a0f673845",
+    "buildscripts/pianist/curriculum_adapter_cache.py": "c525af12a45440d85c596cd5f4b3199c76f90c5fbe706ff866b519b4452b28a6",
+    "buildscripts/pianist/curriculum_release.py": "c3942c003f3e0588b2070a765fe26a13750fba194d005bffc12cce1d2ad45ec5",
+    "buildscripts/pianist/curriculum_source_adapter.py": "25bbcefb1b9ca3c7f93265c35afb89b9fa109d1a73e433a0f75d49a44378bc90",
+    "buildscripts/pianist/import-piano-sources.py": "0528f4b8e53a1c20c2ab557b46db53f28630e124728d9c40a66aca82615f3e8b",
+    "buildscripts/pianist/package-reading-bank.py": "e168797bf8545465cc3d2b1a5ee70d8db5b3bca04bca4548d2f32fb41f9f2f76",
+    "buildscripts/pianist/prepare-supplemental-sources.py": "1daa969fa3f141d19c0d53b528aac5191fbe982e321f8a96dc3d2f5c0629e739",
+    "buildscripts/pianist/reading-bank-progress.py": "93cc1124dff722d4b34b82c2fa82017deceb09688aaec9dca4902bb4edce03cb"
+  }
+}

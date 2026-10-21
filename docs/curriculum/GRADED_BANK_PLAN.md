@@ -2,7 +2,9 @@
 
 Cập nhật 21/10/2026 theo yêu cầu mới: **mỗi lựa chọn độ dài trong mỗi grade phải có tối thiểu 300 bài**. Có 8 grade × 7 độ dài = **56 ô**, tối thiểu 16.800 lượt bài trong các ô. Không dùng tổng của grade để bù ô thiếu.
 
-Số bài đã xuất thực tế và tình trạng từng lựa chọn nằm trong [báo cáo K3](K3_BANK_RESULTS.md). Báo cáo phân biệt rõ kết thúc một lượt quét với đạt đủ quota.
+Kết quả hiện tại ở [báo cáo K5](K5_BANK_RESULTS.md): **5.460 MXL không trùng; 9/56 lựa chọn đạt 300**. Lượt quét/kiểm/đóng gói của kho hiện tại đã kết thúc; quota còn thiếu. [Báo cáo K3](K3_BANK_RESULTS.md) giữ snapshot 5.284 bài trước lô bổ sung.
+
+Lệnh nối các bước K, cách thêm nguồn và cấu trúc gói K5 nằm trong [hướng dẫn build kho](BANK_BUILD.md). `packagingComplete` và `quotaComplete` là hai trạng thái riêng: gói hợp lệ không tự chứng minh đủ 300 bài cho mọi lựa chọn.
 
 **Kho nguồn đã được dọn theo chỉ dẫn mới:** chỉ giữ sheet hai staff piano, còn 14.960 file nguồn. [Kết quả dọn](SOURCE_POOL_CLEANUP.md). Việc này chỉ áp dụng cho sheet nguồn; toàn bộ bài tập đã xuất được giữ nguyên, kể cả bài tập một tay/một staff. Lệnh thu thập bulk cũ bị chặn trên kho đã dọn để không tự nhập lại nguồn đã xóa.
 
@@ -15,7 +17,17 @@ Số bài đã xuất thực tế và tình trạng từng lựa chọn nằm tr
 5. Chỉ MXL qua mọi kiểm tra, không trùng nội dung đã lưu, mới được tính vào ô grade × độ dài. Giữ toàn bộ đoạn đạt của nguồn đang xử lý nên ô có thể vượt 300.
 6. Xong một nguồn thì lưu checkpoint. **Dừng khi cả 56 ô đạt 300**, hoặc hết hàng nguồn hữu hạn. Ô đủ được bỏ khỏi lượt tìm tiếp theo. Nếu hết nguồn vẫn thiếu, báo từng ô thiếu và lý do; không lặp nốt, đổi tên hay nới rule để lấp số.
 
-K1 có 37.629 kết quả; 17.926 nguồn có phân tích để xét tiếp. 19.703 nguồn còn lại có lỗi/giới hạn hoặc chưa xác định phần piano, không tự biến thành bài tập. Nguồn có phân tích vẫn có thể bị loại khi trích đoạn. Chưa tuyên bố 56 ô đã đủ trước kết quả chạy.
+Snapshot lịch sử trước dọn: K1 có 37.629 kết quả; 17.926 nguồn có phân tích để xét tiếp. 19.703 nguồn còn lại có lỗi/giới hạn hoặc chưa xác định phần piano. Lượt hoàn tất K dùng kho nguồn đang giữ và đối soát thêm nhóm chưa đọc được; không cộng nguồn đã xóa vào số nguồn hiện tại. Nguồn có phân tích vẫn có thể bị loại khi trích đoạn. Chưa tuyên bố 56 ô đã đủ trước kết quả chạy.
+
+## Điều kiện hoàn tất các K
+
+| Bước | Điều kiện bàn giao |
+|---|---|
+| K1 | Mỗi nguồn đang giữ có kết quả đọc hoặc lý do chưa hỗ trợ/cần xác minh; cache đúng hash. |
+| K2 | Tiêu chí G1–G8 có phiên bản và bằng chứng nốt; dùng nguyên bộ kiểm nội dung đã thống nhất. |
+| K3 | Quét các nguồn đọc được; mọi checkpoint giải thích được toàn bộ ứng viên, không còn nguồn cần chạy lại trong hàng quét. |
+| K4 | Từng MXL được đọc lại, đối chiếu nguồn, kiểm native MuseScore/timeline/glyph; staging không được tính vào kho. |
+| K5 | Gộp không trùng, kiểm file/catalog và 56 lựa chọn, thống kê profile × tay × độ dài, đóng gói theo phiên bản và kiểm lại ZIP. Báo riêng mọi ô thiếu quota. |
 
 ## Grade đang dùng
 
@@ -78,4 +90,4 @@ Có thể tạo file `STOP_AFTER_SOURCE` trong thư mục release để dừng s
 
 Nội dung trùng chính xác được gộp dù khác file/tên/số ngón. Các biến thể chuyển giọng được gắn nhóm motif riêng để không gọi là ý nhạc độc lập. Đoạn chồng lấn vẫn có thể được lưu theo yêu cầu lấy mọi đoạn phù hợp; tránh gặp liên tiếp các đoạn gần giống thuộc bước chọn bài trên web sau này.
 
-K3 và K4 nay chạy nối tiếp trên từng nguồn. K5 đối soát file/catalog và 56 ô sau lượt chạy. Màn quiz/tích hợp catalog lên web là bước sau; lệnh này không sửa editor, scoring, server hay bản online.
+K3 và K4 chạy nối tiếp trên từng nguồn. K5 dùng `package-reading-bank.py` để đối soát từng checkpoint/file/catalog, gộp bài trùng và đóng gói đủ 56 chỉ mục. Có luồng bổ sung nguồn riêng và lệnh nối các K tại [BANK_BUILD.md](BANK_BUILD.md). Màn quiz/tích hợp catalog lên web là bước sau; các lệnh xây kho không sửa editor, scoring, server hay bản online.
