@@ -56,6 +56,8 @@ public:
     void deinit();
 
     bool load(const void* source, unsigned int len, const std::string& filename);
+    bool loadPracticeScore(const void* source, unsigned int len, const std::string& filename);
+    bool restorePracticeScore();
     bool saveProject();
     bool serializeProject();
     bool prepareProject(const void* source, unsigned int len, const std::string& filename, bool semantics);
@@ -89,6 +91,8 @@ private:
     bool prepareTemporaryProject(const void* source, unsigned int len, const std::string& filename, PreparedOutput outputKind);
 
     project::INotationProjectPtr m_currentProject;
+    project::INotationProjectPtr m_editorProject;
+    bool m_practiceProjectLoaded = false;
     unsigned int m_revision = 0;
     bool m_practiceActive = false;
     bool m_auditionConfigured = false;

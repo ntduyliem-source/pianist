@@ -34,6 +34,15 @@ bool load(const void* source, unsigned int len, const char* filename)
 }
 
 EMSCRIPTEN_KEEPALIVE
+bool loadPracticeScore(const void* source, unsigned int len, const char* filename)
+{
+    return filename && WebApi::instance()->loadPracticeScore(source, len, filename);
+}
+
+EMSCRIPTEN_KEEPALIVE
+bool restorePracticeScore() { return WebApi::instance()->restorePracticeScore(); }
+
+EMSCRIPTEN_KEEPALIVE
 bool saveProject() { return WebApi::instance()->saveProject(); }
 
 EMSCRIPTEN_KEEPALIVE

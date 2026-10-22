@@ -149,6 +149,38 @@ bool WebApi::load(const void* source, unsigned int len, const std::string& filen
     return true;
 }
 
+bool WebApi::loadPracticeScore(const void* source, unsigned int len, const std::string& filename)
+{
+    if (!m_practiceActive) { return false; }
+    // Keep the actual editor project alive: MSCZ serialization does not retain
+    // its undo/redo stack. Use the same empty-context transition as load().
+    const auto editor = m_practiceProjectLoaded ? m_editorProject : m_currentProject;
+    resetPracticePlayback();
+    m_practiceActive = false;
+    const bool loaded = load(source, len, filename);
+    m_practiceActive = true;
+    if (!loaded) { return false; }
+    m_editorProject = editor;
+    m_practiceProjectLoaded = true;
+    m_currentProject->masterNotation()->playback()->setTempoMultiplier(1.0);
+    return true;
+}
+
+bool WebApi::restorePracticeScore()
+{
+    if (!m_practiceProjectLoaded) { return true; }
+    if (!m_practiceActive) { return false; }
+    resetPracticePlayback();
+    const auto audition = m_currentProject; // Keep it alive through observer callbacks.
+    interactive()->closeAllDialogsSync();
+    globalContext()->setCurrentProject(nullptr);
+    globalContext()->setCurrentProject(m_editorProject);
+    if (m_editorProject) { interactive()->open("musescore://notation"); }
+    m_editorProject.reset();
+    m_practiceProjectLoaded = false;
+    return true;
+}
+
 bool WebApi::saveProject()
 {
     if (!m_currentProject) {
@@ -451,9 +483,11 @@ bool WebApi::getPracticePlayback()
 
 bool WebApi::practicePlayback(const std::string& command, double value, double end)
 {
-    if (!m_practiceActive || !m_currentProject || !std::isfinite(value) || !std::isfinite(end)) { return false; }
+    if (!m_practiceActive || !std::isfinite(value) || !std::isfinite(end)) { return false; }
+    // A grade preview can restore an empty editor. Reset remains idempotent
+    // after that restore, including the previous screen's deferred cleanup.
     if (command == "reset") { resetPracticePlayback(); return true; }
-    if (!playbackController()->isPlayAllowed()) { return false; }
+    if (!m_currentProject || !playbackController()->isPlayAllowed()) { return false; }
     const auto sequence = playbackController()->currentTrackSequenceId();
     // Playback::player is a factory, not a getter. Retain its RPC subscriptions,
     // as PlaybackController does; creating one per poll returns an initial state.

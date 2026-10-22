@@ -44,6 +44,7 @@ export class Workspace {
   private autosaving?: Promise<void>;
   private documentChange?: symbol;
   private exerciseNative = false;
+  // Emergency download only. Restoration uses the retained native project.
   private editorBeforeExercise?: Uint8Array;
   private resolveTunes?: (choice: {indices: number[]; openIndex: number}) => void;
   private diagnosticSamples: object[] = [];
@@ -555,10 +556,12 @@ export class Workspace {
     const bridge=await this.ensureEngine(true);
     signal.throwIfAborted();this.requireInactiveSession();
     if(this.state.view!=='practice'||this.state.practiceKind!=='grade')throw Error('Đã rời màn tập theo grade.');
-    if(!this.exerciseNative){this.editorBeforeExercise=this.state.current?bridge.serialize():undefined;this.exerciseNative=true;}
-    bridge.setPractice(false);
-    try{if(!bridge.api.loadScoreData(bytes,'exercise.mxl'))throw Error('MuseScore chưa mở được bài nghe.');}
-    finally{bridge.setPractice(true);}
+    bridge.setPractice(true);
+    const borrowed=this.exerciseNative;
+    if(!borrowed)this.editorBeforeExercise=this.state.current?bridge.serialize():undefined;
+    this.exerciseNative=true;
+    try{if(!bridge.api.loadPracticeScore?.(bytes,'exercise.mxl'))throw Error('MuseScore chưa mở được bài nghe.');}
+    catch(e){this.exerciseNative=borrowed;if(!borrowed)this.editorBeforeExercise=undefined;throw e;}
     const deadline=performance.now()+20000;
     while(!bridge.auditionState().available){signal.throwIfAborted();if(performance.now()>deadline)throw Error('MuseScore chưa sẵn sàng phát bài. Bấm Nghe để thử lại.');await new Promise(resolve=>setTimeout(resolve,50));}
     signal.throwIfAborted();this.patch({busy:''});
@@ -567,9 +570,7 @@ export class Workspace {
   restoreExerciseEditor():void{
     if(!this.exerciseNative||!this.bridge)return;
     this.bridge.audition('reset');
-    this.bridge.setPractice(false);
-    try{if(this.editorBeforeExercise&&!this.bridge.api.loadScoreData(this.editorBeforeExercise,'editor.mscz'))throw Error('Chưa phục hồi được editor. Bản tự lưu vẫn còn trong thư viện.');}
-    finally{this.bridge.setPractice(true);}
+    if(!this.bridge.api.restorePracticeScore?.())throw Error('Chưa phục hồi được editor. Bản tự lưu vẫn còn trong thư viện.');
     this.nativeBase=this.bridge.revision;this.revisionBase=this.state.revision;
     this.editorBeforeExercise=undefined;this.exerciseNative=false;
   }

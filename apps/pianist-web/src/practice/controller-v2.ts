@@ -12,6 +12,9 @@ export class PracticeController {
   private finishing=false;
   private finishOperation?:Promise<void>;
   private disposed=false;
+  private loaded?:Promise<void>;
+  private startup?:AbortController;
+  private clockReady=false;
   private lastPaint=0;
   private lastTick=0;
   private clockSegments:NonNullable<AttemptResult['clock']>['segments']=[];
@@ -44,18 +47,28 @@ export class PracticeController {
   }
   async start(state:()=>MidiEvent[]){
     if(this.status!=='ready')return;this.status='counting';this.onChange();
-    try{await this.load();if(this.disposed||this.finishing||this.status!=='counting')return;await this.begin(state,false);}
+    try{this.loaded=this.load();await this.begin(state,false);}
     catch(e){if(this.disposed||this.finishing||(this.status as AttemptStatus)==='finished')return;this.dispose();throw e;}
   }
   private async begin(state:()=>MidiEvent[],resuming:boolean){
-    this.resuming=resuming;await this.transport.start(this.timeline,this.resumeAt);
-    if(this.disposed||this.finishing||this.status==='finished'){this.transport.silence();return;}
-    this.clockSegments.push(this.transport.mapping);this.lastClockCheck=performance.now();
-    if(resuming)this.log({type:'boundary',atMs:this.resumeAt,kind:'resume'});
-    this.status='counting';this.message='';
-    this.lastTick=performance.now();
-    for(const e of state())this.input(e);
-    this.timer=window.setInterval(()=>this.tick(),20);this.tick();
+    this.startup?.abort();const request=this.startup=new AbortController();
+    this.clockReady=false;this.resuming=resuming;this.status='counting';this.onChange();
+    try{
+      await this.loaded;
+      request.signal.throwIfAborted();
+      await this.transport.start(this.timeline,this.resumeAt,request.signal);
+      request.signal.throwIfAborted();
+      if(this.disposed||this.finishing||this.status!=='counting')return;
+      this.clockReady=true;
+      this.clockSegments.push(this.transport.mapping);this.lastClockCheck=performance.now();
+      if(resuming)this.log({type:'boundary',atMs:this.resumeAt,kind:'resume'});
+      this.message='';this.lastTick=performance.now();
+      for(const e of state())this.input(e);
+      this.timer=window.setInterval(()=>this.tick(),20);this.tick();
+    }catch(e){
+      if(request.signal.aborted||this.disposed||this.finishing)return;
+      this.pause(String(e instanceof Error?e.message:e),true);throw e;
+    }finally{if(this.startup===request)this.startup=undefined;}
   }
   private tick(){
     if(!['counting','running'].includes(this.status))return;
@@ -71,7 +84,7 @@ export class PracticeController {
     if(performance.now()-this.lastPaint>=80){this.lastPaint=performance.now();this.onChange();}
   }
   input(event:MidiEvent){
-    if(!['counting','running'].includes(this.status)||!this.transport.context||!this.transport.mapping.originPerformanceMs)return;
+    if(!this.clockReady||!['counting','running'].includes(this.status)||!this.transport.context)return;
     if(this.transport.context.state!=='running'){this.pause('Đồng hồ âm thanh bị ngắt.',true);return;}
     this.transport.monitor(event);
     const e={...event,timestampMs:this.transport.at(event.timestampMs),receivedMs:this.transport.at(event.receivedMs)};
@@ -80,7 +93,9 @@ export class PracticeController {
   }
   pause(message='Đã tạm dừng. Tiếp tục sẽ đếm vào lại.',interrupted=false,atMs?:number){
     if(!['counting','running'].includes(this.status)||this.finishing)return;
-    clearInterval(this.timer);this.resumeAt=Math.max(this.resumeAt,atMs??this.transport.now);this.elapsedMs=this.resumeAt;
+    // Until startup commits a mapping, now belongs to no score timeline.
+    clearInterval(this.timer);this.resumeAt=this.clockReady?Math.max(this.resumeAt,atMs??this.transport.now):this.resumeAt;this.elapsedMs=this.resumeAt;
+    this.startup?.abort();this.clockReady=false;
     this.log({type:'boundary',atMs:this.resumeAt,kind:'pause'});this.transport.silence();
     this.status=interrupted?'interrupted':'paused';this.message=message;this.onChange();
   }
@@ -96,7 +111,8 @@ export class PracticeController {
   }
   private async closeAttempt(outcome:AttemptResult['outcome']){
     clearInterval(this.timer);
-    const elapsed=['counting','running'].includes(this.status)?Math.max(this.resumeAt,this.transport.now):this.elapsedMs;
+    const elapsed=this.clockReady&&['counting','running'].includes(this.status)?Math.max(this.resumeAt,this.transport.now):this.elapsedMs;
+    this.startup?.abort();this.clockReady=false;
     this.log({type:'boundary',atMs:elapsed,kind:'stop'});this.transport.silence();
     try{
       const view=await new Promise<EngineView>((resolve,reject)=>{
@@ -110,5 +126,5 @@ export class PracticeController {
       this.status='finished';this.worker?.terminate();this.worker=undefined;this.onChange();this.onComplete(result);
     }catch(e){this.status='interrupted';this.message=String(e);this.onChange();}
   }
-  dispose(){this.disposed=true;clearInterval(this.timer);this.rejectReady?.(new DOMException('Đã hủy lượt tập.','AbortError'));this.rejectReady=undefined;this.ready=undefined;this.worker?.terminate();this.worker=undefined;void this.transport.dispose();this.status='finished';}
+  dispose(){this.disposed=true;this.startup?.abort();this.clockReady=false;clearInterval(this.timer);this.rejectReady?.(new DOMException('Đã hủy lượt tập.','AbortError'));this.rejectReady=undefined;this.ready=undefined;this.worker?.terminate();this.worker=undefined;void this.transport.dispose();this.status='finished';}
 }

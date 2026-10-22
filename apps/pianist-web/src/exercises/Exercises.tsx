@@ -7,6 +7,7 @@ import {createTimeline} from '../../../../packages/practice-engine-v2/score-adap
 import type {AttemptResult,PracticeSettings} from '../../../../packages/practice-engine-v2/model';
 import {loadBank,getData,putData,type Bank,type Exercise,type Hand} from './bank';
 import {ExerciseSelector,type QueueItem} from './selector';
+import {RetryableLoad} from './retryable-load';
 import {exerciseSettings,readSelection,DEFAULT_SELECTION,LENGTHS,type Selection} from './settings';
 import * as libraryStorage from '../platform/storage';
 import './exercises.css';
@@ -24,7 +25,7 @@ const grades=[
 const handName:Record<Hand,string>={right:'Tay phải',left:'Tay trái',both:'Hai tay'};
 const fallbackBuckets=LENGTHS.map((id,i)=>({id,label:'Khoảng '+id.slice(1)+' nốt',min:[3,6,9,15,25,40,70][i],max:[5,8,14,24,39,69,120][i]}));
 type Ready=QueueItem&{bytes:Uint8Array;snapshot:ScoreSnapshot};
-type Run={abort:AbortController;renderer:ExerciseRenderer;selector:ExerciseSelector;queue:Promise<Ready>[];bank:Bank;selection:Selection;current?:Ready;manual:boolean;advancing:boolean;completing?:Ready;attemptToken:number;advanceToken:number;stopped:boolean};
+type Run={abort:AbortController;renderer:ExerciseRenderer;selector:ExerciseSelector;queue:RetryableLoad<Ready>[];bank:Bank;selection:Selection;current?:Ready;manual:boolean;advancing:boolean;completing?:Ready;attemptToken:number;advanceToken:number;stopped:boolean};
 const message=(e:unknown)=>String(e instanceof Error?e.message:e);
 function briefResult(signal:AbortSignal){return new Promise<void>((resolve,reject)=>{const finish=()=>{signal.removeEventListener('abort',cancel);resolve();};const timer=setTimeout(finish,700);const cancel=()=>{clearTimeout(timer);signal.removeEventListener('abort',cancel);reject(new DOMException('Đã dừng lượt.','AbortError'));};signal.addEventListener('abort',cancel,{once:true});if(signal.aborted)cancel();});}
 
@@ -73,7 +74,7 @@ export function Exercises(){
   const fill=(r:Run)=>{
     while(r.queue.length<3){
       const queued=r.selector.take();if(!queued)break;
-      const promise=(async()=>{
+      const pending=new RetryableLoad<Ready>(async()=>{
         const entry=queued.entry,bytes=await r.bank.bytes(entry,r.abort.signal);ensureCurrent(r);
         const rendered=await r.renderer.prepare(bytes,entry.scoreId+'.mxl',r.abort.signal);ensureCurrent(r);
         const snapshot:ScoreSnapshot={...rendered.snapshot,title:entry.title,projectId:'grade:'+entry.id,fingerprint:entry.sha256};
@@ -85,11 +86,11 @@ export function Exercises(){
         const left=createTimeline(snapshot,{...full,hand:'left'}).targets.length;
         if(total!==entry.targetCount||right!==entry.countRight||left!==entry.countLeft)throw Error('Số nốt hai tay sau khi dựng không khớp bản đã kiểm.');
         return {...queued,bytes,snapshot};
-      })();
-      void promise.catch(()=>{});r.queue.push(promise);
+      });
+      void pending.read().catch(()=>{});r.queue.push(pending);
     }
     const next=r.queue[0];
-    if(next)void next.then(item=>{if(run.current===r&&r.queue[0]===next)setNextLabel(item.entry.title);}).catch(()=>{if(run.current===r&&r.queue[0]===next)setNextLabel('Chưa tải được bài kế');});
+    if(next)void next.read().then(item=>{if(run.current===r&&r.queue[0]===next)setNextLabel(item.entry.title);}).catch(()=>{if(run.current===r&&r.queue[0]===next)setNextLabel('Chưa tải được bài kế');});
   };
   const advance=async(auto=false)=>{
     const r=run.current;if(!r||r.advancing)return;
@@ -99,11 +100,11 @@ export function Exercises(){
     try{
       ensureCurrent(r);ws.bridge?.audition('reset');ws.session?.dispose();ws.session=undefined;ws.midi.release();
       fill(r);const pending=r.queue[0];if(!pending)throw Error('Lựa chọn này chưa có bài.');
-      const item=await pending;ensureAdvance();
+      const item=await pending.read();ensureAdvance();
       const prior=lastConfig.current,next=exerciseSettings(item.snapshot,item.entry,choice.current,ws.midi.deviceId);
       if(prior){for(const key of ['mode','bpm','hand','accompaniment','difficulty','countIn','metronome','pedalEnabled','durationEnabled','offsetMs'] as const)(next as any)[key]=prior[key];}
       if(!prior||prior.deviceId!==ws.midi.deviceId){const calibration=await libraryStorage.get<{id:string;offsetMs:number}>('settings','calibration-v2:'+ws.midi.deviceId);ensureAdvance();next.offsetMs=calibration?.offsetMs??0;}
-      // Stop retains this promise at the head; another Next resumes the same
+      // Stop retains this slot at the head; another Next resumes the same
       // authored position instead of skipping the item that was being prepared.
       r.queue.shift();
       r.current=item;r.completing=undefined;setReady(item);setConfig(next);lastConfig.current=next;

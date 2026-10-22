@@ -33,3 +33,13 @@ test('closing a context while its output clock is unavailable aborts startup wit
     assert.equal(clock.mapping.originPerformanceMs,0);
   });
 });
+
+test('Pause aborts a pending output-clock wait before it can schedule any audio',async()=>{
+  await coldAudio(async(clock,ready)=>{
+    const abort=new AbortController(),t=timeline([]);Object.assign(t.settings,{countIn:0,metronome:false});
+    const start=clock.start(t,0,abort.signal),rejected=assert.rejects(start,{name:'AbortError'});
+    await new Promise(r=>setTimeout(r,15));abort.abort();ready();await rejected;
+    assert.equal(clock.mapping.originPerformanceMs,0);
+    await clock.start(t,0);assert.ok(clock.mapping.originPerformanceMs>0);
+  });
+});

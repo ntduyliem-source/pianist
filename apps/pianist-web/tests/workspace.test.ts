@@ -56,18 +56,23 @@ test('entering grade practice never replaces it with the current library score',
   await workspace.enterPractice();assert.equal(opened,1);
 });
 
-test('exercise native audition borrows read-only audio and restores exact editor content without a library project',async()=>{
-  const workspace=new Workspace(),loads:Uint8Array[]=[];
-  const editor=new Uint8Array([1,2,3]),exercise=new Uint8Array([4,5]);let readOnly=false;
-  const bridge={revision:7,get practiceActive(){return readOnly;},serialize:()=>editor.slice(),setPractice:(v:boolean)=>{readOnly=v;},audition:()=>{},auditionState:()=>({available:true}),
-    api:{loadScoreData:(data:Uint8Array)=>{assert.equal(readOnly,false,'native requires write mode for document load');loads.push(data.slice());return true;}}} as unknown as EngineBridge;
+test('grade audition retains the native editor and its undo history across multiple previews',async()=>{
+  const workspace=new Workspace(),editor={undo:['edit'],redo:['redo']},exercise={undo:[],redo:[]};
+  let active=editor,retained:typeof editor|undefined,restores=0,readOnly=false;
+  const bridge={revision:7,get practiceActive(){return readOnly;},setPractice:(v:boolean)=>{readOnly=v;},audition:()=>{},auditionState:()=>({available:true}),
+    serialize:()=>new Uint8Array([1,2,3]),api:{
+      loadScoreData:()=>{throw Error('Do not replace the editor');},
+      loadPracticeScore:()=>{assert.equal(readOnly,true);retained??=active;active=exercise;return 1;},
+      restorePracticeScore:()=>{assert.equal(readOnly,true);active=retained!;retained=undefined;restores++;return 1;},
+    }} as unknown as EngineBridge;
   workspace.bridge=bridge;
-  const project={id:'borrow-test',title:'Editor',filename:'edit.mscz',bytes:editor,revision:2,createdAt:0,updatedAt:0};
+  const project={id:'borrow-test',title:'Editor',filename:'edit.mscz',bytes:new Uint8Array([1]),revision:2,createdAt:0,updatedAt:0};
   workspace.patch({view:'practice',practiceKind:'grade',current:project,revision:2,recoveryRevision:2});
-  await workspace.exerciseAudition(exercise,new AbortController().signal);
-  assert.equal(workspace.state.current,project);assert.equal(readOnly,true);assert.equal(workspace.state.projects.length,0);
-  workspace.restoreExerciseEditor();assert.deepEqual(loads,[exercise,editor]);assert.equal(workspace.state.current,project);
-  workspace.restoreExerciseEditor();assert.equal(loads.length,2,'restoring twice is harmless');
+  await workspace.exerciseAudition(new Uint8Array([4]),new AbortController().signal);
+  await workspace.exerciseAudition(new Uint8Array([5]),new AbortController().signal);
+  assert.equal(active,exercise);assert.equal(workspace.state.current,project);assert.equal(workspace.state.projects.length,0);
+  workspace.restoreExerciseEditor();assert.equal(active,editor);assert.deepEqual(active.undo,['edit']);assert.deepEqual(active.redo,['redo']);
+  workspace.restoreExerciseEditor();assert.equal(restores,1);
 });
 
 test('leaving exercise screen while native audio boots cannot publish the old exercise',async()=>{

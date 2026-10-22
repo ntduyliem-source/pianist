@@ -3,6 +3,69 @@ import assert from 'node:assert/strict';
 import {PracticeController} from '../src/practice/controller-v2';
 import {timeline} from './helpers/fixtures-v2';
 
+async function startupFixture(run:(c:PracticeController,w:{load:()=>void;messages:any[]})=>Promise<void>){
+  const oldWorker=globalThis.Worker,oldWindow=globalThis.window;
+  (globalThis as any).window=globalThis;let worker:any;
+  const view={judgements:[],extras:[],held:[],pedal:false,intervals:[],group:0,done:false,processedMs:0,faults:[]};
+  (globalThis as any).Worker=class{
+    onmessage:any;onerror:any;messages:any[]=[];generation='';
+    constructor(){worker=this;}
+    load(){this.onmessage({data:{type:'ready',generation:this.generation,view}});}
+    postMessage(d:any){this.messages.push(d);if(d.type==='load')this.generation=d.generation;
+      if(d.type==='close')queueMicrotask(()=>this.onmessage({data:{type:'closed',generation:d.generation,view}}));}
+    terminate(){}
+  };
+  const c=new PracticeController(timeline(),'startup regression');
+  try{await run(c,{load:()=>worker.load(),get messages(){return worker.messages;}});}
+  finally{c.dispose();(globalThis as any).Worker=oldWorker;(globalThis as any).window=oldWindow;}
+}
+
+test('pausing before the worker loads keeps the resume position at zero',async()=>{
+  await startupFixture(async(c,w)=>{
+    const positions:number[]=[];c.transport.start=async(_t,position)=>{positions.push(position!);};
+    const start=c.start(()=>[]);c.pause();w.load();await start;
+    assert.equal(c.status,'paused');assert.equal(c.elapsedMs,0);assert.deepEqual(positions,[]);
+    assert.equal(w.messages.find(m=>m.command?.kind==='pause').command.atMs,0);
+    await c.resume(()=>[]);assert.deepEqual(positions,[0]);
+    assert.equal(w.messages.find(m=>m.command?.kind==='resume').command.atMs,0);
+  });
+});
+
+test('late audio startup cannot undo Pause',async()=>{
+  await startupFixture(async(c,w)=>{
+    let release!:()=>void,entered!:()=>void;const started=new Promise<void>(r=>entered=r),gate=new Promise<void>(r=>release=r);
+    c.transport.start=async()=>{entered();await gate;};
+    const start=c.start(()=>[]);w.load();await started;c.pause();release();await start;
+    assert.equal(c.status,'paused');assert.equal(c.elapsedMs,0);
+    assert.equal(w.messages.filter(m=>m.command?.type==='clock').length,0);
+  });
+});
+
+test('a cancelled startup finishing after resume cannot silence the resumed attempt',async()=>{
+  await startupFixture(async(c,w)=>{
+    let release!:()=>void,entered!:()=>void,calls=0,silences=0;
+    const enteredAudio=new Promise<void>(r=>entered=r),gate=new Promise<void>(r=>release=r);
+    c.transport.start=async()=>{if(++calls===1){entered();await gate;}};
+    (c.transport as any).context={state:'running',close:async()=>{}};
+    c.transport.silence=()=>{silences++;};
+    const first=c.start(()=>[]);w.load();await enteredAudio;c.pause();
+    await c.resume(()=>[]);const before=silences;assert.equal(c.status,'running');
+    release();await first;
+    assert.equal(c.status,'running');assert.equal(silences,before);
+    assert.equal(w.messages.filter(m=>m.command?.kind==='resume').length,1);
+  });
+});
+
+test('Stop before the first audio mapping records zero elapsed time',async()=>{
+  await startupFixture(async(c,w)=>{
+    let result:any;c.onComplete=r=>{result=r;};const pending=c.start(()=>[]);
+    const finish=c.finish();w.load();await Promise.all([pending,finish]);
+    assert.equal(c.status,'finished');assert.equal(result.outcome,'aborted');
+    assert.equal(w.messages.find(m=>m.command?.kind==='stop').command.atMs,0);
+    assert.deepEqual(result.clock.segments,[]);
+  });
+});
+
 test('disposing during Worker startup cannot start a clock later',async()=>{
   const oldWorker=globalThis.Worker,oldWindow=globalThis.window;
   let worker:any,clocks=0;

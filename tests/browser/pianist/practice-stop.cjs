@@ -128,6 +128,7 @@ const hiddenOnly=process.argv.includes('--hidden-controls'),reportFile=path.join
     // during that pause must also cancel the already scheduled next exercise.
     await page.getByRole('checkbox',{name:'Khoảng 20 nốt',exact:true}).uncheck();await page.getByRole('checkbox',{name:'Khoảng 4 nốt',exact:true}).check();
     await page.getByRole('button',{name:'Bắt đầu tập theo grade',exact:true}).click();await ready();const completedId=await scoreId();
+    check('Grade chooser can open another sheet after listening restores an empty editor');
     await settings();const priorLoads=await page.evaluate(()=>window.stopLoads.length);await page.getByRole('button',{name:'MIDI mô phỏng trường độ + pedal',exact:true}).click();
     await page.waitForFunction(n=>window.stopLoads.length>n,priorLoads);const completedGeneration=await page.evaluate(()=>window.stopLoads.at(-1).generation);
     await page.waitForFunction(g=>window.stopReplies.some(r=>r.generation===g&&r.type==='closed'),completedGeneration,{timeout:30000});

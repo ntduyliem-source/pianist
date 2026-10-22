@@ -2,6 +2,8 @@ import type { ScoreSnapshot } from '../score-contracts/index';
 
 export interface NativeApi {
   Module: any; loadScoreData(bytes: Uint8Array, filename: string): boolean; saveProject(): number;
+  loadPracticeScore?(bytes: Uint8Array, filename: string): number;
+  restorePracticeScore?(): number;
   serializeProject(): number; exportScore(format: string): number; dispatchAction(action: string): number;
   prepareProject(bytes: Uint8Array, filename: string, semantics?: boolean): number;
   preparePracticeSnapshot?(bytes: Uint8Array, filename: string): number;
