@@ -1,0 +1,17 @@
+%abc-2.1
+X:855
+T:g2-n6-055 Hai nhịp thấp có cặp
+C:Nhạc do trợ lý AI biên soạn
+M:2/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=eighth; lead=LH; bucket=n6; notes=8; RH=2; LH=6
+% role=L; duration60=4s; related_pattern=0f9dfd8acaa12f02
+% authored_passages=inline-n6-055
+% source=buildscripts/pianist/compositions/g2/n6.txt:56
+[V:RH] C2 | C2 |]
+[V:LH] C,/2D,/2 E, | D,/2C,/2 C, |]

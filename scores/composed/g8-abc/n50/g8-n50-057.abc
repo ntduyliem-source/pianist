@@ -1,0 +1,23 @@
+%abc-2.1
+X:5457
+T:g8-n50-057 Đôi Mi Sol chấm về Mi
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G8; profile=dyad-dotted; lead=RH; bucket=n50; notes=51; RH=38; LH=13
+% duration60=52s; related_pattern=0704dc02ddffadd4
+% authored_passages=D07 DR3 DR4 DR1
+% source=buildscripts/pianist/compositions/g8/studies.txt:58
+[V:RH] [EG]3/2 F/2 E2 | [DG]3/2 E/2 F2 | E3/2 D/2 C2 | [CE]2 G2 |
+[V:LH] C,4 | D, z z z | C, z z z | C, z z z |
+[V:RH] C4 | [CG]3/2 D/2 E2 | F2 D2 | [DF]3/2 E/2 G2 |
+[V:LH] C, z z z | C, z z z | D, z z z | D, z z z |
+[V:RH] [CE]4 | [CE]3/2 D/2 E2 | [DF]3/2 E/2 D2 | E2 G2 |
+[V:LH] C, z z z | C, z z z | D, z z z | C, z z z |
+[V:RH] C4 |]
+[V:LH] C, z z z |]

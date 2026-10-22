@@ -1,0 +1,19 @@
+%abc-2.1
+X:491
+T:g1-n30-091 Năm ô cùng thở
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n30; notes=30; RH=15; LH=15
+% role=S; family=octave-five-breath; form=authored; duration60=20s
+% related_pattern=b39b492781cfa5e5
+% source=buildscripts/pianist/compositions/g1/n30.txt:91
+[V:RH] C z D E | F E D C | C D E F | E z D C |
+[V:LH] C, z D, E, | F, E, D, C, | C, D, E, F, | E, z D, C, |
+[V:RH] C4 |]
+[V:LH] C,4 |]

@@ -1,0 +1,21 @@
+%abc-2.1
+X:1968
+T:g3-n50-068 Rê Sol trầm đổi lời
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fourth; lead=LH; bucket=n50; notes=46; RH=24; LH=22
+% role=A; duration60=48s; related_pattern=65e3c4e232d79dd0
+% authored_passages=Q08 Q09 Q07
+% source=buildscripts/pianist/compositions/g3/n50.txt:69
+[V:RH] z4 | C D E D | z4 | D C D C |
+[V:LH] D, G, F, E, | z4 | D, E, C,2 | z4 |
+[V:RH] z4 | C D E D | z4 | D E D C |
+[V:LH] C,2 F, E, | z4 | D, G, F, E, | z4 |
+[V:RH] z4 | C D C C | z4 | C D C C |]
+[V:LH] F, C, D, E, | z4 | F, E, D, C, | z4 |]

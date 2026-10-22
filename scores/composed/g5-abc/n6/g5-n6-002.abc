@@ -1,0 +1,17 @@
+%abc-2.1
+X:2902
+T:g5-n6-002 Đô Mi nghe bè trầm
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=offset; lead=RH; bucket=n6; notes=7; RH=4; LH=3
+% duration60=8s; related_pattern=5a741ca22dd9d279
+% authored_passages=O02 CR3
+% source=buildscripts/pianist/compositions/g5/studies.txt:3
+[V:RH] C2 E z | D2 C2 |]
+[V:LH] z C, z E, | G,4 |]

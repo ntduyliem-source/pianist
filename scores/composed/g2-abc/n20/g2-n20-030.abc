@@ -1,0 +1,17 @@
+%abc-2.1
+X:1030
+T:g2-n20-030 Nốt giữ giữa ba phách
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=eighth; lead=RH; bucket=n20; notes=16; RH=12; LH=4
+% role=R; duration60=12s; related_pattern=4f6dc7ec203e9708
+% authored_passages=E25
+% source=buildscripts/pianist/compositions/g2/n20.txt:31
+[V:RH] C2 C/2D/2 | E F/2E/2 D | C D E/2D/2 | C3 |]
+[V:LH] C,3 | C,3 | C,3 | C,3 |]

@@ -1,0 +1,19 @@
+%abc-2.1
+X:3126
+T:g5-n20-026 Trầm Đô Rê mở lời
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=offset; lead=LH; bucket=n20; notes=20; RH=9; LH=11
+% duration60=20s; related_pattern=63535be254fe262d
+% authored_passages=O26 OL1
+% source=buildscripts/pianist/compositions/g5/studies.txt:27
+[V:RH] z C z G | z C z G | C z G z | z F z G |
+[V:LH] C,2 D, z | C,2 E, z | G,2 E,2 | F, E, D,2 |
+[V:RH] C4 |]
+[V:LH] E,2 C,2 |]

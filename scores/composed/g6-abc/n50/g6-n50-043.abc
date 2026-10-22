@@ -1,0 +1,23 @@
+%abc-2.1
+X:4043
+T:g6-n50-043 Đô dẫn Rê vươn cao
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G6; profile=m7-up; lead=RH; bucket=n50; notes=51; RH=38; LH=13
+% duration60=52s; related_pattern=139d71a8bd4472bf
+% authored_passages=S43 CU3 CU1 CU2
+% source=buildscripts/pianist/compositions/g6/studies.txt:44
+[V:RH] C D c d | G2 E2 | E D c B | A2 G2 |
+[V:LH] C,4 | C, z z z | C, z z z | C, z z z |
+[V:RH] E2 C2 | G E D c | B A G2 | E F G2 |
+[V:LH] C, z z z | C, z z z | C, z z z | C, z z z |
+[V:RH] E2 C2 | G F E d | c B A G | E2 G2 |
+[V:LH] C, z z z | C, z z z | C, z z z | C, z z z |
+[V:RH] E2 C2 |]
+[V:LH] C, z z z |]

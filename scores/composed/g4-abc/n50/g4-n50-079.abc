@@ -1,0 +1,21 @@
+%abc-2.1
+X:2679
+T:g4-n50-079 Đô cao gọi lời về
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=span; lead=RH; bucket=n50; notes=45; RH=22; LH=23
+% role=A; duration60=48s; related_pattern=7ad1ff32e073fab4
+% authored_passages=H02 H04 H01
+% source=buildscripts/pianist/compositions/g4/n50.txt:80
+[V:RH] c G C D | z4 | E G C2 | z4 |
+[V:LH] z4 | C, D, E, D, | z4 | D, C, D, C, |
+[V:RH] C2 G c | z4 | B A G C | z4 |
+[V:LH] z4 | C, D, E, D, | z4 | D, C, D, C, |
+[V:RH] C G c B | z4 | A G E C | z4 |]
+[V:LH] z4 | C, D, E, D, | z4 | D, C, C,2 |]

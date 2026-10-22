@@ -1,0 +1,17 @@
+%abc-2.1
+X:2222
+T:g4-n6-022 La dài mở câu thấp
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=lower; lead=RH; bucket=n6; notes=7; RH=5; LH=2
+% role=R; duration60=6s; related_pattern=921592efebb3cf12
+% authored_passages=inline-n6-022
+% source=buildscripts/pianist/compositions/g4/n6.txt:23
+[V:RH] A,2 B, | C D E |]
+[V:LH] C,3 | C,3 |]

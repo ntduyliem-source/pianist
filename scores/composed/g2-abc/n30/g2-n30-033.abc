@@ -1,0 +1,19 @@
+%abc-2.1
+X:1133
+T:g2-n30-033 Mi trầm kể Đô giữ
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=third; lead=LH; bucket=n30; notes=30; RH=8; LH=22
+% role=L; duration60=32s; related_pattern=40765f47fe2fa554
+% authored_passages=U03 U18
+% source=buildscripts/pianist/compositions/g2/n30.txt:34
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] E, G, F, E, | D, F, E, D, | C, E, D, C, | D, E, C,2 |
+[V:RH] C4 | C4 | C4 | C4 |]
+[V:LH] C,4 | E,2 D, C, | E,2 C,2 | C,4 |]

@@ -1,0 +1,17 @@
+%abc-2.1
+X:1685
+T:g3-n10-085 Rải trầm có phách nghỉ
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=arpeggio; lead=LH; bucket=n10; notes=10; RH=5; LH=5
+% role=A; duration60=12s; related_pattern=8b97b2a32d4b723b
+% authored_passages=inline-n10-085
+% source=buildscripts/pianist/compositions/g3/n10.txt:86
+[V:RH] z3 | C D E | z3 | D C2 |]
+[V:LH] C, G, E, | z3 | z G, C, | z3 |]

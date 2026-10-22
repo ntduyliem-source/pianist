@@ -1,0 +1,19 @@
+%abc-2.1
+X:3122
+T:g5-n20-022 Rê nghỉ Fa ngân
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=offset; lead=RH; bucket=n20; notes=20; RH=11; LH=9
+% duration60=20s; related_pattern=060c7efd375217bc
+% authored_passages=O22 OR7
+% source=buildscripts/pianist/compositions/g5/studies.txt:23
+[V:RH] D z F2 | F z D2 | E F G2 | E2 C z |
+[V:LH] D, z z F, | F, z z D, | C, z G, z | z C, z G, |
+[V:RH] D2 C2 |]
+[V:LH] C,4 |]

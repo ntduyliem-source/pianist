@@ -1,0 +1,1799 @@
+%abc-2.1
+X:3001
+T:g5-n10-001 Đô gọi Rê qua phách
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=offset; lead=RH; bucket=n10; notes=10; RH=6; LH=4
+% duration60=12s; related_pattern=29cf3e15247d730f
+% authored_passages=O01 CR1 CR2
+% source=buildscripts/pianist/compositions/g5/studies.txt:2
+[V:RH] C2 D z | G2 E2 | E2 C2 |]
+[V:LH] z C, z G, | C,4 | C,4 |]
+
+%abc-2.1
+X:3027
+T:g5-n10-027 Trầm Đô Mi và lời cao
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=offset; lead=LH; bucket=n10; notes=10; RH=4; LH=6
+% duration60=12s; related_pattern=63f6e06e61c67982
+% authored_passages=O27 CL2 CL3
+% source=buildscripts/pianist/compositions/g5/studies.txt:28
+[V:RH] z C z E | C4 | G4 |]
+[V:LH] C,2 E, z | E,2 C,2 | D,2 C,2 |]
+
+%abc-2.1
+X:3051
+T:g5-n10-051 Đô Mi trở Đô
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=dyad; lead=RH; bucket=n10; notes=11; RH=7; LH=4
+% duration60=12s; related_pattern=2644fc93dd67de0b
+% authored_passages=D01 CR1 CR2
+% source=buildscripts/pianist/compositions/g5/studies.txt:52
+[V:RH] [CE]2 C2 | G2 E2 | E2 C2 |]
+[V:LH] C,2 C,2 | C,4 | C,4 |]
+
+%abc-2.1
+X:3077
+T:g5-n10-077 Đôi trầm tìm Rê
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=dyad; lead=LH; bucket=n10; notes=11; RH=4; LH=7
+% duration60=12s; related_pattern=84097c891fff8752
+% authored_passages=D27 CL2 CL3
+% source=buildscripts/pianist/compositions/g5/studies.txt:78
+[V:RH] C2 D2 | C4 | G4 |]
+[V:LH] [C,E,]2 D,2 | E,2 C,2 | D,2 C,2 |]
+
+%abc-2.1
+X:3003
+T:g5-n10-003 Đô Fa thay lời
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=offset; lead=RH; bucket=n10; notes=10; RH=6; LH=4
+% duration60=12s; related_pattern=9d324d33786bd69d
+% authored_passages=O03 CR3 CR1
+% source=buildscripts/pianist/compositions/g5/studies.txt:4
+[V:RH] C2 F z | D2 C2 | G2 E2 |]
+[V:LH] z C, z F, | G,4 | C,4 |]
+
+%abc-2.1
+X:3029
+T:g5-n10-029 Trầm Đô Sol giữ đáp
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=offset; lead=LH; bucket=n10; notes=10; RH=4; LH=6
+% duration60=12s; related_pattern=64db75bfc0e41f86
+% authored_passages=O29 CL1 CL3
+% source=buildscripts/pianist/compositions/g5/studies.txt:30
+[V:RH] z C z G | C4 | G4 |]
+[V:LH] C,2 G, z | G,2 E,2 | D,2 C,2 |]
+
+%abc-2.1
+X:3053
+T:g5-n10-053 Đô Mi giữ Mi
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=dyad; lead=RH; bucket=n10; notes=11; RH=7; LH=4
+% duration60=12s; related_pattern=276c5482e0eab914
+% authored_passages=D03 CR3 CR1
+% source=buildscripts/pianist/compositions/g5/studies.txt:54
+[V:RH] [CE]2 E2 | D2 C2 | G2 E2 |]
+[V:LH] C,2 E,2 | G,4 | C,4 |]
+
+%abc-2.1
+X:3079
+T:g5-n10-079 Đôi trầm ghé Fa
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=dyad; lead=LH; bucket=n10; notes=11; RH=4; LH=7
+% duration60=12s; related_pattern=7ac0f0afc1a14561
+% authored_passages=D29 CL1 CL3
+% source=buildscripts/pianist/compositions/g5/studies.txt:80
+[V:RH] C2 F2 | C4 | G4 |]
+[V:LH] [C,E,]2 F,2 | G,2 E,2 | D,2 C,2 |]
+
+%abc-2.1
+X:3002
+T:g5-n10-002 Đô Mi nghe bè trầm
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=offset; lead=RH; bucket=n10; notes=10; RH=6; LH=4
+% duration60=12s; related_pattern=63f6e06e61c67982
+% authored_passages=O02 CR2 CR3
+% source=buildscripts/pianist/compositions/g5/studies.txt:3
+[V:RH] C2 E z | E2 C2 | D2 C2 |]
+[V:LH] z C, z E, | C,4 | G,4 |]
+
+%abc-2.1
+X:3026
+T:g5-n10-026 Trầm Đô Rê mở lời
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=offset; lead=LH; bucket=n10; notes=10; RH=4; LH=6
+% duration60=12s; related_pattern=29cf3e15247d730f
+% authored_passages=O26 CL1 CL2
+% source=buildscripts/pianist/compositions/g5/studies.txt:27
+[V:RH] z C z G | C4 | C4 |]
+[V:LH] C,2 D, z | G,2 E,2 | E,2 C,2 |]
+
+%abc-2.1
+X:3052
+T:g5-n10-052 Đô Mi tìm Rê
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=dyad; lead=RH; bucket=n10; notes=11; RH=7; LH=4
+% duration60=12s; related_pattern=84097c891fff8752
+% authored_passages=D02 CR2 CR3
+% source=buildscripts/pianist/compositions/g5/studies.txt:53
+[V:RH] [CE]2 D2 | E2 C2 | D2 C2 |]
+[V:LH] C,2 D,2 | C,4 | G,4 |]
+
+%abc-2.1
+X:3076
+T:g5-n10-076 Đôi trầm về Đô
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=dyad; lead=LH; bucket=n10; notes=11; RH=4; LH=7
+% duration60=12s; related_pattern=2644fc93dd67de0b
+% authored_passages=D26 CL1 CL2
+% source=buildscripts/pianist/compositions/g5/studies.txt:77
+[V:RH] C2 C2 | C4 | C4 |]
+[V:LH] [C,E,]2 C,2 | G,2 E,2 | E,2 C,2 |]
+
+%abc-2.1
+X:3004
+T:g5-n10-004 Đô Sol giữ rồi đáp
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=offset; lead=RH; bucket=n10; notes=10; RH=6; LH=4
+% duration60=12s; related_pattern=64db75bfc0e41f86
+% authored_passages=O04 CR1 CR3
+% source=buildscripts/pianist/compositions/g5/studies.txt:5
+[V:RH] C2 G z | G2 E2 | D2 C2 |]
+[V:LH] z C, z G, | C,4 | G,4 |]
+
+%abc-2.1
+X:3028
+T:g5-n10-028 Trầm Đô Fa thay lượt
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=offset; lead=LH; bucket=n10; notes=10; RH=4; LH=6
+% duration60=12s; related_pattern=9d324d33786bd69d
+% authored_passages=O28 CL3 CL1
+% source=buildscripts/pianist/compositions/g5/studies.txt:29
+[V:RH] z C z F | G4 | C4 |]
+[V:LH] C,2 F, z | D,2 C,2 | G,2 E,2 |]
+
+%abc-2.1
+X:3054
+T:g5-n10-054 Đô Mi ghé Fa
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=dyad; lead=RH; bucket=n10; notes=11; RH=7; LH=4
+% duration60=12s; related_pattern=7ac0f0afc1a14561
+% authored_passages=D04 CR1 CR3
+% source=buildscripts/pianist/compositions/g5/studies.txt:55
+[V:RH] [CE]2 F2 | G2 E2 | D2 C2 |]
+[V:LH] C,2 F,2 | C,4 | G,4 |]
+
+%abc-2.1
+X:3078
+T:g5-n10-078 Đôi trầm giữ Mi
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=dyad; lead=LH; bucket=n10; notes=11; RH=4; LH=7
+% duration60=12s; related_pattern=276c5482e0eab914
+% authored_passages=D28 CL3 CL1
+% source=buildscripts/pianist/compositions/g5/studies.txt:79
+[V:RH] C2 E2 | G4 | C4 |]
+[V:LH] [C,E,]2 E,2 | D,2 C,2 | G,2 E,2 |]
+
+%abc-2.1
+X:3005
+T:g5-n10-005 Rê về Đô lệch phách
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=offset; lead=RH; bucket=n10; notes=10; RH=6; LH=4
+% duration60=12s; related_pattern=02033215b015d939
+% authored_passages=O05 CR2 CR1
+% source=buildscripts/pianist/compositions/g5/studies.txt:6
+[V:RH] D2 C z | E2 C2 | G2 E2 |]
+[V:LH] z D, z C, | C,4 | C,4 |]
+
+%abc-2.1
+X:3031
+T:g5-n10-031 Trầm Rê Mi hai lớp
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=offset; lead=LH; bucket=n10; notes=10; RH=4; LH=6
+% duration60=12s; related_pattern=298702bba1e79fcd
+% authored_passages=O31 CL3 CL2
+% source=buildscripts/pianist/compositions/g5/studies.txt:32
+[V:RH] z D z E | G4 | C4 |]
+[V:LH] D,2 E, z | D,2 C,2 | E,2 C,2 |]
+
+%abc-2.1
+X:3055
+T:g5-n10-055 Đô Mi mở Sol
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=dyad; lead=RH; bucket=n10; notes=11; RH=7; LH=4
+% duration60=12s; related_pattern=7e2b7f322fd580e6
+% authored_passages=D05 CR2 CR1
+% source=buildscripts/pianist/compositions/g5/studies.txt:56
+[V:RH] [CE]2 G2 | E2 C2 | G2 E2 |]
+[V:LH] C,2 G,2 | C,4 | C,4 |]
+
+%abc-2.1
+X:3081
+T:g5-n10-081 Rê Fa trầm về Đô
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=dyad; lead=LH; bucket=n10; notes=11; RH=4; LH=7
+% duration60=12s; related_pattern=ae2748e754742691
+% authored_passages=D31 CL3 CL2
+% source=buildscripts/pianist/compositions/g5/studies.txt:82
+[V:RH] D2 C2 | G4 | C4 |]
+[V:LH] [D,F,]2 C,2 | D,2 C,2 | E,2 C,2 |]
+
+%abc-2.1
+X:3007
+T:g5-n10-007 Rê Fa nghỉ chờ trầm
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=offset; lead=RH; bucket=n10; notes=10; RH=6; LH=4
+% duration60=12s; related_pattern=431497cbf7fb379c
+% authored_passages=O07 CR1 CR2
+% source=buildscripts/pianist/compositions/g5/studies.txt:8
+[V:RH] D2 F z | G2 E2 | E2 C2 |]
+[V:LH] z D, z F, | C,4 | C,4 |]
+
+%abc-2.1
+X:3033
+T:g5-n10-033 Trầm Rê Sol nối tay
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=offset; lead=LH; bucket=n10; notes=10; RH=4; LH=6
+% duration60=12s; related_pattern=3da8f38ae177e54d
+% authored_passages=O33 CL2 CL3
+% source=buildscripts/pianist/compositions/g5/studies.txt:34
+[V:RH] z D z G | C4 | G4 |]
+[V:LH] D,2 G, z | E,2 C,2 | D,2 C,2 |]
+
+%abc-2.1
+X:3057
+T:g5-n10-057 Rê Fa giữ Rê
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=dyad; lead=RH; bucket=n10; notes=11; RH=7; LH=4
+% duration60=12s; related_pattern=3d8ed5a7833065f4
+% authored_passages=D07 CR1 CR2
+% source=buildscripts/pianist/compositions/g5/studies.txt:58
+[V:RH] [DF]2 D2 | G2 E2 | E2 C2 |]
+[V:LH] D,2 D,2 | C,4 | C,4 |]
+
+%abc-2.1
+X:3083
+T:g5-n10-083 Rê Fa trầm qua Mi
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=dyad; lead=LH; bucket=n10; notes=11; RH=4; LH=7
+% duration60=12s; related_pattern=91c7a65a82ec0eab
+% authored_passages=D33 CL2 CL3
+% source=buildscripts/pianist/compositions/g5/studies.txt:84
+[V:RH] D2 E2 | C4 | G4 |]
+[V:LH] [D,F,]2 E,2 | E,2 C,2 | D,2 C,2 |]
+
+%abc-2.1
+X:3006
+T:g5-n10-006 Rê Mi qua hai giọng
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=offset; lead=RH; bucket=n10; notes=10; RH=6; LH=4
+% duration60=12s; related_pattern=298702bba1e79fcd
+% authored_passages=O06 CR3 CR2
+% source=buildscripts/pianist/compositions/g5/studies.txt:7
+[V:RH] D2 E z | D2 C2 | E2 C2 |]
+[V:LH] z D, z E, | G,4 | C,4 |]
+
+%abc-2.1
+X:3030
+T:g5-n10-030 Trầm Rê Đô lệch phách
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=offset; lead=LH; bucket=n10; notes=10; RH=4; LH=6
+% duration60=12s; related_pattern=02033215b015d939
+% authored_passages=O30 CL2 CL1
+% source=buildscripts/pianist/compositions/g5/studies.txt:31
+[V:RH] z D z C | C4 | C4 |]
+[V:LH] D,2 C, z | E,2 C,2 | G,2 E,2 |]
+
+%abc-2.1
+X:3056
+T:g5-n10-056 Rê Fa về Đô
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=dyad; lead=RH; bucket=n10; notes=11; RH=7; LH=4
+% duration60=12s; related_pattern=ae2748e754742691
+% authored_passages=D06 CR3 CR2
+% source=buildscripts/pianist/compositions/g5/studies.txt:57
+[V:RH] [DF]2 C2 | D2 C2 | E2 C2 |]
+[V:LH] D,2 C,2 | G,4 | C,4 |]
+
+%abc-2.1
+X:3080
+T:g5-n10-080 Đôi trầm mở Sol
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=dyad; lead=LH; bucket=n10; notes=11; RH=4; LH=7
+% duration60=12s; related_pattern=7e2b7f322fd580e6
+% authored_passages=D30 CL2 CL1
+% source=buildscripts/pianist/compositions/g5/studies.txt:81
+[V:RH] C2 G2 | C4 | C4 |]
+[V:LH] [C,E,]2 G,2 | E,2 C,2 | G,2 E,2 |]
+
+%abc-2.1
+X:3008
+T:g5-n10-008 Rê Sol nối hai tay
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=offset; lead=RH; bucket=n10; notes=10; RH=6; LH=4
+% duration60=12s; related_pattern=3da8f38ae177e54d
+% authored_passages=O08 CR2 CR3
+% source=buildscripts/pianist/compositions/g5/studies.txt:9
+[V:RH] D2 G z | E2 C2 | D2 C2 |]
+[V:LH] z D, z G, | C,4 | G,4 |]
+
+%abc-2.1
+X:3032
+T:g5-n10-032 Trầm Rê Fa chờ tiếng
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=offset; lead=LH; bucket=n10; notes=10; RH=4; LH=6
+% duration60=12s; related_pattern=431497cbf7fb379c
+% authored_passages=O32 CL1 CL2
+% source=buildscripts/pianist/compositions/g5/studies.txt:33
+[V:RH] z D z F | C4 | C4 |]
+[V:LH] D,2 F, z | G,2 E,2 | E,2 C,2 |]
+
+%abc-2.1
+X:3058
+T:g5-n10-058 Rê Fa qua Mi
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=dyad; lead=RH; bucket=n10; notes=11; RH=7; LH=4
+% duration60=12s; related_pattern=91c7a65a82ec0eab
+% authored_passages=D08 CR2 CR3
+% source=buildscripts/pianist/compositions/g5/studies.txt:59
+[V:RH] [DF]2 E2 | E2 C2 | D2 C2 |]
+[V:LH] D,2 E,2 | C,4 | G,4 |]
+
+%abc-2.1
+X:3082
+T:g5-n10-082 Rê Fa trầm giữ Rê
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=dyad; lead=LH; bucket=n10; notes=11; RH=4; LH=7
+% duration60=12s; related_pattern=3d8ed5a7833065f4
+% authored_passages=D32 CL1 CL2
+% source=buildscripts/pianist/compositions/g5/studies.txt:83
+[V:RH] D2 D2 | C4 | C4 |]
+[V:LH] [D,F,]2 D,2 | G,2 E,2 | E,2 C,2 |]
+
+%abc-2.1
+X:3009
+T:g5-n10-009 Mi Đô nghe tiếng đáp
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=offset; lead=RH; bucket=n10; notes=10; RH=6; LH=4
+% duration60=12s; related_pattern=163c142d3ba6bc7e
+% authored_passages=O09 CR3 CR1
+% source=buildscripts/pianist/compositions/g5/studies.txt:10
+[V:RH] E2 C z | D2 C2 | G2 E2 |]
+[V:LH] z C, z G, | G,4 | C,4 |]
+
+%abc-2.1
+X:3035
+T:g5-n10-035 Trầm Mi Rê đổi lượt
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=offset; lead=LH; bucket=n10; notes=10; RH=4; LH=6
+% duration60=12s; related_pattern=50114567e15e78ab
+% authored_passages=O35 CL1 CL3
+% source=buildscripts/pianist/compositions/g5/studies.txt:36
+[V:RH] z E z D | C4 | G4 |]
+[V:LH] E,2 D, z | G,2 E,2 | D,2 C,2 |]
+
+%abc-2.1
+X:3059
+T:g5-n10-059 Rê Fa giữ Fa
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=dyad; lead=RH; bucket=n10; notes=11; RH=7; LH=4
+% duration60=12s; related_pattern=9109c52ff3a184c1
+% authored_passages=D09 CR3 CR1
+% source=buildscripts/pianist/compositions/g5/studies.txt:60
+[V:RH] [DF]2 F2 | D2 C2 | G2 E2 |]
+[V:LH] D,2 F,2 | G,4 | C,4 |]
+
+%abc-2.1
+X:3085
+T:g5-n10-085 Rê Fa trầm mở Sol
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=dyad; lead=LH; bucket=n10; notes=11; RH=4; LH=7
+% duration60=12s; related_pattern=88a4c5b1c60f2902
+% authored_passages=D35 CL1 CL3
+% source=buildscripts/pianist/compositions/g5/studies.txt:86
+[V:RH] D2 G2 | C4 | G4 |]
+[V:LH] [D,F,]2 G,2 | G,2 E,2 | D,2 C,2 |]
+
+%abc-2.1
+X:3011
+T:g5-n10-011 Mi Fa bên tiếng trầm
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=offset; lead=RH; bucket=n10; notes=10; RH=6; LH=4
+% duration60=12s; related_pattern=964eb793a3bebbf0
+% authored_passages=O11 CR2 CR1
+% source=buildscripts/pianist/compositions/g5/studies.txt:12
+[V:RH] E2 F z | E2 C2 | G2 E2 |]
+[V:LH] z E, z F, | C,4 | C,4 |]
+
+%abc-2.1
+X:3037
+T:g5-n10-037 Trầm Mi Sol khép nghỉ
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=offset; lead=LH; bucket=n10; notes=10; RH=4; LH=6
+% duration60=12s; related_pattern=09e13c37bcd78a17
+% authored_passages=O37 CL3 CL2
+% source=buildscripts/pianist/compositions/g5/studies.txt:38
+[V:RH] z C z G | G4 | C4 |]
+[V:LH] E,2 G, z | D,2 C,2 | E,2 C,2 |]
+
+%abc-2.1
+X:3061
+T:g5-n10-061 Mi Sol về Đô
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=dyad; lead=RH; bucket=n10; notes=11; RH=7; LH=4
+% duration60=12s; related_pattern=6e725d9321b6f4b5
+% authored_passages=D11 CR2 CR1
+% source=buildscripts/pianist/compositions/g5/studies.txt:62
+[V:RH] [EG]2 C2 | E2 C2 | G2 E2 |]
+[V:LH] E,2 C,2 | C,4 | C,4 |]
+
+%abc-2.1
+X:3087
+T:g5-n10-087 Mi Sol trầm ghé Rê
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=dyad; lead=LH; bucket=n10; notes=11; RH=4; LH=7
+% duration60=12s; related_pattern=66fe152fb99ead38
+% authored_passages=D37 CL3 CL2
+% source=buildscripts/pianist/compositions/g5/studies.txt:88
+[V:RH] E2 D2 | G4 | C4 |]
+[V:LH] [E,G,]2 D,2 | D,2 C,2 | E,2 C,2 |]
+
+%abc-2.1
+X:3010
+T:g5-n10-010 Mi Rê đổi lượt ngắn
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=offset; lead=RH; bucket=n10; notes=10; RH=6; LH=4
+% duration60=12s; related_pattern=50114567e15e78ab
+% authored_passages=O10 CR1 CR3
+% source=buildscripts/pianist/compositions/g5/studies.txt:11
+[V:RH] E2 D z | G2 E2 | D2 C2 |]
+[V:LH] z E, z D, | C,4 | G,4 |]
+
+%abc-2.1
+X:3034
+T:g5-n10-034 Trầm Mi Đô nghe đáp
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=offset; lead=LH; bucket=n10; notes=10; RH=4; LH=6
+% duration60=12s; related_pattern=163c142d3ba6bc7e
+% authored_passages=O34 CL3 CL1
+% source=buildscripts/pianist/compositions/g5/studies.txt:35
+[V:RH] z C z G | G4 | C4 |]
+[V:LH] E,2 C, z | D,2 C,2 | G,2 E,2 |]
+
+%abc-2.1
+X:3060
+T:g5-n10-060 Rê Fa mở Sol
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=dyad; lead=RH; bucket=n10; notes=11; RH=7; LH=4
+% duration60=12s; related_pattern=88a4c5b1c60f2902
+% authored_passages=D10 CR1 CR3
+% source=buildscripts/pianist/compositions/g5/studies.txt:61
+[V:RH] [DF]2 G2 | G2 E2 | D2 C2 |]
+[V:LH] D,2 G,2 | C,4 | G,4 |]
+
+%abc-2.1
+X:3084
+T:g5-n10-084 Rê Fa trầm giữ Fa
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=dyad; lead=LH; bucket=n10; notes=11; RH=4; LH=7
+% duration60=12s; related_pattern=9109c52ff3a184c1
+% authored_passages=D34 CL3 CL1
+% source=buildscripts/pianist/compositions/g5/studies.txt:85
+[V:RH] D2 F2 | G4 | C4 |]
+[V:LH] [D,F,]2 F,2 | D,2 C,2 | G,2 E,2 |]
+
+%abc-2.1
+X:3012
+T:g5-n10-012 Mi Sol khép khoảng nghỉ
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=offset; lead=RH; bucket=n10; notes=10; RH=6; LH=4
+% duration60=12s; related_pattern=09e13c37bcd78a17
+% authored_passages=O12 CR3 CR2
+% source=buildscripts/pianist/compositions/g5/studies.txt:13
+[V:RH] E2 G z | D2 C2 | E2 C2 |]
+[V:LH] z C, z G, | G,4 | C,4 |]
+
+%abc-2.1
+X:3036
+T:g5-n10-036 Trầm Mi Fa và lời sáng
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=offset; lead=LH; bucket=n10; notes=10; RH=4; LH=6
+% duration60=12s; related_pattern=964eb793a3bebbf0
+% authored_passages=O36 CL2 CL1
+% source=buildscripts/pianist/compositions/g5/studies.txt:37
+[V:RH] z E z F | C4 | C4 |]
+[V:LH] E,2 F, z | E,2 C,2 | G,2 E,2 |]
+
+%abc-2.1
+X:3062
+T:g5-n10-062 Mi Sol ghé Rê
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=dyad; lead=RH; bucket=n10; notes=11; RH=7; LH=4
+% duration60=12s; related_pattern=66fe152fb99ead38
+% authored_passages=D12 CR3 CR2
+% source=buildscripts/pianist/compositions/g5/studies.txt:63
+[V:RH] [EG]2 D2 | D2 C2 | E2 C2 |]
+[V:LH] E,2 D,2 | G,4 | C,4 |]
+
+%abc-2.1
+X:3086
+T:g5-n10-086 Mi Sol trầm về Đô
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=dyad; lead=LH; bucket=n10; notes=11; RH=4; LH=7
+% duration60=12s; related_pattern=6e725d9321b6f4b5
+% authored_passages=D36 CL2 CL1
+% source=buildscripts/pianist/compositions/g5/studies.txt:87
+[V:RH] E2 C2 | C4 | C4 |]
+[V:LH] [E,G,]2 C,2 | E,2 C,2 | G,2 E,2 |]
+
+%abc-2.1
+X:3013
+T:g5-n10-013 Fa Đô có tiếng chen
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=offset; lead=RH; bucket=n10; notes=10; RH=6; LH=4
+% duration60=12s; related_pattern=c1b69d5cebf4b91c
+% authored_passages=O13 CR1 CR2
+% source=buildscripts/pianist/compositions/g5/studies.txt:14
+[V:RH] F2 C z | G2 E2 | E2 C2 |]
+[V:LH] z F, z C, | C,4 | C,4 |]
+
+%abc-2.1
+X:3039
+T:g5-n10-039 Trầm Fa Rê giữ tiếng
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=offset; lead=LH; bucket=n10; notes=10; RH=4; LH=6
+% duration60=12s; related_pattern=1849f1d958091e06
+% authored_passages=O39 CL2 CL3
+% source=buildscripts/pianist/compositions/g5/studies.txt:40
+[V:RH] z F z D | C4 | G4 |]
+[V:LH] F,2 D, z | E,2 C,2 | D,2 C,2 |]
+
+%abc-2.1
+X:3063
+T:g5-n10-063 Mi Sol giữ Mi
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=dyad; lead=RH; bucket=n10; notes=11; RH=7; LH=4
+% duration60=12s; related_pattern=1887ef6743177669
+% authored_passages=D13 CR1 CR2
+% source=buildscripts/pianist/compositions/g5/studies.txt:64
+[V:RH] [EG]2 E2 | G2 E2 | E2 C2 |]
+[V:LH] E,2 E,2 | C,4 | C,4 |]
+
+%abc-2.1
+X:3089
+T:g5-n10-089 Mi Sol trầm tìm Fa
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=dyad; lead=LH; bucket=n10; notes=11; RH=4; LH=7
+% duration60=12s; related_pattern=8233661b2629f445
+% authored_passages=D39 CL2 CL3
+% source=buildscripts/pianist/compositions/g5/studies.txt:90
+[V:RH] E2 F2 | C4 | G4 |]
+[V:LH] [E,G,]2 F,2 | E,2 C,2 | D,2 C,2 |]
+
+%abc-2.1
+X:3015
+T:g5-n10-015 Fa Mi nối phách lẻ
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=offset; lead=RH; bucket=n10; notes=10; RH=6; LH=4
+% duration60=12s; related_pattern=bb8efc808639e279
+% authored_passages=O15 CR3 CR1
+% source=buildscripts/pianist/compositions/g5/studies.txt:16
+[V:RH] F2 E z | D2 C2 | G2 E2 |]
+[V:LH] z F, z E, | G,4 | C,4 |]
+
+%abc-2.1
+X:3041
+T:g5-n10-041 Trầm Fa Sol qua đệm
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=offset; lead=LH; bucket=n10; notes=10; RH=4; LH=6
+% duration60=12s; related_pattern=6ee903ce7754cd8b
+% authored_passages=O41 CL1 CL3
+% source=buildscripts/pianist/compositions/g5/studies.txt:42
+[V:RH] z F z G | C4 | G4 |]
+[V:LH] F,2 G, z | G,2 E,2 | D,2 C,2 |]
+
+%abc-2.1
+X:3065
+T:g5-n10-065 Mi Sol giữ Sol
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=dyad; lead=RH; bucket=n10; notes=11; RH=7; LH=4
+% duration60=12s; related_pattern=1ca853eed48f547a
+% authored_passages=D15 CR3 CR1
+% source=buildscripts/pianist/compositions/g5/studies.txt:66
+[V:RH] [EG]2 G2 | D2 C2 | G2 E2 |]
+[V:LH] E,2 G,2 | G,4 | C,4 |]
+
+%abc-2.1
+X:3091
+T:g5-n10-091 Năm trầm trở Đô
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=dyad; lead=LH; bucket=n10; notes=11; RH=4; LH=7
+% duration60=12s; related_pattern=28878be564dcb461
+% authored_passages=D41 CL1 CL3
+% source=buildscripts/pianist/compositions/g5/studies.txt:92
+[V:RH] C2 C2 | C4 | G4 |]
+[V:LH] [C,G,]2 C,2 | G,2 E,2 | D,2 C,2 |]
+
+%abc-2.1
+X:3014
+T:g5-n10-014 Fa Rê giữ lời sáng
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=offset; lead=RH; bucket=n10; notes=10; RH=6; LH=4
+% duration60=12s; related_pattern=1849f1d958091e06
+% authored_passages=O14 CR2 CR3
+% source=buildscripts/pianist/compositions/g5/studies.txt:15
+[V:RH] F2 D z | E2 C2 | D2 C2 |]
+[V:LH] z F, z D, | C,4 | G,4 |]
+
+%abc-2.1
+X:3038
+T:g5-n10-038 Trầm Fa Đô có lời chen
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=offset; lead=LH; bucket=n10; notes=10; RH=4; LH=6
+% duration60=12s; related_pattern=c1b69d5cebf4b91c
+% authored_passages=O38 CL1 CL2
+% source=buildscripts/pianist/compositions/g5/studies.txt:39
+[V:RH] z F z C | C4 | C4 |]
+[V:LH] F,2 C, z | G,2 E,2 | E,2 C,2 |]
+
+%abc-2.1
+X:3064
+T:g5-n10-064 Mi Sol tìm Fa
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=dyad; lead=RH; bucket=n10; notes=11; RH=7; LH=4
+% duration60=12s; related_pattern=8233661b2629f445
+% authored_passages=D14 CR2 CR3
+% source=buildscripts/pianist/compositions/g5/studies.txt:65
+[V:RH] [EG]2 F2 | E2 C2 | D2 C2 |]
+[V:LH] E,2 F,2 | C,4 | G,4 |]
+
+%abc-2.1
+X:3088
+T:g5-n10-088 Mi Sol trầm giữ Mi
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=dyad; lead=LH; bucket=n10; notes=11; RH=4; LH=7
+% duration60=12s; related_pattern=1887ef6743177669
+% authored_passages=D38 CL1 CL2
+% source=buildscripts/pianist/compositions/g5/studies.txt:89
+[V:RH] E2 E2 | C4 | C4 |]
+[V:LH] [E,G,]2 E,2 | G,2 E,2 | E,2 C,2 |]
+
+%abc-2.1
+X:3016
+T:g5-n10-016 Fa Sol qua nhịp đệm
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=offset; lead=RH; bucket=n10; notes=10; RH=6; LH=4
+% duration60=12s; related_pattern=6ee903ce7754cd8b
+% authored_passages=O16 CR1 CR3
+% source=buildscripts/pianist/compositions/g5/studies.txt:17
+[V:RH] F2 G z | G2 E2 | D2 C2 |]
+[V:LH] z F, z G, | C,4 | G,4 |]
+
+%abc-2.1
+X:3040
+T:g5-n10-040 Trầm Fa Mi nối phách
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=offset; lead=LH; bucket=n10; notes=10; RH=4; LH=6
+% duration60=12s; related_pattern=bb8efc808639e279
+% authored_passages=O40 CL3 CL1
+% source=buildscripts/pianist/compositions/g5/studies.txt:41
+[V:RH] z F z E | G4 | C4 |]
+[V:LH] F,2 E, z | D,2 C,2 | G,2 E,2 |]
+
+%abc-2.1
+X:3066
+T:g5-n10-066 Quãng năm về Đô
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=dyad; lead=RH; bucket=n10; notes=11; RH=7; LH=4
+% duration60=12s; related_pattern=28878be564dcb461
+% authored_passages=D16 CR1 CR3
+% source=buildscripts/pianist/compositions/g5/studies.txt:67
+[V:RH] [CG]2 C2 | G2 E2 | D2 C2 |]
+[V:LH] C,2 C,2 | C,4 | G,4 |]
+
+%abc-2.1
+X:3090
+T:g5-n10-090 Mi Sol trầm giữ Sol
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=dyad; lead=LH; bucket=n10; notes=11; RH=4; LH=7
+% duration60=12s; related_pattern=1ca853eed48f547a
+% authored_passages=D40 CL3 CL1
+% source=buildscripts/pianist/compositions/g5/studies.txt:91
+[V:RH] E2 G2 | G4 | C4 |]
+[V:LH] [E,G,]2 G,2 | D,2 C,2 | G,2 E,2 |]
+
+%abc-2.1
+X:3017
+T:g5-n10-017 Sol Đô ghé lời trầm
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=offset; lead=RH; bucket=n10; notes=10; RH=6; LH=4
+% duration60=12s; related_pattern=111646527a1c8db0
+% authored_passages=O17 CR2 CR1
+% source=buildscripts/pianist/compositions/g5/studies.txt:18
+[V:RH] G2 C z | E2 C2 | G2 E2 |]
+[V:LH] z G, z C, | C,4 | C,4 |]
+
+%abc-2.1
+X:3043
+T:g5-n10-043 Trầm Sol Rê đáp xa
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=offset; lead=LH; bucket=n10; notes=10; RH=4; LH=6
+% duration60=12s; related_pattern=437586b1b6765a89
+% authored_passages=O43 CL3 CL2
+% source=buildscripts/pianist/compositions/g5/studies.txt:44
+[V:RH] z G z D | G4 | C4 |]
+[V:LH] G,2 D, z | D,2 C,2 | E,2 C,2 |]
+
+%abc-2.1
+X:3067
+T:g5-n10-067 Quãng năm sang Rê
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=dyad; lead=RH; bucket=n10; notes=11; RH=7; LH=4
+% duration60=12s; related_pattern=04b318599d9a5644
+% authored_passages=D17 CR2 CR1
+% source=buildscripts/pianist/compositions/g5/studies.txt:68
+[V:RH] [CG]2 D2 | E2 C2 | G2 E2 |]
+[V:LH] C,2 D,2 | C,4 | C,4 |]
+
+%abc-2.1
+X:3093
+T:g5-n10-093 Năm trầm giữ Mi
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=dyad; lead=LH; bucket=n10; notes=11; RH=4; LH=7
+% duration60=12s; related_pattern=3795d840d0fd2836
+% authored_passages=D43 CL3 CL2
+% source=buildscripts/pianist/compositions/g5/studies.txt:94
+[V:RH] C2 E2 | G4 | C4 |]
+[V:LH] [C,G,]2 E,2 | D,2 C,2 | E,2 C,2 |]
+
+%abc-2.1
+X:3019
+T:g5-n10-019 Sol Mi nghe hai lớp
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=offset; lead=RH; bucket=n10; notes=10; RH=6; LH=4
+% duration60=12s; related_pattern=9812731e54f94559
+% authored_passages=O19 CR1 CR2
+% source=buildscripts/pianist/compositions/g5/studies.txt:20
+[V:RH] G2 E z | G2 E2 | E2 C2 |]
+[V:LH] z G, z C, | C,4 | C,4 |]
+
+%abc-2.1
+X:3045
+T:g5-n10-045 Trầm Sol Fa rồi nghỉ
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=offset; lead=LH; bucket=n10; notes=10; RH=4; LH=6
+% duration60=12s; related_pattern=9cceb7f64019e367
+% authored_passages=O45 CL2 CL3
+% source=buildscripts/pianist/compositions/g5/studies.txt:46
+[V:RH] z G z F | C4 | G4 |]
+[V:LH] G,2 F, z | E,2 C,2 | D,2 C,2 |]
+
+%abc-2.1
+X:3069
+T:g5-n10-069 Quãng năm ghé Fa
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=dyad; lead=RH; bucket=n10; notes=11; RH=7; LH=4
+% duration60=12s; related_pattern=b55eb5cda2f8c5d7
+% authored_passages=D19 CR1 CR2
+% source=buildscripts/pianist/compositions/g5/studies.txt:70
+[V:RH] [CG]2 F2 | G2 E2 | E2 C2 |]
+[V:LH] C,2 F,2 | C,4 | C,4 |]
+
+%abc-2.1
+X:3095
+T:g5-n10-095 Năm trầm giữ Sol
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=dyad; lead=LH; bucket=n10; notes=11; RH=4; LH=7
+% duration60=12s; related_pattern=0b9160c2de95cd3c
+% authored_passages=D45 CL2 CL3
+% source=buildscripts/pianist/compositions/g5/studies.txt:96
+[V:RH] C2 G2 | C4 | G4 |]
+[V:LH] [C,G,]2 G,2 | E,2 C,2 | D,2 C,2 |]
+
+%abc-2.1
+X:3018
+T:g5-n10-018 Sol Rê đáp xa
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=offset; lead=RH; bucket=n10; notes=10; RH=6; LH=4
+% duration60=12s; related_pattern=437586b1b6765a89
+% authored_passages=O18 CR3 CR2
+% source=buildscripts/pianist/compositions/g5/studies.txt:19
+[V:RH] G2 D z | D2 C2 | E2 C2 |]
+[V:LH] z G, z D, | G,4 | C,4 |]
+
+%abc-2.1
+X:3042
+T:g5-n10-042 Trầm Sol Đô ghé sáng
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=offset; lead=LH; bucket=n10; notes=10; RH=4; LH=6
+% duration60=12s; related_pattern=111646527a1c8db0
+% authored_passages=O42 CL2 CL1
+% source=buildscripts/pianist/compositions/g5/studies.txt:43
+[V:RH] z G z C | C4 | C4 |]
+[V:LH] G,2 C, z | E,2 C,2 | G,2 E,2 |]
+
+%abc-2.1
+X:3068
+T:g5-n10-068 Quãng năm giữ Mi
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=dyad; lead=RH; bucket=n10; notes=11; RH=7; LH=4
+% duration60=12s; related_pattern=3795d840d0fd2836
+% authored_passages=D18 CR3 CR2
+% source=buildscripts/pianist/compositions/g5/studies.txt:69
+[V:RH] [CG]2 E2 | D2 C2 | E2 C2 |]
+[V:LH] C,2 E,2 | G,4 | C,4 |]
+
+%abc-2.1
+X:3092
+T:g5-n10-092 Năm trầm sang Rê
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=dyad; lead=LH; bucket=n10; notes=11; RH=4; LH=7
+% duration60=12s; related_pattern=04b318599d9a5644
+% authored_passages=D42 CL2 CL1
+% source=buildscripts/pianist/compositions/g5/studies.txt:93
+[V:RH] C2 D2 | C4 | C4 |]
+[V:LH] [C,G,]2 D,2 | E,2 C,2 | G,2 E,2 |]
+
+%abc-2.1
+X:3020
+T:g5-n10-020 Sol Fa rồi im tiếng
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=offset; lead=RH; bucket=n10; notes=10; RH=6; LH=4
+% duration60=12s; related_pattern=9cceb7f64019e367
+% authored_passages=O20 CR2 CR3
+% source=buildscripts/pianist/compositions/g5/studies.txt:21
+[V:RH] G2 F z | E2 C2 | D2 C2 |]
+[V:LH] z G, z F, | C,4 | G,4 |]
+
+%abc-2.1
+X:3044
+T:g5-n10-044 Trầm Sol Mi nghe lớp
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=offset; lead=LH; bucket=n10; notes=10; RH=4; LH=6
+% duration60=12s; related_pattern=9812731e54f94559
+% authored_passages=O44 CL1 CL2
+% source=buildscripts/pianist/compositions/g5/studies.txt:45
+[V:RH] z G z C | C4 | C4 |]
+[V:LH] G,2 E, z | G,2 E,2 | E,2 C,2 |]
+
+%abc-2.1
+X:3070
+T:g5-n10-070 Quãng năm mở Sol
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=dyad; lead=RH; bucket=n10; notes=11; RH=7; LH=4
+% duration60=12s; related_pattern=0b9160c2de95cd3c
+% authored_passages=D20 CR2 CR3
+% source=buildscripts/pianist/compositions/g5/studies.txt:71
+[V:RH] [CG]2 G2 | E2 C2 | D2 C2 |]
+[V:LH] C,2 G,2 | C,4 | G,4 |]
+
+%abc-2.1
+X:3094
+T:g5-n10-094 Năm trầm ghé Fa
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=dyad; lead=LH; bucket=n10; notes=11; RH=4; LH=7
+% duration60=12s; related_pattern=b55eb5cda2f8c5d7
+% authored_passages=D44 CL1 CL2
+% source=buildscripts/pianist/compositions/g5/studies.txt:95
+[V:RH] C2 F2 | C4 | C4 |]
+[V:LH] [C,G,]2 F,2 | G,2 E,2 | E,2 C,2 |]
+
+%abc-2.1
+X:3021
+T:g5-n10-021 Đô nghỉ Mi giữ
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=offset; lead=RH; bucket=n10; notes=10; RH=6; LH=4
+% duration60=12s; related_pattern=29188f23a12d9e74
+% authored_passages=O21 CR3 CR1
+% source=buildscripts/pianist/compositions/g5/studies.txt:22
+[V:RH] C z E2 | D2 C2 | G2 E2 |]
+[V:LH] C, z z G, | G,4 | C,4 |]
+
+%abc-2.1
+X:3047
+T:g5-n10-047 Trầm Rê nhường Fa
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=offset; lead=LH; bucket=n10; notes=10; RH=4; LH=6
+% duration60=12s; related_pattern=952919730cad60ea
+% authored_passages=O47 CL1 CL3
+% source=buildscripts/pianist/compositions/g5/studies.txt:48
+[V:RH] D z z F | C4 | G4 |]
+[V:LH] D, z F,2 | G,2 E,2 | D,2 C,2 |]
+
+%abc-2.1
+X:3071
+T:g5-n10-071 Rê Sol tìm Đô
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=dyad; lead=RH; bucket=n10; notes=11; RH=7; LH=4
+% duration60=12s; related_pattern=50e12593318c0c21
+% authored_passages=D21 CR3 CR1
+% source=buildscripts/pianist/compositions/g5/studies.txt:72
+[V:RH] [DG]2 C2 | D2 C2 | G2 E2 |]
+[V:LH] D,2 C,2 | G,4 | C,4 |]
+
+%abc-2.1
+X:3097
+T:g5-n10-097 Rê Sol trầm giữ Rê
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=dyad; lead=LH; bucket=n10; notes=11; RH=4; LH=7
+% duration60=12s; related_pattern=693e8a362ff4d13f
+% authored_passages=D47 CL1 CL3
+% source=buildscripts/pianist/compositions/g5/studies.txt:98
+[V:RH] D2 D2 | C4 | G4 |]
+[V:LH] [D,G,]2 D,2 | G,2 E,2 | D,2 C,2 |]
+
+%abc-2.1
+X:3023
+T:g5-n10-023 Mi dừng Sol tiếp
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=offset; lead=RH; bucket=n10; notes=10; RH=6; LH=4
+% duration60=12s; related_pattern=3dc2beed2a0904a5
+% authored_passages=O23 CR2 CR1
+% source=buildscripts/pianist/compositions/g5/studies.txt:24
+[V:RH] E z G2 | E2 C2 | G2 E2 |]
+[V:LH] C, z z G, | C,4 | C,4 |]
+
+%abc-2.1
+X:3049
+T:g5-n10-049 Trầm Fa đợi Rê ngân
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=offset; lead=LH; bucket=n10; notes=10; RH=4; LH=6
+% duration60=12s; related_pattern=50d53fe112ca26e3
+% authored_passages=O49 CL3 CL2
+% source=buildscripts/pianist/compositions/g5/studies.txt:50
+[V:RH] F z z D | G4 | C4 |]
+[V:LH] F, z D,2 | D,2 C,2 | E,2 C,2 |]
+
+%abc-2.1
+X:3073
+T:g5-n10-073 Rê Sol tìm Mi
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=dyad; lead=RH; bucket=n10; notes=11; RH=7; LH=4
+% duration60=12s; related_pattern=09e28fc08ddfc7a8
+% authored_passages=D23 CR2 CR1
+% source=buildscripts/pianist/compositions/g5/studies.txt:74
+[V:RH] [DG]2 E2 | E2 C2 | G2 E2 |]
+[V:LH] D,2 E,2 | C,4 | C,4 |]
+
+%abc-2.1
+X:3099
+T:g5-n10-099 Rê Sol trầm ghé Fa
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=dyad; lead=LH; bucket=n10; notes=11; RH=4; LH=7
+% duration60=12s; related_pattern=02ac75f228d5c5b6
+% authored_passages=D49 CL3 CL2
+% source=buildscripts/pianist/compositions/g5/studies.txt:100
+[V:RH] D2 F2 | G4 | C4 |]
+[V:LH] [D,G,]2 F,2 | D,2 C,2 | E,2 C,2 |]
+
+%abc-2.1
+X:3022
+T:g5-n10-022 Rê nghỉ Fa ngân
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=offset; lead=RH; bucket=n10; notes=10; RH=6; LH=4
+% duration60=12s; related_pattern=952919730cad60ea
+% authored_passages=O22 CR1 CR3
+% source=buildscripts/pianist/compositions/g5/studies.txt:23
+[V:RH] D z F2 | G2 E2 | D2 C2 |]
+[V:LH] D, z z F, | C,4 | G,4 |]
+
+%abc-2.1
+X:3046
+T:g5-n10-046 Trầm Đô nhường Mi
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=offset; lead=LH; bucket=n10; notes=10; RH=4; LH=6
+% duration60=12s; related_pattern=29188f23a12d9e74
+% authored_passages=O46 CL3 CL1
+% source=buildscripts/pianist/compositions/g5/studies.txt:47
+[V:RH] C z z G | G4 | C4 |]
+[V:LH] C, z E,2 | D,2 C,2 | G,2 E,2 |]
+
+%abc-2.1
+X:3072
+T:g5-n10-072 Rê Sol giữ Rê
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=dyad; lead=RH; bucket=n10; notes=11; RH=7; LH=4
+% duration60=12s; related_pattern=693e8a362ff4d13f
+% authored_passages=D22 CR1 CR3
+% source=buildscripts/pianist/compositions/g5/studies.txt:73
+[V:RH] [DG]2 D2 | G2 E2 | D2 C2 |]
+[V:LH] D,2 D,2 | C,4 | G,4 |]
+
+%abc-2.1
+X:3096
+T:g5-n10-096 Rê Sol trầm tìm Đô
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=dyad; lead=LH; bucket=n10; notes=11; RH=4; LH=7
+% duration60=12s; related_pattern=50e12593318c0c21
+% authored_passages=D46 CL3 CL1
+% source=buildscripts/pianist/compositions/g5/studies.txt:97
+[V:RH] D2 C2 | G4 | C4 |]
+[V:LH] [D,G,]2 C,2 | D,2 C,2 | G,2 E,2 |]
+
+%abc-2.1
+X:3024
+T:g5-n10-024 Fa nhường Rê dài
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=offset; lead=RH; bucket=n10; notes=10; RH=6; LH=4
+% duration60=12s; related_pattern=50d53fe112ca26e3
+% authored_passages=O24 CR3 CR2
+% source=buildscripts/pianist/compositions/g5/studies.txt:25
+[V:RH] F z D2 | D2 C2 | E2 C2 |]
+[V:LH] F, z z D, | G,4 | C,4 |]
+
+%abc-2.1
+X:3048
+T:g5-n10-048 Trầm Mi dừng Sol tiếp
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=offset; lead=LH; bucket=n10; notes=10; RH=4; LH=6
+% duration60=12s; related_pattern=3dc2beed2a0904a5
+% authored_passages=O48 CL2 CL1
+% source=buildscripts/pianist/compositions/g5/studies.txt:49
+[V:RH] C z z G | C4 | C4 |]
+[V:LH] E, z G,2 | E,2 C,2 | G,2 E,2 |]
+
+%abc-2.1
+X:3074
+T:g5-n10-074 Rê Sol ghé Fa
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=dyad; lead=RH; bucket=n10; notes=11; RH=7; LH=4
+% duration60=12s; related_pattern=02ac75f228d5c5b6
+% authored_passages=D24 CR3 CR2
+% source=buildscripts/pianist/compositions/g5/studies.txt:75
+[V:RH] [DG]2 F2 | D2 C2 | E2 C2 |]
+[V:LH] D,2 F,2 | G,4 | C,4 |]
+
+%abc-2.1
+X:3098
+T:g5-n10-098 Rê Sol trầm tìm Mi
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=dyad; lead=LH; bucket=n10; notes=11; RH=4; LH=7
+% duration60=12s; related_pattern=09e28fc08ddfc7a8
+% authored_passages=D48 CL2 CL1
+% source=buildscripts/pianist/compositions/g5/studies.txt:99
+[V:RH] D2 E2 | C4 | C4 |]
+[V:LH] [D,G,]2 E,2 | E,2 C,2 | G,2 E,2 |]
+
+%abc-2.1
+X:3025
+T:g5-n10-025 Sol đợi Đô khép
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=offset; lead=RH; bucket=n10; notes=10; RH=6; LH=4
+% duration60=12s; related_pattern=623cf3b5fab42ac7
+% authored_passages=O25 CR1 CR2
+% source=buildscripts/pianist/compositions/g5/studies.txt:26
+[V:RH] G z C2 | G2 E2 | E2 C2 |]
+[V:LH] G, z z C, | C,4 | C,4 |]
+
+%abc-2.1
+X:3075
+T:g5-n10-075 Rê Sol giữ Sol
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=dyad; lead=RH; bucket=n10; notes=11; RH=7; LH=4
+% duration60=12s; related_pattern=959a3c5b7b7e1c12
+% authored_passages=D25 CR1 CR2
+% source=buildscripts/pianist/compositions/g5/studies.txt:76
+[V:RH] [DG]2 G2 | G2 E2 | E2 C2 |]
+[V:LH] D,2 G,2 | C,4 | C,4 |]
+
+%abc-2.1
+X:3050
+T:g5-n10-050 Trầm Sol đợi Đô khép
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=offset; lead=LH; bucket=n10; notes=10; RH=4; LH=6
+% duration60=12s; related_pattern=623cf3b5fab42ac7
+% authored_passages=O50 CL1 CL2
+% source=buildscripts/pianist/compositions/g5/studies.txt:51
+[V:RH] G z z C | C4 | C4 |]
+[V:LH] G, z C,2 | G,2 E,2 | E,2 C,2 |]
+
+%abc-2.1
+X:3100
+T:g5-n10-100 Rê Sol trầm giữ Sol
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=dyad; lead=LH; bucket=n10; notes=11; RH=4; LH=7
+% duration60=12s; related_pattern=959a3c5b7b7e1c12
+% authored_passages=D50 CL1 CL2
+% source=buildscripts/pianist/compositions/g5/studies.txt:101
+[V:RH] D2 G2 | C4 | C4 |]
+[V:LH] [D,G,]2 G,2 | G,2 E,2 | E,2 C,2 |]

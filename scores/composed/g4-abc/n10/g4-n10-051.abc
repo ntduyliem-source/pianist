@@ -1,0 +1,17 @@
+%abc-2.1
+X:2351
+T:g4-n10-051 Mi Đô La trầm nền nhắc
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=lower; lead=LH; bucket=n10; notes=11; RH=4; LH=7
+% role=L; duration60=8s; related_pattern=1dbbe3d079592f51
+% authored_passages=inline-n10-051
+% source=buildscripts/pianist/compositions/g4/n10.txt:52
+[V:RH] C2 C2 | C2 C2 |]
+[V:LH] E, C, A,, B,, | C, D, E,2 |]

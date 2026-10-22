@@ -1,0 +1,19 @@
+%abc-2.1
+X:4564
+T:g7-n20-064 Mi trầm chen phách
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G7; profile=sync; lead=LH; bucket=n20; notes=22; RH=5; LH=17
+% duration60=20s; related_pattern=5ee6cd202a21d654
+% authored_passages=Y14 YL2
+% source=buildscripts/pianist/compositions/g7/studies.txt:65
+[V:RH] D4 | C z z z | D z z z | C z z z |
+[V:LH] D,/2 E, F,/2 D,2 | E,/2 F, G,/2 E,2 | D,/2 E, F,/2 D,2 | E, D, C,2 |
+[V:RH] C z z z |]
+[V:LH] D,2 C,2 |]

@@ -1,0 +1,21 @@
+# S01–05, S10, S12, S14, S16–17, S20: RH thirds. Others: LH thirds.
+S01;4;C E D C | E2 D C | D E C2 | C2 C2;C, D, C, C, | C,2 D, C, | D, D, C,2 | C,2 C,2
+S02;4;C E D2 | E2 D C | E2 D C | C4;C, D, D,2 | C,2 D, C, | C,2 D, C, | C,4
+S03;4;C2 E2 | D E C2 | E2 G2 | E2 C2;C,2 C,2 | D, D, C,2 | C,2 C,2 | C,2 C,2
+S04;4;E2 G2 | F E D C | D E C2 | C4;C,2 C,2 | D, E, D, C, | D, D, C,2 | C,4
+S05;4;C E D C | D F E C | D E C2 | C4;C, D, C, C, | D, E, D, C, | D, D, C,2 | C,4
+S06;4;C D D2 | C2 D C | C2 D C | C4;C, E, D,2 | E,2 D, C, | E,2 D, C, | C,4
+S07;4;C2 C2 | D D C2 | C2 C2 | C2 C2;C,2 E,2 | D, E, C,2 | E,2 G,2 | E,2 C,2
+S08;4;C2 C2 | D E D C | D D C2 | C4;E,2 G,2 | F, E, D, C, | D, E, C,2 | C,4
+S09;4;C D C C | D E D C | D D C2 | C4;C, E, D, C, | D, F, E, C, | D, E, C,2 | C,4
+S10;4;C E D2 | E2 G2 | F E D C | C4;C, D, D,2 | C,2 C,2 | D, E, D, C, | C,4
+S11;4;C D D2 | C2 C2 | D E D C | C4;C, E, D,2 | E,2 G,2 | F, E, D, C, | C,4
+S12;4;C E D C | E2 G2 | F E D C | C4;C, D, C, C, | C,2 C,2 | D, E, D, C, | C,4
+S13;4;C D C C | C2 C2 | D E D C | C4;C, E, D, C, | E,2 G,2 | F, E, D, C, | C,4
+S14;4;C2 E2 | D F E2 | D E C2 | C4;C,2 C,2 | D, E, E,2 | D, D, C,2 | C,4
+S15;4;C2 C2 | D E E2 | D D C2 | C4;C,2 E,2 | D, F, E,2 | D, E, C,2 | C,4
+S16;4;C2 E2 | D E C2 | C4 | C4;C,2 C,2 | D, D, C,2 | C,4 | C,4
+S17;4;C4 | E2 D C | C4 | C4;C,4 | C,2 D, C, | C,4 | C,4
+S18;4;C2 C2 | D D C2 | C4 | C4;C,2 E,2 | D, E, C,2 | C,4 | C,4
+S19;4;C4 | C2 D C | C4 | C4;C,4 | E,2 D, C, | C,4 | C,4
+S20;4;C2 E2 | G2 E2 | D E C2 | C4;C,2 C,2 | C,2 C,2 | D, D, C,2 | C,4

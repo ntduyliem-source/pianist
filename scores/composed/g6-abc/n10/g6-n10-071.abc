@@ -1,0 +1,17 @@
+%abc-2.1
+X:3771
+T:g6-n10-071 Si về Đô rồi Rê
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G6; profile=M7-down; lead=RH; bucket=n10; notes=11; RH=8; LH=3
+% duration60=12s; related_pattern=57dd1427f27aed6f
+% authored_passages=S71 CR1 CR2
+% source=buildscripts/pianist/compositions/g6/studies.txt:72
+[V:RH] A B C D | G2 E2 | G2 C2 |]
+[V:LH] C,4 | C,4 | C,4 |]

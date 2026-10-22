@@ -1,0 +1,19 @@
+%abc-2.1
+X:1777
+T:g3-n20-077 Sáu lượt quãng năm thấp
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fifth; lead=LH; bucket=n20; notes=15; RH=6; LH=9
+% role=A; duration60=18s; related_pattern=925c6298c00cdf99
+% authored_passages=V12
+% source=buildscripts/pianist/compositions/g3/n20.txt:78
+[V:RH] z3 | C2 D | z3 | E2 D |
+[V:LH] C, G, F, | z3 | E, D, C, | z3 |
+[V:RH] z3 | C2 C |]
+[V:LH] D, E, C, | z3 |]

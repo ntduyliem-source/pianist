@@ -1,0 +1,17 @@
+%abc-2.1
+X:979
+T:g2-n10-079 Hai cặp trầm gọi qua cửa
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=eighth; lead=LH; bucket=n10; notes=10; RH=4; LH=6
+% role=A; duration60=8s; related_pattern=92380335f2b413d2
+% authored_passages=inline-n10-079
+% source=buildscripts/pianist/compositions/g2/n10.txt:80
+[V:RH] z4 | C D E D |]
+[V:LH] C,/2D,/2 E,/2F,/2 E, D, | z4 |]

@@ -1,0 +1,21 @@
+%abc-2.1
+X:4694
+T:g7-n30-094 Đô Mi Sol trầm nhóm ba
+C:Nhạc do trợ lý AI biên soạn
+M:6/8
+L:1/4
+Q:3/8=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G7; profile=compound; lead=LH; bucket=n30; notes=36; RH=9; LH=27
+% duration60=18s; related_pattern=4745601741c30940
+% authored_passages=K19 KLp2 KLp1
+% source=buildscripts/pianist/compositions/g7/studies.txt:95
+[V:RH] C3 | C3 | C3 | D3 |
+[V:LH] C, E,/2 G,3/2 | E, G,/2 E,3/2 | C, D,/2 E,3/2 | F, E,/2 D,3/2 |
+[V:RH] C3 | C3 | D3 | C3 |
+[V:LH] E,3/2 C,3/2 | C, D,/2 E,3/2 | F, E,/2 D,3/2 | E,/2 F,/2 G,/2 G, E,/2 |
+[V:RH] C3 |]
+[V:LH] D,3/2 C,3/2 |]

@@ -1,0 +1,17 @@
+%abc-2.1
+X:137
+T:g1-n6-037 Làn sóng trầm thấp
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n6; notes=7; RH=2; LH=5
+% role=L; family=bass-lower-wave; form=authored; duration60=6s
+% related_pattern=12c38c04d4ae3b41
+% source=buildscripts/pianist/compositions/g1/n6.txt:39
+[V:RH] C3 | C3 |]
+[V:LH] C, D, C, | D, E,2 |]

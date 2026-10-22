@@ -1,0 +1,17 @@
+%abc-2.1
+X:1593
+T:g3-n6-093 Rê Sol trầm nhịp chung
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fourth; lead=LH; bucket=n6; notes=6; RH=3; LH=3
+% role=S; duration60=3s; related_pattern=10cbfa2abc266173
+% authored_passages=inline-n6-093
+% source=buildscripts/pianist/compositions/g3/n6.txt:94
+[V:RH] C D E |]
+[V:LH] D, G, F, |]

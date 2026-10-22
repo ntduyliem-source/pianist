@@ -1,0 +1,17 @@
+%abc-2.1
+X:1556
+T:g3-n6-056 Rải Mi trầm ghé Đô
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=arpeggio; lead=LH; bucket=n6; notes=6; RH=2; LH=4
+% role=L; duration60=4s; related_pattern=5d2cc1391149ded1
+% authored_passages=inline-n6-056
+% source=buildscripts/pianist/compositions/g3/n6.txt:57
+[V:RH] C2 C2 |]
+[V:LH] E, C, G, E, |]

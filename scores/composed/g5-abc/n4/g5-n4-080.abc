@@ -1,0 +1,17 @@
+%abc-2.1
+X:2880
+T:g5-n4-080 Đôi trầm mở Sol
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=dyad; lead=LH; bucket=n4; notes=5; RH=2; LH=3
+% duration60=4s; related_pattern=0e64c1c0024e7e49
+% authored_passages=D30
+% source=buildscripts/pianist/compositions/g5/studies.txt:81
+[V:RH] C2 G2 |]
+[V:LH] [C,E,]2 G,2 |]

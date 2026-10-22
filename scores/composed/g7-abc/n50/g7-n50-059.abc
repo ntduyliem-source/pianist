@@ -1,0 +1,23 @@
+%abc-2.1
+X:4759
+T:g7-n50-059 Sol đảo Mi Rê
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G7; profile=sync; lead=RH; bucket=n50; notes=53; RH=40; LH=13
+% duration60=52s; related_pattern=21eb2967108ed804
+% authored_passages=Y09 YR1 YR3 YR4
+% source=buildscripts/pianist/compositions/g7/studies.txt:60
+[V:RH] F/2 G E/2 D2 | C/2 D E/2 G2 | F/2 E D/2 C2 | E2 G2 |
+[V:LH] G,4 | C, z z z | C, z z z | C, z z z |
+[V:RH] D2 C2 | G/2 F E/2 D2 | C2 E2 | F/2 E D/2 C2 |
+[V:LH] C, z z z | G, z z z | C, z z z | C, z z z |
+[V:RH] C4 | D/2 F E/2 G2 | F E D2 | E/2 D C/2 E2 |
+[V:LH] C, z z z | G, z z z | D, z z z | C, z z z |
+[V:RH] D2 C2 |]
+[V:LH] C, z z z |]

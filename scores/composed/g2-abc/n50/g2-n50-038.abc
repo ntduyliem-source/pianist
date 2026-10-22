@@ -1,0 +1,21 @@
+%abc-2.1
+X:1238
+T:g2-n50-038 Câu trầm có nền chuyển
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=third; lead=LH; bucket=n50; notes=53; RH=12; LH=41
+% role=L; duration60=48s; related_pattern=8008dfb36f5bf59d
+% authored_passages=U08 U09 U13
+% source=buildscripts/pianist/compositions/g2/n50.txt:39
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C, E, D, C, | D, F, E,2 | G, F, E, D, | E, C, C,2 |
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] E, C, D, E, | G, F, E,2 | D, F, E, D, | C,2 C,2 |
+[V:RH] C4 | D4 | C4 | C4 |]
+[V:LH] C, E, D, C, | D,2 F, E, | E, G, F, E, | D, E, C,2 |]

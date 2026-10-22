@@ -1,0 +1,17 @@
+%abc-2.1
+X:1069
+T:g2-n20-069 Mi gọi từ trên
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=eighth; lead=RH; bucket=n20; notes=17; RH=10; LH=7
+% role=A; duration60=16s; related_pattern=5beb50e4a0a05b57
+% authored_passages=B04
+% source=buildscripts/pianist/compositions/g2/n20.txt:70
+[V:RH] E/2F/2 G F E | z4 | D E D/2C/2 C | z4 |]
+[V:LH] z4 | C, D, E, D, | z4 | D, C, C,2 |]

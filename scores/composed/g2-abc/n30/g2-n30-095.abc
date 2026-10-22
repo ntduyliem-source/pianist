@@ -1,0 +1,19 @@
+%abc-2.1
+X:1195
+T:g2-n30-095 Khoảng trên rồi nốt chờ
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=third; lead=RH; bucket=n30; notes=32; RH=16; LH=16
+% role=S; duration60=32s; related_pattern=419778e1cf9672da
+% authored_passages=S10 S17
+% source=buildscripts/pianist/compositions/g2/n30.txt:96
+[V:RH] C E D2 | E2 G2 | F E D C | C4 |
+[V:LH] C, D, D,2 | C,2 C,2 | D, E, D, C, | C,4 |
+[V:RH] C4 | E2 D C | C4 | C4 |]
+[V:LH] C,4 | C,2 D, C, | C,4 | C,4 |]

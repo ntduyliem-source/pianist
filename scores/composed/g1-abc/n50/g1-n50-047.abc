@@ -1,0 +1,23 @@
+%abc-2.1
+X:547
+T:g1-n50-047 Nhịp ba trầm trên cao
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n50; notes=54; RH=16; LH=38
+% role=L; family=bass-upper-waltz; form=authored; duration60=48s
+% related_pattern=d2990ce30bdd4855
+% source=buildscripts/pianist/compositions/g1/n50.txt:49
+[V:RH] C3 | C3 | C3 | C3 |
+[V:LH] E, F, G, | F, E, D, | E, F, E, | E,3 |
+[V:RH] C3 | C3 | C3 | C3 |
+[V:LH] E, E, F, | G, F, E, | D, E, F, | E,3 |
+[V:RH] C3 | C3 | C3 | C3 |
+[V:LH] E, F, G, | F, G, F, | E, D, E, | E,3 |
+[V:RH] C3 | C3 | C3 | C3 |]
+[V:LH] E,2 F, | G, F, E, | D, E,2 | E,3 |]

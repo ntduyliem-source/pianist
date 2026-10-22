@@ -1,0 +1,19 @@
+%abc-2.1
+X:345
+T:g1-n20-045 Năm ô trầm có nghỉ
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n20; notes=20; RH=5; LH=15
+% role=L; family=bass-five-breath; form=authored; duration60=20s
+% related_pattern=44cfc7d4cf7859bd
+% source=buildscripts/pianist/compositions/g1/n20.txt:47
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C, D, E,2 | F, E, D, C, | C, z D, E, | F, E, D, C, |
+[V:RH] C4 |]
+[V:LH] C,4 |]

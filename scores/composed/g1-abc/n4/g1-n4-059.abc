@@ -1,0 +1,17 @@
+%abc-2.1
+X:59
+T:g1-n4-059 Nhắc Mi rồi Rê
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n4; notes=4; RH=1; LH=3
+% role=L; family=bass-repeat-down; form=authored; duration60=3s
+% related_pattern=506c1fbb48a2cce4
+% source=buildscripts/pianist/compositions/g1/n4.txt:62
+[V:RH] G3 |]
+[V:LH] E, E, D, |]

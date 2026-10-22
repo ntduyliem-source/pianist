@@ -1,0 +1,26 @@
+# Q fourth dialogues (01–05 RH, 06–10 LH); V fifth; H C-major arpeggio.
+Q01;4;C F E D | z4 | C D F E | z4;z4 | C, D, E, D, | z4 | D, C, C,2
+Q02;4;F C D E | z4 | F E D C | z4;z4 | C, D, C, C, | z4 | C, D, C, C,
+Q03;4;D G F E | z4 | D E C2 | z4;z4 | C, D, E, D, | z4 | D, C, D, C,
+Q04;4;C2 F E | z4 | D G F E | z4;z4 | C, D, E, D, | z4 | D, E, D, C,
+Q05;4;C C F E | z4 | D F E C | z4;z4 | C, D, E, D, | z4 | D, C, C,2
+Q06;4;z4 | C D E D | z4 | D C C2;C, F, E, D, | z4 | C, D, F, E, | z4
+Q07;4;z4 | C D C C | z4 | C D C C;F, C, D, E, | z4 | F, E, D, C, | z4
+Q08;4;z4 | C D E D | z4 | D C D C;D, G, F, E, | z4 | D, E, C,2 | z4
+Q09;4;z4 | C D E D | z4 | D E D C;C,2 F, E, | z4 | D, G, F, E, | z4
+Q10;4;z4 | C D E D | z4 | D C C2;C, C, F, E, | z4 | D, F, E, C, | z4
+V01;4;C G F E | z4 | D E C2 | z4;z4 | C, D, E, D, | z4 | D, C, D, C,
+V02;4;G C D E | z4 | F E D C | z4;z4 | C, D, E, D, | z4 | D, C, C,2
+V03;4;C2 G F | z4 | E D E C | z4;z4 | C, D, E, D, | z4 | D, E, D, C,
+V04;4;C G D E | z4 | F E D C | z4;z4 | C, D, E, D, | z4 | D, C, D, C,
+V05;4;z4 | C D E D | z4 | D C D C;C, G, F, E, | z4 | D, E, C,2 | z4
+V06;4;z4 | C D E D | z4 | D C C2;G, C, D, E, | z4 | F, E, D, C, | z4
+V07;4;z4 | C D E D | z4 | D C D C;C, G, D, E, | z4 | F, E, D, C, | z4
+H01;4;C G E C | z4 | G E C2 | z4;z4 | C, D, E, D, | z4 | D, C, D, C,
+H02;4;G C E G | z4 | E C G C | z4;z4 | C, D, E, D, | z4 | D, C, C,2
+H03;4;E C G E | z4 | C G E C | z4;z4 | C, D, E, D, | z4 | D, E, D, C,
+H04;4;C2 G E | z4 | G C E C | z4;z4 | C, D, E, D, | z4 | D, C, D, C,
+H05;4;z4 | C D E D | z4 | D C D C;C, G, E, C, | z4 | G, E, C,2 | z4
+H06;4;z4 | C D E D | z4 | D C C2;G, C, E, G, | z4 | E, C, G, C, | z4
+H07;4;z4 | C D E D | z4 | D E D C;E, C, G, E, | z4 | C, G, E, C, | z4
+H08;4;z4 | C D E D | z4 | D C D C;C,2 G, E, | z4 | G, C, E, C, | z4

@@ -1,0 +1,17 @@
+%abc-2.1
+X:5043
+T:g8-n6-043 Dòng phụ trầm Fa Rê Sol
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G8; profile=ledger-low; lead=LH; bucket=n6; notes=7; RH=2; LH=5
+% duration60=8s; related_pattern=63379ceb88e602ca
+% authored_passages=L18 CB2
+% source=buildscripts/pianist/compositions/g8/studies.txt:44
+[V:RH] G4 | C4 |]
+[V:LH] F,,, D,,, G,,,2 | E,,,2 C,,,2 |]

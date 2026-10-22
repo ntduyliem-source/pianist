@@ -1,0 +1,25 @@
+%abc-2.1
+X:632
+T:g1-n100-032 Năm câu hỏi trầm trong ngày
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n100; notes=85; RH=20; LH=65
+% role=L; family=bass-five-questions; form=authored; duration60=80s
+% related_pattern=764e1af0c4c44ad4
+% source=buildscripts/pianist/compositions/g1/n100.txt:34
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C,2 D, E, | F,2 E, D, | E, F, E, D, | C,4 |
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C, C, D, E, | F, E, F, G, | F, E, D, C, | C,2 C,2 |
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C, D, E, F, | G, F, E, D, | C, D, E, D, | C,4 |
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C, D, D, E, | F, G, F, E, | D, C, D, E, | D, C, C,2 |
+[V:RH] C4 | C4 | C4 | C4 |]
+[V:LH] C, D, E,2 | F, E, D, C, | C, D, E, D, | C,4 |]

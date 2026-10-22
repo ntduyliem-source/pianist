@@ -1,0 +1,17 @@
+%abc-2.1
+X:152
+T:g1-n6-052 Hai lời trầm gần nhau
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n6; notes=8; RH=2; LH=6
+% role=L; family=bass-two-steps; form=authored; duration60=8s
+% related_pattern=6a48d5c0777cdb14
+% source=buildscripts/pianist/compositions/g1/n6.txt:54
+[V:RH] C4 | C4 |]
+[V:LH] C, D, E,2 | D, E, E,2 |]

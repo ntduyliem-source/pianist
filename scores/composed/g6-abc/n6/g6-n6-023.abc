@@ -1,0 +1,17 @@
+%abc-2.1
+X:3623
+T:g6-n6-023 Fa mở tới Rê cao
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G6; profile=M6-up; lead=RH; bucket=n6; notes=8; RH=6; LH=2
+% duration60=8s; related_pattern=30f8d536cf79961e
+% authored_passages=S23 CR1
+% source=buildscripts/pianist/compositions/g6/studies.txt:24
+[V:RH] E F d c | G2 E2 |]
+[V:LH] C,4 | C,4 |]

@@ -1,0 +1,25 @@
+%abc-2.1
+X:2098
+T:g3-n100-098 Năm lời năm chung ba phách
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fifth; lead=RH; bucket=n100; notes=98; RH=49; LH=49
+% role=S; duration60=60s; related_pattern=956a5a908360c116
+% authored_passages=W21 W25 W23 W21 W25
+% source=buildscripts/pianist/compositions/g3/n100.txt:99
+[V:RH] C G F | E D C | D G F | E C2 |
+[V:LH] C, C, D, | E, D, C, | D, E, D, | C, C,2 |
+[V:RH] C2 G | F E D | C G F | E C2 |
+[V:LH] C,2 C, | D, E, D, | C, C, D, | C, C,2 |
+[V:RH] C2 G | F E C | C3 | C3 |
+[V:LH] C,2 C, | D, D, C, | C,3 | C,3 |
+[V:RH] C G F | E D C | D G F | E C2 |
+[V:LH] C, C, D, | E, D, C, | D, E, D, | C, C,2 |
+[V:RH] C2 G | F E D | C G F | E C2 |]
+[V:LH] C,2 C, | D, E, D, | C, C, D, | C, C,2 |]

@@ -1,0 +1,27 @@
+%abc-2.1
+X:3460
+T:g5-n100-060 Rê Fa mở Sol
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=dyad; lead=RH; bucket=n100; notes=88; RH=56; LH=32
+% duration60=84s; related_pattern=3993d71ad2df3ef0
+% authored_passages=D10 DR4 DR8 DR1 DR5 DR7
+% source=buildscripts/pianist/compositions/g5/studies.txt:61
+[V:RH] [DF]2 G2 | [DF]2 D2 | E2 G2 | [EG]2 D2 |
+[V:LH] D,2 G,2 | D,2 D,2 | C,4 | E,2 G,2 |
+[V:RH] [CE]4 | [CG]2 G2 | E D C2 | [CE]2 D2 |
+[V:LH] C,4 | C,2 G,2 | C,4 | C,2 G,2 |
+[V:RH] [CG]4 | [CE]2 G2 | [DF]2 F2 | E D C2 |
+[V:LH] C,4 | C,2 G,2 | D,2 F,2 | G,4 |
+[V:RH] [CE]4 | [CE]2 C2 | D E F2 | [DF]2 G2 |
+[V:LH] C,4 | C,2 C,2 | D,4 | D,2 G,2 |
+[V:RH] [CG]4 | [EG]2 G2 | F2 D2 | [DF]2 E2 |
+[V:LH] C,4 | E,2 G,2 | D,4 | D,2 E,2 |
+[V:RH] [CE]4 |]
+[V:LH] C,4 |]

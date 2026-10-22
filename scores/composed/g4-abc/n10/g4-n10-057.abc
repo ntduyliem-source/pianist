@@ -1,0 +1,17 @@
+%abc-2.1
+X:2357
+T:g4-n10-057 Qua Fa La trầm về
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=span; lead=LH; bucket=n10; notes=10; RH=2; LH=8
+% role=L; duration60=8s; related_pattern=1f21b2786a86b14f
+% authored_passages=inline-n10-057
+% source=buildscripts/pianist/compositions/g4/n10.txt:58
+[V:RH] E4 | E4 |]
+[V:LH] C, F, A, C | B, G, E, C, |]

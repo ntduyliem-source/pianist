@@ -1,0 +1,17 @@
+%abc-2.1
+X:4437
+T:g7-n10-037 Fa nối sau Rê Đô
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G7; profile=tie; lead=RH; bucket=n10; notes=10; RH=7; LH=3
+% duration60=12s; related_pattern=ce31ac79a66eee3f
+% authored_passages=T12 CR3 CR2
+% source=buildscripts/pianist/compositions/g7/studies.txt:38
+[V:RH] D C/2 F/2-F2 | D2 C2 | E2 C2 |]
+[V:LH] F,4 | G,4 | C,4 |]

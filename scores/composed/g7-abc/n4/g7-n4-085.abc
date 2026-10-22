@@ -1,0 +1,17 @@
+%abc-2.1
+X:4285
+T:g7-n4-085 Fa Rê Sol hai phách
+C:Nhạc do trợ lý AI biên soạn
+M:6/8
+L:1/4
+Q:3/8=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G7; profile=compound; lead=RH; bucket=n4; notes=4; RH=3; LH=1
+% duration60=2s; related_pattern=c0ce03e949b59667
+% authored_passages=K10
+% source=buildscripts/pianist/compositions/g7/studies.txt:86
+[V:RH] F D/2 G3/2 |]
+[V:LH] G,3 |]

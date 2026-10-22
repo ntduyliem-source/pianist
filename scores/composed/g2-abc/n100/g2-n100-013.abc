@@ -1,0 +1,25 @@
+%abc-2.1
+X:1313
+T:g2-n100-013 Nốt dài trong chuyện ba phách
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=third; lead=RH; bucket=n100; notes=78; RH=58; LH=20
+% role=R; duration60=60s; related_pattern=3fa4364633008123
+% authored_passages=T23 T24 T21 T22 T25
+% source=buildscripts/pianist/compositions/g2/n100.txt:14
+[V:RH] C E D | C2 D | E G F | E D C |
+[V:LH] C,3 | C,3 | C,3 | C,3 |
+[V:RH] C D F | E D C | D F E | D C C |
+[V:LH] C,3 | C,3 | C,3 | C,3 |
+[V:RH] C E D | E G F | E D E | D C C |
+[V:LH] C,3 | C,3 | C,3 | C,3 |
+[V:RH] E G F | E C D | E D C | D C C |
+[V:LH] C,3 | C,3 | C,3 | C,3 |
+[V:RH] C C E | D E C | D F E | D C2 |]
+[V:LH] C,3 | C,3 | C,3 | C,3 |]

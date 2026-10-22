@@ -1,0 +1,23 @@
+%abc-2.1
+X:4086
+T:g6-n50-086 Đô trầm nhảy tám
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G6; profile=P8-up; lead=LH; bucket=n50; notes=51; RH=13; LH=38
+% duration60=52s; related_pattern=00c56e8db63ee1c8
+% authored_passages=S86 EL1 EL2 EL3
+% source=buildscripts/pianist/compositions/g6/studies.txt:87
+[V:RH] c4 | c z z z | c z z z | c z z z |
+[V:LH] D, C, C B, | G, D, C, C | B, A, G,2 | E, F, G,2 |
+[V:RH] c z z z | c z z z | c z z z | c z z z |
+[V:LH] E,2 C,2 | G, E, D, D | C B, A, G, | E,2 G,2 |
+[V:RH] c z z z | c z z z | c z z z | c z z z |
+[V:LH] E,2 C,2 | G,2 E,2 | F, E, E D | C2 G,2 |
+[V:RH] c z z z |]
+[V:LH] E,2 C,2 |]

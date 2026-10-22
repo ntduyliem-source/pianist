@@ -1,0 +1,25 @@
+%abc-2.1
+X:2026
+T:g3-n100-026 Mi rải chuyện qua nốt giữ
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=arpeggio; lead=RH; bucket=n100; notes=84; RH=64; LH=20
+% role=R; duration60=80s; related_pattern=9f062245b38367be
+% authored_passages=A02 A04 A01 A05 A07
+% source=buildscripts/pianist/compositions/g3/n100.txt:27
+[V:RH] E C G E | C G E C | E G C G | E C C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C2 G E | C E G C | E G C E | G E C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C G E C | G C E G | E C G E | C2 C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C G E2 | C2 G E | C E G C | E G C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C2 G E | C2 E2 | G2 C2 | C4 |]
+[V:LH] C,4 | C,4 | C,4 | C,4 |]

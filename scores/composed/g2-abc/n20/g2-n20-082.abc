@@ -1,0 +1,17 @@
+%abc-2.1
+X:1082
+T:g2-n20-082 Cặp giữa lời trầm
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=eighth; lead=LH; bucket=n20; notes=18; RH=7; LH=11
+% role=A; duration60=16s; related_pattern=6853bde786ae3544
+% authored_passages=B17
+% source=buildscripts/pianist/compositions/g2/n20.txt:83
+[V:RH] z4 | C D E D | z4 | D C C2 |]
+[V:LH] C, D,/2E,/2 F,/2G,/2 F, | z4 | E, D, E,/2D,/2 C, | z4 |]

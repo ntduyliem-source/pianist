@@ -1,0 +1,21 @@
+%abc-2.1
+X:2577
+T:g4-n30-077 Hai chuyện rất trầm ba
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=lower; lead=LH; bucket=n30; notes=32; RH=15; LH=17
+% role=A; duration60=36s; related_pattern=8f7f57ea9b8a6e43
+% authored_passages=T12 T14
+% source=buildscripts/pianist/compositions/g4/n30.txt:78
+[V:RH] z3 | C2 D | z3 | E2 D |
+[V:LH] A,, B,, C, | z3 | D, E, D, | z3 |
+[V:RH] z3 | C2 C | z3 | C D E |
+[V:LH] C, B,, A,, | z3 | E, B,, C, | z3 |
+[V:RH] z3 | D C D | z3 | E D C |]
+[V:LH] D, C, A,, | z3 | B,, A,,2 | z3 |]

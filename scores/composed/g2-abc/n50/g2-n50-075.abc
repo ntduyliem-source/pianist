@@ -1,0 +1,25 @@
+%abc-2.1
+X:1275
+T:g2-n50-075 Nhịp ba thay câu hỏi
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=eighth; lead=RH; bucket=n50; notes=53; RH=35; LH=18
+% role=A; duration60=54s; related_pattern=1276e32e7aca43e7
+% authored_passages=B22 B26 B21
+% source=buildscripts/pianist/compositions/g2/n50.txt:76
+[V:RH] C2 C/2D/2 | z3 | E D/2C/2 C | z3 |
+[V:LH] z3 | C,2 D, | z3 | E,2 D, |
+[V:RH] C D E/2D/2 | z3 | E/2F/2 G F | z3 |
+[V:LH] z3 | C,2 C, | z3 | C,2 D, |
+[V:RH] E D C/2D/2 | z3 | E D/2C/2 C | z3 |
+[V:LH] z3 | E,2 D, | z3 | C,2 C, |
+[V:RH] C/2D/2 E D | z3 | C D/2E/2 D | z3 |
+[V:LH] z3 | C,2 D, | z3 | E,2 D, |
+[V:RH] C D E/2D/2 | z3 |]
+[V:LH] z3 | C,2 C, |]

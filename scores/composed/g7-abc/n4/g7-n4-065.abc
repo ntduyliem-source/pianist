@@ -1,0 +1,17 @@
+%abc-2.1
+X:4265
+T:g7-n4-065 Fa trầm chen phách
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G7; profile=sync; lead=LH; bucket=n4; notes=5; RH=1; LH=4
+% duration60=4s; related_pattern=8fbc1b1d916dccb6
+% authored_passages=Y15
+% source=buildscripts/pianist/compositions/g7/studies.txt:66
+[V:RH] C4 |]
+[V:LH] E,/2 F, G,/2 E,2 |]

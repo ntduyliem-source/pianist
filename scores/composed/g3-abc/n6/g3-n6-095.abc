@@ -1,0 +1,17 @@
+%abc-2.1
+X:1595
+T:g3-n6-095 Bốn tiếng trầm nhảy chung
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fourth; lead=LH; bucket=n6; notes=8; RH=4; LH=4
+% role=S; duration60=4s; related_pattern=e880ac27d19edcc7
+% authored_passages=inline-n6-095
+% source=buildscripts/pianist/compositions/g3/n6.txt:96
+[V:RH] C D E D |]
+[V:LH] C, F, E, C, |]

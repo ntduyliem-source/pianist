@@ -1,0 +1,17 @@
+%abc-2.1
+X:5063
+T:g8-n6-063 Đôi Rê Sol chấm Rê
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G8; profile=dyad-dotted; lead=RH; bucket=n6; notes=8; RH=6; LH=2
+% duration60=8s; related_pattern=66e40d00b47c8507
+% authored_passages=D13 CR2
+% source=buildscripts/pianist/compositions/g8/studies.txt:64
+[V:RH] [DG]3/2 F/2 D2 | E2 C2 |]
+[V:LH] G,4 | C,4 |]

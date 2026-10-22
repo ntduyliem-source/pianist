@@ -1,0 +1,17 @@
+%abc-2.1
+X:3687
+T:g6-n6-087 Rê trầm nhảy tám
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G6; profile=P8-up; lead=LH; bucket=n6; notes=8; RH=2; LH=6
+% duration60=8s; related_pattern=2a5c7e93a67964c9
+% authored_passages=S87 CL3
+% source=buildscripts/pianist/compositions/g6/studies.txt:88
+[V:RH] c4 | c4 |]
+[V:LH] E, D, D C | G,2 D,2 |]

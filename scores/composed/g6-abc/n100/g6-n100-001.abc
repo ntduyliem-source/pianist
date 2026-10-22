@@ -1,0 +1,27 @@
+%abc-2.1
+X:4101
+T:g6-n100-001 Sáu thứ lên từ Mi
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G6; profile=m6-up; lead=RH; bucket=n100; notes=83; RH=62; LH=21
+% duration60=84s; related_pattern=7685180d7e1460d2
+% authored_passages=S01 AU1 AU2 AU3 AU2 AU1
+% source=buildscripts/pianist/compositions/g6/studies.txt:2
+[V:RH] F E c B | G E c B | A G E2 | D E G2 |
+[V:LH] C,4 | C, z z z | C, z z z | C, z z z |
+[V:RH] E2 C2 | G F E2 | F E c B | A G E2 |
+[V:LH] C, z z z | C, z z z | C, z z z | C, z z z |
+[V:RH] G2 E2 | G2 E2 | F E c B | A2 G2 |
+[V:LH] C, z z z | C, z z z | C, z z z | C, z z z |
+[V:RH] E2 C2 | G F E2 | F E c B | A G E2 |
+[V:LH] C, z z z | C, z z z | C, z z z | C, z z z |
+[V:RH] G2 E2 | G E c B | A G E2 | D E G2 |
+[V:LH] C, z z z | C, z z z | C, z z z | C, z z z |
+[V:RH] E2 C2 |]
+[V:LH] C, z z z |]

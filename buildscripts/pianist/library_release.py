@@ -7,6 +7,37 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 
 
+def validate_versions(songs):
+    """Old entries are version 1; explicit versions belong to a real first entry."""
+    groups = {}
+    for song in songs:
+        explicit = 'workId' in song
+        if explicit != ('version' in song):
+            raise ValueError('Incomplete library version metadata')
+        work = song.get('workId', song['id'])
+        number = song.get('version', 1)
+        if not isinstance(work, str) or not re.fullmatch(r'[a-f0-9]{64}', work) or type(number) is not int or not 1 <= number <= 500:
+            raise ValueError('Invalid library version identity')
+        label = song.get('versionLabel')
+        if label is not None and (not isinstance(label, str) or not label.strip() or len(label) > 120):
+            raise ValueError('Invalid library version label')
+        ready, notice = song.get('practiceReady'), song.get('practiceNotice')
+        if ready is not None and type(ready) is not bool:
+            raise ValueError('Invalid library practice support')
+        if notice is not None and (not isinstance(notice, str) or not notice.strip() or len(notice) > 300):
+            raise ValueError('Invalid library practice notice')
+        if ready is False and not notice:
+            raise ValueError('Unsupported practice requires an explanation')
+        versions = groups.setdefault(work, {})
+        if number in versions:
+            raise ValueError('Duplicate library version number')
+        versions[number] = song
+    for work, versions in groups.items():
+        if versions.get(1, {}).get('id') != work:
+            raise ValueError('Missing first library version')
+    return groups
+
+
 def verify_library(read, paths):
     source = ROOT / 'scores/library/catalog.json'
     if not source.exists():
@@ -19,6 +50,7 @@ def verify_library(read, paths):
     songs = catalog['songs']
     if not isinstance(songs, list) or len(songs) > 500:
         raise ValueError('Invalid library size')
+    validate_versions(songs)
     expected = {'library/catalog.json'}
     identities = set()
     for song in songs:

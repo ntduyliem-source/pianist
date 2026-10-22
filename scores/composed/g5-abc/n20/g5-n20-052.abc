@@ -1,0 +1,19 @@
+%abc-2.1
+X:3152
+T:g5-n20-052 Đô Mi tìm Rê
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=dyad; lead=RH; bucket=n20; notes=22; RH=14; LH=8
+% duration60=20s; related_pattern=da5625b47ce0de36
+% authored_passages=D02 DR2
+% source=buildscripts/pianist/compositions/g5/studies.txt:53
+[V:RH] [CE]2 D2 | [EG]2 E2 | [DF]2 D2 | C D E2 |
+[V:LH] C,2 D,2 | C,2 E,2 | D,2 D,2 | C,4 |
+[V:RH] [CG]4 |]
+[V:LH] C,4 |]

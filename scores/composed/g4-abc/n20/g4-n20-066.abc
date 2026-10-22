@@ -1,0 +1,17 @@
+%abc-2.1
+X:2466
+T:g4-n20-066 Bass cao hỏi trên đáp
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=upper; lead=LH; bucket=n20; notes=15; RH=7; LH=8
+% role=A; duration60=16s; related_pattern=726dd45093875c92
+% authored_passages=Q06
+% source=buildscripts/pianist/compositions/g4/n20.txt:67
+[V:RH] z4 | G F E F | z4 | G F G2 |]
+[V:LH] G, A, B, C | z4 | D C B, G, | z4 |]

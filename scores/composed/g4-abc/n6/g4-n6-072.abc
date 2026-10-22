@@ -1,0 +1,17 @@
+%abc-2.1
+X:2272
+T:g4-n6-072 Mi gọi Si thấp đáp
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=lower; lead=RH; bucket=n6; notes=6; RH=3; LH=3
+% role=A; duration60=6s; related_pattern=110f78e83693d736
+% authored_passages=inline-n6-072
+% source=buildscripts/pianist/compositions/g4/n6.txt:73
+[V:RH] E B, C | z3 |]
+[V:LH] z3 | C, D, E, |]

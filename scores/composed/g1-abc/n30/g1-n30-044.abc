@@ -1,0 +1,19 @@
+%abc-2.1
+X:444
+T:g1-n30-044 Hai câu trầm quanh Sol
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n30; notes=33; RH=8; LH=25
+% role=L; family=bass-two-upper-phrases; form=authored; duration60=32s
+% related_pattern=11dfe69cc6ae14ac
+% source=buildscripts/pianist/compositions/g1/n30.txt:46
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] E, F, G,2 | F, E, D, E, | F, G, F, E, | E,4 |
+[V:RH] C4 | C4 | C4 | C4 |]
+[V:LH] E,2 F, G, | F, G, F, E, | D, E, F, E, | E,2 E,2 |]

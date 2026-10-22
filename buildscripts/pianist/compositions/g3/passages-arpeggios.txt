@@ -1,0 +1,21 @@
+# A: RH C-major arpeggio; D: LH C-major arpeggio. Support remains stepwise.
+A01;4;C G E C | G C E G | E C G E | C2 C2;C,4 | C,4 | C,4 | C,4
+A02;4;E C G E | C G E C | E G C G | E C C2;C,4 | C,4 | C,4 | C,4
+A03;4;G C E G | E C G E | C G E C | E G C2;C,4 | C,4 | C,4 | C,4
+A04;4;C2 G E | C E G C | E G C E | G E C2;C,4 | C,4 | C,4 | C,4
+A05;4;C G E2 | C2 G E | C E G C | E G C2;C,4 | C,4 | C,4 | C,4
+A06;4;C G E z | G C E G | E C G E | C E C2;C,4 | C,4 | C,4 | C,4
+A07;4;C2 G E | C2 E2 | G2 C2 | C4;C,4 | C,4 | C,4 | C,4
+A08;4;C4 | E C G E | C2 E2 | C4;C,4 | C,4 | C,4 | C,4
+A09;4;C2 G E | C4 | E2 G2 | C4;C,4 | C,4 | C,4 | C,4
+A10;4;C4 | C G E2 | C2 G2 | C4;C,4 | C,4 | C,4 | C,4
+D01;4;C4 | C4 | C4 | C4;C, G, E, C, | G, C, E, G, | E, C, G, E, | C,2 C,2
+D02;4;C4 | C4 | C4 | C4;E, C, G, E, | C, G, E, C, | E, G, C, G, | E, C, C,2
+D03;4;C4 | C4 | C4 | C4;G, C, E, G, | E, C, G, E, | C, G, E, C, | E, G, C,2
+D04;4;C4 | C4 | C4 | C4;C,2 G, E, | C, E, G, C, | E, G, C, E, | G, E, C,2
+D05;4;C4 | C4 | C4 | C4;C, G, E,2 | C,2 G, E, | C, E, G, C, | E, G, C,2
+D06;4;C4 | C4 | C4 | C4;C, G, E, z | G, C, E, G, | E, C, G, E, | C, E, C,2
+D07;4;C4 | C4 | C4 | C4;C,2 G, E, | C,2 E,2 | G,2 C,2 | C,4
+D08;4;C4 | C4 | C4 | C4;C,4 | E, C, G, E, | C,2 E,2 | C,4
+D09;4;C4 | C4 | C4 | C4;C,2 G, E, | C,4 | E,2 G,2 | C,4
+D10;4;C4 | C4 | C4 | C4;C,4 | C, G, E,2 | C,2 G,2 | C,4

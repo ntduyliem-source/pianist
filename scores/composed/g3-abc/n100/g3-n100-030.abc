@@ -1,0 +1,25 @@
+%abc-2.1
+X:2030
+T:g3-n100-030 Sol rải Đô trả Mi kể
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=arpeggio; lead=RH; bucket=n100; notes=76; RH=56; LH=20
+% role=R; duration60=60s; related_pattern=94c6c281cb4bc1cf
+% authored_passages=A22 A21 A23 A22 A21
+% source=buildscripts/pianist/compositions/g3/n100.txt:31
+[V:RH] G C E | G E C | E G C | G C2 |
+[V:LH] C,3 | C,3 | C,3 | C,3 |
+[V:RH] C G E | G C E | G E C | C2 E |
+[V:LH] C,3 | C,3 | C,3 | C,3 |
+[V:RH] E C G | E G C | G C E | G E C |
+[V:LH] C,3 | C,3 | C,3 | C,3 |
+[V:RH] G C E | G E C | E G C | G C2 |
+[V:LH] C,3 | C,3 | C,3 | C,3 |
+[V:RH] C G E | G C E | G E C | C2 E |]
+[V:LH] C,3 | C,3 | C,3 | C,3 |]

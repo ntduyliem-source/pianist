@@ -1,0 +1,19 @@
+%abc-2.1
+X:1851
+T:g3-n30-051 Nhắc trầm ngắt nhẹ
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fifth; lead=LH; bucket=n30; notes=36; RH=8; LH=28
+% role=L; duration60=32s; related_pattern=05cfe3e2f1db8201
+% authored_passages=B06 B09
+% source=buildscripts/pianist/compositions/g3/n30.txt:52
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C, C, G, F, | E, D, E, C, | D, E, G, F, | E, D, C,2 |
+[V:RH] C4 | C4 | C4 | C4 |]
+[V:LH] C, G, z F, | E, D, C,2 | D, E, F, E, | D, E, C,2 |]

@@ -1,0 +1,19 @@
+%abc-2.1
+X:1106
+T:g2-n30-006 Hai lời từ nốt Mi
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=third; lead=RH; bucket=n30; notes=33; RH=25; LH=8
+% role=R; duration60=32s; related_pattern=3ca5912859ef92a4
+% authored_passages=T06 T05
+% source=buildscripts/pianist/compositions/g2/n30.txt:7
+[V:RH] E2 G F | E C D E | F E D C | D E C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C2 E D | E2 G F | E D C2 | E2 C2 |]
+[V:LH] C,4 | C,4 | C,4 | C,4 |]

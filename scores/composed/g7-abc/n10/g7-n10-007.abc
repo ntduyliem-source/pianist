@@ -1,0 +1,17 @@
+%abc-2.1
+X:4407
+T:g7-n10-007 Sol Mi Đô buông nhẹ
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G7; profile=dotted; lead=RH; bucket=n10; notes=10; RH=7; LH=3
+% duration60=12s; related_pattern=4908a594e1ae32cd
+% authored_passages=D07 CR1 CR2
+% source=buildscripts/pianist/compositions/g7/studies.txt:8
+[V:RH] G3/2 E/2 C2 | G2 E2 | E2 C2 |]
+[V:LH] C,4 | C,4 | C,4 |]

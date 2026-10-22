@@ -1,5 +1,7 @@
 # Chạy và mở rộng kho bài tập K
 
+> **Hướng dẫn build kho cũ, đã bị thay thế về yêu cầu nội dung.** Đọc [kế hoạch xây lại hai khuông](GRAND_STAFF_BANK_PLAN.md) trước khi triển khai. Các lệnh bên dưới vẫn tạo/đóng gói bank v1 có bài một tay; không chạy chúng rồi coi đó là kho mới. Script/schema thay thế chưa được triển khai trong lượt lập kế hoạch ngày 21/10/2026.
+
 Lệnh chạy từ thư mục gốc repository. Đây là phần xây kho offline K1–K5; không thay đổi editor, màn tập hoặc bộ chấm khi chơi.
 
 ## Chạy tiếp và đóng gói

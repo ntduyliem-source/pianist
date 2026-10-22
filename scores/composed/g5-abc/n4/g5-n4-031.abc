@@ -1,0 +1,17 @@
+%abc-2.1
+X:2831
+T:g5-n4-031 Trầm Rê Mi hai lớp
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=offset; lead=LH; bucket=n4; notes=4; RH=2; LH=2
+% duration60=4s; related_pattern=87b68b5b9ed3de19
+% authored_passages=O31
+% source=buildscripts/pianist/compositions/g5/studies.txt:32
+[V:RH] z D z E |]
+[V:LH] D,2 E, z |]

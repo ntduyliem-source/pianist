@@ -1,0 +1,31 @@
+%abc-2.1
+X:1385
+T:g2-n100-085 Ba phách trầm đổi lời kể
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=eighth; lead=LH; bucket=n100; notes=88; RH=31; LH=57
+% role=A; duration60=90s; related_pattern=1382848c886f83c4
+% authored_passages=B24 B27 B23 B28 B24
+% source=buildscripts/pianist/compositions/g2/n100.txt:86
+[V:RH] z3 | C2 D | z3 | E2 D |
+[V:LH] C,2 C,/2D,/2 | z3 | E, D,/2C,/2 C, | z3 |
+[V:RH] z3 | C2 C | z3 | C D E |
+[V:LH] C, D, E,/2D,/2 | z3 | C, D,/2E,/2 F, | z3 |
+[V:RH] z3 | D C2 | z3 | C2 C |
+[V:LH] E,/2D,/2 C,2 | z3 | C, D, E,/2D,/2 | z3 |
+[V:RH] z3 | C2 D | z3 | E2 D |
+[V:LH] C,/2D,/2 E, D, | z3 | C, D,/2E,/2 D, | z3 |
+[V:RH] z3 | C2 C | z3 | C2 D |
+[V:LH] C, D, E,/2D,/2 | z3 | E,/2F,/2 G, F, | z3 |
+[V:RH] z3 | E2 D | z3 | C2 C |
+[V:LH] E, D, C,/2D,/2 | z3 | E, D,/2C,/2 C, | z3 |
+[V:RH] z3 | C2 D | z3 | E2 D |
+[V:LH] C,2 C,/2D,/2 | z3 | E, D,/2C,/2 C, | z3 |
+[V:RH] z3 | C2 C |]
+[V:LH] C, D, E,/2D,/2 | z3 |]

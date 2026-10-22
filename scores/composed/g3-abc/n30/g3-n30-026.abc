@@ -1,0 +1,19 @@
+%abc-2.1
+X:1826
+T:g3-n30-026 Mi rải nghe nốt yên
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=arpeggio; lead=RH; bucket=n30; notes=31; RH=23; LH=8
+% role=R; duration60=32s; related_pattern=61217775d0fb7fc7
+% authored_passages=A02 A08
+% source=buildscripts/pianist/compositions/g3/n30.txt:27
+[V:RH] E C G E | C G E C | E G C G | E C C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C4 | E C G E | C2 E2 | C4 |]
+[V:LH] C,4 | C,4 | C,4 | C,4 |]

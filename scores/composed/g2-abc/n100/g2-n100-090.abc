@@ -1,0 +1,25 @@
+%abc-2.1
+X:1390
+T:g2-n100-090 Năm lời kể chung tiếng
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=third; lead=RH; bucket=n100; notes=116; RH=58; LH=58
+% role=S; duration60=80s; related_pattern=0ace28084e4dd818
+% authored_passages=S05 S25 S02 S27 S01
+% source=buildscripts/pianist/compositions/g2/n100.txt:91
+[V:RH] C E D C | D F E C | D E C2 | C4 |
+[V:LH] C, D, C, C, | D, E, D, C, | D, D, C,2 | C,4 |
+[V:RH] C2 E D | E G F2 | E2 D C | D E C2 |
+[V:LH] C,2 D, C, | C, D, D,2 | C,2 D, C, | D, D, C,2 |
+[V:RH] C E D2 | E2 D C | E2 D C | C4 |
+[V:LH] C, D, D,2 | C,2 D, C, | C,2 D, C, | C,4 |
+[V:RH] E2 G F | E D F2 | E2 D C | D E C2 |
+[V:LH] C,2 C, D, | E, D, D,2 | C,2 D, C, | D, D, C,2 |
+[V:RH] C E D C | E2 D C | D E C2 | C2 C2 |]
+[V:LH] C, D, C, C, | C,2 D, C, | D, D, C,2 | C,2 C,2 |]

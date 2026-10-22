@@ -1,0 +1,701 @@
+id	group	bookPosition	profile	role	lead	count	right	left	meter	bars	seconds	title
+g4-n4-001	n4	1	upper	R	RH	3	2	1	2	1	2	Sol mở sang La cao
+g4-n4-002	n4	12	upper	R	RH	3	2	1	2	1	2	La cao ghé Si
+g4-n4-003	n4	24	upper	R	RH	3	2	1	2	1	2	Si cao tới Đô
+g4-n4-004	n4	19	upper	R	RH	3	2	1	2	1	2	Đô cao bước sang Rê
+g4-n4-005	n4	32	upper	R	RH	3	2	1	2	1	2	Rê cao về Đô
+g4-n4-006	n4	37	upper	R	RH	3	2	1	2	1	2	Đô cao ghé Si
+g4-n4-007	n4	44	upper	R	RH	3	2	1	2	1	2	Si cao hạ La
+g4-n4-008	n4	52	upper	R	RH	3	2	1	2	1	2	La cao trở về Sol
+g4-n4-009	n4	59	upper	R	RH	4	3	1	3	1	3	Sol gọi Si rồi bước
+g4-n4-010	n4	64	upper	R	RH	4	3	1	3	1	3	Si gọi Rê trở lại
+g4-n4-011	n4	70	upper	R	RH	4	3	1	4	1	4	Sol dài mở vùng cao
+g4-n4-012	n4	79	upper	R	RH	4	3	1	4	1	4	Si dài nhìn Đô Rê
+g4-n4-013	n4	84	upper	R	RH	5	4	1	4	1	4	Bốn bậc từ Sol cao
+g4-n4-014	n4	92	upper	R	RH	5	4	1	4	1	4	Bốn bậc từ Rê cao
+g4-n4-015	n4	98	upper	R	RH	5	4	1	4	1	4	Vòng nhỏ trên khuông
+g4-n4-016	n4	29	lower	R	RH	3	2	1	2	1	2	La thấp ghé Si
+g4-n4-017	n4	2	lower	R	RH	3	2	1	2	1	2	Si thấp tìm Đô giữa
+g4-n4-018	n4	16	lower	R	RH	3	2	1	2	1	2	Đô giữa xuống Si
+g4-n4-019	n4	61	lower	R	RH	3	2	1	2	1	2	Si thấp về La
+g4-n4-020	n4	38	lower	R	RH	4	3	1	3	1	3	La gọi Đô rồi ghé Si
+g4-n4-021	n4	50	lower	R	RH	4	3	1	3	1	3	Mi gọi Si thấp
+g4-n4-022	n4	71	lower	R	RH	5	4	1	4	1	4	La Đô Mi vòng về
+g4-n4-023	n4	82	lower	R	RH	5	4	1	4	1	4	Đô ghé miền thấp
+g4-n4-024	n4	95	lower	R	RH	4	3	1	4	1	4	La dài mở vùng thấp
+g4-n4-025	n4	3	span	R	RH	4	3	1	3	1	3	Đô Sol Đô qua quãng tám
+g4-n4-026	n4	22	span	R	RH	4	3	1	3	1	3	Đô cao qua Sol về giữa
+g4-n4-027	n4	39	span	R	RH	5	4	1	4	1	4	Đô qua Fa La tới cao
+g4-n4-028	n4	54	span	R	RH	5	4	1	4	1	4	Đô cao La Fa về giữa
+g4-n4-029	n4	72	span	R	RH	4	3	1	4	1	4	Giữ Đô rồi mở tám
+g4-n4-030	n4	89	span	R	RH	4	3	1	4	1	4	Giữ Đô cao rồi về
+g4-n4-031	n4	40	upper	L	LH	3	1	2	2	1	2	Sol trầm bước lên La
+g4-n4-032	n4	60	upper	L	LH	3	1	2	2	1	2	La trầm lên Si
+g4-n4-033	n4	13	upper	L	LH	3	1	2	2	1	2	Si trầm tới Đô giữa
+g4-n4-034	n4	73	upper	L	LH	3	1	2	2	1	2	Đô giữa lên Rê
+g4-n4-035	n4	4	upper	L	LH	3	1	2	2	1	2	Rê giữa về Đô
+g4-n4-036	n4	25	upper	L	LH	3	1	2	2	1	2	Đô giữa ghé Si trầm
+g4-n4-037	n4	80	upper	L	LH	3	1	2	2	1	2	Si trầm hạ La
+g4-n4-038	n4	93	upper	L	LH	3	1	2	2	1	2	La trầm trở về Sol
+g4-n4-039	n4	20	upper	L	LH	4	1	3	3	1	3	Sol trầm gọi Si
+g4-n4-040	n4	33	upper	L	LH	4	1	3	3	1	3	Si trầm gọi Rê
+g4-n4-041	n4	45	upper	L	LH	4	1	3	4	1	4	Sol dài vùng bass cao
+g4-n4-042	n4	53	upper	L	LH	4	1	3	4	1	4	Si dài nhìn Đô Rê giữa
+g4-n4-043	n4	65	upper	L	LH	5	1	4	4	1	4	Bốn bậc bass đi lên
+g4-n4-044	n4	85	upper	L	LH	5	1	4	4	1	4	Bốn bậc bass đi xuống
+g4-n4-045	n4	100	upper	L	LH	5	1	4	4	1	4	Vòng nhỏ trên khóa Fa
+g4-n4-046	n4	51	lower	L	LH	3	1	2	2	1	2	La rất trầm ghé Si
+g4-n4-047	n4	41	lower	L	LH	3	1	2	2	1	2	Si rất trầm tìm Đô
+g4-n4-048	n4	5	lower	L	LH	3	1	2	2	1	2	Đô trầm xuống Si
+g4-n4-049	n4	17	lower	L	LH	3	1	2	2	1	2	Si rất trầm về La
+g4-n4-050	n4	30	lower	L	LH	4	1	3	3	1	3	La thấp gọi Đô trầm
+g4-n4-051	n4	62	lower	L	LH	4	1	3	3	1	3	Mi trầm gọi Si thấp
+g4-n4-052	n4	83	lower	L	LH	5	1	4	4	1	4	La Đô Mi trầm vòng về
+g4-n4-053	n4	74	lower	L	LH	5	1	4	4	1	4	Đô trầm ghé miền thấp
+g4-n4-054	n4	99	lower	L	LH	4	1	3	4	1	4	La dài mở bass thấp
+g4-n4-055	n4	23	span	L	LH	4	1	3	3	1	3	Đô trầm Sol tới Đô giữa
+g4-n4-056	n4	6	span	L	LH	4	1	3	3	1	3	Đô giữa qua Sol về trầm
+g4-n4-057	n4	55	span	L	LH	5	1	4	4	1	4	Đô trầm qua Fa La
+g4-n4-058	n4	42	span	L	LH	5	1	4	4	1	4	Đô giữa La Fa về trầm
+g4-n4-059	n4	90	span	L	LH	4	1	3	4	1	4	Giữ Đô trầm mở tám
+g4-n4-060	n4	75	span	L	LH	4	1	3	4	1	4	Giữ Đô giữa về trầm
+g4-n4-061	n4	7	upper	A	RH	3	2	1	3	1	3	Hai nốt cao trao lời
+g4-n4-062	n4	14	upper	A	RH	3	2	1	3	1	3	Si Đô cao gọi đáp
+g4-n4-063	n4	26	upper	A	RH	3	2	1	3	1	3	Rê Đô cao trao lượt
+g4-n4-064	n4	35	upper	A	RH	4	3	1	4	1	4	Ba bậc cao một lời đáp
+g4-n4-065	n4	46	upper	A	RH	4	3	1	4	1	4	Ba bậc cao đi xuống gọi
+g4-n4-066	n4	56	upper	A	LH	3	1	2	3	1	3	Hai nốt bass cao trao
+g4-n4-067	n4	66	upper	A	LH	3	1	2	3	1	3	Si Đô bass cao gọi
+g4-n4-068	n4	76	upper	A	LH	3	1	2	3	1	3	Rê Đô giữa trao lượt
+g4-n4-069	n4	86	upper	A	LH	4	1	3	4	1	4	Ba bậc bass cao gọi
+g4-n4-070	n4	96	upper	A	LH	4	1	3	4	1	4	Ba bậc bass xuống gọi
+g4-n4-071	n4	21	lower	A	RH	3	2	1	3	1	3	Hai nốt thấp trao lời
+g4-n4-072	n4	8	lower	A	RH	3	2	1	3	1	3	Đô Si thấp gọi đáp
+g4-n4-073	n4	34	lower	A	RH	4	3	1	4	1	4	La Đô Mi thấp trao
+g4-n4-074	n4	49	lower	A	RH	4	3	1	4	1	4	Mi Si thấp gọi Đô
+g4-n4-075	n4	63	lower	A	LH	3	1	2	3	1	3	Hai nốt rất trầm gọi
+g4-n4-076	n4	78	lower	A	LH	3	1	2	3	1	3	Đô Si trầm gọi đáp
+g4-n4-077	n4	91	lower	A	LH	4	1	3	4	1	4	La Đô Mi trầm trao
+g4-n4-078	n4	9	span	A	RH	4	3	1	4	1	4	Qua quãng tám rồi đáp
+g4-n4-079	n4	18	span	A	RH	4	3	1	4	1	4	Từ Đô cao về rồi đáp
+g4-n4-080	n4	31	span	A	RH	5	4	1	4	2	8	Mở tám qua bốn bậc gọi
+g4-n4-081	n4	43	span	A	RH	5	4	1	4	2	8	Về giữa qua bốn bậc gọi
+g4-n4-082	n4	57	span	A	LH	4	1	3	4	1	4	Mở tám ở trầm rồi đáp
+g4-n4-083	n4	69	span	A	LH	4	1	3	4	1	4	Từ Đô giữa về gọi đáp
+g4-n4-084	n4	81	span	A	LH	5	1	4	4	2	8	Bốn bậc trầm mở tám gọi
+g4-n4-085	n4	94	span	A	LH	5	1	4	4	2	8	Bốn bậc giữa về trầm gọi
+g4-n4-086	n4	10	upper	S	RH	4	2	2	2	1	2	Hai tiếng cao cùng phách
+g4-n4-087	n4	27	upper	S	RH	4	2	2	2	1	2	La Si cao cùng tiếng
+g4-n4-088	n4	15	upper	S	RH	4	2	2	2	1	2	Si Đô cao nền bước
+g4-n4-089	n4	36	upper	S	RH	4	2	2	2	1	2	Đô Rê cao nền về
+g4-n4-090	n4	47	upper	S	RH	4	2	2	4	1	4	Si Đô dài cùng tiếng
+g4-n4-091	n4	58	upper	S	LH	4	2	2	2	1	2	Hai tiếng bass cao chung
+g4-n4-092	n4	67	upper	S	LH	4	2	2	2	1	2	La Si bass cùng tiếng
+g4-n4-093	n4	77	upper	S	LH	4	2	2	2	1	2	Si Đô bass nền bước
+g4-n4-094	n4	87	upper	S	LH	4	2	2	2	1	2	Đô Rê giữa nền về
+g4-n4-095	n4	97	upper	S	LH	4	2	2	4	1	4	Si Đô giữa dài chung
+g4-n4-096	n4	11	lower	S	RH	4	2	2	2	1	2	Hai tiếng thấp cùng phách
+g4-n4-097	n4	28	lower	S	RH	4	2	2	2	1	2	Si Đô thấp nền bước
+g4-n4-098	n4	48	lower	S	RH	4	2	2	4	1	4	La Đô thấp dài chung
+g4-n4-099	n4	68	lower	S	LH	4	2	2	2	1	2	Hai tiếng rất trầm chung
+g4-n4-100	n4	88	lower	S	LH	4	2	2	4	1	4	La Đô trầm dài chung
+g4-n6-001	n6	1	upper	R	RH	6	4	2	4	1	4	Bốn nốt cao trên nền nhắc
+g4-n6-002	n6	12	upper	R	RH	6	4	2	4	1	4	Từ Rê cao xuống La
+g4-n6-003	n6	19	upper	R	RH	6	4	2	4	1	4	Vòng Sol Si La
+g4-n6-004	n6	32	upper	R	RH	6	4	2	4	1	4	Si gọi Rê rồi về
+g4-n6-005	n6	24	upper	R	RH	6	4	2	4	1	4	Sol ghé Đô cao
+g4-n6-006	n6	37	upper	R	RH	8	6	2	3	2	6	Hai nhịp đi lên về Sol
+g4-n6-007	n6	44	upper	R	RH	8	6	2	3	2	6	Ba nốt phía trên đáp
+g4-n6-008	n6	52	upper	R	RH	8	6	2	3	2	6	Sol Si Rê vòng xuống
+g4-n6-009	n6	59	upper	R	RH	8	6	2	3	2	6	Đô cao gọi La Si
+g4-n6-010	n6	70	upper	R	RH	7	5	2	3	2	6	Giữ Sol mở hai nhịp
+g4-n6-011	n6	64	upper	R	RH	7	5	2	3	2	6	Đi cao rồi giữ Sol
+g4-n6-012	n6	79	upper	R	RH	7	5	2	3	2	6	Si dài nhìn lên Rê
+g4-n6-013	n6	84	upper	R	RH	7	5	2	3	2	6	Nốt nhắc ở cửa vùng cao
+g4-n6-014	n6	92	upper	R	RH	7	5	2	3	2	6	Rê cao đi về chậm
+g4-n6-015	n6	98	upper	R	RH	7	5	2	3	2	6	Sol dài Đô ghé Si
+g4-n6-016	n6	2	lower	R	RH	6	4	2	4	1	4	Bốn nốt từ La thấp
+g4-n6-017	n6	16	lower	R	RH	6	4	2	4	1	4	Mi đi xuống Si thấp
+g4-n6-018	n6	29	lower	R	RH	6	4	2	4	1	4	La thấp Đô Mi vòng về
+g4-n6-019	n6	38	lower	R	RH	6	4	2	4	1	4	Đô ghé La rồi trở lại
+g4-n6-020	n6	50	lower	R	RH	8	6	2	3	2	6	Hai nhịp trong vùng thấp
+g4-n6-021	n6	61	lower	R	RH	8	6	2	3	2	6	Mi gọi Si thấp đáp
+g4-n6-022	n6	71	lower	R	RH	7	5	2	3	2	6	La dài mở câu thấp
+g4-n6-023	n6	82	lower	R	RH	7	5	2	3	2	6	Đô trở về La giữ
+g4-n6-024	n6	95	lower	R	RH	7	5	2	3	2	6	La Đô Mi giữ cuối
+g4-n6-025	n6	3	span	R	RH	6	4	2	4	1	4	Qua tám rồi ghé Sol
+g4-n6-026	n6	22	span	R	RH	6	4	2	4	1	4	Từ cao về giữa ghé Mi
+g4-n6-027	n6	39	span	R	RH	6	4	2	4	1	4	Bốn bậc mở rộng có nền
+g4-n6-028	n6	54	span	R	RH	8	6	2	3	2	6	Mở tám rồi bước xuống
+g4-n6-029	n6	72	span	R	RH	8	6	2	3	2	6	Về giữa rồi đi lên
+g4-n6-030	n6	89	span	R	RH	8	6	2	4	2	8	Giữ hai đầu đường rộng
+g4-n6-031	n6	13	upper	L	LH	6	2	4	4	1	4	Bốn nốt bass cao nền nhắc
+g4-n6-032	n6	4	upper	L	LH	6	2	4	4	1	4	Rê giữa xuống La trầm
+g4-n6-033	n6	33	upper	L	LH	6	2	4	4	1	4	Vòng Sol Si La bass
+g4-n6-034	n6	20	upper	L	LH	6	2	4	4	1	4	Si bass gọi Rê giữa
+g4-n6-035	n6	40	upper	L	LH	6	2	4	4	1	4	Sol trầm ghé Đô giữa
+g4-n6-036	n6	25	upper	L	LH	8	2	6	3	2	6	Hai nhịp bass lên về
+g4-n6-037	n6	53	upper	L	LH	8	2	6	3	2	6	Ba nốt bass phía trên
+g4-n6-038	n6	45	upper	L	LH	8	2	6	3	2	6	Sol Si Rê giữa vòng
+g4-n6-039	n6	73	upper	L	LH	8	2	6	3	2	6	Đô giữa gọi La Si
+g4-n6-040	n6	60	upper	L	LH	7	2	5	3	2	6	Sol thấp dài mở nhịp
+g4-n6-041	n6	80	upper	L	LH	7	2	5	3	2	6	Bass lên rồi giữ Sol
+g4-n6-042	n6	65	upper	L	LH	7	2	5	3	2	6	Si trầm dài nhìn Rê
+g4-n6-043	n6	93	upper	L	LH	7	2	5	3	2	6	Nốt nhắc cửa bass cao
+g4-n6-044	n6	85	upper	L	LH	7	2	5	3	2	6	Rê giữa đi về chậm
+g4-n6-045	n6	100	upper	L	LH	7	2	5	3	2	6	Sol bass dài Đô Si
+g4-n6-046	n6	17	lower	L	LH	6	2	4	4	1	4	Bốn nốt từ La rất trầm
+g4-n6-047	n6	5	lower	L	LH	6	2	4	4	1	4	Mi trầm xuống Si thấp
+g4-n6-048	n6	41	lower	L	LH	6	2	4	4	1	4	La Đô Mi trầm vòng
+g4-n6-049	n6	30	lower	L	LH	6	2	4	4	1	4	Đô trầm ghé La về
+g4-n6-050	n6	62	lower	L	LH	8	2	6	3	2	6	Hai nhịp trong bass thấp
+g4-n6-051	n6	51	lower	L	LH	8	2	6	3	2	6	Mi trầm gọi Si đáp
+g4-n6-052	n6	83	lower	L	LH	7	2	5	3	2	6	La rất trầm dài mở
+g4-n6-053	n6	74	lower	L	LH	7	2	5	3	2	6	Đô trầm về La giữ
+g4-n6-054	n6	99	lower	L	LH	7	2	5	3	2	6	La Đô Mi trầm giữ cuối
+g4-n6-055	n6	23	span	L	LH	6	2	4	4	1	4	Qua tám trầm ghé Sol
+g4-n6-056	n6	6	span	L	LH	6	2	4	4	1	4	Từ giữa về trầm ghé Mi
+g4-n6-057	n6	55	span	L	LH	6	2	4	4	1	4	Bốn bậc bass mở rộng
+g4-n6-058	n6	42	span	L	LH	8	2	6	3	2	6	Mở tám trầm bước xuống
+g4-n6-059	n6	90	span	L	LH	8	2	6	3	2	6	Về trầm rồi đi lên
+g4-n6-060	n6	75	span	L	LH	8	2	6	4	2	8	Giữ hai đầu đường bass
+g4-n6-061	n6	7	upper	A	RH	6	3	3	3	2	6	Cao hỏi bước đều đáp
+g4-n6-062	n6	14	upper	A	RH	6	3	3	3	2	6	Si cao gọi ba tiếng
+g4-n6-063	n6	26	upper	A	RH	6	3	3	3	2	6	Rê cao về nghe đáp
+g4-n6-064	n6	35	upper	A	RH	6	4	2	4	2	8	Bốn nốt cao hai tiếng đáp
+g4-n6-065	n6	46	upper	A	RH	7	3	4	4	2	8	Sol dài gọi bước đáp
+g4-n6-066	n6	56	upper	A	LH	6	3	3	3	2	6	Bass cao hỏi bước đáp
+g4-n6-067	n6	66	upper	A	LH	6	3	3	3	2	6	Si bass gọi ba tiếng
+g4-n6-068	n6	76	upper	A	LH	6	3	3	3	2	6	Rê giữa về nghe đáp
+g4-n6-069	n6	86	upper	A	LH	6	2	4	4	2	8	Bốn tiếng bass hai đáp
+g4-n6-070	n6	96	upper	A	LH	7	4	3	4	2	8	Sol trầm dài bước đáp
+g4-n6-071	n6	8	lower	A	RH	6	3	3	3	2	6	La thấp hỏi bước đáp
+g4-n6-072	n6	21	lower	A	RH	6	3	3	3	2	6	Mi gọi Si thấp đáp
+g4-n6-073	n6	34	lower	A	RH	6	4	2	4	2	8	Bốn nốt thấp hai tiếng trả
+g4-n6-074	n6	49	lower	A	RH	7	3	4	4	2	8	La dài gọi bốn tiếng
+g4-n6-075	n6	63	lower	A	LH	6	3	3	3	2	6	La rất trầm hỏi đáp
+g4-n6-076	n6	78	lower	A	LH	6	3	3	3	2	6	Mi trầm gọi Si thấp
+g4-n6-077	n6	91	lower	A	LH	6	2	4	4	2	8	Bốn tiếng trầm hai đáp
+g4-n6-078	n6	9	span	A	RH	6	3	3	3	2	6	Qua tám gọi ba tiếng
+g4-n6-079	n6	18	span	A	RH	6	3	3	3	2	6	Từ cao gọi ba tiếng thấp
+g4-n6-080	n6	31	span	A	RH	6	4	2	4	2	8	Bốn bậc mở tám hai đáp
+g4-n6-081	n6	43	span	A	RH	7	3	4	4	2	8	Đô dài mở tám đáp đều
+g4-n6-082	n6	57	span	A	LH	6	3	3	3	2	6	Qua tám trầm gọi ba
+g4-n6-083	n6	69	span	A	LH	6	3	3	3	2	6	Từ giữa gọi ba tiếng cao
+g4-n6-084	n6	81	span	A	LH	6	2	4	4	2	8	Bốn bậc bass mở hai đáp
+g4-n6-085	n6	94	span	A	LH	7	4	3	4	2	8	Đô trầm dài mở đáp đều
+g4-n6-086	n6	10	upper	S	RH	6	3	3	3	1	3	Ba tiếng cao cùng nền
+g4-n6-087	n6	15	upper	S	RH	6	3	3	3	1	3	Đô Rê Đô cao chung
+g4-n6-088	n6	27	upper	S	RH	6	3	3	4	1	4	Si dài Đô Rê chung
+g4-n6-089	n6	36	upper	S	RH	6	3	3	4	1	4	Sol La Si giữ chung
+g4-n6-090	n6	47	upper	S	RH	8	4	4	4	1	4	Bốn nốt cao nền bước
+g4-n6-091	n6	58	upper	S	LH	6	3	3	3	1	3	Ba tiếng bass cao chung
+g4-n6-092	n6	67	upper	S	LH	6	3	3	3	1	3	Đô Rê giữa cùng nền
+g4-n6-093	n6	77	upper	S	LH	6	3	3	4	1	4	Si trầm dài Đô Rê chung
+g4-n6-094	n6	87	upper	S	LH	6	3	3	4	1	4	Sol La bass Si giữ
+g4-n6-095	n6	97	upper	S	LH	8	4	4	4	1	4	Bốn tiếng bass nền bước
+g4-n6-096	n6	11	lower	S	RH	6	3	3	3	1	3	Ba tiếng thấp cùng nền
+g4-n6-097	n6	28	lower	S	RH	6	3	3	4	1	4	La dài Đô Mi chung
+g4-n6-098	n6	48	lower	S	RH	8	4	4	4	1	4	Bốn tiếng thấp nền bước
+g4-n6-099	n6	68	lower	S	LH	6	3	3	3	1	3	Ba tiếng rất trầm chung
+g4-n6-100	n6	88	lower	S	LH	6	3	3	4	1	4	La trầm dài Đô Mi chung
+g4-n10-001	n10	1	upper	R	RH	10	8	2	4	2	8	Câu cao đi lên rồi về
+g4-n10-002	n10	12	upper	R	RH	9	7	2	4	2	8	Giữ Rê cao đáp xuống
+g4-n10-003	n10	19	upper	R	RH	9	7	2	4	2	8	Sol Si Rê mở câu
+g4-n10-004	n10	32	upper	R	RH	10	8	2	4	2	8	Đô cao gọi lại Rê
+g4-n10-005	n10	24	upper	R	RH	10	8	2	4	2	8	Nốt nhắc mở cửa cao
+g4-n10-006	n10	37	upper	R	RH	9	7	2	4	2	8	Sol dài dẫn đường cao
+g4-n10-007	n10	44	upper	R	RH	9	7	2	4	2	8	Si gọi Rê giữ Đô
+g4-n10-008	n10	52	upper	R	RH	11	7	4	4	2	8	Quãng bốn trên nền nhắc
+g4-n10-009	n10	59	upper	R	RH	11	7	4	4	2	8	Cao lên giữ Sol cuối
+g4-n10-010	n10	70	upper	R	RH	9	7	2	4	2	8	Nghỉ một phách vùng cao
+g4-n10-011	n10	64	upper	R	RH	12	9	3	3	3	9	Ba nhịp qua Đô Rê cao
+g4-n10-012	n10	79	upper	R	RH	12	9	3	3	3	9	Si Rê Đô cao vòng về
+g4-n10-013	n10	84	upper	R	RH	11	8	3	3	3	9	Giữ Sol trong ba nhịp
+g4-n10-014	n10	92	upper	R	RH	11	8	3	3	3	9	Đô cao dừng ở Sol
+g4-n10-015	n10	98	upper	R	RH	10	7	3	3	3	9	Si dài và đường hạ
+g4-n10-016	n10	2	lower	R	RH	10	8	2	4	2	8	Câu đi từ La thấp
+g4-n10-017	n10	16	lower	R	RH	9	7	2	4	2	8	Mi ghé Si về La
+g4-n10-018	n10	29	lower	R	RH	10	8	2	4	2	8	Rải thấp rồi bước về
+g4-n10-019	n10	38	lower	R	RH	9	7	2	4	2	8	Đô ghé thấp khép giữa
+g4-n10-020	n10	50	lower	R	RH	9	7	2	4	2	8	La dài dẫn đường về
+g4-n10-021	n10	61	lower	R	RH	11	7	4	4	2	8	Mi Đô La trên nền nhắc
+g4-n10-022	n10	71	lower	R	RH	12	9	3	3	3	9	Ba nhịp qua vùng thấp
+g4-n10-023	n10	82	lower	R	RH	11	8	3	3	3	9	Mi gọi Si trong nhịp ba
+g4-n10-024	n10	95	lower	R	RH	11	8	3	3	3	9	Đô ghé La ba nhịp
+g4-n10-025	n10	3	span	R	RH	10	8	2	4	2	8	Mở tám rồi trở về Đô
+g4-n10-026	n10	22	span	R	RH	10	8	2	4	2	8	Từ Đô cao về lại cao
+g4-n10-027	n10	39	span	R	RH	10	8	2	4	2	8	Qua Fa La khép ở Đô
+g4-n10-028	n10	54	span	R	RH	11	7	4	4	2	8	Giữ Đô mở tám nền nhắc
+g4-n10-029	n10	72	span	R	RH	12	9	3	3	3	9	Ba nhịp mở rộng về giữa
+g4-n10-030	n10	89	span	R	RH	9	7	2	4	2	8	Mở tám trước phách nghỉ
+g4-n10-031	n10	13	upper	L	LH	10	2	8	4	2	8	Câu bass cao lên về
+g4-n10-032	n10	4	upper	L	LH	9	2	7	4	2	8	Giữ Rê giữa đáp xuống
+g4-n10-033	n10	33	upper	L	LH	9	2	7	4	2	8	Sol Si Rê giữa mở
+g4-n10-034	n10	20	upper	L	LH	10	2	8	4	2	8	Đô giữa gọi lại Rê
+g4-n10-035	n10	40	upper	L	LH	10	2	8	4	2	8	Nhắc cửa bass cao
+g4-n10-036	n10	25	upper	L	LH	9	2	7	4	2	8	Sol trầm dài dẫn cao
+g4-n10-037	n10	53	upper	L	LH	9	2	7	4	2	8	Si trầm giữ Đô giữa
+g4-n10-038	n10	45	upper	L	LH	11	4	7	4	2	8	Quãng bốn bass nền nhắc
+g4-n10-039	n10	73	upper	L	LH	11	4	7	4	2	8	Bass cao lên giữ Sol
+g4-n10-040	n10	60	upper	L	LH	9	2	7	4	2	8	Nghỉ một phách bass cao
+g4-n10-041	n10	80	upper	L	LH	12	3	9	3	3	9	Ba nhịp qua Đô Rê giữa
+g4-n10-042	n10	65	upper	L	LH	12	3	9	3	3	9	Si Rê Đô bass vòng
+g4-n10-043	n10	93	upper	L	LH	11	3	8	3	3	9	Giữ Sol trầm ba nhịp
+g4-n10-044	n10	85	upper	L	LH	11	3	8	3	3	9	Đô giữa dừng Sol trầm
+g4-n10-045	n10	100	upper	L	LH	10	3	7	3	3	9	Si trầm dài đường hạ
+g4-n10-046	n10	17	lower	L	LH	10	2	8	4	2	8	Câu từ La rất trầm
+g4-n10-047	n10	5	lower	L	LH	9	2	7	4	2	8	Mi trầm Si về La
+g4-n10-048	n10	41	lower	L	LH	10	2	8	4	2	8	Rải rất trầm bước về
+g4-n10-049	n10	30	lower	L	LH	9	2	7	4	2	8	Đô trầm ghé miền thấp
+g4-n10-050	n10	62	lower	L	LH	9	2	7	4	2	8	La trầm dài dẫn về
+g4-n10-051	n10	51	lower	L	LH	11	4	7	4	2	8	Mi Đô La trầm nền nhắc
+g4-n10-052	n10	83	lower	L	LH	12	3	9	3	3	9	Ba nhịp vùng rất trầm
+g4-n10-053	n10	74	lower	L	LH	11	3	8	3	3	9	Mi Si trầm nhịp ba
+g4-n10-054	n10	99	lower	L	LH	11	3	8	3	3	9	Đô trầm La ba nhịp
+g4-n10-055	n10	23	span	L	LH	10	2	8	4	2	8	Mở tám trầm về Đô
+g4-n10-056	n10	6	span	L	LH	10	2	8	4	2	8	Từ Đô giữa về lại
+g4-n10-057	n10	55	span	L	LH	10	2	8	4	2	8	Qua Fa La trầm về
+g4-n10-058	n10	42	span	L	LH	11	4	7	4	2	8	Giữ Đô trầm mở nền nhắc
+g4-n10-059	n10	90	span	L	LH	12	3	9	3	3	9	Ba nhịp mở tám trầm
+g4-n10-060	n10	75	span	L	LH	9	2	7	4	2	8	Mở tám bass trước nghỉ
+g4-n10-061	n10	7	upper	A	RH	12	6	6	3	4	12	Hai câu cao gọi thấp đáp
+g4-n10-062	n10	14	upper	A	RH	12	6	6	3	4	12	Si cao gọi đổi lời đáp
+g4-n10-063	n10	26	upper	A	RH	12	6	6	3	4	12	Rê cao gọi xuống dần
+g4-n10-064	n10	35	upper	A	RH	10	6	4	4	3	12	Cao hỏi nhịp bốn giữ đáp
+g4-n10-065	n10	46	upper	A	RH	10	5	5	3	4	12	Giữ Sol cao rồi đối lời
+g4-n10-066	n10	56	upper	A	LH	12	6	6	3	4	12	Hai câu bass cao gọi
+g4-n10-067	n10	66	upper	A	LH	12	6	6	3	4	12	Si bass gọi đổi đáp
+g4-n10-068	n10	76	upper	A	LH	12	6	6	3	4	12	Rê giữa gọi hạ dần
+g4-n10-069	n10	86	upper	A	LH	10	4	6	4	3	12	Bass cao nhịp bốn giữ đáp
+g4-n10-070	n10	96	upper	A	LH	10	5	5	3	4	12	Giữ Sol trầm đối lời
+g4-n10-071	n10	8	lower	A	RH	12	6	6	3	4	12	Hai câu thấp trao lượt
+g4-n10-072	n10	21	lower	A	RH	12	6	6	3	4	12	Mi gọi Si thấp đổi lời
+g4-n10-073	n10	34	lower	A	RH	11	7	4	4	3	12	Thấp hỏi bốn phách giữ đáp
+g4-n10-074	n10	49	lower	A	RH	10	6	4	4	3	12	La thấp dài trao hai câu
+g4-n10-075	n10	63	lower	A	LH	12	6	6	3	4	12	Hai câu rất trầm trao
+g4-n10-076	n10	78	lower	A	LH	12	6	6	3	4	12	Mi trầm Si thấp đổi lời
+g4-n10-077	n10	91	lower	A	LH	11	4	7	4	3	12	Rất trầm hỏi giữ đáp
+g4-n10-078	n10	9	span	A	RH	12	6	6	3	4	12	Mở tám qua hai câu hỏi
+g4-n10-079	n10	18	span	A	RH	12	6	6	3	4	12	Đô cao về giữa đối lời
+g4-n10-080	n10	31	span	A	RH	11	7	4	4	3	12	Bốn bậc mở tám giữ đáp
+g4-n10-081	n10	43	span	A	RH	10	5	5	3	4	12	Mở tám nghỉ rồi đối lời
+g4-n10-082	n10	57	span	A	LH	12	6	6	3	4	12	Mở tám trầm hai câu hỏi
+g4-n10-083	n10	69	span	A	LH	12	6	6	3	4	12	Đô giữa về trầm đối lời
+g4-n10-084	n10	81	span	A	LH	11	4	7	4	3	12	Bốn bậc bass tám giữ đáp
+g4-n10-085	n10	94	span	A	LH	10	5	5	3	4	12	Mở tám bass nghỉ đối lời
+g4-n10-086	n10	10	upper	S	RH	12	6	6	3	2	6	Hai nhịp cao cùng nền
+g4-n10-087	n10	15	upper	S	RH	10	5	5	3	2	6	Si Rê Đô cùng phách
+g4-n10-088	n10	27	upper	S	RH	10	5	5	3	2	6	Sol dài ba phách chung
+g4-n10-089	n10	36	upper	S	RH	10	5	5	3	2	6	Cao lên giữ cuối cùng
+g4-n10-090	n10	47	upper	S	RH	14	7	7	4	2	8	Cao bốn phách nền bước
+g4-n10-091	n10	58	upper	S	LH	12	6	6	3	2	6	Hai nhịp bass cao chung
+g4-n10-092	n10	67	upper	S	LH	10	5	5	3	2	6	Si Rê giữa cùng phách
+g4-n10-093	n10	77	upper	S	LH	10	5	5	3	2	6	Sol trầm dài phách chung
+g4-n10-094	n10	87	upper	S	LH	10	5	5	3	2	6	Bass lên giữ cuối chung
+g4-n10-095	n10	97	upper	S	LH	14	7	7	4	2	8	Bass bốn phách nền bước
+g4-n10-096	n10	11	lower	S	RH	12	6	6	3	2	6	Hai nhịp thấp cùng nền
+g4-n10-097	n10	28	lower	S	RH	10	5	5	3	2	6	La thấp dài cùng tiếng
+g4-n10-098	n10	48	lower	S	RH	14	7	7	4	2	8	Thấp bốn phách nền bước
+g4-n10-099	n10	68	lower	S	LH	12	6	6	3	2	6	Hai nhịp rất trầm chung
+g4-n10-100	n10	88	lower	S	LH	14	7	7	4	2	8	Trầm bốn phách nền bước
+g4-n20-001	n20	1	upper	R	RH	19	15	4	4	4	16	Bốn cửa sổ vùng cao
+g4-n20-002	n20	12	upper	R	RH	18	14	4	4	4	16	Sol dài mở câu cao
+g4-n20-003	n20	19	upper	R	RH	18	14	4	4	4	16	Si Đô Rê giữ đáp
+g4-n20-004	n20	32	upper	R	RH	19	15	4	4	4	16	Đô cao gọi vòng lại
+g4-n20-005	n20	24	upper	R	RH	15	11	4	4	4	16	Giữ nốt sáng vùng cao
+g4-n20-006	n20	37	upper	R	RH	18	14	4	4	4	16	Một phách nghỉ trên cao
+g4-n20-007	n20	44	upper	R	RH	19	15	4	4	4	16	Nốt nhắc mở khuông cao
+g4-n20-008	n20	52	upper	R	RH	19	15	4	4	4	16	Si ghé Sol Đô cao
+g4-n20-009	n20	59	upper	R	RH	17	13	4	4	4	16	Giữ Si giữ Đô cao
+g4-n20-010	n20	70	upper	R	RH	19	15	4	4	4	16	Rê cao đi về Sol
+g4-n20-011	n20	64	upper	R	RH	16	12	4	3	4	12	Ba phách qua vùng cao
+g4-n20-012	n20	79	upper	R	RH	16	12	4	3	4	12	Si Rê Đô ba phách
+g4-n20-013	n20	84	upper	R	RH	15	11	4	3	4	12	Sol dài ba phách cao
+g4-n20-014	n20	92	upper	R	RH	16	12	4	3	4	12	Sol Đô cao lời gọi
+g4-n20-015	n20	98	upper	R	RH	15	11	4	3	4	12	Nhắc Sol nhịp ba cao
+g4-n20-016	n20	2	lower	R	RH	19	15	4	4	4	16	Bốn cửa phía dưới
+g4-n20-017	n20	16	lower	R	RH	18	14	4	4	4	16	La dài mở câu thấp
+g4-n20-018	n20	29	lower	R	RH	18	14	4	4	4	16	Đô Rê Mi giữ đáp
+g4-n20-019	n20	38	lower	R	RH	19	15	4	4	4	16	Mi gọi Si thấp
+g4-n20-020	n20	50	lower	R	RH	15	11	4	4	4	16	Giữ nốt vùng La thấp
+g4-n20-021	n20	61	lower	R	RH	18	14	4	4	4	16	Một phách nghỉ phía dưới
+g4-n20-022	n20	71	lower	R	RH	16	12	4	3	4	12	Ba phách qua vùng thấp
+g4-n20-023	n20	82	lower	R	RH	16	12	4	3	4	12	Đô Mi Rê ba phách
+g4-n20-024	n20	95	lower	R	RH	15	11	4	3	4	12	La dài ba phách thấp
+g4-n20-025	n20	3	span	R	RH	19	15	4	4	4	16	Bốn ô qua quãng tám
+g4-n20-026	n20	22	span	R	RH	19	15	4	4	4	16	Từ cao về giữa mở lại
+g4-n20-027	n20	39	span	R	RH	17	13	4	4	4	16	Giữ Đô đường rộng
+g4-n20-028	n20	54	span	R	RH	19	15	4	4	4	16	Qua Fa La tới Đô cao
+g4-n20-029	n20	72	span	R	RH	15	11	4	3	4	12	Quãng tám trong nhịp ba
+g4-n20-030	n20	89	span	R	RH	15	11	4	3	4	12	Đô cao về ba phách
+g4-n20-031	n20	13	upper	L	LH	19	4	15	4	4	16	Bốn cửa bass phía cao
+g4-n20-032	n20	4	upper	L	LH	18	4	14	4	4	16	Sol trầm dài mở cao
+g4-n20-033	n20	33	upper	L	LH	18	4	14	4	4	16	Si Đô Rê giữa đáp
+g4-n20-034	n20	20	upper	L	LH	19	4	15	4	4	16	Đô giữa vòng trở lại
+g4-n20-035	n20	40	upper	L	LH	15	4	11	4	4	16	Giữ nốt sáng bass cao
+g4-n20-036	n20	25	upper	L	LH	18	4	14	4	4	16	Phách nghỉ trên khóa Fa
+g4-n20-037	n20	53	upper	L	LH	19	4	15	4	4	16	Nhắc Sol bass cao
+g4-n20-038	n20	45	upper	L	LH	19	4	15	4	4	16	Si trầm ghé Đô giữa
+g4-n20-039	n20	73	upper	L	LH	17	4	13	4	4	16	Giữ Si trầm Đô giữa
+g4-n20-040	n20	60	upper	L	LH	19	4	15	4	4	16	Rê giữa về Sol trầm
+g4-n20-041	n20	80	upper	L	LH	16	4	12	3	4	12	Ba phách bass phía cao
+g4-n20-042	n20	65	upper	L	LH	16	4	12	3	4	12	Si Rê Đô giữa nhịp ba
+g4-n20-043	n20	93	upper	L	LH	15	4	11	3	4	12	Sol trầm dài phách cao
+g4-n20-044	n20	85	upper	L	LH	16	4	12	3	4	12	Sol Đô giữa lời gọi
+g4-n20-045	n20	100	upper	L	LH	15	4	11	3	4	12	Nhắc Sol trầm nhịp cao
+g4-n20-046	n20	17	lower	L	LH	19	4	15	4	4	16	Bốn cửa rất trầm
+g4-n20-047	n20	5	lower	L	LH	18	4	14	4	4	16	La trầm dài mở thấp
+g4-n20-048	n20	41	lower	L	LH	18	4	14	4	4	16	Đô Rê Mi trầm đáp
+g4-n20-049	n20	30	lower	L	LH	19	4	15	4	4	16	Mi trầm gọi Si thấp
+g4-n20-050	n20	62	lower	L	LH	15	4	11	4	4	16	Giữ nốt vùng rất trầm
+g4-n20-051	n20	51	lower	L	LH	18	4	14	4	4	16	Phách nghỉ dưới bass
+g4-n20-052	n20	83	lower	L	LH	16	4	12	3	4	12	Ba phách vùng rất trầm
+g4-n20-053	n20	74	lower	L	LH	16	4	12	3	4	12	Đô Mi Rê trầm nhịp ba
+g4-n20-054	n20	99	lower	L	LH	15	4	11	3	4	12	La trầm dài phách thấp
+g4-n20-055	n20	23	span	L	LH	19	4	15	4	4	16	Bốn ô bass qua tám
+g4-n20-056	n20	6	span	L	LH	19	4	15	4	4	16	Từ giữa về trầm mở lại
+g4-n20-057	n20	55	span	L	LH	17	4	13	4	4	16	Giữ Đô trầm đường rộng
+g4-n20-058	n20	42	span	L	LH	19	4	15	4	4	16	Qua Fa La tới Đô giữa
+g4-n20-059	n20	90	span	L	LH	15	4	11	3	4	12	Quãng tám bass nhịp ba
+g4-n20-060	n20	75	span	L	LH	15	4	11	3	4	12	Đô giữa về ba phách
+g4-n20-061	n20	7	upper	A	RH	15	8	7	4	4	16	Vùng cao hỏi thấp đáp
+g4-n20-062	n20	14	upper	A	RH	16	8	8	4	4	16	Si cao gọi đổi đáp
+g4-n20-063	n20	26	upper	A	RH	15	7	8	4	4	16	Rê cao hạ lời gọi
+g4-n20-064	n20	35	upper	A	RH	18	9	9	3	6	18	Sáu lượt cao ba phách
+g4-n20-065	n20	46	upper	A	RH	15	8	7	3	6	18	Giữ đầu cao đổi lời
+g4-n20-066	n20	56	upper	A	LH	15	7	8	4	4	16	Bass cao hỏi trên đáp
+g4-n20-067	n20	66	upper	A	LH	16	8	8	4	4	16	Si bass cao đổi đáp
+g4-n20-068	n20	76	upper	A	LH	15	8	7	4	4	16	Rê giữa hạ lời gọi
+g4-n20-069	n20	86	upper	A	LH	18	9	9	3	6	18	Sáu lượt bass cao ba
+g4-n20-070	n20	96	upper	A	LH	15	7	8	3	6	18	Giữ trầm cao đổi lời
+g4-n20-071	n20	8	lower	A	RH	15	8	7	4	4	16	Vùng thấp hỏi bước đáp
+g4-n20-072	n20	21	lower	A	RH	15	7	8	4	4	16	Mi gọi Si thấp trả
+g4-n20-073	n20	34	lower	A	RH	15	7	8	4	4	16	Giữ La thấp mở hỏi
+g4-n20-074	n20	49	lower	A	RH	15	9	6	3	6	18	Sáu lượt thấp ba phách
+g4-n20-075	n20	63	lower	A	LH	15	7	8	4	4	16	Vùng rất trầm hỏi đáp
+g4-n20-076	n20	78	lower	A	LH	15	8	7	4	4	16	Mi trầm Si thấp trả
+g4-n20-077	n20	91	lower	A	LH	15	6	9	3	6	18	Sáu lượt rất trầm ba
+g4-n20-078	n20	9	span	A	RH	15	8	7	4	4	16	Qua tám hỏi bước đáp
+g4-n20-079	n20	18	span	A	RH	15	7	8	4	4	16	Đô cao về giữa gọi
+g4-n20-080	n20	31	span	A	RH	16	8	8	4	4	16	Fa La mở tám đối đáp
+g4-n20-081	n20	43	span	A	RH	15	9	6	3	6	18	Sáu lượt rộng ba phách
+g4-n20-082	n20	57	span	A	LH	15	7	8	4	4	16	Qua tám trầm hỏi đáp
+g4-n20-083	n20	69	span	A	LH	15	8	7	4	4	16	Đô giữa về trầm gọi
+g4-n20-084	n20	81	span	A	LH	16	8	8	4	4	16	Fa La bass mở tám
+g4-n20-085	n20	94	span	A	LH	15	6	9	3	6	18	Sáu lượt bass rộng ba
+g4-n20-086	n20	10	upper	S	RH	24	12	12	4	4	16	Vùng cao trên nhịp chung
+g4-n20-087	n20	15	upper	S	RH	24	12	12	4	4	16	Sol dài cao cùng tiếng
+g4-n20-088	n20	27	upper	S	RH	24	12	12	4	4	16	Si Đô Rê cao chung
+g4-n20-089	n20	36	upper	S	RH	20	10	10	3	4	12	Ba phách cao cùng nền
+g4-n20-090	n20	47	upper	S	RH	18	9	9	3	4	12	Giữ đầu cao nhịp ba
+g4-n20-091	n20	58	upper	S	LH	24	12	12	4	4	16	Bass cao trên nhịp chung
+g4-n20-092	n20	67	upper	S	LH	24	12	12	4	4	16	Sol trầm cao cùng tiếng
+g4-n20-093	n20	77	upper	S	LH	24	12	12	4	4	16	Si Đô Rê giữa chung
+g4-n20-094	n20	87	upper	S	LH	20	10	10	3	4	12	Ba phách bass cao chung
+g4-n20-095	n20	97	upper	S	LH	18	9	9	3	4	12	Giữ bass cao nhịp ba
+g4-n20-096	n20	11	lower	S	RH	24	12	12	4	4	16	Vùng thấp trên nhịp chung
+g4-n20-097	n20	28	lower	S	RH	24	12	12	4	4	16	La dài thấp cùng tiếng
+g4-n20-098	n20	48	lower	S	RH	22	11	11	3	4	12	Ba phách thấp cùng nền
+g4-n20-099	n20	68	lower	S	LH	24	12	12	4	4	16	Rất trầm nhịp chung
+g4-n20-100	n20	88	lower	S	LH	22	11	11	3	4	12	Ba phách rất trầm chung
+g4-n30-001	n30	1	upper	R	RH	31	23	8	4	8	32	Cửa cao rồi nốt yên
+g4-n30-002	n30	12	upper	R	RH	30	22	8	4	8	32	Sol dài khép câu thưa
+g4-n30-003	n30	19	upper	R	RH	30	22	8	4	8	32	Si Đô Rê rồi lắng
+g4-n30-004	n30	32	upper	R	RH	31	23	8	4	8	32	Đô cao gọi nốt giữ
+g4-n30-005	n30	24	upper	R	RH	26	18	8	4	8	32	Giữ sáng rồi khép chậm
+g4-n30-006	n30	37	upper	R	RH	34	26	8	4	8	32	Phách nghỉ nghe lời dài
+g4-n30-007	n30	44	upper	R	RH	36	28	8	4	8	32	Nhắc Sol giữ Si cao
+g4-n30-008	n30	52	upper	R	RH	31	23	8	4	8	32	Si ghé Đô rồi về
+g4-n30-009	n30	59	upper	R	RH	29	21	8	4	8	32	Hai lời giữ phía cao
+g4-n30-010	n30	70	upper	R	RH	31	23	8	4	8	32	Rê cao qua khoảng yên
+g4-n30-011	n30	64	upper	R	RH	31	23	8	3	8	24	Hai câu cao ba phách
+g4-n30-012	n30	79	upper	R	RH	31	23	8	3	8	24	Si Rê Đô rồi nhắc
+g4-n30-013	n30	84	upper	R	RH	31	23	8	3	8	24	Giữ Sol gọi Đô cao
+g4-n30-014	n30	92	upper	R	RH	32	24	8	3	8	24	Sol Đô cao quay lại
+g4-n30-015	n30	98	upper	R	RH	31	23	8	3	8	24	Nhắc trước lời Si cao
+g4-n30-016	n30	2	lower	R	RH	31	23	8	4	8	32	Cửa thấp và nốt yên
+g4-n30-017	n30	16	lower	R	RH	31	23	8	4	8	32	La dài khép câu thưa
+g4-n30-018	n30	29	lower	R	RH	30	22	8	4	8	32	Đô Rê Mi rồi lắng
+g4-n30-019	n30	38	lower	R	RH	31	23	8	4	8	32	Mi gọi giữ La thấp
+g4-n30-020	n30	50	lower	R	RH	26	18	8	4	8	32	Giữ thấp rồi khép chậm
+g4-n30-021	n30	61	lower	R	RH	35	27	8	4	8	32	Phách nghỉ nghe lời thấp
+g4-n30-022	n30	71	lower	R	RH	31	23	8	3	8	24	Hai câu thấp ba phách
+g4-n30-023	n30	82	lower	R	RH	31	23	8	3	8	24	Đô Mi Rê đáp La dài
+g4-n30-024	n30	95	lower	R	RH	31	23	8	3	8	24	La dài gọi Mi về
+g4-n30-025	n30	3	span	R	RH	31	23	8	4	8	32	Mở rộng rồi thưa tiếng
+g4-n30-026	n30	22	span	R	RH	31	23	8	4	8	32	Đô cao về nghe đáp
+g4-n30-027	n30	39	span	R	RH	28	20	8	4	8	32	Giữ Đô qua hai đầu
+g4-n30-028	n30	54	span	R	RH	30	22	8	4	8	32	Fa La tới câu giữ
+g4-n30-029	n30	72	span	R	RH	30	22	8	3	8	24	Hai đường rộng ba phách
+g4-n30-030	n30	89	span	R	RH	31	23	8	3	8	24	Đô cao về đường Fa
+g4-n30-031	n30	13	upper	L	LH	31	8	23	4	8	32	Cửa bass cao rồi yên
+g4-n30-032	n30	4	upper	L	LH	30	8	22	4	8	32	Sol trầm dài khép thưa
+g4-n30-033	n30	33	upper	L	LH	30	8	22	4	8	32	Si Đô Rê giữa lắng
+g4-n30-034	n30	20	upper	L	LH	31	8	23	4	8	32	Đô giữa gọi nốt giữ
+g4-n30-035	n30	40	upper	L	LH	26	8	18	4	8	32	Giữ sáng bass khép chậm
+g4-n30-036	n30	25	upper	L	LH	34	8	26	4	8	32	Nghỉ nghe lời bass cao
+g4-n30-037	n30	53	upper	L	LH	36	8	28	4	8	32	Nhắc bass giữ Si giữa
+g4-n30-038	n30	45	upper	L	LH	31	8	23	4	8	32	Si trầm ghé Đô về
+g4-n30-039	n30	73	upper	L	LH	29	8	21	4	8	32	Hai lời giữ bass cao
+g4-n30-040	n30	60	upper	L	LH	31	8	23	4	8	32	Rê giữa qua khoảng yên
+g4-n30-041	n30	80	upper	L	LH	31	8	23	3	8	24	Hai câu bass cao ba
+g4-n30-042	n30	65	upper	L	LH	31	8	23	3	8	24	Si Rê Đô giữa nhắc
+g4-n30-043	n30	93	upper	L	LH	31	8	23	3	8	24	Giữ Sol trầm gọi Đô
+g4-n30-044	n30	85	upper	L	LH	32	8	24	3	8	24	Sol Đô giữa quay lại
+g4-n30-045	n30	100	upper	L	LH	31	8	23	3	8	24	Nhắc trước Si bass cao
+g4-n30-046	n30	17	lower	L	LH	31	8	23	4	8	32	Cửa rất trầm nốt yên
+g4-n30-047	n30	5	lower	L	LH	31	8	23	4	8	32	La rất trầm khép thưa
+g4-n30-048	n30	41	lower	L	LH	30	8	22	4	8	32	Đô Rê Mi trầm lắng
+g4-n30-049	n30	30	lower	L	LH	31	8	23	4	8	32	Mi trầm giữ La thấp
+g4-n30-050	n30	62	lower	L	LH	26	8	18	4	8	32	Giữ trầm khép chậm
+g4-n30-051	n30	51	lower	L	LH	35	8	27	4	8	32	Nghỉ nghe lời rất trầm
+g4-n30-052	n30	83	lower	L	LH	31	8	23	3	8	24	Hai câu rất trầm ba
+g4-n30-053	n30	74	lower	L	LH	31	8	23	3	8	24	Đô Mi Rê trầm đáp
+g4-n30-054	n30	99	lower	L	LH	31	8	23	3	8	24	La trầm dài Mi về
+g4-n30-055	n30	23	span	L	LH	31	8	23	4	8	32	Mở rộng bass thưa tiếng
+g4-n30-056	n30	6	span	L	LH	31	8	23	4	8	32	Đô giữa về nghe đáp
+g4-n30-057	n30	55	span	L	LH	28	8	20	4	8	32	Giữ Đô trầm hai đầu
+g4-n30-058	n30	42	span	L	LH	30	8	22	4	8	32	Fa La bass câu giữ
+g4-n30-059	n30	90	span	L	LH	30	8	22	3	8	24	Hai đường bass rộng ba
+g4-n30-060	n30	75	span	L	LH	31	8	23	3	8	24	Đô giữa về đường Fa
+g4-n30-061	n30	7	upper	A	RH	30	15	15	4	8	32	Hai cuộc gọi vùng cao
+g4-n30-062	n30	14	upper	A	RH	31	15	16	4	8	32	Si cao gọi Sol giữ
+g4-n30-063	n30	26	upper	A	RH	30	15	15	4	8	32	Rê cao gọi tiếng nhắc
+g4-n30-064	n30	35	upper	A	RH	33	17	16	3	12	36	Hai chuyện cao nhịp ba
+g4-n30-065	n30	46	upper	A	RH	30	17	13	3	12	36	Giữ cao đổi lời gọi
+g4-n30-066	n30	56	upper	A	LH	30	15	15	4	8	32	Hai cuộc gọi bass cao
+g4-n30-067	n30	66	upper	A	LH	31	16	15	4	8	32	Si bass gọi Sol giữ
+g4-n30-068	n30	76	upper	A	LH	30	15	15	4	8	32	Rê giữa gọi tiếng nhắc
+g4-n30-069	n30	86	upper	A	LH	33	16	17	3	12	36	Hai chuyện bass cao ba
+g4-n30-070	n30	96	upper	A	LH	30	13	17	3	12	36	Giữ bass cao đổi lời
+g4-n30-071	n30	8	lower	A	RH	30	15	15	4	8	32	Hai cuộc gọi vùng thấp
+g4-n30-072	n30	21	lower	A	RH	31	15	16	4	8	32	Mi gọi đổi câu trả
+g4-n30-073	n30	34	lower	A	RH	30	15	15	4	8	32	La dài và tiếng thấp
+g4-n30-074	n30	49	lower	A	RH	32	17	15	3	12	36	Hai chuyện thấp nhịp ba
+g4-n30-075	n30	63	lower	A	LH	31	15	16	4	8	32	Hai cuộc gọi rất trầm
+g4-n30-076	n30	78	lower	A	LH	30	15	15	4	8	32	Mi trầm đổi câu trả
+g4-n30-077	n30	91	lower	A	LH	32	15	17	3	12	36	Hai chuyện rất trầm ba
+g4-n30-078	n30	9	span	A	RH	31	16	15	4	8	32	Hai chuyện mở qua tám
+g4-n30-079	n30	18	span	A	RH	30	14	16	4	8	32	Đô cao gọi câu dài
+g4-n30-080	n30	31	span	A	RH	31	16	15	4	8	32	Fa La đổi lời rộng
+g4-n30-081	n30	43	span	A	RH	32	17	15	3	12	36	Cao về rồi mở lại
+g4-n30-082	n30	57	span	A	LH	31	15	16	4	8	32	Hai chuyện mở tám bass
+g4-n30-083	n30	69	span	A	LH	30	16	14	4	8	32	Đô giữa gọi câu dài
+g4-n30-084	n30	81	span	A	LH	31	15	16	4	8	32	Fa La bass đổi lời
+g4-n30-085	n30	94	span	A	LH	32	15	17	3	12	36	Giữa về trầm mở lại
+g4-n30-086	n30	10	upper	S	RH	38	19	19	4	8	32	Cao chung rồi thưa
+g4-n30-087	n30	15	upper	S	RH	36	18	18	4	8	32	Sol dài cao rồi yên
+g4-n30-088	n30	27	upper	S	RH	36	18	18	4	8	32	Si Đô Rê cùng chờ
+g4-n30-089	n30	36	upper	S	RH	38	19	19	3	8	24	Hai lời cao chung ba
+g4-n30-090	n30	47	upper	S	RH	38	19	19	3	8	24	Giữ đầu cao nhắc chung
+g4-n30-091	n30	58	upper	S	LH	38	19	19	4	8	32	Bass cao chung rồi thưa
+g4-n30-092	n30	67	upper	S	LH	36	18	18	4	8	32	Sol dài bass rồi yên
+g4-n30-093	n30	77	upper	S	LH	36	18	18	4	8	32	Si Đô Rê giữa chờ
+g4-n30-094	n30	87	upper	S	LH	38	19	19	3	8	24	Hai lời bass cao chung
+g4-n30-095	n30	97	upper	S	LH	38	19	19	3	8	24	Giữ bass cao nhắc chung
+g4-n30-096	n30	11	lower	S	RH	38	19	19	4	8	32	Thấp chung rồi thưa
+g4-n30-097	n30	28	lower	S	RH	38	19	19	4	8	32	La dài thấp rồi chờ
+g4-n30-098	n30	48	lower	S	RH	38	19	19	3	8	24	Hai lời thấp chung ba
+g4-n30-099	n30	68	lower	S	LH	38	19	19	4	8	32	Rất trầm chung rồi thưa
+g4-n30-100	n30	88	lower	S	LH	38	19	19	3	8	24	Hai lời trầm chung ba
+g4-n50-001	n50	1	upper	R	RH	52	40	12	4	12	48	Ba cửa sổ trên khuông cao
+g4-n50-002	n50	12	upper	R	RH	49	37	12	4	12	48	Sol dài nhắc lời rồi yên
+g4-n50-003	n50	19	upper	R	RH	53	41	12	4	12	48	Si Đô Rê qua ba câu
+g4-n50-004	n50	24	upper	R	RH	58	44	14	4	12	48	Đô cao gọi nền nhắc
+g4-n50-005	n50	32	upper	R	RH	40	28	12	4	12	48	Từ nốt yên thành lời cao
+g4-n50-006	n50	37	upper	R	RH	49	37	12	4	12	48	Nghỉ trên cao nghe Sol dài
+g4-n50-007	n50	44	upper	R	RH	50	38	12	4	12	48	Nhắc Sol tìm đường Đô
+g4-n50-008	n50	52	upper	R	RH	54	42	12	4	12	48	Si qua Đô cao hai lời
+g4-n50-009	n50	59	upper	R	RH	47	35	12	4	12	48	Giữ Si mở lời Sol
+g4-n50-010	n50	64	upper	R	RH	53	41	12	4	12	48	Rê cao gọi Đô trả
+g4-n50-011	n50	70	upper	R	RH	46	34	12	3	12	36	Ba câu cao trong nhịp ba
+g4-n50-012	n50	79	upper	R	RH	48	36	12	3	12	36	Si Rê Đô đổi đường
+g4-n50-013	n50	84	upper	R	RH	46	34	12	3	12	36	Giữ Sol nhắc vùng cao
+g4-n50-014	n50	92	upper	R	RH	47	35	12	3	12	36	Sol Đô cao đổi lời
+g4-n50-015	n50	99	upper	R	RH	47	35	12	3	12	36	Nhắc đầu khép lời cao
+g4-n50-016	n50	2	lower	R	RH	69	45	24	4	12	48	Ba câu thấp rõ tiếng nền
+g4-n50-017	n50	16	lower	R	RH	49	37	12	4	12	48	La dài Mi gọi về
+g4-n50-018	n50	29	lower	R	RH	50	38	12	4	12	48	Đô Rê Mi nhắc rồi yên
+g4-n50-019	n50	38	lower	R	RH	46	34	12	4	12	48	Mi gọi giữ La thấp
+g4-n50-020	n50	50	lower	R	RH	43	31	12	4	12	48	Nốt giữ và hai câu thưa
+g4-n50-021	n50	61	lower	R	RH	53	37	16	4	12	48	Nghỉ phía thấp nghe nền
+g4-n50-022	n50	71	lower	R	RH	46	34	12	3	12	36	Ba câu thấp nhịp ba
+g4-n50-023	n50	82	lower	R	RH	48	36	12	3	12	36	Đô Mi Rê qua ba lời
+g4-n50-024	n50	95	lower	R	RH	47	35	12	3	12	36	La dài gọi Đô Mi
+g4-n50-025	n50	3	span	R	RH	55	43	12	4	12	48	Ba đường mở qua tám
+g4-n50-026	n50	22	span	R	RH	48	36	12	4	12	48	Đô cao về rồi giữ thấp
+g4-n50-027	n50	39	span	R	RH	47	35	12	4	12	48	Cao giữ nghe nghỉ rồi về
+g4-n50-028	n50	54	span	R	RH	53	37	16	4	12	48	Fa La rộng dưới nền nhắc
+g4-n50-029	n50	72	span	R	RH	46	34	12	3	12	36	Ba đường rộng nhịp ba
+g4-n50-030	n50	89	span	R	RH	45	33	12	3	12	36	Đô cao về qua đường Fa
+g4-n50-031	n50	4	upper	L	LH	52	12	40	4	12	48	Ba cửa bass phía cao
+g4-n50-032	n50	13	upper	L	LH	49	12	37	4	12	48	Sol trầm dài yên rồi nhắc
+g4-n50-033	n50	20	upper	L	LH	53	12	41	4	12	48	Si Đô Rê giữa ba câu
+g4-n50-034	n50	25	upper	L	LH	58	14	44	4	12	48	Đô giữa gọi nền cao
+g4-n50-035	n50	33	upper	L	LH	40	12	28	4	12	48	Từ bass yên thành cao
+g4-n50-036	n50	40	upper	L	LH	49	12	37	4	12	48	Nghỉ bass cao Sol dài
+g4-n50-037	n50	45	upper	L	LH	50	12	38	4	12	48	Nhắc trầm tìm Đô giữa
+g4-n50-038	n50	53	upper	L	LH	54	12	42	4	12	48	Si trầm qua Đô đáp
+g4-n50-039	n50	60	upper	L	LH	47	12	35	4	12	48	Giữ Si trầm mở Sol
+g4-n50-040	n50	65	upper	L	LH	53	12	41	4	12	48	Rê giữa gọi Đô trả
+g4-n50-041	n50	73	upper	L	LH	46	12	34	3	12	36	Ba câu bass cao nhịp ba
+g4-n50-042	n50	80	upper	L	LH	48	12	36	3	12	36	Si Rê Đô giữa đổi đường
+g4-n50-043	n50	85	upper	L	LH	46	12	34	3	12	36	Giữ Sol trầm nhắc cao
+g4-n50-044	n50	93	upper	L	LH	47	12	35	3	12	36	Sol Đô giữa đổi lời
+g4-n50-045	n50	100	upper	L	LH	47	12	35	3	12	36	Nhắc trầm khép lời cao
+g4-n50-046	n50	5	lower	L	LH	69	24	45	4	12	48	Ba câu rất trầm rõ nền
+g4-n50-047	n50	17	lower	L	LH	49	12	37	4	12	48	La trầm dài Mi về
+g4-n50-048	n50	30	lower	L	LH	50	12	38	4	12	48	Đô Rê Mi trầm nhắc
+g4-n50-049	n50	41	lower	L	LH	46	12	34	4	12	48	Mi trầm giữ La thấp
+g4-n50-050	n50	51	lower	L	LH	43	12	31	4	12	48	Giữ trầm hai câu thưa
+g4-n50-051	n50	62	lower	L	LH	53	16	37	4	12	48	Nghỉ rất trầm nghe nền
+g4-n50-052	n50	74	lower	L	LH	46	12	34	3	12	36	Ba câu rất trầm ba
+g4-n50-053	n50	83	lower	L	LH	48	12	36	3	12	36	Đô Mi Rê trầm ba lời
+g4-n50-054	n50	96	lower	L	LH	47	12	35	3	12	36	La trầm dài Đô Mi
+g4-n50-055	n50	6	span	L	LH	55	12	43	4	12	48	Ba đường bass mở tám
+g4-n50-056	n50	23	span	L	LH	48	12	36	4	12	48	Đô giữa về giữ trầm
+g4-n50-057	n50	42	span	L	LH	47	12	35	4	12	48	Giữa giữ nghỉ rồi trầm
+g4-n50-058	n50	55	span	L	LH	53	16	37	4	12	48	Fa La bass nền nhắc
+g4-n50-059	n50	75	span	L	LH	46	12	34	3	12	36	Ba đường bass rộng ba
+g4-n50-060	n50	90	span	L	LH	45	12	33	3	12	36	Đô giữa về đường Fa
+g4-n50-061	n50	7	upper	A	RH	45	23	22	4	12	48	Ba cuộc gọi vùng cao
+g4-n50-062	n50	14	upper	A	RH	46	23	23	4	12	48	Si cao gọi giữ đáp
+g4-n50-063	n50	26	upper	A	RH	46	22	24	4	12	48	Rê cao đổi lời hỏi
+g4-n50-064	n50	35	upper	A	RH	48	26	22	3	18	54	Ba chuyện cao nhịp ba
+g4-n50-065	n50	46	upper	A	RH	48	26	22	3	18	54	Giữ cao đổi thứ tự
+g4-n50-066	n50	56	upper	A	LH	45	22	23	4	12	48	Ba cuộc gọi bass cao
+g4-n50-067	n50	66	upper	A	LH	46	23	23	4	12	48	Si bass giữ lời đáp
+g4-n50-068	n50	76	upper	A	LH	46	24	22	4	12	48	Rê giữa đổi câu hỏi
+g4-n50-069	n50	86	upper	A	LH	48	22	26	3	18	54	Ba chuyện bass cao ba
+g4-n50-070	n50	97	upper	A	LH	48	22	26	3	18	54	Giữ bass cao đổi thứ tự
+g4-n50-071	n50	8	lower	A	RH	46	23	23	4	12	48	Ba cuộc gọi vùng thấp
+g4-n50-072	n50	21	lower	A	RH	46	23	23	4	12	48	Mi thấp gọi Đô trả
+g4-n50-073	n50	34	lower	A	RH	46	22	24	4	12	48	La dài và hai lời
+g4-n50-074	n50	49	lower	A	RH	47	26	21	3	18	54	Ba chuyện thấp nhịp ba
+g4-n50-075	n50	63	lower	A	LH	46	23	23	4	12	48	Ba cuộc gọi rất trầm
+g4-n50-076	n50	78	lower	A	LH	46	23	23	4	12	48	Mi trầm gọi Đô trả
+g4-n50-077	n50	91	lower	A	LH	47	21	26	3	18	54	Ba chuyện rất trầm ba
+g4-n50-078	n50	9	span	A	RH	46	23	23	4	12	48	Ba chuyện mở qua tám
+g4-n50-079	n50	18	span	A	RH	45	22	23	4	12	48	Đô cao gọi lời về
+g4-n50-080	n50	31	span	A	RH	46	23	23	4	12	48	Fa La rộng giữ cuối
+g4-n50-081	n50	43	span	A	RH	47	27	20	3	18	54	Cao về mở tám nhịp ba
+g4-n50-082	n50	57	span	A	LH	46	23	23	4	12	48	Ba chuyện bass mở tám
+g4-n50-083	n50	69	span	A	LH	45	23	22	4	12	48	Đô giữa gọi lời trầm
+g4-n50-084	n50	81	span	A	LH	46	23	23	4	12	48	Fa La bass giữ cuối
+g4-n50-085	n50	94	span	A	LH	47	20	27	3	18	54	Giữa về mở tám nhịp ba
+g4-n50-086	n50	10	upper	S	RH	64	32	32	4	12	48	Ba câu cao cùng nhịp
+g4-n50-087	n50	15	upper	S	RH	68	34	34	4	12	48	Sol dài cao chung ba đoạn
+g4-n50-088	n50	27	upper	S	RH	62	31	31	4	12	48	Si Đô Rê chung rồi yên
+g4-n50-089	n50	36	upper	S	RH	60	30	30	3	12	36	Ba lời cao chung ba phách
+g4-n50-090	n50	47	upper	S	RH	58	29	29	3	12	36	Giữ đầu cao ba lời chung
+g4-n50-091	n50	58	upper	S	LH	64	32	32	4	12	48	Ba câu bass cao chung
+g4-n50-092	n50	67	upper	S	LH	68	34	34	4	12	48	Sol dài bass chung ba đoạn
+g4-n50-093	n50	77	upper	S	LH	62	31	31	4	12	48	Si Đô Rê giữa rồi yên
+g4-n50-094	n50	87	upper	S	LH	60	30	30	3	12	36	Ba lời bass cao chung
+g4-n50-095	n50	98	upper	S	LH	58	29	29	3	12	36	Giữ bass cao ba lời
+g4-n50-096	n50	11	lower	S	RH	66	33	33	4	12	48	Ba câu thấp cùng nhịp
+g4-n50-097	n50	28	lower	S	RH	62	31	31	4	12	48	La dài thấp nhắc lời chung
+g4-n50-098	n50	48	lower	S	RH	60	30	30	3	12	36	Ba lời thấp chung ba phách
+g4-n50-099	n50	68	lower	S	LH	66	33	33	4	12	48	Ba câu rất trầm chung
+g4-n50-100	n50	88	lower	S	LH	60	30	30	3	12	36	Ba lời rất trầm chung
+g4-n100-001	n100	1	upper	R	RH	92	70	22	4	20	80	Một ngày qua năm cửa cao
+g4-n100-002	n100	12	upper	R	RH	86	66	20	4	20	80	Sol dài và đường quay lại
+g4-n100-003	n100	19	upper	R	RH	86	66	20	4	20	80	Si Đô Rê qua năm lời
+g4-n100-004	n100	24	upper	R	RH	92	70	22	4	20	80	Đô cao gọi trong vườn nhịp
+g4-n100-005	n100	32	upper	R	RH	70	50	20	4	20	80	Từ nốt yên tới lời Sol
+g4-n100-006	n100	37	upper	R	RH	86	66	20	4	20	80	Nghỉ trên cao nghe câu tiếp
+g4-n100-007	n100	44	upper	R	RH	86	66	20	4	20	80	Nhắc Sol qua hai ngõ cao
+g4-n100-008	n100	52	upper	R	RH	88	68	20	4	20	80	Si dẫn Đô cao về nhà
+g4-n100-009	n100	59	upper	R	RH	90	68	22	4	20	80	Rê cao gọi bốn lời tiếp
+g4-n100-010	n100	64	upper	R	RH	89	69	20	4	20	80	Nền nhắc dưới năm câu cao
+g4-n100-011	n100	70	upper	R	RH	78	58	20	3	20	60	Năm vòng cao trong ba phách
+g4-n100-012	n100	79	upper	R	RH	78	58	20	3	20	60	Si Rê Đô khúc nhịp ba
+g4-n100-013	n100	84	upper	R	RH	78	58	20	3	20	60	Sol dài gọi trong năm câu
+g4-n100-014	n100	92	upper	R	RH	79	59	20	3	20	60	Sol Đô cao tìm lối lại
+g4-n100-015	n100	99	upper	R	RH	78	58	20	3	20	60	Sol nhắc năm lời ba phách
+g4-n100-016	n100	2	lower	R	RH	103	71	32	4	20	80	Năm câu thấp rõ tiếng nền
+g4-n100-017	n100	16	lower	R	RH	89	65	24	4	20	80	La dài nghe Mi gọi thấp
+g4-n100-018	n100	29	lower	R	RH	84	64	20	4	20	80	Đô Rê Mi mở năm lời
+g4-n100-019	n100	38	lower	R	RH	83	63	20	4	20	80	Mi ghé Si trong chuyến thấp
+g4-n100-020	n100	50	lower	R	RH	84	60	24	4	20	80	Giữ La nghe phách nghỉ
+g4-n100-021	n100	61	lower	R	RH	95	67	28	4	20	80	Nốt nghỉ trước nền nhắc thấp
+g4-n100-022	n100	71	lower	R	RH	78	58	20	3	20	60	Năm câu thấp trong ba phách
+g4-n100-023	n100	82	lower	R	RH	79	59	20	3	20	60	Đô Mi Rê giữa vòng ba
+g4-n100-024	n100	95	lower	R	RH	78	58	20	3	20	60	La dài tìm Mi rồi về
+g4-n100-025	n100	3	span	R	RH	90	70	20	4	20	80	Năm cảnh mở qua quãng tám
+g4-n100-026	n100	22	span	R	RH	84	64	20	4	20	80	Đô cao về rồi mở rộng
+g4-n100-027	n100	39	span	R	RH	85	65	20	4	20	80	Cao giữ qua khoảng nghỉ
+g4-n100-028	n100	54	span	R	RH	89	65	24	4	20	80	Fa La mở rộng dưới nền
+g4-n100-029	n100	72	span	R	RH	76	56	20	3	20	60	Năm đường rộng trong ba phách
+g4-n100-030	n100	89	span	R	RH	77	57	20	3	20	60	Từ Đô cao qua đường Fa
+g4-n100-031	n100	4	upper	L	LH	92	22	70	4	20	80	Ngày mới qua năm cửa bass
+g4-n100-032	n100	13	upper	L	LH	86	20	66	4	20	80	Sol trầm dài đường trở lại
+g4-n100-033	n100	20	upper	L	LH	86	20	66	4	20	80	Si Đô Rê giữa năm lời
+g4-n100-034	n100	25	upper	L	LH	92	22	70	4	20	80	Đô giữa gọi trong vườn nhịp
+g4-n100-035	n100	33	upper	L	LH	70	20	50	4	20	80	Từ bass yên thành lời Sol
+g4-n100-036	n100	40	upper	L	LH	86	20	66	4	20	80	Nghỉ bass cao nghe tiếp
+g4-n100-037	n100	45	upper	L	LH	86	20	66	4	20	80	Nhắc Sol trầm qua hai ngõ
+g4-n100-038	n100	53	upper	L	LH	88	20	68	4	20	80	Si trầm dẫn Đô về
+g4-n100-039	n100	60	upper	L	LH	90	22	68	4	20	80	Rê giữa bốn lời tiếp
+g4-n100-040	n100	65	upper	L	LH	89	20	69	4	20	80	Nền cao nhắc năm câu bass
+g4-n100-041	n100	73	upper	L	LH	78	20	58	3	20	60	Năm vòng bass cao ba phách
+g4-n100-042	n100	80	upper	L	LH	78	20	58	3	20	60	Si Rê Đô giữa khúc ba
+g4-n100-043	n100	85	upper	L	LH	78	20	58	3	20	60	Sol trầm dài năm câu
+g4-n100-044	n100	93	upper	L	LH	79	20	59	3	20	60	Sol Đô giữa lối lại
+g4-n100-045	n100	100	upper	L	LH	78	20	58	3	20	60	Sol trầm nhắc năm lời
+g4-n100-046	n100	5	lower	L	LH	103	32	71	4	20	80	Năm câu rất trầm theo nền
+g4-n100-047	n100	17	lower	L	LH	89	24	65	4	20	80	La trầm dài Mi gọi
+g4-n100-048	n100	30	lower	L	LH	84	20	64	4	20	80	Đô Rê Mi trầm năm lời
+g4-n100-049	n100	41	lower	L	LH	83	20	63	4	20	80	Mi trầm Si chuyến thấp
+g4-n100-050	n100	51	lower	L	LH	84	24	60	4	20	80	Giữ La trầm nghe nghỉ
+g4-n100-051	n100	62	lower	L	LH	95	28	67	4	20	80	Nghỉ thấp trước nền nhắc
+g4-n100-052	n100	74	lower	L	LH	78	20	58	3	20	60	Năm câu rất trầm ba phách
+g4-n100-053	n100	83	lower	L	LH	79	20	59	3	20	60	Đô Mi Rê trầm vòng ba
+g4-n100-054	n100	96	lower	L	LH	78	20	58	3	20	60	La trầm dài tìm Mi
+g4-n100-055	n100	6	span	L	LH	90	20	70	4	20	80	Năm cảnh bass mở quãng tám
+g4-n100-056	n100	23	span	L	LH	84	20	64	4	20	80	Đô giữa về trầm mở rộng
+g4-n100-057	n100	42	span	L	LH	85	20	65	4	20	80	Giữa giữ qua nghỉ trầm
+g4-n100-058	n100	55	span	L	LH	89	24	65	4	20	80	Fa La bass dưới nền
+g4-n100-059	n100	75	span	L	LH	76	20	56	3	20	60	Năm đường bass rộng ba
+g4-n100-060	n100	90	span	L	LH	77	20	57	3	20	60	Từ Đô giữa đường Fa
+g4-n100-061	n100	7	upper	A	RH	76	38	38	4	20	80	Năm cuộc gọi vùng cao
+g4-n100-062	n100	14	upper	A	RH	76	38	38	4	20	80	Si cao đổi năm lời đáp
+g4-n100-063	n100	26	upper	A	RH	76	38	38	4	20	80	Rê cao hỏi qua cửa
+g4-n100-064	n100	35	upper	A	RH	81	43	38	3	30	90	Năm chuyện cao nhịp ba
+g4-n100-065	n100	46	upper	A	RH	78	43	35	3	30	90	Giữ cao đổi lời kể
+g4-n100-066	n100	56	upper	A	LH	76	38	38	4	20	80	Năm cuộc gọi bass cao
+g4-n100-067	n100	66	upper	A	LH	76	38	38	4	20	80	Si bass năm câu trả
+g4-n100-068	n100	76	upper	A	LH	76	38	38	4	20	80	Rê giữa gọi qua cửa
+g4-n100-069	n100	86	upper	A	LH	81	37	44	3	30	90	Năm chuyện bass cao ba
+g4-n100-070	n100	97	upper	A	LH	81	38	43	3	30	90	Giữ bass cao đổi kể
+g4-n100-071	n100	8	lower	A	RH	76	38	38	4	20	80	Năm lời hỏi từ vùng thấp
+g4-n100-072	n100	21	lower	A	RH	76	37	39	4	20	80	Mi thấp mở năm cuộc gọi
+g4-n100-073	n100	34	lower	A	RH	76	37	39	4	20	80	La dài hỏi rồi trở lại
+g4-n100-074	n100	49	lower	A	RH	79	43	36	3	30	90	Năm chuyện thấp nhịp ba
+g4-n100-075	n100	63	lower	A	LH	77	38	39	4	20	80	Năm lời hỏi rất trầm
+g4-n100-076	n100	78	lower	A	LH	76	38	38	4	20	80	Mi trầm năm cuộc gọi
+g4-n100-077	n100	91	lower	A	LH	77	33	44	3	30	90	Năm chuyện rất trầm ba
+g4-n100-078	n100	9	span	A	RH	77	39	38	4	20	80	Năm chuyện mở qua tám
+g4-n100-079	n100	18	span	A	RH	76	37	39	4	20	80	Đô cao gọi đường về
+g4-n100-080	n100	31	span	A	RH	77	39	38	4	20	80	Fa La qua năm lời
+g4-n100-081	n100	43	span	A	RH	77	46	31	3	30	90	Cao về rồi năm đường rộng
+g4-n100-082	n100	57	span	A	LH	76	38	38	4	20	80	Năm chuyện bass mở tám
+g4-n100-083	n100	69	span	A	LH	76	38	38	4	20	80	Đô giữa gọi đường trầm
+g4-n100-084	n100	81	span	A	LH	77	39	38	4	20	80	Fa La bass năm lời
+g4-n100-085	n100	94	span	A	LH	77	31	46	3	30	90	Giữa về năm đường bass
+g4-n100-086	n100	10	upper	S	RH	120	60	60	4	20	80	Năm cảnh cao chung một nhịp
+g4-n100-087	n100	15	upper	S	RH	104	52	52	4	20	80	Sol dài cao qua năm cảnh
+g4-n100-088	n100	27	upper	S	RH	102	51	51	4	20	80	Si Đô Rê đổi đường chung
+g4-n100-089	n100	36	upper	S	RH	100	50	50	3	20	60	Năm lời cao chung ba phách
+g4-n100-090	n100	47	upper	S	RH	98	49	49	3	20	60	Giữ đầu cao trở lại chung
+g4-n100-091	n100	58	upper	S	LH	120	60	60	4	20	80	Năm cảnh bass cao chung nhịp
+g4-n100-092	n100	67	upper	S	LH	104	52	52	4	20	80	Sol dài bass năm cảnh
+g4-n100-093	n100	77	upper	S	LH	102	51	51	4	20	80	Si Đô Rê giữa đổi chung
+g4-n100-094	n100	87	upper	S	LH	100	50	50	3	20	60	Năm lời bass cao chung ba
+g4-n100-095	n100	98	upper	S	LH	98	49	49	3	20	60	Giữ bass cao trở lại chung
+g4-n100-096	n100	11	lower	S	RH	104	52	52	4	20	80	Năm câu thấp chung phách
+g4-n100-097	n100	28	lower	S	RH	104	52	52	4	20	80	La dài thấp đổi lời chung
+g4-n100-098	n100	48	lower	S	RH	104	52	52	3	20	60	Năm lời thấp chung ba phách
+g4-n100-099	n100	68	lower	S	LH	104	52	52	4	20	80	Năm câu rất trầm chung
+g4-n100-100	n100	88	lower	S	LH	104	52	52	3	20	60	Năm lời rất trầm chung ba

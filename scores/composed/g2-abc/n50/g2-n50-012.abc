@@ -1,0 +1,21 @@
+%abc-2.1
+X:1212
+T:g2-n50-012 Mi qua Fa rồi trở lại
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=third; lead=RH; bucket=n50; notes=48; RH=36; LH=12
+% role=R; duration60=36s; related_pattern=6ec8f5b9309dbac7
+% authored_passages=T22 T24 T21
+% source=buildscripts/pianist/compositions/g2/n50.txt:13
+[V:RH] E G F | E C D | E D C | D C C |
+[V:LH] C,3 | C,3 | C,3 | C,3 |
+[V:RH] C D F | E D C | D F E | D C C |
+[V:LH] C,3 | C,3 | C,3 | C,3 |
+[V:RH] C E D | E G F | E D E | D C C |]
+[V:LH] C,3 | C,3 | C,3 | C,3 |]

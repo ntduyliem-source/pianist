@@ -1,0 +1,17 @@
+%abc-2.1
+X:393
+T:g1-n20-093 Bốn ô ba phách cùng nhau
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n20; notes=22; RH=11; LH=11
+% role=S; family=octave-four-three; form=authored; duration60=12s
+% related_pattern=9daee64913ccfb87
+% source=buildscripts/pianist/compositions/g1/n20.txt:93
+[V:RH] C D E | F E D | C D E | D C2 |]
+[V:LH] C, D, E, | F, E, D, | C, D, E, | D, C,2 |]

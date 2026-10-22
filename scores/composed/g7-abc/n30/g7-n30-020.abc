@@ -1,0 +1,21 @@
+%abc-2.1
+X:4620
+T:g7-n30-020 Trầm Sol Mi Đô buông nhẹ
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G7; profile=dotted; lead=LH; bucket=n30; notes=33; RH=9; LH=24
+% duration60=36s; related_pattern=2f8ba56cb5bc259c
+% authored_passages=D20 DL3 DL4
+% source=buildscripts/pianist/compositions/g7/studies.txt:21
+[V:RH] C4 | C z z z | D z z z | G z z z |
+[V:LH] G,3/2 E,/2 C,2 | G,3/2 F,/2 E,2 | D,3/2 E,/2 F, G, | E,2 D,2 |
+[V:RH] C z z z | D z z z | C z z z | D z z z |
+[V:LH] C,4 | D,3/2 F,/2 E,2 | G,3/2 E,/2 D, C, | F,2 D,2 |
+[V:RH] C z z z |]
+[V:LH] E,2 C,2 |]

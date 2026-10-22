@@ -1,0 +1,21 @@
+%abc-2.1
+X:454
+T:g1-n30-054 Mười bước trầm nhắc lại
+C:Nhạc do trợ lý AI biên soạn
+M:2/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n30; notes=28; RH=10; LH=18
+% role=L; family=bass-ten-repeat; form=authored; duration60=20s
+% related_pattern=aa1ab1e5c8b98e1b
+% source=buildscripts/pianist/compositions/g1/n30.txt:56
+[V:RH] C2 | C2 | C2 | C2 |
+[V:LH] C, C, | D, E, | F, E, | D, C, |
+[V:RH] C2 | C2 | C2 | C2 |
+[V:LH] C,2 | C, D, | D, E, | F, E, |
+[V:RH] C2 | C2 |]
+[V:LH] D, C, | C,2 |]

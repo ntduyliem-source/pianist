@@ -1,0 +1,23 @@
+%abc-2.1
+X:529
+T:g1-n50-029 Bốn cảnh đầy bước chân
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n50; notes=69; RH=53; LH=16
+% role=R; family=four-full-scenes; form=authored; duration60=64s
+% related_pattern=d8f1827e6d0a3170
+% source=buildscripts/pianist/compositions/g1/n50.txt:32
+[V:RH] C D E2 | E F G2 | G F E D | C2 C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C C D E | F G F E | D E F E | D z C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C D E F | G2 F E | D C D E | F E D C |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C D E2 | F E D E | D C D C | C4 |]
+[V:LH] C,4 | C,4 | C,4 | C,4 |]

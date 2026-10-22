@@ -1,0 +1,25 @@
+%abc-2.1
+X:2755
+T:g4-n100-055 Năm cảnh bass mở quãng tám
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=span; lead=LH; bucket=n100; notes=90; RH=20; LH=70
+% role=L; duration60=80s; related_pattern=554af9bf9225ae13
+% authored_passages=X01 X04 X05 X03 X06
+% source=buildscripts/pianist/compositions/g4/n100.txt:56
+[V:RH] E4 | E4 | E4 | E4 |
+[V:LH] C, G, C B, | A, G, E, C, | D, E, G, A, | G, E, C,2 |
+[V:RH] E4 | E4 | E4 | E4 |
+[V:LH] C, F, A, C | B, G, E, C, | D, F, A, G, | E, D, C,2 |
+[V:RH] E4 | E4 | E4 | E4 |
+[V:LH] C, G, C2 | G,2 E, D, | C, E, G, A, | G, E, C,2 |
+[V:RH] E4 | E4 | E4 | E4 |
+[V:LH] C,2 G, C | B, A, G,2 | E, F, A, G, | E, D, C,2 |
+[V:RH] E4 | E4 | E4 | E4 |]
+[V:LH] C, G, C z | B, A, G, E, | D, F, A, G, | E, D, C,2 |]

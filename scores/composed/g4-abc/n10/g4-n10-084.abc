@@ -1,0 +1,17 @@
+%abc-2.1
+X:2384
+T:g4-n10-084 Bốn bậc bass tám giữ đáp
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=span; lead=LH; bucket=n10; notes=11; RH=4; LH=7
+% role=A; duration60=12s; related_pattern=557b40862d74d0c4
+% authored_passages=inline-n10-084
+% source=buildscripts/pianist/compositions/g4/n10.txt:85
+[V:RH] z4 | E F G F | z4 |]
+[V:LH] C, F, A, C | z4 | B, G, C,2 |]

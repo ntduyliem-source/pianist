@@ -1,0 +1,17 @@
+%abc-2.1
+X:4388
+T:g7-n6-088 Mi Sol Rê đu đưa
+C:Nhạc do trợ lý AI biên soạn
+M:6/8
+L:1/4
+Q:3/8=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G7; profile=compound; lead=RH; bucket=n6; notes=7; RH=5; LH=2
+% duration60=4s; related_pattern=963a1942fa5507b4
+% authored_passages=K13 KR2
+% source=buildscripts/pianist/compositions/g7/studies.txt:89
+[V:RH] E G/2 D3/2 | E3/2 C3/2 |]
+[V:LH] G,3 | C,3 |]

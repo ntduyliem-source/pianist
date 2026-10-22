@@ -1,0 +1,21 @@
+%abc-2.1
+X:2671
+T:g4-n50-071 Ba cuộc gọi vùng thấp
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=lower; lead=RH; bucket=n50; notes=46; RH=23; LH=23
+% role=A; duration60=48s; related_pattern=b1c32ed43d523039
+% authored_passages=T01 T03 T04
+% source=buildscripts/pianist/compositions/g4/n50.txt:72
+[V:RH] A, B, C D | z4 | E D C A, | z4 |
+[V:LH] z4 | C, D, E, D, | z4 | D, C, C,2 |
+[V:RH] A,2 C D | z4 | E D C A, | z4 |
+[V:LH] z4 | C, D, E, D, | z4 | D, E, D, C, |
+[V:RH] A, C E D | z4 | C B, A, C | z4 |]
+[V:LH] z4 | C, D, E, D, | z4 | D, C, D, C, |]

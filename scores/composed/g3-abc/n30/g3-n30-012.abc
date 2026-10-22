@@ -1,0 +1,19 @@
+%abc-2.1
+X:1812
+T:g3-n30-012 Fa về Đô nhắc lời
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fourth; lead=RH; bucket=n30; notes=31; RH=23; LH=8
+% role=R; duration60=24s; related_pattern=010d83318c647c9a
+% authored_passages=F22 F25
+% source=buildscripts/pianist/compositions/g3/n30.txt:13
+[V:RH] F C D | E F E | D G F | E D C |
+[V:LH] C,3 | C,3 | C,3 | C,3 |
+[V:RH] C C F | E D C | D G F | E C2 |]
+[V:LH] C,3 | C,3 | C,3 | C,3 |]

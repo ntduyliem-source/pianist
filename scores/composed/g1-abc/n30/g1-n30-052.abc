@@ -1,0 +1,21 @@
+%abc-2.1
+X:452
+T:g1-n30-052 Mười viên đá trầm
+C:Nhạc do trợ lý AI biên soạn
+M:2/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n30; notes=28; RH=10; LH=18
+% role=L; family=bass-ten-little; form=authored; duration60=20s
+% related_pattern=25b7cdab3210156c
+% source=buildscripts/pianist/compositions/g1/n30.txt:54
+[V:RH] C2 | C2 | C2 | C2 |
+[V:LH] C, D, | E, F, | G, F, | E, D, |
+[V:RH] C2 | C2 | C2 | C2 |
+[V:LH] C,2 | C, D, | E, D, | C, D, |
+[V:RH] C2 | C2 |]
+[V:LH] E, D, | C,2 |]

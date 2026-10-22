@@ -1,0 +1,23 @@
+%abc-2.1
+X:643
+T:g1-n100-043 Bốn cảnh trầm nhắc đều
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n100; notes=78; RH=16; LH=62
+% role=L; family=bass-four-flowing-repeat; form=authored; duration60=64s
+% related_pattern=3859fa3f9cae03a9
+% source=buildscripts/pianist/compositions/g1/n100.txt:45
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C, C, D, E, | E, F, F, G, | G, F, E, D, | C, D, C, C, |
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C, D, D, E, | F, F, E, D, | C, C, D, E, | F, E, D, C, |
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C, D, E, E, | F, G, G, F, | E, D, D, C, | C, D, C, C, |
+[V:RH] C4 | C4 | C4 | C4 |]
+[V:LH] C, D, E, F, | G, G, F, E, | D, C, D, C, | C,2 C,2 |]

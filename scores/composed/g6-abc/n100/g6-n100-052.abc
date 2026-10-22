@@ -1,0 +1,27 @@
+%abc-2.1
+X:4152
+T:g6-n100-052 Rê cao về Mi Fa
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G6; profile=m7-down; lead=RH; bucket=n100; notes=81; RH=60; LH=21
+% duration60=84s; related_pattern=65549a99e04f64cf
+% authored_passages=S52 CD2 CD3 CD1 CD3 CD2
+% source=buildscripts/pianist/compositions/g6/studies.txt:53
+[V:RH] c d E F | G2 B c | D E F2 | G E D2 |
+[V:LH] C,4 | C, z z z | C, z z z | C, z z z |
+[V:RH] E2 C2 | G A B c | D E G2 | E2 D2 |
+[V:LH] C, z z z | C, z z z | C, z z z | C, z z z |
+[V:RH] E2 C2 | G B c D | E F G2 | F E D2 |
+[V:LH] C, z z z | C, z z z | C, z z z | C, z z z |
+[V:RH] E2 C2 | G A B c | D E G2 | E2 D2 |
+[V:LH] C, z z z | C, z z z | C, z z z | C, z z z |
+[V:RH] E2 C2 | G2 B c | D E F2 | G E D2 |
+[V:LH] C, z z z | C, z z z | C, z z z | C, z z z |
+[V:RH] E2 C2 |]
+[V:LH] C, z z z |]

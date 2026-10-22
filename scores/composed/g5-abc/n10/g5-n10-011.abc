@@ -1,0 +1,17 @@
+%abc-2.1
+X:3011
+T:g5-n10-011 Mi Fa bên tiếng trầm
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=offset; lead=RH; bucket=n10; notes=10; RH=6; LH=4
+% duration60=12s; related_pattern=964eb793a3bebbf0
+% authored_passages=O11 CR2 CR1
+% source=buildscripts/pianist/compositions/g5/studies.txt:12
+[V:RH] E2 F z | E2 C2 | G2 E2 |]
+[V:LH] z E, z F, | C,4 | C,4 |]

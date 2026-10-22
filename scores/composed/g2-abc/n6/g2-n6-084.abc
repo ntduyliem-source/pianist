@@ -1,0 +1,17 @@
+%abc-2.1
+X:884
+T:g2-n6-084 Câu trầm đáp hai tiếng
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=eighth; lead=LH; bucket=n6; notes=7; RH=2; LH=5
+% role=A; duration60=8s; related_pattern=3060e752bae991c1
+% authored_passages=inline-n6-084
+% source=buildscripts/pianist/compositions/g2/n6.txt:85
+[V:RH] z4 | C2 C2 |]
+[V:LH] C,/2D,/2 E, D, C, | z4 |]

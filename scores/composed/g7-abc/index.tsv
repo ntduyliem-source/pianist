@@ -1,0 +1,701 @@
+id	group	bookPosition	profile	lead	count	right	left	meter	bars	seconds	normalizedHash	title
+g7-n4-001	n4	1	dotted	RH	4	3	1	4/4	1	4	3d37921c336e728f79b37fc97bd45c4e0754a7f74dc0ce0af6f57493d1af848c	Đô Rê Mi dài ngắn
+g7-n4-002	n4	9	dotted	RH	4	3	1	4/4	1	4	6adfb5b7db8ba7d0c99dbc8fe61b263ef0280d29ab982a237b13374f8c507e02	Rê Mi Fa dài ngắn
+g7-n4-003	n4	17	dotted	RH	4	3	1	4/4	1	4	13c07ed4ceac66e24599c67ef30dc306e9306e2591c0f9a0f714eb170ce0815c	Mi Fa Sol dài ngắn
+g7-n4-004	n4	33	dotted	RH	4	3	1	4/4	1	4	3688f98c98f3c6260b9bc20cff064cd558507ded47aeb4a86f89c0135a69f468	Fa Mi Rê chấm dôi
+g7-n4-005	n4	25	dotted	RH	4	3	1	4/4	1	4	1fb718c54d409825c3e45bb267c7d6a75ac4c9b4ebbaf1fd4e38a2b3d57ffd06	Sol Fa Mi chấm dôi
+g7-n4-006	n4	41	dotted	RH	4	3	1	4/4	1	4	385a66057e7b4cd18a06a5fdab582084eeb3e2c0310487a8f255b3ac4c2d3a19	Đô Mi Sol bước rộng
+g7-n4-007	n4	57	dotted	RH	4	3	1	4/4	1	4	805b303ee7c18d969b5f98ee08e3e11a069022aad04319acd88889c0ac66b81c	Sol Mi Đô buông nhẹ
+g7-n4-008	n4	49	dotted	RH	4	3	1	4/4	1	4	b130ab1970fcbdb0c9f9035b9257bd10bb8d80d032f343ed185b0259eddade64	Rê Fa Mi ngắn nối
+g7-n4-009	n4	65	dotted	RH	4	3	1	4/4	1	4	0b6a6ffad8df43e56cf6ab88a02ce780811af8552ffbb81dddc9f7677667ee6b	Mi Rê Đô về nhà
+g7-n4-010	n4	81	dotted	RH	4	3	1	4/4	1	4	391cf080df4ac94f0f4f0c72875a9b482a9ff0309cae00ff3dcd8a09d4af672a	Fa Rê Sol chuyển hướng
+g7-n4-011	n4	73	dotted	RH	4	3	1	4/4	1	4	c743bf4778bd9d02698da30768db05726c920f08064354bd300de03eb381cf23	Đô Sol Mi phách dài
+g7-n4-012	n4	89	dotted	RH	4	3	1	4/4	1	4	10f34830bf3b8ea4dcd23a1869d3983d195f198505f53cb596ec94deb690acf6	Rê Đô Fa phách ngắn
+g7-n4-013	n4	95	dotted	RH	4	3	1	4/4	1	4	1145e353e2df6046c68415e1c0f88a4c93f7784e7aaf7bf4df53cb036f49d857	Mi Sol Rê khép câu
+g7-n4-014	n4	13	dotted	LH	4	1	3	4/4	1	4	3d37921c336e728f79b37fc97bd45c4e0754a7f74dc0ce0af6f57493d1af848c	Trầm Đô Rê Mi dài ngắn
+g7-n4-015	n4	2	dotted	LH	4	1	3	4/4	1	4	6adfb5b7db8ba7d0c99dbc8fe61b263ef0280d29ab982a237b13374f8c507e02	Trầm Rê Mi Fa dài ngắn
+g7-n4-016	n4	29	dotted	LH	4	1	3	4/4	1	4	13c07ed4ceac66e24599c67ef30dc306e9306e2591c0f9a0f714eb170ce0815c	Trầm Mi Fa Sol dài ngắn
+g7-n4-017	n4	21	dotted	LH	4	1	3	4/4	1	4	3688f98c98f3c6260b9bc20cff064cd558507ded47aeb4a86f89c0135a69f468	Trầm Fa Mi Rê chấm dôi
+g7-n4-018	n4	37	dotted	LH	4	1	3	4/4	1	4	1fb718c54d409825c3e45bb267c7d6a75ac4c9b4ebbaf1fd4e38a2b3d57ffd06	Trầm Sol Fa Mi chấm dôi
+g7-n4-019	n4	53	dotted	LH	4	1	3	4/4	1	4	385a66057e7b4cd18a06a5fdab582084eeb3e2c0310487a8f255b3ac4c2d3a19	Trầm Đô Mi Sol bước rộng
+g7-n4-020	n4	45	dotted	LH	4	1	3	4/4	1	4	805b303ee7c18d969b5f98ee08e3e11a069022aad04319acd88889c0ac66b81c	Trầm Sol Mi Đô buông nhẹ
+g7-n4-021	n4	61	dotted	LH	4	1	3	4/4	1	4	b130ab1970fcbdb0c9f9035b9257bd10bb8d80d032f343ed185b0259eddade64	Trầm Rê Fa Mi ngắn nối
+g7-n4-022	n4	77	dotted	LH	4	1	3	4/4	1	4	0b6a6ffad8df43e56cf6ab88a02ce780811af8552ffbb81dddc9f7677667ee6b	Trầm Mi Rê Đô về nhà
+g7-n4-023	n4	69	dotted	LH	4	1	3	4/4	1	4	391cf080df4ac94f0f4f0c72875a9b482a9ff0309cae00ff3dcd8a09d4af672a	Trầm Fa Rê Sol chuyển
+g7-n4-024	n4	85	dotted	LH	4	1	3	4/4	1	4	c743bf4778bd9d02698da30768db05726c920f08064354bd300de03eb381cf23	Trầm Đô Sol Mi phách dài
+g7-n4-025	n4	96	dotted	LH	4	1	3	4/4	1	4	10f34830bf3b8ea4dcd23a1869d3983d195f198505f53cb596ec94deb690acf6	Trầm Rê Đô Fa phách ngắn
+g7-n4-026	n4	3	tie	RH	4	3	1	4/4	1	4	0364d8b2c03f217373f75b39b4a2a8dd2dbfd099174f71dccde74e81277366af	Mi nối qua phách ba
+g7-n4-027	n4	14	tie	RH	4	3	1	4/4	1	4	34f5102d26199faa6187fd073adefd67215c40d3b136f929c029d62f65a5e3fd	Fa nối qua phách ba
+g7-n4-028	n4	30	tie	RH	4	3	1	4/4	1	4	8f2351111e920989b35e929f9d74d5166d2b313b3675b694a52df1ea74e002a4	Sol nối qua phách ba
+g7-n4-029	n4	22	tie	RH	4	3	1	4/4	1	4	85f59782a1b2d5c62c5c298f9536cc270b3f5ef504b63de1724b94c4f94f91cd	Rê nối sau Fa Mi
+g7-n4-030	n4	38	tie	RH	4	3	1	4/4	1	4	0ffb83f5f606ad8051d51975898e328ba5db0c494c620ac794c505cbf4a15c69	Mi nối sau Sol Fa
+g7-n4-031	n4	54	tie	RH	4	3	1	4/4	1	4	678be3f7ae388b53e2f275a1020ecb5a44eb9ee3e61fa5744febe9a40c6be569	Sol nối từ Đô Mi
+g7-n4-032	n4	46	tie	RH	4	3	1	4/4	1	4	5c53ac4a212f254ff1683fc0e630d59cd4cec05c11dcc3f4b44f150c2fe0f3bb	Đô nối từ Sol Mi
+g7-n4-033	n4	62	tie	RH	4	3	1	4/4	1	4	1803f9935b7991258737dd02a3a393c05a8a49941fc2bfaa3b0210e3a1570208	Mi nối từ Rê Fa
+g7-n4-034	n4	78	tie	RH	4	3	1	4/4	1	4	15db3f9e0bd214de0378e0cf766db27c8616d8d05a94acd6e7ec67b8522d5cc1	Đô nối từ Mi Rê
+g7-n4-035	n4	70	tie	RH	4	3	1	4/4	1	4	87b1fe689cdf18a9b4e41478fd6b5c8e72c99fb8316dd042457d92437c9916e1	Sol nối sau Fa Rê
+g7-n4-036	n4	86	tie	RH	4	3	1	4/4	1	4	42eb95f2c0c29593ae2a56bc4a438426010aeab3da2a2a0fe49cbdd8333a1a57	Mi nối sau Đô Sol
+g7-n4-037	n4	97	tie	RH	4	3	1	4/4	1	4	6af7ca584d0db5648c1743f9ac058f1077d60a3c1f4a98181f9c895e0fa40fc3	Fa nối sau Rê Đô
+g7-n4-038	n4	10	tie	LH	4	1	3	4/4	1	4	0364d8b2c03f217373f75b39b4a2a8dd2dbfd099174f71dccde74e81277366af	Mi trầm nối qua phách
+g7-n4-039	n4	4	tie	LH	4	1	3	4/4	1	4	34f5102d26199faa6187fd073adefd67215c40d3b136f929c029d62f65a5e3fd	Fa trầm nối qua phách
+g7-n4-040	n4	18	tie	LH	4	1	3	4/4	1	4	8f2351111e920989b35e929f9d74d5166d2b313b3675b694a52df1ea74e002a4	Sol trầm nối qua phách
+g7-n4-041	n4	34	tie	LH	4	1	3	4/4	1	4	85f59782a1b2d5c62c5c298f9536cc270b3f5ef504b63de1724b94c4f94f91cd	Rê trầm nối sau Fa Mi
+g7-n4-042	n4	26	tie	LH	4	1	3	4/4	1	4	0ffb83f5f606ad8051d51975898e328ba5db0c494c620ac794c505cbf4a15c69	Mi trầm nối sau Sol Fa
+g7-n4-043	n4	42	tie	LH	4	1	3	4/4	1	4	678be3f7ae388b53e2f275a1020ecb5a44eb9ee3e61fa5744febe9a40c6be569	Sol trầm nối Đô Mi
+g7-n4-044	n4	58	tie	LH	4	1	3	4/4	1	4	5c53ac4a212f254ff1683fc0e630d59cd4cec05c11dcc3f4b44f150c2fe0f3bb	Đô trầm nối Sol Mi
+g7-n4-045	n4	50	tie	LH	4	1	3	4/4	1	4	1803f9935b7991258737dd02a3a393c05a8a49941fc2bfaa3b0210e3a1570208	Mi trầm nối Rê Fa
+g7-n4-046	n4	66	tie	LH	4	1	3	4/4	1	4	15db3f9e0bd214de0378e0cf766db27c8616d8d05a94acd6e7ec67b8522d5cc1	Đô trầm nối Mi Rê
+g7-n4-047	n4	82	tie	LH	4	1	3	4/4	1	4	87b1fe689cdf18a9b4e41478fd6b5c8e72c99fb8316dd042457d92437c9916e1	Sol trầm nối Fa Rê
+g7-n4-048	n4	74	tie	LH	4	1	3	4/4	1	4	42eb95f2c0c29593ae2a56bc4a438426010aeab3da2a2a0fe49cbdd8333a1a57	Mi trầm nối Đô Sol
+g7-n4-049	n4	90	tie	LH	4	1	3	4/4	1	4	6af7ca584d0db5648c1743f9ac058f1077d60a3c1f4a98181f9c895e0fa40fc3	Fa trầm nối Rê Đô
+g7-n4-050	n4	98	tie	LH	4	1	3	4/4	1	4	c5262ce0bab0b7758a22dfc2ea3e37c5d00fad94470ecfed70ebbb9b0d20c1c6	Rê trầm nối Mi Sol
+g7-n4-051	n4	5	sync	RH	5	4	1	4/4	1	4	a5b6a53ceb2d7ecd09343e84d40ffe2b4b46e543215f4948268cc404bf46e44e	Rê chen giữa phách
+g7-n4-052	n4	15	sync	RH	5	4	1	4/4	1	4	479ccbf954ef301f9000c13c1aa423ce2d3c63763b6c637ea7f5900c4e36ba8f	Mi chen giữa phách
+g7-n4-053	n4	23	sync	RH	5	4	1	4/4	1	4	8fbc1b1d916dccb6beadae17dc131b1a5d67d5fca326014159a8580b3ef600bf	Fa chen giữa phách
+g7-n4-054	n4	39	sync	RH	5	4	1	4/4	1	4	1e3fc714a2e7ede5f8c3a5e0a499d7c9f80ed34267082d4e39d0bbdba8906d34	Mi đảo rồi Đô
+g7-n4-055	n4	31	sync	RH	5	4	1	4/4	1	4	4a2d991f7333b8b36d610f8a53c3cf6e04c009eefa5e0de764614d9a3b6d1061	Fa đảo rồi Đô
+g7-n4-056	n4	47	sync	RH	5	4	1	4/4	1	4	7b862c55b04907159568ea0d8692bfe8683f8a26749f156cff0e69183ed43201	Mi đảo Rê đáp
+g7-n4-057	n4	63	sync	RH	5	4	1	4/4	1	4	18bb30a1e2f7a78c268df3f0a86f053883c163d42a26e02378eaf48c58f46169	Fa đảo Mi đáp
+g7-n4-058	n4	55	sync	RH	5	4	1	4/4	1	4	80f69cc0d828dff250bab7cc255101a5a6ddba2ba5ba67b685d2bbe767836318	Rê đảo Đô đáp
+g7-n4-059	n4	71	sync	RH	5	4	1	4/4	1	4	1d99db864a1262c9e117c400009f8ccfafb50d7f31594742906516d21620ba83	Sol đảo Mi Rê
+g7-n4-060	n4	87	sync	RH	5	4	1	4/4	1	4	14588cd7355ecede5815b250ba72765d168838b63c267f697f288c993a2d88d4	Mi đảo Rê Đô
+g7-n4-061	n4	79	sync	RH	5	4	1	4/4	1	4	4f9b5d50390d9cf066bc525eadcf5f6baf71fe2bfd5b326405b444eddc94f5a9	Rê đảo Sol Mi
+g7-n4-062	n4	93	sync	RH	5	4	1	4/4	1	4	9de63b015b5919a5c08abeae5f055376fc584eb3b95368a4d62ce656365f1642	Đô đảo Mi Fa
+g7-n4-063	n4	19	sync	LH	5	1	4	4/4	1	4	a5b6a53ceb2d7ecd09343e84d40ffe2b4b46e543215f4948268cc404bf46e44e	Rê trầm chen phách
+g7-n4-064	n4	6	sync	LH	5	1	4	4/4	1	4	479ccbf954ef301f9000c13c1aa423ce2d3c63763b6c637ea7f5900c4e36ba8f	Mi trầm chen phách
+g7-n4-065	n4	11	sync	LH	5	1	4	4/4	1	4	8fbc1b1d916dccb6beadae17dc131b1a5d67d5fca326014159a8580b3ef600bf	Fa trầm chen phách
+g7-n4-066	n4	27	sync	LH	5	1	4	4/4	1	4	1e3fc714a2e7ede5f8c3a5e0a499d7c9f80ed34267082d4e39d0bbdba8906d34	Mi trầm đảo rồi Đô
+g7-n4-067	n4	43	sync	LH	5	1	4	4/4	1	4	4a2d991f7333b8b36d610f8a53c3cf6e04c009eefa5e0de764614d9a3b6d1061	Fa trầm đảo rồi Đô
+g7-n4-068	n4	35	sync	LH	5	1	4	4/4	1	4	7b862c55b04907159568ea0d8692bfe8683f8a26749f156cff0e69183ed43201	Mi trầm đảo Rê đáp
+g7-n4-069	n4	51	sync	LH	5	1	4	4/4	1	4	18bb30a1e2f7a78c268df3f0a86f053883c163d42a26e02378eaf48c58f46169	Fa trầm đảo Mi đáp
+g7-n4-070	n4	67	sync	LH	5	1	4	4/4	1	4	80f69cc0d828dff250bab7cc255101a5a6ddba2ba5ba67b685d2bbe767836318	Rê trầm đảo Đô đáp
+g7-n4-071	n4	59	sync	LH	5	1	4	4/4	1	4	1d99db864a1262c9e117c400009f8ccfafb50d7f31594742906516d21620ba83	Sol trầm đảo Mi Rê
+g7-n4-072	n4	75	sync	LH	5	1	4	4/4	1	4	14588cd7355ecede5815b250ba72765d168838b63c267f697f288c993a2d88d4	Mi trầm đảo Rê Đô
+g7-n4-073	n4	91	sync	LH	5	1	4	4/4	1	4	4f9b5d50390d9cf066bc525eadcf5f6baf71fe2bfd5b326405b444eddc94f5a9	Rê trầm đảo Sol Mi
+g7-n4-074	n4	83	sync	LH	5	1	4	4/4	1	4	9de63b015b5919a5c08abeae5f055376fc584eb3b95368a4d62ce656365f1642	Đô trầm đảo Mi Fa
+g7-n4-075	n4	99	sync	LH	5	1	4	4/4	1	4	18571b3bbc8a9049bb2a5ea3c5073c91791891666d66bc17cc86bf1085e5fadc	Sol trầm đảo Fa Đô
+g7-n4-076	n4	7	compound	RH	4	3	1	6/8	1	2	a5dd29995811dc3d1309df6357453a226050734da67c1c2646d3b4c74f905f81	Hai nhịp lớn Đô Rê Mi
+g7-n4-077	n4	20	compound	RH	4	3	1	6/8	1	2	b64ca802c3d52e143f0388bef1167f3ccd7cf1ef9f59388a466690738e3f1ad8	Hai nhịp lớn Rê Mi Fa
+g7-n4-078	n4	12	compound	RH	4	3	1	6/8	1	2	13f729c9656c932c13cfdf78ddc7ad34fd58a0206a9167e2cdbab1b505a7fe2b	Hai nhịp lớn Mi Fa Sol
+g7-n4-079	n4	28	compound	RH	4	3	1	6/8	1	2	951d0e551be4eb20e38a97920f9e3ab1c2ad9ef5b51962f9253da402b9b51bc2	Fa Mi Rê đu đưa
+g7-n4-080	n4	44	compound	RH	4	3	1	6/8	1	2	b13ac085025cd0ed111f8ea0cf77d862e87409a4ae9d4864537e27a5bc79ee37	Sol Fa Mi đu đưa
+g7-n4-081	n4	36	compound	RH	4	3	1	6/8	1	2	1bd34568e56d56e7adbc7cdb299acd369d53b540c8e090e07b99005cefaa68eb	Đô Mi Sol sáu tám
+g7-n4-082	n4	52	compound	RH	4	3	1	6/8	1	2	31d5b0a8fdcbc22da8e3a4e36423e4a5e550c47ca776d00c2ad11eed098c0072	Sol Mi Đô sáu tám
+g7-n4-083	n4	68	compound	RH	4	3	1	6/8	1	2	8b5a5f4fca13363f8c02793620fda357c43a9dbd3afd4d19842211056744f8da	Rê Fa Mi theo nhóm ba
+g7-n4-084	n4	60	compound	RH	4	3	1	6/8	1	2	062bcad47db2f1e8e8cd6e0e18bc767301508f9e17498b3339c073e4d37cb24f	Mi Rê Đô theo nhóm ba
+g7-n4-085	n4	76	compound	RH	4	3	1	6/8	1	2	c0ce03e949b59667e2c4bf97b1e616333ea3f88d962dea84c98d45373f2b77d7	Fa Rê Sol hai phách
+g7-n4-086	n4	92	compound	RH	4	3	1	6/8	1	2	400ebbcdb03655c8768a63d96befcd25196140439cdf97783f78df509229533e	Đô Sol Mi hai phách
+g7-n4-087	n4	84	compound	RH	4	3	1	6/8	1	2	156d35d8594abb112707886d06b8c154c634cf5914c033362567a7c11c6bee2f	Rê Đô Fa đu đưa
+g7-n4-088	n4	100	compound	RH	4	3	1	6/8	1	2	574145b880a69c04fb2b7161181eec2c01a5031169e6dec233f67b2f7d3f9aa6	Mi Sol Rê đu đưa
+g7-n4-089	n4	16	compound	LH	4	1	3	6/8	1	2	a5dd29995811dc3d1309df6357453a226050734da67c1c2646d3b4c74f905f81	Đô Rê Mi trầm sáu tám
+g7-n4-090	n4	8	compound	LH	4	1	3	6/8	1	2	b64ca802c3d52e143f0388bef1167f3ccd7cf1ef9f59388a466690738e3f1ad8	Rê Mi Fa trầm sáu tám
+g7-n4-091	n4	24	compound	LH	4	1	3	6/8	1	2	13f729c9656c932c13cfdf78ddc7ad34fd58a0206a9167e2cdbab1b505a7fe2b	Mi Fa Sol trầm sáu tám
+g7-n4-092	n4	40	compound	LH	4	1	3	6/8	1	2	951d0e551be4eb20e38a97920f9e3ab1c2ad9ef5b51962f9253da402b9b51bc2	Fa Mi Rê trầm đu đưa
+g7-n4-093	n4	32	compound	LH	4	1	3	6/8	1	2	b13ac085025cd0ed111f8ea0cf77d862e87409a4ae9d4864537e27a5bc79ee37	Sol Fa Mi trầm đu đưa
+g7-n4-094	n4	48	compound	LH	4	1	3	6/8	1	2	1bd34568e56d56e7adbc7cdb299acd369d53b540c8e090e07b99005cefaa68eb	Đô Mi Sol trầm nhóm ba
+g7-n4-095	n4	64	compound	LH	4	1	3	6/8	1	2	31d5b0a8fdcbc22da8e3a4e36423e4a5e550c47ca776d00c2ad11eed098c0072	Sol Mi Đô trầm nhóm ba
+g7-n4-096	n4	56	compound	LH	4	1	3	6/8	1	2	8b5a5f4fca13363f8c02793620fda357c43a9dbd3afd4d19842211056744f8da	Rê Fa Mi trầm hai nhịp
+g7-n4-097	n4	72	compound	LH	4	1	3	6/8	1	2	062bcad47db2f1e8e8cd6e0e18bc767301508f9e17498b3339c073e4d37cb24f	Mi Rê Đô trầm hai nhịp
+g7-n4-098	n4	88	compound	LH	4	1	3	6/8	1	2	c0ce03e949b59667e2c4bf97b1e616333ea3f88d962dea84c98d45373f2b77d7	Fa Rê Sol trầm sáu tám
+g7-n4-099	n4	80	compound	LH	4	1	3	6/8	1	2	400ebbcdb03655c8768a63d96befcd25196140439cdf97783f78df509229533e	Đô Sol Mi trầm sáu tám
+g7-n4-100	n4	94	compound	LH	4	1	3	6/8	1	2	156d35d8594abb112707886d06b8c154c634cf5914c033362567a7c11c6bee2f	Rê Đô Fa trầm đu đưa
+g7-n6-001	n6	1	dotted	RH	7	5	2	4/4	2	8	d92857eedbefe9e0007144f408828af3480c37699a8ce65c7661b70da5bfb5d2	Đô Rê Mi dài ngắn
+g7-n6-002	n6	9	dotted	RH	7	5	2	4/4	2	8	90c5bb2f75682f61fe97edbf7a0a56ef0d78e00b196340f6f22fd0641d96d3d9	Rê Mi Fa dài ngắn
+g7-n6-003	n6	17	dotted	RH	7	5	2	4/4	2	8	1ab697e0dec7ba78ac739b1a4dff2bd730944a207438ec43c6d4eb9246b791cb	Mi Fa Sol dài ngắn
+g7-n6-004	n6	33	dotted	RH	7	5	2	4/4	2	8	10c34cc3d0961ccafe0e4f01ce38a45ed3d077136941d9bcf67a8a9f969ae152	Fa Mi Rê chấm dôi
+g7-n6-005	n6	25	dotted	RH	7	5	2	4/4	2	8	c83f982b156b80a977542a74957693ced21bb0123ae437483141d4cdc9fed2ae	Sol Fa Mi chấm dôi
+g7-n6-006	n6	41	dotted	RH	7	5	2	4/4	2	8	4aa99336275eb8dc7100f7073645100af223f8113e91386b06af24926c6fffc8	Đô Mi Sol bước rộng
+g7-n6-007	n6	57	dotted	RH	7	5	2	4/4	2	8	322e483426ed5339437d737042f057383ef20e99cbc02ee18b6fd6c5e4437b86	Sol Mi Đô buông nhẹ
+g7-n6-008	n6	49	dotted	RH	7	5	2	4/4	2	8	6ed4b2c4fd945588bdc1b126088ca421bf9a4f0a77538d47cf622c4cbe0ca74b	Rê Fa Mi ngắn nối
+g7-n6-009	n6	65	dotted	RH	7	5	2	4/4	2	8	958b079e23cd90b0c062b34f2e6e038350db6cd5bc5b1005f9ff28c188caa1ec	Mi Rê Đô về nhà
+g7-n6-010	n6	81	dotted	RH	7	5	2	4/4	2	8	62dd0bc75068cf4734254cceb5ecce7d6ffb9e7bb97dc3c5c105c0970e2bea16	Fa Rê Sol chuyển hướng
+g7-n6-011	n6	73	dotted	RH	7	5	2	4/4	2	8	0a68e6b969ef6dc50587d89e257162819f5af0215b36b02af45bf6e6e63e23dd	Đô Sol Mi phách dài
+g7-n6-012	n6	89	dotted	RH	7	5	2	4/4	2	8	08cb06003194d0040844472b783b8e428b9d3cc295e67556d044e9271e963d7b	Rê Đô Fa phách ngắn
+g7-n6-013	n6	95	dotted	RH	7	5	2	4/4	2	8	5879c6965ac88fdd77d082f35f78057bf650cbd50fa546f1517afb6433433720	Mi Sol Rê khép câu
+g7-n6-014	n6	13	dotted	LH	7	2	5	4/4	2	8	d92857eedbefe9e0007144f408828af3480c37699a8ce65c7661b70da5bfb5d2	Trầm Đô Rê Mi dài ngắn
+g7-n6-015	n6	2	dotted	LH	7	2	5	4/4	2	8	90c5bb2f75682f61fe97edbf7a0a56ef0d78e00b196340f6f22fd0641d96d3d9	Trầm Rê Mi Fa dài ngắn
+g7-n6-016	n6	29	dotted	LH	7	2	5	4/4	2	8	1ab697e0dec7ba78ac739b1a4dff2bd730944a207438ec43c6d4eb9246b791cb	Trầm Mi Fa Sol dài ngắn
+g7-n6-017	n6	21	dotted	LH	7	2	5	4/4	2	8	10c34cc3d0961ccafe0e4f01ce38a45ed3d077136941d9bcf67a8a9f969ae152	Trầm Fa Mi Rê chấm dôi
+g7-n6-018	n6	37	dotted	LH	7	2	5	4/4	2	8	c83f982b156b80a977542a74957693ced21bb0123ae437483141d4cdc9fed2ae	Trầm Sol Fa Mi chấm dôi
+g7-n6-019	n6	53	dotted	LH	7	2	5	4/4	2	8	4aa99336275eb8dc7100f7073645100af223f8113e91386b06af24926c6fffc8	Trầm Đô Mi Sol bước rộng
+g7-n6-020	n6	45	dotted	LH	7	2	5	4/4	2	8	322e483426ed5339437d737042f057383ef20e99cbc02ee18b6fd6c5e4437b86	Trầm Sol Mi Đô buông nhẹ
+g7-n6-021	n6	61	dotted	LH	7	2	5	4/4	2	8	6ed4b2c4fd945588bdc1b126088ca421bf9a4f0a77538d47cf622c4cbe0ca74b	Trầm Rê Fa Mi ngắn nối
+g7-n6-022	n6	77	dotted	LH	7	2	5	4/4	2	8	958b079e23cd90b0c062b34f2e6e038350db6cd5bc5b1005f9ff28c188caa1ec	Trầm Mi Rê Đô về nhà
+g7-n6-023	n6	69	dotted	LH	7	2	5	4/4	2	8	62dd0bc75068cf4734254cceb5ecce7d6ffb9e7bb97dc3c5c105c0970e2bea16	Trầm Fa Rê Sol chuyển
+g7-n6-024	n6	85	dotted	LH	7	2	5	4/4	2	8	0a68e6b969ef6dc50587d89e257162819f5af0215b36b02af45bf6e6e63e23dd	Trầm Đô Sol Mi phách dài
+g7-n6-025	n6	96	dotted	LH	7	2	5	4/4	2	8	08cb06003194d0040844472b783b8e428b9d3cc295e67556d044e9271e963d7b	Trầm Rê Đô Fa phách ngắn
+g7-n6-026	n6	3	tie	RH	7	5	2	4/4	2	8	30cb5afb12b49e1ec6b0021e54709e211ca94dd095631b07e6d36ffd916abf06	Mi nối qua phách ba
+g7-n6-027	n6	14	tie	RH	7	5	2	4/4	2	8	278adb3f0bcdc83b62d628cee482545c67b056d55f737cf01d74a3cfc71879be	Fa nối qua phách ba
+g7-n6-028	n6	30	tie	RH	7	5	2	4/4	2	8	0d0d1cd0958d32f4290ef8f8b2c3b108a098346a30d725222405e2c07ce3341a	Sol nối qua phách ba
+g7-n6-029	n6	22	tie	RH	7	5	2	4/4	2	8	013fa235f2bcbd106c7d061e6be5dec1a221c26471abbef962d9d3d32c6dbc0a	Rê nối sau Fa Mi
+g7-n6-030	n6	38	tie	RH	7	5	2	4/4	2	8	d669b62eea239616702ad247491a05627abddf317c38851ac308860494cce3a1	Mi nối sau Sol Fa
+g7-n6-031	n6	54	tie	RH	7	5	2	4/4	2	8	3b6e730b9eb7557111df24899cab008ba4341a1d02aa8b7c43940be787525652	Sol nối từ Đô Mi
+g7-n6-032	n6	46	tie	RH	7	5	2	4/4	2	8	6748e876842ed1c4ce6f2d8f445c7fde04d61f079384ec1d7f72ca95a6e249e0	Đô nối từ Sol Mi
+g7-n6-033	n6	62	tie	RH	7	5	2	4/4	2	8	52803ca838f20b5f7eecd7383d1165a2321dd0c9876b4f810405e396bf2fc28a	Mi nối từ Rê Fa
+g7-n6-034	n6	78	tie	RH	7	5	2	4/4	2	8	59d1094d5fe7d45c604c9e137056c5d02927316be10d9190a5885f2caf1040d9	Đô nối từ Mi Rê
+g7-n6-035	n6	70	tie	RH	7	5	2	4/4	2	8	9a7bc715971f65e7b2c9c129f017f571ec137b5844f3e7bc99c7fbb7d03ef320	Sol nối sau Fa Rê
+g7-n6-036	n6	86	tie	RH	7	5	2	4/4	2	8	cf90e5b37eff253a1702b76bb3ea963440fae0da700e9de7cb455fe6b0a1d0e1	Mi nối sau Đô Sol
+g7-n6-037	n6	97	tie	RH	7	5	2	4/4	2	8	6efbe3d39c29d11b5d826fa0d7739d22ae7802440484e329703188e37c2dc040	Fa nối sau Rê Đô
+g7-n6-038	n6	10	tie	LH	7	2	5	4/4	2	8	30cb5afb12b49e1ec6b0021e54709e211ca94dd095631b07e6d36ffd916abf06	Mi trầm nối qua phách
+g7-n6-039	n6	4	tie	LH	7	2	5	4/4	2	8	278adb3f0bcdc83b62d628cee482545c67b056d55f737cf01d74a3cfc71879be	Fa trầm nối qua phách
+g7-n6-040	n6	18	tie	LH	7	2	5	4/4	2	8	0d0d1cd0958d32f4290ef8f8b2c3b108a098346a30d725222405e2c07ce3341a	Sol trầm nối qua phách
+g7-n6-041	n6	34	tie	LH	7	2	5	4/4	2	8	013fa235f2bcbd106c7d061e6be5dec1a221c26471abbef962d9d3d32c6dbc0a	Rê trầm nối sau Fa Mi
+g7-n6-042	n6	26	tie	LH	7	2	5	4/4	2	8	d669b62eea239616702ad247491a05627abddf317c38851ac308860494cce3a1	Mi trầm nối sau Sol Fa
+g7-n6-043	n6	42	tie	LH	7	2	5	4/4	2	8	3b6e730b9eb7557111df24899cab008ba4341a1d02aa8b7c43940be787525652	Sol trầm nối Đô Mi
+g7-n6-044	n6	58	tie	LH	7	2	5	4/4	2	8	6748e876842ed1c4ce6f2d8f445c7fde04d61f079384ec1d7f72ca95a6e249e0	Đô trầm nối Sol Mi
+g7-n6-045	n6	50	tie	LH	7	2	5	4/4	2	8	52803ca838f20b5f7eecd7383d1165a2321dd0c9876b4f810405e396bf2fc28a	Mi trầm nối Rê Fa
+g7-n6-046	n6	66	tie	LH	7	2	5	4/4	2	8	59d1094d5fe7d45c604c9e137056c5d02927316be10d9190a5885f2caf1040d9	Đô trầm nối Mi Rê
+g7-n6-047	n6	82	tie	LH	7	2	5	4/4	2	8	9a7bc715971f65e7b2c9c129f017f571ec137b5844f3e7bc99c7fbb7d03ef320	Sol trầm nối Fa Rê
+g7-n6-048	n6	74	tie	LH	7	2	5	4/4	2	8	cf90e5b37eff253a1702b76bb3ea963440fae0da700e9de7cb455fe6b0a1d0e1	Mi trầm nối Đô Sol
+g7-n6-049	n6	90	tie	LH	7	2	5	4/4	2	8	6efbe3d39c29d11b5d826fa0d7739d22ae7802440484e329703188e37c2dc040	Fa trầm nối Rê Đô
+g7-n6-050	n6	98	tie	LH	7	2	5	4/4	2	8	30659bd88a4a4e44a5b77b72b80d4abfe9acd5f991c0a08e03cb835de6e82ac5	Rê trầm nối Mi Sol
+g7-n6-051	n6	5	sync	RH	8	6	2	4/4	2	8	321d131fd63959a041b4e9a6dd47aed10e171c9335a63ed5f0ee2f531fc9e492	Rê chen giữa phách
+g7-n6-052	n6	15	sync	RH	8	6	2	4/4	2	8	03c691ab60dfaf75ddc18526ee9983236e03b63568ffb8b679a104402368541f	Mi chen giữa phách
+g7-n6-053	n6	23	sync	RH	8	6	2	4/4	2	8	49fb2bcf3c83e097dc2254c229d43ae451c2ee83ad900122276a0ae3a4981586	Fa chen giữa phách
+g7-n6-054	n6	39	sync	RH	8	6	2	4/4	2	8	01423245f3d457cce53e173ab82861eda2b460edecc3c2bb7e27a0439bb0ad01	Mi đảo rồi Đô
+g7-n6-055	n6	31	sync	RH	8	6	2	4/4	2	8	9e9de9138ecbf8486e0d986967a19509f77ffbb315c8b744992726e4ab095223	Fa đảo rồi Đô
+g7-n6-056	n6	47	sync	RH	8	6	2	4/4	2	8	109cde66f126b2459f38ea38d539b90b60a2b5120584c1bde9a98aef29e2c91e	Mi đảo Rê đáp
+g7-n6-057	n6	63	sync	RH	8	6	2	4/4	2	8	a84972ed756cde3cfb96501e089b682001806a3d3b4421240eb0f7e3c98f8f3b	Fa đảo Mi đáp
+g7-n6-058	n6	55	sync	RH	8	6	2	4/4	2	8	94f738b8243869c755deb8c395b11bc0956a55c3872b4ea8115eb0ccd5d708ec	Rê đảo Đô đáp
+g7-n6-059	n6	71	sync	RH	8	6	2	4/4	2	8	8220cc2defff173a1f5893ebab575e347f5046f9847e0f97e4b6514e5019adfa	Sol đảo Mi Rê
+g7-n6-060	n6	87	sync	RH	8	6	2	4/4	2	8	459db2fb2668636fa8ea05c1044e92d8d85ef47e0e86255bd04bf679ab12430a	Mi đảo Rê Đô
+g7-n6-061	n6	79	sync	RH	8	6	2	4/4	2	8	317b369fd077dec6f13b6ceeed13b6230d2e12481d9a84a968240e96e800f1af	Rê đảo Sol Mi
+g7-n6-062	n6	93	sync	RH	8	6	2	4/4	2	8	7a42cc558a9230c637c94b8d5c21fc09d8570474bb9a336a06f93e64215b2326	Đô đảo Mi Fa
+g7-n6-063	n6	19	sync	LH	8	2	6	4/4	2	8	321d131fd63959a041b4e9a6dd47aed10e171c9335a63ed5f0ee2f531fc9e492	Rê trầm chen phách
+g7-n6-064	n6	6	sync	LH	8	2	6	4/4	2	8	03c691ab60dfaf75ddc18526ee9983236e03b63568ffb8b679a104402368541f	Mi trầm chen phách
+g7-n6-065	n6	11	sync	LH	8	2	6	4/4	2	8	49fb2bcf3c83e097dc2254c229d43ae451c2ee83ad900122276a0ae3a4981586	Fa trầm chen phách
+g7-n6-066	n6	27	sync	LH	8	2	6	4/4	2	8	01423245f3d457cce53e173ab82861eda2b460edecc3c2bb7e27a0439bb0ad01	Mi trầm đảo rồi Đô
+g7-n6-067	n6	43	sync	LH	8	2	6	4/4	2	8	9e9de9138ecbf8486e0d986967a19509f77ffbb315c8b744992726e4ab095223	Fa trầm đảo rồi Đô
+g7-n6-068	n6	35	sync	LH	8	2	6	4/4	2	8	109cde66f126b2459f38ea38d539b90b60a2b5120584c1bde9a98aef29e2c91e	Mi trầm đảo Rê đáp
+g7-n6-069	n6	51	sync	LH	8	2	6	4/4	2	8	a84972ed756cde3cfb96501e089b682001806a3d3b4421240eb0f7e3c98f8f3b	Fa trầm đảo Mi đáp
+g7-n6-070	n6	67	sync	LH	8	2	6	4/4	2	8	94f738b8243869c755deb8c395b11bc0956a55c3872b4ea8115eb0ccd5d708ec	Rê trầm đảo Đô đáp
+g7-n6-071	n6	59	sync	LH	8	2	6	4/4	2	8	8220cc2defff173a1f5893ebab575e347f5046f9847e0f97e4b6514e5019adfa	Sol trầm đảo Mi Rê
+g7-n6-072	n6	75	sync	LH	8	2	6	4/4	2	8	459db2fb2668636fa8ea05c1044e92d8d85ef47e0e86255bd04bf679ab12430a	Mi trầm đảo Rê Đô
+g7-n6-073	n6	91	sync	LH	8	2	6	4/4	2	8	317b369fd077dec6f13b6ceeed13b6230d2e12481d9a84a968240e96e800f1af	Rê trầm đảo Sol Mi
+g7-n6-074	n6	83	sync	LH	8	2	6	4/4	2	8	7a42cc558a9230c637c94b8d5c21fc09d8570474bb9a336a06f93e64215b2326	Đô trầm đảo Mi Fa
+g7-n6-075	n6	99	sync	LH	8	2	6	4/4	2	8	2164400698e47672f3f2249e79310e01dfea690cd365a12840e7b1bc34508952	Sol trầm đảo Fa Đô
+g7-n6-076	n6	7	compound	RH	7	5	2	6/8	2	4	3d31439752903a985d317af2c4616068c5e5654ebad687364f5869d7d33936f9	Hai nhịp lớn Đô Rê Mi
+g7-n6-077	n6	20	compound	RH	7	5	2	6/8	2	4	0e38dd333e005e579395f91eba37542f132970ffad653bdccd6afab301ad5f42	Hai nhịp lớn Rê Mi Fa
+g7-n6-078	n6	12	compound	RH	7	5	2	6/8	2	4	37800fe8272c4e7c12bb0f5da65fedfdfe68cd54cf214a70aeb59321dc3eaee8	Hai nhịp lớn Mi Fa Sol
+g7-n6-079	n6	28	compound	RH	7	5	2	6/8	2	4	0e05e71a443a0eefda9794b9f547c363158f21c102db33a126692a72d76d285d	Fa Mi Rê đu đưa
+g7-n6-080	n6	44	compound	RH	7	5	2	6/8	2	4	3e112a004af61e81f4a5c38ee8f46b3916e70b8e0eb9e34023c27bf1142019c2	Sol Fa Mi đu đưa
+g7-n6-081	n6	36	compound	RH	7	5	2	6/8	2	4	7f5147790372cfb4f3714b6302c0850625dd57cf21356c2766800764d5ba7a35	Đô Mi Sol sáu tám
+g7-n6-082	n6	52	compound	RH	7	5	2	6/8	2	4	2ce6a01c7846626fcd75fceb4ab1bc831727375448ea6862bbb017c706481c54	Sol Mi Đô sáu tám
+g7-n6-083	n6	68	compound	RH	7	5	2	6/8	2	4	b1764f2c3f581d3b2fa12581d372e7179bb1524d2ba2c5c29e0387a7da2c2e44	Rê Fa Mi theo nhóm ba
+g7-n6-084	n6	60	compound	RH	7	5	2	6/8	2	4	4cf6a2fa23c743741012b6c0a5288366c28f65b29dee82930bd9fef6a0d2b452	Mi Rê Đô theo nhóm ba
+g7-n6-085	n6	76	compound	RH	7	5	2	6/8	2	4	4e058285cb42199c6bf6f70ffe30af3a018590f029b4bd94dc3e347a2573b10b	Fa Rê Sol hai phách
+g7-n6-086	n6	92	compound	RH	7	5	2	6/8	2	4	a74a15993801d4a8faaea1c11e310b1482a876a9fe6933b063a7a66184abb700	Đô Sol Mi hai phách
+g7-n6-087	n6	84	compound	RH	7	5	2	6/8	2	4	106897e68d52dd43cca7c40bad7eda71ec867398abb8e7f5320c03461b8bfa93	Rê Đô Fa đu đưa
+g7-n6-088	n6	100	compound	RH	7	5	2	6/8	2	4	963a1942fa5507b4c46f9d90266c4bce3c1db31c8f5f8eb2fc137cd8e7794fa1	Mi Sol Rê đu đưa
+g7-n6-089	n6	16	compound	LH	7	2	5	6/8	2	4	3d31439752903a985d317af2c4616068c5e5654ebad687364f5869d7d33936f9	Đô Rê Mi trầm sáu tám
+g7-n6-090	n6	8	compound	LH	7	2	5	6/8	2	4	0e38dd333e005e579395f91eba37542f132970ffad653bdccd6afab301ad5f42	Rê Mi Fa trầm sáu tám
+g7-n6-091	n6	24	compound	LH	7	2	5	6/8	2	4	37800fe8272c4e7c12bb0f5da65fedfdfe68cd54cf214a70aeb59321dc3eaee8	Mi Fa Sol trầm sáu tám
+g7-n6-092	n6	40	compound	LH	7	2	5	6/8	2	4	0e05e71a443a0eefda9794b9f547c363158f21c102db33a126692a72d76d285d	Fa Mi Rê trầm đu đưa
+g7-n6-093	n6	32	compound	LH	7	2	5	6/8	2	4	3e112a004af61e81f4a5c38ee8f46b3916e70b8e0eb9e34023c27bf1142019c2	Sol Fa Mi trầm đu đưa
+g7-n6-094	n6	48	compound	LH	7	2	5	6/8	2	4	7f5147790372cfb4f3714b6302c0850625dd57cf21356c2766800764d5ba7a35	Đô Mi Sol trầm nhóm ba
+g7-n6-095	n6	64	compound	LH	7	2	5	6/8	2	4	2ce6a01c7846626fcd75fceb4ab1bc831727375448ea6862bbb017c706481c54	Sol Mi Đô trầm nhóm ba
+g7-n6-096	n6	56	compound	LH	7	2	5	6/8	2	4	b1764f2c3f581d3b2fa12581d372e7179bb1524d2ba2c5c29e0387a7da2c2e44	Rê Fa Mi trầm hai nhịp
+g7-n6-097	n6	72	compound	LH	7	2	5	6/8	2	4	4cf6a2fa23c743741012b6c0a5288366c28f65b29dee82930bd9fef6a0d2b452	Mi Rê Đô trầm hai nhịp
+g7-n6-098	n6	88	compound	LH	7	2	5	6/8	2	4	4e058285cb42199c6bf6f70ffe30af3a018590f029b4bd94dc3e347a2573b10b	Fa Rê Sol trầm sáu tám
+g7-n6-099	n6	80	compound	LH	7	2	5	6/8	2	4	a74a15993801d4a8faaea1c11e310b1482a876a9fe6933b063a7a66184abb700	Đô Sol Mi trầm sáu tám
+g7-n6-100	n6	94	compound	LH	7	2	5	6/8	2	4	106897e68d52dd43cca7c40bad7eda71ec867398abb8e7f5320c03461b8bfa93	Rê Đô Fa trầm đu đưa
+g7-n10-001	n10	1	dotted	RH	10	7	3	4/4	3	12	19215ad4c641dcd4030fc299f7afac37ff028be5b57b89d3cff153b5f91749ab	Đô Rê Mi dài ngắn
+g7-n10-002	n10	9	dotted	RH	10	7	3	4/4	3	12	18fa542f9d338c281c97e0b3d6883ffc10a8f6bd8ffbcc4d16965f4d2ffc6884	Rê Mi Fa dài ngắn
+g7-n10-003	n10	17	dotted	RH	10	7	3	4/4	3	12	62dcf76bb9a4413a31d04e7f3335becd67f771a634f18491d232b95f42d88dae	Mi Fa Sol dài ngắn
+g7-n10-004	n10	33	dotted	RH	10	7	3	4/4	3	12	6ff762f76df8413a1c97f91eb7a0cf0e04b2fb61e0efb44b6de23c1f66844030	Fa Mi Rê chấm dôi
+g7-n10-005	n10	25	dotted	RH	10	7	3	4/4	3	12	608ba2702bf529de21cc902c7c6e734af0f088a29ce4423746f5193a9bed50f9	Sol Fa Mi chấm dôi
+g7-n10-006	n10	41	dotted	RH	10	7	3	4/4	3	12	d4c7f12f53ee3ea26cb1b65629937c5f3b45f58354d89936698ff6dd88d1713a	Đô Mi Sol bước rộng
+g7-n10-007	n10	57	dotted	RH	10	7	3	4/4	3	12	4908a594e1ae32cdd949feabc92b28467a8f8bfd4f603eda4b15914a8ecddbb4	Sol Mi Đô buông nhẹ
+g7-n10-008	n10	49	dotted	RH	10	7	3	4/4	3	12	118c89999405b159ef351ee409ae951dd6c5ce07410d24556e526b5830a644e6	Rê Fa Mi ngắn nối
+g7-n10-009	n10	65	dotted	RH	10	7	3	4/4	3	12	c5c3f6e261a8f1612aebf1a96e2f533052566679a5b2517c624001fdd3b686ec	Mi Rê Đô về nhà
+g7-n10-010	n10	81	dotted	RH	10	7	3	4/4	3	12	ba701191860e7ee5ed2325b315e2857f3ef1bef0d8de89e819a8f4ca4a6bec75	Fa Rê Sol chuyển hướng
+g7-n10-011	n10	73	dotted	RH	10	7	3	4/4	3	12	659dd262cdc26151e71d8d7b63ac7ee28b073ebc141520bfdb60a7c2bee6dc59	Đô Sol Mi phách dài
+g7-n10-012	n10	89	dotted	RH	10	7	3	4/4	3	12	001972eacb277bcdbc6852809600098587ae914e8ed24a2b8bd353b1014fdeb5	Rê Đô Fa phách ngắn
+g7-n10-013	n10	95	dotted	RH	10	7	3	4/4	3	12	2ef281afa0c8f701ce66e6956f44a0ed203b032ccecbbffd0193450adb7a21e2	Mi Sol Rê khép câu
+g7-n10-014	n10	13	dotted	LH	10	3	7	4/4	3	12	19215ad4c641dcd4030fc299f7afac37ff028be5b57b89d3cff153b5f91749ab	Trầm Đô Rê Mi dài ngắn
+g7-n10-015	n10	2	dotted	LH	10	3	7	4/4	3	12	18fa542f9d338c281c97e0b3d6883ffc10a8f6bd8ffbcc4d16965f4d2ffc6884	Trầm Rê Mi Fa dài ngắn
+g7-n10-016	n10	29	dotted	LH	10	3	7	4/4	3	12	62dcf76bb9a4413a31d04e7f3335becd67f771a634f18491d232b95f42d88dae	Trầm Mi Fa Sol dài ngắn
+g7-n10-017	n10	21	dotted	LH	10	3	7	4/4	3	12	6ff762f76df8413a1c97f91eb7a0cf0e04b2fb61e0efb44b6de23c1f66844030	Trầm Fa Mi Rê chấm dôi
+g7-n10-018	n10	37	dotted	LH	10	3	7	4/4	3	12	608ba2702bf529de21cc902c7c6e734af0f088a29ce4423746f5193a9bed50f9	Trầm Sol Fa Mi chấm dôi
+g7-n10-019	n10	53	dotted	LH	10	3	7	4/4	3	12	d4c7f12f53ee3ea26cb1b65629937c5f3b45f58354d89936698ff6dd88d1713a	Trầm Đô Mi Sol bước rộng
+g7-n10-020	n10	45	dotted	LH	10	3	7	4/4	3	12	4908a594e1ae32cdd949feabc92b28467a8f8bfd4f603eda4b15914a8ecddbb4	Trầm Sol Mi Đô buông nhẹ
+g7-n10-021	n10	61	dotted	LH	10	3	7	4/4	3	12	118c89999405b159ef351ee409ae951dd6c5ce07410d24556e526b5830a644e6	Trầm Rê Fa Mi ngắn nối
+g7-n10-022	n10	77	dotted	LH	10	3	7	4/4	3	12	c5c3f6e261a8f1612aebf1a96e2f533052566679a5b2517c624001fdd3b686ec	Trầm Mi Rê Đô về nhà
+g7-n10-023	n10	69	dotted	LH	10	3	7	4/4	3	12	ba701191860e7ee5ed2325b315e2857f3ef1bef0d8de89e819a8f4ca4a6bec75	Trầm Fa Rê Sol chuyển
+g7-n10-024	n10	85	dotted	LH	10	3	7	4/4	3	12	659dd262cdc26151e71d8d7b63ac7ee28b073ebc141520bfdb60a7c2bee6dc59	Trầm Đô Sol Mi phách dài
+g7-n10-025	n10	96	dotted	LH	10	3	7	4/4	3	12	001972eacb277bcdbc6852809600098587ae914e8ed24a2b8bd353b1014fdeb5	Trầm Rê Đô Fa phách ngắn
+g7-n10-026	n10	3	tie	RH	10	7	3	4/4	3	12	bc51e7f5af6684c07558067f92661e2f76e1baab8b94f8c5816b1b5b6552062b	Mi nối qua phách ba
+g7-n10-027	n10	14	tie	RH	10	7	3	4/4	3	12	07394d4d48a856e4b6c28acd2d857962b8b9914523c9775d52c498c7d6131fa9	Fa nối qua phách ba
+g7-n10-028	n10	30	tie	RH	10	7	3	4/4	3	12	d1ac789af8061e26a6d91310823e91ddb17d9bf9df645be899e3465dda868195	Sol nối qua phách ba
+g7-n10-029	n10	22	tie	RH	10	7	3	4/4	3	12	13ce422e8c1dec527dee9f1066a1d9ea8048140870a72d7bc2f38d564f4d6a40	Rê nối sau Fa Mi
+g7-n10-030	n10	38	tie	RH	10	7	3	4/4	3	12	646a605548ea3f40e73ff7788b7049d5ff92c6d68a833b4e0b7c7fc308adece9	Mi nối sau Sol Fa
+g7-n10-031	n10	54	tie	RH	10	7	3	4/4	3	12	3ecc3e5ecc59259e2e4695fc46ca3680bfa710960b704f11c886bc11b35157a1	Sol nối từ Đô Mi
+g7-n10-032	n10	46	tie	RH	10	7	3	4/4	3	12	783b3b89ade7baa1e3d5871e22592cb2514b43279730f6dd39aa918833ca9838	Đô nối từ Sol Mi
+g7-n10-033	n10	62	tie	RH	10	7	3	4/4	3	12	d0075e4cbc6bcf1b68a39a12eba06cf92d5e3489f732638ebb1fbde7a5014423	Mi nối từ Rê Fa
+g7-n10-034	n10	78	tie	RH	10	7	3	4/4	3	12	bd784a5a226e911839bfe3b2644355dc02e88255e951399d2d4def5417f704a3	Đô nối từ Mi Rê
+g7-n10-035	n10	70	tie	RH	10	7	3	4/4	3	12	11156944f5b8fad56ffaa2c53a5ce15ae71544ee0bcaa44ca9321f18261fe3c0	Sol nối sau Fa Rê
+g7-n10-036	n10	86	tie	RH	10	7	3	4/4	3	12	d818c6ed4016b6d034b8398c980f1eb4b34235a9f7da34a9279b651247e44a62	Mi nối sau Đô Sol
+g7-n10-037	n10	97	tie	RH	10	7	3	4/4	3	12	ce31ac79a66eee3f4c47dae4ecf9bdb66e470e1e91b0add3dd379930ce139b27	Fa nối sau Rê Đô
+g7-n10-038	n10	10	tie	LH	10	3	7	4/4	3	12	bc51e7f5af6684c07558067f92661e2f76e1baab8b94f8c5816b1b5b6552062b	Mi trầm nối qua phách
+g7-n10-039	n10	4	tie	LH	10	3	7	4/4	3	12	07394d4d48a856e4b6c28acd2d857962b8b9914523c9775d52c498c7d6131fa9	Fa trầm nối qua phách
+g7-n10-040	n10	18	tie	LH	10	3	7	4/4	3	12	d1ac789af8061e26a6d91310823e91ddb17d9bf9df645be899e3465dda868195	Sol trầm nối qua phách
+g7-n10-041	n10	34	tie	LH	10	3	7	4/4	3	12	13ce422e8c1dec527dee9f1066a1d9ea8048140870a72d7bc2f38d564f4d6a40	Rê trầm nối sau Fa Mi
+g7-n10-042	n10	26	tie	LH	10	3	7	4/4	3	12	646a605548ea3f40e73ff7788b7049d5ff92c6d68a833b4e0b7c7fc308adece9	Mi trầm nối sau Sol Fa
+g7-n10-043	n10	42	tie	LH	10	3	7	4/4	3	12	3ecc3e5ecc59259e2e4695fc46ca3680bfa710960b704f11c886bc11b35157a1	Sol trầm nối Đô Mi
+g7-n10-044	n10	58	tie	LH	10	3	7	4/4	3	12	783b3b89ade7baa1e3d5871e22592cb2514b43279730f6dd39aa918833ca9838	Đô trầm nối Sol Mi
+g7-n10-045	n10	50	tie	LH	10	3	7	4/4	3	12	d0075e4cbc6bcf1b68a39a12eba06cf92d5e3489f732638ebb1fbde7a5014423	Mi trầm nối Rê Fa
+g7-n10-046	n10	66	tie	LH	10	3	7	4/4	3	12	bd784a5a226e911839bfe3b2644355dc02e88255e951399d2d4def5417f704a3	Đô trầm nối Mi Rê
+g7-n10-047	n10	82	tie	LH	10	3	7	4/4	3	12	11156944f5b8fad56ffaa2c53a5ce15ae71544ee0bcaa44ca9321f18261fe3c0	Sol trầm nối Fa Rê
+g7-n10-048	n10	74	tie	LH	10	3	7	4/4	3	12	d818c6ed4016b6d034b8398c980f1eb4b34235a9f7da34a9279b651247e44a62	Mi trầm nối Đô Sol
+g7-n10-049	n10	90	tie	LH	10	3	7	4/4	3	12	ce31ac79a66eee3f4c47dae4ecf9bdb66e470e1e91b0add3dd379930ce139b27	Fa trầm nối Rê Đô
+g7-n10-050	n10	98	tie	LH	10	3	7	4/4	3	12	0c00eb3052e277728cd219f5afb1d583533f8bf951d7ab24ce16d59b7c09e7c6	Rê trầm nối Mi Sol
+g7-n10-051	n10	5	sync	RH	11	8	3	4/4	3	12	39e168d09bc19c4fe18b4231d9a51c7ca843af5487957ebdc1959add9b91c17e	Rê chen giữa phách
+g7-n10-052	n10	15	sync	RH	11	8	3	4/4	3	12	88073f4867754e282a9172a2d4d83ebb67a3bdcc2556440f0b539368c074f550	Mi chen giữa phách
+g7-n10-053	n10	23	sync	RH	11	8	3	4/4	3	12	134337bb2120351c11da621cf3403d95e099707d56d8f8b2b84d14a1a1925b0a	Fa chen giữa phách
+g7-n10-054	n10	39	sync	RH	11	8	3	4/4	3	12	7f9ee8906b8263833a45c65fa2b9685f2825071db5b2d2513b4d668e2f4d71bf	Mi đảo rồi Đô
+g7-n10-055	n10	31	sync	RH	11	8	3	4/4	3	12	0326dc886c558121c33d13ebf43996a679590080931abf3c9dbbafbeb41ea206	Fa đảo rồi Đô
+g7-n10-056	n10	47	sync	RH	11	8	3	4/4	3	12	9d05d86fa0bce87f07915c3b96d52fb9cfdd9a07c2e8a63654f830b73cbe18cd	Mi đảo Rê đáp
+g7-n10-057	n10	63	sync	RH	11	8	3	4/4	3	12	301bb46dbfacff7ea604dd3815d787f3654e6fc1cfb209a1bea0d5f1e9985c8d	Fa đảo Mi đáp
+g7-n10-058	n10	55	sync	RH	11	8	3	4/4	3	12	a0f540ea615c612f4f7d4479b0c255fe8e53772a4d290947075db73cbff1c37f	Rê đảo Đô đáp
+g7-n10-059	n10	71	sync	RH	11	8	3	4/4	3	12	56507a7480cc6fa57c47fafb6ca7615d8ab2d49c3c58459fa90a9f0072f2f5e8	Sol đảo Mi Rê
+g7-n10-060	n10	87	sync	RH	11	8	3	4/4	3	12	008d6c56032f47a7743652acfa986e4718acfebfd2b1d831de0f18c0e7d0e3c2	Mi đảo Rê Đô
+g7-n10-061	n10	79	sync	RH	11	8	3	4/4	3	12	42a4cec3ca06fe5dd9964688f2cd74c757f36befc5686a44c4fd28077d5c2a2e	Rê đảo Sol Mi
+g7-n10-062	n10	93	sync	RH	11	8	3	4/4	3	12	d124f17a0b9561640156896bfda231b2c9453527a338daeb6002373885d3d510	Đô đảo Mi Fa
+g7-n10-063	n10	19	sync	LH	11	3	8	4/4	3	12	39e168d09bc19c4fe18b4231d9a51c7ca843af5487957ebdc1959add9b91c17e	Rê trầm chen phách
+g7-n10-064	n10	6	sync	LH	11	3	8	4/4	3	12	88073f4867754e282a9172a2d4d83ebb67a3bdcc2556440f0b539368c074f550	Mi trầm chen phách
+g7-n10-065	n10	11	sync	LH	11	3	8	4/4	3	12	134337bb2120351c11da621cf3403d95e099707d56d8f8b2b84d14a1a1925b0a	Fa trầm chen phách
+g7-n10-066	n10	27	sync	LH	11	3	8	4/4	3	12	7f9ee8906b8263833a45c65fa2b9685f2825071db5b2d2513b4d668e2f4d71bf	Mi trầm đảo rồi Đô
+g7-n10-067	n10	43	sync	LH	11	3	8	4/4	3	12	0326dc886c558121c33d13ebf43996a679590080931abf3c9dbbafbeb41ea206	Fa trầm đảo rồi Đô
+g7-n10-068	n10	35	sync	LH	11	3	8	4/4	3	12	9d05d86fa0bce87f07915c3b96d52fb9cfdd9a07c2e8a63654f830b73cbe18cd	Mi trầm đảo Rê đáp
+g7-n10-069	n10	51	sync	LH	11	3	8	4/4	3	12	301bb46dbfacff7ea604dd3815d787f3654e6fc1cfb209a1bea0d5f1e9985c8d	Fa trầm đảo Mi đáp
+g7-n10-070	n10	67	sync	LH	11	3	8	4/4	3	12	a0f540ea615c612f4f7d4479b0c255fe8e53772a4d290947075db73cbff1c37f	Rê trầm đảo Đô đáp
+g7-n10-071	n10	59	sync	LH	11	3	8	4/4	3	12	56507a7480cc6fa57c47fafb6ca7615d8ab2d49c3c58459fa90a9f0072f2f5e8	Sol trầm đảo Mi Rê
+g7-n10-072	n10	75	sync	LH	11	3	8	4/4	3	12	008d6c56032f47a7743652acfa986e4718acfebfd2b1d831de0f18c0e7d0e3c2	Mi trầm đảo Rê Đô
+g7-n10-073	n10	91	sync	LH	11	3	8	4/4	3	12	42a4cec3ca06fe5dd9964688f2cd74c757f36befc5686a44c4fd28077d5c2a2e	Rê trầm đảo Sol Mi
+g7-n10-074	n10	83	sync	LH	11	3	8	4/4	3	12	d124f17a0b9561640156896bfda231b2c9453527a338daeb6002373885d3d510	Đô trầm đảo Mi Fa
+g7-n10-075	n10	99	sync	LH	11	3	8	4/4	3	12	438667a4ec00bf0fd6e0630048b10867c88974c792db5f0d8b31e56cf0a4b654	Sol trầm đảo Fa Đô
+g7-n10-076	n10	7	compound	RH	10	7	3	6/8	3	6	5eda2e750d55ebb94ff7d0733d13a9209ea28ba34dc66d97a18b98e5e8c1457a	Hai nhịp lớn Đô Rê Mi
+g7-n10-077	n10	20	compound	RH	10	7	3	6/8	3	6	3fe15dea489d8a8b790d718c4204557cd81233b0c2ebe869c2641d8ce8ff9953	Hai nhịp lớn Rê Mi Fa
+g7-n10-078	n10	12	compound	RH	10	7	3	6/8	3	6	13334fb1187fcf91c03cd7a84495a92bd909985dd713cd74abcabefb0f551572	Hai nhịp lớn Mi Fa Sol
+g7-n10-079	n10	28	compound	RH	10	7	3	6/8	3	6	36b6def4e53af48a4464291193c55a9e3a34d29050c7b61bbcdcc27f762d034c	Fa Mi Rê đu đưa
+g7-n10-080	n10	44	compound	RH	10	7	3	6/8	3	6	0821258e5ce62038c97bfe6f5e703dd8ced4b19a0b7b1b730c23398bfcc4458f	Sol Fa Mi đu đưa
+g7-n10-081	n10	36	compound	RH	10	7	3	6/8	3	6	3131535a8faa58ed1798cdd7e7f8aafa45848b91134e7a71a176199626bc37ea	Đô Mi Sol sáu tám
+g7-n10-082	n10	52	compound	RH	10	7	3	6/8	3	6	0259721933a5e2b6bd2092d322bf77cafa38a6d7c93333bdeb982c5880bf4d07	Sol Mi Đô sáu tám
+g7-n10-083	n10	68	compound	RH	10	7	3	6/8	3	6	249be874735538cae3304f0b3fc49de9326f1212c500a788e01d3416300ccc6a	Rê Fa Mi theo nhóm ba
+g7-n10-084	n10	60	compound	RH	10	7	3	6/8	3	6	7173f727474558fe66a560c20eb1760fee15e078a1b0e36c5c2eb8e3a6cd62fa	Mi Rê Đô theo nhóm ba
+g7-n10-085	n10	76	compound	RH	10	7	3	6/8	3	6	3617b8c1d50923f98165295f269abe8ff6e091dc3f5e18c8070d158a7562c92a	Fa Rê Sol hai phách
+g7-n10-086	n10	92	compound	RH	10	7	3	6/8	3	6	13495e830d65b8c9049fec35a133e9048515b38ed987571a7c91e4f1b6476878	Đô Sol Mi hai phách
+g7-n10-087	n10	84	compound	RH	10	7	3	6/8	3	6	a669861bb722158d14ea108837242bb3943b46d310f910d8b0e1f67d517a4086	Rê Đô Fa đu đưa
+g7-n10-088	n10	100	compound	RH	10	7	3	6/8	3	6	3bcf89cd30b18165c469aaa3992d0cbcfbbfb28ade71e952f5b9ec5685b9b8ca	Mi Sol Rê đu đưa
+g7-n10-089	n10	16	compound	LH	10	3	7	6/8	3	6	5eda2e750d55ebb94ff7d0733d13a9209ea28ba34dc66d97a18b98e5e8c1457a	Đô Rê Mi trầm sáu tám
+g7-n10-090	n10	8	compound	LH	10	3	7	6/8	3	6	3fe15dea489d8a8b790d718c4204557cd81233b0c2ebe869c2641d8ce8ff9953	Rê Mi Fa trầm sáu tám
+g7-n10-091	n10	24	compound	LH	10	3	7	6/8	3	6	13334fb1187fcf91c03cd7a84495a92bd909985dd713cd74abcabefb0f551572	Mi Fa Sol trầm sáu tám
+g7-n10-092	n10	40	compound	LH	10	3	7	6/8	3	6	36b6def4e53af48a4464291193c55a9e3a34d29050c7b61bbcdcc27f762d034c	Fa Mi Rê trầm đu đưa
+g7-n10-093	n10	32	compound	LH	10	3	7	6/8	3	6	0821258e5ce62038c97bfe6f5e703dd8ced4b19a0b7b1b730c23398bfcc4458f	Sol Fa Mi trầm đu đưa
+g7-n10-094	n10	48	compound	LH	10	3	7	6/8	3	6	3131535a8faa58ed1798cdd7e7f8aafa45848b91134e7a71a176199626bc37ea	Đô Mi Sol trầm nhóm ba
+g7-n10-095	n10	64	compound	LH	10	3	7	6/8	3	6	0259721933a5e2b6bd2092d322bf77cafa38a6d7c93333bdeb982c5880bf4d07	Sol Mi Đô trầm nhóm ba
+g7-n10-096	n10	56	compound	LH	10	3	7	6/8	3	6	249be874735538cae3304f0b3fc49de9326f1212c500a788e01d3416300ccc6a	Rê Fa Mi trầm hai nhịp
+g7-n10-097	n10	72	compound	LH	10	3	7	6/8	3	6	7173f727474558fe66a560c20eb1760fee15e078a1b0e36c5c2eb8e3a6cd62fa	Mi Rê Đô trầm hai nhịp
+g7-n10-098	n10	88	compound	LH	10	3	7	6/8	3	6	3617b8c1d50923f98165295f269abe8ff6e091dc3f5e18c8070d158a7562c92a	Fa Rê Sol trầm sáu tám
+g7-n10-099	n10	80	compound	LH	10	3	7	6/8	3	6	13495e830d65b8c9049fec35a133e9048515b38ed987571a7c91e4f1b6476878	Đô Sol Mi trầm sáu tám
+g7-n10-100	n10	94	compound	LH	10	3	7	6/8	3	6	a669861bb722158d14ea108837242bb3943b46d310f910d8b0e1f67d517a4086	Rê Đô Fa trầm đu đưa
+g7-n20-001	n20	1	dotted	RH	20	15	5	4/4	5	20	038c430ab058c935a7c8d0e7ea17b16a52d22b67f24d3782e6f07bb6129ccef5	Đô Rê Mi dài ngắn
+g7-n20-002	n20	9	dotted	RH	19	14	5	4/4	5	20	13de8f0ec9f6c199426772f7fdcb7a6783ebc207c2b4aaa4d8df9bbc889b724b	Rê Mi Fa dài ngắn
+g7-n20-003	n20	17	dotted	RH	18	13	5	4/4	5	20	0bf8908a492c69c4f0a39822c898d1731433e003fbf33d718031e9938acd52c4	Mi Fa Sol dài ngắn
+g7-n20-004	n20	33	dotted	RH	19	14	5	4/4	5	20	7e39836ff6eb3cc0d59c077eab199d7556ff020ab3cada20535bad84aac0dcc1	Fa Mi Rê chấm dôi
+g7-n20-005	n20	25	dotted	RH	20	15	5	4/4	5	20	54d52972921c9384b79347d00c33c3029a1bdd9c2c3df0a1c41779b776b5963a	Sol Fa Mi chấm dôi
+g7-n20-006	n20	41	dotted	RH	19	14	5	4/4	5	20	c05bda66ef5af7ec83d7b51bc6abade252f8dac38d5c24174d203100e57ca41f	Đô Mi Sol bước rộng
+g7-n20-007	n20	57	dotted	RH	18	13	5	4/4	5	20	9b6a0ecc949b1f6c5b06ddab36badacb7ca78e456940cb4e14a61c98120cec58	Sol Mi Đô buông nhẹ
+g7-n20-008	n20	49	dotted	RH	19	14	5	4/4	5	20	d4c1411f684c3c655c3be5c368e49ba43398a119dc3f4a1f6744038208d00ad9	Rê Fa Mi ngắn nối
+g7-n20-009	n20	65	dotted	RH	20	15	5	4/4	5	20	425cd7b9d1bed7242af29c3aef75de6520d3a7588c27bd6bfcfb63ded2b6f5af	Mi Rê Đô về nhà
+g7-n20-010	n20	81	dotted	RH	19	14	5	4/4	5	20	8329d99fa3fd706b05f2650fcdee28bbec3800f564056111e1bd93e2dc18dfdf	Fa Rê Sol chuyển hướng
+g7-n20-011	n20	73	dotted	RH	18	13	5	4/4	5	20	6d89a342f9270e03392264171484be1798f906cf11920cc443c05b2225273229	Đô Sol Mi phách dài
+g7-n20-012	n20	89	dotted	RH	19	14	5	4/4	5	20	11388647ba947e5cffa5d30bee222dc1eee783ead7fb55f5df2bbd8524d431e5	Rê Đô Fa phách ngắn
+g7-n20-013	n20	95	dotted	RH	20	15	5	4/4	5	20	55487466515fee9aab603e08ab30c4dc99aeacc7566c27bdb9d8f1f2569a12a6	Mi Sol Rê khép câu
+g7-n20-014	n20	13	dotted	LH	20	5	15	4/4	5	20	038c430ab058c935a7c8d0e7ea17b16a52d22b67f24d3782e6f07bb6129ccef5	Trầm Đô Rê Mi dài ngắn
+g7-n20-015	n20	2	dotted	LH	19	5	14	4/4	5	20	13de8f0ec9f6c199426772f7fdcb7a6783ebc207c2b4aaa4d8df9bbc889b724b	Trầm Rê Mi Fa dài ngắn
+g7-n20-016	n20	29	dotted	LH	18	5	13	4/4	5	20	0bf8908a492c69c4f0a39822c898d1731433e003fbf33d718031e9938acd52c4	Trầm Mi Fa Sol dài ngắn
+g7-n20-017	n20	21	dotted	LH	19	5	14	4/4	5	20	7e39836ff6eb3cc0d59c077eab199d7556ff020ab3cada20535bad84aac0dcc1	Trầm Fa Mi Rê chấm dôi
+g7-n20-018	n20	37	dotted	LH	20	5	15	4/4	5	20	54d52972921c9384b79347d00c33c3029a1bdd9c2c3df0a1c41779b776b5963a	Trầm Sol Fa Mi chấm dôi
+g7-n20-019	n20	53	dotted	LH	19	5	14	4/4	5	20	c05bda66ef5af7ec83d7b51bc6abade252f8dac38d5c24174d203100e57ca41f	Trầm Đô Mi Sol bước rộng
+g7-n20-020	n20	45	dotted	LH	18	5	13	4/4	5	20	9b6a0ecc949b1f6c5b06ddab36badacb7ca78e456940cb4e14a61c98120cec58	Trầm Sol Mi Đô buông nhẹ
+g7-n20-021	n20	61	dotted	LH	19	5	14	4/4	5	20	d4c1411f684c3c655c3be5c368e49ba43398a119dc3f4a1f6744038208d00ad9	Trầm Rê Fa Mi ngắn nối
+g7-n20-022	n20	77	dotted	LH	20	5	15	4/4	5	20	425cd7b9d1bed7242af29c3aef75de6520d3a7588c27bd6bfcfb63ded2b6f5af	Trầm Mi Rê Đô về nhà
+g7-n20-023	n20	69	dotted	LH	19	5	14	4/4	5	20	8329d99fa3fd706b05f2650fcdee28bbec3800f564056111e1bd93e2dc18dfdf	Trầm Fa Rê Sol chuyển
+g7-n20-024	n20	85	dotted	LH	18	5	13	4/4	5	20	6d89a342f9270e03392264171484be1798f906cf11920cc443c05b2225273229	Trầm Đô Sol Mi phách dài
+g7-n20-025	n20	96	dotted	LH	19	5	14	4/4	5	20	11388647ba947e5cffa5d30bee222dc1eee783ead7fb55f5df2bbd8524d431e5	Trầm Rê Đô Fa phách ngắn
+g7-n20-026	n20	3	tie	RH	19	14	5	4/4	5	20	cfda0b36dbda469db7e9f45354cb53c6e44fcb4dc21a611806febd8e8d209445	Mi nối qua phách ba
+g7-n20-027	n20	14	tie	RH	17	12	5	4/4	5	20	64aefb514401ca6f4e97e2ae1f1f0c149f836bae0547f16507480e88378ee031	Fa nối qua phách ba
+g7-n20-028	n20	30	tie	RH	18	13	5	4/4	5	20	b2e71a4b1b63b50f51a985dd266362b55348d6f7a9a3981e451b5609101e7f55	Sol nối qua phách ba
+g7-n20-029	n20	22	tie	RH	20	15	5	4/4	5	20	1af0c0de7ad3d09d992c86731ed81f84176deea8e3d25c8c4fa047da7639ff4a	Rê nối sau Fa Mi
+g7-n20-030	n20	38	tie	RH	19	14	5	4/4	5	20	474cb1a06617643e14cc1e237d8e1e9904ab27ed8682b67a57b5647041da9d07	Mi nối sau Sol Fa
+g7-n20-031	n20	54	tie	RH	17	12	5	4/4	5	20	94f90eb195d23e4cdac5f771a42fd15b0e86ab8b2b9834634a4d1bc3552c1213	Sol nối từ Đô Mi
+g7-n20-032	n20	46	tie	RH	18	13	5	4/4	5	20	2e04354d8dcde783c9aba114017cc66009d1a6bab3f6d717b0af7005205000de	Đô nối từ Sol Mi
+g7-n20-033	n20	62	tie	RH	20	15	5	4/4	5	20	4341f2676c6cddfd38e5e5b0e10e9db6b578d41752642ca3ac1cf656903aa3e6	Mi nối từ Rê Fa
+g7-n20-034	n20	78	tie	RH	19	14	5	4/4	5	20	14f4efb1e444bd2f16fa76b4d80b3bb3fb7cbfcd7216eba1aea473e6b587fbb5	Đô nối từ Mi Rê
+g7-n20-035	n20	70	tie	RH	17	12	5	4/4	5	20	03a605cb74c463066891c8344b728d67e5ded0f18aabb7ce9e816f967644d395	Sol nối sau Fa Rê
+g7-n20-036	n20	86	tie	RH	18	13	5	4/4	5	20	2a88f1a36dd37f783d69fdee7424b852524e088ba4b7ea2b4f8f6e0cf2ca2286	Mi nối sau Đô Sol
+g7-n20-037	n20	97	tie	RH	20	15	5	4/4	5	20	d2959571beefdc8cfdb4a6e64d4243c3da18e977bdc54988f68d6203bea2fced	Fa nối sau Rê Đô
+g7-n20-038	n20	10	tie	LH	19	5	14	4/4	5	20	cfda0b36dbda469db7e9f45354cb53c6e44fcb4dc21a611806febd8e8d209445	Mi trầm nối qua phách
+g7-n20-039	n20	4	tie	LH	17	5	12	4/4	5	20	64aefb514401ca6f4e97e2ae1f1f0c149f836bae0547f16507480e88378ee031	Fa trầm nối qua phách
+g7-n20-040	n20	18	tie	LH	18	5	13	4/4	5	20	b2e71a4b1b63b50f51a985dd266362b55348d6f7a9a3981e451b5609101e7f55	Sol trầm nối qua phách
+g7-n20-041	n20	34	tie	LH	20	5	15	4/4	5	20	1af0c0de7ad3d09d992c86731ed81f84176deea8e3d25c8c4fa047da7639ff4a	Rê trầm nối sau Fa Mi
+g7-n20-042	n20	26	tie	LH	19	5	14	4/4	5	20	474cb1a06617643e14cc1e237d8e1e9904ab27ed8682b67a57b5647041da9d07	Mi trầm nối sau Sol Fa
+g7-n20-043	n20	42	tie	LH	17	5	12	4/4	5	20	94f90eb195d23e4cdac5f771a42fd15b0e86ab8b2b9834634a4d1bc3552c1213	Sol trầm nối Đô Mi
+g7-n20-044	n20	58	tie	LH	18	5	13	4/4	5	20	2e04354d8dcde783c9aba114017cc66009d1a6bab3f6d717b0af7005205000de	Đô trầm nối Sol Mi
+g7-n20-045	n20	50	tie	LH	20	5	15	4/4	5	20	4341f2676c6cddfd38e5e5b0e10e9db6b578d41752642ca3ac1cf656903aa3e6	Mi trầm nối Rê Fa
+g7-n20-046	n20	66	tie	LH	19	5	14	4/4	5	20	14f4efb1e444bd2f16fa76b4d80b3bb3fb7cbfcd7216eba1aea473e6b587fbb5	Đô trầm nối Mi Rê
+g7-n20-047	n20	82	tie	LH	17	5	12	4/4	5	20	03a605cb74c463066891c8344b728d67e5ded0f18aabb7ce9e816f967644d395	Sol trầm nối Fa Rê
+g7-n20-048	n20	74	tie	LH	18	5	13	4/4	5	20	2a88f1a36dd37f783d69fdee7424b852524e088ba4b7ea2b4f8f6e0cf2ca2286	Mi trầm nối Đô Sol
+g7-n20-049	n20	90	tie	LH	20	5	15	4/4	5	20	d2959571beefdc8cfdb4a6e64d4243c3da18e977bdc54988f68d6203bea2fced	Fa trầm nối Rê Đô
+g7-n20-050	n20	98	tie	LH	19	5	14	4/4	5	20	00fa2cbde7cb3ae50641d3abcc6b66c8a5cf49401bbc47ff51b30b7a590823a5	Rê trầm nối Mi Sol
+g7-n20-051	n20	5	sync	RH	21	16	5	4/4	5	20	36e11aee4b65c1142fbfb74c821790b40117e34dc90650667bf16daa935da593	Rê chen giữa phách
+g7-n20-052	n20	15	sync	RH	22	17	5	4/4	5	20	5ee6cd202a21d654b6e2bc4b30e23556f0b56a19c4bf6cebb7cf980e164bc072	Mi chen giữa phách
+g7-n20-053	n20	23	sync	RH	20	15	5	4/4	5	20	2296adde757e75fc8b43b0fd449ec8fa49e21f534c60bef4e1301b82668a1f84	Fa chen giữa phách
+g7-n20-054	n20	39	sync	RH	22	17	5	4/4	5	20	3ea5cb75c13333fcdf9f76f74c553280785a9f68653aacbeff27a1c824e93599	Mi đảo rồi Đô
+g7-n20-055	n20	31	sync	RH	21	16	5	4/4	5	20	0eccf4162c8e2af5cb164ed773230eb16e0f3b83647174be9205831ee242573b	Fa đảo rồi Đô
+g7-n20-056	n20	47	sync	RH	22	17	5	4/4	5	20	7fed0c9d5ba3180cd70e4872c57dc8d9b2cabb662737d5b915450509d50621f8	Mi đảo Rê đáp
+g7-n20-057	n20	63	sync	RH	20	15	5	4/4	5	20	02f5f0a245e6c3fe14d412300ad0ae36ee70d81c59f7294bd8031180bf68faba	Fa đảo Mi đáp
+g7-n20-058	n20	55	sync	RH	22	17	5	4/4	5	20	bce969bd2a0358789c90677dea73c0494cd15eaf2de9343eb27f9df1b881563b	Rê đảo Đô đáp
+g7-n20-059	n20	71	sync	RH	21	16	5	4/4	5	20	b10ca68514c94dbd136a453c3ad05cdc223e07ad5bb5b3f14d4091bce1bd23b8	Sol đảo Mi Rê
+g7-n20-060	n20	87	sync	RH	22	17	5	4/4	5	20	6f25aa6177bfa2d1542f64ccbd780a6d5aecddbb8315486f408196aabd27d846	Mi đảo Rê Đô
+g7-n20-061	n20	79	sync	RH	20	15	5	4/4	5	20	4affed8e826a4139fbd8db1a177d2cbc2a2a90a0f91aa310184ae7089ab62820	Rê đảo Sol Mi
+g7-n20-062	n20	93	sync	RH	22	17	5	4/4	5	20	76b72f0566a36b0a216321d95977446bc2f31b8fff7934bd3f9dc14fa1d8aa36	Đô đảo Mi Fa
+g7-n20-063	n20	19	sync	LH	21	5	16	4/4	5	20	36e11aee4b65c1142fbfb74c821790b40117e34dc90650667bf16daa935da593	Rê trầm chen phách
+g7-n20-064	n20	6	sync	LH	22	5	17	4/4	5	20	5ee6cd202a21d654b6e2bc4b30e23556f0b56a19c4bf6cebb7cf980e164bc072	Mi trầm chen phách
+g7-n20-065	n20	11	sync	LH	20	5	15	4/4	5	20	2296adde757e75fc8b43b0fd449ec8fa49e21f534c60bef4e1301b82668a1f84	Fa trầm chen phách
+g7-n20-066	n20	27	sync	LH	22	5	17	4/4	5	20	3ea5cb75c13333fcdf9f76f74c553280785a9f68653aacbeff27a1c824e93599	Mi trầm đảo rồi Đô
+g7-n20-067	n20	43	sync	LH	21	5	16	4/4	5	20	0eccf4162c8e2af5cb164ed773230eb16e0f3b83647174be9205831ee242573b	Fa trầm đảo rồi Đô
+g7-n20-068	n20	35	sync	LH	22	5	17	4/4	5	20	7fed0c9d5ba3180cd70e4872c57dc8d9b2cabb662737d5b915450509d50621f8	Mi trầm đảo Rê đáp
+g7-n20-069	n20	51	sync	LH	20	5	15	4/4	5	20	02f5f0a245e6c3fe14d412300ad0ae36ee70d81c59f7294bd8031180bf68faba	Fa trầm đảo Mi đáp
+g7-n20-070	n20	67	sync	LH	22	5	17	4/4	5	20	bce969bd2a0358789c90677dea73c0494cd15eaf2de9343eb27f9df1b881563b	Rê trầm đảo Đô đáp
+g7-n20-071	n20	59	sync	LH	21	5	16	4/4	5	20	b10ca68514c94dbd136a453c3ad05cdc223e07ad5bb5b3f14d4091bce1bd23b8	Sol trầm đảo Mi Rê
+g7-n20-072	n20	75	sync	LH	22	5	17	4/4	5	20	6f25aa6177bfa2d1542f64ccbd780a6d5aecddbb8315486f408196aabd27d846	Mi trầm đảo Rê Đô
+g7-n20-073	n20	91	sync	LH	20	5	15	4/4	5	20	4affed8e826a4139fbd8db1a177d2cbc2a2a90a0f91aa310184ae7089ab62820	Rê trầm đảo Sol Mi
+g7-n20-074	n20	83	sync	LH	22	5	17	4/4	5	20	76b72f0566a36b0a216321d95977446bc2f31b8fff7934bd3f9dc14fa1d8aa36	Đô trầm đảo Mi Fa
+g7-n20-075	n20	99	sync	LH	21	5	16	4/4	5	20	4bfa2d9487eb0f42af899779e8feff5a2e788d258fafa1c348ab9317cad0d5b2	Sol trầm đảo Fa Đô
+g7-n20-076	n20	7	compound	RH	21	16	5	6/8	5	10	167e54d598659beb516397dbd043df5a92d7eb079f2f6f6ded18175c51be8250	Hai nhịp lớn Đô Rê Mi
+g7-n20-077	n20	20	compound	RH	19	14	5	6/8	5	10	4085a21f08d2bc88f142fc571aeed0804fffca7873148e7c976672a1eccd4ce2	Hai nhịp lớn Rê Mi Fa
+g7-n20-078	n20	12	compound	RH	17	12	5	6/8	5	10	3dac1b2fa180332de2a6598b4ae867f7d96368403264ce8d4d997eb29f4be57e	Hai nhịp lớn Mi Fa Sol
+g7-n20-079	n20	28	compound	RH	21	16	5	6/8	5	10	67b8bd67ae2a5d0301e2e5c20835b37a0f41c1b69057d4bad3994781f5ae4979	Fa Mi Rê đu đưa
+g7-n20-080	n20	44	compound	RH	21	16	5	6/8	5	10	2e8434f41022cc8bea7aad598f2849e36e15e704ab7f5828003bf27359159c60	Sol Fa Mi đu đưa
+g7-n20-081	n20	36	compound	RH	19	14	5	6/8	5	10	163d26a5f4f7758c11a14b510619fff9c634c9dcd0b59a228968c6e8bedbc7a0	Đô Mi Sol sáu tám
+g7-n20-082	n20	52	compound	RH	17	12	5	6/8	5	10	28f59515d4a134d6eb34e87e2ad0480c3b4c05c359e6c6086921371b0cb58bb0	Sol Mi Đô sáu tám
+g7-n20-083	n20	68	compound	RH	21	16	5	6/8	5	10	42e4a57c9035428242ae3d391540b7c085e1df9e033f552c17cdbf63721ab3ad	Rê Fa Mi theo nhóm ba
+g7-n20-084	n20	60	compound	RH	21	16	5	6/8	5	10	28f03558d8876b1ec739062e66eefe0b25993ae85456f13b9413804c0915fcb2	Mi Rê Đô theo nhóm ba
+g7-n20-085	n20	76	compound	RH	19	14	5	6/8	5	10	7b7754a2778ce52d1729bf429b5853139f0965606966921f63783e33fa2b1875	Fa Rê Sol hai phách
+g7-n20-086	n20	92	compound	RH	17	12	5	6/8	5	10	1a6d2983488ef7e3596e08993ecab243d68f24791edec159d3562e3832e6a1c4	Đô Sol Mi hai phách
+g7-n20-087	n20	84	compound	RH	21	16	5	6/8	5	10	585606a2efc6a19b9b212f142b2a4dbb1825cb497795a419fe7abd821531286c	Rê Đô Fa đu đưa
+g7-n20-088	n20	100	compound	RH	21	16	5	6/8	5	10	0e6faa819a247b0ce48d16f71a26e2a8a24b10e4250f98353f90b125f936f4e6	Mi Sol Rê đu đưa
+g7-n20-089	n20	16	compound	LH	21	5	16	6/8	5	10	167e54d598659beb516397dbd043df5a92d7eb079f2f6f6ded18175c51be8250	Đô Rê Mi trầm sáu tám
+g7-n20-090	n20	8	compound	LH	19	5	14	6/8	5	10	4085a21f08d2bc88f142fc571aeed0804fffca7873148e7c976672a1eccd4ce2	Rê Mi Fa trầm sáu tám
+g7-n20-091	n20	24	compound	LH	17	5	12	6/8	5	10	3dac1b2fa180332de2a6598b4ae867f7d96368403264ce8d4d997eb29f4be57e	Mi Fa Sol trầm sáu tám
+g7-n20-092	n20	40	compound	LH	21	5	16	6/8	5	10	67b8bd67ae2a5d0301e2e5c20835b37a0f41c1b69057d4bad3994781f5ae4979	Fa Mi Rê trầm đu đưa
+g7-n20-093	n20	32	compound	LH	21	5	16	6/8	5	10	2e8434f41022cc8bea7aad598f2849e36e15e704ab7f5828003bf27359159c60	Sol Fa Mi trầm đu đưa
+g7-n20-094	n20	48	compound	LH	19	5	14	6/8	5	10	163d26a5f4f7758c11a14b510619fff9c634c9dcd0b59a228968c6e8bedbc7a0	Đô Mi Sol trầm nhóm ba
+g7-n20-095	n20	64	compound	LH	17	5	12	6/8	5	10	28f59515d4a134d6eb34e87e2ad0480c3b4c05c359e6c6086921371b0cb58bb0	Sol Mi Đô trầm nhóm ba
+g7-n20-096	n20	56	compound	LH	21	5	16	6/8	5	10	42e4a57c9035428242ae3d391540b7c085e1df9e033f552c17cdbf63721ab3ad	Rê Fa Mi trầm hai nhịp
+g7-n20-097	n20	72	compound	LH	21	5	16	6/8	5	10	28f03558d8876b1ec739062e66eefe0b25993ae85456f13b9413804c0915fcb2	Mi Rê Đô trầm hai nhịp
+g7-n20-098	n20	88	compound	LH	19	5	14	6/8	5	10	7b7754a2778ce52d1729bf429b5853139f0965606966921f63783e33fa2b1875	Fa Rê Sol trầm sáu tám
+g7-n20-099	n20	80	compound	LH	17	5	12	6/8	5	10	1a6d2983488ef7e3596e08993ecab243d68f24791edec159d3562e3832e6a1c4	Đô Sol Mi trầm sáu tám
+g7-n20-100	n20	94	compound	LH	21	5	16	6/8	5	10	585606a2efc6a19b9b212f142b2a4dbb1825cb497795a419fe7abd821531286c	Rê Đô Fa trầm đu đưa
+g7-n30-001	n30	1	dotted	RH	35	26	9	4/4	9	36	7c39961f6386bb3f15c450cb6019c3ea60021dcaa95b4582ade465c9f96860d5	Đô Rê Mi dài ngắn
+g7-n30-002	n30	9	dotted	RH	34	25	9	4/4	9	36	07c4eb342cbc6d2ec5a7d36540a0b1178c50c4cfc512a24acf1c74996b1b6cf3	Rê Mi Fa dài ngắn
+g7-n30-003	n30	17	dotted	RH	34	25	9	4/4	9	36	75f71177ccd066d484111286a105ea64c16ffb4c8acc890f2e4e8518c5c1bd59	Mi Fa Sol dài ngắn
+g7-n30-004	n30	33	dotted	RH	33	24	9	4/4	9	36	4e7aed3a6608fb1a1c1538620d77e895cb5ca50051871cbf9ba589d21cdfa23b	Fa Mi Rê chấm dôi
+g7-n30-005	n30	25	dotted	RH	35	26	9	4/4	9	36	3c6298afb0a37941b90e74fd177235fd0de34be04ccb86672e26d3f242c729b4	Sol Fa Mi chấm dôi
+g7-n30-006	n30	41	dotted	RH	35	26	9	4/4	9	36	360e26e95c4cc48732d45baa9f9980da7c39f170fcbab010d792bc17d34f8835	Đô Mi Sol bước rộng
+g7-n30-007	n30	57	dotted	RH	33	24	9	4/4	9	36	2f8ba56cb5bc259c82a3641060066ae1dc3866b3ac17b263d9486f34566a22c1	Sol Mi Đô buông nhẹ
+g7-n30-008	n30	49	dotted	RH	34	25	9	4/4	9	36	2fe79fa971fbe4f30fed068dc9b4c21fb9678e52e5e53f06c1161377cf0004b9	Rê Fa Mi ngắn nối
+g7-n30-009	n30	65	dotted	RH	34	25	9	4/4	9	36	2b63e64186c0306b866f5cdc050f4ce2b2757d2a1453525be47a6df80a97ee23	Mi Rê Đô về nhà
+g7-n30-010	n30	81	dotted	RH	33	24	9	4/4	9	36	a9d4233f5ca84960339fe7b688575ba6764a2fb851db82cf9e1a4e24ac0465cd	Fa Rê Sol chuyển hướng
+g7-n30-011	n30	73	dotted	RH	33	24	9	4/4	9	36	9ccb34dea81e97f8386bd910acefba35cb7ae58123d88b5625070815bbf15699	Đô Sol Mi phách dài
+g7-n30-012	n30	89	dotted	RH	35	26	9	4/4	9	36	18b5bb32cfc732e6320a1ec1669aa5110466f3064f51563b37a7f9b31c865445	Rê Đô Fa phách ngắn
+g7-n30-013	n30	95	dotted	RH	35	26	9	4/4	9	36	5370d10a451226db84fb3de0e2a74c5a9f818eba96629a944d313955081bff45	Mi Sol Rê khép câu
+g7-n30-014	n30	13	dotted	LH	35	9	26	4/4	9	36	7c39961f6386bb3f15c450cb6019c3ea60021dcaa95b4582ade465c9f96860d5	Trầm Đô Rê Mi dài ngắn
+g7-n30-015	n30	2	dotted	LH	34	9	25	4/4	9	36	07c4eb342cbc6d2ec5a7d36540a0b1178c50c4cfc512a24acf1c74996b1b6cf3	Trầm Rê Mi Fa dài ngắn
+g7-n30-016	n30	29	dotted	LH	34	9	25	4/4	9	36	75f71177ccd066d484111286a105ea64c16ffb4c8acc890f2e4e8518c5c1bd59	Trầm Mi Fa Sol dài ngắn
+g7-n30-017	n30	21	dotted	LH	33	9	24	4/4	9	36	4e7aed3a6608fb1a1c1538620d77e895cb5ca50051871cbf9ba589d21cdfa23b	Trầm Fa Mi Rê chấm dôi
+g7-n30-018	n30	37	dotted	LH	35	9	26	4/4	9	36	3c6298afb0a37941b90e74fd177235fd0de34be04ccb86672e26d3f242c729b4	Trầm Sol Fa Mi chấm dôi
+g7-n30-019	n30	53	dotted	LH	35	9	26	4/4	9	36	360e26e95c4cc48732d45baa9f9980da7c39f170fcbab010d792bc17d34f8835	Trầm Đô Mi Sol bước rộng
+g7-n30-020	n30	45	dotted	LH	33	9	24	4/4	9	36	2f8ba56cb5bc259c82a3641060066ae1dc3866b3ac17b263d9486f34566a22c1	Trầm Sol Mi Đô buông nhẹ
+g7-n30-021	n30	61	dotted	LH	34	9	25	4/4	9	36	2fe79fa971fbe4f30fed068dc9b4c21fb9678e52e5e53f06c1161377cf0004b9	Trầm Rê Fa Mi ngắn nối
+g7-n30-022	n30	77	dotted	LH	34	9	25	4/4	9	36	2b63e64186c0306b866f5cdc050f4ce2b2757d2a1453525be47a6df80a97ee23	Trầm Mi Rê Đô về nhà
+g7-n30-023	n30	69	dotted	LH	33	9	24	4/4	9	36	a9d4233f5ca84960339fe7b688575ba6764a2fb851db82cf9e1a4e24ac0465cd	Trầm Fa Rê Sol chuyển
+g7-n30-024	n30	85	dotted	LH	33	9	24	4/4	9	36	9ccb34dea81e97f8386bd910acefba35cb7ae58123d88b5625070815bbf15699	Trầm Đô Sol Mi phách dài
+g7-n30-025	n30	96	dotted	LH	35	9	26	4/4	9	36	18b5bb32cfc732e6320a1ec1669aa5110466f3064f51563b37a7f9b31c865445	Trầm Rê Đô Fa phách ngắn
+g7-n30-026	n30	3	tie	RH	32	23	9	4/4	9	36	96b9f8fc27c0265c85f9983b0e208ecab4aae0c68f0c7114377481e6bf8bef0e	Mi nối qua phách ba
+g7-n30-027	n30	14	tie	RH	33	24	9	4/4	9	36	547909d408bb406079c99ae01b6344a81050bb807b53f5a6b4cd72262cdd06e4	Fa nối qua phách ba
+g7-n30-028	n30	30	tie	RH	33	24	9	4/4	9	36	3a850ae4ff0fc046f73c5121b0fb3f5b736812a8c1f2dc74080c93221ca145da	Sol nối qua phách ba
+g7-n30-029	n30	22	tie	RH	34	25	9	4/4	9	36	b0aff6601f5a286361ba7f8f88a6d06566972072a2bdfe4cab44f5d63c96a7f0	Rê nối sau Fa Mi
+g7-n30-030	n30	38	tie	RH	35	26	9	4/4	9	36	704695d1c45503c48eb83ddca05de05cbd3ec4d73e10f5d3548db9a0ae642dc4	Mi nối sau Sol Fa
+g7-n30-031	n30	54	tie	RH	32	23	9	4/4	9	36	e288590f1625c22e0dd73484fd556c60e3a481bfc2e2cc316f5355e79aa5aae1	Sol nối từ Đô Mi
+g7-n30-032	n30	46	tie	RH	34	25	9	4/4	9	36	930dbbb618003c2daa1629407e8e2a73636048589e589a6caa870eb039b4b182	Đô nối từ Sol Mi
+g7-n30-033	n30	62	tie	RH	33	24	9	4/4	9	36	16df392ec9a8c27392e61b79e04b059c3e5a881dc8e8cb591bdc7e621b67a6b4	Mi nối từ Rê Fa
+g7-n30-034	n30	78	tie	RH	33	24	9	4/4	9	36	5f8ce801f7845aebaa6b18dfd6f86f1223372b93618cb1dc53d712d42cce9a2e	Đô nối từ Mi Rê
+g7-n30-035	n30	70	tie	RH	31	22	9	4/4	9	36	55a222c464ab5e0a8c938276431e15feb6c05599d42fde83028d733606656c98	Sol nối sau Fa Rê
+g7-n30-036	n30	86	tie	RH	31	22	9	4/4	9	36	6aee7751d9821e1c9394db1311f8882d5dc93ab6dc3face7d69b31eae90f8902	Mi nối sau Đô Sol
+g7-n30-037	n30	97	tie	RH	35	26	9	4/4	9	36	09ff608f012315aab359e40ed846060ebc93544557104d2d91d90878f172cae4	Fa nối sau Rê Đô
+g7-n30-038	n30	10	tie	LH	32	9	23	4/4	9	36	96b9f8fc27c0265c85f9983b0e208ecab4aae0c68f0c7114377481e6bf8bef0e	Mi trầm nối qua phách
+g7-n30-039	n30	4	tie	LH	33	9	24	4/4	9	36	547909d408bb406079c99ae01b6344a81050bb807b53f5a6b4cd72262cdd06e4	Fa trầm nối qua phách
+g7-n30-040	n30	18	tie	LH	33	9	24	4/4	9	36	3a850ae4ff0fc046f73c5121b0fb3f5b736812a8c1f2dc74080c93221ca145da	Sol trầm nối qua phách
+g7-n30-041	n30	34	tie	LH	34	9	25	4/4	9	36	b0aff6601f5a286361ba7f8f88a6d06566972072a2bdfe4cab44f5d63c96a7f0	Rê trầm nối sau Fa Mi
+g7-n30-042	n30	26	tie	LH	35	9	26	4/4	9	36	704695d1c45503c48eb83ddca05de05cbd3ec4d73e10f5d3548db9a0ae642dc4	Mi trầm nối sau Sol Fa
+g7-n30-043	n30	42	tie	LH	32	9	23	4/4	9	36	e288590f1625c22e0dd73484fd556c60e3a481bfc2e2cc316f5355e79aa5aae1	Sol trầm nối Đô Mi
+g7-n30-044	n30	58	tie	LH	34	9	25	4/4	9	36	930dbbb618003c2daa1629407e8e2a73636048589e589a6caa870eb039b4b182	Đô trầm nối Sol Mi
+g7-n30-045	n30	50	tie	LH	33	9	24	4/4	9	36	16df392ec9a8c27392e61b79e04b059c3e5a881dc8e8cb591bdc7e621b67a6b4	Mi trầm nối Rê Fa
+g7-n30-046	n30	66	tie	LH	33	9	24	4/4	9	36	5f8ce801f7845aebaa6b18dfd6f86f1223372b93618cb1dc53d712d42cce9a2e	Đô trầm nối Mi Rê
+g7-n30-047	n30	82	tie	LH	31	9	22	4/4	9	36	55a222c464ab5e0a8c938276431e15feb6c05599d42fde83028d733606656c98	Sol trầm nối Fa Rê
+g7-n30-048	n30	74	tie	LH	31	9	22	4/4	9	36	6aee7751d9821e1c9394db1311f8882d5dc93ab6dc3face7d69b31eae90f8902	Mi trầm nối Đô Sol
+g7-n30-049	n30	90	tie	LH	35	9	26	4/4	9	36	09ff608f012315aab359e40ed846060ebc93544557104d2d91d90878f172cae4	Fa trầm nối Rê Đô
+g7-n30-050	n30	98	tie	LH	32	9	23	4/4	9	36	73b222e1ac02a3fbcfcd7f8834e28f551b55f096d6585de0fe7f2788f2be241b	Rê trầm nối Mi Sol
+g7-n30-051	n30	5	sync	RH	38	29	9	4/4	9	36	ae8fe5e5bc263f471a4c7e288c07d111f661bca27bdfd0b626b0013416566e94	Rê chen giữa phách
+g7-n30-052	n30	15	sync	RH	39	30	9	4/4	9	36	287aa1213410c3c86fcd4bf26cf28fe617bc8a70cb12dd2fab574565aed9d90a	Mi chen giữa phách
+g7-n30-053	n30	23	sync	RH	36	27	9	4/4	9	36	8831e21d6fa0c5035c9ef12778beb96982272e4b457bf5036d2771d13267e7c5	Fa chen giữa phách
+g7-n30-054	n30	39	sync	RH	37	28	9	4/4	9	36	1bb1a2fc0fd486ae6dc83917c21adf5d96fa5774163fc069c5c5f742cfe36db2	Mi đảo rồi Đô
+g7-n30-055	n30	31	sync	RH	38	29	9	4/4	9	36	1b7a74f8e3d1c916293d5d8caf0d551da65a6e43d9d284339c6879490dac1ca2	Fa đảo rồi Đô
+g7-n30-056	n30	47	sync	RH	38	29	9	4/4	9	36	39a2d6a4d319b79b67365317ce4ab3c3aa59c5d86c018e3ed11114ba92445998	Mi đảo Rê đáp
+g7-n30-057	n30	63	sync	RH	37	28	9	4/4	9	36	cd23f57656ca4e314816c6a037049972a264518430567f7601b417bf5fcfaa69	Fa đảo Mi đáp
+g7-n30-058	n30	55	sync	RH	39	30	9	4/4	9	36	31230a8572b58113920698c38f864785cdd7cf7cbd97e115587b1537968313ba	Rê đảo Đô đáp
+g7-n30-059	n30	71	sync	RH	36	27	9	4/4	9	36	687e93c89231a85f5e16c12de43971682a78ef68a2598d829e09aa0d19a48faa	Sol đảo Mi Rê
+g7-n30-060	n30	87	sync	RH	37	28	9	4/4	9	36	68d47d2d2b3621ab175f1a3e99ccb0b07952f7745be5d5f8453998797a3a4255	Mi đảo Rê Đô
+g7-n30-061	n30	79	sync	RH	37	28	9	4/4	9	36	664f9fdec0c767b3d6066989e8785146d2d403c4274fc409d3da58f561c34d12	Rê đảo Sol Mi
+g7-n30-062	n30	93	sync	RH	38	29	9	4/4	9	36	a6af4b4b8bc1f2d7cd4c9ca8739ad1f93e2742f44ce37ad756a3ef5a8640df9c	Đô đảo Mi Fa
+g7-n30-063	n30	19	sync	LH	38	9	29	4/4	9	36	ae8fe5e5bc263f471a4c7e288c07d111f661bca27bdfd0b626b0013416566e94	Rê trầm chen phách
+g7-n30-064	n30	6	sync	LH	39	9	30	4/4	9	36	287aa1213410c3c86fcd4bf26cf28fe617bc8a70cb12dd2fab574565aed9d90a	Mi trầm chen phách
+g7-n30-065	n30	11	sync	LH	36	9	27	4/4	9	36	8831e21d6fa0c5035c9ef12778beb96982272e4b457bf5036d2771d13267e7c5	Fa trầm chen phách
+g7-n30-066	n30	27	sync	LH	37	9	28	4/4	9	36	1bb1a2fc0fd486ae6dc83917c21adf5d96fa5774163fc069c5c5f742cfe36db2	Mi trầm đảo rồi Đô
+g7-n30-067	n30	43	sync	LH	38	9	29	4/4	9	36	1b7a74f8e3d1c916293d5d8caf0d551da65a6e43d9d284339c6879490dac1ca2	Fa trầm đảo rồi Đô
+g7-n30-068	n30	35	sync	LH	38	9	29	4/4	9	36	39a2d6a4d319b79b67365317ce4ab3c3aa59c5d86c018e3ed11114ba92445998	Mi trầm đảo Rê đáp
+g7-n30-069	n30	51	sync	LH	37	9	28	4/4	9	36	cd23f57656ca4e314816c6a037049972a264518430567f7601b417bf5fcfaa69	Fa trầm đảo Mi đáp
+g7-n30-070	n30	67	sync	LH	39	9	30	4/4	9	36	31230a8572b58113920698c38f864785cdd7cf7cbd97e115587b1537968313ba	Rê trầm đảo Đô đáp
+g7-n30-071	n30	59	sync	LH	36	9	27	4/4	9	36	687e93c89231a85f5e16c12de43971682a78ef68a2598d829e09aa0d19a48faa	Sol trầm đảo Mi Rê
+g7-n30-072	n30	75	sync	LH	37	9	28	4/4	9	36	68d47d2d2b3621ab175f1a3e99ccb0b07952f7745be5d5f8453998797a3a4255	Mi trầm đảo Rê Đô
+g7-n30-073	n30	91	sync	LH	37	9	28	4/4	9	36	664f9fdec0c767b3d6066989e8785146d2d403c4274fc409d3da58f561c34d12	Rê trầm đảo Sol Mi
+g7-n30-074	n30	83	sync	LH	38	9	29	4/4	9	36	a6af4b4b8bc1f2d7cd4c9ca8739ad1f93e2742f44ce37ad756a3ef5a8640df9c	Đô trầm đảo Mi Fa
+g7-n30-075	n30	99	sync	LH	38	9	29	4/4	9	36	79e870cf63704461f2a125f095feb2314c227c1f3eba5df0075bfde38e212716	Sol trầm đảo Fa Đô
+g7-n30-076	n30	7	compound	RH	36	27	9	6/8	9	18	1d4e2ea5007a2633bdb5cc5091f6749efcf153065c08bbca4772c249d366b671	Hai nhịp lớn Đô Rê Mi
+g7-n30-077	n30	20	compound	RH	36	27	9	6/8	9	18	4c1631b41d98deddd302ec4bccfae5abf549c111601ebf54ef0365e36b06cef2	Hai nhịp lớn Rê Mi Fa
+g7-n30-078	n30	12	compound	RH	34	25	9	6/8	9	18	455f0c2ec731bba6776ac44589deb59dd98079b2d7e0325e9de207edcf735c52	Hai nhịp lớn Mi Fa Sol
+g7-n30-079	n30	28	compound	RH	34	25	9	6/8	9	18	1efdaaf89b2eb118d75d0a14e41f38fcb8ec6c17c69d28854961b717df1e63cd	Fa Mi Rê đu đưa
+g7-n30-080	n30	44	compound	RH	38	29	9	6/8	9	18	a0e86791bf4ad9a26b0f23514bbb24355691b61ffd3181f3c459c603b6144f1e	Sol Fa Mi đu đưa
+g7-n30-081	n30	36	compound	RH	36	27	9	6/8	9	18	4745601741c30940f9b43a31307d1d33300226c36947f0e86af1bd0cfcb95d0c	Đô Mi Sol sáu tám
+g7-n30-082	n30	52	compound	RH	34	25	9	6/8	9	18	24e8241e18d20b88fefdcaabb7484348a9b5d7bb67d75caa8afeb5613a22866c	Sol Mi Đô sáu tám
+g7-n30-083	n30	68	compound	RH	36	27	9	6/8	9	18	cae9f7a2cc914bf52364faa76f297d3c8f73d2d1637186e2c04d20a79f3e316e	Rê Fa Mi theo nhóm ba
+g7-n30-084	n30	60	compound	RH	34	25	9	6/8	9	18	1218701ef01a32a243d9e8876a6237342efce03290105f19a6408fa5c5733d86	Mi Rê Đô theo nhóm ba
+g7-n30-085	n30	76	compound	RH	32	23	9	6/8	9	18	af9c44e1a64c262ff4f2985ef9204fec6e52604188f6053ec8125dcd39c678e0	Fa Rê Sol hai phách
+g7-n30-086	n30	92	compound	RH	32	23	9	6/8	9	18	4cf9ba6d6429bc7ee750fe0717f18d522aefd0091c868ecedf2710b224ee1f3b	Đô Sol Mi hai phách
+g7-n30-087	n30	84	compound	RH	38	29	9	6/8	9	18	3c02954800c3e6c1bc3cce6c31d95173145acad1927f0a70fce382600b350f99	Rê Đô Fa đu đưa
+g7-n30-088	n30	100	compound	RH	36	27	9	6/8	9	18	2014d49f5d00b9227197dbf592a6835b03a9b257696fbc83f5c5510248e40201	Mi Sol Rê đu đưa
+g7-n30-089	n30	16	compound	LH	36	9	27	6/8	9	18	1d4e2ea5007a2633bdb5cc5091f6749efcf153065c08bbca4772c249d366b671	Đô Rê Mi trầm sáu tám
+g7-n30-090	n30	8	compound	LH	36	9	27	6/8	9	18	4c1631b41d98deddd302ec4bccfae5abf549c111601ebf54ef0365e36b06cef2	Rê Mi Fa trầm sáu tám
+g7-n30-091	n30	24	compound	LH	34	9	25	6/8	9	18	455f0c2ec731bba6776ac44589deb59dd98079b2d7e0325e9de207edcf735c52	Mi Fa Sol trầm sáu tám
+g7-n30-092	n30	40	compound	LH	34	9	25	6/8	9	18	1efdaaf89b2eb118d75d0a14e41f38fcb8ec6c17c69d28854961b717df1e63cd	Fa Mi Rê trầm đu đưa
+g7-n30-093	n30	32	compound	LH	38	9	29	6/8	9	18	a0e86791bf4ad9a26b0f23514bbb24355691b61ffd3181f3c459c603b6144f1e	Sol Fa Mi trầm đu đưa
+g7-n30-094	n30	48	compound	LH	36	9	27	6/8	9	18	4745601741c30940f9b43a31307d1d33300226c36947f0e86af1bd0cfcb95d0c	Đô Mi Sol trầm nhóm ba
+g7-n30-095	n30	64	compound	LH	34	9	25	6/8	9	18	24e8241e18d20b88fefdcaabb7484348a9b5d7bb67d75caa8afeb5613a22866c	Sol Mi Đô trầm nhóm ba
+g7-n30-096	n30	56	compound	LH	36	9	27	6/8	9	18	cae9f7a2cc914bf52364faa76f297d3c8f73d2d1637186e2c04d20a79f3e316e	Rê Fa Mi trầm hai nhịp
+g7-n30-097	n30	72	compound	LH	34	9	25	6/8	9	18	1218701ef01a32a243d9e8876a6237342efce03290105f19a6408fa5c5733d86	Mi Rê Đô trầm hai nhịp
+g7-n30-098	n30	88	compound	LH	32	9	23	6/8	9	18	af9c44e1a64c262ff4f2985ef9204fec6e52604188f6053ec8125dcd39c678e0	Fa Rê Sol trầm sáu tám
+g7-n30-099	n30	80	compound	LH	32	9	23	6/8	9	18	4cf9ba6d6429bc7ee750fe0717f18d522aefd0091c868ecedf2710b224ee1f3b	Đô Sol Mi trầm sáu tám
+g7-n30-100	n30	94	compound	LH	38	9	29	6/8	9	18	3c02954800c3e6c1bc3cce6c31d95173145acad1927f0a70fce382600b350f99	Rê Đô Fa trầm đu đưa
+g7-n50-001	n50	1	dotted	RH	49	36	13	4/4	13	52	57f20880bfc20838c8d981d4ddcbb56ce92dc2944d99057918bec95c619b66b6	Đô Rê Mi dài ngắn
+g7-n50-002	n50	9	dotted	RH	50	37	13	4/4	13	52	bae9cfdba17d82bb6e448cf76a0db77f5850d7641f87f18d91a55daa90dc301f	Rê Mi Fa dài ngắn
+g7-n50-003	n50	17	dotted	RH	49	36	13	4/4	13	52	0416d53ebda57237925c39949f987d997e1b49f45c3fdf2686f53d95f12c167b	Mi Fa Sol dài ngắn
+g7-n50-004	n50	33	dotted	RH	48	35	13	4/4	13	52	4ad87ffa2ac24cf81399b3e6423cad8beada8698c73d38e0f207b72f5639c4c6	Fa Mi Rê chấm dôi
+g7-n50-005	n50	25	dotted	RH	50	37	13	4/4	13	52	001f11ff730d3145313e4d6b6ce5c00f53518880e9597aa09dc76436084f8561	Sol Fa Mi chấm dôi
+g7-n50-006	n50	41	dotted	RH	49	36	13	4/4	13	52	5761168ba8eceeef413c7efaf83a0f18e4f392bbee1087f1fa9507b9911bf99e	Đô Mi Sol bước rộng
+g7-n50-007	n50	57	dotted	RH	49	36	13	4/4	13	52	11ea2593fdac3cfd738a3e1711cc31ceb470cec4a00d9d4233e2a32ded195eb4	Sol Mi Đô buông nhẹ
+g7-n50-008	n50	49	dotted	RH	48	35	13	4/4	13	52	28c2de7a4ff1eb898a3ff2c6e0fd69f980a39ab976dacefa527767a03c358c3c	Rê Fa Mi ngắn nối
+g7-n50-009	n50	65	dotted	RH	49	36	13	4/4	13	52	3c3f3527ec94719a2167de7f1c6549f1a1f4a0f5c7d773512c9a03941bb80ff0	Mi Rê Đô về nhà
+g7-n50-010	n50	81	dotted	RH	49	36	13	4/4	13	52	400034750b545919af68dfd8b97def7a92b2f2fc9b2a264f0e1fcab9a21ac539	Fa Rê Sol chuyển hướng
+g7-n50-011	n50	73	dotted	RH	48	35	13	4/4	13	52	91be1381c7b17aa7c565db66c46b488b9096cb50a6606d5cf1db3aa344958a55	Đô Sol Mi phách dài
+g7-n50-012	n50	89	dotted	RH	50	37	13	4/4	13	52	2752d1776f4e167f350982618916eb18cbef56415701acc5dc13e0d2229b1ca2	Rê Đô Fa phách ngắn
+g7-n50-013	n50	95	dotted	RH	50	37	13	4/4	13	52	dda9f673e3473ac71cc052dfcb8a12d15eb7e97ba6c155dbaf2c810f5f32cf51	Mi Sol Rê khép câu
+g7-n50-014	n50	13	dotted	LH	49	13	36	4/4	13	52	57f20880bfc20838c8d981d4ddcbb56ce92dc2944d99057918bec95c619b66b6	Trầm Đô Rê Mi dài ngắn
+g7-n50-015	n50	2	dotted	LH	50	13	37	4/4	13	52	bae9cfdba17d82bb6e448cf76a0db77f5850d7641f87f18d91a55daa90dc301f	Trầm Rê Mi Fa dài ngắn
+g7-n50-016	n50	29	dotted	LH	49	13	36	4/4	13	52	0416d53ebda57237925c39949f987d997e1b49f45c3fdf2686f53d95f12c167b	Trầm Mi Fa Sol dài ngắn
+g7-n50-017	n50	21	dotted	LH	48	13	35	4/4	13	52	4ad87ffa2ac24cf81399b3e6423cad8beada8698c73d38e0f207b72f5639c4c6	Trầm Fa Mi Rê chấm dôi
+g7-n50-018	n50	37	dotted	LH	50	13	37	4/4	13	52	001f11ff730d3145313e4d6b6ce5c00f53518880e9597aa09dc76436084f8561	Trầm Sol Fa Mi chấm dôi
+g7-n50-019	n50	53	dotted	LH	49	13	36	4/4	13	52	5761168ba8eceeef413c7efaf83a0f18e4f392bbee1087f1fa9507b9911bf99e	Trầm Đô Mi Sol bước rộng
+g7-n50-020	n50	45	dotted	LH	49	13	36	4/4	13	52	11ea2593fdac3cfd738a3e1711cc31ceb470cec4a00d9d4233e2a32ded195eb4	Trầm Sol Mi Đô buông nhẹ
+g7-n50-021	n50	61	dotted	LH	48	13	35	4/4	13	52	28c2de7a4ff1eb898a3ff2c6e0fd69f980a39ab976dacefa527767a03c358c3c	Trầm Rê Fa Mi ngắn nối
+g7-n50-022	n50	77	dotted	LH	49	13	36	4/4	13	52	3c3f3527ec94719a2167de7f1c6549f1a1f4a0f5c7d773512c9a03941bb80ff0	Trầm Mi Rê Đô về nhà
+g7-n50-023	n50	69	dotted	LH	49	13	36	4/4	13	52	400034750b545919af68dfd8b97def7a92b2f2fc9b2a264f0e1fcab9a21ac539	Trầm Fa Rê Sol chuyển
+g7-n50-024	n50	85	dotted	LH	48	13	35	4/4	13	52	91be1381c7b17aa7c565db66c46b488b9096cb50a6606d5cf1db3aa344958a55	Trầm Đô Sol Mi phách dài
+g7-n50-025	n50	96	dotted	LH	50	13	37	4/4	13	52	2752d1776f4e167f350982618916eb18cbef56415701acc5dc13e0d2229b1ca2	Trầm Rê Đô Fa phách ngắn
+g7-n50-026	n50	3	tie	RH	46	33	13	4/4	13	52	00f5b4385fe941df4bfefa6eeaf5052db05d89f9785e34533da19440ed7968b9	Mi nối qua phách ba
+g7-n50-027	n50	14	tie	RH	48	35	13	4/4	13	52	d5399bddd1e81e55070691929009b69bd99955e25d09be72ca2c7684fee63f74	Fa nối qua phách ba
+g7-n50-028	n50	30	tie	RH	49	36	13	4/4	13	52	c89b0f5e9b95ccd94d1e7b8fceca6bed24a11e122f045b7bba7d1f87576589b0	Sol nối qua phách ba
+g7-n50-029	n50	22	tie	RH	47	34	13	4/4	13	52	3ce92778f231f367db21d19f6c3c414e40c075d6f654748b373f061d5c772198	Rê nối sau Fa Mi
+g7-n50-030	n50	38	tie	RH	48	35	13	4/4	13	52	788485a43b8ebcc7f89e3256e11e37dc171e9931f8311d1f3979a694bb6b7e63	Mi nối sau Sol Fa
+g7-n50-031	n50	54	tie	RH	46	33	13	4/4	13	52	4d758d0a990dbd752589c68c1b7fcf9153fd2a6e37b8db3241fc4df97d87f945	Sol nối từ Đô Mi
+g7-n50-032	n50	46	tie	RH	49	36	13	4/4	13	52	bd354cc394f4cd47e88de58f8774bd02ce1ed7f76c2e9c3e90997a9ce8a71b41	Đô nối từ Sol Mi
+g7-n50-033	n50	62	tie	RH	47	34	13	4/4	13	52	57ceddbb0c1865adfcfe5e60ea3ad30fc4004769599331d1e892b4e8cc21161f	Mi nối từ Rê Fa
+g7-n50-034	n50	78	tie	RH	49	36	13	4/4	13	52	8622302f91ea896946a03adc2670461456628ee14eb61f1a522f868176b3dd64	Đô nối từ Mi Rê
+g7-n50-035	n50	70	tie	RH	46	33	13	4/4	13	52	18f9d9420c0c25ec54fd1b8d384314845673c58575d177a8a1b100dd152519b0	Sol nối sau Fa Rê
+g7-n50-036	n50	86	tie	RH	47	34	13	4/4	13	52	63f2c236759a0dccc85d7943904df666b7ec5d26759afe74f5781a47aa9b7a52	Mi nối sau Đô Sol
+g7-n50-037	n50	97	tie	RH	48	35	13	4/4	13	52	9b2f714398e1fef3ff85877b2f3736d60150a1a323c45eea6b073b0640f7b0a7	Fa nối sau Rê Đô
+g7-n50-038	n50	10	tie	LH	46	13	33	4/4	13	52	00f5b4385fe941df4bfefa6eeaf5052db05d89f9785e34533da19440ed7968b9	Mi trầm nối qua phách
+g7-n50-039	n50	4	tie	LH	48	13	35	4/4	13	52	d5399bddd1e81e55070691929009b69bd99955e25d09be72ca2c7684fee63f74	Fa trầm nối qua phách
+g7-n50-040	n50	18	tie	LH	49	13	36	4/4	13	52	c89b0f5e9b95ccd94d1e7b8fceca6bed24a11e122f045b7bba7d1f87576589b0	Sol trầm nối qua phách
+g7-n50-041	n50	34	tie	LH	47	13	34	4/4	13	52	3ce92778f231f367db21d19f6c3c414e40c075d6f654748b373f061d5c772198	Rê trầm nối sau Fa Mi
+g7-n50-042	n50	26	tie	LH	48	13	35	4/4	13	52	788485a43b8ebcc7f89e3256e11e37dc171e9931f8311d1f3979a694bb6b7e63	Mi trầm nối sau Sol Fa
+g7-n50-043	n50	42	tie	LH	46	13	33	4/4	13	52	4d758d0a990dbd752589c68c1b7fcf9153fd2a6e37b8db3241fc4df97d87f945	Sol trầm nối Đô Mi
+g7-n50-044	n50	58	tie	LH	49	13	36	4/4	13	52	bd354cc394f4cd47e88de58f8774bd02ce1ed7f76c2e9c3e90997a9ce8a71b41	Đô trầm nối Sol Mi
+g7-n50-045	n50	50	tie	LH	47	13	34	4/4	13	52	57ceddbb0c1865adfcfe5e60ea3ad30fc4004769599331d1e892b4e8cc21161f	Mi trầm nối Rê Fa
+g7-n50-046	n50	66	tie	LH	49	13	36	4/4	13	52	8622302f91ea896946a03adc2670461456628ee14eb61f1a522f868176b3dd64	Đô trầm nối Mi Rê
+g7-n50-047	n50	82	tie	LH	46	13	33	4/4	13	52	18f9d9420c0c25ec54fd1b8d384314845673c58575d177a8a1b100dd152519b0	Sol trầm nối Fa Rê
+g7-n50-048	n50	74	tie	LH	47	13	34	4/4	13	52	63f2c236759a0dccc85d7943904df666b7ec5d26759afe74f5781a47aa9b7a52	Mi trầm nối Đô Sol
+g7-n50-049	n50	90	tie	LH	48	13	35	4/4	13	52	9b2f714398e1fef3ff85877b2f3736d60150a1a323c45eea6b073b0640f7b0a7	Fa trầm nối Rê Đô
+g7-n50-050	n50	98	tie	LH	48	13	35	4/4	13	52	0e017c92f76d88c9cc979a985f46b19e8eb43bcff51ef0b82702568809809aeb	Rê trầm nối Mi Sol
+g7-n50-051	n50	5	sync	RH	53	40	13	4/4	13	52	289db42664eeabb0715eb6aa96d6fdf4da846779e3c553a4217f4c5b1896742e	Rê chen giữa phách
+g7-n50-052	n50	15	sync	RH	55	42	13	4/4	13	52	a9b94c816a93813c50ebcb5ee926aee1e86f55ba746a12878e780088205acc6d	Mi chen giữa phách
+g7-n50-053	n50	23	sync	RH	53	40	13	4/4	13	52	5d70f73032bddf8daa9f8747d9250f206dadf24c3820cdaa2823307c145632f5	Fa chen giữa phách
+g7-n50-054	n50	39	sync	RH	54	41	13	4/4	13	52	83abe0a04d3a34b4bb207618b6c1412999efd13e2cc335e8868e6ceac99dd5a5	Mi đảo rồi Đô
+g7-n50-055	n50	31	sync	RH	55	42	13	4/4	13	52	1c6b27664067194eebf6327c1971b756d60d2446bf086a58e154a61a3a01e2c6	Fa đảo rồi Đô
+g7-n50-056	n50	47	sync	RH	53	40	13	4/4	13	52	114905375a48ce1607b5500effda48f3eb22b52b778b2f170adac0c550168397	Mi đảo Rê đáp
+g7-n50-057	n50	63	sync	RH	53	40	13	4/4	13	52	26b8aa9a1faa0bdf2a497d115062ea2e47a67f5e886fee4e54097be9808e1474	Fa đảo Mi đáp
+g7-n50-058	n50	55	sync	RH	54	41	13	4/4	13	52	a4304756243718afc15aabb01a651956e2d4673675c253a57c88815ba9dd264d	Rê đảo Đô đáp
+g7-n50-059	n50	71	sync	RH	53	40	13	4/4	13	52	21eb2967108ed80441f487c27230e49ea3306e832ac59f3338862f4c5a2a3cb6	Sol đảo Mi Rê
+g7-n50-060	n50	87	sync	RH	53	40	13	4/4	13	52	12ba7e7f82c5b6a0b0d5776af630a3f3b226b4386b5c201b6ac06a46c6e09aec	Mi đảo Rê Đô
+g7-n50-061	n50	79	sync	RH	54	41	13	4/4	13	52	02195c68847c3a7d5821ffc99679179500fb7d9abc95c15e1203649fddb95b81	Rê đảo Sol Mi
+g7-n50-062	n50	93	sync	RH	55	42	13	4/4	13	52	6e065059bd036af31b9a8ecccad05dee031491741bc90d0b90a4544939a7ee44	Đô đảo Mi Fa
+g7-n50-063	n50	19	sync	LH	53	13	40	4/4	13	52	289db42664eeabb0715eb6aa96d6fdf4da846779e3c553a4217f4c5b1896742e	Rê trầm chen phách
+g7-n50-064	n50	6	sync	LH	55	13	42	4/4	13	52	a9b94c816a93813c50ebcb5ee926aee1e86f55ba746a12878e780088205acc6d	Mi trầm chen phách
+g7-n50-065	n50	11	sync	LH	53	13	40	4/4	13	52	5d70f73032bddf8daa9f8747d9250f206dadf24c3820cdaa2823307c145632f5	Fa trầm chen phách
+g7-n50-066	n50	27	sync	LH	54	13	41	4/4	13	52	83abe0a04d3a34b4bb207618b6c1412999efd13e2cc335e8868e6ceac99dd5a5	Mi trầm đảo rồi Đô
+g7-n50-067	n50	43	sync	LH	55	13	42	4/4	13	52	1c6b27664067194eebf6327c1971b756d60d2446bf086a58e154a61a3a01e2c6	Fa trầm đảo rồi Đô
+g7-n50-068	n50	35	sync	LH	53	13	40	4/4	13	52	114905375a48ce1607b5500effda48f3eb22b52b778b2f170adac0c550168397	Mi trầm đảo Rê đáp
+g7-n50-069	n50	51	sync	LH	53	13	40	4/4	13	52	26b8aa9a1faa0bdf2a497d115062ea2e47a67f5e886fee4e54097be9808e1474	Fa trầm đảo Mi đáp
+g7-n50-070	n50	67	sync	LH	54	13	41	4/4	13	52	a4304756243718afc15aabb01a651956e2d4673675c253a57c88815ba9dd264d	Rê trầm đảo Đô đáp
+g7-n50-071	n50	59	sync	LH	53	13	40	4/4	13	52	21eb2967108ed80441f487c27230e49ea3306e832ac59f3338862f4c5a2a3cb6	Sol trầm đảo Mi Rê
+g7-n50-072	n50	75	sync	LH	53	13	40	4/4	13	52	12ba7e7f82c5b6a0b0d5776af630a3f3b226b4386b5c201b6ac06a46c6e09aec	Mi trầm đảo Rê Đô
+g7-n50-073	n50	91	sync	LH	54	13	41	4/4	13	52	02195c68847c3a7d5821ffc99679179500fb7d9abc95c15e1203649fddb95b81	Rê trầm đảo Sol Mi
+g7-n50-074	n50	83	sync	LH	55	13	42	4/4	13	52	6e065059bd036af31b9a8ecccad05dee031491741bc90d0b90a4544939a7ee44	Đô trầm đảo Mi Fa
+g7-n50-075	n50	99	sync	LH	55	13	42	4/4	13	52	00fa46128b792f2aacff5685b7a84371c579ff0fd4997d6610fb30c6c50a7252	Sol trầm đảo Fa Đô
+g7-n50-076	n50	7	compound	RH	49	36	13	6/8	13	26	0d84cce6ac4199576eb16a85bef8d36746eceac48ee97f89305a019c46324382	Hai nhịp lớn Đô Rê Mi
+g7-n50-077	n50	20	compound	RH	53	40	13	6/8	13	26	bf70640b3e7316f1628c9ac1caa954f09aad4df74f5d2eeda4d86192f8bb9864	Hai nhịp lớn Rê Mi Fa
+g7-n50-078	n50	12	compound	RH	51	38	13	6/8	13	26	1efdce7ea29c12a13eeb11c8a9cc4ff9d45f0fffe03344c3142e9a70747b79f3	Hai nhịp lớn Mi Fa Sol
+g7-n50-079	n50	28	compound	RH	49	36	13	6/8	13	26	525359e5d26c95d356cfe024bba5afc2bda73ca0892ab3604b9bbc6c8b54d44b	Fa Mi Rê đu đưa
+g7-n50-080	n50	44	compound	RH	53	40	13	6/8	13	26	28f76820a1bba55c24590f1e665921e08daa79610667bfe06c4e97826383b8cb	Sol Fa Mi đu đưa
+g7-n50-081	n50	36	compound	RH	49	36	13	6/8	13	26	4460a64534f5c94b5a3eae896cf011f2767dedc8c41668f803a0ed3c47d5a39b	Đô Mi Sol sáu tám
+g7-n50-082	n50	52	compound	RH	51	38	13	6/8	13	26	13bb49d5fdc2f9e04da9cfc18a01a0a5fd3d74925ecad98d6857fc4a76d1f51c	Sol Mi Đô sáu tám
+g7-n50-083	n50	68	compound	RH	49	36	13	6/8	13	26	41f634028b65f31f3d3432889ca0a21f079f401fdd72235e69806f547a5e5a1e	Rê Fa Mi theo nhóm ba
+g7-n50-084	n50	60	compound	RH	51	38	13	6/8	13	26	5d1269afb24629e5a50b1d52f1aba4925b33e69e50c4d4bf3f15eccb009802b8	Mi Rê Đô theo nhóm ba
+g7-n50-085	n50	76	compound	RH	49	36	13	6/8	13	26	118e1df2210fa35240ad56c83007478d6afc66c242c8da777642d8b7fb924c4d	Fa Rê Sol hai phách
+g7-n50-086	n50	92	compound	RH	49	36	13	6/8	13	26	a87f378058172b3550d3a60ac9431424fb8b10482fdc67f43c629866993fc978	Đô Sol Mi hai phách
+g7-n50-087	n50	84	compound	RH	53	40	13	6/8	13	26	7cf496f8efd92aa064428d8aa19d06861ffcc551cc3e74977d66de88a2190803	Rê Đô Fa đu đưa
+g7-n50-088	n50	100	compound	RH	53	40	13	6/8	13	26	7c88832993ff47e316cac298e317a234b0bb95a420a02ec3356c5342a3a67ce7	Mi Sol Rê đu đưa
+g7-n50-089	n50	16	compound	LH	49	13	36	6/8	13	26	0d84cce6ac4199576eb16a85bef8d36746eceac48ee97f89305a019c46324382	Đô Rê Mi trầm sáu tám
+g7-n50-090	n50	8	compound	LH	53	13	40	6/8	13	26	bf70640b3e7316f1628c9ac1caa954f09aad4df74f5d2eeda4d86192f8bb9864	Rê Mi Fa trầm sáu tám
+g7-n50-091	n50	24	compound	LH	51	13	38	6/8	13	26	1efdce7ea29c12a13eeb11c8a9cc4ff9d45f0fffe03344c3142e9a70747b79f3	Mi Fa Sol trầm sáu tám
+g7-n50-092	n50	40	compound	LH	49	13	36	6/8	13	26	525359e5d26c95d356cfe024bba5afc2bda73ca0892ab3604b9bbc6c8b54d44b	Fa Mi Rê trầm đu đưa
+g7-n50-093	n50	32	compound	LH	53	13	40	6/8	13	26	28f76820a1bba55c24590f1e665921e08daa79610667bfe06c4e97826383b8cb	Sol Fa Mi trầm đu đưa
+g7-n50-094	n50	48	compound	LH	49	13	36	6/8	13	26	4460a64534f5c94b5a3eae896cf011f2767dedc8c41668f803a0ed3c47d5a39b	Đô Mi Sol trầm nhóm ba
+g7-n50-095	n50	64	compound	LH	51	13	38	6/8	13	26	13bb49d5fdc2f9e04da9cfc18a01a0a5fd3d74925ecad98d6857fc4a76d1f51c	Sol Mi Đô trầm nhóm ba
+g7-n50-096	n50	56	compound	LH	49	13	36	6/8	13	26	41f634028b65f31f3d3432889ca0a21f079f401fdd72235e69806f547a5e5a1e	Rê Fa Mi trầm hai nhịp
+g7-n50-097	n50	72	compound	LH	51	13	38	6/8	13	26	5d1269afb24629e5a50b1d52f1aba4925b33e69e50c4d4bf3f15eccb009802b8	Mi Rê Đô trầm hai nhịp
+g7-n50-098	n50	88	compound	LH	49	13	36	6/8	13	26	118e1df2210fa35240ad56c83007478d6afc66c242c8da777642d8b7fb924c4d	Fa Rê Sol trầm sáu tám
+g7-n50-099	n50	80	compound	LH	49	13	36	6/8	13	26	a87f378058172b3550d3a60ac9431424fb8b10482fdc67f43c629866993fc978	Đô Sol Mi trầm sáu tám
+g7-n50-100	n50	94	compound	LH	53	13	40	6/8	13	26	7cf496f8efd92aa064428d8aa19d06861ffcc551cc3e74977d66de88a2190803	Rê Đô Fa trầm đu đưa
+g7-n100-001	n100	1	dotted	RH	80	59	21	4/4	21	84	cec0de195d7027d949f34d431bfc0c2420921b79dc84125b72b48384256021dc	Đô Rê Mi dài ngắn
+g7-n100-002	n100	9	dotted	RH	79	58	21	4/4	21	84	cd17b70f5c630c86b455e02849028a14deed44343548eed0c37229471e32ce44	Rê Mi Fa dài ngắn
+g7-n100-003	n100	17	dotted	RH	78	57	21	4/4	21	84	90d0b16dbe5290f2e79a6b4c12173e26f9e1dbbdee94c36b92684c4cedda9c2a	Mi Fa Sol dài ngắn
+g7-n100-004	n100	33	dotted	RH	79	58	21	4/4	21	84	0c06db4fc0bb09c7dd2fbdd6d57c5db159c9b95ebdbf8a4719930ec0b4fa54c8	Fa Mi Rê chấm dôi
+g7-n100-005	n100	25	dotted	RH	80	59	21	4/4	21	84	dee84438e95d6653d1c01a899b6ebfd2e0a9f41f94f5e668fd044ec988cf1f96	Sol Fa Mi chấm dôi
+g7-n100-006	n100	41	dotted	RH	79	58	21	4/4	21	84	6f7601f07b07f91c7cfec19c8052159468785ace4594c0211ac1640e023f8b14	Đô Mi Sol bước rộng
+g7-n100-007	n100	57	dotted	RH	78	57	21	4/4	21	84	09b23251f8c1888125d2e9e2631e55a593cf9ccc697945c2e36fe2e56a2d5dcb	Sol Mi Đô buông nhẹ
+g7-n100-008	n100	49	dotted	RH	79	58	21	4/4	21	84	587bc27079cb1b5de1e4afe5b9e5e7370c7e7ca4142f45a4c5abb387e701013f	Rê Fa Mi ngắn nối
+g7-n100-009	n100	65	dotted	RH	80	59	21	4/4	21	84	477f33fc3a5e5ee2e9219678c764f188fe92afd12e67fe96ba1763a1352ccb5b	Mi Rê Đô về nhà
+g7-n100-010	n100	81	dotted	RH	79	58	21	4/4	21	84	59602811abf034426494c0c1feec0c0943672a30106ebd8b509a55c9cece2cb9	Fa Rê Sol chuyển hướng
+g7-n100-011	n100	73	dotted	RH	78	57	21	4/4	21	84	bc236df02b697e3127ba284d6e48d5556b16d5b9c3032a0534932bda0d6aa65d	Đô Sol Mi phách dài
+g7-n100-012	n100	89	dotted	RH	79	58	21	4/4	21	84	5b86aa8a17c795e3aee7089a70e813e3c44cab4c04bc125fe1740424747e484c	Rê Đô Fa phách ngắn
+g7-n100-013	n100	95	dotted	RH	80	59	21	4/4	21	84	1e2cc5d5e96534d9518b83153b612216954d80ae8119b3e4002e54f5375e6799	Mi Sol Rê khép câu
+g7-n100-014	n100	13	dotted	LH	80	21	59	4/4	21	84	cec0de195d7027d949f34d431bfc0c2420921b79dc84125b72b48384256021dc	Trầm Đô Rê Mi dài ngắn
+g7-n100-015	n100	2	dotted	LH	79	21	58	4/4	21	84	cd17b70f5c630c86b455e02849028a14deed44343548eed0c37229471e32ce44	Trầm Rê Mi Fa dài ngắn
+g7-n100-016	n100	29	dotted	LH	78	21	57	4/4	21	84	90d0b16dbe5290f2e79a6b4c12173e26f9e1dbbdee94c36b92684c4cedda9c2a	Trầm Mi Fa Sol dài ngắn
+g7-n100-017	n100	21	dotted	LH	79	21	58	4/4	21	84	0c06db4fc0bb09c7dd2fbdd6d57c5db159c9b95ebdbf8a4719930ec0b4fa54c8	Trầm Fa Mi Rê chấm dôi
+g7-n100-018	n100	37	dotted	LH	80	21	59	4/4	21	84	dee84438e95d6653d1c01a899b6ebfd2e0a9f41f94f5e668fd044ec988cf1f96	Trầm Sol Fa Mi chấm dôi
+g7-n100-019	n100	53	dotted	LH	79	21	58	4/4	21	84	6f7601f07b07f91c7cfec19c8052159468785ace4594c0211ac1640e023f8b14	Trầm Đô Mi Sol bước rộng
+g7-n100-020	n100	45	dotted	LH	78	21	57	4/4	21	84	09b23251f8c1888125d2e9e2631e55a593cf9ccc697945c2e36fe2e56a2d5dcb	Trầm Sol Mi Đô buông nhẹ
+g7-n100-021	n100	61	dotted	LH	79	21	58	4/4	21	84	587bc27079cb1b5de1e4afe5b9e5e7370c7e7ca4142f45a4c5abb387e701013f	Trầm Rê Fa Mi ngắn nối
+g7-n100-022	n100	77	dotted	LH	80	21	59	4/4	21	84	477f33fc3a5e5ee2e9219678c764f188fe92afd12e67fe96ba1763a1352ccb5b	Trầm Mi Rê Đô về nhà
+g7-n100-023	n100	69	dotted	LH	79	21	58	4/4	21	84	59602811abf034426494c0c1feec0c0943672a30106ebd8b509a55c9cece2cb9	Trầm Fa Rê Sol chuyển
+g7-n100-024	n100	85	dotted	LH	78	21	57	4/4	21	84	bc236df02b697e3127ba284d6e48d5556b16d5b9c3032a0534932bda0d6aa65d	Trầm Đô Sol Mi phách dài
+g7-n100-025	n100	96	dotted	LH	79	21	58	4/4	21	84	5b86aa8a17c795e3aee7089a70e813e3c44cab4c04bc125fe1740424747e484c	Trầm Rê Đô Fa phách ngắn
+g7-n100-026	n100	3	tie	RH	77	56	21	4/4	21	84	17cbd466ed64a0bd7d4aa0e0250adadd42e507f720dac33be0f2b6ed5ea1074b	Mi nối qua phách ba
+g7-n100-027	n100	14	tie	RH	75	54	21	4/4	21	84	809b424a9a53f53f29bdc924cd5a109c92173008480a0ec15b95882af77b22fa	Fa nối qua phách ba
+g7-n100-028	n100	30	tie	RH	76	55	21	4/4	21	84	1f766fd1ce7ae474d425a021740ce6a98ff019917d7fec14a6f500dc4840966c	Sol nối qua phách ba
+g7-n100-029	n100	22	tie	RH	78	57	21	4/4	21	84	2f61358ede2a2698dc030d65bb765c58f20bfc9e179e229c803cd6fa4e6087f5	Rê nối sau Fa Mi
+g7-n100-030	n100	38	tie	RH	77	56	21	4/4	21	84	380e00d55c82abaf336cf2829900cadc3d41dd16b21ac2696a0f3097b57cc6b7	Mi nối sau Sol Fa
+g7-n100-031	n100	54	tie	RH	75	54	21	4/4	21	84	5fed3cd046e15c105cb3f577d7c02ebe58fb39bad41bbb5b4b04f375a11ff3a3	Sol nối từ Đô Mi
+g7-n100-032	n100	46	tie	RH	76	55	21	4/4	21	84	052bf892500e6f393a6add188b39953ac61ba08540229f61caa61a7deaad7097	Đô nối từ Sol Mi
+g7-n100-033	n100	62	tie	RH	78	57	21	4/4	21	84	eb9061ce022fe8570ad072f51f78f1c376a7c398efc633889ee5629f5ebce653	Mi nối từ Rê Fa
+g7-n100-034	n100	78	tie	RH	77	56	21	4/4	21	84	2fa60ca79d4218cf0e5e36e8774d9afe8107c10428166cdfc363eb7d3df3ec35	Đô nối từ Mi Rê
+g7-n100-035	n100	70	tie	RH	75	54	21	4/4	21	84	164f0cbc61b4d0cd03aaf4face1d0f111ff05e6e34380e84f66d8e17095714e3	Sol nối sau Fa Rê
+g7-n100-036	n100	86	tie	RH	76	55	21	4/4	21	84	3689d6e85cacef4a834da3ab2451303b0cd6c3b3c3d9bd5f93a225323348721c	Mi nối sau Đô Sol
+g7-n100-037	n100	97	tie	RH	78	57	21	4/4	21	84	61d7b7717f4f4f04967a020dff3f66af838eb5d42753357d237f98b34465a7d3	Fa nối sau Rê Đô
+g7-n100-038	n100	10	tie	LH	77	21	56	4/4	21	84	17cbd466ed64a0bd7d4aa0e0250adadd42e507f720dac33be0f2b6ed5ea1074b	Mi trầm nối qua phách
+g7-n100-039	n100	4	tie	LH	75	21	54	4/4	21	84	809b424a9a53f53f29bdc924cd5a109c92173008480a0ec15b95882af77b22fa	Fa trầm nối qua phách
+g7-n100-040	n100	18	tie	LH	76	21	55	4/4	21	84	1f766fd1ce7ae474d425a021740ce6a98ff019917d7fec14a6f500dc4840966c	Sol trầm nối qua phách
+g7-n100-041	n100	34	tie	LH	78	21	57	4/4	21	84	2f61358ede2a2698dc030d65bb765c58f20bfc9e179e229c803cd6fa4e6087f5	Rê trầm nối sau Fa Mi
+g7-n100-042	n100	26	tie	LH	77	21	56	4/4	21	84	380e00d55c82abaf336cf2829900cadc3d41dd16b21ac2696a0f3097b57cc6b7	Mi trầm nối sau Sol Fa
+g7-n100-043	n100	42	tie	LH	75	21	54	4/4	21	84	5fed3cd046e15c105cb3f577d7c02ebe58fb39bad41bbb5b4b04f375a11ff3a3	Sol trầm nối Đô Mi
+g7-n100-044	n100	58	tie	LH	76	21	55	4/4	21	84	052bf892500e6f393a6add188b39953ac61ba08540229f61caa61a7deaad7097	Đô trầm nối Sol Mi
+g7-n100-045	n100	50	tie	LH	78	21	57	4/4	21	84	eb9061ce022fe8570ad072f51f78f1c376a7c398efc633889ee5629f5ebce653	Mi trầm nối Rê Fa
+g7-n100-046	n100	66	tie	LH	77	21	56	4/4	21	84	2fa60ca79d4218cf0e5e36e8774d9afe8107c10428166cdfc363eb7d3df3ec35	Đô trầm nối Mi Rê
+g7-n100-047	n100	82	tie	LH	75	21	54	4/4	21	84	164f0cbc61b4d0cd03aaf4face1d0f111ff05e6e34380e84f66d8e17095714e3	Sol trầm nối Fa Rê
+g7-n100-048	n100	74	tie	LH	76	21	55	4/4	21	84	3689d6e85cacef4a834da3ab2451303b0cd6c3b3c3d9bd5f93a225323348721c	Mi trầm nối Đô Sol
+g7-n100-049	n100	90	tie	LH	78	21	57	4/4	21	84	61d7b7717f4f4f04967a020dff3f66af838eb5d42753357d237f98b34465a7d3	Fa trầm nối Rê Đô
+g7-n100-050	n100	98	tie	LH	77	21	56	4/4	21	84	445ee94ab98cb6ea5d169931046562041b7bc1494deed6ab346180c20f566316	Rê trầm nối Mi Sol
+g7-n100-051	n100	5	sync	RH	86	65	21	4/4	21	84	81b16aff079203cf20a98f25a96804f65ee38e50c5ac27d3c1ba3f1344c3575b	Rê chen giữa phách
+g7-n100-052	n100	15	sync	RH	87	66	21	4/4	21	84	24567ef038b97152cc21d1dae447d3d8ba90f9684f6ff74df05a730528d56665	Mi chen giữa phách
+g7-n100-053	n100	23	sync	RH	85	64	21	4/4	21	84	4bb4ff2b29c7d117fe11a115ed19ca8d93db9232791e1ba36302614b6e015bc1	Fa chen giữa phách
+g7-n100-054	n100	39	sync	RH	87	66	21	4/4	21	84	b3fe9c2e1ffae605c6866e8bb8a00abddab4b780a47c8e36ae75f4d39e4736a5	Mi đảo rồi Đô
+g7-n100-055	n100	31	sync	RH	86	65	21	4/4	21	84	07ed51fc766d5ad3932a1db09fec6bf9e1487e882f752827f4f3f5b758d8a7ce	Fa đảo rồi Đô
+g7-n100-056	n100	47	sync	RH	87	66	21	4/4	21	84	49e887173baf7f3981444ee5626fcedd9aaf34d4bff3e00cf17064799387b6e5	Mi đảo Rê đáp
+g7-n100-057	n100	63	sync	RH	85	64	21	4/4	21	84	6f154000eb96bae8ba5e6ba77d70f12603badd21ea289644cd7dc04f1a2c474a	Fa đảo Mi đáp
+g7-n100-058	n100	55	sync	RH	87	66	21	4/4	21	84	59b8a1f945c685ecc72e87566b659ccea34ce7c4f35aa485bfdce9a249872f1a	Rê đảo Đô đáp
+g7-n100-059	n100	71	sync	RH	86	65	21	4/4	21	84	507152bb715f07e69f33aba27b2ab1be30d513f1d2f5ff145d6a354f7e5a2697	Sol đảo Mi Rê
+g7-n100-060	n100	87	sync	RH	87	66	21	4/4	21	84	3a6ff61fb11d25e1ffd443058d0e1edf077531142586506cd1df03a2682e83b5	Mi đảo Rê Đô
+g7-n100-061	n100	79	sync	RH	85	64	21	4/4	21	84	9d93c433eb4c3364c3b375cddcd40d66c3e8de7cb0fe6fb7220ea7c56a0d6064	Rê đảo Sol Mi
+g7-n100-062	n100	93	sync	RH	87	66	21	4/4	21	84	268e6b02b6934ea998f2cfc18f9249b4fc85e58f98827f90d05062cfff9ce3c1	Đô đảo Mi Fa
+g7-n100-063	n100	19	sync	LH	86	21	65	4/4	21	84	81b16aff079203cf20a98f25a96804f65ee38e50c5ac27d3c1ba3f1344c3575b	Rê trầm chen phách
+g7-n100-064	n100	6	sync	LH	87	21	66	4/4	21	84	24567ef038b97152cc21d1dae447d3d8ba90f9684f6ff74df05a730528d56665	Mi trầm chen phách
+g7-n100-065	n100	11	sync	LH	85	21	64	4/4	21	84	4bb4ff2b29c7d117fe11a115ed19ca8d93db9232791e1ba36302614b6e015bc1	Fa trầm chen phách
+g7-n100-066	n100	27	sync	LH	87	21	66	4/4	21	84	b3fe9c2e1ffae605c6866e8bb8a00abddab4b780a47c8e36ae75f4d39e4736a5	Mi trầm đảo rồi Đô
+g7-n100-067	n100	43	sync	LH	86	21	65	4/4	21	84	07ed51fc766d5ad3932a1db09fec6bf9e1487e882f752827f4f3f5b758d8a7ce	Fa trầm đảo rồi Đô
+g7-n100-068	n100	35	sync	LH	87	21	66	4/4	21	84	49e887173baf7f3981444ee5626fcedd9aaf34d4bff3e00cf17064799387b6e5	Mi trầm đảo Rê đáp
+g7-n100-069	n100	51	sync	LH	85	21	64	4/4	21	84	6f154000eb96bae8ba5e6ba77d70f12603badd21ea289644cd7dc04f1a2c474a	Fa trầm đảo Mi đáp
+g7-n100-070	n100	67	sync	LH	87	21	66	4/4	21	84	59b8a1f945c685ecc72e87566b659ccea34ce7c4f35aa485bfdce9a249872f1a	Rê trầm đảo Đô đáp
+g7-n100-071	n100	59	sync	LH	86	21	65	4/4	21	84	507152bb715f07e69f33aba27b2ab1be30d513f1d2f5ff145d6a354f7e5a2697	Sol trầm đảo Mi Rê
+g7-n100-072	n100	75	sync	LH	87	21	66	4/4	21	84	3a6ff61fb11d25e1ffd443058d0e1edf077531142586506cd1df03a2682e83b5	Mi trầm đảo Rê Đô
+g7-n100-073	n100	91	sync	LH	85	21	64	4/4	21	84	9d93c433eb4c3364c3b375cddcd40d66c3e8de7cb0fe6fb7220ea7c56a0d6064	Rê trầm đảo Sol Mi
+g7-n100-074	n100	83	sync	LH	87	21	66	4/4	21	84	268e6b02b6934ea998f2cfc18f9249b4fc85e58f98827f90d05062cfff9ce3c1	Đô trầm đảo Mi Fa
+g7-n100-075	n100	99	sync	LH	86	21	65	4/4	21	84	51c9026d02d4566e4467305302914acd2bb4bf53451e66c37e5ab5b595f0efd9	Sol trầm đảo Fa Đô
+g7-n100-076	n100	7	compound	RH	83	62	21	6/8	21	42	31f5f339be9b4c09bcb15d0f33bec667706243ce0eae9461e73939051e74f360	Hai nhịp lớn Đô Rê Mi
+g7-n100-077	n100	20	compound	RH	81	60	21	6/8	21	42	bcf25c2646e0b631b3a3f63ffa50b05e6bd242d5d1222fddea4eacdaf3119aed	Hai nhịp lớn Rê Mi Fa
+g7-n100-078	n100	12	compound	RH	79	58	21	6/8	21	42	0dd7317bb652ff1ca4c17a049e68f53b1e56a0689d8522638e5a74c6385fab4a	Hai nhịp lớn Mi Fa Sol
+g7-n100-079	n100	28	compound	RH	83	62	21	6/8	21	42	5c77cec02bd7ebc5594e31f57e0ef3e8b27cd1966eccaa18f8484f4541cee8c4	Fa Mi Rê đu đưa
+g7-n100-080	n100	44	compound	RH	83	62	21	6/8	21	42	5e9c4a06741a6ad413283e6b5677a897bf4b3ac5b9a9522389158d224fdd8c09	Sol Fa Mi đu đưa
+g7-n100-081	n100	36	compound	RH	81	60	21	6/8	21	42	9a52ab6cce3d9691b24824012c08f2f971a5d663453f9d7f3a0ccb150a93f579	Đô Mi Sol sáu tám
+g7-n100-082	n100	52	compound	RH	79	58	21	6/8	21	42	3914935e33c6041bb3e908bd4a9d551004af0a3620f60f5fa5b6c640dd427738	Sol Mi Đô sáu tám
+g7-n100-083	n100	68	compound	RH	83	62	21	6/8	21	42	d8fa835f68c5031bb01adf8f23ce41cdcf43ede47109cfc2262bd9ce0e1cff05	Rê Fa Mi theo nhóm ba
+g7-n100-084	n100	60	compound	RH	83	62	21	6/8	21	42	37a72d4aa394d466dd3b96fda19efd902f9ddcbc325e2235d4614f7bd0452a43	Mi Rê Đô theo nhóm ba
+g7-n100-085	n100	76	compound	RH	81	60	21	6/8	21	42	344fec44d496a1fbeb33dda32e71cd91069d7eff8d26291764232f3e8813f9e5	Fa Rê Sol hai phách
+g7-n100-086	n100	92	compound	RH	79	58	21	6/8	21	42	4ee02116196a73d4f1bb668bc127ee5f0929a7c2529a16ee0e12feaf34ef033a	Đô Sol Mi hai phách
+g7-n100-087	n100	84	compound	RH	83	62	21	6/8	21	42	cf90ea9cf9aac72c0d7ce4ac84605f2bda7d6345c66f99f75cf4cc7c06a0d23b	Rê Đô Fa đu đưa
+g7-n100-088	n100	100	compound	RH	83	62	21	6/8	21	42	750b0e23175cba43a375af67658abda1261f65435aafc3a4486509d141c63f4a	Mi Sol Rê đu đưa
+g7-n100-089	n100	16	compound	LH	83	21	62	6/8	21	42	31f5f339be9b4c09bcb15d0f33bec667706243ce0eae9461e73939051e74f360	Đô Rê Mi trầm sáu tám
+g7-n100-090	n100	8	compound	LH	81	21	60	6/8	21	42	bcf25c2646e0b631b3a3f63ffa50b05e6bd242d5d1222fddea4eacdaf3119aed	Rê Mi Fa trầm sáu tám
+g7-n100-091	n100	24	compound	LH	79	21	58	6/8	21	42	0dd7317bb652ff1ca4c17a049e68f53b1e56a0689d8522638e5a74c6385fab4a	Mi Fa Sol trầm sáu tám
+g7-n100-092	n100	40	compound	LH	83	21	62	6/8	21	42	5c77cec02bd7ebc5594e31f57e0ef3e8b27cd1966eccaa18f8484f4541cee8c4	Fa Mi Rê trầm đu đưa
+g7-n100-093	n100	32	compound	LH	83	21	62	6/8	21	42	5e9c4a06741a6ad413283e6b5677a897bf4b3ac5b9a9522389158d224fdd8c09	Sol Fa Mi trầm đu đưa
+g7-n100-094	n100	48	compound	LH	81	21	60	6/8	21	42	9a52ab6cce3d9691b24824012c08f2f971a5d663453f9d7f3a0ccb150a93f579	Đô Mi Sol trầm nhóm ba
+g7-n100-095	n100	64	compound	LH	79	21	58	6/8	21	42	3914935e33c6041bb3e908bd4a9d551004af0a3620f60f5fa5b6c640dd427738	Sol Mi Đô trầm nhóm ba
+g7-n100-096	n100	56	compound	LH	83	21	62	6/8	21	42	d8fa835f68c5031bb01adf8f23ce41cdcf43ede47109cfc2262bd9ce0e1cff05	Rê Fa Mi trầm hai nhịp
+g7-n100-097	n100	72	compound	LH	83	21	62	6/8	21	42	37a72d4aa394d466dd3b96fda19efd902f9ddcbc325e2235d4614f7bd0452a43	Mi Rê Đô trầm hai nhịp
+g7-n100-098	n100	88	compound	LH	81	21	60	6/8	21	42	344fec44d496a1fbeb33dda32e71cd91069d7eff8d26291764232f3e8813f9e5	Fa Rê Sol trầm sáu tám
+g7-n100-099	n100	80	compound	LH	79	21	58	6/8	21	42	4ee02116196a73d4f1bb668bc127ee5f0929a7c2529a16ee0e12feaf34ef033a	Đô Sol Mi trầm sáu tám
+g7-n100-100	n100	94	compound	LH	83	21	62	6/8	21	42	cf90ea9cf9aac72c0d7ce4ac84605f2bda7d6345c66f99f75cf4cc7c06a0d23b	Rê Đô Fa trầm đu đưa

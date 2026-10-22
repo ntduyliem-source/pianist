@@ -1,0 +1,17 @@
+%abc-2.1
+X:1019
+T:g2-n20-019 Đi nhẹ rồi giữ nốt
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=eighth; lead=RH; bucket=n20; notes=20; RH=16; LH=4
+% role=R; duration60=16s; related_pattern=361eb0f04b91557e
+% authored_passages=E04
+% source=buildscripts/pianist/compositions/g2/n20.txt:20
+[V:RH] C2 C/2D/2 E | F/2E/2 D C2 | D E F E | D/2C/2 C C2 |]
+[V:LH] C,4 | C,4 | C,4 | C,4 |]

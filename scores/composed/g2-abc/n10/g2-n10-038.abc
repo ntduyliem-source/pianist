@@ -1,0 +1,17 @@
+%abc-2.1
+X:938
+T:g2-n10-038 Mở khép bằng Mi trầm
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=third; lead=LH; bucket=n10; notes=11; RH=4; LH=7
+% role=L; duration60=8s; related_pattern=cf7feeacb1541469
+% authored_passages=inline-n10-038
+% source=buildscripts/pianist/compositions/g2/n10.txt:39
+[V:RH] C2 C2 | C2 C2 |]
+[V:LH] E, C, D, E, | G, F, E,2 |]

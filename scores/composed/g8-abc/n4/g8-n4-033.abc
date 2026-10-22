@@ -1,0 +1,17 @@
+%abc-2.1
+X:4933
+T:g8-n4-033 Dòng phụ trầm Rê Mi Sol
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G8; profile=ledger-low; lead=LH; bucket=n4; notes=4; RH=1; LH=3
+% duration60=4s; related_pattern=27c5d7751eefe497
+% authored_passages=L08
+% source=buildscripts/pianist/compositions/g8/studies.txt:34
+[V:RH] G4 |]
+[V:LH] D,,, E,,, G,,,2 |]

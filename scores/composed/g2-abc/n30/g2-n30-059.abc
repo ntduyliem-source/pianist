@@ -1,0 +1,19 @@
+%abc-2.1
+X:1159
+T:g2-n30-059 Qua đỉnh trầm rồi lắng
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=eighth; lead=LH; bucket=n30; notes=36; RH=8; LH=28
+% role=L; duration60=24s; related_pattern=b87cd2a73bfc0eef
+% authored_passages=F24 F25
+% source=buildscripts/pianist/compositions/g2/n30.txt:60
+[V:RH] C3 | C3 | C3 | C3 |
+[V:LH] C,/2D,/2 E,/2F,/2 G, | F,/2E,/2 D, C, | C, D,/2E,/2 F, | E, D, C, |
+[V:RH] C3 | C3 | C3 | C3 |]
+[V:LH] C,2 C,/2D,/2 | E, F,/2E,/2 D, | C, D, E,/2D,/2 | C,3 |]

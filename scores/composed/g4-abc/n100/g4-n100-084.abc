@@ -1,0 +1,25 @@
+%abc-2.1
+X:2784
+T:g4-n100-084 Fa La bass năm lời
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=span; lead=LH; bucket=n100; notes=77; RH=39; LH=38
+% role=A; duration60=80s; related_pattern=00ede4cdfb822e5a
+% authored_passages=H07 H08 H05 H07 H08
+% source=buildscripts/pianist/compositions/g4/n100.txt:85
+[V:RH] z4 | E F G F | z4 | F G F E |
+[V:LH] C, F, A, C | z4 | B, G, E, C, | z4 |
+[V:RH] z4 | E F G F | z4 | F E F E |
+[V:LH] C,2 G, C | z4 | B, A, G, C, | z4 |
+[V:RH] z4 | E F G F | z4 | F E E2 |
+[V:LH] C, G, C B, | z4 | A, G, E, C, | z4 |
+[V:RH] z4 | E F G F | z4 | F G F E |
+[V:LH] C, F, A, C | z4 | B, G, E, C, | z4 |
+[V:RH] z4 | E F G F | z4 | F E F E |]
+[V:LH] C,2 G, C | z4 | B, A, G, C, | z4 |]

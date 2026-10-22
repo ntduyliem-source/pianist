@@ -1,0 +1,17 @@
+%abc-2.1
+X:875
+T:g2-n6-075 Một tiếng mở hai cặp khép
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=eighth; lead=RH; bucket=n6; notes=8; RH=5; LH=3
+% role=A; duration60=6s; related_pattern=42f73aa697566aec
+% authored_passages=inline-n6-075
+% source=buildscripts/pianist/compositions/g2/n6.txt:76
+[V:RH] C D/2E/2 D/2C/2 | z3 |]
+[V:LH] z3 | C, C, C, |]

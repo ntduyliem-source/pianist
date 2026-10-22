@@ -1,0 +1,17 @@
+%abc-2.1
+X:93
+T:g1-n4-093 Cùng tới Sol
+C:Nhạc do trợ lý AI biên soạn
+M:2/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n4; notes=4; RH=2; LH=2
+% role=S; family=octave-top; form=authored; duration60=2s
+% related_pattern=08b9c9a0dea31a35
+% source=buildscripts/pianist/compositions/g1/n4.txt:94
+[V:RH] F G |]
+[V:LH] F, G, |]

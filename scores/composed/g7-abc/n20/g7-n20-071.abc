@@ -1,0 +1,19 @@
+%abc-2.1
+X:4571
+T:g7-n20-071 Sol trầm đảo Mi Rê
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G7; profile=sync; lead=LH; bucket=n20; notes=21; RH=5; LH=16
+% duration60=20s; related_pattern=b10ca68514c94dbd
+% authored_passages=Y21 YL1
+% source=buildscripts/pianist/compositions/g7/studies.txt:72
+[V:RH] G4 | C z z z | C z z z | C z z z |
+[V:LH] F,/2 G, E,/2 D,2 | C,/2 D, E,/2 G,2 | F,/2 E, D,/2 C,2 | E,2 G,2 |
+[V:RH] C z z z |]
+[V:LH] D,2 C,2 |]

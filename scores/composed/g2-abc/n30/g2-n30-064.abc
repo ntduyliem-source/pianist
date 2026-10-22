@@ -1,0 +1,21 @@
+%abc-2.1
+X:1164
+T:g2-n30-064 Trầm ngắn rồi trầm dài
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=third; lead=LH; bucket=n30; notes=33; RH=15; LH=18
+% role=A; duration60=36s; related_pattern=989e2a1591f0e262
+% authored_passages=Q14 Q12
+% source=buildscripts/pianist/compositions/g2/n30.txt:65
+[V:RH] z3 | C2 D | z3 | E2 D |
+[V:LH] C, E, D, | z3 | E, D, C, | z3 |
+[V:RH] z3 | C2 C | z3 | C D E |
+[V:LH] D, E, C, | z3 | C, E, D, | z3 |
+[V:RH] z3 | D E D | z3 | C D C |]
+[V:LH] E, G, F, | z3 | E, D, C, | z3 |]

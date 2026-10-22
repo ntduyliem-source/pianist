@@ -1,0 +1,19 @@
+%abc-2.1
+X:3105
+T:g5-n20-005 Rê về Đô lệch phách
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=offset; lead=RH; bucket=n20; notes=19; RH=10; LH=9
+% duration60=20s; related_pattern=07ee694f7e458879
+% authored_passages=O05 OR3
+% source=buildscripts/pianist/compositions/g5/studies.txt:6
+[V:RH] D2 C z | G2 E z | D E F2 | E2 D2 |
+[V:LH] z D, z C, | z G, z C, | G, z D, z | z G, z G, |
+[V:RH] C4 |]
+[V:LH] C,4 |]

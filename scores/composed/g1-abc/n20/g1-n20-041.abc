@@ -1,0 +1,17 @@
+%abc-2.1
+X:341
+T:g1-n20-041 Điểm nghỉ của câu trầm
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n20; notes=16; RH=4; LH=12
+% role=L; family=bass-gentle-middle; form=authored; duration60=16s
+% related_pattern=02f13d2a5d1209e3
+% source=buildscripts/pianist/compositions/g1/n20.txt:43
+[V:RH] C4 | C4 | C4 | C4 |]
+[V:LH] C, D, E, F, | E,4 | D, E, D, C, | C, D, C,2 |]

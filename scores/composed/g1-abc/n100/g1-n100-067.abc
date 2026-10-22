@@ -1,0 +1,25 @@
+%abc-2.1
+X:667
+T:g1-n100-067 Mười lời trầm trên đồi
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n100; notes=74; RH=37; LH=37
+% role=A; family=left-ten-upper; form=authored; duration60=80s
+% related_pattern=10fdc9a29d62d2a1
+% source=buildscripts/pianist/compositions/g1/n100.txt:68
+[V:RH] z4 | E F G2 | z4 | F E D E |
+[V:LH] C, D, E, F, | z4 | G, F, E, D, | z4 |
+[V:RH] z4 | F G F E | z4 | D E F G |
+[V:LH] C, D, E, F, | z4 | E, D, C, D, | z4 |
+[V:RH] z4 | F E D E | z4 | E F G F |
+[V:LH] E, F, E, D, | z4 | C, C, D, E, | z4 |
+[V:RH] z4 | E D C D | z4 | E F E D |
+[V:LH] F, G, F, E, | z4 | D, E, D, C, | z4 |
+[V:RH] z4 | C D E D | z4 | C2 C2 |]
+[V:LH] C, D, C, D, | z4 | C,4 | z4 |]

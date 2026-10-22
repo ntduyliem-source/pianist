@@ -1,0 +1,21 @@
+%abc-2.1
+X:532
+T:g1-n50-032 Ba câu hỏi trầm
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n50; notes=50; RH=12; LH=38
+% role=L; family=bass-three-questions; form=authored; duration60=48s
+% related_pattern=bf7db859c2dfa3ee
+% source=buildscripts/pianist/compositions/g1/n50.txt:34
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C,2 D, E, | F,2 E, D, | E, F, E, D, | C,4 |
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C, C, D, E, | F, E, F, G, | F, E, D, C, | C,2 C,2 |
+[V:RH] C4 | C4 | C4 | C4 |]
+[V:LH] C, D, E, F, | G, F, E, D, | C, D, E, D, | C,4 |]

@@ -1,0 +1,25 @@
+%abc-2.1
+X:2039
+T:g3-n100-039 Rê Sol thấp bốn lời tiếp
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fourth; lead=LH; bucket=n100; notes=89; RH=22; LH=67
+% role=L; duration60=80s; related_pattern=20f3883deabed9ea
+% authored_passages=G10 G09 G12 G05 G06
+% source=buildscripts/pianist/compositions/g3/n100.txt:40
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] D, G, F, E, | D, F, E, C, | D, E, F, C, | D, C, C,2 |
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C, F, E,2 | F, C, D, E, | D, E, F,2 | E, D, C,2 |
+[V:RH] C2 C2 | C4 | C2 C2 | C4 |
+[V:LH] C, F, E, D, | C,2 F, E, | D, G, F, E, | D, E, C,2 |
+[V:RH] C4 | D4 | C4 | C4 |
+[V:LH] C,2 F, E, | D,2 G, F, | E, D, C,2 | C,2 C,2 |
+[V:RH] C4 | C4 | C4 | C4 |]
+[V:LH] C, F, z E, | D, G, F, E, | D, E, F, C, | D, E, C,2 |]

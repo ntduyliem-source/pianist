@@ -22,7 +22,9 @@ export interface ExercisePracticeContext {
   loading:boolean;error?:string;
   onSettings:(patch:Partial<PracticeSettings>)=>void;
   onComplete:(result:AttemptResult)=>Promise<void>;
-  prepareListen:()=>Promise<EngineBridge>;
+  onStart?:()=>void;
+  onStop?:()=>void;
+  prepareListen:(signal:AbortSignal)=>Promise<EngineBridge>;
 }
 
 const empty:EngineView={judgements:[],extras:[],held:[],pedal:false,intervals:[],group:0,done:false,processedMs:0,faults:[]};
@@ -34,11 +36,13 @@ const time=(ms:number)=>{const s=Math.max(0,Math.floor(ms/1000));return `${Math.
 
 export function Practice({snapshot,config:c,exercise}:{snapshot:ScoreSnapshot;config:PracticeSettings;exercise?:ExercisePracticeContext}){
   useSyncExternalStore(ws.subscribe,ws.snapshot);
-  const root=useRef<HTMLElement>(null),dialog=useRef<HTMLDialogElement>(null),preview=useRef<NativeAudition|null>(null),working=useRef(false);
+  const root=useRef<HTMLElement>(null),dialog=useRef<HTMLDialogElement>(null),preview=useRef<NativeAudition|null>(null),working=useRef<symbol|undefined>(undefined);
+  const listenRequest=useRef<AbortController|null>(null),stoppingNow=useRef(false);
   const persistAttempt=useRef<((r:AttemptResult,show:boolean)=>Promise<void>)|null>(null);
   const[,refresh]=useState(0),[prefs,setPrefs]=useState(presentation),[focus,setFocus]=useState(false),[barHidden,setBarHidden]=useState(false),[panel,setPanel]=useState<'settings'|'range'|null>(null);
   const[selecting,setSelecting]=useState<'a'|'b'|null>(null),[keepReplay,setReplay]=useState(true),[followToken,setFollowToken]=useState(0),[audition,setAudition]=useState<AuditionState|null>(null),[busy,setBusy]=useState(false);
   const[listenWhole,setListenWhole]=useState(false),[listenLoop,setListenLoop]=useState(false),[listenSpeed,setListenSpeed]=useState(1);
+  const[preparingListen,setPreparingListen]=useState(false),[stopping,setStopping]=useState(false);
   const[nativeReady,setNativeReady]=useState(false);
   // At the native one-shot end, keep the viewport on B rather than the first
   // occurrence outside the selected range. Transport time itself stays exact.
@@ -65,12 +69,12 @@ export function Practice({snapshot,config:c,exercise}:{snapshot:ScoreSnapshot;co
   const pedalExpected=!!(active&&c.mode==='bpm'&&t?.pedals?.some(p=>p.atMs<=position&&p.endMs>position));
   const windows=new ManiaHitWindows(c.difficulty).values;
   const device=ws.midi.deviceId==='virtual'?'Bàn phím ảo':ws.midi.ports.find(p=>p.id===ws.midi.deviceId)?.name??'Đàn MIDI';
-  const message=audition?(audition.preparing?'Chuẩn bị nghe…':audition.status==='playing'?'Đang nghe MuseScore':'Nghe · tạm dừng'):count?`Đếm vào · ${count}`:status==='running'?'Đang tập':status==='paused'?'Tạm dừng':status==='interrupted'?'Đã gián đoạn':'Sẵn sàng';
+  const message=preparingListen?'Chuẩn bị nghe…':audition?(audition.preparing?'Chuẩn bị nghe…':audition.status==='playing'?'Đang nghe MuseScore':'Nghe · tạm dừng'):count?`Đếm vào · ${count}`:status==='running'?'Đang tập':status==='paused'?'Tạm dừng':status==='interrupted'?'Đã gián đoạn':'Sẵn sàng';
   const setPref=(patch:Partial<Presentation>)=>setPrefs(p=>{const next={...p,...patch};try{localStorage.setItem('pianist.practice-ui.v3',JSON.stringify(next));}catch{}return next;});
-  const stopPreview=()=>{preview.current?.stop();preview.current=null;setAudition(null);};
+  const stopPreview=()=>{listenRequest.current?.abort();listenRequest.current=null;setPreparingListen(false);preview.current?.stop();preview.current=null;setAudition(null);};
   useEffect(()=>{stopPreview();setFollowToken(n=>n+1);},[snapshot.fingerprint]);
   const update=(patch:Partial<PracticeSettings>)=>{if(!active){stopPreview();if(patch.pedalEnabled===false&&ws.midi.deviceId==='virtual')ws.midi.receive([0xb0,64,0],performance.now());if(exercise)exercise.onSettings(patch);else ws.updatePracticeSettings(patch);setFollowToken(n=>n+1);}};
-  const act=(fn:()=>unknown|Promise<unknown>)=>async()=>{if(working.current)return;working.current=true;setBusy(true);try{await ws.run(fn);}finally{working.current=false;setBusy(false);}};
+  const act=(fn:()=>unknown|Promise<unknown>)=>async()=>{if(working.current||stoppingNow.current)return;const token=working.current=Symbol();setBusy(true);try{await ws.run(fn);}finally{if(working.current===token){working.current=undefined;setBusy(false);}}};
 
   useEffect(()=>{
     const check=()=>{try{setNativeReady(!!exercise||!!ws.bridge?.auditionState().available);}catch{setNativeReady(false);}};
@@ -82,7 +86,7 @@ export function Practice({snapshot,config:c,exercise}:{snapshot:ScoreSnapshot;co
     const hidden=()=>{if(document.hidden)preview.current?.pause();};
     const blur=()=>preview.current?.pause();
     document.addEventListener('fullscreenchange',full);document.addEventListener('visibilitychange',hidden);window.addEventListener('blur',blur);
-    return()=>{document.removeEventListener('fullscreenchange',full);document.removeEventListener('visibilitychange',hidden);window.removeEventListener('blur',blur);preview.current?.stop();if(document.fullscreenElement===el)void document.exitFullscreen().catch(()=>{});delete document.body.dataset.practiceFocus;if(ws.session&&['ready','finished'].includes(ws.session.status)){ws.session.dispose();ws.session=undefined;}};
+    return()=>{document.removeEventListener('fullscreenchange',full);document.removeEventListener('visibilitychange',hidden);window.removeEventListener('blur',blur);listenRequest.current?.abort();preview.current?.stop();if(document.fullscreenElement===el)void document.exitFullscreen().catch(()=>{});delete document.body.dataset.practiceFocus;if(ws.session&&['ready','finished'].includes(ws.session.status)){ws.session.dispose();ws.session=undefined;}};
   },[]);
   useEffect(()=>{document.body.dataset.practiceFocus=String(focus);setFollowToken(n=>n+1);},[focus]);
   useEffect(()=>{if(panel&&!dialog.current?.open)dialog.current?.showModal();else if(!panel&&dialog.current?.open)dialog.current.close();},[panel]);
@@ -91,6 +95,7 @@ export function Practice({snapshot,config:c,exercise}:{snapshot:ScoreSnapshot;co
   useEffect(()=>{const key=(e:KeyboardEvent)=>{if(e.key==='Escape'&&!dialog.current?.open&&focus&&!document.fullscreenElement){e.preventDefault();void exitFocus();}};window.addEventListener('keydown',key);return()=>window.removeEventListener('keydown',key);},[focus]);
 
   const start=async(simulationDelta?:number,releaseReference=false)=>{
+    exercise?.onStart?.();
     stopPreview();setPanel(null);setSelecting(null);
     const next=createTimeline(snapshot,exercise?c:ws.state.config??c);ws.session?.dispose();
     const s=ws.session=new PracticeController(next,snapshot.title);s.onChange=()=>{refresh(n=>n+1);ws.patch({});};
@@ -110,21 +115,49 @@ export function Practice({snapshot,config:c,exercise}:{snapshot:ScoreSnapshot;co
     stopPreview();if(active){let saving:Promise<void>|undefined;const persist=persistAttempt.current;session!.onComplete=r=>{saving=persist?persist(r,false):ws.recordResult(r,keepReplay,false);};await session!.finish();if(session!.status!=='finished')throw Error(session!.message||'Chưa thể kết thúc lượt cũ.');await saving;}
     await start();
   };
+  // Stop stays available during async audio preparation and count-in. It ends
+  // the attempt on this sheet; Pause remains a separate resumable action.
+  const stop=async()=>{
+    if(stoppingNow.current)return;
+    stoppingNow.current=true;setStopping(true);
+    exercise?.onStop?.();stopPreview();working.current=undefined;setBusy(false);
+    setSelecting(null);setPanel(null);setBarHidden(false);setFollowToken(n=>n+1);
+    const current=ws.session;
+    try{
+      ws.midi.release();
+      if(current&&!['ready','finished'].includes(current.status)){
+        let saving:Promise<void>|undefined;const persist=persistAttempt.current;
+        current.onComplete=r=>{saving=persist?persist(r,false):ws.recordResult(r,keepReplay,false);};
+        await current.finish('aborted');
+        if(current.status!=='finished')throw Error(current.message||'Chưa thể kết thúc lượt tập.');
+        await saving;
+      }
+      if(current&&current===ws.session&&current.status==='finished'){
+        current.dispose();ws.session=undefined;persistAttempt.current=null;ws.patch({});
+      }
+    }finally{stoppingNow.current=false;setStopping(false);refresh(n=>n+1);}
+  };
   const listen=async()=>{
     if(preview.current&&audition){preview.current.toggle(audition);return;}if(active)return;
-    const bridge=exercise?await exercise.prepareListen():ws.bridge;if(!bridge)return;
-    const p=new NativeAudition(bridge,auditionRange(snapshot,c.fromMeasure,c.toMeasure,listenWhole));
-    preview.current=p;setFollowToken(n=>n+1);
-    p.onChange=setAudition;p.onError=error=>{preview.current=null;setAudition(null);ws.patch({error:String(error instanceof Error?error.message:error)});};
-    try{p.start(listenSpeed,listenLoop);}catch(e){stopPreview();throw e;}
+    const request=new AbortController();listenRequest.current=request;setPreparingListen(true);
+    try{
+      const bridge=exercise?await exercise.prepareListen(request.signal):ws.bridge;
+      request.signal.throwIfAborted();if(!bridge)return;
+      const p=new NativeAudition(bridge,auditionRange(snapshot,c.fromMeasure,c.toMeasure,listenWhole));
+      preview.current=p;setFollowToken(n=>n+1);
+      p.onChange=setAudition;p.onError=error=>{if(preview.current!==p)return;preview.current=null;setAudition(null);ws.patch({error:String(error instanceof Error?error.message:error)});};
+      try{p.start(listenSpeed,listenLoop);}catch(e){p.stop();preview.current=null;setAudition(null);throw e;}
+    }catch(e){if(!request.signal.aborted)throw e;}
+    finally{if(listenRequest.current===request){listenRequest.current=null;setPreparingListen(false);}}
   };
   const openPanel=(next:'settings'|'range')=>{if(playing)session!.pause();preview.current?.pause();setPanel(next);};
   const rangeEdit=(value:number,side:'a'|'b')=>{if(!Number.isFinite(value))return;const n=Math.max(0,Math.min(snapshot.measures.length-1,Math.trunc(value)));update(side==='a'?{fromMeasure:n,toMeasure:Math.max(n,c.toMeasure)}:{toMeasure:n,fromMeasure:Math.min(n,c.fromMeasure)});};
   const selectMeasure=(index:number)=>{if(!selecting||active)return;rangeEdit(index,selecting);setSelecting(null);};
   const pedalToggle=<label className="v2-check"><input aria-label="Dùng pedal khi tập" type="checkbox" checked={c.pedalEnabled!==false} disabled={active||!!exercise?.loading} onChange={e=>update({pedalEnabled:e.target.checked})}/>Pedal</label>;
+  const canStop=active||!!audition||preparingListen||!!exercise&&(!!session||exercise.loading);
+  const stopButton=<button className="v2-stop" aria-label={audition||preparingListen?'Dừng nghe':active||exercise&&session?'Dừng lượt tập':'Dừng'} title="Dừng và trở về đầu đoạn" disabled={!canStop||stopping} onClick={()=>void ws.run(stop)}>■ Dừng</button>;
 
   const auditionControls=audition&&<div className="v2-audition" role="region" aria-label="Nghe bằng MuseScore">
-      <button className="v2-icon" aria-label="Dừng nghe" onClick={stopPreview}>■</button>
       <span className="v2-time">{time((audition.positionMs-(preview.current?.range.startMs??0))/listenSpeed)}</span>
       <input type="range" aria-label="Vị trí nghe" min={Math.floor(preview.current?.range.startMs??0)} max={Math.ceil(preview.current?.range.endMs??1)} step={1} value={Math.round(audition.positionMs)} onChange={e=>{preview.current?.seek(+e.target.value);setFollowToken(n=>n+1);}}/>
       <select aria-label="Tốc độ nghe" disabled={audition.preparing} value={listenSpeed} onChange={e=>{const value=+e.target.value;void ws.run(()=>preview.current?.speed(value));setListenSpeed(value);}}>{[.25,.5,.75,1,1.25,1.5,2].map(n=><option key={n} value={n}>{Math.round(n*100)}%</option>)}</select>
@@ -138,19 +171,20 @@ export function Practice({snapshot,config:c,exercise}:{snapshot:ScoreSnapshot;co
       <span className="v2-status" role="status">{message}</span>
     </header>
     <div className="v2-transport" hidden={barHidden&&focus} role="group" aria-label="Điều khiển tập luyện">
-      <button className="primary v2-play" aria-label={playing?'Tạm dừng lượt tập':active?'Tiếp tục lượt tập':'Bắt đầu tập'} disabled={busy||exercise?.loading||!t||(active&&!playing&&ws.midi.deviceId!==c.deviceId)} onClick={act(toggle)}>{playing?'Ⅱ Dừng':active?'▶ Tiếp':'▶ Tập'}</button>
-      <button className="v2-listen" disabled={active||busy||exercise?.loading||!nativeReady||audition?.preparing} aria-busy={!nativeReady||audition?.preparing} title={!nativeReady?'Đang chuẩn bị âm thanh MuseScore':active?'Kết thúc lượt để nghe mẫu':'Nghe bằng MuseScore'} aria-label={audition?.status==='playing'?'Tạm dừng nghe':audition?'Tiếp tục nghe':'Nghe đoạn'} aria-pressed={audition?.status==='playing'} onClick={act(listen)}>{audition?.status==='playing'?'Ⅱ Nghe':'♫ Nghe'}</button>
+      <button className="primary v2-play" title={playing?'Tạm dừng lượt tập':active?'Tiếp tục lượt tập':'Bắt đầu tập'} aria-label={playing?'Tạm dừng lượt tập':active?'Tiếp tục lượt tập':'Bắt đầu tập'} disabled={busy||stopping||exercise?.loading||!t||(active&&!playing&&ws.midi.deviceId!==c.deviceId)} onClick={act(toggle)}><span aria-hidden="true">{playing?'Ⅱ':'▶'}</span><span className="v2-play-label">{playing?'Tạm dừng':active?'Tiếp':'Tập'}</span></button>
+      {stopButton}
+      <button className="v2-listen" disabled={active||busy||stopping||exercise?.loading||!nativeReady||audition?.preparing} aria-busy={!nativeReady||preparingListen||audition?.preparing} title={!nativeReady?'Đang chuẩn bị âm thanh MuseScore':active?'Kết thúc lượt để nghe mẫu':'Nghe bằng MuseScore'} aria-label={audition?.status==='playing'?'Tạm dừng nghe':audition?'Tiếp tục nghe':'Nghe đoạn'} aria-pressed={audition?.status==='playing'} onClick={act(listen)}>{audition?.status==='playing'?'Ⅱ Nghe':'♫ Nghe'}</button>
       <button className="v2-pedal-toggle" role="switch" aria-label="Dùng pedal khi tập" aria-checked={c.pedalEnabled!==false} disabled={active||!!exercise?.loading} title={active?'Kết thúc lượt để đổi cấu hình chấm pedal':'Bật/tắt dùng pedal khi tập'} onClick={()=>update({pedalEnabled:c.pedalEnabled===false})}><span className={'v2-switch-dot'+(c.pedalEnabled!==false?' on':'')}/>Pedal</button>
       <span className="v2-flex"/>
       <span className="v2-focus-context" hidden={!focus}>Ô {currentMeasure+1} · Vòng {loop+1}/{c.loops} · {message}</span>
       <button className="v2-icon" aria-label="Thiết lập" onClick={()=>openPanel('settings')} title="Thiết lập">☷</button>
       <button className="v2-icon" aria-label={focus?'Thoát toàn màn hình':'Chỉ bản nhạc'} title={focus?'Thoát toàn màn hình':'Chỉ bản nhạc'} onClick={()=>void(focus?exitFocus():enterFocus())}>⛶</button>
-      {focus&&<button className="v2-icon" onClick={()=>setBarHidden(true)} aria-label="Ẩn thanh điều khiển">⌃</button>}
+      {focus&&<button className="v2-icon v2-hide-controls" onClick={()=>setBarHidden(true)} aria-label="Ẩn thanh điều khiển">⌃</button>}
     </div>
     {exercise&&<div className="exercise-session-bar">{exercise.controls}</div>}
     {exercise?.error&&<p className="v2-alert" role="alert">{exercise.error}</p>}
     {focus&&ws.state.error&&<p className="v2-alert" role="alert">{ws.state.error} <button onClick={()=>ws.patch({error:''})}>Đóng</button></p>}
-    {focus&&barHidden&&<button className="v2-reveal" onClick={()=>setBarHidden(false)}>⌄ Hiện điều khiển · Nghe · Pedal</button>}
+    {focus&&barHidden&&<div className="v2-reveal">{canStop&&stopButton}<button onClick={()=>setBarHidden(false)}>⌄ Hiện điều khiển</button></div>}
     <div className="v2-sheet-tools" hidden={focus}>
       <div className="v2-mode"><button disabled={active||!!exercise?.loading} aria-pressed={c.mode==='wait'} onClick={()=>update({mode:'wait'})}>Đúng nốt</button><button disabled={active||!!exercise?.loading} aria-pressed={c.mode==='bpm'} onClick={()=>update({mode:'bpm'})}>Theo BPM</button></div>
       <label className="v2-tempo"><NumberField aria-label="BPM" type="number" min={20} max={300} value={active?beat.bpm:c.bpm} disabled={active||!!exercise?.loading} onValue={value=>update({bpm:value})}/><span>BPM</span></label>
@@ -180,13 +214,13 @@ export function Practice({snapshot,config:c,exercise}:{snapshot:ScoreSnapshot;co
     <dialog ref={dialog} className="v2-drawer" aria-labelledby="v2-settings-title" onClose={()=>setPanel(null)}>
       <div className="v2-drawer-heading"><h2 id="v2-settings-title">{panel==='range'?'Đoạn luyện tập':'Thiết lập luyện tập'}</h2><button aria-label="Đóng thiết lập" onClick={()=>setPanel(null)}>×</button></div>
       {focus&&auditionControls}
-      <div className="v2-row v2-session-actions"><button disabled={busy||!t} onClick={act(restart)} aria-label="Tập lại đoạn">↺ Tập lại đoạn</button><button disabled={busy||!active} onClick={act(()=>session!.finish())} aria-label="Kết thúc lượt tập">■ Kết thúc lượt</button></div>
+      <div className="v2-row v2-session-actions"><button disabled={busy||stopping||!t} onClick={act(restart)} aria-label="Tập lại đoạn">↺ Tập lại đoạn</button><button disabled={!canStop||stopping} onClick={()=>void ws.run(stop)} aria-label="Kết thúc lượt tập">■ Dừng</button>{focus&&<button className="v2-hide-mobile" onClick={()=>{setPanel(null);setBarHidden(true);}}>Ẩn thanh điều khiển</button>}</div>
       {active&&<p className="v2-info">Kết thúc lượt để thay đổi cấu hình chấm. Lượt hiện tại vẫn được giữ.</p>}
       {panel==='settings'&&<fieldset disabled={active&&!['paused','interrupted'].includes(status)}><legend>Đàn MIDI</legend><div className="v2-row"><span>{device}</span><button onClick={act(()=>ws.midi.connect())}>Kết nối MIDI</button></div><label>Đầu vào<select aria-label="Thiết bị MIDI" value={ws.midi.deviceId} onChange={e=>void ws.run(async()=>{await ws.midi.select(e.target.value);update({deviceId:ws.midi.deviceId,inputSource:ws.midi.deviceId==='virtual'?'virtual':'midi'});})}><option value="virtual">Bàn phím ảo</option>{ws.midi.ports.map(p=><option key={p.id} value={p.id}>{p.name}</option>)}</select></label></fieldset>}
       {!exercise&&<fieldset disabled={active}><legend>Đoạn A–B và vòng tập</legend><div className="v2-field-pair"><label>Từ ô<NumberField aria-label="Từ ô nhịp" type="number" min={1} max={snapshot.measures.length} value={c.fromMeasure+1} onValue={value=>rangeEdit(value-1,'a')}/></label><label>Đến ô<NumberField aria-label="Đến ô nhịp" type="number" min={1} max={snapshot.measures.length} value={c.toMeasure+1} onValue={value=>rangeEdit(value-1,'b')}/></label></div><div className="v2-row"><button onClick={()=>{setSelecting('a');setPanel(null);}}>Chọn A trên bài</button><button onClick={()=>{setSelecting('b');setPanel(null);}}>Chọn B trên bài</button></div><div className="v2-field-pair"><label>Số vòng<NumberField aria-label="Số vòng" type="number" min={1} max={10} value={c.loops} onValue={value=>update({loops:value})}/></label><label>Tăng BPM mỗi vòng<NumberField type="number" min={0} max={50} value={c.loopBpmStep} onValue={value=>update({loopBpmStep:value})}/></label></div></fieldset>}
       {panel==='settings'&&<>
         <fieldset disabled={active||!!exercise?.loading}><legend>Nghe mẫu · MuseScore</legend><label>Phạm vi nghe<select aria-label="Phạm vi nghe" value={listenWhole?'whole':'range'} onChange={e=>{stopPreview();setListenWhole(e.target.value==='whole');}}><option value="range">Đoạn A–B</option><option value="whole">Toàn bài</option></select></label><label className="v2-check"><input type="checkbox" checked={listenLoop} onChange={e=>{setListenLoop(e.target.checked);preview.current?.loop(e.target.checked);}}/>Lặp khi nghe</label><p className="v2-help">Nghe theo tempo, dấu lặp và âm sắc của bản nhạc. Tốc độ nghe điều chỉnh riêng, không thay BPM chấm.</p></fieldset>
-        <fieldset disabled={active||!!exercise?.loading}><legend>Nhịp và tay tập</legend><label className="v2-check"><input type="checkbox" aria-label="Metronome" checked={c.metronome} onChange={e=>update({metronome:e.target.checked})}/>Metronome khi tập</label><div className="v2-field-pair"><label>Đơn vị phách<select disabled={!!exercise} aria-label="Đơn vị phách" value={c.beatQuarter} onChange={e=>update({beatQuarter:+e.target.value as .5|1|1.5})}><option value={.5}>♪ Móc đơn</option><option value={1}>♩ Nốt đen</option><option value={1.5}>♩. Đen chấm dôi</option></select></label><label>Đếm vào · phách<NumberField aria-label="Đếm vào" type="number" min={0} max={16} value={c.countIn} onValue={value=>update({countIn:value})}/></label></div><label>Tempo<select disabled={!!exercise} aria-label="Tempo" value={c.tempoMode} onChange={e=>update({tempoMode:e.target.value as 'fixed'|'score'})}><option value="fixed">Cố định theo BPM</option><option value="score">Theo thay đổi tempo của bài</option></select></label><label>Tập tay<select disabled={!!exercise} aria-label="Tay tập" value={c.hand} onChange={e=>update({hand:e.target.value as PracticeSettings['hand']})}><option value="both">Hai tay</option><option value="right">Tay phải</option><option value="left">Tay trái</option></select></label><label className="v2-check"><input type="checkbox" checked={c.accompaniment} onChange={e=>update({accompaniment:e.target.checked})}/>Phát tay còn lại khi tập BPM</label>
+        <fieldset disabled={active||!!exercise?.loading}><legend>Nhịp và tay tập</legend><label className="v2-check"><input type="checkbox" aria-label="Metronome" checked={c.metronome} onChange={e=>update({metronome:e.target.checked})}/>Metronome khi tập</label><div className="v2-field-pair"><label>Đơn vị phách<select disabled={!!exercise} aria-label="Đơn vị phách" value={c.beatQuarter} onChange={e=>update({beatQuarter:+e.target.value as .5|1|1.5})}><option value={.5}>♪ Móc đơn</option><option value={1}>♩ Nốt đen</option><option value={1.5}>♩. Đen chấm dôi</option></select></label><label>Đếm vào · phách<NumberField aria-label="Đếm vào" type="number" min={0} max={16} value={c.countIn} onValue={value=>update({countIn:value})}/></label></div><label>Tempo<select disabled={!!exercise} aria-label="Tempo" value={c.tempoMode} onChange={e=>update({tempoMode:e.target.value as 'fixed'|'score'})}><option value="fixed">Cố định theo BPM</option><option value="score">Theo thay đổi tempo của bài</option></select></label><label>Tập tay<select aria-label="Tay tập" value={c.hand} onChange={e=>update({hand:e.target.value as PracticeSettings['hand']})}><option value="both">Hai tay</option><option value="right">Tay phải</option><option value="left">Tay trái</option></select></label><label className="v2-check"><input type="checkbox" checked={c.accompaniment} onChange={e=>update({accompaniment:e.target.checked})}/>Phát tay còn lại khi tập BPM</label>
           <details><summary>Phân tay theo khuông và bè</summary>{snapshot.staves.map(s=><label key={s.id}>Khuông {s.id+1} · {s.part}<select disabled={!!exercise} value={c.roles[s.id]} onChange={e=>update({roles:{...c.roles,[s.id]:e.target.value as 'left'|'right'|'off'}})}><option value="right">Tay phải</option><option value="left">Tay trái</option><option value="off">Bỏ qua</option></select></label>)}<div className="v2-row">{[0,1,2,3].map(v=><label className="v2-check" key={v}><input type="checkbox" disabled={!!exercise} checked={c.voices.includes(v)} onChange={e=>update({voices:e.target.checked?[...c.voices,v].sort():c.voices.filter(x=>x!==v)})}/>Bè {v+1}</label>)}</div></details>
         </fieldset>
         <fieldset disabled={active||!!exercise?.loading}><legend>Chấm thời điểm và trường độ</legend><label>Độ chặt timing<select aria-label="Độ khó timing" value={c.difficulty} onChange={e=>update({difficulty:+e.target.value})}><option value={0}>Rộng · OD 0</option><option value={5}>Tiêu chuẩn · OD 5</option><option value={10}>Chặt · OD 10</option></select></label><label className="v2-check"><input type="checkbox" checked={c.durationEnabled!==false} onChange={e=>update({durationEnabled:e.target.checked})}/>Chấm nhả phím khi tập BPM</label>{pedalToggle}<label>Bù trễ đầu vào · ms<NumberField aria-label="Bù trễ ms" type="number" min={-500} max={500} value={c.offsetMs} onValue={value=>update({offsetMs:value})}/></label><CalibrationView settings={c} onApply={offsetMs=>update({offsetMs})}/><label className="v2-check"><input type="checkbox" checked={keepReplay} onChange={e=>setReplay(e.target.checked)}/>Lưu MIDI để kiểm chứng lại</label></fieldset>

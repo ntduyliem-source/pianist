@@ -1,0 +1,17 @@
+%abc-2.1
+X:1516
+T:g3-n6-016 Nhảy năm rồi hạ bậc
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fifth; lead=RH; bucket=n6; notes=6; RH=4; LH=2
+% role=R; duration60=4s; related_pattern=3463dbf532be80b5
+% authored_passages=inline-n6-016
+% source=buildscripts/pianist/compositions/g3/n6.txt:17
+[V:RH] C G F E |]
+[V:LH] C,2 C,2 |]

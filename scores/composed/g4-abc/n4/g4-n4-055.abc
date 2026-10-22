@@ -1,0 +1,17 @@
+%abc-2.1
+X:2155
+T:g4-n4-055 Đô trầm Sol tới Đô giữa
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=span; lead=LH; bucket=n4; notes=4; RH=1; LH=3
+% role=L; duration60=3s; related_pattern=84c5d74c4a4b1c05
+% authored_passages=inline-n4-055
+% source=buildscripts/pianist/compositions/g4/n4.txt:56
+[V:RH] E3 |]
+[V:LH] C, G, C |]

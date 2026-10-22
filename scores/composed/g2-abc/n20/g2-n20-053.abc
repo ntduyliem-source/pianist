@@ -1,0 +1,17 @@
+%abc-2.1
+X:1053
+T:g2-n20-053 Câu trầm bắt đầu yên
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=eighth; lead=LH; bucket=n20; notes=17; RH=4; LH=13
+% role=L; duration60=16s; related_pattern=a42a68c41e540662
+% authored_passages=F08
+% source=buildscripts/pianist/compositions/g2/n20.txt:54
+[V:RH] C4 | C4 | C4 | C4 |]
+[V:LH] C,4 | C,/2D,/2 E, D, C, | D,/2E,/2 D, C,2 | C, D, C,2 |]

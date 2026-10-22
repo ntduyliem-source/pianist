@@ -1,0 +1,19 @@
+%abc-2.1
+X:1897
+T:g3-n30-097 Sol dài trên câu chờ
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fifth; lead=RH; bucket=n30; notes=38; RH=19; LH=19
+% role=S; duration60=32s; related_pattern=7027130b6728238b
+% authored_passages=W02 W07
+% source=buildscripts/pianist/compositions/g3/n30.txt:98
+[V:RH] G2 C D | E2 F E | C2 G F | E D C2 |
+[V:LH] C,2 D, C, | C,2 D, C, | C,2 C, D, | C, D, C,2 |
+[V:RH] C4 | C G F2 | E2 C2 | C4 |]
+[V:LH] C,4 | C, C, D,2 | C,2 C,2 | C,4 |]

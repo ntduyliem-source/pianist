@@ -1,0 +1,19 @@
+%abc-2.1
+X:492
+T:g1-n30-092 Sáu ô ba phách chung
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n30; notes=32; RH=16; LH=16
+% role=S; family=octave-six-three; form=authored; duration60=18s
+% related_pattern=18d7fff775a496b3
+% source=buildscripts/pianist/compositions/g1/n30.txt:92
+[V:RH] C D E | F G F | E D C | D E F |
+[V:LH] C, D, E, | F, G, F, | E, D, C, | D, E, F, |
+[V:RH] E D C | C3 |]
+[V:LH] E, D, C, | C,3 |]

@@ -1,0 +1,25 @@
+%abc-2.1
+X:2729
+T:g4-n100-029 Năm đường rộng trong ba phách
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=span; lead=RH; bucket=n100; notes=76; RH=56; LH=20
+% role=R; duration60=60s; related_pattern=15a7bcebefa2fc10
+% authored_passages=W21 W24 W23 W21 W24
+% source=buildscripts/pianist/compositions/g4/n100.txt:30
+[V:RH] C G c | B A G | E G c | G C2 |
+[V:LH] C,3 | C,3 | C,3 | C,3 |
+[V:RH] C F A | c B G | E D C | G C2 |
+[V:LH] C,3 | C,3 | C,3 | C,3 |
+[V:RH] C G c | A G E | C F A | G E C |
+[V:LH] C,3 | C,3 | C,3 | C,3 |
+[V:RH] C G c | B A G | E G c | G C2 |
+[V:LH] C,3 | C,3 | C,3 | C,3 |
+[V:RH] C F A | c B G | E D C | G C2 |]
+[V:LH] C,3 | C,3 | C,3 | C,3 |]

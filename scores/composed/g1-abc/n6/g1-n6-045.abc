@@ -1,0 +1,17 @@
+%abc-2.1
+X:145
+T:g1-n6-045 Trầm vòng rồi về
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n6; notes=7; RH=2; LH=5
+% role=L; family=bass-turn-landing; form=authored; duration60=8s
+% related_pattern=acc4e2a1d79c81c5
+% source=buildscripts/pianist/compositions/g1/n6.txt:47
+[V:RH] C4 | C4 |]
+[V:LH] E, F, E, D, | C,4 |]

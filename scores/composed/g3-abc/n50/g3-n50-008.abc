@@ -1,0 +1,21 @@
+%abc-2.1
+X:1908
+T:g3-n50-008 Mi qua Fa trên nền đổi
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fourth; lead=RH; bucket=n50; notes=54; RH=42; LH=12
+% role=R; duration60=48s; related_pattern=46a53f7d173b26d7
+% authored_passages=F08 F13 F09
+% source=buildscripts/pianist/compositions/g3/n50.txt:9
+[V:RH] E C F E | D E F C | D G F E | D C C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] D2 G F | E C F E | D F E C | D E C2 |
+[V:LH] D,4 | C,4 | C,4 | C,4 |
+[V:RH] C F E2 | F C D E | D E F2 | E D C2 |]
+[V:LH] C,4 | C,4 | C,4 | C,4 |]

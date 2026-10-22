@@ -1,0 +1,17 @@
+%abc-2.1
+X:4938
+T:g8-n4-038 Dòng phụ trầm Mi Rê Đô
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G8; profile=ledger-low; lead=LH; bucket=n4; notes=4; RH=1; LH=3
+% duration60=4s; related_pattern=5011f16a25603582
+% authored_passages=L13
+% source=buildscripts/pianist/compositions/g8/studies.txt:39
+[V:RH] C4 |]
+[V:LH] E,,, D,,, C,,,2 |]

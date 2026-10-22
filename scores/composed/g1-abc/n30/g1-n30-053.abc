@@ -1,0 +1,21 @@
+%abc-2.1
+X:453
+T:g1-n30-053 Mười bước trầm qua cao
+C:Nhạc do trợ lý AI biên soạn
+M:2/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n30; notes=27; RH=10; LH=17
+% role=L; family=bass-ten-upper; form=authored; duration60=20s
+% related_pattern=a87f5ac0f50d5042
+% source=buildscripts/pianist/compositions/g1/n30.txt:55
+[V:RH] C2 | C2 | C2 | C2 |
+[V:LH] E, F, | G,2 | F, E, | D, E, |
+[V:RH] C2 | C2 | C2 | C2 |
+[V:LH] E,2 | E, F, | G, F, | E, D, |
+[V:RH] C2 | C2 |]
+[V:LH] E, F, | E,2 |]

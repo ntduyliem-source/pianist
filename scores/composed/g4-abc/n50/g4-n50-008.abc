@@ -1,0 +1,21 @@
+%abc-2.1
+X:2608
+T:g4-n50-008 Si qua Đô cao hai lời
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=upper; lead=RH; bucket=n50; notes=54; RH=42; LH=12
+% role=R; duration60=48s; related_pattern=1b5188e91f155fb4
+% authored_passages=U08 U13 U09
+% source=buildscripts/pianist/compositions/g4/n50.txt:9
+[V:RH] B G c B | A B c d | c A B G | A G G2 |
+[V:LH] G,4 | G,4 | G,4 | G,4 |
+[V:RH] A B c2 | B G c B | A B d c | B A G2 |
+[V:LH] G,4 | G,4 | G,4 | G,4 |
+[V:RH] G A B2 | c G A B | c d c2 | B A G2 |]
+[V:LH] G,4 | G,4 | G,4 | G,4 |]

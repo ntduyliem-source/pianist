@@ -1,0 +1,17 @@
+%abc-2.1
+X:2404
+T:g4-n20-004 Đô cao gọi vòng lại
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=upper; lead=RH; bucket=n20; notes=19; RH=15; LH=4
+% role=R; duration60=16s; related_pattern=0ccf7b7889f48b8a
+% authored_passages=U04
+% source=buildscripts/pianist/compositions/g4/n20.txt:5
+[V:RH] c B A G | A B c d | c B A B | A B G2 |]
+[V:LH] G,4 | G,4 | G,4 | G,4 |]

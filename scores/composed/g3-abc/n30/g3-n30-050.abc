@@ -1,0 +1,19 @@
+%abc-2.1
+X:1850
+T:g3-n30-050 Giữ Fa thấp về Đô
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fifth; lead=LH; bucket=n30; notes=31; RH=8; LH=23
+% role=L; duration60=32s; related_pattern=67cd4d923d3768ef
+% authored_passages=B05 B15
+% source=buildscripts/pianist/compositions/g3/n30.txt:51
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C, G, F,2 | E,2 D, C, | D, E, F, E, | D, C, C,2 |
+[V:RH] C4 | C4 | C4 | C4 |]
+[V:LH] C, G, F, E, | D, E, C,2 | C,2 C,2 | C,4 |]

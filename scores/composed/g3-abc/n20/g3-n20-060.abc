@@ -1,0 +1,17 @@
+%abc-2.1
+X:1760
+T:g3-n20-060 Sol rải thấp ba phách
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=arpeggio; lead=LH; bucket=n20; notes=15; RH=4; LH=11
+% role=L; duration60=12s; related_pattern=0d996fdb6da8a822
+% authored_passages=D22
+% source=buildscripts/pianist/compositions/g3/n20.txt:61
+[V:RH] C3 | C3 | C3 | C3 |]
+[V:LH] G, C, E, | G, E, C, | E, G, C, | G, C,2 |]

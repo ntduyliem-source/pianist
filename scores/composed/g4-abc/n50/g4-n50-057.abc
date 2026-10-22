@@ -1,0 +1,21 @@
+%abc-2.1
+X:2657
+T:g4-n50-057 Giữa giữ nghỉ rồi trầm
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=span; lead=LH; bucket=n50; notes=47; RH=12; LH=35
+% role=L; duration60=48s; related_pattern=8997f9e5930f047e
+% authored_passages=X07 X11 X06
+% source=buildscripts/pianist/compositions/g4/n50.txt:58
+[V:RH] E4 | E4 | E4 | E4 |
+[V:LH] C2 G, C, | E, F, G, A, | C B, A, G, | E, D, C,2 |
+[V:RH] E4 | E4 | E4 | E4 |
+[V:LH] C,2 G, C | G,2 C,2 | C,4 | C,4 |
+[V:RH] E4 | E4 | E4 | E4 |]
+[V:LH] C, G, C z | B, A, G, E, | D, F, A, G, | E, D, C,2 |]

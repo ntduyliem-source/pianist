@@ -1,0 +1,17 @@
+%abc-2.1
+X:2944
+T:g5-n6-044 Trầm Sol Mi nghe lớp
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=offset; lead=LH; bucket=n6; notes=7; RH=3; LH=4
+% duration60=8s; related_pattern=81251dce8725c508
+% authored_passages=O44 CL2
+% source=buildscripts/pianist/compositions/g5/studies.txt:45
+[V:RH] z G z C | C4 |]
+[V:LH] G,2 E, z | E,2 C,2 |]

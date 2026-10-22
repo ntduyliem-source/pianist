@@ -1,0 +1,19 @@
+%abc-2.1
+X:1858
+T:g3-n30-058 Rải trầm dài câu trả
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=arpeggio; lead=LH; bucket=n30; notes=29; RH=8; LH=21
+% role=L; duration60=32s; related_pattern=3731780a76fa31f5
+% authored_passages=D04 D10
+% source=buildscripts/pianist/compositions/g3/n30.txt:59
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C,2 G, E, | C, E, G, C, | E, G, C, E, | G, E, C,2 |
+[V:RH] C4 | C4 | C4 | C4 |]
+[V:LH] C,4 | C, G, E,2 | C,2 G,2 | C,4 |]

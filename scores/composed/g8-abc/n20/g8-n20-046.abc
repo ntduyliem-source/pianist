@@ -1,0 +1,19 @@
+%abc-2.1
+X:5246
+T:g8-n20-046 Dòng phụ trầm Sol Mi Đô
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G8; profile=ledger-low; lead=LH; bucket=n20; notes=20; RH=5; LH=15
+% duration60=20s; related_pattern=3d2f32b22a7be989
+% authored_passages=L21 LP1
+% source=buildscripts/pianist/compositions/g8/studies.txt:47
+[V:RH] C4 | C z z z | D z z z | C z z z |
+[V:LH] G,,, E,,, C,,,2 | C,,, D,,, E,,,2 | F,,, E,,, D,,,2 | E,,, G,,, F,,, E,,, |
+[V:RH] C z z z |]
+[V:LH] D,,,2 C,,,2 |]

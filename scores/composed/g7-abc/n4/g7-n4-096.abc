@@ -1,0 +1,17 @@
+%abc-2.1
+X:4296
+T:g7-n4-096 Rê Fa Mi trầm hai nhịp
+C:Nhạc do trợ lý AI biên soạn
+M:6/8
+L:1/4
+Q:3/8=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G7; profile=compound; lead=LH; bucket=n4; notes=4; RH=1; LH=3
+% duration60=2s; related_pattern=8b5a5f4fca13363f
+% authored_passages=K21
+% source=buildscripts/pianist/compositions/g7/studies.txt:97
+[V:RH] C3 |]
+[V:LH] D, F,/2 E,3/2 |]

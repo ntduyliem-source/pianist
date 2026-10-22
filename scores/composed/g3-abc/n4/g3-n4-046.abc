@@ -1,0 +1,17 @@
+%abc-2.1
+X:1446
+T:g3-n4-046 Hai đầu miền trầm
+C:Nhạc do trợ lý AI biên soạn
+M:2/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fifth; lead=LH; bucket=n4; notes=3; RH=1; LH=2
+% role=L; duration60=2s; related_pattern=05636b51a3c43429
+% authored_passages=inline-n4-046
+% source=buildscripts/pianist/compositions/g3/n4.txt:47
+[V:RH] C2 |]
+[V:LH] C, G, |]

@@ -1,0 +1,17 @@
+%abc-2.1
+X:1498
+T:g3-n4-098 Quãng năm dài cùng nhau
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fifth; lead=RH; bucket=n4; notes=4; RH=2; LH=2
+% role=S; duration60=4s; related_pattern=78722a011471b6c4
+% authored_passages=inline-n4-098
+% source=buildscripts/pianist/compositions/g3/n4.txt:99
+[V:RH] C2 G2 |]
+[V:LH] C,2 C,2 |]

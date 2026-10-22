@@ -1,0 +1,21 @@
+%abc-2.1
+X:2569
+T:g4-n30-069 Hai chuyện bass cao ba
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=upper; lead=LH; bucket=n30; notes=33; RH=16; LH=17
+% role=A; duration60=36s; related_pattern=0307915ccaaec51f
+% authored_passages=Q12 Q14
+% source=buildscripts/pianist/compositions/g4/n30.txt:70
+[V:RH] z3 | G F E | z3 | F E F |
+[V:LH] G, A, B, | z3 | C D C | z3 |
+[V:RH] z3 | G F G | z3 | G F E |
+[V:LH] B, A, G, | z3 | G,2 A, | z3 |
+[V:RH] z3 | F2 G | z3 | G2 G |]
+[V:LH] B, C D | z3 | C B, G, | z3 |]

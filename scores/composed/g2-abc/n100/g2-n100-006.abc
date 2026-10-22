@@ -1,0 +1,25 @@
+%abc-2.1
+X:1306
+T:g2-n100-006 Mi theo nền Rê về nhà
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=third; lead=RH; bucket=n100; notes=86; RH=66; LH=20
+% role=R; duration60=80s; related_pattern=73b4d2c231f11853
+% authored_passages=T06 T13 T07 T12 T05
+% source=buildscripts/pianist/compositions/g2/n100.txt:7
+[V:RH] E2 G F | E C D E | F E D C | D E C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C E D C | D2 F E | E G F E | D E C2 |
+[V:LH] C,4 | D,4 | C,4 | C,4 |
+[V:RH] C D F E | D C E D | C2 E D | E D C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C2 E D | F2 E D | E G F E | D E C2 |
+[V:LH] C,4 | D,4 | C,4 | C,4 |
+[V:RH] C2 E D | E2 G F | E D C2 | E2 C2 |]
+[V:LH] C,4 | C,4 | C,4 | C,4 |]

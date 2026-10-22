@@ -1,0 +1,21 @@
+%abc-2.1
+X:1268
+T:g2-n50-068 Nhiều cặp có câu chờ
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=eighth; lead=RH; bucket=n50; notes=52; RH=30; LH=22
+% role=A; duration60=48s; related_pattern=cc686e69640187dc
+% authored_passages=B03 B07 B06
+% source=buildscripts/pianist/compositions/g2/n50.txt:69
+[V:RH] C/2D/2 E/2F/2 G F | z4 | E D C/2D/2 C | z4 |
+[V:LH] z4 | C, D, E, D, | z4 | D, E, D, C, |
+[V:RH] C D/2E/2 F/2G/2 F | z4 | E D E/2D/2 C | z4 |
+[V:LH] z4 | C, D, E, D, | z4 | D, C, C,2 |
+[V:RH] C2 C/2D/2 E | z4 | D/2C/2 C C2 | z4 |]
+[V:LH] z4 | C, D, E, D, | z4 | D, C, C,2 |]

@@ -1,0 +1,17 @@
+%abc-2.1
+X:4450
+T:g7-n10-050 Rê trầm nối Mi Sol
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G7; profile=tie; lead=LH; bucket=n10; notes=10; RH=3; LH=7
+% duration60=12s; related_pattern=0c00eb3052e27772
+% authored_passages=T25 CL1 CL2
+% source=buildscripts/pianist/compositions/g7/studies.txt:51
+[V:RH] G4 | C4 | C4 |]
+[V:LH] E, G,/2 D,/2-D,2 | G,2 E,2 | E,2 C,2 |]

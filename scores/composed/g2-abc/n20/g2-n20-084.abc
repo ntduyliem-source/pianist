@@ -1,0 +1,19 @@
+%abc-2.1
+X:1084
+T:g2-n20-084 Sáu lượt trầm chia nhịp
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=eighth; lead=LH; bucket=n20; notes=18; RH=6; LH=12
+% role=A; duration60=18s; related_pattern=3c215d9c97d475f9
+% authored_passages=B23
+% source=buildscripts/pianist/compositions/g2/n20.txt:85
+[V:RH] z3 | C2 D | z3 | E2 D |
+[V:LH] C,/2D,/2 E, D, | z3 | C, D,/2E,/2 D, | z3 |
+[V:RH] z3 | C2 C |]
+[V:LH] C, D, E,/2D,/2 | z3 |]

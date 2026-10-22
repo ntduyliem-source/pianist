@@ -1,0 +1,27 @@
+%abc-2.1
+X:3445
+T:g5-n100-045 Trầm Sol Fa rồi nghỉ
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=offset; lead=LH; bucket=n100; notes=81; RH=37; LH=44
+% duration60=84s; related_pattern=69ce28254c97b392
+% authored_passages=O45 OL5 OL7 OL1 OL6 OL3
+% source=buildscripts/pianist/compositions/g5/studies.txt:46
+[V:RH] z G z F | C z z G | F z C z | z G z G |
+[V:LH] G,2 F, z | C, z G,2 | F,2 E,2 | D,2 G, z |
+[V:RH] C4 | F z z D | C z G z | z C z G |
+[V:LH] C,4 | F, z D,2 | E, F, G,2 | E,2 C, z |
+[V:RH] C4 | z C z G | C z G z | z F z G |
+[V:LH] D,2 C,2 | C,2 E, z | G,2 E,2 | F, E, D,2 |
+[V:RH] C4 | C z z G | C z G z | z C z C |
+[V:LH] E,2 C,2 | E, z D,2 | C,2 E,2 | G, F, E,2 |
+[V:RH] G4 | z G z C | G z D z | z G z G |
+[V:LH] D,2 C,2 | G,2 E, z | D, E, F,2 | E,2 D,2 |
+[V:RH] C4 |]
+[V:LH] C,4 |]

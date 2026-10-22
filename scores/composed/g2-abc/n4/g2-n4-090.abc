@@ -1,0 +1,17 @@
+%abc-2.1
+X:790
+T:g2-n4-090 Phách chia ở sau
+C:Nhạc do trợ lý AI biên soạn
+M:2/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=eighth; lead=RH; bucket=n4; notes=3; RH=2; LH=1
+% role=A; duration60=2s; related_pattern=89c2684caf7b66e2
+% authored_passages=inline-n4-090
+% source=buildscripts/pianist/compositions/g2/n4.txt:91
+[V:RH] z D/2E/2 |]
+[V:LH] C, z |]

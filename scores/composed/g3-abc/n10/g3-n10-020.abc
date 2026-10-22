@@ -1,0 +1,17 @@
+%abc-2.1
+X:1620
+T:g3-n10-020 Đô dài gọi Sol đáp
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fifth; lead=RH; bucket=n10; notes=9; RH=7; LH=2
+% role=R; duration60=8s; related_pattern=1cc065fbaf965484
+% authored_passages=inline-n10-020
+% source=buildscripts/pianist/compositions/g3/n10.txt:21
+[V:RH] C2 G F | E D E C |]
+[V:LH] C,4 | C,4 |]

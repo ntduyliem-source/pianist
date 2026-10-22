@@ -1,0 +1,25 @@
+%abc-2.1
+X:663
+T:g1-n100-063 Mười lời trên đồi
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n100; notes=74; RH=37; LH=37
+% role=A; family=ten-upper-answers; form=authored; duration60=80s
+% related_pattern=9d9c96febc6ddd4e
+% source=buildscripts/pianist/compositions/g1/n100.txt:64
+[V:RH] E F G2 | z4 | F E D E | z4 |
+[V:LH] z4 | C, D, E, F, | z4 | G, F, E, D, |
+[V:RH] F G F E | z4 | D E F G | z4 |
+[V:LH] z4 | C, D, E, F, | z4 | E, D, C, D, |
+[V:RH] F E D E | z4 | E F G F | z4 |
+[V:LH] z4 | E, F, E, D, | z4 | C, C, D, E, |
+[V:RH] E D C D | z4 | E F E D | z4 |
+[V:LH] z4 | F, G, F, E, | z4 | D, E, D, C, |
+[V:RH] C D E D | z4 | C2 C2 | z4 |]
+[V:LH] z4 | C, D, C, D, | z4 | C,4 |]

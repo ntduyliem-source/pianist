@@ -1,0 +1,7 @@
+n4;s
+n6;s c
+n10;s a c
+n20;s p
+n30;s p q
+n50;s p q r
+n100;s p q r t u

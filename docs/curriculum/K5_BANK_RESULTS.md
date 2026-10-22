@@ -1,5 +1,7 @@
 # K5 — kho MXL đã tổng kiểm và đóng gói
 
+> **BÁO CÁO LỊCH SỬ — kho này không đạt yêu cầu mới.** Đối soát ngày 21/10/2026: 5.455 bài một tay, chỉ 5 bài hai tay. Thực hiện [kế hoạch xây lại toàn bộ MXL đủ hai khuông](GRAND_STAFF_BANK_PLAN.md); không chuyển các số đạt dưới đây thành kết quả của kho mới. Báo cáo và artifact cũ được giữ để đối chiếu.
+
 Ngày 21/10/2026. **Đã hoàn tất lượt xử lý K3–K5 cho kho hiện tại; quota 300 bài cho mỗi lựa chọn chưa đạt.**
 
 Gói có **5.460 MXL không trùng** (tăng **176** so với lô cũ), thuộc **5.172 nhóm motif**. Hai lô có 5.461 bản ghi đã kiểm; một nội dung trùng giữa hai lô chỉ tính một lần. Các đoạn chồng lấn vẫn có thể tồn tại; nhóm motif không phải chứng nhận mọi trải nghiệm là độc lập.

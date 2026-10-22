@@ -1,0 +1,17 @@
+%abc-2.1
+X:3061
+T:g5-n10-061 Mi Sol về Đô
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=dyad; lead=RH; bucket=n10; notes=11; RH=7; LH=4
+% duration60=12s; related_pattern=6e725d9321b6f4b5
+% authored_passages=D11 CR2 CR1
+% source=buildscripts/pianist/compositions/g5/studies.txt:62
+[V:RH] [EG]2 C2 | E2 C2 | G2 E2 |]
+[V:LH] E,2 C,2 | C,4 | C,4 |]

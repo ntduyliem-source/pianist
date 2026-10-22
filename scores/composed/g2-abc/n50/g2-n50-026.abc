@@ -1,0 +1,21 @@
+%abc-2.1
+X:1226
+T:g2-n50-026 Ba lời chia ba phách
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=eighth; lead=RH; bucket=n50; notes=51; RH=39; LH=12
+% role=R; duration60=36s; related_pattern=892d8840c5af3e9e
+% authored_passages=E21 E22 E25
+% source=buildscripts/pianist/compositions/g2/n50.txt:27
+[V:RH] C/2D/2 E D | C D E/2F/2 | G F E | D/2C/2 C2 |
+[V:LH] C,3 | C,3 | C,3 | C,3 |
+[V:RH] C D/2E/2 F | E/2D/2 C2 | C D E | D/2C/2 C2 |
+[V:LH] C,3 | C,3 | C,3 | C,3 |
+[V:RH] C2 C/2D/2 | E F/2E/2 D | C D E/2D/2 | C3 |]
+[V:LH] C,3 | C,3 | C,3 | C,3 |]

@@ -1,0 +1,27 @@
+%abc-2.1
+X:5512
+T:g8-n100-012 Dòng phụ cao Mi Đô Sol
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G8; profile=ledger-high; lead=RH; bucket=n100; notes=78; RH=57; LH=21
+% duration60=84s; related_pattern=c5f1ea13c9018e7c
+% authored_passages=H12 HP4 HP1 HP2 HP3 HP4
+% source=buildscripts/pianist/compositions/g8/studies.txt:13
+[V:RH] e' c' g'2 | d' f' e'2 | g' e' d' c' | f'2 d'2 |
+[V:LH] C,4 | D, z z z | C, z z z | D, z z z |
+[V:RH] e'2 c'2 | c' d' e'2 | f' e' d'2 | e' g' f' e' |
+[V:LH] C, z z z | C, z z z | D, z z z | C, z z z |
+[V:RH] d'2 c'2 | e' g' e' d' | c'2 e'2 | f' e' d'2 |
+[V:LH] C, z z z | C, z z z | C, z z z | D, z z z |
+[V:RH] e'2 c'2 | g'2 e'2 | d' e' f' g' | e'2 d'2 |
+[V:LH] C, z z z | C, z z z | D, z z z | G, z z z |
+[V:RH] c'4 | d' f' e'2 | g' e' d' c' | f'2 d'2 |
+[V:LH] C, z z z | D, z z z | C, z z z | D, z z z |
+[V:RH] e'2 c'2 |]
+[V:LH] C, z z z |]

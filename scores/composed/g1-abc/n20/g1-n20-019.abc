@@ -1,0 +1,19 @@
+%abc-2.1
+X:319
+T:g1-n20-019 Sóng ngắn nhịp ba
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n20; notes=21; RH=15; LH=6
+% role=R; family=three-short-wave; form=authored; duration60=18s
+% related_pattern=b83554cd3cd0b3a8
+% source=buildscripts/pianist/compositions/g1/n20.txt:22
+[V:RH] C D C | D E D | E F E | D E D |
+[V:LH] C,3 | C,3 | C,3 | C,3 |
+[V:RH] C2 C | C3 |]
+[V:LH] C,3 | C,3 |]

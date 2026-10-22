@@ -1,0 +1,21 @@
+%abc-2.1
+X:1210
+T:g2-n50-010 Nghỉ một phách kể tiếp
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=third; lead=RH; bucket=n50; notes=53; RH=41; LH=12
+% role=R; duration60=48s; related_pattern=1b7fddbfa5e4e199
+% authored_passages=T10 T04 T05
+% source=buildscripts/pianist/compositions/g2/n50.txt:11
+[V:RH] C E z D | E G F E | D E D C | D E C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C C E D | E F D C | D E G F | E D E C |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C2 E D | E2 G F | E D C2 | E2 C2 |]
+[V:LH] C,4 | C,4 | C,4 | C,4 |]

@@ -1,0 +1,17 @@
+%abc-2.1
+X:5082
+T:g8-n6-082 Đôi Mi Sol rồi nối Mi
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G8; profile=dyad-tie; lead=RH; bucket=n6; notes=8; RH=6; LH=2
+% duration60=8s; related_pattern=8da0ebcb92eac92a
+% authored_passages=T07 CR2
+% source=buildscripts/pianist/compositions/g8/studies.txt:83
+[V:RH] [EG] F/2 E/2-E2 | E2 C2 |]
+[V:LH] C,4 | C,4 |]

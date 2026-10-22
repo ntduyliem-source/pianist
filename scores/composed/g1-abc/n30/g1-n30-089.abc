@@ -1,0 +1,17 @@
+%abc-2.1
+X:489
+T:g1-n30-089 Bốn ô chung bậc cao
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n30; notes=28; RH=14; LH=14
+% role=S; family=octave-four-upper; form=authored; duration60=16s
+% related_pattern=254ec7c017b2b36f
+% source=buildscripts/pianist/compositions/g1/n30.txt:89
+[V:RH] E F G2 | F E D E | F G F E | D E E2 |]
+[V:LH] E, F, G,2 | F, E, D, E, | F, G, F, E, | D, E, E,2 |]

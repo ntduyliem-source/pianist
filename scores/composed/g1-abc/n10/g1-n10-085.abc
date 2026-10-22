@@ -1,0 +1,17 @@
+%abc-2.1
+X:285
+T:g1-n10-085 Lời cuối ở khuông trầm
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n10; notes=12; RH=7; LH=5
+% role=A; family=last-answer; form=authored; duration60=16s
+% related_pattern=6b129236d7c11127
+% source=buildscripts/pianist/compositions/g1/n10.txt:86
+[V:RH] C D E F | z4 | E D C2 | z4 |]
+[V:LH] z4 | E, F, E,2 | z4 | D, z C,2 |]

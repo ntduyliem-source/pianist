@@ -1,0 +1,17 @@
+%abc-2.1
+X:2294
+T:g4-n6-094 Sol La bass Si giữ
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=upper; lead=LH; bucket=n6; notes=6; RH=3; LH=3
+% role=S; duration60=4s; related_pattern=5585c50a1c422aa1
+% authored_passages=inline-n6-094
+% source=buildscripts/pianist/compositions/g4/n6.txt:95
+[V:RH] G G G2 |]
+[V:LH] G, A, B,2 |]

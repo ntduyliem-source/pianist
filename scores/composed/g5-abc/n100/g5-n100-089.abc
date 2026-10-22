@@ -1,0 +1,27 @@
+%abc-2.1
+X:3489
+T:g5-n100-089 Mi Sol trầm tìm Fa
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=dyad; lead=LH; bucket=n100; notes=86; RH=31; LH=55
+% duration60=84s; related_pattern=4f9af0030c7d8701
+% authored_passages=D39 DL6 DL1 DL4 DL2 DL7
+% source=buildscripts/pianist/compositions/g5/studies.txt:90
+[V:RH] E2 F2 | G2 F2 | C4 | G4 |
+[V:LH] [E,G,]2 F,2 | [D,G,]2 F,2 | E,2 C,2 | D, E, G,2 |
+[V:RH] C4 | C2 G2 | D2 F2 | G4 |
+[V:LH] [C,E,]4 | [C,E,]2 G,2 | [D,F,]2 F,2 | E, D, C,2 |
+[V:RH] C4 | D2 D2 | C4 | E2 G2 |
+[V:LH] [C,E,]4 | [D,F,]2 D,2 | E,2 G,2 | [E,G,]2 D,2 |
+[V:RH] C4 | C2 E2 | D2 D2 | C4 |
+[V:LH] [C,E,]4 | [E,G,]2 E,2 | [D,F,]2 D,2 | C, D, E,2 |
+[V:RH] C4 | E2 G2 | D4 | D2 E2 |
+[V:LH] [C,G,]4 | [E,G,]2 G,2 | F,2 D,2 | [D,F,]2 E,2 |
+[V:RH] C4 |]
+[V:LH] [C,E,]4 |]

@@ -1,0 +1,25 @@
+%abc-2.1
+X:2040
+T:g3-n100-040 Nền cao đổi câu nhảy thấp
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fourth; lead=LH; bucket=n100; notes=89; RH=20; LH=69
+% role=L; duration60=80s; related_pattern=2e32f025f50a6184
+% authored_passages=G11 G14 G13 G04 G06
+% source=buildscripts/pianist/compositions/g3/n100.txt:41
+[V:RH] C4 | D4 | C4 | C4 |
+[V:LH] C,2 F, E, | F,2 E, D, | C, F, E, D, | C,2 C,2 |
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] F,2 C, D, | E, D, F, E, | D, G, F, E, | D, C, C,2 |
+[V:RH] D4 | C4 | C4 | C4 |
+[V:LH] D,2 G, F, | E, C, F, E, | D, F, E, C, | D, E, C,2 |
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] F, C, D, E, | F, E, D, C, | D, G, F, E, | D, E, C,2 |
+[V:RH] C4 | C4 | C4 | C4 |]
+[V:LH] C, F, z E, | D, G, F, E, | D, E, F, C, | D, E, C,2 |]

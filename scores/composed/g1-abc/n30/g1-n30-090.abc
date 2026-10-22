@@ -1,0 +1,19 @@
+%abc-2.1
+X:490
+T:g1-n30-090 Năm ô sóng đôi
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n30; notes=36; RH=18; LH=18
+% role=S; family=octave-five-arch; form=authored; duration60=20s
+% related_pattern=afba3c2b83885238
+% source=buildscripts/pianist/compositions/g1/n30.txt:90
+[V:RH] C D E F | G F E2 | D E F E | D C D E |
+[V:LH] C, D, E, F, | G, F, E,2 | D, E, F, E, | D, C, D, E, |
+[V:RH] D C C2 |]
+[V:LH] D, C, C,2 |]

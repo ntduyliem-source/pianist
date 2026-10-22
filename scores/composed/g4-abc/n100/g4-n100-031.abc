@@ -1,0 +1,25 @@
+%abc-2.1
+X:2731
+T:g4-n100-031 Ngày mới qua năm cửa bass
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=upper; lead=LH; bucket=n100; notes=92; RH=22; LH=70
+% role=L; duration60=80s; related_pattern=1c167c9b401a685f
+% authored_passages=V01 V06 V12 V05 V08
+% source=buildscripts/pianist/compositions/g4/n100.txt:32
+[V:RH] G4 | G4 | G4 | G4 |
+[V:LH] G, A, B, C | D C B, A, | G, B, C B, | A, B, G,2 |
+[V:RH] G4 | G4 | G4 | G4 |
+[V:LH] G, B, z A, | B, C D C | B, A, B, G, | A, B, G,2 |
+[V:RH] G2 G2 | G4 | G2 G2 | G4 |
+[V:LH] G, A, B, C | D B, C D | C B, A, G, | A, B, G,2 |
+[V:RH] G4 | G4 | G4 | G4 |
+[V:LH] G,2 B, A, | G,2 B, C | D C B,2 | G,2 G,2 |
+[V:RH] G4 | G4 | G4 | G4 |]
+[V:LH] B, G, C B, | A, B, C D | C A, B, G, | A, G, G,2 |]

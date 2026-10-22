@@ -13,9 +13,10 @@ import { MidiRouter } from './platform/midi-v2';
 import * as storage from './platform/storage';
 import {PracticeController} from './practice/controller-v2';
 import { loadEngineAssets } from './platform/engine-assets';
-import {loadBundledCatalog,loadBundledScore,type BundledScore} from './platform/bundled-library';
+import {loadBundledCatalog,loadBundledScore,bundledPracticeNotice,type BundledScore} from './platform/bundled-library';
 
-type View = 'library' | 'editor' | 'practice' | 'results' | 'history' | 'exercises';
+type View = 'library' | 'editor' | 'practice' | 'results' | 'history';
+export type PracticeKind = 'free' | 'grade';
 export interface TuneSelection {
   requestId: number; filename: string; tunes: AbcTune[]; sourceBytes: number; practice: boolean;
   selected: number[]; openIndex: number; errors: Record<number, string>; error?: string;
@@ -27,6 +28,7 @@ export interface WorkspaceState {
   exampleTitle: string;
   bundledScores: BundledScore[];
   practicePicker: boolean;
+  practiceKind: PracticeKind;
   canCancelOpen?: boolean;
   cancelOpenLabel?: string;
   engineFailed?: boolean;
@@ -34,7 +36,7 @@ export interface WorkspaceState {
   tuneSelection?: TuneSelection;
 }
 export class Workspace {
-  state: WorkspaceState = {view: 'library', busy: '', error: '', toast: '', projects: [], history: [], bundledScores: [], revision: 0, savedRevision: 0, recoveryRevision: 0, saveState: '', engineReady: false, midiVersion: 0, exampleTitle: 'Piano khởi động', practicePicker: true};
+  state: WorkspaceState = {view: 'library', busy: '', error: '', toast: '', projects: [], history: [], bundledScores: [], revision: 0, savedRevision: 0, recoveryRevision: 0, saveState: '', engineReady: false, midiVersion: 0, exampleTitle: 'Piano khởi động', practicePicker: true, practiceKind: 'free'};
   bridge?: EngineBridge; session?: PracticeController; readonly midi = new MidiRouter();
   private listeners = new Set<() => void>(); private engineLoading?: Promise<EngineBridge>; private loadingDocument = false;
   private nativeBase = 0; private revisionBase = 0; private nativeRevision = 0; private autosaveTimer?: number; private leaseTimer?: number; private toastTimer?: number;
@@ -75,12 +77,26 @@ export class Workspace {
     if (catalog?.examples?.[0]?.title) this.patch({exampleTitle: catalog.examples[0].title});
     this.patch({bundledScores:await loadBundledCatalog().catch(()=>[])});
     const initialView = location.hash.slice(2);
-    history.replaceState(null, '', location.pathname + location.search + (initialView === 'exercises' ? '#/exercises' : '#/library'));
-    if(initialView === 'exercises') this.navigate('exercises');
+    try {if(localStorage.getItem('pianist.practice-kind')==='grade')this.patch({practiceKind:'grade'});} catch {}
+    if(initialView==='exercises'){
+      this.patch({practiceKind:'grade'});
+      try {localStorage.setItem('pianist.practice-kind','grade');} catch {}
+    }
+    const initialPractice=initialView==='practice'||initialView==='exercises';
+    history.replaceState(null, '', location.pathname + location.search + (initialPractice ? '#/practice' : '#/library'));
+    if(initialPractice)this.openPractice();
     window.addEventListener('hashchange', () => {
-      const view = location.hash.slice(2) as View;
+      const route = location.hash.slice(2);
+      if(route==='exercises') {
+        if(this.session&&!['ready','finished'].includes(this.session.status)){
+          history.replaceState(null,'',location.pathname+location.search+'#/'+this.state.view);
+          if(this.state.practiceKind!=='grade')this.notice('Kết thúc lượt trước khi chuyển sang tập theo grade.');
+        }else void this.run(()=>this.selectPracticeKind('grade'));
+        return;
+      }
+      const view = route as View;
       if (view === this.state.view) return;
-      if (['library', 'editor', 'practice', 'results', 'history', 'exercises'].includes(view)) {
+      if (['library', 'editor', 'practice', 'results', 'history'].includes(view)) {
         if (view === 'editor' && !this.state.current) void this.run(() => this.openEditor());
         else if (view === 'practice') void this.run(() => this.enterPractice());
         else if (view === 'results' && !this.state.result) this.navigate('library');
@@ -93,7 +109,7 @@ export class Workspace {
       if (this.recovery) this.notice('Có bản tự lưu. Mở bài trong thư viện sẽ phục hồi các thay đổi gần nhất.');
     } catch (e) {this.fail(e);}
     this.midi.onChange = () => {
-      if(this.state.view!=='exercises'&&this.state.config&&this.state.config.deviceId!==this.midi.deviceId&&(!this.session||['ready','finished'].includes(this.session.status))){
+      if(!(this.state.view==='practice'&&this.state.practiceKind==='grade')&&this.state.config&&this.state.config.deviceId!==this.midi.deviceId&&(!this.session||['ready','finished'].includes(this.session.status))){
         const deviceId=this.midi.deviceId;
         this.updatePracticeSettings({deviceId,offsetMs:0});
         void storage.get<{id:string;offsetMs:number}>('settings','calibration-v2:'+deviceId).then(profile=>{
@@ -107,7 +123,7 @@ export class Workspace {
     this.midi.onInput = (e, bytes) => {
       if (this.state.engineFailed) return;
       if (this.state.view === 'editor') this.bridge?.api.midiInput(bytes[0], bytes[1], bytes[2]);
-      if (this.state.view === 'practice' || this.state.view === 'exercises') {
+      if (this.state.view === 'practice') {
         this.session?.input(e);
       }
     };
@@ -127,11 +143,11 @@ export class Workspace {
     const win = element ?? root?.querySelector('.qt-decorated-window:not(.inactive) .qt-window');
     if (win && !win.contains(root?.activeElement ?? null)) (win.querySelector('.qt-window-focus-helper') as HTMLElement)?.focus({preventScroll: true});
   };
-  async ensureEngine(): Promise<EngineBridge> {
+  async ensureEngine(background = false): Promise<EngineBridge> {
     if (this.state.engineFailed) throw Error('Tải lại trang để khởi động lại MuseScore.');
     if (this.bridge) return this.bridge;
     if (this.engineLoading) return this.engineLoading;
-    this.patch({busy: 'Đang tải MuseScore… Lần đầu cần tải bộ ký âm và tiếng piano.'});
+    if(!background)this.patch({busy: 'Đang tải MuseScore… Lần đầu cần tải bộ ký âm và tiếng piano.'});
     this.engineLoading = (async () => {
       const started = performance.now();
       const wasmBinary = await loadEngineAssets();
@@ -211,8 +227,17 @@ export class Workspace {
     this.patch({practicePicker: true});
     this.navigate('practice');
   }
+  selectPracticeKind(kind: PracticeKind): void {
+    this.requireInactiveSession();
+    this.session?.dispose();this.session=undefined;
+    this.restoreExerciseEditor();
+    this.patch({practiceKind:kind,practicePicker:true});
+    try {localStorage.setItem('pianist.practice-kind',kind);} catch {}
+    this.navigate('practice');
+  }
   async enterPractice(): Promise<void> {
     if (this.session && !['ready','finished'].includes(this.session.status)) {this.navigate('practice');return;}
+    if(this.state.practiceKind==='grade'){this.openPractice();return;}
     if (!this.state.current || !this.bridge) {this.openPractice();return;}
     await this.practice();
   }
@@ -398,6 +423,7 @@ export class Workspace {
   }
   async openBundledScore(score:BundledScore,practice=false):Promise<void>{
     this.requireInactiveSession();
+    if(practice&&score.practiceReady===false)throw Error(score.practiceNotice||'Phiên bản này hiện hỗ trợ nghe và chỉnh sửa.');
     const bytes=await loadBundledScore(score);
     const existing=this.state.projects.find(p=>!p.archived&&p.sourceName===score.filename&&p.source?.length===bytes.length&&p.source.every((b,i)=>b===bytes[i]));
     if(existing){await this.openProject(existing.id,practice);return;}
@@ -466,7 +492,12 @@ export class Workspace {
     });
   }
   async practice(overrides?: Partial<PracticeSettings>): Promise<void> {
+    const practiceNotice=await bundledPracticeNotice(this.state.bundledScores,this.state.current?.sourceName,this.state.current?.source);
+    if(practiceNotice)throw Error(practiceNotice);
+    this.requireInactiveSession();
     this.restoreExerciseEditor();
+    this.patch({practiceKind:'free'});
+    try {localStorage.setItem('pianist.practice-kind','free');} catch {}
     if (!this.state.current || !this.bridge) {this.openPractice(); return;}
     if (this.session && !['ready', 'finished'].includes(this.session.status)) throw Error('Kết thúc lượt tập trước khi thay đổi bản nhạc.');
     this.session?.dispose(); this.session = undefined;
@@ -495,12 +526,12 @@ export class Workspace {
   navigate(view: View): void {
     if (this.state.engineFailed) return;
     if(view===this.state.view&&this.session&&!['ready','finished'].includes(this.session.status))return;
-    if (view==='practice' && !this.state.practicePicker && this.state.snapshot && (this.state.snapshot.projectId!==this.state.current?.id || this.state.snapshot.revision!==this.state.revision)) {void this.run(()=>this.enterPractice());return;}
+    if (view==='practice' && this.state.practiceKind==='free' && !this.state.practicePicker && this.state.snapshot && (this.state.snapshot.projectId!==this.state.current?.id || this.state.snapshot.revision!==this.state.revision)) {void this.run(()=>this.enterPractice());return;}
     if (this.session && !['ready', 'finished'].includes(this.session.status) && view !== this.state.view) {
       location.hash='/'+this.state.view;
       this.notice('Bấm Kết thúc lượt tập trước khi chuyển màn hình.'); return;
     }
-    if(view!=='exercises')this.restoreExerciseEditor();
+    if(view!=='practice'||this.state.practiceKind!=='grade')this.restoreExerciseEditor();
     this.midi.release();
     if (view === 'editor') this.bridge?.setPractice(false); else if (this.bridge) this.bridge.setPractice(true);
     this.patch({view}); location.hash = '/' + view;
@@ -520,9 +551,10 @@ export class Workspace {
   async exerciseAudition(bytes:Uint8Array,signal:AbortSignal):Promise<EngineBridge>{
     this.requireInactiveSession();signal.throwIfAborted();
     await this.autosave(true);
-    const bridge=await this.ensureEngine();
+    // The practice transport owns its loading state so Stop remains reachable.
+    const bridge=await this.ensureEngine(true);
     signal.throwIfAborted();this.requireInactiveSession();
-    if(this.state.view!=='exercises')throw Error('Đã rời màn bài tập.');
+    if(this.state.view!=='practice'||this.state.practiceKind!=='grade')throw Error('Đã rời màn tập theo grade.');
     if(!this.exerciseNative){this.editorBeforeExercise=this.state.current?bridge.serialize():undefined;this.exerciseNative=true;}
     bridge.setPractice(false);
     try{if(!bridge.api.loadScoreData(bytes,'exercise.mxl'))throw Error('MuseScore chưa mở được bài nghe.');}

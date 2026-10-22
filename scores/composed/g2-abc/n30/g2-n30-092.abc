@@ -1,0 +1,19 @@
+%abc-2.1
+X:1192
+T:g2-n30-092 Nốt trầm dài dần lắng
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=third; lead=LH; bucket=n30; notes=30; RH=15; LH=15
+% role=S; duration60=32s; related_pattern=1d54e724b805711e
+% authored_passages=S07 S19
+% source=buildscripts/pianist/compositions/g2/n30.txt:93
+[V:RH] C2 C2 | D D C2 | C2 C2 | C2 C2 |
+[V:LH] C,2 E,2 | D, E, C,2 | E,2 G,2 | E,2 C,2 |
+[V:RH] C4 | C2 D C | C4 | C4 |]
+[V:LH] C,4 | E,2 D, C, | C,4 | C,4 |]

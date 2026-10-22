@@ -1,0 +1,23 @@
+%abc-2.1
+X:4762
+T:g7-n50-062 Đô đảo Mi Fa
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G7; profile=sync; lead=RH; bucket=n50; notes=55; RH=42; LH=13
+% duration60=52s; related_pattern=6e065059bd036af3
+% authored_passages=Y12 YR4 YR1 YR2
+% source=buildscripts/pianist/compositions/g7/studies.txt:63
+[V:RH] D/2 C E/2 F2 | D/2 F E/2 G2 | F E D2 | E/2 D C/2 E2 |
+[V:LH] F,4 | G, z z z | D, z z z | C, z z z |
+[V:RH] D2 C2 | C/2 D E/2 G2 | F/2 E D/2 C2 | E2 G2 |
+[V:LH] C, z z z | C, z z z | C, z z z | C, z z z |
+[V:RH] D2 C2 | E/2 F G/2 E2 | D/2 E F/2 D2 | E D C2 |
+[V:LH] C, z z z | C, z z z | D, z z z | C, z z z |
+[V:RH] D2 C2 |]
+[V:LH] C, z z z |]

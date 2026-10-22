@@ -1,0 +1,19 @@
+%abc-2.1
+X:3173
+T:g5-n20-073 Rê Sol tìm Mi
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=dyad; lead=RH; bucket=n20; notes=22; RH=14; LH=8
+% duration60=20s; related_pattern=57850e65cb73d7ed
+% authored_passages=D23 DR8
+% source=buildscripts/pianist/compositions/g5/studies.txt:74
+[V:RH] [DG]2 E2 | [CG]2 G2 | E D C2 | [CE]2 D2 |
+[V:LH] D,2 E,2 | C,2 G,2 | C,4 | C,2 G,2 |
+[V:RH] [CG]4 |]
+[V:LH] C,4 |]

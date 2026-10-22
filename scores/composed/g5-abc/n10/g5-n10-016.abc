@@ -1,0 +1,17 @@
+%abc-2.1
+X:3016
+T:g5-n10-016 Fa Sol qua nhịp đệm
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=offset; lead=RH; bucket=n10; notes=10; RH=6; LH=4
+% duration60=12s; related_pattern=6ee903ce7754cd8b
+% authored_passages=O16 CR1 CR3
+% source=buildscripts/pianist/compositions/g5/studies.txt:17
+[V:RH] F2 G z | G2 E2 | D2 C2 |]
+[V:LH] z F, z G, | C,4 | G,4 |]

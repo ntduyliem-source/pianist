@@ -1,0 +1,17 @@
+%abc-2.1
+X:2947
+T:g5-n6-047 Trầm Rê nhường Fa
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=offset; lead=LH; bucket=n6; notes=7; RH=3; LH=4
+% duration60=8s; related_pattern=9bfcad4330028d7f
+% authored_passages=O47 CL3
+% source=buildscripts/pianist/compositions/g5/studies.txt:48
+[V:RH] D z z F | G4 |]
+[V:LH] D, z F,2 | D,2 C,2 |]

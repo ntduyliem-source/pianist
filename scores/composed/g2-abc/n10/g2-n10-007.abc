@@ -1,0 +1,17 @@
+%abc-2.1
+X:907
+T:g2-n10-007 Về nhà qua bậc giữa
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=third; lead=RH; bucket=n10; notes=10; RH=8; LH=2
+% role=R; duration60=8s; related_pattern=74ac460349b5e3e3
+% authored_passages=inline-n10-007
+% source=buildscripts/pianist/compositions/g2/n10.txt:8
+[V:RH] D F E C | D E D C |]
+[V:LH] C,4 | C,4 |]

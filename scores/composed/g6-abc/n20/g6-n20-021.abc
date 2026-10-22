@@ -1,0 +1,19 @@
+%abc-2.1
+X:3821
+T:g6-n20-021 Sáu trưởng Đô La
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G6; profile=M6-up; lead=RH; bucket=n20; notes=21; RH=16; LH=5
+% duration60=20s; related_pattern=dcea8448bac5737f
+% authored_passages=S21 BU1
+% source=buildscripts/pianist/compositions/g6/studies.txt:22
+[V:RH] D C A G | G D C A | G E D2 | E F G2 |
+[V:LH] C,4 | C, z z z | C, z z z | C, z z z |
+[V:RH] E2 C2 |]
+[V:LH] C, z z z |]

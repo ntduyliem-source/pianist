@@ -1,0 +1,17 @@
+%abc-2.1
+X:1667
+T:g3-n10-067 Fa trầm gọi nghe đáp
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fourth; lead=LH; bucket=n10; notes=12; RH=6; LH=6
+% role=A; duration60=12s; related_pattern=b2bc84e205e037f2
+% authored_passages=inline-n10-067
+% source=buildscripts/pianist/compositions/g3/n10.txt:68
+[V:RH] z3 | E D C | z3 | D E D |]
+[V:LH] F, C, D, | z3 | E, D, C, | z3 |]

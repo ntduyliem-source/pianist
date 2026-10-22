@@ -1,0 +1,19 @@
+%abc-2.1
+X:2519
+T:g4-n30-019 Mi gọi giữ La thấp
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=lower; lead=RH; bucket=n30; notes=31; RH=23; LH=8
+% role=R; duration60=32s; related_pattern=577874a71d8fb67a
+% authored_passages=L04 L14
+% source=buildscripts/pianist/compositions/g4/n30.txt:20
+[V:RH] E B, C D | C A, B, C | D E D C | B, C A,2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] A, C B, A, | C2 A,2 | A,4 | A,4 |]
+[V:LH] C,4 | C,4 | C,4 | C,4 |]

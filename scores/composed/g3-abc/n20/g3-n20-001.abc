@@ -1,0 +1,17 @@
+%abc-2.1
+X:1701
+T:g3-n20-001 Bốn ô cửa qua Fa
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fourth; lead=RH; bucket=n20; notes=19; RH=15; LH=4
+% role=R; duration60=16s; related_pattern=38c51e4f08e00635
+% authored_passages=F01
+% source=buildscripts/pianist/compositions/g3/n20.txt:2
+[V:RH] C F E D | C D F E | D G F E | D E C2 |]
+[V:LH] C,4 | C,4 | C,4 | C,4 |]

@@ -1,0 +1,17 @@
+%abc-2.1
+X:834
+T:g2-n6-034 Bậc thấp nhắc lại
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=third; lead=LH; bucket=n6; notes=6; RH=2; LH=4
+% role=L; duration60=4s; related_pattern=35c8194760218c11
+% authored_passages=inline-n6-034
+% source=buildscripts/pianist/compositions/g2/n6.txt:35
+[V:RH] C2 C2 |]
+[V:LH] E, C, D, C, |]

@@ -1,0 +1,19 @@
+%abc-2.1
+X:1854
+T:g3-n30-054 Đô thấp dài gọi Sol
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fifth; lead=LH; bucket=n30; notes=31; RH=8; LH=23
+% role=L; duration60=24s; related_pattern=5a520331cd2ceb44
+% authored_passages=B23 B24
+% source=buildscripts/pianist/compositions/g3/n30.txt:55
+[V:RH] C3 | C3 | C3 | C3 |
+[V:LH] C,2 G, | F, E, D, | C, G, F, | E, D, C, |
+[V:RH] C3 | C3 | C3 | C3 |]
+[V:LH] C, G, F, | E, D, C, | D, G, F, | E, D, C, |]

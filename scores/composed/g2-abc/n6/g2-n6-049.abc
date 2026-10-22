@@ -1,0 +1,17 @@
+%abc-2.1
+X:849
+T:g2-n6-049 Hai cặp thấp mở câu
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=eighth; lead=LH; bucket=n6; notes=7; RH=1; LH=6
+% role=L; duration60=4s; related_pattern=214108e330893672
+% authored_passages=inline-n6-049
+% source=buildscripts/pianist/compositions/g2/n6.txt:50
+[V:RH] C4 |]
+[V:LH] C,/2D,/2 E,/2F,/2 E, D, |]

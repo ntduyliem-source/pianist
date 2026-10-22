@@ -1,0 +1,19 @@
+%abc-2.1
+X:1128
+T:g2-n30-028 Mi gọi Đô trả lời
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=eighth; lead=RH; bucket=n30; notes=36; RH=28; LH=8
+% role=R; duration60=24s; related_pattern=1f843f3d30783e9a
+% authored_passages=E23 E21
+% source=buildscripts/pianist/compositions/g2/n30.txt:29
+[V:RH] E/2F/2 G F | E D C | C/2D/2 E D | C C C |
+[V:LH] C,3 | C,3 | C,3 | C,3 |
+[V:RH] C/2D/2 E D | C D E/2F/2 | G F E | D/2C/2 C2 |]
+[V:LH] C,3 | C,3 | C,3 | C,3 |]

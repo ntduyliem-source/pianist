@@ -1,0 +1,21 @@
+%abc-2.1
+X:1979
+T:g3-n50-079 Sol rải hai lời trả
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=arpeggio; lead=RH; bucket=n50; notes=45; RH=22; LH=23
+% role=A; duration60=48s; related_pattern=999360eb63f472a8
+% authored_passages=H02 H04 H01
+% source=buildscripts/pianist/compositions/g3/n50.txt:80
+[V:RH] G C E G | z4 | E C G C | z4 |
+[V:LH] z4 | C, D, E, D, | z4 | D, C, C,2 |
+[V:RH] C2 G E | z4 | G C E C | z4 |
+[V:LH] z4 | C, D, E, D, | z4 | D, C, D, C, |
+[V:RH] C G E C | z4 | G E C2 | z4 |]
+[V:LH] z4 | C, D, E, D, | z4 | D, C, D, C, |]

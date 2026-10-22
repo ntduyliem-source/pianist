@@ -1,0 +1,25 @@
+%abc-2.1
+X:2046
+T:g3-n100-046 Năm bậc trầm theo nền cao
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fifth; lead=LH; bucket=n100; notes=105; RH=32; LH=73
+% role=L; duration60=80s; related_pattern=28c71eedcc5b3164
+% authored_passages=B10 B04 B16 B05 B17
+% source=buildscripts/pianist/compositions/g3/n100.txt:47
+[V:RH] C2 C2 | C2 C2 | C2 C2 | C2 C2 |
+[V:LH] C, G, F, E, | D, G, F, E, | D, E, G, F, | E, D, C,2 |
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C, G, D, E, | F, D, E, C, | D, G, F, E, | D, E, C,2 |
+[V:RH] C2 C2 | C2 C2 | C2 C2 | C2 C2 |
+[V:LH] C,2 G, F, | E, D, C, G, | F, E, D, G, | F, E, D, C, |
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C, G, F,2 | E,2 D, C, | D, E, F, E, | D, C, C,2 |
+[V:RH] C2 C2 | C2 C2 | C2 C2 | C2 C2 |]
+[V:LH] G, C, D, E, | F, E, D, C, | D, E, G, F, | E,2 D, C, |]

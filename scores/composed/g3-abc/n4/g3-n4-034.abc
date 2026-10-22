@@ -1,0 +1,17 @@
+%abc-2.1
+X:1434
+T:g3-n4-034 Sol trầm về Rê
+C:Nhạc do trợ lý AI biên soạn
+M:2/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fourth; lead=LH; bucket=n4; notes=3; RH=1; LH=2
+% role=L; duration60=2s; related_pattern=16338639deaa2c06
+% authored_passages=inline-n4-034
+% source=buildscripts/pianist/compositions/g3/n4.txt:35
+[V:RH] C2 |]
+[V:LH] G, D, |]

@@ -1,0 +1,17 @@
+%abc-2.1
+X:395
+T:g1-n20-095 Bốn vòng đồng nhịp
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n20; notes=20; RH=10; LH=10
+% role=S; family=octave-four-turn; form=authored; duration60=12s
+% related_pattern=e92728ef493c7b9e
+% source=buildscripts/pianist/compositions/g1/n20.txt:95
+[V:RH] C D C | D E D | E D C | C3 |]
+[V:LH] C, D, C, | D, E, D, | E, D, C, | C,3 |]

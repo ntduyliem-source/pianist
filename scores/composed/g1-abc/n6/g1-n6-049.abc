@@ -1,0 +1,17 @@
+%abc-2.1
+X:149
+T:g1-n6-049 Thở nhẹ ở khuông dưới
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n6; notes=6; RH=2; LH=4
+% role=L; family=bass-breath-fall; form=authored; duration60=8s
+% related_pattern=81138dd0be0c5954
+% source=buildscripts/pianist/compositions/g1/n6.txt:51
+[V:RH] C4 | C4 |]
+[V:LH] E, z D, C, | C,4 |]

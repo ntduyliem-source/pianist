@@ -1,0 +1,19 @@
+%abc-2.1
+X:4535
+T:g7-n20-035 Sol nối sau Fa Rê
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G7; profile=tie; lead=RH; bucket=n20; notes=17; RH=12; LH=5
+% duration60=20s; related_pattern=03a605cb74c46306
+% authored_passages=T10 TR2
+% source=buildscripts/pianist/compositions/g7/studies.txt:36
+[V:RH] F D/2 G/2-G2 | G F/2 E/2-E2 | D2 E2 | F E/2 D/2-D2 |
+[V:LH] G,4 | C, z z z | D, z z z | D, z z z |
+[V:RH] C4 |]
+[V:LH] C, z z z |]

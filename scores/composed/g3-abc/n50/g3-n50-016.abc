@@ -1,0 +1,21 @@
+%abc-2.1
+X:1916
+T:g3-n50-016 Ba câu năm bậc rõ phách
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fifth; lead=RH; bucket=n50; notes=69; RH=45; LH=24
+% role=R; duration60=48s; related_pattern=1d89853590ea0d84
+% authored_passages=P10 P16 P17
+% source=buildscripts/pianist/compositions/g3/n50.txt:17
+[V:RH] C G F E | D G F E | D E G F | E D C2 |
+[V:LH] C,2 C,2 | C,2 C,2 | C,2 C,2 | C,2 C,2 |
+[V:RH] C2 G F | E D C G | F E D G | F E D C |
+[V:LH] C,2 C,2 | C,2 C,2 | C,2 C,2 | C,2 C,2 |
+[V:RH] G C D E | F E D C | D E G F | E2 D C |]
+[V:LH] C,2 C,2 | C,2 C,2 | C,2 C,2 | C,2 C,2 |]

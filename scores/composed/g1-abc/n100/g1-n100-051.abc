@@ -1,0 +1,25 @@
+%abc-2.1
+X:651
+T:g1-n100-051 Hai mươi ô trầm ba phách cao
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n100; notes=76; RH=20; LH=56
+% role=L; family=bass-twenty-upper; form=authored; duration60=60s
+% related_pattern=41c7f71a25ceb38f
+% source=buildscripts/pianist/compositions/g1/n100.txt:53
+[V:RH] C3 | C3 | C3 | C3 |
+[V:LH] E, F, G, | F, E, D, | E, F, G, | F, G, F, |
+[V:RH] C3 | C3 | C3 | C3 |
+[V:LH] E, D, C, | D, E, F, | E, F, G, | F, E, D, |
+[V:RH] C3 | C3 | C3 | C3 |
+[V:LH] E, F, E, | D, E, F, | E, D, E, | E,3 |
+[V:RH] C3 | C3 | C3 | C3 |
+[V:LH] E, E, F, | G, F, E, | D, C, D, | E, F, G, |
+[V:RH] C3 | C3 | C3 | C3 |]
+[V:LH] F, E, D, | C, D, E, | D, E, D, | C,3 |]

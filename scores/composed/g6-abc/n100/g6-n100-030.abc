@@ -1,0 +1,27 @@
+%abc-2.1
+X:4130
+T:g6-n100-030 La trầm rồi Si
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G6; profile=M6-up; lead=LH; bucket=n100; notes=83; RH=21; LH=62
+% duration60=84s; related_pattern=63c6b25965060f5e
+% authored_passages=S30 BL2 BL1 BL3 BL1 BL2
+% source=buildscripts/pianist/compositions/g6/studies.txt:31
+[V:RH] c4 | c z z z | c z z z | c z z z |
+[V:LH] D, C, A, B, | G,2 E, F, | D C B, A, | G, E, D,2 |
+[V:RH] c z z z | c z z z | c z z z | c z z z |
+[V:LH] E,2 C,2 | G, D, C, A, | G, E, D,2 | E, F, G,2 |
+[V:RH] c z z z | c z z z | c z z z | c z z z |
+[V:LH] E,2 C,2 | G,2 D,2 | E, D, B, A, | G,2 E,2 |
+[V:RH] c z z z | c z z z | c z z z | c z z z |
+[V:LH] D,2 C,2 | G, D, C, A, | G, E, D,2 | E, F, G,2 |
+[V:RH] c z z z | c z z z | c z z z | c z z z |
+[V:LH] E,2 C,2 | G,2 E, F, | D C B, A, | G, E, D,2 |
+[V:RH] c z z z |]
+[V:LH] E,2 C,2 |]

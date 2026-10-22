@@ -1,0 +1,21 @@
+%abc-2.1
+X:3235
+T:g5-n30-035 Trầm Mi Rê đổi lượt
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=offset; lead=LH; bucket=n30; notes=35; RH=16; LH=19
+% duration60=36s; related_pattern=d2cc866d6c60c418
+% authored_passages=O35 OL4 OL8
+% source=buildscripts/pianist/compositions/g5/studies.txt:36
+[V:RH] z E z D | z D z F | C z E z | z G z G |
+[V:LH] E,2 D, z | D,2 F, z | E,2 C,2 | D, E, G,2 |
+[V:RH] C4 | G z z C | D z G z | z C z G |
+[V:LH] E,2 C,2 | G, z E,2 | F,2 D,2 | E, D, E,2 |
+[V:RH] C4 |]
+[V:LH] C,4 |]

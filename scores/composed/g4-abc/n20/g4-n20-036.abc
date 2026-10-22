@@ -1,0 +1,17 @@
+%abc-2.1
+X:2436
+T:g4-n20-036 Phách nghỉ trên khóa Fa
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=upper; lead=LH; bucket=n20; notes=18; RH=4; LH=14
+% role=L; duration60=16s; related_pattern=189d991bc6a6b4ea
+% authored_passages=V06
+% source=buildscripts/pianist/compositions/g4/n20.txt:37
+[V:RH] G4 | G4 | G4 | G4 |]
+[V:LH] G, B, z A, | B, C D C | B, A, B, G, | A, B, G,2 |]

@@ -1,0 +1,27 @@
+%abc-2.1
+X:674
+T:g1-n100-074 Mười một câu dài ngắn
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n100; notes=80; RH=39; LH=41
+% role=A; family=eleven-short-long; form=authored; duration60=88s
+% related_pattern=910f14ecb0ecd59d
+% source=buildscripts/pianist/compositions/g1/n100.txt:75
+[V:RH] C2 D E | z4 | F E D C | z4 |
+[V:LH] z4 | C, D, E, F, | z4 | G, F, E,2 |
+[V:RH] C D E2 | z4 | F E D C | z4 |
+[V:LH] z4 | D, E, F, E, | z4 | D, C, D, E, |
+[V:RH] C C D E | z4 | F E D E | z4 |
+[V:LH] z4 | F, G, F, E, | z4 | D, E, D, C, |
+[V:RH] D C D E | z4 | F G F E | z4 |
+[V:LH] z4 | C, C, D, E, | z4 | F, E, D, C, |
+[V:RH] D E D C | z4 | C D E D | z4 |
+[V:LH] z4 | D, E, D, C, | z4 | C, D, C, D, |
+[V:RH] C4 | z4 |]
+[V:LH] z4 | C,2 C,2 |]

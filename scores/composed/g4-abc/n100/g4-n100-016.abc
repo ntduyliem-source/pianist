@@ -1,0 +1,25 @@
+%abc-2.1
+X:2716
+T:g4-n100-016 Năm câu thấp rõ tiếng nền
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=lower; lead=RH; bucket=n100; notes=103; RH=71; LH=32
+% role=R; duration60=80s; related_pattern=357ce7ae4b5bdc5e
+% authored_passages=L16 L17 L04 L18 L05
+% source=buildscripts/pianist/compositions/g4/n100.txt:17
+[V:RH] A, B, C D | E D C B, | A, C D C | B, C A,2 |
+[V:LH] C,2 C,2 | C,2 C,2 | C,2 C,2 | C,2 C,2 |
+[V:RH] E B, C D | C A, B, C | D E D C | B, C A,2 |
+[V:LH] C,2 C,2 | C,2 C,2 | C,2 C,2 | C,2 C,2 |
+[V:RH] E B, C D | C A, B, C | D E D C | B, C A,2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] E D C B, | A, C E D | C B, A, C | B, A, A,2 |
+[V:LH] C,2 C,2 | C,2 C,2 | C,2 C,2 | C,2 C,2 |
+[V:RH] A,2 C B, | A,2 C D | E D C2 | A,2 A,2 |]
+[V:LH] C,4 | C,4 | C,4 | C,4 |]

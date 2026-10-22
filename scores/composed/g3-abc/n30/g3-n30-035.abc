@@ -1,0 +1,19 @@
+%abc-2.1
+X:1835
+T:g3-n30-035 Nền cao Rê khép thấp
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fourth; lead=LH; bucket=n30; notes=26; RH=8; LH=18
+% role=L; duration60=32s; related_pattern=32702e93c78cc3da
+% authored_passages=G05 G20
+% source=buildscripts/pianist/compositions/g3/n30.txt:36
+[V:RH] C4 | D4 | C4 | C4 |
+[V:LH] C,2 F, E, | D,2 G, F, | E, D, C,2 | C,2 C,2 |
+[V:RH] C4 | C4 | C4 | C4 |]
+[V:LH] C,4 | C,2 F,2 | E, D, C,2 | C,4 |]

@@ -1,0 +1,21 @@
+%abc-2.1
+X:1214
+T:g2-n50-014 Qua bậc Fa ba lần
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=third; lead=RH; bucket=n50; notes=47; RH=35; LH=12
+% role=R; duration60=36s; related_pattern=c536b1c5053f9b58
+% authored_passages=T24 T22 T25
+% source=buildscripts/pianist/compositions/g2/n50.txt:15
+[V:RH] C D F | E D C | D F E | D C C |
+[V:LH] C,3 | C,3 | C,3 | C,3 |
+[V:RH] E G F | E C D | E D C | D C C |
+[V:LH] C,3 | C,3 | C,3 | C,3 |
+[V:RH] C C E | D E C | D F E | D C2 |]
+[V:LH] C,3 | C,3 | C,3 | C,3 |]

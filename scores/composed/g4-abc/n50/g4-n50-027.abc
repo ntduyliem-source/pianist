@@ -1,0 +1,21 @@
+%abc-2.1
+X:2627
+T:g4-n50-027 Cao giữ nghe nghỉ rồi về
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=span; lead=RH; bucket=n50; notes=47; RH=35; LH=12
+% role=R; duration60=48s; related_pattern=078bfd2581a74283
+% authored_passages=W07 W06 W11
+% source=buildscripts/pianist/compositions/g4/n50.txt:28
+[V:RH] c2 G C | E F G A | c B A G | E D C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C G c z | B A G E | D F A G | E D C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C2 G c | G2 C2 | C4 | C4 |]
+[V:LH] C,4 | C,4 | C,4 | C,4 |]

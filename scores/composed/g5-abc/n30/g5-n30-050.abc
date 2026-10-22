@@ -1,0 +1,21 @@
+%abc-2.1
+X:3250
+T:g5-n30-050 Trầm Sol đợi Đô khép
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=offset; lead=LH; bucket=n30; notes=34; RH=16; LH=18
+% duration60=36s; related_pattern=73010a07ac82b453
+% authored_passages=O50 OL5 OL2
+% source=buildscripts/pianist/compositions/g5/studies.txt:51
+[V:RH] G z z C | C z z G | F z C z | z G z G |
+[V:LH] G, z C,2 | C, z G,2 | F,2 E,2 | D,2 G, z |
+[V:RH] C4 | z C z G | D z G z | z C z G |
+[V:LH] C,4 | E,2 G, z | F,2 D,2 | E, D, C,2 |
+[V:RH] C4 |]
+[V:LH] D,2 C,2 |]

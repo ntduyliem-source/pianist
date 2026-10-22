@@ -1,0 +1,17 @@
+%abc-2.1
+X:2236
+T:g4-n6-036 Hai nhịp bass lên về
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=upper; lead=LH; bucket=n6; notes=8; RH=2; LH=6
+% role=L; duration60=6s; related_pattern=105516436a766b16
+% authored_passages=inline-n6-036
+% source=buildscripts/pianist/compositions/g4/n6.txt:37
+[V:RH] G3 | G3 |]
+[V:LH] G, A, B, | C B, G, |]

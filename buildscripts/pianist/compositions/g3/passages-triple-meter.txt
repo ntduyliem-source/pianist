@@ -1,0 +1,49 @@
+# Additional authored 3/4 phrases and dialogues.
+F21;3;C F E | D G F | E D E | D C C;C,3 | C,3 | C,3 | C,3
+F22;3;F C D | E F E | D G F | E D C;C,3 | C,3 | C,3 | C,3
+F23;3;C2 F | E D C | D G F | E D C;C,3 | C,3 | C,3 | C,3
+F24;3;D G F | E C F | E D E | D C C;C,3 | C,3 | C,3 | C,3
+F25;3;C C F | E D C | D G F | E C2;C,3 | C,3 | C,3 | C,3
+G21;3;C3 | C3 | C3 | C3;C, F, E, | D, G, F, | E, D, E, | D, C, C,
+G22;3;C3 | C3 | C3 | C3;F, C, D, | E, F, E, | D, G, F, | E, D, C,
+G23;3;C3 | C3 | C3 | C3;C,2 F, | E, D, C, | D, G, F, | E, D, C,
+G24;3;C3 | C3 | C3 | C3;D, G, F, | E, C, F, | E, D, E, | D, C, C,
+G25;3;C3 | C3 | C3 | C3;C, C, F, | E, D, C, | D, G, F, | E, C,2
+P21;3;C G F | E D C | D E F | E C2;C,3 | C,3 | C,3 | C,3
+P22;3;G C D | E F E | D G F | E D C;C,3 | C,3 | C,3 | C,3
+P23;3;C2 G | F E D | C G F | E D C;C,3 | C,3 | C,3 | C,3
+P24;3;C G F | E D C | D G F | E D C;C,3 | C,3 | C,3 | C,3
+P25;3;C2 G | F2 E | D C2 | C3;C,3 | C,3 | C,3 | C,3
+B21;3;C3 | C3 | C3 | C3;C, G, F, | E, D, C, | D, E, F, | E, C,2
+B22;3;C3 | C3 | C3 | C3;G, C, D, | E, F, E, | D, G, F, | E, D, C,
+B23;3;C3 | C3 | C3 | C3;C,2 G, | F, E, D, | C, G, F, | E, D, C,
+B24;3;C3 | C3 | C3 | C3;C, G, F, | E, D, C, | D, G, F, | E, D, C,
+B25;3;C3 | C3 | C3 | C3;C,2 G, | F,2 E, | D, C,2 | C,3
+A21;3;C G E | G C E | G E C | C2 E;C,3 | C,3 | C,3 | C,3
+A22;3;G C E | G E C | E G C | G C2;C,3 | C,3 | C,3 | C,3
+A23;3;E C G | E G C | G C E | G E C;C,3 | C,3 | C,3 | C,3
+D21;3;C3 | C3 | C3 | C3;C, G, E, | G, C, E, | G, E, C, | C,2 E,
+D22;3;C3 | C3 | C3 | C3;G, C, E, | G, E, C, | E, G, C, | G, C,2
+D23;3;C3 | C3 | C3 | C3;E, C, G, | E, G, C, | G, C, E, | G, E, C,
+Q11;3;C F E | z3 | D G F | z3 | E D C | z3;z3 | C, D, E, | z3 | D, E, D, | z3 | C, D, C,
+Q12;3;z3 | C D E | z3 | D E D | z3 | C D C;C, F, E, | z3 | D, G, F, | z3 | E, D, C, | z3
+Q13;3;C2 F | z3 | E D C | z3 | D F E | z3;z3 | C, D, E, | z3 | D, C,2 | z3 | C,2 C,
+Q14;3;z3 | C D E | z3 | D C2 | z3 | C2 C;C,2 F, | z3 | E, D, C, | z3 | D, F, E, | z3
+Q15;3;F C D | z3 | E F E | z3 | D E C | z3;z3 | C,2 D, | z3 | E,2 D, | z3 | C,2 C,
+Q16;3;z3 | C2 D | z3 | E2 D | z3 | C2 C;F, C, D, | z3 | E, F, E, | z3 | D, E, C, | z3
+V11;3;C G F | z3 | E D C | z3 | D E C | z3;z3 | C,2 D, | z3 | E,2 D, | z3 | C,2 C,
+V12;3;z3 | C2 D | z3 | E2 D | z3 | C2 C;C, G, F, | z3 | E, D, C, | z3 | D, E, C, | z3
+V13;3;G C D | z3 | E F E | z3 | D C2 | z3;z3 | C, D, E, | z3 | D, C, D, | z3 | E, D, C,
+V14;3;z3 | C D E | z3 | D C D | z3 | E D C;G, C, D, | z3 | E, F, E, | z3 | D, C,2 | z3
+H11;3;C G E | z3 | G E C | z3 | E G C | z3;z3 | C,2 D, | z3 | E,2 D, | z3 | C,2 C,
+H12;3;z3 | C2 D | z3 | E2 D | z3 | C2 C;C, G, E, | z3 | G, E, C, | z3 | E, G, C, | z3
+H13;3;G C E | z3 | G E C | z3 | E C2 | z3;z3 | C, D, E, | z3 | D, C, D, | z3 | E, D, C,
+H14;3;z3 | C D E | z3 | D C D | z3 | E D C;G, C, E, | z3 | G, E, C, | z3 | E, C,2 | z3
+S21;3;C F E | D E C | F E D | C3;C, D, E, | D, D, C, | D, E, D, | C,3
+S22;3;C D E | D D C | D E D | C3;C, F, E, | D, E, C, | F, E, D, | C,3
+S23;3;C2 F | E D C | F E C | C3;C,2 D, | E, D, C, | D, E, D, | C,3
+S24;3;C2 D | E D C | D E D | C3;C,2 F, | E, D, C, | F, E, C, | C,3
+W21;3;C G F | E D C | D G F | E C2;C, C, D, | E, D, C, | D, E, D, | C, C,2
+W22;3;C C D | E D C | D E D | C C2;C, G, F, | E, D, C, | D, G, F, | E, C,2
+W23;3;C2 G | F E C | C3 | C3;C,2 C, | D, D, C, | C,3 | C,3
+W24;3;C2 C | D D C | C3 | C3;C,2 G, | F, E, C, | C,3 | C,3

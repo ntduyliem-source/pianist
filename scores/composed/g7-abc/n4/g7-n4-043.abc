@@ -1,0 +1,17 @@
+%abc-2.1
+X:4243
+T:g7-n4-043 Sol trầm nối Đô Mi
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G7; profile=tie; lead=LH; bucket=n4; notes=4; RH=1; LH=3
+% duration60=4s; related_pattern=678be3f7ae388b53
+% authored_passages=T18
+% source=buildscripts/pianist/compositions/g7/studies.txt:44
+[V:RH] C4 |]
+[V:LH] C, E,/2 G,/2-G,2 |]

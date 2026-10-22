@@ -1,0 +1,17 @@
+%abc-2.1
+X:4967
+T:g8-n4-067 Rê Fa trầm chấm Rê
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G8; profile=dyad-dotted; lead=LH; bucket=n4; notes=5; RH=1; LH=4
+% duration60=4s; related_pattern=14ba90c8e316b948
+% authored_passages=D17
+% source=buildscripts/pianist/compositions/g8/studies.txt:68
+[V:RH] D4 |]
+[V:LH] [D,F,]3/2 E,/2 D,2 |]

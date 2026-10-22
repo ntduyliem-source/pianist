@@ -1,0 +1,17 @@
+%abc-2.1
+X:804
+T:g2-n6-004 Bước thấp được nhắc
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=third; lead=RH; bucket=n6; notes=6; RH=4; LH=2
+% role=R; duration60=4s; related_pattern=35c8194760218c11
+% authored_passages=inline-n6-004
+% source=buildscripts/pianist/compositions/g2/n6.txt:5
+[V:RH] E C D C |]
+[V:LH] C,2 C,2 |]

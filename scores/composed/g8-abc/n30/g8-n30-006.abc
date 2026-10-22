@@ -1,0 +1,21 @@
+%abc-2.1
+X:5306
+T:g8-n30-006 Dòng phụ cao Rê Mi Đô
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G8; profile=ledger-high; lead=RH; bucket=n30; notes=35; RH=26; LH=9
+% duration60=36s; related_pattern=1ebffce823b77a16
+% authored_passages=H06 HP2 HP1
+% source=buildscripts/pianist/compositions/g8/studies.txt:7
+[V:RH] d' e' c'2 | e' g' e' d' | c'2 e'2 | f' e' d'2 |
+[V:LH] C,4 | C, z z z | C, z z z | D, z z z |
+[V:RH] e'2 c'2 | c' d' e'2 | f' e' d'2 | e' g' f' e' |
+[V:LH] C, z z z | C, z z z | D, z z z | C, z z z |
+[V:RH] d'2 c'2 |]
+[V:LH] C, z z z |]

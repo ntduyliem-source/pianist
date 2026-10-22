@@ -1,0 +1,17 @@
+%abc-2.1
+X:3725
+T:g6-n10-025 La lên Si sau quãng
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G6; profile=M6-up; lead=RH; bucket=n10; notes=11; RH=8; LH=3
+% duration60=12s; related_pattern=038fb5ab308f5720
+% authored_passages=S25 CR2 CR1
+% source=buildscripts/pianist/compositions/g6/studies.txt:26
+[V:RH] D C A B | G2 C2 | G2 E2 |]
+[V:LH] C,4 | C,4 | C,4 |]

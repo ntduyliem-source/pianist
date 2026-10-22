@@ -1,0 +1,17 @@
+%abc-2.1
+X:281
+T:g1-n10-081 Bốn dòng ngắn
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n10; notes=13; RH=7; LH=6
+% role=A; family=four-short-lines; form=authored; duration60=16s
+% related_pattern=d96747424a912936
+% source=buildscripts/pianist/compositions/g1/n10.txt:82
+[V:RH] C D E2 | z4 | D E D C | z4 |]
+[V:LH] z4 | E, F, G,2 | z4 | F, E, E,2 |]

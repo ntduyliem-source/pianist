@@ -1,0 +1,17 @@
+%abc-2.1
+X:4305
+T:g7-n6-005 Sol Fa Mi chấm dôi
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G7; profile=dotted; lead=RH; bucket=n6; notes=7; RH=5; LH=2
+% duration60=8s; related_pattern=c83f982b156b80a9
+% authored_passages=D05 CR1
+% source=buildscripts/pianist/compositions/g7/studies.txt:6
+[V:RH] G3/2 F/2 E2 | G2 E2 |]
+[V:LH] C,4 | C,4 |]

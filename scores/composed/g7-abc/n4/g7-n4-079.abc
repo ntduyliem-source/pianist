@@ -1,0 +1,17 @@
+%abc-2.1
+X:4279
+T:g7-n4-079 Fa Mi Rê đu đưa
+C:Nhạc do trợ lý AI biên soạn
+M:6/8
+L:1/4
+Q:3/8=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G7; profile=compound; lead=RH; bucket=n4; notes=4; RH=3; LH=1
+% duration60=2s; related_pattern=951d0e551be4eb20
+% authored_passages=K04
+% source=buildscripts/pianist/compositions/g7/studies.txt:80
+[V:RH] F E/2 D3/2 |]
+[V:LH] D,3 |]

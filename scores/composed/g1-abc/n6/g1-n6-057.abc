@@ -1,0 +1,17 @@
+%abc-2.1
+X:157
+T:g1-n6-057 Trầm quay ở bậc giữa
+C:Nhạc do trợ lý AI biên soạn
+M:2/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n6; notes=7; RH=3; LH=4
+% role=L; family=bass-upper-stop; form=authored; duration60=6s
+% related_pattern=064ba0d213c27bf4
+% source=buildscripts/pianist/compositions/g1/n6.txt:59
+[V:RH] C2 | C2 | C2 |]
+[V:LH] E, F, | E,2 | E,2 |]

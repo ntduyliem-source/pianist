@@ -1,0 +1,17 @@
+%abc-2.1
+X:1598
+T:g3-n6-098 Nhảy năm giữ Fa chung
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fifth; lead=RH; bucket=n6; notes=6; RH=3; LH=3
+% role=S; duration60=4s; related_pattern=139ad38b7246203c
+% authored_passages=inline-n6-098
+% source=buildscripts/pianist/compositions/g3/n6.txt:99
+[V:RH] C G F2 |]
+[V:LH] C, C, D,2 |]

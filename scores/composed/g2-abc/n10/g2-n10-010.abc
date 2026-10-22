@@ -1,0 +1,17 @@
+%abc-2.1
+X:910
+T:g2-n10-010 Ngắt nhẹ sau bước nhảy
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=third; lead=RH; bucket=n10; notes=9; RH=7; LH=2
+% role=R; duration60=8s; related_pattern=9ab7e2fedb4a9c26
+% authored_passages=inline-n10-010
+% source=buildscripts/pianist/compositions/g2/n10.txt:11
+[V:RH] C E z D | E F D C |]
+[V:LH] C,4 | C,4 |]

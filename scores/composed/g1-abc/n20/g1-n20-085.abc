@@ -1,0 +1,19 @@
+%abc-2.1
+X:385
+T:g1-n20-085 Ba lời đáp cuối
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n20; notes=21; RH=11; LH=10
+% role=A; family=last-three-answers; form=authored; duration60=24s
+% related_pattern=6972b461db253544
+% source=buildscripts/pianist/compositions/g1/n20.txt:86
+[V:RH] C D E F | z4 | E F G2 | z4 |
+[V:LH] z4 | E, F, E, D, | z4 | C, D, E,2 |
+[V:RH] F E D C | z4 |]
+[V:LH] z4 | D, C, C,2 |]

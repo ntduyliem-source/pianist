@@ -1,0 +1,17 @@
+%abc-2.1
+X:2957
+T:g5-n6-057 Rê Fa giữ Rê
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=dyad; lead=RH; bucket=n6; notes=8; RH=5; LH=3
+% duration60=8s; related_pattern=875dd782ec374243
+% authored_passages=D07 CR2
+% source=buildscripts/pianist/compositions/g5/studies.txt:58
+[V:RH] [DF]2 D2 | E2 C2 |]
+[V:LH] D,2 D,2 | C,4 |]

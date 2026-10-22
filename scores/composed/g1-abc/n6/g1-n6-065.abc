@@ -1,0 +1,17 @@
+%abc-2.1
+X:165
+T:g1-n6-065 Hai vòng giữa
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n6; notes=6; RH=3; LH=3
+% role=A; family=echo-middle; form=authored; duration60=6s
+% related_pattern=205003a8853942bc
+% source=buildscripts/pianist/compositions/g1/n6.txt:66
+[V:RH] E F E | z3 |]
+[V:LH] z3 | E, F, E, |]

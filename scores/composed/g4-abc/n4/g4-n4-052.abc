@@ -1,0 +1,17 @@
+%abc-2.1
+X:2152
+T:g4-n4-052 La Đô Mi trầm vòng về
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=lower; lead=LH; bucket=n4; notes=5; RH=1; LH=4
+% role=L; duration60=4s; related_pattern=a4804efa42a9472e
+% authored_passages=inline-n4-052
+% source=buildscripts/pianist/compositions/g4/n4.txt:53
+[V:RH] C4 |]
+[V:LH] A,, C, E, C, |]

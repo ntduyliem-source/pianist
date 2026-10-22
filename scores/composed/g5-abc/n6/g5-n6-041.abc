@@ -1,0 +1,17 @@
+%abc-2.1
+X:2941
+T:g5-n6-041 Trầm Fa Sol qua đệm
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=offset; lead=LH; bucket=n6; notes=7; RH=3; LH=4
+% duration60=8s; related_pattern=0031801c8e90829e
+% authored_passages=O41 CL3
+% source=buildscripts/pianist/compositions/g5/studies.txt:42
+[V:RH] z F z G | G4 |]
+[V:LH] F,2 G, z | D,2 C,2 |]

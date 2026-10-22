@@ -1,0 +1,27 @@
+%abc-2.1
+X:672
+T:g1-n100-072 Mười hai lời trầm ba phách
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n100; notes=70; RH=36; LH=34
+% role=A; family=left-twelve-three; form=authored; duration60=72s
+% related_pattern=5e8ce3292c78b0d2
+% source=buildscripts/pianist/compositions/g1/n100.txt:73
+[V:RH] z3 | C D E | z3 | F G F |
+[V:LH] E, D, C, | z3 | D, E, F, | z3 |
+[V:RH] z3 | E D C | z3 | C D E |
+[V:LH] G, F, E, | z3 | D, C, D, | z3 |
+[V:RH] z3 | F E D | z3 | C D C |
+[V:LH] E, F, E, | z3 | D, C, D, | z3 |
+[V:RH] z3 | D E D | z3 | C D E |
+[V:LH] E, D, C, | z3 | C, D, E, | z3 |
+[V:RH] z3 | F G F | z3 | E D C |
+[V:LH] F, E, D, | z3 | C, D, E, | z3 |
+[V:RH] z3 | D E D | z3 | C D C |]
+[V:LH] D, C, D, | z3 | C,3 | z3 |]

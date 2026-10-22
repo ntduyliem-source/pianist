@@ -1,0 +1,25 @@
+%abc-2.1
+X:2704
+T:g4-n100-004 Đô cao gọi trong vườn nhịp
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=upper; lead=RH; bucket=n100; notes=92; RH=70; LH=22
+% role=R; duration60=80s; related_pattern=06db40d4b6d20c48
+% authored_passages=U04 U08 U14 U12 U05
+% source=buildscripts/pianist/compositions/g4/n100.txt:5
+[V:RH] c B A G | A B c d | c B A B | A B G2 |
+[V:LH] G,4 | G,4 | G,4 | G,4 |
+[V:RH] B G c B | A B c d | c A B G | A G G2 |
+[V:LH] G,4 | G,4 | G,4 | G,4 |
+[V:RH] c2 G A | B A c B | A d c B | A G G2 |
+[V:LH] G,4 | G,4 | G,4 | G,4 |
+[V:RH] G A B c | d B c d | c B A G | A B G2 |
+[V:LH] G,2 G,2 | G,4 | G,2 G,2 | G,4 |
+[V:RH] G2 B A | G2 B c | d c B2 | G2 G2 |]
+[V:LH] G,4 | G,4 | G,4 | G,4 |]

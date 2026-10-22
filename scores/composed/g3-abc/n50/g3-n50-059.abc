@@ -1,0 +1,21 @@
+%abc-2.1
+X:1959
+T:g3-n50-059 Ba lời rải trầm ba
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=arpeggio; lead=LH; bucket=n50; notes=46; RH=12; LH=34
+% role=L; duration60=36s; related_pattern=45fd155bb3a01f48
+% authored_passages=D21 D22 D23
+% source=buildscripts/pianist/compositions/g3/n50.txt:60
+[V:RH] C3 | C3 | C3 | C3 |
+[V:LH] C, G, E, | G, C, E, | G, E, C, | C,2 E, |
+[V:RH] C3 | C3 | C3 | C3 |
+[V:LH] G, C, E, | G, E, C, | E, G, C, | G, C,2 |
+[V:RH] C3 | C3 | C3 | C3 |]
+[V:LH] E, C, G, | E, G, C, | G, C, E, | G, E, C, |]

@@ -1,5 +1,7 @@
 # Quy tắc xây kho bài tập sinh sẵn từ nhạc thật
 
+> **ĐÃ THAY THẾ — 21/10/2026.** [Quy tắc kho hai khuông mới](GRAND_STAFF_BANK_PLAN.md) là tài liệu hiện hành. Không còn được trích một dòng/tay thành MXL riêng: phải giữ toàn bộ phần piano hai khuông và cho người dùng chọn tay khi tập. Phần dưới lưu lịch sử các lần xây kho trước.
+
 **Luồng xây kho hiện hành:** xem [GRADED_BANK_PLAN.md](GRADED_BANK_PLAN.md). Dùng `prepare-reading-bank.py`: mỗi nguồn → xuất/kiểm MXL ngay, tối thiểu 300 bài cho mỗi ô grade × độ dài (56 ô), không tìm ngón. Phần mô tả scanner/duyệt thủ công bên dưới được giữ làm lịch sử và kiểm hồi quy; không dùng lệnh quét toàn kho cũ làm điều kiện chờ xuất bài.
 
 Cập nhật **21/10/2026, v2**. Thay thiết kế tạo/biến đổi câu trong phiên bằng **tạo và duyệt bài offline; web chỉ chọn bài có sẵn**. Đã triển khai nhánh build các đơn vị có hồ sơ xét nguồn cho lô G1–G2; phần chọn/nối bài trong web vẫn là đặc tả. Xem [kết quả pilot](Q4_PREPARED_PILOT.md), [kế hoạch Q](IMPLEMENTATION_PLAN.md) và [grade/căn cứ](GRADE_DESIGN.md).

@@ -1,0 +1,17 @@
+%abc-2.1
+X:192
+T:g1-n6-092 Ba bước song song
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n6; notes=6; RH=3; LH=3
+% role=S; family=sixths-down; form=authored; duration60=3s
+% related_pattern=0fce61fa5ef7c14d
+% source=buildscripts/pianist/compositions/g1/n6.txt:92
+[V:RH] E D C |]
+[V:LH] G, F, E, |]

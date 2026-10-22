@@ -1,0 +1,23 @@
+%abc-2.1
+X:3307
+T:g5-n50-007 Rê Fa nghỉ chờ trầm
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=offset; lead=RH; bucket=n50; notes=50; RH=27; LH=23
+% duration60=52s; related_pattern=0d618b7d58cec541
+% authored_passages=O07 OR7 OR4 OR5
+% source=buildscripts/pianist/compositions/g5/studies.txt:8
+[V:RH] D2 F z | F z D2 | E F G2 | E2 C z |
+[V:LH] z D, z F, | F, z z D, | C, z G, z | z C, z G, |
+[V:RH] D2 C2 | D2 F z | E2 C2 | D E G2 |
+[V:LH] C,4 | z D, z F, | C, z E, z | z G, z G, |
+[V:RH] E2 C2 | C z G2 | F2 E2 | D2 G z |
+[V:LH] C,4 | C, z z G, | F, z C, z | z G, z G, |
+[V:RH] C4 |]
+[V:LH] C,4 |]

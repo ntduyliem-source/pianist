@@ -1,0 +1,17 @@
+%abc-2.1
+X:2846
+T:g5-n4-046 Trầm Đô nhường Mi
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=offset; lead=LH; bucket=n4; notes=4; RH=2; LH=2
+% duration60=4s; related_pattern=97cbc1fa5b020d11
+% authored_passages=O46
+% source=buildscripts/pianist/compositions/g5/studies.txt:47
+[V:RH] C z z G |]
+[V:LH] C, z E,2 |]

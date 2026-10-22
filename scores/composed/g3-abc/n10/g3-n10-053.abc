@@ -1,0 +1,17 @@
+%abc-2.1
+X:1653
+T:g3-n10-053 Ba nhịp Sol trầm về
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fifth; lead=LH; bucket=n10; notes=11; RH=3; LH=8
+% role=L; duration60=9s; related_pattern=b9a496172f2dd130
+% authored_passages=inline-n10-053
+% source=buildscripts/pianist/compositions/g3/n10.txt:54
+[V:RH] C3 | C3 | C3 |]
+[V:LH] G, C, D, | E, F, E, | D, C,2 |]

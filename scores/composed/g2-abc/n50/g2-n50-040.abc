@@ -1,0 +1,21 @@
+%abc-2.1
+X:1240
+T:g2-n50-040 Trầm nghỉ rồi kể tiếp
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=third; lead=LH; bucket=n50; notes=53; RH=12; LH=41
+% role=L; duration60=48s; related_pattern=5e29b1888e209679
+% authored_passages=U10 U05 U04
+% source=buildscripts/pianist/compositions/g2/n50.txt:41
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C, E, z D, | E, G, F, E, | D, E, D, C, | D, E, C,2 |
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C,2 E, D, | E,2 G, F, | E, D, C,2 | E,2 C,2 |
+[V:RH] C4 | C4 | C4 | C4 |]
+[V:LH] C, C, E, D, | E, F, D, C, | D, E, G, F, | E, D, E, C, |]

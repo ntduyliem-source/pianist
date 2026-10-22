@@ -1,0 +1,17 @@
+%abc-2.1
+X:5055
+T:g8-n6-055 Đôi Rê Fa chấm về Fa
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G8; profile=dyad-dotted; lead=RH; bucket=n6; notes=8; RH=6; LH=2
+% duration60=8s; related_pattern=4cdf084d66b44344
+% authored_passages=D05 CR1
+% source=buildscripts/pianist/compositions/g8/studies.txt:56
+[V:RH] [DF]3/2 C/2 F2 | G2 E2 |]
+[V:LH] D,4 | C,4 |]

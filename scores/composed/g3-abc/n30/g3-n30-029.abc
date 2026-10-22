@@ -1,0 +1,19 @@
+%abc-2.1
+X:1829
+T:g3-n30-029 Hai lời rải ba phách
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=arpeggio; lead=RH; bucket=n30; notes=30; RH=22; LH=8
+% role=R; duration60=24s; related_pattern=a96764251aae2da3
+% authored_passages=A21 A22
+% source=buildscripts/pianist/compositions/g3/n30.txt:30
+[V:RH] C G E | G C E | G E C | C2 E |
+[V:LH] C,3 | C,3 | C,3 | C,3 |
+[V:RH] G C E | G E C | E G C | G C2 |]
+[V:LH] C,3 | C,3 | C,3 | C,3 |]

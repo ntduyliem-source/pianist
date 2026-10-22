@@ -1,0 +1,17 @@
+%abc-2.1
+X:2103
+T:g4-n4-003 Si cao tới Đô
+C:Nhạc do trợ lý AI biên soạn
+M:2/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=upper; lead=RH; bucket=n4; notes=3; RH=2; LH=1
+% role=R; duration60=2s; related_pattern=911ba7c88b5aa509
+% authored_passages=inline-n4-003
+% source=buildscripts/pianist/compositions/g4/n4.txt:4
+[V:RH] B c |]
+[V:LH] G,2 |]

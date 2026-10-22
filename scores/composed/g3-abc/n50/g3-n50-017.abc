@@ -1,0 +1,21 @@
+%abc-2.1
+X:1917
+T:g3-n50-017 Sol qua Rê về nốt giữ
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fifth; lead=RH; bucket=n50; notes=50; RH=38; LH=12
+% role=R; duration60=48s; related_pattern=311b9b31d2fca3e3
+% authored_passages=P02 P04 P11
+% source=buildscripts/pianist/compositions/g3/n50.txt:18
+[V:RH] G C D E | F E D C | D E G F | E D C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C G D E | F D E C | D G F E | D E C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C2 G2 | F2 E D | C2 C2 | C4 |]
+[V:LH] C,4 | C,4 | C,4 | C,4 |]

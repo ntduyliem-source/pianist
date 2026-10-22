@@ -1,0 +1,21 @@
+%abc-2.1
+X:1920
+T:g3-n50-020 Fa giữ và phách nghỉ
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fifth; lead=RH; bucket=n50; notes=45; RH=33; LH=12
+% role=R; duration60=48s; related_pattern=578af440de5ef43f
+% authored_passages=P05 P09 P14
+% source=buildscripts/pianist/compositions/g3/n50.txt:21
+[V:RH] C G F2 | E2 D C | D E F E | D C C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C G z F | E D C2 | D E F E | D E C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C4 | C2 G2 | F2 E D | C4 |]
+[V:LH] C,4 | C,4 | C,4 | C,4 |]

@@ -1,0 +1,17 @@
+%abc-2.1
+X:2374
+T:g4-n10-074 La thấp dài trao hai câu
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=lower; lead=RH; bucket=n10; notes=10; RH=6; LH=4
+% role=A; duration60=12s; related_pattern=2abdaf04c63a140c
+% authored_passages=inline-n10-074
+% source=buildscripts/pianist/compositions/g4/n10.txt:75
+[V:RH] A,2 C E | z4 | D C A,2 |]
+[V:LH] z4 | C, D, E, D, | z4 |]

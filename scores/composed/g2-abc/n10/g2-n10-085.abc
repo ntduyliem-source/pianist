@@ -1,0 +1,17 @@
+%abc-2.1
+X:985
+T:g2-n10-085 Ba cặp thấp gọi tiếng đáp
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=eighth; lead=LH; bucket=n10; notes=10; RH=3; LH=7
+% role=A; duration60=8s; related_pattern=374d639b657f13f3
+% authored_passages=inline-n10-085
+% source=buildscripts/pianist/compositions/g2/n10.txt:86
+[V:RH] z4 | E D C2 |]
+[V:LH] C,/2D,/2 E,/2D,/2 C,/2D,/2 E, | z4 |]

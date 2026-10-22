@@ -1,0 +1,25 @@
+%abc-2.1
+X:682
+T:g1-n100-082 Mười lời hướng ra vườn
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n100; notes=75; RH=38; LH=37
+% role=A; family=ten-outward-calls; form=authored; duration60=80s
+% related_pattern=443b3f3cd3891348
+% source=buildscripts/pianist/compositions/g1/n100.txt:83
+[V:RH] E F G F | z4 | E D E F | z4 |
+[V:LH] z4 | C, D, E, F, | z4 | G, F, E, D, |
+[V:RH] G F E D | z4 | E F E E | z4 |
+[V:LH] z4 | C, D, E, D, | z4 | C, D, C, C, |
+[V:RH] E E F G | z4 | F E D C | z4 |
+[V:LH] z4 | C, C, D, E, | z4 | F, G, F, E, |
+[V:RH] D E F G | z4 | F E D E | z4 |
+[V:LH] z4 | D, E, F, G, | z4 | F, E, D, C, |
+[V:RH] D E D C | z4 | C2 C2 | z4 |]
+[V:LH] z4 | C, D, C, D, | z4 | C,4 |]

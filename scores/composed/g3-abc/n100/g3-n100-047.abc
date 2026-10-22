@@ -1,0 +1,25 @@
+%abc-2.1
+X:2047
+T:g3-n100-047 Sol trầm gọi Đô giữ xa
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fifth; lead=LH; bucket=n100; notes=88; RH=24; LH=64
+% role=L; duration60=80s; related_pattern=998342ae90522a16
+% authored_passages=B02 B10 B07 B11 B09
+% source=buildscripts/pianist/compositions/g3/n100.txt:48
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] G, C, D, E, | F, E, D, C, | D, E, G, F, | E, D, C,2 |
+[V:RH] C2 C2 | C2 C2 | C2 C2 | C2 C2 |
+[V:LH] C, G, F, E, | D, G, F, E, | D, E, G, F, | E, D, C,2 |
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C,2 G,2 | F, E, D, C, | D, G, F, E, | D, C, C,2 |
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C,2 G,2 | F,2 E, D, | C,2 C,2 | C,4 |
+[V:RH] C4 | C4 | C4 | C4 |]
+[V:LH] C, G, z F, | E, D, C,2 | D, E, F, E, | D, E, C,2 |]

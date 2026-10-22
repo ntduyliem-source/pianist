@@ -1,0 +1,21 @@
+%abc-2.1
+X:3902
+T:g6-n30-002 Mi nhìn Đô qua Sol
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G6; profile=m6-up; lead=RH; bucket=n30; notes=35; RH=26; LH=9
+% duration60=36s; related_pattern=3a06a813ad762f6a
+% authored_passages=S02 AU2 AU3
+% source=buildscripts/pianist/compositions/g6/studies.txt:3
+[V:RH] G E c B | G F E2 | F E c B | A G E2 |
+[V:LH] C,4 | C, z z z | C, z z z | C, z z z |
+[V:RH] G2 E2 | G2 E2 | F E c B | A2 G2 |
+[V:LH] C, z z z | C, z z z | C, z z z | C, z z z |
+[V:RH] E2 C2 |]
+[V:LH] C, z z z |]

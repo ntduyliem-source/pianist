@@ -1,0 +1,25 @@
+%abc-2.1
+X:2800
+T:g4-n100-100 Năm lời rất trầm chung ba
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=lower; lead=LH; bucket=n100; notes=104; RH=52; LH=52
+% role=S; duration60=60s; related_pattern=c1711db7f557ea1b
+% authored_passages=Y22 Y24 Y26 Y22 Y26
+% source=buildscripts/pianist/compositions/g4/n100.txt:101
+[V:RH] C C C | D C C | C D E | D C2 |
+[V:LH] A,, B,, C, | D, C, A,, | B,, C, E, | D, A,,2 |
+[V:RH] C2 C | C D E | D C2 | C3 |
+[V:LH] A,,2 B,, | C, D, E, | C, A,,2 | A,,3 |
+[V:RH] C C C | D E D | C D C | C C2 |
+[V:LH] A,, B,, C, | D, E, D, | C, B,, A,, | C, A,,2 |
+[V:RH] C C C | D C C | C D E | D C2 |
+[V:LH] A,, B,, C, | D, C, A,, | B,, C, E, | D, A,,2 |
+[V:RH] C C C | D E D | C D C | C C2 |]
+[V:LH] A,, B,, C, | D, E, D, | C, B,, A,, | C, A,,2 |]

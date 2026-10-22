@@ -1,0 +1,17 @@
+%abc-2.1
+X:720
+T:g2-n4-020 Hai nốt rồi nghỉ
+C:Nhạc do trợ lý AI biên soạn
+M:2/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=eighth; lead=RH; bucket=n4; notes=3; RH=2; LH=1
+% role=R; duration60=2s; related_pattern=4cb392f2c1558988
+% authored_passages=inline-n4-020
+% source=buildscripts/pianist/compositions/g2/n4.txt:21
+[V:RH] C/2D/2 z |]
+[V:LH] C,2 |]

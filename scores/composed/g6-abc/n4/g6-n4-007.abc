@@ -1,0 +1,17 @@
+%abc-2.1
+X:3507
+T:g6-n4-007 Mi trầm nhìn Đô
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G6; profile=m6-up; lead=LH; bucket=n4; notes=5; RH=1; LH=4
+% duration60=4s; related_pattern=189845a8a06eb01f
+% authored_passages=S07
+% source=buildscripts/pianist/compositions/g6/studies.txt:8
+[V:RH] c4 |]
+[V:LH] G, E, C B, |]

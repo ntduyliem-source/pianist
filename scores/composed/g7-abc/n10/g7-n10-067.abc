@@ -1,0 +1,17 @@
+%abc-2.1
+X:4467
+T:g7-n10-067 Fa trầm đảo rồi Đô
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G7; profile=sync; lead=LH; bucket=n10; notes=11; RH=3; LH=8
+% duration60=12s; related_pattern=0326dc886c558121
+% authored_passages=Y17 CL2 CL1
+% source=buildscripts/pianist/compositions/g7/studies.txt:68
+[V:RH] C4 | C4 | C4 |]
+[V:LH] G,/2 F, E,/2 C,2 | E,2 C,2 | G,2 E,2 |]

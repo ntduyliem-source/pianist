@@ -1,0 +1,21 @@
+%abc-2.1
+X:3955
+T:g6-n30-055 Đô cao về Rê Fa
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G6; profile=m7-down; lead=RH; bucket=n30; notes=36; RH=27; LH=9
+% duration60=36s; related_pattern=d30ad41ee962fa32
+% authored_passages=S55 CD2 CD1
+% source=buildscripts/pianist/compositions/g6/studies.txt:56
+[V:RH] B c D F | G2 B c | D E F2 | G E D2 |
+[V:LH] C,4 | C, z z z | C, z z z | C, z z z |
+[V:RH] E2 C2 | G B c D | E F G2 | F E D2 |
+[V:LH] C, z z z | C, z z z | C, z z z | C, z z z |
+[V:RH] E2 C2 |]
+[V:LH] C, z z z |]

@@ -1,0 +1,21 @@
+%abc-2.1
+X:542
+T:g1-n50-042 Mười ô trầm dịu lại
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n50; notes=45; RH=10; LH=35
+% role=L; family=bass-ten-soft; form=authored; duration60=40s
+% related_pattern=8f1c3d1bd2a799d5
+% source=buildscripts/pianist/compositions/g1/n50.txt:44
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C,2 D, E, | F, E, D, C, | C, D, E, F, | G,2 F, E, |
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] D, E, D, C, | C, D, C, C, | C, C, D, E, | F, E, D, E, |
+[V:RH] C4 | C4 |]
+[V:LH] D, C, D, C, | C,4 |]

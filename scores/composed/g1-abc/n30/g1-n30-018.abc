@@ -1,0 +1,19 @@
+%abc-2.1
+X:418
+T:g1-n30-018 Tám ô nhìn lên
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n30; notes=28; RH=20; LH=8
+% role=R; family=three-eight-high; form=authored; duration60=24s
+% related_pattern=0cdc772f412601e9
+% source=buildscripts/pianist/compositions/g1/n30.txt:21
+[V:RH] E F G | F E D | E F E | E3 |
+[V:LH] C,3 | C,3 | C,3 | C,3 |
+[V:RH] E E F | G F E | D E F | E3 |]
+[V:LH] C,3 | C,3 | C,3 | C,3 |]

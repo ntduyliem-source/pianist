@@ -1,0 +1,17 @@
+%abc-2.1
+X:2349
+T:g4-n10-049 Đô trầm ghé miền thấp
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=lower; lead=LH; bucket=n10; notes=9; RH=2; LH=7
+% role=L; duration60=8s; related_pattern=60fd476835fca9c5
+% authored_passages=inline-n10-049
+% source=buildscripts/pianist/compositions/g4/n10.txt:50
+[V:RH] C4 | C4 |]
+[V:LH] C, A,, B,, C, | D, E, C,2 |]

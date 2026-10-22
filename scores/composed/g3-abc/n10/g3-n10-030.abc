@@ -1,0 +1,17 @@
+%abc-2.1
+X:1630
+T:g3-n10-030 Rải rồi nghỉ nhẹ
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=arpeggio; lead=RH; bucket=n10; notes=9; RH=7; LH=2
+% role=R; duration60=8s; related_pattern=8097829c786fd5f0
+% authored_passages=inline-n10-030
+% source=buildscripts/pianist/compositions/g3/n10.txt:31
+[V:RH] C G E z | G E C C |]
+[V:LH] C,4 | C,4 |]

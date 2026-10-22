@@ -1,0 +1,21 @@
+%abc-2.1
+X:1203
+T:g2-n50-003 Mi kể ba đoạn
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=third; lead=RH; bucket=n50; notes=54; RH=42; LH=12
+% role=R; duration60=48s; related_pattern=3fe0fddbf51ad285
+% authored_passages=T03 T06 T09
+% source=buildscripts/pianist/compositions/g2/n50.txt:4
+[V:RH] E G F E | D F E D | C E D C | D E C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] E2 G F | E C D E | F E D C | D E C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] E C D E | G F E2 | D F E D | C2 C2 |]
+[V:LH] C,4 | C,4 | C,4 | C,4 |]

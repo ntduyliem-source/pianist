@@ -1,0 +1,19 @@
+%abc-2.1
+X:2506
+T:g4-n30-006 Phách nghỉ nghe lời dài
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=upper; lead=RH; bucket=n30; notes=34; RH=26; LH=8
+% role=R; duration60=32s; related_pattern=19df888e5223acaa
+% authored_passages=U06 U11
+% source=buildscripts/pianist/compositions/g4/n30.txt:7
+[V:RH] G B z A | B c d c | B A B G | A B G2 |
+[V:LH] G,4 | G,4 | G,4 | G,4 |
+[V:RH] G2 B c | d2 c B | G A B c | G2 G2 |]
+[V:LH] G,4 | G,4 | G,4 | G,4 |]

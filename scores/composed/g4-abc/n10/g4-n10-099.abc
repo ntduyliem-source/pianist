@@ -1,0 +1,17 @@
+%abc-2.1
+X:2399
+T:g4-n10-099 Hai nhịp rất trầm chung
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=lower; lead=LH; bucket=n10; notes=12; RH=6; LH=6
+% role=S; duration60=6s; related_pattern=2cc1a55c00fe15da
+% authored_passages=inline-n10-099
+% source=buildscripts/pianist/compositions/g4/n10.txt:100
+[V:RH] C C C | D C C |]
+[V:LH] A,, B,, C, | D, C, A,, |]

@@ -1,0 +1,17 @@
+%abc-2.1
+X:1679
+T:g3-n10-079 Sol rải gọi hai tiếng vọng
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=arpeggio; lead=RH; bucket=n10; notes=12; RH=6; LH=6
+% role=A; duration60=12s; related_pattern=17b6024f2ebe0d1f
+% authored_passages=inline-n10-079
+% source=buildscripts/pianist/compositions/g3/n10.txt:80
+[V:RH] G C E | z3 | G E C | z3 |]
+[V:LH] z3 | E, D, C, | z3 | D, E, D, |]

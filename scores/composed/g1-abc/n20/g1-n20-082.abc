@@ -1,0 +1,21 @@
+%abc-2.1
+X:382
+T:g1-n20-082 Chín lượt nhỏ
+C:Nhạc do trợ lý AI biên soạn
+M:2/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n20; notes=17; RH=9; LH=8
+% role=A; family=nine-short-turns; form=authored; duration60=18s
+% related_pattern=e3843f0d5261ba34
+% source=buildscripts/pianist/compositions/g1/n20.txt:83
+[V:RH] C D | z2 | E F | z2 |
+[V:LH] z2 | E, F, | z2 | G, F, |
+[V:RH] G F | z2 | E D | z2 |
+[V:LH] z2 | E, D, | z2 | C, C, |
+[V:RH] C2 |]
+[V:LH] z2 |]

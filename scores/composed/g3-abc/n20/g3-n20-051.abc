@@ -1,0 +1,17 @@
+%abc-2.1
+X:1751
+T:g3-n20-051 Nhắc Đô trầm trước xa
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fifth; lead=LH; bucket=n20; notes=19; RH=4; LH=15
+% role=L; duration60=16s; related_pattern=516a66b3401920ff
+% authored_passages=B06
+% source=buildscripts/pianist/compositions/g3/n20.txt:52
+[V:RH] C4 | C4 | C4 | C4 |]
+[V:LH] C, C, G, F, | E, D, E, C, | D, E, G, F, | E, D, C,2 |]

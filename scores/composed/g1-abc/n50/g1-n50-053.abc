@@ -1,0 +1,23 @@
+%abc-2.1
+X:553
+T:g1-n50-053 Mười sáu bước trầm lên cao
+C:Nhạc do trợ lý AI biên soạn
+M:2/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n50; notes=43; RH=16; LH=27
+% role=L; family=bass-sixteen-upper; form=authored; duration60=32s
+% related_pattern=231f23ccb66e47a2
+% source=buildscripts/pianist/compositions/g1/n50.txt:55
+[V:RH] C2 | C2 | C2 | C2 |
+[V:LH] E, F, | G,2 | F, E, | E,2 |
+[V:RH] C2 | C2 | C2 | C2 |
+[V:LH] E, F, | G, F, | E, D, | E,2 |
+[V:RH] C2 | C2 | C2 | C2 |
+[V:LH] E, F, | G, F, | E, D, | C,2 |
+[V:RH] C2 | C2 | C2 | C2 |]
+[V:LH] C, D, | E, F, | E, D, | C,2 |]

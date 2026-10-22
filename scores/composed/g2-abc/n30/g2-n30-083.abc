@@ -1,0 +1,19 @@
+%abc-2.1
+X:1183
+T:g2-n30-083 Nhiều cặp trầm gọi ngắn
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=eighth; lead=LH; bucket=n30; notes=35; RH=15; LH=20
+% role=A; duration60=32s; related_pattern=c2d752caf2c88ad7
+% authored_passages=B18 B16
+% source=buildscripts/pianist/compositions/g2/n30.txt:84
+[V:RH] z4 | C D E D | z4 | D E D C |
+[V:LH] C,/2D,/2 E,/2F,/2 E, D, | z4 | C,/2D,/2 E, D,/2C,/2 C, | z4 |
+[V:RH] z4 | C D E D | z4 | D C C2 |]
+[V:LH] C,2 C,/2D,/2 E, | z4 | D,/2C,/2 C, C,2 | z4 |]

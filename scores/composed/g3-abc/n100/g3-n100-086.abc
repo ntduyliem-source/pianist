@@ -1,0 +1,25 @@
+%abc-2.1
+X:2086
+T:g3-n100-086 Năm cảnh quãng bốn chung nhịp
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fourth; lead=RH; bucket=n100; notes=120; RH=60; LH=60
+% role=S; duration60=80s; related_pattern=17e40b4c15fdba7a
+% authored_passages=S01 S02 S03 S04 S05
+% source=buildscripts/pianist/compositions/g3/n100.txt:87
+[V:RH] C F E2 | D G F2 | E F C2 | D E C2 |
+[V:LH] C, D, E,2 | D, E, D,2 | E, D, C,2 | D, D, C,2 |
+[V:RH] C2 F E | D2 G F | E2 F C | D E C2 |
+[V:LH] C,2 D, E, | D,2 E, D, | C,2 D, C, | D, D, C,2 |
+[V:RH] F C E2 | D G F2 | E C F2 | E D C2 |
+[V:LH] D, C, C,2 | D, E, D,2 | E, D, D,2 | C, D, C,2 |
+[V:RH] E C F2 | E2 D C | D G F2 | E D C2 |
+[V:LH] C, D, D,2 | C,2 D, C, | D, E, D,2 | C, D, C,2 |
+[V:RH] C F E2 | F2 E C | D G F2 | E D C2 |]
+[V:LH] C, D, E,2 | D,2 E, D, | C, D, D,2 | C, D, C,2 |]

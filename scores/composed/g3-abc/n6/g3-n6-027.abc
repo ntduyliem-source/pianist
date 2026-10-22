@@ -1,0 +1,17 @@
+%abc-2.1
+X:1527
+T:g3-n6-027 Rải từ Sol rồi về
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=arpeggio; lead=RH; bucket=n6; notes=6; RH=4; LH=2
+% role=R; duration60=4s; related_pattern=2623ef8726b6cd12
+% authored_passages=inline-n6-027
+% source=buildscripts/pianist/compositions/g3/n6.txt:28
+[V:RH] G C E C |]
+[V:LH] C,2 C,2 |]

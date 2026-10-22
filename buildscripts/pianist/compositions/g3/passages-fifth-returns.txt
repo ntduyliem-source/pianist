@@ -1,0 +1,5 @@
+# Denser fifth phrases with the familiar half-note accompaniment, for later forms.
+P16;4;C2 G F | E D C G | F E D G | F E D C;C,2 C,2 | C,2 C,2 | C,2 C,2 | C,2 C,2
+P17;4;G C D E | F E D C | D E G F | E2 D C;C,2 C,2 | C,2 C,2 | C,2 C,2 | C,2 C,2
+B16;4;C2 C2 | C2 C2 | C2 C2 | C2 C2;C,2 G, F, | E, D, C, G, | F, E, D, G, | F, E, D, C,
+B17;4;C2 C2 | C2 C2 | C2 C2 | C2 C2;G, C, D, E, | F, E, D, C, | D, E, G, F, | E,2 D, C,

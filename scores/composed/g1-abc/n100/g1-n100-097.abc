@@ -1,0 +1,27 @@
+%abc-2.1
+X:697
+T:g1-n100-097 Hai mươi bốn bước đôi qua đồi
+C:Nhạc do trợ lý AI biên soạn
+M:2/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n100; notes=84; RH=42; LH=42
+% role=S; family=octave-twenty-four-upper; form=authored; duration60=48s
+% related_pattern=b24506c64e2d284f
+% source=buildscripts/pianist/compositions/g1/n100.txt:97
+[V:RH] E F | G2 | F E | E2 |
+[V:LH] E, F, | G,2 | F, E, | E,2 |
+[V:RH] E F | G F | E D | E2 |
+[V:LH] E, F, | G, F, | E, D, | E,2 |
+[V:RH] E F | G F | E D | C2 |
+[V:LH] E, F, | G, F, | E, D, | C,2 |
+[V:RH] C D | E F | E D | C2 |
+[V:LH] C, D, | E, F, | E, D, | C,2 |
+[V:RH] C C | D E | F G | F E |
+[V:LH] C, C, | D, E, | F, G, | F, E, |
+[V:RH] D C | C D | E D | C2 |]
+[V:LH] D, C, | C, D, | E, D, | C,2 |]

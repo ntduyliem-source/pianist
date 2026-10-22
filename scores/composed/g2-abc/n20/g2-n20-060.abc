@@ -1,0 +1,17 @@
+%abc-2.1
+X:1060
+T:g2-n20-060 Giữ trầm giữa ba phách
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=eighth; lead=LH; bucket=n20; notes=16; RH=4; LH=12
+% role=L; duration60=12s; related_pattern=4f6dc7ec203e9708
+% authored_passages=F25
+% source=buildscripts/pianist/compositions/g2/n20.txt:61
+[V:RH] C3 | C3 | C3 | C3 |]
+[V:LH] C,2 C,/2D,/2 | E, F,/2E,/2 D, | C, D, E,/2D,/2 | C,3 |]

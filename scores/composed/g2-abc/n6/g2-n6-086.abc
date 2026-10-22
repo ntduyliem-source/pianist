@@ -1,0 +1,17 @@
+%abc-2.1
+X:886
+T:g2-n6-086 Cùng phách một tay nhảy
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=third; lead=RH; bucket=n6; notes=6; RH=3; LH=3
+% role=S; duration60=3s; related_pattern=0a2c61c5211a5b03
+% authored_passages=inline-n6-086
+% source=buildscripts/pianist/compositions/g2/n6.txt:87
+[V:RH] C E D |]
+[V:LH] C, D, C, |]

@@ -1,0 +1,25 @@
+%abc-2.1
+X:1370
+T:g2-n100-070 Lời giữ nhắc cặp đôi
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=eighth; lead=RH; bucket=n100; notes=82; RH=45; LH=37
+% role=A; duration60=80s; related_pattern=77b5db96186ea4d7
+% authored_passages=B05 B07 B02 B10 B06
+% source=buildscripts/pianist/compositions/g2/n100.txt:71
+[V:RH] C2 C/2D/2 E | z4 | D/2E/2 D C2 | z4 |
+[V:LH] z4 | C, D, E, D, | z4 | D, E, D, C, |
+[V:RH] C D/2E/2 F/2G/2 F | z4 | E D E/2D/2 C | z4 |
+[V:LH] z4 | C, D, E, D, | z4 | D, C, C,2 |
+[V:RH] C D E/2F/2 G | z4 | F/2E/2 D C2 | z4 |
+[V:LH] z4 | C, D, C, C, | z4 | C, D, C, C, |
+[V:RH] C/2D/2 E z D/2C/2 | z4 | C2 D/2C/2 C | z4 |
+[V:LH] z4 | C, D, E, D, | z4 | D, C, C,2 |
+[V:RH] C2 C/2D/2 E | z4 | D/2C/2 C C2 | z4 |]
+[V:LH] z4 | C, D, E, D, | z4 | D, C, C,2 |]

@@ -1,0 +1,17 @@
+%abc-2.1
+X:844
+T:g2-n6-044 Câu hỏi ở nốt Rê trầm
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=third; lead=LH; bucket=n6; notes=7; RH=2; LH=5
+% role=L; duration60=6s; related_pattern=e369d7b0b8bd74c8
+% authored_passages=inline-n6-044
+% source=buildscripts/pianist/compositions/g2/n6.txt:45
+[V:RH] C3 | C3 |]
+[V:LH] D, F, E, | D, E,2 |]

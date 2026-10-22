@@ -1,0 +1,17 @@
+%abc-2.1
+X:2279
+T:g4-n6-079 Từ cao gọi ba tiếng thấp
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=span; lead=RH; bucket=n6; notes=6; RH=3; LH=3
+% role=A; duration60=6s; related_pattern=5cb0ff17347488d7
+% authored_passages=inline-n6-079
+% source=buildscripts/pianist/compositions/g4/n6.txt:80
+[V:RH] c G C | z3 |]
+[V:LH] z3 | E, D, C, |]

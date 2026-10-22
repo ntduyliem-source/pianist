@@ -1,0 +1,17 @@
+%abc-2.1
+X:2224
+T:g4-n6-024 La Đô Mi giữ cuối
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=lower; lead=RH; bucket=n6; notes=7; RH=5; LH=2
+% role=R; duration60=6s; related_pattern=3ba82ae623e582cd
+% authored_passages=inline-n6-024
+% source=buildscripts/pianist/compositions/g4/n6.txt:25
+[V:RH] A, C E | D C2 |]
+[V:LH] C,3 | C,3 |]

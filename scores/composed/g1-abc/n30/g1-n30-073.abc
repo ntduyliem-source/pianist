@@ -1,0 +1,21 @@
+%abc-2.1
+X:473
+T:g1-n30-073 Năm lượt trầm đổi hướng
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n30; notes=28; RH=14; LH=14
+% role=A; family=left-five-turns; form=authored; duration60=30s
+% related_pattern=1090e28c0a8d72fd
+% source=buildscripts/pianist/compositions/g1/n30.txt:74
+[V:RH] z3 | C D C | z3 | D E D |
+[V:LH] C, D, E, | z3 | F, E, D, | z3 |
+[V:RH] z3 | E F E | z3 | D E D |
+[V:LH] C, D, E, | z3 | D, C, D, | z3 |
+[V:RH] z3 | C2 C |]
+[V:LH] C,2 C, | z3 |]

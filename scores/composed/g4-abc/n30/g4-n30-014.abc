@@ -1,0 +1,19 @@
+%abc-2.1
+X:2514
+T:g4-n30-014 Sol Đô cao quay lại
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=upper; lead=RH; bucket=n30; notes=32; RH=24; LH=8
+% role=R; duration60=24s; related_pattern=0e75222c24708b5a
+% authored_passages=U24 U21
+% source=buildscripts/pianist/compositions/g4/n30.txt:15
+[V:RH] G c B | A G B | d c B | A G G |
+[V:LH] G,3 | G,3 | G,3 | G,3 |
+[V:RH] G A B | c d c | B A B | A G G |]
+[V:LH] G,3 | G,3 | G,3 | G,3 |]

@@ -1,0 +1,19 @@
+%abc-2.1
+X:2582
+T:g4-n30-082 Hai chuyện mở tám bass
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=span; lead=LH; bucket=n30; notes=31; RH=15; LH=16
+% role=A; duration60=32s; related_pattern=7ec2989587acc625
+% authored_passages=H05 H07
+% source=buildscripts/pianist/compositions/g4/n30.txt:83
+[V:RH] z4 | E F G F | z4 | F E E2 |
+[V:LH] C, G, C B, | z4 | A, G, E, C, | z4 |
+[V:RH] z4 | E F G F | z4 | F G F E |]
+[V:LH] C, F, A, C | z4 | B, G, E, C, | z4 |]

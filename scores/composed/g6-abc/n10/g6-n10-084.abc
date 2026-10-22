@@ -1,0 +1,17 @@
+%abc-2.1
+X:3784
+T:g6-n10-084 Nhắc Đô lên tám rồi Rê
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G6; profile=P8-up; lead=RH; bucket=n10; notes=11; RH=8; LH=3
+% duration60=12s; related_pattern=2b47df8dae8ecb91
+% authored_passages=S84 CR1 CR3
+% source=buildscripts/pianist/compositions/g6/studies.txt:85
+[V:RH] C C c d | G2 E2 | G2 D2 |]
+[V:LH] C,4 | C,4 | C,4 |]

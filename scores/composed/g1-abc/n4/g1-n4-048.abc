@@ -1,0 +1,17 @@
+%abc-2.1
+X:48
+T:g1-n4-048 Tay trái nhắc đầu
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n4; notes=5; RH=1; LH=4
+% role=L; family=bass-repeat-start; form=authored; duration60=4s
+% related_pattern=3851832e4fd310b7
+% source=buildscripts/pianist/compositions/g1/n4.txt:51
+[V:RH] C4 |]
+[V:LH] C, C, D, E, |]

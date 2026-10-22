@@ -1,0 +1,17 @@
+%abc-2.1
+X:5085
+T:g8-n6-085 Quãng năm rồi nối Đô
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G8; profile=dyad-tie; lead=RH; bucket=n6; notes=8; RH=6; LH=2
+% duration60=8s; related_pattern=586278cf24e20734
+% authored_passages=T10 CR3
+% source=buildscripts/pianist/compositions/g8/studies.txt:86
+[V:RH] [CG] E/2 C/2-C2 | D2 C2 |]
+[V:LH] C,4 | G,4 |]

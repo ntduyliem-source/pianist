@@ -1,0 +1,17 @@
+%abc-2.1
+X:1706
+T:g3-n20-006 Khoảng nghỉ trong lời nhảy
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fourth; lead=RH; bucket=n20; notes=18; RH=14; LH=4
+% role=R; duration60=16s; related_pattern=33f79ef08921d62b
+% authored_passages=F06
+% source=buildscripts/pianist/compositions/g3/n20.txt:7
+[V:RH] C F z E | D G F E | D E F C | D E C2 |]
+[V:LH] C,4 | C,4 | C,4 | C,4 |]

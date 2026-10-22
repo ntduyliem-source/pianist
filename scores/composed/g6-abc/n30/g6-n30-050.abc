@@ -1,0 +1,21 @@
+%abc-2.1
+X:3950
+T:g6-n30-050 Fa Rê trầm chạm Đô
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G6; profile=m7-up; lead=LH; bucket=n30; notes=37; RH=9; LH=28
+% duration60=36s; related_pattern=42377768da35a0a4
+% authored_passages=S50 CLP2 CLP1
+% source=buildscripts/pianist/compositions/g6/studies.txt:51
+[V:RH] c4 | c z z z | c z z z | c z z z |
+[V:LH] F, D, C B, | G, F, E, D | C B, A, G, | E,2 G,2 |
+[V:RH] c z z z | c z z z | c z z z | c z z z |
+[V:LH] E,2 C,2 | G, E, D, C | B, A, G,2 | E, F, G,2 |
+[V:RH] c z z z |]
+[V:LH] E,2 C,2 |]

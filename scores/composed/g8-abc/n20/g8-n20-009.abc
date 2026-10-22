@@ -1,0 +1,19 @@
+%abc-2.1
+X:5209
+T:g8-n20-009 Dòng phụ cao Rê Fa Mi
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G8; profile=ledger-high; lead=RH; bucket=n20; notes=20; RH=15; LH=5
+% duration60=20s; related_pattern=78a5e00bd130e3b4
+% authored_passages=H09 HP1
+% source=buildscripts/pianist/compositions/g8/studies.txt:10
+[V:RH] d' f' e'2 | c' d' e'2 | f' e' d'2 | e' g' f' e' |
+[V:LH] C,4 | C, z z z | D, z z z | C, z z z |
+[V:RH] d'2 c'2 |]
+[V:LH] C, z z z |]

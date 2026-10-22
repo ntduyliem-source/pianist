@@ -1,0 +1,17 @@
+%abc-2.1
+X:1575
+T:g3-n6-075 Quãng năm trầm hỏi bước
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fifth; lead=LH; bucket=n6; notes=6; RH=3; LH=3
+% role=A; duration60=6s; related_pattern=9e68bed048a89d93
+% authored_passages=inline-n6-075
+% source=buildscripts/pianist/compositions/g3/n6.txt:76
+[V:RH] z3 | E D C |]
+[V:LH] C, G, F, | z3 |]

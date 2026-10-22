@@ -1,0 +1,21 @@
+%abc-2.1
+X:1215
+T:g2-n50-015 Nhắc mở khép nhịp ba
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=third; lead=RH; bucket=n50; notes=47; RH=35; LH=12
+% role=R; duration60=36s; related_pattern=e3311d52efd03ada
+% authored_passages=T25 T21 T24
+% source=buildscripts/pianist/compositions/g2/n50.txt:16
+[V:RH] C C E | D E C | D F E | D C2 |
+[V:LH] C,3 | C,3 | C,3 | C,3 |
+[V:RH] C E D | E G F | E D E | D C C |
+[V:LH] C,3 | C,3 | C,3 | C,3 |
+[V:RH] C D F | E D C | D F E | D C C |]
+[V:LH] C,3 | C,3 | C,3 | C,3 |]

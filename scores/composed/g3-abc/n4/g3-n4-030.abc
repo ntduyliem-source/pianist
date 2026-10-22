@@ -1,0 +1,17 @@
+%abc-2.1
+X:1430
+T:g3-n4-030 Giữ Sol trước mẫu rải
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=arpeggio; lead=RH; bucket=n4; notes=4; RH=3; LH=1
+% role=R; duration60=4s; related_pattern=a176afdb177c406e
+% authored_passages=inline-n4-030
+% source=buildscripts/pianist/compositions/g3/n4.txt:31
+[V:RH] G2 C E |]
+[V:LH] C,4 |]

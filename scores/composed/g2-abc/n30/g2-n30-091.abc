@@ -1,0 +1,19 @@
+%abc-2.1
+X:1191
+T:g2-n30-091 Trầm nhảy cùng khép
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=third; lead=LH; bucket=n30; notes=34; RH=17; LH=17
+% role=S; duration60=32s; related_pattern=7f28ad8205a23113
+% authored_passages=S06 S18
+% source=buildscripts/pianist/compositions/g2/n30.txt:92
+[V:RH] C D D2 | C2 D C | C2 D C | C4 |
+[V:LH] C, E, D,2 | E,2 D, C, | E,2 D, C, | C,4 |
+[V:RH] C2 C2 | D D C2 | C4 | C4 |]
+[V:LH] C,2 E,2 | D, E, C,2 | C,4 | C,4 |]

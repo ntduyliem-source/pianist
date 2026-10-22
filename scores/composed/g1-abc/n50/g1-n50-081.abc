@@ -1,0 +1,27 @@
+%abc-2.1
+X:581
+T:g1-n50-081 Hai mươi hai lời ngắn
+C:Nhạc do trợ lý AI biên soạn
+M:2/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n50; notes=42; RH=21; LH=21
+% role=A; family=twenty-two-turns; form=authored; duration60=44s
+% related_pattern=37f9250575b9ccd9
+% source=buildscripts/pianist/compositions/g1/n50.txt:82
+[V:RH] C D | z2 | E F | z2 |
+[V:LH] z2 | E, F, | z2 | G, F, |
+[V:RH] G F | z2 | E D | z2 |
+[V:LH] z2 | E, D, | z2 | C, D, |
+[V:RH] C D | z2 | E F | z2 |
+[V:LH] z2 | E, F, | z2 | G, F, |
+[V:RH] E D | z2 | C D | z2 |
+[V:LH] z2 | E, D, | z2 | C, D, |
+[V:RH] E D | z2 | C D | z2 |
+[V:LH] z2 | E, D, | z2 | C, D, |
+[V:RH] C2 | z2 |]
+[V:LH] z2 | C,2 |]

@@ -1,0 +1,25 @@
+%abc-2.1
+X:2017
+T:g3-n100-017 Sol gọi Đô giữ chuyện xa
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fifth; lead=RH; bucket=n100; notes=88; RH=64; LH=24
+% role=R; duration60=80s; related_pattern=1cdee2b0feb64e96
+% authored_passages=P02 P07 P10 P09 P11
+% source=buildscripts/pianist/compositions/g3/n100.txt:18
+[V:RH] G C D E | F E D C | D E G F | E D C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C2 G2 | F E D C | D G F E | D C C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C G F E | D G F E | D E G F | E D C2 |
+[V:LH] C,2 C,2 | C,2 C,2 | C,2 C,2 | C,2 C,2 |
+[V:RH] C G z F | E D C2 | D E F E | D E C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C2 G2 | F2 E D | C2 C2 | C4 |]
+[V:LH] C,4 | C,4 | C,4 | C,4 |]

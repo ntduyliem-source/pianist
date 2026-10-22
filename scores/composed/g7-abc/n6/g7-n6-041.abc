@@ -1,0 +1,17 @@
+%abc-2.1
+X:4341
+T:g7-n6-041 Rê trầm nối sau Fa Mi
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G7; profile=tie; lead=LH; bucket=n6; notes=7; RH=2; LH=5
+% duration60=8s; related_pattern=013fa235f2bcbd10
+% authored_passages=T16 CL3
+% source=buildscripts/pianist/compositions/g7/studies.txt:42
+[V:RH] D4 | G4 |]
+[V:LH] F, E,/2 D,/2-D,2 | D,2 C,2 |]

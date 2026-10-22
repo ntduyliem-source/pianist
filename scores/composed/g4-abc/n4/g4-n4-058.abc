@@ -1,0 +1,17 @@
+%abc-2.1
+X:2158
+T:g4-n4-058 Đô giữa La Fa về trầm
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=span; lead=LH; bucket=n4; notes=5; RH=1; LH=4
+% role=L; duration60=4s; related_pattern=059d2e7ebd893299
+% authored_passages=inline-n4-058
+% source=buildscripts/pianist/compositions/g4/n4.txt:59
+[V:RH] E4 |]
+[V:LH] C A, F, C, |]

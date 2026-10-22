@@ -1,0 +1,17 @@
+%abc-2.1
+X:207
+T:g1-n10-007 Vòng quanh nốt Mi
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n10; notes=10; RH=8; LH=2
+% role=R; family=middle-turn; form=authored; duration60=8s
+% related_pattern=3c8ddd55d7a2642d
+% source=buildscripts/pianist/compositions/g1/n10.txt:10
+[V:RH] D E F E | D C D E |]
+[V:LH] C,4 | C,4 |]

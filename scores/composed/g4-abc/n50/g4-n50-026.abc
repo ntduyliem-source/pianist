@@ -1,0 +1,21 @@
+%abc-2.1
+X:2626
+T:g4-n50-026 Đô cao về rồi giữ thấp
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=span; lead=RH; bucket=n50; notes=48; RH=36; LH=12
+% role=R; duration60=48s; related_pattern=0499cf3cd93ea6a6
+% authored_passages=W02 W03 W09
+% source=buildscripts/pianist/compositions/g4/n50.txt:27
+[V:RH] c G C D | E G A c | B A G E | D E C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C2 G c | B A G2 | E F A G | E D C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C2 G c | B G E2 | C4 | C4 |]
+[V:LH] C,4 | C,4 | C,4 | C,4 |]

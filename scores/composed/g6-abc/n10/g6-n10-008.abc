@@ -1,0 +1,17 @@
+%abc-2.1
+X:3708
+T:g6-n10-008 Rê trầm dẫn Mi
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G6; profile=m6-up; lead=LH; bucket=n10; notes=11; RH=3; LH=8
+% duration60=12s; related_pattern=35ee8b30b09c8e86
+% authored_passages=S08 CL3 CL1
+% source=buildscripts/pianist/compositions/g6/studies.txt:9
+[V:RH] c4 | c4 | c4 |]
+[V:LH] D, E, C D | G,2 D,2 | G,2 E,2 |]

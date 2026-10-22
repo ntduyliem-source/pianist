@@ -1,0 +1,19 @@
+%abc-2.1
+X:3867
+T:g6-n20-067 Fa Mi tay trái
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G6; profile=M7-up; lead=LH; bucket=n20; notes=22; RH=5; LH=17
+% duration60=20s; related_pattern=2da3df6317ec320f
+% authored_passages=S67 DLP2
+% source=buildscripts/pianist/compositions/g6/studies.txt:68
+[V:RH] c4 | c z z z | c z z z | c z z z |
+[V:LH] E, F, E D | G, E, F, E | D C B, A, | G, E, D,2 |
+[V:RH] c z z z |]
+[V:LH] E,2 C,2 |]

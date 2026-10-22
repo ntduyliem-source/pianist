@@ -1,0 +1,27 @@
+%abc-2.1
+X:3421
+T:g5-n100-021 Đô nghỉ Mi giữ
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=offset; lead=RH; bucket=n100; notes=80; RH=43; LH=37
+% duration60=84s; related_pattern=23a1196da2e6e530
+% authored_passages=O21 OR6 OR3 OR8 OR2 OR5
+% source=buildscripts/pianist/compositions/g5/studies.txt:22
+[V:RH] C z E2 | E z D2 | C2 E2 | G F E2 |
+[V:LH] C, z z G, | C, z z G, | C, z G, z | z C, z C, |
+[V:RH] D2 C2 | G2 E z | D E F2 | E2 D2 |
+[V:LH] G,4 | z G, z C, | G, z D, z | z G, z G, |
+[V:RH] C4 | G z E2 | F2 D2 | E D E2 |
+[V:LH] C,4 | G, z z C, | D, z G, z | z C, z G, |
+[V:RH] C4 | E2 G z | F2 D2 | E D C2 |
+[V:LH] C,4 | z C, z G, | D, z G, z | z C, z G, |
+[V:RH] D2 C2 | C z G2 | F2 E2 | D2 G z |
+[V:LH] C,4 | C, z z G, | F, z C, z | z G, z G, |
+[V:RH] C4 |]
+[V:LH] C,4 |]

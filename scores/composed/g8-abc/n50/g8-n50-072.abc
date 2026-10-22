@@ -1,0 +1,23 @@
+%abc-2.1
+X:5472
+T:g8-n50-072 Mi Sol trầm chấm Sol
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G8; profile=dyad-dotted; lead=LH; bucket=n50; notes=51; RH=13; LH=38
+% duration60=52s; related_pattern=772f86416fff88d1
+% authored_passages=D22 DL1 DL3 DL4
+% source=buildscripts/pianist/compositions/g8/studies.txt:73
+[V:RH] C4 | C z z z | D z z z | C z z z |
+[V:LH] [E,G,]3/2 C,/2 G,2 | [C,E,]3/2 D,/2 E,2 | [D,F,]3/2 E,/2 D,2 | E,2 G,2 |
+[V:RH] C z z z | D z z z | C z z z | C z z z |
+[V:LH] C,4 | [D,G,]3/2 E,/2 F,2 | E,3/2 D,/2 C,2 | [C,E,]2 G,2 |
+[V:RH] C z z z | C z z z | D z z z | D z z z |
+[V:LH] C,4 | [C,G,]3/2 D,/2 E,2 | F,2 D,2 | [D,F,]3/2 E,/2 G,2 |
+[V:RH] C z z z |]
+[V:LH] [C,E,]4 |]

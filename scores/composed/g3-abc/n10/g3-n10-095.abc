@@ -1,0 +1,17 @@
+%abc-2.1
+X:1695
+T:g3-n10-095 Hai nhịp trầm bốn phách
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fourth; lead=LH; bucket=n10; notes=14; RH=7; LH=7
+% role=S; duration60=8s; related_pattern=478ee20ae91c1839
+% authored_passages=inline-n10-095
+% source=buildscripts/pianist/compositions/g3/n10.txt:96
+[V:RH] C D E D | C D C2 |]
+[V:LH] C, F, E, C, | D, E, C,2 |]

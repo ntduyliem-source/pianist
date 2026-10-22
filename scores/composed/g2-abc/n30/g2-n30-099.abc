@@ -1,0 +1,19 @@
+%abc-2.1
+X:1199
+T:g2-n30-099 Giữ đầu trở về chung
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=third; lead=RH; bucket=n30; notes=34; RH=17; LH=17
+% role=S; duration60=24s; related_pattern=3a9e147a7c46c28a
+% authored_passages=S23 S21
+% source=buildscripts/pianist/compositions/g2/n30.txt:100
+[V:RH] C2 E | D E C | E C2 | C3 |
+[V:LH] C,2 D, | D, D, C, | D, C,2 | C,3 |
+[V:RH] C E D | E C2 | D E C | C3 |]
+[V:LH] C, D, C, | D, C,2 | D, D, C, | C,3 |]

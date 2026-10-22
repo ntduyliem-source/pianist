@@ -1,0 +1,19 @@
+%abc-2.1
+X:433
+T:g1-n30-033 Hai vòng trầm nhẹ
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n30; notes=25; RH=6; LH=19
+% role=L; family=bass-two-gentle; form=authored; duration60=24s
+% related_pattern=4ad19564b17c0321
+% source=buildscripts/pianist/compositions/g1/n30.txt:35
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C,2 D, E, | F,2 E, D, | C, D, E, F, | G,2 F, E, |
+[V:RH] C4 | C4 |]
+[V:LH] D, E, D, C, | C,2 C,2 |]

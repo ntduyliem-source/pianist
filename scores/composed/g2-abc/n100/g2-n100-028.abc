@@ -1,0 +1,25 @@
+%abc-2.1
+X:1328
+T:g2-n100-028 Mi mở chuyến đi ba phách
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=eighth; lead=RH; bucket=n100; notes=85; RH=65; LH=20
+% role=R; duration60=60s; related_pattern=39868cc9aa65cd40
+% authored_passages=E23 E22 E25 E21 E25
+% source=buildscripts/pianist/compositions/g2/n100.txt:29
+[V:RH] E/2F/2 G F | E D C | C/2D/2 E D | C C C |
+[V:LH] C,3 | C,3 | C,3 | C,3 |
+[V:RH] C D/2E/2 F | E/2D/2 C2 | C D E | D/2C/2 C2 |
+[V:LH] C,3 | C,3 | C,3 | C,3 |
+[V:RH] C2 C/2D/2 | E F/2E/2 D | C D E/2D/2 | C3 |
+[V:LH] C,3 | C,3 | C,3 | C,3 |
+[V:RH] C/2D/2 E D | C D E/2F/2 | G F E | D/2C/2 C2 |
+[V:LH] C,3 | C,3 | C,3 | C,3 |
+[V:RH] C2 C/2D/2 | E F/2E/2 D | C D E/2D/2 | C3 |]
+[V:LH] C,3 | C,3 | C,3 | C,3 |]

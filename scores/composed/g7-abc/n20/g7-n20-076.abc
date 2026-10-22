@@ -1,0 +1,19 @@
+%abc-2.1
+X:4576
+T:g7-n20-076 Hai nhịp lớn Đô Rê Mi
+C:Nhạc do trợ lý AI biên soạn
+M:6/8
+L:1/4
+Q:3/8=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G7; profile=compound; lead=RH; bucket=n20; notes=21; RH=16; LH=5
+% duration60=10s; related_pattern=167e54d598659beb
+% authored_passages=K01 KRp1
+% source=buildscripts/pianist/compositions/g7/studies.txt:77
+[V:RH] C D/2 E3/2 | C D/2 E3/2 | F E/2 D3/2 | E/2 F/2 G/2 G E/2 |
+[V:LH] C,3 | C,3 | D,3 | C,3 |
+[V:RH] D3/2 C3/2 |]
+[V:LH] C,3 |]

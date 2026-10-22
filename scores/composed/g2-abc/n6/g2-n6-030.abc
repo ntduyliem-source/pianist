@@ -1,0 +1,17 @@
+%abc-2.1
+X:830
+T:g2-n6-030 Đổi hướng ở cặp sau
+C:Nhạc do trợ lý AI biên soạn
+M:2/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=eighth; lead=RH; bucket=n6; notes=8; RH=6; LH=2
+% role=R; duration60=4s; related_pattern=54ed8bebf14e6237
+% authored_passages=inline-n6-030
+% source=buildscripts/pianist/compositions/g2/n6.txt:31
+[V:RH] C D/2E/2 | D/2C/2 C |]
+[V:LH] C,2 | C,2 |]

@@ -1,0 +1,19 @@
+%abc-2.1
+X:1847
+T:g3-n30-047 Sol trầm gọi Đô giữ
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fifth; lead=LH; bucket=n30; notes=32; RH=8; LH=24
+% role=L; duration60=32s; related_pattern=03da8902754b913b
+% authored_passages=B02 B12
+% source=buildscripts/pianist/compositions/g3/n30.txt:48
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] G, C, D, E, | F, E, D, C, | D, E, G, F, | E, D, C,2 |
+[V:RH] C4 | C4 | C4 | C4 |]
+[V:LH] C,4 | C, G, F, E, | D, C, C,2 | C,4 |]

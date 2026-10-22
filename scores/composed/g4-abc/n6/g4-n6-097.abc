@@ -1,0 +1,17 @@
+%abc-2.1
+X:2297
+T:g4-n6-097 La dài Đô Mi chung
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=lower; lead=RH; bucket=n6; notes=6; RH=3; LH=3
+% role=S; duration60=4s; related_pattern=5c3aedfba2f93b77
+% authored_passages=inline-n6-097
+% source=buildscripts/pianist/compositions/g4/n6.txt:98
+[V:RH] A,2 C E |]
+[V:LH] C,2 D, E, |]

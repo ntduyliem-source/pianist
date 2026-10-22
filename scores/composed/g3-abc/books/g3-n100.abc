@@ -1,0 +1,2647 @@
+%abc-2.1
+X:2001
+T:g3-n100-001 Một ngày qua năm cửa Fa
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fourth; lead=RH; bucket=n100; notes=91; RH=69; LH=22
+% role=R; duration60=80s; related_pattern=49622f8de292bfa9
+% authored_passages=F01 F12 F06 F08 F05
+% source=buildscripts/pianist/compositions/g3/n100.txt:2
+[V:RH] C F E D | C D F E | D G F E | D E C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C F E D | C2 F E | D G F E | D E C2 |
+[V:LH] C,2 C,2 | C,4 | C,2 C,2 | C,4 |
+[V:RH] C F z E | D G F E | D E F C | D E C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] E C F E | D E F C | D G F E | D C C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C2 F E | D2 G F | E D C2 | C2 C2 |]
+[V:LH] C,4 | D,4 | C,4 | C,4 |]
+
+%abc-2.1
+X:2016
+T:g3-n100-016 Năm bậc qua những tiếng nền
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fifth; lead=RH; bucket=n100; notes=105; RH=73; LH=32
+% role=R; duration60=80s; related_pattern=8cde58ab665ef50d
+% authored_passages=P10 P16 P04 P17 P05
+% source=buildscripts/pianist/compositions/g3/n100.txt:17
+[V:RH] C G F E | D G F E | D E G F | E D C2 |
+[V:LH] C,2 C,2 | C,2 C,2 | C,2 C,2 | C,2 C,2 |
+[V:RH] C2 G F | E D C G | F E D G | F E D C |
+[V:LH] C,2 C,2 | C,2 C,2 | C,2 C,2 | C,2 C,2 |
+[V:RH] C G D E | F D E C | D G F E | D E C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] G C D E | F E D C | D E G F | E2 D C |
+[V:LH] C,2 C,2 | C,2 C,2 | C,2 C,2 | C,2 C,2 |
+[V:RH] C G F2 | E2 D C | D E F E | D C C2 |]
+[V:LH] C,4 | C,4 | C,4 | C,4 |]
+
+%abc-2.1
+X:2025
+T:g3-n100-025 Năm cảnh rải hợp âm Đô
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=arpeggio; lead=RH; bucket=n100; notes=90; RH=70; LH=20
+% role=R; duration60=80s; related_pattern=1ae9485a869515c3
+% authored_passages=A01 A05 A03 A06 A04
+% source=buildscripts/pianist/compositions/g3/n100.txt:26
+[V:RH] C G E C | G C E G | E C G E | C2 C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C G E2 | C2 G E | C E G C | E G C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] G C E G | E C G E | C G E C | E G C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C G E z | G C E G | E C G E | C E C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C2 G E | C E G C | E G C E | G E C2 |]
+[V:LH] C,4 | C,4 | C,4 | C,4 |]
+
+%abc-2.1
+X:2031
+T:g3-n100-031 Ngày trầm qua năm cửa Fa
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fourth; lead=LH; bucket=n100; notes=91; RH=22; LH=69
+% role=L; duration60=80s; related_pattern=43bb12e0f252069e
+% authored_passages=G01 G06 G12 G05 G08
+% source=buildscripts/pianist/compositions/g3/n100.txt:32
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C, F, E, D, | C, D, F, E, | D, G, F, E, | D, E, C,2 |
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C, F, z E, | D, G, F, E, | D, E, F, C, | D, E, C,2 |
+[V:RH] C2 C2 | C4 | C2 C2 | C4 |
+[V:LH] C, F, E, D, | C,2 F, E, | D, G, F, E, | D, E, C,2 |
+[V:RH] C4 | D4 | C4 | C4 |
+[V:LH] C,2 F, E, | D,2 G, F, | E, D, C,2 | C,2 C,2 |
+[V:RH] C4 | C4 | C4 | C4 |]
+[V:LH] E, C, F, E, | D, E, F, C, | D, G, F, E, | D, C, C,2 |]
+
+%abc-2.1
+X:2046
+T:g3-n100-046 Năm bậc trầm theo nền cao
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fifth; lead=LH; bucket=n100; notes=105; RH=32; LH=73
+% role=L; duration60=80s; related_pattern=28c71eedcc5b3164
+% authored_passages=B10 B04 B16 B05 B17
+% source=buildscripts/pianist/compositions/g3/n100.txt:47
+[V:RH] C2 C2 | C2 C2 | C2 C2 | C2 C2 |
+[V:LH] C, G, F, E, | D, G, F, E, | D, E, G, F, | E, D, C,2 |
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C, G, D, E, | F, D, E, C, | D, G, F, E, | D, E, C,2 |
+[V:RH] C2 C2 | C2 C2 | C2 C2 | C2 C2 |
+[V:LH] C,2 G, F, | E, D, C, G, | F, E, D, G, | F, E, D, C, |
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C, G, F,2 | E,2 D, C, | D, E, F, E, | D, C, C,2 |
+[V:RH] C2 C2 | C2 C2 | C2 C2 | C2 C2 |]
+[V:LH] G, C, D, E, | F, E, D, C, | D, E, G, F, | E,2 D, C, |]
+
+%abc-2.1
+X:2055
+T:g3-n100-055 Năm cảnh rải Đô trầm
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=arpeggio; lead=LH; bucket=n100; notes=90; RH=20; LH=70
+% role=L; duration60=80s; related_pattern=8b8dc6bdfda55d46
+% authored_passages=D01 D03 D05 D04 D06
+% source=buildscripts/pianist/compositions/g3/n100.txt:56
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C, G, E, C, | G, C, E, G, | E, C, G, E, | C,2 C,2 |
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] G, C, E, G, | E, C, G, E, | C, G, E, C, | E, G, C,2 |
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C, G, E,2 | C,2 G, E, | C, E, G, C, | E, G, C,2 |
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C,2 G, E, | C, E, G, C, | E, G, C, E, | G, E, C,2 |
+[V:RH] C4 | C4 | C4 | C4 |]
+[V:LH] C, G, E, z | G, C, E, G, | E, C, G, E, | C, E, C,2 |]
+
+%abc-2.1
+X:2061
+T:g3-n100-061 Năm cuộc gọi qua quãng bốn
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fourth; lead=RH; bucket=n100; notes=76; RH=38; LH=38
+% role=A; duration60=80s; related_pattern=3ae68eb0982e0bec
+% authored_passages=Q01 Q03 Q05 Q04 Q02
+% source=buildscripts/pianist/compositions/g3/n100.txt:62
+[V:RH] C F E D | z4 | C D F E | z4 |
+[V:LH] z4 | C, D, E, D, | z4 | D, C, C,2 |
+[V:RH] D G F E | z4 | D E C2 | z4 |
+[V:LH] z4 | C, D, E, D, | z4 | D, C, D, C, |
+[V:RH] C C F E | z4 | D F E C | z4 |
+[V:LH] z4 | C, D, E, D, | z4 | D, C, C,2 |
+[V:RH] C2 F E | z4 | D G F E | z4 |
+[V:LH] z4 | C, D, E, D, | z4 | D, E, D, C, |
+[V:RH] F C D E | z4 | F E D C | z4 |]
+[V:LH] z4 | C, D, C, C, | z4 | C, D, C, C, |]
+
+%abc-2.1
+X:2071
+T:g3-n100-071 Năm lời hỏi cách năm bậc
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fifth; lead=RH; bucket=n100; notes=76; RH=37; LH=39
+% role=A; duration60=80s; related_pattern=8f54e2dc0600e2ae
+% authored_passages=V01 V03 V04 V02 V01
+% source=buildscripts/pianist/compositions/g3/n100.txt:72
+[V:RH] C G F E | z4 | D E C2 | z4 |
+[V:LH] z4 | C, D, E, D, | z4 | D, C, D, C, |
+[V:RH] C2 G F | z4 | E D E C | z4 |
+[V:LH] z4 | C, D, E, D, | z4 | D, E, D, C, |
+[V:RH] C G D E | z4 | F E D C | z4 |
+[V:LH] z4 | C, D, E, D, | z4 | D, C, D, C, |
+[V:RH] G C D E | z4 | F E D C | z4 |
+[V:LH] z4 | C, D, E, D, | z4 | D, C, C,2 |
+[V:RH] C G F E | z4 | D E C2 | z4 |]
+[V:LH] z4 | C, D, E, D, | z4 | D, C, D, C, |]
+
+%abc-2.1
+X:2078
+T:g3-n100-078 Năm cuộc gọi rải Đô
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=arpeggio; lead=RH; bucket=n100; notes=76; RH=37; LH=39
+% role=A; duration60=80s; related_pattern=3e46c4cc08f1dc7d
+% authored_passages=H01 H03 H04 H02 H01
+% source=buildscripts/pianist/compositions/g3/n100.txt:79
+[V:RH] C G E C | z4 | G E C2 | z4 |
+[V:LH] z4 | C, D, E, D, | z4 | D, C, D, C, |
+[V:RH] E C G E | z4 | C G E C | z4 |
+[V:LH] z4 | C, D, E, D, | z4 | D, E, D, C, |
+[V:RH] C2 G E | z4 | G C E C | z4 |
+[V:LH] z4 | C, D, E, D, | z4 | D, C, D, C, |
+[V:RH] G C E G | z4 | E C G C | z4 |
+[V:LH] z4 | C, D, E, D, | z4 | D, C, C,2 |
+[V:RH] C G E C | z4 | G E C2 | z4 |]
+[V:LH] z4 | C, D, E, D, | z4 | D, C, D, C, |]
+
+%abc-2.1
+X:2086
+T:g3-n100-086 Năm cảnh quãng bốn chung nhịp
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fourth; lead=RH; bucket=n100; notes=120; RH=60; LH=60
+% role=S; duration60=80s; related_pattern=17e40b4c15fdba7a
+% authored_passages=S01 S02 S03 S04 S05
+% source=buildscripts/pianist/compositions/g3/n100.txt:87
+[V:RH] C F E2 | D G F2 | E F C2 | D E C2 |
+[V:LH] C, D, E,2 | D, E, D,2 | E, D, C,2 | D, D, C,2 |
+[V:RH] C2 F E | D2 G F | E2 F C | D E C2 |
+[V:LH] C,2 D, E, | D,2 E, D, | C,2 D, C, | D, D, C,2 |
+[V:RH] F C E2 | D G F2 | E C F2 | E D C2 |
+[V:LH] D, C, C,2 | D, E, D,2 | E, D, D,2 | C, D, C,2 |
+[V:RH] E C F2 | E2 D C | D G F2 | E D C2 |
+[V:LH] C, D, D,2 | C,2 D, C, | D, E, D,2 | C, D, C,2 |
+[V:RH] C F E2 | F2 E C | D G F2 | E D C2 |]
+[V:LH] C, D, E,2 | D,2 E, D, | C, D, D,2 | C, D, C,2 |]
+
+%abc-2.1
+X:2096
+T:g3-n100-096 Năm câu quãng năm chung phách
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fifth; lead=RH; bucket=n100; notes=104; RH=52; LH=52
+% role=S; duration60=80s; related_pattern=80bb2346bae650b1
+% authored_passages=W01 W02 W03 W08 W06
+% source=buildscripts/pianist/compositions/g3/n100.txt:97
+[V:RH] C G F2 | E2 D C | D G F2 | E D C2 |
+[V:LH] C, C, D,2 | C,2 D, C, | D, E, D,2 | C, D, C,2 |
+[V:RH] G2 C D | E2 F E | C2 G F | E D C2 |
+[V:LH] C,2 D, C, | C,2 D, C, | C,2 C, D, | C, D, C,2 |
+[V:RH] C G E2 | F2 E D | C2 G F | E D C2 |
+[V:LH] C, C, C,2 | D,2 E, D, | C,2 C, D, | C, D, C,2 |
+[V:RH] C2 G F | E2 C2 | D E C2 | C4 |
+[V:LH] C,2 C, D, | C,2 C,2 | D, D, C,2 | C,4 |
+[V:RH] C2 G2 | F E C2 | C4 | C4 |]
+[V:LH] C,2 C,2 | D, D, C,2 | C,4 | C,4 |]
+
+%abc-2.1
+X:2002
+T:g3-n100-002 Đô dài và đường quay lại
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fourth; lead=RH; bucket=n100; notes=86; RH=66; LH=20
+% role=R; duration60=80s; related_pattern=074ec13356470cfd
+% authored_passages=F02 F07 F04 F02 F17
+% source=buildscripts/pianist/compositions/g3/n100.txt:3
+[V:RH] C2 F E | D G F E | D F E C | D C C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C C F E | D G F E | F C D E | D C C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] F C D E | F E D C | D G F E | D E C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C2 F E | D G F E | D F E C | D C C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C2 F E | E2 C2 | C2 F2 | C4 |]
+[V:LH] C,4 | C,4 | C,4 | C,4 |]
+
+%abc-2.1
+X:2032
+T:g3-n100-032 Đô thấp dài đường quay lại
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fourth; lead=LH; bucket=n100; notes=86; RH=20; LH=66
+% role=L; duration60=80s; related_pattern=81a1a86072647d87
+% authored_passages=G02 G04 G07 G17 G02
+% source=buildscripts/pianist/compositions/g3/n100.txt:33
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C,2 F, E, | D, G, F, E, | D, F, E, C, | D, C, C,2 |
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] F, C, D, E, | F, E, D, C, | D, G, F, E, | D, E, C,2 |
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C, C, F, E, | D, G, F, E, | F, C, D, E, | D, C, C,2 |
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C,2 F, E, | E,2 C,2 | C,2 F,2 | C,4 |
+[V:RH] C4 | C4 | C4 | C4 |]
+[V:LH] C,2 F, E, | D, G, F, E, | D, F, E, C, | D, C, C,2 |]
+
+%abc-2.1
+X:2062
+T:g3-n100-062 Fa gọi đổi năm câu đáp
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fourth; lead=RH; bucket=n100; notes=76; RH=38; LH=38
+% role=A; duration60=80s; related_pattern=576cf63e3cb1e234
+% authored_passages=Q02 Q04 Q01 Q05 Q03
+% source=buildscripts/pianist/compositions/g3/n100.txt:63
+[V:RH] F C D E | z4 | F E D C | z4 |
+[V:LH] z4 | C, D, C, C, | z4 | C, D, C, C, |
+[V:RH] C2 F E | z4 | D G F E | z4 |
+[V:LH] z4 | C, D, E, D, | z4 | D, E, D, C, |
+[V:RH] C F E D | z4 | C D F E | z4 |
+[V:LH] z4 | C, D, E, D, | z4 | D, C, C,2 |
+[V:RH] C C F E | z4 | D F E C | z4 |
+[V:LH] z4 | C, D, E, D, | z4 | D, C, C,2 |
+[V:RH] D G F E | z4 | D E C2 | z4 |]
+[V:LH] z4 | C, D, E, D, | z4 | D, C, D, C, |]
+
+%abc-2.1
+X:2087
+T:g3-n100-087 Giữ nhảy qua năm cảnh chung
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fourth; lead=RH; bucket=n100; notes=104; RH=52; LH=52
+% role=S; duration60=80s; related_pattern=1be4d013feddd6d2
+% authored_passages=S02 S04 S14 S01 S12
+% source=buildscripts/pianist/compositions/g3/n100.txt:88
+[V:RH] C2 F E | D2 G F | E2 F C | D E C2 |
+[V:LH] C,2 D, E, | D,2 E, D, | C,2 D, C, | D, D, C,2 |
+[V:RH] E C F2 | E2 D C | D G F2 | E D C2 |
+[V:LH] C, D, D,2 | C,2 D, C, | D, E, D,2 | C, D, C,2 |
+[V:RH] C F E2 | D G F2 | E D C2 | C4 |
+[V:LH] C, D, E,2 | D, E, D,2 | C, D, C,2 | C,4 |
+[V:RH] C F E2 | D G F2 | E F C2 | D E C2 |
+[V:LH] C, D, E,2 | D, E, D,2 | E, D, C,2 | D, D, C,2 |
+[V:RH] C4 | C F E2 | C4 | C4 |]
+[V:LH] C,4 | C, D, C,2 | C,4 | C,4 |]
+
+%abc-2.1
+X:2017
+T:g3-n100-017 Sol gọi Đô giữ chuyện xa
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fifth; lead=RH; bucket=n100; notes=88; RH=64; LH=24
+% role=R; duration60=80s; related_pattern=1cdee2b0feb64e96
+% authored_passages=P02 P07 P10 P09 P11
+% source=buildscripts/pianist/compositions/g3/n100.txt:18
+[V:RH] G C D E | F E D C | D E G F | E D C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C2 G2 | F E D C | D G F E | D C C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C G F E | D G F E | D E G F | E D C2 |
+[V:LH] C,2 C,2 | C,2 C,2 | C,2 C,2 | C,2 C,2 |
+[V:RH] C G z F | E D C2 | D E F E | D E C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C2 G2 | F2 E D | C2 C2 | C4 |]
+[V:LH] C,4 | C,4 | C,4 | C,4 |]
+
+%abc-2.1
+X:2047
+T:g3-n100-047 Sol trầm gọi Đô giữ xa
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fifth; lead=LH; bucket=n100; notes=88; RH=24; LH=64
+% role=L; duration60=80s; related_pattern=998342ae90522a16
+% authored_passages=B02 B10 B07 B11 B09
+% source=buildscripts/pianist/compositions/g3/n100.txt:48
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] G, C, D, E, | F, E, D, C, | D, E, G, F, | E, D, C,2 |
+[V:RH] C2 C2 | C2 C2 | C2 C2 | C2 C2 |
+[V:LH] C, G, F, E, | D, G, F, E, | D, E, G, F, | E, D, C,2 |
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C,2 G,2 | F, E, D, C, | D, G, F, E, | D, C, C,2 |
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C,2 G,2 | F,2 E, D, | C,2 C,2 | C,4 |
+[V:RH] C4 | C4 | C4 | C4 |]
+[V:LH] C, G, z F, | E, D, C,2 | D, E, F, E, | D, E, C,2 |]
+
+%abc-2.1
+X:2079
+T:g3-n100-079 Sol rải những lời trả
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=arpeggio; lead=RH; bucket=n100; notes=76; RH=38; LH=38
+% role=A; duration60=80s; related_pattern=19e68af6438d1c80
+% authored_passages=H02 H04 H01 H03 H02
+% source=buildscripts/pianist/compositions/g3/n100.txt:80
+[V:RH] G C E G | z4 | E C G C | z4 |
+[V:LH] z4 | C, D, E, D, | z4 | D, C, C,2 |
+[V:RH] C2 G E | z4 | G C E C | z4 |
+[V:LH] z4 | C, D, E, D, | z4 | D, C, D, C, |
+[V:RH] C G E C | z4 | G E C2 | z4 |
+[V:LH] z4 | C, D, E, D, | z4 | D, C, D, C, |
+[V:RH] E C G E | z4 | C G E C | z4 |
+[V:LH] z4 | C, D, E, D, | z4 | D, E, D, C, |
+[V:RH] G C E G | z4 | E C G C | z4 |]
+[V:LH] z4 | C, D, E, D, | z4 | D, C, C,2 |]
+
+%abc-2.1
+X:2003
+T:g3-n100-003 Mi giữ chuyện qua năm đoạn
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fourth; lead=RH; bucket=n100; notes=86; RH=66; LH=20
+% role=R; duration60=80s; related_pattern=0d9012dea63cb506
+% authored_passages=F03 F09 F13 F06 F05
+% source=buildscripts/pianist/compositions/g3/n100.txt:4
+[V:RH] C F E2 | D E F C | D G F E | D E C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C F E2 | F C D E | D E F2 | E D C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] D2 G F | E C F E | D F E C | D E C2 |
+[V:LH] D,4 | C,4 | C,4 | C,4 |
+[V:RH] C F z E | D G F E | D E F C | D E C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C2 F E | D2 G F | E D C2 | C2 C2 |]
+[V:LH] C,4 | D,4 | C,4 | C,4 |]
+
+%abc-2.1
+X:2033
+T:g3-n100-033 Mi trầm giữ năm lời kể
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fourth; lead=LH; bucket=n100; notes=86; RH=20; LH=66
+% role=L; duration60=80s; related_pattern=e57a8e26aff65197
+% authored_passages=G03 G13 G09 G05 G06
+% source=buildscripts/pianist/compositions/g3/n100.txt:34
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C, F, E,2 | D, E, F, C, | D, G, F, E, | D, E, C,2 |
+[V:RH] D4 | C4 | C4 | C4 |
+[V:LH] D,2 G, F, | E, C, F, E, | D, F, E, C, | D, E, C,2 |
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C, F, E,2 | F, C, D, E, | D, E, F,2 | E, D, C,2 |
+[V:RH] C4 | D4 | C4 | C4 |
+[V:LH] C,2 F, E, | D,2 G, F, | E, D, C,2 | C,2 C,2 |
+[V:RH] C4 | C4 | C4 | C4 |]
+[V:LH] C, F, z E, | D, G, F, E, | D, E, F, C, | D, E, C,2 |]
+
+%abc-2.1
+X:2072
+T:g3-n100-072 Sol mở năm cuộc gọi
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fifth; lead=RH; bucket=n100; notes=76; RH=38; LH=38
+% role=A; duration60=80s; related_pattern=6f5b41e1730f1672
+% authored_passages=V02 V04 V01 V03 V02
+% source=buildscripts/pianist/compositions/g3/n100.txt:73
+[V:RH] G C D E | z4 | F E D C | z4 |
+[V:LH] z4 | C, D, E, D, | z4 | D, C, C,2 |
+[V:RH] C G D E | z4 | F E D C | z4 |
+[V:LH] z4 | C, D, E, D, | z4 | D, C, D, C, |
+[V:RH] C G F E | z4 | D E C2 | z4 |
+[V:LH] z4 | C, D, E, D, | z4 | D, C, D, C, |
+[V:RH] C2 G F | z4 | E D E C | z4 |
+[V:LH] z4 | C, D, E, D, | z4 | D, E, D, C, |
+[V:RH] G C D E | z4 | F E D C | z4 |]
+[V:LH] z4 | C, D, E, D, | z4 | D, C, C,2 |]
+
+%abc-2.1
+X:2026
+T:g3-n100-026 Mi rải chuyện qua nốt giữ
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=arpeggio; lead=RH; bucket=n100; notes=84; RH=64; LH=20
+% role=R; duration60=80s; related_pattern=9f062245b38367be
+% authored_passages=A02 A04 A01 A05 A07
+% source=buildscripts/pianist/compositions/g3/n100.txt:27
+[V:RH] E C G E | C G E C | E G C G | E C C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C2 G E | C E G C | E G C E | G E C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C G E C | G C E G | E C G E | C2 C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C G E2 | C2 G E | C E G C | E G C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C2 G E | C2 E2 | G2 C2 | C4 |]
+[V:LH] C,4 | C,4 | C,4 | C,4 |]
+
+%abc-2.1
+X:2056
+T:g3-n100-056 Mi trầm rải chuyện giữ
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=arpeggio; lead=LH; bucket=n100; notes=84; RH=20; LH=64
+% role=L; duration60=80s; related_pattern=530cb7e539acd167
+% authored_passages=D02 D01 D04 D07 D05
+% source=buildscripts/pianist/compositions/g3/n100.txt:57
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] E, C, G, E, | C, G, E, C, | E, G, C, G, | E, C, C,2 |
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C, G, E, C, | G, C, E, G, | E, C, G, E, | C,2 C,2 |
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C,2 G, E, | C, E, G, C, | E, G, C, E, | G, E, C,2 |
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C,2 G, E, | C,2 E,2 | G,2 C,2 | C,4 |
+[V:RH] C4 | C4 | C4 | C4 |]
+[V:LH] C, G, E,2 | C,2 G, E, | C, E, G, C, | E, G, C,2 |]
+
+%abc-2.1
+X:2004
+T:g3-n100-004 Fa gọi trong khu vườn nhịp
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fourth; lead=RH; bucket=n100; notes=91; RH=69; LH=22
+% role=R; duration60=80s; related_pattern=0870d7a510c67c57
+% authored_passages=F04 F08 F14 F12 F05
+% source=buildscripts/pianist/compositions/g3/n100.txt:5
+[V:RH] F C D E | F E D C | D G F E | D E C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] E C F E | D E F C | D G F E | D C C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] F2 C D | E D F E | D G F E | D C C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C F E D | C2 F E | D G F E | D E C2 |
+[V:LH] C,2 C,2 | C,4 | C,2 C,2 | C,4 |
+[V:RH] C2 F E | D2 G F | E D C2 | C2 C2 |]
+[V:LH] C,4 | D,4 | C,4 | C,4 |]
+
+%abc-2.1
+X:2034
+T:g3-n100-034 Fa thấp gọi vườn nhịp
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fourth; lead=LH; bucket=n100; notes=91; RH=22; LH=69
+% role=L; duration60=80s; related_pattern=38821a928e459586
+% authored_passages=G04 G14 G08 G05 G12
+% source=buildscripts/pianist/compositions/g3/n100.txt:35
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] F, C, D, E, | F, E, D, C, | D, G, F, E, | D, E, C,2 |
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] F,2 C, D, | E, D, F, E, | D, G, F, E, | D, C, C,2 |
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] E, C, F, E, | D, E, F, C, | D, G, F, E, | D, C, C,2 |
+[V:RH] C4 | D4 | C4 | C4 |
+[V:LH] C,2 F, E, | D,2 G, F, | E, D, C,2 | C,2 C,2 |
+[V:RH] C2 C2 | C4 | C2 C2 | C4 |]
+[V:LH] C, F, E, D, | C,2 F, E, | D, G, F, E, | D, E, C,2 |]
+
+%abc-2.1
+X:2063
+T:g3-n100-063 Rê Sol hỏi qua cửa sổ
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fourth; lead=RH; bucket=n100; notes=76; RH=38; LH=38
+% role=A; duration60=80s; related_pattern=2157312b83454ae9
+% authored_passages=Q03 Q01 Q04 Q02 Q05
+% source=buildscripts/pianist/compositions/g3/n100.txt:64
+[V:RH] D G F E | z4 | D E C2 | z4 |
+[V:LH] z4 | C, D, E, D, | z4 | D, C, D, C, |
+[V:RH] C F E D | z4 | C D F E | z4 |
+[V:LH] z4 | C, D, E, D, | z4 | D, C, C,2 |
+[V:RH] C2 F E | z4 | D G F E | z4 |
+[V:LH] z4 | C, D, E, D, | z4 | D, E, D, C, |
+[V:RH] F C D E | z4 | F E D C | z4 |
+[V:LH] z4 | C, D, C, C, | z4 | C, D, C, C, |
+[V:RH] C C F E | z4 | D F E C | z4 |]
+[V:LH] z4 | C, D, E, D, | z4 | D, C, C,2 |]
+
+%abc-2.1
+X:2088
+T:g3-n100-088 Fa gọi đổi đường cùng tiếng
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fourth; lead=RH; bucket=n100; notes=102; RH=51; LH=51
+% role=S; duration60=80s; related_pattern=e124b32d7024df3f
+% authored_passages=S03 S13 S05 S02 S11
+% source=buildscripts/pianist/compositions/g3/n100.txt:89
+[V:RH] F C E2 | D G F2 | E C F2 | E D C2 |
+[V:LH] D, C, C,2 | D, E, D,2 | E, D, D,2 | C, D, C,2 |
+[V:RH] C2 F2 | E2 C2 | D E C2 | C4 |
+[V:LH] C,2 D,2 | C,2 C,2 | D, D, C,2 | C,4 |
+[V:RH] C F E2 | F2 E C | D G F2 | E D C2 |
+[V:LH] C, D, E,2 | D,2 E, D, | C, D, D,2 | C, D, C,2 |
+[V:RH] C2 F E | D2 G F | E2 F C | D E C2 |
+[V:LH] C,2 D, E, | D,2 E, D, | C,2 D, C, | D, D, C,2 |
+[V:RH] C2 F2 | E D C2 | C4 | C4 |]
+[V:LH] C,2 D,2 | E, D, C,2 | C,4 | C,4 |]
+
+%abc-2.1
+X:2097
+T:g3-n100-097 Sol dài đổi lời cùng nhau
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fifth; lead=RH; bucket=n100; notes=104; RH=52; LH=52
+% role=S; duration60=80s; related_pattern=138c3db556f664c7
+% authored_passages=W02 W03 W07 W01 W08
+% source=buildscripts/pianist/compositions/g3/n100.txt:98
+[V:RH] G2 C D | E2 F E | C2 G F | E D C2 |
+[V:LH] C,2 D, C, | C,2 D, C, | C,2 C, D, | C, D, C,2 |
+[V:RH] C G E2 | F2 E D | C2 G F | E D C2 |
+[V:LH] C, C, C,2 | D,2 E, D, | C,2 C, D, | C, D, C,2 |
+[V:RH] C4 | C G F2 | E2 C2 | C4 |
+[V:LH] C,4 | C, C, D,2 | C,2 C,2 | C,4 |
+[V:RH] C G F2 | E2 D C | D G F2 | E D C2 |
+[V:LH] C, C, D,2 | C,2 D, C, | D, E, D,2 | C, D, C,2 |
+[V:RH] C2 G F | E2 C2 | D E C2 | C4 |]
+[V:LH] C,2 C, D, | C,2 C,2 | D, D, C,2 | C,4 |]
+
+%abc-2.1
+X:2018
+T:g3-n100-018 Đô dài mở năm lời mới
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fifth; lead=RH; bucket=n100; notes=85; RH=65; LH=20
+% role=R; duration60=80s; related_pattern=531ca446f1b6a57c
+% authored_passages=P03 P01 P05 P04 P12
+% source=buildscripts/pianist/compositions/g3/n100.txt:19
+[V:RH] C2 G F | E D C2 | D E F E | D C C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C G F E | D E F E | D G F E | D E C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C G F2 | E2 D C | D E F E | D C C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C G D E | F D E C | D G F E | D E C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C4 | C G F E | D C C2 | C4 |]
+[V:LH] C,4 | C,4 | C,4 | C,4 |]
+
+%abc-2.1
+X:2048
+T:g3-n100-048 Đô thấp dài năm lời mới
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fifth; lead=LH; bucket=n100; notes=85; RH=20; LH=65
+% role=L; duration60=80s; related_pattern=255eeb157b82f0bc
+% authored_passages=B03 B05 B01 B12 B04
+% source=buildscripts/pianist/compositions/g3/n100.txt:49
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C,2 G, F, | E, D, C,2 | D, E, F, E, | D, C, C,2 |
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C, G, F,2 | E,2 D, C, | D, E, F, E, | D, C, C,2 |
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C, G, F, E, | D, E, F, E, | D, G, F, E, | D, E, C,2 |
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C,4 | C, G, F, E, | D, C, C,2 | C,4 |
+[V:RH] C4 | C4 | C4 | C4 |]
+[V:LH] C, G, D, E, | F, D, E, C, | D, G, F, E, | D, E, C,2 |]
+
+%abc-2.1
+X:2080
+T:g3-n100-080 Mi rải qua năm chuyện
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=arpeggio; lead=RH; bucket=n100; notes=77; RH=38; LH=39
+% role=A; duration60=80s; related_pattern=bef5a835417f5ce2
+% authored_passages=H03 H01 H02 H04 H03
+% source=buildscripts/pianist/compositions/g3/n100.txt:81
+[V:RH] E C G E | z4 | C G E C | z4 |
+[V:LH] z4 | C, D, E, D, | z4 | D, E, D, C, |
+[V:RH] C G E C | z4 | G E C2 | z4 |
+[V:LH] z4 | C, D, E, D, | z4 | D, C, D, C, |
+[V:RH] G C E G | z4 | E C G C | z4 |
+[V:LH] z4 | C, D, E, D, | z4 | D, C, C,2 |
+[V:RH] C2 G E | z4 | G C E C | z4 |
+[V:LH] z4 | C, D, E, D, | z4 | D, C, D, C, |
+[V:RH] E C G E | z4 | C G E C | z4 |]
+[V:LH] z4 | C, D, E, D, | z4 | D, E, D, C, |]
+
+%abc-2.1
+X:2005
+T:g3-n100-005 Từ nốt yên thành lời Fa
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fourth; lead=RH; bucket=n100; notes=70; RH=50; LH=20
+% role=R; duration60=80s; related_pattern=c0a054f239c901d6
+% authored_passages=F16 F09 F17 F05 F16
+% source=buildscripts/pianist/compositions/g3/n100.txt:6
+[V:RH] C2 F2 | E D C2 | F2 E D | C4 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C F E2 | F C D E | D E F2 | E D C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C2 F E | E2 C2 | C2 F2 | C4 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C2 F E | D2 G F | E D C2 | C2 C2 |
+[V:LH] C,4 | D,4 | C,4 | C,4 |
+[V:RH] C2 F2 | E D C2 | F2 E D | C4 |]
+[V:LH] C,4 | C,4 | C,4 | C,4 |]
+
+%abc-2.1
+X:2035
+T:g3-n100-035 Từ trầm yên thành lời
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fourth; lead=LH; bucket=n100; notes=70; RH=20; LH=50
+% role=L; duration60=80s; related_pattern=d912f42e4606d205
+% authored_passages=G16 G05 G09 G17 G16
+% source=buildscripts/pianist/compositions/g3/n100.txt:36
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C,2 F,2 | E, D, C,2 | F,2 E, D, | C,4 |
+[V:RH] C4 | D4 | C4 | C4 |
+[V:LH] C,2 F, E, | D,2 G, F, | E, D, C,2 | C,2 C,2 |
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C, F, E,2 | F, C, D, E, | D, E, F,2 | E, D, C,2 |
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C,2 F, E, | E,2 C,2 | C,2 F,2 | C,4 |
+[V:RH] C4 | C4 | C4 | C4 |]
+[V:LH] C,2 F,2 | E, D, C,2 | F,2 E, D, | C,4 |]
+
+%abc-2.1
+X:2073
+T:g3-n100-073 Đô dài hỏi xa rồi về
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fifth; lead=RH; bucket=n100; notes=76; RH=37; LH=39
+% role=A; duration60=80s; related_pattern=335f0e84bb7789c3
+% authored_passages=V03 V01 V02 V04 V03
+% source=buildscripts/pianist/compositions/g3/n100.txt:74
+[V:RH] C2 G F | z4 | E D E C | z4 |
+[V:LH] z4 | C, D, E, D, | z4 | D, E, D, C, |
+[V:RH] C G F E | z4 | D E C2 | z4 |
+[V:LH] z4 | C, D, E, D, | z4 | D, C, D, C, |
+[V:RH] G C D E | z4 | F E D C | z4 |
+[V:LH] z4 | C, D, E, D, | z4 | D, C, C,2 |
+[V:RH] C G D E | z4 | F E D C | z4 |
+[V:LH] z4 | C, D, E, D, | z4 | D, C, D, C, |
+[V:RH] C2 G F | z4 | E D E C | z4 |]
+[V:LH] z4 | C, D, E, D, | z4 | D, E, D, C, |]
+
+%abc-2.1
+X:2064
+T:g3-n100-064 Năm chuyện hỏi nhịp ba
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fourth; lead=RH; bucket=n100; notes=81; RH=43; LH=38
+% role=A; duration60=90s; related_pattern=edc68571bf56d35e
+% authored_passages=Q11 Q13 Q15 Q13 Q11
+% source=buildscripts/pianist/compositions/g3/n100.txt:65
+[V:RH] C F E | z3 | D G F | z3 |
+[V:LH] z3 | C, D, E, | z3 | D, E, D, |
+[V:RH] E D C | z3 | C2 F | z3 |
+[V:LH] z3 | C, D, C, | z3 | C, D, E, |
+[V:RH] E D C | z3 | D F E | z3 |
+[V:LH] z3 | D, C,2 | z3 | C,2 C, |
+[V:RH] F C D | z3 | E F E | z3 |
+[V:LH] z3 | C,2 D, | z3 | E,2 D, |
+[V:RH] D E C | z3 | C2 F | z3 |
+[V:LH] z3 | C,2 C, | z3 | C, D, E, |
+[V:RH] E D C | z3 | D F E | z3 |
+[V:LH] z3 | D, C,2 | z3 | C,2 C, |
+[V:RH] C F E | z3 | D G F | z3 |
+[V:LH] z3 | C, D, E, | z3 | D, E, D, |
+[V:RH] E D C | z3 |]
+[V:LH] z3 | C, D, C, |]
+
+%abc-2.1
+X:2089
+T:g3-n100-089 Năm lời Fa chung nhịp ba
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fourth; lead=RH; bucket=n100; notes=100; RH=50; LH=50
+% role=S; duration60=60s; related_pattern=87005ae141b9e2d6
+% authored_passages=S21 S23 S25 S27 S21
+% source=buildscripts/pianist/compositions/g3/n100.txt:90
+[V:RH] C F E | D E C | F E D | C3 |
+[V:LH] C, D, E, | D, D, C, | D, E, D, | C,3 |
+[V:RH] C2 F | E D C | F E C | C3 |
+[V:LH] C,2 D, | E, D, C, | D, E, D, | C,3 |
+[V:RH] F C D | E F C | D G F | E C2 |
+[V:LH] D, C, C, | D, E, D, | C, D, E, | D, C,2 |
+[V:RH] C F2 | E D C | D G F | E C2 |
+[V:LH] C, D,2 | E, D, C, | D, E, D, | C, C,2 |
+[V:RH] C F E | D E C | F E D | C3 |]
+[V:LH] C, D, E, | D, D, C, | D, E, D, | C,3 |]
+
+%abc-2.1
+X:2006
+T:g3-n100-006 Nghỉ nhẹ theo nền Rê
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fourth; lead=RH; bucket=n100; notes=86; RH=66; LH=20
+% role=R; duration60=80s; related_pattern=00adc5b1d76e87ab
+% authored_passages=F06 F13 F07 F11 F05
+% source=buildscripts/pianist/compositions/g3/n100.txt:7
+[V:RH] C F z E | D G F E | D E F C | D E C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] D2 G F | E C F E | D F E C | D E C2 |
+[V:LH] D,4 | C,4 | C,4 | C,4 |
+[V:RH] C C F E | D G F E | F C D E | D C C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C2 F E | F2 E D | C F E D | C2 C2 |
+[V:LH] C,4 | D,4 | C,4 | C,4 |
+[V:RH] C2 F E | D2 G F | E D C2 | C2 C2 |]
+[V:LH] C,4 | D,4 | C,4 | C,4 |]
+
+%abc-2.1
+X:2019
+T:g3-n100-019 Rê giữa chuyến đi quãng năm
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fifth; lead=RH; bucket=n100; notes=87; RH=67; LH=20
+% role=R; duration60=80s; related_pattern=7986b6d57904abad
+% authored_passages=P04 P06 P08 P05 P15
+% source=buildscripts/pianist/compositions/g3/n100.txt:20
+[V:RH] C G D E | F D E C | D G F E | D E C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C C G F | E D E C | D E G F | E D C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] G2 C D | E F E D | C G F E | D E C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C G F2 | E2 D C | D E F E | D C C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C G F E | D E C2 | C2 C2 | C4 |]
+[V:LH] C,4 | C,4 | C,4 | C,4 |]
+
+%abc-2.1
+X:2027
+T:g3-n100-027 Sol rải qua khoảng nghỉ
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=arpeggio; lead=RH; bucket=n100; notes=85; RH=65; LH=20
+% role=R; duration60=80s; related_pattern=3937e16dae893a90
+% authored_passages=A03 A06 A02 A01 A09
+% source=buildscripts/pianist/compositions/g3/n100.txt:28
+[V:RH] G C E G | E C G E | C G E C | E G C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C G E z | G C E G | E C G E | C E C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] E C G E | C G E C | E G C G | E C C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C G E C | G C E G | E C G E | C2 C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C2 G E | C4 | E2 G2 | C4 |]
+[V:LH] C,4 | C,4 | C,4 | C,4 |]
+
+%abc-2.1
+X:2036
+T:g3-n100-036 Trầm nghỉ theo nền cao Rê
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fourth; lead=LH; bucket=n100; notes=86; RH=20; LH=66
+% role=L; duration60=80s; related_pattern=a34a8305c30b431f
+% authored_passages=G06 G07 G13 G05 G11
+% source=buildscripts/pianist/compositions/g3/n100.txt:37
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C, F, z E, | D, G, F, E, | D, E, F, C, | D, E, C,2 |
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C, C, F, E, | D, G, F, E, | F, C, D, E, | D, C, C,2 |
+[V:RH] D4 | C4 | C4 | C4 |
+[V:LH] D,2 G, F, | E, C, F, E, | D, F, E, C, | D, E, C,2 |
+[V:RH] C4 | D4 | C4 | C4 |
+[V:LH] C,2 F, E, | D,2 G, F, | E, D, C,2 | C,2 C,2 |
+[V:RH] C4 | D4 | C4 | C4 |]
+[V:LH] C,2 F, E, | F,2 E, D, | C, F, E, D, | C,2 C,2 |]
+
+%abc-2.1
+X:2049
+T:g3-n100-049 Rê trầm giữa chuyến đi
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fifth; lead=LH; bucket=n100; notes=87; RH=20; LH=67
+% role=L; duration60=80s; related_pattern=02a2bef819d5cc19
+% authored_passages=B04 B08 B06 B15 B05
+% source=buildscripts/pianist/compositions/g3/n100.txt:50
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C, G, D, E, | F, D, E, C, | D, G, F, E, | D, E, C,2 |
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] G,2 C, D, | E, F, E, D, | C, G, F, E, | D, E, C,2 |
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C, C, G, F, | E, D, E, C, | D, E, G, F, | E, D, C,2 |
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C, G, F, E, | D, E, C,2 | C,2 C,2 | C,4 |
+[V:RH] C4 | C4 | C4 | C4 |]
+[V:LH] C, G, F,2 | E,2 D, C, | D, E, F, E, | D, C, C,2 |]
+
+%abc-2.1
+X:2057
+T:g3-n100-057 Sol thấp rải qua nghỉ
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=arpeggio; lead=LH; bucket=n100; notes=85; RH=20; LH=65
+% role=L; duration60=80s; related_pattern=63a12850db249d63
+% authored_passages=D03 D02 D06 D09 D01
+% source=buildscripts/pianist/compositions/g3/n100.txt:58
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] G, C, E, G, | E, C, G, E, | C, G, E, C, | E, G, C,2 |
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] E, C, G, E, | C, G, E, C, | E, G, C, G, | E, C, C,2 |
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C, G, E, z | G, C, E, G, | E, C, G, E, | C, E, C,2 |
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C,2 G, E, | C,4 | E,2 G,2 | C,4 |
+[V:RH] C4 | C4 | C4 | C4 |]
+[V:LH] C, G, E, C, | G, C, E, G, | E, C, G, E, | C,2 C,2 |]
+
+%abc-2.1
+X:2081
+T:g3-n100-081 Năm chuyện rải ba phách
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=arpeggio; lead=RH; bucket=n100; notes=79; RH=43; LH=36
+% role=A; duration60=90s; related_pattern=5a18f926b2aa1d74
+% authored_passages=H11 H13 H15 H11 H13
+% source=buildscripts/pianist/compositions/g3/n100.txt:82
+[V:RH] C G E | z3 | G E C | z3 |
+[V:LH] z3 | C,2 D, | z3 | E,2 D, |
+[V:RH] E G C | z3 | G C E | z3 |
+[V:LH] z3 | C,2 C, | z3 | C, D, E, |
+[V:RH] G E C | z3 | E C2 | z3 |
+[V:LH] z3 | D, C, D, | z3 | E, D, C, |
+[V:RH] E C G | z3 | E G C | z3 |
+[V:LH] z3 | C,2 D, | z3 | E,2 D, |
+[V:RH] G E C | z3 | C G E | z3 |
+[V:LH] z3 | C,2 C, | z3 | C,2 D, |
+[V:RH] G E C | z3 | E G C | z3 |
+[V:LH] z3 | E,2 D, | z3 | C,2 C, |
+[V:RH] G C E | z3 | G E C | z3 |
+[V:LH] z3 | C, D, E, | z3 | D, C, D, |
+[V:RH] E C2 | z3 |]
+[V:LH] z3 | E, D, C, |]
+
+%abc-2.1
+X:2007
+T:g3-n100-007 Nốt nhắc đi qua hai ngõ
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fourth; lead=RH; bucket=n100; notes=86; RH=66; LH=20
+% role=R; duration60=80s; related_pattern=920a697e0d86799e
+% authored_passages=F07 F02 F06 F08 F17
+% source=buildscripts/pianist/compositions/g3/n100.txt:8
+[V:RH] C C F E | D G F E | F C D E | D C C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C2 F E | D G F E | D F E C | D C C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C F z E | D G F E | D E F C | D E C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] E C F E | D E F C | D G F E | D C C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C2 F E | E2 C2 | C2 F2 | C4 |]
+[V:LH] C,4 | C,4 | C,4 | C,4 |]
+
+%abc-2.1
+X:2037
+T:g3-n100-037 Nốt thấp nhắc qua hai ngõ
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fourth; lead=LH; bucket=n100; notes=86; RH=20; LH=66
+% role=L; duration60=80s; related_pattern=74636c37105910bc
+% authored_passages=G07 G06 G02 G17 G08
+% source=buildscripts/pianist/compositions/g3/n100.txt:38
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C, C, F, E, | D, G, F, E, | F, C, D, E, | D, C, C,2 |
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C, F, z E, | D, G, F, E, | D, E, F, C, | D, E, C,2 |
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C,2 F, E, | D, G, F, E, | D, F, E, C, | D, C, C,2 |
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C,2 F, E, | E,2 C,2 | C,2 F,2 | C,4 |
+[V:RH] C4 | C4 | C4 | C4 |]
+[V:LH] E, C, F, E, | D, E, F, C, | D, G, F, E, | D, C, C,2 |]
+
+%abc-2.1
+X:2065
+T:g3-n100-065 Giữ đầu câu đổi lời kể
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fourth; lead=RH; bucket=n100; notes=78; RH=43; LH=35
+% role=A; duration60=90s; related_pattern=c34eecf788084dcb
+% authored_passages=Q13 Q15 Q11 Q13 Q15
+% source=buildscripts/pianist/compositions/g3/n100.txt:66
+[V:RH] C2 F | z3 | E D C | z3 |
+[V:LH] z3 | C, D, E, | z3 | D, C,2 |
+[V:RH] D F E | z3 | F C D | z3 |
+[V:LH] z3 | C,2 C, | z3 | C,2 D, |
+[V:RH] E F E | z3 | D E C | z3 |
+[V:LH] z3 | E,2 D, | z3 | C,2 C, |
+[V:RH] C F E | z3 | D G F | z3 |
+[V:LH] z3 | C, D, E, | z3 | D, E, D, |
+[V:RH] E D C | z3 | C2 F | z3 |
+[V:LH] z3 | C, D, C, | z3 | C, D, E, |
+[V:RH] E D C | z3 | D F E | z3 |
+[V:LH] z3 | D, C,2 | z3 | C,2 C, |
+[V:RH] F C D | z3 | E F E | z3 |
+[V:LH] z3 | C,2 D, | z3 | E,2 D, |
+[V:RH] D E C | z3 |]
+[V:LH] z3 | C,2 C, |]
+
+%abc-2.1
+X:2090
+T:g3-n100-090 Giữ đầu trở lại nhịp chung
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fourth; lead=RH; bucket=n100; notes=98; RH=49; LH=49
+% role=S; duration60=60s; related_pattern=50b0ebc0b3e91ac1
+% authored_passages=S23 S27 S21 S25 S23
+% source=buildscripts/pianist/compositions/g3/n100.txt:91
+[V:RH] C2 F | E D C | F E C | C3 |
+[V:LH] C,2 D, | E, D, C, | D, E, D, | C,3 |
+[V:RH] C F2 | E D C | D G F | E C2 |
+[V:LH] C, D,2 | E, D, C, | D, E, D, | C, C,2 |
+[V:RH] C F E | D E C | F E D | C3 |
+[V:LH] C, D, E, | D, D, C, | D, E, D, | C,3 |
+[V:RH] F C D | E F C | D G F | E C2 |
+[V:LH] D, C, C, | D, E, D, | C, D, E, | D, C,2 |
+[V:RH] C2 F | E D C | F E C | C3 |]
+[V:LH] C,2 D, | E, D, C, | D, E, D, | C,3 |]
+
+%abc-2.1
+X:2098
+T:g3-n100-098 Năm lời năm chung ba phách
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fifth; lead=RH; bucket=n100; notes=98; RH=49; LH=49
+% role=S; duration60=60s; related_pattern=956a5a908360c116
+% authored_passages=W21 W25 W23 W21 W25
+% source=buildscripts/pianist/compositions/g3/n100.txt:99
+[V:RH] C G F | E D C | D G F | E C2 |
+[V:LH] C, C, D, | E, D, C, | D, E, D, | C, C,2 |
+[V:RH] C2 G | F E D | C G F | E C2 |
+[V:LH] C,2 C, | D, E, D, | C, C, D, | C, C,2 |
+[V:RH] C2 G | F E C | C3 | C3 |
+[V:LH] C,2 C, | D, D, C, | C,3 | C,3 |
+[V:RH] C G F | E D C | D G F | E C2 |
+[V:LH] C, C, D, | E, D, C, | D, E, D, | C, C,2 |
+[V:RH] C2 G | F E D | C G F | E C2 |]
+[V:LH] C,2 C, | D, E, D, | C, C, D, | C, C,2 |]
+
+%abc-2.1
+X:2074
+T:g3-n100-074 Năm chuyện năm nhịp ba
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fifth; lead=RH; bucket=n100; notes=79; RH=43; LH=36
+% role=A; duration60=90s; related_pattern=c6cffbf0543cd483
+% authored_passages=V11 V13 V15 V11 V13
+% source=buildscripts/pianist/compositions/g3/n100.txt:75
+[V:RH] C G F | z3 | E D C | z3 |
+[V:LH] z3 | C,2 D, | z3 | E,2 D, |
+[V:RH] D E C | z3 | G C D | z3 |
+[V:LH] z3 | C,2 C, | z3 | C, D, E, |
+[V:RH] E F E | z3 | D C2 | z3 |
+[V:LH] z3 | D, C, D, | z3 | E, D, C, |
+[V:RH] C G E | z3 | F E D | z3 |
+[V:LH] z3 | C,2 D, | z3 | E,2 D, |
+[V:RH] E D C | z3 | C G F | z3 |
+[V:LH] z3 | C,2 C, | z3 | C,2 D, |
+[V:RH] E D C | z3 | D E C | z3 |
+[V:LH] z3 | E,2 D, | z3 | C,2 C, |
+[V:RH] G C D | z3 | E F E | z3 |
+[V:LH] z3 | C, D, E, | z3 | D, C, D, |
+[V:RH] D C2 | z3 |]
+[V:LH] z3 | E, D, C, |]
+
+%abc-2.1
+X:2020
+T:g3-n100-020 Fa giữ nghe một phách nghỉ
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fifth; lead=RH; bucket=n100; notes=85; RH=61; LH=24
+% role=R; duration60=80s; related_pattern=5707209ecc53bb62
+% authored_passages=P05 P09 P16 P03 P13
+% source=buildscripts/pianist/compositions/g3/n100.txt:21
+[V:RH] C G F2 | E2 D C | D E F E | D C C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C G z F | E D C2 | D E F E | D E C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C2 G F | E D C G | F E D G | F E D C |
+[V:LH] C,2 C,2 | C,2 C,2 | C,2 C,2 | C,2 C,2 |
+[V:RH] C2 G F | E D C2 | D E F E | D C C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C2 G F | E2 C2 | C4 | C4 |]
+[V:LH] C,4 | C,4 | C,4 | C,4 |]
+
+%abc-2.1
+X:2050
+T:g3-n100-050 Fa thấp giữ phách nghỉ
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fifth; lead=LH; bucket=n100; notes=85; RH=24; LH=61
+% role=L; duration60=80s; related_pattern=1d70682cf411a6cc
+% authored_passages=B05 B16 B09 B13 B03
+% source=buildscripts/pianist/compositions/g3/n100.txt:51
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C, G, F,2 | E,2 D, C, | D, E, F, E, | D, C, C,2 |
+[V:RH] C2 C2 | C2 C2 | C2 C2 | C2 C2 |
+[V:LH] C,2 G, F, | E, D, C, G, | F, E, D, G, | F, E, D, C, |
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C, G, z F, | E, D, C,2 | D, E, F, E, | D, E, C,2 |
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C,2 G, F, | E,2 C,2 | C,4 | C,4 |
+[V:RH] C4 | C4 | C4 | C4 |]
+[V:LH] C,2 G, F, | E, D, C,2 | D, E, F, E, | D, C, C,2 |]
+
+%abc-2.1
+X:2008
+T:g3-n100-008 Mi dẫn Fa về nốt chủ
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fourth; lead=RH; bucket=n100; notes=88; RH=68; LH=20
+% role=R; duration60=80s; related_pattern=3c4ba42cf6671574
+% authored_passages=F08 F04 F09 F13 F05
+% source=buildscripts/pianist/compositions/g3/n100.txt:9
+[V:RH] E C F E | D E F C | D G F E | D C C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] F C D E | F E D C | D G F E | D E C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C F E2 | F C D E | D E F2 | E D C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] D2 G F | E C F E | D F E C | D E C2 |
+[V:LH] D,4 | C,4 | C,4 | C,4 |
+[V:RH] C2 F E | D2 G F | E D C2 | C2 C2 |]
+[V:LH] C,4 | D,4 | C,4 | C,4 |]
+
+%abc-2.1
+X:2038
+T:g3-n100-038 Mi trầm dẫn Fa về Đô
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fourth; lead=LH; bucket=n100; notes=88; RH=20; LH=68
+% role=L; duration60=80s; related_pattern=68d042603f2ba02d
+% authored_passages=G08 G09 G04 G05 G13
+% source=buildscripts/pianist/compositions/g3/n100.txt:39
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] E, C, F, E, | D, E, F, C, | D, G, F, E, | D, C, C,2 |
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C, F, E,2 | F, C, D, E, | D, E, F,2 | E, D, C,2 |
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] F, C, D, E, | F, E, D, C, | D, G, F, E, | D, E, C,2 |
+[V:RH] C4 | D4 | C4 | C4 |
+[V:LH] C,2 F, E, | D,2 G, F, | E, D, C,2 | C,2 C,2 |
+[V:RH] D4 | C4 | C4 | C4 |]
+[V:LH] D,2 G, F, | E, C, F, E, | D, F, E, C, | D, E, C,2 |]
+
+%abc-2.1
+X:2028
+T:g3-n100-028 Đô dài và những lời Mi
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=arpeggio; lead=RH; bucket=n100; notes=84; RH=64; LH=20
+% role=R; duration60=80s; related_pattern=2f9df64e455f1beb
+% authored_passages=A04 A02 A05 A03 A10
+% source=buildscripts/pianist/compositions/g3/n100.txt:29
+[V:RH] C2 G E | C E G C | E G C E | G E C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] E C G E | C G E C | E G C G | E C C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C G E2 | C2 G E | C E G C | E G C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] G C E G | E C G E | C G E C | E G C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C4 | C G E2 | C2 G2 | C4 |]
+[V:LH] C,4 | C,4 | C,4 | C,4 |]
+
+%abc-2.1
+X:2058
+T:g3-n100-058 Đô thấp dài lời Mi
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=arpeggio; lead=LH; bucket=n100; notes=84; RH=20; LH=64
+% role=L; duration60=80s; related_pattern=14339ee9622cb8cf
+% authored_passages=D04 D05 D02 D10 D03
+% source=buildscripts/pianist/compositions/g3/n100.txt:59
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C,2 G, E, | C, E, G, C, | E, G, C, E, | G, E, C,2 |
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C, G, E,2 | C,2 G, E, | C, E, G, C, | E, G, C,2 |
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] E, C, G, E, | C, G, E, C, | E, G, C, G, | E, C, C,2 |
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C,4 | C, G, E,2 | C,2 G,2 | C,4 |
+[V:RH] C4 | C4 | C4 | C4 |]
+[V:LH] G, C, E, G, | E, C, G, E, | C, G, E, C, | E, G, C,2 |]
+
+%abc-2.1
+X:2066
+T:g3-n100-066 Năm cuộc gọi trầm bốn
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fourth; lead=LH; bucket=n100; notes=76; RH=38; LH=38
+% role=A; duration60=80s; related_pattern=900e077d4807cbab
+% authored_passages=Q06 Q10 Q08 Q07 Q09
+% source=buildscripts/pianist/compositions/g3/n100.txt:67
+[V:RH] z4 | C D E D | z4 | D C C2 |
+[V:LH] C, F, E, D, | z4 | C, D, F, E, | z4 |
+[V:RH] z4 | C D E D | z4 | D C C2 |
+[V:LH] C, C, F, E, | z4 | D, F, E, C, | z4 |
+[V:RH] z4 | C D E D | z4 | D C D C |
+[V:LH] D, G, F, E, | z4 | D, E, C,2 | z4 |
+[V:RH] z4 | C D C C | z4 | C D C C |
+[V:LH] F, C, D, E, | z4 | F, E, D, C, | z4 |
+[V:RH] z4 | C D E D | z4 | D E D C |]
+[V:LH] C,2 F, E, | z4 | D, G, F, E, | z4 |]
+
+%abc-2.1
+X:2082
+T:g3-n100-082 Năm cuộc gọi rải trầm
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=arpeggio; lead=LH; bucket=n100; notes=76; RH=39; LH=37
+% role=A; duration60=80s; related_pattern=a1c30bafa8e9cc48
+% authored_passages=H05 H08 H07 H06 H05
+% source=buildscripts/pianist/compositions/g3/n100.txt:83
+[V:RH] z4 | C D E D | z4 | D C D C |
+[V:LH] C, G, E, C, | z4 | G, E, C,2 | z4 |
+[V:RH] z4 | C D E D | z4 | D C D C |
+[V:LH] C,2 G, E, | z4 | G, C, E, C, | z4 |
+[V:RH] z4 | C D E D | z4 | D E D C |
+[V:LH] E, C, G, E, | z4 | C, G, E, C, | z4 |
+[V:RH] z4 | C D E D | z4 | D C C2 |
+[V:LH] G, C, E, G, | z4 | E, C, G, C, | z4 |
+[V:RH] z4 | C D E D | z4 | D C D C |]
+[V:LH] C, G, E, C, | z4 | G, E, C,2 | z4 |]
+
+%abc-2.1
+X:2091
+T:g3-n100-091 Năm cảnh trầm bốn chung nhịp
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fourth; lead=LH; bucket=n100; notes=120; RH=60; LH=60
+% role=S; duration60=80s; related_pattern=17e40b4c15fdba7a
+% authored_passages=S06 S07 S08 S09 S10
+% source=buildscripts/pianist/compositions/g3/n100.txt:92
+[V:RH] C D E2 | D E D2 | E D C2 | D D C2 |
+[V:LH] C, F, E,2 | D, G, F,2 | E, F, C,2 | D, E, C,2 |
+[V:RH] C2 D E | D2 E D | C2 D C | D D C2 |
+[V:LH] C,2 F, E, | D,2 G, F, | E,2 F, C, | D, E, C,2 |
+[V:RH] D C C2 | D E D2 | E D D2 | C D C2 |
+[V:LH] F, C, E,2 | D, G, F,2 | E, C, F,2 | E, D, C,2 |
+[V:RH] C D D2 | C2 D C | D E D2 | C D C2 |
+[V:LH] E, C, F,2 | E,2 D, C, | D, G, F,2 | E, D, C,2 |
+[V:RH] C D E2 | D2 E D | C D D2 | C D C2 |]
+[V:LH] C, F, E,2 | F,2 E, C, | D, G, F,2 | E, D, C,2 |]
+
+%abc-2.1
+X:2009
+T:g3-n100-009 Rê Sol gọi bốn lời tiếp
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fourth; lead=RH; bucket=n100; notes=89; RH=67; LH=22
+% role=R; duration60=80s; related_pattern=43b930fc7ecb8f71
+% authored_passages=F10 F12 F09 F06 F05
+% source=buildscripts/pianist/compositions/g3/n100.txt:10
+[V:RH] D G F E | D F E C | D E F C | D C C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C F E D | C2 F E | D G F E | D E C2 |
+[V:LH] C,2 C,2 | C,4 | C,2 C,2 | C,4 |
+[V:RH] C F E2 | F C D E | D E F2 | E D C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C F z E | D G F E | D E F C | D E C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C2 F E | D2 G F | E D C2 | C2 C2 |]
+[V:LH] C,4 | D,4 | C,4 | C,4 |]
+
+%abc-2.1
+X:2039
+T:g3-n100-039 Rê Sol thấp bốn lời tiếp
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fourth; lead=LH; bucket=n100; notes=89; RH=22; LH=67
+% role=L; duration60=80s; related_pattern=20f3883deabed9ea
+% authored_passages=G10 G09 G12 G05 G06
+% source=buildscripts/pianist/compositions/g3/n100.txt:40
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] D, G, F, E, | D, F, E, C, | D, E, F, C, | D, C, C,2 |
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C, F, E,2 | F, C, D, E, | D, E, F,2 | E, D, C,2 |
+[V:RH] C2 C2 | C4 | C2 C2 | C4 |
+[V:LH] C, F, E, D, | C,2 F, E, | D, G, F, E, | D, E, C,2 |
+[V:RH] C4 | D4 | C4 | C4 |
+[V:LH] C,2 F, E, | D,2 G, F, | E, D, C,2 | C,2 C,2 |
+[V:RH] C4 | C4 | C4 | C4 |]
+[V:LH] C, F, z E, | D, G, F, E, | D, E, F, C, | D, E, C,2 |]
+
+%abc-2.1
+X:2021
+T:g3-n100-021 Đô nhắc Sol gọi về Đô
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fifth; lead=RH; bucket=n100; notes=98; RH=70; LH=28
+% role=R; duration60=80s; related_pattern=9d85c8409b433fb5
+% authored_passages=P06 P10 P01 P17 P15
+% source=buildscripts/pianist/compositions/g3/n100.txt:22
+[V:RH] C C G F | E D E C | D E G F | E D C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C G F E | D G F E | D E G F | E D C2 |
+[V:LH] C,2 C,2 | C,2 C,2 | C,2 C,2 | C,2 C,2 |
+[V:RH] C G F E | D E F E | D G F E | D E C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] G C D E | F E D C | D E G F | E2 D C |
+[V:LH] C,2 C,2 | C,2 C,2 | C,2 C,2 | C,2 C,2 |
+[V:RH] C G F E | D E C2 | C2 C2 | C4 |]
+[V:LH] C,4 | C,4 | C,4 | C,4 |]
+
+%abc-2.1
+X:2051
+T:g3-n100-051 Đô thấp nhắc Sol gọi
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fifth; lead=LH; bucket=n100; notes=98; RH=28; LH=70
+% role=L; duration60=80s; related_pattern=6134aa28753040f6
+% authored_passages=B06 B01 B10 B15 B17
+% source=buildscripts/pianist/compositions/g3/n100.txt:52
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C, C, G, F, | E, D, E, C, | D, E, G, F, | E, D, C,2 |
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C, G, F, E, | D, E, F, E, | D, G, F, E, | D, E, C,2 |
+[V:RH] C2 C2 | C2 C2 | C2 C2 | C2 C2 |
+[V:LH] C, G, F, E, | D, G, F, E, | D, E, G, F, | E, D, C,2 |
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C, G, F, E, | D, E, C,2 | C,2 C,2 | C,4 |
+[V:RH] C2 C2 | C2 C2 | C2 C2 | C2 C2 |]
+[V:LH] G, C, D, E, | F, E, D, C, | D, E, G, F, | E,2 D, C, |]
+
+%abc-2.1
+X:2075
+T:g3-n100-075 Năm lời trầm hỏi xa
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fifth; lead=LH; bucket=n100; notes=77; RH=39; LH=38
+% role=A; duration60=80s; related_pattern=294755d4c972d531
+% authored_passages=V05 V07 V06 V05 V07
+% source=buildscripts/pianist/compositions/g3/n100.txt:76
+[V:RH] z4 | C D E D | z4 | D C D C |
+[V:LH] C, G, F, E, | z4 | D, E, C,2 | z4 |
+[V:RH] z4 | C D E D | z4 | D C D C |
+[V:LH] C, G, D, E, | z4 | F, E, D, C, | z4 |
+[V:RH] z4 | C D E D | z4 | D C C2 |
+[V:LH] G, C, D, E, | z4 | F, E, D, C, | z4 |
+[V:RH] z4 | C D E D | z4 | D C D C |
+[V:LH] C, G, F, E, | z4 | D, E, C,2 | z4 |
+[V:RH] z4 | C D E D | z4 | D C D C |]
+[V:LH] C, G, D, E, | z4 | F, E, D, C, | z4 |]
+
+%abc-2.1
+X:2010
+T:g3-n100-010 Nền thay qua năm câu nhảy
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fourth; lead=RH; bucket=n100; notes=89; RH=69; LH=20
+% role=R; duration60=80s; related_pattern=0a2a5af439b8c04d
+% authored_passages=F11 F13 F14 F06 F04
+% source=buildscripts/pianist/compositions/g3/n100.txt:11
+[V:RH] C2 F E | F2 E D | C F E D | C2 C2 |
+[V:LH] C,4 | D,4 | C,4 | C,4 |
+[V:RH] D2 G F | E C F E | D F E C | D E C2 |
+[V:LH] D,4 | C,4 | C,4 | C,4 |
+[V:RH] F2 C D | E D F E | D G F E | D C C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C F z E | D G F E | D E F C | D E C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] F C D E | F E D C | D G F E | D E C2 |]
+[V:LH] C,4 | C,4 | C,4 | C,4 |]
+
+%abc-2.1
+X:2040
+T:g3-n100-040 Nền cao đổi câu nhảy thấp
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fourth; lead=LH; bucket=n100; notes=89; RH=20; LH=69
+% role=L; duration60=80s; related_pattern=2e32f025f50a6184
+% authored_passages=G11 G14 G13 G04 G06
+% source=buildscripts/pianist/compositions/g3/n100.txt:41
+[V:RH] C4 | D4 | C4 | C4 |
+[V:LH] C,2 F, E, | F,2 E, D, | C, F, E, D, | C,2 C,2 |
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] F,2 C, D, | E, D, F, E, | D, G, F, E, | D, C, C,2 |
+[V:RH] D4 | C4 | C4 | C4 |
+[V:LH] D,2 G, F, | E, C, F, E, | D, F, E, C, | D, E, C,2 |
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] F, C, D, E, | F, E, D, C, | D, G, F, E, | D, E, C,2 |
+[V:RH] C4 | C4 | C4 | C4 |]
+[V:LH] C, F, z E, | D, G, F, E, | D, E, F, C, | D, E, C,2 |]
+
+%abc-2.1
+X:2067
+T:g3-n100-067 Fa thấp gọi năm câu đáp
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fourth; lead=LH; bucket=n100; notes=76; RH=38; LH=38
+% role=A; duration60=80s; related_pattern=385985180451bbc0
+% authored_passages=Q07 Q09 Q06 Q08 Q10
+% source=buildscripts/pianist/compositions/g3/n100.txt:68
+[V:RH] z4 | C D C C | z4 | C D C C |
+[V:LH] F, C, D, E, | z4 | F, E, D, C, | z4 |
+[V:RH] z4 | C D E D | z4 | D E D C |
+[V:LH] C,2 F, E, | z4 | D, G, F, E, | z4 |
+[V:RH] z4 | C D E D | z4 | D C C2 |
+[V:LH] C, F, E, D, | z4 | C, D, F, E, | z4 |
+[V:RH] z4 | C D E D | z4 | D C D C |
+[V:LH] D, G, F, E, | z4 | D, E, C,2 | z4 |
+[V:RH] z4 | C D E D | z4 | D C C2 |]
+[V:LH] C, C, F, E, | z4 | D, F, E, C, | z4 |]
+
+%abc-2.1
+X:2092
+T:g3-n100-092 Giữ thấp qua năm cảnh chung
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fourth; lead=LH; bucket=n100; notes=104; RH=52; LH=52
+% role=S; duration60=80s; related_pattern=2430955ef26acbf3
+% authored_passages=S07 S19 S09 S06 S17
+% source=buildscripts/pianist/compositions/g3/n100.txt:93
+[V:RH] C2 D E | D2 E D | C2 D C | D D C2 |
+[V:LH] C,2 F, E, | D,2 G, F, | E,2 F, C, | D, E, C,2 |
+[V:RH] C D E2 | D E D2 | C D C2 | C4 |
+[V:LH] C, F, E,2 | D, G, F,2 | E, D, C,2 | C,4 |
+[V:RH] C D D2 | C2 D C | D E D2 | C D C2 |
+[V:LH] E, C, F,2 | E,2 D, C, | D, G, F,2 | E, D, C,2 |
+[V:RH] C D E2 | D E D2 | E D C2 | D D C2 |
+[V:LH] C, F, E,2 | D, G, F,2 | E, F, C,2 | D, E, C,2 |
+[V:RH] C4 | C D C2 | C4 | C4 |]
+[V:LH] C,4 | C, F, E,2 | C,4 | C,4 |]
+
+%abc-2.1
+X:2099
+T:g3-n100-099 Năm câu trầm năm chung phách
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fifth; lead=LH; bucket=n100; notes=104; RH=52; LH=52
+% role=S; duration60=80s; related_pattern=054b900f65a05f13
+% authored_passages=W04 W05 W10 W04 W09
+% source=buildscripts/pianist/compositions/g3/n100.txt:100
+[V:RH] C C D2 | C2 D C | D E D2 | C D C2 |
+[V:LH] C, G, F,2 | E,2 D, C, | D, G, F,2 | E, D, C,2 |
+[V:RH] C C C2 | D2 E D | C2 C D | C D C2 |
+[V:LH] C, G, E,2 | F,2 E, D, | C,2 G, F, | E, D, C,2 |
+[V:RH] C2 C D | C2 C2 | D D C2 | C4 |
+[V:LH] C,2 G, F, | E,2 C,2 | D, E, C,2 | C,4 |
+[V:RH] C C D2 | C2 D C | D E D2 | C D C2 |
+[V:LH] C, G, F,2 | E,2 D, C, | D, G, F,2 | E, D, C,2 |
+[V:RH] C2 C2 | D D C2 | C4 | C4 |]
+[V:LH] C,2 G,2 | F, E, C,2 | C,4 | C,4 |]
+
+%abc-2.1
+X:2083
+T:g3-n100-083 Sol thấp rải năm đáp
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=arpeggio; lead=LH; bucket=n100; notes=76; RH=38; LH=38
+% role=A; duration60=80s; related_pattern=1f4810a5a08d4022
+% authored_passages=H06 H05 H08 H07 H06
+% source=buildscripts/pianist/compositions/g3/n100.txt:84
+[V:RH] z4 | C D E D | z4 | D C C2 |
+[V:LH] G, C, E, G, | z4 | E, C, G, C, | z4 |
+[V:RH] z4 | C D E D | z4 | D C D C |
+[V:LH] C, G, E, C, | z4 | G, E, C,2 | z4 |
+[V:RH] z4 | C D E D | z4 | D C D C |
+[V:LH] C,2 G, E, | z4 | G, C, E, C, | z4 |
+[V:RH] z4 | C D E D | z4 | D E D C |
+[V:LH] E, C, G, E, | z4 | C, G, E, C, | z4 |
+[V:RH] z4 | C D E D | z4 | D C C2 |]
+[V:LH] G, C, E, G, | z4 | E, C, G, C, | z4 |]
+
+%abc-2.1
+X:2011
+T:g3-n100-011 Năm vòng ba phách qua Fa
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fourth; lead=RH; bucket=n100; notes=78; RH=58; LH=20
+% role=R; duration60=60s; related_pattern=5ab14ca5cfa1d1a0
+% authored_passages=F21 F25 F24 F23 F21
+% source=buildscripts/pianist/compositions/g3/n100.txt:12
+[V:RH] C F E | D G F | E D E | D C C |
+[V:LH] C,3 | C,3 | C,3 | C,3 |
+[V:RH] C C F | E D C | D G F | E C2 |
+[V:LH] C,3 | C,3 | C,3 | C,3 |
+[V:RH] D G F | E C F | E D E | D C C |
+[V:LH] C,3 | C,3 | C,3 | C,3 |
+[V:RH] C2 F | E D C | D G F | E D C |
+[V:LH] C,3 | C,3 | C,3 | C,3 |
+[V:RH] C F E | D G F | E D E | D C C |]
+[V:LH] C,3 | C,3 | C,3 | C,3 |]
+
+%abc-2.1
+X:2022
+T:g3-n100-022 Năm câu năm bậc ba phách
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fifth; lead=RH; bucket=n100; notes=72; RH=52; LH=20
+% role=R; duration60=60s; related_pattern=86c0b95e503b1816
+% authored_passages=P21 P25 P23 P24 P21
+% source=buildscripts/pianist/compositions/g3/n100.txt:23
+[V:RH] C G F | E D C | D E F | E C2 |
+[V:LH] C,3 | C,3 | C,3 | C,3 |
+[V:RH] C2 G | F2 E | D C2 | C3 |
+[V:LH] C,3 | C,3 | C,3 | C,3 |
+[V:RH] C2 G | F E D | C G F | E D C |
+[V:LH] C,3 | C,3 | C,3 | C,3 |
+[V:RH] C G F | E D C | D G F | E D C |
+[V:LH] C,3 | C,3 | C,3 | C,3 |
+[V:RH] C G F | E D C | D E F | E C2 |]
+[V:LH] C,3 | C,3 | C,3 | C,3 |]
+
+%abc-2.1
+X:2029
+T:g3-n100-029 Năm vòng rải trong nhịp ba
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=arpeggio; lead=RH; bucket=n100; notes=77; RH=57; LH=20
+% role=R; duration60=60s; related_pattern=39e720d08fb7337e
+% authored_passages=A21 A23 A22 A21 A23
+% source=buildscripts/pianist/compositions/g3/n100.txt:30
+[V:RH] C G E | G C E | G E C | C2 E |
+[V:LH] C,3 | C,3 | C,3 | C,3 |
+[V:RH] E C G | E G C | G C E | G E C |
+[V:LH] C,3 | C,3 | C,3 | C,3 |
+[V:RH] G C E | G E C | E G C | G C2 |
+[V:LH] C,3 | C,3 | C,3 | C,3 |
+[V:RH] C G E | G C E | G E C | C2 E |
+[V:LH] C,3 | C,3 | C,3 | C,3 |
+[V:RH] E C G | E G C | G C E | G E C |]
+[V:LH] C,3 | C,3 | C,3 | C,3 |]
+
+%abc-2.1
+X:2041
+T:g3-n100-041 Năm vòng trầm ba phách
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fourth; lead=LH; bucket=n100; notes=78; RH=20; LH=58
+% role=L; duration60=60s; related_pattern=1f0ba928ce644611
+% authored_passages=G21 G24 G25 G21 G23
+% source=buildscripts/pianist/compositions/g3/n100.txt:42
+[V:RH] C3 | C3 | C3 | C3 |
+[V:LH] C, F, E, | D, G, F, | E, D, E, | D, C, C, |
+[V:RH] C3 | C3 | C3 | C3 |
+[V:LH] D, G, F, | E, C, F, | E, D, E, | D, C, C, |
+[V:RH] C3 | C3 | C3 | C3 |
+[V:LH] C, C, F, | E, D, C, | D, G, F, | E, C,2 |
+[V:RH] C3 | C3 | C3 | C3 |
+[V:LH] C, F, E, | D, G, F, | E, D, E, | D, C, C, |
+[V:RH] C3 | C3 | C3 | C3 |]
+[V:LH] C,2 F, | E, D, C, | D, G, F, | E, D, C, |]
+
+%abc-2.1
+X:2052
+T:g3-n100-052 Năm câu trầm năm nhịp ba
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fifth; lead=LH; bucket=n100; notes=72; RH=20; LH=52
+% role=L; duration60=60s; related_pattern=a8574f33e247efc6
+% authored_passages=B21 B23 B25 B21 B24
+% source=buildscripts/pianist/compositions/g3/n100.txt:53
+[V:RH] C3 | C3 | C3 | C3 |
+[V:LH] C, G, F, | E, D, C, | D, E, F, | E, C,2 |
+[V:RH] C3 | C3 | C3 | C3 |
+[V:LH] C,2 G, | F, E, D, | C, G, F, | E, D, C, |
+[V:RH] C3 | C3 | C3 | C3 |
+[V:LH] C,2 G, | F,2 E, | D, C,2 | C,3 |
+[V:RH] C3 | C3 | C3 | C3 |
+[V:LH] C, G, F, | E, D, C, | D, E, F, | E, C,2 |
+[V:RH] C3 | C3 | C3 | C3 |]
+[V:LH] C, G, F, | E, D, C, | D, G, F, | E, D, C, |]
+
+%abc-2.1
+X:2059
+T:g3-n100-059 Năm vòng rải trầm ba
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=arpeggio; lead=LH; bucket=n100; notes=77; RH=20; LH=57
+% role=L; duration60=60s; related_pattern=1985bb5e79308bf9
+% authored_passages=D21 D22 D23 D21 D23
+% source=buildscripts/pianist/compositions/g3/n100.txt:60
+[V:RH] C3 | C3 | C3 | C3 |
+[V:LH] C, G, E, | G, C, E, | G, E, C, | C,2 E, |
+[V:RH] C3 | C3 | C3 | C3 |
+[V:LH] G, C, E, | G, E, C, | E, G, C, | G, C,2 |
+[V:RH] C3 | C3 | C3 | C3 |
+[V:LH] E, C, G, | E, G, C, | G, C, E, | G, E, C, |
+[V:RH] C3 | C3 | C3 | C3 |
+[V:LH] C, G, E, | G, C, E, | G, E, C, | C,2 E, |
+[V:RH] C3 | C3 | C3 | C3 |]
+[V:LH] E, C, G, | E, G, C, | G, C, E, | G, E, C, |]
+
+%abc-2.1
+X:2068
+T:g3-n100-068 Rê Sol trầm qua cửa
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fourth; lead=LH; bucket=n100; notes=76; RH=38; LH=38
+% role=A; duration60=80s; related_pattern=38f2e0cb4f6a34d0
+% authored_passages=Q08 Q06 Q10 Q09 Q07
+% source=buildscripts/pianist/compositions/g3/n100.txt:69
+[V:RH] z4 | C D E D | z4 | D C D C |
+[V:LH] D, G, F, E, | z4 | D, E, C,2 | z4 |
+[V:RH] z4 | C D E D | z4 | D C C2 |
+[V:LH] C, F, E, D, | z4 | C, D, F, E, | z4 |
+[V:RH] z4 | C D E D | z4 | D C C2 |
+[V:LH] C, C, F, E, | z4 | D, F, E, C, | z4 |
+[V:RH] z4 | C D E D | z4 | D E D C |
+[V:LH] C,2 F, E, | z4 | D, G, F, E, | z4 |
+[V:RH] z4 | C D C C | z4 | C D C C |]
+[V:LH] F, C, D, E, | z4 | F, E, D, C, | z4 |]
+
+%abc-2.1
+X:2093
+T:g3-n100-093 Fa trầm đổi đường cùng tiếng
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fourth; lead=LH; bucket=n100; notes=102; RH=51; LH=51
+% role=S; duration60=80s; related_pattern=29eee784206a697d
+% authored_passages=S08 S10 S18 S07 S16
+% source=buildscripts/pianist/compositions/g3/n100.txt:94
+[V:RH] D C C2 | D E D2 | E D D2 | C D C2 |
+[V:LH] F, C, E,2 | D, G, F,2 | E, C, F,2 | E, D, C,2 |
+[V:RH] C D E2 | D2 E D | C D D2 | C D C2 |
+[V:LH] C, F, E,2 | F,2 E, C, | D, G, F,2 | E, D, C,2 |
+[V:RH] C2 D2 | C2 C2 | D D C2 | C4 |
+[V:LH] C,2 F,2 | E,2 C,2 | D, E, C,2 | C,4 |
+[V:RH] C2 D E | D2 E D | C2 D C | D D C2 |
+[V:LH] C,2 F, E, | D,2 G, F, | E,2 F, C, | D, E, C,2 |
+[V:RH] C2 D2 | E D C2 | C4 | C4 |]
+[V:LH] C,2 F,2 | E, D, C,2 | C,4 | C,4 |]
+
+%abc-2.1
+X:2076
+T:g3-n100-076 Sol thấp mở năm cuộc gọi
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fifth; lead=LH; bucket=n100; notes=76; RH=38; LH=38
+% role=A; duration60=80s; related_pattern=4252f4b4e2200408
+% authored_passages=V06 V05 V07 V06 V05
+% source=buildscripts/pianist/compositions/g3/n100.txt:77
+[V:RH] z4 | C D E D | z4 | D C C2 |
+[V:LH] G, C, D, E, | z4 | F, E, D, C, | z4 |
+[V:RH] z4 | C D E D | z4 | D C D C |
+[V:LH] C, G, F, E, | z4 | D, E, C,2 | z4 |
+[V:RH] z4 | C D E D | z4 | D C D C |
+[V:LH] C, G, D, E, | z4 | F, E, D, C, | z4 |
+[V:RH] z4 | C D E D | z4 | D C C2 |
+[V:LH] G, C, D, E, | z4 | F, E, D, C, | z4 |
+[V:RH] z4 | C D E D | z4 | D C D C |]
+[V:LH] C, G, F, E, | z4 | D, E, C,2 | z4 |]
+
+%abc-2.1
+X:2012
+T:g3-n100-012 Fa về Đô khúc nhịp ba
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fourth; lead=RH; bucket=n100; notes=78; RH=58; LH=20
+% role=R; duration60=60s; related_pattern=efa2a7505f6f8d4a
+% authored_passages=F22 F21 F23 F25 F24
+% source=buildscripts/pianist/compositions/g3/n100.txt:13
+[V:RH] F C D | E F E | D G F | E D C |
+[V:LH] C,3 | C,3 | C,3 | C,3 |
+[V:RH] C F E | D G F | E D E | D C C |
+[V:LH] C,3 | C,3 | C,3 | C,3 |
+[V:RH] C2 F | E D C | D G F | E D C |
+[V:LH] C,3 | C,3 | C,3 | C,3 |
+[V:RH] C C F | E D C | D G F | E C2 |
+[V:LH] C,3 | C,3 | C,3 | C,3 |
+[V:RH] D G F | E C F | E D E | D C C |]
+[V:LH] C,3 | C,3 | C,3 | C,3 |]
+
+%abc-2.1
+X:2042
+T:g3-n100-042 Fa thấp về khúc nhịp ba
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fourth; lead=LH; bucket=n100; notes=78; RH=20; LH=58
+% role=L; duration60=60s; related_pattern=c365d26c7ad9399f
+% authored_passages=G22 G23 G21 G24 G25
+% source=buildscripts/pianist/compositions/g3/n100.txt:43
+[V:RH] C3 | C3 | C3 | C3 |
+[V:LH] F, C, D, | E, F, E, | D, G, F, | E, D, C, |
+[V:RH] C3 | C3 | C3 | C3 |
+[V:LH] C,2 F, | E, D, C, | D, G, F, | E, D, C, |
+[V:RH] C3 | C3 | C3 | C3 |
+[V:LH] C, F, E, | D, G, F, | E, D, E, | D, C, C, |
+[V:RH] C3 | C3 | C3 | C3 |
+[V:LH] D, G, F, | E, C, F, | E, D, E, | D, C, C, |
+[V:RH] C3 | C3 | C3 | C3 |]
+[V:LH] C, C, F, | E, D, C, | D, G, F, | E, C,2 |]
+
+%abc-2.1
+X:2084
+T:g3-n100-084 Mi trầm rải năm chuyện
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=arpeggio; lead=LH; bucket=n100; notes=77; RH=39; LH=38
+% role=A; duration60=80s; related_pattern=1ded1e78d8ea03a1
+% authored_passages=H07 H08 H05 H06 H07
+% source=buildscripts/pianist/compositions/g3/n100.txt:85
+[V:RH] z4 | C D E D | z4 | D E D C |
+[V:LH] E, C, G, E, | z4 | C, G, E, C, | z4 |
+[V:RH] z4 | C D E D | z4 | D C D C |
+[V:LH] C,2 G, E, | z4 | G, C, E, C, | z4 |
+[V:RH] z4 | C D E D | z4 | D C D C |
+[V:LH] C, G, E, C, | z4 | G, E, C,2 | z4 |
+[V:RH] z4 | C D E D | z4 | D C C2 |
+[V:LH] G, C, E, G, | z4 | E, C, G, C, | z4 |
+[V:RH] z4 | C D E D | z4 | D E D C |]
+[V:LH] E, C, G, E, | z4 | C, G, E, C, | z4 |]
+
+%abc-2.1
+X:2023
+T:g3-n100-023 Sol về Đô giữa vòng ba
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fifth; lead=RH; bucket=n100; notes=78; RH=58; LH=20
+% role=R; duration60=60s; related_pattern=e0e9f6052eb4f16e
+% authored_passages=P22 P21 P24 P23 P22
+% source=buildscripts/pianist/compositions/g3/n100.txt:24
+[V:RH] G C D | E F E | D G F | E D C |
+[V:LH] C,3 | C,3 | C,3 | C,3 |
+[V:RH] C G F | E D C | D E F | E C2 |
+[V:LH] C,3 | C,3 | C,3 | C,3 |
+[V:RH] C G F | E D C | D G F | E D C |
+[V:LH] C,3 | C,3 | C,3 | C,3 |
+[V:RH] C2 G | F E D | C G F | E D C |
+[V:LH] C,3 | C,3 | C,3 | C,3 |
+[V:RH] G C D | E F E | D G F | E D C |]
+[V:LH] C,3 | C,3 | C,3 | C,3 |]
+
+%abc-2.1
+X:2053
+T:g3-n100-053 Sol thấp về vòng ba
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fifth; lead=LH; bucket=n100; notes=78; RH=20; LH=58
+% role=L; duration60=60s; related_pattern=12d54c0e058fafa2
+% authored_passages=B22 B24 B21 B22 B23
+% source=buildscripts/pianist/compositions/g3/n100.txt:54
+[V:RH] C3 | C3 | C3 | C3 |
+[V:LH] G, C, D, | E, F, E, | D, G, F, | E, D, C, |
+[V:RH] C3 | C3 | C3 | C3 |
+[V:LH] C, G, F, | E, D, C, | D, G, F, | E, D, C, |
+[V:RH] C3 | C3 | C3 | C3 |
+[V:LH] C, G, F, | E, D, C, | D, E, F, | E, C,2 |
+[V:RH] C3 | C3 | C3 | C3 |
+[V:LH] G, C, D, | E, F, E, | D, G, F, | E, D, C, |
+[V:RH] C3 | C3 | C3 | C3 |]
+[V:LH] C,2 G, | F, E, D, | C, G, F, | E, D, C, |]
+
+%abc-2.1
+X:2013
+T:g3-n100-013 Giữ rồi gọi trong năm câu
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fourth; lead=RH; bucket=n100; notes=78; RH=58; LH=20
+% role=R; duration60=60s; related_pattern=3f092349b02caa87
+% authored_passages=F23 F24 F21 F22 F25
+% source=buildscripts/pianist/compositions/g3/n100.txt:14
+[V:RH] C2 F | E D C | D G F | E D C |
+[V:LH] C,3 | C,3 | C,3 | C,3 |
+[V:RH] D G F | E C F | E D E | D C C |
+[V:LH] C,3 | C,3 | C,3 | C,3 |
+[V:RH] C F E | D G F | E D E | D C C |
+[V:LH] C,3 | C,3 | C,3 | C,3 |
+[V:RH] F C D | E F E | D G F | E D C |
+[V:LH] C,3 | C,3 | C,3 | C,3 |
+[V:RH] C C F | E D C | D G F | E C2 |]
+[V:LH] C,3 | C,3 | C,3 | C,3 |]
+
+%abc-2.1
+X:2043
+T:g3-n100-043 Giữ thấp gọi năm câu
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fourth; lead=LH; bucket=n100; notes=78; RH=20; LH=58
+% role=L; duration60=60s; related_pattern=939d48fff47b75d3
+% authored_passages=G23 G21 G24 G25 G22
+% source=buildscripts/pianist/compositions/g3/n100.txt:44
+[V:RH] C3 | C3 | C3 | C3 |
+[V:LH] C,2 F, | E, D, C, | D, G, F, | E, D, C, |
+[V:RH] C3 | C3 | C3 | C3 |
+[V:LH] C, F, E, | D, G, F, | E, D, E, | D, C, C, |
+[V:RH] C3 | C3 | C3 | C3 |
+[V:LH] D, G, F, | E, C, F, | E, D, E, | D, C, C, |
+[V:RH] C3 | C3 | C3 | C3 |
+[V:LH] C, C, F, | E, D, C, | D, G, F, | E, C,2 |
+[V:RH] C3 | C3 | C3 | C3 |]
+[V:LH] F, C, D, | E, F, E, | D, G, F, | E, D, C, |]
+
+%abc-2.1
+X:2069
+T:g3-n100-069 Năm chuyện trầm nhịp ba
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fourth; lead=LH; bucket=n100; notes=81; RH=37; LH=44
+% role=A; duration60=90s; related_pattern=522280856fd75f9e
+% authored_passages=Q12 Q16 Q14 Q12 Q16
+% source=buildscripts/pianist/compositions/g3/n100.txt:70
+[V:RH] z3 | C D E | z3 | D E D |
+[V:LH] C, F, E, | z3 | D, G, F, | z3 |
+[V:RH] z3 | C D C | z3 | C2 D |
+[V:LH] E, D, C, | z3 | F, C, D, | z3 |
+[V:RH] z3 | E2 D | z3 | C2 C |
+[V:LH] E, F, E, | z3 | D, E, C, | z3 |
+[V:RH] z3 | C D E | z3 | D C2 |
+[V:LH] C,2 F, | z3 | E, D, C, | z3 |
+[V:RH] z3 | C2 C | z3 | C D E |
+[V:LH] D, F, E, | z3 | C, F, E, | z3 |
+[V:RH] z3 | D E D | z3 | C D C |
+[V:LH] D, G, F, | z3 | E, D, C, | z3 |
+[V:RH] z3 | C2 D | z3 | E2 D |
+[V:LH] F, C, D, | z3 | E, F, E, | z3 |
+[V:RH] z3 | C2 C |]
+[V:LH] D, E, C, | z3 |]
+
+%abc-2.1
+X:2094
+T:g3-n100-094 Năm lời Fa thấp nhịp ba
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fourth; lead=LH; bucket=n100; notes=100; RH=50; LH=50
+% role=S; duration60=60s; related_pattern=422a950565fdaad0
+% authored_passages=S22 S26 S24 S22 S28
+% source=buildscripts/pianist/compositions/g3/n100.txt:95
+[V:RH] C D E | D D C | D E D | C3 |
+[V:LH] C, F, E, | D, E, C, | F, E, D, | C,3 |
+[V:RH] D C C | D E D | C D E | D C2 |
+[V:LH] F, C, D, | E, F, C, | D, G, F, | E, C,2 |
+[V:RH] C2 D | E D C | D E D | C3 |
+[V:LH] C,2 F, | E, D, C, | F, E, C, | C,3 |
+[V:RH] C D E | D D C | D E D | C3 |
+[V:LH] C, F, E, | D, E, C, | F, E, D, | C,3 |
+[V:RH] C D2 | E D C | D E D | C C2 |]
+[V:LH] C, F,2 | E, D, C, | D, G, F, | E, C,2 |]
+
+%abc-2.1
+X:2100
+T:g3-n100-100 Năm lời thấp năm chung ba
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fifth; lead=LH; bucket=n100; notes=98; RH=49; LH=49
+% role=S; duration60=60s; related_pattern=8828785edc4dde07
+% authored_passages=W22 W24 W26 W22 W26
+% source=buildscripts/pianist/compositions/g3/n100.txt:101
+[V:RH] C C D | E D C | D E D | C C2 |
+[V:LH] C, G, F, | E, D, C, | D, G, F, | E, C,2 |
+[V:RH] C2 C | D D C | C3 | C3 |
+[V:LH] C,2 G, | F, E, C, | C,3 | C,3 |
+[V:RH] C2 C | D E D | C C D | C C2 |
+[V:LH] C,2 G, | F, E, D, | C, G, F, | E, C,2 |
+[V:RH] C C D | E D C | D E D | C C2 |
+[V:LH] C, G, F, | E, D, C, | D, G, F, | E, C,2 |
+[V:RH] C2 C | D E D | C C D | C C2 |]
+[V:LH] C,2 G, | F, E, D, | C, G, F, | E, C,2 |]
+
+%abc-2.1
+X:2030
+T:g3-n100-030 Sol rải Đô trả Mi kể
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=arpeggio; lead=RH; bucket=n100; notes=76; RH=56; LH=20
+% role=R; duration60=60s; related_pattern=94c6c281cb4bc1cf
+% authored_passages=A22 A21 A23 A22 A21
+% source=buildscripts/pianist/compositions/g3/n100.txt:31
+[V:RH] G C E | G E C | E G C | G C2 |
+[V:LH] C,3 | C,3 | C,3 | C,3 |
+[V:RH] C G E | G C E | G E C | C2 E |
+[V:LH] C,3 | C,3 | C,3 | C,3 |
+[V:RH] E C G | E G C | G C E | G E C |
+[V:LH] C,3 | C,3 | C,3 | C,3 |
+[V:RH] G C E | G E C | E G C | G C2 |
+[V:LH] C,3 | C,3 | C,3 | C,3 |
+[V:RH] C G E | G C E | G E C | C2 E |]
+[V:LH] C,3 | C,3 | C,3 | C,3 |]
+
+%abc-2.1
+X:2060
+T:g3-n100-060 Sol thấp rải Mi kể
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=arpeggio; lead=LH; bucket=n100; notes=76; RH=20; LH=56
+% role=L; duration60=60s; related_pattern=46844c761e663954
+% authored_passages=D22 D23 D21 D22 D21
+% source=buildscripts/pianist/compositions/g3/n100.txt:61
+[V:RH] C3 | C3 | C3 | C3 |
+[V:LH] G, C, E, | G, E, C, | E, G, C, | G, C,2 |
+[V:RH] C3 | C3 | C3 | C3 |
+[V:LH] E, C, G, | E, G, C, | G, C, E, | G, E, C, |
+[V:RH] C3 | C3 | C3 | C3 |
+[V:LH] C, G, E, | G, C, E, | G, E, C, | C,2 E, |
+[V:RH] C3 | C3 | C3 | C3 |
+[V:LH] G, C, E, | G, E, C, | E, G, C, | G, C,2 |
+[V:RH] C3 | C3 | C3 | C3 |]
+[V:LH] C, G, E, | G, C, E, | G, E, C, | C,2 E, |]
+
+%abc-2.1
+X:2077
+T:g3-n100-077 Năm chuyện năm thấp ba
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fifth; lead=LH; bucket=n100; notes=77; RH=33; LH=44
+% role=A; duration60=90s; related_pattern=53d91662e479441a
+% authored_passages=V12 V16 V14 V12 V16
+% source=buildscripts/pianist/compositions/g3/n100.txt:78
+[V:RH] z3 | C2 D | z3 | E2 D |
+[V:LH] C, G, F, | z3 | E, D, C, | z3 |
+[V:RH] z3 | C2 C | z3 | C2 D |
+[V:LH] D, E, C, | z3 | C, G, E, | z3 |
+[V:RH] z3 | E2 D | z3 | C2 C |
+[V:LH] F, E, D, | z3 | E, D, C, | z3 |
+[V:RH] z3 | C D E | z3 | D C D |
+[V:LH] G, C, D, | z3 | E, F, E, | z3 |
+[V:RH] z3 | E D C | z3 | C2 D |
+[V:LH] D, C,2 | z3 | C, G, F, | z3 |
+[V:RH] z3 | E2 D | z3 | C2 C |
+[V:LH] E, D, C, | z3 | D, E, C, | z3 |
+[V:RH] z3 | C2 D | z3 | E2 D |
+[V:LH] C, G, E, | z3 | F, E, D, | z3 |
+[V:RH] z3 | C2 C |]
+[V:LH] E, D, C, | z3 |]
+
+%abc-2.1
+X:2014
+T:g3-n100-014 Rê tới Sol tìm lối lại
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fourth; lead=RH; bucket=n100; notes=79; RH=59; LH=20
+% role=R; duration60=60s; related_pattern=928c55d6bc6f3ad8
+% authored_passages=F24 F22 F25 F21 F24
+% source=buildscripts/pianist/compositions/g3/n100.txt:15
+[V:RH] D G F | E C F | E D E | D C C |
+[V:LH] C,3 | C,3 | C,3 | C,3 |
+[V:RH] F C D | E F E | D G F | E D C |
+[V:LH] C,3 | C,3 | C,3 | C,3 |
+[V:RH] C C F | E D C | D G F | E C2 |
+[V:LH] C,3 | C,3 | C,3 | C,3 |
+[V:RH] C F E | D G F | E D E | D C C |
+[V:LH] C,3 | C,3 | C,3 | C,3 |
+[V:RH] D G F | E C F | E D E | D C C |]
+[V:LH] C,3 | C,3 | C,3 | C,3 |]
+
+%abc-2.1
+X:2044
+T:g3-n100-044 Rê trầm Sol lối trở lại
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fourth; lead=LH; bucket=n100; notes=79; RH=20; LH=59
+% role=L; duration60=60s; related_pattern=13f8836fbd9b58d6
+% authored_passages=G24 G25 G22 G24 G21
+% source=buildscripts/pianist/compositions/g3/n100.txt:45
+[V:RH] C3 | C3 | C3 | C3 |
+[V:LH] D, G, F, | E, C, F, | E, D, E, | D, C, C, |
+[V:RH] C3 | C3 | C3 | C3 |
+[V:LH] C, C, F, | E, D, C, | D, G, F, | E, C,2 |
+[V:RH] C3 | C3 | C3 | C3 |
+[V:LH] F, C, D, | E, F, E, | D, G, F, | E, D, C, |
+[V:RH] C3 | C3 | C3 | C3 |
+[V:LH] D, G, F, | E, C, F, | E, D, E, | D, C, C, |
+[V:RH] C3 | C3 | C3 | C3 |]
+[V:LH] C, F, E, | D, G, F, | E, D, E, | D, C, C, |]
+
+%abc-2.1
+X:2085
+T:g3-n100-085 Năm chuyện rải thấp ba
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=arpeggio; lead=LH; bucket=n100; notes=77; RH=33; LH=44
+% role=A; duration60=90s; related_pattern=ba55c4a52e8d9a72
+% authored_passages=H12 H16 H14 H12 H16
+% source=buildscripts/pianist/compositions/g3/n100.txt:86
+[V:RH] z3 | C2 D | z3 | E2 D |
+[V:LH] C, G, E, | z3 | G, E, C, | z3 |
+[V:RH] z3 | C2 C | z3 | C2 D |
+[V:LH] E, G, C, | z3 | E, C, G, | z3 |
+[V:RH] z3 | E2 D | z3 | C2 C |
+[V:LH] E, G, C, | z3 | G, E, C, | z3 |
+[V:RH] z3 | C D E | z3 | D C D |
+[V:LH] G, C, E, | z3 | G, E, C, | z3 |
+[V:RH] z3 | E D C | z3 | C2 D |
+[V:LH] E, C,2 | z3 | C, G, E, | z3 |
+[V:RH] z3 | E2 D | z3 | C2 C |
+[V:LH] G, E, C, | z3 | E, G, C, | z3 |
+[V:RH] z3 | C2 D | z3 | E2 D |
+[V:LH] E, C, G, | z3 | E, G, C, | z3 |
+[V:RH] z3 | C2 C |]
+[V:LH] G, E, C, | z3 |]
+
+%abc-2.1
+X:2024
+T:g3-n100-024 Đô dài tìm Sol rồi về
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fifth; lead=RH; bucket=n100; notes=73; RH=53; LH=20
+% role=R; duration60=60s; related_pattern=781d6a0704ab47e2
+% authored_passages=P23 P22 P25 P24 P21
+% source=buildscripts/pianist/compositions/g3/n100.txt:25
+[V:RH] C2 G | F E D | C G F | E D C |
+[V:LH] C,3 | C,3 | C,3 | C,3 |
+[V:RH] G C D | E F E | D G F | E D C |
+[V:LH] C,3 | C,3 | C,3 | C,3 |
+[V:RH] C2 G | F2 E | D C2 | C3 |
+[V:LH] C,3 | C,3 | C,3 | C,3 |
+[V:RH] C G F | E D C | D G F | E D C |
+[V:LH] C,3 | C,3 | C,3 | C,3 |
+[V:RH] C G F | E D C | D E F | E C2 |]
+[V:LH] C,3 | C,3 | C,3 | C,3 |]
+
+%abc-2.1
+X:2054
+T:g3-n100-054 Đô trầm dài tìm Sol
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fifth; lead=LH; bucket=n100; notes=73; RH=20; LH=53
+% role=L; duration60=60s; related_pattern=1a1442ee11fa3bc0
+% authored_passages=B23 B25 B22 B21 B24
+% source=buildscripts/pianist/compositions/g3/n100.txt:55
+[V:RH] C3 | C3 | C3 | C3 |
+[V:LH] C,2 G, | F, E, D, | C, G, F, | E, D, C, |
+[V:RH] C3 | C3 | C3 | C3 |
+[V:LH] C,2 G, | F,2 E, | D, C,2 | C,3 |
+[V:RH] C3 | C3 | C3 | C3 |
+[V:LH] G, C, D, | E, F, E, | D, G, F, | E, D, C, |
+[V:RH] C3 | C3 | C3 | C3 |
+[V:LH] C, G, F, | E, D, C, | D, E, F, | E, C,2 |
+[V:RH] C3 | C3 | C3 | C3 |]
+[V:LH] C, G, F, | E, D, C, | D, G, F, | E, D, C, |]
+
+%abc-2.1
+X:2070
+T:g3-n100-070 Giữ trầm đổi lời kể
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fourth; lead=LH; bucket=n100; notes=81; RH=38; LH=43
+% role=A; duration60=90s; related_pattern=51e86877f3d28580
+% authored_passages=Q14 Q12 Q16 Q14 Q12
+% source=buildscripts/pianist/compositions/g3/n100.txt:71
+[V:RH] z3 | C D E | z3 | D C2 |
+[V:LH] C,2 F, | z3 | E, D, C, | z3 |
+[V:RH] z3 | C2 C | z3 | C D E |
+[V:LH] D, F, E, | z3 | C, F, E, | z3 |
+[V:RH] z3 | D E D | z3 | C D C |
+[V:LH] D, G, F, | z3 | E, D, C, | z3 |
+[V:RH] z3 | C2 D | z3 | E2 D |
+[V:LH] F, C, D, | z3 | E, F, E, | z3 |
+[V:RH] z3 | C2 C | z3 | C D E |
+[V:LH] D, E, C, | z3 | C,2 F, | z3 |
+[V:RH] z3 | D C2 | z3 | C2 C |
+[V:LH] E, D, C, | z3 | D, F, E, | z3 |
+[V:RH] z3 | C D E | z3 | D E D |
+[V:LH] C, F, E, | z3 | D, G, F, | z3 |
+[V:RH] z3 | C D C |]
+[V:LH] E, D, C, | z3 |]
+
+%abc-2.1
+X:2095
+T:g3-n100-095 Giữ trầm trở lại nhịp chung
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fourth; lead=LH; bucket=n100; notes=98; RH=49; LH=49
+% role=S; duration60=60s; related_pattern=9c9eacd057812443
+% authored_passages=S24 S22 S28 S26 S24
+% source=buildscripts/pianist/compositions/g3/n100.txt:96
+[V:RH] C2 D | E D C | D E D | C3 |
+[V:LH] C,2 F, | E, D, C, | F, E, C, | C,3 |
+[V:RH] C D E | D D C | D E D | C3 |
+[V:LH] C, F, E, | D, E, C, | F, E, D, | C,3 |
+[V:RH] C D2 | E D C | D E D | C C2 |
+[V:LH] C, F,2 | E, D, C, | D, G, F, | E, C,2 |
+[V:RH] D C C | D E D | C D E | D C2 |
+[V:LH] F, C, D, | E, F, C, | D, G, F, | E, C,2 |
+[V:RH] C2 D | E D C | D E D | C3 |]
+[V:LH] C,2 F, | E, D, C, | F, E, C, | C,3 |]
+
+%abc-2.1
+X:2015
+T:g3-n100-015 Đô nhắc năm lời ba phách
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fourth; lead=RH; bucket=n100; notes=78; RH=58; LH=20
+% role=R; duration60=60s; related_pattern=00b4d21d8b25500a
+% authored_passages=F25 F23 F22 F24 F21
+% source=buildscripts/pianist/compositions/g3/n100.txt:16
+[V:RH] C C F | E D C | D G F | E C2 |
+[V:LH] C,3 | C,3 | C,3 | C,3 |
+[V:RH] C2 F | E D C | D G F | E D C |
+[V:LH] C,3 | C,3 | C,3 | C,3 |
+[V:RH] F C D | E F E | D G F | E D C |
+[V:LH] C,3 | C,3 | C,3 | C,3 |
+[V:RH] D G F | E C F | E D E | D C C |
+[V:LH] C,3 | C,3 | C,3 | C,3 |
+[V:RH] C F E | D G F | E D E | D C C |]
+[V:LH] C,3 | C,3 | C,3 | C,3 |]
+
+%abc-2.1
+X:2045
+T:g3-n100-045 Đô thấp nhắc năm lời
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fourth; lead=LH; bucket=n100; notes=78; RH=20; LH=58
+% role=L; duration60=60s; related_pattern=7c547d9efc0e4334
+% authored_passages=G25 G22 G23 G21 G24
+% source=buildscripts/pianist/compositions/g3/n100.txt:46
+[V:RH] C3 | C3 | C3 | C3 |
+[V:LH] C, C, F, | E, D, C, | D, G, F, | E, C,2 |
+[V:RH] C3 | C3 | C3 | C3 |
+[V:LH] F, C, D, | E, F, E, | D, G, F, | E, D, C, |
+[V:RH] C3 | C3 | C3 | C3 |
+[V:LH] C,2 F, | E, D, C, | D, G, F, | E, D, C, |
+[V:RH] C3 | C3 | C3 | C3 |
+[V:LH] C, F, E, | D, G, F, | E, D, E, | D, C, C, |
+[V:RH] C3 | C3 | C3 | C3 |]
+[V:LH] D, G, F, | E, C, F, | E, D, E, | D, C, C, |]

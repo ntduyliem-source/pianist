@@ -1,0 +1,17 @@
+%abc-2.1
+X:3714
+T:g6-n10-014 Nhắc Đô rồi hạ sáu
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G6; profile=m6-down; lead=RH; bucket=n10; notes=11; RH=8; LH=3
+% duration60=12s; related_pattern=096864983d8fc3d7
+% authored_passages=S14 CR1 CR3
+% source=buildscripts/pianist/compositions/g6/studies.txt:15
+[V:RH] c c E F | G2 E2 | G2 D2 |]
+[V:LH] C,4 | C,4 | C,4 |]

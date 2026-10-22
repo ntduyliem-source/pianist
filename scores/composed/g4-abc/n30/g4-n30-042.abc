@@ -1,0 +1,19 @@
+%abc-2.1
+X:2542
+T:g4-n30-042 Si Rê Đô giữa nhắc
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=upper; lead=LH; bucket=n30; notes=31; RH=8; LH=23
+% role=L; duration60=24s; related_pattern=012a5da3574b35e2
+% authored_passages=V22 V25
+% source=buildscripts/pianist/compositions/g4/n30.txt:43
+[V:RH] G3 | G3 | G3 | G3 |
+[V:LH] B, D C | B, G, A, | B, A, G, | A, G, G, |
+[V:RH] G3 | G3 | G3 | G3 |]
+[V:LH] G, G, A, | B, A, G, | A, C B, | A, G,2 |]

@@ -1,0 +1,19 @@
+%abc-2.1
+X:1127
+T:g2-n30-027 Cặp sau và nốt dài
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=eighth; lead=RH; bucket=n30; notes=33; RH=25; LH=8
+% role=R; duration60=24s; related_pattern=5322d5b809dba6c6
+% authored_passages=E22 E25
+% source=buildscripts/pianist/compositions/g2/n30.txt:28
+[V:RH] C D/2E/2 F | E/2D/2 C2 | C D E | D/2C/2 C2 |
+[V:LH] C,3 | C,3 | C,3 | C,3 |
+[V:RH] C2 C/2D/2 | E F/2E/2 D | C D E/2D/2 | C3 |]
+[V:LH] C,3 | C,3 | C,3 | C,3 |]

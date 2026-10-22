@@ -1,0 +1,19 @@
+%abc-2.1
+X:466
+T:g1-n30-066 Trầm mở bốn câu
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n30; notes=28; RH=14; LH=14
+% role=A; family=left-four-arches; form=authored; duration60=32s
+% related_pattern=7428c750a8a9aa97
+% source=buildscripts/pianist/compositions/g1/n30.txt:67
+[V:RH] z4 | C D E2 | z4 | F G F E |
+[V:LH] C, D, E, F, | z4 | G, F, E, D, | z4 |
+[V:RH] z4 | D E D C | z4 | C D C2 |]
+[V:LH] C, D, E,2 | z4 | D, C, C,2 | z4 |]

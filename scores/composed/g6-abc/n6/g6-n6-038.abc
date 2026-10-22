@@ -1,0 +1,17 @@
+%abc-2.1
+X:3638
+T:g6-n6-038 Rê giữa về Fa Mi
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G6; profile=M6-down; lead=LH; bucket=n6; notes=8; RH=2; LH=6
+% duration60=8s; related_pattern=817b26814bfacb08
+% authored_passages=S38 CL1
+% source=buildscripts/pianist/compositions/g6/studies.txt:39
+[V:RH] c4 | c4 |]
+[V:LH] C D F, E, | G,2 E,2 |]

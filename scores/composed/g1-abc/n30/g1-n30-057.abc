@@ -1,0 +1,19 @@
+%abc-2.1
+X:457
+T:g1-n30-057 Trầm trên nền đi bước
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n30; notes=30; RH=8; LH=22
+% role=L; family=bass-moving-eight; form=authored; duration60=24s
+% related_pattern=37efa6664afb25ae
+% source=buildscripts/pianist/compositions/g1/n30.txt:59
+[V:RH] C3 | C3 | D3 | D3 |
+[V:LH] C, D, E, | F, E, D, | C, D, E, | F, E, D, |
+[V:RH] C3 | C3 | C3 | C3 |]
+[V:LH] C, D, E, | F, E, D, | C, D, C, | C,3 |]

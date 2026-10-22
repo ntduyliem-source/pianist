@@ -1,0 +1,25 @@
+%abc-2.1
+X:1348
+T:g2-n100-048 Chuyện trầm trên nền chuyển
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=eighth; lead=LH; bucket=n100; notes=94; RH=20; LH=74
+% role=L; duration60=80s; related_pattern=122766e2e12c0297
+% authored_passages=F03 F01 F05 F19 F06
+% source=buildscripts/pianist/compositions/g2/n100.txt:49
+[V:RH] C4 | D4 | C4 | C4 |
+[V:LH] C,/2D,/2 E, D, C, | D,2 D,/2E,/2 F, | E, D, C, D, | E,/2D,/2 C, C,2 |
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C,/2D,/2 E, D, C, | D, E,/2F,/2 G, F, | E, D,/2C,/2 D, E, | D,/2C,/2 C, C,2 |
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C,/2D,/2 E, E,2 | D, C, C,2 | C,/2D,/2 E, D, C, | D, C, C,2 |
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C,2 C,/2D,/2 E, | D, D, E,2 | D, C, C,2 | C,4 |
+[V:RH] C4 | C4 | C4 | C4 |]
+[V:LH] C,2 C,/2D,/2 E, | D, D, E,2 | D,/2C,/2 C, C,2 | C,4 |]

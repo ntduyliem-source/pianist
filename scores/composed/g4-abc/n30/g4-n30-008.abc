@@ -1,0 +1,19 @@
+%abc-2.1
+X:2508
+T:g4-n30-008 Si ghé Đô rồi về
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=upper; lead=RH; bucket=n30; notes=31; RH=23; LH=8
+% role=R; duration60=32s; related_pattern=a911eea0065ff162
+% authored_passages=U08 U17
+% source=buildscripts/pianist/compositions/g4/n30.txt:9
+[V:RH] B G c B | A B c d | c A B G | A G G2 |
+[V:LH] G,4 | G,4 | G,4 | G,4 |
+[V:RH] G2 B A | G2 B2 | c2 G2 | G4 |]
+[V:LH] G,4 | G,4 | G,4 | G,4 |]

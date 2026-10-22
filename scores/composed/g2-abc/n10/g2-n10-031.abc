@@ -1,0 +1,17 @@
+%abc-2.1
+X:931
+T:g2-n10-031 Câu quãng ba ở miền trầm
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=third; lead=LH; bucket=n10; notes=9; RH=2; LH=7
+% role=L; duration60=8s; related_pattern=8269e8ff8f61550e
+% authored_passages=inline-n10-031
+% source=buildscripts/pianist/compositions/g2/n10.txt:32
+[V:RH] C4 | C4 |]
+[V:LH] C, E, D, C, | D, E, C,2 |]

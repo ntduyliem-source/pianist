@@ -1,0 +1,17 @@
+%abc-2.1
+X:1057
+T:g2-n20-057 Cặp trầm sau nhịp ba
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=eighth; lead=LH; bucket=n20; notes=17; RH=4; LH=13
+% role=L; duration60=12s; related_pattern=b1369cc9d1319afc
+% authored_passages=F22
+% source=buildscripts/pianist/compositions/g2/n20.txt:58
+[V:RH] C3 | C3 | C3 | C3 |]
+[V:LH] C, D,/2E,/2 F, | E,/2D,/2 C,2 | C, D, E, | D,/2C,/2 C,2 |]

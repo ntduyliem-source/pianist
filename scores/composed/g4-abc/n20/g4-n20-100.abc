@@ -1,0 +1,17 @@
+%abc-2.1
+X:2500
+T:g4-n20-100 Ba phách rất trầm chung
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=lower; lead=LH; bucket=n20; notes=22; RH=11; LH=11
+% role=S; duration60=12s; related_pattern=461f51c92dab85fe
+% authored_passages=Y22
+% source=buildscripts/pianist/compositions/g4/n20.txt:101
+[V:RH] C C C | D C C | C D E | D C2 |]
+[V:LH] A,, B,, C, | D, C, A,, | B,, C, E, | D, A,,2 |]

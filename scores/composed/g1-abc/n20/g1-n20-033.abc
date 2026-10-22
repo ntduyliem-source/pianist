@@ -1,0 +1,17 @@
+%abc-2.1
+X:333
+T:g1-n20-033 Câu hỏi trầm thấp
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n20; notes=15; RH=4; LH=11
+% role=L; family=bass-low-question; form=authored; duration60=16s
+% related_pattern=ae2fcbc7a8e62e09
+% source=buildscripts/pianist/compositions/g1/n20.txt:35
+[V:RH] C4 | C4 | C4 | C4 |]
+[V:LH] C, D, C, D, | E,2 E,2 | D, E, D, C, | C,4 |]

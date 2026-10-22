@@ -1,0 +1,25 @@
+%abc-2.1
+X:1344
+T:g2-n100-044 Fa trầm dẫn đường lại
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=third; lead=LH; bucket=n100; notes=79; RH=20; LH=59
+% role=L; duration60=60s; related_pattern=2dc13b789d13a0c8
+% authored_passages=U24 U25 U22 U24 U21
+% source=buildscripts/pianist/compositions/g2/n100.txt:45
+[V:RH] C3 | C3 | C3 | C3 |
+[V:LH] C, D, F, | E, D, C, | D, F, E, | D, C, C, |
+[V:RH] C3 | C3 | C3 | C3 |
+[V:LH] C, C, E, | D, E, C, | D, F, E, | D, C,2 |
+[V:RH] C3 | C3 | C3 | C3 |
+[V:LH] E, G, F, | E, C, D, | E, D, C, | D, C, C, |
+[V:RH] C3 | C3 | C3 | C3 |
+[V:LH] C, D, F, | E, D, C, | D, F, E, | D, C, C, |
+[V:RH] C3 | C3 | C3 | C3 |]
+[V:LH] C, E, D, | E, G, F, | E, D, E, | D, C, C, |]

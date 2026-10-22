@@ -1,0 +1,17 @@
+%abc-2.1
+X:2405
+T:g4-n20-005 Giữ nốt sáng vùng cao
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=upper; lead=RH; bucket=n20; notes=15; RH=11; LH=4
+% role=R; duration60=16s; related_pattern=348096c11c1c7a6b
+% authored_passages=U05
+% source=buildscripts/pianist/compositions/g4/n20.txt:6
+[V:RH] G2 B A | G2 B c | d c B2 | G2 G2 |]
+[V:LH] G,4 | G,4 | G,4 | G,4 |]

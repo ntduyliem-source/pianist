@@ -1,0 +1,17 @@
+%abc-2.1
+X:3014
+T:g5-n10-014 Fa Rê giữ lời sáng
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=offset; lead=RH; bucket=n10; notes=10; RH=6; LH=4
+% duration60=12s; related_pattern=1849f1d958091e06
+% authored_passages=O14 CR2 CR3
+% source=buildscripts/pianist/compositions/g5/studies.txt:15
+[V:RH] F2 D z | E2 C2 | D2 C2 |]
+[V:LH] z F, z D, | C,4 | G,4 |]

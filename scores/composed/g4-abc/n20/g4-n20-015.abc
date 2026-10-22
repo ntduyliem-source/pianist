@@ -1,0 +1,17 @@
+%abc-2.1
+X:2415
+T:g4-n20-015 Nhắc Sol nhịp ba cao
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=upper; lead=RH; bucket=n20; notes=15; RH=11; LH=4
+% role=R; duration60=12s; related_pattern=9ed0acbce40d925c
+% authored_passages=U25
+% source=buildscripts/pianist/compositions/g4/n20.txt:16
+[V:RH] G G A | B A G | A c B | A G2 |]
+[V:LH] G,3 | G,3 | G,3 | G,3 |]

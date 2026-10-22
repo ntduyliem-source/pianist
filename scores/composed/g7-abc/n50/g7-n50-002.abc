@@ -1,0 +1,23 @@
+%abc-2.1
+X:4702
+T:g7-n50-002 Rê Mi Fa dài ngắn
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G7; profile=dotted; lead=RH; bucket=n50; notes=50; RH=37; LH=13
+% duration60=52s; related_pattern=bae9cfdba17d82bb
+% authored_passages=D02 DR2 DR4 DR1
+% source=buildscripts/pianist/compositions/g7/studies.txt:3
+[V:RH] D3/2 E/2 F2 | E3/2 G/2 E D | C2 E2 | F3/2 E/2 D2 |
+[V:LH] D,4 | C, z z z | C, z z z | D, z z z |
+[V:RH] E2 C2 | D3/2 F/2 E2 | G3/2 E/2 D C | F2 D2 |
+[V:LH] C, z z z | D, z z z | C, z z z | D, z z z |
+[V:RH] E2 C2 | C3/2 D/2 E2 | F3/2 E/2 D2 | E3/2 F/2 G E |
+[V:LH] C, z z z | C, z z z | D, z z z | C, z z z |
+[V:RH] D2 C2 |]
+[V:LH] C, z z z |]

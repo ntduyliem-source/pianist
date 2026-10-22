@@ -1,0 +1,17 @@
+%abc-2.1
+X:2499
+T:g4-n20-099 Rất trầm nhịp chung
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=lower; lead=LH; bucket=n20; notes=24; RH=12; LH=12
+% role=S; duration60=16s; related_pattern=139fca8fb3df386f
+% authored_passages=Y04
+% source=buildscripts/pianist/compositions/g4/n20.txt:100
+[V:RH] C C C2 | D C C2 | C D E2 | D C C2 |]
+[V:LH] A,, B,, C,2 | D, C, A,,2 | B,, C, E,2 | D, C, A,,2 |]

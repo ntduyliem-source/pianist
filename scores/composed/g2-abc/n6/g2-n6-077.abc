@@ -1,0 +1,17 @@
+%abc-2.1
+X:877
+T:g2-n6-077 Trầm gọi ở phách sau
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=eighth; lead=LH; bucket=n6; notes=7; RH=3; LH=4
+% role=A; duration60=6s; related_pattern=2a4a01ed536aeb4e
+% authored_passages=inline-n6-077
+% source=buildscripts/pianist/compositions/g2/n6.txt:78
+[V:RH] z3 | C D C |]
+[V:LH] C, D,/2E,/2 D, | z3 |]

@@ -1,0 +1,17 @@
+%abc-2.1
+X:146
+T:g1-n6-046 Trầm nhìn lên Sol
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n6; notes=7; RH=2; LH=5
+% role=L; family=bass-upper-landing; form=authored; duration60=8s
+% related_pattern=64c1f7ca37aae9a5
+% source=buildscripts/pianist/compositions/g1/n6.txt:48
+[V:RH] C4 | C4 |]
+[V:LH] E, F, G,2 | G,2 G,2 |]

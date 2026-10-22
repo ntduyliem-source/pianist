@@ -1,0 +1,21 @@
+%abc-2.1
+X:1973
+T:g3-n50-073 Đô dài và hai lời
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fifth; lead=RH; bucket=n50; notes=46; RH=23; LH=23
+% role=A; duration60=48s; related_pattern=3d84cd4673dc46d9
+% authored_passages=V03 V02 V04
+% source=buildscripts/pianist/compositions/g3/n50.txt:74
+[V:RH] C2 G F | z4 | E D E C | z4 |
+[V:LH] z4 | C, D, E, D, | z4 | D, E, D, C, |
+[V:RH] G C D E | z4 | F E D C | z4 |
+[V:LH] z4 | C, D, E, D, | z4 | D, C, C,2 |
+[V:RH] C G D E | z4 | F E D C | z4 |]
+[V:LH] z4 | C, D, E, D, | z4 | D, C, D, C, |]

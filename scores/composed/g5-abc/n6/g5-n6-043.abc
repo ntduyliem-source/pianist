@@ -1,0 +1,17 @@
+%abc-2.1
+X:2943
+T:g5-n6-043 Trầm Sol Rê đáp xa
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=offset; lead=LH; bucket=n6; notes=7; RH=3; LH=4
+% duration60=8s; related_pattern=51684578408a3fad
+% authored_passages=O43 CL2
+% source=buildscripts/pianist/compositions/g5/studies.txt:44
+[V:RH] z G z D | C4 |]
+[V:LH] G,2 D, z | E,2 C,2 |]

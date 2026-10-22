@@ -1,0 +1,17 @@
+%abc-2.1
+X:2260
+T:g4-n6-060 Giữ hai đầu đường bass
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=span; lead=LH; bucket=n6; notes=8; RH=2; LH=6
+% role=L; duration60=8s; related_pattern=1e8814aadbeb59db
+% authored_passages=inline-n6-060
+% source=buildscripts/pianist/compositions/g4/n6.txt:61
+[V:RH] E4 | E4 |]
+[V:LH] C,2 G, C | B, G, C,2 |]

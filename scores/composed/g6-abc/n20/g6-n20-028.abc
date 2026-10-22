@@ -1,0 +1,19 @@
+%abc-2.1
+X:3828
+T:g6-n20-028 Fa trầm mở Rê
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G6; profile=M6-up; lead=LH; bucket=n20; notes=19; RH=5; LH=14
+% duration60=20s; related_pattern=1cb2717c1500d27e
+% authored_passages=S28 BL3
+% source=buildscripts/pianist/compositions/g6/studies.txt:29
+[V:RH] c4 | c z z z | c z z z | c z z z |
+[V:LH] E, F, D C | G,2 D,2 | E, D, B, A, | G,2 E,2 |
+[V:RH] c z z z |]
+[V:LH] D,2 C,2 |]

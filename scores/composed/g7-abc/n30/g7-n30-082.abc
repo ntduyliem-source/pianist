@@ -1,0 +1,21 @@
+%abc-2.1
+X:4682
+T:g7-n30-082 Sol Mi Đô sáu tám
+C:Nhạc do trợ lý AI biên soạn
+M:6/8
+L:1/4
+Q:3/8=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G7; profile=compound; lead=RH; bucket=n30; notes=34; RH=25; LH=9
+% duration60=18s; related_pattern=24e8241e18d20b88
+% authored_passages=K07 KRp3 KRp4
+% source=buildscripts/pianist/compositions/g7/studies.txt:83
+[V:RH] G E/2 C3/2 | G3/2 E3/2 | D E/2 F3/2 | E F/2 G3/2 |
+[V:LH] C,3 | C,3 | D,3 | C,3 |
+[V:RH] C3 | D F/2 E3/2 | G/2 F/2 E/2 D C/2 | F E/2 D3/2 |
+[V:LH] C,3 | D,3 | C,3 | D,3 |
+[V:RH] E3/2 C3/2 |]
+[V:LH] C,3 |]

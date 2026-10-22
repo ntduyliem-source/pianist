@@ -1,0 +1,17 @@
+%abc-2.1
+X:3534
+T:g6-n4-034 Mi cao về Sol Fa
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G6; profile=M6-down; lead=RH; bucket=n4; notes=5; RH=4; LH=1
+% duration60=4s; related_pattern=48318f1dd4fe9865
+% authored_passages=S34
+% source=buildscripts/pianist/compositions/g6/studies.txt:35
+[V:RH] d e G F |]
+[V:LH] C,4 |]

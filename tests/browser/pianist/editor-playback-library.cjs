@@ -20,7 +20,7 @@ const root=path.resolve(__dirname,'../../..'),channel=process.env.PIANIST_BROWSE
   try{
     const base=new URL(process.env.PIANIST_URL||'http://127.0.0.1:8787/pianist.html');base.searchParams.set('diagnostics','1');await p.goto(base.href);
     const catalog=JSON.parse(await fs.readFile(path.join(root,'scores/library/catalog.json'),'utf8'));
-    const bundled=p.getByRole('region',{name:'Bài hát có sẵn'});await bundled.waitFor();assert.equal(await bundled.locator('article').count(),catalog.songs.length);
+    const bundled=p.getByRole('region',{name:'Bài hát có sẵn'});await bundled.waitFor();assert.equal(await bundled.locator('article').count(),new Set(catalog.songs.map(s=>s.workId||s.id)).size);
     // Use a real file-chooser gesture for cold-start audio permissions.
     const chooser=p.waitForEvent('filechooser');await p.getByRole('button',{name:'Nhập bản nhạc',exact:true}).click();await(await chooser).setFiles(path.join(root,'tests/fixtures/pianist/m0/piano.mxl'));
     await idle();const controls=p.getByRole('region',{name:'Phát bản nhạc trong editor'});

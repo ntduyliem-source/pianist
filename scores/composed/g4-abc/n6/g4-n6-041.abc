@@ -1,0 +1,17 @@
+%abc-2.1
+X:2241
+T:g4-n6-041 Bass lên rồi giữ Sol
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=upper; lead=LH; bucket=n6; notes=7; RH=2; LH=5
+% role=L; duration60=6s; related_pattern=a9e473ac36b011ba
+% authored_passages=inline-n6-041
+% source=buildscripts/pianist/compositions/g4/n6.txt:42
+[V:RH] G3 | G3 |]
+[V:LH] G, A, B, | C G,2 |]

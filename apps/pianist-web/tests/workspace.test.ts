@@ -9,11 +9,51 @@ import {PracticeEngine} from '../../../packages/practice-engine-v2/engine';
 import {resultFor} from '../../../packages/practice-engine-v2/results';
 import {settingsFor} from '../../../packages/practice-engine-v2/score-adapter';
 import * as storage from '../src/platform/storage';
+import type {BundledScore} from '../src/platform/bundled-library';
 
-test('reselecting Exercises navbar never releases held MIDI during a running attempt',()=>{
-  const workspace=new Workspace();workspace.patch({view:'exercises'});workspace.session={status:'running'} as PracticeController;
+test('editor-only bundled versions cannot enter practice through the card or editor shortcut',async()=>{
+  const workspace=new Workspace(),bytes=new TextEncoder().encode('native score with grace');
+  const sha=Buffer.from(await crypto.subtle.digest('SHA-256',bytes)).toString('hex');
+  const score:BundledScore={id:sha,sha256:sha,bytes:bytes.length,title:'Version two',filename:'Version two — v2.mxl',url:'library/songs/version-two-v2.mxl',practiceReady:false,practiceNotice:'Chưa hỗ trợ tập nốt hoa mỹ.'};
+  workspace.patch({bundledScores:[score],current:{id:'limited-version',title:score.title,filename:'two.mscz',sourceName:score.filename,source:bytes,bytes:new Uint8Array(),revision:1,createdAt:0,updatedAt:0}});
+  await assert.rejects(workspace.openBundledScore(score,true),/nốt hoa mỹ/);
+  await assert.rejects(workspace.practice(),/nốt hoa mỹ/);
+});
+
+test('reselecting grade practice navbar never releases held MIDI during a running attempt',()=>{
+  const workspace=new Workspace();workspace.patch({view:'practice',practiceKind:'grade'});workspace.session={status:'running'} as PracticeController;
   workspace.midi.release=()=>{throw Error('held input must survive');};
-  assert.doesNotThrow(()=>workspace.navigate('exercises'));assert.equal(workspace.state.view,'exercises');
+  assert.doesNotThrow(()=>workspace.navigate('practice'));assert.equal(workspace.state.view,'practice');
+});
+
+test('practice kind switches keep the editor project and open the matching selector',()=>{
+  const workspace=new Workspace();let restored=0,disposed=0;
+  const current={id:'free-song',title:'Library song',filename:'song.mscz',bytes:new Uint8Array([1]),revision:1,createdAt:0,updatedAt:0};
+  workspace.patch({current,view:'practice',practicePicker:false});
+  workspace.navigate=view=>workspace.patch({view});
+  workspace.restoreExerciseEditor=()=>{restored++;};
+  workspace.session={status:'finished',dispose:()=>{disposed++;}} as unknown as PracticeController;
+  workspace.selectPracticeKind('grade');
+  assert.equal(workspace.state.practiceKind,'grade');assert.equal(workspace.state.practicePicker,true);
+  assert.equal(workspace.state.current,current);assert.equal(disposed,1);assert.equal(restored,1);
+  workspace.selectPracticeKind('free');
+  assert.equal(workspace.state.practiceKind,'free');assert.equal(workspace.state.current,current);
+});
+
+test('changing practice kind cannot dispose a running or paused attempt',()=>{
+  const workspace=new Workspace();workspace.patch({practiceKind:'grade'});
+  for(const status of ['counting','running','paused','interrupted'] as const){
+    workspace.session={status,dispose:()=>{throw Error('Must preserve attempt');}} as unknown as PracticeController;
+    assert.throws(()=>workspace.selectPracticeKind('free'),/Kết thúc lượt/);
+    assert.equal(workspace.state.practiceKind,'grade');
+  }
+});
+
+test('entering grade practice never replaces it with the current library score',async()=>{
+  const workspace=new Workspace();workspace.patch({practiceKind:'grade'});
+  let opened=0;
+  workspace.openPractice=()=>{opened++;};workspace.practice=async()=>{throw Error('Must keep grade selector');};
+  await workspace.enterPractice();assert.equal(opened,1);
 });
 
 test('exercise native audition borrows read-only audio and restores exact editor content without a library project',async()=>{
@@ -23,7 +63,7 @@ test('exercise native audition borrows read-only audio and restores exact editor
     api:{loadScoreData:(data:Uint8Array)=>{assert.equal(readOnly,false,'native requires write mode for document load');loads.push(data.slice());return true;}}} as unknown as EngineBridge;
   workspace.bridge=bridge;
   const project={id:'borrow-test',title:'Editor',filename:'edit.mscz',bytes:editor,revision:2,createdAt:0,updatedAt:0};
-  workspace.patch({view:'exercises',current:project,revision:2,recoveryRevision:2});
+  workspace.patch({view:'practice',practiceKind:'grade',current:project,revision:2,recoveryRevision:2});
   await workspace.exerciseAudition(exercise,new AbortController().signal);
   assert.equal(workspace.state.current,project);assert.equal(readOnly,true);assert.equal(workspace.state.projects.length,0);
   workspace.restoreExerciseEditor();assert.deepEqual(loads,[exercise,editor]);assert.equal(workspace.state.current,project);
@@ -31,7 +71,7 @@ test('exercise native audition borrows read-only audio and restores exact editor
 });
 
 test('leaving exercise screen while native audio boots cannot publish the old exercise',async()=>{
-  const workspace=new Workspace(),abort=new AbortController();workspace.patch({view:'exercises'});
+  const workspace=new Workspace(),abort=new AbortController();workspace.patch({view:'practice',practiceKind:'grade'});
   let release!:(b:EngineBridge)=>void;
   workspace.ensureEngine=()=>new Promise<EngineBridge>(resolve=>{release=resolve;});
   const pending=workspace.exerciseAudition(new Uint8Array([1]),abort.signal);

@@ -1,0 +1,17 @@
+%abc-2.1
+X:2479
+T:g4-n20-079 Đô cao về giữa gọi
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=span; lead=RH; bucket=n20; notes=15; RH=7; LH=8
+% role=A; duration60=16s; related_pattern=1855599c6c16398c
+% authored_passages=H02
+% source=buildscripts/pianist/compositions/g4/n20.txt:80
+[V:RH] c G C D | z4 | E G C2 | z4 |]
+[V:LH] z4 | C, D, E, D, | z4 | D, C, D, C, |]

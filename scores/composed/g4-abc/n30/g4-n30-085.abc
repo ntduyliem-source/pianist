@@ -1,0 +1,21 @@
+%abc-2.1
+X:2585
+T:g4-n30-085 Giữa về trầm mở lại
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=span; lead=LH; bucket=n30; notes=32; RH=15; LH=17
+% role=A; duration60=36s; related_pattern=112249d65a7a8f47
+% authored_passages=H14 H12
+% source=buildscripts/pianist/compositions/g4/n30.txt:86
+[V:RH] z3 | E F G | z3 | F E F |
+[V:LH] C G, C, | z3 | E, G, A, | z3 |
+[V:RH] z3 | G F E | z3 | E2 F |
+[V:LH] G, C,2 | z3 | C, G, C | z3 |
+[V:RH] z3 | G2 F | z3 | E2 E |]
+[V:LH] B, A, G, | z3 | E, G, C, | z3 |]

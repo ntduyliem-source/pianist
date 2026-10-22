@@ -1,0 +1,19 @@
+%abc-2.1
+X:365
+T:g1-n20-065 Qua lại có khoảng thở
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n20; notes=19; RH=10; LH=9
+% role=A; family=three-breath-calls; form=authored; duration60=24s
+% related_pattern=3e9dc07bd9d7c312
+% source=buildscripts/pianist/compositions/g1/n20.txt:66
+[V:RH] C z D E | z4 | F E D C | z4 |
+[V:LH] z4 | C, D, E, F, | z4 | E, z D, C, |
+[V:RH] C D C2 | z4 |]
+[V:LH] z4 | C,2 C,2 |]

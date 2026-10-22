@@ -1,0 +1,25 @@
+%abc-2.1
+X:2037
+T:g3-n100-037 Nốt thấp nhắc qua hai ngõ
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fourth; lead=LH; bucket=n100; notes=86; RH=20; LH=66
+% role=L; duration60=80s; related_pattern=74636c37105910bc
+% authored_passages=G07 G06 G02 G17 G08
+% source=buildscripts/pianist/compositions/g3/n100.txt:38
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C, C, F, E, | D, G, F, E, | F, C, D, E, | D, C, C,2 |
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C, F, z E, | D, G, F, E, | D, E, F, C, | D, E, C,2 |
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C,2 F, E, | D, G, F, E, | D, F, E, C, | D, C, C,2 |
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C,2 F, E, | E,2 C,2 | C,2 F,2 | C,4 |
+[V:RH] C4 | C4 | C4 | C4 |]
+[V:LH] E, C, F, E, | D, E, F, C, | D, G, F, E, | D, C, C,2 |]

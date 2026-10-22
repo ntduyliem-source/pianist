@@ -1,0 +1,19 @@
+%abc-2.1
+X:2536
+T:g4-n30-036 Nghỉ nghe lời bass cao
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=upper; lead=LH; bucket=n30; notes=34; RH=8; LH=26
+% role=L; duration60=32s; related_pattern=19df888e5223acaa
+% authored_passages=V06 V11
+% source=buildscripts/pianist/compositions/g4/n30.txt:37
+[V:RH] G4 | G4 | G4 | G4 |
+[V:LH] G, B, z A, | B, C D C | B, A, B, G, | A, B, G,2 |
+[V:RH] G4 | G4 | G4 | G4 |]
+[V:LH] G,2 B, C | D2 C B, | G, A, B, C | G,2 G,2 |]

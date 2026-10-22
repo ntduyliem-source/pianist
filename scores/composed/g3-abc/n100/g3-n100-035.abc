@@ -1,0 +1,25 @@
+%abc-2.1
+X:2035
+T:g3-n100-035 Từ trầm yên thành lời
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fourth; lead=LH; bucket=n100; notes=70; RH=20; LH=50
+% role=L; duration60=80s; related_pattern=d912f42e4606d205
+% authored_passages=G16 G05 G09 G17 G16
+% source=buildscripts/pianist/compositions/g3/n100.txt:36
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C,2 F,2 | E, D, C,2 | F,2 E, D, | C,4 |
+[V:RH] C4 | D4 | C4 | C4 |
+[V:LH] C,2 F, E, | D,2 G, F, | E, D, C,2 | C,2 C,2 |
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C, F, E,2 | F, C, D, E, | D, E, F,2 | E, D, C,2 |
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C,2 F, E, | E,2 C,2 | C,2 F,2 | C,4 |
+[V:RH] C4 | C4 | C4 | C4 |]
+[V:LH] C,2 F,2 | E, D, C,2 | F,2 E, D, | C,4 |]

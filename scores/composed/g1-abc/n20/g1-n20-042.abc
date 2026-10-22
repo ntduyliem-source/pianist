@@ -1,0 +1,17 @@
+%abc-2.1
+X:342
+T:g1-n20-042 Ba điểm tựa trầm
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n20; notes=17; RH=4; LH=13
+% role=L; family=bass-three-landings; form=authored; duration60=16s
+% related_pattern=2e970f1883fb0f07
+% source=buildscripts/pianist/compositions/g1/n20.txt:44
+[V:RH] C4 | C4 | C4 | C4 |]
+[V:LH] C, D, E,2 | F, E, E,2 | D, E, D, C, | D, C, C,2 |]

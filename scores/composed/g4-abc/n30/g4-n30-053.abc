@@ -1,0 +1,19 @@
+%abc-2.1
+X:2553
+T:g4-n30-053 Đô Mi Rê trầm đáp
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=lower; lead=LH; bucket=n30; notes=31; RH=8; LH=23
+% role=L; duration60=24s; related_pattern=3480bd2e0f5b716b
+% authored_passages=M22 M23
+% source=buildscripts/pianist/compositions/g4/n30.txt:54
+[V:RH] C3 | C3 | C3 | C3 |
+[V:LH] C, E, D, | C, A,, B,, | C, B,, A,, | B,, A,, A,, |
+[V:RH] C3 | C3 | C3 | C3 |]
+[V:LH] A,,2 B,, | C, D, E, | D, C, B,, | C, B,, A,, |]

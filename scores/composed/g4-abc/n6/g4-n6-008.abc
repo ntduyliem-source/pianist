@@ -1,0 +1,17 @@
+%abc-2.1
+X:2208
+T:g4-n6-008 Sol Si Rê vòng xuống
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=upper; lead=RH; bucket=n6; notes=8; RH=6; LH=2
+% role=R; duration60=6s; related_pattern=677cb2d0e4fde139
+% authored_passages=inline-n6-008
+% source=buildscripts/pianist/compositions/g4/n6.txt:9
+[V:RH] G B d | c A G |]
+[V:LH] G,3 | G,3 |]

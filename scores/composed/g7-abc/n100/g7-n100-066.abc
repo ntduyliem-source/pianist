@@ -1,0 +1,27 @@
+%abc-2.1
+X:4866
+T:g7-n100-066 Mi trầm đảo rồi Đô
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G7; profile=sync; lead=LH; bucket=n100; notes=87; RH=21; LH=66
+% duration60=84s; related_pattern=b3fe9c2e1ffae605
+% authored_passages=Y16 YL4 YL3 YL2 YL1 YL4
+% source=buildscripts/pianist/compositions/g7/studies.txt:67
+[V:RH] C4 | G z z z | D z z z | C z z z |
+[V:LH] F,/2 E, D,/2 C,2 | D,/2 F, E,/2 G,2 | F, E, D,2 | E,/2 D, C,/2 E,2 |
+[V:RH] C z z z | G z z z | C z z z | C z z z |
+[V:LH] D,2 C,2 | G,/2 F, E,/2 D,2 | C,2 E,2 | F,/2 E, D,/2 C,2 |
+[V:RH] C z z z | C z z z | D z z z | C z z z |
+[V:LH] C,4 | E,/2 F, G,/2 E,2 | D,/2 E, F,/2 D,2 | E, D, C,2 |
+[V:RH] C z z z | C z z z | C z z z | C z z z |
+[V:LH] D,2 C,2 | C,/2 D, E,/2 G,2 | F,/2 E, D,/2 C,2 | E,2 G,2 |
+[V:RH] C z z z | G z z z | D z z z | C z z z |
+[V:LH] D,2 C,2 | D,/2 F, E,/2 G,2 | F, E, D,2 | E,/2 D, C,/2 E,2 |
+[V:RH] C z z z |]
+[V:LH] D,2 C,2 |]

@@ -1,0 +1,701 @@
+id	group	bookPosition	profile	lead	count	right	left	meter	bars	seconds	normalizedHash	title
+g8-n4-001	n4	1	ledger-high	RH	4	3	1	4/4	1	4	45fff0d732359c4e34e6ff1dcf569ceb6f4b79924bb59441a89d2dda7196c8ab	Dòng phụ cao Đô Rê Mi
+g8-n4-002	n4	11	ledger-high	RH	4	3	1	4/4	1	4	27c5d7751eefe497499de3ce5005b9b750539d266bf2c91c226eab506149963f	Dòng phụ cao Đô Rê Fa
+g8-n4-003	n4	7	ledger-high	RH	4	3	1	4/4	1	4	0f84af4d7809411678ea1c4fab1197a8b5337e352e213f248ac6e16cc04e7101	Dòng phụ cao Đô Rê Sol
+g8-n4-004	n4	19	ledger-high	RH	4	3	1	4/4	1	4	13818581edc7f90f225629b23948948b27765d19ba048c5ac61c32e36bedb17c	Dòng phụ cao Đô Mi Rê
+g8-n4-005	n4	15	ledger-high	RH	4	3	1	4/4	1	4	98b1fc57f780bf70356681254323e55589fc26bd137e37252a205e14f4b164ef	Dòng phụ cao Đô Mi Sol
+g8-n4-006	n4	27	ledger-high	RH	4	3	1	4/4	1	4	12e604e60039aecac0207dbbd0a64f472c4ec668ed93fa2d56a3f0c0972438f7	Dòng phụ cao Rê Mi Đô
+g8-n4-007	n4	23	ledger-high	RH	4	3	1	4/4	1	4	02847ac03bfae3ade40f51e145418d40f4b0a58b87f4ef632ee32f746b2370da	Dòng phụ cao Rê Mi Fa
+g8-n4-008	n4	35	ledger-high	RH	4	3	1	4/4	1	4	27c5d7751eefe497499de3ce5005b9b750539d266bf2c91c226eab506149963f	Dòng phụ cao Rê Mi Sol
+g8-n4-009	n4	31	ledger-high	RH	4	3	1	4/4	1	4	53b2315476c8608b4b51001106b028fbd24db273706e48cf119855b752c95832	Dòng phụ cao Rê Fa Mi
+g8-n4-010	n4	43	ledger-high	RH	4	3	1	4/4	1	4	3628f566799e8c1c8cd017b42f62e9c8ca51c1e47cec76205ccc9100afdb2176	Dòng phụ cao Rê Fa Sol
+g8-n4-011	n4	39	ledger-high	RH	4	3	1	4/4	1	4	c0d1e919cfc74f1f04d63e7e2ce9365b09e0dda2579cb6aa42214e6645b9d67f	Dòng phụ cao Mi Đô Rê
+g8-n4-012	n4	51	ledger-high	RH	4	3	1	4/4	1	4	5a9e88bb8ff7652fe0adac64ab00a4ac226cfb70acac7eb71f541f5fba056e41	Dòng phụ cao Mi Đô Sol
+g8-n4-013	n4	47	ledger-high	RH	4	3	1	4/4	1	4	5011f16a25603582a8fb10d66bdda4901758ebdefe38d6052dfe5dff95efb736	Dòng phụ cao Mi Rê Đô
+g8-n4-014	n4	59	ledger-high	RH	4	3	1	4/4	1	4	1126d1dc5385a32a009d22e22b4ccdbd614632413ef03d28eb3851a1eb30084a	Dòng phụ cao Mi Rê Fa
+g8-n4-015	n4	55	ledger-high	RH	4	3	1	4/4	1	4	7a22a1a67f8f4021dde79dc856f0772343eae1202ee6e95b4b85c449427825d7	Dòng phụ cao Mi Sol Fa
+g8-n4-016	n4	67	ledger-high	RH	4	3	1	4/4	1	4	23b09ebf91110161e6c28912afef231219142de8bb50d288a6dcbd8b4b5270bc	Dòng phụ cao Fa Rê Đô
+g8-n4-017	n4	63	ledger-high	RH	4	3	1	4/4	1	4	27081b13b935d0a54b3afbc8b803a791ffed0dcca434b05c349555a57f3f9d0b	Dòng phụ cao Fa Rê Mi
+g8-n4-018	n4	75	ledger-high	RH	4	3	1	4/4	1	4	5cd5f46e9fb59fc61666dbe7c486db1b8163982c2de45f1b1094443ae1c748c3	Dòng phụ cao Fa Rê Sol
+g8-n4-019	n4	71	ledger-high	RH	4	3	1	4/4	1	4	3702b12c1d592cd7b7b8558df68fdc7944346158bfaea0ccca97304526d0a072	Dòng phụ cao Fa Mi Rê
+g8-n4-020	n4	83	ledger-high	RH	4	3	1	4/4	1	4	41979be47a699bfdcec55290142744dc1002df22adf84b2c5eef4649e83b435e	Dòng phụ cao Fa Mi Sol
+g8-n4-021	n4	79	ledger-high	RH	4	3	1	4/4	1	4	3fbd73c100fb3d3c8d353ad64333c120cc5b7d950a226f52bbd59800ca21a172	Dòng phụ cao Sol Mi Đô
+g8-n4-022	n4	91	ledger-high	RH	4	3	1	4/4	1	4	23b09ebf91110161e6c28912afef231219142de8bb50d288a6dcbd8b4b5270bc	Dòng phụ cao Sol Mi Rê
+g8-n4-023	n4	87	ledger-high	RH	4	3	1	4/4	1	4	b91e617fbd85f5466491f1dbd30a5e1d28442952854ebc500df9268eddbd9219	Dòng phụ cao Sol Mi Fa
+g8-n4-024	n4	99	ledger-high	RH	4	3	1	4/4	1	4	14b2e7fc38ebd3e27731127f3db31db0f791c743627a476f06e962523b828c34	Dòng phụ cao Sol Fa Rê
+g8-n4-025	n4	95	ledger-high	RH	4	3	1	4/4	1	4	918edd0e6e785591dc4f77bffb5bb47dfabae67d72f5643be2864ffc91187acc	Dòng phụ cao Sol Fa Mi
+g8-n4-026	n4	8	ledger-low	LH	4	1	3	4/4	1	4	45fff0d732359c4e34e6ff1dcf569ceb6f4b79924bb59441a89d2dda7196c8ab	Dòng phụ trầm Đô Rê Mi
+g8-n4-027	n4	2	ledger-low	LH	4	1	3	4/4	1	4	27c5d7751eefe497499de3ce5005b9b750539d266bf2c91c226eab506149963f	Dòng phụ trầm Đô Rê Fa
+g8-n4-028	n4	16	ledger-low	LH	4	1	3	4/4	1	4	0f84af4d7809411678ea1c4fab1197a8b5337e352e213f248ac6e16cc04e7101	Dòng phụ trầm Đô Rê Sol
+g8-n4-029	n4	12	ledger-low	LH	4	1	3	4/4	1	4	13818581edc7f90f225629b23948948b27765d19ba048c5ac61c32e36bedb17c	Dòng phụ trầm Đô Mi Rê
+g8-n4-030	n4	24	ledger-low	LH	4	1	3	4/4	1	4	98b1fc57f780bf70356681254323e55589fc26bd137e37252a205e14f4b164ef	Dòng phụ trầm Đô Mi Sol
+g8-n4-031	n4	20	ledger-low	LH	4	1	3	4/4	1	4	12e604e60039aecac0207dbbd0a64f472c4ec668ed93fa2d56a3f0c0972438f7	Dòng phụ trầm Rê Mi Đô
+g8-n4-032	n4	32	ledger-low	LH	4	1	3	4/4	1	4	02847ac03bfae3ade40f51e145418d40f4b0a58b87f4ef632ee32f746b2370da	Dòng phụ trầm Rê Mi Fa
+g8-n4-033	n4	28	ledger-low	LH	4	1	3	4/4	1	4	27c5d7751eefe497499de3ce5005b9b750539d266bf2c91c226eab506149963f	Dòng phụ trầm Rê Mi Sol
+g8-n4-034	n4	40	ledger-low	LH	4	1	3	4/4	1	4	53b2315476c8608b4b51001106b028fbd24db273706e48cf119855b752c95832	Dòng phụ trầm Rê Fa Mi
+g8-n4-035	n4	36	ledger-low	LH	4	1	3	4/4	1	4	3628f566799e8c1c8cd017b42f62e9c8ca51c1e47cec76205ccc9100afdb2176	Dòng phụ trầm Rê Fa Sol
+g8-n4-036	n4	48	ledger-low	LH	4	1	3	4/4	1	4	c0d1e919cfc74f1f04d63e7e2ce9365b09e0dda2579cb6aa42214e6645b9d67f	Dòng phụ trầm Mi Đô Rê
+g8-n4-037	n4	44	ledger-low	LH	4	1	3	4/4	1	4	5a9e88bb8ff7652fe0adac64ab00a4ac226cfb70acac7eb71f541f5fba056e41	Dòng phụ trầm Mi Đô Sol
+g8-n4-038	n4	56	ledger-low	LH	4	1	3	4/4	1	4	5011f16a25603582a8fb10d66bdda4901758ebdefe38d6052dfe5dff95efb736	Dòng phụ trầm Mi Rê Đô
+g8-n4-039	n4	52	ledger-low	LH	4	1	3	4/4	1	4	1126d1dc5385a32a009d22e22b4ccdbd614632413ef03d28eb3851a1eb30084a	Dòng phụ trầm Mi Rê Fa
+g8-n4-040	n4	64	ledger-low	LH	4	1	3	4/4	1	4	7a22a1a67f8f4021dde79dc856f0772343eae1202ee6e95b4b85c449427825d7	Dòng phụ trầm Mi Sol Fa
+g8-n4-041	n4	60	ledger-low	LH	4	1	3	4/4	1	4	23b09ebf91110161e6c28912afef231219142de8bb50d288a6dcbd8b4b5270bc	Dòng phụ trầm Fa Rê Đô
+g8-n4-042	n4	72	ledger-low	LH	4	1	3	4/4	1	4	27081b13b935d0a54b3afbc8b803a791ffed0dcca434b05c349555a57f3f9d0b	Dòng phụ trầm Fa Rê Mi
+g8-n4-043	n4	68	ledger-low	LH	4	1	3	4/4	1	4	5cd5f46e9fb59fc61666dbe7c486db1b8163982c2de45f1b1094443ae1c748c3	Dòng phụ trầm Fa Rê Sol
+g8-n4-044	n4	80	ledger-low	LH	4	1	3	4/4	1	4	3702b12c1d592cd7b7b8558df68fdc7944346158bfaea0ccca97304526d0a072	Dòng phụ trầm Fa Mi Rê
+g8-n4-045	n4	76	ledger-low	LH	4	1	3	4/4	1	4	41979be47a699bfdcec55290142744dc1002df22adf84b2c5eef4649e83b435e	Dòng phụ trầm Fa Mi Sol
+g8-n4-046	n4	88	ledger-low	LH	4	1	3	4/4	1	4	3fbd73c100fb3d3c8d353ad64333c120cc5b7d950a226f52bbd59800ca21a172	Dòng phụ trầm Sol Mi Đô
+g8-n4-047	n4	84	ledger-low	LH	4	1	3	4/4	1	4	23b09ebf91110161e6c28912afef231219142de8bb50d288a6dcbd8b4b5270bc	Dòng phụ trầm Sol Mi Rê
+g8-n4-048	n4	96	ledger-low	LH	4	1	3	4/4	1	4	b91e617fbd85f5466491f1dbd30a5e1d28442952854ebc500df9268eddbd9219	Dòng phụ trầm Sol Mi Fa
+g8-n4-049	n4	92	ledger-low	LH	4	1	3	4/4	1	4	14b2e7fc38ebd3e27731127f3db31db0f791c743627a476f06e962523b828c34	Dòng phụ trầm Sol Fa Rê
+g8-n4-050	n4	100	ledger-low	LH	4	1	3	4/4	1	4	918edd0e6e785591dc4f77bffb5bb47dfabae67d72f5643be2864ffc91187acc	Dòng phụ trầm Sol Fa Mi
+g8-n4-051	n4	3	dyad-dotted	RH	5	4	1	4/4	1	4	41d582ed6f7acd0e187c36d65e5d123a2e421d8601318eef9a2e3cd2f9066082	Đôi Đô Mi chấm rồi Đô
+g8-n4-052	n4	17	dyad-dotted	RH	5	4	1	4/4	1	4	228b4fcccba041e185528ee9b434ccf1c23cd3133f2aba74a6daedf5484b9471	Đôi Đô Mi chấm rồi Mi
+g8-n4-053	n4	9	dyad-dotted	RH	5	4	1	4/4	1	4	894d02cdf51f29b1134df3af9f9d8914b580f7dc91da7469b246144b19b82bd7	Đôi Đô Mi chấm tới Sol
+g8-n4-054	n4	25	dyad-dotted	RH	5	4	1	4/4	1	4	14ba90c8e316b948ea09aa3365a71e489444d1b7afa1f145ee7ae3aa5f360664	Đôi Rê Fa chấm về Rê
+g8-n4-055	n4	41	dyad-dotted	RH	5	4	1	4/4	1	4	80d2c1785f9d5e72d5a835fa10df712f2c6280aa81650008b7ddf5d59a17b188	Đôi Rê Fa chấm về Fa
+g8-n4-056	n4	33	dyad-dotted	RH	5	4	1	4/4	1	4	250c6806f799048417d4efdb7799c7d32d966844d9b79b23d2884eb5689ecdc5	Đôi Rê Fa chấm sang Mi
+g8-n4-057	n4	49	dyad-dotted	RH	5	4	1	4/4	1	4	406cda268cc18a2f668b3436aca827cd834f0d316a70aa96afa5a8043470e38d	Đôi Mi Sol chấm về Mi
+g8-n4-058	n4	65	dyad-dotted	RH	5	4	1	4/4	1	4	3c119c56264446f6b051c8a688450cefcc142bf7e637498c03287ed525555532	Đôi Mi Sol chấm về Đô
+g8-n4-059	n4	57	dyad-dotted	RH	5	4	1	4/4	1	4	15aab2ecfae2950de41616bb30a92dac4b105e3af5a33db70be0dc62aab3c6f6	Đôi Mi Sol chấm giữ Sol
+g8-n4-060	n4	73	dyad-dotted	RH	5	4	1	4/4	1	4	086ab1d3cd019f6dbdd30ca30da1c907d4eb242757e429b9d77a5039f234aa80	Đôi quãng năm chấm Đô
+g8-n4-061	n4	89	dyad-dotted	RH	5	4	1	4/4	1	4	8ea254bd1796b6a7bd50894e1f207559d04ffc4433584897fafd240732ce4f40	Đôi quãng năm chấm Sol
+g8-n4-062	n4	81	dyad-dotted	RH	5	4	1	4/4	1	4	261cc22eef2c743cf2d6b16f8ba3103422ebaee95e4c45ed2d60677a7ba19ea3	Đôi Rê Sol chấm Fa
+g8-n4-063	n4	97	dyad-dotted	RH	5	4	1	4/4	1	4	0a150a4975024e53a6b849b66a3b6091f0b916c0d340ba24be79c70cebb1cd25	Đôi Rê Sol chấm Rê
+g8-n4-064	n4	13	dyad-dotted	LH	5	1	4	4/4	1	4	41d582ed6f7acd0e187c36d65e5d123a2e421d8601318eef9a2e3cd2f9066082	Đôi trầm chấm về Đô
+g8-n4-065	n4	4	dyad-dotted	LH	5	1	4	4/4	1	4	228b4fcccba041e185528ee9b434ccf1c23cd3133f2aba74a6daedf5484b9471	Đôi trầm chấm về Mi
+g8-n4-066	n4	21	dyad-dotted	LH	5	1	4	4/4	1	4	894d02cdf51f29b1134df3af9f9d8914b580f7dc91da7469b246144b19b82bd7	Đôi trầm chấm tới Sol
+g8-n4-067	n4	37	dyad-dotted	LH	5	1	4	4/4	1	4	14ba90c8e316b948ea09aa3365a71e489444d1b7afa1f145ee7ae3aa5f360664	Rê Fa trầm chấm Rê
+g8-n4-068	n4	29	dyad-dotted	LH	5	1	4	4/4	1	4	80d2c1785f9d5e72d5a835fa10df712f2c6280aa81650008b7ddf5d59a17b188	Rê Fa trầm chấm Fa
+g8-n4-069	n4	45	dyad-dotted	LH	5	1	4	4/4	1	4	250c6806f799048417d4efdb7799c7d32d966844d9b79b23d2884eb5689ecdc5	Rê Fa trầm chấm Mi
+g8-n4-070	n4	61	dyad-dotted	LH	5	1	4	4/4	1	4	406cda268cc18a2f668b3436aca827cd834f0d316a70aa96afa5a8043470e38d	Mi Sol trầm chấm Mi
+g8-n4-071	n4	53	dyad-dotted	LH	5	1	4	4/4	1	4	3c119c56264446f6b051c8a688450cefcc142bf7e637498c03287ed525555532	Mi Sol trầm chấm Đô
+g8-n4-072	n4	69	dyad-dotted	LH	5	1	4	4/4	1	4	15aab2ecfae2950de41616bb30a92dac4b105e3af5a33db70be0dc62aab3c6f6	Mi Sol trầm chấm Sol
+g8-n4-073	n4	85	dyad-dotted	LH	5	1	4	4/4	1	4	086ab1d3cd019f6dbdd30ca30da1c907d4eb242757e429b9d77a5039f234aa80	Năm trầm chấm Đô
+g8-n4-074	n4	77	dyad-dotted	LH	5	1	4	4/4	1	4	8ea254bd1796b6a7bd50894e1f207559d04ffc4433584897fafd240732ce4f40	Năm trầm chấm Sol
+g8-n4-075	n4	93	dyad-dotted	LH	5	1	4	4/4	1	4	261cc22eef2c743cf2d6b16f8ba3103422ebaee95e4c45ed2d60677a7ba19ea3	Rê Sol trầm chấm Fa
+g8-n4-076	n4	5	dyad-tie	RH	5	4	1	4/4	1	4	69478c71f4d74167629f9a34d88ffdae5715e47759aa3fccbed8f665a9e06577	Đôi Đô Mi rồi nối Đô
+g8-n4-077	n4	14	dyad-tie	RH	5	4	1	4/4	1	4	06a2998b34c04eaba650f0f3a11be8b5f3b077252e5b903782cd9be16f65e825	Đôi Đô Mi rồi nối Mi
+g8-n4-078	n4	22	dyad-tie	RH	5	4	1	4/4	1	4	1137ea3967797d07cd9f14bec7e91b816123564f7b04ad12073808001464855d	Đôi Đô Mi rồi nối Sol
+g8-n4-079	n4	38	dyad-tie	RH	5	4	1	4/4	1	4	34f63c613f609455152ada78548d83274b1be15353d8355edda866219a88a378	Đôi Rê Fa rồi nối Rê
+g8-n4-080	n4	30	dyad-tie	RH	5	4	1	4/4	1	4	73f27473e8e4bd8bfda9c6e298315d6353f09408a4ff2cee63f9fad74f1f0b85	Đôi Rê Fa rồi nối Fa
+g8-n4-081	n4	46	dyad-tie	RH	5	4	1	4/4	1	4	4a6fae34ff25b9864a8a716870a6ff44241dc7c5389c3220e688de1a54481db5	Đôi Rê Fa rồi nối Mi
+g8-n4-082	n4	62	dyad-tie	RH	5	4	1	4/4	1	4	1f690a5739b127641c6adeaa49a3d02869b97f1850352597505a47d6d482bf60	Đôi Mi Sol rồi nối Mi
+g8-n4-083	n4	54	dyad-tie	RH	5	4	1	4/4	1	4	c9b076ebde6423b435a13d348dc5bd6b6985ad1f7e6d22e120a65214dd4caee7	Đôi Mi Sol rồi nối Đô
+g8-n4-084	n4	70	dyad-tie	RH	5	4	1	4/4	1	4	5a090e818e5bf301902b44f86caadf0c2f1222bd49664e6a9455ef98bf5b445f	Đôi Mi Sol rồi nối Sol
+g8-n4-085	n4	86	dyad-tie	RH	5	4	1	4/4	1	4	a5f2669f96dc90d4b6ff9b4fa679197b81f0d4127d3dcbedc2a796aae062b7f5	Quãng năm rồi nối Đô
+g8-n4-086	n4	78	dyad-tie	RH	5	4	1	4/4	1	4	5ef50e9aa166958c9bc370d4a0ef0f7d2d4b6c154dddf31e14b452866560aeb2	Quãng năm rồi nối Sol
+g8-n4-087	n4	94	dyad-tie	RH	5	4	1	4/4	1	4	244eed96003f2afcbf49d7156681708c102a54bd66e72ab42cfae5fef64fa8b9	Rê Sol rồi nối Fa
+g8-n4-088	n4	18	dyad-tie	LH	5	1	4	4/4	1	4	69478c71f4d74167629f9a34d88ffdae5715e47759aa3fccbed8f665a9e06577	Đôi trầm rồi nối Đô
+g8-n4-089	n4	6	dyad-tie	LH	5	1	4	4/4	1	4	06a2998b34c04eaba650f0f3a11be8b5f3b077252e5b903782cd9be16f65e825	Đôi trầm rồi nối Mi
+g8-n4-090	n4	10	dyad-tie	LH	5	1	4	4/4	1	4	1137ea3967797d07cd9f14bec7e91b816123564f7b04ad12073808001464855d	Đôi trầm rồi nối Sol
+g8-n4-091	n4	26	dyad-tie	LH	5	1	4	4/4	1	4	34f63c613f609455152ada78548d83274b1be15353d8355edda866219a88a378	Rê Fa trầm rồi nối Rê
+g8-n4-092	n4	42	dyad-tie	LH	5	1	4	4/4	1	4	73f27473e8e4bd8bfda9c6e298315d6353f09408a4ff2cee63f9fad74f1f0b85	Rê Fa trầm rồi nối Fa
+g8-n4-093	n4	34	dyad-tie	LH	5	1	4	4/4	1	4	4a6fae34ff25b9864a8a716870a6ff44241dc7c5389c3220e688de1a54481db5	Rê Fa trầm rồi nối Mi
+g8-n4-094	n4	50	dyad-tie	LH	5	1	4	4/4	1	4	1f690a5739b127641c6adeaa49a3d02869b97f1850352597505a47d6d482bf60	Mi Sol trầm rồi nối Mi
+g8-n4-095	n4	66	dyad-tie	LH	5	1	4	4/4	1	4	c9b076ebde6423b435a13d348dc5bd6b6985ad1f7e6d22e120a65214dd4caee7	Mi Sol trầm rồi nối Đô
+g8-n4-096	n4	58	dyad-tie	LH	5	1	4	4/4	1	4	5a090e818e5bf301902b44f86caadf0c2f1222bd49664e6a9455ef98bf5b445f	Mi Sol trầm rồi nối Sol
+g8-n4-097	n4	74	dyad-tie	LH	5	1	4	4/4	1	4	a5f2669f96dc90d4b6ff9b4fa679197b81f0d4127d3dcbedc2a796aae062b7f5	Năm trầm rồi nối Đô
+g8-n4-098	n4	90	dyad-tie	LH	5	1	4	4/4	1	4	5ef50e9aa166958c9bc370d4a0ef0f7d2d4b6c154dddf31e14b452866560aeb2	Năm trầm rồi nối Sol
+g8-n4-099	n4	82	dyad-tie	LH	5	1	4	4/4	1	4	244eed96003f2afcbf49d7156681708c102a54bd66e72ab42cfae5fef64fa8b9	Rê Sol trầm rồi nối Fa
+g8-n4-100	n4	98	dyad-tie	LH	5	1	4	4/4	1	4	899aab366b47db3f5affd42305f420ad25dc233ab6affd7d5230a227511bf94b	Rê Sol trầm rồi nối Rê
+g8-n6-001	n6	1	ledger-high	RH	7	5	2	4/4	2	8	12e50061793e1f7464061e84e6b633931ca3b9cfe45c73aee524be02af0a18d9	Dòng phụ cao Đô Rê Mi
+g8-n6-002	n6	11	ledger-high	RH	7	5	2	4/4	2	8	080fc459fbed8d247d7a32c763af94c64861d1b99329a3b6ff77cb33c3537f34	Dòng phụ cao Đô Rê Fa
+g8-n6-003	n6	7	ledger-high	RH	7	5	2	4/4	2	8	dbe7555d6335d291785744d7fd6b89d2bd0acab671a8e05b740b3381f4b6bdca	Dòng phụ cao Đô Rê Sol
+g8-n6-004	n6	19	ledger-high	RH	7	5	2	4/4	2	8	2ecbd74508b385e1c757349034e2c51a776abef57c06368542ecb166c6df8f4d	Dòng phụ cao Đô Mi Rê
+g8-n6-005	n6	15	ledger-high	RH	7	5	2	4/4	2	8	3c28ff3964326f4b8cc70ae9d9fba3dd86a1aa17a452d4b8294521333d71191d	Dòng phụ cao Đô Mi Sol
+g8-n6-006	n6	27	ledger-high	RH	7	5	2	4/4	2	8	52c1f51707762ad4fddfeef5663d4c557eb1da179a51d23a9219efdb55234e4a	Dòng phụ cao Rê Mi Đô
+g8-n6-007	n6	23	ledger-high	RH	7	5	2	4/4	2	8	3ae6ce54864e9dcd81a9c02e438665aab352e7fc64ce315d3bb7f3a7438e1553	Dòng phụ cao Rê Mi Fa
+g8-n6-008	n6	35	ledger-high	RH	7	5	2	4/4	2	8	082f711b6452560ef47210c5e07df64a69fda5dd6ac9b05897cc095932a1d012	Dòng phụ cao Rê Mi Sol
+g8-n6-009	n6	31	ledger-high	RH	7	5	2	4/4	2	8	37496e45015dfe52bb731e9101693fd72f4a4ee55d24958cb4e4024d7c0e8adb	Dòng phụ cao Rê Fa Mi
+g8-n6-010	n6	43	ledger-high	RH	7	5	2	4/4	2	8	079ced81d4f8064ba6f45651e874823f1de86cb4de41a45649567c07ef05ebb8	Dòng phụ cao Rê Fa Sol
+g8-n6-011	n6	39	ledger-high	RH	7	5	2	4/4	2	8	ac61a3f8f0edcf47fe3c15c1c549034954a58e1d6fd864eceaeee5bc2f06968e	Dòng phụ cao Mi Đô Rê
+g8-n6-012	n6	51	ledger-high	RH	7	5	2	4/4	2	8	4488d6e9944510ef208f7986e0f705fa4af3db8c4f74f01a7b13d50cdbc1a5d7	Dòng phụ cao Mi Đô Sol
+g8-n6-013	n6	47	ledger-high	RH	7	5	2	4/4	2	8	2ce04a336618beb225023a33675532eb0775d8116da00f8cf2dfe80441eb1d1a	Dòng phụ cao Mi Rê Đô
+g8-n6-014	n6	59	ledger-high	RH	7	5	2	4/4	2	8	aa36293dc09bfd21327e041ca907bec2992f0975dfd77ede9a2fa4c64f01c44b	Dòng phụ cao Mi Rê Fa
+g8-n6-015	n6	55	ledger-high	RH	7	5	2	4/4	2	8	3e84f98d0fee446dec42b8a7c11287675486df59e1e302359f9aa076a7e268cc	Dòng phụ cao Mi Sol Fa
+g8-n6-016	n6	67	ledger-high	RH	7	5	2	4/4	2	8	46002856455e7ef0ec2525639d6405aadc4998d46d7c1bf05f8546e42e59e09e	Dòng phụ cao Fa Rê Đô
+g8-n6-017	n6	63	ledger-high	RH	7	5	2	4/4	2	8	6a18e5cccb6f32d287a93507854264671db4555c494dda80ae3a0fa71eda0e81	Dòng phụ cao Fa Rê Mi
+g8-n6-018	n6	75	ledger-high	RH	7	5	2	4/4	2	8	63379ceb88e602ca6445538965c125fcc652b0c1288741c9b53a1217a061d197	Dòng phụ cao Fa Rê Sol
+g8-n6-019	n6	71	ledger-high	RH	7	5	2	4/4	2	8	24113e6414cf5c203f29fb7505ca82017a3b34aa56432d4752d4e3d568ccfe18	Dòng phụ cao Fa Mi Rê
+g8-n6-020	n6	83	ledger-high	RH	7	5	2	4/4	2	8	4b80c612077dd0279b19de7bd8a1e27d61e3ec90f3b8c3eda45d42876d2d2eef	Dòng phụ cao Fa Mi Sol
+g8-n6-021	n6	79	ledger-high	RH	7	5	2	4/4	2	8	733fd22c706c4309bdee34f2f931d48db3bd221da6d751c6b2212aa54a332914	Dòng phụ cao Sol Mi Đô
+g8-n6-022	n6	91	ledger-high	RH	7	5	2	4/4	2	8	555727b0cb0d4d814037b7f04957790f57484f7469d64afcc9c365faf600b86e	Dòng phụ cao Sol Mi Rê
+g8-n6-023	n6	87	ledger-high	RH	7	5	2	4/4	2	8	d71cdc988c010ee291faa74f8bbef3abb8f3c0a2c9b7e28d6177d2cf9bdd498d	Dòng phụ cao Sol Mi Fa
+g8-n6-024	n6	99	ledger-high	RH	7	5	2	4/4	2	8	3ea7103a827dcee59846ab801f3d1aa7da9c734f611ac4b1a3645ceb57682bc2	Dòng phụ cao Sol Fa Rê
+g8-n6-025	n6	95	ledger-high	RH	7	5	2	4/4	2	8	63b9ec5e60d21c544de118aab2a984c075db14b9f92328bac27686ac6a1fa433	Dòng phụ cao Sol Fa Mi
+g8-n6-026	n6	8	ledger-low	LH	7	2	5	4/4	2	8	12e50061793e1f7464061e84e6b633931ca3b9cfe45c73aee524be02af0a18d9	Dòng phụ trầm Đô Rê Mi
+g8-n6-027	n6	2	ledger-low	LH	7	2	5	4/4	2	8	080fc459fbed8d247d7a32c763af94c64861d1b99329a3b6ff77cb33c3537f34	Dòng phụ trầm Đô Rê Fa
+g8-n6-028	n6	16	ledger-low	LH	7	2	5	4/4	2	8	dbe7555d6335d291785744d7fd6b89d2bd0acab671a8e05b740b3381f4b6bdca	Dòng phụ trầm Đô Rê Sol
+g8-n6-029	n6	12	ledger-low	LH	7	2	5	4/4	2	8	2ecbd74508b385e1c757349034e2c51a776abef57c06368542ecb166c6df8f4d	Dòng phụ trầm Đô Mi Rê
+g8-n6-030	n6	24	ledger-low	LH	7	2	5	4/4	2	8	3c28ff3964326f4b8cc70ae9d9fba3dd86a1aa17a452d4b8294521333d71191d	Dòng phụ trầm Đô Mi Sol
+g8-n6-031	n6	20	ledger-low	LH	7	2	5	4/4	2	8	52c1f51707762ad4fddfeef5663d4c557eb1da179a51d23a9219efdb55234e4a	Dòng phụ trầm Rê Mi Đô
+g8-n6-032	n6	32	ledger-low	LH	7	2	5	4/4	2	8	3ae6ce54864e9dcd81a9c02e438665aab352e7fc64ce315d3bb7f3a7438e1553	Dòng phụ trầm Rê Mi Fa
+g8-n6-033	n6	28	ledger-low	LH	7	2	5	4/4	2	8	082f711b6452560ef47210c5e07df64a69fda5dd6ac9b05897cc095932a1d012	Dòng phụ trầm Rê Mi Sol
+g8-n6-034	n6	40	ledger-low	LH	7	2	5	4/4	2	8	37496e45015dfe52bb731e9101693fd72f4a4ee55d24958cb4e4024d7c0e8adb	Dòng phụ trầm Rê Fa Mi
+g8-n6-035	n6	36	ledger-low	LH	7	2	5	4/4	2	8	079ced81d4f8064ba6f45651e874823f1de86cb4de41a45649567c07ef05ebb8	Dòng phụ trầm Rê Fa Sol
+g8-n6-036	n6	48	ledger-low	LH	7	2	5	4/4	2	8	ac61a3f8f0edcf47fe3c15c1c549034954a58e1d6fd864eceaeee5bc2f06968e	Dòng phụ trầm Mi Đô Rê
+g8-n6-037	n6	44	ledger-low	LH	7	2	5	4/4	2	8	4488d6e9944510ef208f7986e0f705fa4af3db8c4f74f01a7b13d50cdbc1a5d7	Dòng phụ trầm Mi Đô Sol
+g8-n6-038	n6	56	ledger-low	LH	7	2	5	4/4	2	8	2ce04a336618beb225023a33675532eb0775d8116da00f8cf2dfe80441eb1d1a	Dòng phụ trầm Mi Rê Đô
+g8-n6-039	n6	52	ledger-low	LH	7	2	5	4/4	2	8	aa36293dc09bfd21327e041ca907bec2992f0975dfd77ede9a2fa4c64f01c44b	Dòng phụ trầm Mi Rê Fa
+g8-n6-040	n6	64	ledger-low	LH	7	2	5	4/4	2	8	3e84f98d0fee446dec42b8a7c11287675486df59e1e302359f9aa076a7e268cc	Dòng phụ trầm Mi Sol Fa
+g8-n6-041	n6	60	ledger-low	LH	7	2	5	4/4	2	8	46002856455e7ef0ec2525639d6405aadc4998d46d7c1bf05f8546e42e59e09e	Dòng phụ trầm Fa Rê Đô
+g8-n6-042	n6	72	ledger-low	LH	7	2	5	4/4	2	8	6a18e5cccb6f32d287a93507854264671db4555c494dda80ae3a0fa71eda0e81	Dòng phụ trầm Fa Rê Mi
+g8-n6-043	n6	68	ledger-low	LH	7	2	5	4/4	2	8	63379ceb88e602ca6445538965c125fcc652b0c1288741c9b53a1217a061d197	Dòng phụ trầm Fa Rê Sol
+g8-n6-044	n6	80	ledger-low	LH	7	2	5	4/4	2	8	24113e6414cf5c203f29fb7505ca82017a3b34aa56432d4752d4e3d568ccfe18	Dòng phụ trầm Fa Mi Rê
+g8-n6-045	n6	76	ledger-low	LH	7	2	5	4/4	2	8	4b80c612077dd0279b19de7bd8a1e27d61e3ec90f3b8c3eda45d42876d2d2eef	Dòng phụ trầm Fa Mi Sol
+g8-n6-046	n6	88	ledger-low	LH	7	2	5	4/4	2	8	733fd22c706c4309bdee34f2f931d48db3bd221da6d751c6b2212aa54a332914	Dòng phụ trầm Sol Mi Đô
+g8-n6-047	n6	84	ledger-low	LH	7	2	5	4/4	2	8	555727b0cb0d4d814037b7f04957790f57484f7469d64afcc9c365faf600b86e	Dòng phụ trầm Sol Mi Rê
+g8-n6-048	n6	96	ledger-low	LH	7	2	5	4/4	2	8	d71cdc988c010ee291faa74f8bbef3abb8f3c0a2c9b7e28d6177d2cf9bdd498d	Dòng phụ trầm Sol Mi Fa
+g8-n6-049	n6	92	ledger-low	LH	7	2	5	4/4	2	8	3ea7103a827dcee59846ab801f3d1aa7da9c734f611ac4b1a3645ceb57682bc2	Dòng phụ trầm Sol Fa Rê
+g8-n6-050	n6	100	ledger-low	LH	7	2	5	4/4	2	8	63b9ec5e60d21c544de118aab2a984c075db14b9f92328bac27686ac6a1fa433	Dòng phụ trầm Sol Fa Mi
+g8-n6-051	n6	3	dyad-dotted	RH	8	6	2	4/4	2	8	45061727bdceceb08039b506614e7e0d370e4ae0e1dc6a58f2ff3924bedeaafb	Đôi Đô Mi chấm rồi Đô
+g8-n6-052	n6	17	dyad-dotted	RH	8	6	2	4/4	2	8	48b5f637be8ae74def8dbea9b9f284fa493b9364106f5ff841814678522f9c47	Đôi Đô Mi chấm rồi Mi
+g8-n6-053	n6	9	dyad-dotted	RH	8	6	2	4/4	2	8	775d71d0d5bcbdee85b30bd00c8587e6f24f8ef20512226034fed14cc7ed3528	Đôi Đô Mi chấm tới Sol
+g8-n6-054	n6	25	dyad-dotted	RH	8	6	2	4/4	2	8	56e58bc68664d7f6f4cf2ef63f067e8c3ed427b959ea6801b453e51883fdba09	Đôi Rê Fa chấm về Rê
+g8-n6-055	n6	41	dyad-dotted	RH	8	6	2	4/4	2	8	4cdf084d66b443448892c180b1c19077c5e80eb3c60cb387c8ab1507c8bec948	Đôi Rê Fa chấm về Fa
+g8-n6-056	n6	33	dyad-dotted	RH	8	6	2	4/4	2	8	8adc82b529d6226a10371b497b69bdb359764de4ea96408733981ac90a47c426	Đôi Rê Fa chấm sang Mi
+g8-n6-057	n6	49	dyad-dotted	RH	8	6	2	4/4	2	8	2e7bffb5f577d0e4ca0a52b00f0a1611f10d1939fedf516b92b1c7f8562230a5	Đôi Mi Sol chấm về Mi
+g8-n6-058	n6	65	dyad-dotted	RH	8	6	2	4/4	2	8	284861c90aba068f6725eee986142f4c80e90590ed4469d52df470e7bcfc3fa2	Đôi Mi Sol chấm về Đô
+g8-n6-059	n6	57	dyad-dotted	RH	8	6	2	4/4	2	8	9300cc8a7131496ab8e0e7e41bd409fe48c6e1f06e762321ee515a47bcf0ae7a	Đôi Mi Sol chấm giữ Sol
+g8-n6-060	n6	73	dyad-dotted	RH	8	6	2	4/4	2	8	4a6b217fb501d05c51c7feae8fa8a7a4cfe6f1b46e5a7365c469c9ca9df6bbfd	Đôi quãng năm chấm Đô
+g8-n6-061	n6	89	dyad-dotted	RH	8	6	2	4/4	2	8	630a55df7cfb276c680beacf74eb6d4c80d1a40952f5bb728fd6e3302aad790d	Đôi quãng năm chấm Sol
+g8-n6-062	n6	81	dyad-dotted	RH	8	6	2	4/4	2	8	90fa5e793cb0f94039b6d0d4e80fda2c455783d0456381883e30406c21939195	Đôi Rê Sol chấm Fa
+g8-n6-063	n6	97	dyad-dotted	RH	8	6	2	4/4	2	8	66e40d00b47c8507935634107dbb1a7b1c4f9456cea25cf94eb227e0253cbde8	Đôi Rê Sol chấm Rê
+g8-n6-064	n6	13	dyad-dotted	LH	8	2	6	4/4	2	8	45061727bdceceb08039b506614e7e0d370e4ae0e1dc6a58f2ff3924bedeaafb	Đôi trầm chấm về Đô
+g8-n6-065	n6	4	dyad-dotted	LH	8	2	6	4/4	2	8	48b5f637be8ae74def8dbea9b9f284fa493b9364106f5ff841814678522f9c47	Đôi trầm chấm về Mi
+g8-n6-066	n6	21	dyad-dotted	LH	8	2	6	4/4	2	8	775d71d0d5bcbdee85b30bd00c8587e6f24f8ef20512226034fed14cc7ed3528	Đôi trầm chấm tới Sol
+g8-n6-067	n6	37	dyad-dotted	LH	8	2	6	4/4	2	8	56e58bc68664d7f6f4cf2ef63f067e8c3ed427b959ea6801b453e51883fdba09	Rê Fa trầm chấm Rê
+g8-n6-068	n6	29	dyad-dotted	LH	8	2	6	4/4	2	8	4cdf084d66b443448892c180b1c19077c5e80eb3c60cb387c8ab1507c8bec948	Rê Fa trầm chấm Fa
+g8-n6-069	n6	45	dyad-dotted	LH	8	2	6	4/4	2	8	8adc82b529d6226a10371b497b69bdb359764de4ea96408733981ac90a47c426	Rê Fa trầm chấm Mi
+g8-n6-070	n6	61	dyad-dotted	LH	8	2	6	4/4	2	8	2e7bffb5f577d0e4ca0a52b00f0a1611f10d1939fedf516b92b1c7f8562230a5	Mi Sol trầm chấm Mi
+g8-n6-071	n6	53	dyad-dotted	LH	8	2	6	4/4	2	8	284861c90aba068f6725eee986142f4c80e90590ed4469d52df470e7bcfc3fa2	Mi Sol trầm chấm Đô
+g8-n6-072	n6	69	dyad-dotted	LH	8	2	6	4/4	2	8	9300cc8a7131496ab8e0e7e41bd409fe48c6e1f06e762321ee515a47bcf0ae7a	Mi Sol trầm chấm Sol
+g8-n6-073	n6	85	dyad-dotted	LH	8	2	6	4/4	2	8	4a6b217fb501d05c51c7feae8fa8a7a4cfe6f1b46e5a7365c469c9ca9df6bbfd	Năm trầm chấm Đô
+g8-n6-074	n6	77	dyad-dotted	LH	8	2	6	4/4	2	8	630a55df7cfb276c680beacf74eb6d4c80d1a40952f5bb728fd6e3302aad790d	Năm trầm chấm Sol
+g8-n6-075	n6	93	dyad-dotted	LH	8	2	6	4/4	2	8	90fa5e793cb0f94039b6d0d4e80fda2c455783d0456381883e30406c21939195	Rê Sol trầm chấm Fa
+g8-n6-076	n6	5	dyad-tie	RH	8	6	2	4/4	2	8	3ae97b492c06bfee2e76bcc9fa27bd89c85b57b1c0c4d76666bf7673b066397f	Đôi Đô Mi rồi nối Đô
+g8-n6-077	n6	14	dyad-tie	RH	8	6	2	4/4	2	8	538a30d5f4ac896ff4860315c3ef3d59bca92e8a874bde17c7cd9df4bebb40c0	Đôi Đô Mi rồi nối Mi
+g8-n6-078	n6	22	dyad-tie	RH	8	6	2	4/4	2	8	7b1021b1181934427c8f742ed0af51903509c7ef2fa74715d27274b61212ff5a	Đôi Đô Mi rồi nối Sol
+g8-n6-079	n6	38	dyad-tie	RH	8	6	2	4/4	2	8	1d4ee712ef1000b13e6feed16bba38af956cfb5464dea59cd3428fd8c9968300	Đôi Rê Fa rồi nối Rê
+g8-n6-080	n6	30	dyad-tie	RH	8	6	2	4/4	2	8	b1220d1abf86ca449cd337c6bfefe86b870e112161491765b357b6c9112805c6	Đôi Rê Fa rồi nối Fa
+g8-n6-081	n6	46	dyad-tie	RH	8	6	2	4/4	2	8	bd0def84d44b2ec6852837a983a4a1ce5d0e6f4bba1a50636e592a8fe3089389	Đôi Rê Fa rồi nối Mi
+g8-n6-082	n6	62	dyad-tie	RH	8	6	2	4/4	2	8	8da0ebcb92eac92a6f3634cfe4f201d2bed6fb11073f654e47f605d712db693f	Đôi Mi Sol rồi nối Mi
+g8-n6-083	n6	54	dyad-tie	RH	8	6	2	4/4	2	8	5d4744de76e774c5615f4bb0b919e87e9f688699f2189d25481c39408156acc3	Đôi Mi Sol rồi nối Đô
+g8-n6-084	n6	70	dyad-tie	RH	8	6	2	4/4	2	8	364a8d1312ad783d4a3470a45c1b9ef68ff973c8e538d8afe36e429d8a890305	Đôi Mi Sol rồi nối Sol
+g8-n6-085	n6	86	dyad-tie	RH	8	6	2	4/4	2	8	586278cf24e20734419f13174502c18abfd93b05afcd92a984e25a86ed4264d0	Quãng năm rồi nối Đô
+g8-n6-086	n6	78	dyad-tie	RH	8	6	2	4/4	2	8	1e6562c7d0267b0d03b975d289e0c1c00d9302eafa8e654efcf7d563178f2c19	Quãng năm rồi nối Sol
+g8-n6-087	n6	94	dyad-tie	RH	8	6	2	4/4	2	8	42a7e1bc64c33efff5915b8f965cece40b0fcfd9fe15ed8a001fc4ae45d7d035	Rê Sol rồi nối Fa
+g8-n6-088	n6	18	dyad-tie	LH	8	2	6	4/4	2	8	3ae97b492c06bfee2e76bcc9fa27bd89c85b57b1c0c4d76666bf7673b066397f	Đôi trầm rồi nối Đô
+g8-n6-089	n6	6	dyad-tie	LH	8	2	6	4/4	2	8	538a30d5f4ac896ff4860315c3ef3d59bca92e8a874bde17c7cd9df4bebb40c0	Đôi trầm rồi nối Mi
+g8-n6-090	n6	10	dyad-tie	LH	8	2	6	4/4	2	8	7b1021b1181934427c8f742ed0af51903509c7ef2fa74715d27274b61212ff5a	Đôi trầm rồi nối Sol
+g8-n6-091	n6	26	dyad-tie	LH	8	2	6	4/4	2	8	1d4ee712ef1000b13e6feed16bba38af956cfb5464dea59cd3428fd8c9968300	Rê Fa trầm rồi nối Rê
+g8-n6-092	n6	42	dyad-tie	LH	8	2	6	4/4	2	8	b1220d1abf86ca449cd337c6bfefe86b870e112161491765b357b6c9112805c6	Rê Fa trầm rồi nối Fa
+g8-n6-093	n6	34	dyad-tie	LH	8	2	6	4/4	2	8	bd0def84d44b2ec6852837a983a4a1ce5d0e6f4bba1a50636e592a8fe3089389	Rê Fa trầm rồi nối Mi
+g8-n6-094	n6	50	dyad-tie	LH	8	2	6	4/4	2	8	8da0ebcb92eac92a6f3634cfe4f201d2bed6fb11073f654e47f605d712db693f	Mi Sol trầm rồi nối Mi
+g8-n6-095	n6	66	dyad-tie	LH	8	2	6	4/4	2	8	5d4744de76e774c5615f4bb0b919e87e9f688699f2189d25481c39408156acc3	Mi Sol trầm rồi nối Đô
+g8-n6-096	n6	58	dyad-tie	LH	8	2	6	4/4	2	8	364a8d1312ad783d4a3470a45c1b9ef68ff973c8e538d8afe36e429d8a890305	Mi Sol trầm rồi nối Sol
+g8-n6-097	n6	74	dyad-tie	LH	8	2	6	4/4	2	8	586278cf24e20734419f13174502c18abfd93b05afcd92a984e25a86ed4264d0	Năm trầm rồi nối Đô
+g8-n6-098	n6	90	dyad-tie	LH	8	2	6	4/4	2	8	1e6562c7d0267b0d03b975d289e0c1c00d9302eafa8e654efcf7d563178f2c19	Năm trầm rồi nối Sol
+g8-n6-099	n6	82	dyad-tie	LH	8	2	6	4/4	2	8	42a7e1bc64c33efff5915b8f965cece40b0fcfd9fe15ed8a001fc4ae45d7d035	Rê Sol trầm rồi nối Fa
+g8-n6-100	n6	98	dyad-tie	LH	8	2	6	4/4	2	8	2103ef24a779f62bc68fa6513fcba627d87f7eeb646587fcae26ae26be8587ff	Rê Sol trầm rồi nối Rê
+g8-n10-001	n10	1	ledger-high	RH	10	7	3	4/4	3	12	4f73154cde59eee33cce02f39644f40abb0ea29aaff10ff5392ac50711834afe	Dòng phụ cao Đô Rê Mi
+g8-n10-002	n10	11	ledger-high	RH	10	7	3	4/4	3	12	17f1d5a501dd3763d90ec55d647f5e4fa925c01622fd5b896f3269decef6122d	Dòng phụ cao Đô Rê Fa
+g8-n10-003	n10	7	ledger-high	RH	10	7	3	4/4	3	12	cec6fe2cfb151768f37ee6c7428d1d049851f3c6670c1db048cb86dd9342ca85	Dòng phụ cao Đô Rê Sol
+g8-n10-004	n10	19	ledger-high	RH	10	7	3	4/4	3	12	845cf40a55ca7ee449128e8942b90e2bbac499d5ca966a274e010420060fbc52	Dòng phụ cao Đô Mi Rê
+g8-n10-005	n10	15	ledger-high	RH	10	7	3	4/4	3	12	8971e64390145721773c412ac7f3701340bc1c404de51985d3122602e246d632	Dòng phụ cao Đô Mi Sol
+g8-n10-006	n10	27	ledger-high	RH	10	7	3	4/4	3	12	7349ff0edbfd3ef344d3c68ef59d8fffd8ac55fad5add57102fa32392fe27281	Dòng phụ cao Rê Mi Đô
+g8-n10-007	n10	23	ledger-high	RH	10	7	3	4/4	3	12	1465393bf4f6e7b5df6fe0f72ad09466319d25964d09d507e4d988be21d2ec41	Dòng phụ cao Rê Mi Fa
+g8-n10-008	n10	35	ledger-high	RH	10	7	3	4/4	3	12	8ae2498ea7b6163c5174f9f48901aae599b671690fecee9489b2ade54bcf5315	Dòng phụ cao Rê Mi Sol
+g8-n10-009	n10	31	ledger-high	RH	10	7	3	4/4	3	12	510706d722989d22fe64e08c5864efef9eec9f3c5451c7988dc27895fd897dba	Dòng phụ cao Rê Fa Mi
+g8-n10-010	n10	43	ledger-high	RH	10	7	3	4/4	3	12	1510ad57e2d75ae25c18651a97c4d13c0fb205768f32e5feb5a9da1d286e6d0f	Dòng phụ cao Rê Fa Sol
+g8-n10-011	n10	39	ledger-high	RH	10	7	3	4/4	3	12	239488d13a4c6ae37834760d085716805ed37c635671a1cc71085f6b2d212c42	Dòng phụ cao Mi Đô Rê
+g8-n10-012	n10	51	ledger-high	RH	10	7	3	4/4	3	12	5e2384d92dbbde944d3c1b4ab630b9191db6bff2c948e95c3509b32eccd3c37d	Dòng phụ cao Mi Đô Sol
+g8-n10-013	n10	47	ledger-high	RH	10	7	3	4/4	3	12	a64618d82963195c4fea907e9d14b57d0dd6e23992af4086042b9cc5178b3f4e	Dòng phụ cao Mi Rê Đô
+g8-n10-014	n10	59	ledger-high	RH	10	7	3	4/4	3	12	263d7d3fe3bc40eb332dfabdd2ebf4209d11c21ca614e96fdb086bcc6b7358f5	Dòng phụ cao Mi Rê Fa
+g8-n10-015	n10	55	ledger-high	RH	10	7	3	4/4	3	12	da2e91bd4f6223036a5d049d6a3a1e8726215b9ce71d56adab09bce344aadcb3	Dòng phụ cao Mi Sol Fa
+g8-n10-016	n10	67	ledger-high	RH	10	7	3	4/4	3	12	28b93829877d8260ff749be19a2c6283929bf1f45331bf492992e142815cf9be	Dòng phụ cao Fa Rê Đô
+g8-n10-017	n10	63	ledger-high	RH	10	7	3	4/4	3	12	1d2765984baaaf1c34db018bb7a14e621b97b3adcdbeee946d191eaf58802a64	Dòng phụ cao Fa Rê Mi
+g8-n10-018	n10	75	ledger-high	RH	10	7	3	4/4	3	12	61d6315a244bfdae02f69eb3d323267a886376dc855c8262aa3cd13866254eaa	Dòng phụ cao Fa Rê Sol
+g8-n10-019	n10	71	ledger-high	RH	10	7	3	4/4	3	12	0af44857ed92809fa59aa64768dca5e797b0643db3a6a0aafca08c27acb335ed	Dòng phụ cao Fa Mi Rê
+g8-n10-020	n10	83	ledger-high	RH	10	7	3	4/4	3	12	06722266d182f61d265ecd196390dcb17d3ba92cae52029dd20bc38b16895c72	Dòng phụ cao Fa Mi Sol
+g8-n10-021	n10	79	ledger-high	RH	10	7	3	4/4	3	12	12ec97d2cec37e9f948492188a050b42ea1578e59b07184481f44bc8640d844f	Dòng phụ cao Sol Mi Đô
+g8-n10-022	n10	91	ledger-high	RH	10	7	3	4/4	3	12	07da68e3f20a281248516d5a3877a04b613fa4a2cbbff1582626d3851662890e	Dòng phụ cao Sol Mi Rê
+g8-n10-023	n10	87	ledger-high	RH	10	7	3	4/4	3	12	591b322570d702d49094cb1539f8e73c1fb1d8da46a30ccbcb9f4ebeef152bed	Dòng phụ cao Sol Mi Fa
+g8-n10-024	n10	99	ledger-high	RH	10	7	3	4/4	3	12	184aabcdff3ad2b77e15fb059fb5443a9dc3adc142a04c5003f7c09462acddf9	Dòng phụ cao Sol Fa Rê
+g8-n10-025	n10	95	ledger-high	RH	10	7	3	4/4	3	12	3fef154a9fa978b0fdb343533865e894f6fa996b22adbfb538cc3e0bb45d8c69	Dòng phụ cao Sol Fa Mi
+g8-n10-026	n10	8	ledger-low	LH	10	3	7	4/4	3	12	4f73154cde59eee33cce02f39644f40abb0ea29aaff10ff5392ac50711834afe	Dòng phụ trầm Đô Rê Mi
+g8-n10-027	n10	2	ledger-low	LH	10	3	7	4/4	3	12	17f1d5a501dd3763d90ec55d647f5e4fa925c01622fd5b896f3269decef6122d	Dòng phụ trầm Đô Rê Fa
+g8-n10-028	n10	16	ledger-low	LH	10	3	7	4/4	3	12	cec6fe2cfb151768f37ee6c7428d1d049851f3c6670c1db048cb86dd9342ca85	Dòng phụ trầm Đô Rê Sol
+g8-n10-029	n10	12	ledger-low	LH	10	3	7	4/4	3	12	845cf40a55ca7ee449128e8942b90e2bbac499d5ca966a274e010420060fbc52	Dòng phụ trầm Đô Mi Rê
+g8-n10-030	n10	24	ledger-low	LH	10	3	7	4/4	3	12	8971e64390145721773c412ac7f3701340bc1c404de51985d3122602e246d632	Dòng phụ trầm Đô Mi Sol
+g8-n10-031	n10	20	ledger-low	LH	10	3	7	4/4	3	12	7349ff0edbfd3ef344d3c68ef59d8fffd8ac55fad5add57102fa32392fe27281	Dòng phụ trầm Rê Mi Đô
+g8-n10-032	n10	32	ledger-low	LH	10	3	7	4/4	3	12	1465393bf4f6e7b5df6fe0f72ad09466319d25964d09d507e4d988be21d2ec41	Dòng phụ trầm Rê Mi Fa
+g8-n10-033	n10	28	ledger-low	LH	10	3	7	4/4	3	12	8ae2498ea7b6163c5174f9f48901aae599b671690fecee9489b2ade54bcf5315	Dòng phụ trầm Rê Mi Sol
+g8-n10-034	n10	40	ledger-low	LH	10	3	7	4/4	3	12	510706d722989d22fe64e08c5864efef9eec9f3c5451c7988dc27895fd897dba	Dòng phụ trầm Rê Fa Mi
+g8-n10-035	n10	36	ledger-low	LH	10	3	7	4/4	3	12	1510ad57e2d75ae25c18651a97c4d13c0fb205768f32e5feb5a9da1d286e6d0f	Dòng phụ trầm Rê Fa Sol
+g8-n10-036	n10	48	ledger-low	LH	10	3	7	4/4	3	12	239488d13a4c6ae37834760d085716805ed37c635671a1cc71085f6b2d212c42	Dòng phụ trầm Mi Đô Rê
+g8-n10-037	n10	44	ledger-low	LH	10	3	7	4/4	3	12	5e2384d92dbbde944d3c1b4ab630b9191db6bff2c948e95c3509b32eccd3c37d	Dòng phụ trầm Mi Đô Sol
+g8-n10-038	n10	56	ledger-low	LH	10	3	7	4/4	3	12	a64618d82963195c4fea907e9d14b57d0dd6e23992af4086042b9cc5178b3f4e	Dòng phụ trầm Mi Rê Đô
+g8-n10-039	n10	52	ledger-low	LH	10	3	7	4/4	3	12	263d7d3fe3bc40eb332dfabdd2ebf4209d11c21ca614e96fdb086bcc6b7358f5	Dòng phụ trầm Mi Rê Fa
+g8-n10-040	n10	64	ledger-low	LH	10	3	7	4/4	3	12	da2e91bd4f6223036a5d049d6a3a1e8726215b9ce71d56adab09bce344aadcb3	Dòng phụ trầm Mi Sol Fa
+g8-n10-041	n10	60	ledger-low	LH	10	3	7	4/4	3	12	28b93829877d8260ff749be19a2c6283929bf1f45331bf492992e142815cf9be	Dòng phụ trầm Fa Rê Đô
+g8-n10-042	n10	72	ledger-low	LH	10	3	7	4/4	3	12	1d2765984baaaf1c34db018bb7a14e621b97b3adcdbeee946d191eaf58802a64	Dòng phụ trầm Fa Rê Mi
+g8-n10-043	n10	68	ledger-low	LH	10	3	7	4/4	3	12	61d6315a244bfdae02f69eb3d323267a886376dc855c8262aa3cd13866254eaa	Dòng phụ trầm Fa Rê Sol
+g8-n10-044	n10	80	ledger-low	LH	10	3	7	4/4	3	12	0af44857ed92809fa59aa64768dca5e797b0643db3a6a0aafca08c27acb335ed	Dòng phụ trầm Fa Mi Rê
+g8-n10-045	n10	76	ledger-low	LH	10	3	7	4/4	3	12	06722266d182f61d265ecd196390dcb17d3ba92cae52029dd20bc38b16895c72	Dòng phụ trầm Fa Mi Sol
+g8-n10-046	n10	88	ledger-low	LH	10	3	7	4/4	3	12	12ec97d2cec37e9f948492188a050b42ea1578e59b07184481f44bc8640d844f	Dòng phụ trầm Sol Mi Đô
+g8-n10-047	n10	84	ledger-low	LH	10	3	7	4/4	3	12	07da68e3f20a281248516d5a3877a04b613fa4a2cbbff1582626d3851662890e	Dòng phụ trầm Sol Mi Rê
+g8-n10-048	n10	96	ledger-low	LH	10	3	7	4/4	3	12	591b322570d702d49094cb1539f8e73c1fb1d8da46a30ccbcb9f4ebeef152bed	Dòng phụ trầm Sol Mi Fa
+g8-n10-049	n10	92	ledger-low	LH	10	3	7	4/4	3	12	184aabcdff3ad2b77e15fb059fb5443a9dc3adc142a04c5003f7c09462acddf9	Dòng phụ trầm Sol Fa Rê
+g8-n10-050	n10	100	ledger-low	LH	10	3	7	4/4	3	12	3fef154a9fa978b0fdb343533865e894f6fa996b22adbfb538cc3e0bb45d8c69	Dòng phụ trầm Sol Fa Mi
+g8-n10-051	n10	3	dyad-dotted	RH	11	8	3	4/4	3	12	43180b5a6db7425a83ff11ed821571f9cef5585aea2ef8ae9078bcaca7562260	Đôi Đô Mi chấm rồi Đô
+g8-n10-052	n10	17	dyad-dotted	RH	11	8	3	4/4	3	12	67482c9a03263eb150c9683ce40cf924cce9934cb46fdfec3a68e0a97e5a58e3	Đôi Đô Mi chấm rồi Mi
+g8-n10-053	n10	9	dyad-dotted	RH	11	8	3	4/4	3	12	3941c129afc70f43dc0e3ce7e0d16f1473da36c2fef14de278b53bbbd6cba294	Đôi Đô Mi chấm tới Sol
+g8-n10-054	n10	25	dyad-dotted	RH	11	8	3	4/4	3	12	1b9e3d48cd2abdfe67330b2071220a876b6cab4723c7a9fae708bcf451e693a2	Đôi Rê Fa chấm về Rê
+g8-n10-055	n10	41	dyad-dotted	RH	11	8	3	4/4	3	12	35f48a42a75e14d2eda3702db56399730003600413b9af53a60feca621dea36c	Đôi Rê Fa chấm về Fa
+g8-n10-056	n10	33	dyad-dotted	RH	11	8	3	4/4	3	12	3a10f6ee17b4f71cc366c84af18e3676706cb875d5e7fc78a72d797887b9b3d0	Đôi Rê Fa chấm sang Mi
+g8-n10-057	n10	49	dyad-dotted	RH	11	8	3	4/4	3	12	67f44e86bfce6b0b7ea9e595f69babe0051965b2a1edef0cf220182aee60e034	Đôi Mi Sol chấm về Mi
+g8-n10-058	n10	65	dyad-dotted	RH	11	8	3	4/4	3	12	3c465f62ed1807402f60e051e2a9b12360304456d8d620240415ed41f53a9f1d	Đôi Mi Sol chấm về Đô
+g8-n10-059	n10	57	dyad-dotted	RH	11	8	3	4/4	3	12	f44c8c43d4e20aa165371e3d98a85bf81b38e2098c11c9450eadadc989ed37b0	Đôi Mi Sol chấm giữ Sol
+g8-n10-060	n10	73	dyad-dotted	RH	11	8	3	4/4	3	12	29b15114419c793a938e0cde265dba375c235859d90ed523f9a64957a40abaa6	Đôi quãng năm chấm Đô
+g8-n10-061	n10	89	dyad-dotted	RH	11	8	3	4/4	3	12	4a182910b24a17328f6d5fde5df1955a98bd0effd74b3d555cb881cf7589a2f5	Đôi quãng năm chấm Sol
+g8-n10-062	n10	81	dyad-dotted	RH	11	8	3	4/4	3	12	879f2fc639d1e28afe773dee45e3bd1aded8b7ea3d1126cc7c6e663cb4a0e201	Đôi Rê Sol chấm Fa
+g8-n10-063	n10	97	dyad-dotted	RH	11	8	3	4/4	3	12	2ff7bc023fccf24121e28588f1f14bf9e8b94c0927add046f81a40cec8911c43	Đôi Rê Sol chấm Rê
+g8-n10-064	n10	13	dyad-dotted	LH	11	3	8	4/4	3	12	43180b5a6db7425a83ff11ed821571f9cef5585aea2ef8ae9078bcaca7562260	Đôi trầm chấm về Đô
+g8-n10-065	n10	4	dyad-dotted	LH	11	3	8	4/4	3	12	67482c9a03263eb150c9683ce40cf924cce9934cb46fdfec3a68e0a97e5a58e3	Đôi trầm chấm về Mi
+g8-n10-066	n10	21	dyad-dotted	LH	11	3	8	4/4	3	12	3941c129afc70f43dc0e3ce7e0d16f1473da36c2fef14de278b53bbbd6cba294	Đôi trầm chấm tới Sol
+g8-n10-067	n10	37	dyad-dotted	LH	11	3	8	4/4	3	12	1b9e3d48cd2abdfe67330b2071220a876b6cab4723c7a9fae708bcf451e693a2	Rê Fa trầm chấm Rê
+g8-n10-068	n10	29	dyad-dotted	LH	11	3	8	4/4	3	12	35f48a42a75e14d2eda3702db56399730003600413b9af53a60feca621dea36c	Rê Fa trầm chấm Fa
+g8-n10-069	n10	45	dyad-dotted	LH	11	3	8	4/4	3	12	3a10f6ee17b4f71cc366c84af18e3676706cb875d5e7fc78a72d797887b9b3d0	Rê Fa trầm chấm Mi
+g8-n10-070	n10	61	dyad-dotted	LH	11	3	8	4/4	3	12	67f44e86bfce6b0b7ea9e595f69babe0051965b2a1edef0cf220182aee60e034	Mi Sol trầm chấm Mi
+g8-n10-071	n10	53	dyad-dotted	LH	11	3	8	4/4	3	12	3c465f62ed1807402f60e051e2a9b12360304456d8d620240415ed41f53a9f1d	Mi Sol trầm chấm Đô
+g8-n10-072	n10	69	dyad-dotted	LH	11	3	8	4/4	3	12	f44c8c43d4e20aa165371e3d98a85bf81b38e2098c11c9450eadadc989ed37b0	Mi Sol trầm chấm Sol
+g8-n10-073	n10	85	dyad-dotted	LH	11	3	8	4/4	3	12	29b15114419c793a938e0cde265dba375c235859d90ed523f9a64957a40abaa6	Năm trầm chấm Đô
+g8-n10-074	n10	77	dyad-dotted	LH	11	3	8	4/4	3	12	4a182910b24a17328f6d5fde5df1955a98bd0effd74b3d555cb881cf7589a2f5	Năm trầm chấm Sol
+g8-n10-075	n10	93	dyad-dotted	LH	11	3	8	4/4	3	12	879f2fc639d1e28afe773dee45e3bd1aded8b7ea3d1126cc7c6e663cb4a0e201	Rê Sol trầm chấm Fa
+g8-n10-076	n10	5	dyad-tie	RH	11	8	3	4/4	3	12	5174b5f5d7852892ce8149bad0f6d6e7ed2bd707b619f5bfafc44785e2b31cd4	Đôi Đô Mi rồi nối Đô
+g8-n10-077	n10	14	dyad-tie	RH	11	8	3	4/4	3	12	0971e4c3f91f8da30e23a6a5b58efc19dc4df6eb1c33c240e4656d244234e83d	Đôi Đô Mi rồi nối Mi
+g8-n10-078	n10	22	dyad-tie	RH	11	8	3	4/4	3	12	297a6aecdd92fcac01690d745f2d8a8a244b1257ea64204aa28e364212bff0c2	Đôi Đô Mi rồi nối Sol
+g8-n10-079	n10	38	dyad-tie	RH	11	8	3	4/4	3	12	4ed0429a45220bfc8454ba128e02848a27c961096597517d9187b979538fd369	Đôi Rê Fa rồi nối Rê
+g8-n10-080	n10	30	dyad-tie	RH	11	8	3	4/4	3	12	86c043715706effbc821c3e75e94ddcc775aa46bdbb4bbf1bfa7aecafde9c607	Đôi Rê Fa rồi nối Fa
+g8-n10-081	n10	46	dyad-tie	RH	11	8	3	4/4	3	12	01f9c8820461ba5502c2833e92c1f0e71f535c58c8929e637a04e68547de7d07	Đôi Rê Fa rồi nối Mi
+g8-n10-082	n10	62	dyad-tie	RH	11	8	3	4/4	3	12	685ef9d2fc6a00c61b16cd1bdbbdeeb5e2eca211b23f264d4162aaca516f6354	Đôi Mi Sol rồi nối Mi
+g8-n10-083	n10	54	dyad-tie	RH	11	8	3	4/4	3	12	23ca2882e1471b78428861120b02eca139426787562e9ca43acbdc3aeaee1326	Đôi Mi Sol rồi nối Đô
+g8-n10-084	n10	70	dyad-tie	RH	11	8	3	4/4	3	12	b19085b02f5c9294af4903b41f567c028cf1705f6c497a9bfc306605a86cbd00	Đôi Mi Sol rồi nối Sol
+g8-n10-085	n10	86	dyad-tie	RH	11	8	3	4/4	3	12	9c5cba367beef6fe61c06b4f5690cf149c99a10a69b1a5ad3536619efb0b6a7b	Quãng năm rồi nối Đô
+g8-n10-086	n10	78	dyad-tie	RH	11	8	3	4/4	3	12	3ecc9deab89973c1aec33dfbe3f92f23ad2a809e65a6e7a450d8637828218b66	Quãng năm rồi nối Sol
+g8-n10-087	n10	94	dyad-tie	RH	11	8	3	4/4	3	12	615a402448dca6e3316e802b6a1efa80a108b7a064f6af3bb26392a08b446b01	Rê Sol rồi nối Fa
+g8-n10-088	n10	18	dyad-tie	LH	11	3	8	4/4	3	12	5174b5f5d7852892ce8149bad0f6d6e7ed2bd707b619f5bfafc44785e2b31cd4	Đôi trầm rồi nối Đô
+g8-n10-089	n10	6	dyad-tie	LH	11	3	8	4/4	3	12	0971e4c3f91f8da30e23a6a5b58efc19dc4df6eb1c33c240e4656d244234e83d	Đôi trầm rồi nối Mi
+g8-n10-090	n10	10	dyad-tie	LH	11	3	8	4/4	3	12	297a6aecdd92fcac01690d745f2d8a8a244b1257ea64204aa28e364212bff0c2	Đôi trầm rồi nối Sol
+g8-n10-091	n10	26	dyad-tie	LH	11	3	8	4/4	3	12	4ed0429a45220bfc8454ba128e02848a27c961096597517d9187b979538fd369	Rê Fa trầm rồi nối Rê
+g8-n10-092	n10	42	dyad-tie	LH	11	3	8	4/4	3	12	86c043715706effbc821c3e75e94ddcc775aa46bdbb4bbf1bfa7aecafde9c607	Rê Fa trầm rồi nối Fa
+g8-n10-093	n10	34	dyad-tie	LH	11	3	8	4/4	3	12	01f9c8820461ba5502c2833e92c1f0e71f535c58c8929e637a04e68547de7d07	Rê Fa trầm rồi nối Mi
+g8-n10-094	n10	50	dyad-tie	LH	11	3	8	4/4	3	12	685ef9d2fc6a00c61b16cd1bdbbdeeb5e2eca211b23f264d4162aaca516f6354	Mi Sol trầm rồi nối Mi
+g8-n10-095	n10	66	dyad-tie	LH	11	3	8	4/4	3	12	23ca2882e1471b78428861120b02eca139426787562e9ca43acbdc3aeaee1326	Mi Sol trầm rồi nối Đô
+g8-n10-096	n10	58	dyad-tie	LH	11	3	8	4/4	3	12	b19085b02f5c9294af4903b41f567c028cf1705f6c497a9bfc306605a86cbd00	Mi Sol trầm rồi nối Sol
+g8-n10-097	n10	74	dyad-tie	LH	11	3	8	4/4	3	12	9c5cba367beef6fe61c06b4f5690cf149c99a10a69b1a5ad3536619efb0b6a7b	Năm trầm rồi nối Đô
+g8-n10-098	n10	90	dyad-tie	LH	11	3	8	4/4	3	12	3ecc9deab89973c1aec33dfbe3f92f23ad2a809e65a6e7a450d8637828218b66	Năm trầm rồi nối Sol
+g8-n10-099	n10	82	dyad-tie	LH	11	3	8	4/4	3	12	615a402448dca6e3316e802b6a1efa80a108b7a064f6af3bb26392a08b446b01	Rê Sol trầm rồi nối Fa
+g8-n10-100	n10	98	dyad-tie	LH	11	3	8	4/4	3	12	1214609e7b83af7e56a0049665415b54458c2676fb464079d7740becb56b95cb	Rê Sol trầm rồi nối Rê
+g8-n20-001	n20	1	ledger-high	RH	20	15	5	4/4	5	20	04bcb94ff78603bda98ebc0bbf4b718f7065bf7aee16d14ccf01d84fd6268622	Dòng phụ cao Đô Rê Mi
+g8-n20-002	n20	11	ledger-high	RH	19	14	5	4/4	5	20	6d327a6adf25458b9402ab72efecc042dea4d78832f41a381ff9b7176c05ae35	Dòng phụ cao Đô Rê Fa
+g8-n20-003	n20	7	ledger-high	RH	17	12	5	4/4	5	20	8936f595804b46196f62f8c55488d1fc1152b51f64b5b878c61229812c4bf84a	Dòng phụ cao Đô Rê Sol
+g8-n20-004	n20	19	ledger-high	RH	19	14	5	4/4	5	20	a3649b9bb07d84613e54e033226b184dc83835320336a0303d0e196d59cb890d	Dòng phụ cao Đô Mi Rê
+g8-n20-005	n20	15	ledger-high	RH	20	15	5	4/4	5	20	63091942eb1a2f7b89dd25515b405695d0dd4217d34e7c0788105eb1a3681e30	Dòng phụ cao Đô Mi Sol
+g8-n20-006	n20	27	ledger-high	RH	19	14	5	4/4	5	20	9591ca3269e07cd5a589f5a657eda8e235aac1920d726862d1c330d94ba75eb5	Dòng phụ cao Rê Mi Đô
+g8-n20-007	n20	23	ledger-high	RH	17	12	5	4/4	5	20	c27d554ebd4ee815f8cd5142a6ef20bb5677876d1c26e71e17b1a3c464036225	Dòng phụ cao Rê Mi Fa
+g8-n20-008	n20	35	ledger-high	RH	19	14	5	4/4	5	20	3e8513cf3d4692aadfde6a27e0de34121d91cb4d6ecd170b1d79e9f71163f58e	Dòng phụ cao Rê Mi Sol
+g8-n20-009	n20	31	ledger-high	RH	20	15	5	4/4	5	20	78a5e00bd130e3b4f51fc3c08ce3e60bb71ef5ce6b87dc49cec4ab04c10b2a9e	Dòng phụ cao Rê Fa Mi
+g8-n20-010	n20	43	ledger-high	RH	19	14	5	4/4	5	20	2ebe631cbc88622e1283e5b25c38ad31378cd0cdb0789bde2a57ce8646b2a4e4	Dòng phụ cao Rê Fa Sol
+g8-n20-011	n20	39	ledger-high	RH	17	12	5	4/4	5	20	7185c33118fe698e3fb172ed4522e90cfc837d88c3227834825a1d0b9e6fc4b1	Dòng phụ cao Mi Đô Rê
+g8-n20-012	n20	51	ledger-high	RH	19	14	5	4/4	5	20	e2438636c44a1ec7db138fdb7f20ed14a3ee4f166319c2187b0f8f93687ca96b	Dòng phụ cao Mi Đô Sol
+g8-n20-013	n20	47	ledger-high	RH	20	15	5	4/4	5	20	9333bdb7e487b622883ad4f98c00af0b9e812397b21038da0fac5ee38e43f0a8	Dòng phụ cao Mi Rê Đô
+g8-n20-014	n20	59	ledger-high	RH	19	14	5	4/4	5	20	85e529eb27f178b00b40bae98d1bddf8fbbc4f197ef2c22e7b0f02d079b162ea	Dòng phụ cao Mi Rê Fa
+g8-n20-015	n20	55	ledger-high	RH	17	12	5	4/4	5	20	0b069bf315011f406ead9a1ce80ded3604ad8ea7230267d465a838857153fb45	Dòng phụ cao Mi Sol Fa
+g8-n20-016	n20	67	ledger-high	RH	19	14	5	4/4	5	20	25eef76f2cfb5563c111c7aac9c0d00a582c3f38b6d6d656e766944cc275bbee	Dòng phụ cao Fa Rê Đô
+g8-n20-017	n20	63	ledger-high	RH	20	15	5	4/4	5	20	20ca51e5d7c9c86b02030b444885bf8ce1e0e34a8a05eb80bcbed8f595666820	Dòng phụ cao Fa Rê Mi
+g8-n20-018	n20	75	ledger-high	RH	19	14	5	4/4	5	20	770e60478413e4ebc0f221041f91d752207479c936aacc600c116c1efc77bae9	Dòng phụ cao Fa Rê Sol
+g8-n20-019	n20	71	ledger-high	RH	17	12	5	4/4	5	20	796691cfd34fc6e0d6320a19f028f4a71c592511974670f723d7cd45a75eae2d	Dòng phụ cao Fa Mi Rê
+g8-n20-020	n20	83	ledger-high	RH	19	14	5	4/4	5	20	d3488e72bcbb495d48561c6b115d353e64fdcc1832171582d6e1fc7e03082871	Dòng phụ cao Fa Mi Sol
+g8-n20-021	n20	79	ledger-high	RH	20	15	5	4/4	5	20	3d2f32b22a7be989224d53b9df0d9746d0e7449fcc1cb84a9f543ecbd0eeff21	Dòng phụ cao Sol Mi Đô
+g8-n20-022	n20	91	ledger-high	RH	19	14	5	4/4	5	20	7063357c9446a8f6c6873db7a6f2756a8e9790558f74842d805637b560d771d8	Dòng phụ cao Sol Mi Rê
+g8-n20-023	n20	87	ledger-high	RH	17	12	5	4/4	5	20	7e238311fd7bf55c6012ee3d1934d9571526c27d9b3045b7201bf9a4fcc47195	Dòng phụ cao Sol Mi Fa
+g8-n20-024	n20	99	ledger-high	RH	19	14	5	4/4	5	20	d275624d0996358e5c9c65b407040f2b0baf2652117df905934e9e13c109631a	Dòng phụ cao Sol Fa Rê
+g8-n20-025	n20	95	ledger-high	RH	20	15	5	4/4	5	20	0a35b986a62b4693fa75fc1c7948ab4bcf938ff779f6fa1a8a69b510161baa8d	Dòng phụ cao Sol Fa Mi
+g8-n20-026	n20	8	ledger-low	LH	20	5	15	4/4	5	20	04bcb94ff78603bda98ebc0bbf4b718f7065bf7aee16d14ccf01d84fd6268622	Dòng phụ trầm Đô Rê Mi
+g8-n20-027	n20	2	ledger-low	LH	19	5	14	4/4	5	20	6d327a6adf25458b9402ab72efecc042dea4d78832f41a381ff9b7176c05ae35	Dòng phụ trầm Đô Rê Fa
+g8-n20-028	n20	16	ledger-low	LH	17	5	12	4/4	5	20	8936f595804b46196f62f8c55488d1fc1152b51f64b5b878c61229812c4bf84a	Dòng phụ trầm Đô Rê Sol
+g8-n20-029	n20	12	ledger-low	LH	19	5	14	4/4	5	20	a3649b9bb07d84613e54e033226b184dc83835320336a0303d0e196d59cb890d	Dòng phụ trầm Đô Mi Rê
+g8-n20-030	n20	24	ledger-low	LH	20	5	15	4/4	5	20	63091942eb1a2f7b89dd25515b405695d0dd4217d34e7c0788105eb1a3681e30	Dòng phụ trầm Đô Mi Sol
+g8-n20-031	n20	20	ledger-low	LH	19	5	14	4/4	5	20	9591ca3269e07cd5a589f5a657eda8e235aac1920d726862d1c330d94ba75eb5	Dòng phụ trầm Rê Mi Đô
+g8-n20-032	n20	32	ledger-low	LH	17	5	12	4/4	5	20	c27d554ebd4ee815f8cd5142a6ef20bb5677876d1c26e71e17b1a3c464036225	Dòng phụ trầm Rê Mi Fa
+g8-n20-033	n20	28	ledger-low	LH	19	5	14	4/4	5	20	3e8513cf3d4692aadfde6a27e0de34121d91cb4d6ecd170b1d79e9f71163f58e	Dòng phụ trầm Rê Mi Sol
+g8-n20-034	n20	40	ledger-low	LH	20	5	15	4/4	5	20	78a5e00bd130e3b4f51fc3c08ce3e60bb71ef5ce6b87dc49cec4ab04c10b2a9e	Dòng phụ trầm Rê Fa Mi
+g8-n20-035	n20	36	ledger-low	LH	19	5	14	4/4	5	20	2ebe631cbc88622e1283e5b25c38ad31378cd0cdb0789bde2a57ce8646b2a4e4	Dòng phụ trầm Rê Fa Sol
+g8-n20-036	n20	48	ledger-low	LH	17	5	12	4/4	5	20	7185c33118fe698e3fb172ed4522e90cfc837d88c3227834825a1d0b9e6fc4b1	Dòng phụ trầm Mi Đô Rê
+g8-n20-037	n20	44	ledger-low	LH	19	5	14	4/4	5	20	e2438636c44a1ec7db138fdb7f20ed14a3ee4f166319c2187b0f8f93687ca96b	Dòng phụ trầm Mi Đô Sol
+g8-n20-038	n20	56	ledger-low	LH	20	5	15	4/4	5	20	9333bdb7e487b622883ad4f98c00af0b9e812397b21038da0fac5ee38e43f0a8	Dòng phụ trầm Mi Rê Đô
+g8-n20-039	n20	52	ledger-low	LH	19	5	14	4/4	5	20	85e529eb27f178b00b40bae98d1bddf8fbbc4f197ef2c22e7b0f02d079b162ea	Dòng phụ trầm Mi Rê Fa
+g8-n20-040	n20	64	ledger-low	LH	17	5	12	4/4	5	20	0b069bf315011f406ead9a1ce80ded3604ad8ea7230267d465a838857153fb45	Dòng phụ trầm Mi Sol Fa
+g8-n20-041	n20	60	ledger-low	LH	19	5	14	4/4	5	20	25eef76f2cfb5563c111c7aac9c0d00a582c3f38b6d6d656e766944cc275bbee	Dòng phụ trầm Fa Rê Đô
+g8-n20-042	n20	72	ledger-low	LH	20	5	15	4/4	5	20	20ca51e5d7c9c86b02030b444885bf8ce1e0e34a8a05eb80bcbed8f595666820	Dòng phụ trầm Fa Rê Mi
+g8-n20-043	n20	68	ledger-low	LH	19	5	14	4/4	5	20	770e60478413e4ebc0f221041f91d752207479c936aacc600c116c1efc77bae9	Dòng phụ trầm Fa Rê Sol
+g8-n20-044	n20	80	ledger-low	LH	17	5	12	4/4	5	20	796691cfd34fc6e0d6320a19f028f4a71c592511974670f723d7cd45a75eae2d	Dòng phụ trầm Fa Mi Rê
+g8-n20-045	n20	76	ledger-low	LH	19	5	14	4/4	5	20	d3488e72bcbb495d48561c6b115d353e64fdcc1832171582d6e1fc7e03082871	Dòng phụ trầm Fa Mi Sol
+g8-n20-046	n20	88	ledger-low	LH	20	5	15	4/4	5	20	3d2f32b22a7be989224d53b9df0d9746d0e7449fcc1cb84a9f543ecbd0eeff21	Dòng phụ trầm Sol Mi Đô
+g8-n20-047	n20	84	ledger-low	LH	19	5	14	4/4	5	20	7063357c9446a8f6c6873db7a6f2756a8e9790558f74842d805637b560d771d8	Dòng phụ trầm Sol Mi Rê
+g8-n20-048	n20	96	ledger-low	LH	17	5	12	4/4	5	20	7e238311fd7bf55c6012ee3d1934d9571526c27d9b3045b7201bf9a4fcc47195	Dòng phụ trầm Sol Mi Fa
+g8-n20-049	n20	92	ledger-low	LH	19	5	14	4/4	5	20	d275624d0996358e5c9c65b407040f2b0baf2652117df905934e9e13c109631a	Dòng phụ trầm Sol Fa Rê
+g8-n20-050	n20	100	ledger-low	LH	20	5	15	4/4	5	20	0a35b986a62b4693fa75fc1c7948ab4bcf938ff779f6fa1a8a69b510161baa8d	Dòng phụ trầm Sol Fa Mi
+g8-n20-051	n20	3	dyad-dotted	RH	20	15	5	4/4	5	20	bd4f4a7942714321116610be51136542ec910a8f1bb967330a7b69eaaacd5d16	Đôi Đô Mi chấm rồi Đô
+g8-n20-052	n20	17	dyad-dotted	RH	21	16	5	4/4	5	20	042e60655d18bc505aa3600faea3bf206bedb0439e068172be056faa69614540	Đôi Đô Mi chấm rồi Mi
+g8-n20-053	n20	9	dyad-dotted	RH	20	15	5	4/4	5	20	332d7e39ebec38d793b4290ee9accf55ce9f4c9b04cbaa124ab21e2a71dccc59	Đôi Đô Mi chấm tới Sol
+g8-n20-054	n20	25	dyad-dotted	RH	21	16	5	4/4	5	20	5e0b0bee70b2feff20788d7b7696694e1f6c41e4a29b00e7ac1c4ed9e7abfdff	Đôi Rê Fa chấm về Rê
+g8-n20-055	n20	41	dyad-dotted	RH	20	15	5	4/4	5	20	bb6a2e208ec4d431c81ebf3f1a838dbc2b5e78ace305694052644117f1beeaa2	Đôi Rê Fa chấm về Fa
+g8-n20-056	n20	33	dyad-dotted	RH	21	16	5	4/4	5	20	874fee25dc6d36136e3144c21557808099f8926525af4aa1ca31f75d692c104f	Đôi Rê Fa chấm sang Mi
+g8-n20-057	n20	49	dyad-dotted	RH	20	15	5	4/4	5	20	b1fd204b3f51a4ef6ca533a67c54ef873ae8015d7176809a56f330306ee7585c	Đôi Mi Sol chấm về Mi
+g8-n20-058	n20	65	dyad-dotted	RH	21	16	5	4/4	5	20	0aa4664d3729c59791ccf1d830ad416db14996bce2ae32f995dd6d01c2eb65f3	Đôi Mi Sol chấm về Đô
+g8-n20-059	n20	57	dyad-dotted	RH	20	15	5	4/4	5	20	6535ed22d41d840b819e58ccc4ae0836d70f2ca4513dd7beb91014f0d3e34e35	Đôi Mi Sol chấm giữ Sol
+g8-n20-060	n20	73	dyad-dotted	RH	21	16	5	4/4	5	20	62cba2db9efa190c16d1a963a3b08f105057f3c20ee1aa714cca89e7b0f51622	Đôi quãng năm chấm Đô
+g8-n20-061	n20	89	dyad-dotted	RH	20	15	5	4/4	5	20	86082accf54884feea1deaf909ce2bf2f692052568216ba205443cb8421625cb	Đôi quãng năm chấm Sol
+g8-n20-062	n20	81	dyad-dotted	RH	21	16	5	4/4	5	20	93948bbe52374e5e5f1f9f2154b62b0bdfd4a2114f0d03d78b33cb69b9ba9871	Đôi Rê Sol chấm Fa
+g8-n20-063	n20	97	dyad-dotted	RH	20	15	5	4/4	5	20	5606a14e1682d133140117309387933fb199a6ccc85de010f88aeb0ceb13f94c	Đôi Rê Sol chấm Rê
+g8-n20-064	n20	13	dyad-dotted	LH	20	5	15	4/4	5	20	bd4f4a7942714321116610be51136542ec910a8f1bb967330a7b69eaaacd5d16	Đôi trầm chấm về Đô
+g8-n20-065	n20	4	dyad-dotted	LH	21	5	16	4/4	5	20	042e60655d18bc505aa3600faea3bf206bedb0439e068172be056faa69614540	Đôi trầm chấm về Mi
+g8-n20-066	n20	21	dyad-dotted	LH	20	5	15	4/4	5	20	332d7e39ebec38d793b4290ee9accf55ce9f4c9b04cbaa124ab21e2a71dccc59	Đôi trầm chấm tới Sol
+g8-n20-067	n20	37	dyad-dotted	LH	21	5	16	4/4	5	20	5e0b0bee70b2feff20788d7b7696694e1f6c41e4a29b00e7ac1c4ed9e7abfdff	Rê Fa trầm chấm Rê
+g8-n20-068	n20	29	dyad-dotted	LH	20	5	15	4/4	5	20	bb6a2e208ec4d431c81ebf3f1a838dbc2b5e78ace305694052644117f1beeaa2	Rê Fa trầm chấm Fa
+g8-n20-069	n20	45	dyad-dotted	LH	21	5	16	4/4	5	20	874fee25dc6d36136e3144c21557808099f8926525af4aa1ca31f75d692c104f	Rê Fa trầm chấm Mi
+g8-n20-070	n20	61	dyad-dotted	LH	20	5	15	4/4	5	20	b1fd204b3f51a4ef6ca533a67c54ef873ae8015d7176809a56f330306ee7585c	Mi Sol trầm chấm Mi
+g8-n20-071	n20	53	dyad-dotted	LH	21	5	16	4/4	5	20	0aa4664d3729c59791ccf1d830ad416db14996bce2ae32f995dd6d01c2eb65f3	Mi Sol trầm chấm Đô
+g8-n20-072	n20	69	dyad-dotted	LH	20	5	15	4/4	5	20	6535ed22d41d840b819e58ccc4ae0836d70f2ca4513dd7beb91014f0d3e34e35	Mi Sol trầm chấm Sol
+g8-n20-073	n20	85	dyad-dotted	LH	21	5	16	4/4	5	20	62cba2db9efa190c16d1a963a3b08f105057f3c20ee1aa714cca89e7b0f51622	Năm trầm chấm Đô
+g8-n20-074	n20	77	dyad-dotted	LH	20	5	15	4/4	5	20	86082accf54884feea1deaf909ce2bf2f692052568216ba205443cb8421625cb	Năm trầm chấm Sol
+g8-n20-075	n20	93	dyad-dotted	LH	21	5	16	4/4	5	20	93948bbe52374e5e5f1f9f2154b62b0bdfd4a2114f0d03d78b33cb69b9ba9871	Rê Sol trầm chấm Fa
+g8-n20-076	n20	5	dyad-tie	RH	20	15	5	4/4	5	20	4fa37507e01639a3abf4e36cbfec2408f0787c755bfdc8ae7bf8d46dcd4a7d11	Đôi Đô Mi rồi nối Đô
+g8-n20-077	n20	14	dyad-tie	RH	21	16	5	4/4	5	20	1a8f7cffeb2a92f4877e6182f7236c3c19c4ff2bc1ea45e7bd3dd979d3922594	Đôi Đô Mi rồi nối Mi
+g8-n20-078	n20	22	dyad-tie	RH	20	15	5	4/4	5	20	1242e6b2bff2083aca8bb44c748e63cacff8ceb47434df8624f0a285b14d5831	Đôi Đô Mi rồi nối Sol
+g8-n20-079	n20	38	dyad-tie	RH	21	16	5	4/4	5	20	2570d5ce993aa5876f187bd2c69a8d12160c57e9d5fbda1b0f79d6774106b190	Đôi Rê Fa rồi nối Rê
+g8-n20-080	n20	30	dyad-tie	RH	20	15	5	4/4	5	20	0108b7c3f93410a3704c73f8bb56f67e0d550b9efebe73b60e04c66a284b59a1	Đôi Rê Fa rồi nối Fa
+g8-n20-081	n20	46	dyad-tie	RH	21	16	5	4/4	5	20	5025b0994e46ea2d953b50ed4ea44ac62f006eb48d1584e085637ebe6293271b	Đôi Rê Fa rồi nối Mi
+g8-n20-082	n20	62	dyad-tie	RH	20	15	5	4/4	5	20	57e3014a867cfb0c3f2450ebac825805a14ed25c264188f27ad079ecba32b95e	Đôi Mi Sol rồi nối Mi
+g8-n20-083	n20	54	dyad-tie	RH	21	16	5	4/4	5	20	07c24942f0d47ec7eb91ace8313b7f119ac1f15916deb92b27e79f13c86b2cec	Đôi Mi Sol rồi nối Đô
+g8-n20-084	n20	70	dyad-tie	RH	20	15	5	4/4	5	20	9a37f215490981315b0f760adba2483bb27b630cc9c4a4e2899ca7f0cffccc81	Đôi Mi Sol rồi nối Sol
+g8-n20-085	n20	86	dyad-tie	RH	21	16	5	4/4	5	20	af8459cd4314f6fb15c75b19888fbd4a4ebc778b9c516323559added23c4ca8a	Quãng năm rồi nối Đô
+g8-n20-086	n20	78	dyad-tie	RH	20	15	5	4/4	5	20	164ee28b89132f0b9938fb19b90414b86a825e9ba2221c80589f630f4e5bd930	Quãng năm rồi nối Sol
+g8-n20-087	n20	94	dyad-tie	RH	21	16	5	4/4	5	20	11b7d3bffef362ada3be3c5706fdc42001f82d750120a1f9f002aa2b478715fb	Rê Sol rồi nối Fa
+g8-n20-088	n20	18	dyad-tie	LH	20	5	15	4/4	5	20	4fa37507e01639a3abf4e36cbfec2408f0787c755bfdc8ae7bf8d46dcd4a7d11	Đôi trầm rồi nối Đô
+g8-n20-089	n20	6	dyad-tie	LH	21	5	16	4/4	5	20	1a8f7cffeb2a92f4877e6182f7236c3c19c4ff2bc1ea45e7bd3dd979d3922594	Đôi trầm rồi nối Mi
+g8-n20-090	n20	10	dyad-tie	LH	20	5	15	4/4	5	20	1242e6b2bff2083aca8bb44c748e63cacff8ceb47434df8624f0a285b14d5831	Đôi trầm rồi nối Sol
+g8-n20-091	n20	26	dyad-tie	LH	21	5	16	4/4	5	20	2570d5ce993aa5876f187bd2c69a8d12160c57e9d5fbda1b0f79d6774106b190	Rê Fa trầm rồi nối Rê
+g8-n20-092	n20	42	dyad-tie	LH	20	5	15	4/4	5	20	0108b7c3f93410a3704c73f8bb56f67e0d550b9efebe73b60e04c66a284b59a1	Rê Fa trầm rồi nối Fa
+g8-n20-093	n20	34	dyad-tie	LH	21	5	16	4/4	5	20	5025b0994e46ea2d953b50ed4ea44ac62f006eb48d1584e085637ebe6293271b	Rê Fa trầm rồi nối Mi
+g8-n20-094	n20	50	dyad-tie	LH	20	5	15	4/4	5	20	57e3014a867cfb0c3f2450ebac825805a14ed25c264188f27ad079ecba32b95e	Mi Sol trầm rồi nối Mi
+g8-n20-095	n20	66	dyad-tie	LH	21	5	16	4/4	5	20	07c24942f0d47ec7eb91ace8313b7f119ac1f15916deb92b27e79f13c86b2cec	Mi Sol trầm rồi nối Đô
+g8-n20-096	n20	58	dyad-tie	LH	20	5	15	4/4	5	20	9a37f215490981315b0f760adba2483bb27b630cc9c4a4e2899ca7f0cffccc81	Mi Sol trầm rồi nối Sol
+g8-n20-097	n20	74	dyad-tie	LH	21	5	16	4/4	5	20	af8459cd4314f6fb15c75b19888fbd4a4ebc778b9c516323559added23c4ca8a	Năm trầm rồi nối Đô
+g8-n20-098	n20	90	dyad-tie	LH	20	5	15	4/4	5	20	164ee28b89132f0b9938fb19b90414b86a825e9ba2221c80589f630f4e5bd930	Năm trầm rồi nối Sol
+g8-n20-099	n20	82	dyad-tie	LH	21	5	16	4/4	5	20	11b7d3bffef362ada3be3c5706fdc42001f82d750120a1f9f002aa2b478715fb	Rê Sol trầm rồi nối Fa
+g8-n20-100	n20	98	dyad-tie	LH	20	5	15	4/4	5	20	60ec2415d95df6c56cafa68ea8ea20afa993db4058cb43957680d685f1ddd040	Rê Sol trầm rồi nối Rê
+g8-n30-001	n30	1	ledger-high	RH	35	26	9	4/4	9	36	4682a26475423cc19d9451f3077c076480350450c70dd6bb144e4911163c031a	Dòng phụ cao Đô Rê Mi
+g8-n30-002	n30	11	ledger-high	RH	34	25	9	4/4	9	36	df8c20c0ae76ad5b6db53a7fe5e3c4f4ac027c2174a9e37474ba436860d4767c	Dòng phụ cao Đô Rê Fa
+g8-n30-003	n30	7	ledger-high	RH	33	24	9	4/4	9	36	1712f042f79601b0799e0c639d20642200fdee3599eed647ea91bbe77db0c25b	Dòng phụ cao Đô Rê Sol
+g8-n30-004	n30	19	ledger-high	RH	32	23	9	4/4	9	36	6e638393b71b25bfcc56d733e7ec682eac083b651418ccde919f887fa7555375	Dòng phụ cao Đô Mi Rê
+g8-n30-005	n30	15	ledger-high	RH	35	26	9	4/4	9	36	1142f8b3b2824c2c13286dcb27471bc09d3c644c4ecbad9fa74ba8b9c48d8c66	Dòng phụ cao Đô Mi Sol
+g8-n30-006	n30	27	ledger-high	RH	35	26	9	4/4	9	36	1ebffce823b77a162b47059d7d5328294741b6d0daab4f5f666798588e37bb9f	Dòng phụ cao Rê Mi Đô
+g8-n30-007	n30	23	ledger-high	RH	32	23	9	4/4	9	36	4e4525314b3f534d63e2fbc25b36073d20ef8d96b15af179e2ab367fb03f7ce6	Dòng phụ cao Rê Mi Fa
+g8-n30-008	n30	35	ledger-high	RH	34	25	9	4/4	9	36	210de73535559a93e4987baf3250f18ae078c6783fcd2512b1b0865e06ab7691	Dòng phụ cao Rê Mi Sol
+g8-n30-009	n30	31	ledger-high	RH	33	24	9	4/4	9	36	0c7f8185476f1b46f285639e8990532ff363ba6c35371f54f0b0e70f37859fdd	Dòng phụ cao Rê Fa Mi
+g8-n30-010	n30	43	ledger-high	RH	32	23	9	4/4	9	36	27a9394c2a0fbcef11dd1ea5c014ab7f6e1c06bbaf0c54e47ee79bc85d0ef299	Dòng phụ cao Rê Fa Sol
+g8-n30-011	n30	39	ledger-high	RH	32	23	9	4/4	9	36	cc6011c36bf0ae0c77a8f61db70854b4e069fe1c640657999aaeabd2e534c466	Dòng phụ cao Mi Đô Rê
+g8-n30-012	n30	51	ledger-high	RH	35	26	9	4/4	9	36	7c0fa07f44ba2a8f40f127d8b40c081619fffd9064d38f7e7d6a8969445987df	Dòng phụ cao Mi Đô Sol
+g8-n30-013	n30	47	ledger-high	RH	35	26	9	4/4	9	36	30ccc29662fc6166e1e58342a33e13f5c8e8f82942b855f39c6c75a51da51cff	Dòng phụ cao Mi Rê Đô
+g8-n30-014	n30	59	ledger-high	RH	34	25	9	4/4	9	36	d141d7130011178b1aa9d287adb9a19b9d6dc2782be925c4f86aa3ca872e2683	Dòng phụ cao Mi Rê Fa
+g8-n30-015	n30	55	ledger-high	RH	33	24	9	4/4	9	36	1f9a86a9beedffb309a69327a0e572aac49187602ed0511ef8d58fb5d53d6f8e	Dòng phụ cao Mi Sol Fa
+g8-n30-016	n30	67	ledger-high	RH	32	23	9	4/4	9	36	005517bcfdf80cff26bf171897400020987e964e731c97c6d18c62e363a45404	Dòng phụ cao Fa Rê Đô
+g8-n30-017	n30	63	ledger-high	RH	35	26	9	4/4	9	36	3c393b7d854a9b52ebd7254bd288bf4ee93e687b303cc009ddba8aa1f211f592	Dòng phụ cao Fa Rê Mi
+g8-n30-018	n30	75	ledger-high	RH	35	26	9	4/4	9	36	10772a19a1217c61a741ac0c434aba3bb9bf6ca610944d92bf66c463951fbec3	Dòng phụ cao Fa Rê Sol
+g8-n30-019	n30	71	ledger-high	RH	32	23	9	4/4	9	36	4b6532d327e1656791416d4af7a069680ea8f9ab5701ebbefb68e7b581c80a62	Dòng phụ cao Fa Mi Rê
+g8-n30-020	n30	83	ledger-high	RH	34	25	9	4/4	9	36	5163c9882263831cced8b8b42cb1150badb45cd446585fd0de38e9667fe474bf	Dòng phụ cao Fa Mi Sol
+g8-n30-021	n30	79	ledger-high	RH	33	24	9	4/4	9	36	70ef00b47d57113d2759b7bdc141e79b6290e4aec82237f8f3f25286399dacee	Dòng phụ cao Sol Mi Đô
+g8-n30-022	n30	91	ledger-high	RH	32	23	9	4/4	9	36	3c944207580dd362628ef08d4200675a5d8da59bddc7172ab492b78f81922b6b	Dòng phụ cao Sol Mi Rê
+g8-n30-023	n30	87	ledger-high	RH	32	23	9	4/4	9	36	0bde0ad0f96515e70e1d8953282a3ac85710c22548003b6a752d7c8bf58e796c	Dòng phụ cao Sol Mi Fa
+g8-n30-024	n30	99	ledger-high	RH	35	26	9	4/4	9	36	2924f3630d294594163e987e651aa5e836cb0def07fedfbdfd75f03af0f59c69	Dòng phụ cao Sol Fa Rê
+g8-n30-025	n30	95	ledger-high	RH	35	26	9	4/4	9	36	5eef29b639318edcef6a6e42042740785e9d85c9aa96f3f16c40a210170290db	Dòng phụ cao Sol Fa Mi
+g8-n30-026	n30	8	ledger-low	LH	35	9	26	4/4	9	36	4682a26475423cc19d9451f3077c076480350450c70dd6bb144e4911163c031a	Dòng phụ trầm Đô Rê Mi
+g8-n30-027	n30	2	ledger-low	LH	34	9	25	4/4	9	36	df8c20c0ae76ad5b6db53a7fe5e3c4f4ac027c2174a9e37474ba436860d4767c	Dòng phụ trầm Đô Rê Fa
+g8-n30-028	n30	16	ledger-low	LH	33	9	24	4/4	9	36	1712f042f79601b0799e0c639d20642200fdee3599eed647ea91bbe77db0c25b	Dòng phụ trầm Đô Rê Sol
+g8-n30-029	n30	12	ledger-low	LH	32	9	23	4/4	9	36	6e638393b71b25bfcc56d733e7ec682eac083b651418ccde919f887fa7555375	Dòng phụ trầm Đô Mi Rê
+g8-n30-030	n30	24	ledger-low	LH	35	9	26	4/4	9	36	1142f8b3b2824c2c13286dcb27471bc09d3c644c4ecbad9fa74ba8b9c48d8c66	Dòng phụ trầm Đô Mi Sol
+g8-n30-031	n30	20	ledger-low	LH	35	9	26	4/4	9	36	1ebffce823b77a162b47059d7d5328294741b6d0daab4f5f666798588e37bb9f	Dòng phụ trầm Rê Mi Đô
+g8-n30-032	n30	32	ledger-low	LH	32	9	23	4/4	9	36	4e4525314b3f534d63e2fbc25b36073d20ef8d96b15af179e2ab367fb03f7ce6	Dòng phụ trầm Rê Mi Fa
+g8-n30-033	n30	28	ledger-low	LH	34	9	25	4/4	9	36	210de73535559a93e4987baf3250f18ae078c6783fcd2512b1b0865e06ab7691	Dòng phụ trầm Rê Mi Sol
+g8-n30-034	n30	40	ledger-low	LH	33	9	24	4/4	9	36	0c7f8185476f1b46f285639e8990532ff363ba6c35371f54f0b0e70f37859fdd	Dòng phụ trầm Rê Fa Mi
+g8-n30-035	n30	36	ledger-low	LH	32	9	23	4/4	9	36	27a9394c2a0fbcef11dd1ea5c014ab7f6e1c06bbaf0c54e47ee79bc85d0ef299	Dòng phụ trầm Rê Fa Sol
+g8-n30-036	n30	48	ledger-low	LH	32	9	23	4/4	9	36	cc6011c36bf0ae0c77a8f61db70854b4e069fe1c640657999aaeabd2e534c466	Dòng phụ trầm Mi Đô Rê
+g8-n30-037	n30	44	ledger-low	LH	35	9	26	4/4	9	36	7c0fa07f44ba2a8f40f127d8b40c081619fffd9064d38f7e7d6a8969445987df	Dòng phụ trầm Mi Đô Sol
+g8-n30-038	n30	56	ledger-low	LH	35	9	26	4/4	9	36	30ccc29662fc6166e1e58342a33e13f5c8e8f82942b855f39c6c75a51da51cff	Dòng phụ trầm Mi Rê Đô
+g8-n30-039	n30	52	ledger-low	LH	34	9	25	4/4	9	36	d141d7130011178b1aa9d287adb9a19b9d6dc2782be925c4f86aa3ca872e2683	Dòng phụ trầm Mi Rê Fa
+g8-n30-040	n30	64	ledger-low	LH	33	9	24	4/4	9	36	1f9a86a9beedffb309a69327a0e572aac49187602ed0511ef8d58fb5d53d6f8e	Dòng phụ trầm Mi Sol Fa
+g8-n30-041	n30	60	ledger-low	LH	32	9	23	4/4	9	36	005517bcfdf80cff26bf171897400020987e964e731c97c6d18c62e363a45404	Dòng phụ trầm Fa Rê Đô
+g8-n30-042	n30	72	ledger-low	LH	35	9	26	4/4	9	36	3c393b7d854a9b52ebd7254bd288bf4ee93e687b303cc009ddba8aa1f211f592	Dòng phụ trầm Fa Rê Mi
+g8-n30-043	n30	68	ledger-low	LH	35	9	26	4/4	9	36	10772a19a1217c61a741ac0c434aba3bb9bf6ca610944d92bf66c463951fbec3	Dòng phụ trầm Fa Rê Sol
+g8-n30-044	n30	80	ledger-low	LH	32	9	23	4/4	9	36	4b6532d327e1656791416d4af7a069680ea8f9ab5701ebbefb68e7b581c80a62	Dòng phụ trầm Fa Mi Rê
+g8-n30-045	n30	76	ledger-low	LH	34	9	25	4/4	9	36	5163c9882263831cced8b8b42cb1150badb45cd446585fd0de38e9667fe474bf	Dòng phụ trầm Fa Mi Sol
+g8-n30-046	n30	88	ledger-low	LH	33	9	24	4/4	9	36	70ef00b47d57113d2759b7bdc141e79b6290e4aec82237f8f3f25286399dacee	Dòng phụ trầm Sol Mi Đô
+g8-n30-047	n30	84	ledger-low	LH	32	9	23	4/4	9	36	3c944207580dd362628ef08d4200675a5d8da59bddc7172ab492b78f81922b6b	Dòng phụ trầm Sol Mi Rê
+g8-n30-048	n30	96	ledger-low	LH	32	9	23	4/4	9	36	0bde0ad0f96515e70e1d8953282a3ac85710c22548003b6a752d7c8bf58e796c	Dòng phụ trầm Sol Mi Fa
+g8-n30-049	n30	92	ledger-low	LH	35	9	26	4/4	9	36	2924f3630d294594163e987e651aa5e836cb0def07fedfbdfd75f03af0f59c69	Dòng phụ trầm Sol Fa Rê
+g8-n30-050	n30	100	ledger-low	LH	35	9	26	4/4	9	36	5eef29b639318edcef6a6e42042740785e9d85c9aa96f3f16c40a210170290db	Dòng phụ trầm Sol Fa Mi
+g8-n30-051	n30	3	dyad-dotted	RH	36	27	9	4/4	9	36	34cab46a8462c625c6ebdea54d2af57b9037e6daafaf37037546cc7aa49adc0d	Đôi Đô Mi chấm rồi Đô
+g8-n30-052	n30	17	dyad-dotted	RH	37	28	9	4/4	9	36	0d333a394f563341aae5dfeadb3ef6e3ecf3fa141f151214cb9262fe11a575df	Đôi Đô Mi chấm rồi Mi
+g8-n30-053	n30	9	dyad-dotted	RH	35	26	9	4/4	9	36	146be5b41e748d5fbbd2aaebb712dc149c27ccb21e78c4f90721feab30b82b1e	Đôi Đô Mi chấm tới Sol
+g8-n30-054	n30	25	dyad-dotted	RH	36	27	9	4/4	9	36	1b50fac5d29c4434b42f25177ca9fa3093517c13db4f4d5fa5578cead331a0e8	Đôi Rê Fa chấm về Rê
+g8-n30-055	n30	41	dyad-dotted	RH	36	27	9	4/4	9	36	9015a719ad55b04605cf02270c3145dd1b90765ad8670a78b90a6f95eae2215f	Đôi Rê Fa chấm về Fa
+g8-n30-056	n30	33	dyad-dotted	RH	36	27	9	4/4	9	36	250a9783f58d0c595db527827c236794be17b3bffc00748adc0b5c5624d741be	Đôi Rê Fa chấm sang Mi
+g8-n30-057	n30	49	dyad-dotted	RH	36	27	9	4/4	9	36	1cd8df662751fc3da682c94311db8f34b1c1e444e986449cdf1aba017bad7a44	Đôi Mi Sol chấm về Mi
+g8-n30-058	n30	65	dyad-dotted	RH	37	28	9	4/4	9	36	1bef6f2da80de2aae2b257fcd4262d73694d5d0747eedc29bf3f242d8fec637a	Đôi Mi Sol chấm về Đô
+g8-n30-059	n30	57	dyad-dotted	RH	35	26	9	4/4	9	36	57d8fa7bd07185fa48ac2e3fd959faf07da236c7f0f9356be8f487112dc32954	Đôi Mi Sol chấm giữ Sol
+g8-n30-060	n30	73	dyad-dotted	RH	36	27	9	4/4	9	36	203090bf1464d4a787d7280eab0dfb29b08eb6bd25bd92705a1a861b91b638cb	Đôi quãng năm chấm Đô
+g8-n30-061	n30	89	dyad-dotted	RH	36	27	9	4/4	9	36	6c326690dcf6b5e319f73582c8a3fbf7bc0ad205e038966aa4ca532916be0d9e	Đôi quãng năm chấm Sol
+g8-n30-062	n30	81	dyad-dotted	RH	36	27	9	4/4	9	36	758b8db373ac3fb73b742509e43c6e89c304222440971a3d7ea3211c04700fd6	Đôi Rê Sol chấm Fa
+g8-n30-063	n30	97	dyad-dotted	RH	36	27	9	4/4	9	36	b4c11e2f364dd6185bd730201f44de05adb6c708c16f9223d47819aebe913818	Đôi Rê Sol chấm Rê
+g8-n30-064	n30	13	dyad-dotted	LH	36	9	27	4/4	9	36	34cab46a8462c625c6ebdea54d2af57b9037e6daafaf37037546cc7aa49adc0d	Đôi trầm chấm về Đô
+g8-n30-065	n30	4	dyad-dotted	LH	37	9	28	4/4	9	36	0d333a394f563341aae5dfeadb3ef6e3ecf3fa141f151214cb9262fe11a575df	Đôi trầm chấm về Mi
+g8-n30-066	n30	21	dyad-dotted	LH	35	9	26	4/4	9	36	146be5b41e748d5fbbd2aaebb712dc149c27ccb21e78c4f90721feab30b82b1e	Đôi trầm chấm tới Sol
+g8-n30-067	n30	37	dyad-dotted	LH	36	9	27	4/4	9	36	1b50fac5d29c4434b42f25177ca9fa3093517c13db4f4d5fa5578cead331a0e8	Rê Fa trầm chấm Rê
+g8-n30-068	n30	29	dyad-dotted	LH	36	9	27	4/4	9	36	9015a719ad55b04605cf02270c3145dd1b90765ad8670a78b90a6f95eae2215f	Rê Fa trầm chấm Fa
+g8-n30-069	n30	45	dyad-dotted	LH	36	9	27	4/4	9	36	250a9783f58d0c595db527827c236794be17b3bffc00748adc0b5c5624d741be	Rê Fa trầm chấm Mi
+g8-n30-070	n30	61	dyad-dotted	LH	36	9	27	4/4	9	36	1cd8df662751fc3da682c94311db8f34b1c1e444e986449cdf1aba017bad7a44	Mi Sol trầm chấm Mi
+g8-n30-071	n30	53	dyad-dotted	LH	37	9	28	4/4	9	36	1bef6f2da80de2aae2b257fcd4262d73694d5d0747eedc29bf3f242d8fec637a	Mi Sol trầm chấm Đô
+g8-n30-072	n30	69	dyad-dotted	LH	35	9	26	4/4	9	36	57d8fa7bd07185fa48ac2e3fd959faf07da236c7f0f9356be8f487112dc32954	Mi Sol trầm chấm Sol
+g8-n30-073	n30	85	dyad-dotted	LH	36	9	27	4/4	9	36	203090bf1464d4a787d7280eab0dfb29b08eb6bd25bd92705a1a861b91b638cb	Năm trầm chấm Đô
+g8-n30-074	n30	77	dyad-dotted	LH	36	9	27	4/4	9	36	6c326690dcf6b5e319f73582c8a3fbf7bc0ad205e038966aa4ca532916be0d9e	Năm trầm chấm Sol
+g8-n30-075	n30	93	dyad-dotted	LH	36	9	27	4/4	9	36	758b8db373ac3fb73b742509e43c6e89c304222440971a3d7ea3211c04700fd6	Rê Sol trầm chấm Fa
+g8-n30-076	n30	5	dyad-tie	RH	36	27	9	4/4	9	36	49d08444cd9d7c7540ebec2455813e839712fe43ede31e3b7e7342f1e54e81d0	Đôi Đô Mi rồi nối Đô
+g8-n30-077	n30	14	dyad-tie	RH	37	28	9	4/4	9	36	4474ba6f50c6c2a886f601297ca5e4145a6623be1cf806e2f0afac591a1d2157	Đôi Đô Mi rồi nối Mi
+g8-n30-078	n30	22	dyad-tie	RH	35	26	9	4/4	9	36	b3b9af64aa55a8a919ab5d2b1f33203d31ff0f95fdf2afb549f6fb17aa9e78cd	Đôi Đô Mi rồi nối Sol
+g8-n30-079	n30	38	dyad-tie	RH	36	27	9	4/4	9	36	49ef5ef1f75f2cb92e5834e1965daac973553f504dcca2d8f73084be2d8fe5db	Đôi Rê Fa rồi nối Rê
+g8-n30-080	n30	30	dyad-tie	RH	36	27	9	4/4	9	36	1b784f452dcd406fe3a88b1359a71f836d94fd4e0bb02368aa899da6299cc61e	Đôi Rê Fa rồi nối Fa
+g8-n30-081	n30	46	dyad-tie	RH	36	27	9	4/4	9	36	a49ceeac23405779c5fe029525f5bd19fc15e5fffa8b4dfa448a9f63c3009f35	Đôi Rê Fa rồi nối Mi
+g8-n30-082	n30	62	dyad-tie	RH	36	27	9	4/4	9	36	802ab3dc3b9c5a2949dc7f66d5b1fbc1f8048a88df3c6a0d139323e1722fc5aa	Đôi Mi Sol rồi nối Mi
+g8-n30-083	n30	54	dyad-tie	RH	37	28	9	4/4	9	36	98ca0c0ecaa7b617c545c0bb66dddb084b5d31fbb11de1499e1af41180de598f	Đôi Mi Sol rồi nối Đô
+g8-n30-084	n30	70	dyad-tie	RH	35	26	9	4/4	9	36	426e293365b7134391536120a8bcf0169b94ee9c9e4ab054d39fb6ac677c9db3	Đôi Mi Sol rồi nối Sol
+g8-n30-085	n30	86	dyad-tie	RH	36	27	9	4/4	9	36	ad24f898129a76cf9bada5f4e36540b93f4cda84e48f1d7cbb16f27c13e5f762	Quãng năm rồi nối Đô
+g8-n30-086	n30	78	dyad-tie	RH	36	27	9	4/4	9	36	75e675283db7adfa2178d4f5bea799bcedfe689be8c4f57de96a148abd15f4ad	Quãng năm rồi nối Sol
+g8-n30-087	n30	94	dyad-tie	RH	36	27	9	4/4	9	36	ab7bc491e4f7b36a7970214b60000628cca05030fedeb8b35dbbfe09ac0fbfd6	Rê Sol rồi nối Fa
+g8-n30-088	n30	18	dyad-tie	LH	36	9	27	4/4	9	36	49d08444cd9d7c7540ebec2455813e839712fe43ede31e3b7e7342f1e54e81d0	Đôi trầm rồi nối Đô
+g8-n30-089	n30	6	dyad-tie	LH	37	9	28	4/4	9	36	4474ba6f50c6c2a886f601297ca5e4145a6623be1cf806e2f0afac591a1d2157	Đôi trầm rồi nối Mi
+g8-n30-090	n30	10	dyad-tie	LH	35	9	26	4/4	9	36	b3b9af64aa55a8a919ab5d2b1f33203d31ff0f95fdf2afb549f6fb17aa9e78cd	Đôi trầm rồi nối Sol
+g8-n30-091	n30	26	dyad-tie	LH	36	9	27	4/4	9	36	49ef5ef1f75f2cb92e5834e1965daac973553f504dcca2d8f73084be2d8fe5db	Rê Fa trầm rồi nối Rê
+g8-n30-092	n30	42	dyad-tie	LH	36	9	27	4/4	9	36	1b784f452dcd406fe3a88b1359a71f836d94fd4e0bb02368aa899da6299cc61e	Rê Fa trầm rồi nối Fa
+g8-n30-093	n30	34	dyad-tie	LH	36	9	27	4/4	9	36	a49ceeac23405779c5fe029525f5bd19fc15e5fffa8b4dfa448a9f63c3009f35	Rê Fa trầm rồi nối Mi
+g8-n30-094	n30	50	dyad-tie	LH	36	9	27	4/4	9	36	802ab3dc3b9c5a2949dc7f66d5b1fbc1f8048a88df3c6a0d139323e1722fc5aa	Mi Sol trầm rồi nối Mi
+g8-n30-095	n30	66	dyad-tie	LH	37	9	28	4/4	9	36	98ca0c0ecaa7b617c545c0bb66dddb084b5d31fbb11de1499e1af41180de598f	Mi Sol trầm rồi nối Đô
+g8-n30-096	n30	58	dyad-tie	LH	35	9	26	4/4	9	36	426e293365b7134391536120a8bcf0169b94ee9c9e4ab054d39fb6ac677c9db3	Mi Sol trầm rồi nối Sol
+g8-n30-097	n30	74	dyad-tie	LH	36	9	27	4/4	9	36	ad24f898129a76cf9bada5f4e36540b93f4cda84e48f1d7cbb16f27c13e5f762	Năm trầm rồi nối Đô
+g8-n30-098	n30	90	dyad-tie	LH	36	9	27	4/4	9	36	75e675283db7adfa2178d4f5bea799bcedfe689be8c4f57de96a148abd15f4ad	Năm trầm rồi nối Sol
+g8-n30-099	n30	82	dyad-tie	LH	36	9	27	4/4	9	36	ab7bc491e4f7b36a7970214b60000628cca05030fedeb8b35dbbfe09ac0fbfd6	Rê Sol trầm rồi nối Fa
+g8-n30-100	n30	98	dyad-tie	LH	36	9	27	4/4	9	36	7106cc5339fe832ef0ff656262efed07cb186aa8546969ee67c262be258db942	Rê Sol trầm rồi nối Rê
+g8-n50-001	n50	1	ledger-high	RH	48	35	13	4/4	13	52	9041df1dc342ec9b70023da1b128274906f74fc323e48fe2f0d19273ed97c1ab	Dòng phụ cao Đô Rê Mi
+g8-n50-002	n50	11	ledger-high	RH	50	37	13	4/4	13	52	aa99c71af34d27862c701f117915c673b62c7dabd3dfcae0cdf7d46ecf7d9db4	Dòng phụ cao Đô Rê Fa
+g8-n50-003	n50	7	ledger-high	RH	48	35	13	4/4	13	52	53ef629034e7c31a141f49bce15c223ffa94daf119600523e03531f296f82c0e	Dòng phụ cao Đô Rê Sol
+g8-n50-004	n50	19	ledger-high	RH	47	34	13	4/4	13	52	44dc546d39c8ecf6f98e6d78f280507494523aa27c37948e563b8b735e604568	Dòng phụ cao Đô Mi Rê
+g8-n50-005	n50	15	ledger-high	RH	50	37	13	4/4	13	52	0da7821485b14ae34f7932df557f3a3f93edc067d886594a76efa319952d26aa	Dòng phụ cao Đô Mi Sol
+g8-n50-006	n50	27	ledger-high	RH	48	35	13	4/4	13	52	0835ac3909f53af7952f0c8036494ac646f24e94941d84d4161f5be7ec5c83f7	Dòng phụ cao Rê Mi Đô
+g8-n50-007	n50	23	ledger-high	RH	48	35	13	4/4	13	52	645717ae2846a6948e0800ef2d428714c2f60eac07abc53b554f60a0917eed03	Dòng phụ cao Rê Mi Fa
+g8-n50-008	n50	35	ledger-high	RH	47	34	13	4/4	13	52	95919162d63676336fe2fc8a334979887b7a93cd757a8f4939376d28efbdb973	Dòng phụ cao Rê Mi Sol
+g8-n50-009	n50	31	ledger-high	RH	48	35	13	4/4	13	52	7c74bae0637abc1a8f9e923a93b3700624c11a2d4f8ae84ba6c90b1777479bd9	Dòng phụ cao Rê Fa Mi
+g8-n50-010	n50	43	ledger-high	RH	48	35	13	4/4	13	52	b1fec756fc325e1dd190de789fdafda5d190313788ff534df9b47f88bfa1760f	Dòng phụ cao Rê Fa Sol
+g8-n50-011	n50	39	ledger-high	RH	47	34	13	4/4	13	52	1113bb5800679ab42f8f4c24f8945add249b70bb3fac0958228da3df9dc99543	Dòng phụ cao Mi Đô Rê
+g8-n50-012	n50	51	ledger-high	RH	50	37	13	4/4	13	52	c3ba151d45d1909f42f6391101f12f02f28c3a0c16ea48f778fff4135347a8a5	Dòng phụ cao Mi Đô Sol
+g8-n50-013	n50	47	ledger-high	RH	50	37	13	4/4	13	52	5bb3667263b099fc0c7359bc26304796effb5cf549c0f8ee5e490d569c31b39b	Dòng phụ cao Mi Rê Đô
+g8-n50-014	n50	59	ledger-high	RH	47	34	13	4/4	13	52	a2bf7cc2689cca0671c040bc42f7b10321ebce901deeabcdeeeecc71f29fc021	Dòng phụ cao Mi Rê Fa
+g8-n50-015	n50	55	ledger-high	RH	48	35	13	4/4	13	52	6abbca76ecbe46ef560c039650a43b87736a40c4a0085e646c47758e3093d123	Dòng phụ cao Mi Sol Fa
+g8-n50-016	n50	67	ledger-high	RH	48	35	13	4/4	13	52	382ffb0c5789e5221784b608266834d8291fdb316a26310781ecaddfca05fbfb	Dòng phụ cao Fa Rê Đô
+g8-n50-017	n50	63	ledger-high	RH	48	35	13	4/4	13	52	1b55288f59b730a4e58b33bbcd8e71d4a7e69d8f72a8585035cd2e0660730781	Dòng phụ cao Fa Rê Mi
+g8-n50-018	n50	75	ledger-high	RH	50	37	13	4/4	13	52	20b657b84765ae398a885f031cf7d6855f19d27aee906571d1cd800f2f79ae9f	Dòng phụ cao Fa Rê Sol
+g8-n50-019	n50	71	ledger-high	RH	47	34	13	4/4	13	52	4354f74b0b98331d0b7a2258bf3c2ec81af3a15a5f03fb0df58bcf7b95d4b991	Dòng phụ cao Fa Mi Rê
+g8-n50-020	n50	83	ledger-high	RH	50	37	13	4/4	13	52	5839e5e7a76c09bfb559d47bb444d1f332186cf85d9bf7753cbe3e0216608679	Dòng phụ cao Fa Mi Sol
+g8-n50-021	n50	79	ledger-high	RH	48	35	13	4/4	13	52	53c5e3afa8881dcb77b8711d391d0338987df03cfb3cb17105be113b72df1dfe	Dòng phụ cao Sol Mi Đô
+g8-n50-022	n50	91	ledger-high	RH	47	34	13	4/4	13	52	70cec72e8d7feb028c99fdc59b05c1b1f230dfcc1421df0e9750c9f14828620a	Dòng phụ cao Sol Mi Rê
+g8-n50-023	n50	87	ledger-high	RH	48	35	13	4/4	13	52	6d68174c49c3e5a5dcb829fa2bdf99092a6eb44ecedc12d5b73adc8b50d9715b	Dòng phụ cao Sol Mi Fa
+g8-n50-024	n50	99	ledger-high	RH	48	35	13	4/4	13	52	a6ca1c444360d02e62c58cc6381d8d31a72285378fc3e97a9d49c7138acdb3bf	Dòng phụ cao Sol Fa Rê
+g8-n50-025	n50	95	ledger-high	RH	48	35	13	4/4	13	52	59920b2b7d74a755c4a1f3f6fe7751882da086c32814bc8b4319cc8020386158	Dòng phụ cao Sol Fa Mi
+g8-n50-026	n50	8	ledger-low	LH	48	13	35	4/4	13	52	9041df1dc342ec9b70023da1b128274906f74fc323e48fe2f0d19273ed97c1ab	Dòng phụ trầm Đô Rê Mi
+g8-n50-027	n50	2	ledger-low	LH	50	13	37	4/4	13	52	aa99c71af34d27862c701f117915c673b62c7dabd3dfcae0cdf7d46ecf7d9db4	Dòng phụ trầm Đô Rê Fa
+g8-n50-028	n50	16	ledger-low	LH	48	13	35	4/4	13	52	53ef629034e7c31a141f49bce15c223ffa94daf119600523e03531f296f82c0e	Dòng phụ trầm Đô Rê Sol
+g8-n50-029	n50	12	ledger-low	LH	47	13	34	4/4	13	52	44dc546d39c8ecf6f98e6d78f280507494523aa27c37948e563b8b735e604568	Dòng phụ trầm Đô Mi Rê
+g8-n50-030	n50	24	ledger-low	LH	50	13	37	4/4	13	52	0da7821485b14ae34f7932df557f3a3f93edc067d886594a76efa319952d26aa	Dòng phụ trầm Đô Mi Sol
+g8-n50-031	n50	20	ledger-low	LH	48	13	35	4/4	13	52	0835ac3909f53af7952f0c8036494ac646f24e94941d84d4161f5be7ec5c83f7	Dòng phụ trầm Rê Mi Đô
+g8-n50-032	n50	32	ledger-low	LH	48	13	35	4/4	13	52	645717ae2846a6948e0800ef2d428714c2f60eac07abc53b554f60a0917eed03	Dòng phụ trầm Rê Mi Fa
+g8-n50-033	n50	28	ledger-low	LH	47	13	34	4/4	13	52	95919162d63676336fe2fc8a334979887b7a93cd757a8f4939376d28efbdb973	Dòng phụ trầm Rê Mi Sol
+g8-n50-034	n50	40	ledger-low	LH	48	13	35	4/4	13	52	7c74bae0637abc1a8f9e923a93b3700624c11a2d4f8ae84ba6c90b1777479bd9	Dòng phụ trầm Rê Fa Mi
+g8-n50-035	n50	36	ledger-low	LH	48	13	35	4/4	13	52	b1fec756fc325e1dd190de789fdafda5d190313788ff534df9b47f88bfa1760f	Dòng phụ trầm Rê Fa Sol
+g8-n50-036	n50	48	ledger-low	LH	47	13	34	4/4	13	52	1113bb5800679ab42f8f4c24f8945add249b70bb3fac0958228da3df9dc99543	Dòng phụ trầm Mi Đô Rê
+g8-n50-037	n50	44	ledger-low	LH	50	13	37	4/4	13	52	c3ba151d45d1909f42f6391101f12f02f28c3a0c16ea48f778fff4135347a8a5	Dòng phụ trầm Mi Đô Sol
+g8-n50-038	n50	56	ledger-low	LH	50	13	37	4/4	13	52	5bb3667263b099fc0c7359bc26304796effb5cf549c0f8ee5e490d569c31b39b	Dòng phụ trầm Mi Rê Đô
+g8-n50-039	n50	52	ledger-low	LH	47	13	34	4/4	13	52	a2bf7cc2689cca0671c040bc42f7b10321ebce901deeabcdeeeecc71f29fc021	Dòng phụ trầm Mi Rê Fa
+g8-n50-040	n50	64	ledger-low	LH	48	13	35	4/4	13	52	6abbca76ecbe46ef560c039650a43b87736a40c4a0085e646c47758e3093d123	Dòng phụ trầm Mi Sol Fa
+g8-n50-041	n50	60	ledger-low	LH	48	13	35	4/4	13	52	382ffb0c5789e5221784b608266834d8291fdb316a26310781ecaddfca05fbfb	Dòng phụ trầm Fa Rê Đô
+g8-n50-042	n50	72	ledger-low	LH	48	13	35	4/4	13	52	1b55288f59b730a4e58b33bbcd8e71d4a7e69d8f72a8585035cd2e0660730781	Dòng phụ trầm Fa Rê Mi
+g8-n50-043	n50	68	ledger-low	LH	50	13	37	4/4	13	52	20b657b84765ae398a885f031cf7d6855f19d27aee906571d1cd800f2f79ae9f	Dòng phụ trầm Fa Rê Sol
+g8-n50-044	n50	80	ledger-low	LH	47	13	34	4/4	13	52	4354f74b0b98331d0b7a2258bf3c2ec81af3a15a5f03fb0df58bcf7b95d4b991	Dòng phụ trầm Fa Mi Rê
+g8-n50-045	n50	76	ledger-low	LH	50	13	37	4/4	13	52	5839e5e7a76c09bfb559d47bb444d1f332186cf85d9bf7753cbe3e0216608679	Dòng phụ trầm Fa Mi Sol
+g8-n50-046	n50	88	ledger-low	LH	48	13	35	4/4	13	52	53c5e3afa8881dcb77b8711d391d0338987df03cfb3cb17105be113b72df1dfe	Dòng phụ trầm Sol Mi Đô
+g8-n50-047	n50	84	ledger-low	LH	47	13	34	4/4	13	52	70cec72e8d7feb028c99fdc59b05c1b1f230dfcc1421df0e9750c9f14828620a	Dòng phụ trầm Sol Mi Rê
+g8-n50-048	n50	96	ledger-low	LH	48	13	35	4/4	13	52	6d68174c49c3e5a5dcb829fa2bdf99092a6eb44ecedc12d5b73adc8b50d9715b	Dòng phụ trầm Sol Mi Fa
+g8-n50-049	n50	92	ledger-low	LH	48	13	35	4/4	13	52	a6ca1c444360d02e62c58cc6381d8d31a72285378fc3e97a9d49c7138acdb3bf	Dòng phụ trầm Sol Fa Rê
+g8-n50-050	n50	100	ledger-low	LH	48	13	35	4/4	13	52	59920b2b7d74a755c4a1f3f6fe7751882da086c32814bc8b4319cc8020386158	Dòng phụ trầm Sol Fa Mi
+g8-n50-051	n50	3	dyad-dotted	RH	51	38	13	4/4	13	52	7ddc4b0f8f8d4b9f19655ed0d3379e1230777d3b4e7d9fe534ef07b33b3d2061	Đôi Đô Mi chấm rồi Đô
+g8-n50-052	n50	17	dyad-dotted	RH	52	39	13	4/4	13	52	23f4bc83b6f94f3a4606cea961e18a68a971c817acf5910f493ddcdedc09a95c	Đôi Đô Mi chấm rồi Mi
+g8-n50-053	n50	9	dyad-dotted	RH	51	38	13	4/4	13	52	385c65e7e342088946b1465e21bef3a25dc5de9cab0ddb5d8185c2c9d768adc9	Đôi Đô Mi chấm tới Sol
+g8-n50-054	n50	25	dyad-dotted	RH	52	39	13	4/4	13	52	80a12ac801a7b3a5f611ea67e64f49c7c00fc0137ea76179cd2565be3d94ede3	Đôi Rê Fa chấm về Rê
+g8-n50-055	n50	41	dyad-dotted	RH	52	39	13	4/4	13	52	35d7ed6ac5837e5bf6daf73e455f92da1f652636bc0e475c7d76e15cd0a422b9	Đôi Rê Fa chấm về Fa
+g8-n50-056	n50	33	dyad-dotted	RH	51	38	13	4/4	13	52	91750846db18be7d0c8fba47415efff58ec91137483d00d2052ba7afddca9ec5	Đôi Rê Fa chấm sang Mi
+g8-n50-057	n50	49	dyad-dotted	RH	51	38	13	4/4	13	52	0704dc02ddffadd43fdb7401e16741c70a32f7bc7ebf51dc33cece3a5d854244	Đôi Mi Sol chấm về Mi
+g8-n50-058	n50	65	dyad-dotted	RH	52	39	13	4/4	13	52	eca094544df81be0296965baa108780625e6e16760f7137a6cfb4e14076e5da5	Đôi Mi Sol chấm về Đô
+g8-n50-059	n50	57	dyad-dotted	RH	51	38	13	4/4	13	52	772f86416fff88d1008c54d8c82cae3d7e3f5d21fa7dfff811940fc9922db8bb	Đôi Mi Sol chấm giữ Sol
+g8-n50-060	n50	73	dyad-dotted	RH	51	38	13	4/4	13	52	137ef3e41cd375b17cb4a0bb9a7f0d1b5a7c7048c77a24432a36c6796da46929	Đôi quãng năm chấm Đô
+g8-n50-061	n50	89	dyad-dotted	RH	52	39	13	4/4	13	52	22800fe001aef3d64de707970a38213f7f2a1f9b69d9a15f590221788cad0947	Đôi quãng năm chấm Sol
+g8-n50-062	n50	81	dyad-dotted	RH	52	39	13	4/4	13	52	4f7faa28c38cdf41fccab957332cd21c1f31ad11fc94a473b9dc516628c7ba94	Đôi Rê Sol chấm Fa
+g8-n50-063	n50	97	dyad-dotted	RH	52	39	13	4/4	13	52	1ef4a618ce3d8cd8fe18f7058fd11b8cb1d606f671bfe955ad62a2314c003e92	Đôi Rê Sol chấm Rê
+g8-n50-064	n50	13	dyad-dotted	LH	51	13	38	4/4	13	52	7ddc4b0f8f8d4b9f19655ed0d3379e1230777d3b4e7d9fe534ef07b33b3d2061	Đôi trầm chấm về Đô
+g8-n50-065	n50	4	dyad-dotted	LH	52	13	39	4/4	13	52	23f4bc83b6f94f3a4606cea961e18a68a971c817acf5910f493ddcdedc09a95c	Đôi trầm chấm về Mi
+g8-n50-066	n50	21	dyad-dotted	LH	51	13	38	4/4	13	52	385c65e7e342088946b1465e21bef3a25dc5de9cab0ddb5d8185c2c9d768adc9	Đôi trầm chấm tới Sol
+g8-n50-067	n50	37	dyad-dotted	LH	52	13	39	4/4	13	52	80a12ac801a7b3a5f611ea67e64f49c7c00fc0137ea76179cd2565be3d94ede3	Rê Fa trầm chấm Rê
+g8-n50-068	n50	29	dyad-dotted	LH	52	13	39	4/4	13	52	35d7ed6ac5837e5bf6daf73e455f92da1f652636bc0e475c7d76e15cd0a422b9	Rê Fa trầm chấm Fa
+g8-n50-069	n50	45	dyad-dotted	LH	51	13	38	4/4	13	52	91750846db18be7d0c8fba47415efff58ec91137483d00d2052ba7afddca9ec5	Rê Fa trầm chấm Mi
+g8-n50-070	n50	61	dyad-dotted	LH	51	13	38	4/4	13	52	0704dc02ddffadd43fdb7401e16741c70a32f7bc7ebf51dc33cece3a5d854244	Mi Sol trầm chấm Mi
+g8-n50-071	n50	53	dyad-dotted	LH	52	13	39	4/4	13	52	eca094544df81be0296965baa108780625e6e16760f7137a6cfb4e14076e5da5	Mi Sol trầm chấm Đô
+g8-n50-072	n50	69	dyad-dotted	LH	51	13	38	4/4	13	52	772f86416fff88d1008c54d8c82cae3d7e3f5d21fa7dfff811940fc9922db8bb	Mi Sol trầm chấm Sol
+g8-n50-073	n50	85	dyad-dotted	LH	51	13	38	4/4	13	52	137ef3e41cd375b17cb4a0bb9a7f0d1b5a7c7048c77a24432a36c6796da46929	Năm trầm chấm Đô
+g8-n50-074	n50	77	dyad-dotted	LH	52	13	39	4/4	13	52	22800fe001aef3d64de707970a38213f7f2a1f9b69d9a15f590221788cad0947	Năm trầm chấm Sol
+g8-n50-075	n50	93	dyad-dotted	LH	52	13	39	4/4	13	52	4f7faa28c38cdf41fccab957332cd21c1f31ad11fc94a473b9dc516628c7ba94	Rê Sol trầm chấm Fa
+g8-n50-076	n50	5	dyad-tie	RH	51	38	13	4/4	13	52	5dfef2ef77fb14eee98b68856a8128a6bfca2d9b42d42d2816197b04d29e878c	Đôi Đô Mi rồi nối Đô
+g8-n50-077	n50	14	dyad-tie	RH	52	39	13	4/4	13	52	13667a6abd4bbd90844024de88c87d05a477f23fb9d20d535b7cb5791d4d446c	Đôi Đô Mi rồi nối Mi
+g8-n50-078	n50	22	dyad-tie	RH	51	38	13	4/4	13	52	7efaab126237ac05402169357053e9462453e26b457289a05bb48ce7cd95f752	Đôi Đô Mi rồi nối Sol
+g8-n50-079	n50	38	dyad-tie	RH	52	39	13	4/4	13	52	4b1a42a9bd8867f7f2284286d114e3e6b51f341efd20a689a65d83ce3930a082	Đôi Rê Fa rồi nối Rê
+g8-n50-080	n50	30	dyad-tie	RH	52	39	13	4/4	13	52	3d15cb3070e3b3a896af52e03fc520f36c0ef939b571e2fdc867107063e49826	Đôi Rê Fa rồi nối Fa
+g8-n50-081	n50	46	dyad-tie	RH	51	38	13	4/4	13	52	534bf6954177de5f9b143cfae8494db9564acca935c9aaa6556340e7b31c8bf7	Đôi Rê Fa rồi nối Mi
+g8-n50-082	n50	62	dyad-tie	RH	51	38	13	4/4	13	52	402673066b7ad3a5b59cc6b615aa30d5ec284309740e98fb3394212e9d1013fb	Đôi Mi Sol rồi nối Mi
+g8-n50-083	n50	54	dyad-tie	RH	52	39	13	4/4	13	52	2cd080ae98c3ee55cdadff7a3547d43306d2d14ddc87683e017d91f5920cc27d	Đôi Mi Sol rồi nối Đô
+g8-n50-084	n50	70	dyad-tie	RH	51	38	13	4/4	13	52	53781b7849b1cff879f6a02bdc566f4cbf0e5a64a684ac03eeb1e846c31a2693	Đôi Mi Sol rồi nối Sol
+g8-n50-085	n50	86	dyad-tie	RH	51	38	13	4/4	13	52	6b32cf089a2f4e633b8a609199a8161b70027bd6d64a104e6af93d9424fd3c5a	Quãng năm rồi nối Đô
+g8-n50-086	n50	78	dyad-tie	RH	52	39	13	4/4	13	52	23971f9a0adf674da3f00e4e8d5b1bb69761040651888abf0834afda85e943ae	Quãng năm rồi nối Sol
+g8-n50-087	n50	94	dyad-tie	RH	52	39	13	4/4	13	52	51b5d8998a3619964b284d3614a9c18c4c8cdea3d08ea078574598e78b419c81	Rê Sol rồi nối Fa
+g8-n50-088	n50	18	dyad-tie	LH	51	13	38	4/4	13	52	5dfef2ef77fb14eee98b68856a8128a6bfca2d9b42d42d2816197b04d29e878c	Đôi trầm rồi nối Đô
+g8-n50-089	n50	6	dyad-tie	LH	52	13	39	4/4	13	52	13667a6abd4bbd90844024de88c87d05a477f23fb9d20d535b7cb5791d4d446c	Đôi trầm rồi nối Mi
+g8-n50-090	n50	10	dyad-tie	LH	51	13	38	4/4	13	52	7efaab126237ac05402169357053e9462453e26b457289a05bb48ce7cd95f752	Đôi trầm rồi nối Sol
+g8-n50-091	n50	26	dyad-tie	LH	52	13	39	4/4	13	52	4b1a42a9bd8867f7f2284286d114e3e6b51f341efd20a689a65d83ce3930a082	Rê Fa trầm rồi nối Rê
+g8-n50-092	n50	42	dyad-tie	LH	52	13	39	4/4	13	52	3d15cb3070e3b3a896af52e03fc520f36c0ef939b571e2fdc867107063e49826	Rê Fa trầm rồi nối Fa
+g8-n50-093	n50	34	dyad-tie	LH	51	13	38	4/4	13	52	534bf6954177de5f9b143cfae8494db9564acca935c9aaa6556340e7b31c8bf7	Rê Fa trầm rồi nối Mi
+g8-n50-094	n50	50	dyad-tie	LH	51	13	38	4/4	13	52	402673066b7ad3a5b59cc6b615aa30d5ec284309740e98fb3394212e9d1013fb	Mi Sol trầm rồi nối Mi
+g8-n50-095	n50	66	dyad-tie	LH	52	13	39	4/4	13	52	2cd080ae98c3ee55cdadff7a3547d43306d2d14ddc87683e017d91f5920cc27d	Mi Sol trầm rồi nối Đô
+g8-n50-096	n50	58	dyad-tie	LH	51	13	38	4/4	13	52	53781b7849b1cff879f6a02bdc566f4cbf0e5a64a684ac03eeb1e846c31a2693	Mi Sol trầm rồi nối Sol
+g8-n50-097	n50	74	dyad-tie	LH	51	13	38	4/4	13	52	6b32cf089a2f4e633b8a609199a8161b70027bd6d64a104e6af93d9424fd3c5a	Năm trầm rồi nối Đô
+g8-n50-098	n50	90	dyad-tie	LH	52	13	39	4/4	13	52	23971f9a0adf674da3f00e4e8d5b1bb69761040651888abf0834afda85e943ae	Năm trầm rồi nối Sol
+g8-n50-099	n50	82	dyad-tie	LH	52	13	39	4/4	13	52	51b5d8998a3619964b284d3614a9c18c4c8cdea3d08ea078574598e78b419c81	Rê Sol trầm rồi nối Fa
+g8-n50-100	n50	98	dyad-tie	LH	52	13	39	4/4	13	52	a27fdd6a5385f9176be8d3dfc7d38587d10fdf8dd180bf35f7a9503003ef2666	Rê Sol trầm rồi nối Rê
+g8-n100-001	n100	1	ledger-high	RH	79	58	21	4/4	21	84	2d6ace29451aa54eef99b4a67c8654329f037ae0acabb687fc24e8c123692d7f	Dòng phụ cao Đô Rê Mi
+g8-n100-002	n100	11	ledger-high	RH	78	57	21	4/4	21	84	51c3d735e5a937a27dbf6a0d5120578cab3237a7a4a660cf79fa8a525f1af57f	Dòng phụ cao Đô Rê Fa
+g8-n100-003	n100	7	ledger-high	RH	76	55	21	4/4	21	84	ce841dc33e449af9bc64e4b92190927d984c4aa8ba2fa6d739855a3c253f6ac9	Dòng phụ cao Đô Rê Sol
+g8-n100-004	n100	19	ledger-high	RH	78	57	21	4/4	21	84	91fc8d5e2c68ca7acf1657d423a687f02d717ed6d12a318c1f4d95d338c21d52	Dòng phụ cao Đô Mi Rê
+g8-n100-005	n100	15	ledger-high	RH	79	58	21	4/4	21	84	01e290a8a117ef7ee8e24928304a5ca9a5f3e0133dc0481ba6b1c0b675737638	Dòng phụ cao Đô Mi Sol
+g8-n100-006	n100	27	ledger-high	RH	78	57	21	4/4	21	84	4d6325ad13ed254b301ea6f54ba68f3132c129d6cc019e5566e5df1e8ee6e561	Dòng phụ cao Rê Mi Đô
+g8-n100-007	n100	23	ledger-high	RH	76	55	21	4/4	21	84	1ca183a2f32382e4ec36f93e1d555efd1ff2c6fa3ebb0040742dfe310dd30d4e	Dòng phụ cao Rê Mi Fa
+g8-n100-008	n100	35	ledger-high	RH	78	57	21	4/4	21	84	3512a9d9d06231ab345e4cfb4dc5b1d160f0409195fd31bcf8a4d49b2c6bba72	Dòng phụ cao Rê Mi Sol
+g8-n100-009	n100	31	ledger-high	RH	79	58	21	4/4	21	84	d1f626d2b9c044ed18704b5c54f37bb114136e2beb9f993e9ee0a6d11d621b2e	Dòng phụ cao Rê Fa Mi
+g8-n100-010	n100	43	ledger-high	RH	78	57	21	4/4	21	84	bc292bbb2b74229918eceff42f047b7b131a577fdee4b4848c1080d87c45eeb4	Dòng phụ cao Rê Fa Sol
+g8-n100-011	n100	39	ledger-high	RH	76	55	21	4/4	21	84	3a8fcdfa0aee366c89ecf77fe13dbc28808dd37dedd836753ee313128daf7182	Dòng phụ cao Mi Đô Rê
+g8-n100-012	n100	51	ledger-high	RH	78	57	21	4/4	21	84	c5f1ea13c9018e7c937a5deef1875445be0d951cda68566fdf9f9d8568e4a895	Dòng phụ cao Mi Đô Sol
+g8-n100-013	n100	47	ledger-high	RH	79	58	21	4/4	21	84	258968bcfd5e7831561713967deee06b62b7b8f88c58840a89aa602f823c467e	Dòng phụ cao Mi Rê Đô
+g8-n100-014	n100	59	ledger-high	RH	78	57	21	4/4	21	84	4d359e9ec2c835c7df748b6284e71487dd67be06401988fa815fee3675531b0f	Dòng phụ cao Mi Rê Fa
+g8-n100-015	n100	55	ledger-high	RH	76	55	21	4/4	21	84	15e2f7360bcfe79a517f28ef681c940906b25cd3636cbbced729108219295bf1	Dòng phụ cao Mi Sol Fa
+g8-n100-016	n100	67	ledger-high	RH	78	57	21	4/4	21	84	47cfdb4842a2cd46f95f95f96d5663fcdf5633fb24c745dd0ce859e73f13708d	Dòng phụ cao Fa Rê Đô
+g8-n100-017	n100	63	ledger-high	RH	79	58	21	4/4	21	84	470588c8140b1b677a148f3870fa0863aa5f0c150a9d6769cacb66206117f681	Dòng phụ cao Fa Rê Mi
+g8-n100-018	n100	75	ledger-high	RH	78	57	21	4/4	21	84	da25b249e5b8d4fcf014c99e7e58e18f9412f72f090aab05dd734790c8799bff	Dòng phụ cao Fa Rê Sol
+g8-n100-019	n100	71	ledger-high	RH	76	55	21	4/4	21	84	5a185ab46c77c1519f39913fe6dda81917210b0d0c6fb2d824cf9fb3a341f6e5	Dòng phụ cao Fa Mi Rê
+g8-n100-020	n100	83	ledger-high	RH	78	57	21	4/4	21	84	c0e6c4034d0e30e575e1fe0f7d9ebf04c4fa0e2a3983645b58aa0ea55c40bbd0	Dòng phụ cao Fa Mi Sol
+g8-n100-021	n100	79	ledger-high	RH	79	58	21	4/4	21	84	aa117de4f6dbf81b057396e9c161998d8da9581e8b817cabbe7e54e245c5bd88	Dòng phụ cao Sol Mi Đô
+g8-n100-022	n100	91	ledger-high	RH	78	57	21	4/4	21	84	20c6f3e93033668f115287ea000c1372d0f66c58541aa01b47a831ec8ae86953	Dòng phụ cao Sol Mi Rê
+g8-n100-023	n100	87	ledger-high	RH	76	55	21	4/4	21	84	6d2b3731e4d5594d77f4ec84290c47b403f7bca39c3a0b021113c189d7f6b684	Dòng phụ cao Sol Mi Fa
+g8-n100-024	n100	99	ledger-high	RH	78	57	21	4/4	21	84	226874e2f48944751b19cd1eff037fb9382816332cc2d485269bdc9404c8b44b	Dòng phụ cao Sol Fa Rê
+g8-n100-025	n100	95	ledger-high	RH	79	58	21	4/4	21	84	cd9dc380cf903650265b6fdf2e7971ba6ffd9a97fc5a9efe143954e77a951a00	Dòng phụ cao Sol Fa Mi
+g8-n100-026	n100	8	ledger-low	LH	79	21	58	4/4	21	84	2d6ace29451aa54eef99b4a67c8654329f037ae0acabb687fc24e8c123692d7f	Dòng phụ trầm Đô Rê Mi
+g8-n100-027	n100	2	ledger-low	LH	78	21	57	4/4	21	84	51c3d735e5a937a27dbf6a0d5120578cab3237a7a4a660cf79fa8a525f1af57f	Dòng phụ trầm Đô Rê Fa
+g8-n100-028	n100	16	ledger-low	LH	76	21	55	4/4	21	84	ce841dc33e449af9bc64e4b92190927d984c4aa8ba2fa6d739855a3c253f6ac9	Dòng phụ trầm Đô Rê Sol
+g8-n100-029	n100	12	ledger-low	LH	78	21	57	4/4	21	84	91fc8d5e2c68ca7acf1657d423a687f02d717ed6d12a318c1f4d95d338c21d52	Dòng phụ trầm Đô Mi Rê
+g8-n100-030	n100	24	ledger-low	LH	79	21	58	4/4	21	84	01e290a8a117ef7ee8e24928304a5ca9a5f3e0133dc0481ba6b1c0b675737638	Dòng phụ trầm Đô Mi Sol
+g8-n100-031	n100	20	ledger-low	LH	78	21	57	4/4	21	84	4d6325ad13ed254b301ea6f54ba68f3132c129d6cc019e5566e5df1e8ee6e561	Dòng phụ trầm Rê Mi Đô
+g8-n100-032	n100	32	ledger-low	LH	76	21	55	4/4	21	84	1ca183a2f32382e4ec36f93e1d555efd1ff2c6fa3ebb0040742dfe310dd30d4e	Dòng phụ trầm Rê Mi Fa
+g8-n100-033	n100	28	ledger-low	LH	78	21	57	4/4	21	84	3512a9d9d06231ab345e4cfb4dc5b1d160f0409195fd31bcf8a4d49b2c6bba72	Dòng phụ trầm Rê Mi Sol
+g8-n100-034	n100	40	ledger-low	LH	79	21	58	4/4	21	84	d1f626d2b9c044ed18704b5c54f37bb114136e2beb9f993e9ee0a6d11d621b2e	Dòng phụ trầm Rê Fa Mi
+g8-n100-035	n100	36	ledger-low	LH	78	21	57	4/4	21	84	bc292bbb2b74229918eceff42f047b7b131a577fdee4b4848c1080d87c45eeb4	Dòng phụ trầm Rê Fa Sol
+g8-n100-036	n100	48	ledger-low	LH	76	21	55	4/4	21	84	3a8fcdfa0aee366c89ecf77fe13dbc28808dd37dedd836753ee313128daf7182	Dòng phụ trầm Mi Đô Rê
+g8-n100-037	n100	44	ledger-low	LH	78	21	57	4/4	21	84	c5f1ea13c9018e7c937a5deef1875445be0d951cda68566fdf9f9d8568e4a895	Dòng phụ trầm Mi Đô Sol
+g8-n100-038	n100	56	ledger-low	LH	79	21	58	4/4	21	84	258968bcfd5e7831561713967deee06b62b7b8f88c58840a89aa602f823c467e	Dòng phụ trầm Mi Rê Đô
+g8-n100-039	n100	52	ledger-low	LH	78	21	57	4/4	21	84	4d359e9ec2c835c7df748b6284e71487dd67be06401988fa815fee3675531b0f	Dòng phụ trầm Mi Rê Fa
+g8-n100-040	n100	64	ledger-low	LH	76	21	55	4/4	21	84	15e2f7360bcfe79a517f28ef681c940906b25cd3636cbbced729108219295bf1	Dòng phụ trầm Mi Sol Fa
+g8-n100-041	n100	60	ledger-low	LH	78	21	57	4/4	21	84	47cfdb4842a2cd46f95f95f96d5663fcdf5633fb24c745dd0ce859e73f13708d	Dòng phụ trầm Fa Rê Đô
+g8-n100-042	n100	72	ledger-low	LH	79	21	58	4/4	21	84	470588c8140b1b677a148f3870fa0863aa5f0c150a9d6769cacb66206117f681	Dòng phụ trầm Fa Rê Mi
+g8-n100-043	n100	68	ledger-low	LH	78	21	57	4/4	21	84	da25b249e5b8d4fcf014c99e7e58e18f9412f72f090aab05dd734790c8799bff	Dòng phụ trầm Fa Rê Sol
+g8-n100-044	n100	80	ledger-low	LH	76	21	55	4/4	21	84	5a185ab46c77c1519f39913fe6dda81917210b0d0c6fb2d824cf9fb3a341f6e5	Dòng phụ trầm Fa Mi Rê
+g8-n100-045	n100	76	ledger-low	LH	78	21	57	4/4	21	84	c0e6c4034d0e30e575e1fe0f7d9ebf04c4fa0e2a3983645b58aa0ea55c40bbd0	Dòng phụ trầm Fa Mi Sol
+g8-n100-046	n100	88	ledger-low	LH	79	21	58	4/4	21	84	aa117de4f6dbf81b057396e9c161998d8da9581e8b817cabbe7e54e245c5bd88	Dòng phụ trầm Sol Mi Đô
+g8-n100-047	n100	84	ledger-low	LH	78	21	57	4/4	21	84	20c6f3e93033668f115287ea000c1372d0f66c58541aa01b47a831ec8ae86953	Dòng phụ trầm Sol Mi Rê
+g8-n100-048	n100	96	ledger-low	LH	76	21	55	4/4	21	84	6d2b3731e4d5594d77f4ec84290c47b403f7bca39c3a0b021113c189d7f6b684	Dòng phụ trầm Sol Mi Fa
+g8-n100-049	n100	92	ledger-low	LH	78	21	57	4/4	21	84	226874e2f48944751b19cd1eff037fb9382816332cc2d485269bdc9404c8b44b	Dòng phụ trầm Sol Fa Rê
+g8-n100-050	n100	100	ledger-low	LH	79	21	58	4/4	21	84	cd9dc380cf903650265b6fdf2e7971ba6ffd9a97fc5a9efe143954e77a951a00	Dòng phụ trầm Sol Fa Mi
+g8-n100-051	n100	3	dyad-dotted	RH	82	61	21	4/4	21	84	7ea1eaed61d407b033057bdea82bc6e2eb083e0f5c18e4a35301cd6a494de60c	Đôi Đô Mi chấm rồi Đô
+g8-n100-052	n100	17	dyad-dotted	RH	83	62	21	4/4	21	84	7d774d07e41abbf07948f42fc1b9a218d21f1d1ff6d24b409e472babff595505	Đôi Đô Mi chấm rồi Mi
+g8-n100-053	n100	9	dyad-dotted	RH	82	61	21	4/4	21	84	1b00278e3233acb4523d3a03452e5036ef7beb1dfb228696823dde14732d4a6f	Đôi Đô Mi chấm tới Sol
+g8-n100-054	n100	25	dyad-dotted	RH	83	62	21	4/4	21	84	09872c3f7da31b5f5e9bf41764c12609a678ed5e0d06cc6f88dc7f418fc9a08e	Đôi Rê Fa chấm về Rê
+g8-n100-055	n100	41	dyad-dotted	RH	82	61	21	4/4	21	84	2759b44934d6caca2ac38c730ef5a7dc82b255bf0dba778fcdd81a765b2ba920	Đôi Rê Fa chấm về Fa
+g8-n100-056	n100	33	dyad-dotted	RH	83	62	21	4/4	21	84	34c251e04e5fba0761433fc90633f625d834bf57750f03c3563ef6541095a8f1	Đôi Rê Fa chấm sang Mi
+g8-n100-057	n100	49	dyad-dotted	RH	82	61	21	4/4	21	84	6aa2ab18e54c557fdfb5bf5cd0a4856bd80f8e8bb5135e6e51db766d68ce6458	Đôi Mi Sol chấm về Mi
+g8-n100-058	n100	65	dyad-dotted	RH	83	62	21	4/4	21	84	47b858461177f9ebfc4aa8add34cb0a2ab416e9133c7595228eb87f7252116d6	Đôi Mi Sol chấm về Đô
+g8-n100-059	n100	57	dyad-dotted	RH	82	61	21	4/4	21	84	417a7b8421c6d69d8382395f6c59b1830b1b8bc1898dd97ae6cdd333720e8aae	Đôi Mi Sol chấm giữ Sol
+g8-n100-060	n100	73	dyad-dotted	RH	83	62	21	4/4	21	84	7739d1f2599e0d86375cfd782951faaf2e3627a3cf605e573a042f6c1d8cb214	Đôi quãng năm chấm Đô
+g8-n100-061	n100	89	dyad-dotted	RH	82	61	21	4/4	21	84	2d9b038ebc6980e0d679de9d34424f2307ac7c2787e89a1b5ec1163ddaf30dac	Đôi quãng năm chấm Sol
+g8-n100-062	n100	81	dyad-dotted	RH	83	62	21	4/4	21	84	53ed11a5c56b5716be193829d0da3a514934c97c522160ca9224225052095e80	Đôi Rê Sol chấm Fa
+g8-n100-063	n100	97	dyad-dotted	RH	82	61	21	4/4	21	84	329d92609f1ecdb2c4cc4891f51ff845a5859cd9e220fa9f10b4335f08503445	Đôi Rê Sol chấm Rê
+g8-n100-064	n100	13	dyad-dotted	LH	82	21	61	4/4	21	84	7ea1eaed61d407b033057bdea82bc6e2eb083e0f5c18e4a35301cd6a494de60c	Đôi trầm chấm về Đô
+g8-n100-065	n100	4	dyad-dotted	LH	83	21	62	4/4	21	84	7d774d07e41abbf07948f42fc1b9a218d21f1d1ff6d24b409e472babff595505	Đôi trầm chấm về Mi
+g8-n100-066	n100	21	dyad-dotted	LH	82	21	61	4/4	21	84	1b00278e3233acb4523d3a03452e5036ef7beb1dfb228696823dde14732d4a6f	Đôi trầm chấm tới Sol
+g8-n100-067	n100	37	dyad-dotted	LH	83	21	62	4/4	21	84	09872c3f7da31b5f5e9bf41764c12609a678ed5e0d06cc6f88dc7f418fc9a08e	Rê Fa trầm chấm Rê
+g8-n100-068	n100	29	dyad-dotted	LH	82	21	61	4/4	21	84	2759b44934d6caca2ac38c730ef5a7dc82b255bf0dba778fcdd81a765b2ba920	Rê Fa trầm chấm Fa
+g8-n100-069	n100	45	dyad-dotted	LH	83	21	62	4/4	21	84	34c251e04e5fba0761433fc90633f625d834bf57750f03c3563ef6541095a8f1	Rê Fa trầm chấm Mi
+g8-n100-070	n100	61	dyad-dotted	LH	82	21	61	4/4	21	84	6aa2ab18e54c557fdfb5bf5cd0a4856bd80f8e8bb5135e6e51db766d68ce6458	Mi Sol trầm chấm Mi
+g8-n100-071	n100	53	dyad-dotted	LH	83	21	62	4/4	21	84	47b858461177f9ebfc4aa8add34cb0a2ab416e9133c7595228eb87f7252116d6	Mi Sol trầm chấm Đô
+g8-n100-072	n100	69	dyad-dotted	LH	82	21	61	4/4	21	84	417a7b8421c6d69d8382395f6c59b1830b1b8bc1898dd97ae6cdd333720e8aae	Mi Sol trầm chấm Sol
+g8-n100-073	n100	85	dyad-dotted	LH	83	21	62	4/4	21	84	7739d1f2599e0d86375cfd782951faaf2e3627a3cf605e573a042f6c1d8cb214	Năm trầm chấm Đô
+g8-n100-074	n100	77	dyad-dotted	LH	82	21	61	4/4	21	84	2d9b038ebc6980e0d679de9d34424f2307ac7c2787e89a1b5ec1163ddaf30dac	Năm trầm chấm Sol
+g8-n100-075	n100	93	dyad-dotted	LH	83	21	62	4/4	21	84	53ed11a5c56b5716be193829d0da3a514934c97c522160ca9224225052095e80	Rê Sol trầm chấm Fa
+g8-n100-076	n100	5	dyad-tie	RH	82	61	21	4/4	21	84	83481921d24de02550d9a0e0b52cc64c4dc84d756b6b5ebf5851ff3c55c52671	Đôi Đô Mi rồi nối Đô
+g8-n100-077	n100	14	dyad-tie	RH	83	62	21	4/4	21	84	2b39f9beab80018d4a9a896b7e3914d7bba3a822b5c3d06fc65bb2d17f071887	Đôi Đô Mi rồi nối Mi
+g8-n100-078	n100	22	dyad-tie	RH	82	61	21	4/4	21	84	8f88e2054bc5bc13fc3203d8832d52382964d4533a1ba56431423e2244272f18	Đôi Đô Mi rồi nối Sol
+g8-n100-079	n100	38	dyad-tie	RH	83	62	21	4/4	21	84	18a59fbc03d7f9e4f6892d0d2cc542f30a1c2592cb2651ea913b988404505a90	Đôi Rê Fa rồi nối Rê
+g8-n100-080	n100	30	dyad-tie	RH	82	61	21	4/4	21	84	42be801162b3ce9d3931cc3adc46b2dcf3e997472348d0019a8afb2f8595eb99	Đôi Rê Fa rồi nối Fa
+g8-n100-081	n100	46	dyad-tie	RH	83	62	21	4/4	21	84	4d3bd479e5e768fef840b672166fb3c38fff6b38f0652a0da416e67742f3832f	Đôi Rê Fa rồi nối Mi
+g8-n100-082	n100	62	dyad-tie	RH	82	61	21	4/4	21	84	1d73ec32b2aff1f6b2c463ebf5558f1b480903286ff335723fba9da32fdea218	Đôi Mi Sol rồi nối Mi
+g8-n100-083	n100	54	dyad-tie	RH	83	62	21	4/4	21	84	201077550649690940fdd017f5d78e675b2a548ad790d9596c021b074fd71880	Đôi Mi Sol rồi nối Đô
+g8-n100-084	n100	70	dyad-tie	RH	82	61	21	4/4	21	84	14453e051d8d9692a879bbf5f597a01eb76f7e535d061a9f67a67ae8244fd838	Đôi Mi Sol rồi nối Sol
+g8-n100-085	n100	86	dyad-tie	RH	83	62	21	4/4	21	84	53cf14599fe7be8e474fe954e01c8673c03b3de1436b55eb11c063d12fa500ba	Quãng năm rồi nối Đô
+g8-n100-086	n100	78	dyad-tie	RH	82	61	21	4/4	21	84	12d81923c491801492c4e4eb0e4b5aa98b6b651036c05f12399ef1f985340cbf	Quãng năm rồi nối Sol
+g8-n100-087	n100	94	dyad-tie	RH	83	62	21	4/4	21	84	9128478b84f03520bb1f1a7fd018146e2f0a56d3d62797144d826b713b1f5601	Rê Sol rồi nối Fa
+g8-n100-088	n100	18	dyad-tie	LH	82	21	61	4/4	21	84	83481921d24de02550d9a0e0b52cc64c4dc84d756b6b5ebf5851ff3c55c52671	Đôi trầm rồi nối Đô
+g8-n100-089	n100	6	dyad-tie	LH	83	21	62	4/4	21	84	2b39f9beab80018d4a9a896b7e3914d7bba3a822b5c3d06fc65bb2d17f071887	Đôi trầm rồi nối Mi
+g8-n100-090	n100	10	dyad-tie	LH	82	21	61	4/4	21	84	8f88e2054bc5bc13fc3203d8832d52382964d4533a1ba56431423e2244272f18	Đôi trầm rồi nối Sol
+g8-n100-091	n100	26	dyad-tie	LH	83	21	62	4/4	21	84	18a59fbc03d7f9e4f6892d0d2cc542f30a1c2592cb2651ea913b988404505a90	Rê Fa trầm rồi nối Rê
+g8-n100-092	n100	42	dyad-tie	LH	82	21	61	4/4	21	84	42be801162b3ce9d3931cc3adc46b2dcf3e997472348d0019a8afb2f8595eb99	Rê Fa trầm rồi nối Fa
+g8-n100-093	n100	34	dyad-tie	LH	83	21	62	4/4	21	84	4d3bd479e5e768fef840b672166fb3c38fff6b38f0652a0da416e67742f3832f	Rê Fa trầm rồi nối Mi
+g8-n100-094	n100	50	dyad-tie	LH	82	21	61	4/4	21	84	1d73ec32b2aff1f6b2c463ebf5558f1b480903286ff335723fba9da32fdea218	Mi Sol trầm rồi nối Mi
+g8-n100-095	n100	66	dyad-tie	LH	83	21	62	4/4	21	84	201077550649690940fdd017f5d78e675b2a548ad790d9596c021b074fd71880	Mi Sol trầm rồi nối Đô
+g8-n100-096	n100	58	dyad-tie	LH	82	21	61	4/4	21	84	14453e051d8d9692a879bbf5f597a01eb76f7e535d061a9f67a67ae8244fd838	Mi Sol trầm rồi nối Sol
+g8-n100-097	n100	74	dyad-tie	LH	83	21	62	4/4	21	84	53cf14599fe7be8e474fe954e01c8673c03b3de1436b55eb11c063d12fa500ba	Năm trầm rồi nối Đô
+g8-n100-098	n100	90	dyad-tie	LH	82	21	61	4/4	21	84	12d81923c491801492c4e4eb0e4b5aa98b6b651036c05f12399ef1f985340cbf	Năm trầm rồi nối Sol
+g8-n100-099	n100	82	dyad-tie	LH	83	21	62	4/4	21	84	9128478b84f03520bb1f1a7fd018146e2f0a56d3d62797144d826b713b1f5601	Rê Sol trầm rồi nối Fa
+g8-n100-100	n100	98	dyad-tie	LH	82	21	61	4/4	21	84	025bd386731a8214dcc01e02f59999abcb6d29be02865036046454b33bcd48dc	Rê Sol trầm rồi nối Rê

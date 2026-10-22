@@ -1,0 +1,19 @@
+%abc-2.1
+X:1834
+T:g3-n30-034 Fa trầm gọi nốt giữ
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fourth; lead=LH; bucket=n30; notes=31; RH=8; LH=23
+% role=L; duration60=32s; related_pattern=075b888b3b145862
+% authored_passages=G04 G19
+% source=buildscripts/pianist/compositions/g3/n30.txt:35
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] F, C, D, E, | F, E, D, C, | D, G, F, E, | D, E, C,2 |
+[V:RH] C4 | C4 | C4 | C4 |]
+[V:LH] C, F, E,2 | C,4 | F,2 E, D, | C,4 |]

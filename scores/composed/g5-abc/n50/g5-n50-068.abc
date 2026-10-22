@@ -1,0 +1,23 @@
+%abc-2.1
+X:3368
+T:g5-n50-068 Quãng năm giữ Mi
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=dyad; lead=RH; bucket=n50; notes=55; RH=35; LH=20
+% duration60=52s; related_pattern=20b477b7c78cef2c
+% authored_passages=D18 DR2 DR8 DR7
+% source=buildscripts/pianist/compositions/g5/studies.txt:69
+[V:RH] [CG]2 E2 | [EG]2 E2 | [DF]2 D2 | C D E2 |
+[V:LH] C,2 E,2 | C,2 E,2 | D,2 D,2 | C,4 |
+[V:RH] [CG]4 | [CG]2 G2 | E D C2 | [CE]2 D2 |
+[V:LH] C,4 | C,2 G,2 | C,4 | C,2 G,2 |
+[V:RH] [CG]4 | [EG]2 G2 | F2 D2 | [DF]2 E2 |
+[V:LH] C,4 | E,2 G,2 | D,4 | D,2 E,2 |
+[V:RH] [CE]4 |]
+[V:LH] C,4 |]

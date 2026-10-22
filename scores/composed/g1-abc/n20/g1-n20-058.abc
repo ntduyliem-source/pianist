@@ -1,0 +1,19 @@
+%abc-2.1
+X:358
+T:g1-n20-058 Trầm trên nền chuyển
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n20; notes=19; RH=5; LH=14
+% role=L; family=bass-changing-base; form=authored; duration60=15s
+% related_pattern=5012d76e8fc47778
+% source=buildscripts/pianist/compositions/g1/n20.txt:60
+[V:RH] C3 | C3 | D3 | D3 |
+[V:LH] C, D, E, | F, E, D, | C, D, E, | F, E, D, |
+[V:RH] C3 |]
+[V:LH] C,2 C, |]

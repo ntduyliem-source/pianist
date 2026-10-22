@@ -1,0 +1,23 @@
+%abc-2.1
+X:4728
+T:g7-n50-028 Sol nối qua phách ba
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G7; profile=tie; lead=RH; bucket=n50; notes=49; RH=36; LH=13
+% duration60=52s; related_pattern=c89b0f5e9b95ccd9
+% authored_passages=T03 TR3 TR1 TR4
+% source=buildscripts/pianist/compositions/g7/studies.txt:29
+[V:RH] E F/2 G/2-G2 | E G/2 E/2-E2 | D C/2 D/2-D2 | E2 G2 |
+[V:LH] E,4 | C, z z z | G, z z z | C, z z z |
+[V:RH] E2 C2 | C D/2 E/2-E2 | F E/2 D/2-D2 | E F/2 G/2-G2 |
+[V:LH] C, z z z | C, z z z | D, z z z | C, z z z |
+[V:RH] D2 C2 | C/2 D/2-D E2 | F/2 E/2-E D2 | E F G E |
+[V:LH] C, z z z | C, z z z | D, z z z | C, z z z |
+[V:RH] D2 C2 |]
+[V:LH] C, z z z |]

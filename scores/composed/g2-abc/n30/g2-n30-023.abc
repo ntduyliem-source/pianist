@@ -1,0 +1,19 @@
+%abc-2.1
+X:1123
+T:g2-n30-023 Lời yên và lời bước
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=eighth; lead=RH; bucket=n30; notes=34; RH=26; LH=8
+% role=R; duration60=32s; related_pattern=08f36709c631f275
+% authored_passages=E08 E15
+% source=buildscripts/pianist/compositions/g2/n30.txt:24
+[V:RH] C4 | C/2D/2 E D C | D/2E/2 D C2 | C D C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C2 C/2D/2 E | F E D C | C2 D/2C/2 C | C4 |]
+[V:LH] C,4 | C,4 | C,4 | C,4 |]

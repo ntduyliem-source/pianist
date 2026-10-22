@@ -1,0 +1,19 @@
+%abc-2.1
+X:598
+T:g1-n50-098 Tám ô hai đường song hành
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n50; notes=50; RH=25; LH=25
+% role=S; family=sixths-eight; form=authored; duration60=32s
+% related_pattern=3990f647740eef45
+% source=buildscripts/pianist/compositions/g1/n50.txt:98
+[V:RH] C D E2 | D C D E | D C C2 | C4 |
+[V:LH] E, F, G,2 | F, E, F, G, | F, E, E,2 | E,4 |
+[V:RH] C C D E | D E D C | D E D C | C2 C2 |]
+[V:LH] E, E, F, G, | F, G, F, E, | F, G, F, E, | E,2 E,2 |]

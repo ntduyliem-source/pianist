@@ -1,0 +1,21 @@
+%abc-2.1
+X:1255
+T:g2-n50-055 Cặp trầm tìm điểm dừng
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=eighth; lead=LH; bucket=n50; notes=55; RH=12; LH=43
+% role=L; duration60=48s; related_pattern=4a25f38a5c51814e
+% authored_passages=F10 F20 F14
+% source=buildscripts/pianist/compositions/g2/n50.txt:56
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C,/2D,/2 E,/2F,/2 G, F, | E, D,/2C,/2 D, E, | F,/2E,/2 D, C, D, | E, D, C,2 |
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C,4 | C,2 C,/2D,/2 D, | C,4 | C,4 |
+[V:RH] C4 | C4 | D4 | C4 |]
+[V:LH] C, D, E,/2D,/2 C, | C,/2D,/2 E, F, E, | D, C, D,2 | C,/2D,/2 C, C,2 |]

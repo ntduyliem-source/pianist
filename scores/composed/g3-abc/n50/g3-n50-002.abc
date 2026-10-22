@@ -1,0 +1,21 @@
+%abc-2.1
+X:1902
+T:g3-n50-002 Đô dài nhắc lời rồi lắng
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fourth; lead=RH; bucket=n50; notes=49; RH=37; LH=12
+% role=R; duration60=48s; related_pattern=4003ae9d28331240
+% authored_passages=F02 F07 F17
+% source=buildscripts/pianist/compositions/g3/n50.txt:3
+[V:RH] C2 F E | D G F E | D F E C | D C C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C C F E | D G F E | F C D E | D C C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C2 F E | E2 C2 | C2 F2 | C4 |]
+[V:LH] C,4 | C,4 | C,4 | C,4 |]

@@ -1,0 +1,19 @@
+%abc-2.1
+X:2556
+T:g4-n30-056 Đô giữa về nghe đáp
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=span; lead=LH; bucket=n30; notes=31; RH=8; LH=23
+% role=L; duration60=32s; related_pattern=08a80c7234dbca85
+% authored_passages=X02 X10
+% source=buildscripts/pianist/compositions/g4/n30.txt:57
+[V:RH] E4 | E4 | E4 | E4 |
+[V:LH] C G, C, D, | E, G, A, C | B, A, G, E, | D, E, C,2 |
+[V:RH] E4 | E4 | E4 | E4 |]
+[V:LH] C,4 | C, G, C G, | E,2 C,2 | C,4 |]

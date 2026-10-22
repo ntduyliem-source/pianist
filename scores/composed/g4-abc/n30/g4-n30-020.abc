@@ -1,0 +1,19 @@
+%abc-2.1
+X:2520
+T:g4-n30-020 Giữ thấp rồi khép chậm
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=lower; lead=RH; bucket=n30; notes=26; RH=18; LH=8
+% role=R; duration60=32s; related_pattern=7030924ed0e0ac42
+% authored_passages=L05 L15
+% source=buildscripts/pianist/compositions/g4/n30.txt:21
+[V:RH] A,2 C B, | A,2 C D | E D C2 | A,2 A,2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] A,4 | A,2 E2 | D C A,2 | A,4 |]
+[V:LH] C,4 | C,4 | C,4 | C,4 |]

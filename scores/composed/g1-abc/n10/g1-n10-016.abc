@@ -1,0 +1,17 @@
+%abc-2.1
+X:216
+T:g1-n10-016 Bước nhẹ ba phách
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n10; notes=10; RH=7; LH=3
+% role=R; family=gentle-three; form=authored; duration60=9s
+% related_pattern=4fa79394ba621eda
+% source=buildscripts/pianist/compositions/g1/n10.txt:19
+[V:RH] C2 D | E F E | D C2 |]
+[V:LH] C,3 | C,3 | C,3 |]

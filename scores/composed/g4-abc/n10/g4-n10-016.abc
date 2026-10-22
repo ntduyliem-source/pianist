@@ -1,0 +1,17 @@
+%abc-2.1
+X:2316
+T:g4-n10-016 Câu đi từ La thấp
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=lower; lead=RH; bucket=n10; notes=10; RH=8; LH=2
+% role=R; duration60=8s; related_pattern=0809ecd282172f8e
+% authored_passages=inline-n10-016
+% source=buildscripts/pianist/compositions/g4/n10.txt:17
+[V:RH] A, B, C D | E D C A, |]
+[V:LH] C,4 | C,4 |]

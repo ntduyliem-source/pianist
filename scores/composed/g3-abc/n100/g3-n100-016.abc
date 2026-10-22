@@ -1,0 +1,25 @@
+%abc-2.1
+X:2016
+T:g3-n100-016 Năm bậc qua những tiếng nền
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fifth; lead=RH; bucket=n100; notes=105; RH=73; LH=32
+% role=R; duration60=80s; related_pattern=8cde58ab665ef50d
+% authored_passages=P10 P16 P04 P17 P05
+% source=buildscripts/pianist/compositions/g3/n100.txt:17
+[V:RH] C G F E | D G F E | D E G F | E D C2 |
+[V:LH] C,2 C,2 | C,2 C,2 | C,2 C,2 | C,2 C,2 |
+[V:RH] C2 G F | E D C G | F E D G | F E D C |
+[V:LH] C,2 C,2 | C,2 C,2 | C,2 C,2 | C,2 C,2 |
+[V:RH] C G D E | F D E C | D G F E | D E C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] G C D E | F E D C | D E G F | E2 D C |
+[V:LH] C,2 C,2 | C,2 C,2 | C,2 C,2 | C,2 C,2 |
+[V:RH] C G F2 | E2 D C | D E F E | D C C2 |]
+[V:LH] C,4 | C,4 | C,4 | C,4 |]

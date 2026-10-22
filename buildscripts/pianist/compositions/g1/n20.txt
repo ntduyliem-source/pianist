@@ -1,0 +1,100 @@
+001;R;4;arch-four;Con đường qua đồi;C D E F | G F E2 | D E D C | C2 C2;C,4 | C,4 | C,4 | C,4
+002;R;3;three-return;Một vòng sân;E D C | D E F | G F E | D E2 | D C2 | C3;C,3 | C,3 | C,3 | C,3 | C,3 | C,3
+031;L;4;bass-four;Lời kể của tay trái;C4 | C4 | C4 | C4;C, D, E,2 | E, F, G,2 | G, F, E, D, | C,2 C,2
+061;A;4;three-answers;Ba lời đối đáp;C D E F | z4 | E F G2 | z4 | F E D C | z4;z4 | C, D, E, F, | z4 | G, F, E,2 | z4 | D, E, D, C,
+086;S;4;octave-walk;Hai hàng bước chân;C D E2 | F E D C | C2 D E;C, D, E,2 | F, E, D, C, | C,2 D, E,
+003;R;4;hill-and-home;Lên đồi rồi về;C D E2 | E F G2 | G F E D | C2 C2;C,4 | C,4 | C,4 | C,4
+004;R;4;question-turn;Hỏi ở bậc giữa;C2 D E | F2 E D | E F E D | C4;C,4 | C,4 | C,4 | C,4
+005;R;4;low-question;Câu hỏi ở thấp;C D C D | E2 E2 | D E D C | C4;C,4 | C,4 | C,4 | C,4
+006;R;4;upper-question;Câu hỏi ở cao;E F G2 | F E D E | F G F E | E4;C,4 | C,4 | C,4 | C,4
+007;R;4;repeated-rise;Nhắc lời đi lên;C C D E | E F F G | F E D C | C2 C2;C,4 | C,4 | C,4 | C,4
+008;R;4;four-wave;Bốn làn sóng nhẹ;C D E D | C D E F | G F E D | C4;C,4 | C,4 | C,4 | C,4
+009;R;4;down-and-back;Xuống rồi trở lại;G F E2 | D E F E | D C D E | E4;C,4 | C,4 | C,4 | C,4
+010;R;4;breath-question;Câu hỏi có hơi thở;C z D E | F E D C | C D E D | C4;C,4 | C,4 | C,4 | C,4
+011;R;4;breath-answer;Câu đáp có hơi thở;C D E F | G2 F E | D z C C | C4;C,4 | C,4 | C,4 | C,4
+012;R;4;gentle-start;Khởi hành nhẹ;C4 | C D E F | E F E D | C D C C;C,4 | C,4 | C,4 | C,4
+013;R;4;gentle-middle;Một điểm nghỉ giữa;C D E F | E4 | D E D C | C D C2;C,4 | C,4 | C,4 | C,4
+014;R;4;three-landings;Ba điểm tựa;C D E2 | F E E2 | D E D C | D C C2;C,4 | C,4 | C,4 | C,4
+015;R;4;upper-landings;Những điểm tựa trên cao;E F G2 | F G G2 | F E D E | F E E2;C,4 | C,4 | C,4 | C,4
+016;R;4;five-bar-answer;Câu đáp năm ô;C D E F | G F E D | C D E F | E D C D | C D C2;C,4 | C,4 | C,4 | C,4 | C,4
+017;R;4;five-bar-breath;Năm ô có khoảng thở;C D E2 | F E D C | C z D E | F E D C | C4;C,4 | C,4 | C,4 | C,4 | C,4
+018;R;3;three-arch;Cầu nhỏ trong nhịp ba;C D E | F G F | E D C | D E F | E D C | C3;C,3 | C,3 | C,3 | C,3 | C,3 | C,3
+019;R;3;three-short-wave;Sóng ngắn nhịp ba;C D C | D E D | E F E | D E D | C2 C | C3;C,3 | C,3 | C,3 | C,3 | C,3 | C,3
+020;R;3;three-upper;Lời ở bậc cao;E F G | F E D | E F E | F G F | E2 E | E3;C,3 | C,3 | C,3 | C,3 | C,3 | C,3
+021;R;3;three-repeated;Lời nhắc nhịp ba;C C D | E E F | G F E | D D C | D E D | C3;C,3 | C,3 | C,3 | C,3 | C,3 | C,3
+022;R;3;three-breath;Thở đều trong nhịp ba;C z D | E F E | D C2 | C D E | D C2 | C3;C,3 | C,3 | C,3 | C,3 | C,3 | C,3
+023;R;3;three-long-short;Dài ngắn trong nhịp ba;C2 D | E2 F | G2 F | E2 D | C D C | C3;C,3 | C,3 | C,3 | C,3 | C,3 | C,3
+024;R;2;six-little-bars;Sáu bước nhỏ;C D | E F | G F | E D | C D | C2;C,2 | C,2 | C,2 | C,2 | C,2 | C,2
+025;R;2;six-middle-bars;Sáu bước quanh Mi;E F | G F | E D | C D | E D | C2;C,2 | C,2 | C,2 | C,2 | C,2 | C,2
+026;R;2;six-repeat-bars;Sáu lời nhắc nhỏ;C C | D E | F E | D D | C D | C2;C,2 | C,2 | C,2 | C,2 | C,2 | C,2
+027;R;2;seven-little-bars;Bảy viên đá;C D | E2 | F G | F E | D E | D C | C2;C,2 | C,2 | C,2 | C,2 | C,2 | C,2 | C,2
+028;R;4;e-foundation;Câu trên nền dịu;C D E F | G F E2 | D E F E | E4;E,4 | E,4 | E,4 | E,4
+029;R;4;g-foundation;Câu trên nền sáng;E F G2 | F E D E | F G F E | E2 E2;G,4 | G,4 | G,4 | G,4
+030;R;3;changing-foundation;Nền đổi ở cuối câu;C D E | F E D | C D E | F E D | C2 C;C,3 | C,3 | D,3 | D,3 | C,3
+032;L;4;bass-question-turn;Câu hỏi trầm ở giữa;C4 | C4 | C4 | C4;C,2 D, E, | F,2 E, D, | E, F, E, D, | C,4
+033;L;4;bass-low-question;Câu hỏi trầm thấp;C4 | C4 | C4 | C4;C, D, C, D, | E,2 E,2 | D, E, D, C, | C,4
+034;L;4;bass-upper-question;Câu hỏi trầm cao;C4 | C4 | C4 | C4;E, F, G,2 | F, E, D, E, | F, G, F, E, | E,4
+035;L;4;bass-repeated-rise;Trầm nhắc bước lên;C4 | C4 | C4 | C4;C, C, D, E, | E, F, F, G, | F, E, D, C, | C,2 C,2
+036;L;4;bass-four-wave;Bốn làn sóng trầm;C4 | C4 | C4 | C4;C, D, E, D, | C, D, E, F, | G, F, E, D, | C,4
+037;L;4;bass-down-back;Trầm xuống rồi trở lại;C4 | C4 | C4 | C4;G, F, E,2 | D, E, F, E, | D, C, D, E, | E,4
+038;L;4;bass-breath-question;Câu hỏi trầm có nghỉ;C4 | C4 | C4 | C4;C, z D, E, | F, E, D, C, | C, D, E, D, | C,4
+039;L;4;bass-breath-answer;Câu đáp trầm có nghỉ;C4 | C4 | C4 | C4;C, D, E, F, | G,2 F, E, | D, z C, C, | C,4
+040;L;4;bass-gentle-start;Tay trái khởi hành nhẹ;C4 | C4 | C4 | C4;C,4 | C, D, E, F, | E, F, E, D, | C, D, C, C,
+041;L;4;bass-gentle-middle;Điểm nghỉ của câu trầm;C4 | C4 | C4 | C4;C, D, E, F, | E,4 | D, E, D, C, | C, D, C,2
+042;L;4;bass-three-landings;Ba điểm tựa trầm;C4 | C4 | C4 | C4;C, D, E,2 | F, E, E,2 | D, E, D, C, | D, C, C,2
+043;L;4;bass-upper-landings;Điểm tựa trầm phía trên;C4 | C4 | C4 | C4;E, F, G,2 | F, G, G,2 | F, E, D, E, | F, E, E,2
+044;L;4;bass-five-answer;Câu trầm năm ô;C4 | C4 | C4 | C4 | C4;C, D, E, F, | G, F, E, D, | C, D, E, F, | E, D, C, D, | C, D, C,2
+045;L;4;bass-five-breath;Năm ô trầm có nghỉ;C4 | C4 | C4 | C4 | C4;C, D, E,2 | F, E, D, C, | C, z D, E, | F, E, D, C, | C,4
+046;L;3;bass-three-arch;Cầu trầm nhịp ba;C3 | C3 | C3 | C3 | C3 | C3;C, D, E, | F, G, F, | E, D, C, | D, E, F, | E, D, C, | C,3
+047;L;3;bass-three-wave;Sóng trầm nhịp ba;C3 | C3 | C3 | C3 | C3 | C3;C, D, C, | D, E, D, | E, F, E, | D, E, D, | C,2 C, | C,3
+048;L;3;bass-three-upper;Lời trầm ở bậc cao;C3 | C3 | C3 | C3 | C3 | C3;E, F, G, | F, E, D, | E, F, E, | F, G, F, | E,2 E, | E,3
+049;L;3;bass-three-repeat;Trầm nhắc nhịp ba;C3 | C3 | C3 | C3 | C3 | C3;C, C, D, | E, E, F, | G, F, E, | D, D, C, | D, E, D, | C,3
+050;L;3;bass-three-breath;Trầm thở đều nhịp ba;C3 | C3 | C3 | C3 | C3 | C3;C, z D, | E, F, E, | D, C,2 | C, D, E, | D, C,2 | C,3
+051;L;3;bass-three-long;Nốt trầm dài ngắn;C3 | C3 | C3 | C3 | C3 | C3;C,2 D, | E,2 F, | G,2 F, | E,2 D, | C, D, C, | C,3
+052;L;2;bass-six-little;Sáu bước trầm;C2 | C2 | C2 | C2 | C2 | C2;C, D, | E, F, | G, F, | E, D, | C, D, | C,2
+053;L;2;bass-six-middle;Sáu bước trầm quanh Mi;C2 | C2 | C2 | C2 | C2 | C2;E, F, | G, F, | E, D, | C, D, | E, D, | C,2
+054;L;2;bass-six-repeat;Sáu lời nhắc trầm;C2 | C2 | C2 | C2 | C2 | C2;C, C, | D, E, | F, E, | D, D, | C, D, | C,2
+055;L;2;bass-seven-little;Bảy viên đá trầm;C2 | C2 | C2 | C2 | C2 | C2 | C2;C, D, | E,2 | F, G, | F, E, | D, E, | D, C, | C,2
+056;L;4;bass-e-foundation;Câu trầm trên nền dịu;E4 | E4 | E4 | E4;C, D, E, F, | G, F, E,2 | D, E, F, E, | E,4
+057;L;4;bass-g-foundation;Câu trầm trên nền sáng;G4 | G4 | G4 | G4;E, F, G,2 | F, E, D, E, | F, G, F, E, | E,2 E,2
+058;L;3;bass-changing-base;Trầm trên nền chuyển;C3 | C3 | D3 | D3 | C3;C, D, E, | F, E, D, | C, D, E, | F, E, D, | C,2 C,
+059;L;4;bass-hill-home;Đồi và nhà ở khuông dưới;C4 | C4 | C4 | C4;C, D, E, F, | G, F, E,2 | D, E, D, C, | C,2 C,2
+060;L;3;bass-six-return;Một vòng sân trầm;C3 | C3 | C3 | C3 | C3 | C3;E, D, C, | D, E, F, | G, F, E, | D, E,2 | D, C,2 | C,3
+062;A;4;three-arches;Ba câu hỏi nhẹ;C D E2 | z4 | F G F E | z4 | D E D C | z4;z4 | C, D, E,2 | z4 | F, E, D, C, | z4 | C,2 C,2
+063;A;4;three-replies;Ba câu đáp về nhà;E F G2 | z4 | F E D E | z4 | D C C2 | z4;z4 | C, D, E, F, | z4 | E, D, C,2 | z4 | C, D, C,2
+064;A;4;three-repeat-calls;Nhắc lời qua lại;C C D E | z4 | F E E2 | z4 | D C D C | z4;z4 | E, D, C, C, | z4 | D, E, F, E, | z4 | D, C, C,2
+065;A;4;three-breath-calls;Qua lại có khoảng thở;C z D E | z4 | F E D C | z4 | C D C2 | z4;z4 | C, D, E, F, | z4 | E, z D, C, | z4 | C,2 C,2
+066;A;4;left-three-arches;Trầm hỏi ba câu;z4 | C D E2 | z4 | F G F E | z4 | D E D C;C, D, E,2 | z4 | F, E, D, C, | z4 | C,2 C,2 | z4
+067;A;4;left-three-replies;Trầm đáp ba câu;z4 | E F G2 | z4 | F E D E | z4 | D C C2;C, D, E, F, | z4 | E, D, C,2 | z4 | C, D, C,2 | z4
+068;A;4;left-repeat-calls;Trầm nhắc ba lần;z4 | C C D E | z4 | F E E2 | z4 | D C D C;E, D, C, C, | z4 | D, E, F, E, | z4 | D, C, C,2 | z4
+069;A;3;four-three-calls;Bốn lời nhịp ba;C D E | z3 | F G F | z3 | E D C | z3 | D C2 | z3;z3 | C, D, E, | z3 | D, E, F, | z3 | E, D, C, | z3 | C,3
+070;A;3;four-three-turns;Bốn vòng đối đáp;C D C | z3 | D E D | z3 | E F E | z3 | D C2 | z3;z3 | E, D, C, | z3 | D, E, D, | z3 | C, D, E, | z3 | D, C,2
+071;A;3;four-upper-calls;Bốn lời trên đồi;E F G | z3 | F E F | z3 | G F E | z3 | E3 | z3;z3 | G, F, E, | z3 | D, E, F, | z3 | E, D, C, | z3 | C,3
+072;A;3;left-four-three;Bốn lời từ khuông trầm;z3 | C D E | z3 | F G F | z3 | E D C | z3 | D C2;C, D, E, | z3 | D, E, F, | z3 | E, D, C, | z3 | C,3 | z3
+073;A;3;left-four-turns;Trầm mở bốn vòng;z3 | C D C | z3 | D E D | z3 | E F E | z3 | D C2;E, D, C, | z3 | D, E, D, | z3 | C, D, E, | z3 | D, C,2 | z3
+074;A;4;four-short-answers;Bốn câu ngắn tiếp nhau;C D E2 | z4 | D C C2 | z4 | C D E2 | z4 | D z C2 | z4;z4 | E, F, G,2 | z4 | F, z E,2 | z4 | E, F, E,2 | z4 | D, z C,2
+075;A;4;three-descending;Câu trả lời thấp dần;G F E D | z4 | C D E2 | z4 | D C C2 | z4;z4 | E, F, G, F, | z4 | E, D, C,2 | z4 | D, C, C,2
+076;A;4;three-middle;Đối đáp quanh Mi;D E F E | z4 | D C D E | z4 | D E E2 | z4;z4 | E, F, G,2 | z4 | F, E, D, E, | z4 | D, C, C,2
+077;A;4;three-short-long;Lời ngắn lời dài;C2 D E | z4 | F2 E D | z4 | C D C2 | z4;z4 | C, D, E, F, | z4 | G, F, E, D, | z4 | C,4
+078;A;4;left-three-breath;Trầm mở một khoảng thở;z4 | C z D E | z4 | F E D C | z4 | C D C2;C, D, E, F, | z4 | E, z D, C, | z4 | C,2 C,2 | z4
+079;A;3;three-breath-dialogue;Lời qua lại có nhịp thở;C z D | z3 | E F E | z3 | D C2 | z3 | C3 | z3;z3 | C, D, E, | z3 | F, E, D, | z3 | C, D, C, | z3 | C,3
+080;A;3;three-repeat-dialogue;Lời qua lại có nhịp nhắc;C C D | z3 | E E F | z3 | G F E | z3 | D C2 | z3;z3 | E, D, C, | z3 | D, E, D, | z3 | C, C, D, | z3 | C,3
+081;A;2;eight-short-turns;Tám lượt nhỏ;C D | z2 | E F | z2 | E D | z2 | C2 | z2;z2 | C, D, | z2 | E, F, | z2 | E, D, | z2 | C, C,
+082;A;2;nine-short-turns;Chín lượt nhỏ;C D | z2 | E F | z2 | G F | z2 | E D | z2 | C2;z2 | E, F, | z2 | G, F, | z2 | E, D, | z2 | C, C, | z2
+083;A;2;left-nine-turns;Chín lượt tay trái mở;z2 | E F | z2 | G F | z2 | E D | z2 | C C | z2;C, D, | z2 | E, F, | z2 | G, F, | z2 | E, D, | z2 | C,2
+084;A;3;three-gentle-dialogue;Cuộc trò chuyện nhẹ;C2 D | z3 | E2 F | z3 | G F E | z3 | D C2 | z3;z3 | C, D, E, | z3 | D, C, D, | z3 | E, D, C, | z3 | C,3
+085;A;4;last-three-answers;Ba lời đáp cuối;C D E F | z4 | E F G2 | z4 | F E D C | z4;z4 | E, F, E, D, | z4 | C, D, E,2 | z4 | D, C, C,2
+087;S;4;octave-three-arch;Ba ô sóng đôi;C D E F | G F E D | C2 C2;C, D, E, F, | G, F, E, D, | C,2 C,2
+088;S;4;octave-three-turn;Ba ô hai lần quay;C D E D | C D E F | E D C2;C, D, E, D, | C, D, E, F, | E, D, C,2
+089;S;4;octave-upper-three;Ba ô hai tay trên cao;E F G2 | F E D E | F E E2;E, F, G,2 | F, E, D, E, | F, E, E,2
+090;S;4;octave-repeat-three;Ba ô cùng nhắc;C C D E | E F E D | C D C C;C, C, D, E, | E, F, E, D, | C, D, C, C,
+091;S;4;octave-two-dense;Hai câu bước đều;C D E F | E D C C;C, D, E, F, | E, D, C, C,
+092;S;4;octave-breath-three;Ba ô cùng thở;C z D E | F E D C | C D C2;C, z D, E, | F, E, D, C, | C, D, C,2
+093;S;3;octave-four-three;Bốn ô ba phách cùng nhau;C D E | F E D | C D E | D C2;C, D, E, | F, E, D, | C, D, E, | D, C,2
+094;S;3;octave-four-upper;Bốn ô trên đồi;E F G | F E D | E F E | E3;E, F, G, | F, E, D, | E, F, E, | E,3
+095;S;3;octave-four-turn;Bốn vòng đồng nhịp;C D C | D E D | E D C | C3;C, D, C, | D, E, D, | E, D, C, | C,3
+096;S;3;sixths-four;Hai đường quanh bậc giữa;C D E | D C D | E D C | C3;E, F, G, | F, E, F, | G, F, E, | E,3
+097;S;2;octave-five;Năm bước đôi;C D | E F | G F | E D | C2;C, D, | E, F, | G, F, | E, D, | C,2
+098;S;2;octave-six;Sáu bước đôi;C D | E2 | F G | F E | D C | C2;C, D, | E,2 | F, G, | F, E, | D, C, | C,2
+099;S;4;sixths-three;Ba câu hai đường;C D E2 | D C D E | D C C2;E, F, G,2 | F, E, F, G, | F, E, E,2
+100;S;3;sixths-breath;Hai đường thở nhẹ;C z D | E D C | D E D | C3;E, z F, | G, F, E, | F, G, F, | E,3

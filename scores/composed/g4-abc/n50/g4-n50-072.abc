@@ -1,0 +1,21 @@
+%abc-2.1
+X:2672
+T:g4-n50-072 Mi thấp gọi Đô trả
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=lower; lead=RH; bucket=n50; notes=46; RH=23; LH=23
+% role=A; duration60=48s; related_pattern=86b61b78a27bfd2d
+% authored_passages=T02 T04 T01
+% source=buildscripts/pianist/compositions/g4/n50.txt:73
+[V:RH] E B, C D | z4 | C B, A,2 | z4 |
+[V:LH] z4 | C, D, E, D, | z4 | D, C, D, C, |
+[V:RH] A, C E D | z4 | C B, A, C | z4 |
+[V:LH] z4 | C, D, E, D, | z4 | D, C, D, C, |
+[V:RH] A, B, C D | z4 | E D C A, | z4 |]
+[V:LH] z4 | C, D, E, D, | z4 | D, C, C,2 |]

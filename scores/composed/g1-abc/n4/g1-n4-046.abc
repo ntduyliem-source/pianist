@@ -1,0 +1,17 @@
+%abc-2.1
+X:46
+T:g1-n4-046 Đường trầm đi lên
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n4; notes=5; RH=1; LH=4
+% role=L; family=bass-four; form=authored; duration60=4s
+% related_pattern=90721dc36a59272e
+% source=buildscripts/pianist/compositions/g1/n4.txt:49
+[V:RH] C4 |]
+[V:LH] C, D, E, F, |]

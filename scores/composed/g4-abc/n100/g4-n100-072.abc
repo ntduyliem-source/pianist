@@ -1,0 +1,25 @@
+%abc-2.1
+X:2772
+T:g4-n100-072 Mi thấp mở năm cuộc gọi
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=lower; lead=RH; bucket=n100; notes=76; RH=37; LH=39
+% role=A; duration60=80s; related_pattern=213d41f9a000cf07
+% authored_passages=T02 T04 T01 T03 T02
+% source=buildscripts/pianist/compositions/g4/n100.txt:73
+[V:RH] E B, C D | z4 | C B, A,2 | z4 |
+[V:LH] z4 | C, D, E, D, | z4 | D, C, D, C, |
+[V:RH] A, C E D | z4 | C B, A, C | z4 |
+[V:LH] z4 | C, D, E, D, | z4 | D, C, D, C, |
+[V:RH] A, B, C D | z4 | E D C A, | z4 |
+[V:LH] z4 | C, D, E, D, | z4 | D, C, C,2 |
+[V:RH] A,2 C D | z4 | E D C A, | z4 |
+[V:LH] z4 | C, D, E, D, | z4 | D, E, D, C, |
+[V:RH] E B, C D | z4 | C B, A,2 | z4 |]
+[V:LH] z4 | C, D, E, D, | z4 | D, C, D, C, |]

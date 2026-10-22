@@ -1,0 +1,17 @@
+%abc-2.1
+X:288
+T:g1-n10-088 Hai tay qua đồi cao
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n10; notes=10; RH=5; LH=5
+% role=S; family=octave-upper-arch; form=authored; duration60=6s
+% related_pattern=dfeb7a349d67b2d6
+% source=buildscripts/pianist/compositions/g1/n10.txt:88
+[V:RH] E F G | F E2 |]
+[V:LH] E, F, G, | F, E,2 |]

@@ -1,0 +1,23 @@
+%abc-2.1
+X:3336
+T:g5-n50-036 Trầm Mi Fa và lời sáng
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=offset; lead=LH; bucket=n50; notes=50; RH=23; LH=27
+% duration60=52s; related_pattern=c914f600507e81ed
+% authored_passages=O36 OL1 OL3 OL8
+% source=buildscripts/pianist/compositions/g5/studies.txt:37
+[V:RH] z E z F | z C z G | C z G z | z F z G |
+[V:LH] E,2 F, z | C,2 E, z | G,2 E,2 | F, E, D,2 |
+[V:RH] C4 | z G z C | G z D z | z G z G |
+[V:LH] E,2 C,2 | G,2 E, z | D, E, F,2 | E,2 D,2 |
+[V:RH] C4 | G z z C | D z G z | z C z G |
+[V:LH] C,4 | G, z E,2 | F,2 D,2 | E, D, E,2 |
+[V:RH] C4 |]
+[V:LH] C,4 |]

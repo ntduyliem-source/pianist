@@ -1,0 +1,27 @@
+%abc-2.1
+X:618
+T:g1-n100-018 Sáu vòng nhịp ba trên cao
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n100; notes=82; RH=58; LH=24
+% role=R; family=six-three-upper; form=authored; duration60=72s
+% related_pattern=1b3e5499a624edec
+% source=buildscripts/pianist/compositions/g1/n100.txt:21
+[V:RH] E F G | F E D | E F E | E3 |
+[V:LH] C,3 | C,3 | C,3 | C,3 |
+[V:RH] E E F | G F E | D E F | E3 |
+[V:LH] C,3 | C,3 | C,3 | C,3 |
+[V:RH] E F G | F G F | E D E | E3 |
+[V:LH] C,3 | C,3 | C,3 | C,3 |
+[V:RH] E2 F | G F E | D E2 | E3 |
+[V:LH] C,3 | C,3 | C,3 | C,3 |
+[V:RH] E F G | F E D | C D E | E3 |
+[V:LH] C,3 | C,3 | C,3 | C,3 |
+[V:RH] E D C | D E D | C D C | C3 |]
+[V:LH] C,3 | C,3 | C,3 | C,3 |]

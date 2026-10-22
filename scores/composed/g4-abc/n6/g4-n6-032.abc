@@ -1,0 +1,17 @@
+%abc-2.1
+X:2232
+T:g4-n6-032 Rê giữa xuống La trầm
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=upper; lead=LH; bucket=n6; notes=6; RH=2; LH=4
+% role=L; duration60=4s; related_pattern=660a8dfc10cd7fb3
+% authored_passages=inline-n6-032
+% source=buildscripts/pianist/compositions/g4/n6.txt:33
+[V:RH] G2 G2 |]
+[V:LH] D C B, A, |]

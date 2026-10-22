@@ -9,6 +9,7 @@ import {Practice,Results,History} from './practice/PracticeView';
 import {EditorPlayback} from './EditorPlayback';
 import {EditorActions} from './EditorActions';
 import {Exercises} from './exercises/Exercises';
+import {groupBundledScores,selectBundledVersion,bundledVersionLabel,matchesBundledWork,type BundledWork} from './platform/bundled-library';
 import './style.css';
 
 const run = (fn: () => unknown | Promise<unknown>) => () => void ws.run(fn);
@@ -66,7 +67,6 @@ function App() {
         <button className={state.view === 'library' ? 'selected' : ''} onClick={() => ws.navigate('library')} disabled={!!active}><Icon name="folder"/>Thư viện</button>
         <button className={state.view === 'editor' ? 'selected' : ''} disabled={!!active} onClick={run(() => ws.openEditor())}><Icon name="score"/>Editor</button>
         <button className={state.view === 'practice' ? 'selected' : ''} disabled={!!active && state.view !== 'practice'} onClick={run(() => ws.openPractice())}><Icon name="piano"/>Tập piano</button>
-        <button className={state.view === 'exercises' ? 'selected' : ''} disabled={!!active && state.view !== 'exercises'} onClick={() => ws.navigate('exercises')}><Icon name="play"/>Bài tập</button>
       </nav>
       <div className="appbar-end"><span className="local-tag"><span/>Lưu trên thiết bị</span><button className="icon-button" title="Giới thiệu và giấy phép" aria-label="Giới thiệu" onClick={() => about.current?.showModal()}>?</button></div>
     </header>
@@ -76,8 +76,10 @@ function App() {
     {state.view === 'editor' && <EditorActions title={state.current?.title} saveState={state.saveState} onExport={()=>exportDialog.current?.showModal()}/>}
     {state.view === 'editor' && state.engineReady && state.current && <EditorPlayback key={state.current.id}/>}
     {state.view === 'library' && <Library/>}
-    {state.view === 'exercises' && <Exercises/>}
-    {state.view === 'practice' && (state.practicePicker || !state.snapshot || !state.config ? <PracticeHome/> : <Practice key={state.snapshot.fingerprint + ':' + state.snapshot.revision} snapshot={state.snapshot} config={state.config}/>)}
+    {state.view === 'practice' && <>
+      {state.practicePicker && <div className="practice-kind" role="group" aria-label="Cách tập piano"><button aria-label="Free play" aria-pressed={state.practiceKind==='free'} onClick={run(()=>ws.selectPracticeKind('free'))}><Icon name="score"/><span>Free play<small>Chọn bài từ thư viện</small></span></button><button aria-label="Theo grade" aria-pressed={state.practiceKind==='grade'} onClick={run(()=>ws.selectPracticeKind('grade'))}><Icon name="piano"/><span>Theo grade<small>Đọc nhạc từ G1 đến G8</small></span></button></div>}
+      {state.practiceKind==='grade' ? <Exercises/> : state.practicePicker || !state.snapshot || !state.config ? <PracticeHome/> : <Practice key={state.snapshot.fingerprint + ':' + state.snapshot.revision} snapshot={state.snapshot} config={state.config}/>}
+    </>}
     {state.view === 'results' && state.result && <Results result={state.result}/>}
     {state.view === 'history' && <History/>}
     {state.busy && !state.tuneSelection && <div className="loading-overlay" role="status"><span className="brand-symbol">p</span><h2>{state.busy}</h2><div className="loading-bar"/><p>File được xử lý ngay trong trình duyệt.</p>{state.canCancelOpen && <button onClick={() => ws.cancelOpen()}>{state.cancelOpenLabel ?? 'Hủy mở file'}</button>}</div>}
@@ -102,7 +104,7 @@ function Library() {
       <div className="section-top"><h2>{trash ? 'Có thể khôi phục bất cứ lúc nào' : 'Gần đây'} <span>{projects.length}</span></h2><input type="search" aria-label="Tìm bản nhạc" placeholder="Tìm tên bản nhạc…" value={search} onChange={e => setSearch(e.target.value)}/></div>
       <div className="score-grid">{projects.map(project => <article className="score-card" key={project.id}><button className="score-cover" aria-label={'Mở ' + project.title} onClick={run(() => ws.openProject(project.id))}><Icon name="score"/><span>{project.title}</span><div className="cover-lines">━━━━━━━━━━<br/>━━━━━━━━━━<br/>━━━━━━━━━━</div></button><div className="score-card-body"><h3>{project.title}</h3><SourceLabel project={project}/><p>{date(project.updatedAt)} · {Math.round(project.bytes.length / 1024)} KB</p><div className="button-row">{trash ? <button onClick={run(() => ws.archive(project))}>Khôi phục</button> : <><button onClick={run(() => ws.openProject(project.id))}>Chỉnh sửa</button><button className="primary-light" onClick={run(() => ws.openProject(project.id, true))}><Icon name="play"/>Tập</button><button className="archive" title="Lưu trữ bài (có thể khôi phục)" aria-label={'Lưu trữ ' + project.title} onClick={run(() => ws.archive(project))}>···</button></>}</div></div></article>)}{!trash && <button className="import-card" onClick={() => ws.chooseFile()}><Icon name="upload"/><strong>Thêm bản nhạc</strong><span>Thả file vào đây hoặc chọn file</span><small>ABC · MXL · MusicXML · MSCZ · tối đa 32 MiB</small></button>}</div>
       {!trash && <BundledSongs search={search}/>}
-      {!projects.length && search && !state.bundledScores.some(s=>s.title.toLowerCase().includes(search.toLowerCase())) && <p>Không tìm thấy bài phù hợp.</p>}
+      {!projects.length && search && !groupBundledScores(state.bundledScores).some(w=>matchesBundledWork(w,search)) && <p>Không tìm thấy bài phù hợp.</p>}
       <p className="storage-note">Thư viện và bản tự lưu nằm trong trình duyệt này. Tải MSCZ hoặc sao lưu cả thư viện để giữ trên máy.</p>
       <LibraryTransfer/>
       <div className="offline-controls"><button onClick={run(() => prepareOffline(setOffline))}>Chuẩn bị dùng offline</button><button onClick={run(async () => {await useOnline(); setOffline('Đã chuyển sang dùng online. Tải lại trang để áp dụng.');})}>Dùng online</button><span role="status">{offline}</span></div>
@@ -111,9 +113,27 @@ function Library() {
 }
 
 function BundledSongs({search='',practice=false}:{search?:string;practice?:boolean}){
-  const state=useSyncExternalStore(ws.subscribe,ws.snapshot),songs=state.bundledScores.filter(s=>s.title.toLowerCase().includes(search.toLowerCase()));
+  const state=useSyncExternalStore(ws.subscribe,ws.snapshot),songs=useMemo(()=>groupBundledScores(state.bundledScores).filter(work=>matchesBundledWork(work,search)),[state.bundledScores,search]);
   if(!songs.length)return null;
-  return <section className="bundled-library" aria-label="Bài hát có sẵn"><div className="section-top"><h2>Bài hát có sẵn <span>{songs.length}</span></h2><span className="muted">Mở một bài để lưu bản riêng trên thiết bị</span></div><div className="score-grid">{songs.map(song=><article className="score-card" key={song.id}><button className="score-cover" aria-label={'Mở bài có sẵn '+song.title} onClick={run(()=>ws.openBundledScore(song,practice))}><Icon name="score"/><span>{song.title}</span><div className="cover-lines">━━━━━━━━━━<br/>━━━━━━━━━━<br/>━━━━━━━━━━</div></button><div className="score-card-body"><h3>{song.title}</h3><span className="source-label">MXL · Có sẵn</span><p>{song.composer||'Bản piano'}</p><div className="button-row"><button onClick={run(()=>ws.openBundledScore(song))}>Chỉnh sửa</button><button className="primary-light" onClick={run(()=>ws.openBundledScore(song,true))}><Icon name="play"/>Tập</button></div></div></article>)}</div></section>;
+  return <section className="bundled-library" aria-label="Bài hát có sẵn"><div className="section-top"><h2>Bài hát có sẵn <span>{songs.length}</span></h2><span className="muted">Mở một bài để lưu bản riêng trên thiết bị</span></div><div className="score-grid">{songs.map(work=><BundledSongCard key={work.id} work={work} practice={practice}/>)}</div></section>;
+}
+
+function BundledSongCard({work,practice}:{work:BundledWork;practice:boolean}){
+  const preference='pianist-bundled-version:'+work.id;
+  const [selected,setSelected]=useState(()=>{try{return localStorage.getItem(preference)??undefined;}catch{return undefined;}});
+  const song=selectBundledVersion(work,selected),canPractice=song.practiceReady!==false;
+  const choose=(id:string)=>{setSelected(id);try{localStorage.setItem(preference,id);}catch{/* Selecting remains available when storage is full or disabled. */}};
+  return <article className="score-card" data-work-id={work.id}>
+    <button className="score-cover" aria-label={'Mở bài có sẵn '+work.title} onClick={run(()=>ws.openBundledScore(song,practice&&canPractice))}>
+      <Icon name="score"/><span>{work.title}</span><div className="cover-lines">━━━━━━━━━━<br/>━━━━━━━━━━<br/>━━━━━━━━━━</div>
+    </button>
+    <div className="score-card-body"><h3>{work.title}</h3><span className="source-label">MXL · Có sẵn</span>
+      {work.versions.length>1&&<label className="bundled-version">Phiên bản<select aria-label={'Chọn phiên bản '+work.title} value={song.id} onChange={e=>choose(e.target.value)}>{work.versions.map(version=><option key={version.id} value={version.id}>{bundledVersionLabel(version)}</option>)}</select></label>}
+      <p>{song.composer||'Bản piano'}</p>
+      {!canPractice&&<p className="bundled-practice-notice" role="note">{song.practiceNotice}</p>}
+      <div className="button-row"><button onClick={run(()=>ws.openBundledScore(song))}>Chỉnh sửa</button><button className="primary-light" disabled={!canPractice} title={canPractice?undefined:song.practiceNotice} onClick={run(()=>ws.openBundledScore(song,true))}><Icon name="play"/>Tập</button></div>
+    </div>
+  </article>;
 }
 
 function PracticeHome() {
@@ -125,13 +145,6 @@ function PracticeHome() {
         <div><div className="eyebrow">PIANO PRACTICE</div><h1 id="view-heading" tabIndex={-1}>Chọn bài để tập</h1><p>Mở bài trong thư viện hoặc nhập bản nhạc để bắt đầu.</p></div>
         <button className="primary" onClick={() => ws.chooseFile(true)}><Icon name="upload"/>Nhập bản nhạc để tập</button>
       </div>
-      <div className="practice-intro">
-        <div><h2>Mỗi buổi tập, một bước tiến.</h2><p>Chọn cách tập phù hợp, rồi luyện từng đoạn theo nhịp của bạn.</p>
-          <div className="practice-modes"><div><Icon name="check"/><span><strong>Đúng nốt</strong>Đủ nốt mới chuyển tiếp.</span></div><div><Icon name="piano"/><span><strong>Theo BPM</strong>Luyện nhịp và xem sai lệch từng nốt.</span></div></div>
-          <button onClick={run(() => ws.sample(true))}><Icon name="play"/>Tập bài mẫu {state.exampleTitle}</button>
-        </div>
-        <Icon name="piano"/>
-      </div>
       {state.current && <div className="practice-current"><div><span className="eyebrow">BẢN NHẠC ĐANG MỞ</span><strong>{state.current.title}</strong></div><button className="primary-light" onClick={run(() => ws.practice())}><Icon name="play"/>Tập bài đang mở</button></div>}
       <div className="section-top"><h2>Bài trong thư viện <span>{projects.length}</span></h2><input type="search" aria-label="Tìm bài để tập" placeholder="Tìm tên bản nhạc…" value={search} onChange={e => setSearch(e.target.value)}/></div>
       <div className="score-grid">{projects.map(project => <article className="score-card" key={project.id}>
@@ -139,7 +152,7 @@ function PracticeHome() {
         <div className="score-card-body"><h3>{project.title}</h3><SourceLabel project={project}/><p>{date(project.updatedAt)} · {Math.round(project.bytes.length / 1024)} KB</p><button className="primary-light" aria-label={'Bắt đầu với ' + project.title} onClick={run(() => ws.openProject(project.id, true))}><Icon name="play"/>Tập bài này</button></div>
       </article>)}</div>
       <BundledSongs search={search} practice/>
-      {!projects.length && !state.bundledScores.some(s=>s.title.toLowerCase().includes(search.toLowerCase())) && <p className="practice-empty">{search ? 'Không tìm thấy bài phù hợp.' : 'Thư viện chưa có bài. Nhập file hoặc thử bài mẫu để bắt đầu.'}</p>}
+      {!projects.length && !groupBundledScores(state.bundledScores).some(w=>matchesBundledWork(w,search)) && <p className="practice-empty">{search ? 'Không tìm thấy bài phù hợp.' : 'Thư viện chưa có bài. Nhập file hoặc thử bài mẫu để bắt đầu.'}</p>}
       <p className="storage-note">Màn tập sử dụng bản nhạc chỉ đọc. ABC · MXL · MusicXML · MSCZ · tối đa 32 MiB.</p>
     </section>
   </main>;

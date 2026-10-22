@@ -1,0 +1,27 @@
+%abc-2.1
+X:4183
+T:g6-n100-083 Quãng tám từ Mi
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G6; profile=P8-up; lead=RH; bucket=n100; notes=81; RH=60; LH=21
+% duration60=84s; related_pattern=03572c3843c4c321
+% authored_passages=S83 EU3 EU1 EU2 EU1 EU3
+% source=buildscripts/pianist/compositions/g6/studies.txt:84
+[V:RH] F E e d | G2 E2 | F E e d | c2 G2 |
+[V:LH] C,4 | C, z z z | C, z z z | C, z z z |
+[V:RH] E2 C2 | G D C c | B A G2 | E F G2 |
+[V:LH] C, z z z | C, z z z | C, z z z | C, z z z |
+[V:RH] E2 C2 | G E D d | c B A G | E2 G2 |
+[V:LH] C, z z z | C, z z z | C, z z z | C, z z z |
+[V:RH] E2 C2 | G D C c | B A G2 | E F G2 |
+[V:LH] C, z z z | C, z z z | C, z z z | C, z z z |
+[V:RH] E2 C2 | G2 E2 | F E e d | c2 G2 |
+[V:LH] C, z z z | C, z z z | C, z z z | C, z z z |
+[V:RH] E2 C2 |]
+[V:LH] C, z z z |]

@@ -1,0 +1,25 @@
+%abc-2.1
+X:2055
+T:g3-n100-055 Năm cảnh rải Đô trầm
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=arpeggio; lead=LH; bucket=n100; notes=90; RH=20; LH=70
+% role=L; duration60=80s; related_pattern=8b8dc6bdfda55d46
+% authored_passages=D01 D03 D05 D04 D06
+% source=buildscripts/pianist/compositions/g3/n100.txt:56
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C, G, E, C, | G, C, E, G, | E, C, G, E, | C,2 C,2 |
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] G, C, E, G, | E, C, G, E, | C, G, E, C, | E, G, C,2 |
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C, G, E,2 | C,2 G, E, | C, E, G, C, | E, G, C,2 |
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C,2 G, E, | C, E, G, C, | E, G, C, E, | G, E, C,2 |
+[V:RH] C4 | C4 | C4 | C4 |]
+[V:LH] C, G, E, z | G, C, E, G, | E, C, G, E, | C, E, C,2 |]

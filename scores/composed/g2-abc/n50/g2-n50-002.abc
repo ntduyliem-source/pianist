@@ -1,0 +1,21 @@
+%abc-2.1
+X:1202
+T:g2-n50-002 Bậc thang tới nốt chờ
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=third; lead=RH; bucket=n50; notes=48; RH=36; LH=12
+% role=R; duration60=48s; related_pattern=05a7eb80a258190e
+% authored_passages=T02 T07 T17
+% source=buildscripts/pianist/compositions/g2/n50.txt:3
+[V:RH] C D E G | F D E2 | E C D E | D C C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C D F E | D C E D | C2 E D | E D C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C2 E2 | G2 E2 | D E C2 | C4 |]
+[V:LH] C,4 | C,4 | C,4 | C,4 |]

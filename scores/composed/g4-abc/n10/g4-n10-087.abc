@@ -1,0 +1,17 @@
+%abc-2.1
+X:2387
+T:g4-n10-087 Si Rê Đô cùng phách
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=upper; lead=RH; bucket=n10; notes=10; RH=5; LH=5
+% role=S; duration60=6s; related_pattern=5f801c8911fdfa9c
+% authored_passages=inline-n10-087
+% source=buildscripts/pianist/compositions/g4/n10.txt:88
+[V:RH] B d c | B G2 |]
+[V:LH] G, F, G, | G, G,2 |]

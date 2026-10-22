@@ -1,0 +1,21 @@
+%abc-2.1
+X:4692
+T:g7-n30-092 Fa Mi Rê trầm đu đưa
+C:Nhạc do trợ lý AI biên soạn
+M:6/8
+L:1/4
+Q:3/8=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G7; profile=compound; lead=LH; bucket=n30; notes=34; RH=9; LH=25
+% duration60=18s; related_pattern=1efdaaf89b2eb118
+% authored_passages=K17 KLp4 KLp3
+% source=buildscripts/pianist/compositions/g7/studies.txt:93
+[V:RH] D3 | D3 | C3 | D3 |
+[V:LH] F, E,/2 D,3/2 | D, F,/2 E,3/2 | G,/2 F,/2 E,/2 D, C,/2 | F, E,/2 D,3/2 |
+[V:RH] C3 | C3 | D3 | C3 |
+[V:LH] E,3/2 C,3/2 | G,3/2 E,3/2 | D, E,/2 F,3/2 | E, F,/2 G,3/2 |
+[V:RH] C3 |]
+[V:LH] C,3 |]

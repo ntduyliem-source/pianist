@@ -1,0 +1,17 @@
+%abc-2.1
+X:2491
+T:g4-n20-091 Bass cao trên nhịp chung
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=upper; lead=LH; bucket=n20; notes=24; RH=12; LH=12
+% role=S; duration60=16s; related_pattern=5ba5e08655aede94
+% authored_passages=S06
+% source=buildscripts/pianist/compositions/g4/n20.txt:92
+[V:RH] G G G2 | F G G2 | G G G2 | F G G2 |]
+[V:LH] G, A, B,2 | C B, G,2 | A, B, C2 | B, A, G,2 |]

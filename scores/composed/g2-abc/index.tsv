@@ -1,0 +1,701 @@
+id	group	bookPosition	profile	role	lead	count	right	left	meter	bars	seconds	title
+g2-n4-001	n4	1	third	R	RH	4	3	1	3	1	3	Bỏ một bậc rồi về
+g2-n4-002	n4	7	third	R	RH	4	3	1	3	1	3	Đáp xuống nốt chủ
+g2-n4-003	n4	13	third	R	RH	4	3	1	3	1	3	Bậc giữa mở cửa
+g2-n4-004	n4	25	third	R	RH	4	3	1	3	1	3	Từ ngọn xuống
+g2-n4-005	n4	19	third	R	RH	4	3	1	3	1	3	Đảo hướng ở giữa
+g2-n4-006	n4	31	third	R	RH	4	3	1	3	1	3	Ghé bậc thấp
+g2-n4-007	n4	35	third	R	RH	4	3	1	3	1	3	Vòng trên khuông
+g2-n4-008	n4	41	third	R	RH	4	3	1	3	1	3	Từ bậc bốn trở về
+g2-n4-009	n4	47	third	R	RH	4	3	1	3	1	3	Đặt chân rồi nhảy
+g2-n4-010	n4	53	third	R	RH	4	3	1	4	1	4	Giữ đầu câu sáng
+g2-n4-011	n4	65	third	R	RH	4	3	1	4	1	4	Giữ nốt giữa
+g2-n4-012	n4	59	third	R	RH	4	3	1	4	1	4	Dừng ở bậc bốn
+g2-n4-013	n4	69	third	R	RH	4	3	1	4	1	4	Dừng trên nền Sol
+g2-n4-014	n4	81	third	R	RH	4	3	1	4	1	4	Nhảy sau một khoảng nghỉ
+g2-n4-015	n4	75	third	R	RH	4	3	1	4	1	4	Nốt thấp sau nghỉ
+g2-n4-016	n4	93	third	R	RH	5	4	1	4	1	4	Một vòng về nhà
+g2-n4-017	n4	87	third	R	RH	5	4	1	4	1	4	Ba xuống một lên
+g2-n4-018	n4	99	third	R	RH	5	4	1	4	1	4	Lượn quanh nốt Mi
+g2-n4-019	n4	2	eighth	R	RH	4	3	1	2	1	2	Chia đôi phách đầu
+g2-n4-020	n4	15	eighth	R	RH	3	2	1	2	1	2	Hai nốt rồi nghỉ
+g2-n4-021	n4	21	eighth	R	RH	4	3	1	2	1	2	Chia phách trở về
+g2-n4-022	n4	9	eighth	R	RH	4	3	1	2	1	2	Đi lên từ giữa
+g2-n4-023	n4	33	eighth	R	RH	4	3	1	2	1	2	Đi xuống từ cao
+g2-n4-024	n4	27	eighth	R	RH	4	3	1	2	1	2	Đổi hướng trong phách
+g2-n4-025	n4	39	eighth	R	RH	3	2	1	2	1	2	Đợi rồi chia đôi
+g2-n4-026	n4	51	eighth	R	RH	4	3	1	3	1	3	Nốt dài mở câu
+g2-n4-027	n4	45	eighth	R	RH	4	3	1	3	1	3	Nốt dài đóng câu
+g2-n4-028	n4	55	eighth	R	RH	4	3	1	3	1	3	Hai nốt về Đô
+g2-n4-029	n4	67	eighth	R	RH	5	4	1	3	1	3	Nhắc trước khi đi
+g2-n4-030	n4	61	eighth	R	RH	5	4	1	3	1	3	Chia đôi ở giữa
+g2-n4-031	n4	73	eighth	R	RH	4	3	1	3	1	3	Một nhịp nghỉ cuối
+g2-n4-032	n4	85	eighth	R	RH	5	4	1	2	1	2	Hai cặp đi lên
+g2-n4-033	n4	79	eighth	R	RH	5	4	1	2	1	2	Hai cặp đi xuống
+g2-n4-034	n4	91	eighth	R	RH	5	4	1	2	1	2	Hai cặp quay lại
+g2-n4-035	n4	100	eighth	R	RH	5	3	2	2	1	2	Nền nhắc hai lần
+g2-n4-036	n4	10	third	L	LH	4	1	3	3	1	3	Bậc ba ở khóa Fa
+g2-n4-037	n4	3	third	L	LH	4	1	3	3	1	3	Đường dưới về nhà
+g2-n4-038	n4	22	third	L	LH	4	1	3	3	1	3	Nhánh thấp giữa sân
+g2-n4-039	n4	16	third	L	LH	4	1	3	3	1	3	Hạ từ Sol
+g2-n4-040	n4	28	third	L	LH	4	1	3	3	1	3	Bước dưới phía trên
+g2-n4-041	n4	34	third	L	LH	4	1	3	3	1	3	Vòng tay trái
+g2-n4-042	n4	46	third	L	LH	4	1	3	3	1	3	Ghé qua nốt Mi
+g2-n4-043	n4	40	third	L	LH	4	1	3	3	1	3	Nhảy ở cuối mô típ
+g2-n4-044	n4	52	third	L	LH	4	1	3	3	1	3	Xuống rồi đi tiếp
+g2-n4-045	n4	62	third	L	LH	4	1	3	4	1	4	Nốt giữ ở đầu đường
+g2-n4-046	n4	56	third	L	LH	4	1	3	4	1	4	Khoảng dưới rộng hơn
+g2-n4-047	n4	68	third	L	LH	4	1	3	4	1	4	Dừng ở Fa thấp
+g2-n4-048	n4	80	third	L	LH	4	1	3	4	1	4	Dừng ở Rê thấp
+g2-n4-049	n4	74	third	L	LH	4	1	3	4	1	4	Tay trái đợi một phách
+g2-n4-050	n4	86	third	L	LH	5	1	4	4	1	4	Về Đô khóa Fa
+g2-n4-051	n4	92	third	L	LH	5	1	4	4	1	4	Lượn ở miền trầm
+g2-n4-052	n4	97	third	L	LH	5	1	4	4	1	4	Nhắc chân bước thấp
+g2-n4-053	n4	14	eighth	L	LH	4	1	3	2	1	2	Chia phách dưới khuông
+g2-n4-054	n4	4	eighth	L	LH	3	1	2	2	1	2	Hai nốt trầm rồi nghỉ
+g2-n4-055	n4	8	eighth	L	LH	4	1	3	2	1	2	Xuống dưới trong phách
+g2-n4-056	n4	20	eighth	L	LH	4	1	3	2	1	2	Hai bậc giữa khóa Fa
+g2-n4-057	n4	26	eighth	L	LH	4	1	3	2	1	2	Từ Sol thấp trở về
+g2-n4-058	n4	36	eighth	L	LH	4	1	3	2	1	2	Bật nhẹ rồi quay lại
+g2-n4-059	n4	32	eighth	L	LH	3	1	2	2	1	2	Phách đầu yên lặng
+g2-n4-060	n4	42	eighth	L	LH	4	1	3	3	1	3	Giữ rồi chia ở dưới
+g2-n4-061	n4	54	eighth	L	LH	4	1	3	3	1	3	Chia rồi giữ Mi thấp
+g2-n4-062	n4	48	eighth	L	LH	4	1	3	3	1	3	Đô trầm ở cuối câu
+g2-n4-063	n4	60	eighth	L	LH	5	1	4	3	1	3	Nốt nhắc mở lối
+g2-n4-064	n4	70	eighth	L	LH	5	1	4	3	1	3	Cặp giữa câu trầm
+g2-n4-065	n4	66	eighth	L	LH	4	1	3	3	1	3	Nghỉ sau nốt thấp
+g2-n4-066	n4	76	eighth	L	LH	5	1	4	2	1	2	Hai cặp dưới đi lên
+g2-n4-067	n4	88	eighth	L	LH	5	1	4	2	1	2	Hai cặp dưới đi xuống
+g2-n4-068	n4	82	eighth	L	LH	5	1	4	2	1	2	Hai cặp dưới quay về
+g2-n4-069	n4	94	eighth	L	LH	5	2	3	2	1	2	Tay trên giữ phách
+g2-n4-070	n4	98	eighth	L	LH	5	1	4	3	1	3	Bậc Fa ghé Mi
+g2-n4-071	n4	5	third	A	RH	4	3	1	4	1	4	Ba nốt gọi một nốt đáp
+g2-n4-072	n4	11	third	A	RH	4	3	1	4	1	4	Câu hỏi từ miền giữa
+g2-n4-073	n4	17	third	A	RH	4	3	1	4	1	4	Lời gọi từ Sol
+g2-n4-074	n4	23	third	A	RH	4	3	1	4	1	4	Gọi vòng phía trên
+g2-n4-075	n4	29	third	A	RH	4	3	1	4	1	4	Gọi vòng phía dưới
+g2-n4-076	n4	37	third	A	LH	4	1	3	4	1	4	Lời trầm trao lại
+g2-n4-077	n4	43	third	A	LH	4	1	3	4	1	4	Trầm hỏi giữa khuông
+g2-n4-078	n4	49	third	A	LH	4	1	3	4	1	4	Trầm gọi từ Sol
+g2-n4-079	n4	57	third	A	LH	4	1	3	4	1	4	Trầm vòng phía trên
+g2-n4-080	n4	63	third	A	LH	4	1	3	4	1	4	Trầm vòng phía dưới
+g2-n4-081	n4	71	third	A	RH	4	3	1	3	2	6	Lời gọi qua vạch nhịp
+g2-n4-082	n4	83	third	A	LH	4	1	3	3	2	6	Lời đáp qua vạch nhịp
+g2-n4-083	n4	77	third	A	RH	5	4	1	4	2	8	Vòng bốn nốt trao tay
+g2-n4-084	n4	89	third	A	LH	5	1	4	4	2	8	Vòng trầm bốn nốt
+g2-n4-085	n4	95	third	A	RH	5	3	2	3	2	6	Đáp bằng hai nốt
+g2-n4-086	n4	6	eighth	A	RH	3	2	1	2	1	2	Chia phách rồi trao lượt
+g2-n4-087	n4	18	eighth	A	LH	3	1	2	2	1	2	Phách trầm trao lượt
+g2-n4-088	n4	12	eighth	A	RH	3	2	1	2	1	2	Hai nốt từ trên
+g2-n4-089	n4	24	eighth	A	LH	3	1	2	2	1	2	Hai nốt từ dưới
+g2-n4-090	n4	30	eighth	A	RH	3	2	1	2	1	2	Phách chia ở sau
+g2-n4-091	n4	38	eighth	A	LH	3	1	2	2	1	2	Đợi tay trên gọi
+g2-n4-092	n4	44	eighth	A	RH	4	3	1	3	1	3	Một câu chia ba phách
+g2-n4-093	n4	58	eighth	A	LH	4	1	3	3	1	3	Một câu trầm ba phách
+g2-n4-094	n4	50	eighth	A	RH	4	3	1	3	1	3	Từ Mi xuống rồi đáp
+g2-n4-095	n4	64	eighth	A	LH	4	1	3	3	1	3	Từ Mi trầm rồi đáp
+g2-n4-096	n4	72	eighth	A	RH	5	4	1	4	1	4	Bốn nốt chờ tiếng đáp
+g2-n4-097	n4	84	eighth	A	LH	5	1	4	4	1	4	Bốn nốt trầm chờ đáp
+g2-n4-098	n4	78	eighth	A	RH	5	4	1	3	1	3	Hai cặp trao một tiếng
+g2-n4-099	n4	90	eighth	A	LH	5	1	4	3	1	3	Hai cặp trầm trao tiếng
+g2-n4-100	n4	96	eighth	A	RH	4	2	2	3	1	3	Gọi ngắn đáp hai lần
+g2-n6-001	n6	1	third	R	RH	6	4	2	4	1	4	Bốn nốt trên hai tiếng nền
+g2-n6-002	n6	15	third	R	RH	6	4	2	4	1	4	Bậc giữa có chỗ tựa
+g2-n6-003	n6	9	third	R	RH	6	4	2	4	1	4	Vòm trên có phách
+g2-n6-004	n6	21	third	R	RH	6	4	2	4	1	4	Bước thấp được nhắc
+g2-n6-005	n6	35	third	R	RH	6	4	2	4	1	4	Từ Sol rơi nhẹ
+g2-n6-006	n6	29	third	R	RH	8	6	2	3	2	6	Một nhịp mở một nhịp khép
+g2-n6-007	n6	41	third	R	RH	8	6	2	3	2	6	Cửa sổ phía trên
+g2-n6-008	n6	55	third	R	RH	8	6	2	3	2	6	Đường vòng giữa sân
+g2-n6-009	n6	49	third	R	RH	8	6	2	3	2	6	Hai câu trông nhau
+g2-n6-010	n6	61	third	R	RH	7	4	3	3	2	6	Lời ngắn giữ cuối
+g2-n6-011	n6	75	third	R	RH	7	5	2	3	2	6	Nốt dài ở giữa đường
+g2-n6-012	n6	69	third	R	RH	7	5	2	3	2	6	Chân bước nương nốt Mi
+g2-n6-013	n6	81	third	R	RH	7	5	2	3	2	6	Nhắc một lần rồi về
+g2-n6-014	n6	95	third	R	RH	7	5	2	3	2	6	Hỏi từ bậc Rê
+g2-n6-015	n6	89	third	R	RH	7	5	2	3	2	6	Đi vòng rồi dừng
+g2-n6-016	n6	2	eighth	R	RH	6	5	1	4	1	4	Chia rồi bước đều
+g2-n6-017	n6	16	eighth	R	RH	6	5	1	4	1	4	Bước đều rồi chia
+g2-n6-018	n6	10	eighth	R	RH	6	5	1	4	1	4	Nửa phách trên cao
+g2-n6-019	n6	22	eighth	R	RH	7	6	1	4	1	4	Hai cặp đầu câu
+g2-n6-020	n6	36	eighth	R	RH	7	6	1	4	1	4	Hai cặp cuối câu
+g2-n6-021	n6	30	eighth	R	RH	8	7	1	4	1	4	Ba cặp vừa một câu
+g2-n6-022	n6	42	eighth	R	RH	8	7	1	4	1	4	Phách đôi đi về
+g2-n6-023	n6	56	eighth	R	RH	8	6	2	3	2	6	Giữ Đô rồi bước nhẹ
+g2-n6-024	n6	50	eighth	R	RH	7	5	2	3	2	6	Đi nhẹ giữ Mi
+g2-n6-025	n6	62	eighth	R	RH	8	6	2	2	2	4	Một cặp trong mỗi nhịp
+g2-n6-026	n6	76	eighth	R	RH	7	5	2	2	2	4	Một cặp rồi nhắc Đô
+g2-n6-027	n6	70	eighth	R	RH	7	5	2	2	2	4	Hai bậc giữa rồi về
+g2-n6-028	n6	82	eighth	R	RH	7	5	2	3	2	6	Từ ngọn xuống chậm
+g2-n6-029	n6	96	eighth	R	RH	7	5	2	2	2	4	Chia nhịp quanh Mi
+g2-n6-030	n6	90	eighth	R	RH	8	6	2	2	2	4	Đổi hướng ở cặp sau
+g2-n6-031	n6	11	third	L	LH	6	2	4	4	1	4	Bốn nốt trầm có nền
+g2-n6-032	n6	3	third	L	LH	6	2	4	4	1	4	Miền trầm ở giữa
+g2-n6-033	n6	17	third	L	LH	6	2	4	4	1	4	Vòm thấp đi về
+g2-n6-034	n6	31	third	L	LH	6	2	4	4	1	4	Bậc thấp nhắc lại
+g2-n6-035	n6	23	third	L	LH	6	2	4	4	1	4	Từ Sol trầm đi xuống
+g2-n6-036	n6	37	third	L	LH	8	2	6	3	2	6	Hai nhịp dưới cùng kể
+g2-n6-037	n6	51	third	L	LH	8	2	6	3	2	6	Cửa sổ ở miền trầm
+g2-n6-038	n6	43	third	L	LH	8	2	6	3	2	6	Đường vòng khóa Fa
+g2-n6-039	n6	57	third	L	LH	8	2	6	3	2	6	Câu trầm từ thấp lên
+g2-n6-040	n6	71	third	L	LH	7	3	4	3	2	6	Lời trầm có điểm dừng
+g2-n6-041	n6	63	third	L	LH	7	2	5	3	2	6	Nốt giữ mở đường thấp
+g2-n6-042	n6	77	third	L	LH	7	2	5	3	2	6	Mi trầm làm điểm tựa
+g2-n6-043	n6	91	third	L	LH	7	2	5	3	2	6	Nhắc trước cú nhảy
+g2-n6-044	n6	83	third	L	LH	7	2	5	3	2	6	Câu hỏi ở nốt Rê trầm
+g2-n6-045	n6	97	third	L	LH	7	2	5	3	2	6	Vòng thấp khép ở Đô
+g2-n6-046	n6	12	eighth	L	LH	6	1	5	4	1	4	Chia đôi phách dưới
+g2-n6-047	n6	4	eighth	L	LH	6	1	5	4	1	4	Cặp nốt ở cuối đường
+g2-n6-048	n6	18	eighth	L	LH	6	1	5	4	1	4	Phách đôi miền trầm
+g2-n6-049	n6	32	eighth	L	LH	7	1	6	4	1	4	Hai cặp thấp mở câu
+g2-n6-050	n6	24	eighth	L	LH	7	1	6	4	1	4	Hai cặp thấp kết câu
+g2-n6-051	n6	38	eighth	L	LH	8	1	7	4	1	4	Ba cặp ở khóa Fa
+g2-n6-052	n6	52	eighth	L	LH	8	1	7	4	1	4	Phách đôi trầm quay về
+g2-n6-053	n6	44	eighth	L	LH	8	2	6	3	2	6	Giữ Đô thấp rồi chia
+g2-n6-054	n6	58	eighth	L	LH	7	2	5	3	2	6	Đi nhanh giữ Mi thấp
+g2-n6-055	n6	72	eighth	L	LH	8	2	6	2	2	4	Hai nhịp thấp có cặp
+g2-n6-056	n6	64	eighth	L	LH	7	2	5	2	2	4	Đô thấp nhắc sau cặp
+g2-n6-057	n6	78	eighth	L	LH	7	2	5	2	2	4	Cặp giữa khuông trầm
+g2-n6-058	n6	92	eighth	L	LH	7	2	5	3	2	6	Đi xuống rồi giữ thấp
+g2-n6-059	n6	84	eighth	L	LH	7	2	5	2	2	4	Cặp sau ở miền trầm
+g2-n6-060	n6	98	eighth	L	LH	8	2	6	2	2	4	Đảo hướng trong hai nhịp
+g2-n6-061	n6	5	third	A	RH	6	3	3	3	2	6	Hỏi quãng ba đáp bước liền
+g2-n6-062	n6	25	third	A	LH	6	3	3	3	2	6	Trầm hỏi cao đáp
+g2-n6-063	n6	45	third	A	RH	6	3	3	3	2	6	Hỏi từ trên đáp từ giữa
+g2-n6-064	n6	65	third	A	LH	6	3	3	3	2	6	Quãng ba dưới cửa sổ
+g2-n6-065	n6	85	third	A	RH	6	4	2	4	2	8	Bốn tiếng gọi hai tiếng đáp
+g2-n6-066	n6	6	eighth	A	RH	7	4	3	3	2	6	Chia phách hỏi đều phách đáp
+g2-n6-067	n6	8	eighth	A	RH	7	4	3	3	2	6	Gọi ở phách sau
+g2-n6-068	n6	14	eighth	A	RH	7	4	3	3	2	6	Gọi vòng nốt Mi
+g2-n6-069	n6	20	eighth	A	RH	7	4	3	3	2	6	Gọi đi xuống
+g2-n6-070	n6	26	eighth	A	RH	6	4	2	2	2	4	Hai cặp gọi hai nốt đáp
+g2-n6-071	n6	28	eighth	A	RH	7	4	3	3	2	6	Cặp cuối lời gọi
+g2-n6-072	n6	34	eighth	A	RH	7	4	3	3	2	6	Gọi nhắc rồi chia
+g2-n6-073	n6	40	eighth	A	RH	8	5	3	3	2	6	Hai cặp quanh Mi
+g2-n6-074	n6	46	eighth	A	RH	7	5	2	4	2	8	Giữ nốt kết lời gọi
+g2-n6-075	n6	48	eighth	A	RH	8	5	3	3	2	6	Một tiếng mở hai cặp khép
+g2-n6-076	n6	54	eighth	A	LH	7	3	4	3	2	6	Trầm chia phách rồi gọi
+g2-n6-077	n6	60	eighth	A	LH	7	3	4	3	2	6	Trầm gọi ở phách sau
+g2-n6-078	n6	66	eighth	A	LH	7	3	4	3	2	6	Trầm gọi vòng nốt Mi
+g2-n6-079	n6	68	eighth	A	LH	7	3	4	3	2	6	Trầm gọi đi xuống
+g2-n6-080	n6	74	eighth	A	LH	6	2	4	2	2	4	Hai cặp thấp hai tiếng đáp
+g2-n6-081	n6	80	eighth	A	LH	7	3	4	3	2	6	Cặp cuối câu trầm
+g2-n6-082	n6	86	eighth	A	LH	7	3	4	3	2	6	Trầm nhắc rồi chia
+g2-n6-083	n6	88	eighth	A	LH	8	3	5	3	2	6	Hai cặp trầm quanh Mi
+g2-n6-084	n6	94	eighth	A	LH	7	2	5	4	2	8	Câu trầm đáp hai tiếng
+g2-n6-085	n6	100	eighth	A	LH	8	3	5	3	2	6	Trầm mở một khép hai cặp
+g2-n6-086	n6	7	third	S	RH	6	3	3	3	1	3	Cùng phách một tay nhảy
+g2-n6-087	n6	19	third	S	LH	6	3	3	3	1	3	Cùng phách dưới nhảy
+g2-n6-088	n6	13	third	S	RH	6	3	3	3	1	3	Quãng ba phía trên
+g2-n6-089	n6	27	third	S	LH	6	3	3	3	1	3	Quãng ba phía dưới
+g2-n6-090	n6	33	third	S	RH	6	3	3	3	1	3	Đảo chiều cùng tiếng
+g2-n6-091	n6	47	third	S	LH	6	3	3	3	1	3	Đảo chiều dưới cùng tiếng
+g2-n6-092	n6	39	third	S	RH	6	3	3	3	1	3	Hai tay gặp nốt Mi
+g2-n6-093	n6	53	third	S	LH	6	3	3	3	1	3	Gặp Mi ở miền trầm
+g2-n6-094	n6	59	third	S	RH	6	3	3	4	1	4	Phách dài kết chung
+g2-n6-095	n6	67	third	S	LH	6	3	3	4	1	4	Phách dài trầm kết
+g2-n6-096	n6	73	third	S	RH	6	3	3	4	1	4	Giữ rồi cùng bước
+g2-n6-097	n6	87	third	S	LH	6	3	3	4	1	4	Giữ cùng đường trầm
+g2-n6-098	n6	79	third	S	RH	8	4	4	4	1	4	Bốn tiếng cùng đường
+g2-n6-099	n6	93	third	S	LH	8	4	4	4	1	4	Bốn tiếng dưới dẫn
+g2-n6-100	n6	99	third	S	RH	8	4	4	4	1	4	Đường vòng hai khuông
+g2-n10-001	n10	1	third	R	RH	9	7	2	4	2	8	Câu quãng ba trở về
+g2-n10-002	n10	15	third	R	RH	10	8	2	4	2	8	Câu hỏi trên nốt Mi
+g2-n10-003	n10	9	third	R	RH	10	8	2	4	2	8	Hai vòng nhỏ
+g2-n10-004	n10	21	third	R	RH	10	8	2	4	2	8	Nhắc bậc chủ rồi đi
+g2-n10-005	n10	35	third	R	RH	10	8	2	4	2	8	Lời từ đỉnh thấp dần
+g2-n10-006	n10	29	third	R	RH	9	7	2	4	2	8	Nốt dài trả lời bước nhảy
+g2-n10-007	n10	41	third	R	RH	10	8	2	4	2	8	Về nhà qua bậc giữa
+g2-n10-008	n10	55	third	R	RH	11	7	4	4	2	8	Mở và khép ở Mi
+g2-n10-009	n10	49	third	R	RH	11	7	4	4	2	8	Đường nét bên hai tiếng nền
+g2-n10-010	n10	61	third	R	RH	9	7	2	4	2	8	Ngắt nhẹ sau bước nhảy
+g2-n10-011	n10	75	third	R	RH	9	7	2	4	2	8	Vòng Mi có phách nghỉ
+g2-n10-012	n10	69	third	R	RH	12	9	3	3	3	9	Ba nhịp có tiếng vọng
+g2-n10-013	n10	81	third	R	RH	12	9	3	3	3	9	Ba nhịp giữa vườn
+g2-n10-014	n10	95	third	R	RH	11	8	3	3	3	9	Ba nhịp giữ đầu câu
+g2-n10-015	n10	89	third	R	RH	11	8	3	3	3	9	Ba nhịp nghỉ rồi về
+g2-n10-016	n10	2	eighth	R	RH	11	9	2	4	2	8	Cặp đầu cặp đáp
+g2-n10-017	n10	16	eighth	R	RH	12	10	2	4	2	8	Phách đôi ở cuối lời
+g2-n10-018	n10	10	eighth	R	RH	12	10	2	4	2	8	Hai cặp cùng trở lại
+g2-n10-019	n10	22	eighth	R	RH	11	9	2	4	2	8	Dòng chia quanh Mi
+g2-n10-020	n10	36	eighth	R	RH	11	9	2	4	2	8	Một nhịp sáng một nhịp êm
+g2-n10-021	n10	30	eighth	R	RH	13	10	3	4	2	8	Hai nhịp chia đều
+g2-n10-022	n10	42	eighth	R	RH	12	10	2	4	2	8	Cặp đi xuống đầu câu
+g2-n10-023	n10	56	eighth	R	RH	10	8	2	4	2	8	Nghe phách qua chỗ nghỉ
+g2-n10-024	n10	50	eighth	R	RH	11	9	2	4	2	8	Một cặp sau nốt giữ
+g2-n10-025	n10	62	eighth	R	RH	13	11	2	4	2	8	Một đường bốn cặp
+g2-n10-026	n10	76	eighth	R	RH	12	9	3	3	3	9	Chia ba nhịp ngắn
+g2-n10-027	n10	70	eighth	R	RH	11	8	3	3	3	9	Một cặp giữa ba nhịp
+g2-n10-028	n10	82	eighth	R	RH	12	9	3	3	3	9	Ba nhịp có hai cặp
+g2-n10-029	n10	96	eighth	R	RH	13	9	4	4	2	8	Nền nhắc dưới phách đôi
+g2-n10-030	n10	90	eighth	R	RH	13	9	4	4	2	8	Hai cặp giữa tiếng nền
+g2-n10-031	n10	11	third	L	LH	9	2	7	4	2	8	Câu quãng ba ở miền trầm
+g2-n10-032	n10	3	third	L	LH	10	2	8	4	2	8	Trầm hỏi từ Mi
+g2-n10-033	n10	17	third	L	LH	10	2	8	4	2	8	Hai vòng ở khóa Fa
+g2-n10-034	n10	31	third	L	LH	10	2	8	4	2	8	Nhắc chủ âm trầm
+g2-n10-035	n10	23	third	L	LH	10	2	8	4	2	8	Lời từ Sol thấp
+g2-n10-036	n10	37	third	L	LH	9	2	7	4	2	8	Trầm giữ đầu rồi nhảy
+g2-n10-037	n10	51	third	L	LH	10	2	8	4	2	8	Về trầm qua bậc giữa
+g2-n10-038	n10	43	third	L	LH	11	4	7	4	2	8	Mở khép bằng Mi trầm
+g2-n10-039	n10	57	third	L	LH	11	4	7	4	2	8	Quãng ba dưới tiếng nền
+g2-n10-040	n10	71	third	L	LH	9	2	7	4	2	8	Trầm ngắt sau bước nhảy
+g2-n10-041	n10	63	third	L	LH	9	2	7	4	2	8	Vòng thấp có phách nghỉ
+g2-n10-042	n10	77	third	L	LH	12	3	9	3	3	9	Ba nhịp trầm vọng lại
+g2-n10-043	n10	91	third	L	LH	12	3	9	3	3	9	Ba nhịp dưới khu vườn
+g2-n10-044	n10	83	third	L	LH	11	3	8	3	3	9	Trầm dài mở ba nhịp
+g2-n10-045	n10	97	third	L	LH	11	3	8	3	3	9	Trầm nghỉ rồi về
+g2-n10-046	n10	12	eighth	L	LH	11	2	9	4	2	8	Cặp đầu cặp đáp trầm
+g2-n10-047	n10	4	eighth	L	LH	12	2	10	4	2	8	Phách đôi khép lời trầm
+g2-n10-048	n10	18	eighth	L	LH	12	2	10	4	2	8	Hai cặp thấp trở lại
+g2-n10-049	n10	32	eighth	L	LH	11	2	9	4	2	8	Chia phách quanh Mi thấp
+g2-n10-050	n10	24	eighth	L	LH	11	2	9	4	2	8	Trầm sáng rồi êm
+g2-n10-051	n10	38	eighth	L	LH	13	3	10	4	2	8	Hai nhịp trầm chia đều
+g2-n10-052	n10	52	eighth	L	LH	12	2	10	4	2	8	Cặp xuống mở câu trầm
+g2-n10-053	n10	44	eighth	L	LH	10	2	8	4	2	8	Nghe phách trầm qua nghỉ
+g2-n10-054	n10	58	eighth	L	LH	11	2	9	4	2	8	Cặp thấp sau nốt giữ
+g2-n10-055	n10	72	eighth	L	LH	13	2	11	4	2	8	Bốn cặp dưới khuông
+g2-n10-056	n10	64	eighth	L	LH	12	3	9	3	3	9	Ba nhịp thấp chia ngắn
+g2-n10-057	n10	78	eighth	L	LH	11	3	8	3	3	9	Cặp giữa ba nhịp trầm
+g2-n10-058	n10	92	eighth	L	LH	12	3	9	3	3	9	Hai cặp ba nhịp thấp
+g2-n10-059	n10	84	eighth	L	LH	13	4	9	4	2	8	Phách trầm đôi dưới nền
+g2-n10-060	n10	98	eighth	L	LH	13	4	9	4	2	8	Hai cặp trầm giữa nền
+g2-n10-061	n10	5	third	A	RH	12	6	6	3	4	12	Hai lời hỏi hai lời đáp
+g2-n10-062	n10	25	third	A	LH	12	6	6	3	4	12	Đối đáp từ miền trầm
+g2-n10-063	n10	45	third	A	RH	12	6	6	3	4	12	Hỏi phía trên đáp phía dưới
+g2-n10-064	n10	65	third	A	LH	12	6	6	3	4	12	Hỏi giữa khóa Fa
+g2-n10-065	n10	85	third	A	RH	10	5	5	3	4	12	Câu hỏi nghỉ một phách
+g2-n10-066	n10	6	eighth	A	RH	9	5	4	4	2	8	Phách đôi hỏi phách đều đáp
+g2-n10-067	n10	8	eighth	A	RH	9	5	4	4	2	8	Một lời gọi đi lên
+g2-n10-068	n10	14	eighth	A	RH	9	5	4	4	2	8	Lời gọi từ trên xuống
+g2-n10-069	n10	20	eighth	A	RH	10	6	4	4	2	8	Hai cặp gọi qua cửa
+g2-n10-070	n10	26	eighth	A	RH	10	6	4	4	2	8	Hai cặp khép tiếng gọi
+g2-n10-071	n10	28	eighth	A	RH	10	6	4	4	2	8	Vòng gọi quanh Mi
+g2-n10-072	n10	34	eighth	A	RH	10	6	4	2	4	8	Bốn nhịp ngắn trao lượt
+g2-n10-073	n10	40	eighth	A	RH	10	6	4	2	4	8	Bốn nhịp đổi cặp
+g2-n10-074	n10	46	eighth	A	RH	9	5	4	4	2	8	Nghỉ nhẹ giữa hai lời
+g2-n10-075	n10	48	eighth	A	RH	10	7	3	4	2	8	Ba cặp gọi giữ tiếng đáp
+g2-n10-076	n10	54	eighth	A	LH	9	4	5	4	2	8	Trầm chia phách trên đáp
+g2-n10-077	n10	60	eighth	A	LH	9	4	5	4	2	8	Lời trầm gọi lên
+g2-n10-078	n10	66	eighth	A	LH	9	4	5	4	2	8	Lời trầm gọi xuống
+g2-n10-079	n10	68	eighth	A	LH	10	4	6	4	2	8	Hai cặp trầm gọi qua cửa
+g2-n10-080	n10	74	eighth	A	LH	10	4	6	4	2	8	Hai cặp trầm kết lời
+g2-n10-081	n10	80	eighth	A	LH	10	4	6	4	2	8	Vòng trầm gọi quanh Mi
+g2-n10-082	n10	86	eighth	A	LH	10	4	6	2	4	8	Bốn nhịp dưới trao lượt
+g2-n10-083	n10	88	eighth	A	LH	10	4	6	2	4	8	Bốn nhịp trầm đổi cặp
+g2-n10-084	n10	94	eighth	A	LH	9	4	5	4	2	8	Trầm nghỉ nhẹ giữa lời
+g2-n10-085	n10	100	eighth	A	LH	10	3	7	4	2	8	Ba cặp thấp gọi tiếng đáp
+g2-n10-086	n10	7	third	S	RH	12	6	6	3	2	6	Cùng phách qua hai nhịp
+g2-n10-087	n10	19	third	S	LH	12	6	6	3	2	6	Hai nhịp trầm nhảy
+g2-n10-088	n10	13	third	S	RH	12	6	6	3	2	6	Vòm trên cùng nhịp
+g2-n10-089	n10	27	third	S	LH	12	6	6	3	2	6	Vòm trầm cùng nhịp
+g2-n10-090	n10	33	third	S	RH	10	5	5	3	2	6	Nốt giữ khép hai nhịp
+g2-n10-091	n10	47	third	S	LH	10	5	5	3	2	6	Nốt giữ trầm khép câu
+g2-n10-092	n10	39	third	S	RH	10	5	5	3	2	6	Quãng ba ở giữa câu
+g2-n10-093	n10	53	third	S	LH	10	5	5	3	2	6	Quãng ba trầm giữa câu
+g2-n10-094	n10	59	third	S	RH	14	7	7	4	2	8	Hai tay khép bốn phách
+g2-n10-095	n10	67	third	S	LH	14	7	7	4	2	8	Trầm khép bốn phách
+g2-n10-096	n10	73	third	S	RH	10	5	5	3	2	6	Nốt dài trước bước nhảy
+g2-n10-097	n10	87	third	S	LH	10	5	5	3	2	6	Dưới giữ trước bước nhảy
+g2-n10-098	n10	79	third	S	RH	12	6	6	3	2	6	Đối hướng trên cùng phách
+g2-n10-099	n10	93	third	S	LH	12	6	6	3	2	6	Đối hướng dưới cùng phách
+g2-n10-100	n10	99	third	S	RH	12	6	6	3	2	6	Dừng ở Mi cùng tiếng
+g2-n20-001	n20	1	third	R	RH	18	14	4	4	4	16	Bốn khung cửa quãng ba
+g2-n20-002	n20	15	third	R	RH	18	14	4	4	4	16	Bậc thang có khoảng mở
+g2-n20-003	n20	9	third	R	RH	19	15	4	4	4	16	Lời từ nốt Mi
+g2-n20-004	n20	21	third	R	RH	20	16	4	4	4	16	Nốt nhắc và đường vòng
+g2-n20-005	n20	35	third	R	RH	15	11	4	4	4	16	Bốn nhịp thở chậm
+g2-n20-006	n20	29	third	R	RH	18	14	4	4	4	16	Mi dẫn đường về
+g2-n20-007	n20	41	third	R	RH	18	14	4	4	4	16	Lối đi qua bậc Fa
+g2-n20-008	n20	55	third	R	RH	18	14	4	4	4	16	Câu hỏi vòng dưới
+g2-n20-009	n20	49	third	R	RH	17	13	4	4	4	16	Hai bậc sáng trong câu
+g2-n20-010	n20	61	third	R	RH	18	14	4	4	4	16	Chờ một phách rồi kể
+g2-n20-011	n20	75	third	R	RH	16	12	4	3	4	12	Vòng ba phách đầu tiên
+g2-n20-012	n20	69	third	R	RH	16	12	4	3	4	12	Mi mở nhịp ba
+g2-n20-013	n20	81	third	R	RH	15	11	4	3	4	12	Giữ nốt giữa nhịp ba
+g2-n20-014	n20	95	third	R	RH	16	12	4	3	4	12	Bước qua Fa trong nhịp ba
+g2-n20-015	n20	89	third	R	RH	15	11	4	3	4	12	Nhắc Đô khép nhịp ba
+g2-n20-016	n20	2	eighth	R	RH	23	19	4	4	4	16	Bốn nhịp chia phách
+g2-n20-017	n20	16	eighth	R	RH	23	19	4	4	4	16	Cặp nốt thay vị trí
+g2-n20-018	n20	10	eighth	R	RH	21	17	4	4	4	16	Phách chia trên nền chuyển
+g2-n20-019	n20	22	eighth	R	RH	20	16	4	4	4	16	Đi nhẹ rồi giữ nốt
+g2-n20-020	n20	36	eighth	R	RH	19	15	4	4	4	16	Chia phách mở hai lời
+g2-n20-021	n20	30	eighth	R	RH	16	12	4	4	4	16	Câu đôi khép chậm
+g2-n20-022	n20	42	eighth	R	RH	17	13	4	4	4	16	Nốt nhắc trong câu chia
+g2-n20-023	n20	56	eighth	R	RH	17	13	4	4	4	16	Bắt đầu bằng khoảng yên
+g2-n20-024	n20	50	eighth	R	RH	20	16	4	4	4	16	Bậc thấp chia phách
+g2-n20-025	n20	62	eighth	R	RH	23	19	4	4	4	16	Nhiều cặp trong cùng câu
+g2-n20-026	n20	76	eighth	R	RH	18	14	4	3	4	12	Ba phách có cặp đôi
+g2-n20-027	n20	70	eighth	R	RH	17	13	4	3	4	12	Cặp sau trong nhịp ba
+g2-n20-028	n20	82	eighth	R	RH	18	14	4	3	4	12	Vòm Mi chia nhịp ba
+g2-n20-029	n20	96	eighth	R	RH	20	16	4	3	4	12	Cặp đôi đi qua đỉnh
+g2-n20-030	n20	90	eighth	R	RH	16	12	4	3	4	12	Nốt giữ giữa ba phách
+g2-n20-031	n20	11	third	L	LH	18	4	14	4	4	16	Bốn cửa ở miền trầm
+g2-n20-032	n20	3	third	L	LH	18	4	14	4	4	16	Thang dưới có khoảng mở
+g2-n20-033	n20	17	third	L	LH	19	4	15	4	4	16	Lời từ Mi trầm
+g2-n20-034	n20	31	third	L	LH	20	4	16	4	4	16	Nốt nhắc đường trầm
+g2-n20-035	n20	23	third	L	LH	15	4	11	4	4	16	Bốn nhịp thở ở dưới
+g2-n20-036	n20	37	third	L	LH	18	4	14	4	4	16	Mi trầm dẫn đường
+g2-n20-037	n20	51	third	L	LH	18	4	14	4	4	16	Lối thấp qua Fa
+g2-n20-038	n20	43	third	L	LH	18	4	14	4	4	16	Câu hỏi ở khóa Fa
+g2-n20-039	n20	57	third	L	LH	17	4	13	4	4	16	Hai bậc sáng miền trầm
+g2-n20-040	n20	71	third	L	LH	18	4	14	4	4	16	Câu trầm chờ một phách
+g2-n20-041	n20	63	third	L	LH	16	4	12	3	4	12	Vòng ba phách dưới
+g2-n20-042	n20	77	third	L	LH	16	4	12	3	4	12	Mi trầm mở nhịp ba
+g2-n20-043	n20	91	third	L	LH	15	4	11	3	4	12	Giữ nốt thấp giữa nhịp
+g2-n20-044	n20	83	third	L	LH	16	4	12	3	4	12	Bước qua Fa thấp
+g2-n20-045	n20	97	third	L	LH	15	4	11	3	4	12	Nhắc Đô trầm khép nhịp
+g2-n20-046	n20	12	eighth	L	LH	23	4	19	4	4	16	Bốn nhịp thấp chia phách
+g2-n20-047	n20	4	eighth	L	LH	23	4	19	4	4	16	Cặp trầm đổi vị trí
+g2-n20-048	n20	18	eighth	L	LH	21	4	17	4	4	16	Phách trầm trên nền chuyển
+g2-n20-049	n20	32	eighth	L	LH	20	4	16	4	4	16	Đi nhẹ giữ nốt trầm
+g2-n20-050	n20	24	eighth	L	LH	19	4	15	4	4	16	Chia phách trầm mở lời
+g2-n20-051	n20	38	eighth	L	LH	16	4	12	4	4	16	Câu trầm khép chậm
+g2-n20-052	n20	52	eighth	L	LH	17	4	13	4	4	16	Nốt nhắc trong câu thấp
+g2-n20-053	n20	44	eighth	L	LH	17	4	13	4	4	16	Câu trầm bắt đầu yên
+g2-n20-054	n20	58	eighth	L	LH	20	4	16	4	4	16	Bậc thấp giữ phách đôi
+g2-n20-055	n20	72	eighth	L	LH	23	4	19	4	4	16	Nhiều cặp miền trầm
+g2-n20-056	n20	64	eighth	L	LH	18	4	14	3	4	12	Ba phách thấp có cặp
+g2-n20-057	n20	78	eighth	L	LH	17	4	13	3	4	12	Cặp trầm sau nhịp ba
+g2-n20-058	n20	92	eighth	L	LH	18	4	14	3	4	12	Vòm Mi trầm chia nhịp
+g2-n20-059	n20	84	eighth	L	LH	20	4	16	3	4	12	Cặp thấp qua đỉnh
+g2-n20-060	n20	98	eighth	L	LH	16	4	12	3	4	12	Giữ trầm giữa ba phách
+g2-n20-061	n20	5	third	A	RH	15	8	7	4	4	16	Bốn lượt qua cửa sổ
+g2-n20-062	n20	25	third	A	LH	15	7	8	4	4	16	Trầm hỏi trên đáp
+g2-n20-063	n20	45	third	A	RH	18	9	9	3	6	18	Sáu lượt cùng nhịp ba
+g2-n20-064	n20	65	third	A	LH	15	6	9	3	6	18	Lời trầm ngắn câu đáp dài
+g2-n20-065	n20	85	third	A	RH	15	8	7	4	4	16	Hỏi nhắc ở nốt Đô
+g2-n20-066	n20	6	eighth	A	RH	17	10	7	4	4	16	Cặp đôi hỏi bước đều đáp
+g2-n20-067	n20	8	eighth	A	RH	17	9	8	4	4	16	Gọi lên đáp xuống
+g2-n20-068	n20	14	eighth	A	RH	19	11	8	4	4	16	Hai cặp trao qua lại
+g2-n20-069	n20	20	eighth	A	RH	17	10	7	4	4	16	Mi gọi từ trên
+g2-n20-070	n20	26	eighth	A	RH	16	8	8	4	4	16	Lời hỏi có nốt giữ
+g2-n20-071	n20	28	eighth	A	RH	15	8	7	4	4	16	Nốt dài đợi lời đáp
+g2-n20-072	n20	34	eighth	A	RH	18	11	7	4	4	16	Đôi cặp ở giữa lời
+g2-n20-073	n20	40	eighth	A	RH	20	12	8	4	4	16	Nhắc câu hỏi bằng cặp
+g2-n20-074	n20	46	eighth	A	RH	18	12	6	3	6	18	Sáu lượt chia nhịp ba
+g2-n20-075	n20	48	eighth	A	RH	17	11	6	3	6	18	Giữ đầu câu chia cuối
+g2-n20-076	n20	54	eighth	A	LH	17	7	10	4	4	16	Trầm chia hỏi trên đáp
+g2-n20-077	n20	60	eighth	A	LH	17	8	9	4	4	16	Gọi thấp rồi đáp cao
+g2-n20-078	n20	66	eighth	A	LH	19	8	11	4	4	16	Hai cặp dưới trao lời
+g2-n20-079	n20	68	eighth	A	LH	17	7	10	4	4	16	Mi trầm mở lời
+g2-n20-080	n20	74	eighth	A	LH	16	8	8	4	4	16	Câu trầm có nốt giữ
+g2-n20-081	n20	80	eighth	A	LH	15	7	8	4	4	16	Giữ trầm chờ đáp
+g2-n20-082	n20	86	eighth	A	LH	18	7	11	4	4	16	Cặp giữa lời trầm
+g2-n20-083	n20	88	eighth	A	LH	20	8	12	4	4	16	Nhắc câu hỏi dưới
+g2-n20-084	n20	94	eighth	A	LH	18	6	12	3	6	18	Sáu lượt trầm chia nhịp
+g2-n20-085	n20	99	eighth	A	LH	17	6	11	3	6	18	Trầm giữ đầu chia cuối
+g2-n20-086	n20	7	third	S	RH	24	12	12	4	4	16	Hai khuông cùng nhịp
+g2-n20-087	n20	13	third	S	RH	20	10	10	4	4	16	Nhảy và giữ cùng tiếng
+g2-n20-088	n20	19	third	S	RH	18	9	9	4	4	16	Nốt dài với bước ngắn
+g2-n20-089	n20	27	third	S	RH	20	10	10	4	4	16	Từ Mi xuống cùng nhau
+g2-n20-090	n20	33	third	S	RH	24	12	12	4	4	16	Quãng ba giữa hai khuông
+g2-n20-091	n20	39	third	S	LH	20	10	10	4	4	16	Dưới nhảy trên giữ
+g2-n20-092	n20	47	third	S	LH	18	9	9	4	4	16	Trầm đọc nốt dài
+g2-n20-093	n20	53	third	S	LH	20	10	10	4	4	16	Mi trầm xuống cùng nhịp
+g2-n20-094	n20	59	third	S	LH	24	12	12	4	4	16	Quãng ba dưới giữa câu
+g2-n20-095	n20	67	third	S	RH	20	10	10	4	4	16	Mở khoảng trên nhịp chung
+g2-n20-096	n20	79	third	S	LH	20	10	10	4	4	16	Mở khoảng dưới nhịp chung
+g2-n20-097	n20	73	third	S	RH	18	9	9	3	4	12	Hai tay ba phách
+g2-n20-098	n20	87	third	S	LH	18	9	9	3	4	12	Trầm dẫn ba phách
+g2-n20-099	n20	93	third	S	RH	16	8	8	3	4	12	Giữ và nhảy nhịp ba
+g2-n20-100	n20	100	third	S	LH	16	8	8	3	4	12	Giữ dưới nhảy nhịp ba
+g2-n30-001	n30	1	third	R	RH	31	23	8	4	8	32	Cửa sổ và khoảng lặng
+g2-n30-002	n30	15	third	R	RH	30	22	8	4	8	32	Bậc thang rồi nốt dài
+g2-n30-003	n30	9	third	R	RH	30	22	8	4	8	32	Mi kể rồi Đô giữ
+g2-n30-004	n30	21	third	R	RH	31	23	8	4	8	32	Nhắc câu rồi thở
+g2-n30-005	n30	35	third	R	RH	25	17	8	4	8	32	Câu ngắn khép chậm
+g2-n30-006	n30	29	third	R	RH	33	25	8	4	8	32	Hai lời từ nốt Mi
+g2-n30-007	n30	41	third	R	RH	35	27	8	4	8	32	Qua Fa ghé Mi
+g2-n30-008	n30	55	third	R	RH	30	22	8	4	8	32	Câu hỏi khép ở Đô
+g2-n30-009	n30	49	third	R	RH	30	22	8	4	8	32	Nốt sáng dần lắng
+g2-n30-010	n30	61	third	R	RH	29	21	8	4	8	32	Nghỉ trong câu về
+g2-n30-011	n30	75	third	R	RH	31	23	8	3	8	24	Hai vòng ba phách
+g2-n30-012	n30	69	third	R	RH	31	23	8	3	8	24	Mi và nốt nhắc ba phách
+g2-n30-013	n30	81	third	R	RH	31	23	8	3	8	24	Giữ trước bước qua Fa
+g2-n30-014	n30	95	third	R	RH	32	24	8	3	8	24	Từ Fa vòng lại
+g2-n30-015	n30	89	third	R	RH	31	23	8	3	8	24	Nhắc đầu đổi hướng sau
+g2-n30-016	n30	2	eighth	R	RH	36	28	8	4	8	32	Phách chia rồi thu lại
+g2-n30-017	n30	16	eighth	R	RH	39	31	8	4	8	32	Đường đôi về cửa nhà
+g2-n30-018	n30	10	eighth	R	RH	34	26	8	4	8	32	Nền chuyển rồi ổn định
+g2-n30-019	n30	22	eighth	R	RH	35	27	8	4	8	32	Câu chia có nốt chờ
+g2-n30-020	n30	36	eighth	R	RH	30	22	8	4	8	32	Hai lời ngắn qua phách
+g2-n30-021	n30	30	eighth	R	RH	34	26	8	4	8	32	Chia chậm có khoảng nghỉ
+g2-n30-022	n30	42	eighth	R	RH	35	27	8	4	8	32	Nhắc rồi đổi điểm tựa
+g2-n30-023	n30	56	eighth	R	RH	34	26	8	4	8	32	Lời yên và lời bước
+g2-n30-024	n30	50	eighth	R	RH	33	25	8	4	8	32	Phách đôi từ thấp về
+g2-n30-025	n30	62	eighth	R	RH	36	28	8	4	8	32	Nhiều cặp về nốt giữ
+g2-n30-026	n30	76	eighth	R	RH	35	27	8	3	8	24	Hai lời chia nhịp ba
+g2-n30-027	n30	70	eighth	R	RH	33	25	8	3	8	24	Cặp sau và nốt dài
+g2-n30-028	n30	82	eighth	R	RH	36	28	8	3	8	24	Mi gọi Đô trả lời
+g2-n30-029	n30	96	eighth	R	RH	36	28	8	3	8	24	Qua đỉnh rồi lắng
+g2-n30-030	n30	90	eighth	R	RH	34	26	8	3	8	24	Mi mở câu giữ cuối
+g2-n30-031	n30	11	third	L	LH	31	8	23	4	8	32	Cửa trầm và khoảng lặng
+g2-n30-032	n30	3	third	L	LH	30	8	22	4	8	32	Thang thấp rồi nốt dài
+g2-n30-033	n30	17	third	L	LH	30	8	22	4	8	32	Mi trầm kể Đô giữ
+g2-n30-034	n30	31	third	L	LH	31	8	23	4	8	32	Nhắc câu trầm rồi thở
+g2-n30-035	n30	23	third	L	LH	25	8	17	4	8	32	Câu thấp khép chậm
+g2-n30-036	n30	37	third	L	LH	33	8	25	4	8	32	Hai lời từ Mi trầm
+g2-n30-037	n30	51	third	L	LH	35	8	27	4	8	32	Qua Fa thấp ghé Mi
+g2-n30-038	n30	43	third	L	LH	30	8	22	4	8	32	Câu trầm khép ở Đô
+g2-n30-039	n30	57	third	L	LH	30	8	22	4	8	32	Nốt trầm dần lắng
+g2-n30-040	n30	71	third	L	LH	29	8	21	4	8	32	Nghỉ trong lời trầm
+g2-n30-041	n30	63	third	L	LH	31	8	23	3	8	24	Hai vòng thấp ba phách
+g2-n30-042	n30	77	third	L	LH	31	8	23	3	8	24	Mi thấp nhắc nhịp ba
+g2-n30-043	n30	91	third	L	LH	31	8	23	3	8	24	Giữ thấp trước Fa
+g2-n30-044	n30	83	third	L	LH	32	8	24	3	8	24	Từ Fa thấp vòng về
+g2-n30-045	n30	97	third	L	LH	31	8	23	3	8	24	Trầm nhắc rồi đổi hướng
+g2-n30-046	n30	12	eighth	L	LH	36	8	28	4	8	32	Phách trầm chia rồi thu
+g2-n30-047	n30	4	eighth	L	LH	39	8	31	4	8	32	Đường đôi miền trầm
+g2-n30-048	n30	18	eighth	L	LH	34	8	26	4	8	32	Nền cao chuyển câu thấp
+g2-n30-049	n30	32	eighth	L	LH	35	8	27	4	8	32	Câu trầm có nốt chờ
+g2-n30-050	n30	24	eighth	L	LH	30	8	22	4	8	32	Hai lời thấp qua phách
+g2-n30-051	n30	38	eighth	L	LH	34	8	26	4	8	32	Chia trầm có khoảng nghỉ
+g2-n30-052	n30	52	eighth	L	LH	35	8	27	4	8	32	Nhắc thấp đổi điểm tựa
+g2-n30-053	n30	44	eighth	L	LH	34	8	26	4	8	32	Lời trầm yên rồi bước
+g2-n30-054	n30	58	eighth	L	LH	33	8	25	4	8	32	Phách đôi trầm đi về
+g2-n30-055	n30	72	eighth	L	LH	36	8	28	4	8	32	Nhiều cặp thấp về giữ
+g2-n30-056	n30	64	eighth	L	LH	35	8	27	3	8	24	Hai lời trầm nhịp ba
+g2-n30-057	n30	78	eighth	L	LH	33	8	25	3	8	24	Cặp thấp sau nốt dài
+g2-n30-058	n30	92	eighth	L	LH	36	8	28	3	8	24	Mi trầm gọi Đô đáp
+g2-n30-059	n30	84	eighth	L	LH	36	8	28	3	8	24	Qua đỉnh trầm rồi lắng
+g2-n30-060	n30	98	eighth	L	LH	34	8	26	3	8	24	Mi trầm mở giữ cuối
+g2-n30-061	n30	5	third	A	RH	30	15	15	4	8	32	Hai cuộc gọi qua sân
+g2-n30-062	n30	25	third	A	LH	30	15	15	4	8	32	Trầm gọi đổi câu đáp
+g2-n30-063	n30	45	third	A	RH	33	18	15	3	12	36	Mười hai lượt nhịp ba
+g2-n30-064	n30	65	third	A	LH	33	15	18	3	12	36	Trầm ngắn rồi trầm dài
+g2-n30-065	n30	85	third	A	RH	31	16	15	4	8	32	Nhắc lời rồi khép
+g2-n30-066	n30	6	eighth	A	RH	34	19	15	4	8	32	Cặp hỏi đổi hướng
+g2-n30-067	n30	8	eighth	A	RH	32	17	15	4	8	32	Câu lên tiếng về
+g2-n30-068	n30	14	eighth	A	RH	35	19	16	4	8	32	Hai cặp rồi nốt dài
+g2-n30-069	n30	20	eighth	A	RH	34	20	14	4	8	32	Mi mở cuộc đối đáp
+g2-n30-070	n30	26	eighth	A	RH	32	17	15	4	8	32	Lời giữ và lời nhắc
+g2-n30-071	n30	28	eighth	A	RH	33	19	14	4	8	32	Đợi rồi gọi nhanh hơn
+g2-n30-072	n30	34	eighth	A	RH	38	23	15	4	8	32	Cặp giữa và cặp đầu
+g2-n30-073	n30	40	eighth	A	RH	35	20	15	4	8	32	Nhiều cặp gọi ngắn
+g2-n30-074	n30	46	eighth	A	RH	35	23	12	3	12	36	Đối đáp ba phách giữ đầu
+g2-n30-075	n30	48	eighth	A	RH	35	23	12	3	12	36	Đối đáp ba phách đổi chỗ
+g2-n30-076	n30	54	eighth	A	LH	34	15	19	4	8	32	Cặp trầm hỏi đổi hướng
+g2-n30-077	n30	60	eighth	A	LH	32	15	17	4	8	32	Câu trầm lên tiếng về
+g2-n30-078	n30	66	eighth	A	LH	35	16	19	4	8	32	Hai cặp thấp rồi giữ
+g2-n30-079	n30	68	eighth	A	LH	34	14	20	4	8	32	Mi trầm mở đối đáp
+g2-n30-080	n30	74	eighth	A	LH	32	15	17	4	8	32	Lời thấp giữ rồi nhắc
+g2-n30-081	n30	80	eighth	A	LH	33	14	19	4	8	32	Đợi trầm rồi gọi nhanh
+g2-n30-082	n30	86	eighth	A	LH	38	15	23	4	8	32	Cặp giữa câu trầm
+g2-n30-083	n30	88	eighth	A	LH	35	15	20	4	8	32	Nhiều cặp trầm gọi ngắn
+g2-n30-084	n30	94	eighth	A	LH	35	12	23	3	12	36	Đối đáp trầm giữ đầu
+g2-n30-085	n30	99	eighth	A	LH	35	12	23	3	12	36	Đối đáp trầm đổi chỗ
+g2-n30-086	n30	7	third	S	RH	38	19	19	4	8	32	Cùng phách rồi lắng
+g2-n30-087	n30	13	third	S	RH	32	16	16	4	8	32	Nhảy và khoảng thở
+g2-n30-088	n30	19	third	S	RH	34	17	17	4	8	32	Nốt dài qua hai câu
+g2-n30-089	n30	27	third	S	RH	34	17	17	4	8	32	Mi cao hạ nhịp
+g2-n30-090	n30	33	third	S	RH	36	18	18	4	8	32	Bước nhảy và tiếng giữ
+g2-n30-091	n30	39	third	S	LH	34	17	17	4	8	32	Trầm nhảy cùng khép
+g2-n30-092	n30	47	third	S	LH	30	15	15	4	8	32	Nốt trầm dài dần lắng
+g2-n30-093	n30	53	third	S	LH	34	17	17	4	8	32	Mi trầm hạ nhịp
+g2-n30-094	n30	59	third	S	LH	36	18	18	4	8	32	Bước trầm và tiếng giữ
+g2-n30-095	n30	67	third	S	RH	32	16	16	4	8	32	Khoảng trên rồi nốt chờ
+g2-n30-096	n30	79	third	S	LH	32	16	16	4	8	32	Khoảng dưới rồi nốt chờ
+g2-n30-097	n30	73	third	S	RH	34	17	17	3	8	24	Nhịp ba đổi lời chung
+g2-n30-098	n30	87	third	S	LH	34	17	17	3	8	24	Trầm nhịp ba đổi lời
+g2-n30-099	n30	93	third	S	RH	34	17	17	3	8	24	Giữ đầu trở về chung
+g2-n30-100	n30	100	third	S	LH	34	17	17	3	8	24	Trầm giữ rồi trở về
+g2-n50-001	n50	1	third	R	RH	52	40	12	4	12	48	Ba cửa sổ trong nắng
+g2-n50-002	n50	9	third	R	RH	48	36	12	4	12	48	Bậc thang tới nốt chờ
+g2-n50-003	n50	15	third	R	RH	54	42	12	4	12	48	Mi kể ba đoạn
+g2-n50-004	n50	21	third	R	RH	60	44	16	4	12	48	Nhắc câu đổi nền
+g2-n50-005	n50	29	third	R	RH	40	28	12	4	12	48	Từ yên lặng thành lời
+g2-n50-006	n50	35	third	R	RH	50	38	12	4	12	48	Mi qua nền Rê
+g2-n50-007	n50	41	third	R	RH	49	37	12	4	12	48	Lối đi ba vòng
+g2-n50-008	n50	49	third	R	RH	53	41	12	4	12	48	Câu hỏi có nền chuyển
+g2-n50-009	n50	55	third	R	RH	47	35	12	4	12	48	Nốt sáng rồi lắng chậm
+g2-n50-010	n50	61	third	R	RH	53	41	12	4	12	48	Nghỉ một phách kể tiếp
+g2-n50-011	n50	69	third	R	RH	46	34	12	3	12	36	Ba vòng trong nhịp ba
+g2-n50-012	n50	75	third	R	RH	48	36	12	3	12	36	Mi qua Fa rồi trở lại
+g2-n50-013	n50	81	third	R	RH	46	34	12	3	12	36	Nốt dài và nốt nhắc
+g2-n50-014	n50	89	third	R	RH	47	35	12	3	12	36	Qua bậc Fa ba lần
+g2-n50-015	n50	95	third	R	RH	47	35	12	3	12	36	Nhắc mở khép nhịp ba
+g2-n50-016	n50	2	eighth	R	RH	69	57	12	4	12	48	Ba lời nhiều cặp đôi
+g2-n50-017	n50	10	eighth	R	RH	56	44	12	4	12	48	Phách chia tới nốt thở
+g2-n50-018	n50	16	eighth	R	RH	55	43	12	4	12	48	Hai nền dưới phách đôi
+g2-n50-019	n50	22	eighth	R	RH	56	44	12	4	12	48	Đi nhẹ qua ba câu
+g2-n50-020	n50	30	eighth	R	RH	51	39	12	4	12	48	Một cặp rồi câu nhắc
+g2-n50-021	n50	36	eighth	R	RH	55	43	12	4	12	48	Từ thưa tới dày rồi thưa
+g2-n50-022	n50	42	eighth	R	RH	52	40	12	4	12	48	Phách nhắc giữa ba đoạn
+g2-n50-023	n50	50	eighth	R	RH	50	38	12	4	12	48	Đợi đầu câu giữ cuối
+g2-n50-024	n50	56	eighth	R	RH	54	42	12	4	12	48	Nền Rê trở về Đô
+g2-n50-025	n50	62	eighth	R	RH	55	43	12	4	12	48	Nhiều cặp tìm chỗ dừng
+g2-n50-026	n50	70	eighth	R	RH	51	39	12	3	12	36	Ba lời chia ba phách
+g2-n50-027	n50	76	eighth	R	RH	55	43	12	3	12	36	Cặp sau lên đỉnh
+g2-n50-028	n50	82	eighth	R	RH	52	40	12	3	12	36	Mi mở câu ba đoạn
+g2-n50-029	n50	90	eighth	R	RH	53	41	12	3	12	36	Lên đỉnh giữ lại
+g2-n50-030	n50	96	eighth	R	RH	54	42	12	3	12	36	Mi đi vòng qua Đô
+g2-n50-031	n50	3	third	L	LH	52	12	40	4	12	48	Ba cửa trầm đổi thứ tự
+g2-n50-032	n50	11	third	L	LH	48	12	36	4	12	48	Thang thấp có chỗ chờ
+g2-n50-033	n50	17	third	L	LH	54	12	42	4	12	48	Mi trầm kể đổi lời
+g2-n50-034	n50	23	third	L	LH	60	16	44	4	12	48	Nền cao câu thấp
+g2-n50-035	n50	31	third	L	LH	40	12	28	4	12	48	Từ trầm yên thành tiếng
+g2-n50-036	n50	37	third	L	LH	50	12	38	4	12	48	Mi thấp qua nền Rê
+g2-n50-037	n50	43	third	L	LH	49	12	37	4	12	48	Ba vòng ở khóa Fa
+g2-n50-038	n50	51	third	L	LH	53	12	41	4	12	48	Câu trầm có nền chuyển
+g2-n50-039	n50	57	third	L	LH	47	12	35	4	12	48	Nốt trầm sáng rồi lắng
+g2-n50-040	n50	63	third	L	LH	53	12	41	4	12	48	Trầm nghỉ rồi kể tiếp
+g2-n50-041	n50	71	third	L	LH	46	12	34	3	12	36	Ba vòng thấp nhịp ba
+g2-n50-042	n50	77	third	L	LH	48	12	36	3	12	36	Mi thấp qua Fa về
+g2-n50-043	n50	83	third	L	LH	46	12	34	3	12	36	Giữ thấp rồi nhắc
+g2-n50-044	n50	91	third	L	LH	47	12	35	3	12	36	Qua Fa thấp ba lần
+g2-n50-045	n50	97	third	L	LH	47	12	35	3	12	36	Trầm nhắc khép nhịp ba
+g2-n50-046	n50	4	eighth	L	LH	69	12	57	4	12	48	Ba lời trầm nhiều cặp
+g2-n50-047	n50	12	eighth	L	LH	56	12	44	4	12	48	Phách trầm tới nốt thở
+g2-n50-048	n50	18	eighth	L	LH	55	12	43	4	12	48	Hai nền dưới câu trầm
+g2-n50-049	n50	24	eighth	L	LH	56	12	44	4	12	48	Đi nhẹ ba câu thấp
+g2-n50-050	n50	32	eighth	L	LH	51	12	39	4	12	48	Cặp trầm rồi câu nhắc
+g2-n50-051	n50	38	eighth	L	LH	55	12	43	4	12	48	Trầm thưa dày rồi thưa
+g2-n50-052	n50	44	eighth	L	LH	52	12	40	4	12	48	Phách thấp giữa ba đoạn
+g2-n50-053	n50	52	eighth	L	LH	50	12	38	4	12	48	Đợi trầm giữ cuối
+g2-n50-054	n50	58	eighth	L	LH	54	12	42	4	12	48	Nền cao Rê về Đô
+g2-n50-055	n50	64	eighth	L	LH	55	12	43	4	12	48	Cặp trầm tìm điểm dừng
+g2-n50-056	n50	72	eighth	L	LH	51	12	39	3	12	36	Ba lời thấp chia phách
+g2-n50-057	n50	78	eighth	L	LH	55	12	43	3	12	36	Cặp trầm sau lên đỉnh
+g2-n50-058	n50	84	eighth	L	LH	52	12	40	3	12	36	Mi trầm mở ba đoạn
+g2-n50-059	n50	92	eighth	L	LH	53	12	41	3	12	36	Đỉnh trầm giữ lại
+g2-n50-060	n50	98	eighth	L	LH	54	12	42	3	12	36	Mi thấp đi vòng Đô
+g2-n50-061	n50	5	third	A	RH	46	23	23	4	12	48	Ba cuộc gọi trong sân
+g2-n50-062	n50	25	third	A	LH	46	23	23	4	12	48	Ba cuộc gọi từ dưới
+g2-n50-063	n50	45	third	A	RH	51	27	24	3	18	54	Ba lượt chuyện nhịp ba
+g2-n50-064	n50	65	third	A	LH	51	24	27	3	18	54	Ba lời trầm nhịp ba
+g2-n50-065	n50	85	third	A	RH	46	23	23	4	12	48	Nhắc lời đổi câu hỏi
+g2-n50-066	n50	6	eighth	A	RH	51	29	22	4	12	48	Cặp hỏi đổi lời đáp
+g2-n50-067	n50	8	eighth	A	RH	49	26	23	4	12	48	Hỏi lên chờ rồi nhắc
+g2-n50-068	n50	14	eighth	A	RH	52	30	22	4	12	48	Nhiều cặp có câu chờ
+g2-n50-069	n50	20	eighth	A	RH	54	32	22	4	12	48	Mi mở ba lời gọi
+g2-n50-070	n50	26	eighth	A	RH	51	28	23	4	12	48	Giữ đầu chia giữa câu
+g2-n50-071	n50	28	eighth	A	RH	52	30	22	4	12	48	Đợi rồi hỏi qua sân
+g2-n50-072	n50	34	eighth	A	RH	54	31	23	4	12	48	Hai cặp và ba cặp
+g2-n50-073	n50	40	eighth	A	RH	54	31	23	4	12	48	Nhắc lời gọi rồi khép
+g2-n50-074	n50	46	eighth	A	RH	53	34	19	3	18	54	Ba cuộc gọi ba phách
+g2-n50-075	n50	48	eighth	A	RH	53	35	18	3	18	54	Nhịp ba thay câu hỏi
+g2-n50-076	n50	54	eighth	A	LH	51	22	29	4	12	48	Cặp trầm đổi lời đáp
+g2-n50-077	n50	60	eighth	A	LH	49	23	26	4	12	48	Trầm hỏi lên rồi nhắc
+g2-n50-078	n50	66	eighth	A	LH	52	22	30	4	12	48	Cặp thấp có câu chờ
+g2-n50-079	n50	68	eighth	A	LH	54	22	32	4	12	48	Mi trầm mở ba lời
+g2-n50-080	n50	74	eighth	A	LH	51	23	28	4	12	48	Giữ thấp chia giữa câu
+g2-n50-081	n50	80	eighth	A	LH	52	22	30	4	12	48	Đợi trầm hỏi qua sân
+g2-n50-082	n50	86	eighth	A	LH	54	23	31	4	12	48	Hai ba cặp ở dưới
+g2-n50-083	n50	88	eighth	A	LH	54	23	31	4	12	48	Nhắc lời trầm rồi khép
+g2-n50-084	n50	94	eighth	A	LH	53	19	34	3	18	54	Ba cuộc gọi trầm
+g2-n50-085	n50	100	eighth	A	LH	53	18	35	3	18	54	Nhịp trầm đổi câu hỏi
+g2-n50-086	n50	7	third	S	RH	66	33	33	4	12	48	Ba câu cùng nhịp
+g2-n50-087	n50	13	third	S	RH	62	31	31	4	12	48	Giữ và nhảy chung
+g2-n50-088	n50	19	third	S	RH	56	28	28	4	12	48	Nốt dài đổi đường
+g2-n50-089	n50	27	third	S	RH	60	30	30	4	12	48	Mi cao qua ba đoạn
+g2-n50-090	n50	33	third	S	RH	68	34	34	4	12	48	Hai khuông ba lời
+g2-n50-091	n50	39	third	S	LH	62	31	31	4	12	48	Ba câu trầm cùng nhịp
+g2-n50-092	n50	47	third	S	LH	56	28	28	4	12	48	Nốt thấp đổi đường
+g2-n50-093	n50	53	third	S	LH	60	30	30	4	12	48	Mi trầm qua ba đoạn
+g2-n50-094	n50	59	third	S	LH	62	31	31	4	12	48	Hai khuông ba lời trầm
+g2-n50-095	n50	67	third	S	RH	62	31	31	4	12	48	Khoảng trên đổi tiếng
+g2-n50-096	n50	79	third	S	LH	62	31	31	4	12	48	Khoảng dưới đổi tiếng
+g2-n50-097	n50	73	third	S	RH	52	26	26	3	12	36	Ba câu chung nhịp ba
+g2-n50-098	n50	87	third	S	LH	52	26	26	3	12	36	Ba câu trầm nhịp ba
+g2-n50-099	n50	93	third	S	RH	50	25	25	3	12	36	Giữ đầu câu chung
+g2-n50-100	n50	99	third	S	LH	50	25	25	3	12	36	Trầm giữ đầu câu chung
+g2-n100-001	n100	1	third	R	RH	89	67	22	4	20	80	Buổi sáng qua năm khung cửa
+g2-n100-002	n100	9	third	R	RH	86	66	20	4	20	80	Bậc thang và đường trở lại
+g2-n100-003	n100	15	third	R	RH	86	66	20	4	20	80	Năm lời kể từ Mi
+g2-n100-004	n100	21	third	R	RH	93	69	24	4	20	80	Câu nhắc đi qua khu vườn
+g2-n100-005	n100	29	third	R	RH	70	50	20	4	20	80	Từ nốt dài thành câu chuyện
+g2-n100-006	n100	35	third	R	RH	86	66	20	4	20	80	Mi theo nền Rê về nhà
+g2-n100-007	n100	41	third	R	RH	84	64	20	4	20	80	Lối quanh Fa qua năm đoạn
+g2-n100-008	n100	49	third	R	RH	88	68	20	4	20	80	Câu hỏi và bốn lời tiếp
+g2-n100-009	n100	55	third	R	RH	84	64	20	4	20	80	Nền Mi mở đường về Đô
+g2-n100-010	n100	61	third	R	RH	96	72	24	4	20	80	Nhắc nền qua năm khung nhịp
+g2-n100-011	n100	69	third	R	RH	78	58	20	3	20	60	Năm vòng sân ba phách
+g2-n100-012	n100	75	third	R	RH	78	58	20	3	20	60	Mi mở vũ khúc nhỏ
+g2-n100-013	n100	81	third	R	RH	78	58	20	3	20	60	Nốt dài trong chuyện ba phách
+g2-n100-014	n100	89	third	R	RH	79	59	20	3	20	60	Fa dẫn lối quay lại
+g2-n100-015	n100	95	third	R	RH	78	58	20	3	20	60	Đô nhắc trước năm lời
+g2-n100-016	n100	2	eighth	R	RH	100	80	20	4	20	80	Một ngày chia đôi phách
+g2-n100-017	n100	10	eighth	R	RH	94	74	20	4	20	80	Cặp nốt qua năm ô cửa
+g2-n100-018	n100	16	eighth	R	RH	94	74	20	4	20	80	Câu chuyện trên nền chuyển
+g2-n100-019	n100	22	eighth	R	RH	94	74	20	4	20	80	Đi nhẹ nghe phách tới cuối
+g2-n100-020	n100	30	eighth	R	RH	90	70	20	4	20	80	Nốt giữ và đôi chân nhỏ
+g2-n100-021	n100	36	eighth	R	RH	93	73	20	4	20	80	Từ thưa sang dày rồi về
+g2-n100-022	n100	42	eighth	R	RH	93	73	20	4	20	80	Lời nhắc dưới những cặp đôi
+g2-n100-023	n100	50	eighth	R	RH	88	68	20	4	20	80	Một khoảng yên trước chuyện dài
+g2-n100-024	n100	56	eighth	R	RH	95	75	20	4	20	80	Nền Rê qua ba lời Đô
+g2-n100-025	n100	62	eighth	R	RH	112	92	20	4	20	80	Năm đường sáng chia phách
+g2-n100-026	n100	70	eighth	R	RH	89	69	20	3	20	60	Năm lời chia ba phách
+g2-n100-027	n100	76	eighth	R	RH	88	68	20	3	20	60	Cặp sau dẫn tới đỉnh
+g2-n100-028	n100	82	eighth	R	RH	85	65	20	3	20	60	Mi mở chuyến đi ba phách
+g2-n100-029	n100	90	eighth	R	RH	91	71	20	3	20	60	Qua đỉnh trở lại nhịp ba
+g2-n100-030	n100	96	eighth	R	RH	89	69	20	3	20	60	Mi giữ bước qua năm câu
+g2-n100-031	n100	3	third	L	LH	89	22	67	4	20	80	Ngày mới qua cửa trầm
+g2-n100-032	n100	11	third	L	LH	86	20	66	4	20	80	Thang thấp và lối trở về
+g2-n100-033	n100	17	third	L	LH	86	20	66	4	20	80	Năm lời kể của Mi trầm
+g2-n100-034	n100	23	third	L	LH	93	24	69	4	20	80	Câu trầm đi qua khu vườn
+g2-n100-035	n100	31	third	L	LH	70	20	50	4	20	80	Từ trầm dài thành lời
+g2-n100-036	n100	37	third	L	LH	86	20	66	4	20	80	Mi thấp theo nền cao
+g2-n100-037	n100	43	third	L	LH	84	20	64	4	20	80	Lối Fa thấp qua năm đoạn
+g2-n100-038	n100	51	third	L	LH	88	20	68	4	20	80	Câu trầm và bốn lời tiếp
+g2-n100-039	n100	57	third	L	LH	84	20	64	4	20	80	Mi cao đỡ đường trầm
+g2-n100-040	n100	63	third	L	LH	96	24	72	4	20	80	Nền nhắc qua chuyện thấp
+g2-n100-041	n100	71	third	L	LH	78	20	58	3	20	60	Năm vòng trầm ba phách
+g2-n100-042	n100	77	third	L	LH	78	20	58	3	20	60	Mi trầm mở khúc nhỏ
+g2-n100-043	n100	83	third	L	LH	78	20	58	3	20	60	Nốt thấp dài kể nhịp ba
+g2-n100-044	n100	91	third	L	LH	79	20	59	3	20	60	Fa trầm dẫn đường lại
+g2-n100-045	n100	97	third	L	LH	78	20	58	3	20	60	Đô trầm nhắc năm lời
+g2-n100-046	n100	4	eighth	L	LH	100	20	80	4	20	80	Ngày trầm chia đôi phách
+g2-n100-047	n100	12	eighth	L	LH	94	20	74	4	20	80	Cặp thấp qua năm cửa
+g2-n100-048	n100	18	eighth	L	LH	94	20	74	4	20	80	Chuyện trầm trên nền chuyển
+g2-n100-049	n100	24	eighth	L	LH	94	20	74	4	20	80	Đi nhẹ nghe phách trầm
+g2-n100-050	n100	32	eighth	L	LH	90	20	70	4	20	80	Nốt trầm giữ bước nhỏ
+g2-n100-051	n100	38	eighth	L	LH	93	20	73	4	20	80	Trầm thưa dày rồi về
+g2-n100-052	n100	44	eighth	L	LH	93	20	73	4	20	80	Lời nhắc dưới cặp trầm
+g2-n100-053	n100	52	eighth	L	LH	88	20	68	4	20	80	Trầm yên trước chuyện dài
+g2-n100-054	n100	58	eighth	L	LH	95	20	75	4	20	80	Nền cao Rê câu thấp Đô
+g2-n100-055	n100	64	eighth	L	LH	112	20	92	4	20	80	Năm đường trầm chia phách
+g2-n100-056	n100	72	eighth	L	LH	89	20	69	3	20	60	Năm lời thấp ba phách
+g2-n100-057	n100	78	eighth	L	LH	88	20	68	3	20	60	Cặp thấp sau tới đỉnh
+g2-n100-058	n100	84	eighth	L	LH	85	20	65	3	20	60	Mi trầm mở chuyến đi
+g2-n100-059	n100	92	eighth	L	LH	91	20	71	3	20	60	Qua đỉnh trầm trở lại
+g2-n100-060	n100	98	eighth	L	LH	89	20	69	3	20	60	Mi trầm giữ năm bước
+g2-n100-061	n100	5	third	A	RH	76	38	38	4	20	80	Năm cuộc gọi bên hiên
+g2-n100-062	n100	25	third	A	LH	76	38	38	4	20	80	Năm lời trầm qua cửa
+g2-n100-063	n100	45	third	A	RH	84	45	39	3	30	90	Chuyện hỏi đáp ba phách
+g2-n100-064	n100	65	third	A	LH	84	39	45	3	30	90	Chuyện trầm gọi nhịp ba
+g2-n100-065	n100	85	third	A	RH	76	38	38	4	20	80	Nhắc lời ở cuối buổi
+g2-n100-066	n100	6	eighth	A	RH	85	48	37	4	20	80	Những câu hỏi chia phách
+g2-n100-067	n100	8	eighth	A	RH	84	46	38	4	20	80	Gọi lên đợi rồi trở về
+g2-n100-068	n100	14	eighth	A	RH	90	52	38	4	20	80	Hai cặp đi qua năm lượt
+g2-n100-069	n100	20	eighth	A	RH	88	51	37	4	20	80	Mi gọi chuyện bên cửa
+g2-n100-070	n100	26	eighth	A	RH	82	45	37	4	20	80	Lời giữ nhắc cặp đôi
+g2-n100-071	n100	28	eighth	A	RH	87	49	38	4	20	80	Từ chờ đợi thành lời gọi
+g2-n100-072	n100	34	eighth	A	RH	86	48	38	4	20	80	Cặp giữa đổi câu hỏi
+g2-n100-073	n100	40	eighth	A	RH	87	50	37	4	20	80	Nhiều cặp trao lại lời
+g2-n100-074	n100	46	eighth	A	RH	89	58	31	3	30	90	Năm cuộc gọi ba phách
+g2-n100-075	n100	48	eighth	A	RH	88	57	31	3	30	90	Ba phách hỏi đổi giọng kể
+g2-n100-076	n100	54	eighth	A	LH	85	37	48	4	20	80	Những câu trầm chia phách
+g2-n100-077	n100	60	eighth	A	LH	84	38	46	4	20	80	Trầm gọi lên đợi trở về
+g2-n100-078	n100	66	eighth	A	LH	90	38	52	4	20	80	Cặp thấp qua năm lượt
+g2-n100-079	n100	68	eighth	A	LH	88	37	51	4	20	80	Mi trầm gọi bên cửa
+g2-n100-080	n100	74	eighth	A	LH	82	37	45	4	20	80	Lời thấp giữ nhắc cặp
+g2-n100-081	n100	80	eighth	A	LH	87	38	49	4	20	80	Đợi trầm thành lời gọi
+g2-n100-082	n100	86	eighth	A	LH	86	38	48	4	20	80	Cặp trầm giữa đổi hỏi
+g2-n100-083	n100	88	eighth	A	LH	87	37	50	4	20	80	Nhiều cặp thấp trao lời
+g2-n100-084	n100	94	eighth	A	LH	89	31	58	3	30	90	Năm cuộc gọi trầm ba phách
+g2-n100-085	n100	100	eighth	A	LH	88	31	57	3	30	90	Ba phách trầm đổi lời kể
+g2-n100-086	n100	7	third	S	RH	120	60	60	4	20	80	Năm đoạn chung một dòng nhịp
+g2-n100-087	n100	13	third	S	RH	100	50	50	4	20	80	Giữ và nhảy qua năm cảnh
+g2-n100-088	n100	19	third	S	RH	90	45	45	4	20	80	Chuyện dài của nốt giữ
+g2-n100-089	n100	27	third	S	RH	102	51	51	4	20	80	Mi cao cùng đường trở lại
+g2-n100-090	n100	33	third	S	RH	116	58	58	4	20	80	Năm lời kể chung tiếng
+g2-n100-091	n100	39	third	S	LH	120	60	60	4	20	80	Năm đoạn trầm chung nhịp
+g2-n100-092	n100	47	third	S	LH	88	44	44	4	20	80	Chuyện dài nốt trầm giữ
+g2-n100-093	n100	53	third	S	LH	102	51	51	4	20	80	Mi trầm cùng đường về
+g2-n100-094	n100	59	third	S	LH	116	58	58	4	20	80	Năm lời trầm chung tiếng
+g2-n100-095	n100	67	third	S	RH	108	54	54	4	20	80	Khoảng trên qua năm câu
+g2-n100-096	n100	79	third	S	LH	108	54	54	4	20	80	Khoảng dưới qua năm câu
+g2-n100-097	n100	73	third	S	RH	86	43	43	3	20	60	Năm vòng chung nhịp ba
+g2-n100-098	n100	87	third	S	LH	86	43	43	3	20	60	Năm vòng trầm nhịp ba
+g2-n100-099	n100	93	third	S	RH	84	42	42	3	20	60	Giữ đầu qua khúc ba phách
+g2-n100-100	n100	99	third	S	LH	84	42	42	3	20	60	Giữ trầm qua khúc ba phách

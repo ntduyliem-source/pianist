@@ -1,0 +1,27 @@
+%abc-2.1
+X:4178
+T:g6-n100-078 Si trầm về Đô Mi
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G6; profile=M7-down; lead=LH; bucket=n100; notes=80; RH=21; LH=59
+% duration60=84s; related_pattern=60d05502e17a7d26
+% authored_passages=S78 DX3 DX1 DX2 DX1 DX3
+% source=buildscripts/pianist/compositions/g6/studies.txt:79
+[V:RH] c4 | c z z z | c z z z | c z z z |
+[V:LH] C B, C, E, | G, A, B,2 | C, D, E,2 | G,2 E,2 |
+[V:RH] c z z z | c z z z | c z z z | c z z z |
+[V:LH] D,2 C,2 | G, A, B, C, | D, E, G,2 | F, E, D,2 |
+[V:RH] c z z z | c z z z | c z z z | c z z z |
+[V:LH] E,2 C,2 | G,2 C B, | C, D, E,2 | F, E, D,2 |
+[V:RH] c z z z | c z z z | c z z z | c z z z |
+[V:LH] G,2 C,2 | G, A, B, C, | D, E, G,2 | F, E, D,2 |
+[V:RH] c z z z | c z z z | c z z z | c z z z |
+[V:LH] E,2 C,2 | G, A, B,2 | C, D, E,2 | G,2 E,2 |
+[V:RH] c z z z |]
+[V:LH] D,2 C,2 |]

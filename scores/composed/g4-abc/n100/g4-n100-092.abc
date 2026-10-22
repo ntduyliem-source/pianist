@@ -1,0 +1,25 @@
+%abc-2.1
+X:2792
+T:g4-n100-092 Sol dài bass năm cảnh
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=upper; lead=LH; bucket=n100; notes=104; RH=52; LH=52
+% role=S; duration60=80s; related_pattern=5ce05ec4db66a0f8
+% authored_passages=S07 S19 S09 S06 S17
+% source=buildscripts/pianist/compositions/g4/n100.txt:93
+[V:RH] G2 F G | F2 G G | G2 G G | F G G2 |
+[V:LH] G,2 B, C | D2 C B, | G,2 A, B, | C B, G,2 |
+[V:RH] G G G2 | F G G2 | G G G2 | G4 |
+[V:LH] G, A, B,2 | C B, G,2 | A, B, G,2 | G,4 |
+[V:RH] F2 G G | G2 F G | F G G2 | G G G2 |
+[V:LH] C2 G, A, | B,2 C D | C B, G,2 | A, B, G,2 |
+[V:RH] G G G2 | F G G2 | G G G2 | F G G2 |
+[V:LH] G, A, B,2 | C B, G,2 | A, B, C2 | B, A, G,2 |
+[V:RH] G4 | G G G2 | G4 | G4 |]
+[V:LH] G,4 | G, A, B,2 | G,4 | G,4 |]

@@ -1,0 +1,17 @@
+%abc-2.1
+X:226
+T:g1-n10-026 Vòng cao kết dài
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n10; notes=11; RH=8; LH=3
+% role=R; family=upper-long-close; form=authored; duration60=12s
+% related_pattern=3989de660c01c33e
+% source=buildscripts/pianist/compositions/g1/n10.txt:29
+[V:RH] E F G2 | F E D E | E4 |]
+[V:LH] C,4 | C,4 | C,4 |]

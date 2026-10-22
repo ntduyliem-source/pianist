@@ -1,0 +1,17 @@
+%abc-2.1
+X:357
+T:g1-n20-057 Câu trầm trên nền sáng
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n20; notes=17; RH=4; LH=13
+% role=L; family=bass-g-foundation; form=authored; duration60=16s
+% related_pattern=6a3bfe034a851e26
+% source=buildscripts/pianist/compositions/g1/n20.txt:59
+[V:RH] G4 | G4 | G4 | G4 |]
+[V:LH] E, F, G,2 | F, E, D, E, | F, G, F, E, | E,2 E,2 |]

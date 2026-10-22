@@ -1,0 +1,17 @@
+%abc-2.1
+X:3632
+T:g6-n6-032 Si hạ Rê rồi Mi
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G6; profile=M6-down; lead=RH; bucket=n6; notes=8; RH=6; LH=2
+% duration60=8s; related_pattern=331f12d45d84d78c
+% authored_passages=S32 CR3
+% source=buildscripts/pianist/compositions/g6/studies.txt:33
+[V:RH] A B D E | G2 D2 |]
+[V:LH] C,4 | C,4 |]

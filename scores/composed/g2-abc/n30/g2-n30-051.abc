@@ -1,0 +1,19 @@
+%abc-2.1
+X:1151
+T:g2-n30-051 Chia trầm có khoảng nghỉ
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=eighth; lead=LH; bucket=n30; notes=34; RH=8; LH=26
+% role=L; duration60=32s; related_pattern=01d359d38d939f16
+% authored_passages=F06 F11
+% source=buildscripts/pianist/compositions/g2/n30.txt:52
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C,2 C,/2D,/2 E, | D, D, E,2 | D,/2C,/2 C, C,2 | C,4 |
+[V:RH] C4 | C4 | C4 | C4 |]
+[V:LH] C,/2D,/2 E, z D, | E,/2F,/2 G, F,2 | E,2 D, C, | D, C, C,2 |]

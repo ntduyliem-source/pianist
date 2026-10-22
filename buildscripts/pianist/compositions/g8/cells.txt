@@ -1,0 +1,137 @@
+# Fixed ABC, not scientific pitch-name notation: c' = C6, C,,, = C1.
+H01;4/4;c' d' e'2;C,4
+H02;4/4;c' d' f'2;F,4
+H03;4/4;c' d' g'2;C,4
+H04;4/4;c' e' d'2;G,4
+H05;4/4;c' e' g'2;C,4
+H06;4/4;d' e' c'2;C,4
+H07;4/4;d' e' f'2;D,4
+H08;4/4;d' e' g'2;G,4
+H09;4/4;d' f' e'2;C,4
+H10;4/4;d' f' g'2;G,4
+H11;4/4;e' c' d'2;G,4
+H12;4/4;e' c' g'2;C,4
+H13;4/4;e' d' c'2;C,4
+H14;4/4;e' d' f'2;F,4
+H15;4/4;e' g' f'2;F,4
+H16;4/4;f' d' c'2;C,4
+H17;4/4;f' d' e'2;C,4
+H18;4/4;f' d' g'2;G,4
+H19;4/4;f' e' d'2;D,4
+H20;4/4;f' e' g'2;C,4
+H21;4/4;g' e' c'2;C,4
+H22;4/4;g' e' d'2;G,4
+H23;4/4;g' e' f'2;F,4
+H24;4/4;g' f' d'2;D,4
+H25;4/4;g' f' e'2;C,4
+L01;4/4;C4;C,,, D,,, E,,,2
+L02;4/4;F4;C,,, D,,, F,,,2
+L03;4/4;C4;C,,, D,,, G,,,2
+L04;4/4;G4;C,,, E,,, D,,,2
+L05;4/4;C4;C,,, E,,, G,,,2
+L06;4/4;C4;D,,, E,,, C,,,2
+L07;4/4;D4;D,,, E,,, F,,,2
+L08;4/4;G4;D,,, E,,, G,,,2
+L09;4/4;C4;D,,, F,,, E,,,2
+L10;4/4;G4;D,,, F,,, G,,,2
+L11;4/4;G4;E,,, C,,, D,,,2
+L12;4/4;C4;E,,, C,,, G,,,2
+L13;4/4;C4;E,,, D,,, C,,,2
+L14;4/4;F4;E,,, D,,, F,,,2
+L15;4/4;F4;E,,, G,,, F,,,2
+L16;4/4;C4;F,,, D,,, C,,,2
+L17;4/4;C4;F,,, D,,, E,,,2
+L18;4/4;G4;F,,, D,,, G,,,2
+L19;4/4;D4;F,,, E,,, D,,,2
+L20;4/4;C4;F,,, E,,, G,,,2
+L21;4/4;C4;G,,, E,,, C,,,2
+L22;4/4;G4;G,,, E,,, D,,,2
+L23;4/4;F4;G,,, E,,, F,,,2
+L24;4/4;D4;G,,, F,,, D,,,2
+L25;4/4;C4;G,,, F,,, E,,,2
+D01;4/4;[CE]3/2 D/2 C2;C,4
+D02;4/4;[CE]3/2 D/2 E2;C,4
+D03;4/4;[CE]3/2 F/2 G2;C,4
+D04;4/4;[DF]3/2 E/2 D2;D,4
+D05;4/4;[DF]3/2 C/2 F2;D,4
+D06;4/4;[DF]3/2 G/2 E2;C,4
+D07;4/4;[EG]3/2 F/2 E2;C,4
+D08;4/4;[EG]3/2 D/2 C2;C,4
+D09;4/4;[EG]3/2 C/2 G2;C,4
+D10;4/4;[CG]3/2 E/2 C2;C,4
+D11;4/4;[CG]3/2 D/2 G2;C,4
+D12;4/4;[DG]3/2 E/2 F2;D,4
+D13;4/4;[DG]3/2 F/2 D2;G,4
+D14;4/4;C4;[C,E,]3/2 D,/2 C,2
+D15;4/4;C4;[C,E,]3/2 D,/2 E,2
+D16;4/4;C4;[C,E,]3/2 F,/2 G,2
+D17;4/4;D4;[D,F,]3/2 E,/2 D,2
+D18;4/4;D4;[D,F,]3/2 C,/2 F,2
+D19;4/4;C4;[D,F,]3/2 G,/2 E,2
+D20;4/4;C4;[E,G,]3/2 F,/2 E,2
+D21;4/4;C4;[E,G,]3/2 D,/2 C,2
+D22;4/4;C4;[E,G,]3/2 C,/2 G,2
+D23;4/4;C4;[C,G,]3/2 E,/2 C,2
+D24;4/4;C4;[C,G,]3/2 D,/2 G,2
+D25;4/4;D4;[D,G,]3/2 E,/2 F,2
+T01;4/4;[CE] D/2 C/2-C2;C,4
+T02;4/4;[CE] D/2 E/2-E2;C,4
+T03;4/4;[CE] F/2 G/2-G2;C,4
+T04;4/4;[DF] E/2 D/2-D2;D,4
+T05;4/4;[DF] C/2 F/2-F2;D,4
+T06;4/4;[DF] G/2 E/2-E2;C,4
+T07;4/4;[EG] F/2 E/2-E2;C,4
+T08;4/4;[EG] D/2 C/2-C2;C,4
+T09;4/4;[EG] C/2 G/2-G2;C,4
+T10;4/4;[CG] E/2 C/2-C2;C,4
+T11;4/4;[CG] D/2 G/2-G2;C,4
+T12;4/4;[DG] E/2 F/2-F2;D,4
+T13;4/4;C4;[C,E,] D,/2 C,/2-C,2
+T14;4/4;C4;[C,E,] D,/2 E,/2-E,2
+T15;4/4;C4;[C,E,] F,/2 G,/2-G,2
+T16;4/4;D4;[D,F,] E,/2 D,/2-D,2
+T17;4/4;D4;[D,F,] C,/2 F,/2-F,2
+T18;4/4;C4;[D,F,] G,/2 E,/2-E,2
+T19;4/4;C4;[E,G,] F,/2 E,/2-E,2
+T20;4/4;C4;[E,G,] D,/2 C,/2-C,2
+T21;4/4;C4;[E,G,] C,/2 G,/2-G,2
+T22;4/4;C4;[C,G,] E,/2 C,/2-C,2
+T23;4/4;C4;[C,G,] D,/2 G,/2-G,2
+T24;4/4;D4;[D,G,] E,/2 F,/2-F,2
+T25;4/4;G4;[D,G,] F,/2 D,/2-D,2
+CH1;4/4;g'2 e'2;C,4
+CH2;4/4;e'2 c'2;C,4
+CH3;4/4;d'2 c'2;G,4
+CB1;4/4;C4;G,,,2 E,,,2
+CB2;4/4;C4;E,,,2 C,,,2
+CB3;4/4;G4;D,,,2 C,,,2
+CR1;4/4;G2 E2;C,4
+CR2;4/4;E2 C2;C,4
+CR3;4/4;D2 C2;G,4
+CL1;4/4;C4;G,2 E,2
+CL2;4/4;C4;E,2 C,2
+CL3;4/4;G4;D,2 C,2
+HP1;4/4;c' d' e'2 | f' e' d'2 | e' g' f' e' | d'2 c'2;C, z z z | D, z z z | C, z z z | C, z z z
+HP2;4/4;e' g' e' d' | c'2 e'2 | f' e' d'2 | e'2 c'2;C, z z z | C, z z z | D, z z z | C, z z z
+HP3;4/4;g'2 e'2 | d' e' f' g' | e'2 d'2 | c'4;C, z z z | D, z z z | G, z z z | C, z z z
+HP4;4/4;d' f' e'2 | g' e' d' c' | f'2 d'2 | e'2 c'2;D, z z z | C, z z z | D, z z z | C, z z z
+LP1;4/4;C z z z | D z z z | C z z z | C z z z;C,,, D,,, E,,,2 | F,,, E,,, D,,,2 | E,,, G,,, F,,, E,,, | D,,,2 C,,,2
+LP2;4/4;C z z z | C z z z | D z z z | C z z z;E,,, G,,, E,,, D,,, | C,,,2 E,,,2 | F,,, E,,, D,,,2 | E,,,2 C,,,2
+LP3;4/4;C z z z | D z z z | G z z z | C z z z;G,,,2 E,,,2 | D,,, E,,, F,,, G,,, | E,,,2 D,,,2 | C,,,4
+LP4;4/4;D z z z | C z z z | D z z z | C z z z;D,,, F,,, E,,,2 | G,,, E,,, D,,, C,,, | F,,,2 D,,,2 | E,,,2 C,,,2
+DR1;4/4;[CE]3/2 D/2 E2 | [DF]3/2 E/2 D2 | E2 G2 | C4;C, z z z | D, z z z | C, z z z | C, z z z
+DR2;4/4;[EG]3/2 F/2 E2 | D2 C2 | [CG]3/2 E/2 G2 | E2 C2;C, z z z | C, z z z | C, z z z | C, z z z
+DR3;4/4;[DG]3/2 E/2 F2 | E3/2 D/2 C2 | [CE]2 G2 | C4;D, z z z | C, z z z | C, z z z | C, z z z
+DR4;4/4;[CG]3/2 D/2 E2 | F2 D2 | [DF]3/2 E/2 G2 | [CE]4;C, z z z | D, z z z | D, z z z | C, z z z
+DL1;4/4;C z z z | D z z z | C z z z | C z z z;[C,E,]3/2 D,/2 E,2 | [D,F,]3/2 E,/2 D,2 | E,2 G,2 | C,4
+DL2;4/4;C z z z | C z z z | C z z z | C z z z;[E,G,]3/2 F,/2 E,2 | D,2 C,2 | [C,G,]3/2 E,/2 G,2 | E,2 C,2
+DL3;4/4;D z z z | C z z z | C z z z | C z z z;[D,G,]3/2 E,/2 F,2 | E,3/2 D,/2 C,2 | [C,E,]2 G,2 | C,4
+DL4;4/4;C z z z | D z z z | D z z z | C z z z;[C,G,]3/2 D,/2 E,2 | F,2 D,2 | [D,F,]3/2 E,/2 G,2 | [C,E,]4
+TR1;4/4;[CE] D/2 E/2-E2 | [DF] E/2 D/2-D2 | E2 G2 | C4;C, z z z | D, z z z | C, z z z | C, z z z
+TR2;4/4;[EG] F/2 E/2-E2 | D2 C2 | [CG] E/2 G/2-G2 | E2 C2;C, z z z | C, z z z | C, z z z | C, z z z
+TR3;4/4;[DG] E/2 F/2-F2 | E D/2 C/2-C2 | [CE]2 G2 | C4;D, z z z | C, z z z | C, z z z | C, z z z
+TR4;4/4;[CG] D/2 E/2-E2 | F2 D2 | [DF] E/2 G/2-G2 | [CE]4;C, z z z | D, z z z | D, z z z | C, z z z
+TL1;4/4;C z z z | D z z z | C z z z | C z z z;[C,E,] D,/2 E,/2-E,2 | [D,F,] E,/2 D,/2-D,2 | E,2 G,2 | C,4
+TL2;4/4;C z z z | C z z z | C z z z | C z z z;[E,G,] F,/2 E,/2-E,2 | D,2 C,2 | [C,G,] E,/2 G,/2-G,2 | E,2 C,2
+TL3;4/4;D z z z | C z z z | C z z z | C z z z;[D,G,] E,/2 F,/2-F,2 | E, D,/2 C,/2-C,2 | [C,E,]2 G,2 | C,4
+TL4;4/4;C z z z | D z z z | D z z z | C z z z;[C,G,] D,/2 E,/2-E,2 | F,2 D,2 | [D,F,] E,/2 G,/2-G,2 | [C,E,]4

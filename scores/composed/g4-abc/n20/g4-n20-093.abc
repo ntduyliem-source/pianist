@@ -1,0 +1,17 @@
+%abc-2.1
+X:2493
+T:g4-n20-093 Si Đô Rê giữa chung
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=upper; lead=LH; bucket=n20; notes=24; RH=12; LH=12
+% role=S; duration60=16s; related_pattern=7b214b05aa0fe1bc
+% authored_passages=S08
+% source=buildscripts/pianist/compositions/g4/n20.txt:94
+[V:RH] G F G2 | F2 G G | G G G2 | F G G2 |]
+[V:LH] B, C D2 | C2 B, G, | A, B, C2 | B, A, G,2 |]

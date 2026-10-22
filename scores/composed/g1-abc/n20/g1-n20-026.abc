@@ -1,0 +1,19 @@
+%abc-2.1
+X:326
+T:g1-n20-026 Sáu lời nhắc nhỏ
+C:Nhạc do trợ lý AI biên soạn
+M:2/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n20; notes=17; RH=11; LH=6
+% role=R; family=six-repeat-bars; form=authored; duration60=12s
+% related_pattern=1a6ab307248a083d
+% source=buildscripts/pianist/compositions/g1/n20.txt:29
+[V:RH] C C | D E | F E | D D |
+[V:LH] C,2 | C,2 | C,2 | C,2 |
+[V:RH] C D | C2 |]
+[V:LH] C,2 | C,2 |]

@@ -1,0 +1,17 @@
+%abc-2.1
+X:2451
+T:g4-n20-051 Phách nghỉ dưới bass
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=lower; lead=LH; bucket=n20; notes=18; RH=4; LH=14
+% role=L; duration60=16s; related_pattern=12dc467918d52af5
+% authored_passages=M06
+% source=buildscripts/pianist/compositions/g4/n20.txt:52
+[V:RH] C4 | C4 | C4 | C4 |]
+[V:LH] A,, C, z B,, | C, D, E, D, | C, B,, C, A,, | B,, C, A,,2 |]

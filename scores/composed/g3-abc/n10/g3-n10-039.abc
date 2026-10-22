@@ -1,0 +1,17 @@
+%abc-2.1
+X:1639
+T:g3-n10-039 Nền cao nhắc câu thấp
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fourth; lead=LH; bucket=n10; notes=11; RH=4; LH=7
+% role=L; duration60=8s; related_pattern=94f59772946f2322
+% authored_passages=inline-n10-039
+% source=buildscripts/pianist/compositions/g3/n10.txt:40
+[V:RH] C2 C2 | C2 C2 |]
+[V:LH] C, F, E, D, | C, F, E,2 |]

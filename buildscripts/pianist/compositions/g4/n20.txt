@@ -1,0 +1,101 @@
+# Explicitly selected phrases; note content is in the authored passage tables.
+001;upper;R;RH;Bốn cửa sổ vùng cao;U01
+002;upper;R;RH;Sol dài mở câu cao;U02
+003;upper;R;RH;Si Đô Rê giữ đáp;U03
+004;upper;R;RH;Đô cao gọi vòng lại;U04
+005;upper;R;RH;Giữ nốt sáng vùng cao;U05
+006;upper;R;RH;Một phách nghỉ trên cao;U06
+007;upper;R;RH;Nốt nhắc mở khuông cao;U07
+008;upper;R;RH;Si ghé Sol Đô cao;U08
+009;upper;R;RH;Giữ Si giữ Đô cao;U09
+010;upper;R;RH;Rê cao đi về Sol;U10
+011;upper;R;RH;Ba phách qua vùng cao;U21
+012;upper;R;RH;Si Rê Đô ba phách;U22
+013;upper;R;RH;Sol dài ba phách cao;U23
+014;upper;R;RH;Sol Đô cao lời gọi;U24
+015;upper;R;RH;Nhắc Sol nhịp ba cao;U25
+016;lower;R;RH;Bốn cửa phía dưới;L01
+017;lower;R;RH;La dài mở câu thấp;L02
+018;lower;R;RH;Đô Rê Mi giữ đáp;L03
+019;lower;R;RH;Mi gọi Si thấp;L04
+020;lower;R;RH;Giữ nốt vùng La thấp;L05
+021;lower;R;RH;Một phách nghỉ phía dưới;L06
+022;lower;R;RH;Ba phách qua vùng thấp;L21
+023;lower;R;RH;Đô Mi Rê ba phách;L22
+024;lower;R;RH;La dài ba phách thấp;L23
+025;span;R;RH;Bốn ô qua quãng tám;W01
+026;span;R;RH;Từ cao về giữa mở lại;W02
+027;span;R;RH;Giữ Đô đường rộng;W03
+028;span;R;RH;Qua Fa La tới Đô cao;W04
+029;span;R;RH;Quãng tám trong nhịp ba;W21
+030;span;R;RH;Đô cao về ba phách;W22
+031;upper;L;LH;Bốn cửa bass phía cao;V01
+032;upper;L;LH;Sol trầm dài mở cao;V02
+033;upper;L;LH;Si Đô Rê giữa đáp;V03
+034;upper;L;LH;Đô giữa vòng trở lại;V04
+035;upper;L;LH;Giữ nốt sáng bass cao;V05
+036;upper;L;LH;Phách nghỉ trên khóa Fa;V06
+037;upper;L;LH;Nhắc Sol bass cao;V07
+038;upper;L;LH;Si trầm ghé Đô giữa;V08
+039;upper;L;LH;Giữ Si trầm Đô giữa;V09
+040;upper;L;LH;Rê giữa về Sol trầm;V10
+041;upper;L;LH;Ba phách bass phía cao;V21
+042;upper;L;LH;Si Rê Đô giữa nhịp ba;V22
+043;upper;L;LH;Sol trầm dài phách cao;V23
+044;upper;L;LH;Sol Đô giữa lời gọi;V24
+045;upper;L;LH;Nhắc Sol trầm nhịp cao;V25
+046;lower;L;LH;Bốn cửa rất trầm;M01
+047;lower;L;LH;La trầm dài mở thấp;M02
+048;lower;L;LH;Đô Rê Mi trầm đáp;M03
+049;lower;L;LH;Mi trầm gọi Si thấp;M04
+050;lower;L;LH;Giữ nốt vùng rất trầm;M05
+051;lower;L;LH;Phách nghỉ dưới bass;M06
+052;lower;L;LH;Ba phách vùng rất trầm;M21
+053;lower;L;LH;Đô Mi Rê trầm nhịp ba;M22
+054;lower;L;LH;La trầm dài phách thấp;M23
+055;span;L;LH;Bốn ô bass qua tám;X01
+056;span;L;LH;Từ giữa về trầm mở lại;X02
+057;span;L;LH;Giữ Đô trầm đường rộng;X03
+058;span;L;LH;Qua Fa La tới Đô giữa;X04
+059;span;L;LH;Quãng tám bass nhịp ba;X21
+060;span;L;LH;Đô giữa về ba phách;X22
+061;upper;A;RH;Vùng cao hỏi thấp đáp;Q01
+062;upper;A;RH;Si cao gọi đổi đáp;Q02
+063;upper;A;RH;Rê cao hạ lời gọi;Q03
+064;upper;A;RH;Sáu lượt cao ba phách;Q11
+065;upper;A;RH;Giữ đầu cao đổi lời;Q13
+066;upper;A;LH;Bass cao hỏi trên đáp;Q06
+067;upper;A;LH;Si bass cao đổi đáp;Q07
+068;upper;A;LH;Rê giữa hạ lời gọi;Q08
+069;upper;A;LH;Sáu lượt bass cao ba;Q12
+070;upper;A;LH;Giữ trầm cao đổi lời;Q14
+071;lower;A;RH;Vùng thấp hỏi bước đáp;T01
+072;lower;A;RH;Mi gọi Si thấp trả;T02
+073;lower;A;RH;Giữ La thấp mở hỏi;T03
+074;lower;A;RH;Sáu lượt thấp ba phách;T11
+075;lower;A;LH;Vùng rất trầm hỏi đáp;T05
+076;lower;A;LH;Mi trầm Si thấp trả;T06
+077;lower;A;LH;Sáu lượt rất trầm ba;T12
+078;span;A;RH;Qua tám hỏi bước đáp;H01
+079;span;A;RH;Đô cao về giữa gọi;H02
+080;span;A;RH;Fa La mở tám đối đáp;H03
+081;span;A;RH;Sáu lượt rộng ba phách;H11
+082;span;A;LH;Qua tám trầm hỏi đáp;H05
+083;span;A;LH;Đô giữa về trầm gọi;H06
+084;span;A;LH;Fa La bass mở tám;H07
+085;span;A;LH;Sáu lượt bass rộng ba;H12
+086;upper;S;RH;Vùng cao trên nhịp chung;S01
+087;upper;S;RH;Sol dài cao cùng tiếng;S02
+088;upper;S;RH;Si Đô Rê cao chung;S03
+089;upper;S;RH;Ba phách cao cùng nền;S21
+090;upper;S;RH;Giữ đầu cao nhịp ba;S23
+091;upper;S;LH;Bass cao trên nhịp chung;S06
+092;upper;S;LH;Sol trầm cao cùng tiếng;S07
+093;upper;S;LH;Si Đô Rê giữa chung;S08
+094;upper;S;LH;Ba phách bass cao chung;S22
+095;upper;S;LH;Giữ bass cao nhịp ba;S24
+096;lower;S;RH;Vùng thấp trên nhịp chung;Y01
+097;lower;S;RH;La dài thấp cùng tiếng;Y02
+098;lower;S;RH;Ba phách thấp cùng nền;Y21
+099;lower;S;LH;Rất trầm nhịp chung;Y04
+100;lower;S;LH;Ba phách rất trầm chung;Y22

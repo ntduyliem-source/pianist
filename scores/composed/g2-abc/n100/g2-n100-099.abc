@@ -1,0 +1,25 @@
+%abc-2.1
+X:1399
+T:g2-n100-099 Giữ đầu qua khúc ba phách
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=third; lead=RH; bucket=n100; notes=84; RH=42; LH=42
+% role=S; duration60=60s; related_pattern=5de3920e85531dc4
+% authored_passages=S23 S34 S21 S32 S23
+% source=buildscripts/pianist/compositions/g2/n100.txt:100
+[V:RH] C2 E | D E C | E C2 | C3 |
+[V:LH] C,2 D, | D, D, C, | D, C,2 | C,3 |
+[V:RH] C E D | E2 G | E C2 | C3 |
+[V:LH] C, D, C, | C,2 D, | D, C,2 | C,3 |
+[V:RH] C E D | E C2 | D E C | C3 |
+[V:LH] C, D, C, | D, C,2 | D, D, C, | C,3 |
+[V:RH] E G F | E C2 | D E C | C3 |
+[V:LH] C, C, D, | D, C,2 | D, D, C, | C,3 |
+[V:RH] C2 E | D E C | E C2 | C3 |]
+[V:LH] C,2 D, | D, D, C, | D, C,2 | C,3 |]

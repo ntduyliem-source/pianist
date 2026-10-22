@@ -1,0 +1,17 @@
+%abc-2.1
+X:150
+T:g1-n6-050 Tay trái bước chậm
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n6; notes=8; RH=2; LH=6
+% role=L; family=bass-paired-half; form=authored; duration60=8s
+% related_pattern=deaaef8fc6cc44c8
+% source=buildscripts/pianist/compositions/g1/n6.txt:52
+[V:RH] C4 | C4 |]
+[V:LH] C,2 D, E, | F, E, E,2 |]

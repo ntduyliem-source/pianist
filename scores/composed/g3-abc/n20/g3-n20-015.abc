@@ -1,0 +1,17 @@
+%abc-2.1
+X:1715
+T:g3-n20-015 Nốt nhắc ở nhịp ba
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fourth; lead=RH; bucket=n20; notes=15; RH=11; LH=4
+% role=R; duration60=12s; related_pattern=b390b99e580758f8
+% authored_passages=F25
+% source=buildscripts/pianist/compositions/g3/n20.txt:16
+[V:RH] C C F | E D C | D G F | E C2 |]
+[V:LH] C,3 | C,3 | C,3 | C,3 |]

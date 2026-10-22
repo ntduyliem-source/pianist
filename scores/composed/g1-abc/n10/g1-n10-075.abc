@@ -1,0 +1,17 @@
+%abc-2.1
+X:275
+T:g1-n10-075 Hai câu có nốt dài
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n10; notes=12; RH=6; LH=6
+% role=A; family=paired-long; form=authored; duration60=16s
+% related_pattern=3560d7e477a726d6
+% source=buildscripts/pianist/compositions/g1/n10.txt:76
+[V:RH] C2 D E | z4 | F E E2 | z4 |]
+[V:LH] z4 | C, D, E,2 | z4 | D, C, C,2 |]

@@ -1,0 +1,25 @@
+%abc-2.1
+X:2053
+T:g3-n100-053 Sol thấp về vòng ba
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fifth; lead=LH; bucket=n100; notes=78; RH=20; LH=58
+% role=L; duration60=60s; related_pattern=12d54c0e058fafa2
+% authored_passages=B22 B24 B21 B22 B23
+% source=buildscripts/pianist/compositions/g3/n100.txt:54
+[V:RH] C3 | C3 | C3 | C3 |
+[V:LH] G, C, D, | E, F, E, | D, G, F, | E, D, C, |
+[V:RH] C3 | C3 | C3 | C3 |
+[V:LH] C, G, F, | E, D, C, | D, G, F, | E, D, C, |
+[V:RH] C3 | C3 | C3 | C3 |
+[V:LH] C, G, F, | E, D, C, | D, E, F, | E, C,2 |
+[V:RH] C3 | C3 | C3 | C3 |
+[V:LH] G, C, D, | E, F, E, | D, G, F, | E, D, C, |
+[V:RH] C3 | C3 | C3 | C3 |]
+[V:LH] C,2 G, | F, E, D, | C, G, F, | E, D, C, |]

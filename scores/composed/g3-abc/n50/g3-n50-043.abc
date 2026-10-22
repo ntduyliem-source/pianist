@@ -1,0 +1,21 @@
+%abc-2.1
+X:1943
+T:g3-n50-043 Giữ thấp nhắc ba phách
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fourth; lead=LH; bucket=n50; notes=46; RH=12; LH=34
+% role=L; duration60=36s; related_pattern=24a5ba9d0455dc54
+% authored_passages=G23 G22 G25
+% source=buildscripts/pianist/compositions/g3/n50.txt:44
+[V:RH] C3 | C3 | C3 | C3 |
+[V:LH] C,2 F, | E, D, C, | D, G, F, | E, D, C, |
+[V:RH] C3 | C3 | C3 | C3 |
+[V:LH] F, C, D, | E, F, E, | D, G, F, | E, D, C, |
+[V:RH] C3 | C3 | C3 | C3 |]
+[V:LH] C, C, F, | E, D, C, | D, G, F, | E, C,2 |]

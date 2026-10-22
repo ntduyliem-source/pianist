@@ -1,0 +1,17 @@
+%abc-2.1
+X:168
+T:g1-n6-068 Trầm mở một vòng
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n6; notes=6; RH=3; LH=3
+% role=A; family=left-turn; form=authored; duration60=6s
+% related_pattern=6db9ed6a4a5779d7
+% source=buildscripts/pianist/compositions/g1/n6.txt:69
+[V:RH] z3 | C D C |]
+[V:LH] C, D, C, | z3 |]

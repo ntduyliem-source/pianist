@@ -1,0 +1,23 @@
+%abc-2.1
+X:558
+T:g1-n50-058 Bốn cảnh trầm đầy bước
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n50; notes=69; RH=16; LH=53
+% role=L; family=bass-four-full; form=authored; duration60=64s
+% related_pattern=d8f1827e6d0a3170
+% source=buildscripts/pianist/compositions/g1/n50.txt:60
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C, D, E,2 | E, F, G,2 | G, F, E, D, | C,2 C,2 |
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C, C, D, E, | F, G, F, E, | D, E, F, E, | D, z C,2 |
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C, D, E, F, | G,2 F, E, | D, C, D, E, | F, E, D, C, |
+[V:RH] C4 | C4 | C4 | C4 |]
+[V:LH] C, D, E,2 | F, E, D, E, | D, C, D, C, | C,4 |]

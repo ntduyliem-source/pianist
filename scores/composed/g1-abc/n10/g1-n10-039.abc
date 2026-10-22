@@ -1,0 +1,17 @@
+%abc-2.1
+X:239
+T:g1-n10-039 Nốt trầm dài giữa câu
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n10; notes=9; RH=2; LH=7
+% role=L; family=bass-held-middle; form=authored; duration60=8s
+% related_pattern=a56eaabe87abf42c
+% source=buildscripts/pianist/compositions/g1/n10.txt:41
+[V:RH] C4 | C4 |]
+[V:LH] C, D, E,2 | F, E, D, C, |]

@@ -1,0 +1,23 @@
+%abc-2.1
+X:5474
+T:g8-n50-074 Năm trầm chấm Sol
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G8; profile=dyad-dotted; lead=LH; bucket=n50; notes=52; RH=13; LH=39
+% duration60=52s; related_pattern=22800fe001aef3d6
+% authored_passages=D24 DL3 DL2 DL4
+% source=buildscripts/pianist/compositions/g8/studies.txt:75
+[V:RH] C4 | D z z z | C z z z | C z z z |
+[V:LH] [C,G,]3/2 D,/2 G,2 | [D,G,]3/2 E,/2 F,2 | E,3/2 D,/2 C,2 | [C,E,]2 G,2 |
+[V:RH] C z z z | C z z z | C z z z | C z z z |
+[V:LH] C,4 | [E,G,]3/2 F,/2 E,2 | D,2 C,2 | [C,G,]3/2 E,/2 G,2 |
+[V:RH] C z z z | C z z z | D z z z | D z z z |
+[V:LH] E,2 C,2 | [C,G,]3/2 D,/2 E,2 | F,2 D,2 | [D,F,]3/2 E,/2 G,2 |
+[V:RH] C z z z |]
+[V:LH] [C,E,]4 |]

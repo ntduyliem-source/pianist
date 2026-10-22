@@ -1,0 +1,19 @@
+%abc-2.1
+X:4509
+T:g7-n20-009 Mi Rê Đô về nhà
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G7; profile=dotted; lead=RH; bucket=n20; notes=20; RH=15; LH=5
+% duration60=20s; related_pattern=425cd7b9d1bed724
+% authored_passages=D09 DR1
+% source=buildscripts/pianist/compositions/g7/studies.txt:10
+[V:RH] E3/2 D/2 C2 | C3/2 D/2 E2 | F3/2 E/2 D2 | E3/2 F/2 G E |
+[V:LH] C,4 | C, z z z | D, z z z | C, z z z |
+[V:RH] D2 C2 |]
+[V:LH] C, z z z |]

@@ -1,0 +1,17 @@
+%abc-2.1
+X:3593
+T:g6-n4-093 Mi cao trở Mi Fa
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G6; profile=P8-down; lead=RH; bucket=n4; notes=5; RH=4; LH=1
+% duration60=4s; related_pattern=580d31cdd49d6196
+% authored_passages=S93
+% source=buildscripts/pianist/compositions/g6/studies.txt:94
+[V:RH] d e E F |]
+[V:LH] C,4 |]

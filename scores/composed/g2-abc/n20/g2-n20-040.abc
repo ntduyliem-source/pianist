@@ -1,0 +1,17 @@
+%abc-2.1
+X:1040
+T:g2-n20-040 Câu trầm chờ một phách
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=third; lead=LH; bucket=n20; notes=18; RH=4; LH=14
+% role=L; duration60=16s; related_pattern=596baabc088960af
+% authored_passages=U10
+% source=buildscripts/pianist/compositions/g2/n20.txt:41
+[V:RH] C4 | C4 | C4 | C4 |]
+[V:LH] C, E, z D, | E, G, F, E, | D, E, D, C, | D, E, C,2 |]

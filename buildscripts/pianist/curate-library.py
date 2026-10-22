@@ -22,7 +22,22 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--inputs', type=Path, required=True)
     parser.add_argument('--audit', type=Path, required=True)
+    mode = parser.add_mutually_exclusive_group()
+    mode.add_argument('--append', dest='append', action='store_true', help='Keep the current library and append versions (default)')
+    mode.add_argument('--replace', dest='append', action='store_false', help='Explicit legacy replacement of the entire catalog')
+    parser.set_defaults(append=True)
+    parser.add_argument('--allow-editor-only', action='store_true', help='Keep native-verified grace-note versions for listening/editing with practice disabled')
+    parser.add_argument('--report', type=Path, help='Write a JSON receipt for append mode')
     args = parser.parse_args()
+    if args.append:
+        from library_import import append_library
+        report = append_library(json.loads(args.inputs.read_text(encoding='utf-8')),
+                                json.loads(args.audit.read_text(encoding='utf-8')), ROOT/'scores/library', args.allow_editor_only)
+        if args.report:
+            args.report.parent.mkdir(parents=True, exist_ok=True)
+            args.report.write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+        print(json.dumps(report['summary'], ensure_ascii=False))
+        return
     inputs = {r['filename']: r for r in json.loads(args.inputs.read_text(encoding='utf-8'))}
     audit = json.loads(args.audit.read_text(encoding='utf-8'))
     if audit['errors']: raise ValueError('Native engine errors must be resolved first')

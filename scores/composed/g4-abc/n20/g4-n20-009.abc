@@ -1,0 +1,17 @@
+%abc-2.1
+X:2409
+T:g4-n20-009 Giữ Si giữ Đô cao
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=upper; lead=RH; bucket=n20; notes=17; RH=13; LH=4
+% role=R; duration60=16s; related_pattern=6afc205857f33912
+% authored_passages=U09
+% source=buildscripts/pianist/compositions/g4/n20.txt:10
+[V:RH] G A B2 | c G A B | c d c2 | B A G2 |]
+[V:LH] G,4 | G,4 | G,4 | G,4 |]

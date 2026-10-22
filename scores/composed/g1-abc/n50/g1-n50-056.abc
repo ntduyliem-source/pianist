@@ -1,0 +1,21 @@
+%abc-2.1
+X:556
+T:g1-n50-056 Ba câu trầm nền Sol
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n50; notes=51; RH=12; LH=39
+% role=L; family=bass-g-three; form=authored; duration60=48s
+% related_pattern=8f3e3b33ee5e61c0
+% source=buildscripts/pianist/compositions/g1/n50.txt:58
+[V:RH] G4 | G4 | G4 | G4 |
+[V:LH] E, F, G,2 | F, E, D, E, | F, G, F, E, | E,4 |
+[V:RH] G4 | G4 | G4 | G4 |
+[V:LH] E, F, F, G, | F, E, D, E, | F, G, F, E, | E,2 E,2 |
+[V:RH] G4 | G4 | G4 | G4 |]
+[V:LH] E, F, G, F, | E, D, C, D, | E, F, E, D, | C,4 |]

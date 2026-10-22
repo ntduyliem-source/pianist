@@ -1,0 +1,19 @@
+%abc-2.1
+X:2485
+T:g4-n20-085 Sáu lượt bass rộng ba
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=span; lead=LH; bucket=n20; notes=15; RH=6; LH=9
+% role=A; duration60=18s; related_pattern=2d8e1024a80fcf89
+% authored_passages=H12
+% source=buildscripts/pianist/compositions/g4/n20.txt:86
+[V:RH] z3 | E2 F | z3 | G2 F |
+[V:LH] C, G, C | z3 | B, A, G, | z3 |
+[V:RH] z3 | E2 E |]
+[V:LH] E, G, C, | z3 |]

@@ -1,0 +1,17 @@
+%abc-2.1
+X:1750
+T:g3-n20-050 Giữ Fa thấp sau nhảy
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fifth; lead=LH; bucket=n20; notes=17; RH=4; LH=13
+% role=L; duration60=16s; related_pattern=32cbdf9d33d65d36
+% authored_passages=B05
+% source=buildscripts/pianist/compositions/g3/n20.txt:51
+[V:RH] C4 | C4 | C4 | C4 |]
+[V:LH] C, G, F,2 | E,2 D, C, | D, E, F, E, | D, C, C,2 |]

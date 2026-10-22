@@ -1,0 +1,21 @@
+%abc-2.1
+X:2638
+T:g4-n50-038 Si trầm qua Đô đáp
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=upper; lead=LH; bucket=n50; notes=54; RH=12; LH=42
+% role=L; duration60=48s; related_pattern=b716e4409f06f67a
+% authored_passages=V08 V09 V13
+% source=buildscripts/pianist/compositions/g4/n50.txt:39
+[V:RH] G4 | G4 | G4 | G4 |
+[V:LH] B, G, C B, | A, B, C D | C A, B, G, | A, G, G,2 |
+[V:RH] G4 | G4 | G4 | G4 |
+[V:LH] G, A, B,2 | C G, A, B, | C D C2 | B, A, G,2 |
+[V:RH] G4 | G4 | G4 | G4 |]
+[V:LH] A, B, C2 | B, G, C B, | A, B, D C | B, A, G,2 |]

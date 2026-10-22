@@ -1,0 +1,17 @@
+%abc-2.1
+X:1572
+T:g3-n6-072 Sol gọi từ phía trên
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fifth; lead=RH; bucket=n6; notes=6; RH=3; LH=3
+% role=A; duration60=6s; related_pattern=3504577028d2806b
+% authored_passages=inline-n6-072
+% source=buildscripts/pianist/compositions/g3/n6.txt:73
+[V:RH] G C D | z3 |]
+[V:LH] z3 | C, D, E, |]

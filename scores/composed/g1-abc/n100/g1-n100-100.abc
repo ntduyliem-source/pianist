@@ -1,0 +1,23 @@
+%abc-2.1
+X:700
+T:g1-n100-100 Bốn câu hai tay cùng về
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n100; notes=106; RH=53; LH=53
+% role=S; family=octave-four-return; form=authored; duration60=64s
+% related_pattern=da04e68b3f29c49b
+% source=buildscripts/pianist/compositions/g1/n100.txt:100
+[V:RH] G F E2 | D E F E | D C D E | E4 |
+[V:LH] G, F, E,2 | D, E, F, E, | D, C, D, E, | E,4 |
+[V:RH] E F G F | E D C D | E F E D | C4 |
+[V:LH] E, F, G, F, | E, D, C, D, | E, F, E, D, | C,4 |
+[V:RH] C D E F | G F E D | C D C C | C2 C2 |
+[V:LH] C, D, E, F, | G, F, E, D, | C, D, C, C, | C,2 C,2 |
+[V:RH] C D E2 | F E D C | D E F E | D C C2 |]
+[V:LH] C, D, E,2 | F, E, D, C, | D, E, F, E, | D, C, C,2 |]

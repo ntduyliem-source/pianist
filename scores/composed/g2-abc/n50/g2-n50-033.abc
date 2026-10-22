@@ -1,0 +1,21 @@
+%abc-2.1
+X:1233
+T:g2-n50-033 Mi trầm kể đổi lời
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=third; lead=LH; bucket=n50; notes=54; RH=12; LH=42
+% role=L; duration60=48s; related_pattern=6a0edc7b73bb2c00
+% authored_passages=U03 U09 U06
+% source=buildscripts/pianist/compositions/g2/n50.txt:34
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] E, G, F, E, | D, F, E, D, | C, E, D, C, | D, E, C,2 |
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] E, C, D, E, | G, F, E,2 | D, F, E, D, | C,2 C,2 |
+[V:RH] C4 | C4 | C4 | C4 |]
+[V:LH] E,2 G, F, | E, C, D, E, | F, E, D, C, | D, E, C,2 |]

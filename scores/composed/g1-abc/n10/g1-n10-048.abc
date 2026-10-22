@@ -1,0 +1,17 @@
+%abc-2.1
+X:248
+T:g1-n10-048 Nhịp ba và hơi thở trầm
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n10; notes=10; RH=3; LH=7
+% role=L; family=bass-breath-three; form=authored; duration60=9s
+% related_pattern=0c1c0f69169b31ae
+% source=buildscripts/pianist/compositions/g1/n10.txt:50
+[V:RH] C3 | C3 | C3 |]
+[V:LH] C, z D, | E, F, E, | D, C,2 |]

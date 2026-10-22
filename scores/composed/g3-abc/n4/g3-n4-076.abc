@@ -1,0 +1,17 @@
+%abc-2.1
+X:1476
+T:g3-n4-076 Sol Đô thấp gọi Mi
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fifth; lead=LH; bucket=n4; notes=3; RH=1; LH=2
+% role=A; duration60=3s; related_pattern=273c87d6d71500d4
+% authored_passages=inline-n4-076
+% source=buildscripts/pianist/compositions/g3/n4.txt:77
+[V:RH] z z E |]
+[V:LH] G, C, z |]

@@ -1,0 +1,21 @@
+%abc-2.1
+X:2631
+T:g4-n50-031 Ba cửa bass phía cao
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=upper; lead=LH; bucket=n50; notes=52; RH=12; LH=40
+% role=L; duration60=48s; related_pattern=4636d3ac02c5c178
+% authored_passages=V01 V05 V03
+% source=buildscripts/pianist/compositions/g4/n50.txt:32
+[V:RH] G4 | G4 | G4 | G4 |
+[V:LH] G, A, B, C | D C B, A, | G, B, C B, | A, B, G,2 |
+[V:RH] G4 | G4 | G4 | G4 |
+[V:LH] G,2 B, A, | G,2 B, C | D C B,2 | G,2 G,2 |
+[V:RH] G4 | G4 | G4 | G4 |]
+[V:LH] B, C D2 | C B, A, G, | A, B, C B, | A, G, G,2 |]

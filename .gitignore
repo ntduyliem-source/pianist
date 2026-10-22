@@ -96,3 +96,4 @@ __pycache__/
 apps/pianist-web/node_modules/
 apps/pianist-web/.test-dist/
 /examples/local/
+/warehouse/

@@ -1,0 +1,17 @@
+%abc-2.1
+X:957
+T:g2-n10-057 Cặp giữa ba nhịp trầm
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=eighth; lead=LH; bucket=n10; notes=11; RH=3; LH=8
+% role=L; duration60=9s; related_pattern=53975331cc0ad2f2
+% authored_passages=inline-n10-057
+% source=buildscripts/pianist/compositions/g2/n10.txt:58
+[V:RH] C3 | C3 | C3 |]
+[V:LH] C, D, E, | F,/2E,/2 D, C, | C,3 |]

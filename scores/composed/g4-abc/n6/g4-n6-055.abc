@@ -1,0 +1,17 @@
+%abc-2.1
+X:2255
+T:g4-n6-055 Qua tám trầm ghé Sol
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=span; lead=LH; bucket=n6; notes=6; RH=2; LH=4
+% role=L; duration60=4s; related_pattern=6b9708469bf132d0
+% authored_passages=inline-n6-055
+% source=buildscripts/pianist/compositions/g4/n6.txt:56
+[V:RH] E2 E2 |]
+[V:LH] C, G, C G, |]

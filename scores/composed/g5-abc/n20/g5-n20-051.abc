@@ -1,0 +1,19 @@
+%abc-2.1
+X:3151
+T:g5-n20-051 Đô Mi trở Đô
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=dyad; lead=RH; bucket=n20; notes=22; RH=14; LH=8
+% duration60=20s; related_pattern=2beaac9eaa3c3195
+% authored_passages=D01 DR1
+% source=buildscripts/pianist/compositions/g5/studies.txt:52
+[V:RH] [CE]2 C2 | [CE]2 G2 | [DF]2 F2 | E D C2 |
+[V:LH] C,2 C,2 | C,2 G,2 | D,2 F,2 | G,4 |
+[V:RH] [CE]4 |]
+[V:LH] C,4 |]

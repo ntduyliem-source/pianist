@@ -1,0 +1,17 @@
+%abc-2.1
+X:1097
+T:g2-n20-097 Hai tay ba phách
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=third; lead=RH; bucket=n20; notes=18; RH=9; LH=9
+% role=S; duration60=12s; related_pattern=d3d399cb4f308737
+% authored_passages=S21
+% source=buildscripts/pianist/compositions/g2/n20.txt:98
+[V:RH] C E D | E C2 | D E C | C3 |]
+[V:LH] C, D, C, | D, C,2 | D, D, C, | C,3 |]

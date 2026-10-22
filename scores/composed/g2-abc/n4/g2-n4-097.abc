@@ -1,0 +1,17 @@
+%abc-2.1
+X:797
+T:g2-n4-097 Bốn nốt trầm chờ đáp
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=eighth; lead=LH; bucket=n4; notes=5; RH=1; LH=4
+% role=A; duration60=4s; related_pattern=000d4f973836a161
+% authored_passages=inline-n4-097
+% source=buildscripts/pianist/compositions/g2/n4.txt:98
+[V:RH] z z z C |]
+[V:LH] C,/2D,/2 E, D, z |]

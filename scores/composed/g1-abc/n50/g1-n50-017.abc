@@ -1,0 +1,23 @@
+%abc-2.1
+X:517
+T:g1-n50-017 Ba cảnh nhịp ba
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n50; notes=54; RH=38; LH=16
+% role=R; family=three-waltz-scenes; form=authored; duration60=48s
+% related_pattern=291d4f6e86293800
+% source=buildscripts/pianist/compositions/g1/n50.txt:20
+[V:RH] C D E | F G F | E D C | C3 |
+[V:LH] C,3 | C,3 | C,3 | C,3 |
+[V:RH] C D C | D E F | E D C | C3 |
+[V:LH] C,3 | C,3 | C,3 | C,3 |
+[V:RH] C D E | F E D | C D C | C3 |
+[V:LH] C,3 | C,3 | C,3 | C,3 |
+[V:RH] C2 D | E F E | D C2 | C3 |]
+[V:LH] C,3 | C,3 | C,3 | C,3 |]

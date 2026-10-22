@@ -1,0 +1,17 @@
+%abc-2.1
+X:3081
+T:g5-n10-081 Rê Fa trầm về Đô
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=dyad; lead=LH; bucket=n10; notes=11; RH=4; LH=7
+% duration60=12s; related_pattern=ae2748e754742691
+% authored_passages=D31 CL3 CL2
+% source=buildscripts/pianist/compositions/g5/studies.txt:82
+[V:RH] D2 C2 | G4 | C4 |]
+[V:LH] [D,F,]2 C,2 | D,2 C,2 | E,2 C,2 |]

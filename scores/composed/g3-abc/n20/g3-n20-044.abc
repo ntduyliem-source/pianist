@@ -1,0 +1,17 @@
+%abc-2.1
+X:1744
+T:g3-n20-044 Rê trầm gọi ba phách
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fourth; lead=LH; bucket=n20; notes=16; RH=4; LH=12
+% role=L; duration60=12s; related_pattern=6ede86c38b664fc8
+% authored_passages=G24
+% source=buildscripts/pianist/compositions/g3/n20.txt:45
+[V:RH] C3 | C3 | C3 | C3 |]
+[V:LH] D, G, F, | E, C, F, | E, D, E, | D, C, C, |]

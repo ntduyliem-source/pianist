@@ -1,0 +1,17 @@
+%abc-2.1
+X:4947
+T:g8-n4-047 Dòng phụ trầm Sol Mi Rê
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G8; profile=ledger-low; lead=LH; bucket=n4; notes=4; RH=1; LH=3
+% duration60=4s; related_pattern=23b09ebf91110161
+% authored_passages=L22
+% source=buildscripts/pianist/compositions/g8/studies.txt:48
+[V:RH] G4 |]
+[V:LH] G,,, E,,, D,,,2 |]

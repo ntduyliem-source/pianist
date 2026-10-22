@@ -1,6 +1,7 @@
 """Validate the lazy web bank's entire file graph before staging/publishing."""
 import hashlib
 import json
+import re
 from pathlib import PurePosixPath
 
 
@@ -22,8 +23,15 @@ def verify_web_bank(read, public=False):
     index = json.loads(checked('curriculum/' + pointer['index']['path'], pointer['index']))
     if index['releaseId'] != release_id or len(index['options']) != 56:
         raise ValueError('Incomplete bank index')
-    if public and index['visibility'] != 'public':
+    composed = index.get('kind') == 'composed-abc-v1'
+    if composed and (index['visibility'] != 'composed' or not index.get('sourceRelease', '').startswith('composed-abc-')):
+        raise ValueError('Invalid composed bank provenance')
+    if public and not composed and index['visibility'] != 'public':
         raise ValueError('Local exercise bank cannot be published')
+    if composed:
+        expected = {(g, n) for g in range(1, 9) for n in ['n4', 'n6', 'n10', 'n20', 'n30', 'n50', 'n100']}
+        if {(o['grade'], o['lengthBucket']) for o in index['options']} != expected:
+            raise ValueError('Incomplete composed grade/length choices')
     paths = {'curriculum/manifest.json', base + 'index.json'}
     exercises = {}
     options = set()
@@ -39,7 +47,16 @@ def verify_web_bank(read, public=False):
         for e in data['entries']:
             if e['path'] != 'exercises/' + e['id'] + '.mxl' or option['grade'] not in e['grades']:
                 raise ValueError('Exercise identity disagreement')
-            if public and (not e['sources'] or any(s['license_id'] != 'CC0-1.0' or not s['source_url'].startswith(
+            if composed:
+                if (e['hand'] != 'both' or e.get('lengthBucket') != option['lengthBucket'] or
+                        e['id'] != e['sha256'] or not re.fullmatch(r'g[1-8]-n(?:4|6|10|20|30|50|100)-[0-9]{3}', e.get('scoreId', '')) or
+                        e.get('countRight', 0) < 1 or e.get('countLeft', 0) < 1 or
+                        e['countRight'] + e['countLeft'] != e['targetCount'] or
+                        not isinstance(e.get('bookPosition'), int) or not 1 <= e['bookPosition'] <= option['count'] or
+                        not re.fullmatch(r'[a-f0-9]{64}', e.get('abcSha256', '')) or
+                        not e.get('sources') or any(s.get('license_id') != 'AI-composed' for s in e['sources'])):
+                    raise ValueError('Invalid composed score metadata')
+            if public and not composed and (not e['sources'] or any(s['license_id'] != 'CC0-1.0' or not s['source_url'].startswith(
                     'https://raw.githubusercontent.com/OpenScore/Lieder/38c5db510224d9facdc4b08d741fc788cfb58ea8/') for s in e['sources'])):
                 raise ValueError('Public bank source has not been reviewed')
             if e['id'] in exercises and exercises[e['id']] != e['sha256']:
@@ -50,6 +67,8 @@ def verify_web_bank(read, public=False):
             paths.add(base + e['path'])
         if option['byHand'] != {h: sum(e['hand'] == h for e in data['entries']) for h in ['left', 'right', 'both']}:
             raise ValueError('Hand counts disagree')
+        if composed and sorted(e['bookPosition'] for e in data['entries']) != list(range(1, option['count'] + 1)):
+            raise ValueError('Missing or repeated book position')
     if len(exercises) != index['total']:
         raise ValueError('Bank total disagrees')
     return {'releaseId': release_id, 'count': len(exercises), 'visibility': index['visibility'], 'paths': sorted(paths)}

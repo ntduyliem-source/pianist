@@ -1,0 +1,25 @@
+%abc-2.1
+X:630
+T:g1-n100-030 Năm cảnh cuối buổi
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n100; notes=87; RH=67; LH=20
+% role=R; family=five-final-scenes; form=authored; duration60=80s
+% related_pattern=1a1e0ce9cd918932
+% source=buildscripts/pianist/compositions/g1/n100.txt:33
+[V:RH] E F G F | E D C2 | D E F E | D C C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C D E F | G F E2 | D E D C | C4 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C C D E | F2 E D | C D E D | C2 C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C D E F | G F E D | C C D E | F E D C |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C D E2 | F E D E | D C D C | C4 |]
+[V:LH] C,4 | C,4 | C,4 | C,4 |]

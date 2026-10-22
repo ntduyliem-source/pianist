@@ -1,0 +1,17 @@
+%abc-2.1
+X:4500
+T:g7-n10-100 Rê Đô Fa trầm đu đưa
+C:Nhạc do trợ lý AI biên soạn
+M:6/8
+L:1/4
+Q:3/8=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G7; profile=compound; lead=LH; bucket=n10; notes=10; RH=3; LH=7
+% duration60=6s; related_pattern=a669861bb722158d
+% authored_passages=K25 KL3 KL2
+% source=buildscripts/pianist/compositions/g7/studies.txt:101
+[V:RH] F3 | G3 | C3 |]
+[V:LH] D, C,/2 F,3/2 | D,3/2 C,3/2 | E,3/2 C,3/2 |]

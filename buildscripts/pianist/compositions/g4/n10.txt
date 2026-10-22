@@ -1,0 +1,101 @@
+# Complete short phrases in new positions and across an octave.
+001;upper;R;RH;Câu cao đi lên rồi về;4;G A B c | d c B G;G,4 | G,4
+002;upper;R;RH;Giữ Rê cao đáp xuống;4;B c d2 | c B A G;G,4 | G,4
+003;upper;R;RH;Sol Si Rê mở câu;4;G B d c | B A G2;G,4 | G,4
+004;upper;R;RH;Đô cao gọi lại Rê;4;c B A G | A B c d;G,4 | G,4
+005;upper;R;RH;Nốt nhắc mở cửa cao;4;G G A B | c B A G;G,4 | G,4
+006;upper;R;RH;Sol dài dẫn đường cao;4;G2 B c | d c B G;G,4 | G,4
+007;upper;R;RH;Si gọi Rê giữ Đô;4;B d c2 | B A B G;G,4 | G,4
+008;upper;R;RH;Quãng bốn trên nền nhắc;4;G c B A | G A B2;G,2 G,2 | G,2 G,2
+009;upper;R;RH;Cao lên giữ Sol cuối;4;G A B c | d B G2;G,2 G,2 | G,2 G,2
+010;upper;R;RH;Nghỉ một phách vùng cao;4;G B z A | B c B G;G,4 | G,4
+011;upper;R;RH;Ba nhịp qua Đô Rê cao;3;G A B | c d c | B A G;G,3 | G,3 | G,3
+012;upper;R;RH;Si Rê Đô cao vòng về;3;B d c | B A G | A B G;G,3 | G,3 | G,3
+013;upper;R;RH;Giữ Sol trong ba nhịp;3;G2 A | B c d | c B G;G,3 | G,3 | G,3
+014;upper;R;RH;Đô cao dừng ở Sol;3;G A B | c G2 | A B G;G,3 | G,3 | G,3
+015;upper;R;RH;Si dài và đường hạ;3;B2 c | d c B | A G2;G,3 | G,3 | G,3
+016;lower;R;RH;Câu đi từ La thấp;4;A, B, C D | E D C A,;C,4 | C,4
+017;lower;R;RH;Mi ghé Si về La;4;E B, C D | C B, A,2;C,4 | C,4
+018;lower;R;RH;Rải thấp rồi bước về;4;A, C E D | C B, A, C;C,4 | C,4
+019;lower;R;RH;Đô ghé thấp khép giữa;4;C A, B, C | D E C2;C,4 | C,4
+020;lower;R;RH;La dài dẫn đường về;4;A,2 B, C | D C B, A,;C,4 | C,4
+021;lower;R;RH;Mi Đô La trên nền nhắc;4;E C A, B, | C D E2;C,2 C,2 | C,2 C,2
+022;lower;R;RH;Ba nhịp qua vùng thấp;3;A, B, C | D E D | C B, A,;C,3 | C,3 | C,3
+023;lower;R;RH;Mi gọi Si trong nhịp ba;3;E B, C | D C A, | B, C2;C,3 | C,3 | C,3
+024;lower;R;RH;Đô ghé La ba nhịp;3;C A, B, | C D E | D C2;C,3 | C,3 | C,3
+025;span;R;RH;Mở tám rồi trở về Đô;4;C G c B | A G E C;C,4 | C,4
+026;span;R;RH;Từ Đô cao về lại cao;4;c G C D | E G A c;C,4 | C,4
+027;span;R;RH;Qua Fa La khép ở Đô;4;C F A c | B G E C;C,4 | C,4
+028;span;R;RH;Giữ Đô mở tám nền nhắc;4;C2 G c | B A G C;C,2 C,2 | C,2 C,2
+029;span;R;RH;Ba nhịp mở rộng về giữa;3;C G c | B A G | E D C;C,3 | C,3 | C,3
+030;span;R;RH;Mở tám trước phách nghỉ;4;C G c z | B G E C;C,4 | C,4
+031;upper;L;LH;Câu bass cao lên về;4;G4 | G4;G, A, B, C | D C B, G,
+032;upper;L;LH;Giữ Rê giữa đáp xuống;4;G4 | G4;B, C D2 | C B, A, G,
+033;upper;L;LH;Sol Si Rê giữa mở;4;G4 | G4;G, B, D C | B, A, G,2
+034;upper;L;LH;Đô giữa gọi lại Rê;4;G4 | G4;C B, A, G, | A, B, C D
+035;upper;L;LH;Nhắc cửa bass cao;4;G4 | G4;G, G, A, B, | C B, A, G,
+036;upper;L;LH;Sol trầm dài dẫn cao;4;G4 | G4;G,2 B, C | D C B, G,
+037;upper;L;LH;Si trầm giữ Đô giữa;4;G4 | G4;B, D C2 | B, A, B, G,
+038;upper;L;LH;Quãng bốn bass nền nhắc;4;G2 G2 | G2 G2;G, C B, A, | G, A, B,2
+039;upper;L;LH;Bass cao lên giữ Sol;4;G2 G2 | G2 G2;G, A, B, C | D B, G,2
+040;upper;L;LH;Nghỉ một phách bass cao;4;G4 | G4;G, B, z A, | B, C B, G,
+041;upper;L;LH;Ba nhịp qua Đô Rê giữa;3;G3 | G3 | G3;G, A, B, | C D C | B, A, G,
+042;upper;L;LH;Si Rê Đô bass vòng;3;G3 | G3 | G3;B, D C | B, A, G, | A, B, G,
+043;upper;L;LH;Giữ Sol trầm ba nhịp;3;G3 | G3 | G3;G,2 A, | B, C D | C B, G,
+044;upper;L;LH;Đô giữa dừng Sol trầm;3;G3 | G3 | G3;G, A, B, | C G,2 | A, B, G,
+045;upper;L;LH;Si trầm dài đường hạ;3;G3 | G3 | G3;B,2 C | D C B, | A, G,2
+046;lower;L;LH;Câu từ La rất trầm;4;C4 | C4;A,, B,, C, D, | E, D, C, A,,
+047;lower;L;LH;Mi trầm Si về La;4;C4 | C4;E, B,, C, D, | C, B,, A,,2
+048;lower;L;LH;Rải rất trầm bước về;4;C4 | C4;A,, C, E, D, | C, B,, A,, C,
+049;lower;L;LH;Đô trầm ghé miền thấp;4;C4 | C4;C, A,, B,, C, | D, E, C,2
+050;lower;L;LH;La trầm dài dẫn về;4;C4 | C4;A,,2 B,, C, | D, C, B,, A,,
+051;lower;L;LH;Mi Đô La trầm nền nhắc;4;C2 C2 | C2 C2;E, C, A,, B,, | C, D, E,2
+052;lower;L;LH;Ba nhịp vùng rất trầm;3;C3 | C3 | C3;A,, B,, C, | D, E, D, | C, B,, A,,
+053;lower;L;LH;Mi Si trầm nhịp ba;3;C3 | C3 | C3;E, B,, C, | D, C, A,, | B,, C,2
+054;lower;L;LH;Đô trầm La ba nhịp;3;C3 | C3 | C3;C, A,, B,, | C, D, E, | D, C,2
+055;span;L;LH;Mở tám trầm về Đô;4;E4 | E4;C, G, C B, | A, G, E, C,
+056;span;L;LH;Từ Đô giữa về lại;4;E4 | E4;C G, C, D, | E, G, A, C
+057;span;L;LH;Qua Fa La trầm về;4;E4 | E4;C, F, A, C | B, G, E, C,
+058;span;L;LH;Giữ Đô trầm mở nền nhắc;4;E2 E2 | E2 E2;C,2 G, C | B, A, G, C,
+059;span;L;LH;Ba nhịp mở tám trầm;3;E3 | E3 | E3;C, G, C | B, A, G, | E, D, C,
+060;span;L;LH;Mở tám bass trước nghỉ;4;E4 | E4;C, G, C z | B, G, E, C,
+061;upper;A;RH;Hai câu cao gọi thấp đáp;3;G A B | z3 | c B G | z3;z3 | G, F, E, | z3 | F, G, G,
+062;upper;A;RH;Si cao gọi đổi lời đáp;3;B c d | z3 | c A G | z3;z3 | E, F, G, | z3 | F, E, E,
+063;upper;A;RH;Rê cao gọi xuống dần;3;d c B | z3 | A B G | z3;z3 | G, F, E, | z3 | F, G, G,
+064;upper;A;RH;Cao hỏi nhịp bốn giữ đáp;4;G A B c | z4 | B2 G2;z4 | G, F, E, F, | z4
+065;upper;A;RH;Giữ Sol cao rồi đối lời;3;G2 A | z3 | B c G | z3;z3 | E, F, G, | z3 | F, G,2
+066;upper;A;LH;Hai câu bass cao gọi;3;z3 | G F E | z3 | F G G;G, A, B, | z3 | C B, G, | z3
+067;upper;A;LH;Si bass gọi đổi đáp;3;z3 | E F G | z3 | F E E;B, C D | z3 | C A, G, | z3
+068;upper;A;LH;Rê giữa gọi hạ dần;3;z3 | G F E | z3 | F G G;D C B, | z3 | A, B, G, | z3
+069;upper;A;LH;Bass cao nhịp bốn giữ đáp;4;z4 | G F E F | z4;G, A, B, C | z4 | B,2 G,2
+070;upper;A;LH;Giữ Sol trầm đối lời;3;z3 | E F G | z3 | F G2;G,2 A, | z3 | B, C G, | z3
+071;lower;A;RH;Hai câu thấp trao lượt;3;A, B, C | z3 | D C A, | z3;z3 | C, D, E, | z3 | D, C, C,
+072;lower;A;RH;Mi gọi Si thấp đổi lời;3;E B, C | z3 | D C A, | z3;z3 | E, D, C, | z3 | D, E, D,
+073;lower;A;RH;Thấp hỏi bốn phách giữ đáp;4;A, C E D | z4 | C A, A,2;z4 | C, D, E, D, | z4
+074;lower;A;RH;La thấp dài trao hai câu;4;A,2 C E | z4 | D C A,2;z4 | C, D, E, D, | z4
+075;lower;A;LH;Hai câu rất trầm trao;3;z3 | C D E | z3 | D C C;A,, B,, C, | z3 | D, C, A,, | z3
+076;lower;A;LH;Mi trầm Si thấp đổi lời;3;z3 | E D C | z3 | D E D;E, B,, C, | z3 | D, C, A,, | z3
+077;lower;A;LH;Rất trầm hỏi giữ đáp;4;z4 | C D E D | z4;A,, C, E, D, | z4 | C, A,, A,,2
+078;span;A;RH;Mở tám qua hai câu hỏi;3;C G c | z3 | B G C | z3;z3 | C, D, E, | z3 | D, C, C,
+079;span;A;RH;Đô cao về giữa đối lời;3;c G C | z3 | E G C | z3;z3 | E, D, C, | z3 | D, E, D,
+080;span;A;RH;Bốn bậc mở tám giữ đáp;4;C F A c | z4 | B G C2;z4 | C, D, E, D, | z4
+081;span;A;RH;Mở tám nghỉ rồi đối lời;3;C G c | z3 | z G C | z3;z3 | C, D, E, | z3 | D, C,2
+082;span;A;LH;Mở tám trầm hai câu hỏi;3;z3 | E F G | z3 | F E E;C, G, C | z3 | B, G, C, | z3
+083;span;A;LH;Đô giữa về trầm đối lời;3;z3 | G F E | z3 | F G F;C G, C, | z3 | E, G, C, | z3
+084;span;A;LH;Bốn bậc bass tám giữ đáp;4;z4 | E F G F | z4;C, F, A, C | z4 | B, G, C,2
+085;span;A;LH;Mở tám bass nghỉ đối lời;3;z3 | E F G | z3 | F E2;C, G, C | z3 | z G, C, | z3
+086;upper;S;RH;Hai nhịp cao cùng nền;3;G A B | c B G;G, G, G, | F, G, G,
+087;upper;S;RH;Si Rê Đô cùng phách;3;B d c | B G2;G, F, G, | G, G,2
+088;upper;S;RH;Sol dài ba phách chung;3;G2 A | B c d;G,2 G, | G, G, G,
+089;upper;S;RH;Cao lên giữ cuối cùng;3;G A B | c G2;G, G, G, | F, G,2
+090;upper;S;RH;Cao bốn phách nền bước;4;G A B c | d B G2;G, G, F, G, | F, G, G,2
+091;upper;S;LH;Hai nhịp bass cao chung;3;G G G | F G G;G, A, B, | C B, G,
+092;upper;S;LH;Si Rê giữa cùng phách;3;G F G | G G2;B, D C | B, G,2
+093;upper;S;LH;Sol trầm dài phách chung;3;G2 G | G G G;G,2 A, | B, C D
+094;upper;S;LH;Bass lên giữ cuối chung;3;G G G | F G2;G, A, B, | C G,2
+095;upper;S;LH;Bass bốn phách nền bước;4;G G F G | F G G2;G, A, B, C | D B, G,2
+096;lower;S;RH;Hai nhịp thấp cùng nền;3;A, B, C | D C A,;C, C, C, | D, C, C,
+097;lower;S;RH;La thấp dài cùng tiếng;3;A,2 B, | C D E;C,2 C, | C, D, E,
+098;lower;S;RH;Thấp bốn phách nền bước;4;A, B, C D | E C A,2;C, C, D, E, | D, C, C,2
+099;lower;S;LH;Hai nhịp rất trầm chung;3;C C C | D C C;A,, B,, C, | D, C, A,,
+100;lower;S;LH;Trầm bốn phách nền bước;4;C C D E | D C C2;A,, B,, C, D, | E, C, A,,2

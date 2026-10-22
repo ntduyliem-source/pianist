@@ -1,0 +1,21 @@
+%abc-2.1
+X:1252
+T:g2-n50-052 Phách thấp giữa ba đoạn
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=eighth; lead=LH; bucket=n50; notes=52; RH=12; LH=40
+% role=L; duration60=48s; related_pattern=0962aba53b0c3dfd
+% authored_passages=F07 F16 F12
+% source=buildscripts/pianist/compositions/g2/n50.txt:53
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C,/2D,/2 E, E,2 | D, C, C,2 | C, D,/2E,/2 D, C, | C,4 |
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C,2 C,/2D,/2 E, | D, C, C,2 | C,4 | C,4 |
+[V:RH] C4 | C4 | C4 | C4 |]
+[V:LH] C, D,/2E,/2 F, E, | D, C,/2D,/2 E, D, | C,2 D, E, | F, E, D,/2C,/2 C, |]

@@ -1,0 +1,19 @@
+%abc-2.1
+X:414
+T:g1-n30-014 Hai câu thưa hơn
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n30; notes=30; RH=22; LH=8
+% role=R; family=two-rested-phrases; form=authored; duration60=32s
+% related_pattern=c4b9b3603f086fea
+% source=buildscripts/pianist/compositions/g1/n30.txt:17
+[V:RH] C z D E | F2 E D | E F E D | C4 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C D E F | G2 F E | D z C C | C4 |]
+[V:LH] C,4 | C,4 | C,4 | C,4 |]

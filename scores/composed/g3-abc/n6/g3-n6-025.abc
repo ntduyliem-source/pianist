@@ -1,0 +1,17 @@
+%abc-2.1
+X:1525
+T:g3-n6-025 Bốn tiếng rải Đô
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=arpeggio; lead=RH; bucket=n6; notes=6; RH=4; LH=2
+% role=R; duration60=4s; related_pattern=1b7fee766fad3713
+% authored_passages=inline-n6-025
+% source=buildscripts/pianist/compositions/g3/n6.txt:26
+[V:RH] C G E C |]
+[V:LH] C,2 C,2 |]

@@ -1,0 +1,25 @@
+%abc-2.1
+X:2019
+T:g3-n100-019 Rê giữa chuyến đi quãng năm
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fifth; lead=RH; bucket=n100; notes=87; RH=67; LH=20
+% role=R; duration60=80s; related_pattern=7986b6d57904abad
+% authored_passages=P04 P06 P08 P05 P15
+% source=buildscripts/pianist/compositions/g3/n100.txt:20
+[V:RH] C G D E | F D E C | D G F E | D E C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C C G F | E D E C | D E G F | E D C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] G2 C D | E F E D | C G F E | D E C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C G F2 | E2 D C | D E F E | D C C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C G F E | D E C2 | C2 C2 | C4 |]
+[V:LH] C,4 | C,4 | C,4 | C,4 |]

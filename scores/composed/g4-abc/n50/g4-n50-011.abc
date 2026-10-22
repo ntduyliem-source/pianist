@@ -1,0 +1,21 @@
+%abc-2.1
+X:2611
+T:g4-n50-011 Ba câu cao trong nhịp ba
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=upper; lead=RH; bucket=n50; notes=46; RH=34; LH=12
+% role=R; duration60=36s; related_pattern=6b0dd3747dd871fb
+% authored_passages=U21 U23 U25
+% source=buildscripts/pianist/compositions/g4/n50.txt:12
+[V:RH] G A B | c d c | B A B | A G G |
+[V:LH] G,3 | G,3 | G,3 | G,3 |
+[V:RH] G2 A | B c d | c B A | B A G |
+[V:LH] G,3 | G,3 | G,3 | G,3 |
+[V:RH] G G A | B A G | A c B | A G2 |]
+[V:LH] G,3 | G,3 | G,3 | G,3 |]

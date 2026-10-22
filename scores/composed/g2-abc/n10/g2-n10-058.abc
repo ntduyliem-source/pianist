@@ -1,0 +1,17 @@
+%abc-2.1
+X:958
+T:g2-n10-058 Hai cặp ba nhịp thấp
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=eighth; lead=LH; bucket=n10; notes=12; RH=3; LH=9
+% role=L; duration60=9s; related_pattern=57732495a971e2dc
+% authored_passages=inline-n10-058
+% source=buildscripts/pianist/compositions/g2/n10.txt:59
+[V:RH] C3 | C3 | C3 |]
+[V:LH] E,/2F,/2 G, F, | E,2 D, | D,/2C,/2 C,2 |]

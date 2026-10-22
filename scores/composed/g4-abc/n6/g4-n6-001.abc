@@ -1,0 +1,17 @@
+%abc-2.1
+X:2201
+T:g4-n6-001 Bốn nốt cao trên nền nhắc
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=upper; lead=RH; bucket=n6; notes=6; RH=4; LH=2
+% role=R; duration60=4s; related_pattern=3db8a2feee45b42f
+% authored_passages=inline-n6-001
+% source=buildscripts/pianist/compositions/g4/n6.txt:2
+[V:RH] G A B c |]
+[V:LH] G,2 G,2 |]

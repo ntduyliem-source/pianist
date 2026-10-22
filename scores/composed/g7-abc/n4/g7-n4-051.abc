@@ -1,0 +1,17 @@
+%abc-2.1
+X:4251
+T:g7-n4-051 Rê chen giữa phách
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G7; profile=sync; lead=RH; bucket=n4; notes=5; RH=4; LH=1
+% duration60=4s; related_pattern=a5b6a53ceb2d7ecd
+% authored_passages=Y01
+% source=buildscripts/pianist/compositions/g7/studies.txt:52
+[V:RH] C/2 D E/2 G2 |]
+[V:LH] C,4 |]

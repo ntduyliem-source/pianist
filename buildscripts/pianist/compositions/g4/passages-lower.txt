@@ -1,0 +1,31 @@
+# L: RH A3–E4; M: LH A2–E3. Literal notes, with no automatic octave substitution.
+L01;4;A, B, C D | E D C B, | A, C D C | B, C A,2;C,4 | C,4 | C,4 | C,4
+L02;4;A,2 C D | E C D E | D C B, A, | B, C A,2;C,4 | C,4 | C,4 | C,4
+L03;4;C D E2 | D C B, A, | B, C D C | B, A, A,2;C,4 | C,4 | C,4 | C,4
+L04;4;E B, C D | C A, B, C | D E D C | B, C A,2;C,4 | C,4 | C,4 | C,4
+L05;4;A,2 C B, | A,2 C D | E D C2 | A,2 A,2;C,4 | C,4 | C,4 | C,4
+L06;4;A, C z B, | C D E D | C B, C A, | B, C A,2;C,4 | C,4 | C,4 | C,4
+L07;4;A, A, B, C | D C B, A, | C E D C | B, A, A,2;C,4 | C,4 | C,4 | C,4
+L08;4;C A, D C | B, C D E | D B, C A, | B, A, A,2;C,4 | C,4 | C,4 | C,4
+L09;4;A, B, C2 | D A, B, C | D E C2 | B, C A,2;C,4 | C,4 | C,4 | C,4
+L10;4;E D C B, | A, C E D | C B, A, C | B, A, A,2;C,4 | C,4 | C,4 | C,4
+L11;4;A,2 C2 | D C A,2 | C2 E2 | A,4;C,4 | C,4 | C,4 | C,4
+L12;4;A,2 C B, | A,2 C2 | D C A,2 | A,4;C,4 | C,4 | C,4 | C,4
+L13;4;A,4 | A, B, C2 | D C A,2 | A,4;C,4 | C,4 | C,4 | C,4
+L14;4;A, C B, A, | C2 A,2 | A,4 | A,4;C,4 | C,4 | C,4 | C,4
+L15;4;A,4 | A,2 E2 | D C A,2 | A,4;C,4 | C,4 | C,4 | C,4
+M01;4;C4 | C4 | C4 | C4;A,, B,, C, D, | E, D, C, B,, | A,, C, D, C, | B,, C, A,,2
+M02;4;C4 | C4 | C4 | C4;A,,2 C, D, | E, C, D, E, | D, C, B,, A,, | B,, C, A,,2
+M03;4;C4 | C4 | C4 | C4;C, D, E,2 | D, C, B,, A,, | B,, C, D, C, | B,, A,, A,,2
+M04;4;C4 | C4 | C4 | C4;E, B,, C, D, | C, A,, B,, C, | D, E, D, C, | B,, C, A,,2
+M05;4;C4 | C4 | C4 | C4;A,,2 C, B,, | A,,2 C, D, | E, D, C,2 | A,,2 A,,2
+M06;4;C4 | C4 | C4 | C4;A,, C, z B,, | C, D, E, D, | C, B,, C, A,, | B,, C, A,,2
+M07;4;C4 | C4 | C4 | C4;A,, A,, B,, C, | D, C, B,, A,, | C, E, D, C, | B,, A,, A,,2
+M08;4;C4 | C4 | C4 | C4;C, A,, D, C, | B,, C, D, E, | D, B,, C, A,, | B,, A,, A,,2
+M09;4;C4 | C4 | C4 | C4;A,, B,, C,2 | D, A,, B,, C, | D, E, C,2 | B,, C, A,,2
+M10;4;C4 | C4 | C4 | C4;E, D, C, B,, | A,, C, E, D, | C, B,, A,, C, | B,, A,, A,,2
+M11;4;C4 | C4 | C4 | C4;A,,2 C,2 | D, C, A,,2 | C,2 E,2 | A,,4
+M12;4;C4 | C4 | C4 | C4;A,,2 C, B,, | A,,2 C,2 | D, C, A,,2 | A,,4
+M13;4;C4 | C4 | C4 | C4;A,,4 | A,, B,, C,2 | D, C, A,,2 | A,,4
+M14;4;C4 | C4 | C4 | C4;A,, C, B,, A,, | C,2 A,,2 | A,,4 | A,,4
+M15;4;C4 | C4 | C4 | C4;A,,4 | A,,2 E,2 | D, C, A,,2 | A,,4

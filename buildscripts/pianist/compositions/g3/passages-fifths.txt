@@ -1,0 +1,31 @@
+# P: RH melodic fifth; B: LH melodic fifth. Contrasting passages and quiet endings included.
+P01;4;C G F E | D E F E | D G F E | D E C2;C,4 | C,4 | C,4 | C,4
+P02;4;G C D E | F E D C | D E G F | E D C2;C,4 | C,4 | C,4 | C,4
+P03;4;C2 G F | E D C2 | D E F E | D C C2;C,4 | C,4 | C,4 | C,4
+P04;4;C G D E | F D E C | D G F E | D E C2;C,4 | C,4 | C,4 | C,4
+P05;4;C G F2 | E2 D C | D E F E | D C C2;C,4 | C,4 | C,4 | C,4
+P06;4;C C G F | E D E C | D E G F | E D C2;C,4 | C,4 | C,4 | C,4
+P07;4;C2 G2 | F E D C | D G F E | D C C2;C,4 | C,4 | C,4 | C,4
+P08;4;G2 C D | E F E D | C G F E | D E C2;C,4 | C,4 | C,4 | C,4
+P09;4;C G z F | E D C2 | D E F E | D E C2;C,4 | C,4 | C,4 | C,4
+P10;4;C G F E | D G F E | D E G F | E D C2;C,2 C,2 | C,2 C,2 | C,2 C,2 | C,2 C,2
+P11;4;C2 G2 | F2 E D | C2 C2 | C4;C,4 | C,4 | C,4 | C,4
+P12;4;C4 | C G F E | D C C2 | C4;C,4 | C,4 | C,4 | C,4
+P13;4;C2 G F | E2 C2 | C4 | C4;C,4 | C,4 | C,4 | C,4
+P14;4;C4 | C2 G2 | F2 E D | C4;C,4 | C,4 | C,4 | C,4
+P15;4;C G F E | D E C2 | C2 C2 | C4;C,4 | C,4 | C,4 | C,4
+B01;4;C4 | C4 | C4 | C4;C, G, F, E, | D, E, F, E, | D, G, F, E, | D, E, C,2
+B02;4;C4 | C4 | C4 | C4;G, C, D, E, | F, E, D, C, | D, E, G, F, | E, D, C,2
+B03;4;C4 | C4 | C4 | C4;C,2 G, F, | E, D, C,2 | D, E, F, E, | D, C, C,2
+B04;4;C4 | C4 | C4 | C4;C, G, D, E, | F, D, E, C, | D, G, F, E, | D, E, C,2
+B05;4;C4 | C4 | C4 | C4;C, G, F,2 | E,2 D, C, | D, E, F, E, | D, C, C,2
+B06;4;C4 | C4 | C4 | C4;C, C, G, F, | E, D, E, C, | D, E, G, F, | E, D, C,2
+B07;4;C4 | C4 | C4 | C4;C,2 G,2 | F, E, D, C, | D, G, F, E, | D, C, C,2
+B08;4;C4 | C4 | C4 | C4;G,2 C, D, | E, F, E, D, | C, G, F, E, | D, E, C,2
+B09;4;C4 | C4 | C4 | C4;C, G, z F, | E, D, C,2 | D, E, F, E, | D, E, C,2
+B10;4;C2 C2 | C2 C2 | C2 C2 | C2 C2;C, G, F, E, | D, G, F, E, | D, E, G, F, | E, D, C,2
+B11;4;C4 | C4 | C4 | C4;C,2 G,2 | F,2 E, D, | C,2 C,2 | C,4
+B12;4;C4 | C4 | C4 | C4;C,4 | C, G, F, E, | D, C, C,2 | C,4
+B13;4;C4 | C4 | C4 | C4;C,2 G, F, | E,2 C,2 | C,4 | C,4
+B14;4;C4 | C4 | C4 | C4;C,4 | C,2 G,2 | F,2 E, D, | C,4
+B15;4;C4 | C4 | C4 | C4;C, G, F, E, | D, E, C,2 | C,2 C,2 | C,4

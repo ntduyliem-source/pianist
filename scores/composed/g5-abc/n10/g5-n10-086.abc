@@ -1,0 +1,17 @@
+%abc-2.1
+X:3086
+T:g5-n10-086 Mi Sol trầm về Đô
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=dyad; lead=LH; bucket=n10; notes=11; RH=4; LH=7
+% duration60=12s; related_pattern=6e725d9321b6f4b5
+% authored_passages=D36 CL2 CL1
+% source=buildscripts/pianist/compositions/g5/studies.txt:87
+[V:RH] E2 C2 | C4 | C4 |]
+[V:LH] [E,G,]2 C,2 | E,2 C,2 | G,2 E,2 |]

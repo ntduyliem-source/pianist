@@ -1,0 +1,21 @@
+%abc-2.1
+X:514
+T:g1-n50-014 Mười ô vòng cao
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n50; notes=46; RH=36; LH=10
+% role=R; family=ten-upper-bars; form=authored; duration60=40s
+% related_pattern=2e3c5404d7fbc7e1
+% source=buildscripts/pianist/compositions/g1/n50.txt:17
+[V:RH] E F G F | E D E F | G F E D | E F G2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] F G F E | D C D E | F E D E | F G F E |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] D E F E | E4 |]
+[V:LH] C,4 | C,4 |]

@@ -1,0 +1,19 @@
+%abc-2.1
+X:3104
+T:g5-n20-004 Đô Sol giữ rồi đáp
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=offset; lead=RH; bucket=n20; notes=18; RH=9; LH=9
+% duration60=20s; related_pattern=69fecdb5a7f2e613
+% authored_passages=O04 OR5
+% source=buildscripts/pianist/compositions/g5/studies.txt:5
+[V:RH] C2 G z | C z G2 | F2 E2 | D2 G z |
+[V:LH] z C, z G, | C, z z G, | F, z C, z | z G, z G, |
+[V:RH] C4 |]
+[V:LH] C,4 |]

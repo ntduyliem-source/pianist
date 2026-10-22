@@ -38,6 +38,7 @@
 .editor-playback button{padding:6px 12px;font-size:12px}.editor-playback input[type=range]{flex:1;min-width:40px;max-width:600px}.editor-playback-time{font-variant-numeric:tabular-nums;min-width:36px;color:#617389}.editor-playback label{display:flex;align-items:center;gap:8px;white-space:nowrap}.editor-playback select{padding:5px}.editor-playback-state{margin-left:auto;color:#7c899a;font-size:11px;max-width:240px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 body[data-view=editor] #screen{inset:139px 0 0;height:calc(100% - 139px)}
 .bundled-library{margin-top:30px}.bundled-library>.section-top{margin-bottom:16px}.bundled-library .score-cover{background:linear-gradient(150deg,#f8faff,#eef3fc)}
+.bundled-version{display:flex;flex-direction:column;gap:5px;font-size:12px;color:#617389;margin-top:12px;min-width:0}.bundled-version select{width:100%;max-width:100%;min-height:40px;text-overflow:ellipsis}.score-card-body .bundled-practice-notice{font-size:12px;line-height:1.45;white-space:normal;height:auto;color:#92671f;margin:8px 0}.bundled-library .score-card-body{min-width:0}
 @media(max-width:800px){.editor-playback{gap:6px;padding-inline:8px}.editor-playback-state{display:none}.editor-playback label{font-size:0;gap:0}.editor-playback select{font-size:11px}.editor-playback button{font-size:11px;padding:6px 8px}.bundled-library>.section-top>.muted{display:none}}
 
 /* Tunebook selection keeps the current editor underneath the modal. */
@@ -75,3 +76,10 @@ body[data-view=editor] #screen{inset:calc(var(--app-top) + var(--editor-meta-hei
   .editor-playback{top:var(--app-top);left:45%}
   body[data-view=editor] #screen{top:calc(var(--app-top) + var(--editor-meta-height))}
 }
+.practice-kind{position:fixed;top:calc(var(--app-top) + 14px);left:50%;transform:translateX(-50%);z-index:2;display:flex;gap:12px;max-width:760px;width:calc(100% - 48px);height:72px}
+.practice-kind+.page{top:calc(var(--app-top) + 100px)}
+.practice-kind>button{flex:1;display:flex;align-items:center;gap:12px;text-align:left;padding:14px 18px;border-radius:12px;min-width:0;background:#fff;border:1px solid #ddd}
+.practice-kind>button[aria-pressed=true]{border-color:var(--blue);background:#edf3fc;box-shadow:0 0 0 1px var(--blue)}
+.practice-kind span{font-weight:650;font-size:16px}
+.practice-kind small{display:block;font-size:12px;color:#68716d;font-weight:400;margin-top:4px}
+@media(max-width:600px){.practice-kind{width:calc(100% - 24px);gap:8px;height:64px}.practice-kind+.page{top:calc(var(--app-top) + 92px)}.practice-kind>button{padding:12px 10px;gap:8px}.practice-kind small{font-size:11px}.practice-kind .icon{width:20px;flex-shrink:0}}

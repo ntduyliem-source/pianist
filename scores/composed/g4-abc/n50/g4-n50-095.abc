@@ -1,0 +1,21 @@
+%abc-2.1
+X:2695
+T:g4-n50-095 Giữ bass cao ba lời
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=upper; lead=LH; bucket=n50; notes=58; RH=29; LH=29
+% role=S; duration60=36s; related_pattern=5c104514c53c5398
+% authored_passages=S24 S22 S28
+% source=buildscripts/pianist/compositions/g4/n50.txt:96
+[V:RH] G2 G | G F G | G G G | G3 |
+[V:LH] G,2 A, | B, C G, | A, B, G, | G,3 |
+[V:RH] G G G | F G G | G G G | G3 |
+[V:LH] G, A, B, | C B, G, | A, B, G, | G,3 |
+[V:RH] G G G | F2 G | G G G | G G2 |]
+[V:LH] G, A, B, | C2 B, | A, B, C | B, G,2 |]

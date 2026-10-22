@@ -1,0 +1,19 @@
+%abc-2.1
+X:2558
+T:g4-n30-058 Fa La bass câu giữ
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=span; lead=LH; bucket=n30; notes=30; RH=8; LH=22
+% role=L; duration60=32s; related_pattern=0de0b21b2e9eba25
+% authored_passages=X04 X12
+% source=buildscripts/pianist/compositions/g4/n30.txt:59
+[V:RH] E4 | E4 | E4 | E4 |
+[V:LH] C, F, A, C | B, G, E, C, | D, F, A, G, | E, D, C,2 |
+[V:RH] E4 | E4 | E4 | E4 |]
+[V:LH] C,4 | C, G, C2 | G,2 C,2 | C,4 |]

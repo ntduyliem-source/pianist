@@ -1,0 +1,17 @@
+%abc-2.1
+X:4434
+T:g7-n10-034 Đô nối từ Mi Rê
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G7; profile=tie; lead=RH; bucket=n10; notes=10; RH=7; LH=3
+% duration60=12s; related_pattern=bd784a5a226e9118
+% authored_passages=T09 CR3 CR1
+% source=buildscripts/pianist/compositions/g7/studies.txt:35
+[V:RH] E D/2 C/2-C2 | D2 C2 | G2 E2 |]
+[V:LH] C,4 | G,4 | C,4 |]

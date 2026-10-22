@@ -1,0 +1,17 @@
+%abc-2.1
+X:3578
+T:g6-n4-078 Si trầm về Đô Mi
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G6; profile=M7-down; lead=LH; bucket=n4; notes=5; RH=1; LH=4
+% duration60=4s; related_pattern=1134edccda6cdf44
+% authored_passages=S78
+% source=buildscripts/pianist/compositions/g6/studies.txt:79
+[V:RH] c4 |]
+[V:LH] C B, C, E, |]

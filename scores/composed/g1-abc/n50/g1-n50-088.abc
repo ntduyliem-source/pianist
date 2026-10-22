@@ -1,0 +1,19 @@
+%abc-2.1
+X:588
+T:g1-n50-088 Hai tay hai câu trên cao
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n50; notes=50; RH=25; LH=25
+% role=S; family=octave-two-upper; form=authored; duration60=32s
+% related_pattern=85c3aaaccafe44d1
+% source=buildscripts/pianist/compositions/g1/n50.txt:88
+[V:RH] E F G2 | F E D E | F G F E | E4 |
+[V:LH] E, F, G,2 | F, E, D, E, | F, G, F, E, | E,4 |
+[V:RH] E2 F G | F G F E | D E F E | E2 E2 |]
+[V:LH] E,2 F, G, | F, G, F, E, | D, E, F, E, | E,2 E,2 |]

@@ -10,6 +10,7 @@ export class PracticeController {
   private worker?:Worker;private generation=crypto.randomUUID();private timer?:number;private resumeAt=0;private resuming=false;
   private ready?:()=>void;private closed?:(v:EngineView)=>void;private rejectReady?:(e:Error)=>void;private rejectClose?:(e:Error)=>void;
   private finishing=false;
+  private finishOperation?:Promise<void>;
   private disposed=false;
   private lastPaint=0;
   private lastTick=0;
@@ -84,9 +85,17 @@ export class PracticeController {
     this.status=interrupted?'interrupted':'paused';this.message=message;this.onChange();
   }
   async resume(state:()=>MidiEvent[]){if(!['paused','interrupted'].includes(this.status))return;if(this.view.faults.length)throw Error('Lượt có lỗi giao MIDI; kết thúc lượt rồi bắt đầu lại.');await this.begin(state,true);}
-  async finish(outcome:AttemptResult['outcome']='aborted'){
-    if(this.finishing||this.status==='finished'||!this.worker)return;
-    this.finishing=true;clearInterval(this.timer);
+  finish(outcome:AttemptResult['outcome']='aborted'):Promise<void>{
+    if(this.finishOperation)return this.finishOperation;
+    if(this.status==='finished'||!this.worker)return Promise.resolve();
+    this.finishing=true;
+    // Stop/restart must wait for an in-flight automatic completion as well.
+    // The first caller owns the outcome and the single persisted result.
+    this.finishOperation=this.closeAttempt(outcome).finally(()=>{this.finishing=false;this.finishOperation=undefined;});
+    return this.finishOperation;
+  }
+  private async closeAttempt(outcome:AttemptResult['outcome']){
+    clearInterval(this.timer);
     const elapsed=['counting','running'].includes(this.status)?Math.max(this.resumeAt,this.transport.now):this.elapsedMs;
     this.log({type:'boundary',atMs:elapsed,kind:'stop'});this.transport.silence();
     try{
@@ -100,7 +109,6 @@ export class PracticeController {
       if(this.replayComplete)result.replay={engine:ENGINE_ID,commands:this.commands};
       this.status='finished';this.worker?.terminate();this.worker=undefined;this.onChange();this.onComplete(result);
     }catch(e){this.status='interrupted';this.message=String(e);this.onChange();}
-    finally{this.finishing=false;}
   }
   dispose(){this.disposed=true;clearInterval(this.timer);this.rejectReady?.(new DOMException('Đã hủy lượt tập.','AbortError'));this.rejectReady=undefined;this.ready=undefined;this.worker?.terminate();this.worker=undefined;void this.transport.dispose();this.status='finished';}
 }

@@ -1,0 +1,17 @@
+%abc-2.1
+X:4323
+T:g7-n6-023 Trầm Fa Rê Sol chuyển
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G7; profile=dotted; lead=LH; bucket=n6; notes=7; RH=2; LH=5
+% duration60=8s; related_pattern=62dd0bc75068cf47
+% authored_passages=D23 CL3
+% source=buildscripts/pianist/compositions/g7/studies.txt:24
+[V:RH] G4 | G4 |]
+[V:LH] F,3/2 D,/2 G,2 | D,2 C,2 |]

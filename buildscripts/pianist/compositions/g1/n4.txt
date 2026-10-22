@@ -1,0 +1,101 @@
+# number; role; meter; family; title; literal RH; literal LH
+001;R;2;up-pedal;Hai bước đầu;C D;C,2
+002;R;3;down-pedal;Về nhà;E D C;C,3
+031;L;2;bass-up;Bước dưới;E2;E, F,
+061;A;2;echo-return;Gọi và đáp;C D | z2;z2 | D, C,
+086;S;2;sixths-up;Cùng bước lên;C D;E, F,
+003;R;2;down-pedal;Xuống một bậc;D C;C,2
+004;R;2;up-middle;Nhích lên giữa khuông;E F;C,2
+005;R;2;down-middle;Nhích xuống giữa khuông;F E;C,2
+006;R;2;up-top;Hai bậc trên;F G;C,2
+007;R;2;down-top;Từ trên xuống;G F;C,2
+008;R;3;up-pedal;Ba bước sáng;C D E;C,3
+009;R;3;turn-low;Lên rồi về;C D C;C,3
+010;R;3;turn-middle;Nhẹ vòng giữa;E F E;C,3
+011;R;3;turn-upper;Ghé bậc cao;F G F;C,3
+012;R;3;turn-down;Xuống rồi lên;E D E;C,3
+013;R;3;up-middle;Ba bậc giữa;D E F;C,3
+014;R;3;down-top;Ba bậc xuống;G F E;C,3
+015;R;4;up-four;Bốn bước lên;C D E F;C,4
+016;R;4;down-four;Bốn bước về;F E D C;C,4
+017;R;4;repeat-start;Nhắc bước đầu;C C D E;C,4
+018;R;4;repeat-end;Dừng ở bậc giữa;C D E E;C,4
+019;R;4;turn-low;Vòng quanh nốt chủ;C D C C;C,4
+020;R;4;turn-upper;Vòng ở phía trên;E F G F;C,4
+021;R;4;turn-middle;Một làn sóng;D E F E;C,4
+022;R;4;held-ending;Hai bước và dừng;C D E2;C,4
+023;R;4;held-return;Trở về và giữ;E D C2;C,4
+024;R;4;held-start;Giữ rồi bước;C2 D E;C,4
+025;R;4;rest-between;Một khoảng thở;C z D E;C,4
+026;R;4;rest-return;Thở rồi về;E z D C;C,4
+027;R;3;repeat-up;Nhắc và nhích lên;C C D;E,3
+028;R;3;repeat-down;Nhắc và nhích xuống;E E D;G,3
+029;R;2;up-pedal;Bước trên nền Mi;C D;E,2
+030;R;2;down-pedal;Về trên nền Sol;F E;G,2
+032;L;2;bass-down;Bậc trầm đi xuống;C2;D, C,
+033;L;2;bass-up;Bậc trầm đi lên;C2;C, D,
+034;L;2;bass-middle;Chuyển động giữa;C2;D, E,
+035;L;2;bass-return;Về vùng thấp;C2;E, D,
+036;L;2;bass-top;Hai bậc cao tay trái;C2;F, G,
+037;L;2;bass-top-down;Tay trái đi xuống;C2;G, F,
+038;L;3;bass-three;Ba bậc trầm;C3;C, D, E,
+039;L;3;bass-three-down;Ba bậc trở về;C3;E, D, C,
+040;L;3;bass-low-turn;Vòng thấp;C3;C, D, C,
+041;L;3;bass-middle-turn;Vòng giữa tay trái;C3;E, F, E,
+042;L;3;bass-high-turn;Ghé bậc Sol;C3;F, G, F,
+043;L;3;bass-reverse-turn;Đi xuống rồi trở lên;C3;E, D, E,
+044;L;3;bass-middle-up;Ba bước tay trái;C3;D, E, F,
+045;L;3;bass-top-down;Từ Sol về Mi;C3;G, F, E,
+046;L;4;bass-four;Đường trầm đi lên;C4;C, D, E, F,
+047;L;4;bass-four-down;Đường trầm đi xuống;C4;F, E, D, C,
+048;L;4;bass-repeat-start;Tay trái nhắc đầu;C4;C, C, D, E,
+049;L;4;bass-repeat-end;Tay trái dừng giữa;C4;C, D, E, E,
+050;L;4;bass-low-turn;Một vòng thấp;C4;C, D, C, C,
+051;L;4;bass-high-turn;Một vòng cao tay trái;C4;E, F, G, F,
+052;L;4;bass-middle-turn;Làn sóng trầm;C4;D, E, F, E,
+053;L;4;bass-held-end;Hai bước trầm và giữ;C4;C, D, E,2
+054;L;4;bass-held-return;Giữ nốt về;C4;E, D, C,2
+055;L;4;bass-held-start;Nốt trầm dài rồi bước;C4;C,2 D, E,
+056;L;4;bass-rest;Tay trái có khoảng thở;C4;C, z D, E,
+057;L;4;bass-rest-return;Nghỉ rồi về trầm;C4;E, z D, C,
+058;L;3;bass-repeat-up;Nhắc Đô rồi Rê;E3;C, C, D,
+059;L;3;bass-repeat-down;Nhắc Mi rồi Rê;G3;E, E, D,
+060;L;2;bass-down-bright;Bước trầm nền sáng;G2;F, E,
+062;A;2;echo-up;Hai bên cùng lên;C D | z2;z2 | C, D,
+063;A;2;echo-down;Hai bên cùng về;D C | z2;z2 | D, C,
+064;A;2;echo-inverse;Hỏi xuống đáp lên;D C | z2;z2 | C, D,
+065;A;2;echo-middle;Tiếng gọi giữa khuông;E F | z2;z2 | E, F,
+066;A;2;echo-middle-return;Tiếng đáp trở về;E F | z2;z2 | F, E,
+067;A;2;echo-top;Gọi ở bậc cao;F G | z2;z2 | G, F,
+068;A;2;echo-top-up;Đáp lên bậc cao;G F | z2;z2 | F, G,
+069;A;2;left-first;Tay trái mở lời;z2 | C D;D, C, | z2
+070;A;2;left-first-up;Tay trái gọi lên;z2 | D C;C, D, | z2
+071;A;2;left-middle;Lời trầm ở giữa;z2 | E F;F, E, | z2
+072;A;2;left-upper;Lời trầm phía trên;z2 | G F;F, G, | z2
+073;A;3;three-and-one;Ba bước một đáp;C D E | z3;z3 | C,3
+074;A;3;three-and-one-return;Ba bước về một đáp;E D C | z3;z3 | C,3
+075;A;3;one-and-three;Một gọi ba đáp;C3 | z3;z3 | C, D, E,
+076;A;3;one-and-three-return;Một gọi ba bước về;C3 | z3;z3 | E, D, C,
+077;A;2;two-and-one;Hai tiếng một tiếng;C D | z2;z2 | C,2
+078;A;2;one-and-two;Một tiếng hai tiếng;E2 | z2;z2 | D, C,
+079;A;4;three-and-two;Câu hỏi ngắn;C D E2 | z4;z4 | E,2 D,2
+080;A;4;two-and-three;Câu đáp ngắn;C2 D2 | z4;z4 | E, D, C,2
+081;A;4;left-three;Trầm hỏi cao đáp;z4 | C2 D2;E, D, C,2 | z4
+082;A;4;left-two;Trầm dài cao ngắn;z4 | C D E2;C,2 D,2 | z4
+083;A;3;breath-answer;Khoảng thở trước lời;C z D | z3;z3 | D, C,2
+084;A;3;breath-return;Khoảng thở trong lời;E z D | z3;z3 | D, E,2
+085;A;3;left-breath;Tay trái thở nhẹ;z3 | E D2;C, z D, | z3
+087;S;2;octave-up;Cùng lên một bậc;C D;C, D,
+088;S;2;octave-down;Cùng xuống một bậc;D C;D, C,
+089;S;2;octave-middle;Cùng đi giữa khuông;D E;D, E,
+090;S;2;octave-middle-down;Cùng về giữa khuông;E D;E, D,
+091;S;2;octave-high;Cùng tiến lên;E F;E, F,
+092;S;2;octave-high-down;Cùng lùi xuống;F E;F, E,
+093;S;2;octave-top;Cùng tới Sol;F G;F, G,
+094;S;2;octave-top-down;Cùng rời Sol;G F;G, F,
+095;S;2;sixths-down;Hai đường song song;D C;F, E,
+096;S;4;octave-half;Bước đôi chậm;C2 D2;C,2 D,2
+097;S;4;sixths-half;Bước đôi rộng tiếng;C2 D2;E,2 F,2
+098;S;3;octave-long-end;Bước đôi rồi giữ;C D2;C, D,2
+099;S;3;octave-long-start;Giữ rồi cùng bước;C2 D;C,2 D,
+100;S;4;octave-rest;Cùng thở cùng về;D z C2;D, z C,2

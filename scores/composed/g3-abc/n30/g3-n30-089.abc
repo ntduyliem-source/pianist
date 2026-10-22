@@ -1,0 +1,19 @@
+%abc-2.1
+X:1889
+T:g3-n30-089 Nhịp ba đổi lời Fa
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fourth; lead=RH; bucket=n30; notes=38; RH=19; LH=19
+% role=S; duration60=24s; related_pattern=74526f2ee5bae9de
+% authored_passages=S21 S23
+% source=buildscripts/pianist/compositions/g3/n30.txt:90
+[V:RH] C F E | D E C | F E D | C3 |
+[V:LH] C, D, E, | D, D, C, | D, E, D, | C,3 |
+[V:RH] C2 F | E D C | F E C | C3 |]
+[V:LH] C,2 D, | E, D, C, | D, E, D, | C,3 |]

@@ -1,0 +1,19 @@
+%abc-2.1
+X:1871
+T:g3-n30-071 Quãng năm gọi hai chuyện
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fifth; lead=RH; bucket=n30; notes=30; RH=14; LH=16
+% role=A; duration60=32s; related_pattern=1bf36b797fb0f445
+% authored_passages=V01 V03
+% source=buildscripts/pianist/compositions/g3/n30.txt:72
+[V:RH] C G F E | z4 | D E C2 | z4 |
+[V:LH] z4 | C, D, E, D, | z4 | D, C, D, C, |
+[V:RH] C2 G F | z4 | E D E C | z4 |]
+[V:LH] z4 | C, D, E, D, | z4 | D, E, D, C, |]

@@ -1,0 +1,19 @@
+%abc-2.1
+X:2477
+T:g4-n20-077 Sáu lượt rất trầm ba
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=lower; lead=LH; bucket=n20; notes=15; RH=6; LH=9
+% role=A; duration60=18s; related_pattern=2009b35e6e8e9ead
+% authored_passages=T12
+% source=buildscripts/pianist/compositions/g4/n20.txt:78
+[V:RH] z3 | C2 D | z3 | E2 D |
+[V:LH] A,, B,, C, | z3 | D, E, D, | z3 |
+[V:RH] z3 | C2 C |]
+[V:LH] C, B,, A,, | z3 |]

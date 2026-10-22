@@ -1,0 +1,21 @@
+%abc-2.1
+X:2668
+T:g4-n50-068 Rê giữa đổi câu hỏi
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=upper; lead=LH; bucket=n50; notes=46; RH=24; LH=22
+% role=A; duration60=48s; related_pattern=a27735c55ee69e04
+% authored_passages=Q08 Q09 Q07
+% source=buildscripts/pianist/compositions/g4/n50.txt:69
+[V:RH] z4 | G F E F | z4 | G F G G |
+[V:LH] D C B, A, | z4 | B, A, G,2 | z4 |
+[V:RH] z4 | G F E F | z4 | G F G G |
+[V:LH] G,2 B, C | z4 | D C B, G, | z4 |
+[V:RH] z4 | G F E F | z4 | F E F G |]
+[V:LH] B, C D C | z4 | B, A, B, G, | z4 |]

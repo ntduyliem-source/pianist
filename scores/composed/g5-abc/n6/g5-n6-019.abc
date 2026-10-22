@@ -1,0 +1,17 @@
+%abc-2.1
+X:2919
+T:g5-n6-019 Sol Mi nghe hai lớp
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=offset; lead=RH; bucket=n6; notes=7; RH=4; LH=3
+% duration60=8s; related_pattern=81251dce8725c508
+% authored_passages=O19 CR2
+% source=buildscripts/pianist/compositions/g5/studies.txt:20
+[V:RH] G2 E z | E2 C2 |]
+[V:LH] z G, z C, | C,4 |]

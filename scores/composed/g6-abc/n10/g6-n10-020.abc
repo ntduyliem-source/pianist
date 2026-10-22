@@ -1,0 +1,17 @@
+%abc-2.1
+X:3720
+T:g6-n10-020 Đô Mi Fa ở bè trầm
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G6; profile=m6-down; lead=LH; bucket=n10; notes=11; RH=3; LH=8
+% duration60=12s; related_pattern=034e76a86d922018
+% authored_passages=S20 CL2 CL1
+% source=buildscripts/pianist/compositions/g6/studies.txt:21
+[V:RH] c4 | c4 | c4 |]
+[V:LH] D C E, F, | G,2 C,2 | G,2 E,2 |]

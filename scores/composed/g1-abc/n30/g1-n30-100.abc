@@ -1,0 +1,19 @@
+%abc-2.1
+X:500
+T:g1-n30-100 Năm ô trở về chung
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n30; notes=34; RH=17; LH=17
+% role=S; family=octave-five-return; form=authored; duration60=20s
+% related_pattern=1f2dc79599eafd66
+% source=buildscripts/pianist/compositions/g1/n30.txt:100
+[V:RH] G F E D | C D E2 | F E D C | C D E D |
+[V:LH] G, F, E, D, | C, D, E,2 | F, E, D, C, | C, D, E, D, |
+[V:RH] C2 C2 |]
+[V:LH] C,2 C,2 |]

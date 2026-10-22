@@ -1,0 +1,17 @@
+%abc-2.1
+X:234
+T:g1-n10-034 Trầm nhắc bước lên
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n10; notes=10; RH=2; LH=8
+% role=L; family=bass-repeat-climb; form=authored; duration60=8s
+% related_pattern=4574757a8e9d783b
+% source=buildscripts/pianist/compositions/g1/n10.txt:36
+[V:RH] C4 | C4 |]
+[V:LH] C, C, D, E, | F, E, D, C, |]

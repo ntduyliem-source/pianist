@@ -1,0 +1,19 @@
+%abc-2.1
+X:2548
+T:g4-n30-048 Đô Rê Mi trầm lắng
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=lower; lead=LH; bucket=n30; notes=30; RH=8; LH=22
+% role=L; duration60=32s; related_pattern=13acf9a73c22c90e
+% authored_passages=M03 M13
+% source=buildscripts/pianist/compositions/g4/n30.txt:49
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C, D, E,2 | D, C, B,, A,, | B,, C, D, C, | B,, A,, A,,2 |
+[V:RH] C4 | C4 | C4 | C4 |]
+[V:LH] A,,4 | A,, B,, C,2 | D, C, A,,2 | A,,4 |]

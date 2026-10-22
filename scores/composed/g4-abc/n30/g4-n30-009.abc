@@ -1,0 +1,19 @@
+%abc-2.1
+X:2509
+T:g4-n30-009 Hai lời giữ phía cao
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=upper; lead=RH; bucket=n30; notes=29; RH=21; LH=8
+% role=R; duration60=32s; related_pattern=3e22c47e93785986
+% authored_passages=U09 U16
+% source=buildscripts/pianist/compositions/g4/n30.txt:10
+[V:RH] G A B2 | c G A B | c d c2 | B A G2 |
+[V:LH] G,4 | G,4 | G,4 | G,4 |
+[V:RH] G2 B2 | c B G2 | B2 d2 | G4 |]
+[V:LH] G,4 | G,4 | G,4 | G,4 |]

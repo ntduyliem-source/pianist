@@ -1,0 +1,17 @@
+%abc-2.1
+X:1032
+T:g2-n20-032 Thang dưới có khoảng mở
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=third; lead=LH; bucket=n20; notes=18; RH=4; LH=14
+% role=L; duration60=16s; related_pattern=32645db84045f958
+% authored_passages=U02
+% source=buildscripts/pianist/compositions/g2/n20.txt:33
+[V:RH] C4 | C4 | C4 | C4 |]
+[V:LH] C, D, E, G, | F, D, E,2 | E, C, D, E, | D, C, C,2 |]

@@ -1,0 +1,25 @@
+%abc-2.1
+X:658
+T:g1-n100-058 Năm cảnh trầm đầy bước chân
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n100; notes=87; RH=20; LH=67
+% role=L; family=bass-five-full; form=authored; duration60=80s
+% related_pattern=1c2e0cc38e24c2cd
+% source=buildscripts/pianist/compositions/g1/n100.txt:60
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C, D, E,2 | E, F, G,2 | G, F, E, D, | C,2 C,2 |
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C, C, D, E, | F, G, F, E, | D, E, F, E, | D, z C,2 |
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C, D, E, F, | G,2 F, E, | D, C, D, E, | F, E, D, C, |
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C, D, E,2 | F, E, D, E, | D, C, D, C, | C,4 |
+[V:RH] C4 | C4 | C4 | C4 |]
+[V:LH] C, D, E, F, | G, F, E, D, | C, D, E, D, | C,2 C,2 |]

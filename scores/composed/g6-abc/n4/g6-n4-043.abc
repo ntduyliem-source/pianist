@@ -1,0 +1,17 @@
+%abc-2.1
+X:3543
+T:g6-n4-043 Đô dẫn Rê vươn cao
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G6; profile=m7-up; lead=RH; bucket=n4; notes=5; RH=4; LH=1
+% duration60=4s; related_pattern=4f31b52318143b0d
+% authored_passages=S43
+% source=buildscripts/pianist/compositions/g6/studies.txt:44
+[V:RH] C D c d |]
+[V:LH] C,4 |]

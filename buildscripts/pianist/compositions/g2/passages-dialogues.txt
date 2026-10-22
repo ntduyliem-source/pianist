@@ -1,0 +1,31 @@
+# Q01–05 RH thirds, Q06–10 LH thirds. B01–10 RH eighths, B11–20 LH eighths.
+Q01;4;C E D C | z4 | D F E C | z4;z4 | C, D, E, D, | z4 | D, C, C,2
+Q02;4;C D E G | z4 | F E D C | z4;z4 | C, D, C, C, | z4 | C, D, C, C,
+Q03;4;E G F E | z4 | D E C2 | z4;z4 | C, D, E, D, | z4 | D, C, D, C,
+Q04;4;C E D2 | z4 | E F D C | z4;z4 | C, D, E, D, | z4 | D, E, D, C,
+Q05;4;C C E D | z4 | E G F E | z4;z4 | C, D, E, D, | z4 | D, C, C,2
+Q06;4;z4 | C D E D | z4 | D C C2;C, E, D, C, | z4 | D, F, E, C, | z4
+Q07;4;z4 | C D C C | z4 | C D C C;C, D, E, G, | z4 | F, E, D, C, | z4
+Q08;4;z4 | C D E D | z4 | D C D C;E, G, F, E, | z4 | D, E, C,2 | z4
+Q09;4;z4 | C D E D | z4 | D E D C;C, E, D,2 | z4 | E, F, D, C, | z4
+Q10;4;z4 | C D E D | z4 | D C C2;C, C, E, D, | z4 | E, G, F, E, | z4
+B01;4;C/2D/2 E D C | z4 | C D E/2D/2 C | z4;z4 | C, D, E, D, | z4 | D, C, C,2
+B02;4;C D E/2F/2 G | z4 | F/2E/2 D C2 | z4;z4 | C, D, C, C, | z4 | C, D, C, C,
+B03;4;C/2D/2 E/2F/2 G F | z4 | E D C/2D/2 C | z4;z4 | C, D, E, D, | z4 | D, E, D, C,
+B04;4;E/2F/2 G F E | z4 | D E D/2C/2 C | z4;z4 | C, D, E, D, | z4 | D, C, C,2
+B05;4;C2 C/2D/2 E | z4 | D/2E/2 D C2 | z4;z4 | C, D, E, D, | z4 | D, E, D, C,
+B06;4;C2 C/2D/2 E | z4 | D/2C/2 C C2 | z4;z4 | C, D, E, D, | z4 | D, C, C,2
+B07;4;C D/2E/2 F/2G/2 F | z4 | E D E/2D/2 C | z4;z4 | C, D, E, D, | z4 | D, C, C,2
+B08;4;C/2D/2 E/2F/2 E D | z4 | C/2D/2 E D/2C/2 C | z4;z4 | C, D, E, D, | z4 | D, E, D, C,
+B09;4;C/2D/2 E/2F/2 G/2F/2 E | z4 | D C D/2E/2 D | z4;z4 | C, D, E, D, | z4 | D, E, D, C,
+B10;4;C/2D/2 E z D/2C/2 | z4 | C2 D/2C/2 C | z4;z4 | C, D, E, D, | z4 | D, C, C,2
+B11;4;z4 | C D E D | z4 | D C C2;C,/2D,/2 E, D, C, | z4 | C, D, E,/2D,/2 C, | z4
+B12;4;z4 | C D C C | z4 | C D C C;C, D, E,/2F,/2 G, | z4 | F,/2E,/2 D, C,2 | z4
+B13;4;z4 | C D E D | z4 | D E D C;C,/2D,/2 E,/2F,/2 G, F, | z4 | E, D, C,/2D,/2 C, | z4
+B14;4;z4 | C D E D | z4 | D C C2;E,/2F,/2 G, F, E, | z4 | D, E, D,/2C,/2 C, | z4
+B15;4;z4 | C D E D | z4 | D E D C;C,2 C,/2D,/2 E, | z4 | D,/2E,/2 D, C,2 | z4
+B16;4;z4 | C D E D | z4 | D C C2;C,2 C,/2D,/2 E, | z4 | D,/2C,/2 C, C,2 | z4
+B17;4;z4 | C D E D | z4 | D C C2;C, D,/2E,/2 F,/2G,/2 F, | z4 | E, D, E,/2D,/2 C, | z4
+B18;4;z4 | C D E D | z4 | D E D C;C,/2D,/2 E,/2F,/2 E, D, | z4 | C,/2D,/2 E, D,/2C,/2 C, | z4
+B19;4;z4 | C D E D | z4 | D E D C;C,/2D,/2 E,/2F,/2 G,/2F,/2 E, | z4 | D, C, D,/2E,/2 D, | z4
+B20;4;z4 | C D E D | z4 | D C C2;C,/2D,/2 E, z D,/2C,/2 | z4 | C,2 D,/2C,/2 C, | z4

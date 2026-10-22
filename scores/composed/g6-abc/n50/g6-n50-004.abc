@@ -1,0 +1,23 @@
+%abc-2.1
+X:4004
+T:g6-n50-004 Đô cao rồi Rê thoát
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G6; profile=m6-up; lead=RH; bucket=n50; notes=51; RH=38; LH=13
+% duration60=52s; related_pattern=b94bc88502ad77c6
+% authored_passages=S04 AU1 AU3 AU2
+% source=buildscripts/pianist/compositions/g6/studies.txt:5
+[V:RH] F E c d | G E c B | A G E2 | D E G2 |
+[V:LH] C,4 | C, z z z | C, z z z | C, z z z |
+[V:RH] E2 C2 | G2 E2 | F E c B | A2 G2 |
+[V:LH] C, z z z | C, z z z | C, z z z | C, z z z |
+[V:RH] E2 C2 | G F E2 | F E c B | A G E2 |
+[V:LH] C, z z z | C, z z z | C, z z z | C, z z z |
+[V:RH] G2 E2 |]
+[V:LH] C, z z z |]

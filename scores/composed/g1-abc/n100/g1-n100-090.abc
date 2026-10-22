@@ -1,0 +1,23 @@
+%abc-2.1
+X:690
+T:g1-n100-090 Hai tay bốn hơi thở
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n100; notes=98; RH=49; LH=49
+% role=S; family=octave-four-breath; form=authored; duration60=64s
+% related_pattern=ab2b95342cd8bea8
+% source=buildscripts/pianist/compositions/g1/n100.txt:90
+[V:RH] C z D E | F E D C | C D E D | C4 |
+[V:LH] C, z D, E, | F, E, D, C, | C, D, E, D, | C,4 |
+[V:RH] C D E F | G2 F E | D z C C | C4 |
+[V:LH] C, D, E, F, | G,2 F, E, | D, z C, C, | C,4 |
+[V:RH] C2 D E | F z E D | E D C C | C2 C2 |
+[V:LH] C,2 D, E, | F, z E, D, | E, D, C, C, | C,2 C,2 |
+[V:RH] C D E F | G F E D | C z D E | D C C2 |]
+[V:LH] C, D, E, F, | G, F, E, D, | C, z D, E, | D, C, C,2 |]

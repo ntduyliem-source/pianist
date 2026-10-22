@@ -1,0 +1,21 @@
+%abc-2.1
+X:5383
+T:g8-n30-083 Đôi Mi Sol rồi nối Đô
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G8; profile=dyad-tie; lead=RH; bucket=n30; notes=37; RH=28; LH=9
+% duration60=36s; related_pattern=98ca0c0ecaa7b617
+% authored_passages=T08 TR4 TR2
+% source=buildscripts/pianist/compositions/g8/studies.txt:84
+[V:RH] [EG] D/2 C/2-C2 | [CG] D/2 E/2-E2 | F2 D2 | [DF] E/2 G/2-G2 |
+[V:LH] C,4 | C, z z z | D, z z z | D, z z z |
+[V:RH] [CE]4 | [EG] F/2 E/2-E2 | D2 C2 | [CG] E/2 G/2-G2 |
+[V:LH] C, z z z | C, z z z | C, z z z | C, z z z |
+[V:RH] E2 C2 |]
+[V:LH] C, z z z |]

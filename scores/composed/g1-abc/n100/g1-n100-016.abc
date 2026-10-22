@@ -1,0 +1,27 @@
+%abc-2.1
+X:616
+T:g1-n100-016 Sáu lần nhìn lên
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n100; notes=97; RH=73; LH=24
+% role=R; family=six-high-scenes; form=authored; duration60=96s
+% related_pattern=9ce200e5f2bb9127
+% source=buildscripts/pianist/compositions/g1/n100.txt:19
+[V:RH] E F G2 | F E D E | F G F E | E4 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] E2 F G | F G F E | D E F E | E4 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] E F F G | F E D E | F G G2 | G4 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] G F E2 | D E F E | D C D E | E4 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] E F G F | E D C D | E F E D | C4 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C D E F | G F E2 | D E D C | C4 |]
+[V:LH] C,4 | C,4 | C,4 | C,4 |]

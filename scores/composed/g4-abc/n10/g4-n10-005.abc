@@ -1,0 +1,17 @@
+%abc-2.1
+X:2305
+T:g4-n10-005 Nốt nhắc mở cửa cao
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=upper; lead=RH; bucket=n10; notes=10; RH=8; LH=2
+% role=R; duration60=8s; related_pattern=22d9a0e0fee83b0e
+% authored_passages=inline-n10-005
+% source=buildscripts/pianist/compositions/g4/n10.txt:6
+[V:RH] G G A B | c B A G |]
+[V:LH] G,4 | G,4 |]

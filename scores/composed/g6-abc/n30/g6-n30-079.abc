@@ -1,0 +1,21 @@
+%abc-2.1
+X:3979
+T:g6-n30-079 Nhắc Mi giữa về Fa
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G6; profile=M7-down; lead=LH; bucket=n30; notes=35; RH=9; LH=26
+% duration60=36s; related_pattern=983187fdf8dffcdd
+% authored_passages=S79 DX1 DX3
+% source=buildscripts/pianist/compositions/g6/studies.txt:80
+[V:RH] c4 | c z z z | c z z z | c z z z |
+[V:LH] E E F, E, | G, A, B, C, | D, E, G,2 | F, E, D,2 |
+[V:RH] c z z z | c z z z | c z z z | c z z z |
+[V:LH] E,2 C,2 | G, A, B,2 | C, D, E,2 | G,2 E,2 |
+[V:RH] c z z z |]
+[V:LH] D,2 C,2 |]

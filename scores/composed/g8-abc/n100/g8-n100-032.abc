@@ -1,0 +1,27 @@
+%abc-2.1
+X:5532
+T:g8-n100-032 Dòng phụ trầm Rê Mi Fa
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G8; profile=ledger-low; lead=LH; bucket=n100; notes=76; RH=21; LH=55
+% duration60=84s; related_pattern=1ca183a2f32382e4
+% authored_passages=L07 LP3 LP4 LP1 LP2 LP3
+% source=buildscripts/pianist/compositions/g8/studies.txt:33
+[V:RH] D4 | C z z z | D z z z | G z z z |
+[V:LH] D,,, E,,, F,,,2 | G,,,2 E,,,2 | D,,, E,,, F,,, G,,, | E,,,2 D,,,2 |
+[V:RH] C z z z | D z z z | C z z z | D z z z |
+[V:LH] C,,,4 | D,,, F,,, E,,,2 | G,,, E,,, D,,, C,,, | F,,,2 D,,,2 |
+[V:RH] C z z z | C z z z | D z z z | C z z z |
+[V:LH] E,,,2 C,,,2 | C,,, D,,, E,,,2 | F,,, E,,, D,,,2 | E,,, G,,, F,,, E,,, |
+[V:RH] C z z z | C z z z | C z z z | D z z z |
+[V:LH] D,,,2 C,,,2 | E,,, G,,, E,,, D,,, | C,,,2 E,,,2 | F,,, E,,, D,,,2 |
+[V:RH] C z z z | C z z z | D z z z | G z z z |
+[V:LH] E,,,2 C,,,2 | G,,,2 E,,,2 | D,,, E,,, F,,, G,,, | E,,,2 D,,,2 |
+[V:RH] C z z z |]
+[V:LH] C,,,4 |]

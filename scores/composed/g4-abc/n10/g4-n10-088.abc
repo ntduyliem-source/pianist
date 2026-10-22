@@ -1,0 +1,17 @@
+%abc-2.1
+X:2388
+T:g4-n10-088 Sol dài ba phách chung
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=upper; lead=RH; bucket=n10; notes=10; RH=5; LH=5
+% role=S; duration60=6s; related_pattern=26e794b1ae8fe015
+% authored_passages=inline-n10-088
+% source=buildscripts/pianist/compositions/g4/n10.txt:89
+[V:RH] G2 A | B c d |]
+[V:LH] G,2 G, | G, G, G, |]

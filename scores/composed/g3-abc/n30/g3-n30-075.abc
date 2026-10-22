@@ -1,0 +1,19 @@
+%abc-2.1
+X:1875
+T:g3-n30-075 Quãng năm trầm hai chuyện
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fifth; lead=LH; bucket=n30; notes=31; RH=16; LH=15
+% role=A; duration60=32s; related_pattern=9c74faf268898c6a
+% authored_passages=V05 V07
+% source=buildscripts/pianist/compositions/g3/n30.txt:76
+[V:RH] z4 | C D E D | z4 | D C D C |
+[V:LH] C, G, F, E, | z4 | D, E, C,2 | z4 |
+[V:RH] z4 | C D E D | z4 | D C D C |]
+[V:LH] C, G, D, E, | z4 | F, E, D, C, | z4 |]

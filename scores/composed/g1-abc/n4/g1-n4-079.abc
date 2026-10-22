@@ -1,0 +1,17 @@
+%abc-2.1
+X:79
+T:g1-n4-079 Câu hỏi ngắn
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n4; notes=5; RH=3; LH=2
+% role=A; family=three-and-two; form=authored; duration60=8s
+% related_pattern=5e790e20a8b2b1ca
+% source=buildscripts/pianist/compositions/g1/n4.txt:81
+[V:RH] C D E2 | z4 |]
+[V:LH] z4 | E,2 D,2 |]

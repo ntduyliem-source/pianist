@@ -1,0 +1,17 @@
+%abc-2.1
+X:3023
+T:g5-n10-023 Mi dừng Sol tiếp
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=offset; lead=RH; bucket=n10; notes=10; RH=6; LH=4
+% duration60=12s; related_pattern=3dc2beed2a0904a5
+% authored_passages=O23 CR2 CR1
+% source=buildscripts/pianist/compositions/g5/studies.txt:24
+[V:RH] E z G2 | E2 C2 | G2 E2 |]
+[V:LH] C, z z G, | C,4 | C,4 |]

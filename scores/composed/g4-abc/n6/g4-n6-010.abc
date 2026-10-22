@@ -1,0 +1,17 @@
+%abc-2.1
+X:2210
+T:g4-n6-010 Giữ Sol mở hai nhịp
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=upper; lead=RH; bucket=n6; notes=7; RH=5; LH=2
+% role=R; duration60=6s; related_pattern=1770b0558c8da86a
+% authored_passages=inline-n6-010
+% source=buildscripts/pianist/compositions/g4/n6.txt:11
+[V:RH] G2 A | B c d |]
+[V:LH] G,3 | G,3 |]

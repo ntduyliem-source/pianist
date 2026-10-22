@@ -1,0 +1,17 @@
+%abc-2.1
+X:4258
+T:g7-n4-058 Rê đảo Đô đáp
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G7; profile=sync; lead=RH; bucket=n4; notes=5; RH=4; LH=1
+% duration60=4s; related_pattern=80f69cc0d828dff2
+% authored_passages=Y08
+% source=buildscripts/pianist/compositions/g7/studies.txt:59
+[V:RH] E/2 D C/2 E2 |]
+[V:LH] C,4 |]

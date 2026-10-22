@@ -1,0 +1,19 @@
+%abc-2.1
+X:5297
+T:g8-n20-097 Năm trầm rồi nối Đô
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G8; profile=dyad-tie; lead=LH; bucket=n20; notes=21; RH=5; LH=16
+% duration60=20s; related_pattern=af8459cd4314f6fb
+% authored_passages=T22 TL2
+% source=buildscripts/pianist/compositions/g8/studies.txt:98
+[V:RH] C4 | C z z z | C z z z | C z z z |
+[V:LH] [C,G,] E,/2 C,/2-C,2 | [E,G,] F,/2 E,/2-E,2 | D,2 C,2 | [C,G,] E,/2 G,/2-G,2 |
+[V:RH] C z z z |]
+[V:LH] E,2 C,2 |]

@@ -1,0 +1,21 @@
+%abc-2.1
+X:2637
+T:g4-n50-037 Nhắc trầm tìm Đô giữa
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=upper; lead=LH; bucket=n50; notes=50; RH=12; LH=38
+% role=L; duration60=48s; related_pattern=b086e652119a94b6
+% authored_passages=V07 V16 V08
+% source=buildscripts/pianist/compositions/g4/n50.txt:38
+[V:RH] G4 | G4 | G4 | G4 |
+[V:LH] G, G, A, B, | C B, A, G, | B, D C B, | A, G, G,2 |
+[V:RH] G4 | G4 | G4 | G4 |
+[V:LH] G,2 B,2 | C B, G,2 | B,2 D2 | G,4 |
+[V:RH] G4 | G4 | G4 | G4 |]
+[V:LH] B, G, C B, | A, B, C D | C A, B, G, | A, G, G,2 |]

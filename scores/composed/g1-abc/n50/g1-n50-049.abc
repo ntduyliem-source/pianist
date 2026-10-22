@@ -1,0 +1,23 @@
+%abc-2.1
+X:549
+T:g1-n50-049 Nhịp ba trầm có nghỉ
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n50; notes=51; RH=16; LH=35
+% role=L; family=bass-breathing-waltz; form=authored; duration60=48s
+% related_pattern=2121ec147a3ee258
+% source=buildscripts/pianist/compositions/g1/n50.txt:51
+[V:RH] C3 | C3 | C3 | C3 |
+[V:LH] C, z D, | E, F, E, | D, C,2 | C,3 |
+[V:RH] C3 | C3 | C3 | C3 |
+[V:LH] C, D, E, | F, z E, | D, E, D, | C,3 |
+[V:RH] C3 | C3 | C3 | C3 |
+[V:LH] C,2 D, | E, F, G, | F, E, D, | C,3 |
+[V:RH] C3 | C3 | C3 | C3 |]
+[V:LH] C, D, E, | D, z C, | C, D, C, | C,3 |]

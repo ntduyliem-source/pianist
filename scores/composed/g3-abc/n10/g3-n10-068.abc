@@ -1,0 +1,17 @@
+%abc-2.1
+X:1668
+T:g3-n10-068 Rê Sol thấp gọi hai câu
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fourth; lead=LH; bucket=n10; notes=12; RH=6; LH=6
+% role=A; duration60=12s; related_pattern=ed80327fa633097d
+% authored_passages=inline-n10-068
+% source=buildscripts/pianist/compositions/g3/n10.txt:69
+[V:RH] z3 | C D E | z3 | D C C |]
+[V:LH] D, G, F, | z3 | E, D, C, | z3 |]

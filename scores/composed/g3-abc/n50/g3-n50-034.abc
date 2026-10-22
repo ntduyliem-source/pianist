@@ -1,0 +1,21 @@
+%abc-2.1
+X:1934
+T:g3-n50-034 Fa thấp nhịp nền thay
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fourth; lead=LH; bucket=n50; notes=57; RH=14; LH=43
+% role=L; duration60=48s; related_pattern=296d91bdb78ae81e
+% authored_passages=G04 G14 G12
+% source=buildscripts/pianist/compositions/g3/n50.txt:35
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] F, C, D, E, | F, E, D, C, | D, G, F, E, | D, E, C,2 |
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] F,2 C, D, | E, D, F, E, | D, G, F, E, | D, C, C,2 |
+[V:RH] C2 C2 | C4 | C2 C2 | C4 |]
+[V:LH] C, F, E, D, | C,2 F, E, | D, G, F, E, | D, E, C,2 |]

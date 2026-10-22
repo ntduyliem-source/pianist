@@ -1,0 +1,21 @@
+%abc-2.1
+X:539
+T:g1-n50-039 Câu đáp trầm nền chuyển
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n50; notes=51; RH=12; LH=39
+% role=L; family=bass-moving-reply; form=authored; duration60=48s
+% related_pattern=2b7bb9a9c458704b
+% source=buildscripts/pianist/compositions/g1/n50.txt:41
+[V:RH] C4 | D4 | C4 | D4 |
+[V:LH] C, D, E, F, | G, F, E, D, | C,2 D, E, | F, E, D, C, |
+[V:RH] E4 | E4 | D4 | E4 |
+[V:LH] C, D, E, F, | G,2 G,2 | F, E, D, E, | E,4 |
+[V:RH] D4 | C4 | C4 | C4 |]
+[V:LH] E, D, C, D, | E, F, E, D, | C, D, C, C, | C,4 |]

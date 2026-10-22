@@ -1,0 +1,25 @@
+%abc-2.1
+X:2080
+T:g3-n100-080 Mi rải qua năm chuyện
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=arpeggio; lead=RH; bucket=n100; notes=77; RH=38; LH=39
+% role=A; duration60=80s; related_pattern=bef5a835417f5ce2
+% authored_passages=H03 H01 H02 H04 H03
+% source=buildscripts/pianist/compositions/g3/n100.txt:81
+[V:RH] E C G E | z4 | C G E C | z4 |
+[V:LH] z4 | C, D, E, D, | z4 | D, E, D, C, |
+[V:RH] C G E C | z4 | G E C2 | z4 |
+[V:LH] z4 | C, D, E, D, | z4 | D, C, D, C, |
+[V:RH] G C E G | z4 | E C G C | z4 |
+[V:LH] z4 | C, D, E, D, | z4 | D, C, C,2 |
+[V:RH] C2 G E | z4 | G C E C | z4 |
+[V:LH] z4 | C, D, E, D, | z4 | D, C, D, C, |
+[V:RH] E C G E | z4 | C G E C | z4 |]
+[V:LH] z4 | C, D, E, D, | z4 | D, E, D, C, |]

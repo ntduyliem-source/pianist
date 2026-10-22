@@ -1,0 +1,25 @@
+%abc-2.1
+X:2708
+T:g4-n100-008 Si dẫn Đô cao về nhà
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=upper; lead=RH; bucket=n100; notes=88; RH=68; LH=20
+% role=R; duration60=80s; related_pattern=6d4d4bbe0a43ad7d
+% authored_passages=U08 U04 U09 U13 U05
+% source=buildscripts/pianist/compositions/g4/n100.txt:9
+[V:RH] B G c B | A B c d | c A B G | A G G2 |
+[V:LH] G,4 | G,4 | G,4 | G,4 |
+[V:RH] c B A G | A B c d | c B A B | A B G2 |
+[V:LH] G,4 | G,4 | G,4 | G,4 |
+[V:RH] G A B2 | c G A B | c d c2 | B A G2 |
+[V:LH] G,4 | G,4 | G,4 | G,4 |
+[V:RH] A B c2 | B G c B | A B d c | B A G2 |
+[V:LH] G,4 | G,4 | G,4 | G,4 |
+[V:RH] G2 B A | G2 B c | d c B2 | G2 G2 |]
+[V:LH] G,4 | G,4 | G,4 | G,4 |]

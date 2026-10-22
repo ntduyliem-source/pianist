@@ -1,0 +1,25 @@
+%abc-2.1
+X:2788
+T:g4-n100-088 Si Đô Rê đổi đường chung
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=upper; lead=RH; bucket=n100; notes=102; RH=51; LH=51
+% role=S; duration60=80s; related_pattern=dcc941e1755de25e
+% authored_passages=S03 S13 S05 S02 S11
+% source=buildscripts/pianist/compositions/g4/n100.txt:89
+[V:RH] B c d2 | c2 B G | A B c2 | B A G2 |
+[V:LH] G, F, G,2 | F,2 G, G, | G, G, G,2 | F, G, G,2 |
+[V:RH] G2 B2 | c2 G2 | A B G2 | G4 |
+[V:LH] G,2 G,2 | F,2 G,2 | G, G, G,2 | G,4 |
+[V:RH] G B c2 | d2 c B | A B c2 | B A G2 |
+[V:LH] G, F, G,2 | F,2 G, G, | G, G, G,2 | F, G, G,2 |
+[V:RH] G2 B c | d2 c B | G2 A B | c B G2 |
+[V:LH] G,2 F, G, | F,2 G, G, | G,2 G, G, | F, G, G,2 |
+[V:RH] G2 B2 | c B G2 | G4 | G4 |]
+[V:LH] G,2 G,2 | F, G, G,2 | G,4 | G,4 |]

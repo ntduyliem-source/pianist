@@ -1,0 +1,17 @@
+%abc-2.1
+X:3091
+T:g5-n10-091 Năm trầm trở Đô
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=dyad; lead=LH; bucket=n10; notes=11; RH=4; LH=7
+% duration60=12s; related_pattern=28878be564dcb461
+% authored_passages=D41 CL1 CL3
+% source=buildscripts/pianist/compositions/g5/studies.txt:92
+[V:RH] C2 C2 | C4 | G4 |]
+[V:LH] [C,G,]2 C,2 | G,2 E,2 | D,2 C,2 |]

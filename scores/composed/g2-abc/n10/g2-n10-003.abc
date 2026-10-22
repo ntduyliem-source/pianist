@@ -1,0 +1,17 @@
+%abc-2.1
+X:903
+T:g2-n10-003 Hai vòng nhỏ
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=third; lead=RH; bucket=n10; notes=10; RH=8; LH=2
+% role=R; duration60=8s; related_pattern=eb7e88a1a2e9e813
+% authored_passages=inline-n10-003
+% source=buildscripts/pianist/compositions/g2/n10.txt:4
+[V:RH] C E D E | F D E C |]
+[V:LH] C,4 | C,4 |]

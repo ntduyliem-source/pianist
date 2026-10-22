@@ -1,0 +1,17 @@
+%abc-2.1
+X:2459
+T:g4-n20-059 Quãng tám bass nhịp ba
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=span; lead=LH; bucket=n20; notes=15; RH=4; LH=11
+% role=L; duration60=12s; related_pattern=1c4d3f419f3f61d5
+% authored_passages=X21
+% source=buildscripts/pianist/compositions/g4/n20.txt:60
+[V:RH] E3 | E3 | E3 | E3 |]
+[V:LH] C, G, C | B, A, G, | E, G, C | G, C,2 |]

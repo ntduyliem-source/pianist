@@ -1,0 +1,17 @@
+%abc-2.1
+X:942
+T:g2-n10-042 Ba nhịp trầm vọng lại
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=third; lead=LH; bucket=n10; notes=12; RH=3; LH=9
+% role=L; duration60=9s; related_pattern=53752d4c9f89935a
+% authored_passages=inline-n10-042
+% source=buildscripts/pianist/compositions/g2/n10.txt:43
+[V:RH] C3 | C3 | C3 |]
+[V:LH] C, E, D, | E, G, F, | E, D, C, |]

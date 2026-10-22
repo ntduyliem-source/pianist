@@ -1,0 +1,23 @@
+%abc-2.1
+X:584
+T:g1-n50-084 Tám lời có khoảng thở
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n50; notes=42; RH=21; LH=21
+% role=A; family=eight-rested; form=authored; duration60=48s
+% related_pattern=15547037d281fdc6
+% source=buildscripts/pianist/compositions/g1/n50.txt:85
+[V:RH] C z D | z3 | E F E | z3 |
+[V:LH] z3 | C, D, E, | z3 | F, z E, |
+[V:RH] D C D | z3 | E D C | z3 |
+[V:LH] z3 | D, C, D, | z3 | E, D, C, |
+[V:RH] C D E | z3 | F E D | z3 |
+[V:LH] z3 | C, D, E, | z3 | F, E, D, |
+[V:RH] C D C | z3 | C3 | z3 |]
+[V:LH] z3 | C, D, C, | z3 | C,3 |]

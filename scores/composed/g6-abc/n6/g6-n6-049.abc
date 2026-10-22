@@ -1,0 +1,17 @@
+%abc-2.1
+X:3649
+T:g6-n6-049 Mi trầm tới Rê giữa
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G6; profile=m7-up; lead=LH; bucket=n6; notes=8; RH=2; LH=6
+% duration60=8s; related_pattern=4f7f589a9fb7756e
+% authored_passages=S49 CL3
+% source=buildscripts/pianist/compositions/g6/studies.txt:50
+[V:RH] c4 | c4 |]
+[V:LH] D, E, D C | G,2 D,2 |]

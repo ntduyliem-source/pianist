@@ -1,0 +1,19 @@
+%abc-2.1
+X:376
+T:g1-n20-076 Đối đáp quanh Mi
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n20; notes=21; RH=11; LH=10
+% role=A; family=three-middle; form=authored; duration60=24s
+% related_pattern=556d95e0a98001ba
+% source=buildscripts/pianist/compositions/g1/n20.txt:77
+[V:RH] D E F E | z4 | D C D E | z4 |
+[V:LH] z4 | E, F, G,2 | z4 | F, E, D, E, |
+[V:RH] D E E2 | z4 |]
+[V:LH] z4 | D, C, C,2 |]

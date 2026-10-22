@@ -1,0 +1,17 @@
+%abc-2.1
+X:2385
+T:g4-n10-085 Mở tám bass nghỉ đối lời
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=span; lead=LH; bucket=n10; notes=10; RH=5; LH=5
+% role=A; duration60=12s; related_pattern=bc7e74ddac9578dd
+% authored_passages=inline-n10-085
+% source=buildscripts/pianist/compositions/g4/n10.txt:86
+[V:RH] z3 | E F G | z3 | F E2 |]
+[V:LH] C, G, C | z3 | z G, C, | z3 |]

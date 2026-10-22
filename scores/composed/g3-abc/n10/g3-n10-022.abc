@@ -1,0 +1,17 @@
+%abc-2.1
+X:1622
+T:g3-n10-022 Ba nhịp qua quãng năm
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fifth; lead=RH; bucket=n10; notes=12; RH=9; LH=3
+% role=R; duration60=9s; related_pattern=419fc292c01b021c
+% authored_passages=inline-n10-022
+% source=buildscripts/pianist/compositions/g3/n10.txt:23
+[V:RH] C G F | E D C | D E C |]
+[V:LH] C,3 | C,3 | C,3 |]

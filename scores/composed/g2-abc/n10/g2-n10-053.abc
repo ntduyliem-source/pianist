@@ -1,0 +1,17 @@
+%abc-2.1
+X:953
+T:g2-n10-053 Nghe phách trầm qua nghỉ
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=eighth; lead=LH; bucket=n10; notes=10; RH=2; LH=8
+% role=L; duration60=8s; related_pattern=7933d223fb2e6d9f
+% authored_passages=inline-n10-053
+% source=buildscripts/pianist/compositions/g2/n10.txt:54
+[V:RH] C4 | C4 |]
+[V:LH] C,/2D,/2 E, z D, | E,/2D,/2 C, C,2 |]

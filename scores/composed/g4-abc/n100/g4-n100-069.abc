@@ -1,0 +1,31 @@
+%abc-2.1
+X:2769
+T:g4-n100-069 Năm chuyện bass cao ba
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=upper; lead=LH; bucket=n100; notes=81; RH=37; LH=44
+% role=A; duration60=90s; related_pattern=cb18f7a398625291
+% authored_passages=Q12 Q16 Q14 Q12 Q16
+% source=buildscripts/pianist/compositions/g4/n100.txt:70
+[V:RH] z3 | G F E | z3 | F E F |
+[V:LH] G, A, B, | z3 | C D C | z3 |
+[V:RH] z3 | G F G | z3 | G2 F |
+[V:LH] B, A, G, | z3 | B, D C | z3 |
+[V:RH] z3 | E2 F | z3 | G2 G |
+[V:LH] B, A, G, | z3 | A, B, G, | z3 |
+[V:RH] z3 | G F E | z3 | F2 G |
+[V:LH] G,2 A, | z3 | B, C D | z3 |
+[V:RH] z3 | G2 G | z3 | G F E |
+[V:LH] C B, G, | z3 | G, A, B, | z3 |
+[V:RH] z3 | F E F | z3 | G F G |
+[V:LH] C D C | z3 | B, A, G, | z3 |
+[V:RH] z3 | G2 F | z3 | E2 F |
+[V:LH] B, D C | z3 | B, A, G, | z3 |
+[V:RH] z3 | G2 G |]
+[V:LH] A, B, G, | z3 |]

@@ -1,0 +1,17 @@
+%abc-2.1
+X:794
+T:g2-n4-094 Từ Mi xuống rồi đáp
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=eighth; lead=RH; bucket=n4; notes=4; RH=3; LH=1
+% role=A; duration60=3s; related_pattern=b53088176e803a2b
+% authored_passages=inline-n4-094
+% source=buildscripts/pianist/compositions/g2/n4.txt:95
+[V:RH] E/2D/2 C z |]
+[V:LH] z z E, |]

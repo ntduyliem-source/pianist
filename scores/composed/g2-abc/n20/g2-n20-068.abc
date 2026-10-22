@@ -1,0 +1,17 @@
+%abc-2.1
+X:1068
+T:g2-n20-068 Hai cặp trao qua lại
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=eighth; lead=RH; bucket=n20; notes=19; RH=11; LH=8
+% role=A; duration60=16s; related_pattern=527ff4c36368ce4e
+% authored_passages=B03
+% source=buildscripts/pianist/compositions/g2/n20.txt:69
+[V:RH] C/2D/2 E/2F/2 G F | z4 | E D C/2D/2 C | z4 |]
+[V:LH] z4 | C, D, E, D, | z4 | D, E, D, C, |]

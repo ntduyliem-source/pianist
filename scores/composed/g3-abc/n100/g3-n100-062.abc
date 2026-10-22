@@ -1,0 +1,25 @@
+%abc-2.1
+X:2062
+T:g3-n100-062 Fa gọi đổi năm câu đáp
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fourth; lead=RH; bucket=n100; notes=76; RH=38; LH=38
+% role=A; duration60=80s; related_pattern=576cf63e3cb1e234
+% authored_passages=Q02 Q04 Q01 Q05 Q03
+% source=buildscripts/pianist/compositions/g3/n100.txt:63
+[V:RH] F C D E | z4 | F E D C | z4 |
+[V:LH] z4 | C, D, C, C, | z4 | C, D, C, C, |
+[V:RH] C2 F E | z4 | D G F E | z4 |
+[V:LH] z4 | C, D, E, D, | z4 | D, E, D, C, |
+[V:RH] C F E D | z4 | C D F E | z4 |
+[V:LH] z4 | C, D, E, D, | z4 | D, C, C,2 |
+[V:RH] C C F E | z4 | D F E C | z4 |
+[V:LH] z4 | C, D, E, D, | z4 | D, C, C,2 |
+[V:RH] D G F E | z4 | D E C2 | z4 |]
+[V:LH] z4 | C, D, E, D, | z4 | D, C, D, C, |]

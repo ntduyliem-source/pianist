@@ -1,0 +1,17 @@
+%abc-2.1
+X:3552
+T:g6-n4-052 Rê cao về Mi Fa
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G6; profile=m7-down; lead=RH; bucket=n4; notes=5; RH=4; LH=1
+% duration60=4s; related_pattern=eac87b2bcac69d2a
+% authored_passages=S52
+% source=buildscripts/pianist/compositions/g6/studies.txt:53
+[V:RH] c d E F |]
+[V:LH] C,4 |]

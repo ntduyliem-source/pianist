@@ -1,0 +1,17 @@
+%abc-2.1
+X:2126
+T:g4-n4-026 Đô cao qua Sol về giữa
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=span; lead=RH; bucket=n4; notes=4; RH=3; LH=1
+% role=R; duration60=3s; related_pattern=16459340266ed17f
+% authored_passages=inline-n4-026
+% source=buildscripts/pianist/compositions/g4/n4.txt:27
+[V:RH] c G C |]
+[V:LH] C,3 |]

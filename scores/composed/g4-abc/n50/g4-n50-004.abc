@@ -1,0 +1,21 @@
+%abc-2.1
+X:2604
+T:g4-n50-004 Đô cao gọi nền nhắc
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=upper; lead=RH; bucket=n50; notes=58; RH=44; LH=14
+% role=R; duration60=48s; related_pattern=4832219a9b82b09d
+% authored_passages=U04 U12 U14
+% source=buildscripts/pianist/compositions/g4/n50.txt:5
+[V:RH] c B A G | A B c d | c B A B | A B G2 |
+[V:LH] G,4 | G,4 | G,4 | G,4 |
+[V:RH] G A B c | d B c d | c B A G | A B G2 |
+[V:LH] G,2 G,2 | G,4 | G,2 G,2 | G,4 |
+[V:RH] c2 G A | B A c B | A d c B | A G G2 |]
+[V:LH] G,4 | G,4 | G,4 | G,4 |]

@@ -1,0 +1,25 @@
+%abc-2.1
+X:621
+T:g1-n100-021 Hai mươi ô nhịp ba
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n100; notes=76; RH=56; LH=20
+% role=R; family=twenty-flowing; form=authored; duration60=60s
+% related_pattern=76a72e9c096dba3d
+% source=buildscripts/pianist/compositions/g1/n100.txt:24
+[V:RH] C D E | F G F | E D C | D E F |
+[V:LH] C,3 | C,3 | C,3 | C,3 |
+[V:RH] G F E | D C D | E F E | D C D |
+[V:LH] C,3 | C,3 | C,3 | C,3 |
+[V:RH] E D C | C D E | D C D | C3 |
+[V:LH] C,3 | C,3 | C,3 | C,3 |
+[V:RH] C C D | E F G | F E D | C D E |
+[V:LH] C,3 | C,3 | C,3 | C,3 |
+[V:RH] F E D | C D E | D C D | C3 |]
+[V:LH] C,3 | C,3 | C,3 | C,3 |]

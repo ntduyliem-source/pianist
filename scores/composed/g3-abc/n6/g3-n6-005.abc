@@ -1,0 +1,17 @@
+%abc-2.1
+X:1505
+T:g3-n6-005 Nhắc Đô trước Fa
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fourth; lead=RH; bucket=n6; notes=6; RH=4; LH=2
+% role=R; duration60=4s; related_pattern=b2d2f9be06a89e6e
+% authored_passages=inline-n6-005
+% source=buildscripts/pianist/compositions/g3/n6.txt:6
+[V:RH] C C F E |]
+[V:LH] C,2 C,2 |]

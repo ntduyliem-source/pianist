@@ -1,0 +1,19 @@
+%abc-2.1
+X:2586
+T:g4-n30-086 Cao chung rồi thưa
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=upper; lead=RH; bucket=n30; notes=38; RH=19; LH=19
+% role=S; duration60=32s; related_pattern=05a99759b96e2a5a
+% authored_passages=S01 S11
+% source=buildscripts/pianist/compositions/g4/n30.txt:87
+[V:RH] G A B2 | c B G2 | A B c2 | B A G2 |
+[V:LH] G, G, G,2 | F, G, G,2 | G, G, G,2 | F, G, G,2 |
+[V:RH] G2 B2 | c B G2 | G4 | G4 |]
+[V:LH] G,2 G,2 | F, G, G,2 | G,4 | G,4 |]

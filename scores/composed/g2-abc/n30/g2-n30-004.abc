@@ -1,0 +1,19 @@
+%abc-2.1
+X:1104
+T:g2-n30-004 Nhắc câu rồi thở
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=third; lead=RH; bucket=n30; notes=31; RH=23; LH=8
+% role=R; duration60=32s; related_pattern=2bf8d7aeccabfb10
+% authored_passages=T04 T19
+% source=buildscripts/pianist/compositions/g2/n30.txt:5
+[V:RH] C C E D | E F D C | D E G F | E D E C |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C4 | C E D C | C4 | C4 |]
+[V:LH] C,4 | C,4 | C,4 | C,4 |]

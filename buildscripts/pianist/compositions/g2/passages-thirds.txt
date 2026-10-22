@@ -1,0 +1,42 @@
+# Fixed four-bar passages. T = RH focus; U = LH focus. Shared passages are intentional reading variants.
+# id; meter; literal RH; literal LH
+T01;4;C E C2 | E G F E | D F E D | E D C2;C,4 | C,4 | C,4 | C,4
+T02;4;C D E G | F D E2 | E C D E | D C C2;C,4 | C,4 | C,4 | C,4
+T03;4;E G F E | D F E D | C E D C | D E C2;C,4 | C,4 | C,4 | C,4
+T04;4;C C E D | E F D C | D E G F | E D E C;C,4 | C,4 | C,4 | C,4
+T05;4;C2 E D | E2 G F | E D C2 | E2 C2;C,4 | C,4 | C,4 | C,4
+T06;4;E2 G F | E C D E | F E D C | D E C2;C,4 | C,4 | C,4 | C,4
+T07;4;C D F E | D C E D | C2 E D | E D C2;C,4 | C,4 | C,4 | C,4
+T08;4;C E D C | D F E2 | G F E D | E C C2;C,4 | C,4 | C,4 | C,4
+T09;4;E C D E | G F E2 | D F E D | C2 C2;C,4 | C,4 | C,4 | C,4
+T10;4;C E z D | E G F E | D E D C | D E C2;C,4 | C,4 | C,4 | C,4
+T11;4;C2 E D | F E D C | E G F E | D C C2;C,2 C,2 | C,4 | C,2 C,2 | C,4
+T12;4;C2 E D | F2 E D | E G F E | D E C2;C,4 | D,4 | C,4 | C,4
+T13;4;C E D C | D2 F E | E G F E | D E C2;C,4 | D,4 | C,4 | C,4
+T14;4;C E D C | E2 G F | E D F E | D C C2;C,4 | C,2 C,2 | C,4 | C,2 C,2
+T15;4;E2 G F | F2 E D | E C D E | D E C2;E,4 | D,4 | C,4 | C,4
+T16;4;C2 E2 | D E C2 | E2 G2 | E2 C2;C,4 | C,4 | C,4 | C,4
+T17;4;C2 E2 | G2 E2 | D E C2 | C4;C,4 | C,4 | C,4 | C,4
+T18;4;C4 | E2 D C | E2 C2 | C4;C,4 | C,4 | C,4 | C,4
+T19;4;C4 | C E D C | C4 | C4;C,4 | C,4 | C,4 | C,4
+T20;4;C2 E D | C4 | C4 | C4;C,4 | C,4 | C,4 | C,4
+U01;4;C4 | C4 | C4 | C4;C, E, C,2 | E, G, F, E, | D, F, E, D, | E, D, C,2
+U02;4;C4 | C4 | C4 | C4;C, D, E, G, | F, D, E,2 | E, C, D, E, | D, C, C,2
+U03;4;C4 | C4 | C4 | C4;E, G, F, E, | D, F, E, D, | C, E, D, C, | D, E, C,2
+U04;4;C4 | C4 | C4 | C4;C, C, E, D, | E, F, D, C, | D, E, G, F, | E, D, E, C,
+U05;4;C4 | C4 | C4 | C4;C,2 E, D, | E,2 G, F, | E, D, C,2 | E,2 C,2
+U06;4;C4 | C4 | C4 | C4;E,2 G, F, | E, C, D, E, | F, E, D, C, | D, E, C,2
+U07;4;C4 | C4 | C4 | C4;C, D, F, E, | D, C, E, D, | C,2 E, D, | E, D, C,2
+U08;4;C4 | C4 | C4 | C4;C, E, D, C, | D, F, E,2 | G, F, E, D, | E, C, C,2
+U09;4;C4 | C4 | C4 | C4;E, C, D, E, | G, F, E,2 | D, F, E, D, | C,2 C,2
+U10;4;C4 | C4 | C4 | C4;C, E, z D, | E, G, F, E, | D, E, D, C, | D, E, C,2
+U11;4;C2 C2 | C4 | C2 C2 | C4;C,2 E, D, | F, E, D, C, | E, G, F, E, | D, C, C,2
+U12;4;C4 | D4 | C4 | C4;C,2 E, D, | F,2 E, D, | E, G, F, E, | D, E, C,2
+U13;4;C4 | D4 | C4 | C4;C, E, D, C, | D,2 F, E, | E, G, F, E, | D, E, C,2
+U14;4;C4 | C2 C2 | C4 | C2 C2;C, E, D, C, | E,2 G, F, | E, D, F, E, | D, C, C,2
+U15;4;E4 | D4 | C4 | C4;E,2 G, F, | F,2 E, D, | E, C, D, E, | D, E, C,2
+U16;4;C4 | C4 | C4 | C4;C,2 E,2 | D, E, C,2 | E,2 G,2 | E,2 C,2
+U17;4;C4 | C4 | C4 | C4;C,2 E,2 | G,2 E,2 | D, E, C,2 | C,4
+U18;4;C4 | C4 | C4 | C4;C,4 | E,2 D, C, | E,2 C,2 | C,4
+U19;4;C4 | C4 | C4 | C4;C,4 | C, E, D, C, | C,4 | C,4
+U20;4;C4 | C4 | C4 | C4;C,2 E, D, | C,4 | C,4 | C,4

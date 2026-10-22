@@ -1,0 +1,21 @@
+%abc-2.1
+X:2602
+T:g4-n50-002 Sol dài nhắc lời rồi yên
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=upper; lead=RH; bucket=n50; notes=49; RH=37; LH=12
+% role=R; duration60=48s; related_pattern=2aab1ab876ded792
+% authored_passages=U02 U07 U17
+% source=buildscripts/pianist/compositions/g4/n50.txt:3
+[V:RH] G2 B c | d B c d | c B A G | A B G2 |
+[V:LH] G,4 | G,4 | G,4 | G,4 |
+[V:RH] G G A B | c B A G | B d c B | A G G2 |
+[V:LH] G,4 | G,4 | G,4 | G,4 |
+[V:RH] G2 B A | G2 B2 | c2 G2 | G4 |]
+[V:LH] G,4 | G,4 | G,4 | G,4 |]

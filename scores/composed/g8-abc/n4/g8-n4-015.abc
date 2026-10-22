@@ -1,0 +1,17 @@
+%abc-2.1
+X:4915
+T:g8-n4-015 Dòng phụ cao Mi Sol Fa
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G8; profile=ledger-high; lead=RH; bucket=n4; notes=4; RH=3; LH=1
+% duration60=4s; related_pattern=7a22a1a67f8f4021
+% authored_passages=H15
+% source=buildscripts/pianist/compositions/g8/studies.txt:16
+[V:RH] e' g' f'2 |]
+[V:LH] F,4 |]

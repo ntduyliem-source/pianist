@@ -1,0 +1,25 @@
+%abc-2.1
+X:607
+T:g1-n100-007 Năm câu thở nhẹ
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n100; notes=81; RH=61; LH=20
+% role=R; family=five-breaths; form=authored; duration60=80s
+% related_pattern=7a9827d809bdfea2
+% source=buildscripts/pianist/compositions/g1/n100.txt:10
+[V:RH] C z D E | F E D C | C D E D | C4 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C D E F | G2 F E | D z C C | C4 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C2 D E | F z E D | E D C C | C2 C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C D E F | G F E D | C z D E | D C C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C D E2 | F E D C | C D C D | C4 |]
+[V:LH] C,4 | C,4 | C,4 | C,4 |]

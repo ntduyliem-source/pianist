@@ -1,0 +1,101 @@
+# Literal short phrases; all durations and notes are authored here.
+001;third;R;RH;Câu quãng ba trở về;4;C E D C | D E C2;C,4 | C,4
+002;third;R;RH;Câu hỏi trên nốt Mi;4;E G F E | D E D C;C,4 | C,4
+003;third;R;RH;Hai vòng nhỏ;4;C E D E | F D E C;C,4 | C,4
+004;third;R;RH;Nhắc bậc chủ rồi đi;4;C C E D | C D E C;C,4 | C,4
+005;third;R;RH;Lời từ đỉnh thấp dần;4;G E F E | D F E C;C,4 | C,4
+006;third;R;RH;Nốt dài trả lời bước nhảy;4;C2 E D | E G F E;C,4 | C,4
+007;third;R;RH;Về nhà qua bậc giữa;4;D F E C | D E D C;C,4 | C,4
+008;third;R;RH;Mở và khép ở Mi;4;E C D E | G F E2;C,2 C,2 | C,2 C,2
+009;third;R;RH;Đường nét bên hai tiếng nền;4;C D F E | D E C2;C,2 C,2 | C,2 C,2
+010;third;R;RH;Ngắt nhẹ sau bước nhảy;4;C E z D | E F D C;C,4 | C,4
+011;third;R;RH;Vòng Mi có phách nghỉ;4;E G F z | E D E C;C,4 | C,4
+012;third;R;RH;Ba nhịp có tiếng vọng;3;C E D | E G F | E D C;C,3 | C,3 | C,3
+013;third;R;RH;Ba nhịp giữa vườn;3;E C D | F E D | E D C;C,3 | C,3 | C,3
+014;third;R;RH;Ba nhịp giữ đầu câu;3;C2 E | G F E | D E C;C,3 | C,3 | C,3
+015;third;R;RH;Ba nhịp nghỉ rồi về;3;C E D | z E F | E D C;C,3 | C,3 | C,3
+016;eighth;R;RH;Cặp đầu cặp đáp;4;C/2D/2 E D C | D/2E/2 D C2;C,4 | C,4
+017;eighth;R;RH;Phách đôi ở cuối lời;4;C D E/2F/2 G | F E D/2C/2 C;C,4 | C,4
+018;eighth;R;RH;Hai cặp cùng trở lại;4;C/2D/2 E/2F/2 E D | C D E D;C,4 | C,4
+019;eighth;R;RH;Dòng chia quanh Mi;4;E/2F/2 G F E | D/2E/2 D C2;C,4 | C,4
+020;eighth;R;RH;Một nhịp sáng một nhịp êm;4;C/2D/2 E/2F/2 G F | E D C2;C,4 | C,4
+021;eighth;R;RH;Hai nhịp chia đều;4;C/2D/2 E D C | C/2D/2 E D C;C,4 | C,2 C,2
+022;eighth;R;RH;Cặp đi xuống đầu câu;4;G/2F/2 E D C | C D E/2D/2 C;C,4 | C,4
+023;eighth;R;RH;Nghe phách qua chỗ nghỉ;4;C/2D/2 E z D | E/2D/2 C C2;C,4 | C,4
+024;eighth;R;RH;Một cặp sau nốt giữ;4;C2 C/2D/2 E | F E D/2C/2 C;C,4 | C,4
+025;eighth;R;RH;Một đường bốn cặp;4;C/2D/2 E/2F/2 G F | E/2D/2 D/2C/2 C2;C,4 | C,4
+026;eighth;R;RH;Chia ba nhịp ngắn;3;C/2D/2 E D | C2 D | E D C;C,3 | C,3 | C,3
+027;eighth;R;RH;Một cặp giữa ba nhịp;3;C D E | F/2E/2 D C | C3;C,3 | C,3 | C,3
+028;eighth;R;RH;Ba nhịp có hai cặp;3;E/2F/2 G F | E2 D | D/2C/2 C2;C,3 | C,3 | C,3
+029;eighth;R;RH;Nền nhắc dưới phách đôi;4;C/2D/2 E D C | D C D C;C,2 C,2 | C,2 C,2
+030;eighth;R;RH;Hai cặp giữa tiếng nền;4;E F/2E/2 D C | D E/2D/2 C2;C,2 C,2 | C,2 C,2
+031;third;L;LH;Câu quãng ba ở miền trầm;4;C4 | C4;C, E, D, C, | D, E, C,2
+032;third;L;LH;Trầm hỏi từ Mi;4;C4 | C4;E, G, F, E, | D, E, D, C,
+033;third;L;LH;Hai vòng ở khóa Fa;4;C4 | C4;C, E, D, E, | F, D, E, C,
+034;third;L;LH;Nhắc chủ âm trầm;4;C4 | C4;C, C, E, D, | C, D, E, C,
+035;third;L;LH;Lời từ Sol thấp;4;C4 | C4;G, E, F, E, | D, F, E, C,
+036;third;L;LH;Trầm giữ đầu rồi nhảy;4;C4 | C4;C,2 E, D, | E, G, F, E,
+037;third;L;LH;Về trầm qua bậc giữa;4;C4 | C4;D, F, E, C, | D, E, D, C,
+038;third;L;LH;Mở khép bằng Mi trầm;4;C2 C2 | C2 C2;E, C, D, E, | G, F, E,2
+039;third;L;LH;Quãng ba dưới tiếng nền;4;C2 C2 | C2 C2;C, D, F, E, | D, E, C,2
+040;third;L;LH;Trầm ngắt sau bước nhảy;4;C4 | C4;C, E, z D, | E, F, D, C,
+041;third;L;LH;Vòng thấp có phách nghỉ;4;C4 | C4;E, G, F, z | E, D, E, C,
+042;third;L;LH;Ba nhịp trầm vọng lại;3;C3 | C3 | C3;C, E, D, | E, G, F, | E, D, C,
+043;third;L;LH;Ba nhịp dưới khu vườn;3;C3 | C3 | C3;E, C, D, | F, E, D, | E, D, C,
+044;third;L;LH;Trầm dài mở ba nhịp;3;C3 | C3 | C3;C,2 E, | G, F, E, | D, E, C,
+045;third;L;LH;Trầm nghỉ rồi về;3;C3 | C3 | C3;C, E, D, | z E, F, | E, D, C,
+046;eighth;L;LH;Cặp đầu cặp đáp trầm;4;C4 | C4;C,/2D,/2 E, D, C, | D,/2E,/2 D, C,2
+047;eighth;L;LH;Phách đôi khép lời trầm;4;C4 | C4;C, D, E,/2F,/2 G, | F, E, D,/2C,/2 C,
+048;eighth;L;LH;Hai cặp thấp trở lại;4;C4 | C4;C,/2D,/2 E,/2F,/2 E, D, | C, D, E, D,
+049;eighth;L;LH;Chia phách quanh Mi thấp;4;C4 | C4;E,/2F,/2 G, F, E, | D,/2E,/2 D, C,2
+050;eighth;L;LH;Trầm sáng rồi êm;4;C4 | C4;C,/2D,/2 E,/2F,/2 G, F, | E, D, C,2
+051;eighth;L;LH;Hai nhịp trầm chia đều;4;C4 | C2 C2;C,/2D,/2 E, D, C, | C,/2D,/2 E, D, C,
+052;eighth;L;LH;Cặp xuống mở câu trầm;4;C4 | C4;G,/2F,/2 E, D, C, | C, D, E,/2D,/2 C,
+053;eighth;L;LH;Nghe phách trầm qua nghỉ;4;C4 | C4;C,/2D,/2 E, z D, | E,/2D,/2 C, C,2
+054;eighth;L;LH;Cặp thấp sau nốt giữ;4;C4 | C4;C,2 C,/2D,/2 E, | F, E, D,/2C,/2 C,
+055;eighth;L;LH;Bốn cặp dưới khuông;4;C4 | C4;C,/2D,/2 E,/2F,/2 G, F, | E,/2D,/2 D,/2C,/2 C,2
+056;eighth;L;LH;Ba nhịp thấp chia ngắn;3;C3 | C3 | C3;C,/2D,/2 E, D, | C,2 D, | E, D, C,
+057;eighth;L;LH;Cặp giữa ba nhịp trầm;3;C3 | C3 | C3;C, D, E, | F,/2E,/2 D, C, | C,3
+058;eighth;L;LH;Hai cặp ba nhịp thấp;3;C3 | C3 | C3;E,/2F,/2 G, F, | E,2 D, | D,/2C,/2 C,2
+059;eighth;L;LH;Phách trầm đôi dưới nền;4;C2 C2 | C2 C2;C,/2D,/2 E, D, C, | D, C, D, C,
+060;eighth;L;LH;Hai cặp trầm giữa nền;4;C2 C2 | C2 C2;E, F,/2E,/2 D, C, | D, E,/2D,/2 C,2
+061;third;A;RH;Hai lời hỏi hai lời đáp;3;C E D | z3 | E D C | z3;z3 | C, D, E, | z3 | D, C, C,
+062;third;A;LH;Đối đáp từ miền trầm;3;z3 | C D E | z3 | D C C;C, E, D, | z3 | E, D, C, | z3
+063;third;A;RH;Hỏi phía trên đáp phía dưới;3;E G F | z3 | E D C | z3;z3 | E, F, E, | z3 | D, E, D,
+064;third;A;LH;Hỏi giữa khóa Fa;3;z3 | C D C | z3 | D E D;D, F, E, | z3 | C, D, C, | z3
+065;third;A;RH;Câu hỏi nghỉ một phách;3;C E z | z3 | D E C | z3;z3 | C, D, E, | z3 | D, C,2
+066;eighth;A;RH;Phách đôi hỏi phách đều đáp;4;C/2D/2 E D C | z4;z4 | C, D, E, D,
+067;eighth;A;RH;Một lời gọi đi lên;4;C D E/2F/2 G | z4;z4 | E, D, C, C,
+068;eighth;A;RH;Lời gọi từ trên xuống;4;G/2F/2 E D C | z4;z4 | C, D, C, C,
+069;eighth;A;RH;Hai cặp gọi qua cửa;4;C/2D/2 E/2F/2 E D | z4;z4 | C, D, E, D,
+070;eighth;A;RH;Hai cặp khép tiếng gọi;4;C D E/2D/2 D/2C/2 | z4;z4 | E, D, C, C,
+071;eighth;A;RH;Vòng gọi quanh Mi;4;E/2F/2 G/2F/2 E D | z4;z4 | C, D, C, C,
+072;eighth;A;RH;Bốn nhịp ngắn trao lượt;2;C/2D/2 E | z2 | D/2C/2 C | z2;z2 | C, D, | z2 | D, C,
+073;eighth;A;RH;Bốn nhịp đổi cặp;2;C D/2E/2 | z2 | F/2E/2 D | z2;z2 | E, D, | z2 | C, C,
+074;eighth;A;RH;Nghỉ nhẹ giữa hai lời;4;C/2D/2 E z D/2C/2 | z4;z4 | C, D, E, D,
+075;eighth;A;RH;Ba cặp gọi giữ tiếng đáp;4;C/2D/2 E/2D/2 C/2D/2 E | z4;z4 | E, D, C,2
+076;eighth;A;LH;Trầm chia phách trên đáp;4;z4 | C D E D;C,/2D,/2 E, D, C, | z4
+077;eighth;A;LH;Lời trầm gọi lên;4;z4 | E D C C;C, D, E,/2F,/2 G, | z4
+078;eighth;A;LH;Lời trầm gọi xuống;4;z4 | C D C C;G,/2F,/2 E, D, C, | z4
+079;eighth;A;LH;Hai cặp trầm gọi qua cửa;4;z4 | C D E D;C,/2D,/2 E,/2F,/2 E, D, | z4
+080;eighth;A;LH;Hai cặp trầm kết lời;4;z4 | E D C C;C, D, E,/2D,/2 D,/2C,/2 | z4
+081;eighth;A;LH;Vòng trầm gọi quanh Mi;4;z4 | C D C C;E,/2F,/2 G,/2F,/2 E, D, | z4
+082;eighth;A;LH;Bốn nhịp dưới trao lượt;2;z2 | C D | z2 | D C;C,/2D,/2 E, | z2 | D,/2C,/2 C, | z2
+083;eighth;A;LH;Bốn nhịp trầm đổi cặp;2;z2 | E D | z2 | C C;C, D,/2E,/2 | z2 | F,/2E,/2 D, | z2
+084;eighth;A;LH;Trầm nghỉ nhẹ giữa lời;4;z4 | C D E D;C,/2D,/2 E, z D,/2C,/2 | z4
+085;eighth;A;LH;Ba cặp thấp gọi tiếng đáp;4;z4 | E D C2;C,/2D,/2 E,/2D,/2 C,/2D,/2 E, | z4
+086;third;S;RH;Cùng phách qua hai nhịp;3;C E D | E D C;C, D, C, | C, D, C,
+087;third;S;LH;Hai nhịp trầm nhảy;3;C D C | C D C;C, E, D, | E, D, C,
+088;third;S;RH;Vòm trên cùng nhịp;3;E G F | E D C;C, C, D, | E, D, C,
+089;third;S;LH;Vòm trầm cùng nhịp;3;C C D | E D C;E, G, F, | E, D, C,
+090;third;S;RH;Nốt giữ khép hai nhịp;3;C E D | E C2;C, D, C, | D, C,2
+091;third;S;LH;Nốt giữ trầm khép câu;3;C D C | D C2;C, E, D, | E, C,2
+092;third;S;RH;Quãng ba ở giữa câu;3;C D F | E C2;C, D, E, | D, C,2
+093;third;S;LH;Quãng ba trầm giữa câu;3;C D E | D C2;C, D, F, | E, C,2
+094;third;S;RH;Hai tay khép bốn phách;4;C E D C | D E C2;C, D, C, C, | D, D, C,2
+095;third;S;LH;Trầm khép bốn phách;4;C D C C | D D C2;C, E, D, C, | D, E, C,2
+096;third;S;RH;Nốt dài trước bước nhảy;3;C2 E | G F E;C,2 D, | E, D, C,
+097;third;S;LH;Dưới giữ trước bước nhảy;3;C2 D | E D C;C,2 E, | G, F, E,
+098;third;S;RH;Đối hướng trên cùng phách;3;G E F | E D C;E, D, C, | D, E, E,
+099;third;S;LH;Đối hướng dưới cùng phách;3;E D C | D E E;G, E, F, | E, D, C,
+100;third;S;RH;Dừng ở Mi cùng tiếng;3;E C D | E G E;C, D, C, | D, E, E,

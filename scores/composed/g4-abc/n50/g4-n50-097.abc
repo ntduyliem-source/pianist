@@ -1,0 +1,21 @@
+%abc-2.1
+X:2697
+T:g4-n50-097 La dài thấp nhắc lời chung
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=lower; lead=RH; bucket=n50; notes=62; RH=31; LH=31
+% role=S; duration60=48s; related_pattern=1f088f4b914b3184
+% authored_passages=Y02 Y07 Y03
+% source=buildscripts/pianist/compositions/g4/n50.txt:98
+[V:RH] A,2 C D | E2 D C | A,2 B, C | D C A,2 |
+[V:LH] C,2 D, E, | E,2 D, C, | C,2 C, D, | E, D, C,2 |
+[V:RH] A,4 | A, B, C2 | E2 C2 | A,4 |
+[V:LH] C,4 | C, C, C,2 | C,2 C,2 | C,4 |
+[V:RH] C D E2 | D C A,2 | B, C E2 | D C A,2 |]
+[V:LH] C, D, E,2 | D, C, C,2 | C, D, E,2 | D, C, C,2 |]

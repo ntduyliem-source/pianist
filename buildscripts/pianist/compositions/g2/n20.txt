@@ -1,0 +1,101 @@
+# number; profile; role; focus hand; title; explicitly ordered authored passages
+001;third;R;RH;Bốn khung cửa quãng ba;T01
+002;third;R;RH;Bậc thang có khoảng mở;T02
+003;third;R;RH;Lời từ nốt Mi;T03
+004;third;R;RH;Nốt nhắc và đường vòng;T04
+005;third;R;RH;Bốn nhịp thở chậm;T05
+006;third;R;RH;Mi dẫn đường về;T06
+007;third;R;RH;Lối đi qua bậc Fa;T07
+008;third;R;RH;Câu hỏi vòng dưới;T08
+009;third;R;RH;Hai bậc sáng trong câu;T09
+010;third;R;RH;Chờ một phách rồi kể;T10
+011;third;R;RH;Vòng ba phách đầu tiên;T21
+012;third;R;RH;Mi mở nhịp ba;T22
+013;third;R;RH;Giữ nốt giữa nhịp ba;T23
+014;third;R;RH;Bước qua Fa trong nhịp ba;T24
+015;third;R;RH;Nhắc Đô khép nhịp ba;T25
+016;eighth;R;RH;Bốn nhịp chia phách;E01
+017;eighth;R;RH;Cặp nốt thay vị trí;E02
+018;eighth;R;RH;Phách chia trên nền chuyển;E03
+019;eighth;R;RH;Đi nhẹ rồi giữ nốt;E04
+020;eighth;R;RH;Chia phách mở hai lời;E05
+021;eighth;R;RH;Câu đôi khép chậm;E06
+022;eighth;R;RH;Nốt nhắc trong câu chia;E07
+023;eighth;R;RH;Bắt đầu bằng khoảng yên;E08
+024;eighth;R;RH;Bậc thấp chia phách;E09
+025;eighth;R;RH;Nhiều cặp trong cùng câu;E10
+026;eighth;R;RH;Ba phách có cặp đôi;E21
+027;eighth;R;RH;Cặp sau trong nhịp ba;E22
+028;eighth;R;RH;Vòm Mi chia nhịp ba;E23
+029;eighth;R;RH;Cặp đôi đi qua đỉnh;E24
+030;eighth;R;RH;Nốt giữ giữa ba phách;E25
+031;third;L;LH;Bốn cửa ở miền trầm;U01
+032;third;L;LH;Thang dưới có khoảng mở;U02
+033;third;L;LH;Lời từ Mi trầm;U03
+034;third;L;LH;Nốt nhắc đường trầm;U04
+035;third;L;LH;Bốn nhịp thở ở dưới;U05
+036;third;L;LH;Mi trầm dẫn đường;U06
+037;third;L;LH;Lối thấp qua Fa;U07
+038;third;L;LH;Câu hỏi ở khóa Fa;U08
+039;third;L;LH;Hai bậc sáng miền trầm;U09
+040;third;L;LH;Câu trầm chờ một phách;U10
+041;third;L;LH;Vòng ba phách dưới;U21
+042;third;L;LH;Mi trầm mở nhịp ba;U22
+043;third;L;LH;Giữ nốt thấp giữa nhịp;U23
+044;third;L;LH;Bước qua Fa thấp;U24
+045;third;L;LH;Nhắc Đô trầm khép nhịp;U25
+046;eighth;L;LH;Bốn nhịp thấp chia phách;F01
+047;eighth;L;LH;Cặp trầm đổi vị trí;F02
+048;eighth;L;LH;Phách trầm trên nền chuyển;F03
+049;eighth;L;LH;Đi nhẹ giữ nốt trầm;F04
+050;eighth;L;LH;Chia phách trầm mở lời;F05
+051;eighth;L;LH;Câu trầm khép chậm;F06
+052;eighth;L;LH;Nốt nhắc trong câu thấp;F07
+053;eighth;L;LH;Câu trầm bắt đầu yên;F08
+054;eighth;L;LH;Bậc thấp giữ phách đôi;F09
+055;eighth;L;LH;Nhiều cặp miền trầm;F10
+056;eighth;L;LH;Ba phách thấp có cặp;F21
+057;eighth;L;LH;Cặp trầm sau nhịp ba;F22
+058;eighth;L;LH;Vòm Mi trầm chia nhịp;F23
+059;eighth;L;LH;Cặp thấp qua đỉnh;F24
+060;eighth;L;LH;Giữ trầm giữa ba phách;F25
+061;third;A;RH;Bốn lượt qua cửa sổ;Q01
+062;third;A;LH;Trầm hỏi trên đáp;Q06
+063;third;A;RH;Sáu lượt cùng nhịp ba;Q11
+064;third;A;LH;Lời trầm ngắn câu đáp dài;Q14
+065;third;A;RH;Hỏi nhắc ở nốt Đô;Q05
+066;eighth;A;RH;Cặp đôi hỏi bước đều đáp;B01
+067;eighth;A;RH;Gọi lên đáp xuống;B02
+068;eighth;A;RH;Hai cặp trao qua lại;B03
+069;eighth;A;RH;Mi gọi từ trên;B04
+070;eighth;A;RH;Lời hỏi có nốt giữ;B05
+071;eighth;A;RH;Nốt dài đợi lời đáp;B06
+072;eighth;A;RH;Đôi cặp ở giữa lời;B07
+073;eighth;A;RH;Nhắc câu hỏi bằng cặp;B08
+074;eighth;A;RH;Sáu lượt chia nhịp ba;B21
+075;eighth;A;RH;Giữ đầu câu chia cuối;B22
+076;eighth;A;LH;Trầm chia hỏi trên đáp;B11
+077;eighth;A;LH;Gọi thấp rồi đáp cao;B12
+078;eighth;A;LH;Hai cặp dưới trao lời;B13
+079;eighth;A;LH;Mi trầm mở lời;B14
+080;eighth;A;LH;Câu trầm có nốt giữ;B15
+081;eighth;A;LH;Giữ trầm chờ đáp;B16
+082;eighth;A;LH;Cặp giữa lời trầm;B17
+083;eighth;A;LH;Nhắc câu hỏi dưới;B18
+084;eighth;A;LH;Sáu lượt trầm chia nhịp;B23
+085;eighth;A;LH;Trầm giữ đầu chia cuối;B24
+086;third;S;RH;Hai khuông cùng nhịp;S01
+087;third;S;RH;Nhảy và giữ cùng tiếng;S02
+088;third;S;RH;Nốt dài với bước ngắn;S03
+089;third;S;RH;Từ Mi xuống cùng nhau;S04
+090;third;S;RH;Quãng ba giữa hai khuông;S05
+091;third;S;LH;Dưới nhảy trên giữ;S06
+092;third;S;LH;Trầm đọc nốt dài;S07
+093;third;S;LH;Mi trầm xuống cùng nhịp;S08
+094;third;S;LH;Quãng ba dưới giữa câu;S09
+095;third;S;RH;Mở khoảng trên nhịp chung;S10
+096;third;S;LH;Mở khoảng dưới nhịp chung;S11
+097;third;S;RH;Hai tay ba phách;S21
+098;third;S;LH;Trầm dẫn ba phách;S22
+099;third;S;RH;Giữ và nhảy nhịp ba;S23
+100;third;S;LH;Giữ dưới nhảy nhịp ba;S24

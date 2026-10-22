@@ -1,0 +1,19 @@
+%abc-2.1
+X:1816
+T:g3-n30-016 Quãng năm và nốt yên
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fifth; lead=RH; bucket=n30; notes=31; RH=23; LH=8
+% role=R; duration60=32s; related_pattern=050a5b382b80d9bf
+% authored_passages=P01 P11
+% source=buildscripts/pianist/compositions/g3/n30.txt:17
+[V:RH] C G F E | D E F E | D G F E | D E C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C2 G2 | F2 E D | C2 C2 | C4 |]
+[V:LH] C,4 | C,4 | C,4 | C,4 |]

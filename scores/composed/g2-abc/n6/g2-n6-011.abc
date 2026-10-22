@@ -1,0 +1,17 @@
+%abc-2.1
+X:811
+T:g2-n6-011 Nốt dài ở giữa đường
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=third; lead=RH; bucket=n6; notes=7; RH=5; LH=2
+% role=R; duration60=6s; related_pattern=6b7a1bf041203549
+% authored_passages=inline-n6-011
+% source=buildscripts/pianist/compositions/g2/n6.txt:12
+[V:RH] C2 E | D E C |]
+[V:LH] C,3 | C,3 |]

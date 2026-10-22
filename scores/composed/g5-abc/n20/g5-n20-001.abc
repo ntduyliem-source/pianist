@@ -1,0 +1,19 @@
+%abc-2.1
+X:3101
+T:g5-n20-001 Đô gọi Rê qua phách
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=offset; lead=RH; bucket=n20; notes=20; RH=11; LH=9
+% duration60=20s; related_pattern=63535be254fe262d
+% authored_passages=O01 OR1
+% source=buildscripts/pianist/compositions/g5/studies.txt:2
+[V:RH] C2 D z | C2 E z | G2 E2 | F E D2 |
+[V:LH] z C, z G, | z C, z G, | C, z G, z | z F, z G, |
+[V:RH] E2 C2 |]
+[V:LH] C,4 |]

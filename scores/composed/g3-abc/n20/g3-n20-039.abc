@@ -1,0 +1,17 @@
+%abc-2.1
+X:1739
+T:g3-n20-039 Nốt trầm giữ tiếng gọi
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fourth; lead=LH; bucket=n20; notes=17; RH=4; LH=13
+% role=L; duration60=16s; related_pattern=09e04655f41e55cf
+% authored_passages=G09
+% source=buildscripts/pianist/compositions/g3/n20.txt:40
+[V:RH] C4 | C4 | C4 | C4 |]
+[V:LH] C, F, E,2 | F, C, D, E, | D, E, F,2 | E, D, C,2 |]

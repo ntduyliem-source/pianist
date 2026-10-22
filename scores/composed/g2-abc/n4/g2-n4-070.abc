@@ -1,0 +1,17 @@
+%abc-2.1
+X:770
+T:g2-n4-070 Bậc Fa ghé Mi
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=eighth; lead=LH; bucket=n4; notes=5; RH=1; LH=4
+% role=L; duration60=3s; related_pattern=608b395be84acce2
+% authored_passages=inline-n4-070
+% source=buildscripts/pianist/compositions/g2/n4.txt:71
+[V:RH] C3 |]
+[V:LH] F, E,/2D,/2 E, |]

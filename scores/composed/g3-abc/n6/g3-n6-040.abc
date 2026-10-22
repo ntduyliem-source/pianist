@@ -1,0 +1,17 @@
+%abc-2.1
+X:1540
+T:g3-n6-040 Nốt trầm dài trước Fa
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fourth; lead=LH; bucket=n6; notes=7; RH=2; LH=5
+% role=L; duration60=6s; related_pattern=6712e89af4454b69
+% authored_passages=inline-n6-040
+% source=buildscripts/pianist/compositions/g3/n6.txt:41
+[V:RH] C3 | C3 |]
+[V:LH] C,2 F, | E, D, C, |]

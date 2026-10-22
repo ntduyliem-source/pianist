@@ -1,0 +1,17 @@
+%abc-2.1
+X:1005
+T:g2-n20-005 Bốn nhịp thở chậm
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=third; lead=RH; bucket=n20; notes=15; RH=11; LH=4
+% role=R; duration60=16s; related_pattern=1b8dc3bf1d8b410a
+% authored_passages=T05
+% source=buildscripts/pianist/compositions/g2/n20.txt:6
+[V:RH] C2 E D | E2 G F | E D C2 | E2 C2 |]
+[V:LH] C,4 | C,4 | C,4 | C,4 |]

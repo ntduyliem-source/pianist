@@ -1,0 +1,21 @@
+%abc-2.1
+X:2654
+T:g4-n50-054 La trầm dài Đô Mi
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=lower; lead=LH; bucket=n50; notes=47; RH=12; LH=35
+% role=L; duration60=36s; related_pattern=a9bbefdaef41f73f
+% authored_passages=M23 M24 M22
+% source=buildscripts/pianist/compositions/g4/n50.txt:55
+[V:RH] C3 | C3 | C3 | C3 |
+[V:LH] A,,2 B,, | C, D, E, | D, C, B,, | C, B,, A,, |
+[V:RH] C3 | C3 | C3 | C3 |
+[V:LH] A,, D, C, | B,, A,, C, | E, D, C, | B,, A,, A,, |
+[V:RH] C3 | C3 | C3 | C3 |]
+[V:LH] C, E, D, | C, A,, B,, | C, B,, A,, | B,, A,, A,, |]

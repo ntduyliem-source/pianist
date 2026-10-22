@@ -1,0 +1,101 @@
+# number; profile; hand; title; s; a; c; p; q; r; t; u
+001;dotted;RH;Đô Rê Mi dài ngắn;D01;CR1;CR2;DR1;DR2;DR3;DR4;DR1
+002;dotted;RH;Rê Mi Fa dài ngắn;D02;CR2;CR3;DR2;DR4;DR1;DR3;DR2
+003;dotted;RH;Mi Fa Sol dài ngắn;D03;CR3;CR1;DR3;DR1;DR4;DR2;DR3
+004;dotted;RH;Fa Mi Rê chấm dôi;D04;CR1;CR3;DR4;DR3;DR2;DR1;DR4
+005;dotted;RH;Sol Fa Mi chấm dôi;D05;CR2;CR1;DR1;DR4;DR2;DR3;DR1
+006;dotted;RH;Đô Mi Sol bước rộng;D06;CR3;CR2;DR2;DR1;DR3;DR4;DR2
+007;dotted;RH;Sol Mi Đô buông nhẹ;D07;CR1;CR2;DR3;DR4;DR1;DR2;DR3
+008;dotted;RH;Rê Fa Mi ngắn nối;D08;CR2;CR3;DR4;DR2;DR3;DR1;DR4
+009;dotted;RH;Mi Rê Đô về nhà;D09;CR3;CR1;DR1;DR3;DR4;DR2;DR1
+010;dotted;RH;Fa Rê Sol chuyển hướng;D10;CR1;CR3;DR2;DR3;DR1;DR4;DR2
+011;dotted;RH;Đô Sol Mi phách dài;D11;CR2;CR1;DR3;DR2;DR4;DR1;DR3
+012;dotted;RH;Rê Đô Fa phách ngắn;D12;CR3;CR2;DR4;DR1;DR2;DR3;DR4
+013;dotted;RH;Mi Sol Rê khép câu;D13;CR1;CR2;DR1;DR2;DR4;DR3;DR1
+014;dotted;LH;Trầm Đô Rê Mi dài ngắn;D14;CL1;CL2;DL1;DL2;DL3;DL4;DL1
+015;dotted;LH;Trầm Rê Mi Fa dài ngắn;D15;CL2;CL3;DL2;DL4;DL1;DL3;DL2
+016;dotted;LH;Trầm Mi Fa Sol dài ngắn;D16;CL3;CL1;DL3;DL1;DL4;DL2;DL3
+017;dotted;LH;Trầm Fa Mi Rê chấm dôi;D17;CL1;CL3;DL4;DL3;DL2;DL1;DL4
+018;dotted;LH;Trầm Sol Fa Mi chấm dôi;D18;CL2;CL1;DL1;DL4;DL2;DL3;DL1
+019;dotted;LH;Trầm Đô Mi Sol bước rộng;D19;CL3;CL2;DL2;DL1;DL3;DL4;DL2
+020;dotted;LH;Trầm Sol Mi Đô buông nhẹ;D20;CL1;CL2;DL3;DL4;DL1;DL2;DL3
+021;dotted;LH;Trầm Rê Fa Mi ngắn nối;D21;CL2;CL3;DL4;DL2;DL3;DL1;DL4
+022;dotted;LH;Trầm Mi Rê Đô về nhà;D22;CL3;CL1;DL1;DL3;DL4;DL2;DL1
+023;dotted;LH;Trầm Fa Rê Sol chuyển;D23;CL1;CL3;DL2;DL3;DL1;DL4;DL2
+024;dotted;LH;Trầm Đô Sol Mi phách dài;D24;CL2;CL1;DL3;DL2;DL4;DL1;DL3
+025;dotted;LH;Trầm Rê Đô Fa phách ngắn;D25;CL3;CL2;DL4;DL1;DL2;DL3;DL4
+026;tie;RH;Mi nối qua phách ba;T01;CR1;CR2;TR1;TR2;TR3;TR4;TR1
+027;tie;RH;Fa nối qua phách ba;T02;CR2;CR3;TR2;TR4;TR1;TR3;TR2
+028;tie;RH;Sol nối qua phách ba;T03;CR3;CR1;TR3;TR1;TR4;TR2;TR3
+029;tie;RH;Rê nối sau Fa Mi;T04;CR1;CR3;TR4;TR3;TR2;TR1;TR4
+030;tie;RH;Mi nối sau Sol Fa;T05;CR2;CR1;TR1;TR4;TR2;TR3;TR1
+031;tie;RH;Sol nối từ Đô Mi;T06;CR3;CR2;TR2;TR1;TR3;TR4;TR2
+032;tie;RH;Đô nối từ Sol Mi;T07;CR1;CR2;TR3;TR4;TR1;TR2;TR3
+033;tie;RH;Mi nối từ Rê Fa;T08;CR2;CR3;TR4;TR2;TR3;TR1;TR4
+034;tie;RH;Đô nối từ Mi Rê;T09;CR3;CR1;TR1;TR3;TR4;TR2;TR1
+035;tie;RH;Sol nối sau Fa Rê;T10;CR1;CR3;TR2;TR3;TR1;TR4;TR2
+036;tie;RH;Mi nối sau Đô Sol;T11;CR2;CR1;TR3;TR2;TR4;TR1;TR3
+037;tie;RH;Fa nối sau Rê Đô;T12;CR3;CR2;TR4;TR1;TR2;TR3;TR4
+038;tie;LH;Mi trầm nối qua phách;T13;CL1;CL2;TL1;TL2;TL3;TL4;TL1
+039;tie;LH;Fa trầm nối qua phách;T14;CL2;CL3;TL2;TL4;TL1;TL3;TL2
+040;tie;LH;Sol trầm nối qua phách;T15;CL3;CL1;TL3;TL1;TL4;TL2;TL3
+041;tie;LH;Rê trầm nối sau Fa Mi;T16;CL1;CL3;TL4;TL3;TL2;TL1;TL4
+042;tie;LH;Mi trầm nối sau Sol Fa;T17;CL2;CL1;TL1;TL4;TL2;TL3;TL1
+043;tie;LH;Sol trầm nối Đô Mi;T18;CL3;CL2;TL2;TL1;TL3;TL4;TL2
+044;tie;LH;Đô trầm nối Sol Mi;T19;CL1;CL2;TL3;TL4;TL1;TL2;TL3
+045;tie;LH;Mi trầm nối Rê Fa;T20;CL2;CL3;TL4;TL2;TL3;TL1;TL4
+046;tie;LH;Đô trầm nối Mi Rê;T21;CL3;CL1;TL1;TL3;TL4;TL2;TL1
+047;tie;LH;Sol trầm nối Fa Rê;T22;CL1;CL3;TL2;TL3;TL1;TL4;TL2
+048;tie;LH;Mi trầm nối Đô Sol;T23;CL2;CL1;TL3;TL2;TL4;TL1;TL3
+049;tie;LH;Fa trầm nối Rê Đô;T24;CL3;CL2;TL4;TL1;TL2;TL3;TL4
+050;tie;LH;Rê trầm nối Mi Sol;T25;CL1;CL2;TL1;TL2;TL4;TL3;TL1
+051;sync;RH;Rê chen giữa phách;Y01;CR1;CR2;YR1;YR2;YR3;YR4;YR1
+052;sync;RH;Mi chen giữa phách;Y02;CR2;CR3;YR2;YR4;YR1;YR3;YR2
+053;sync;RH;Fa chen giữa phách;Y03;CR3;CR1;YR3;YR1;YR4;YR2;YR3
+054;sync;RH;Mi đảo rồi Đô;Y04;CR1;CR3;YR4;YR3;YR2;YR1;YR4
+055;sync;RH;Fa đảo rồi Đô;Y05;CR2;CR1;YR1;YR4;YR2;YR3;YR1
+056;sync;RH;Mi đảo Rê đáp;Y06;CR3;CR2;YR2;YR1;YR3;YR4;YR2
+057;sync;RH;Fa đảo Mi đáp;Y07;CR1;CR2;YR3;YR4;YR1;YR2;YR3
+058;sync;RH;Rê đảo Đô đáp;Y08;CR2;CR3;YR4;YR2;YR3;YR1;YR4
+059;sync;RH;Sol đảo Mi Rê;Y09;CR3;CR1;YR1;YR3;YR4;YR2;YR1
+060;sync;RH;Mi đảo Rê Đô;Y10;CR1;CR3;YR2;YR3;YR1;YR4;YR2
+061;sync;RH;Rê đảo Sol Mi;Y11;CR2;CR1;YR3;YR2;YR4;YR1;YR3
+062;sync;RH;Đô đảo Mi Fa;Y12;CR3;CR2;YR4;YR1;YR2;YR3;YR4
+063;sync;LH;Rê trầm chen phách;Y13;CL1;CL2;YL1;YL2;YL3;YL4;YL1
+064;sync;LH;Mi trầm chen phách;Y14;CL2;CL3;YL2;YL4;YL1;YL3;YL2
+065;sync;LH;Fa trầm chen phách;Y15;CL3;CL1;YL3;YL1;YL4;YL2;YL3
+066;sync;LH;Mi trầm đảo rồi Đô;Y16;CL1;CL3;YL4;YL3;YL2;YL1;YL4
+067;sync;LH;Fa trầm đảo rồi Đô;Y17;CL2;CL1;YL1;YL4;YL2;YL3;YL1
+068;sync;LH;Mi trầm đảo Rê đáp;Y18;CL3;CL2;YL2;YL1;YL3;YL4;YL2
+069;sync;LH;Fa trầm đảo Mi đáp;Y19;CL1;CL2;YL3;YL4;YL1;YL2;YL3
+070;sync;LH;Rê trầm đảo Đô đáp;Y20;CL2;CL3;YL4;YL2;YL3;YL1;YL4
+071;sync;LH;Sol trầm đảo Mi Rê;Y21;CL3;CL1;YL1;YL3;YL4;YL2;YL1
+072;sync;LH;Mi trầm đảo Rê Đô;Y22;CL1;CL3;YL2;YL3;YL1;YL4;YL2
+073;sync;LH;Rê trầm đảo Sol Mi;Y23;CL2;CL1;YL3;YL2;YL4;YL1;YL3
+074;sync;LH;Đô trầm đảo Mi Fa;Y24;CL3;CL2;YL4;YL1;YL2;YL3;YL4
+075;sync;LH;Sol trầm đảo Fa Đô;Y25;CL1;CL2;YL1;YL2;YL4;YL3;YL1
+076;compound;RH;Hai nhịp lớn Đô Rê Mi;K01;KR1;KR2;KRp1;KRp2;KRp3;KRp4;KRp1
+077;compound;RH;Hai nhịp lớn Rê Mi Fa;K02;KR2;KR3;KRp2;KRp4;KRp1;KRp3;KRp2
+078;compound;RH;Hai nhịp lớn Mi Fa Sol;K03;KR3;KR1;KRp3;KRp1;KRp4;KRp2;KRp3
+079;compound;RH;Fa Mi Rê đu đưa;K04;KR1;KR3;KRp4;KRp3;KRp2;KRp1;KRp4
+080;compound;RH;Sol Fa Mi đu đưa;K05;KR2;KR1;KRp1;KRp4;KRp2;KRp3;KRp1
+081;compound;RH;Đô Mi Sol sáu tám;K06;KR3;KR2;KRp2;KRp1;KRp3;KRp4;KRp2
+082;compound;RH;Sol Mi Đô sáu tám;K07;KR1;KR2;KRp3;KRp4;KRp1;KRp2;KRp3
+083;compound;RH;Rê Fa Mi theo nhóm ba;K08;KR2;KR3;KRp4;KRp2;KRp3;KRp1;KRp4
+084;compound;RH;Mi Rê Đô theo nhóm ba;K09;KR3;KR1;KRp1;KRp3;KRp4;KRp2;KRp1
+085;compound;RH;Fa Rê Sol hai phách;K10;KR1;KR3;KRp2;KRp3;KRp1;KRp4;KRp2
+086;compound;RH;Đô Sol Mi hai phách;K11;KR2;KR1;KRp3;KRp2;KRp4;KRp1;KRp3
+087;compound;RH;Rê Đô Fa đu đưa;K12;KR3;KR2;KRp4;KRp1;KRp2;KRp3;KRp4
+088;compound;RH;Mi Sol Rê đu đưa;K13;KR1;KR2;KRp1;KRp2;KRp4;KRp3;KRp1
+089;compound;LH;Đô Rê Mi trầm sáu tám;K14;KL1;KL2;KLp1;KLp2;KLp3;KLp4;KLp1
+090;compound;LH;Rê Mi Fa trầm sáu tám;K15;KL2;KL3;KLp2;KLp4;KLp1;KLp3;KLp2
+091;compound;LH;Mi Fa Sol trầm sáu tám;K16;KL3;KL1;KLp3;KLp1;KLp4;KLp2;KLp3
+092;compound;LH;Fa Mi Rê trầm đu đưa;K17;KL1;KL3;KLp4;KLp3;KLp2;KLp1;KLp4
+093;compound;LH;Sol Fa Mi trầm đu đưa;K18;KL2;KL1;KLp1;KLp4;KLp2;KLp3;KLp1
+094;compound;LH;Đô Mi Sol trầm nhóm ba;K19;KL3;KL2;KLp2;KLp1;KLp3;KLp4;KLp2
+095;compound;LH;Sol Mi Đô trầm nhóm ba;K20;KL1;KL2;KLp3;KLp4;KLp1;KLp2;KLp3
+096;compound;LH;Rê Fa Mi trầm hai nhịp;K21;KL2;KL3;KLp4;KLp2;KLp3;KLp1;KLp4
+097;compound;LH;Mi Rê Đô trầm hai nhịp;K22;KL3;KL1;KLp1;KLp3;KLp4;KLp2;KLp1
+098;compound;LH;Fa Rê Sol trầm sáu tám;K23;KL1;KL3;KLp2;KLp3;KLp1;KLp4;KLp2
+099;compound;LH;Đô Sol Mi trầm sáu tám;K24;KL2;KL1;KLp3;KLp2;KLp4;KLp1;KLp3
+100;compound;LH;Rê Đô Fa trầm đu đưa;K25;KL3;KL2;KLp4;KLp1;KLp2;KLp3;KLp4

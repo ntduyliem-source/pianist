@@ -1,0 +1,25 @@
+%abc-2.1
+X:1365
+T:g2-n100-065 Nhắc lời ở cuối buổi
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=third; lead=RH; bucket=n100; notes=76; RH=38; LH=38
+% role=A; duration60=80s; related_pattern=89e0c2a96d7a2833
+% authored_passages=Q05 Q02 Q04 Q01 Q03
+% source=buildscripts/pianist/compositions/g2/n100.txt:66
+[V:RH] C C E D | z4 | E G F E | z4 |
+[V:LH] z4 | C, D, E, D, | z4 | D, C, C,2 |
+[V:RH] C D E G | z4 | F E D C | z4 |
+[V:LH] z4 | C, D, C, C, | z4 | C, D, C, C, |
+[V:RH] C E D2 | z4 | E F D C | z4 |
+[V:LH] z4 | C, D, E, D, | z4 | D, E, D, C, |
+[V:RH] C E D C | z4 | D F E C | z4 |
+[V:LH] z4 | C, D, E, D, | z4 | D, C, C,2 |
+[V:RH] E G F E | z4 | D E C2 | z4 |]
+[V:LH] z4 | C, D, E, D, | z4 | D, C, D, C, |]

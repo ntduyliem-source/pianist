@@ -1,0 +1,17 @@
+%abc-2.1
+X:2917
+T:g5-n6-017 Sol Đô ghé lời trầm
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=offset; lead=RH; bucket=n6; notes=7; RH=4; LH=3
+% duration60=8s; related_pattern=1ad8b761719c0391
+% authored_passages=O17 CR1
+% source=buildscripts/pianist/compositions/g5/studies.txt:18
+[V:RH] G2 C z | G2 E2 |]
+[V:LH] z G, z C, | C,4 |]

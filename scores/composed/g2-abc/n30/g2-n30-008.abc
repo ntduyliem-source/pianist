@@ -1,0 +1,19 @@
+%abc-2.1
+X:1108
+T:g2-n30-008 Câu hỏi khép ở Đô
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=third; lead=RH; bucket=n30; notes=30; RH=22; LH=8
+% role=R; duration60=32s; related_pattern=5053afe140144a73
+% authored_passages=T08 T17
+% source=buildscripts/pianist/compositions/g2/n30.txt:9
+[V:RH] C E D C | D F E2 | G F E D | E C C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C2 E2 | G2 E2 | D E C2 | C4 |]
+[V:LH] C,4 | C,4 | C,4 | C,4 |]

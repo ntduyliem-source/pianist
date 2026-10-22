@@ -1,0 +1,701 @@
+id	group	bookPosition	profile	role	lead	count	right	left	meter	bars	seconds	title
+g3-n4-001	n4	1	fourth	R	RH	3	2	1	2	1	2	Đô gọi Fa
+g3-n4-002	n4	12	fourth	R	RH	3	2	1	2	1	2	Fa trở lại Đô
+g3-n4-003	n4	32	fourth	R	RH	3	2	1	2	1	2	Rê gọi Sol
+g3-n4-004	n4	19	fourth	R	RH	3	2	1	2	1	2	Sol trở lại Rê
+g3-n4-005	n4	24	fourth	R	RH	4	3	1	3	1	3	Quãng bốn rồi bước xuống
+g3-n4-006	n4	37	fourth	R	RH	4	3	1	3	1	3	Xuống bốn rồi bước lên
+g3-n4-007	n4	44	fourth	R	RH	4	3	1	3	1	3	Nhảy tới đỉnh thấp
+g3-n4-008	n4	52	fourth	R	RH	4	3	1	3	1	3	Từ đỉnh ghé Rê
+g3-n4-009	n4	59	fourth	R	RH	4	3	1	3	1	3	Mi dẫn tới Fa
+g3-n4-010	n4	70	fourth	R	RH	3	2	1	4	1	4	Giữ hai đầu quãng bốn
+g3-n4-011	n4	64	fourth	R	RH	3	2	1	4	1	4	Hai nốt dài trở về
+g3-n4-012	n4	79	fourth	R	RH	3	2	1	4	1	4	Rê dài ghé Sol
+g3-n4-013	n4	84	fourth	R	RH	5	4	1	4	1	4	Bốn tiếng vòng qua Fa
+g3-n4-014	n4	92	fourth	R	RH	5	4	1	4	1	4	Bốn tiếng từ Rê
+g3-n4-015	n4	98	fourth	R	RH	4	3	1	4	1	4	Quãng bốn trước phách nghỉ
+g3-n4-016	n4	2	fifth	R	RH	3	2	1	2	1	2	Hai đầu vùng năm nốt
+g3-n4-017	n4	16	fifth	R	RH	3	2	1	2	1	2	Từ Sol về Đô
+g3-n4-018	n4	29	fifth	R	RH	4	3	1	3	1	3	Nhảy năm bước xuống
+g3-n4-019	n4	38	fifth	R	RH	4	3	1	3	1	3	Về Đô đi tiếp
+g3-n4-020	n4	50	fifth	R	RH	3	2	1	4	1	4	Hai nốt dài cách năm
+g3-n4-021	n4	61	fifth	R	RH	3	2	1	4	1	4	Sol dài Đô dài
+g3-n4-022	n4	71	fifth	R	RH	5	4	1	4	1	4	Quãng năm vòng qua Mi
+g3-n4-023	n4	82	fifth	R	RH	5	4	1	4	1	4	Nhảy tới Sol xuống Mi
+g3-n4-024	n4	95	fifth	R	RH	5	4	1	4	1	4	Về Đô rồi đi lên
+g3-n4-025	n4	3	arpeggio	R	RH	4	3	1	3	1	3	Đô Sol Mi rải đều
+g3-n4-026	n4	22	arpeggio	R	RH	4	3	1	3	1	3	Sol Đô Mi rải đều
+g3-n4-027	n4	39	arpeggio	R	RH	4	3	1	3	1	3	Mi Đô Sol rải đều
+g3-n4-028	n4	54	arpeggio	R	RH	4	3	1	3	1	3	Mi Sol Đô rải đều
+g3-n4-029	n4	72	arpeggio	R	RH	4	3	1	4	1	4	Giữ Đô trước mẫu rải
+g3-n4-030	n4	89	arpeggio	R	RH	4	3	1	4	1	4	Giữ Sol trước mẫu rải
+g3-n4-031	n4	13	fourth	L	LH	3	1	2	2	1	2	Đô trầm gọi Fa
+g3-n4-032	n4	4	fourth	L	LH	3	1	2	2	1	2	Fa trầm về Đô
+g3-n4-033	n4	20	fourth	L	LH	3	1	2	2	1	2	Rê trầm gọi Sol
+g3-n4-034	n4	33	fourth	L	LH	3	1	2	2	1	2	Sol trầm về Rê
+g3-n4-035	n4	40	fourth	L	LH	4	1	3	3	1	3	Nhảy dưới rồi bước
+g3-n4-036	n4	25	fourth	L	LH	4	1	3	3	1	3	Xuống dưới rồi lên
+g3-n4-037	n4	53	fourth	L	LH	4	1	3	3	1	3	Quãng bốn đỉnh trầm
+g3-n4-038	n4	45	fourth	L	LH	4	1	3	3	1	3	Từ Sol trầm ghé Rê
+g3-n4-039	n4	73	fourth	L	LH	4	1	3	3	1	3	Mi trầm dẫn tới Fa
+g3-n4-040	n4	60	fourth	L	LH	3	1	2	4	1	4	Giữ quãng bốn ở dưới
+g3-n4-041	n4	80	fourth	L	LH	3	1	2	4	1	4	Hai nốt dài miền trầm
+g3-n4-042	n4	93	fourth	L	LH	3	1	2	4	1	4	Rê thấp dài ghé Sol
+g3-n4-043	n4	65	fourth	L	LH	5	1	4	4	1	4	Vòng trầm qua Fa
+g3-n4-044	n4	85	fourth	L	LH	5	1	4	4	1	4	Bốn tiếng từ Rê trầm
+g3-n4-045	n4	100	fourth	L	LH	4	1	3	4	1	4	Quãng bốn trầm trước nghỉ
+g3-n4-046	n4	17	fifth	L	LH	3	1	2	2	1	2	Hai đầu miền trầm
+g3-n4-047	n4	5	fifth	L	LH	3	1	2	2	1	2	Từ Sol trầm về Đô
+g3-n4-048	n4	41	fifth	L	LH	4	1	3	3	1	3	Nhảy trầm năm rồi xuống
+g3-n4-049	n4	30	fifth	L	LH	4	1	3	3	1	3	Về Đô thấp đi tiếp
+g3-n4-050	n4	62	fifth	L	LH	3	1	2	4	1	4	Hai nốt dài trầm cách năm
+g3-n4-051	n4	51	fifth	L	LH	3	1	2	4	1	4	Sol thấp dài Đô thấp dài
+g3-n4-052	n4	83	fifth	L	LH	5	1	4	4	1	4	Quãng năm dưới qua Mi
+g3-n4-053	n4	74	fifth	L	LH	5	1	4	4	1	4	Nhảy Sol trầm xuống Mi
+g3-n4-054	n4	99	fifth	L	LH	5	1	4	4	1	4	Về thấp rồi đi lên
+g3-n4-055	n4	23	arpeggio	L	LH	4	1	3	3	1	3	Đô Sol Mi trầm rải đều
+g3-n4-056	n4	6	arpeggio	L	LH	4	1	3	3	1	3	Sol Đô Mi trầm rải đều
+g3-n4-057	n4	55	arpeggio	L	LH	4	1	3	3	1	3	Mi Đô Sol trầm rải đều
+g3-n4-058	n4	42	arpeggio	L	LH	4	1	3	3	1	3	Mi Sol Đô trầm rải đều
+g3-n4-059	n4	90	arpeggio	L	LH	4	1	3	4	1	4	Đô thấp giữ trước rải
+g3-n4-060	n4	75	arpeggio	L	LH	4	1	3	4	1	4	Sol thấp giữ trước rải
+g3-n4-061	n4	7	fourth	A	RH	3	2	1	3	1	3	Đô Fa trao tiếng đáp
+g3-n4-062	n4	14	fourth	A	RH	3	2	1	3	1	3	Fa Đô rồi trao lượt
+g3-n4-063	n4	26	fourth	A	RH	3	2	1	3	1	3	Rê Sol gọi một tiếng
+g3-n4-064	n4	35	fourth	A	RH	3	2	1	3	1	3	Sol Rê gọi tiếng giữa
+g3-n4-065	n4	46	fourth	A	RH	4	3	1	4	1	4	Quãng bốn gọi ba nốt
+g3-n4-066	n4	56	fourth	A	LH	3	1	2	3	1	3	Đô Fa trầm trao tiếng
+g3-n4-067	n4	66	fourth	A	LH	3	1	2	3	1	3	Fa Đô trầm trao lượt
+g3-n4-068	n4	76	fourth	A	LH	3	1	2	3	1	3	Rê Sol thấp gọi tiếng
+g3-n4-069	n4	86	fourth	A	LH	3	1	2	3	1	3	Sol Rê thấp gọi giữa
+g3-n4-070	n4	96	fourth	A	LH	4	1	3	4	1	4	Quãng bốn trầm gọi ba
+g3-n4-071	n4	8	fifth	A	RH	3	2	1	3	1	3	Đô Sol gọi tiếng đáp
+g3-n4-072	n4	21	fifth	A	RH	3	2	1	3	1	3	Sol Đô gọi nốt Mi
+g3-n4-073	n4	34	fifth	A	RH	4	3	1	4	1	4	Nhảy năm rồi trao lời
+g3-n4-074	n4	49	fifth	A	RH	4	2	2	4	1	4	Về Đô trao hai tiếng
+g3-n4-075	n4	63	fifth	A	LH	3	1	2	3	1	3	Đô Sol thấp gọi đáp
+g3-n4-076	n4	78	fifth	A	LH	3	1	2	3	1	3	Sol Đô thấp gọi Mi
+g3-n4-077	n4	91	fifth	A	LH	4	1	3	4	1	4	Nhảy năm trầm trao lời
+g3-n4-078	n4	9	arpeggio	A	RH	4	3	1	4	1	4	Mẫu rải hỏi một tiếng
+g3-n4-079	n4	18	arpeggio	A	RH	4	3	1	4	1	4	Mẫu rải từ Sol hỏi
+g3-n4-080	n4	31	arpeggio	A	RH	4	3	1	4	1	4	Mi Đô Sol trao tiếng
+g3-n4-081	n4	43	arpeggio	A	RH	4	3	1	4	1	4	Mi Sol Đô trao tiếng
+g3-n4-082	n4	57	arpeggio	A	LH	4	1	3	4	1	4	Rải trầm hỏi một tiếng
+g3-n4-083	n4	69	arpeggio	A	LH	4	1	3	4	1	4	Rải trầm từ Sol hỏi
+g3-n4-084	n4	81	arpeggio	A	LH	4	1	3	4	1	4	Mi Đô Sol trầm trao
+g3-n4-085	n4	94	arpeggio	A	LH	4	1	3	4	1	4	Mi Sol Đô trầm trao
+g3-n4-086	n4	10	fourth	S	RH	4	2	2	2	1	2	Cùng phách trên nhảy bốn
+g3-n4-087	n4	15	fourth	S	RH	4	2	2	2	1	2	Cùng phách trên về Đô
+g3-n4-088	n4	27	fourth	S	RH	4	2	2	2	1	2	Cùng phách Rê tới Sol
+g3-n4-089	n4	36	fourth	S	RH	4	2	2	2	1	2	Cùng phách Sol tới Rê
+g3-n4-090	n4	47	fourth	S	RH	4	2	2	4	1	4	Hai nốt dài nhảy bốn
+g3-n4-091	n4	58	fourth	S	LH	4	2	2	2	1	2	Cùng phách dưới nhảy bốn
+g3-n4-092	n4	67	fourth	S	LH	4	2	2	2	1	2	Cùng phách dưới về Đô
+g3-n4-093	n4	77	fourth	S	LH	4	2	2	2	1	2	Rê trầm tới Sol chung
+g3-n4-094	n4	87	fourth	S	LH	4	2	2	2	1	2	Sol trầm tới Rê chung
+g3-n4-095	n4	97	fourth	S	LH	4	2	2	4	1	4	Hai nốt dài trầm bốn
+g3-n4-096	n4	11	fifth	S	RH	4	2	2	2	1	2	Cùng phách trên nhảy năm
+g3-n4-097	n4	28	fifth	S	RH	4	2	2	2	1	2	Sol Đô trên nhịp chung
+g3-n4-098	n4	48	fifth	S	RH	4	2	2	4	1	4	Quãng năm dài cùng nhau
+g3-n4-099	n4	68	fifth	S	LH	4	2	2	2	1	2	Cùng phách dưới nhảy năm
+g3-n4-100	n4	88	fifth	S	LH	4	2	2	4	1	4	Quãng năm trầm dài chung
+g3-n6-001	n6	1	fourth	R	RH	6	4	2	4	1	4	Bốn tiếng qua Fa
+g3-n6-002	n6	12	fourth	R	RH	6	4	2	4	1	4	Từ Fa về rồi bước
+g3-n6-003	n6	19	fourth	R	RH	6	4	2	4	1	4	Đỉnh Sol theo quãng bốn
+g3-n6-004	n6	32	fourth	R	RH	6	4	2	4	1	4	Sol hạ xuống Rê
+g3-n6-005	n6	24	fourth	R	RH	6	4	2	4	1	4	Nhắc Đô trước Fa
+g3-n6-006	n6	37	fourth	R	RH	8	6	2	3	2	6	Hai nhịp quãng bốn
+g3-n6-007	n6	44	fourth	R	RH	8	6	2	3	2	6	Hai lần ghé Fa
+g3-n6-008	n6	52	fourth	R	RH	8	6	2	3	2	6	Mi mở đường tới Fa
+g3-n6-009	n6	59	fourth	R	RH	8	6	2	3	2	6	Quãng bốn ở cuối lời
+g3-n6-010	n6	70	fourth	R	RH	7	5	2	3	2	6	Nốt dài ở trước Fa
+g3-n6-011	n6	64	fourth	R	RH	7	5	2	3	2	6	Giữ Fa rồi trở xuống
+g3-n6-012	n6	79	fourth	R	RH	7	5	2	3	2	6	Đỉnh Sol khép Mi
+g3-n6-013	n6	84	fourth	R	RH	7	5	2	3	2	6	Nhắc Fa rồi hạ
+g3-n6-014	n6	92	fourth	R	RH	7	5	2	3	2	6	Bước từ Rê qua Sol
+g3-n6-015	n6	98	fourth	R	RH	7	5	2	3	2	6	Mi ghé Fa về Đô
+g3-n6-016	n6	2	fifth	R	RH	6	4	2	4	1	4	Nhảy năm rồi hạ bậc
+g3-n6-017	n6	16	fifth	R	RH	6	4	2	4	1	4	Sol về Đô bước tiếp
+g3-n6-018	n6	29	fifth	R	RH	6	4	2	4	1	4	Hai phía của nốt Rê
+g3-n6-019	n6	38	fifth	R	RH	6	4	2	4	1	4	Đô gọi Sol hai lần
+g3-n6-020	n6	50	fifth	R	RH	8	6	2	3	2	6	Hai nhịp một quãng năm
+g3-n6-021	n6	61	fifth	R	RH	8	6	2	3	2	6	Về Đô qua hai nhịp
+g3-n6-022	n6	71	fifth	R	RH	7	5	2	3	2	6	Giữ Đô rồi nhảy xa
+g3-n6-023	n6	82	fifth	R	RH	7	5	2	3	2	6	Giữ Sol rồi xuống dần
+g3-n6-024	n6	95	fifth	R	RH	7	5	2	3	2	6	Tiếng nhắc trước quãng năm
+g3-n6-025	n6	3	arpeggio	R	RH	6	4	2	4	1	4	Bốn tiếng rải Đô
+g3-n6-026	n6	22	arpeggio	R	RH	6	4	2	4	1	4	Rải từ Mi ghé Đô
+g3-n6-027	n6	39	arpeggio	R	RH	6	4	2	4	1	4	Rải từ Sol rồi về
+g3-n6-028	n6	54	arpeggio	R	RH	8	6	2	3	2	6	Hai nhịp rải đều
+g3-n6-029	n6	72	arpeggio	R	RH	7	5	2	3	2	6	Rải rồi giữ nốt chủ
+g3-n6-030	n6	89	arpeggio	R	RH	7	5	2	3	2	6	Giữ đầu rải giữa
+g3-n6-031	n6	13	fourth	L	LH	6	2	4	4	1	4	Bốn tiếng trầm qua Fa
+g3-n6-032	n6	4	fourth	L	LH	6	2	4	4	1	4	Từ Fa thấp bước về
+g3-n6-033	n6	33	fourth	L	LH	6	2	4	4	1	4	Sol thấp theo quãng bốn
+g3-n6-034	n6	20	fourth	L	LH	6	2	4	4	1	4	Sol trầm hạ Rê
+g3-n6-035	n6	40	fourth	L	LH	6	2	4	4	1	4	Nhắc Đô thấp trước Fa
+g3-n6-036	n6	25	fourth	L	LH	8	2	6	3	2	6	Hai nhịp quãng bốn trầm
+g3-n6-037	n6	53	fourth	L	LH	8	2	6	3	2	6	Hai lần ghé Fa trầm
+g3-n6-038	n6	45	fourth	L	LH	8	2	6	3	2	6	Mi thấp mở đường Fa
+g3-n6-039	n6	73	fourth	L	LH	8	2	6	3	2	6	Quãng bốn cuối câu trầm
+g3-n6-040	n6	60	fourth	L	LH	7	2	5	3	2	6	Nốt trầm dài trước Fa
+g3-n6-041	n6	80	fourth	L	LH	7	2	5	3	2	6	Giữ Fa thấp rồi về
+g3-n6-042	n6	65	fourth	L	LH	7	2	5	3	2	6	Đỉnh Sol trầm khép Mi
+g3-n6-043	n6	93	fourth	L	LH	7	2	5	3	2	6	Nhắc Fa thấp hạ dần
+g3-n6-044	n6	85	fourth	L	LH	7	2	5	3	2	6	Từ Rê trầm qua Sol
+g3-n6-045	n6	100	fourth	L	LH	7	2	5	3	2	6	Mi trầm ghé Fa về Đô
+g3-n6-046	n6	17	fifth	L	LH	6	2	4	4	1	4	Nhảy năm trầm hạ bậc
+g3-n6-047	n6	5	fifth	L	LH	6	2	4	4	1	4	Sol thấp về Đô bước
+g3-n6-048	n6	41	fifth	L	LH	6	2	4	4	1	4	Hai phía Rê trầm
+g3-n6-049	n6	30	fifth	L	LH	6	2	4	4	1	4	Đô trầm gọi Sol hai lần
+g3-n6-050	n6	62	fifth	L	LH	8	2	6	3	2	6	Hai nhịp quãng năm thấp
+g3-n6-051	n6	51	fifth	L	LH	8	2	6	3	2	6	Về Đô thấp hai nhịp
+g3-n6-052	n6	83	fifth	L	LH	7	2	5	3	2	6	Đô trầm dài nhảy xa
+g3-n6-053	n6	74	fifth	L	LH	7	2	5	3	2	6	Sol trầm giữ xuống dần
+g3-n6-054	n6	99	fifth	L	LH	7	2	5	3	2	6	Nhắc thấp trước quãng năm
+g3-n6-055	n6	23	arpeggio	L	LH	6	2	4	4	1	4	Bốn tiếng rải trầm
+g3-n6-056	n6	6	arpeggio	L	LH	6	2	4	4	1	4	Rải Mi trầm ghé Đô
+g3-n6-057	n6	55	arpeggio	L	LH	6	2	4	4	1	4	Rải Sol thấp trở về
+g3-n6-058	n6	42	arpeggio	L	LH	8	2	6	3	2	6	Hai nhịp rải dưới
+g3-n6-059	n6	90	arpeggio	L	LH	7	2	5	3	2	6	Rải trầm giữ nốt chủ
+g3-n6-060	n6	75	arpeggio	L	LH	7	2	5	3	2	6	Giữ thấp rải giữa
+g3-n6-061	n6	7	fourth	A	RH	6	3	3	3	2	6	Quãng bốn hỏi bước đáp
+g3-n6-062	n6	14	fourth	A	RH	6	3	3	3	2	6	Fa gọi Đô trả lời
+g3-n6-063	n6	26	fourth	A	RH	6	3	3	3	2	6	Rê Sol gọi từ giữa
+g3-n6-064	n6	35	fourth	A	RH	6	3	3	3	2	6	Sol Rê rồi lời đáp
+g3-n6-065	n6	46	fourth	A	RH	6	4	2	4	2	8	Bốn tiếng hỏi hai tiếng đáp
+g3-n6-066	n6	56	fourth	A	LH	6	3	3	3	2	6	Quãng bốn trầm hỏi bước
+g3-n6-067	n6	66	fourth	A	LH	6	3	3	3	2	6	Fa thấp gọi Đô cao
+g3-n6-068	n6	76	fourth	A	LH	6	3	3	3	2	6	Rê Sol trầm gọi giữa
+g3-n6-069	n6	86	fourth	A	LH	6	3	3	3	2	6	Sol Rê thấp trao lời
+g3-n6-070	n6	96	fourth	A	LH	6	2	4	4	2	8	Bốn tiếng thấp hai tiếng cao
+g3-n6-071	n6	8	fifth	A	RH	6	3	3	3	2	6	Quãng năm hỏi bước đáp
+g3-n6-072	n6	21	fifth	A	RH	6	3	3	3	2	6	Sol gọi từ phía trên
+g3-n6-073	n6	34	fifth	A	RH	6	4	2	4	2	8	Bốn tiếng nhảy gọi đáp
+g3-n6-074	n6	49	fifth	A	RH	7	3	4	4	2	8	Tiếng hỏi giữ nốt Đô
+g3-n6-075	n6	63	fifth	A	LH	6	3	3	3	2	6	Quãng năm trầm hỏi bước
+g3-n6-076	n6	78	fifth	A	LH	6	3	3	3	2	6	Sol trầm gọi từ dưới
+g3-n6-077	n6	91	fifth	A	LH	6	2	4	4	2	8	Bốn tiếng trầm nhảy gọi
+g3-n6-078	n6	9	arpeggio	A	RH	6	3	3	3	2	6	Đô Sol Mi hỏi ba tiếng
+g3-n6-079	n6	18	arpeggio	A	RH	6	3	3	3	2	6	Sol Đô Mi hỏi ba tiếng
+g3-n6-080	n6	31	arpeggio	A	RH	6	4	2	4	2	8	Rải Mi Đô Sol trao lời
+g3-n6-081	n6	43	arpeggio	A	RH	7	3	4	4	2	8	Giữ Đô rải rồi đáp
+g3-n6-082	n6	57	arpeggio	A	LH	6	3	3	3	2	6	Rải trầm hỏi ba tiếng
+g3-n6-083	n6	69	arpeggio	A	LH	6	3	3	3	2	6	Sol thấp rải hỏi ba
+g3-n6-084	n6	81	arpeggio	A	LH	6	2	4	4	2	8	Mi Đô Sol thấp trao lời
+g3-n6-085	n6	94	arpeggio	A	LH	7	4	3	4	2	8	Giữ Đô trầm rải đáp
+g3-n6-086	n6	10	fourth	S	RH	6	3	3	3	1	3	Ba tiếng trên nhảy bốn
+g3-n6-087	n6	15	fourth	S	RH	6	3	3	3	1	3	Ba tiếng Fa về Đô
+g3-n6-088	n6	27	fourth	S	RH	6	3	3	3	1	3	Rê Sol nhịp ba chung
+g3-n6-089	n6	36	fourth	S	RH	6	3	3	4	1	4	Quãng bốn khép nốt dài
+g3-n6-090	n6	47	fourth	S	RH	8	4	4	4	1	4	Bốn tiếng quãng bốn chung
+g3-n6-091	n6	58	fourth	S	LH	6	3	3	3	1	3	Ba tiếng trầm nhảy bốn
+g3-n6-092	n6	67	fourth	S	LH	6	3	3	3	1	3	Ba tiếng Fa thấp về
+g3-n6-093	n6	77	fourth	S	LH	6	3	3	3	1	3	Rê Sol trầm nhịp chung
+g3-n6-094	n6	87	fourth	S	LH	6	3	3	4	1	4	Quãng bốn trầm khép dài
+g3-n6-095	n6	97	fourth	S	LH	8	4	4	4	1	4	Bốn tiếng trầm nhảy chung
+g3-n6-096	n6	11	fifth	S	RH	6	3	3	3	1	3	Ba tiếng trên nhảy năm
+g3-n6-097	n6	28	fifth	S	RH	6	3	3	3	1	3	Ba tiếng Sol về Đô
+g3-n6-098	n6	48	fifth	S	RH	6	3	3	4	1	4	Nhảy năm giữ Fa chung
+g3-n6-099	n6	68	fifth	S	LH	6	3	3	3	1	3	Ba tiếng dưới nhảy năm
+g3-n6-100	n6	88	fifth	S	LH	6	3	3	4	1	4	Nhảy trầm năm giữ chung
+g3-n10-001	n10	1	fourth	R	RH	10	8	2	4	2	8	Quãng bốn mở câu về Đô
+g3-n10-002	n10	12	fourth	R	RH	10	8	2	4	2	8	Fa gọi Đô giữa câu
+g3-n10-003	n10	19	fourth	R	RH	9	7	2	4	2	8	Rê ghé Sol rồi về
+g3-n10-004	n10	32	fourth	R	RH	9	7	2	4	2	8	Sol hạ xuống đường giữa
+g3-n10-005	n10	24	fourth	R	RH	10	8	2	4	2	8	Nhắc Đô mở quãng bốn
+g3-n10-006	n10	37	fourth	R	RH	9	7	2	4	2	8	Giữ đầu câu qua Fa
+g3-n10-007	n10	44	fourth	R	RH	9	7	2	4	2	8	Nhảy bốn giữ nốt Mi
+g3-n10-008	n10	52	fourth	R	RH	11	7	4	4	2	8	Mi ghé Đô rồi gọi Fa
+g3-n10-009	n10	59	fourth	R	RH	11	7	4	4	2	8	Nền nhắc dưới quãng bốn
+g3-n10-010	n10	70	fourth	R	RH	9	7	2	4	2	8	Quãng bốn có phách nghỉ
+g3-n10-011	n10	64	fourth	R	RH	12	9	3	3	3	9	Ba nhịp một lời Fa
+g3-n10-012	n10	79	fourth	R	RH	12	9	3	3	3	9	Ba nhịp từ Sol xuống
+g3-n10-013	n10	84	fourth	R	RH	11	8	3	3	3	9	Giữ đầu ba nhịp
+g3-n10-014	n10	92	fourth	R	RH	11	8	3	3	3	9	Fa dài trong nhịp ba
+g3-n10-015	n10	98	fourth	R	RH	11	8	3	3	3	9	Nghỉ rồi khép quãng bốn
+g3-n10-016	n10	2	fifth	R	RH	10	8	2	4	2	8	Năm bậc mở đường về
+g3-n10-017	n10	16	fifth	R	RH	10	8	2	4	2	8	Sol về Đô rồi vươn
+g3-n10-018	n10	29	fifth	R	RH	9	7	2	4	2	8	Đi hai phía nốt Rê
+g3-n10-019	n10	38	fifth	R	RH	9	7	2	4	2	8	Nhắc đầu và nhảy xa
+g3-n10-020	n10	50	fifth	R	RH	9	7	2	4	2	8	Đô dài gọi Sol đáp
+g3-n10-021	n10	61	fifth	R	RH	10	6	4	4	2	8	Giữ đỉnh rồi về
+g3-n10-022	n10	71	fifth	R	RH	12	9	3	3	3	9	Ba nhịp qua quãng năm
+g3-n10-023	n10	82	fifth	R	RH	11	8	3	3	3	9	Ba nhịp từ Sol về
+g3-n10-024	n10	95	fifth	R	RH	9	7	2	4	2	8	Phách nghỉ sau quãng năm
+g3-n10-025	n10	3	arpeggio	R	RH	9	7	2	4	2	8	Hai nhịp rải câu Đô
+g3-n10-026	n10	22	arpeggio	R	RH	10	8	2	4	2	8	Mi mở mẫu rải ngắn
+g3-n10-027	n10	39	arpeggio	R	RH	10	8	2	4	2	8	Sol mở Đô trả lời
+g3-n10-028	n10	54	arpeggio	R	RH	11	7	4	4	2	8	Giữ trước mẫu rải
+g3-n10-029	n10	72	arpeggio	R	RH	12	9	3	3	3	9	Ba nhịp rải có đáp
+g3-n10-030	n10	89	arpeggio	R	RH	9	7	2	4	2	8	Rải rồi nghỉ nhẹ
+g3-n10-031	n10	13	fourth	L	LH	10	2	8	4	2	8	Quãng bốn trầm mở câu
+g3-n10-032	n10	4	fourth	L	LH	10	2	8	4	2	8	Fa trầm gọi giữa câu
+g3-n10-033	n10	33	fourth	L	LH	9	2	7	4	2	8	Rê trầm ghé Sol về
+g3-n10-034	n10	20	fourth	L	LH	9	2	7	4	2	8	Sol trầm xuống giữa
+g3-n10-035	n10	40	fourth	L	LH	10	2	8	4	2	8	Đô trầm nhắc quãng bốn
+g3-n10-036	n10	25	fourth	L	LH	9	2	7	4	2	8	Giữ thấp qua Fa
+g3-n10-037	n10	53	fourth	L	LH	9	2	7	4	2	8	Nhảy trầm giữ Mi
+g3-n10-038	n10	45	fourth	L	LH	11	4	7	4	2	8	Mi trầm ghé Đô Fa
+g3-n10-039	n10	73	fourth	L	LH	11	4	7	4	2	8	Nền cao nhắc câu thấp
+g3-n10-040	n10	60	fourth	L	LH	9	2	7	4	2	8	Quãng bốn thấp có nghỉ
+g3-n10-041	n10	80	fourth	L	LH	12	3	9	3	3	9	Ba nhịp trầm lời Fa
+g3-n10-042	n10	65	fourth	L	LH	12	3	9	3	3	9	Ba nhịp từ Sol thấp
+g3-n10-043	n10	93	fourth	L	LH	11	3	8	3	3	9	Giữ thấp đầu ba nhịp
+g3-n10-044	n10	85	fourth	L	LH	11	3	8	3	3	9	Fa trầm dài nhịp ba
+g3-n10-045	n10	100	fourth	L	LH	11	3	8	3	3	9	Trầm nghỉ khép quãng bốn
+g3-n10-046	n10	17	fifth	L	LH	10	2	8	4	2	8	Năm bậc trầm mở về
+g3-n10-047	n10	5	fifth	L	LH	10	2	8	4	2	8	Sol trầm về rồi vươn
+g3-n10-048	n10	41	fifth	L	LH	9	2	7	4	2	8	Hai phía Rê trầm
+g3-n10-049	n10	30	fifth	L	LH	9	2	7	4	2	8	Nhắc thấp rồi nhảy xa
+g3-n10-050	n10	62	fifth	L	LH	9	2	7	4	2	8	Đô trầm dài gọi Sol
+g3-n10-051	n10	51	fifth	L	LH	10	4	6	4	2	8	Giữ đỉnh trầm rồi về
+g3-n10-052	n10	83	fifth	L	LH	12	3	9	3	3	9	Ba nhịp trầm quãng năm
+g3-n10-053	n10	74	fifth	L	LH	11	3	8	3	3	9	Ba nhịp Sol trầm về
+g3-n10-054	n10	99	fifth	L	LH	9	2	7	4	2	8	Trầm nghỉ sau quãng năm
+g3-n10-055	n10	23	arpeggio	L	LH	9	2	7	4	2	8	Hai nhịp rải trầm Đô
+g3-n10-056	n10	6	arpeggio	L	LH	10	2	8	4	2	8	Mi trầm rải câu ngắn
+g3-n10-057	n10	55	arpeggio	L	LH	10	2	8	4	2	8	Sol thấp Đô trả lời
+g3-n10-058	n10	42	arpeggio	L	LH	11	4	7	4	2	8	Giữ thấp trước mẫu rải
+g3-n10-059	n10	90	arpeggio	L	LH	12	3	9	3	3	9	Ba nhịp rải trầm đáp
+g3-n10-060	n10	75	arpeggio	L	LH	9	2	7	4	2	8	Rải trầm rồi nghỉ
+g3-n10-061	n10	7	fourth	A	RH	12	6	6	3	4	12	Hai câu quãng bốn trao lượt
+g3-n10-062	n10	14	fourth	A	RH	12	6	6	3	4	12	Gọi từ Fa nghe tiếng đáp
+g3-n10-063	n10	26	fourth	A	RH	12	6	6	3	4	12	Rê Sol gọi qua hai câu
+g3-n10-064	n10	35	fourth	A	RH	10	6	4	4	3	12	Quãng bốn giữ tiếng đáp
+g3-n10-065	n10	46	fourth	A	RH	10	5	5	3	4	12	Hỏi Fa nghỉ rồi nói tiếp
+g3-n10-066	n10	56	fourth	A	LH	12	6	6	3	4	12	Hai câu quãng bốn thấp
+g3-n10-067	n10	66	fourth	A	LH	12	6	6	3	4	12	Fa trầm gọi nghe đáp
+g3-n10-068	n10	76	fourth	A	LH	12	6	6	3	4	12	Rê Sol thấp gọi hai câu
+g3-n10-069	n10	86	fourth	A	LH	10	4	6	4	3	12	Quãng bốn trầm giữ đáp
+g3-n10-070	n10	96	fourth	A	LH	10	5	5	3	4	12	Hỏi thấp nghỉ rồi tiếp
+g3-n10-071	n10	8	fifth	A	RH	12	6	6	3	4	12	Hai câu quãng năm gọi
+g3-n10-072	n10	21	fifth	A	RH	12	6	6	3	4	12	Sol gọi qua hai lượt
+g3-n10-073	n10	34	fifth	A	RH	11	7	4	4	3	12	Quãng năm gọi giữ cuối
+g3-n10-074	n10	49	fifth	A	RH	10	6	4	4	3	12	Giữ Đô nhảy xa trao lời
+g3-n10-075	n10	63	fifth	A	LH	12	6	6	3	4	12	Hai câu quãng năm trầm
+g3-n10-076	n10	78	fifth	A	LH	12	6	6	3	4	12	Sol trầm gọi hai lượt
+g3-n10-077	n10	91	fifth	A	LH	11	4	7	4	3	12	Quãng năm trầm giữ cuối
+g3-n10-078	n10	9	arpeggio	A	RH	12	6	6	3	4	12	Mẫu rải qua hai lời
+g3-n10-079	n10	18	arpeggio	A	RH	12	6	6	3	4	12	Sol rải gọi hai tiếng vọng
+g3-n10-080	n10	31	arpeggio	A	RH	11	7	4	4	3	12	Mi rải hỏi rồi giữ
+g3-n10-081	n10	43	arpeggio	A	RH	10	5	5	3	4	12	Rải có phách nghỉ đầu lời
+g3-n10-082	n10	57	arpeggio	A	LH	12	6	6	3	4	12	Mẫu rải trầm qua hai lời
+g3-n10-083	n10	69	arpeggio	A	LH	12	6	6	3	4	12	Sol thấp rải hai tiếng vọng
+g3-n10-084	n10	81	arpeggio	A	LH	11	4	7	4	3	12	Mi thấp rải hỏi giữ
+g3-n10-085	n10	94	arpeggio	A	LH	10	5	5	3	4	12	Rải trầm có phách nghỉ
+g3-n10-086	n10	10	fourth	S	RH	12	6	6	3	2	6	Hai nhịp trên nhảy bốn
+g3-n10-087	n10	15	fourth	S	RH	12	6	6	3	2	6	Fa về Đô cùng phách
+g3-n10-088	n10	27	fourth	S	RH	10	5	5	3	2	6	Giữ cuối quãng bốn chung
+g3-n10-089	n10	36	fourth	S	RH	10	5	5	3	2	6	Giữ trước quãng bốn chung
+g3-n10-090	n10	47	fourth	S	RH	14	7	7	4	2	8	Hai nhịp bốn phách chung
+g3-n10-091	n10	58	fourth	S	LH	12	6	6	3	2	6	Hai nhịp dưới nhảy bốn
+g3-n10-092	n10	67	fourth	S	LH	12	6	6	3	2	6	Fa thấp về Đô chung
+g3-n10-093	n10	77	fourth	S	LH	10	5	5	3	2	6	Giữ cuối quãng bốn thấp
+g3-n10-094	n10	87	fourth	S	LH	10	5	5	3	2	6	Giữ trước quãng bốn thấp
+g3-n10-095	n10	97	fourth	S	LH	14	7	7	4	2	8	Hai nhịp trầm bốn phách
+g3-n10-096	n10	11	fifth	S	RH	12	6	6	3	2	6	Quãng năm qua hai nhịp
+g3-n10-097	n10	28	fifth	S	RH	10	5	5	3	2	6	Sol về Đô giữ chung
+g3-n10-098	n10	48	fifth	S	RH	14	7	7	4	2	8	Nhảy năm bốn phách chung
+g3-n10-099	n10	68	fifth	S	LH	12	6	6	3	2	6	Quãng năm thấp hai nhịp
+g3-n10-100	n10	88	fifth	S	LH	14	7	7	4	2	8	Nhảy năm trầm bốn phách
+g3-n20-001	n20	1	fourth	R	RH	19	15	4	4	4	16	Bốn ô cửa qua Fa
+g3-n20-002	n20	12	fourth	R	RH	18	14	4	4	4	16	Đô dài mở lời nhảy
+g3-n20-003	n20	19	fourth	R	RH	18	14	4	4	4	16	Giữ Mi sau quãng bốn
+g3-n20-004	n20	32	fourth	R	RH	19	15	4	4	4	16	Fa gọi từ ngoài hiên
+g3-n20-005	n20	24	fourth	R	RH	15	11	4	4	4	16	Quãng bốn trên nền Rê
+g3-n20-006	n20	37	fourth	R	RH	18	14	4	4	4	16	Khoảng nghỉ trong lời nhảy
+g3-n20-007	n20	44	fourth	R	RH	19	15	4	4	4	16	Nốt nhắc mở quãng bốn
+g3-n20-008	n20	52	fourth	R	RH	19	15	4	4	4	16	Mi dẫn tới Fa
+g3-n20-009	n20	59	fourth	R	RH	17	13	4	4	4	16	Lời giữ có tiếng gọi
+g3-n20-010	n20	70	fourth	R	RH	19	15	4	4	4	16	Rê tới Sol qua câu
+g3-n20-011	n20	64	fourth	R	RH	16	12	4	3	4	12	Ba phách bước qua Fa
+g3-n20-012	n20	79	fourth	R	RH	16	12	4	3	4	12	Fa về Đô nhịp ba
+g3-n20-013	n20	84	fourth	R	RH	15	11	4	3	4	12	Giữ trước quãng bốn ba
+g3-n20-014	n20	92	fourth	R	RH	16	12	4	3	4	12	Rê gọi Sol ba phách
+g3-n20-015	n20	98	fourth	R	RH	15	11	4	3	4	12	Nốt nhắc ở nhịp ba
+g3-n20-016	n20	2	fifth	R	RH	19	15	4	4	4	16	Đô gọi Sol qua bốn ô
+g3-n20-017	n20	16	fifth	R	RH	19	15	4	4	4	16	Sol về Đô mở câu
+g3-n20-018	n20	29	fifth	R	RH	17	13	4	4	4	16	Nốt dài trước quãng năm
+g3-n20-019	n20	38	fifth	R	RH	19	15	4	4	4	16	Quãng năm qua nốt Rê
+g3-n20-020	n20	50	fifth	R	RH	17	13	4	4	4	16	Giữ Fa sau quãng năm
+g3-n20-021	n20	61	fifth	R	RH	19	15	4	4	4	16	Nhắc Đô trước chuyến xa
+g3-n20-022	n20	71	fifth	R	RH	15	11	4	3	4	12	Quãng năm trong ba phách
+g3-n20-023	n20	82	fifth	R	RH	16	12	4	3	4	12	Sol gọi ba phách về
+g3-n20-024	n20	95	fifth	R	RH	15	11	4	3	4	12	Đô dài Sol ngắn nhịp ba
+g3-n20-025	n20	3	arpeggio	R	RH	18	14	4	4	4	16	Bốn ô rải hợp âm Đô
+g3-n20-026	n20	22	arpeggio	R	RH	19	15	4	4	4	16	Mi mở những tiếng rải
+g3-n20-027	n20	39	arpeggio	R	RH	19	15	4	4	4	16	Sol mở câu rải về
+g3-n20-028	n20	54	arpeggio	R	RH	18	14	4	4	4	16	Nốt dài trong mẫu rải
+g3-n20-029	n20	72	arpeggio	R	RH	15	11	4	3	4	12	Rải trong nhịp ba
+g3-n20-030	n20	89	arpeggio	R	RH	15	11	4	3	4	12	Sol rải ba phách về
+g3-n20-031	n20	13	fourth	L	LH	19	4	15	4	4	16	Bốn cửa trầm qua Fa
+g3-n20-032	n20	4	fourth	L	LH	18	4	14	4	4	16	Đô thấp dài mở lời
+g3-n20-033	n20	33	fourth	L	LH	18	4	14	4	4	16	Mi trầm giữ sau nhảy
+g3-n20-034	n20	20	fourth	L	LH	19	4	15	4	4	16	Fa trầm gọi ngoài hiên
+g3-n20-035	n20	40	fourth	L	LH	15	4	11	4	4	16	Quãng bốn thấp nền Rê
+g3-n20-036	n20	25	fourth	L	LH	18	4	14	4	4	16	Khoảng nghỉ lời trầm
+g3-n20-037	n20	53	fourth	L	LH	19	4	15	4	4	16	Nhắc thấp mở quãng bốn
+g3-n20-038	n20	45	fourth	L	LH	19	4	15	4	4	16	Mi trầm dẫn tới Fa
+g3-n20-039	n20	73	fourth	L	LH	17	4	13	4	4	16	Nốt trầm giữ tiếng gọi
+g3-n20-040	n20	60	fourth	L	LH	19	4	15	4	4	16	Rê trầm tới Sol
+g3-n20-041	n20	80	fourth	L	LH	16	4	12	3	4	12	Ba phách thấp qua Fa
+g3-n20-042	n20	65	fourth	L	LH	16	4	12	3	4	12	Fa thấp về Đô nhịp ba
+g3-n20-043	n20	93	fourth	L	LH	15	4	11	3	4	12	Giữ thấp trước nhảy bốn
+g3-n20-044	n20	85	fourth	L	LH	16	4	12	3	4	12	Rê trầm gọi ba phách
+g3-n20-045	n20	100	fourth	L	LH	15	4	11	3	4	12	Nhắc trầm trong nhịp ba
+g3-n20-046	n20	17	fifth	L	LH	19	4	15	4	4	16	Đô trầm Sol qua bốn ô
+g3-n20-047	n20	5	fifth	L	LH	19	4	15	4	4	16	Sol thấp về mở câu
+g3-n20-048	n20	41	fifth	L	LH	17	4	13	4	4	16	Nốt trầm dài trước năm
+g3-n20-049	n20	30	fifth	L	LH	19	4	15	4	4	16	Quãng năm trầm qua Rê
+g3-n20-050	n20	62	fifth	L	LH	17	4	13	4	4	16	Giữ Fa thấp sau nhảy
+g3-n20-051	n20	51	fifth	L	LH	19	4	15	4	4	16	Nhắc Đô trầm trước xa
+g3-n20-052	n20	83	fifth	L	LH	15	4	11	3	4	12	Quãng năm thấp nhịp ba
+g3-n20-053	n20	74	fifth	L	LH	16	4	12	3	4	12	Sol trầm gọi phách ba
+g3-n20-054	n20	99	fifth	L	LH	15	4	11	3	4	12	Đô trầm dài Sol ngắn
+g3-n20-055	n20	23	arpeggio	L	LH	18	4	14	4	4	16	Bốn ô rải trầm Đô
+g3-n20-056	n20	6	arpeggio	L	LH	19	4	15	4	4	16	Mi trầm mở tiếng rải
+g3-n20-057	n20	55	arpeggio	L	LH	19	4	15	4	4	16	Sol thấp mở câu rải
+g3-n20-058	n20	42	arpeggio	L	LH	18	4	14	4	4	16	Nốt trầm dài mẫu rải
+g3-n20-059	n20	90	arpeggio	L	LH	15	4	11	3	4	12	Rải trầm trong nhịp ba
+g3-n20-060	n20	75	arpeggio	L	LH	15	4	11	3	4	12	Sol rải thấp ba phách
+g3-n20-061	n20	7	fourth	A	RH	15	8	7	4	4	16	Hỏi quãng bốn đáp liền
+g3-n20-062	n20	14	fourth	A	RH	16	8	8	4	4	16	Fa gọi bước đều trả
+g3-n20-063	n20	26	fourth	A	RH	15	7	8	4	4	16	Rê Sol mở đối đáp
+g3-n20-064	n20	35	fourth	A	RH	18	9	9	3	6	18	Sáu lượt hỏi nhịp ba
+g3-n20-065	n20	46	fourth	A	RH	15	8	7	3	6	18	Giữ nốt hỏi ba phách
+g3-n20-066	n20	56	fourth	A	LH	15	7	8	4	4	16	Quãng bốn thấp hỏi đáp
+g3-n20-067	n20	66	fourth	A	LH	16	8	8	4	4	16	Fa trầm gọi bước đáp
+g3-n20-068	n20	76	fourth	A	LH	15	8	7	4	4	16	Rê Sol trầm đối đáp
+g3-n20-069	n20	86	fourth	A	LH	18	9	9	3	6	18	Sáu lượt trầm nhịp ba
+g3-n20-070	n20	96	fourth	A	LH	15	7	8	3	6	18	Giữ trầm hỏi ba phách
+g3-n20-071	n20	8	fifth	A	RH	15	7	8	4	4	16	Quãng năm hỏi bốn lượt
+g3-n20-072	n20	21	fifth	A	RH	15	8	7	4	4	16	Sol mở cuộc gọi về
+g3-n20-073	n20	34	fifth	A	RH	15	7	8	4	4	16	Giữ Đô gọi năm bậc
+g3-n20-074	n20	49	fifth	A	RH	15	9	6	3	6	18	Sáu lượt quãng năm
+g3-n20-075	n20	63	fifth	A	LH	15	8	7	4	4	16	Quãng năm thấp bốn lượt
+g3-n20-076	n20	78	fifth	A	LH	15	7	8	4	4	16	Sol trầm gọi trở về
+g3-n20-077	n20	91	fifth	A	LH	15	6	9	3	6	18	Sáu lượt quãng năm thấp
+g3-n20-078	n20	9	arpeggio	A	RH	15	7	8	4	4	16	Rải Đô hỏi bước đáp
+g3-n20-079	n20	18	arpeggio	A	RH	15	8	7	4	4	16	Sol rải trao lời
+g3-n20-080	n20	31	arpeggio	A	RH	16	8	8	4	4	16	Mi rải qua hai lượt
+g3-n20-081	n20	43	arpeggio	A	RH	15	9	6	3	6	18	Rải sáu lượt nhịp ba
+g3-n20-082	n20	57	arpeggio	A	LH	15	8	7	4	4	16	Rải trầm hỏi bước đáp
+g3-n20-083	n20	69	arpeggio	A	LH	15	7	8	4	4	16	Sol thấp rải trao lời
+g3-n20-084	n20	81	arpeggio	A	LH	16	8	8	4	4	16	Mi trầm qua hai lượt
+g3-n20-085	n20	94	arpeggio	A	LH	15	6	9	3	6	18	Rải trầm sáu lượt ba
+g3-n20-086	n20	10	fourth	S	RH	24	12	12	4	4	16	Quãng bốn cùng nhịp đầu
+g3-n20-087	n20	15	fourth	S	RH	24	12	12	4	4	16	Giữ rồi nhảy cùng tiếng
+g3-n20-088	n20	27	fourth	S	RH	24	12	12	4	4	16	Fa gọi trên nhịp chung
+g3-n20-089	n20	36	fourth	S	RH	20	10	10	3	4	12	Nhịp ba trên nhảy bốn
+g3-n20-090	n20	47	fourth	S	RH	18	9	9	3	4	12	Giữ đầu chung ba phách
+g3-n20-091	n20	58	fourth	S	LH	24	12	12	4	4	16	Quãng bốn trầm cùng nhịp
+g3-n20-092	n20	67	fourth	S	LH	24	12	12	4	4	16	Giữ thấp nhảy cùng tiếng
+g3-n20-093	n20	77	fourth	S	LH	24	12	12	4	4	16	Fa thấp gọi nhịp chung
+g3-n20-094	n20	87	fourth	S	LH	20	10	10	3	4	12	Nhịp ba dưới nhảy bốn
+g3-n20-095	n20	97	fourth	S	LH	18	9	9	3	4	12	Giữ trầm chung ba phách
+g3-n20-096	n20	11	fifth	S	RH	24	12	12	4	4	16	Quãng năm trên nhịp chung
+g3-n20-097	n20	28	fifth	S	RH	24	12	12	4	4	16	Sol dài trên nhịp chung
+g3-n20-098	n20	48	fifth	S	RH	22	11	11	3	4	12	Quãng năm chung ba phách
+g3-n20-099	n20	68	fifth	S	LH	24	12	12	4	4	16	Quãng năm dưới nhịp chung
+g3-n20-100	n20	88	fifth	S	LH	22	11	11	3	4	12	Quãng năm thấp chung ba
+g3-n30-001	n30	1	fourth	R	RH	32	24	8	4	8	32	Qua Fa rồi lắng xuống
+g3-n30-002	n30	12	fourth	R	RH	30	22	8	4	8	32	Đô dài và câu đáp thưa
+g3-n30-003	n30	19	fourth	R	RH	30	22	8	4	8	32	Giữ Mi mở khoảng thở
+g3-n30-004	n30	32	fourth	R	RH	31	23	8	4	8	32	Fa gọi rồi nốt giữ
+g3-n30-005	n30	24	fourth	R	RH	26	18	8	4	8	32	Nền Rê khép chậm
+g3-n30-006	n30	37	fourth	R	RH	34	26	8	4	8	32	Nghỉ nhẹ qua nền đổi
+g3-n30-007	n30	44	fourth	R	RH	36	28	8	4	8	32	Nhắc đầu giữ cuối
+g3-n30-008	n30	52	fourth	R	RH	31	23	8	4	8	32	Mi dẫn Fa rồi về
+g3-n30-009	n30	59	fourth	R	RH	30	22	8	4	8	32	Hai lời giữ qua Fa
+g3-n30-010	n30	70	fourth	R	RH	31	23	8	4	8	32	Rê Sol và khoảng yên
+g3-n30-011	n30	64	fourth	R	RH	31	23	8	3	8	24	Hai câu ba phách qua Fa
+g3-n30-012	n30	79	fourth	R	RH	31	23	8	3	8	24	Fa về Đô nhắc lời
+g3-n30-013	n30	84	fourth	R	RH	31	23	8	3	8	24	Giữ rồi gọi Sol nhịp ba
+g3-n30-014	n30	92	fourth	R	RH	32	24	8	3	8	24	Rê gọi Sol vòng lại
+g3-n30-015	n30	98	fourth	R	RH	31	23	8	3	8	24	Nhắc trước lời Fa
+g3-n30-016	n30	2	fifth	R	RH	31	23	8	4	8	32	Quãng năm và nốt yên
+g3-n30-017	n30	16	fifth	R	RH	32	24	8	4	8	32	Sol gọi về Đô giữ
+g3-n30-018	n30	29	fifth	R	RH	28	20	8	4	8	32	Nhảy xa khép thưa
+g3-n30-019	n30	38	fifth	R	RH	30	22	8	4	8	32	Nốt Rê giữa hai lời
+g3-n30-020	n30	50	fifth	R	RH	31	23	8	4	8	32	Giữ Fa về Đô
+g3-n30-021	n30	61	fifth	R	RH	36	28	8	4	8	32	Nhắc Đô rồi ngắt nhẹ
+g3-n30-022	n30	71	fifth	R	RH	26	18	8	3	8	24	Quãng năm ba phách lắng
+g3-n30-023	n30	82	fifth	R	RH	31	23	8	3	8	24	Sol và Đô dài đối lời
+g3-n30-024	n30	95	fifth	R	RH	31	23	8	3	8	24	Đô dài gọi lại Sol
+g3-n30-025	n30	3	arpeggio	R	RH	30	22	8	4	8	32	Rải Đô rồi thưa tiếng
+g3-n30-026	n30	22	arpeggio	R	RH	31	23	8	4	8	32	Mi rải nghe nốt yên
+g3-n30-027	n30	39	arpeggio	R	RH	30	22	8	4	8	32	Sol rải giữ câu cuối
+g3-n30-028	n30	54	arpeggio	R	RH	29	21	8	4	8	32	Rải dài có câu trả
+g3-n30-029	n30	72	arpeggio	R	RH	30	22	8	3	8	24	Hai lời rải ba phách
+g3-n30-030	n30	89	arpeggio	R	RH	31	23	8	3	8	24	Sol rải Mi trả lời
+g3-n30-031	n30	13	fourth	L	LH	32	8	24	4	8	32	Qua Fa trầm rồi lắng
+g3-n30-032	n30	4	fourth	L	LH	30	8	22	4	8	32	Đô trầm dài câu thưa
+g3-n30-033	n30	33	fourth	L	LH	30	8	22	4	8	32	Mi trầm mở khoảng thở
+g3-n30-034	n30	20	fourth	L	LH	31	8	23	4	8	32	Fa trầm gọi nốt giữ
+g3-n30-035	n30	40	fourth	L	LH	26	8	18	4	8	32	Nền cao Rê khép thấp
+g3-n30-036	n30	25	fourth	L	LH	34	8	26	4	8	32	Trầm nghỉ qua nền đổi
+g3-n30-037	n30	53	fourth	L	LH	36	8	28	4	8	32	Trầm nhắc đầu giữ cuối
+g3-n30-038	n30	45	fourth	L	LH	31	8	23	4	8	32	Mi trầm dẫn Fa về
+g3-n30-039	n30	73	fourth	L	LH	30	8	22	4	8	32	Hai lời trầm qua Fa
+g3-n30-040	n30	60	fourth	L	LH	31	8	23	4	8	32	Rê Sol trầm khoảng yên
+g3-n30-041	n30	80	fourth	L	LH	31	8	23	3	8	24	Hai câu thấp ba phách
+g3-n30-042	n30	65	fourth	L	LH	31	8	23	3	8	24	Fa trầm về nhắc Đô
+g3-n30-043	n30	93	fourth	L	LH	31	8	23	3	8	24	Giữ trầm gọi Sol
+g3-n30-044	n30	85	fourth	L	LH	32	8	24	3	8	24	Rê thấp gọi vòng lại
+g3-n30-045	n30	100	fourth	L	LH	31	8	23	3	8	24	Nhắc thấp trước lời Fa
+g3-n30-046	n30	17	fifth	L	LH	31	8	23	4	8	32	Quãng năm trầm nốt yên
+g3-n30-047	n30	5	fifth	L	LH	32	8	24	4	8	32	Sol trầm gọi Đô giữ
+g3-n30-048	n30	41	fifth	L	LH	28	8	20	4	8	32	Nhảy trầm xa khép thưa
+g3-n30-049	n30	30	fifth	L	LH	30	8	22	4	8	32	Rê trầm giữa hai lời
+g3-n30-050	n30	62	fifth	L	LH	31	8	23	4	8	32	Giữ Fa thấp về Đô
+g3-n30-051	n30	51	fifth	L	LH	36	8	28	4	8	32	Nhắc trầm ngắt nhẹ
+g3-n30-052	n30	83	fifth	L	LH	26	8	18	3	8	24	Quãng năm thấp ba phách
+g3-n30-053	n30	74	fifth	L	LH	31	8	23	3	8	24	Sol Đô trầm đối lời
+g3-n30-054	n30	99	fifth	L	LH	31	8	23	3	8	24	Đô thấp dài gọi Sol
+g3-n30-055	n30	23	arpeggio	L	LH	30	8	22	4	8	32	Rải trầm rồi thưa tiếng
+g3-n30-056	n30	6	arpeggio	L	LH	31	8	23	4	8	32	Mi trầm rải nghe yên
+g3-n30-057	n30	55	arpeggio	L	LH	30	8	22	4	8	32	Sol thấp rải giữ cuối
+g3-n30-058	n30	42	arpeggio	L	LH	29	8	21	4	8	32	Rải trầm dài câu trả
+g3-n30-059	n30	90	arpeggio	L	LH	30	8	22	3	8	24	Hai lời trầm rải ba
+g3-n30-060	n30	75	arpeggio	L	LH	31	8	23	3	8	24	Sol trầm rải Mi đáp
+g3-n30-061	n30	7	fourth	A	RH	30	15	15	4	8	32	Hai cuộc gọi qua Fa
+g3-n30-062	n30	14	fourth	A	RH	31	15	16	4	8	32	Fa gọi nốt dài trả
+g3-n30-063	n30	26	fourth	A	RH	30	15	15	4	8	32	Rê Sol gọi tiếng nhắc
+g3-n30-064	n30	35	fourth	A	RH	33	17	16	3	12	36	Hai chuyện hỏi nhịp ba
+g3-n30-065	n30	46	fourth	A	RH	30	17	13	3	12	36	Giữ trước đổi lời gọi
+g3-n30-066	n30	56	fourth	A	LH	30	15	15	4	8	32	Hai cuộc gọi trầm Fa
+g3-n30-067	n30	66	fourth	A	LH	31	16	15	4	8	32	Fa trầm gọi giữ đáp
+g3-n30-068	n30	76	fourth	A	LH	30	15	15	4	8	32	Rê Sol thấp gọi nhắc
+g3-n30-069	n30	86	fourth	A	LH	33	16	17	3	12	36	Hai chuyện trầm nhịp ba
+g3-n30-070	n30	96	fourth	A	LH	30	13	17	3	12	36	Giữ thấp đổi lời gọi
+g3-n30-071	n30	8	fifth	A	RH	30	14	16	4	8	32	Quãng năm gọi hai chuyện
+g3-n30-072	n30	21	fifth	A	RH	31	16	15	4	8	32	Sol mở rồi đổi câu
+g3-n30-073	n30	34	fifth	A	RH	30	14	16	4	8	32	Đô dài và tiếng gọi
+g3-n30-074	n30	49	fifth	A	RH	32	17	15	3	12	36	Hai chuyện năm ba phách
+g3-n30-075	n30	63	fifth	A	LH	31	16	15	4	8	32	Quãng năm trầm hai chuyện
+g3-n30-076	n30	78	fifth	A	LH	30	15	15	4	8	32	Sol thấp gọi về
+g3-n30-077	n30	91	fifth	A	LH	32	15	17	3	12	36	Hai chuyện năm trầm ba
+g3-n30-078	n30	9	arpeggio	A	RH	31	15	16	4	8	32	Hai chuyện rải Đô
+g3-n30-079	n30	18	arpeggio	A	RH	30	15	15	4	8	32	Sol rải Đô dài đáp
+g3-n30-080	n30	31	arpeggio	A	RH	31	15	16	4	8	32	Mi rải chuyển lời
+g3-n30-081	n30	43	arpeggio	A	RH	32	17	15	3	12	36	Hai chuyện rải nhịp ba
+g3-n30-082	n30	57	arpeggio	A	LH	31	16	15	4	8	32	Hai chuyện rải Đô trầm
+g3-n30-083	n30	69	arpeggio	A	LH	30	15	15	4	8	32	Sol thấp rải giữ đáp
+g3-n30-084	n30	81	arpeggio	A	LH	31	16	15	4	8	32	Mi thấp rải đổi lời
+g3-n30-085	n30	94	arpeggio	A	LH	32	15	17	3	12	36	Hai chuyện rải trầm ba
+g3-n30-086	n30	10	fourth	S	RH	38	19	19	4	8	32	Quãng bốn chung rồi thưa
+g3-n30-087	n30	15	fourth	S	RH	36	18	18	4	8	32	Giữ nhảy chung rồi yên
+g3-n30-088	n30	27	fourth	S	RH	36	18	18	4	8	32	Fa cùng tiếng nốt chờ
+g3-n30-089	n30	36	fourth	S	RH	38	19	19	3	8	24	Nhịp ba đổi lời Fa
+g3-n30-090	n30	47	fourth	S	RH	38	19	19	3	8	24	Giữ đầu nhắc nhịp chung
+g3-n30-091	n30	58	fourth	S	LH	38	19	19	4	8	32	Quãng bốn trầm rồi thưa
+g3-n30-092	n30	67	fourth	S	LH	36	18	18	4	8	32	Giữ trầm rồi yên chung
+g3-n30-093	n30	77	fourth	S	LH	36	18	18	4	8	32	Fa trầm cùng nốt chờ
+g3-n30-094	n30	87	fourth	S	LH	38	19	19	3	8	24	Nhịp ba đổi lời trầm
+g3-n30-095	n30	97	fourth	S	LH	38	19	19	3	8	24	Giữ trầm nhắc nhịp chung
+g3-n30-096	n30	11	fifth	S	RH	38	19	19	4	8	32	Quãng năm chung rồi yên
+g3-n30-097	n30	28	fifth	S	RH	38	19	19	4	8	32	Sol dài trên câu chờ
+g3-n30-098	n30	48	fifth	S	RH	36	18	18	3	8	24	Năm bậc ba phách lắng
+g3-n30-099	n30	68	fifth	S	LH	38	19	19	4	8	32	Quãng năm thấp rồi yên
+g3-n30-100	n30	88	fifth	S	LH	36	18	18	3	8	24	Năm bậc trầm ba phách
+g3-n50-001	n50	1	fourth	R	RH	52	40	12	4	12	48	Ba cửa sổ đi qua Fa
+g3-n50-002	n50	12	fourth	R	RH	49	37	12	4	12	48	Đô dài nhắc lời rồi lắng
+g3-n50-003	n50	19	fourth	R	RH	53	41	12	4	12	48	Mi giữ qua ba câu
+g3-n50-004	n50	24	fourth	R	RH	57	43	14	4	12	48	Fa gọi nhịp nền thay
+g3-n50-005	n50	32	fourth	R	RH	40	28	12	4	12	48	Từ nốt giữ thành lời
+g3-n50-006	n50	37	fourth	R	RH	49	37	12	4	12	48	Nghỉ một phách qua Rê
+g3-n50-007	n50	44	fourth	R	RH	51	39	12	4	12	48	Nốt nhắc dẫn đường vòng
+g3-n50-008	n50	52	fourth	R	RH	54	42	12	4	12	48	Mi qua Fa trên nền đổi
+g3-n50-009	n50	59	fourth	R	RH	47	35	12	4	12	48	Hai lời giữ một lời bước
+g3-n50-010	n50	64	fourth	R	RH	53	41	12	4	12	48	Rê Sol gọi Fa trả
+g3-n50-011	n50	70	fourth	R	RH	46	34	12	3	12	36	Ba câu quãng bốn nhịp ba
+g3-n50-012	n50	79	fourth	R	RH	48	36	12	3	12	36	Fa dẫn qua Sol về
+g3-n50-013	n50	84	fourth	R	RH	46	34	12	3	12	36	Giữ rồi nhắc ba phách
+g3-n50-014	n50	92	fourth	R	RH	47	35	12	3	12	36	Rê gọi hai đường Fa
+g3-n50-015	n50	99	fourth	R	RH	47	35	12	3	12	36	Nhắc Đô trước ba lời
+g3-n50-016	n50	2	fifth	R	RH	69	45	24	4	12	48	Ba câu năm bậc rõ phách
+g3-n50-017	n50	16	fifth	R	RH	50	38	12	4	12	48	Sol qua Rê về nốt giữ
+g3-n50-018	n50	29	fifth	R	RH	47	35	12	4	12	48	Đô dài tìm đường về
+g3-n50-019	n50	38	fifth	R	RH	50	38	12	4	12	48	Rê giữa câu nhảy xa
+g3-n50-020	n50	50	fifth	R	RH	45	33	12	4	12	48	Fa giữ và phách nghỉ
+g3-n50-021	n50	61	fifth	R	RH	53	37	16	4	12	48	Nhắc Đô qua nền nhắc
+g3-n50-022	n50	71	fifth	R	RH	41	29	12	3	12	36	Ba lời năm bậc ba phách
+g3-n50-023	n50	82	fifth	R	RH	47	35	12	3	12	36	Sol về Đô qua ba câu
+g3-n50-024	n50	95	fifth	R	RH	47	35	12	3	12	36	Đô dài gọi Sol trở lại
+g3-n50-025	n50	3	arpeggio	R	RH	54	42	12	4	12	48	Ba đoạn rải hợp âm Đô
+g3-n50-026	n50	22	arpeggio	R	RH	49	37	12	4	12	48	Mi rải qua nốt giữ
+g3-n50-027	n50	39	arpeggio	R	RH	48	36	12	4	12	48	Sol rải nghỉ rồi về
+g3-n50-028	n50	54	arpeggio	R	RH	48	36	12	4	12	48	Đô dài rải Mi đáp
+g3-n50-029	n50	72	arpeggio	R	RH	46	34	12	3	12	36	Ba lời rải nhịp ba
+g3-n50-030	n50	89	arpeggio	R	RH	46	34	12	3	12	36	Sol rải đổi thứ tự câu
+g3-n50-031	n50	4	fourth	L	LH	52	12	40	4	12	48	Ba cửa trầm qua Fa
+g3-n50-032	n50	13	fourth	L	LH	49	12	37	4	12	48	Đô thấp dài lắng rồi nhắc
+g3-n50-033	n50	20	fourth	L	LH	53	12	41	4	12	48	Mi trầm qua ba câu giữ
+g3-n50-034	n50	25	fourth	L	LH	57	14	43	4	12	48	Fa thấp nhịp nền thay
+g3-n50-035	n50	33	fourth	L	LH	40	12	28	4	12	48	Từ trầm giữ thành lời
+g3-n50-036	n50	40	fourth	L	LH	49	12	37	4	12	48	Trầm nghỉ qua nền Rê
+g3-n50-037	n50	45	fourth	L	LH	51	12	39	4	12	48	Nhắc thấp dẫn vòng về
+g3-n50-038	n50	53	fourth	L	LH	54	12	42	4	12	48	Mi trầm Fa nền đổi
+g3-n50-039	n50	60	fourth	L	LH	47	12	35	4	12	48	Hai lời thấp một lời bước
+g3-n50-040	n50	65	fourth	L	LH	53	12	41	4	12	48	Rê Sol thấp gọi Fa
+g3-n50-041	n50	73	fourth	L	LH	46	12	34	3	12	36	Ba câu thấp bốn nhịp ba
+g3-n50-042	n50	80	fourth	L	LH	48	12	36	3	12	36	Fa thấp qua Sol về
+g3-n50-043	n50	85	fourth	L	LH	46	12	34	3	12	36	Giữ thấp nhắc ba phách
+g3-n50-044	n50	93	fourth	L	LH	47	12	35	3	12	36	Rê trầm hai đường Fa
+g3-n50-045	n50	100	fourth	L	LH	47	12	35	3	12	36	Nhắc Đô thấp ba lời
+g3-n50-046	n50	5	fifth	L	LH	69	24	45	4	12	48	Ba câu trầm năm bậc
+g3-n50-047	n50	17	fifth	L	LH	50	12	38	4	12	48	Sol thấp qua Rê giữ
+g3-n50-048	n50	30	fifth	L	LH	47	12	35	4	12	48	Đô thấp dài tìm về
+g3-n50-049	n50	41	fifth	L	LH	50	12	38	4	12	48	Rê trầm giữa câu xa
+g3-n50-050	n50	51	fifth	L	LH	45	12	33	4	12	48	Fa trầm giữ nghỉ phách
+g3-n50-051	n50	62	fifth	L	LH	53	16	37	4	12	48	Nhắc thấp qua nền nhắc
+g3-n50-052	n50	74	fifth	L	LH	41	12	29	3	12	36	Ba lời thấp năm ba phách
+g3-n50-053	n50	83	fifth	L	LH	47	12	35	3	12	36	Sol thấp Đô ba câu
+g3-n50-054	n50	96	fifth	L	LH	47	12	35	3	12	36	Đô trầm dài gọi Sol
+g3-n50-055	n50	6	arpeggio	L	LH	54	12	42	4	12	48	Ba đoạn rải Đô trầm
+g3-n50-056	n50	23	arpeggio	L	LH	49	12	37	4	12	48	Mi thấp rải nốt giữ
+g3-n50-057	n50	42	arpeggio	L	LH	48	12	36	4	12	48	Sol trầm rải rồi nghỉ
+g3-n50-058	n50	55	arpeggio	L	LH	48	12	36	4	12	48	Đô dài thấp Mi đáp
+g3-n50-059	n50	75	arpeggio	L	LH	46	12	34	3	12	36	Ba lời rải trầm ba
+g3-n50-060	n50	90	arpeggio	L	LH	46	12	34	3	12	36	Sol thấp rải đổi câu
+g3-n50-061	n50	7	fourth	A	RH	45	23	22	4	12	48	Ba cuộc gọi qua quãng bốn
+g3-n50-062	n50	14	fourth	A	RH	46	23	23	4	12	48	Fa gọi giữ câu trả
+g3-n50-063	n50	26	fourth	A	RH	46	22	24	4	12	48	Rê Sol đổi lời gọi
+g3-n50-064	n50	35	fourth	A	RH	48	26	22	3	18	54	Ba chuyện hỏi ba phách
+g3-n50-065	n50	46	fourth	A	RH	48	26	22	3	18	54	Giữ đầu đổi thứ tự lời
+g3-n50-066	n50	56	fourth	A	LH	45	22	23	4	12	48	Ba cuộc gọi trầm bốn
+g3-n50-067	n50	66	fourth	A	LH	46	23	23	4	12	48	Fa thấp gọi giữ trả
+g3-n50-068	n50	76	fourth	A	LH	46	24	22	4	12	48	Rê Sol trầm đổi lời
+g3-n50-069	n50	86	fourth	A	LH	48	22	26	3	18	54	Ba chuyện thấp ba phách
+g3-n50-070	n50	97	fourth	A	LH	48	22	26	3	18	54	Giữ thấp đổi thứ tự
+g3-n50-071	n50	8	fifth	A	RH	46	22	24	4	12	48	Ba lời năm bậc hỏi đáp
+g3-n50-072	n50	21	fifth	A	RH	46	23	23	4	12	48	Sol gọi Rê bước trả
+g3-n50-073	n50	34	fifth	A	RH	46	23	23	4	12	48	Đô dài và hai lời
+g3-n50-074	n50	49	fifth	A	RH	47	26	21	3	18	54	Ba chuyện năm ba phách
+g3-n50-075	n50	63	fifth	A	LH	46	23	23	4	12	48	Ba lời trầm năm hỏi
+g3-n50-076	n50	78	fifth	A	LH	46	23	23	4	12	48	Sol thấp gọi bước trả
+g3-n50-077	n50	91	fifth	A	LH	47	21	26	3	18	54	Ba chuyện năm thấp ba
+g3-n50-078	n50	9	arpeggio	A	RH	46	22	24	4	12	48	Ba cuộc gọi rải Đô
+g3-n50-079	n50	18	arpeggio	A	RH	45	22	23	4	12	48	Sol rải hai lời trả
+g3-n50-080	n50	31	arpeggio	A	RH	46	22	24	4	12	48	Mi rải giữ cuối chuyện
+g3-n50-081	n50	43	arpeggio	A	RH	47	26	21	3	18	54	Ba chuyện rải ba phách
+g3-n50-082	n50	57	arpeggio	A	LH	46	24	22	4	12	48	Ba cuộc gọi rải trầm
+g3-n50-083	n50	69	arpeggio	A	LH	45	23	22	4	12	48	Sol trầm rải hai đáp
+g3-n50-084	n50	81	arpeggio	A	LH	46	24	22	4	12	48	Mi thấp rải giữ cuối
+g3-n50-085	n50	94	arpeggio	A	LH	47	21	26	3	18	54	Ba chuyện rải thấp ba
+g3-n50-086	n50	10	fourth	S	RH	64	32	32	4	12	48	Ba câu quãng bốn chung
+g3-n50-087	n50	15	fourth	S	RH	68	34	34	4	12	48	Giữ nhảy chung ba đoạn
+g3-n50-088	n50	27	fourth	S	RH	62	31	31	4	12	48	Fa trên nhịp chung lắng
+g3-n50-089	n50	36	fourth	S	RH	60	30	30	3	12	36	Ba lời Fa chung ba phách
+g3-n50-090	n50	47	fourth	S	RH	58	29	29	3	12	36	Giữ đầu ba lời chung
+g3-n50-091	n50	58	fourth	S	LH	64	32	32	4	12	48	Ba câu bốn trầm chung
+g3-n50-092	n50	67	fourth	S	LH	68	34	34	4	12	48	Giữ trầm nhảy ba đoạn
+g3-n50-093	n50	77	fourth	S	LH	62	31	31	4	12	48	Fa thấp nhịp chung lắng
+g3-n50-094	n50	87	fourth	S	LH	60	30	30	3	12	36	Ba lời thấp chung ba
+g3-n50-095	n50	98	fourth	S	LH	58	29	29	3	12	36	Giữ trầm ba lời chung
+g3-n50-096	n50	11	fifth	S	RH	66	33	33	4	12	48	Ba câu quãng năm chung
+g3-n50-097	n50	28	fifth	S	RH	62	31	31	4	12	48	Sol dài nhắc lời chung
+g3-n50-098	n50	48	fifth	S	RH	56	28	28	3	12	36	Ba lời năm chung ba phách
+g3-n50-099	n50	68	fifth	S	LH	66	33	33	4	12	48	Ba câu năm trầm chung
+g3-n50-100	n50	88	fifth	S	LH	56	28	28	3	12	36	Ba lời thấp năm chung
+g3-n100-001	n100	1	fourth	R	RH	91	69	22	4	20	80	Một ngày qua năm cửa Fa
+g3-n100-002	n100	12	fourth	R	RH	86	66	20	4	20	80	Đô dài và đường quay lại
+g3-n100-003	n100	19	fourth	R	RH	86	66	20	4	20	80	Mi giữ chuyện qua năm đoạn
+g3-n100-004	n100	24	fourth	R	RH	91	69	22	4	20	80	Fa gọi trong khu vườn nhịp
+g3-n100-005	n100	32	fourth	R	RH	70	50	20	4	20	80	Từ nốt yên thành lời Fa
+g3-n100-006	n100	37	fourth	R	RH	86	66	20	4	20	80	Nghỉ nhẹ theo nền Rê
+g3-n100-007	n100	44	fourth	R	RH	86	66	20	4	20	80	Nốt nhắc đi qua hai ngõ
+g3-n100-008	n100	52	fourth	R	RH	88	68	20	4	20	80	Mi dẫn Fa về nốt chủ
+g3-n100-009	n100	59	fourth	R	RH	89	67	22	4	20	80	Rê Sol gọi bốn lời tiếp
+g3-n100-010	n100	64	fourth	R	RH	89	69	20	4	20	80	Nền thay qua năm câu nhảy
+g3-n100-011	n100	70	fourth	R	RH	78	58	20	3	20	60	Năm vòng ba phách qua Fa
+g3-n100-012	n100	79	fourth	R	RH	78	58	20	3	20	60	Fa về Đô khúc nhịp ba
+g3-n100-013	n100	84	fourth	R	RH	78	58	20	3	20	60	Giữ rồi gọi trong năm câu
+g3-n100-014	n100	92	fourth	R	RH	79	59	20	3	20	60	Rê tới Sol tìm lối lại
+g3-n100-015	n100	99	fourth	R	RH	78	58	20	3	20	60	Đô nhắc năm lời ba phách
+g3-n100-016	n100	2	fifth	R	RH	105	73	32	4	20	80	Năm bậc qua những tiếng nền
+g3-n100-017	n100	16	fifth	R	RH	88	64	24	4	20	80	Sol gọi Đô giữ chuyện xa
+g3-n100-018	n100	29	fifth	R	RH	85	65	20	4	20	80	Đô dài mở năm lời mới
+g3-n100-019	n100	38	fifth	R	RH	87	67	20	4	20	80	Rê giữa chuyến đi quãng năm
+g3-n100-020	n100	50	fifth	R	RH	85	61	24	4	20	80	Fa giữ nghe một phách nghỉ
+g3-n100-021	n100	61	fifth	R	RH	98	70	28	4	20	80	Đô nhắc Sol gọi về Đô
+g3-n100-022	n100	71	fifth	R	RH	72	52	20	3	20	60	Năm câu năm bậc ba phách
+g3-n100-023	n100	82	fifth	R	RH	78	58	20	3	20	60	Sol về Đô giữa vòng ba
+g3-n100-024	n100	95	fifth	R	RH	73	53	20	3	20	60	Đô dài tìm Sol rồi về
+g3-n100-025	n100	3	arpeggio	R	RH	90	70	20	4	20	80	Năm cảnh rải hợp âm Đô
+g3-n100-026	n100	22	arpeggio	R	RH	84	64	20	4	20	80	Mi rải chuyện qua nốt giữ
+g3-n100-027	n100	39	arpeggio	R	RH	85	65	20	4	20	80	Sol rải qua khoảng nghỉ
+g3-n100-028	n100	54	arpeggio	R	RH	84	64	20	4	20	80	Đô dài và những lời Mi
+g3-n100-029	n100	72	arpeggio	R	RH	77	57	20	3	20	60	Năm vòng rải trong nhịp ba
+g3-n100-030	n100	89	arpeggio	R	RH	76	56	20	3	20	60	Sol rải Đô trả Mi kể
+g3-n100-031	n100	4	fourth	L	LH	91	22	69	4	20	80	Ngày trầm qua năm cửa Fa
+g3-n100-032	n100	13	fourth	L	LH	86	20	66	4	20	80	Đô thấp dài đường quay lại
+g3-n100-033	n100	20	fourth	L	LH	86	20	66	4	20	80	Mi trầm giữ năm lời kể
+g3-n100-034	n100	25	fourth	L	LH	91	22	69	4	20	80	Fa thấp gọi vườn nhịp
+g3-n100-035	n100	33	fourth	L	LH	70	20	50	4	20	80	Từ trầm yên thành lời
+g3-n100-036	n100	40	fourth	L	LH	86	20	66	4	20	80	Trầm nghỉ theo nền cao Rê
+g3-n100-037	n100	45	fourth	L	LH	86	20	66	4	20	80	Nốt thấp nhắc qua hai ngõ
+g3-n100-038	n100	53	fourth	L	LH	88	20	68	4	20	80	Mi trầm dẫn Fa về Đô
+g3-n100-039	n100	60	fourth	L	LH	89	22	67	4	20	80	Rê Sol thấp bốn lời tiếp
+g3-n100-040	n100	65	fourth	L	LH	89	20	69	4	20	80	Nền cao đổi câu nhảy thấp
+g3-n100-041	n100	73	fourth	L	LH	78	20	58	3	20	60	Năm vòng trầm ba phách
+g3-n100-042	n100	80	fourth	L	LH	78	20	58	3	20	60	Fa thấp về khúc nhịp ba
+g3-n100-043	n100	85	fourth	L	LH	78	20	58	3	20	60	Giữ thấp gọi năm câu
+g3-n100-044	n100	93	fourth	L	LH	79	20	59	3	20	60	Rê trầm Sol lối trở lại
+g3-n100-045	n100	100	fourth	L	LH	78	20	58	3	20	60	Đô thấp nhắc năm lời
+g3-n100-046	n100	5	fifth	L	LH	105	32	73	4	20	80	Năm bậc trầm theo nền cao
+g3-n100-047	n100	17	fifth	L	LH	88	24	64	4	20	80	Sol trầm gọi Đô giữ xa
+g3-n100-048	n100	30	fifth	L	LH	85	20	65	4	20	80	Đô thấp dài năm lời mới
+g3-n100-049	n100	41	fifth	L	LH	87	20	67	4	20	80	Rê trầm giữa chuyến đi
+g3-n100-050	n100	51	fifth	L	LH	85	24	61	4	20	80	Fa thấp giữ phách nghỉ
+g3-n100-051	n100	62	fifth	L	LH	98	28	70	4	20	80	Đô thấp nhắc Sol gọi
+g3-n100-052	n100	74	fifth	L	LH	72	20	52	3	20	60	Năm câu trầm năm nhịp ba
+g3-n100-053	n100	83	fifth	L	LH	78	20	58	3	20	60	Sol thấp về vòng ba
+g3-n100-054	n100	96	fifth	L	LH	73	20	53	3	20	60	Đô trầm dài tìm Sol
+g3-n100-055	n100	6	arpeggio	L	LH	90	20	70	4	20	80	Năm cảnh rải Đô trầm
+g3-n100-056	n100	23	arpeggio	L	LH	84	20	64	4	20	80	Mi trầm rải chuyện giữ
+g3-n100-057	n100	42	arpeggio	L	LH	85	20	65	4	20	80	Sol thấp rải qua nghỉ
+g3-n100-058	n100	55	arpeggio	L	LH	84	20	64	4	20	80	Đô thấp dài lời Mi
+g3-n100-059	n100	75	arpeggio	L	LH	77	20	57	3	20	60	Năm vòng rải trầm ba
+g3-n100-060	n100	90	arpeggio	L	LH	76	20	56	3	20	60	Sol thấp rải Mi kể
+g3-n100-061	n100	7	fourth	A	RH	76	38	38	4	20	80	Năm cuộc gọi qua quãng bốn
+g3-n100-062	n100	14	fourth	A	RH	76	38	38	4	20	80	Fa gọi đổi năm câu đáp
+g3-n100-063	n100	26	fourth	A	RH	76	38	38	4	20	80	Rê Sol hỏi qua cửa sổ
+g3-n100-064	n100	35	fourth	A	RH	81	43	38	3	30	90	Năm chuyện hỏi nhịp ba
+g3-n100-065	n100	46	fourth	A	RH	78	43	35	3	30	90	Giữ đầu câu đổi lời kể
+g3-n100-066	n100	56	fourth	A	LH	76	38	38	4	20	80	Năm cuộc gọi trầm bốn
+g3-n100-067	n100	66	fourth	A	LH	76	38	38	4	20	80	Fa thấp gọi năm câu đáp
+g3-n100-068	n100	76	fourth	A	LH	76	38	38	4	20	80	Rê Sol trầm qua cửa
+g3-n100-069	n100	86	fourth	A	LH	81	37	44	3	30	90	Năm chuyện trầm nhịp ba
+g3-n100-070	n100	97	fourth	A	LH	81	38	43	3	30	90	Giữ trầm đổi lời kể
+g3-n100-071	n100	8	fifth	A	RH	76	37	39	4	20	80	Năm lời hỏi cách năm bậc
+g3-n100-072	n100	21	fifth	A	RH	76	38	38	4	20	80	Sol mở năm cuộc gọi
+g3-n100-073	n100	34	fifth	A	RH	76	37	39	4	20	80	Đô dài hỏi xa rồi về
+g3-n100-074	n100	49	fifth	A	RH	79	43	36	3	30	90	Năm chuyện năm nhịp ba
+g3-n100-075	n100	63	fifth	A	LH	77	39	38	4	20	80	Năm lời trầm hỏi xa
+g3-n100-076	n100	78	fifth	A	LH	76	38	38	4	20	80	Sol thấp mở năm cuộc gọi
+g3-n100-077	n100	91	fifth	A	LH	77	33	44	3	30	90	Năm chuyện năm thấp ba
+g3-n100-078	n100	9	arpeggio	A	RH	76	37	39	4	20	80	Năm cuộc gọi rải Đô
+g3-n100-079	n100	18	arpeggio	A	RH	76	38	38	4	20	80	Sol rải những lời trả
+g3-n100-080	n100	31	arpeggio	A	RH	77	38	39	4	20	80	Mi rải qua năm chuyện
+g3-n100-081	n100	43	arpeggio	A	RH	79	43	36	3	30	90	Năm chuyện rải ba phách
+g3-n100-082	n100	57	arpeggio	A	LH	76	39	37	4	20	80	Năm cuộc gọi rải trầm
+g3-n100-083	n100	69	arpeggio	A	LH	76	38	38	4	20	80	Sol thấp rải năm đáp
+g3-n100-084	n100	81	arpeggio	A	LH	77	39	38	4	20	80	Mi trầm rải năm chuyện
+g3-n100-085	n100	94	arpeggio	A	LH	77	33	44	3	30	90	Năm chuyện rải thấp ba
+g3-n100-086	n100	10	fourth	S	RH	120	60	60	4	20	80	Năm cảnh quãng bốn chung nhịp
+g3-n100-087	n100	15	fourth	S	RH	104	52	52	4	20	80	Giữ nhảy qua năm cảnh chung
+g3-n100-088	n100	27	fourth	S	RH	102	51	51	4	20	80	Fa gọi đổi đường cùng tiếng
+g3-n100-089	n100	36	fourth	S	RH	100	50	50	3	20	60	Năm lời Fa chung nhịp ba
+g3-n100-090	n100	47	fourth	S	RH	98	49	49	3	20	60	Giữ đầu trở lại nhịp chung
+g3-n100-091	n100	58	fourth	S	LH	120	60	60	4	20	80	Năm cảnh trầm bốn chung nhịp
+g3-n100-092	n100	67	fourth	S	LH	104	52	52	4	20	80	Giữ thấp qua năm cảnh chung
+g3-n100-093	n100	77	fourth	S	LH	102	51	51	4	20	80	Fa trầm đổi đường cùng tiếng
+g3-n100-094	n100	87	fourth	S	LH	100	50	50	3	20	60	Năm lời Fa thấp nhịp ba
+g3-n100-095	n100	98	fourth	S	LH	98	49	49	3	20	60	Giữ trầm trở lại nhịp chung
+g3-n100-096	n100	11	fifth	S	RH	104	52	52	4	20	80	Năm câu quãng năm chung phách
+g3-n100-097	n100	28	fifth	S	RH	104	52	52	4	20	80	Sol dài đổi lời cùng nhau
+g3-n100-098	n100	48	fifth	S	RH	98	49	49	3	20	60	Năm lời năm chung ba phách
+g3-n100-099	n100	68	fifth	S	LH	104	52	52	4	20	80	Năm câu trầm năm chung phách
+g3-n100-100	n100	88	fifth	S	LH	98	49	49	3	20	60	Năm lời thấp năm chung ba

@@ -1,0 +1,41 @@
+# E = RH eighth-pair focus; F = LH. Each /2 pair occupies one whole quarter beat.
+E01;4;C/2D/2 E D C | D E/2F/2 G F | E D/2C/2 D E | D/2C/2 C C2;C,4 | C,4 | C,4 | C,4
+E02;4;C D E/2F/2 G | F/2E/2 D C2 | C/2D/2 E F E | D E D/2C/2 C;C,4 | C,4 | C,4 | C,4
+E03;4;C/2D/2 E D C | D2 D/2E/2 F | E D C D | E/2D/2 C C2;C,4 | D,4 | C,4 | C,4
+E04;4;C2 C/2D/2 E | F/2E/2 D C2 | D E F E | D/2C/2 C C2;C,4 | C,4 | C,4 | C,4
+E05;4;C/2D/2 E E2 | D C C2 | C/2D/2 E D C | D C C2;C,4 | C,4 | C,4 | C,4
+E06;4;C2 C/2D/2 E | D D E2 | D/2C/2 C C2 | C4;C,4 | C,4 | C,4 | C,4
+E07;4;C/2D/2 E E2 | D C C2 | C D/2E/2 D C | C4;C,4 | C,4 | C,4 | C,4
+E08;4;C4 | C/2D/2 E D C | D/2E/2 D C2 | C D C2;C,4 | C,4 | C,4 | C,4
+E09;4;C C/2D/2 E D | E F/2G/2 F E | D2 D/2C/2 C | C2 C2;C,4 | C,4 | D,4 | C,4
+E10;4;C/2D/2 E/2F/2 G F | E D/2C/2 D E | F/2E/2 D C D | E D C2;C,4 | C,4 | C,4 | C,4
+E11;4;C/2D/2 E z D | E/2F/2 G F2 | E2 D C | D C C2;C,4 | C,4 | C,4 | C,4
+E12;4;C D/2E/2 F E | D C/2D/2 E D | C2 D E | F E D/2C/2 C;C,4 | C,4 | C,4 | C,4
+E13;4;C2 C/2D/2 E | D/2E/2 F F2 | E D C2 | D C C2;C,4 | D,4 | C,4 | C,4
+E14;4;C D E/2D/2 C | C/2D/2 E F E | D C D2 | C/2D/2 C C2;C,4 | C,4 | D,4 | C,4
+E15;4;C2 C/2D/2 E | F E D C | C2 D/2C/2 C | C4;C,4 | C,4 | C,4 | C,4
+E16;4;C2 C/2D/2 E | D C C2 | C4 | C4;C,4 | C,4 | C,4 | C,4
+E17;4;C2 C/2D/2 E | D C C2 | D E D C | C4;C,4 | C,4 | C,4 | C,4
+E18;4;C4 | C/2D/2 E D C | C2 C2 | C4;C,4 | C,4 | C,4 | C,4
+E19;4;C2 C/2D/2 E | D D E2 | D C C2 | C4;C,4 | C,4 | C,4 | C,4
+E20;4;C4 | C2 C/2D/2 D | C4 | C4;C,4 | C,4 | C,4 | C,4
+F01;4;C4 | C4 | C4 | C4;C,/2D,/2 E, D, C, | D, E,/2F,/2 G, F, | E, D,/2C,/2 D, E, | D,/2C,/2 C, C,2
+F02;4;C4 | C4 | C4 | C4;C, D, E,/2F,/2 G, | F,/2E,/2 D, C,2 | C,/2D,/2 E, F, E, | D, E, D,/2C,/2 C,
+F03;4;C4 | D4 | C4 | C4;C,/2D,/2 E, D, C, | D,2 D,/2E,/2 F, | E, D, C, D, | E,/2D,/2 C, C,2
+F04;4;C4 | C4 | C4 | C4;C,2 C,/2D,/2 E, | F,/2E,/2 D, C,2 | D, E, F, E, | D,/2C,/2 C, C,2
+F05;4;C4 | C4 | C4 | C4;C,/2D,/2 E, E,2 | D, C, C,2 | C,/2D,/2 E, D, C, | D, C, C,2
+F06;4;C4 | C4 | C4 | C4;C,2 C,/2D,/2 E, | D, D, E,2 | D,/2C,/2 C, C,2 | C,4
+F07;4;C4 | C4 | C4 | C4;C,/2D,/2 E, E,2 | D, C, C,2 | C, D,/2E,/2 D, C, | C,4
+F08;4;C4 | C4 | C4 | C4;C,4 | C,/2D,/2 E, D, C, | D,/2E,/2 D, C,2 | C, D, C,2
+F09;4;C4 | C4 | D4 | C4;C, C,/2D,/2 E, D, | E, F,/2G,/2 F, E, | D,2 D,/2C,/2 C, | C,2 C,2
+F10;4;C4 | C4 | C4 | C4;C,/2D,/2 E,/2F,/2 G, F, | E, D,/2C,/2 D, E, | F,/2E,/2 D, C, D, | E, D, C,2
+F11;4;C4 | C4 | C4 | C4;C,/2D,/2 E, z D, | E,/2F,/2 G, F,2 | E,2 D, C, | D, C, C,2
+F12;4;C4 | C4 | C4 | C4;C, D,/2E,/2 F, E, | D, C,/2D,/2 E, D, | C,2 D, E, | F, E, D,/2C,/2 C,
+F13;4;C4 | D4 | C4 | C4;C,2 C,/2D,/2 E, | D,/2E,/2 F, F,2 | E, D, C,2 | D, C, C,2
+F14;4;C4 | C4 | D4 | C4;C, D, E,/2D,/2 C, | C,/2D,/2 E, F, E, | D, C, D,2 | C,/2D,/2 C, C,2
+F15;4;C4 | C4 | C4 | C4;C,2 C,/2D,/2 E, | F, E, D, C, | C,2 D,/2C,/2 C, | C,4
+F16;4;C4 | C4 | C4 | C4;C,2 C,/2D,/2 E, | D, C, C,2 | C,4 | C,4
+F17;4;C4 | C4 | C4 | C4;C,2 C,/2D,/2 E, | D, C, C,2 | D, E, D, C, | C,4
+F18;4;C4 | C4 | C4 | C4;C,4 | C,/2D,/2 E, D, C, | C,2 C,2 | C,4
+F19;4;C4 | C4 | C4 | C4;C,2 C,/2D,/2 E, | D, D, E,2 | D, C, C,2 | C,4
+F20;4;C4 | C4 | C4 | C4;C,4 | C,2 C,/2D,/2 D, | C,4 | C,4

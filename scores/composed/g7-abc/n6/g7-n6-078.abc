@@ -1,0 +1,17 @@
+%abc-2.1
+X:4378
+T:g7-n6-078 Hai nhịp lớn Mi Fa Sol
+C:Nhạc do trợ lý AI biên soạn
+M:6/8
+L:1/4
+Q:3/8=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G7; profile=compound; lead=RH; bucket=n6; notes=7; RH=5; LH=2
+% duration60=4s; related_pattern=37800fe8272c4e7c
+% authored_passages=K03 KR1
+% source=buildscripts/pianist/compositions/g7/studies.txt:79
+[V:RH] E F/2 G3/2 | G3/2 E3/2 |]
+[V:LH] E,3 | C,3 |]

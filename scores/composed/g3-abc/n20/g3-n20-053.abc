@@ -1,0 +1,17 @@
+%abc-2.1
+X:1753
+T:g3-n20-053 Sol trầm gọi phách ba
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fifth; lead=LH; bucket=n20; notes=16; RH=4; LH=12
+% role=L; duration60=12s; related_pattern=0eb539139a17bd9f
+% authored_passages=B22
+% source=buildscripts/pianist/compositions/g3/n20.txt:54
+[V:RH] C3 | C3 | C3 | C3 |]
+[V:LH] G, C, D, | E, F, E, | D, G, F, | E, D, C, |]

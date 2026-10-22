@@ -1,0 +1,17 @@
+%abc-2.1
+X:1023
+T:g2-n20-023 Bắt đầu bằng khoảng yên
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=eighth; lead=RH; bucket=n20; notes=17; RH=13; LH=4
+% role=R; duration60=16s; related_pattern=a42a68c41e540662
+% authored_passages=E08
+% source=buildscripts/pianist/compositions/g2/n20.txt:24
+[V:RH] C4 | C/2D/2 E D C | D/2E/2 D C2 | C D C2 |]
+[V:LH] C,4 | C,4 | C,4 | C,4 |]

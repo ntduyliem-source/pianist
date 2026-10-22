@@ -1,0 +1,17 @@
+%abc-2.1
+X:959
+T:g2-n10-059 Phách trầm đôi dưới nền
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=eighth; lead=LH; bucket=n10; notes=13; RH=4; LH=9
+% role=L; duration60=8s; related_pattern=3af4a2ddd1999d8f
+% authored_passages=inline-n10-059
+% source=buildscripts/pianist/compositions/g2/n10.txt:60
+[V:RH] C2 C2 | C2 C2 |]
+[V:LH] C,/2D,/2 E, D, C, | D, C, D, C, |]

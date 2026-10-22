@@ -1,0 +1,31 @@
+%abc-2.1
+X:2085
+T:g3-n100-085 Năm chuyện rải thấp ba
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=arpeggio; lead=LH; bucket=n100; notes=77; RH=33; LH=44
+% role=A; duration60=90s; related_pattern=ba55c4a52e8d9a72
+% authored_passages=H12 H16 H14 H12 H16
+% source=buildscripts/pianist/compositions/g3/n100.txt:86
+[V:RH] z3 | C2 D | z3 | E2 D |
+[V:LH] C, G, E, | z3 | G, E, C, | z3 |
+[V:RH] z3 | C2 C | z3 | C2 D |
+[V:LH] E, G, C, | z3 | E, C, G, | z3 |
+[V:RH] z3 | E2 D | z3 | C2 C |
+[V:LH] E, G, C, | z3 | G, E, C, | z3 |
+[V:RH] z3 | C D E | z3 | D C D |
+[V:LH] G, C, E, | z3 | G, E, C, | z3 |
+[V:RH] z3 | E D C | z3 | C2 D |
+[V:LH] E, C,2 | z3 | C, G, E, | z3 |
+[V:RH] z3 | E2 D | z3 | C2 C |
+[V:LH] G, E, C, | z3 | E, G, C, | z3 |
+[V:RH] z3 | C2 D | z3 | E2 D |
+[V:LH] E, C, G, | z3 | E, G, C, | z3 |
+[V:RH] z3 | C2 C |]
+[V:LH] G, E, C, | z3 |]

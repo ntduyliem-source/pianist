@@ -1,0 +1,17 @@
+%abc-2.1
+X:1623
+T:g3-n10-023 Ba nhịp từ Sol về
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fifth; lead=RH; bucket=n10; notes=11; RH=8; LH=3
+% role=R; duration60=9s; related_pattern=b9a496172f2dd130
+% authored_passages=inline-n10-023
+% source=buildscripts/pianist/compositions/g3/n10.txt:24
+[V:RH] G C D | E F E | D C2 |]
+[V:LH] C,3 | C,3 | C,3 |]

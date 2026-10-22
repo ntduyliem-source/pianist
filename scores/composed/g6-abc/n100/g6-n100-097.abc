@@ -1,0 +1,27 @@
+%abc-2.1
+X:4197
+T:g6-n100-097 Rê giữa trở Rê Mi
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G6; profile=P8-down; lead=LH; bucket=n100; notes=81; RH=21; LH=60
+% duration60=84s; related_pattern=1fed5bf86b7de554
+% authored_passages=S97 EX2 EX3 EX1 EX3 EX2
+% source=buildscripts/pianist/compositions/g6/studies.txt:98
+[V:RH] c4 | c z z z | c z z z | c z z z |
+[V:LH] C D D, E, | G,2 B, C | C, D, E,2 | G, E, D,2 |
+[V:RH] c z z z | c z z z | c z z z | c z z z |
+[V:LH] E,2 C,2 | G, A, B, C | C, D, G,2 | E,2 D,2 |
+[V:RH] c z z z | c z z z | c z z z | c z z z |
+[V:LH] E,2 C,2 | G, B, C C, | D, E, G,2 | F, E, D,2 |
+[V:RH] c z z z | c z z z | c z z z | c z z z |
+[V:LH] E,2 C,2 | G, A, B, C | C, D, G,2 | E,2 D,2 |
+[V:RH] c z z z | c z z z | c z z z | c z z z |
+[V:LH] E,2 C,2 | G,2 B, C | C, D, E,2 | G, E, D,2 |
+[V:RH] c z z z |]
+[V:LH] E,2 C,2 |]

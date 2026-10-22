@@ -1,0 +1,23 @@
+%abc-2.1
+X:4010
+T:g6-n50-010 Nhắc Mi trầm rồi lên
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G6; profile=m6-up; lead=LH; bucket=n50; notes=51; RH=13; LH=38
+% duration60=52s; related_pattern=c20ab948544dbb09
+% authored_passages=S10 AL2 AL1 AL3
+% source=buildscripts/pianist/compositions/g6/studies.txt:11
+[V:RH] c4 | c z z z | c z z z | c z z z |
+[V:LH] E, E, C B, | G, F, E,2 | F, E, C B, | A, G, E,2 |
+[V:RH] c z z z | c z z z | c z z z | c z z z |
+[V:LH] G,2 E,2 | G, E, C B, | A, G, E,2 | D, E, G,2 |
+[V:RH] c z z z | c z z z | c z z z | c z z z |
+[V:LH] E,2 C,2 | G,2 E,2 | F, E, C B, | A,2 G,2 |
+[V:RH] c z z z |]
+[V:LH] E,2 C,2 |]

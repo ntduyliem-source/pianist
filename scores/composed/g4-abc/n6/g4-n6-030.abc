@@ -1,0 +1,17 @@
+%abc-2.1
+X:2230
+T:g4-n6-030 Giữ hai đầu đường rộng
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=span; lead=RH; bucket=n6; notes=8; RH=6; LH=2
+% role=R; duration60=8s; related_pattern=1e8814aadbeb59db
+% authored_passages=inline-n6-030
+% source=buildscripts/pianist/compositions/g4/n6.txt:31
+[V:RH] C2 G c | B G C2 |]
+[V:LH] C,4 | C,4 |]

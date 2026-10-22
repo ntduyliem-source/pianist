@@ -1,0 +1,25 @@
+%abc-2.1
+X:2717
+T:g4-n100-017 La dài nghe Mi gọi thấp
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=lower; lead=RH; bucket=n100; notes=89; RH=65; LH=24
+% role=R; duration60=80s; related_pattern=a3089aabe947f12b
+% authored_passages=L02 L07 L16 L09 L11
+% source=buildscripts/pianist/compositions/g4/n100.txt:18
+[V:RH] A,2 C D | E C D E | D C B, A, | B, C A,2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] A, A, B, C | D C B, A, | C E D C | B, A, A,2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] A, B, C D | E D C B, | A, C D C | B, C A,2 |
+[V:LH] C,2 C,2 | C,2 C,2 | C,2 C,2 | C,2 C,2 |
+[V:RH] A, B, C2 | D A, B, C | D E C2 | B, C A,2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] A,2 C2 | D C A,2 | C2 E2 | A,4 |]
+[V:LH] C,4 | C,4 | C,4 | C,4 |]

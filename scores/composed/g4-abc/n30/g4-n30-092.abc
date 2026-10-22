@@ -1,0 +1,19 @@
+%abc-2.1
+X:2592
+T:g4-n30-092 Sol dài bass rồi yên
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=upper; lead=LH; bucket=n30; notes=36; RH=18; LH=18
+% role=S; duration60=32s; related_pattern=6497cabef9dce8e4
+% authored_passages=S07 S17
+% source=buildscripts/pianist/compositions/g4/n30.txt:93
+[V:RH] G2 F G | F2 G G | G2 G G | F G G2 |
+[V:LH] G,2 B, C | D2 C B, | G,2 A, B, | C B, G,2 |
+[V:RH] G4 | G G G2 | G4 | G4 |]
+[V:LH] G,4 | G, A, B,2 | G,4 | G,4 |]

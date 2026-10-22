@@ -1,0 +1,21 @@
+%abc-2.1
+X:1224
+T:g2-n50-024 Nền Rê trở về Đô
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=eighth; lead=RH; bucket=n50; notes=54; RH=42; LH=12
+% role=R; duration60=48s; related_pattern=1cc5971044c03acb
+% authored_passages=E09 E03 E18
+% source=buildscripts/pianist/compositions/g2/n50.txt:25
+[V:RH] C C/2D/2 E D | E F/2G/2 F E | D2 D/2C/2 C | C2 C2 |
+[V:LH] C,4 | C,4 | D,4 | C,4 |
+[V:RH] C/2D/2 E D C | D2 D/2E/2 F | E D C D | E/2D/2 C C2 |
+[V:LH] C,4 | D,4 | C,4 | C,4 |
+[V:RH] C4 | C/2D/2 E D C | C2 C2 | C4 |]
+[V:LH] C,4 | C,4 | C,4 | C,4 |]

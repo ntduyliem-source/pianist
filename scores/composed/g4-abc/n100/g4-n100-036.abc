@@ -1,0 +1,25 @@
+%abc-2.1
+X:2736
+T:g4-n100-036 Nghỉ bass cao nghe tiếp
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=upper; lead=LH; bucket=n100; notes=86; RH=20; LH=66
+% role=L; duration60=80s; related_pattern=914849c812f8119f
+% authored_passages=V06 V07 V13 V05 V11
+% source=buildscripts/pianist/compositions/g4/n100.txt:37
+[V:RH] G4 | G4 | G4 | G4 |
+[V:LH] G, B, z A, | B, C D C | B, A, B, G, | A, B, G,2 |
+[V:RH] G4 | G4 | G4 | G4 |
+[V:LH] G, G, A, B, | C B, A, G, | B, D C B, | A, G, G,2 |
+[V:RH] G4 | G4 | G4 | G4 |
+[V:LH] A, B, C2 | B, G, C B, | A, B, D C | B, A, G,2 |
+[V:RH] G4 | G4 | G4 | G4 |
+[V:LH] G,2 B, A, | G,2 B, C | D C B,2 | G,2 G,2 |
+[V:RH] G4 | G4 | G4 | G4 |]
+[V:LH] G,2 B, C | D2 C B, | G, A, B, C | G,2 G,2 |]

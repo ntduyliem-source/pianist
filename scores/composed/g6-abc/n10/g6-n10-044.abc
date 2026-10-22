@@ -1,0 +1,17 @@
+%abc-2.1
+X:3744
+T:g6-n10-044 Mi Rê cao trở Đô
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G6; profile=m7-up; lead=RH; bucket=n10; notes=11; RH=8; LH=3
+% duration60=12s; related_pattern=45b1bbab079e5eec
+% authored_passages=S44 CR1 CR3
+% source=buildscripts/pianist/compositions/g6/studies.txt:45
+[V:RH] D E d c | G2 E2 | G2 D2 |]
+[V:LH] C,4 | C,4 | C,4 |]

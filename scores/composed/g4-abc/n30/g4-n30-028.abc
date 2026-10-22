@@ -1,0 +1,19 @@
+%abc-2.1
+X:2528
+T:g4-n30-028 Fa La tới câu giữ
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=span; lead=RH; bucket=n30; notes=30; RH=22; LH=8
+% role=R; duration60=32s; related_pattern=0de0b21b2e9eba25
+% authored_passages=W04 W12
+% source=buildscripts/pianist/compositions/g4/n30.txt:29
+[V:RH] C F A c | B G E C | D F A G | E D C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C4 | C G c2 | G2 C2 | C4 |]
+[V:LH] C,4 | C,4 | C,4 | C,4 |]

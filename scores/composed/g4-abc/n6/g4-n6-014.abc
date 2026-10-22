@@ -1,0 +1,17 @@
+%abc-2.1
+X:2214
+T:g4-n6-014 Rê cao đi về chậm
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=upper; lead=RH; bucket=n6; notes=7; RH=5; LH=2
+% role=R; duration60=6s; related_pattern=6ab549183aba631e
+% authored_passages=inline-n6-014
+% source=buildscripts/pianist/compositions/g4/n6.txt:15
+[V:RH] d c B | A G2 |]
+[V:LH] G,3 | G,3 |]

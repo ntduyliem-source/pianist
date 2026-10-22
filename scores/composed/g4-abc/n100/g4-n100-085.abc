@@ -1,0 +1,31 @@
+%abc-2.1
+X:2785
+T:g4-n100-085 Giữa về năm đường bass
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=span; lead=LH; bucket=n100; notes=77; RH=31; LH=46
+% role=A; duration60=90s; related_pattern=4e8d2200cd603c3c
+% authored_passages=H14 H12 H16 H12 H16
+% source=buildscripts/pianist/compositions/g4/n100.txt:86
+[V:RH] z3 | E F G | z3 | F E F |
+[V:LH] C G, C, | z3 | E, G, A, | z3 |
+[V:RH] z3 | G F E | z3 | E2 F |
+[V:LH] G, C,2 | z3 | C, G, C | z3 |
+[V:RH] z3 | G2 F | z3 | E2 E |
+[V:LH] B, A, G, | z3 | E, G, C, | z3 |
+[V:RH] z3 | z3 | E F G | z3 |
+[V:LH] C, F, A, | C B, G, | z3 | E, D, C, |
+[V:RH] F E2 | z3 | z3 | E2 F |
+[V:LH] z3 | C,3 | C, G, C | z3 |
+[V:RH] z3 | G2 F | z3 | E2 E |
+[V:LH] B, A, G, | z3 | E, G, C, | z3 |
+[V:RH] z3 | z3 | E F G | z3 |
+[V:LH] C, F, A, | C B, G, | z3 | E, D, C, |
+[V:RH] F E2 | z3 |]
+[V:LH] z3 | C,3 |]

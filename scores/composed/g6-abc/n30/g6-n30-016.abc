@@ -1,0 +1,21 @@
+%abc-2.1
+X:3916
+T:g6-n30-016 Sáu thứ trầm xuống
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G6; profile=m6-down; lead=LH; bucket=n30; notes=36; RH=9; LH=27
+% duration60=36s; related_pattern=61dd405ab20c79ad
+% authored_passages=S16 AX1 AX2
+% source=buildscripts/pianist/compositions/g6/studies.txt:17
+[V:RH] c4 | c z z z | c z z z | c z z z |
+[V:LH] B, C E, F, | G, B, C E, | F, E, D,2 | E, G, E,2 |
+[V:RH] c z z z | c z z z | c z z z | c z z z |
+[V:LH] D,2 C,2 | G,2 B, C | E, F, G, E, | D,2 E,2 |
+[V:RH] c z z z |]
+[V:LH] G,2 C,2 |]

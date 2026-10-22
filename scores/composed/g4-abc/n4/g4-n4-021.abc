@@ -1,0 +1,17 @@
+%abc-2.1
+X:2121
+T:g4-n4-021 Mi gọi Si thấp
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=lower; lead=RH; bucket=n4; notes=4; RH=3; LH=1
+% role=R; duration60=3s; related_pattern=bf6c9ec4cb9c7af6
+% authored_passages=inline-n4-021
+% source=buildscripts/pianist/compositions/g4/n4.txt:22
+[V:RH] E B, C |]
+[V:LH] C,3 |]

@@ -1,0 +1,25 @@
+%abc-2.1
+X:2097
+T:g3-n100-097 Sol dài đổi lời cùng nhau
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fifth; lead=RH; bucket=n100; notes=104; RH=52; LH=52
+% role=S; duration60=80s; related_pattern=138c3db556f664c7
+% authored_passages=W02 W03 W07 W01 W08
+% source=buildscripts/pianist/compositions/g3/n100.txt:98
+[V:RH] G2 C D | E2 F E | C2 G F | E D C2 |
+[V:LH] C,2 D, C, | C,2 D, C, | C,2 C, D, | C, D, C,2 |
+[V:RH] C G E2 | F2 E D | C2 G F | E D C2 |
+[V:LH] C, C, C,2 | D,2 E, D, | C,2 C, D, | C, D, C,2 |
+[V:RH] C4 | C G F2 | E2 C2 | C4 |
+[V:LH] C,4 | C, C, D,2 | C,2 C,2 | C,4 |
+[V:RH] C G F2 | E2 D C | D G F2 | E D C2 |
+[V:LH] C, C, D,2 | C,2 D, C, | D, E, D,2 | C, D, C,2 |
+[V:RH] C2 G F | E2 C2 | D E C2 | C4 |]
+[V:LH] C,2 C, D, | C,2 C,2 | D, D, C,2 | C,4 |]

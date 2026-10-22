@@ -1,0 +1,27 @@
+%abc-2.1
+X:4163
+T:g6-n100-063 Nhắc Đô chạm Si Đô
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G6; profile=M7-up; lead=RH; bucket=n100; notes=82; RH=61; LH=21
+% duration60=84s; related_pattern=18fa5ea2fa8a1ef9
+% authored_passages=S63 DU3 DU1 DU2 DU1 DU3
+% source=buildscripts/pianist/compositions/g6/studies.txt:64
+[V:RH] C C B c | G2 E2 | D C B A | G2 E2 |
+[V:LH] C,4 | C, z z z | C, z z z | C, z z z |
+[V:RH] D2 C2 | G D C B | A G E2 | D E G2 |
+[V:LH] C, z z z | C, z z z | C, z z z | C, z z z |
+[V:RH] E2 C2 | G E F e | d c B A | G E D2 |
+[V:LH] C, z z z | C, z z z | C, z z z | C, z z z |
+[V:RH] E2 C2 | G D C B | A G E2 | D E G2 |
+[V:LH] C, z z z | C, z z z | C, z z z | C, z z z |
+[V:RH] E2 C2 | G2 E2 | D C B A | G2 E2 |
+[V:LH] C, z z z | C, z z z | C, z z z | C, z z z |
+[V:RH] D2 C2 |]
+[V:LH] C, z z z |]

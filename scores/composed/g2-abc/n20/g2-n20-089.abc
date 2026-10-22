@@ -1,0 +1,17 @@
+%abc-2.1
+X:1089
+T:g2-n20-089 Từ Mi xuống cùng nhau
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=third; lead=RH; bucket=n20; notes=20; RH=10; LH=10
+% role=S; duration60=16s; related_pattern=422fd67f8f374e5f
+% authored_passages=S04
+% source=buildscripts/pianist/compositions/g2/n20.txt:90
+[V:RH] E2 G2 | F E D C | D E C2 | C4 |]
+[V:LH] C,2 C,2 | D, E, D, C, | D, D, C,2 | C,4 |]

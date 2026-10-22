@@ -1,0 +1,101 @@
+# Five-section forms. Fixed passage order, including intentional returns, is authored per study.
+001;third;R;RH;Buổi sáng qua năm khung cửa;T01 T11 T06 T08 T05
+002;third;R;RH;Bậc thang và đường trở lại;T02 T07 T04 T02 T17
+003;third;R;RH;Năm lời kể từ Mi;T03 T09 T12 T06 T05
+004;third;R;RH;Câu nhắc đi qua khu vườn;T04 T08 T14 T11 T05
+005;third;R;RH;Từ nốt dài thành câu chuyện;T16 T09 T17 T05 T16
+006;third;R;RH;Mi theo nền Rê về nhà;T06 T13 T07 T12 T05
+007;third;R;RH;Lối quanh Fa qua năm đoạn;T07 T02 T10 T08 T17
+008;third;R;RH;Câu hỏi và bốn lời tiếp;T08 T04 T09 T13 T05
+009;third;R;RH;Nền Mi mở đường về Đô;T15 T12 T09 T06 T05
+010;third;R;RH;Nhắc nền qua năm khung nhịp;T11 T13 T14 T10 T04
+011;third;R;RH;Năm vòng sân ba phách;T21 T25 T24 T23 T21
+012;third;R;RH;Mi mở vũ khúc nhỏ;T22 T21 T23 T25 T24
+013;third;R;RH;Nốt dài trong chuyện ba phách;T23 T24 T21 T22 T25
+014;third;R;RH;Fa dẫn lối quay lại;T24 T22 T25 T21 T24
+015;third;R;RH;Đô nhắc trước năm lời;T25 T23 T22 T24 T21
+016;eighth;R;RH;Một ngày chia đôi phách;E01 E11 E04 E12 E15
+017;eighth;R;RH;Cặp nốt qua năm ô cửa;E02 E07 E13 E09 E17
+018;eighth;R;RH;Câu chuyện trên nền chuyển;E03 E05 E01 E06 E19
+019;eighth;R;RH;Đi nhẹ nghe phách tới cuối;E04 E12 E08 E11 E15
+020;eighth;R;RH;Nốt giữ và đôi chân nhỏ;E05 E09 E14 E07 E16
+021;eighth;R;RH;Từ thưa sang dày rồi về;E06 E10 E03 E08 E17
+022;eighth;R;RH;Lời nhắc dưới những cặp đôi;E07 E04 E02 E13 E19
+023;eighth;R;RH;Một khoảng yên trước chuyện dài;E08 E15 E12 E05 E16
+024;eighth;R;RH;Nền Rê qua ba lời Đô;E09 E01 E11 E14 E18
+025;eighth;R;RH;Năm đường sáng chia phách;E01 E02 E10 E12 E14
+026;eighth;R;RH;Năm lời chia ba phách;E21 E25 E22 E24 E21
+027;eighth;R;RH;Cặp sau dẫn tới đỉnh;E22 E21 E24 E25 E22
+028;eighth;R;RH;Mi mở chuyến đi ba phách;E23 E22 E25 E21 E25
+029;eighth;R;RH;Qua đỉnh trở lại nhịp ba;E24 E22 E21 E25 E24
+030;eighth;R;RH;Mi giữ bước qua năm câu;E23 E25 E24 E22 E21
+031;third;L;LH;Ngày mới qua cửa trầm;U01 U06 U11 U05 U08
+032;third;L;LH;Thang thấp và lối trở về;U02 U04 U07 U17 U02
+033;third;L;LH;Năm lời kể của Mi trầm;U03 U12 U09 U05 U06
+034;third;L;LH;Câu trầm đi qua khu vườn;U04 U14 U08 U05 U11
+035;third;L;LH;Từ trầm dài thành lời;U16 U05 U09 U17 U16
+036;third;L;LH;Mi thấp theo nền cao;U06 U07 U13 U05 U12
+037;third;L;LH;Lối Fa thấp qua năm đoạn;U07 U10 U02 U17 U08
+038;third;L;LH;Câu trầm và bốn lời tiếp;U08 U09 U04 U05 U13
+039;third;L;LH;Mi cao đỡ đường trầm;U15 U09 U12 U05 U06
+040;third;L;LH;Nền nhắc qua chuyện thấp;U11 U14 U13 U04 U10
+041;third;L;LH;Năm vòng trầm ba phách;U21 U24 U25 U21 U23
+042;third;L;LH;Mi trầm mở khúc nhỏ;U22 U23 U21 U24 U25
+043;third;L;LH;Nốt thấp dài kể nhịp ba;U23 U21 U24 U25 U22
+044;third;L;LH;Fa trầm dẫn đường lại;U24 U25 U22 U24 U21
+045;third;L;LH;Đô trầm nhắc năm lời;U25 U22 U23 U21 U24
+046;eighth;L;LH;Ngày trầm chia đôi phách;F01 F12 F04 F11 F15
+047;eighth;L;LH;Cặp thấp qua năm cửa;F02 F13 F07 F17 F09
+048;eighth;L;LH;Chuyện trầm trên nền chuyển;F03 F01 F05 F19 F06
+049;eighth;L;LH;Đi nhẹ nghe phách trầm;F04 F08 F12 F15 F11
+050;eighth;L;LH;Nốt trầm giữ bước nhỏ;F05 F14 F09 F16 F07
+051;eighth;L;LH;Trầm thưa dày rồi về;F06 F03 F10 F17 F08
+052;eighth;L;LH;Lời nhắc dưới cặp trầm;F07 F02 F04 F19 F13
+053;eighth;L;LH;Trầm yên trước chuyện dài;F08 F12 F15 F16 F05
+054;eighth;L;LH;Nền cao Rê câu thấp Đô;F09 F11 F01 F18 F14
+055;eighth;L;LH;Năm đường trầm chia phách;F10 F01 F12 F14 F02
+056;eighth;L;LH;Năm lời thấp ba phách;F21 F22 F25 F21 F24
+057;eighth;L;LH;Cặp thấp sau tới đỉnh;F22 F24 F21 F22 F25
+058;eighth;L;LH;Mi trầm mở chuyến đi;F23 F25 F22 F25 F21
+059;eighth;L;LH;Qua đỉnh trầm trở lại;F24 F21 F22 F24 F25
+060;eighth;L;LH;Mi trầm giữ năm bước;F23 F24 F25 F21 F22
+061;third;A;RH;Năm cuộc gọi bên hiên;Q01 Q03 Q05 Q04 Q02
+062;third;A;LH;Năm lời trầm qua cửa;Q06 Q10 Q08 Q07 Q09
+063;third;A;RH;Chuyện hỏi đáp ba phách;Q11 Q13 Q15 Q13 Q11
+064;third;A;LH;Chuyện trầm gọi nhịp ba;Q14 Q16 Q12 Q14 Q16
+065;third;A;RH;Nhắc lời ở cuối buổi;Q05 Q02 Q04 Q01 Q03
+066;eighth;A;RH;Những câu hỏi chia phách;B01 B05 B03 B07 B06
+067;eighth;A;RH;Gọi lên đợi rồi trở về;B02 B10 B05 B08 B06
+068;eighth;A;RH;Hai cặp đi qua năm lượt;B03 B01 B09 B07 B05
+069;eighth;A;RH;Mi gọi chuyện bên cửa;B04 B08 B01 B03 B06
+070;eighth;A;RH;Lời giữ nhắc cặp đôi;B05 B07 B02 B10 B06
+071;eighth;A;RH;Từ chờ đợi thành lời gọi;B06 B03 B08 B01 B05
+072;eighth;A;RH;Cặp giữa đổi câu hỏi;B07 B05 B09 B02 B06
+073;eighth;A;RH;Nhiều cặp trao lại lời;B08 B01 B03 B10 B06
+074;eighth;A;RH;Năm cuộc gọi ba phách;B21 B25 B26 B22 B21
+075;eighth;A;RH;Ba phách hỏi đổi giọng kể;B22 B21 B25 B26 B22
+076;eighth;A;LH;Những câu trầm chia phách;B11 B13 B15 B16 B17
+077;eighth;A;LH;Trầm gọi lên đợi trở về;B12 B15 B20 B16 B18
+078;eighth;A;LH;Cặp thấp qua năm lượt;B13 B19 B11 B15 B17
+079;eighth;A;LH;Mi trầm gọi bên cửa;B14 B11 B18 B16 B13
+080;eighth;A;LH;Lời thấp giữ nhắc cặp;B15 B12 B17 B16 B20
+081;eighth;A;LH;Đợi trầm thành lời gọi;B16 B18 B13 B15 B11
+082;eighth;A;LH;Cặp trầm giữa đổi hỏi;B17 B19 B15 B16 B12
+083;eighth;A;LH;Nhiều cặp thấp trao lời;B18 B13 B11 B16 B20
+084;eighth;A;LH;Năm cuộc gọi trầm ba phách;B23 B28 B24 B27 B23
+085;eighth;A;LH;Ba phách trầm đổi lời kể;B24 B27 B23 B28 B24
+086;third;S;RH;Năm đoạn chung một dòng nhịp;S01 S05 S25 S26 S27
+087;third;S;RH;Giữ và nhảy qua năm cảnh;S02 S10 S12 S25 S16
+088;third;S;RH;Chuyện dài của nốt giữ;S03 S14 S20 S03 S02
+089;third;S;RH;Mi cao cùng đường trở lại;S04 S12 S26 S14 S03
+090;third;S;RH;Năm lời kể chung tiếng;S05 S25 S02 S27 S01
+091;third;S;LH;Năm đoạn trầm chung nhịp;S09 S28 S29 S30 S31
+092;third;S;LH;Chuyện dài nốt trầm giữ;S07 S15 S18 S07 S06
+093;third;S;LH;Mi trầm cùng đường về;S08 S13 S29 S15 S07
+094;third;S;LH;Năm lời trầm chung tiếng;S09 S28 S06 S30 S31
+095;third;S;RH;Khoảng trên qua năm câu;S10 S25 S26 S12 S03
+096;third;S;LH;Khoảng dưới qua năm câu;S11 S28 S29 S13 S07
+097;third;S;RH;Năm vòng chung nhịp ba;S21 S23 S32 S34 S21
+098;third;S;LH;Năm vòng trầm nhịp ba;S22 S33 S24 S22 S35
+099;third;S;RH;Giữ đầu qua khúc ba phách;S23 S34 S21 S32 S23
+100;third;S;LH;Giữ trầm qua khúc ba phách;S24 S22 S35 S33 S24

@@ -1,0 +1,21 @@
+%abc-2.1
+X:1918
+T:g3-n50-018 Đô dài tìm đường về
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fifth; lead=RH; bucket=n50; notes=47; RH=35; LH=12
+% role=R; duration60=48s; related_pattern=8d485b97ba5a3c06
+% authored_passages=P03 P07 P12
+% source=buildscripts/pianist/compositions/g3/n50.txt:19
+[V:RH] C2 G F | E D C2 | D E F E | D C C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C2 G2 | F E D C | D G F E | D C C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C4 | C G F E | D C C2 | C4 |]
+[V:LH] C,4 | C,4 | C,4 | C,4 |]

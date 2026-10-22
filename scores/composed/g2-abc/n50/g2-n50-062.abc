@@ -1,0 +1,21 @@
+%abc-2.1
+X:1262
+T:g2-n50-062 Ba cuộc gọi từ dưới
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=third; lead=LH; bucket=n50; notes=46; RH=23; LH=23
+% role=A; duration60=48s; related_pattern=200c88a25c3b5a0f
+% authored_passages=Q06 Q08 Q07
+% source=buildscripts/pianist/compositions/g2/n50.txt:63
+[V:RH] z4 | C D E D | z4 | D C C2 |
+[V:LH] C, E, D, C, | z4 | D, F, E, C, | z4 |
+[V:RH] z4 | C D E D | z4 | D C D C |
+[V:LH] E, G, F, E, | z4 | D, E, C,2 | z4 |
+[V:RH] z4 | C D C C | z4 | C D C C |]
+[V:LH] C, D, E, G, | z4 | F, E, D, C, | z4 |]

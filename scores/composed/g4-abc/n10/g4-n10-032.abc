@@ -1,0 +1,17 @@
+%abc-2.1
+X:2332
+T:g4-n10-032 Giữ Rê giữa đáp xuống
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=upper; lead=LH; bucket=n10; notes=9; RH=2; LH=7
+% role=L; duration60=8s; related_pattern=5c313128c45f9516
+% authored_passages=inline-n10-032
+% source=buildscripts/pianist/compositions/g4/n10.txt:33
+[V:RH] G4 | G4 |]
+[V:LH] B, C D2 | C B, A, G, |]

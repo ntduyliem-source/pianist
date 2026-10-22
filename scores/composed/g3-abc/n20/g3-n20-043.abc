@@ -1,0 +1,17 @@
+%abc-2.1
+X:1743
+T:g3-n20-043 Giữ thấp trước nhảy bốn
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fourth; lead=LH; bucket=n20; notes=15; RH=4; LH=11
+% role=L; duration60=12s; related_pattern=1004b6695d79f618
+% authored_passages=G23
+% source=buildscripts/pianist/compositions/g3/n20.txt:44
+[V:RH] C3 | C3 | C3 | C3 |]
+[V:LH] C,2 F, | E, D, C, | D, G, F, | E, D, C, |]

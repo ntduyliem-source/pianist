@@ -1,0 +1,21 @@
+%abc-2.1
+X:1299
+T:g2-n50-099 Giữ đầu câu chung
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=third; lead=RH; bucket=n50; notes=50; RH=25; LH=25
+% role=S; duration60=36s; related_pattern=bc43b6701f5b8954
+% authored_passages=S23 S34 S21
+% source=buildscripts/pianist/compositions/g2/n50.txt:100
+[V:RH] C2 E | D E C | E C2 | C3 |
+[V:LH] C,2 D, | D, D, C, | D, C,2 | C,3 |
+[V:RH] C E D | E2 G | E C2 | C3 |
+[V:LH] C, D, C, | C,2 D, | D, C,2 | C,3 |
+[V:RH] C E D | E C2 | D E C | C3 |]
+[V:LH] C, D, C, | D, C,2 | D, D, C, | C,3 |]

@@ -1,0 +1,19 @@
+%abc-2.1
+X:2537
+T:g4-n30-037 Nhắc bass giữ Si giữa
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=upper; lead=LH; bucket=n30; notes=36; RH=8; LH=28
+% role=L; duration60=32s; related_pattern=494617c7c3dcac51
+% authored_passages=V07 V09
+% source=buildscripts/pianist/compositions/g4/n30.txt:38
+[V:RH] G4 | G4 | G4 | G4 |
+[V:LH] G, G, A, B, | C B, A, G, | B, D C B, | A, G, G,2 |
+[V:RH] G4 | G4 | G4 | G4 |]
+[V:LH] G, A, B,2 | C G, A, B, | C D C2 | B, A, G,2 |]

@@ -1,0 +1,25 @@
+%abc-2.1
+X:2034
+T:g3-n100-034 Fa thấp gọi vườn nhịp
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fourth; lead=LH; bucket=n100; notes=91; RH=22; LH=69
+% role=L; duration60=80s; related_pattern=38821a928e459586
+% authored_passages=G04 G14 G08 G05 G12
+% source=buildscripts/pianist/compositions/g3/n100.txt:35
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] F, C, D, E, | F, E, D, C, | D, G, F, E, | D, E, C,2 |
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] F,2 C, D, | E, D, F, E, | D, G, F, E, | D, C, C,2 |
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] E, C, F, E, | D, E, F, C, | D, G, F, E, | D, C, C,2 |
+[V:RH] C4 | D4 | C4 | C4 |
+[V:LH] C,2 F, E, | D,2 G, F, | E, D, C,2 | C,2 C,2 |
+[V:RH] C2 C2 | C4 | C2 C2 | C4 |]
+[V:LH] C, F, E, D, | C,2 F, E, | D, G, F, E, | D, E, C,2 |]

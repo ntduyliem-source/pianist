@@ -1,0 +1,17 @@
+%abc-2.1
+X:111
+T:g1-n6-011 Một lời rồi ngân
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n6; notes=6; RH=4; LH=2
+% role=R; family=short-long; form=authored; duration60=8s
+% related_pattern=329d74db07a91871
+% source=buildscripts/pianist/compositions/g1/n6.txt:14
+[V:RH] C D E2 | E4 |]
+[V:LH] C,4 | C,4 |]

@@ -1,0 +1,23 @@
+%abc-2.1
+X:4038
+T:g6-n50-038 Rê giữa về Fa Mi
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G6; profile=M6-down; lead=LH; bucket=n50; notes=51; RH=13; LH=38
+% duration60=52s; related_pattern=a8def943c1abf467
+% authored_passages=S38 BX3 BX1 BX2
+% source=buildscripts/pianist/compositions/g6/studies.txt:39
+[V:RH] c4 | c z z z | c z z z | c z z z |
+[V:LH] C D F, E, | G,2 A, B, | D, E, F,2 | G,2 E,2 |
+[V:RH] c z z z | c z z z | c z z z | c z z z |
+[V:LH] D,2 C,2 | G, A, C, D, | E, F, G,2 | F, E, D,2 |
+[V:RH] c z z z | c z z z | c z z z | c z z z |
+[V:LH] E,2 C,2 | G, B, A, C, | D, E, F,2 | E, D, E,2 |
+[V:RH] c z z z |]
+[V:LH] G,2 C,2 |]

@@ -1,0 +1,17 @@
+%abc-2.1
+X:5160
+T:g8-n10-060 Đôi quãng năm chấm Đô
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G8; profile=dyad-dotted; lead=RH; bucket=n10; notes=11; RH=8; LH=3
+% duration60=12s; related_pattern=29b15114419c793a
+% authored_passages=D10 CR1 CR3
+% source=buildscripts/pianist/compositions/g8/studies.txt:61
+[V:RH] [CG]3/2 E/2 C2 | G2 E2 | D2 C2 |]
+[V:LH] C,4 | C,4 | G,4 |]

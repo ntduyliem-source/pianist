@@ -1,0 +1,17 @@
+%abc-2.1
+X:2314
+T:g4-n10-014 Đô cao dừng ở Sol
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=upper; lead=RH; bucket=n10; notes=11; RH=8; LH=3
+% role=R; duration60=9s; related_pattern=bc2fa6e82ea409c2
+% authored_passages=inline-n10-014
+% source=buildscripts/pianist/compositions/g4/n10.txt:15
+[V:RH] G A B | c G2 | A B G |]
+[V:LH] G,3 | G,3 | G,3 |]

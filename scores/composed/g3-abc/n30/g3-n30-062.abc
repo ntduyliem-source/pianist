@@ -1,0 +1,19 @@
+%abc-2.1
+X:1862
+T:g3-n30-062 Fa gọi nốt dài trả
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fourth; lead=RH; bucket=n30; notes=31; RH=15; LH=16
+% role=A; duration60=32s; related_pattern=46571556bf8f588b
+% authored_passages=Q02 Q04
+% source=buildscripts/pianist/compositions/g3/n30.txt:63
+[V:RH] F C D E | z4 | F E D C | z4 |
+[V:LH] z4 | C, D, C, C, | z4 | C, D, C, C, |
+[V:RH] C2 F E | z4 | D G F E | z4 |]
+[V:LH] z4 | C, D, E, D, | z4 | D, E, D, C, |]

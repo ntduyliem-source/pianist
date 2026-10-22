@@ -1,0 +1,17 @@
+%abc-2.1
+X:4981
+T:g8-n4-081 Đôi Rê Fa rồi nối Mi
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G8; profile=dyad-tie; lead=RH; bucket=n4; notes=5; RH=4; LH=1
+% duration60=4s; related_pattern=4a6fae34ff25b986
+% authored_passages=T06
+% source=buildscripts/pianist/compositions/g8/studies.txt:82
+[V:RH] [DF] G/2 E/2-E2 |]
+[V:LH] C,4 |]

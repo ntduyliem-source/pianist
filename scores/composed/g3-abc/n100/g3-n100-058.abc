@@ -1,0 +1,25 @@
+%abc-2.1
+X:2058
+T:g3-n100-058 Đô thấp dài lời Mi
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=arpeggio; lead=LH; bucket=n100; notes=84; RH=20; LH=64
+% role=L; duration60=80s; related_pattern=14339ee9622cb8cf
+% authored_passages=D04 D05 D02 D10 D03
+% source=buildscripts/pianist/compositions/g3/n100.txt:59
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C,2 G, E, | C, E, G, C, | E, G, C, E, | G, E, C,2 |
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C, G, E,2 | C,2 G, E, | C, E, G, C, | E, G, C,2 |
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] E, C, G, E, | C, G, E, C, | E, G, C, G, | E, C, C,2 |
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C,4 | C, G, E,2 | C,2 G,2 | C,4 |
+[V:RH] C4 | C4 | C4 | C4 |]
+[V:LH] G, C, E, G, | E, C, G, E, | C, G, E, C, | E, G, C,2 |]

@@ -1,0 +1,101 @@
+# number; profile; hand; title; s; a; c; p; q; r; t; u
+001;offset;RH;Đô gọi Rê qua phách;O01;CR1;CR2;OR1;OR2;OR5;OR3;OR8
+002;offset;RH;Đô Mi nghe bè trầm;O02;CR2;CR3;OR2;OR4;OR1;OR6;OR5
+003;offset;RH;Đô Fa thay lời;O03;CR3;CR1;OR4;OR3;OR7;OR2;OR1
+004;offset;RH;Đô Sol giữ rồi đáp;O04;CR1;CR3;OR5;OR1;OR8;OR4;OR6
+005;offset;RH;Rê về Đô lệch phách;O05;CR2;CR1;OR3;OR6;OR2;OR7;OR4
+006;offset;RH;Rê Mi qua hai giọng;O06;CR3;CR2;OR6;OR2;OR4;OR8;OR1
+007;offset;RH;Rê Fa nghỉ chờ trầm;O07;CR1;CR2;OR7;OR4;OR5;OR1;OR3
+008;offset;RH;Rê Sol nối hai tay;O08;CR2;CR3;OR8;OR5;OR3;OR6;OR2
+009;offset;RH;Mi Đô nghe tiếng đáp;O09;CR3;CR1;OR2;OR7;OR6;OR3;OR5
+010;offset;RH;Mi Rê đổi lượt ngắn;O10;CR1;CR3;OR4;OR8;OR1;OR5;OR7
+011;offset;RH;Mi Fa bên tiếng trầm;O11;CR2;CR1;OR1;OR3;OR8;OR7;OR6
+012;offset;RH;Mi Sol khép khoảng nghỉ;O12;CR3;CR2;OR5;OR6;OR2;OR4;OR8
+013;offset;RH;Fa Đô có tiếng chen;O13;CR1;CR2;OR3;OR5;OR7;OR6;OR1
+014;offset;RH;Fa Rê giữ lời sáng;O14;CR2;CR3;OR6;OR1;OR4;OR2;OR7
+015;offset;RH;Fa Mi nối phách lẻ;O15;CR3;CR1;OR7;OR2;OR6;OR8;OR4
+016;offset;RH;Fa Sol qua nhịp đệm;O16;CR1;CR3;OR8;OR4;OR5;OR3;OR2
+017;offset;RH;Sol Đô ghé lời trầm;O17;CR2;CR1;OR1;OR6;OR3;OR5;OR4
+018;offset;RH;Sol Rê đáp xa;O18;CR3;CR2;OR2;OR8;OR7;OR1;OR6
+019;offset;RH;Sol Mi nghe hai lớp;O19;CR1;CR2;OR4;OR5;OR2;OR7;OR8
+020;offset;RH;Sol Fa rồi im tiếng;O20;CR2;CR3;OR5;OR7;OR1;OR6;OR3
+021;offset;RH;Đô nghỉ Mi giữ;O21;CR3;CR1;OR6;OR3;OR8;OR2;OR5
+022;offset;RH;Rê nghỉ Fa ngân;O22;CR1;CR3;OR7;OR8;OR4;OR5;OR1
+023;offset;RH;Mi dừng Sol tiếp;O23;CR2;CR1;OR8;OR1;OR6;OR4;OR7
+024;offset;RH;Fa nhường Rê dài;O24;CR3;CR2;OR3;OR4;OR5;OR8;OR2
+025;offset;RH;Sol đợi Đô khép;O25;CR1;CR2;OR5;OR2;OR7;OR1;OR4
+026;offset;LH;Trầm Đô Rê mở lời;O26;CL1;CL2;OL1;OL2;OL5;OL3;OL8
+027;offset;LH;Trầm Đô Mi và lời cao;O27;CL2;CL3;OL2;OL4;OL1;OL6;OL5
+028;offset;LH;Trầm Đô Fa thay lượt;O28;CL3;CL1;OL4;OL3;OL7;OL2;OL1
+029;offset;LH;Trầm Đô Sol giữ đáp;O29;CL1;CL3;OL5;OL1;OL8;OL4;OL6
+030;offset;LH;Trầm Rê Đô lệch phách;O30;CL2;CL1;OL3;OL6;OL2;OL7;OL4
+031;offset;LH;Trầm Rê Mi hai lớp;O31;CL3;CL2;OL6;OL2;OL4;OL8;OL1
+032;offset;LH;Trầm Rê Fa chờ tiếng;O32;CL1;CL2;OL7;OL4;OL5;OL1;OL3
+033;offset;LH;Trầm Rê Sol nối tay;O33;CL2;CL3;OL8;OL5;OL3;OL6;OL2
+034;offset;LH;Trầm Mi Đô nghe đáp;O34;CL3;CL1;OL2;OL7;OL6;OL3;OL5
+035;offset;LH;Trầm Mi Rê đổi lượt;O35;CL1;CL3;OL4;OL8;OL1;OL5;OL7
+036;offset;LH;Trầm Mi Fa và lời sáng;O36;CL2;CL1;OL1;OL3;OL8;OL7;OL6
+037;offset;LH;Trầm Mi Sol khép nghỉ;O37;CL3;CL2;OL5;OL6;OL2;OL4;OL8
+038;offset;LH;Trầm Fa Đô có lời chen;O38;CL1;CL2;OL3;OL5;OL7;OL6;OL1
+039;offset;LH;Trầm Fa Rê giữ tiếng;O39;CL2;CL3;OL6;OL1;OL4;OL2;OL7
+040;offset;LH;Trầm Fa Mi nối phách;O40;CL3;CL1;OL7;OL2;OL6;OL8;OL4
+041;offset;LH;Trầm Fa Sol qua đệm;O41;CL1;CL3;OL8;OL4;OL5;OL3;OL2
+042;offset;LH;Trầm Sol Đô ghé sáng;O42;CL2;CL1;OL1;OL6;OL3;OL5;OL4
+043;offset;LH;Trầm Sol Rê đáp xa;O43;CL3;CL2;OL2;OL8;OL7;OL1;OL6
+044;offset;LH;Trầm Sol Mi nghe lớp;O44;CL1;CL2;OL4;OL5;OL2;OL7;OL8
+045;offset;LH;Trầm Sol Fa rồi nghỉ;O45;CL2;CL3;OL5;OL7;OL1;OL6;OL3
+046;offset;LH;Trầm Đô nhường Mi;O46;CL3;CL1;OL6;OL3;OL8;OL2;OL5
+047;offset;LH;Trầm Rê nhường Fa;O47;CL1;CL3;OL7;OL8;OL4;OL5;OL1
+048;offset;LH;Trầm Mi dừng Sol tiếp;O48;CL2;CL1;OL8;OL1;OL6;OL4;OL7
+049;offset;LH;Trầm Fa đợi Rê ngân;O49;CL3;CL2;OL3;OL4;OL5;OL8;OL2
+050;offset;LH;Trầm Sol đợi Đô khép;O50;CL1;CL2;OL5;OL2;OL7;OL1;OL4
+051;dyad;RH;Đô Mi trở Đô;D01;CR1;CR2;DR1;DR2;DR5;DR3;DR8
+052;dyad;RH;Đô Mi tìm Rê;D02;CR2;CR3;DR2;DR4;DR1;DR6;DR5
+053;dyad;RH;Đô Mi giữ Mi;D03;CR3;CR1;DR4;DR3;DR7;DR2;DR1
+054;dyad;RH;Đô Mi ghé Fa;D04;CR1;CR3;DR5;DR1;DR8;DR4;DR6
+055;dyad;RH;Đô Mi mở Sol;D05;CR2;CR1;DR3;DR6;DR2;DR7;DR4
+056;dyad;RH;Rê Fa về Đô;D06;CR3;CR2;DR6;DR2;DR4;DR8;DR1
+057;dyad;RH;Rê Fa giữ Rê;D07;CR1;CR2;DR7;DR4;DR5;DR1;DR3
+058;dyad;RH;Rê Fa qua Mi;D08;CR2;CR3;DR8;DR5;DR3;DR6;DR2
+059;dyad;RH;Rê Fa giữ Fa;D09;CR3;CR1;DR2;DR7;DR6;DR3;DR5
+060;dyad;RH;Rê Fa mở Sol;D10;CR1;CR3;DR4;DR8;DR1;DR5;DR7
+061;dyad;RH;Mi Sol về Đô;D11;CR2;CR1;DR1;DR3;DR8;DR7;DR6
+062;dyad;RH;Mi Sol ghé Rê;D12;CR3;CR2;DR5;DR6;DR2;DR4;DR8
+063;dyad;RH;Mi Sol giữ Mi;D13;CR1;CR2;DR3;DR5;DR7;DR6;DR1
+064;dyad;RH;Mi Sol tìm Fa;D14;CR2;CR3;DR6;DR1;DR4;DR2;DR7
+065;dyad;RH;Mi Sol giữ Sol;D15;CR3;CR1;DR7;DR2;DR6;DR8;DR4
+066;dyad;RH;Quãng năm về Đô;D16;CR1;CR3;DR8;DR4;DR5;DR3;DR2
+067;dyad;RH;Quãng năm sang Rê;D17;CR2;CR1;DR1;DR6;DR3;DR5;DR4
+068;dyad;RH;Quãng năm giữ Mi;D18;CR3;CR2;DR2;DR8;DR7;DR1;DR6
+069;dyad;RH;Quãng năm ghé Fa;D19;CR1;CR2;DR4;DR5;DR2;DR7;DR8
+070;dyad;RH;Quãng năm mở Sol;D20;CR2;CR3;DR5;DR7;DR1;DR6;DR3
+071;dyad;RH;Rê Sol tìm Đô;D21;CR3;CR1;DR6;DR3;DR8;DR2;DR5
+072;dyad;RH;Rê Sol giữ Rê;D22;CR1;CR3;DR7;DR8;DR4;DR5;DR1
+073;dyad;RH;Rê Sol tìm Mi;D23;CR2;CR1;DR8;DR1;DR6;DR4;DR7
+074;dyad;RH;Rê Sol ghé Fa;D24;CR3;CR2;DR3;DR4;DR5;DR8;DR2
+075;dyad;RH;Rê Sol giữ Sol;D25;CR1;CR2;DR5;DR2;DR7;DR1;DR4
+076;dyad;LH;Đôi trầm về Đô;D26;CL1;CL2;DL1;DL2;DL5;DL3;DL8
+077;dyad;LH;Đôi trầm tìm Rê;D27;CL2;CL3;DL2;DL4;DL1;DL6;DL5
+078;dyad;LH;Đôi trầm giữ Mi;D28;CL3;CL1;DL4;DL3;DL7;DL2;DL1
+079;dyad;LH;Đôi trầm ghé Fa;D29;CL1;CL3;DL5;DL1;DL8;DL4;DL6
+080;dyad;LH;Đôi trầm mở Sol;D30;CL2;CL1;DL3;DL6;DL2;DL7;DL4
+081;dyad;LH;Rê Fa trầm về Đô;D31;CL3;CL2;DL6;DL2;DL4;DL8;DL1
+082;dyad;LH;Rê Fa trầm giữ Rê;D32;CL1;CL2;DL7;DL4;DL5;DL1;DL3
+083;dyad;LH;Rê Fa trầm qua Mi;D33;CL2;CL3;DL8;DL5;DL3;DL6;DL2
+084;dyad;LH;Rê Fa trầm giữ Fa;D34;CL3;CL1;DL2;DL7;DL6;DL3;DL5
+085;dyad;LH;Rê Fa trầm mở Sol;D35;CL1;CL3;DL4;DL8;DL1;DL5;DL7
+086;dyad;LH;Mi Sol trầm về Đô;D36;CL2;CL1;DL1;DL3;DL8;DL7;DL6
+087;dyad;LH;Mi Sol trầm ghé Rê;D37;CL3;CL2;DL5;DL6;DL2;DL4;DL8
+088;dyad;LH;Mi Sol trầm giữ Mi;D38;CL1;CL2;DL3;DL5;DL7;DL6;DL1
+089;dyad;LH;Mi Sol trầm tìm Fa;D39;CL2;CL3;DL6;DL1;DL4;DL2;DL7
+090;dyad;LH;Mi Sol trầm giữ Sol;D40;CL3;CL1;DL7;DL2;DL6;DL8;DL4
+091;dyad;LH;Năm trầm trở Đô;D41;CL1;CL3;DL8;DL4;DL5;DL3;DL2
+092;dyad;LH;Năm trầm sang Rê;D42;CL2;CL1;DL1;DL6;DL3;DL5;DL4
+093;dyad;LH;Năm trầm giữ Mi;D43;CL3;CL2;DL2;DL8;DL7;DL1;DL6
+094;dyad;LH;Năm trầm ghé Fa;D44;CL1;CL2;DL4;DL5;DL2;DL7;DL8
+095;dyad;LH;Năm trầm giữ Sol;D45;CL2;CL3;DL5;DL7;DL1;DL6;DL3
+096;dyad;LH;Rê Sol trầm tìm Đô;D46;CL3;CL1;DL6;DL3;DL8;DL2;DL5
+097;dyad;LH;Rê Sol trầm giữ Rê;D47;CL1;CL3;DL7;DL8;DL4;DL5;DL1
+098;dyad;LH;Rê Sol trầm tìm Mi;D48;CL2;CL1;DL8;DL1;DL6;DL4;DL7
+099;dyad;LH;Rê Sol trầm ghé Fa;D49;CL3;CL2;DL3;DL4;DL5;DL8;DL2
+100;dyad;LH;Rê Sol trầm giữ Sol;D50;CL1;CL2;DL5;DL2;DL7;DL1;DL4

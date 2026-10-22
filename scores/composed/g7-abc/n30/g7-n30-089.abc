@@ -1,0 +1,21 @@
+%abc-2.1
+X:4689
+T:g7-n30-089 Đô Rê Mi trầm sáu tám
+C:Nhạc do trợ lý AI biên soạn
+M:6/8
+L:1/4
+Q:3/8=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G7; profile=compound; lead=LH; bucket=n30; notes=36; RH=9; LH=27
+% duration60=18s; related_pattern=1d4e2ea5007a2633
+% authored_passages=K14 KLp1 KLp2
+% source=buildscripts/pianist/compositions/g7/studies.txt:90
+[V:RH] C3 | C3 | D3 | C3 |
+[V:LH] C, D,/2 E,3/2 | C, D,/2 E,3/2 | F, E,/2 D,3/2 | E,/2 F,/2 G,/2 G, E,/2 |
+[V:RH] C3 | C3 | C3 | D3 |
+[V:LH] D,3/2 C,3/2 | E, G,/2 E,3/2 | C, D,/2 E,3/2 | F, E,/2 D,3/2 |
+[V:RH] C3 |]
+[V:LH] E,3/2 C,3/2 |]

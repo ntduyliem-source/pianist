@@ -1,0 +1,25 @@
+%abc-2.1
+X:2783
+T:g4-n100-083 Đô giữa gọi đường trầm
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=span; lead=LH; bucket=n100; notes=76; RH=38; LH=38
+% role=A; duration60=80s; related_pattern=a28dd077751aba59
+% authored_passages=H06 H05 H08 H07 H05
+% source=buildscripts/pianist/compositions/g4/n100.txt:84
+[V:RH] z4 | E F G F | z4 | F E F E |
+[V:LH] C G, C, D, | z4 | E, G, C,2 | z4 |
+[V:RH] z4 | E F G F | z4 | F E E2 |
+[V:LH] C, G, C B, | z4 | A, G, E, C, | z4 |
+[V:RH] z4 | E F G F | z4 | F E F E |
+[V:LH] C,2 G, C | z4 | B, A, G, C, | z4 |
+[V:RH] z4 | E F G F | z4 | F G F E |
+[V:LH] C, F, A, C | z4 | B, G, E, C, | z4 |
+[V:RH] z4 | E F G F | z4 | F E E2 |]
+[V:LH] C, G, C B, | z4 | A, G, E, C, | z4 |]

@@ -1,0 +1,21 @@
+%abc-2.1
+X:1990
+T:g3-n50-090 Giữ đầu ba lời chung
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fourth; lead=RH; bucket=n50; notes=58; RH=29; LH=29
+% role=S; duration60=36s; related_pattern=5924d051dd3a91f5
+% authored_passages=S23 S27 S21
+% source=buildscripts/pianist/compositions/g3/n50.txt:91
+[V:RH] C2 F | E D C | F E C | C3 |
+[V:LH] C,2 D, | E, D, C, | D, E, D, | C,3 |
+[V:RH] C F2 | E D C | D G F | E C2 |
+[V:LH] C, D,2 | E, D, C, | D, E, D, | C, C,2 |
+[V:RH] C F E | D E C | F E D | C3 |]
+[V:LH] C, D, E, | D, D, C, | D, E, D, | C,3 |]

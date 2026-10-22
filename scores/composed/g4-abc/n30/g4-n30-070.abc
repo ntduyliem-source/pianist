@@ -1,0 +1,21 @@
+%abc-2.1
+X:2570
+T:g4-n30-070 Giữ bass cao đổi lời
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=upper; lead=LH; bucket=n30; notes=30; RH=13; LH=17
+% role=A; duration60=36s; related_pattern=61c4ed5e512a1cb2
+% authored_passages=Q14 Q16
+% source=buildscripts/pianist/compositions/g4/n30.txt:71
+[V:RH] z3 | G F E | z3 | F2 G |
+[V:LH] G,2 A, | z3 | B, C D | z3 |
+[V:RH] z3 | G2 G | z3 | G2 F |
+[V:LH] C B, G, | z3 | B, D C | z3 |
+[V:RH] z3 | E2 F | z3 | G2 G |]
+[V:LH] B, A, G, | z3 | A, B, G, | z3 |]

@@ -1,0 +1,17 @@
+%abc-2.1
+X:2909
+T:g5-n6-009 Mi Đô nghe tiếng đáp
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=offset; lead=RH; bucket=n6; notes=7; RH=4; LH=3
+% duration60=8s; related_pattern=b19d15fe7b2c5d71
+% authored_passages=O09 CR1
+% source=buildscripts/pianist/compositions/g5/studies.txt:10
+[V:RH] E2 C z | G2 E2 |]
+[V:LH] z C, z G, | C,4 |]

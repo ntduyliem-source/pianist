@@ -1,0 +1,25 @@
+%abc-2.1
+X:1382
+T:g2-n100-082 Cặp trầm giữa đổi hỏi
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=eighth; lead=LH; bucket=n100; notes=86; RH=38; LH=48
+% role=A; duration60=80s; related_pattern=04337add39841b35
+% authored_passages=B17 B19 B15 B16 B12
+% source=buildscripts/pianist/compositions/g2/n100.txt:83
+[V:RH] z4 | C D E D | z4 | D C C2 |
+[V:LH] C, D,/2E,/2 F,/2G,/2 F, | z4 | E, D, E,/2D,/2 C, | z4 |
+[V:RH] z4 | C D E D | z4 | D E D C |
+[V:LH] C,/2D,/2 E,/2F,/2 G,/2F,/2 E, | z4 | D, C, D,/2E,/2 D, | z4 |
+[V:RH] z4 | C D E D | z4 | D E D C |
+[V:LH] C,2 C,/2D,/2 E, | z4 | D,/2E,/2 D, C,2 | z4 |
+[V:RH] z4 | C D E D | z4 | D C C2 |
+[V:LH] C,2 C,/2D,/2 E, | z4 | D,/2C,/2 C, C,2 | z4 |
+[V:RH] z4 | C D C C | z4 | C D C C |]
+[V:LH] C, D, E,/2F,/2 G, | z4 | F,/2E,/2 D, C,2 | z4 |]

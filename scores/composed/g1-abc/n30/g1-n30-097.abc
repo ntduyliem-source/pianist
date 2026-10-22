@@ -1,0 +1,21 @@
+%abc-2.1
+X:497
+T:g1-n30-097 Chín ô bước đôi
+C:Nhạc do trợ lý AI biên soạn
+M:2/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n30; notes=32; RH=16; LH=16
+% role=S; family=octave-nine; form=authored; duration60=18s
+% related_pattern=fa0fdb2d3c68fece
+% source=buildscripts/pianist/compositions/g1/n30.txt:97
+[V:RH] C D | E2 | F G | F E |
+[V:LH] C, D, | E,2 | F, G, | F, E, |
+[V:RH] D C | C D | E D | C D |
+[V:LH] D, C, | C, D, | E, D, | C, D, |
+[V:RH] C2 |]
+[V:LH] C,2 |]

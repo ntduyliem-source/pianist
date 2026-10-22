@@ -1,0 +1,17 @@
+%abc-2.1
+X:2480
+T:g4-n20-080 Fa La mở tám đối đáp
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=span; lead=RH; bucket=n20; notes=16; RH=8; LH=8
+% role=A; duration60=16s; related_pattern=2335ff5e12b7c3a7
+% authored_passages=H03
+% source=buildscripts/pianist/compositions/g4/n20.txt:81
+[V:RH] C F A c | z4 | B G E C | z4 |]
+[V:LH] z4 | C, D, E, D, | z4 | D, E, D, C, |]

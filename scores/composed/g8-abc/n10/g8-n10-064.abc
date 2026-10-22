@@ -1,0 +1,17 @@
+%abc-2.1
+X:5164
+T:g8-n10-064 Đôi trầm chấm về Đô
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G8; profile=dyad-dotted; lead=LH; bucket=n10; notes=11; RH=3; LH=8
+% duration60=12s; related_pattern=43180b5a6db7425a
+% authored_passages=D14 CL1 CL2
+% source=buildscripts/pianist/compositions/g8/studies.txt:65
+[V:RH] C4 | C4 | C4 |]
+[V:LH] [C,E,]3/2 D,/2 C,2 | G,2 E,2 | E,2 C,2 |]

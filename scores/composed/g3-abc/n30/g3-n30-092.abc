@@ -1,0 +1,19 @@
+%abc-2.1
+X:1892
+T:g3-n30-092 Giữ trầm rồi yên chung
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fourth; lead=LH; bucket=n30; notes=36; RH=18; LH=18
+% role=S; duration60=32s; related_pattern=9101ad67bebe4e6a
+% authored_passages=S07 S17
+% source=buildscripts/pianist/compositions/g3/n30.txt:93
+[V:RH] C2 D E | D2 E D | C2 D C | D D C2 |
+[V:LH] C,2 F, E, | D,2 G, F, | E,2 F, C, | D, E, C,2 |
+[V:RH] C4 | C D C2 | C4 | C4 |]
+[V:LH] C,4 | C, F, E,2 | C,4 | C,4 |]

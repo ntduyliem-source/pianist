@@ -1,0 +1,23 @@
+%abc-2.1
+X:652
+T:g1-n100-052 Bốn câu trầm bước đều
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n100; notes=77; RH=16; LH=61
+% role=L; family=bass-four-dense-questions; form=authored; duration60=64s
+% related_pattern=319f8f01bbed07f8
+% source=buildscripts/pianist/compositions/g1/n100.txt:54
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C, D, E, F, | G, F, E, D, | C, D, E, D, | C, D, C, C, |
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C, D, D, E, | F, G, F, E, | D, C, D, E, | F, E, D, C, |
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C, C, D, E, | F, E, F, G, | F, E, D, C, | D, E, D, C, |
+[V:RH] C4 | C4 | C4 | C4 |]
+[V:LH] C, D, E, F, | G, F, E, D, | C, D, E, D, | C,4 |]

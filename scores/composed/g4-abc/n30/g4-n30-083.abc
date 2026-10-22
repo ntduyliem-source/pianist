@@ -1,0 +1,19 @@
+%abc-2.1
+X:2583
+T:g4-n30-083 Đô giữa gọi câu dài
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=span; lead=LH; bucket=n30; notes=30; RH=16; LH=14
+% role=A; duration60=32s; related_pattern=656f94b19dfaebc3
+% authored_passages=H06 H08
+% source=buildscripts/pianist/compositions/g4/n30.txt:84
+[V:RH] z4 | E F G F | z4 | F E F E |
+[V:LH] C G, C, D, | z4 | E, G, C,2 | z4 |
+[V:RH] z4 | E F G F | z4 | F E F E |]
+[V:LH] C,2 G, C | z4 | B, A, G, C, | z4 |]

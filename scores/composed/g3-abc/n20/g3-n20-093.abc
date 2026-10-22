@@ -1,0 +1,17 @@
+%abc-2.1
+X:1793
+T:g3-n20-093 Fa thấp gọi nhịp chung
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fourth; lead=LH; bucket=n20; notes=24; RH=12; LH=12
+% role=S; duration60=16s; related_pattern=1ae2178c2164b942
+% authored_passages=S08
+% source=buildscripts/pianist/compositions/g3/n20.txt:94
+[V:RH] D C C2 | D E D2 | E D D2 | C D C2 |]
+[V:LH] F, C, E,2 | D, G, F,2 | E, C, F,2 | E, D, C,2 |]

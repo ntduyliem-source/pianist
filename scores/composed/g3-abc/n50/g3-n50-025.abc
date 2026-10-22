@@ -1,0 +1,21 @@
+%abc-2.1
+X:1925
+T:g3-n50-025 Ba đoạn rải hợp âm Đô
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=arpeggio; lead=RH; bucket=n50; notes=54; RH=42; LH=12
+% role=R; duration60=48s; related_pattern=0c9cb145339ec9f9
+% authored_passages=A01 A03 A05
+% source=buildscripts/pianist/compositions/g3/n50.txt:26
+[V:RH] C G E C | G C E G | E C G E | C2 C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] G C E G | E C G E | C G E C | E G C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C G E2 | C2 G E | C E G C | E G C2 |]
+[V:LH] C,4 | C,4 | C,4 | C,4 |]

@@ -1,0 +1,23 @@
+%abc-2.1
+X:692
+T:g1-n100-092 Mười sáu ô hai tay nhịp ba
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n100; notes=76; RH=38; LH=38
+% role=S; family=octave-sixteen-three; form=authored; duration60=48s
+% related_pattern=84ac49772653647c
+% source=buildscripts/pianist/compositions/g1/n100.txt:92
+[V:RH] C D E | F G F | E D C | C3 |
+[V:LH] C, D, E, | F, G, F, | E, D, C, | C,3 |
+[V:RH] C D C | D E F | E D C | C3 |
+[V:LH] C, D, C, | D, E, F, | E, D, C, | C,3 |
+[V:RH] C D E | F E D | C D C | C3 |
+[V:LH] C, D, E, | F, E, D, | C, D, C, | C,3 |
+[V:RH] C2 D | E F E | D C2 | C3 |]
+[V:LH] C,2 D, | E, F, E, | D, C,2 | C,3 |]

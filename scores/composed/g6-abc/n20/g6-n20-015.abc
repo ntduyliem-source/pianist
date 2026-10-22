@@ -1,0 +1,19 @@
+%abc-2.1
+X:3815
+T:g6-n20-015 Đô Mi Fa khép nhẹ
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G6; profile=m6-down; lead=RH; bucket=n20; notes=20; RH=15; LH=5
+% duration60=20s; related_pattern=374f9c5703e0f783
+% authored_passages=S15 AD2
+% source=buildscripts/pianist/compositions/g6/studies.txt:16
+[V:RH] d c E F | G2 B c | E F G E | D2 E2 |
+[V:LH] C,4 | C, z z z | C, z z z | C, z z z |
+[V:RH] G2 C2 |]
+[V:LH] C, z z z |]

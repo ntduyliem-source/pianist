@@ -1,0 +1,41 @@
+# U: RH G4–D5; V: LH G3–D4. Accompaniment stays in the familiar G1 register.
+U01;4;G A B c | d c B A | G B c B | A B G2;G,4 | G,4 | G,4 | G,4
+U02;4;G2 B c | d B c d | c B A G | A B G2;G,4 | G,4 | G,4 | G,4
+U03;4;B c d2 | c B A G | A B c B | A G G2;G,4 | G,4 | G,4 | G,4
+U04;4;c B A G | A B c d | c B A B | A B G2;G,4 | G,4 | G,4 | G,4
+U05;4;G2 B A | G2 B c | d c B2 | G2 G2;G,4 | G,4 | G,4 | G,4
+U06;4;G B z A | B c d c | B A B G | A B G2;G,4 | G,4 | G,4 | G,4
+U07;4;G G A B | c B A G | B d c B | A G G2;G,4 | G,4 | G,4 | G,4
+U08;4;B G c B | A B c d | c A B G | A G G2;G,4 | G,4 | G,4 | G,4
+U09;4;G A B2 | c G A B | c d c2 | B A G2;G,4 | G,4 | G,4 | G,4
+U10;4;d c B A | G B d c | B A G B | A G G2;G,4 | G,4 | G,4 | G,4
+U11;4;G2 B c | d2 c B | G A B c | G2 G2;G,4 | G,4 | G,4 | G,4
+U12;4;G A B c | d B c d | c B A G | A B G2;G,2 G,2 | G,4 | G,2 G,2 | G,4
+U13;4;A B c2 | B G c B | A B d c | B A G2;G,4 | G,4 | G,4 | G,4
+U14;4;c2 G A | B A c B | A d c B | A G G2;G,4 | G,4 | G,4 | G,4
+U15;4;G c B G | A d c B | A B c G | B A G2;G,4 | G,4 | G,4 | G,4
+U16;4;G2 B2 | c B G2 | B2 d2 | G4;G,4 | G,4 | G,4 | G,4
+U17;4;G2 B A | G2 B2 | c2 G2 | G4;G,4 | G,4 | G,4 | G,4
+U18;4;G4 | G A B2 | c B G2 | G4;G,4 | G,4 | G,4 | G,4
+U19;4;G A B2 | G4 | c2 B A | G4;G,4 | G,4 | G,4 | G,4
+U20;4;G4 | G2 c2 | B A G2 | G4;G,4 | G,4 | G,4 | G,4
+V01;4;G4 | G4 | G4 | G4;G, A, B, C | D C B, A, | G, B, C B, | A, B, G,2
+V02;4;G4 | G4 | G4 | G4;G,2 B, C | D B, C D | C B, A, G, | A, B, G,2
+V03;4;G4 | G4 | G4 | G4;B, C D2 | C B, A, G, | A, B, C B, | A, G, G,2
+V04;4;G4 | G4 | G4 | G4;C B, A, G, | A, B, C D | C B, A, B, | A, B, G,2
+V05;4;G4 | G4 | G4 | G4;G,2 B, A, | G,2 B, C | D C B,2 | G,2 G,2
+V06;4;G4 | G4 | G4 | G4;G, B, z A, | B, C D C | B, A, B, G, | A, B, G,2
+V07;4;G4 | G4 | G4 | G4;G, G, A, B, | C B, A, G, | B, D C B, | A, G, G,2
+V08;4;G4 | G4 | G4 | G4;B, G, C B, | A, B, C D | C A, B, G, | A, G, G,2
+V09;4;G4 | G4 | G4 | G4;G, A, B,2 | C G, A, B, | C D C2 | B, A, G,2
+V10;4;G4 | G4 | G4 | G4;D C B, A, | G, B, D C | B, A, G, B, | A, G, G,2
+V11;4;G4 | G4 | G4 | G4;G,2 B, C | D2 C B, | G, A, B, C | G,2 G,2
+V12;4;G2 G2 | G4 | G2 G2 | G4;G, A, B, C | D B, C D | C B, A, G, | A, B, G,2
+V13;4;G4 | G4 | G4 | G4;A, B, C2 | B, G, C B, | A, B, D C | B, A, G,2
+V14;4;G4 | G4 | G4 | G4;C2 G, A, | B, A, C B, | A, D C B, | A, G, G,2
+V15;4;G4 | G4 | G4 | G4;G, C B, G, | A, D C B, | A, B, C G, | B, A, G,2
+V16;4;G4 | G4 | G4 | G4;G,2 B,2 | C B, G,2 | B,2 D2 | G,4
+V17;4;G4 | G4 | G4 | G4;G,2 B, A, | G,2 B,2 | C2 G,2 | G,4
+V18;4;G4 | G4 | G4 | G4;G,4 | G, A, B,2 | C B, G,2 | G,4
+V19;4;G4 | G4 | G4 | G4;G, A, B,2 | G,4 | C2 B, A, | G,4
+V20;4;G4 | G4 | G4 | G4;G,4 | G,2 C2 | B, A, G,2 | G,4

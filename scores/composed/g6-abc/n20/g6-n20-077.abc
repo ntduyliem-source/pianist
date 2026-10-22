@@ -1,0 +1,19 @@
+%abc-2.1
+X:3877
+T:g6-n20-077 Mi giữa về Fa Sol
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G6; profile=M7-down; lead=LH; bucket=n20; notes=20; RH=5; LH=15
+% duration60=20s; related_pattern=a854fdd96b5564e8
+% authored_passages=S77 DX2
+% source=buildscripts/pianist/compositions/g6/studies.txt:78
+[V:RH] c4 | c z z z | c z z z | c z z z |
+[V:LH] D E F, G, | G,2 C B, | C, D, E,2 | F, E, D,2 |
+[V:RH] c z z z |]
+[V:LH] G,2 C,2 |]

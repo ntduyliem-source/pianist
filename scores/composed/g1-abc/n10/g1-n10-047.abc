@@ -1,0 +1,17 @@
+%abc-2.1
+X:247
+T:g1-n10-047 Ba vòng tay trái
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n10; notes=12; RH=3; LH=9
+% role=L; family=bass-three-turns; form=authored; duration60=9s
+% related_pattern=543e47b829c6a42e
+% source=buildscripts/pianist/compositions/g1/n10.txt:49
+[V:RH] C3 | C3 | C3 |]
+[V:LH] C, D, C, | D, E, D, | E, D, C, |]

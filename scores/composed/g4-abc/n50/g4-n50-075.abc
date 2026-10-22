@@ -1,0 +1,21 @@
+%abc-2.1
+X:2675
+T:g4-n50-075 Ba cuộc gọi rất trầm
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=lower; lead=LH; bucket=n50; notes=46; RH=23; LH=23
+% role=A; duration60=48s; related_pattern=403d7d922a9512e8
+% authored_passages=T05 T07 T06
+% source=buildscripts/pianist/compositions/g4/n50.txt:76
+[V:RH] z4 | C D E D | z4 | D C C2 |
+[V:LH] A,, B,, C, D, | z4 | E, D, C, A,, | z4 |
+[V:RH] z4 | C D E D | z4 | D C D C |
+[V:LH] A,, C, E, D, | z4 | C, B,, A,, C, | z4 |
+[V:RH] z4 | C D E D | z4 | D C D C |]
+[V:LH] E, B,, C, D, | z4 | C, B,, A,,2 | z4 |]

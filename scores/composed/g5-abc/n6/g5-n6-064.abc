@@ -1,0 +1,17 @@
+%abc-2.1
+X:2964
+T:g5-n6-064 Mi Sol tìm Fa
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=dyad; lead=RH; bucket=n6; notes=8; RH=5; LH=3
+% duration60=8s; related_pattern=bd4d5819a411e90f
+% authored_passages=D14 CR3
+% source=buildscripts/pianist/compositions/g5/studies.txt:65
+[V:RH] [EG]2 F2 | D2 C2 |]
+[V:LH] E,2 F,2 | G,4 |]

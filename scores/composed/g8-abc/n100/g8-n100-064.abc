@@ -1,0 +1,27 @@
+%abc-2.1
+X:5564
+T:g8-n100-064 Đôi trầm chấm về Đô
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G8; profile=dyad-dotted; lead=LH; bucket=n100; notes=82; RH=21; LH=61
+% duration60=84s; related_pattern=7ea1eaed61d407b0
+% authored_passages=D14 DL1 DL2 DL3 DL4 DL1
+% source=buildscripts/pianist/compositions/g8/studies.txt:65
+[V:RH] C4 | C z z z | D z z z | C z z z |
+[V:LH] [C,E,]3/2 D,/2 C,2 | [C,E,]3/2 D,/2 E,2 | [D,F,]3/2 E,/2 D,2 | E,2 G,2 |
+[V:RH] C z z z | C z z z | C z z z | C z z z |
+[V:LH] C,4 | [E,G,]3/2 F,/2 E,2 | D,2 C,2 | [C,G,]3/2 E,/2 G,2 |
+[V:RH] C z z z | D z z z | C z z z | C z z z |
+[V:LH] E,2 C,2 | [D,G,]3/2 E,/2 F,2 | E,3/2 D,/2 C,2 | [C,E,]2 G,2 |
+[V:RH] C z z z | C z z z | D z z z | D z z z |
+[V:LH] C,4 | [C,G,]3/2 D,/2 E,2 | F,2 D,2 | [D,F,]3/2 E,/2 G,2 |
+[V:RH] C z z z | C z z z | D z z z | C z z z |
+[V:LH] [C,E,]4 | [C,E,]3/2 D,/2 E,2 | [D,F,]3/2 E,/2 D,2 | E,2 G,2 |
+[V:RH] C z z z |]
+[V:LH] C,4 |]

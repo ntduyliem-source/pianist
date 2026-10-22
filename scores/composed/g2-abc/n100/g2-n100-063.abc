@@ -1,0 +1,31 @@
+%abc-2.1
+X:1363
+T:g2-n100-063 Chuyện hỏi đáp ba phách
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=third; lead=RH; bucket=n100; notes=84; RH=45; LH=39
+% role=A; duration60=90s; related_pattern=7dfc38623b038b2f
+% authored_passages=Q11 Q13 Q15 Q13 Q11
+% source=buildscripts/pianist/compositions/g2/n100.txt:64
+[V:RH] C E D | z3 | E G F | z3 |
+[V:LH] z3 | C, D, E, | z3 | D, E, D, |
+[V:RH] E D C | z3 | C E D | z3 |
+[V:LH] z3 | C, D, C, | z3 | C,2 D, |
+[V:RH] E D C | z3 | D E C | z3 |
+[V:LH] z3 | E,2 D, | z3 | C,2 C, |
+[V:RH] C D F | z3 | E G F | z3 |
+[V:LH] z3 | C, D, E, | z3 | D, C, D, |
+[V:RH] E D C | z3 | C E D | z3 |
+[V:LH] z3 | E, D, C, | z3 | C,2 D, |
+[V:RH] E D C | z3 | D E C | z3 |
+[V:LH] z3 | E,2 D, | z3 | C,2 C, |
+[V:RH] C E D | z3 | E G F | z3 |
+[V:LH] z3 | C, D, E, | z3 | D, E, D, |
+[V:RH] E D C | z3 |]
+[V:LH] z3 | C, D, C, |]

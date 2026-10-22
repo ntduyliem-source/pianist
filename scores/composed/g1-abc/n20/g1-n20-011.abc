@@ -1,0 +1,17 @@
+%abc-2.1
+X:311
+T:g1-n20-011 Câu đáp có hơi thở
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n20; notes=15; RH=11; LH=4
+% role=R; family=breath-answer; form=authored; duration60=16s
+% related_pattern=ce70d2cad1c0b4ef
+% source=buildscripts/pianist/compositions/g1/n20.txt:14
+[V:RH] C D E F | G2 F E | D z C C | C4 |]
+[V:LH] C,4 | C,4 | C,4 | C,4 |]

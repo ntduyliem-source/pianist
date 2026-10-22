@@ -1,0 +1,17 @@
+%abc-2.1
+X:1730
+T:g3-n20-030 Sol rải ba phách về
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=arpeggio; lead=RH; bucket=n20; notes=15; RH=11; LH=4
+% role=R; duration60=12s; related_pattern=0d996fdb6da8a822
+% authored_passages=A22
+% source=buildscripts/pianist/compositions/g3/n20.txt:31
+[V:RH] G C E | G E C | E G C | G C2 |]
+[V:LH] C,3 | C,3 | C,3 | C,3 |]

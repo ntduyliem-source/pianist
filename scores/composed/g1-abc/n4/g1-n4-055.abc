@@ -1,0 +1,17 @@
+%abc-2.1
+X:55
+T:g1-n4-055 Nốt trầm dài rồi bước
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n4; notes=4; RH=1; LH=3
+% role=L; family=bass-held-start; form=authored; duration60=4s
+% related_pattern=3e0c5ec3d88b4bb5
+% source=buildscripts/pianist/compositions/g1/n4.txt:58
+[V:RH] C4 |]
+[V:LH] C,2 D, E, |]

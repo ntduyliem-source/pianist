@@ -1,0 +1,19 @@
+%abc-2.1
+X:426
+T:g1-n30-026 Hai câu trên nền Mi
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n30; notes=30; RH=23; LH=7
+% role=R; family=e-base-two; form=authored; duration60=28s
+% related_pattern=15fba96fc00bf64a
+% source=buildscripts/pianist/compositions/g1/n30.txt:29
+[V:RH] C D E F | G2 F E | D E F E | E4 |
+[V:LH] E,4 | E,4 | E,4 | E,4 |
+[V:RH] E D C D | E F E D | C D E2 |]
+[V:LH] E,4 | E,4 | E,4 |]

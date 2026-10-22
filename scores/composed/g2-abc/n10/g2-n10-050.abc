@@ -1,0 +1,17 @@
+%abc-2.1
+X:950
+T:g2-n10-050 Trầm sáng rồi êm
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=eighth; lead=LH; bucket=n10; notes=11; RH=2; LH=9
+% role=L; duration60=8s; related_pattern=074341094e764301
+% authored_passages=inline-n10-050
+% source=buildscripts/pianist/compositions/g2/n10.txt:51
+[V:RH] C4 | C4 |]
+[V:LH] C,/2D,/2 E,/2F,/2 G, F, | E, D, C,2 |]

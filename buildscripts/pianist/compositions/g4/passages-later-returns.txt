@@ -1,0 +1,9 @@
+# Familiar accompaniment pulses and an additional octave route for later forms.
+L16;4;A, B, C D | E D C B, | A, C D C | B, C A,2;C,2 C,2 | C,2 C,2 | C,2 C,2 | C,2 C,2
+L17;4;E B, C D | C A, B, C | D E D C | B, C A,2;C,2 C,2 | C,2 C,2 | C,2 C,2 | C,2 C,2
+L18;4;E D C B, | A, C E D | C B, A, C | B, A, A,2;C,2 C,2 | C,2 C,2 | C,2 C,2 | C,2 C,2
+M16;4;C2 C2 | C2 C2 | C2 C2 | C2 C2;A,, B,, C, D, | E, D, C, B,, | A,, C, D, C, | B,, C, A,,2
+M17;4;C2 C2 | C2 C2 | C2 C2 | C2 C2;E, B,, C, D, | C, A,, B,, C, | D, E, D, C, | B,, C, A,,2
+M18;4;C2 C2 | C2 C2 | C2 C2 | C2 C2;E, D, C, B,, | A,, C, E, D, | C, B,, A,, C, | B,, A,, A,,2
+W24;3;C F A | c B G | E D C | G C2;C,3 | C,3 | C,3 | C,3
+X24;3;E3 | E3 | E3 | E3;C, F, A, | C B, G, | E, D, C, | G, C,2

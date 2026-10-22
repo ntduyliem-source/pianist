@@ -1,0 +1,17 @@
+%abc-2.1
+X:823
+T:g2-n6-023 Giữ Đô rồi bước nhẹ
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=eighth; lead=RH; bucket=n6; notes=8; RH=6; LH=2
+% role=R; duration60=6s; related_pattern=1e805e045223c556
+% authored_passages=inline-n6-023
+% source=buildscripts/pianist/compositions/g2/n6.txt:24
+[V:RH] C2 C/2D/2 | E D C |]
+[V:LH] C,3 | C,3 |]

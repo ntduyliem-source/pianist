@@ -1,0 +1,17 @@
+%abc-2.1
+X:949
+T:g2-n10-049 Chia phách quanh Mi thấp
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=eighth; lead=LH; bucket=n10; notes=11; RH=2; LH=9
+% role=L; duration60=8s; related_pattern=66b7d6c02d3f059c
+% authored_passages=inline-n10-049
+% source=buildscripts/pianist/compositions/g2/n10.txt:50
+[V:RH] C4 | C4 |]
+[V:LH] E,/2F,/2 G, F, E, | D,/2E,/2 D, C,2 |]

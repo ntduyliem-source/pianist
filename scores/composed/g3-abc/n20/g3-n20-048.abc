@@ -1,0 +1,17 @@
+%abc-2.1
+X:1748
+T:g3-n20-048 Nốt trầm dài trước năm
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fifth; lead=LH; bucket=n20; notes=17; RH=4; LH=13
+% role=L; duration60=16s; related_pattern=6d7597034145dde5
+% authored_passages=B03
+% source=buildscripts/pianist/compositions/g3/n20.txt:49
+[V:RH] C4 | C4 | C4 | C4 |]
+[V:LH] C,2 G, F, | E, D, C,2 | D, E, F, E, | D, C, C,2 |]

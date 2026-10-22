@@ -1,0 +1,17 @@
+%abc-2.1
+X:2271
+T:g4-n6-071 La thấp hỏi bước đáp
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=lower; lead=RH; bucket=n6; notes=6; RH=3; LH=3
+% role=A; duration60=6s; related_pattern=15195b79de62fee1
+% authored_passages=inline-n6-071
+% source=buildscripts/pianist/compositions/g4/n6.txt:72
+[V:RH] A, B, C | z3 |]
+[V:LH] z3 | E, D, C, |]

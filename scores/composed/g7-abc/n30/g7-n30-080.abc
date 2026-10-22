@@ -1,0 +1,21 @@
+%abc-2.1
+X:4680
+T:g7-n30-080 Sol Fa Mi đu đưa
+C:Nhạc do trợ lý AI biên soạn
+M:6/8
+L:1/4
+Q:3/8=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G7; profile=compound; lead=RH; bucket=n30; notes=38; RH=29; LH=9
+% duration60=18s; related_pattern=a0e86791bf4ad9a2
+% authored_passages=K05 KRp1 KRp4
+% source=buildscripts/pianist/compositions/g7/studies.txt:81
+[V:RH] G F/2 E3/2 | C D/2 E3/2 | F E/2 D3/2 | E/2 F/2 G/2 G E/2 |
+[V:LH] C,3 | C,3 | D,3 | C,3 |
+[V:RH] D3/2 C3/2 | D F/2 E3/2 | G/2 F/2 E/2 D C/2 | F E/2 D3/2 |
+[V:LH] C,3 | D,3 | C,3 | D,3 |
+[V:RH] E3/2 C3/2 |]
+[V:LH] C,3 |]

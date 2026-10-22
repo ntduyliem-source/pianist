@@ -1,0 +1,19 @@
+%abc-2.1
+X:4539
+T:g7-n20-039 Fa trầm nối qua phách
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G7; profile=tie; lead=LH; bucket=n20; notes=17; RH=5; LH=12
+% duration60=20s; related_pattern=64aefb514401ca6f
+% authored_passages=T14 TL2
+% source=buildscripts/pianist/compositions/g7/studies.txt:40
+[V:RH] D4 | C z z z | D z z z | D z z z |
+[V:LH] D, E,/2 F,/2-F,2 | G, F,/2 E,/2-E,2 | D,2 E,2 | F, E,/2 D,/2-D,2 |
+[V:RH] C z z z |]
+[V:LH] C,4 |]

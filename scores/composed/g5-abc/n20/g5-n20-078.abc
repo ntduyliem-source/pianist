@@ -1,0 +1,19 @@
+%abc-2.1
+X:3178
+T:g5-n20-078 Đôi trầm giữ Mi
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=dyad; lead=LH; bucket=n20; notes=21; RH=8; LH=13
+% duration60=20s; related_pattern=861aa29bf5c58cfe
+% authored_passages=D28 DL4
+% source=buildscripts/pianist/compositions/g5/studies.txt:79
+[V:RH] C2 E2 | D2 D2 | C4 | E2 G2 |
+[V:LH] [C,E,]2 E,2 | [D,F,]2 D,2 | E,2 G,2 | [E,G,]2 D,2 |
+[V:RH] C4 |]
+[V:LH] [C,E,]4 |]

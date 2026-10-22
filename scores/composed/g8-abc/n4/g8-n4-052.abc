@@ -1,0 +1,17 @@
+%abc-2.1
+X:4952
+T:g8-n4-052 Đôi Đô Mi chấm rồi Mi
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G8; profile=dyad-dotted; lead=RH; bucket=n4; notes=5; RH=4; LH=1
+% duration60=4s; related_pattern=228b4fcccba041e1
+% authored_passages=D02
+% source=buildscripts/pianist/compositions/g8/studies.txt:53
+[V:RH] [CE]3/2 D/2 E2 |]
+[V:LH] C,4 |]

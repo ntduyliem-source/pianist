@@ -1,0 +1,27 @@
+%abc-2.1
+X:4844
+T:g7-n100-044 Đô trầm nối Sol Mi
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G7; profile=tie; lead=LH; bucket=n100; notes=76; RH=21; LH=55
+% duration60=84s; related_pattern=052bf892500e6f39
+% authored_passages=T19 TL3 TL4 TL1 TL2 TL3
+% source=buildscripts/pianist/compositions/g7/studies.txt:45
+[V:RH] C4 | C z z z | G z z z | C z z z |
+[V:LH] G, E,/2 C,/2-C,2 | E, G,/2 E,/2-E,2 | D, C,/2 D,/2-D,2 | E,2 G,2 |
+[V:RH] C z z z | C z z z | D z z z | C z z z |
+[V:LH] E,2 C,2 | C,/2 D,/2-D, E,2 | F,/2 E,/2-E, D,2 | E, F, G, E, |
+[V:RH] C z z z | C z z z | D z z z | C z z z |
+[V:LH] D,2 C,2 | C, D,/2 E,/2-E,2 | F, E,/2 D,/2-D,2 | E, F,/2 G,/2-G,2 |
+[V:RH] C z z z | C z z z | D z z z | D z z z |
+[V:LH] D,2 C,2 | G, F,/2 E,/2-E,2 | D,2 E,2 | F, E,/2 D,/2-D,2 |
+[V:RH] C z z z | C z z z | G z z z | C z z z |
+[V:LH] C,4 | E, G,/2 E,/2-E,2 | D, C,/2 D,/2-D,2 | E,2 G,2 |
+[V:RH] C z z z |]
+[V:LH] E,2 C,2 |]

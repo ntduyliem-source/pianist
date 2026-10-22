@@ -1,0 +1,17 @@
+%abc-2.1
+X:2200
+T:g4-n4-100 La Đô trầm dài chung
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=lower; lead=LH; bucket=n4; notes=4; RH=2; LH=2
+% role=S; duration60=4s; related_pattern=8ee034fcd1516372
+% authored_passages=inline-n4-100
+% source=buildscripts/pianist/compositions/g4/n4.txt:101
+[V:RH] C2 C2 |]
+[V:LH] A,,2 C,2 |]

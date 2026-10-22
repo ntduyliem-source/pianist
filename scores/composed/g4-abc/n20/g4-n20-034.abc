@@ -1,0 +1,17 @@
+%abc-2.1
+X:2434
+T:g4-n20-034 Đô giữa vòng trở lại
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=upper; lead=LH; bucket=n20; notes=19; RH=4; LH=15
+% role=L; duration60=16s; related_pattern=0ccf7b7889f48b8a
+% authored_passages=V04
+% source=buildscripts/pianist/compositions/g4/n20.txt:35
+[V:RH] G4 | G4 | G4 | G4 |]
+[V:LH] C B, A, G, | A, B, C D | C B, A, B, | A, B, G,2 |]

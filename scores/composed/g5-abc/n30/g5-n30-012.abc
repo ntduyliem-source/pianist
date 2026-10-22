@@ -1,0 +1,21 @@
+%abc-2.1
+X:3212
+T:g5-n30-012 Mi Sol khép khoảng nghỉ
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=offset; lead=RH; bucket=n30; notes=34; RH=18; LH=16
+% duration60=36s; related_pattern=3c82e2b711a5d34d
+% authored_passages=O12 OR5 OR6
+% source=buildscripts/pianist/compositions/g5/studies.txt:13
+[V:RH] E2 G z | C z G2 | F2 E2 | D2 G z |
+[V:LH] z C, z G, | C, z z G, | F, z C, z | z G, z G, |
+[V:RH] C4 | E z D2 | C2 E2 | G F E2 |
+[V:LH] C,4 | C, z z G, | C, z G, z | z C, z C, |
+[V:RH] D2 C2 |]
+[V:LH] G,4 |]

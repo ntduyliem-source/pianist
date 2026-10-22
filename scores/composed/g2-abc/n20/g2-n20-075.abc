@@ -1,0 +1,19 @@
+%abc-2.1
+X:1075
+T:g2-n20-075 Giữ đầu câu chia cuối
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=eighth; lead=RH; bucket=n20; notes=17; RH=11; LH=6
+% role=A; duration60=18s; related_pattern=0b6323b0e845a20b
+% authored_passages=B22
+% source=buildscripts/pianist/compositions/g2/n20.txt:76
+[V:RH] C2 C/2D/2 | z3 | E D/2C/2 C | z3 |
+[V:LH] z3 | C,2 D, | z3 | E,2 D, |
+[V:RH] C D E/2D/2 | z3 |]
+[V:LH] z3 | C,2 C, |]

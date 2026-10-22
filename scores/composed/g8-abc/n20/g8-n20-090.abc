@@ -1,0 +1,19 @@
+%abc-2.1
+X:5290
+T:g8-n20-090 Đôi trầm rồi nối Sol
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G8; profile=dyad-tie; lead=LH; bucket=n20; notes=20; RH=5; LH=15
+% duration60=20s; related_pattern=1242e6b2bff2083a
+% authored_passages=T15 TL3
+% source=buildscripts/pianist/compositions/g8/studies.txt:91
+[V:RH] C4 | D z z z | C z z z | C z z z |
+[V:LH] [C,E,] F,/2 G,/2-G,2 | [D,G,] E,/2 F,/2-F,2 | E, D,/2 C,/2-C,2 | [C,E,]2 G,2 |
+[V:RH] C z z z |]
+[V:LH] C,4 |]

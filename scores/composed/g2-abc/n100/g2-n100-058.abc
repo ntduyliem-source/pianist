@@ -1,0 +1,25 @@
+%abc-2.1
+X:1358
+T:g2-n100-058 Mi trầm mở chuyến đi
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=eighth; lead=LH; bucket=n100; notes=85; RH=20; LH=65
+% role=L; duration60=60s; related_pattern=75e4ab64c1d0b121
+% authored_passages=F23 F25 F22 F25 F21
+% source=buildscripts/pianist/compositions/g2/n100.txt:59
+[V:RH] C3 | C3 | C3 | C3 |
+[V:LH] E,/2F,/2 G, F, | E, D, C, | C,/2D,/2 E, D, | C, C, C, |
+[V:RH] C3 | C3 | C3 | C3 |
+[V:LH] C,2 C,/2D,/2 | E, F,/2E,/2 D, | C, D, E,/2D,/2 | C,3 |
+[V:RH] C3 | C3 | C3 | C3 |
+[V:LH] C, D,/2E,/2 F, | E,/2D,/2 C,2 | C, D, E, | D,/2C,/2 C,2 |
+[V:RH] C3 | C3 | C3 | C3 |
+[V:LH] C,2 C,/2D,/2 | E, F,/2E,/2 D, | C, D, E,/2D,/2 | C,3 |
+[V:RH] C3 | C3 | C3 | C3 |]
+[V:LH] C,/2D,/2 E, D, | C, D, E,/2F,/2 | G, F, E, | D,/2C,/2 C,2 |]

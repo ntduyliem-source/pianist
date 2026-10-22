@@ -1,0 +1,21 @@
+%abc-2.1
+X:2628
+T:g4-n50-028 Fa La rộng dưới nền nhắc
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=span; lead=RH; bucket=n50; notes=53; RH=37; LH=16
+% role=R; duration60=48s; related_pattern=6ceddb9dc49b82ca
+% authored_passages=W04 W08 W12
+% source=buildscripts/pianist/compositions/g4/n50.txt:29
+[V:RH] C F A c | B G E C | D F A G | E D C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C G c B | A G E C | E G c G | E D C2 |
+[V:LH] C,2 C,2 | C,2 C,2 | C,2 C,2 | C,2 C,2 |
+[V:RH] C4 | C G c2 | G2 C2 | C4 |]
+[V:LH] C,4 | C,4 | C,4 | C,4 |]

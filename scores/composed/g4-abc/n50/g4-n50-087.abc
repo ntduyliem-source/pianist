@@ -1,0 +1,21 @@
+%abc-2.1
+X:2687
+T:g4-n50-087 Sol dài cao chung ba đoạn
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=upper; lead=RH; bucket=n50; notes=68; RH=34; LH=34
+% role=S; duration60=48s; related_pattern=1ed7e6e889a88606
+% authored_passages=S02 S04 S14
+% source=buildscripts/pianist/compositions/g4/n50.txt:88
+[V:RH] G2 B c | d2 c B | G2 A B | c B G2 |
+[V:LH] G,2 F, G, | F,2 G, G, | G,2 G, G, | F, G, G,2 |
+[V:RH] c2 G A | B2 c d | c B G2 | A B G2 |
+[V:LH] F,2 G, G, | G,2 F, G, | F, G, G,2 | G, G, G,2 |
+[V:RH] G A B2 | c B G2 | A B G2 | G4 |]
+[V:LH] G, G, G,2 | F, G, G,2 | G, G, G,2 | G,4 |]

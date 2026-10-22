@@ -1,0 +1,21 @@
+%abc-2.1
+X:4631
+T:g7-n30-031 Sol nối từ Đô Mi
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G7; profile=tie; lead=RH; bucket=n30; notes=32; RH=23; LH=9
+% duration60=36s; related_pattern=e288590f1625c22e
+% authored_passages=T06 TR2 TR1
+% source=buildscripts/pianist/compositions/g7/studies.txt:32
+[V:RH] C E/2 G/2-G2 | G F/2 E/2-E2 | D2 E2 | F E/2 D/2-D2 |
+[V:LH] C,4 | C, z z z | D, z z z | D, z z z |
+[V:RH] C4 | C D/2 E/2-E2 | F E/2 D/2-D2 | E F/2 G/2-G2 |
+[V:LH] C, z z z | C, z z z | D, z z z | C, z z z |
+[V:RH] D2 C2 |]
+[V:LH] C, z z z |]

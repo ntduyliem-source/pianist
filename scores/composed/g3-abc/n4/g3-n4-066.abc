@@ -1,0 +1,17 @@
+%abc-2.1
+X:1466
+T:g3-n4-066 Đô Fa trầm trao tiếng
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fourth; lead=LH; bucket=n4; notes=3; RH=1; LH=2
+% role=A; duration60=3s; related_pattern=644f538f372ac80a
+% authored_passages=inline-n4-066
+% source=buildscripts/pianist/compositions/g3/n4.txt:67
+[V:RH] z z C |]
+[V:LH] C, F, z |]

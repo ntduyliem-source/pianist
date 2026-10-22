@@ -1,0 +1,21 @@
+%abc-2.1
+X:3923
+T:g6-n30-023 Fa mở tới Rê cao
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G6; profile=M6-up; lead=RH; bucket=n30; notes=35; RH=26; LH=9
+% duration60=36s; related_pattern=2caa6255989b2913
+% authored_passages=S23 BU3 BU1
+% source=buildscripts/pianist/compositions/g6/studies.txt:24
+[V:RH] E F d c | G2 D2 | E D B A | G2 E2 |
+[V:LH] C,4 | C, z z z | C, z z z | C, z z z |
+[V:RH] D2 C2 | G D C A | G E D2 | E F G2 |
+[V:LH] C, z z z | C, z z z | C, z z z | C, z z z |
+[V:RH] E2 C2 |]
+[V:LH] C, z z z |]

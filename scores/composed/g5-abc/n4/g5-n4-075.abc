@@ -1,0 +1,17 @@
+%abc-2.1
+X:2875
+T:g5-n4-075 Rê Sol giữ Sol
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=dyad; lead=RH; bucket=n4; notes=5; RH=3; LH=2
+% duration60=4s; related_pattern=05b43f721d834594
+% authored_passages=D25
+% source=buildscripts/pianist/compositions/g5/studies.txt:76
+[V:RH] [DG]2 G2 |]
+[V:LH] D,2 G,2 |]

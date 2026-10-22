@@ -1,0 +1,101 @@
+# Explicit two-section studies. Sparse opening/closing passages are used deliberately.
+001;third;R;RH;Cửa sổ và khoảng lặng;T01 T16
+002;third;R;RH;Bậc thang rồi nốt dài;T02 T17
+003;third;R;RH;Mi kể rồi Đô giữ;T03 T18
+004;third;R;RH;Nhắc câu rồi thở;T04 T19
+005;third;R;RH;Câu ngắn khép chậm;T05 T20
+006;third;R;RH;Hai lời từ nốt Mi;T06 T05
+007;third;R;RH;Qua Fa ghé Mi;T07 T09
+008;third;R;RH;Câu hỏi khép ở Đô;T08 T17
+009;third;R;RH;Nốt sáng dần lắng;T09 T16
+010;third;R;RH;Nghỉ trong câu về;T10 T18
+011;third;R;RH;Hai vòng ba phách;T21 T23
+012;third;R;RH;Mi và nốt nhắc ba phách;T22 T25
+013;third;R;RH;Giữ trước bước qua Fa;T23 T24
+014;third;R;RH;Từ Fa vòng lại;T24 T21
+015;third;R;RH;Nhắc đầu đổi hướng sau;T25 T22
+016;eighth;R;RH;Phách chia rồi thu lại;E01 E16
+017;eighth;R;RH;Đường đôi về cửa nhà;E02 E17
+018;eighth;R;RH;Nền chuyển rồi ổn định;E03 E18
+019;eighth;R;RH;Câu chia có nốt chờ;E04 E19
+020;eighth;R;RH;Hai lời ngắn qua phách;E05 E20
+021;eighth;R;RH;Chia chậm có khoảng nghỉ;E06 E11
+022;eighth;R;RH;Nhắc rồi đổi điểm tựa;E07 E13
+023;eighth;R;RH;Lời yên và lời bước;E08 E15
+024;eighth;R;RH;Phách đôi từ thấp về;E09 E16
+025;eighth;R;RH;Nhiều cặp về nốt giữ;E10 E18
+026;eighth;R;RH;Hai lời chia nhịp ba;E21 E22
+027;eighth;R;RH;Cặp sau và nốt dài;E22 E25
+028;eighth;R;RH;Mi gọi Đô trả lời;E23 E21
+029;eighth;R;RH;Qua đỉnh rồi lắng;E24 E25
+030;eighth;R;RH;Mi mở câu giữ cuối;E23 E25
+031;third;L;LH;Cửa trầm và khoảng lặng;U01 U16
+032;third;L;LH;Thang thấp rồi nốt dài;U02 U17
+033;third;L;LH;Mi trầm kể Đô giữ;U03 U18
+034;third;L;LH;Nhắc câu trầm rồi thở;U04 U19
+035;third;L;LH;Câu thấp khép chậm;U05 U20
+036;third;L;LH;Hai lời từ Mi trầm;U06 U05
+037;third;L;LH;Qua Fa thấp ghé Mi;U07 U09
+038;third;L;LH;Câu trầm khép ở Đô;U08 U17
+039;third;L;LH;Nốt trầm dần lắng;U09 U16
+040;third;L;LH;Nghỉ trong lời trầm;U10 U18
+041;third;L;LH;Hai vòng thấp ba phách;U21 U23
+042;third;L;LH;Mi thấp nhắc nhịp ba;U22 U25
+043;third;L;LH;Giữ thấp trước Fa;U23 U24
+044;third;L;LH;Từ Fa thấp vòng về;U24 U21
+045;third;L;LH;Trầm nhắc rồi đổi hướng;U25 U22
+046;eighth;L;LH;Phách trầm chia rồi thu;F01 F16
+047;eighth;L;LH;Đường đôi miền trầm;F02 F17
+048;eighth;L;LH;Nền cao chuyển câu thấp;F03 F18
+049;eighth;L;LH;Câu trầm có nốt chờ;F04 F19
+050;eighth;L;LH;Hai lời thấp qua phách;F05 F20
+051;eighth;L;LH;Chia trầm có khoảng nghỉ;F06 F11
+052;eighth;L;LH;Nhắc thấp đổi điểm tựa;F07 F13
+053;eighth;L;LH;Lời trầm yên rồi bước;F08 F15
+054;eighth;L;LH;Phách đôi trầm đi về;F09 F16
+055;eighth;L;LH;Nhiều cặp thấp về giữ;F10 F18
+056;eighth;L;LH;Hai lời trầm nhịp ba;F21 F22
+057;eighth;L;LH;Cặp thấp sau nốt dài;F22 F25
+058;eighth;L;LH;Mi trầm gọi Đô đáp;F23 F21
+059;eighth;L;LH;Qua đỉnh trầm rồi lắng;F24 F25
+060;eighth;L;LH;Mi trầm mở giữ cuối;F23 F25
+061;third;A;RH;Hai cuộc gọi qua sân;Q01 Q03
+062;third;A;LH;Trầm gọi đổi câu đáp;Q06 Q08
+063;third;A;RH;Mười hai lượt nhịp ba;Q11 Q13
+064;third;A;LH;Trầm ngắn rồi trầm dài;Q14 Q12
+065;third;A;RH;Nhắc lời rồi khép;Q05 Q02
+066;eighth;A;RH;Cặp hỏi đổi hướng;B01 B02
+067;eighth;A;RH;Câu lên tiếng về;B02 B06
+068;eighth;A;RH;Hai cặp rồi nốt dài;B03 B05
+069;eighth;A;RH;Mi mở cuộc đối đáp;B04 B01
+070;eighth;A;RH;Lời giữ và lời nhắc;B05 B10
+071;eighth;A;RH;Đợi rồi gọi nhanh hơn;B06 B07
+072;eighth;A;RH;Cặp giữa và cặp đầu;B07 B08
+073;eighth;A;RH;Nhiều cặp gọi ngắn;B08 B06
+074;eighth;A;RH;Đối đáp ba phách giữ đầu;B21 B22
+075;eighth;A;RH;Đối đáp ba phách đổi chỗ;B22 B21
+076;eighth;A;LH;Cặp trầm hỏi đổi hướng;B11 B12
+077;eighth;A;LH;Câu trầm lên tiếng về;B12 B16
+078;eighth;A;LH;Hai cặp thấp rồi giữ;B13 B15
+079;eighth;A;LH;Mi trầm mở đối đáp;B14 B11
+080;eighth;A;LH;Lời thấp giữ rồi nhắc;B15 B20
+081;eighth;A;LH;Đợi trầm rồi gọi nhanh;B16 B17
+082;eighth;A;LH;Cặp giữa câu trầm;B17 B18
+083;eighth;A;LH;Nhiều cặp trầm gọi ngắn;B18 B16
+084;eighth;A;LH;Đối đáp trầm giữ đầu;B23 B24
+085;eighth;A;LH;Đối đáp trầm đổi chỗ;B24 B23
+086;third;S;RH;Cùng phách rồi lắng;S01 S16
+087;third;S;RH;Nhảy và khoảng thở;S02 S17
+088;third;S;RH;Nốt dài qua hai câu;S03 S20
+089;third;S;RH;Mi cao hạ nhịp;S04 S16
+090;third;S;RH;Bước nhảy và tiếng giữ;S05 S17
+091;third;S;LH;Trầm nhảy cùng khép;S06 S18
+092;third;S;LH;Nốt trầm dài dần lắng;S07 S19
+093;third;S;LH;Mi trầm hạ nhịp;S08 S18
+094;third;S;LH;Bước trầm và tiếng giữ;S09 S19
+095;third;S;RH;Khoảng trên rồi nốt chờ;S10 S17
+096;third;S;LH;Khoảng dưới rồi nốt chờ;S11 S19
+097;third;S;RH;Nhịp ba đổi lời chung;S21 S23
+098;third;S;LH;Trầm nhịp ba đổi lời;S22 S24
+099;third;S;RH;Giữ đầu trở về chung;S23 S21
+100;third;S;LH;Trầm giữ rồi trở về;S24 S22

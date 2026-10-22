@@ -1,0 +1,21 @@
+%abc-2.1
+X:2642
+T:g4-n50-042 Si Rê Đô giữa đổi đường
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=upper; lead=LH; bucket=n50; notes=48; RH=12; LH=36
+% role=L; duration60=36s; related_pattern=240bc042117074af
+% authored_passages=V22 V21 V24
+% source=buildscripts/pianist/compositions/g4/n50.txt:43
+[V:RH] G3 | G3 | G3 | G3 |
+[V:LH] B, D C | B, G, A, | B, A, G, | A, G, G, |
+[V:RH] G3 | G3 | G3 | G3 |
+[V:LH] G, A, B, | C D C | B, A, B, | A, G, G, |
+[V:RH] G3 | G3 | G3 | G3 |]
+[V:LH] G, C B, | A, G, B, | D C B, | A, G, G, |]

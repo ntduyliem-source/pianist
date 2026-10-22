@@ -1,0 +1,23 @@
+%abc-2.1
+X:3363
+T:g5-n50-063 Mi Sol giữ Mi
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=dyad; lead=RH; bucket=n50; notes=55; RH=35; LH=20
+% duration60=52s; related_pattern=7cb29ba938f4154a
+% authored_passages=D13 DR3 DR5 DR7
+% source=buildscripts/pianist/compositions/g5/studies.txt:64
+[V:RH] [EG]2 E2 | [CG]2 E2 | F E D2 | [DG]2 G2 |
+[V:LH] E,2 E,2 | C,2 C,2 | F,4 | G,2 G,2 |
+[V:RH] [CE]4 | [CE]2 C2 | D E F2 | [DF]2 G2 |
+[V:LH] C,4 | C,2 C,2 | D,4 | D,2 G,2 |
+[V:RH] [CG]4 | [EG]2 G2 | F2 D2 | [DF]2 E2 |
+[V:LH] C,4 | E,2 G,2 | D,4 | D,2 E,2 |
+[V:RH] [CE]4 |]
+[V:LH] C,4 |]

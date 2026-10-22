@@ -1,0 +1,21 @@
+%abc-2.1
+X:565
+T:g1-n50-065 Sáu câu có chỗ thở
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n50; notes=41; RH=20; LH=21
+% role=A; family=six-breath-answers; form=authored; duration60=48s
+% related_pattern=9fc2a359553bd66a
+% source=buildscripts/pianist/compositions/g1/n50.txt:66
+[V:RH] C z D E | z4 | F E D C | z4 |
+[V:LH] z4 | C, D, E, F, | z4 | E, z D, C, |
+[V:RH] C D E F | z4 | G F E D | z4 |
+[V:LH] z4 | C, D, E, F, | z4 | G, F, E, D, |
+[V:RH] C D E D | z4 | C4 | z4 |]
+[V:LH] z4 | C, D, C, D, | z4 | C,2 C,2 |]

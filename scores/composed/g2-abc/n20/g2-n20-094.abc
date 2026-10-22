@@ -1,0 +1,17 @@
+%abc-2.1
+X:1094
+T:g2-n20-094 Quãng ba dưới giữa câu
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=third; lead=LH; bucket=n20; notes=24; RH=12; LH=12
+% role=S; duration60=16s; related_pattern=19506337d85065bd
+% authored_passages=S09
+% source=buildscripts/pianist/compositions/g2/n20.txt:95
+[V:RH] C D C C | D E D C | D D C2 | C4 |]
+[V:LH] C, E, D, C, | D, F, E, C, | D, E, C,2 | C,4 |]

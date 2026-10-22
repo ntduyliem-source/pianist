@@ -1,0 +1,17 @@
+%abc-2.1
+X:1034
+T:g2-n20-034 Nốt nhắc đường trầm
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=third; lead=LH; bucket=n20; notes=20; RH=4; LH=16
+% role=L; duration60=16s; related_pattern=424b9f6b399c897f
+% authored_passages=U04
+% source=buildscripts/pianist/compositions/g2/n20.txt:35
+[V:RH] C4 | C4 | C4 | C4 |]
+[V:LH] C, C, E, D, | E, F, D, C, | D, E, G, F, | E, D, E, C, |]

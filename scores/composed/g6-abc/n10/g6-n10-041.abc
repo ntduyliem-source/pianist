@@ -1,0 +1,17 @@
+%abc-2.1
+X:3741
+T:g6-n10-041 Bảy thứ từ Rê
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G6; profile=m7-up; lead=RH; bucket=n10; notes=11; RH=8; LH=3
+% duration60=12s; related_pattern=926576318800e2bd
+% authored_passages=S41 CR1 CR2
+% source=buildscripts/pianist/compositions/g6/studies.txt:42
+[V:RH] E D c B | G2 E2 | G2 C2 |]
+[V:LH] C,4 | C,4 | C,4 |]

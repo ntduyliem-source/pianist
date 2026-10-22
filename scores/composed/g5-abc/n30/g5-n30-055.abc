@@ -1,0 +1,21 @@
+%abc-2.1
+X:3255
+T:g5-n30-055 Đô Mi mở Sol
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=dyad; lead=RH; bucket=n30; notes=37; RH=24; LH=13
+% duration60=36s; related_pattern=67275eefbf673868
+% authored_passages=D05 DR3 DR6
+% source=buildscripts/pianist/compositions/g5/studies.txt:56
+[V:RH] [CE]2 G2 | [CG]2 E2 | F E D2 | [DG]2 G2 |
+[V:LH] C,2 G,2 | C,2 C,2 | F,4 | G,2 G,2 |
+[V:RH] [CE]4 | [DG]2 F2 | E2 C2 | D E G2 |
+[V:LH] C,4 | G,2 F,2 | C,4 | G,4 |
+[V:RH] [CE]4 |]
+[V:LH] C,4 |]

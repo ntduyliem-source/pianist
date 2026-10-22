@@ -1,0 +1,27 @@
+%abc-2.1
+X:4145
+T:g6-n100-045 Fa Rê chạm Đô cao
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G6; profile=m7-up; lead=RH; bucket=n100; notes=83; RH=62; LH=21
+% duration60=84s; related_pattern=9feb87db4c20f936
+% authored_passages=S45 CU2 CU1 CU3 CU1 CU2
+% source=buildscripts/pianist/compositions/g6/studies.txt:46
+[V:RH] F D c B | G F E d | c B A G | E2 G2 |
+[V:LH] C,4 | C, z z z | C, z z z | C, z z z |
+[V:RH] E2 C2 | G E D c | B A G2 | E F G2 |
+[V:LH] C, z z z | C, z z z | C, z z z | C, z z z |
+[V:RH] E2 C2 | G2 E2 | E D c B | A2 G2 |
+[V:LH] C, z z z | C, z z z | C, z z z | C, z z z |
+[V:RH] E2 C2 | G E D c | B A G2 | E F G2 |
+[V:LH] C, z z z | C, z z z | C, z z z | C, z z z |
+[V:RH] E2 C2 | G F E d | c B A G | E2 G2 |
+[V:LH] C, z z z | C, z z z | C, z z z | C, z z z |
+[V:RH] E2 C2 |]
+[V:LH] C, z z z |]

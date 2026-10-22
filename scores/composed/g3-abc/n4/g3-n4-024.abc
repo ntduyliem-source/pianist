@@ -1,0 +1,17 @@
+%abc-2.1
+X:1424
+T:g3-n4-024 Về Đô rồi đi lên
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fifth; lead=RH; bucket=n4; notes=5; RH=4; LH=1
+% role=R; duration60=4s; related_pattern=063c0980ef61b630
+% authored_passages=inline-n4-024
+% source=buildscripts/pianist/compositions/g3/n4.txt:25
+[V:RH] G C D E |]
+[V:LH] C,4 |]

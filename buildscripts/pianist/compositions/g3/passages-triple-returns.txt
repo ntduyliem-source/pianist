@@ -1,0 +1,11 @@
+# Explicit contrasting/return passages for longer forms, in 3/4.
+V15;3;C G E | z3 | F E D | z3 | E D C | z3;z3 | C,2 D, | z3 | E,2 D, | z3 | C,2 C,
+V16;3;z3 | C2 D | z3 | E2 D | z3 | C2 C;C, G, E, | z3 | F, E, D, | z3 | E, D, C, | z3
+H15;3;E C G | z3 | E G C | z3 | G E C | z3;z3 | C,2 D, | z3 | E,2 D, | z3 | C,2 C,
+H16;3;z3 | C2 D | z3 | E2 D | z3 | C2 C;E, C, G, | z3 | E, G, C, | z3 | G, E, C, | z3
+S25;3;F C D | E F C | D G F | E C2;D, C, C, | D, E, D, | C, D, E, | D, C,2
+S26;3;D C C | D E D | C D E | D C2;F, C, D, | E, F, C, | D, G, F, | E, C,2
+S27;3;C F2 | E D C | D G F | E C2;C, D,2 | E, D, C, | D, E, D, | C, C,2
+S28;3;C D2 | E D C | D E D | C C2;C, F,2 | E, D, C, | D, G, F, | E, C,2
+W25;3;C2 G | F E D | C G F | E C2;C,2 C, | D, E, D, | C, C, D, | C, C,2
+W26;3;C2 C | D E D | C C D | C C2;C,2 G, | F, E, D, | C, G, F, | E, C,2

@@ -1,0 +1,21 @@
+%abc-2.1
+X:566
+T:g1-n50-066 Sáu lời từ khuông dưới
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n50; notes=43; RH=22; LH=21
+% role=A; family=left-six-arches; form=authored; duration60=48s
+% related_pattern=944f715794f39e25
+% source=buildscripts/pianist/compositions/g1/n50.txt:67
+[V:RH] z4 | C D E2 | z4 | F G F E |
+[V:LH] E, F, G,2 | z4 | F, E, D, C, | z4 |
+[V:RH] z4 | D E D C | z4 | C D E F |
+[V:LH] C, D, E, D, | z4 | C, C, D, E, | z4 |
+[V:RH] z4 | G F E D | z4 | C D C2 |]
+[V:LH] F, E, D, C, | z4 | C,2 C,2 | z4 |]

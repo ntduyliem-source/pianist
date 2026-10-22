@@ -1,0 +1,19 @@
+%abc-2.1
+X:2517
+T:g4-n30-017 La dài khép câu thưa
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=lower; lead=RH; bucket=n30; notes=31; RH=23; LH=8
+% role=R; duration60=32s; related_pattern=7dc7b00ee320e5dc
+% authored_passages=L02 L12
+% source=buildscripts/pianist/compositions/g4/n30.txt:18
+[V:RH] A,2 C D | E C D E | D C B, A, | B, C A,2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] A,2 C B, | A,2 C2 | D C A,2 | A,4 |]
+[V:LH] C,4 | C,4 | C,4 | C,4 |]

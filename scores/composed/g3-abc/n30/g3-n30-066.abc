@@ -1,0 +1,19 @@
+%abc-2.1
+X:1866
+T:g3-n30-066 Hai cuộc gọi trầm Fa
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fourth; lead=LH; bucket=n30; notes=30; RH=15; LH=15
+% role=A; duration60=32s; related_pattern=34f65985fa72b7bf
+% authored_passages=Q06 Q08
+% source=buildscripts/pianist/compositions/g3/n30.txt:67
+[V:RH] z4 | C D E D | z4 | D C C2 |
+[V:LH] C, F, E, D, | z4 | C, D, F, E, | z4 |
+[V:RH] z4 | C D E D | z4 | D C D C |]
+[V:LH] D, G, F, E, | z4 | D, E, C,2 | z4 |]

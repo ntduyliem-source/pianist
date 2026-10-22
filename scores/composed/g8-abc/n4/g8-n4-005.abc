@@ -1,0 +1,17 @@
+%abc-2.1
+X:4905
+T:g8-n4-005 Dòng phụ cao Đô Mi Sol
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G8; profile=ledger-high; lead=RH; bucket=n4; notes=4; RH=3; LH=1
+% duration60=4s; related_pattern=98b1fc57f780bf70
+% authored_passages=H05
+% source=buildscripts/pianist/compositions/g8/studies.txt:6
+[V:RH] c' e' g'2 |]
+[V:LH] C,4 |]

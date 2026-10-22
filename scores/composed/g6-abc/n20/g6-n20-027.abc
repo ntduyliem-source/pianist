@@ -1,0 +1,19 @@
+%abc-2.1
+X:3827
+T:g6-n20-027 Rê Si ở tay trái
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G6; profile=M6-up; lead=LH; bucket=n20; notes=21; RH=5; LH=16
+% duration60=20s; related_pattern=2de02c9956e902e8
+% authored_passages=S27 BL2
+% source=buildscripts/pianist/compositions/g6/studies.txt:28
+[V:RH] c4 | c z z z | c z z z | c z z z |
+[V:LH] E, D, B, A, | G,2 E, F, | D C B, A, | G, E, D,2 |
+[V:RH] c z z z |]
+[V:LH] E,2 C,2 |]

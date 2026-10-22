@@ -1,0 +1,25 @@
+%abc-2.1
+X:578
+T:g1-n50-078 Chín câu nhắc nhỏ
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n50; notes=50; RH=25; LH=25
+% role=A; family=nine-three-repeat; form=authored; duration60=54s
+% related_pattern=421f78b61959d519
+% source=buildscripts/pianist/compositions/g1/n50.txt:79
+[V:RH] C C D | z3 | E E F | z3 |
+[V:LH] z3 | C, D, E, | z3 | F, E, D, |
+[V:RH] G F E | z3 | D D C | z3 |
+[V:LH] z3 | C, C, D, | z3 | E, D, C, |
+[V:RH] D E D | z3 | C D E | z3 |
+[V:LH] z3 | D, C, C, | z3 | C, D, E, |
+[V:RH] F E D | z3 | C D C | z3 |
+[V:LH] z3 | F, E, D, | z3 | C, D, C, |
+[V:RH] C3 | z3 |]
+[V:LH] z3 | C,3 |]

@@ -1,0 +1,25 @@
+%abc-2.1
+X:1340
+T:g2-n100-040 Nền nhắc qua chuyện thấp
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=third; lead=LH; bucket=n100; notes=96; RH=24; LH=72
+% role=L; duration60=80s; related_pattern=5773e8733e6cb807
+% authored_passages=U11 U14 U13 U04 U10
+% source=buildscripts/pianist/compositions/g2/n100.txt:41
+[V:RH] C2 C2 | C4 | C2 C2 | C4 |
+[V:LH] C,2 E, D, | F, E, D, C, | E, G, F, E, | D, C, C,2 |
+[V:RH] C4 | C2 C2 | C4 | C2 C2 |
+[V:LH] C, E, D, C, | E,2 G, F, | E, D, F, E, | D, C, C,2 |
+[V:RH] C4 | D4 | C4 | C4 |
+[V:LH] C, E, D, C, | D,2 F, E, | E, G, F, E, | D, E, C,2 |
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C, C, E, D, | E, F, D, C, | D, E, G, F, | E, D, E, C, |
+[V:RH] C4 | C4 | C4 | C4 |]
+[V:LH] C, E, z D, | E, G, F, E, | D, E, D, C, | D, E, C,2 |]

@@ -1,0 +1,31 @@
+%abc-2.1
+X:2781
+T:g4-n100-081 Cao về rồi năm đường rộng
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=span; lead=RH; bucket=n100; notes=77; RH=46; LH=31
+% role=A; duration60=90s; related_pattern=9d1e4bed415d8b0b
+% authored_passages=H13 H11 H15 H11 H15
+% source=buildscripts/pianist/compositions/g4/n100.txt:82
+[V:RH] c G C | z3 | E G A | z3 |
+[V:LH] z3 | C, D, E, | z3 | D, C, D, |
+[V:RH] G C2 | z3 | C G c | z3 |
+[V:LH] z3 | E, D, C, | z3 | C,2 D, |
+[V:RH] B A G | z3 | E G C | z3 |
+[V:LH] z3 | E,2 D, | z3 | C,2 C, |
+[V:RH] C F A | c B G | z3 | E D C |
+[V:LH] z3 | z3 | C, D, E, | z3 |
+[V:RH] z3 | C3 | C G c | z3 |
+[V:LH] D, C,2 | z3 | z3 | C,2 D, |
+[V:RH] B A G | z3 | E G C | z3 |
+[V:LH] z3 | E,2 D, | z3 | C,2 C, |
+[V:RH] C F A | c B G | z3 | E D C |
+[V:LH] z3 | z3 | C, D, E, | z3 |
+[V:RH] z3 | C3 |]
+[V:LH] D, C,2 | z3 |]

@@ -1,0 +1,17 @@
+%abc-2.1
+X:3029
+T:g5-n10-029 Trầm Đô Sol giữ đáp
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=offset; lead=LH; bucket=n10; notes=10; RH=4; LH=6
+% duration60=12s; related_pattern=64db75bfc0e41f86
+% authored_passages=O29 CL1 CL3
+% source=buildscripts/pianist/compositions/g5/studies.txt:30
+[V:RH] z C z G | C4 | G4 |]
+[V:LH] C,2 G, z | G,2 E,2 | D,2 C,2 |]

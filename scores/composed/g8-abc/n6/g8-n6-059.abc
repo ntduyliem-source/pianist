@@ -1,0 +1,17 @@
+%abc-2.1
+X:5059
+T:g8-n6-059 Đôi Mi Sol chấm giữ Sol
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G8; profile=dyad-dotted; lead=RH; bucket=n6; notes=8; RH=6; LH=2
+% duration60=8s; related_pattern=9300cc8a7131496a
+% authored_passages=D09 CR1
+% source=buildscripts/pianist/compositions/g8/studies.txt:60
+[V:RH] [EG]3/2 C/2 G2 | G2 E2 |]
+[V:LH] C,4 | C,4 |]

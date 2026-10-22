@@ -1,0 +1,23 @@
+%abc-2.1
+X:4793
+T:g7-n50-093 Sol Fa Mi trầm đu đưa
+C:Nhạc do trợ lý AI biên soạn
+M:6/8
+L:1/4
+Q:3/8=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G7; profile=compound; lead=LH; bucket=n50; notes=53; RH=13; LH=40
+% duration60=26s; related_pattern=28f76820a1bba55c
+% authored_passages=K18 KLp1 KLp4 KLp2
+% source=buildscripts/pianist/compositions/g7/studies.txt:94
+[V:RH] C3 | C3 | D3 | C3 |
+[V:LH] G, F,/2 E,3/2 | C, D,/2 E,3/2 | F, E,/2 D,3/2 | E,/2 F,/2 G,/2 G, E,/2 |
+[V:RH] C3 | D3 | C3 | D3 |
+[V:LH] D,3/2 C,3/2 | D, F,/2 E,3/2 | G,/2 F,/2 E,/2 D, C,/2 | F, E,/2 D,3/2 |
+[V:RH] C3 | C3 | C3 | D3 |
+[V:LH] E,3/2 C,3/2 | E, G,/2 E,3/2 | C, D,/2 E,3/2 | F, E,/2 D,3/2 |
+[V:RH] C3 |]
+[V:LH] E,3/2 C,3/2 |]

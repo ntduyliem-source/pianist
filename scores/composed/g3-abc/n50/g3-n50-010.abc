@@ -1,0 +1,21 @@
+%abc-2.1
+X:1910
+T:g3-n50-010 Rê Sol gọi Fa trả
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fourth; lead=RH; bucket=n50; notes=53; RH=41; LH=12
+% role=R; duration60=48s; related_pattern=1d9e4850f37a2c3d
+% authored_passages=F10 F04 F05
+% source=buildscripts/pianist/compositions/g3/n50.txt:11
+[V:RH] D G F E | D F E C | D E F C | D C C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] F C D E | F E D C | D G F E | D E C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C2 F E | D2 G F | E D C2 | C2 C2 |]
+[V:LH] C,4 | D,4 | C,4 | C,4 |]

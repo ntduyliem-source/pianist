@@ -1,0 +1,17 @@
+%abc-2.1
+X:1594
+T:g3-n6-094 Quãng bốn trầm khép dài
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fourth; lead=LH; bucket=n6; notes=6; RH=3; LH=3
+% role=S; duration60=4s; related_pattern=3273096fa23b67f3
+% authored_passages=inline-n6-094
+% source=buildscripts/pianist/compositions/g3/n6.txt:95
+[V:RH] C D E2 |]
+[V:LH] C, F, E,2 |]

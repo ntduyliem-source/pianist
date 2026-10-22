@@ -1,0 +1,101 @@
+# Two-section studies, with literal phrase order chosen for each score.
+001;fourth;R;RH;Qua Fa rồi lắng xuống;F01 F16
+002;fourth;R;RH;Đô dài và câu đáp thưa;F02 F17
+003;fourth;R;RH;Giữ Mi mở khoảng thở;F03 F18
+004;fourth;R;RH;Fa gọi rồi nốt giữ;F04 F19
+005;fourth;R;RH;Nền Rê khép chậm;F05 F20
+006;fourth;R;RH;Nghỉ nhẹ qua nền đổi;F06 F11
+007;fourth;R;RH;Nhắc đầu giữ cuối;F07 F09
+008;fourth;R;RH;Mi dẫn Fa rồi về;F08 F17
+009;fourth;R;RH;Hai lời giữ qua Fa;F09 F16
+010;fourth;R;RH;Rê Sol và khoảng yên;F10 F18
+011;fourth;R;RH;Hai câu ba phách qua Fa;F21 F23
+012;fourth;R;RH;Fa về Đô nhắc lời;F22 F25
+013;fourth;R;RH;Giữ rồi gọi Sol nhịp ba;F23 F24
+014;fourth;R;RH;Rê gọi Sol vòng lại;F24 F21
+015;fourth;R;RH;Nhắc trước lời Fa;F25 F22
+016;fifth;R;RH;Quãng năm và nốt yên;P01 P11
+017;fifth;R;RH;Sol gọi về Đô giữ;P02 P12
+018;fifth;R;RH;Nhảy xa khép thưa;P03 P13
+019;fifth;R;RH;Nốt Rê giữa hai lời;P04 P14
+020;fifth;R;RH;Giữ Fa về Đô;P05 P15
+021;fifth;R;RH;Nhắc Đô rồi ngắt nhẹ;P06 P09
+022;fifth;R;RH;Quãng năm ba phách lắng;P21 P25
+023;fifth;R;RH;Sol và Đô dài đối lời;P22 P23
+024;fifth;R;RH;Đô dài gọi lại Sol;P23 P24
+025;arpeggio;R;RH;Rải Đô rồi thưa tiếng;A01 A07
+026;arpeggio;R;RH;Mi rải nghe nốt yên;A02 A08
+027;arpeggio;R;RH;Sol rải giữ câu cuối;A03 A09
+028;arpeggio;R;RH;Rải dài có câu trả;A04 A10
+029;arpeggio;R;RH;Hai lời rải ba phách;A21 A22
+030;arpeggio;R;RH;Sol rải Mi trả lời;A22 A23
+031;fourth;L;LH;Qua Fa trầm rồi lắng;G01 G16
+032;fourth;L;LH;Đô trầm dài câu thưa;G02 G17
+033;fourth;L;LH;Mi trầm mở khoảng thở;G03 G18
+034;fourth;L;LH;Fa trầm gọi nốt giữ;G04 G19
+035;fourth;L;LH;Nền cao Rê khép thấp;G05 G20
+036;fourth;L;LH;Trầm nghỉ qua nền đổi;G06 G11
+037;fourth;L;LH;Trầm nhắc đầu giữ cuối;G07 G09
+038;fourth;L;LH;Mi trầm dẫn Fa về;G08 G17
+039;fourth;L;LH;Hai lời trầm qua Fa;G09 G16
+040;fourth;L;LH;Rê Sol trầm khoảng yên;G10 G18
+041;fourth;L;LH;Hai câu thấp ba phách;G21 G23
+042;fourth;L;LH;Fa trầm về nhắc Đô;G22 G25
+043;fourth;L;LH;Giữ trầm gọi Sol;G23 G24
+044;fourth;L;LH;Rê thấp gọi vòng lại;G24 G21
+045;fourth;L;LH;Nhắc thấp trước lời Fa;G25 G22
+046;fifth;L;LH;Quãng năm trầm nốt yên;B01 B11
+047;fifth;L;LH;Sol trầm gọi Đô giữ;B02 B12
+048;fifth;L;LH;Nhảy trầm xa khép thưa;B03 B13
+049;fifth;L;LH;Rê trầm giữa hai lời;B04 B14
+050;fifth;L;LH;Giữ Fa thấp về Đô;B05 B15
+051;fifth;L;LH;Nhắc trầm ngắt nhẹ;B06 B09
+052;fifth;L;LH;Quãng năm thấp ba phách;B21 B25
+053;fifth;L;LH;Sol Đô trầm đối lời;B22 B23
+054;fifth;L;LH;Đô thấp dài gọi Sol;B23 B24
+055;arpeggio;L;LH;Rải trầm rồi thưa tiếng;D01 D07
+056;arpeggio;L;LH;Mi trầm rải nghe yên;D02 D08
+057;arpeggio;L;LH;Sol thấp rải giữ cuối;D03 D09
+058;arpeggio;L;LH;Rải trầm dài câu trả;D04 D10
+059;arpeggio;L;LH;Hai lời trầm rải ba;D21 D22
+060;arpeggio;L;LH;Sol trầm rải Mi đáp;D22 D23
+061;fourth;A;RH;Hai cuộc gọi qua Fa;Q01 Q03
+062;fourth;A;RH;Fa gọi nốt dài trả;Q02 Q04
+063;fourth;A;RH;Rê Sol gọi tiếng nhắc;Q03 Q05
+064;fourth;A;RH;Hai chuyện hỏi nhịp ba;Q11 Q13
+065;fourth;A;RH;Giữ trước đổi lời gọi;Q13 Q15
+066;fourth;A;LH;Hai cuộc gọi trầm Fa;Q06 Q08
+067;fourth;A;LH;Fa trầm gọi giữ đáp;Q07 Q09
+068;fourth;A;LH;Rê Sol thấp gọi nhắc;Q08 Q10
+069;fourth;A;LH;Hai chuyện trầm nhịp ba;Q12 Q14
+070;fourth;A;LH;Giữ thấp đổi lời gọi;Q14 Q16
+071;fifth;A;RH;Quãng năm gọi hai chuyện;V01 V03
+072;fifth;A;RH;Sol mở rồi đổi câu;V02 V04
+073;fifth;A;RH;Đô dài và tiếng gọi;V03 V01
+074;fifth;A;RH;Hai chuyện năm ba phách;V11 V13
+075;fifth;A;LH;Quãng năm trầm hai chuyện;V05 V07
+076;fifth;A;LH;Sol thấp gọi về;V06 V05
+077;fifth;A;LH;Hai chuyện năm trầm ba;V12 V14
+078;arpeggio;A;RH;Hai chuyện rải Đô;H01 H03
+079;arpeggio;A;RH;Sol rải Đô dài đáp;H02 H04
+080;arpeggio;A;RH;Mi rải chuyển lời;H03 H01
+081;arpeggio;A;RH;Hai chuyện rải nhịp ba;H11 H13
+082;arpeggio;A;LH;Hai chuyện rải Đô trầm;H05 H07
+083;arpeggio;A;LH;Sol thấp rải giữ đáp;H06 H08
+084;arpeggio;A;LH;Mi thấp rải đổi lời;H07 H05
+085;arpeggio;A;LH;Hai chuyện rải trầm ba;H12 H14
+086;fourth;S;RH;Quãng bốn chung rồi thưa;S01 S11
+087;fourth;S;RH;Giữ nhảy chung rồi yên;S02 S12
+088;fourth;S;RH;Fa cùng tiếng nốt chờ;S03 S12
+089;fourth;S;RH;Nhịp ba đổi lời Fa;S21 S23
+090;fourth;S;RH;Giữ đầu nhắc nhịp chung;S23 S21
+091;fourth;S;LH;Quãng bốn trầm rồi thưa;S06 S16
+092;fourth;S;LH;Giữ trầm rồi yên chung;S07 S17
+093;fourth;S;LH;Fa trầm cùng nốt chờ;S08 S17
+094;fourth;S;LH;Nhịp ba đổi lời trầm;S22 S24
+095;fourth;S;LH;Giữ trầm nhắc nhịp chung;S24 S22
+096;fifth;S;RH;Quãng năm chung rồi yên;W01 W06
+097;fifth;S;RH;Sol dài trên câu chờ;W02 W07
+098;fifth;S;RH;Năm bậc ba phách lắng;W21 W23
+099;fifth;S;LH;Quãng năm thấp rồi yên;W04 W09
+100;fifth;S;LH;Năm bậc trầm ba phách;W22 W24

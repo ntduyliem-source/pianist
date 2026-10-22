@@ -1,0 +1,17 @@
+%abc-2.1
+X:4468
+T:g7-n10-068 Mi trầm đảo Rê đáp
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G7; profile=sync; lead=LH; bucket=n10; notes=11; RH=3; LH=8
+% duration60=12s; related_pattern=9d05d86fa0bce87f
+% authored_passages=Y18 CL3 CL2
+% source=buildscripts/pianist/compositions/g7/studies.txt:69
+[V:RH] C4 | G4 | C4 |]
+[V:LH] C,/2 E, D,/2 C,2 | D,2 C,2 | E,2 C,2 |]

@@ -1,0 +1,19 @@
+%abc-2.1
+X:4524
+T:g7-n20-024 Trầm Đô Sol Mi phách dài
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G7; profile=dotted; lead=LH; bucket=n20; notes=18; RH=5; LH=13
+% duration60=20s; related_pattern=6d89a342f9270e03
+% authored_passages=D24 DL3
+% source=buildscripts/pianist/compositions/g7/studies.txt:25
+[V:RH] C4 | C z z z | D z z z | G z z z |
+[V:LH] C,3/2 G,/2 E,2 | G,3/2 F,/2 E,2 | D,3/2 E,/2 F, G, | E,2 D,2 |
+[V:RH] C z z z |]
+[V:LH] C,4 |]

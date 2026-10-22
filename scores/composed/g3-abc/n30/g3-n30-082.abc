@@ -1,0 +1,19 @@
+%abc-2.1
+X:1882
+T:g3-n30-082 Hai chuyện rải Đô trầm
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=arpeggio; lead=LH; bucket=n30; notes=31; RH=16; LH=15
+% role=A; duration60=32s; related_pattern=89e163c0c2b32215
+% authored_passages=H05 H07
+% source=buildscripts/pianist/compositions/g3/n30.txt:83
+[V:RH] z4 | C D E D | z4 | D C D C |
+[V:LH] C, G, E, C, | z4 | G, E, C,2 | z4 |
+[V:RH] z4 | C D E D | z4 | D E D C |]
+[V:LH] E, C, G, E, | z4 | C, G, E, C, | z4 |]

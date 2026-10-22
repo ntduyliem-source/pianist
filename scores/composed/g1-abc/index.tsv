@@ -1,0 +1,701 @@
+id	group	bookPosition	role	count	right	left	meter	bars	seconds	family	normalizedHash	title
+g1-n4-001	n4	1	R	3	2	1	2	1	2	up-pedal	0af9db4093b4a5ce33c64e573544fb980bd9c9ebc0c95f01232aa606228be386	Hai bước đầu
+g1-n4-002	n4	5	R	4	3	1	3	1	3	down-pedal	91f43a2392d44dbab755dd0c5369da287aa9714b1772edf29ac700d944eafebe	Về nhà
+g1-n4-003	n4	28	R	3	2	1	2	1	2	down-pedal	08671d29d6233e13b9fca0d9c1694821b9b6d373698fc6ee618b5802e25faa33	Xuống một bậc
+g1-n4-004	n4	12	R	3	2	1	2	1	2	up-middle	052c99231330ea65863416700391f994c8c1ce5de52e7d832f363f7506cdc3d9	Nhích lên giữa khuông
+g1-n4-005	n4	8	R	3	2	1	2	1	2	down-middle	36e3782bf4ea00d9c6a10424d7edb48068abfaa91fbd2b6d269fd2b5accedd8f	Nhích xuống giữa khuông
+g1-n4-006	n4	25	R	3	2	1	2	1	2	up-top	0af9db4093b4a5ce33c64e573544fb980bd9c9ebc0c95f01232aa606228be386	Hai bậc trên
+g1-n4-007	n4	35	R	3	2	1	2	1	2	down-top	08671d29d6233e13b9fca0d9c1694821b9b6d373698fc6ee618b5802e25faa33	Từ trên xuống
+g1-n4-008	n4	15	R	4	3	1	3	1	3	up-pedal	0c596da2355da9c1b5f2ca9b32273699b8875a0a1f4ceb0bfa86a7e61ee7b7e6	Ba bước sáng
+g1-n4-009	n4	19	R	4	3	1	3	1	3	turn-low	72ac1e24db82e2b3c7ebf38c7eb710865eb9077e53ab9dfa7d6538c703082481	Lên rồi về
+g1-n4-010	n4	21	R	4	3	1	3	1	3	turn-middle	0f387ac491bb53c9f118646ca35dc7f6878ad3123dde70bf9fa2bd63373954c1	Nhẹ vòng giữa
+g1-n4-011	n4	39	R	4	3	1	3	1	3	turn-upper	72ac1e24db82e2b3c7ebf38c7eb710865eb9077e53ab9dfa7d6538c703082481	Ghé bậc cao
+g1-n4-012	n4	32	R	4	3	1	3	1	3	turn-down	6543d2ea521c04d7f20e38385e86c8a82698ba401d0f13f9cdbef874b2962004	Xuống rồi lên
+g1-n4-013	n4	41	R	4	3	1	3	1	3	up-middle	45ae43f2d4519ac1097e35eb866e320bfa948f7a34481df9a80e06a5d3f975ad	Ba bậc giữa
+g1-n4-014	n4	52	R	4	3	1	3	1	3	down-top	070ac53819c35610202b38f913afe359dd02542d93b097dbd94507010df27093	Ba bậc xuống
+g1-n4-015	n4	45	R	5	4	1	4	1	4	up-four	90721dc36a59272e1253198484b25a55b16cdb9acd350115b09b1b7a5648fdb7	Bốn bước lên
+g1-n4-016	n4	48	R	5	4	1	4	1	4	down-four	2e38d29afde992f40b86458df3db81be725b0ce3333cb1f9b3ff5b92b72ef119	Bốn bước về
+g1-n4-017	n4	55	R	5	4	1	4	1	4	repeat-start	3851832e4fd310b7804bbde1ab16ac7c679aa509d980979948b7f0f5c5367a7a	Nhắc bước đầu
+g1-n4-018	n4	59	R	5	4	1	4	1	4	repeat-end	32d9e257aed48dba305254fa59929b22cbec472c575731d880d44a7eb0610b1d	Dừng ở bậc giữa
+g1-n4-019	n4	68	R	5	4	1	4	1	4	turn-low	4fd5ab4d0bbf4e8164663ec67bda4d6e5a777fa7b3aa8e9d0bdfb765d3d808c7	Vòng quanh nốt chủ
+g1-n4-020	n4	61	R	5	4	1	4	1	4	turn-upper	d46d697c061d286cca6869d5ed34c103d9cd991c3dbfd8657b5ab8ce60984d65	Vòng ở phía trên
+g1-n4-021	n4	65	R	5	4	1	4	1	4	turn-middle	51c62cb5810059fc6ae6281d2cb7a7adaf84de776c76222a6ab1b94bff3d7cea	Một làn sóng
+g1-n4-022	n4	72	R	4	3	1	4	1	4	held-ending	6bd7efccace51bf4b3f0568afe6433bc361d4b384bde80869bf92dd1e13b0d14	Hai bước và dừng
+g1-n4-023	n4	75	R	4	3	1	4	1	4	held-return	96c5ed58fd245f003851fbad7f383792bc8efbccf78ff6ef48899785dc804e8c	Trở về và giữ
+g1-n4-024	n4	85	R	4	3	1	4	1	4	held-start	3e0c5ec3d88b4bb509b5b513057afc4e61351e9012cd10f718b8e5f03d5ad11d	Giữ rồi bước
+g1-n4-025	n4	79	R	4	3	1	4	1	4	rest-between	1397b4470d5af91a419bfc7bb19335da3f8033440a036ec008c1ea55a9f9eaaa	Một khoảng thở
+g1-n4-026	n4	81	R	4	3	1	4	1	4	rest-return	86540dca5deb02d99310299a6d168a1dd6e66c18a05dccde2fd9a9b722e1b4d2	Thở rồi về
+g1-n4-027	n4	88	R	4	3	1	3	1	3	repeat-up	4a0d6d3c8fe4f0c3269b1557c3da374ee6200b9d14bbf35fe4655a41af2441ac	Nhắc và nhích lên
+g1-n4-028	n4	92	R	4	3	1	3	1	3	repeat-down	506c1fbb48a2cce4975f5c6b32cf5ddb72f83fb5e0c70463abdd7b006ce7f0b9	Nhắc và nhích xuống
+g1-n4-029	n4	95	R	3	2	1	2	1	2	up-pedal	0af9db4093b4a5ce33c64e573544fb980bd9c9ebc0c95f01232aa606228be386	Bước trên nền Mi
+g1-n4-030	n4	100	R	3	2	1	2	1	2	down-pedal	36e3782bf4ea00d9c6a10424d7edb48068abfaa91fbd2b6d269fd2b5accedd8f	Về trên nền Sol
+g1-n4-031	n4	2	L	3	1	2	2	1	2	bass-up	052c99231330ea65863416700391f994c8c1ce5de52e7d832f363f7506cdc3d9	Bước dưới
+g1-n4-032	n4	6	L	3	1	2	2	1	2	bass-down	08671d29d6233e13b9fca0d9c1694821b9b6d373698fc6ee618b5802e25faa33	Bậc trầm đi xuống
+g1-n4-033	n4	9	L	3	1	2	2	1	2	bass-up	0af9db4093b4a5ce33c64e573544fb980bd9c9ebc0c95f01232aa606228be386	Bậc trầm đi lên
+g1-n4-034	n4	16	L	3	1	2	2	1	2	bass-middle	0af9db4093b4a5ce33c64e573544fb980bd9c9ebc0c95f01232aa606228be386	Chuyển động giữa
+g1-n4-035	n4	13	L	3	1	2	2	1	2	bass-return	08671d29d6233e13b9fca0d9c1694821b9b6d373698fc6ee618b5802e25faa33	Về vùng thấp
+g1-n4-036	n4	33	L	3	1	2	2	1	2	bass-top	0af9db4093b4a5ce33c64e573544fb980bd9c9ebc0c95f01232aa606228be386	Hai bậc cao tay trái
+g1-n4-037	n4	20	L	3	1	2	2	1	2	bass-top-down	08671d29d6233e13b9fca0d9c1694821b9b6d373698fc6ee618b5802e25faa33	Tay trái đi xuống
+g1-n4-038	n4	22	L	4	1	3	3	1	3	bass-three	0c596da2355da9c1b5f2ca9b32273699b8875a0a1f4ceb0bfa86a7e61ee7b7e6	Ba bậc trầm
+g1-n4-039	n4	26	L	4	1	3	3	1	3	bass-three-down	91f43a2392d44dbab755dd0c5369da287aa9714b1772edf29ac700d944eafebe	Ba bậc trở về
+g1-n4-040	n4	29	L	4	1	3	3	1	3	bass-low-turn	72ac1e24db82e2b3c7ebf38c7eb710865eb9077e53ab9dfa7d6538c703082481	Vòng thấp
+g1-n4-041	n4	36	L	4	1	3	3	1	3	bass-middle-turn	0f387ac491bb53c9f118646ca35dc7f6878ad3123dde70bf9fa2bd63373954c1	Vòng giữa tay trái
+g1-n4-042	n4	46	L	4	1	3	3	1	3	bass-high-turn	72ac1e24db82e2b3c7ebf38c7eb710865eb9077e53ab9dfa7d6538c703082481	Ghé bậc Sol
+g1-n4-043	n4	40	L	4	1	3	3	1	3	bass-reverse-turn	6543d2ea521c04d7f20e38385e86c8a82698ba401d0f13f9cdbef874b2962004	Đi xuống rồi trở lên
+g1-n4-044	n4	49	L	4	1	3	3	1	3	bass-middle-up	45ae43f2d4519ac1097e35eb866e320bfa948f7a34481df9a80e06a5d3f975ad	Ba bước tay trái
+g1-n4-045	n4	42	L	4	1	3	3	1	3	bass-top-down	070ac53819c35610202b38f913afe359dd02542d93b097dbd94507010df27093	Từ Sol về Mi
+g1-n4-046	n4	53	L	5	1	4	4	1	4	bass-four	90721dc36a59272e1253198484b25a55b16cdb9acd350115b09b1b7a5648fdb7	Đường trầm đi lên
+g1-n4-047	n4	56	L	5	1	4	4	1	4	bass-four-down	2e38d29afde992f40b86458df3db81be725b0ce3333cb1f9b3ff5b92b72ef119	Đường trầm đi xuống
+g1-n4-048	n4	62	L	5	1	4	4	1	4	bass-repeat-start	3851832e4fd310b7804bbde1ab16ac7c679aa509d980979948b7f0f5c5367a7a	Tay trái nhắc đầu
+g1-n4-049	n4	66	L	5	1	4	4	1	4	bass-repeat-end	32d9e257aed48dba305254fa59929b22cbec472c575731d880d44a7eb0610b1d	Tay trái dừng giữa
+g1-n4-050	n4	60	L	5	1	4	4	1	4	bass-low-turn	4fd5ab4d0bbf4e8164663ec67bda4d6e5a777fa7b3aa8e9d0bdfb765d3d808c7	Một vòng thấp
+g1-n4-051	n4	69	L	5	1	4	4	1	4	bass-high-turn	d46d697c061d286cca6869d5ed34c103d9cd991c3dbfd8657b5ab8ce60984d65	Một vòng cao tay trái
+g1-n4-052	n4	73	L	5	1	4	4	1	4	bass-middle-turn	51c62cb5810059fc6ae6281d2cb7a7adaf84de776c76222a6ab1b94bff3d7cea	Làn sóng trầm
+g1-n4-053	n4	80	L	4	1	3	4	1	4	bass-held-end	6bd7efccace51bf4b3f0568afe6433bc361d4b384bde80869bf92dd1e13b0d14	Hai bước trầm và giữ
+g1-n4-054	n4	82	L	4	1	3	4	1	4	bass-held-return	96c5ed58fd245f003851fbad7f383792bc8efbccf78ff6ef48899785dc804e8c	Giữ nốt về
+g1-n4-055	n4	76	L	4	1	3	4	1	4	bass-held-start	3e0c5ec3d88b4bb509b5b513057afc4e61351e9012cd10f718b8e5f03d5ad11d	Nốt trầm dài rồi bước
+g1-n4-056	n4	86	L	4	1	3	4	1	4	bass-rest	1397b4470d5af91a419bfc7bb19335da3f8033440a036ec008c1ea55a9f9eaaa	Tay trái có khoảng thở
+g1-n4-057	n4	89	L	4	1	3	4	1	4	bass-rest-return	86540dca5deb02d99310299a6d168a1dd6e66c18a05dccde2fd9a9b722e1b4d2	Nghỉ rồi về trầm
+g1-n4-058	n4	96	L	4	1	3	3	1	3	bass-repeat-up	4a0d6d3c8fe4f0c3269b1557c3da374ee6200b9d14bbf35fe4655a41af2441ac	Nhắc Đô rồi Rê
+g1-n4-059	n4	99	L	4	1	3	3	1	3	bass-repeat-down	506c1fbb48a2cce4975f5c6b32cf5ddb72f83fb5e0c70463abdd7b006ce7f0b9	Nhắc Mi rồi Rê
+g1-n4-060	n4	93	L	3	1	2	2	1	2	bass-down-bright	36e3782bf4ea00d9c6a10424d7edb48068abfaa91fbd2b6d269fd2b5accedd8f	Bước trầm nền sáng
+g1-n4-061	n4	3	A	4	2	2	2	2	4	echo-return	1f30f1a2c5a97bafec9d7a2d0fbe65c3a01358f3621502ecf20af2cf20bffbed	Gọi và đáp
+g1-n4-062	n4	7	A	4	2	2	2	2	4	echo-up	7a2053a24af7475c0ef65bad5e8ac1b06a0f8a4315ef668690acfc5574c39c74	Hai bên cùng lên
+g1-n4-063	n4	11	A	4	2	2	2	2	4	echo-down	6c07bf368ed4db0562e0397bc5658f87dedea8afa96b5b2243b1d87ae0260655	Hai bên cùng về
+g1-n4-064	n4	14	A	4	2	2	2	2	4	echo-inverse	9961a001f19b6810c705e2309dd9842e103e2e3249014f88be7faf466c797d7f	Hỏi xuống đáp lên
+g1-n4-065	n4	18	A	4	2	2	2	2	4	echo-middle	0c64e5cc04cf3c75a937859ca937fd3b96856eb9c27eecb2f8b98911cbc37934	Tiếng gọi giữa khuông
+g1-n4-066	n4	23	A	4	2	2	2	2	4	echo-middle-return	77920572289c9d0bbb0fb1950ac2e2257b09b1e8bae8fd24e7230975440cc35d	Tiếng đáp trở về
+g1-n4-067	n4	27	A	4	2	2	2	2	4	echo-top	1f30f1a2c5a97bafec9d7a2d0fbe65c3a01358f3621502ecf20af2cf20bffbed	Gọi ở bậc cao
+g1-n4-068	n4	31	A	4	2	2	2	2	4	echo-top-up	9961a001f19b6810c705e2309dd9842e103e2e3249014f88be7faf466c797d7f	Đáp lên bậc cao
+g1-n4-069	n4	38	A	4	2	2	2	2	4	left-first	9961a001f19b6810c705e2309dd9842e103e2e3249014f88be7faf466c797d7f	Tay trái mở lời
+g1-n4-070	n4	34	A	4	2	2	2	2	4	left-first-up	1f30f1a2c5a97bafec9d7a2d0fbe65c3a01358f3621502ecf20af2cf20bffbed	Tay trái gọi lên
+g1-n4-071	n4	43	A	4	2	2	2	2	4	left-middle	035c2dc3220f38923305dc60abe2f80f5f4c620851d33d8ad5fc8cadf611ab71	Lời trầm ở giữa
+g1-n4-072	n4	47	A	4	2	2	2	2	4	left-upper	1f30f1a2c5a97bafec9d7a2d0fbe65c3a01358f3621502ecf20af2cf20bffbed	Lời trầm phía trên
+g1-n4-073	n4	51	A	4	3	1	3	2	6	three-and-one	2b2c9476234fc691e0ced1fb516afa068b3bf5ce72c41c02c173cc3bc1c2dfbf	Ba bước một đáp
+g1-n4-074	n4	54	A	4	3	1	3	2	6	three-and-one-return	4113013c31848501b9808b8ef32e568440ad40db6bc8f690df9be8651da11c8f	Ba bước về một đáp
+g1-n4-075	n4	58	A	4	1	3	3	2	6	one-and-three	2ef1c42e565bf98d6000ca7d9f36b1be8b6ad557859c31d9bf69daffad593bd0	Một gọi ba đáp
+g1-n4-076	n4	63	A	4	1	3	3	2	6	one-and-three-return	9292bffabdf66daa3337351fe73e929d001542bce2ce08c1854e31d465581919	Một gọi ba bước về
+g1-n4-077	n4	67	A	3	2	1	2	2	4	two-and-one	cb6a68bbc9979f6bfc175b4497d3ce83275732c36e6925c715e4bd714ec655e7	Hai tiếng một tiếng
+g1-n4-078	n4	71	A	3	1	2	2	2	4	one-and-two	6e6a69b83c609928339970d8a32a3f3f78a0e3a599876da0df5c9a6c6d6f85f3	Một tiếng hai tiếng
+g1-n4-079	n4	74	A	5	3	2	4	2	8	three-and-two	5e790e20a8b2b1caa61b92e6182ddb50a4a3ba9a7d29a63d8aed492798fe5ebb	Câu hỏi ngắn
+g1-n4-080	n4	78	A	5	2	3	4	2	8	two-and-three	95147ef8f4d7faf9805d17e7496f857cb6aff79b09e2fd9134b7b004270d1e5d	Câu đáp ngắn
+g1-n4-081	n4	83	A	5	2	3	4	2	8	left-three	ab5cc49433a7cc7c52625e43e263d3ca7705b00edb4b84726fe3c87b00e5c6c3	Trầm hỏi cao đáp
+g1-n4-082	n4	87	A	5	3	2	4	2	8	left-two	1de158c54cb00ebab23ddae231cca3bfd0c563c6e107f179b78be45065fb1bfc	Trầm dài cao ngắn
+g1-n4-083	n4	91	A	4	2	2	3	2	6	breath-answer	913042980a4ea62c53bc201926510f8ce622abaef2b2525c049a637f9d2b9549	Khoảng thở trước lời
+g1-n4-084	n4	94	A	4	2	2	3	2	6	breath-return	27c9cb31d5c5c4f1a6a61b604e4ff88581c984f1ee2a704ccf869ba62d34adf0	Khoảng thở trong lời
+g1-n4-085	n4	98	A	4	2	2	3	2	6	left-breath	913042980a4ea62c53bc201926510f8ce622abaef2b2525c049a637f9d2b9549	Tay trái thở nhẹ
+g1-n4-086	n4	4	S	4	2	2	2	1	2	sixths-up	716f3851c6967a4bc1cc84a6e4b49316e3f5c31b202b184ae6b2276b44b25534	Cùng bước lên
+g1-n4-087	n4	10	S	4	2	2	2	1	2	octave-up	08b9c9a0dea31a35bae1eae0e207c648677f6d12ca3b3c3475429883c52c61fd	Cùng lên một bậc
+g1-n4-088	n4	17	S	4	2	2	2	1	2	octave-down	7d430deb8fc557be53d3d45a92e3f50cff259219e28c24f699362636bcb9025a	Cùng xuống một bậc
+g1-n4-089	n4	24	S	4	2	2	2	1	2	octave-middle	08b9c9a0dea31a35bae1eae0e207c648677f6d12ca3b3c3475429883c52c61fd	Cùng đi giữa khuông
+g1-n4-090	n4	30	S	4	2	2	2	1	2	octave-middle-down	7d430deb8fc557be53d3d45a92e3f50cff259219e28c24f699362636bcb9025a	Cùng về giữa khuông
+g1-n4-091	n4	37	S	4	2	2	2	1	2	octave-high	43f7dd86a99ea7345b0e0c8960cb5b2f7ec6e1138b3e427cc9a33e960092e59b	Cùng tiến lên
+g1-n4-092	n4	44	S	4	2	2	2	1	2	octave-high-down	5ff131f092741c759d85d6137d06a2fcfe64bc22b4aa61bee6e855fd1f7559d9	Cùng lùi xuống
+g1-n4-093	n4	50	S	4	2	2	2	1	2	octave-top	08b9c9a0dea31a35bae1eae0e207c648677f6d12ca3b3c3475429883c52c61fd	Cùng tới Sol
+g1-n4-094	n4	57	S	4	2	2	2	1	2	octave-top-down	7d430deb8fc557be53d3d45a92e3f50cff259219e28c24f699362636bcb9025a	Cùng rời Sol
+g1-n4-095	n4	64	S	4	2	2	2	1	2	sixths-down	a9052726bdd2d6446780bd47f4b0c3f01a68c45a7614156834cafa7963b1cd5f	Hai đường song song
+g1-n4-096	n4	70	S	4	2	2	4	1	4	octave-half	27b50131faaea5d8ddd8d59d248c879817175afd46b08c375883d3af375c7457	Bước đôi chậm
+g1-n4-097	n4	77	S	4	2	2	4	1	4	sixths-half	a1156dd7e830a6b6920c18a101e55f7d30cc3ed5c6d327cb8444bb58562c4232	Bước đôi rộng tiếng
+g1-n4-098	n4	84	S	4	2	2	3	1	3	octave-long-end	84f234ff7a7a6f3035616ca59d569ba0c84008435c824acf9fa0874e8210af11	Bước đôi rồi giữ
+g1-n4-099	n4	90	S	4	2	2	3	1	3	octave-long-start	2d0e2b7d78fdf6dd11ab83155f26686212c6bc8ab42f97169f1db6cae6fe58d6	Giữ rồi cùng bước
+g1-n4-100	n4	97	S	4	2	2	4	1	4	octave-rest	3bfa8800cfa69db12048dc70e1daa8798b979fd10ad5895e55f2ba1fc2995cce	Cùng thở cùng về
+g1-n6-001	n6	1	R	7	5	2	4	2	8	arch-pedal	1afd43535b60e793b7728461c3c0f692942f0c74e7832eabdf064a4449c42510	Đường cong nhỏ
+g1-n6-002	n6	5	R	7	5	2	3	2	6	down-return	0cbe5cfb8564ea891c0240c43e1d41ed95de0c4619b91e30d1a8e1cbd11ad85a	Đi rồi quay lại
+g1-n6-003	n6	15	R	7	5	2	3	2	6	small-arch	28eb0d3c9c0c62e4adf826538119cfe532985babaecf6072961e231a533fef70	Lên ba bậc rồi về
+g1-n6-004	n6	8	R	7	5	2	3	2	6	long-start	5ab82eb79abd346c5df41d06cd5b6ce251b55437b91cad3854344fb36f4f777c	Chậm rồi bước đều
+g1-n6-005	n6	19	R	7	5	2	3	2	6	upper-arch	1d48183741644a3f7c643324574e5dc2a3de9864d211a81d8825e6d7921e29c2	Ngọn đồi nhỏ
+g1-n6-006	n6	12	R	8	6	2	3	2	6	repeat-arch	583afa1a05c37ee8930b10dc6d0598994d7ab821dee043418015612613996c25	Nhắc lời rồi về
+g1-n6-007	n6	21	R	8	6	2	3	2	6	turn-middle	013332703d3541b4f41cc94908422eeb1f63ca1c2dee673d8b1e4c61f6707bee	Vòng qua Mi
+g1-n6-008	n6	32	R	7	5	2	3	2	6	lower-wave	12c38c04d4ae3b41f787d859d3453222a06cc54442845c5ee28398a885a8388f	Sóng thấp
+g1-n6-009	n6	25	R	7	5	2	3	2	6	upper-wave	957e442fa522dce6bac5b791193507c7049b14709172f47724daa3898419a840	Sóng cao
+g1-n6-010	n6	35	R	8	6	2	3	2	6	repeat-return	69cf5226dc07648aa776a9a84eb9b67a8ca72a908ab1c3d995960d982d8756a2	Nhắc Đô ở cuối
+g1-n6-011	n6	28	R	6	4	2	4	2	8	short-long	329d74db07a9187199bc8a461a1e8f358d123b99ff9fa8248eccf452be6c6c96	Một lời rồi ngân
+g1-n6-012	n6	39	R	6	4	2	4	2	8	short-long-return	6c394870ee16ee167aebc49e09b1968531172f529f266223559a4af0d4261bcd	Về Đô rồi ngân
+g1-n6-013	n6	48	R	6	4	2	4	2	8	long-short	150c5735ed87928e911d38d98fddb3554c25cb1d57354e5bbd793d0204115f73	Ngân rồi bước lên
+g1-n6-014	n6	41	R	6	4	2	4	2	8	long-short-return	82ba73e0989c598c56bf0e1d141ac5811bc9a9040b8eabf59d75b5292cdc5c99	Ngân rồi bước về
+g1-n6-015	n6	52	R	7	5	2	4	2	8	repeat-landing	76f8697b07ecb261c9ffc3f7801478a8ee16b0d6caa7b19119298c2f1ad68c40	Nhắc nhẹ điểm dừng
+g1-n6-016	n6	45	R	7	5	2	4	2	8	turn-landing	acc4e2a1d79c81c5c156d21fd20da20c56c13336c05cb4d1d6f5e46f6b503029	Đi qua rồi về
+g1-n6-017	n6	55	R	7	5	2	4	2	8	upper-landing	64c1f7ca37aae9a54d19458adfd7283f5a128e057bbc74fa98344893d22f0db0	Nhìn lên bậc Sol
+g1-n6-018	n6	65	R	8	6	2	4	2	8	low-landing	4c5e27a55e538046c279abb66eefd3ef70fe9fcac0b5519a4209f50548e3c071	Nhìn về nốt Đô
+g1-n6-019	n6	59	R	6	4	2	4	2	8	breath-rise	9abd5af3b48beb9921ce07f564a7f3be2862903b03af13951ec746fb35f373cf	Thở nhẹ rồi đi
+g1-n6-020	n6	68	R	6	4	2	4	2	8	breath-fall	81138dd0be0c59541d01af5aafe63d7da658b52aab3ef31459b03836552a7c07	Thở nhẹ rồi về
+g1-n6-021	n6	61	R	8	6	2	4	2	8	paired-half	deaaef8fc6cc44c87a629618be6b5384d2eee773f8ca9d1dc1569db7c1873e89	Hai nhịp chậm
+g1-n6-022	n6	72	R	8	6	2	4	2	8	paired-return	59b605a05b4a14873b8a8bd0d03a06f05cf0c95502dc2b3fdb9adf32f6357611	Trở lại qua Mi
+g1-n6-023	n6	81	R	8	6	2	4	2	8	two-steps	6a48d5c0777cdb14fb86feeb998492caf95baa9aa8b2e63d69f3b7f468ee4781	Đi rồi đáp lại
+g1-n6-024	n6	75	R	8	6	2	4	2	8	repeated-call	4e5c0cb79b1c1a795abcec3ad9e4e1a833bf2e20c28b1fb0924f102af93f16c2	Hai lời gần nhau
+g1-n6-025	n6	85	R	8	5	3	2	3	6	three-little-bars	1554bbd10200fddf021a56c0b82c2bbed91783813dd2d0d4eb319e85b6975fe0	Ba ô nhỏ đi lên
+g1-n6-026	n6	79	R	8	5	3	2	3	6	three-little-bars-down	618ef41715414cbea0d2a405e9b13d3f8a92d49560994c0469fddbf6cb0caaea	Ba ô nhỏ đi xuống
+g1-n6-027	n6	88	R	7	4	3	2	3	6	turn-and-stop	17876c482595e9d3a3521b627438124c58ca39dfe115aac29dd079d92f2ce011	Quay đầu và dừng
+g1-n6-028	n6	96	R	7	4	3	2	3	6	turn-upper-stop	064ba0d213c27bf4672f4a59d1ae9dac79e6c6c406bf1dac30b74f6a4949192d	Vòng cao rồi dừng
+g1-n6-029	n6	92	R	8	5	3	3	2	6	moving-support	0fc8edd3518a75e839aabe98c97e0c95407c7d35fcab502fa208112772a3c80f	Nền bước nhẹ
+g1-n6-030	n6	100	R	8	5	3	3	2	6	moving-support-return	0958c332d820716dd85c585b6ed2ee8fca030701583c9f8cab269f2c23405abc	Nền trở về
+g1-n6-031	n6	2	L	7	2	5	4	2	8	bass-arch	c0bbbc22f986bad7d4a44a846e3cda4035c82da10bb025320dcb7a4861f950b5	Vòng cung trầm
+g1-n6-032	n6	6	L	7	2	5	3	2	6	bass-small-arch	28eb0d3c9c0c62e4adf826538119cfe532985babaecf6072961e231a533fef70	Ba bậc trầm rồi về
+g1-n6-033	n6	16	L	7	2	5	3	2	6	bass-long-start	5ab82eb79abd346c5df41d06cd5b6ce251b55437b91cad3854344fb36f4f777c	Trầm dài rồi bước
+g1-n6-034	n6	9	L	7	2	5	3	2	6	bass-upper-arch	1d48183741644a3f7c643324574e5dc2a3de9864d211a81d8825e6d7921e29c2	Đồi nhỏ ở khuông dưới
+g1-n6-035	n6	20	L	8	2	6	3	2	6	bass-repeat-arch	583afa1a05c37ee8930b10dc6d0598994d7ab821dee043418015612613996c25	Trầm nhắc rồi về
+g1-n6-036	n6	13	L	8	2	6	3	2	6	bass-turn-middle	013332703d3541b4f41cc94908422eeb1f63ca1c2dee673d8b1e4c61f6707bee	Một vòng qua Mi trầm
+g1-n6-037	n6	22	L	7	2	5	3	2	6	bass-lower-wave	12c38c04d4ae3b41f787d859d3453222a06cc54442845c5ee28398a885a8388f	Làn sóng trầm thấp
+g1-n6-038	n6	33	L	7	2	5	3	2	6	bass-upper-wave	957e442fa522dce6bac5b791193507c7049b14709172f47724daa3898419a840	Làn sóng trầm cao
+g1-n6-039	n6	26	L	8	2	6	3	2	6	bass-repeat-return	69cf5226dc07648aa776a9a84eb9b67a8ca72a908ab1c3d995960d982d8756a2	Nhắc Đô trầm cuối
+g1-n6-040	n6	36	L	6	2	4	4	2	8	bass-short-long	329d74db07a9187199bc8a461a1e8f358d123b99ff9fa8248eccf452be6c6c96	Lời trầm ngân dài
+g1-n6-041	n6	29	L	6	2	4	4	2	8	bass-short-return	6c394870ee16ee167aebc49e09b1968531172f529f266223559a4af0d4261bcd	Ngân nốt trầm về
+g1-n6-042	n6	40	L	6	2	4	4	2	8	bass-long-short	150c5735ed87928e911d38d98fddb3554c25cb1d57354e5bbd793d0204115f73	Giữ trầm rồi lên
+g1-n6-043	n6	49	L	6	2	4	4	2	8	bass-long-return	82ba73e0989c598c56bf0e1d141ac5811bc9a9040b8eabf59d75b5292cdc5c99	Giữ trầm rồi xuống
+g1-n6-044	n6	42	L	7	2	5	4	2	8	bass-repeat-landing	76f8697b07ecb261c9ffc3f7801478a8ee16b0d6caa7b19119298c2f1ad68c40	Nhắc điểm dừng thấp
+g1-n6-045	n6	53	L	7	2	5	4	2	8	bass-turn-landing	acc4e2a1d79c81c5c156d21fd20da20c56c13336c05cb4d1d6f5e46f6b503029	Trầm vòng rồi về
+g1-n6-046	n6	46	L	7	2	5	4	2	8	bass-upper-landing	64c1f7ca37aae9a54d19458adfd7283f5a128e057bbc74fa98344893d22f0db0	Trầm nhìn lên Sol
+g1-n6-047	n6	56	L	8	2	6	4	2	8	bass-low-landing	4c5e27a55e538046c279abb66eefd3ef70fe9fcac0b5519a4209f50548e3c071	Trầm nhìn về Đô
+g1-n6-048	n6	66	L	6	2	4	4	2	8	bass-breath-rise	9abd5af3b48beb9921ce07f564a7f3be2862903b03af13951ec746fb35f373cf	Lời trầm có khoảng thở
+g1-n6-049	n6	60	L	6	2	4	4	2	8	bass-breath-fall	81138dd0be0c59541d01af5aafe63d7da658b52aab3ef31459b03836552a7c07	Thở nhẹ ở khuông dưới
+g1-n6-050	n6	69	L	8	2	6	4	2	8	bass-paired-half	deaaef8fc6cc44c87a629618be6b5384d2eee773f8ca9d1dc1569db7c1873e89	Tay trái bước chậm
+g1-n6-051	n6	62	L	8	2	6	4	2	8	bass-paired-return	59b605a05b4a14873b8a8bd0d03a06f05cf0c95502dc2b3fdb9adf32f6357611	Tay trái vòng qua Sol
+g1-n6-052	n6	73	L	8	2	6	4	2	8	bass-two-steps	6a48d5c0777cdb14fb86feeb998492caf95baa9aa8b2e63d69f3b7f468ee4781	Hai lời trầm gần nhau
+g1-n6-053	n6	82	L	8	2	6	4	2	8	bass-repeated-call	4e5c0cb79b1c1a795abcec3ad9e4e1a833bf2e20c28b1fb0924f102af93f16c2	Lời trầm gọi lại
+g1-n6-054	n6	76	L	8	3	5	2	3	6	bass-three-bars	1554bbd10200fddf021a56c0b82c2bbed91783813dd2d0d4eb319e85b6975fe0	Ba ô nhịp trầm
+g1-n6-055	n6	86	L	8	3	5	2	3	6	bass-three-down	618ef41715414cbea0d2a405e9b13d3f8a92d49560994c0469fddbf6cb0caaea	Ba ô trầm về nhà
+g1-n6-056	n6	80	L	7	3	4	2	3	6	bass-turn-stop	17876c482595e9d3a3521b627438124c58ca39dfe115aac29dd079d92f2ce011	Trầm quay đầu
+g1-n6-057	n6	89	L	7	3	4	2	3	6	bass-upper-stop	064ba0d213c27bf4672f4a59d1ae9dac79e6c6c406bf1dac30b74f6a4949192d	Trầm quay ở bậc giữa
+g1-n6-058	n6	99	L	8	3	5	3	2	6	bass-moving-support	0fc8edd3518a75e839aabe98c97e0c95407c7d35fcab502fa208112772a3c80f	Trên nền chuyển nhẹ
+g1-n6-059	n6	93	L	8	3	5	3	2	6	bass-moving-return	0958c332d820716dd85c585b6ed2ee8fca030701583c9f8cab269f2c23405abc	Trên nền trở lại
+g1-n6-060	n6	95	L	7	2	5	3	2	6	bass-call	1a6e31c44b76f0979bc2b7ea997fce67bff6af7f903d295b9033f77081f4d761	Tiếng trầm ngắn
+g1-n6-061	n6	3	A	6	3	3	3	2	6	echo-return	02ba4b9bc45cc0f7e2e546c48b1dfce4e4bb154a796f97e2fc3a38b93b6eadcc	Tiếng vọng ba bước
+g1-n6-062	n6	7	A	6	3	3	3	2	6	echo-up	a5c8e022a9abe804df86bb94b51162c46f98f9a95254c20748df572988721cb5	Hai lượt đi lên
+g1-n6-063	n6	11	A	6	3	3	3	2	6	echo-down	805c3342f46a3b2c9cc0812f2e0056fc3b33f5ee808034e9b71d880973cf3ee7	Hai lượt đi xuống
+g1-n6-064	n6	14	A	6	3	3	3	2	6	echo-turn	6db9ed6a4a5779d7562cb5162c80c668cc477bed02a59b83ceb31c1eb480f17b	Hai vòng thấp
+g1-n6-065	n6	18	A	6	3	3	3	2	6	echo-middle	205003a8853942bc392fa553e4af88883cccb1c270db29adcc2c3958ba480e1a	Hai vòng giữa
+g1-n6-066	n6	23	A	6	3	3	3	2	6	echo-high	59fe931b2e44ffefa858aa0fae2390e15111b1e53ba4a83f6b195a9211e511b3	Lời gọi ở trên
+g1-n6-067	n6	27	A	6	3	3	3	2	6	left-first	02ba4b9bc45cc0f7e2e546c48b1dfce4e4bb154a796f97e2fc3a38b93b6eadcc	Trầm gọi cao đáp
+g1-n6-068	n6	31	A	6	3	3	3	2	6	left-turn	6db9ed6a4a5779d7562cb5162c80c668cc477bed02a59b83ceb31c1eb480f17b	Trầm mở một vòng
+g1-n6-069	n6	34	A	7	4	3	4	2	8	four-three	1f11c98e9f4343aed4b13a740726a6e1d4a8cd2371b90b3351985cb3de79e0e2	Bốn tiếng ba tiếng
+g1-n6-070	n6	38	A	7	3	4	4	2	8	three-four	799bf5e0821eb839f7c4df56a4fd6345fcc3baa51a9c8a2b48e401818d68554d	Ba tiếng bốn tiếng
+g1-n6-071	n6	43	A	8	4	4	4	2	8	four-four	0561d234451037241edf83f613527861912541d3d38f12594702ed3fefa32ef6	Bốn bậc đối đáp
+g1-n6-072	n6	47	A	8	4	4	4	2	8	middle-response	95124b0f143fad7f4feda02246d922c5f0bdeee9b549ec2a08718b9543045b04	Lời giữa đáp về
+g1-n6-073	n6	51	A	8	4	4	4	2	8	repeat-response	1124fa8ac7a6f6cb42245ccdf97da44d4d2c310a084870fcfaaa9bb7f561ebab	Lời nhắc đáp lại
+g1-n6-074	n6	54	A	8	4	4	4	2	8	left-four	d846210034578f3183ebcc8207510de38ea26709448142d91ee96a5f7a6efdbf	Bốn tiếng từ khuông trầm
+g1-n6-075	n6	58	A	7	4	3	4	2	8	left-three	00174c8cbabb49a380a5c929e0abe5603292a9714531a5a5075f7aa925afada4	Ba tiếng từ khuông trầm
+g1-n6-076	n6	63	A	6	4	2	2	3	6	three-turns	26c93b4e3977d5f651ec11ab58cdef41d7eaa816ab33e069f4a5183042af7c63	Ba lượt qua lại
+g1-n6-077	n6	67	A	6	4	2	2	3	6	three-turns-return	e80f8d217f5811f9f53cdc4d6435ee59cc2b372069030ce409873a5e941eb247	Ba lượt trở về
+g1-n6-078	n6	71	A	6	2	4	2	3	6	three-left-turns	26c93b4e3977d5f651ec11ab58cdef41d7eaa816ab33e069f4a5183042af7c63	Ba lượt tay trái mở
+g1-n6-079	n6	74	A	6	2	4	2	3	6	three-left-return	e80f8d217f5811f9f53cdc4d6435ee59cc2b372069030ce409873a5e941eb247	Ba lượt trầm trở về
+g1-n6-080	n6	78	A	6	3	3	4	2	8	breath-answer	1282e083dac5263b76b6dbd9831502ce738db413b29e3cbe4ebffd68bb5a73ba	Hỏi thưa đáp đều
+g1-n6-081	n6	83	A	6	3	3	4	2	8	answer-breath	71fbe612fdc89f471479620ae96aebd2b24f4cd9c8721d9b58377b5dabbe0bf9	Hỏi đều đáp thưa
+g1-n6-082	n6	87	A	7	4	3	4	2	8	upper-answer	0f77422d929b3223a57e685b43540f45b0ab584cfc24dc8c0553aa731cef0431	Đi lên nghe tiếng vọng
+g1-n6-083	n6	91	A	8	4	4	4	2	8	upper-return	2200cb5367b91279e34c5567564412ae31005dc668ebe246413142449bc66b9f	Tiếng vọng xuống thấp
+g1-n6-084	n6	94	A	6	3	3	4	2	8	left-breath	1282e083dac5263b76b6dbd9831502ce738db413b29e3cbe4ebffd68bb5a73ba	Trầm có khoảng thở
+g1-n6-085	n6	98	A	7	3	4	4	2	8	left-upper	0f77422d929b3223a57e685b43540f45b0ab584cfc24dc8c0553aa731cef0431	Trầm gọi phía trên
+g1-n6-086	n6	4	S	6	3	3	3	1	3	sixths-up	8af0487444748e176906d0c149ac27cddc07e28d0a7f54a063ba3b457b58569a	Ba bậc cùng đi
+g1-n6-087	n6	10	S	6	3	3	3	1	3	octave-three	04a684fccc7f749e03ef7bf0d25b93034f15e537c01e055c235d28eb3b4175ee	Ba bậc cùng sáng
+g1-n6-088	n6	17	S	6	3	3	3	1	3	octave-three-down	33f3ed2f43e9bf4ac8e166dc16763f2c4de18d27f4b883fd3dcd2437c8943e1a	Ba bậc cùng về
+g1-n6-089	n6	24	S	6	3	3	3	1	3	octave-turn	deca5216c2306acd0845dc442dc6f40d479b72f0139eebbfcb22ede4a7fe1a9f	Cùng vòng thấp
+g1-n6-090	n6	30	S	6	3	3	3	1	3	octave-middle-turn	c2151bf9e54e7da8087dc95660b724dd8629f3b7e3ae215b4f4289db6278bde9	Cùng vòng giữa
+g1-n6-091	n6	37	S	6	3	3	3	1	3	octave-top-turn	deca5216c2306acd0845dc442dc6f40d479b72f0139eebbfcb22ede4a7fe1a9f	Cùng vòng cao
+g1-n6-092	n6	44	S	6	3	3	3	1	3	sixths-down	0fce61fa5ef7c14d79c4474d709fd34e5d9afedb1edbc0a1b3489dd82a075db0	Ba bước song song
+g1-n6-093	n6	50	S	8	4	4	4	1	4	octave-four	bbd658aee444e168cad6ca39f482f156cc6600a226e451020d3f748b9c972511	Bốn bước cùng lên
+g1-n6-094	n6	57	S	8	4	4	4	1	4	octave-four-down	4f30094e7bacdd9f391ea774af07bc3eeeffcabcc58a051bffe2fba427960b8e	Bốn bước cùng về
+g1-n6-095	n6	64	S	8	4	4	4	1	4	octave-repeat	18ddbb893116a539ddc534516bca8f8e17c60bd9c185cb755590f2ed422cc035	Nhắc cùng một bước
+g1-n6-096	n6	70	S	6	3	3	4	1	4	octave-half-end	106a544c0d8614b359893a267936cbe556682faa4963478e745f45eac4653c46	Đi cùng rồi giữ
+g1-n6-097	n6	77	S	6	3	3	4	1	4	octave-half-start	d39d8d25c73fec974e7323033e1c451dea5c3aac064bb4eed6b96ca81b261d3d	Giữ cùng rồi đi
+g1-n6-098	n6	84	S	6	3	3	4	1	4	sixths-half-end	3ed3514b66a672bc88e3c0ed45085219f087a668ff1d37b135251f4819299547	Hai đường tới điểm dừng
+g1-n6-099	n6	90	S	6	3	3	4	1	4	octave-rest	8c56caf7e8c078ccab038355676678c845d1433ad6ab7be8de3dee21e23f1ff9	Một hơi thở chung
+g1-n6-100	n6	97	S	8	4	4	2	2	4	octave-two-bars	046dfd51a62be12fe0169c7f2fbe2c395f55a0cd429e7a2d371b0842b342ba79	Hai ô bước đôi
+g1-n10-001	n10	1	R	10	7	3	4	2	8	arch-pedal	0e2bb46970840099d18f9949c648ec6d59e12571ea30d9159aa96e07a922d363	Đi lên rồi trở về
+g1-n10-002	n10	5	R	10	7	3	3	3	9	arch-three	0876a06effc44e18c7b489291ca83fd546614fa2781812b25330613f5ca03c9b	Chiếc cầu nhỏ
+g1-n10-003	n10	12	R	10	8	2	4	2	8	wave-eight	7a8df38e6f819c991b9473177d91d9917e134b93e882c5b3a9e01df499991ff4	Sóng nhỏ tám bước
+g1-n10-004	n10	15	R	10	8	2	4	2	8	upper-wave	1e7c250520cb2e7e62ace99ca84a479107abed8d1e2d9ba834cf0f7087868014	Sóng quanh Sol
+g1-n10-005	n10	8	R	10	8	2	4	2	8	repeat-climb	4574757a8e9d783b2fc084511dc9304f7b49737d03a0afbfad06dd4b076937eb	Nhắc bước lên đồi
+g1-n10-006	n10	21	R	10	8	2	4	2	8	double-turn	84ac7be016700f0f01d3c16400a01e65eb2e9ca4b43cbd21bc106c31a9d58c55	Hai lần quay đầu
+g1-n10-007	n10	19	R	10	8	2	4	2	8	middle-turn	3c8ddd55d7a2642dd8c5ea56ac81ebb17a058e549c10e3031239297d6ecc7c35	Vòng quanh nốt Mi
+g1-n10-008	n10	28	R	10	8	2	4	2	8	return-from-top	704aedf78c67e2ff40219c0a405d6d9fda4bdd8181dd674ac14e5483eed81f26	Từ đỉnh trở xuống
+g1-n10-009	n10	32	R	10	7	3	4	2	8	long-opening	d301b6c82205ac9da97923b59925c189727615f575f51f8bf6d41c86886ff81b	Mở lời chậm
+g1-n10-010	n10	25	R	9	7	2	4	2	8	held-middle	a56eaabe87abf42c74c4b2f60202ea98d56a8f316098fa43ff37342fe87aa49a	Giữ giữa câu
+g1-n10-011	n10	39	R	9	7	2	4	2	8	rested-wave	61f9558e94f689357e03bfe4cd3e9608837c3f90f7f4120a6536d83bf4e03a4f	Làn sóng có khoảng thở
+g1-n10-012	n10	35	R	9	7	2	4	2	8	rested-return	164629da5d116a9a3b5c6dedfe6b961cb93c4a63cad9b82539df0d3dd4b20ec0	Nghỉ trước khi về
+g1-n10-013	n10	45	R	10	7	3	3	3	9	small-three	095a9f98fcbfc74d929c17e4a075b42e6cc40c9356118939e97f95f37ff996c4	Ba ô nhịp nhỏ
+g1-n10-014	n10	48	R	10	7	3	3	3	9	upper-three	2833d2eff78862d19cab005e6af37127da834490909d4d7afbaa61353ad05b23	Ba ô ở bậc trên
+g1-n10-015	n10	41	R	10	7	3	3	3	9	answer-three	4cb191fb4804743ad08f7e235adef33dfa0bbb1964d774a737c0dec2bb82a1e3	Câu đáp trong ba nhịp
+g1-n10-016	n10	55	R	10	7	3	3	3	9	gentle-three	4fa79394ba621eda840a3db5249b4c6a8bad18f4154b41f9ede1ac08d3a4b424	Bước nhẹ ba phách
+g1-n10-017	n10	52	R	12	9	3	3	3	9	repeated-three	b0a3acf3b30aa15f498fb21666afc184810f2f551856e72fa6b83877af36ec51	Tiếng nhắc ba phách
+g1-n10-018	n10	61	R	12	9	3	3	3	9	three-turns	543e47b829c6a42ea3f24cfe77c3f56bde545e4deacd9dda66f5faa094d9607d	Ba vòng quay nhỏ
+g1-n10-019	n10	65	R	10	7	3	3	3	9	breath-three	0c1c0f69169b31ae6cc157496277cb2e92385fa500d36db8ca5e4d1534f3966a	Thở trong nhịp ba
+g1-n10-020	n10	59	R	11	7	4	2	4	8	four-little-bars	77919da09e09e25d29895e6aecbca8728a164d5aa4e001e7cc87931e65b60343	Bốn viên gạch
+g1-n10-021	n10	72	R	10	6	4	2	4	8	four-upper-bars	a725e61fed5c4a8f94f179dc5093bdbcff5a6ea4e3a264c3a048fc96d61eb4fc	Bốn bước nhìn lên
+g1-n10-022	n10	68	R	10	6	4	2	4	8	four-return-bars	45d58f667349022dd61c98687c78b5252f3f52ae25b9533495a75a6e7fecf125	Bốn bước nhìn về
+g1-n10-023	n10	79	R	11	7	4	2	4	8	four-turn-bars	2564b148092eab86cd980c0e7c692bf1612c9ebb4a67496154e0edf9125cd9d3	Bốn lượt quay đầu
+g1-n10-024	n10	81	R	11	7	4	2	4	8	four-repeat-bars	49a51faa6a113cafc558291db8914e762c5a4a1561b513710d80902179db8732	Bốn lời nhắc nhẹ
+g1-n10-025	n10	75	R	11	8	3	4	3	12	long-close	3cfd35cded2ebbb1701f2cfc8f44d124a49cd0e066c6d407b81df4bc2a891cbb	Lời ngắn kết dài
+g1-n10-026	n10	88	R	11	8	3	4	3	12	upper-long-close	3989de660c01c33ebf6c9bcc0cbf4227698bbac02735503e76c508d4f0f06d7f	Vòng cao kết dài
+g1-n10-027	n10	85	R	11	8	3	4	3	12	breath-close	5e00d14be9c0da02534b2cc39082c9cd2efa2b07fc8cf2c500bd83f400c27a46	Khoảng thở và điểm dừng
+g1-n10-028	n10	95	R	10	7	3	3	3	9	new-foundation	5191934e395fd2c40b27e27c3ae65a1d555f66c868a8402b51ce176a5db08d1d	Bước trên nền khác
+g1-n10-029	n10	99	R	10	7	3	4	2	8	middle-foundation	0e2bb46970840099d18f9949c648ec6d59e12571ea30d9159aa96e07a922d363	Câu trên nền Mi
+g1-n10-030	n10	92	R	10	7	3	4	2	8	upper-foundation	7411a1d36a228618ce3bbfab99b88a4bc5d92a56ddc7cddfd683097af7bdf58b	Câu trên nền Sol
+g1-n10-031	n10	9	L	10	3	7	4	2	8	bass-arch	0e2bb46970840099d18f9949c648ec6d59e12571ea30d9159aa96e07a922d363	Câu chuyện dưới khuông
+g1-n10-032	n10	2	L	10	2	8	4	2	8	bass-eight-wave	7a8df38e6f819c991b9473177d91d9917e134b93e882c5b3a9e01df499991ff4	Sóng trầm tám bước
+g1-n10-033	n10	6	L	10	2	8	4	2	8	bass-upper-wave	1e7c250520cb2e7e62ace99ca84a479107abed8d1e2d9ba834cf0f7087868014	Sóng trầm quanh Sol
+g1-n10-034	n10	16	L	10	2	8	4	2	8	bass-repeat-climb	4574757a8e9d783b2fc084511dc9304f7b49737d03a0afbfad06dd4b076937eb	Trầm nhắc bước lên
+g1-n10-035	n10	13	L	10	2	8	4	2	8	bass-double-turn	84ac7be016700f0f01d3c16400a01e65eb2e9ca4b43cbd21bc106c31a9d58c55	Trầm quay hai lần
+g1-n10-036	n10	26	L	10	2	8	4	2	8	bass-middle-turn	3c8ddd55d7a2642dd8c5ea56ac81ebb17a058e549c10e3031239297d6ecc7c35	Vòng trầm quanh Mi
+g1-n10-037	n10	20	L	10	2	8	4	2	8	bass-top-return	704aedf78c67e2ff40219c0a405d6d9fda4bdd8181dd674ac14e5483eed81f26	Tay trái từ trên về
+g1-n10-038	n10	22	L	10	3	7	4	2	8	bass-long-opening	d301b6c82205ac9da97923b59925c189727615f575f51f8bf6d41c86886ff81b	Lời trầm mở chậm
+g1-n10-039	n10	33	L	9	2	7	4	2	8	bass-held-middle	a56eaabe87abf42c74c4b2f60202ea98d56a8f316098fa43ff37342fe87aa49a	Nốt trầm dài giữa câu
+g1-n10-040	n10	29	L	9	2	7	4	2	8	bass-rested-wave	61f9558e94f689357e03bfe4cd3e9608837c3f90f7f4120a6536d83bf4e03a4f	Sóng trầm và hơi thở
+g1-n10-041	n10	42	L	9	2	7	4	2	8	bass-rested-return	164629da5d116a9a3b5c6dedfe6b961cb93c4a63cad9b82539df0d3dd4b20ec0	Tay trái nghỉ rồi về
+g1-n10-042	n10	36	L	10	3	7	3	3	9	bass-small-three	095a9f98fcbfc74d929c17e4a075b42e6cc40c9356118939e97f95f37ff996c4	Ba ô trầm nhỏ
+g1-n10-043	n10	40	L	10	3	7	3	3	9	bass-upper-three	2833d2eff78862d19cab005e6af37127da834490909d4d7afbaa61353ad05b23	Ba ô trầm phía trên
+g1-n10-044	n10	49	L	10	3	7	3	3	9	bass-answer-three	4cb191fb4804743ad08f7e235adef33dfa0bbb1964d774a737c0dec2bb82a1e3	Câu trả lời trầm
+g1-n10-045	n10	46	L	10	3	7	3	3	9	bass-gentle-three	4fa79394ba621eda840a3db5249b4c6a8bad18f4154b41f9ede1ac08d3a4b424	Bước trầm nhẹ nhàng
+g1-n10-046	n10	60	L	12	3	9	3	3	9	bass-repeated-three	b0a3acf3b30aa15f498fb21666afc184810f2f551856e72fa6b83877af36ec51	Trầm nhắc trong nhịp ba
+g1-n10-047	n10	53	L	12	3	9	3	3	9	bass-three-turns	543e47b829c6a42ea3f24cfe77c3f56bde545e4deacd9dda66f5faa094d9607d	Ba vòng tay trái
+g1-n10-048	n10	56	L	10	3	7	3	3	9	bass-breath-three	0c1c0f69169b31ae6cc157496277cb2e92385fa500d36db8ca5e4d1534f3966a	Nhịp ba và hơi thở trầm
+g1-n10-049	n10	66	L	11	4	7	2	4	8	bass-four-little	77919da09e09e25d29895e6aecbca8728a164d5aa4e001e7cc87931e65b60343	Bốn viên gạch trầm
+g1-n10-050	n10	62	L	10	4	6	2	4	8	bass-four-upper	a725e61fed5c4a8f94f179dc5093bdbcff5a6ea4e3a264c3a048fc96d61eb4fc	Bốn ô tay trái nhìn lên
+g1-n10-051	n10	76	L	10	4	6	2	4	8	bass-four-return	45d58f667349022dd61c98687c78b5252f3f52ae25b9533495a75a6e7fecf125	Bốn ô tay trái nhìn về
+g1-n10-052	n10	69	L	11	4	7	2	4	8	bass-four-turn	2564b148092eab86cd980c0e7c692bf1612c9ebb4a67496154e0edf9125cd9d3	Bốn lượt quay tay trái
+g1-n10-053	n10	73	L	11	4	7	2	4	8	bass-four-repeat	49a51faa6a113cafc558291db8914e762c5a4a1561b513710d80902179db8732	Bốn lời nhắc tay trái
+g1-n10-054	n10	82	L	11	3	8	4	3	12	bass-long-close	3cfd35cded2ebbb1701f2cfc8f44d124a49cd0e066c6d407b81df4bc2a891cbb	Tay trái kết dài
+g1-n10-055	n10	80	L	11	3	8	4	3	12	bass-upper-close	3989de660c01c33ebf6c9bcc0cbf4227698bbac02735503e76c508d4f0f06d7f	Tay trái vòng cao và kết
+g1-n10-056	n10	93	L	11	3	8	4	3	12	bass-breath-close	5e00d14be9c0da02534b2cc39082c9cd2efa2b07fc8cf2c500bd83f400c27a46	Trầm thở rồi kết
+g1-n10-057	n10	86	L	10	3	7	3	3	9	bass-new-foundation	5191934e395fd2c40b27e27c3ae65a1d555f66c868a8402b51ce176a5db08d1d	Trầm trên nền Mi
+g1-n10-058	n10	89	L	10	3	7	4	2	8	bass-middle-foundation	0e2bb46970840099d18f9949c648ec6d59e12571ea30d9159aa96e07a922d363	Câu trầm nền Mi
+g1-n10-059	n10	100	L	10	3	7	4	2	8	bass-upper-foundation	7411a1d36a228618ce3bbfab99b88a4bc5d92a56ddc7cddfd683097af7bdf58b	Câu trầm nền Sol
+g1-n10-060	n10	96	L	10	3	7	3	3	9	bass-three-arc	0876a06effc44e18c7b489291ca83fd546614fa2781812b25330613f5ca03c9b	Chiếc cầu ở khuông trầm
+g1-n10-061	n10	3	A	13	7	6	4	4	16	paired-answer	0971b73fcd6ac2eef5fa7eb1f2d69fb5422595fab948ea120cf01c937e794d2a	Hai lời nhắn
+g1-n10-062	n10	7	A	10	5	5	3	4	12	two-small-answers	2885f02798363cf524381032ef6ee2a6b131f5887056ee3b2a03b6d590f69240	Hai lời trong nhịp ba
+g1-n10-063	n10	11	A	10	5	5	3	4	12	two-high-answers	ced293082365ad853daabd1b7d3ebb45ff322327edbadfa07ac64e3549ef79e1	Lời gọi trên đồi
+g1-n10-064	n10	14	A	10	5	5	3	4	12	opposite-answers	7eae622c155c9d2a62a329bde60e2c6ac23be6338d6f66f7141510a21c97ed3c	Hai hướng đối đáp
+g1-n10-065	n10	18	A	12	6	6	3	4	12	repeated-answers	1a4fdd15681258b4a1eb290b3da90b588ba1ee97cc7f502ea5ddcc6bf1fa308f	Nhắc lời đối đáp
+g1-n10-066	n10	23	A	10	5	5	3	4	12	left-small-answer	2885f02798363cf524381032ef6ee2a6b131f5887056ee3b2a03b6d590f69240	Trầm mở hai lời
+g1-n10-067	n10	27	A	10	5	5	3	4	12	left-high-answer	ced293082365ad853daabd1b7d3ebb45ff322327edbadfa07ac64e3549ef79e1	Trầm mở lời trên đồi
+g1-n10-068	n10	31	A	10	7	3	4	3	12	three-turns	3b6c8bb9c1fe620b6eef2f81355785eea85c2c0ba59e81ace5f2d894413e0a25	Ba lượt kể chuyện
+g1-n10-069	n10	34	A	11	7	4	4	3	12	three-upper-turns	1146e57b5dcc6be44fc5503ec2ea3b0cc46e7fdf80eb72ac6d557ab49c4c0631	Ba lượt ở phía trên
+g1-n10-070	n10	38	A	11	4	7	4	3	12	three-left-turns	056dc12f1b2e214557ae2662d7062ea326c1429d98fc0cc4ad14bcfca06b45ac	Ba lượt trầm mở
+g1-n10-071	n10	43	A	11	4	7	4	3	12	three-left-upper	1146e57b5dcc6be44fc5503ec2ea3b0cc46e7fdf80eb72ac6d557ab49c4c0631	Trầm mở vòng cao
+g1-n10-072	n10	47	A	10	6	4	2	5	10	five-turns	48c1ab2dda2638b8fda3f5caea3c3ca3064ca6e87bccb4d8c155aa0c3a3dc7b6	Năm lời ngắn
+g1-n10-073	n10	51	A	9	5	4	2	5	10	five-turns-home	7eeaf185c2bd006e17f4977db4988b86c39dc15292bc3111dd7bae8a23518f97	Năm lời về nhà
+g1-n10-074	n10	54	A	10	4	6	2	5	10	left-five-turns	48c1ab2dda2638b8fda3f5caea3c3ca3064ca6e87bccb4d8c155aa0c3a3dc7b6	Năm lời bắt đầu trầm
+g1-n10-075	n10	58	A	12	6	6	4	4	16	paired-long	3560d7e477a726d668baa984d83232cdcda15485c8eae6d88a2ab97352e69124	Hai câu có nốt dài
+g1-n10-076	n10	63	A	12	7	5	4	4	16	paired-return	9501c31fb7be6dab94dad4448d804fd703912c4007b98f976cd394d857ba8a8c	Hai câu kết về Đô
+g1-n10-077	n10	67	A	10	5	5	3	4	12	breathing-answer	36cde308da6a0f6b91e5131d0dbe02005c53cc29daf5ee662ddec41e47402c6d	Thở trước câu đáp
+g1-n10-078	n10	71	A	10	5	5	3	4	12	answer-breathing	25b539a5453c395e7b8b000cc78ec96dc6e15e703174760fa363aa5f223d1a85	Câu đáp có chỗ nghỉ
+g1-n10-079	n10	74	A	12	6	6	4	4	16	left-paired-long	2d6e585b5316903abeae0847ff01a5d9b2554368a7b24ca082cbacc3c9f22381	Lời trầm kéo dài
+g1-n10-080	n10	78	A	10	5	5	3	4	12	left-breathing	36cde308da6a0f6b91e5131d0dbe02005c53cc29daf5ee662ddec41e47402c6d	Hơi thở của lời trầm
+g1-n10-081	n10	83	A	13	7	6	4	4	16	four-short-lines	d96747424a912936f6a2f6da26526dd38a1361b0c0ce4d3307abd58ba1c7e7d6	Bốn dòng ngắn
+g1-n10-082	n10	87	A	13	7	6	4	4	16	upper-four-lines	b0a9e406edb5b3d8fb382c994c5c524f2aaa0da41c109461b2b6fd788eabb643	Bốn dòng phía trên
+g1-n10-083	n10	91	A	11	6	5	3	4	12	soft-repeat	5b871130804f13d2b90a06071a9bbd3ccc81cee4eb7c3c5f649ecf4c3ba7bf45	Nhắc nhỏ rồi đáp
+g1-n10-084	n10	94	A	11	5	6	3	4	12	soft-high-repeat	b52e8530bab26d6a2a2a61d1675d8ee7cbe04b3a1741d23c9318a0990b0c6c5e	Tiếng vọng nhẹ trên cao
+g1-n10-085	n10	98	A	12	7	5	4	4	16	last-answer	6b129236d7c1112716c0833129ae092b8e2902179d53acaa0ed6346f978b4da5	Lời cuối ở khuông trầm
+g1-n10-086	n10	4	S	10	5	5	3	2	6	sixths-arch	a1af311eba993e37e3ff054777ea72b26c8af0fa280f6c968484f56d12b1e1ef	Bước đôi trở về
+g1-n10-087	n10	10	S	10	5	5	3	2	6	octave-arch	b9b89a50fc0dbc352237fd6a8db66dce27c30fb403a717c2fc67beaceec1446a	Hai tay qua chiếc cầu
+g1-n10-088	n10	17	S	10	5	5	3	2	6	octave-upper-arch	dfeb7a349d67b2d61b3dc68b58945e5b003ccf4fb3168a555ff3de3c5234494f	Hai tay qua đồi cao
+g1-n10-089	n10	24	S	10	5	5	3	2	6	octave-return	7496b02da215fcef4543ffb11351e74665c1ea25bad93dff23995407e72ba774	Hai tay đổi hướng
+g1-n10-090	n10	30	S	12	6	6	3	2	6	octave-double-turn	7e2aae7b323e9b016d001baf3123163c33b415b5b7dac407662bdfea7d4a9b1c	Hai tay quay hai lần
+g1-n10-091	n10	37	S	10	5	5	3	2	6	sixths-return	907d5091f9c895af8df2ecc65ae6c25b8af622ac78dea3410cedf93a0c50314c	Hai đường song hành về
+g1-n10-092	n10	44	S	10	5	5	4	2	8	octave-four-close	dfecce19cf45822318f03f4cb158b41dc0f18665485d6276fcf176a56cb6dbd1	Cùng lên rồi dừng
+g1-n10-093	n10	50	S	10	5	5	4	2	8	octave-low-close	1573329090f0c778030d5ffd072b65613fe982f26e3ecd434ff3f1aebc5e47ea	Cùng xuống rồi dừng
+g1-n10-094	n10	57	S	12	6	6	4	2	8	octave-half-wave	d441be628ac5e9950690c333031ec95b285a21abf8b82e3337921e319a037323	Sóng đôi nhịp chậm
+g1-n10-095	n10	64	S	12	6	6	4	2	8	octave-half-upper	dcb0e9f45cd54b224917037430b12803cc8784e53c7a967045854292710be4a7	Sóng đôi trên cao
+g1-n10-096	n10	70	S	10	5	5	4	2	8	octave-long-first	43a6ffdfd1764233e63c8700c9de0080feae49f122e75f2ad9ae70ec07866810	Cùng ngân rồi đi
+g1-n10-097	n10	77	S	14	7	7	4	2	8	octave-seven	523de06edaa2199454d5c2e19565ffe533d588b3a646237bf0d5e5b37b686d80	Bảy bước mỗi tay
+g1-n10-098	n10	84	S	14	7	7	4	2	8	sixths-seven	283c59ecfb975b819586f1c505b61e177fd9664d5cb37f9bfac66418586430ca	Hai đường bảy bước
+g1-n10-099	n10	90	S	12	6	6	3	3	9	octave-three-bars	6f43ec03e62af23fbd597f045f6c333e571935fd4b88de8a63d9ef6d57d547b3	Ba ô cùng tiến
+g1-n10-100	n10	97	S	10	5	5	3	2	6	octave-breath	cc258e56f8c50001f09d866299225fc5275fb520ff34fd54a6dc92c523f6a2c8	Cùng thở trong câu
+g1-n20-001	n20	1	R	17	13	4	4	4	16	arch-four	bdc6c2bbfdad003e8cb933fb12d4f3962c33976c8a3142ec978fcf03231b8aa7	Con đường qua đồi
+g1-n20-002	n20	5	R	20	14	6	3	6	18	three-return	56fe33f783dc8865079ee241a6d7b25e04571cad0acbf81913fc289400accdcc	Một vòng sân
+g1-n20-003	n20	12	R	16	12	4	4	4	16	hill-and-home	657b17241ee169d08d53fb03ce02d3d50b995b55cadfc3752b6bb2837d2b40ae	Lên đồi rồi về
+g1-n20-004	n20	15	R	15	11	4	4	4	16	question-turn	90d8e5636dee6f8c65c5e691a994105504a43252ba51aa6e17dda4092fa69b39	Hỏi ở bậc giữa
+g1-n20-005	n20	8	R	15	11	4	4	4	16	low-question	ae2fcbc7a8e62e090d65dc523138a1cadf117979b8ee2498b3e572201dc8ac4b	Câu hỏi ở thấp
+g1-n20-006	n20	19	R	16	12	4	4	4	16	upper-question	ef0a3cf5991de14cdadd82c04bf8a8fd1435320223d8fba7efc1aff2b515b233	Câu hỏi ở cao
+g1-n20-007	n20	21	R	18	14	4	4	4	16	repeated-rise	4faf8c535436008e453867e2555c15840f131275ad3816e4bf5471880fca2cc3	Nhắc lời đi lên
+g1-n20-008	n20	28	R	17	13	4	4	4	16	four-wave	136646921df27fc5eeee7b8ea775643b34fbb2c5dc6f022056a2a9388d7c2fab	Bốn làn sóng nhẹ
+g1-n20-009	n20	32	R	16	12	4	4	4	16	down-and-back	4f7999f2bf5e96db74ad4ccd11f3972685744d2888fecd937427bd0ce7182ec1	Xuống rồi trở lại
+g1-n20-010	n20	25	R	16	12	4	4	4	16	breath-question	47e90a6aff414f6957f08ba634ef078c3a2340497547fe7a5981de0aa76e648e	Câu hỏi có hơi thở
+g1-n20-011	n20	35	R	15	11	4	4	4	16	breath-answer	ce70d2cad1c0b4efb4f1d035d90658df0050a5bd26b013883a412e559045d5fc	Câu đáp có hơi thở
+g1-n20-012	n20	39	R	17	13	4	4	4	16	gentle-start	29a3da6f26af9c09afaaef822a62362000d94c7ca68891b9877446ffc38b16ad	Khởi hành nhẹ
+g1-n20-013	n20	45	R	16	12	4	4	4	16	gentle-middle	02f13d2a5d1209e3411d88fbf5ecd8dd8e4b09a22080ef1526aba28b80366079	Một điểm nghỉ giữa
+g1-n20-014	n20	48	R	17	13	4	4	4	16	three-landings	2e970f1883fb0f076bbb841570bde0365c69cb1a87e5c8a9d4999cd32d009d3b	Ba điểm tựa
+g1-n20-015	n20	41	R	17	13	4	4	4	16	upper-landings	96607f20613920f1869f807a8707be62d3670fc77e668f407e431e04698f2f9e	Những điểm tựa trên cao
+g1-n20-016	n20	52	R	24	19	5	4	5	20	five-bar-answer	2cec85f8df57c863158e67578209544de0b032cce3c363d7f9ba27ac0e9af72a	Câu đáp năm ô
+g1-n20-017	n20	55	R	20	15	5	4	5	20	five-bar-breath	44cfc7d4cf7859bd519ea80f2ec7767718f7dff50bc331adab9907533dbcbdf4	Năm ô có khoảng thở
+g1-n20-018	n20	61	R	22	16	6	3	6	18	three-arch	15446dd3d9f925588b174ae5e3ff76b2a59fc4f10706ae6be28d10f43be739ac	Cầu nhỏ trong nhịp ba
+g1-n20-019	n20	65	R	21	15	6	3	6	18	three-short-wave	b83554cd3cd0b3a825013332aa80590261d1e65eacf1a6062ce8430a914906dd	Sóng ngắn nhịp ba
+g1-n20-020	n20	59	R	21	15	6	3	6	18	three-upper	2af9c8afd5bde376b3c6bb22fa372c034906bc79376902539fa1ed3bb2665545	Lời ở bậc cao
+g1-n20-021	n20	68	R	22	16	6	3	6	18	three-repeated	6c527df50a4e069b2099ba18c5638c7748e67966eb761a008eaa256d2079db10	Lời nhắc nhịp ba
+g1-n20-022	n20	72	R	19	13	6	3	6	18	three-breath	33b8cfb590b20c25ad2d52199f9dca493add87aa977ac86a869cbbb8e8849bde	Thở đều trong nhịp ba
+g1-n20-023	n20	79	R	18	12	6	3	6	18	three-long-short	78bc0283fe8d6fff7a52fad4c5bcf9eb68946596761e0e0a329ee73efa01cde1	Dài ngắn trong nhịp ba
+g1-n20-024	n20	81	R	17	11	6	2	6	12	six-little-bars	3002722329ae675c6bcb04d44e77c6870c5cecc3982e8792c85a2eff8caf1398	Sáu bước nhỏ
+g1-n20-025	n20	75	R	17	11	6	2	6	12	six-middle-bars	14ee7294d9f92e836d40388475f20e3e2dccce4f1713682eea7171b4793a74e5	Sáu bước quanh Mi
+g1-n20-026	n20	85	R	17	11	6	2	6	12	six-repeat-bars	1a6ab307248a083dbdcb2e26dfa1dd7afa2336d6433b7e3abdeaac3b09e0957b	Sáu lời nhắc nhỏ
+g1-n20-027	n20	88	R	19	12	7	2	7	14	seven-little-bars	6963915f4aa1738eb3b8f859c132813d68e899593d18ce9613272eded638451d	Bảy viên đá
+g1-n20-028	n20	95	R	16	12	4	4	4	16	e-foundation	4bbb142bb18244cfeaa75c41f7e7b0135176e36137c1db82239d1148d951b335	Câu trên nền dịu
+g1-n20-029	n20	99	R	17	13	4	4	4	16	g-foundation	6a3bfe034a851e265e0b20f3fdbffd21ea64815613b21bf0de76ea61b3616c85	Câu trên nền sáng
+g1-n20-030	n20	92	R	19	14	5	3	5	15	changing-foundation	5012d76e8fc47778bcf347914f388e66f2e8cfd2aa44daccc5ed65fcc5d00e7b	Nền đổi ở cuối câu
+g1-n20-031	n20	2	L	16	4	12	4	4	16	bass-four	657b17241ee169d08d53fb03ce02d3d50b995b55cadfc3752b6bb2837d2b40ae	Lời kể của tay trái
+g1-n20-032	n20	6	L	15	4	11	4	4	16	bass-question-turn	90d8e5636dee6f8c65c5e691a994105504a43252ba51aa6e17dda4092fa69b39	Câu hỏi trầm ở giữa
+g1-n20-033	n20	16	L	15	4	11	4	4	16	bass-low-question	ae2fcbc7a8e62e090d65dc523138a1cadf117979b8ee2498b3e572201dc8ac4b	Câu hỏi trầm thấp
+g1-n20-034	n20	9	L	16	4	12	4	4	16	bass-upper-question	ef0a3cf5991de14cdadd82c04bf8a8fd1435320223d8fba7efc1aff2b515b233	Câu hỏi trầm cao
+g1-n20-035	n20	13	L	18	4	14	4	4	16	bass-repeated-rise	4faf8c535436008e453867e2555c15840f131275ad3816e4bf5471880fca2cc3	Trầm nhắc bước lên
+g1-n20-036	n20	20	L	17	4	13	4	4	16	bass-four-wave	136646921df27fc5eeee7b8ea775643b34fbb2c5dc6f022056a2a9388d7c2fab	Bốn làn sóng trầm
+g1-n20-037	n20	22	L	16	4	12	4	4	16	bass-down-back	4f7999f2bf5e96db74ad4ccd11f3972685744d2888fecd937427bd0ce7182ec1	Trầm xuống rồi trở lại
+g1-n20-038	n20	33	L	16	4	12	4	4	16	bass-breath-question	47e90a6aff414f6957f08ba634ef078c3a2340497547fe7a5981de0aa76e648e	Câu hỏi trầm có nghỉ
+g1-n20-039	n20	26	L	15	4	11	4	4	16	bass-breath-answer	ce70d2cad1c0b4efb4f1d035d90658df0050a5bd26b013883a412e559045d5fc	Câu đáp trầm có nghỉ
+g1-n20-040	n20	29	L	17	4	13	4	4	16	bass-gentle-start	29a3da6f26af9c09afaaef822a62362000d94c7ca68891b9877446ffc38b16ad	Tay trái khởi hành nhẹ
+g1-n20-041	n20	36	L	16	4	12	4	4	16	bass-gentle-middle	02f13d2a5d1209e3411d88fbf5ecd8dd8e4b09a22080ef1526aba28b80366079	Điểm nghỉ của câu trầm
+g1-n20-042	n20	40	L	17	4	13	4	4	16	bass-three-landings	2e970f1883fb0f076bbb841570bde0365c69cb1a87e5c8a9d4999cd32d009d3b	Ba điểm tựa trầm
+g1-n20-043	n20	49	L	17	4	13	4	4	16	bass-upper-landings	96607f20613920f1869f807a8707be62d3670fc77e668f407e431e04698f2f9e	Điểm tựa trầm phía trên
+g1-n20-044	n20	42	L	24	5	19	4	5	20	bass-five-answer	2cec85f8df57c863158e67578209544de0b032cce3c363d7f9ba27ac0e9af72a	Câu trầm năm ô
+g1-n20-045	n20	46	L	20	5	15	4	5	20	bass-five-breath	44cfc7d4cf7859bd519ea80f2ec7767718f7dff50bc331adab9907533dbcbdf4	Năm ô trầm có nghỉ
+g1-n20-046	n20	53	L	22	6	16	3	6	18	bass-three-arch	15446dd3d9f925588b174ae5e3ff76b2a59fc4f10706ae6be28d10f43be739ac	Cầu trầm nhịp ba
+g1-n20-047	n20	56	L	21	6	15	3	6	18	bass-three-wave	b83554cd3cd0b3a825013332aa80590261d1e65eacf1a6062ce8430a914906dd	Sóng trầm nhịp ba
+g1-n20-048	n20	66	L	21	6	15	3	6	18	bass-three-upper	2af9c8afd5bde376b3c6bb22fa372c034906bc79376902539fa1ed3bb2665545	Lời trầm ở bậc cao
+g1-n20-049	n20	60	L	22	6	16	3	6	18	bass-three-repeat	6c527df50a4e069b2099ba18c5638c7748e67966eb761a008eaa256d2079db10	Trầm nhắc nhịp ba
+g1-n20-050	n20	62	L	19	6	13	3	6	18	bass-three-breath	33b8cfb590b20c25ad2d52199f9dca493add87aa977ac86a869cbbb8e8849bde	Trầm thở đều nhịp ba
+g1-n20-051	n20	69	L	18	6	12	3	6	18	bass-three-long	78bc0283fe8d6fff7a52fad4c5bcf9eb68946596761e0e0a329ee73efa01cde1	Nốt trầm dài ngắn
+g1-n20-052	n20	73	L	17	6	11	2	6	12	bass-six-little	3002722329ae675c6bcb04d44e77c6870c5cecc3982e8792c85a2eff8caf1398	Sáu bước trầm
+g1-n20-053	n20	82	L	17	6	11	2	6	12	bass-six-middle	14ee7294d9f92e836d40388475f20e3e2dccce4f1713682eea7171b4793a74e5	Sáu bước trầm quanh Mi
+g1-n20-054	n20	76	L	17	6	11	2	6	12	bass-six-repeat	1a6ab307248a083dbdcb2e26dfa1dd7afa2336d6433b7e3abdeaac3b09e0957b	Sáu lời nhắc trầm
+g1-n20-055	n20	80	L	19	7	12	2	7	14	bass-seven-little	6963915f4aa1738eb3b8f859c132813d68e899593d18ce9613272eded638451d	Bảy viên đá trầm
+g1-n20-056	n20	86	L	16	4	12	4	4	16	bass-e-foundation	4bbb142bb18244cfeaa75c41f7e7b0135176e36137c1db82239d1148d951b335	Câu trầm trên nền dịu
+g1-n20-057	n20	89	L	17	4	13	4	4	16	bass-g-foundation	6a3bfe034a851e265e0b20f3fdbffd21ea64815613b21bf0de76ea61b3616c85	Câu trầm trên nền sáng
+g1-n20-058	n20	100	L	19	5	14	3	5	15	bass-changing-base	5012d76e8fc47778bcf347914f388e66f2e8cfd2aa44daccc5ed65fcc5d00e7b	Trầm trên nền chuyển
+g1-n20-059	n20	93	L	17	4	13	4	4	16	bass-hill-home	bdc6c2bbfdad003e8cb933fb12d4f3962c33976c8a3142ec978fcf03231b8aa7	Đồi và nhà ở khuông dưới
+g1-n20-060	n20	96	L	20	6	14	3	6	18	bass-six-return	56fe33f783dc8865079ee241a6d7b25e04571cad0acbf81913fc289400accdcc	Một vòng sân trầm
+g1-n20-061	n20	3	A	22	11	11	4	6	24	three-answers	36e0086e6c78a80d3018472729130e881edd301dde7876dd9cdf7b44c35e3f1e	Ba lời đối đáp
+g1-n20-062	n20	7	A	20	11	9	4	6	24	three-arches	71c193f106d5f61ce37b0025ed355877b3545c01b4b2a7332525cf0609da3277	Ba câu hỏi nhẹ
+g1-n20-063	n20	11	A	20	10	10	4	6	24	three-replies	5ca484cb881609b932cde70b03a444b93331f833d058514c3914628e1a8a0133	Ba câu đáp về nhà
+g1-n20-064	n20	14	A	22	11	11	4	6	24	three-repeat-calls	a23b91fea38e5812487adef3714754ed3c126dd8cd6dafdb7f3235b3713845d9	Nhắc lời qua lại
+g1-n20-065	n20	18	A	19	10	9	4	6	24	three-breath-calls	3e9dc07bd9d7c3127185a283aaf71c3d12e3d534d5fc9544933088d8183eb02d	Qua lại có khoảng thở
+g1-n20-066	n20	23	A	20	11	9	4	6	24	left-three-arches	dd36cbf3b543c7a18e5360c981dbc62cf02dd2225e0e6682ab14f298cd4add1c	Trầm hỏi ba câu
+g1-n20-067	n20	27	A	20	10	10	4	6	24	left-three-replies	69c638017b028b931df1266e4cb658af9290a0879fc23cd2348fe844913d2493	Trầm đáp ba câu
+g1-n20-068	n20	31	A	22	11	11	4	6	24	left-repeat-calls	22c9d459ed546380701ff0421fc99149043ff18ce756da56e30a494d4d6127cb	Trầm nhắc ba lần
+g1-n20-069	n20	34	A	21	11	10	3	8	24	four-three-calls	26428e4c6d2d3f5a840c4fe893c3464c3f0be0290be8294b97a401d59dfc9fa4	Bốn lời nhịp ba
+g1-n20-070	n20	38	A	22	11	11	3	8	24	four-three-turns	77511895d33939b9051378f2a3a282437903b9fab5e5d8e6617ee49bd8d853db	Bốn vòng đối đáp
+g1-n20-071	n20	43	A	20	10	10	3	8	24	four-upper-calls	2a3f0ccb646cb4fb2563edd8fd615bd8aed9bd1d27da97c04fe0b34c17b7d1bc	Bốn lời trên đồi
+g1-n20-072	n20	47	A	21	11	10	3	8	24	left-four-three	9181c488a6f45f5748216b4226f438e8aea85d5dd7de4a5ae1e5b0caf625568d	Bốn lời từ khuông trầm
+g1-n20-073	n20	51	A	22	11	11	3	8	24	left-four-turns	cf1c24b5685fb00555e55278171c0db6b7eba2d4d9707e32b5f2c7227d136998	Trầm mở bốn vòng
+g1-n20-074	n20	54	A	21	11	10	4	8	32	four-short-answers	0e4fc298bb9cc4606e326ad2615cb6c4f95b38d655440e22179ecc9a7bb76991	Bốn câu ngắn tiếp nhau
+g1-n20-075	n20	58	A	20	10	10	4	6	24	three-descending	63893cfafca08455fd2487156f87178e37dec85bf6dfdadf0adb8aa7ae23ed96	Câu trả lời thấp dần
+g1-n20-076	n20	63	A	21	11	10	4	6	24	three-middle	556d95e0a98001ba90dce544f2a3d64b72928494ba1a1cbb777170d0f19311d4	Đối đáp quanh Mi
+g1-n20-077	n20	67	A	18	9	9	4	6	24	three-short-long	0d86b51afe3ffa60a56133757208a4d094d360146c79aa9462deb57f69fe0352	Lời ngắn lời dài
+g1-n20-078	n20	71	A	19	10	9	4	6	24	left-three-breath	750d632dba04c42d35e900bd9978dc9ca76842dcefab4bece0a7be748ed4f1fd	Trầm mở một khoảng thở
+g1-n20-079	n20	74	A	18	8	10	3	8	24	three-breath-dialogue	3a12acf200a1ab0c47f874abfac2d61f6028424980d578609b2257995e740092	Lời qua lại có nhịp thở
+g1-n20-080	n20	78	A	21	11	10	3	8	24	three-repeat-dialogue	470f55e89f8178669cbcd03e0e1410697cdb2803e6ad8fcb7f68619492f3c6bd	Lời qua lại có nhịp nhắc
+g1-n20-081	n20	83	A	15	7	8	2	8	16	eight-short-turns	843012e08835d613619b033e9b96922513ed47505cd95f86e68c8f1d45e72b13	Tám lượt nhỏ
+g1-n20-082	n20	87	A	17	9	8	2	9	18	nine-short-turns	e3843f0d5261ba34708fb0f3f0bc8b8718d7a0205a05651d4c0436ff1b7af34f	Chín lượt nhỏ
+g1-n20-083	n20	94	A	17	8	9	2	9	18	left-nine-turns	e3843f0d5261ba34708fb0f3f0bc8b8718d7a0205a05651d4c0436ff1b7af34f	Chín lượt tay trái mở
+g1-n20-084	n20	91	A	19	9	10	3	8	24	three-gentle-dialogue	24f92f9e5398cc72cc3a0c75d2af93b8f7a09b626acba27630a0ec538e1dec1c	Cuộc trò chuyện nhẹ
+g1-n20-085	n20	98	A	21	11	10	4	6	24	last-three-answers	6972b461db253544358b9f3a69d032b6864fa9f808a459a09b90b10d52b03f93	Ba lời đáp cuối
+g1-n20-086	n20	4	S	20	10	10	4	3	12	octave-walk	4cfef85fc74147d2656caab3f24589f86ebb5ea2877a016ee197a31d668dbc7f	Hai hàng bước chân
+g1-n20-087	n20	10	S	20	10	10	4	3	12	octave-three-arch	a5fdc5faef2ff7e321ac450f36007d8eb230a549e402d3be042d092c4c791e36	Ba ô sóng đôi
+g1-n20-088	n20	17	S	22	11	11	4	3	12	octave-three-turn	7b5e07b7c6110dfaa7e0372d060877e7249fd0c1e5dbce844d510e54b8e93270	Ba ô hai lần quay
+g1-n20-089	n20	24	S	20	10	10	4	3	12	octave-upper-three	6534a6ef0f76acec52d34fe3d6acadca5ad52637f177ab2360d8c11da5fd9a09	Ba ô hai tay trên cao
+g1-n20-090	n20	30	S	24	12	12	4	3	12	octave-repeat-three	0a3ad8ed6a3b7762d0908ee323af1be02ebb5b801123ef3b7b6b8c198de26ecb	Ba ô cùng nhắc
+g1-n20-091	n20	37	S	16	8	8	4	2	8	octave-two-dense	f8918c48abeff988cc2969bd147d661b335443f566a5b10a65a9aa659942784d	Hai câu bước đều
+g1-n20-092	n20	44	S	20	10	10	4	3	12	octave-breath-three	345ff8ebf87a09c21c489938462bd57180d6f7d7f1768d4fb5ca584f6d00f7cd	Ba ô cùng thở
+g1-n20-093	n20	50	S	22	11	11	3	4	12	octave-four-three	9daee64913ccfb87a7fe6328bd24a14b0f7a910ea6107717d6af4844dc97990e	Bốn ô ba phách cùng nhau
+g1-n20-094	n20	57	S	20	10	10	3	4	12	octave-four-upper	88114d24734ab45f8893c75d7da64460837b39853f0f1158fa519c31974b0352	Bốn ô trên đồi
+g1-n20-095	n20	64	S	20	10	10	3	4	12	octave-four-turn	e92728ef493c7b9e51b810b483ce80694c7607edcd4c402cb1e6740b2308daab	Bốn vòng đồng nhịp
+g1-n20-096	n20	70	S	20	10	10	3	4	12	sixths-four	dec9ae2fdef426cb332bf88d6bd10db14e03c714d0e9a8cc01339b880b7aa0c5	Hai đường quanh bậc giữa
+g1-n20-097	n20	77	S	18	9	9	2	5	10	octave-five	1b5627f550fb7b34fa88eba84be15053fdb9b4452c2dfd02bdca002af7418023	Năm bước đôi
+g1-n20-098	n20	84	S	20	10	10	2	6	12	octave-six	3ba2f41adf735528d0020a252fd6076fb517fb6185f9a385711a247c9c28ed75	Sáu bước đôi
+g1-n20-099	n20	90	S	20	10	10	4	3	12	sixths-three	b2b1cf58592e89d88238147714c9c52a92cf21de8d1660171935c14e691d9fef	Ba câu hai đường
+g1-n20-100	n20	97	S	18	9	9	3	4	12	sixths-breath	284945c31967a80431c9d2c3165c0718087fd08a5fb66f1d310ecc169d472f20	Hai đường thở nhẹ
+g1-n30-001	n30	1	R	26	20	6	4	6	24	two-arches	7d4651112c9754488a63ea3d309513bd09eea7cb2bab711689813b10be71424e	Hai ngọn đồi
+g1-n30-002	n30	5	R	28	20	8	3	8	24	three-phrases	7355af32bca4c02284a81c203779dfc69fffd2b741d98acd3749c05fd46d012f	Dọc bờ rào
+g1-n30-003	n30	15	R	26	20	6	4	6	24	two-answers	67ff5ab93b083c530e1aaeac52b48206f5a1d3de984d2f3b5ad594769b971e8b	Hai câu hai lối về
+g1-n30-004	n30	8	R	25	19	6	4	6	24	two-gentle-arches	4ad19564b17c0321f830d7c8e77232c396018f837f10e8a9b6e8b6d6e54e1fe7	Hai vòng nhẹ
+g1-n30-005	n30	19	R	26	20	6	4	6	24	two-upper-answers	ad2ed5537782f04699a51486ec8b92daecac1dfff6e680a09684688ce9f8cd98	Hai câu phía trên
+g1-n30-006	n30	12	R	29	23	6	4	6	24	two-repeat-answers	5ba180ede21cb85974fd2a583d6f93bdd31a28cc40a4cd58e2a85152c2b09c59	Hai lời nhắc khác nhau
+g1-n30-007	n30	21	R	25	19	6	4	6	24	two-breath-answers	75a40d265159ab58783f476c613c887e4ab0ffe4128bdf8131d7eca91ed47743	Hai câu có hơi thở
+g1-n30-008	n30	32	R	27	21	6	4	6	24	two-low-answers	3dd76d5fbb14c5a3b9d37f74a3d7864f3a3bbc29a4e3607521872c40ba5e8290	Hai câu ở vùng thấp
+g1-n30-009	n30	25	R	30	23	7	4	7	28	seven-bar-arc	14753446ef4b1979cf0c53399bf71297653d3fa965ff7eedbbebae9db66e60c8	Cầu bảy nhịp
+g1-n30-010	n30	35	R	29	22	7	4	7	28	seven-bar-upper	5f2eece0591d233c58182f619f51c1167b12789920c10375be1e7daf24a09d32	Bảy ô trên cao
+g1-n30-011	n30	28	R	32	24	8	4	8	32	two-four-phrases	52c732b994d195cf03a8b536d813ab644340887de1b0360bee73de6d170c0d2b	Hai câu bốn ô
+g1-n30-012	n30	39	R	33	25	8	4	8	32	question-new-answer	8da94ded489923bba50d3ecdf50b8a9ae95fa70a3eca9f1e11e7099eafdb6426	Hỏi lại đáp khác
+g1-n30-013	n30	48	R	39	31	8	4	8	32	dense-two-phrases	2e05f114364a2b379fabdb5f1d4fbcdb4203c778e282c7351e9f3b18f5bf1b80	Hai câu bước đều
+g1-n30-014	n30	41	R	30	22	8	4	8	32	two-rested-phrases	c4b9b3603f086fea77056963a8d89b3179628d85b8bc68e5a56a7f74d4921757	Hai câu thưa hơn
+g1-n30-015	n30	52	R	33	25	8	4	8	32	two-upper-phrases	11dfe69cc6ae14ac4d363f3adb47b70c7d2e6c35769ef9374d7d4923c5c6d5a3	Hai câu quanh Sol
+g1-n30-016	n30	45	R	28	20	8	3	8	24	three-eight-arch	b2c1adc18b3d22576fd818e7722411477b54439d08e1a002577b7c4541a20362	Tám ô ba phách
+g1-n30-017	n30	55	R	29	21	8	3	8	24	three-eight-turn	53f796eba3c32133358c1935d82eb89f5519a6acf7eeb1bda6afcb59ec8d080f	Tám ô đổi hướng
+g1-n30-018	n30	65	R	28	20	8	3	8	24	three-eight-high	0cdc772f412601e9d4cf994c5a32706a85fdef436effc7805b315225ca2ce347	Tám ô nhìn lên
+g1-n30-019	n30	59	R	30	22	8	3	8	24	three-eight-repeat	30b3fba9de768c8eecfb81ba8b4951f79fd6109effa04b2b79758db73fbfc257	Tám ô nhắc lời
+g1-n30-020	n30	68	R	25	17	8	3	8	24	three-eight-breath	13d76dbda1115bf8df7213b9702f4f33c8bf7e99975c9b5da9e4e8bd719de290	Tám ô thở đều
+g1-n30-021	n30	61	R	34	24	10	3	10	30	three-ten	dbf575253dce4ae11b0c058249ea593367d35bd9dbe9c87f5f4bec5d1c7cdcc8	Mười ô nhỏ
+g1-n30-022	n30	72	R	33	23	10	3	10	30	three-ten-high	118caa065dd8af81518d931621c26811e0aa6301fe321d8d09afd044f5f626cc	Mười ô trên đồi
+g1-n30-023	n30	81	R	28	18	10	2	10	20	ten-little-bars	25b7cdab3210156cbf710b1eff5eb5c492677deb831dd1d8f4c62b5b85dca445	Mười viên đá nhỏ
+g1-n30-024	n30	75	R	27	17	10	2	10	20	ten-upper-bars	a87f5ac0f50d504294b875b0fba29a514925c1bc001fcda6564232b1b181e298	Mười bước qua bậc cao
+g1-n30-025	n30	85	R	28	18	10	2	10	20	ten-repeat-bars	aa1ab1e5c8b98e1b0d7bee6862f1cf1afc441a64425729774395a8849a0455ba	Mười bước có lời nhắc
+g1-n30-026	n30	79	R	30	23	7	4	7	28	e-base-two	15fba96fc00bf64a3cbd273510b771d7be02190c5f9e9759f53f6aa12839b49d	Hai câu trên nền Mi
+g1-n30-027	n30	88	R	29	22	7	4	7	28	g-base-two	b2f22d062b838b28397c8554d04c9d7ef10d7300a6ba85d993b0e522a3bab82f	Hai câu trên nền Sol
+g1-n30-028	n30	96	R	30	22	8	3	8	24	moving-base-eight	37efa6664afb25aefb130bb04a97e3a69d9cda0364282118c84ee985182a6a56	Nền đi một bước
+g1-n30-029	n30	92	R	28	21	7	4	7	28	two-part-soft	410aa678fe4cc416673dddacdea6ff974d57c576610566f44ef201cb35b4ebe4	Hai phần dịu
+g1-n30-030	n30	100	R	32	25	7	4	7	28	two-part-playful	447b1be72dbc0e296c4119c96b4dfca8ddd5b595441eff3b6df0ebebd55ac0d2	Hai phần vui nhỏ
+g1-n30-031	n30	2	L	32	8	24	4	8	32	bass-two-phrases	9c6fd68f1fd29b165cd32673754d791fae345b08b6cbaa7b860ad6c192544895	Hai đoạn kể trầm
+g1-n30-032	n30	6	L	26	6	20	4	6	24	bass-two-answers	67ff5ab93b083c530e1aaeac52b48206f5a1d3de984d2f3b5ad594769b971e8b	Hai câu trầm hai lối về
+g1-n30-033	n30	16	L	25	6	19	4	6	24	bass-two-gentle	4ad19564b17c0321f830d7c8e77232c396018f837f10e8a9b6e8b6d6e54e1fe7	Hai vòng trầm nhẹ
+g1-n30-034	n30	9	L	26	6	20	4	6	24	bass-two-upper	ad2ed5537782f04699a51486ec8b92daecac1dfff6e680a09684688ce9f8cd98	Hai câu trầm phía trên
+g1-n30-035	n30	20	L	29	6	23	4	6	24	bass-two-repeat	5ba180ede21cb85974fd2a583d6f93bdd31a28cc40a4cd58e2a85152c2b09c59	Hai lời nhắc trầm
+g1-n30-036	n30	13	L	25	6	19	4	6	24	bass-two-breath	75a40d265159ab58783f476c613c887e4ab0ffe4128bdf8131d7eca91ed47743	Hai câu trầm có nghỉ
+g1-n30-037	n30	22	L	27	6	21	4	6	24	bass-two-low	3dd76d5fbb14c5a3b9d37f74a3d7864f3a3bbc29a4e3607521872c40ba5e8290	Hai câu trầm thấp
+g1-n30-038	n30	33	L	30	7	23	4	7	28	bass-seven-arc	14753446ef4b1979cf0c53399bf71297653d3fa965ff7eedbbebae9db66e60c8	Cầu trầm bảy ô
+g1-n30-039	n30	26	L	29	7	22	4	7	28	bass-seven-upper	5f2eece0591d233c58182f619f51c1167b12789920c10375be1e7daf24a09d32	Bảy ô trầm trên cao
+g1-n30-040	n30	36	L	32	8	24	4	8	32	bass-two-four	52c732b994d195cf03a8b536d813ab644340887de1b0360bee73de6d170c0d2b	Hai câu trầm bốn ô
+g1-n30-041	n30	29	L	33	8	25	4	8	32	bass-new-answer	8da94ded489923bba50d3ecdf50b8a9ae95fa70a3eca9f1e11e7099eafdb6426	Trầm hỏi lại đáp khác
+g1-n30-042	n30	40	L	39	8	31	4	8	32	bass-dense-two	2e05f114364a2b379fabdb5f1d4fbcdb4203c778e282c7351e9f3b18f5bf1b80	Hai câu trầm bước đều
+g1-n30-043	n30	49	L	30	8	22	4	8	32	bass-two-rested	c4b9b3603f086fea77056963a8d89b3179628d85b8bc68e5a56a7f74d4921757	Hai câu trầm thưa
+g1-n30-044	n30	42	L	33	8	25	4	8	32	bass-two-upper-phrases	11dfe69cc6ae14ac4d363f3adb47b70c7d2e6c35769ef9374d7d4923c5c6d5a3	Hai câu trầm quanh Sol
+g1-n30-045	n30	53	L	28	8	20	3	8	24	bass-eight-arch	b2c1adc18b3d22576fd818e7722411477b54439d08e1a002577b7c4541a20362	Tám ô trầm ba phách
+g1-n30-046	n30	46	L	29	8	21	3	8	24	bass-eight-turn	53f796eba3c32133358c1935d82eb89f5519a6acf7eeb1bda6afcb59ec8d080f	Tám ô trầm đổi hướng
+g1-n30-047	n30	56	L	28	8	20	3	8	24	bass-eight-high	0cdc772f412601e9d4cf994c5a32706a85fdef436effc7805b315225ca2ce347	Tám ô trầm nhìn lên
+g1-n30-048	n30	66	L	30	8	22	3	8	24	bass-eight-repeat	30b3fba9de768c8eecfb81ba8b4951f79fd6109effa04b2b79758db73fbfc257	Tám ô trầm nhắc lời
+g1-n30-049	n30	60	L	25	8	17	3	8	24	bass-eight-breath	13d76dbda1115bf8df7213b9702f4f33c8bf7e99975c9b5da9e4e8bd719de290	Tám ô trầm thở đều
+g1-n30-050	n30	69	L	34	10	24	3	10	30	bass-ten	dbf575253dce4ae11b0c058249ea593367d35bd9dbe9c87f5f4bec5d1c7cdcc8	Mười ô trầm nhỏ
+g1-n30-051	n30	62	L	33	10	23	3	10	30	bass-ten-high	118caa065dd8af81518d931621c26811e0aa6301fe321d8d09afd044f5f626cc	Mười ô trầm trên đồi
+g1-n30-052	n30	73	L	28	10	18	2	10	20	bass-ten-little	25b7cdab3210156cbf710b1eff5eb5c492677deb831dd1d8f4c62b5b85dca445	Mười viên đá trầm
+g1-n30-053	n30	82	L	27	10	17	2	10	20	bass-ten-upper	a87f5ac0f50d504294b875b0fba29a514925c1bc001fcda6564232b1b181e298	Mười bước trầm qua cao
+g1-n30-054	n30	76	L	28	10	18	2	10	20	bass-ten-repeat	aa1ab1e5c8b98e1b0d7bee6862f1cf1afc441a64425729774395a8849a0455ba	Mười bước trầm nhắc lại
+g1-n30-055	n30	86	L	30	7	23	4	7	28	bass-e-two	15fba96fc00bf64a3cbd273510b771d7be02190c5f9e9759f53f6aa12839b49d	Hai câu trầm nền Mi
+g1-n30-056	n30	80	L	29	7	22	4	7	28	bass-g-two	b2f22d062b838b28397c8554d04c9d7ef10d7300a6ba85d993b0e522a3bab82f	Hai câu trầm nền Sol
+g1-n30-057	n30	89	L	30	8	22	3	8	24	bass-moving-eight	37efa6664afb25aefb130bb04a97e3a69d9cda0364282118c84ee985182a6a56	Trầm trên nền đi bước
+g1-n30-058	n30	99	L	28	7	21	4	7	28	bass-two-soft	410aa678fe4cc416673dddacdea6ff974d57c576610566f44ef201cb35b4ebe4	Hai phần trầm dịu
+g1-n30-059	n30	93	L	32	7	25	4	7	28	bass-two-playful	447b1be72dbc0e296c4119c96b4dfca8ddd5b595441eff3b6df0ebebd55ac0d2	Hai phần trầm vui
+g1-n30-060	n30	95	L	26	6	20	4	6	24	bass-two-hills	7d4651112c9754488a63ea3d309513bd09eea7cb2bab711689813b10be71424e	Hai ngọn đồi trầm
+g1-n30-061	n30	3	A	32	16	16	4	8	32	four-answers	7cb9a672d5dfc031043e6842ed71acb0f8e4bab09dff54637a16e232d2194e38	Qua lại bốn lần
+g1-n30-062	n30	7	A	28	14	14	4	8	32	four-arches	07a5161b42960ec6818c7d1b9543100d4796aa82f6be6ed84b4da2c459985797	Bốn lời qua cầu
+g1-n30-063	n30	11	A	29	14	15	4	8	32	four-upper	500f1744e8d71de18d02b810f6fe6d260a761b269c30550e43721625162ff8e4	Bốn lời trên cao
+g1-n30-064	n30	14	A	29	14	15	4	8	32	four-repeat	85f5de67873ecdbd2ee7fc547e1c8bf822b09a9c739814837b08d3fac75d8119	Bốn lời có nhắc
+g1-n30-065	n30	18	A	27	14	13	4	8	32	four-breath	1d52cbf300cf73e3c627d943b6a51b1c643e989f1570ea770730dc440a443b56	Bốn lời có nghỉ
+g1-n30-066	n30	23	A	28	14	14	4	8	32	left-four-arches	7428c750a8a9aa97ff72d18d9a805c0700d7e034e17806d2b1e302dbaae3f5cb	Trầm mở bốn câu
+g1-n30-067	n30	27	A	29	14	15	4	8	32	left-four-upper	3b1859db3d6a665fc023b8701b42af6d0d9380ec04954366b18a0cb2a4230236	Trầm mở bốn câu cao
+g1-n30-068	n30	31	A	29	14	15	4	8	32	left-four-repeat	8fa8749d8eeda82a42997125d7f210a0a4055262a26a53398d6e8389a52ccfb3	Trầm nhắc trong bốn câu
+g1-n30-069	n30	34	A	26	13	13	3	10	30	five-three-answers	65746fc1e34d5f8a838992e115b47bb242851e1c574cd477777ff0d04a531e36	Năm lượt nhịp ba
+g1-n30-070	n30	38	A	28	14	14	3	10	30	five-three-turns	29f450b933a0817a4bb60b380f014fc714b907909ea1a9bcc5a1c8ab29a9fd34	Năm lượt đổi hướng
+g1-n30-071	n30	43	A	26	13	13	3	10	30	five-three-upper	2c74ce3a5a9611e3ef569fda7ab021384749e20f28d86ce19ffe87c529a73a49	Năm lượt trên đồi
+g1-n30-072	n30	47	A	26	13	13	3	10	30	left-five-three	a7c15467b5c1b6badefd588d181eff21ccb4ab4ef8a747d7da67bbd3b03bcbd1	Năm lượt trầm mở
+g1-n30-073	n30	51	A	28	14	14	3	10	30	left-five-turns	1090e28c0a8d72fd85624bcb87e05afe0828961364e03e00f1fae2dc6e4e627d	Năm lượt trầm đổi hướng
+g1-n30-074	n30	54	A	33	15	18	4	10	40	five-short-long	ac8dc4bd4b644c7dbe1e86443fce4d5ae6e7c45f36a604d5e48335966394f562	Năm câu dài ngắn
+g1-n30-075	n30	58	A	34	16	18	4	10	40	five-downward	04d7fa3327bdd90d63e7856984eefdca2809882a67ea40ca95edb2eaeedb5129	Năm câu đi về
+g1-n30-076	n30	63	A	33	15	18	4	10	40	left-five-short-long	197d34de35095d3a61ccd83a2ee74a7baba9309bc1870a0c5beddeba56f7c1d3	Trầm mở năm câu
+g1-n30-077	n30	67	A	30	15	15	3	12	36	six-three-calls	1d9d60e52d1d0c2e4ff45ba9d747b4d031a992f36f9782fefdba3723f9c6549c	Sáu câu nhịp ba
+g1-n30-078	n30	71	A	32	16	16	3	12	36	six-three-repeat	186619f721c6cc0d0cc6af64af6b7777a1e659f5958ed95a5c14f4343ec1937f	Sáu câu nhắc nhỏ
+g1-n30-079	n30	74	A	27	13	14	4	8	32	four-gentle	4ec98ce8816ff6498f2bc4b5b4827a81f2085077f13eb5e8f7f9cb10f9003d53	Bốn câu êm
+g1-n30-080	n30	78	A	30	15	15	4	8	32	four-stepwise	0a125a24cc0f0eb8dd20c64217fc1c08b0c13b3bd089581b23fa0baa7ed78623	Bốn câu bước liên tục
+g1-n30-081	n30	83	A	26	13	13	2	14	28	fourteen-turns	844bc63e2d41357a1fb2541d1687c275dabe5f247f1802990fe7b4b443d9dba2	Mười bốn lượt ngắn
+g1-n30-082	n30	87	A	26	13	13	2	14	28	fourteen-repeat	1724703393206847a6f08dd13b6a6e328e6c76b0638007ce3e4fc45faa6438bb	Mười bốn lượt có nhắc
+g1-n30-083	n30	91	A	27	14	13	4	8	32	left-four-breath	6e3015b689462f78ab6a924d77dd9ba7ffecd57a4fd7c8809df45a0257eb26b0	Bốn câu trầm có nghỉ
+g1-n30-084	n30	94	A	26	14	12	3	10	30	five-rested	53fa43cc5d6b8d077110de97b3287e6c2f46ad184223b221d445f30ae2a811e1	Năm câu có khoảng thở
+g1-n30-085	n30	98	A	28	14	14	4	8	32	four-final-replies	a386a1180e06bca6948ff3e862013c083ad3fbb4519e335ca597dbf1c2a23af9	Bốn lời cuối
+g1-n30-086	n30	4	S	28	14	14	4	4	16	octave-arch	cff86fd7e8d38efe0d4561f122a772cefa3a64ebd7bdeafd57291a8f11317cf9	Sóng đôi trên đồi
+g1-n30-087	n30	10	S	26	13	13	4	4	16	octave-four-arch	fbf2f28e6325062b86c57d91d4338849dec70c00b72a099ddc8b3748eb2bde32	Bốn ô chung đường
+g1-n30-088	n30	17	S	30	15	15	4	4	16	octave-four-repeat	97b2f3df8ce62d4e39cc2525de4f37a8749ef2514c5db13415941595bd8eba06	Bốn ô chung lời nhắc
+g1-n30-089	n30	24	S	28	14	14	4	4	16	octave-four-upper	254ec7c017b2b36ff171f888dde8ad528760e59395f68885c8de8df752255bc3	Bốn ô chung bậc cao
+g1-n30-090	n30	30	S	36	18	18	4	5	20	octave-five-arch	afba3c2b83885238f2b930a01a76cc4a353866f3edfdc81434ecd2481c99dbcc	Năm ô sóng đôi
+g1-n30-091	n30	37	S	30	15	15	4	5	20	octave-five-breath	b39b492781cfa5e55c4c5eabeb5da07934929d0e366b397c594763ea6108a462	Năm ô cùng thở
+g1-n30-092	n30	44	S	32	16	16	3	6	18	octave-six-three	18d7fff775a496b34cc542f282477e21a0620fae1a9b2edd247af3c824861151	Sáu ô ba phách chung
+g1-n30-093	n30	50	S	32	16	16	3	6	18	octave-six-turn	a3875fac3fa806ad6f87d773307a76fbf47e666ec57a1dff624d24d3e63a7a59	Sáu ô quay đầu chung
+g1-n30-094	n30	57	S	32	16	16	3	6	18	octave-six-upper	3674f11770ae91d04a9281120addef18e7ab9a21bd97face078a96c82786e73f	Sáu ô trên đồi chung
+g1-n30-095	n30	64	S	32	16	16	3	6	18	sixths-six	19208fd39a67167ed339462c092168586f35228c9a97fa11a456cd61e247a271	Sáu ô hai đường
+g1-n30-096	n30	70	S	30	15	15	2	8	16	octave-eight	dca4cb68846e40a5163f7ddccfa487039b458abf01b2e8709101c9e61c632b83	Tám ô bước đôi
+g1-n30-097	n30	77	S	32	16	16	2	9	18	octave-nine	fa0fdb2d3c68feced665ae3b04030c9dc0737a1c2f7860f629210e8deac7621c	Chín ô bước đôi
+g1-n30-098	n30	84	S	28	14	14	4	4	16	sixths-four	2cb3536e7b16a44df106cc04088fb9f06f985ee7208070f2ae1f1709a1445e7d	Bốn ô hai đường song hành
+g1-n30-099	n30	90	S	34	17	17	3	7	21	sixths-seven	052665eb591a4df8d72e7c5694be2ad589169a6c126e517d163219b908f23771	Bảy ô song hành
+g1-n30-100	n30	97	S	34	17	17	4	5	20	octave-five-return	1f2dc79599eafd66d5b0348ea6982020e076a716452d93bea66fbc902f6e0e59	Năm ô trở về chung
+g1-n50-001	n50	1	R	50	38	12	4	12	48	three-scenes	30f0fdc64ffe23498d4c59ddb28e6608120ff42b1025695bdad8aba11352c346	Ba cảnh sân vườn
+g1-n50-002	n50	5	R	54	38	16	3	16	48	four-small-arcs	20b08dd7baf3f8ab381731b6c90ee680095688ed1e8c20225dfffc839ad0f388	Bốn vòng lá nhỏ
+g1-n50-003	n50	15	R	50	38	12	4	12	48	three-questions	bf7db859c2dfa3ee975f20cdabd18f22b1f567cec4dc64bb42d26190dae24111	Ba câu hỏi quanh sân
+g1-n50-004	n50	8	R	49	37	12	4	12	48	three-low-waves	00a0082ab0964b12755ef379c8551f79caf2d15346a71f688d3d63a932174a7f	Ba làn sóng thấp
+g1-n50-005	n50	19	R	50	38	12	4	12	48	three-high-waves	b0eaab51c512e95964b829529674e4ad8e08bea02d6c78c9ec0f41148449fff1	Ba làn sóng cao
+g1-n50-006	n50	12	R	53	41	12	4	12	48	three-repeated-ideas	b4d972cc3e902f8015624cfa392d15c91f825fdadfc94a5010dac6644f6a9a02	Ba lời nhắc thay đổi
+g1-n50-007	n50	21	R	47	35	12	4	12	48	three-breaths	b9c077c57e547c9fcaa7fd8838a55cee0035caf6694632967853640279b2fe50	Ba câu và hơi thở
+g1-n50-008	n50	32	R	51	39	12	4	12	48	three-descending-scenes	3d2c29646044140fb7ccf9ec4295a885d68be68482ce67e4319f193fc135bc13	Ba cảnh đi xuống
+g1-n50-009	n50	25	R	50	38	12	4	12	48	moving-bass-arch	1f825235c887e75c1e54916c8dc9e5bfadffe28643c095b5d3cd4a3d88328e2b	Con đường và bước nền
+g1-n50-010	n50	35	R	51	39	12	4	12	48	moving-bass-reply	2b7bb9a9c458704bc6a60486c29026df460549b2408a33fa59723d6cba0b644c	Câu đáp trên nền chuyển
+g1-n50-011	n50	28	R	50	38	12	4	12	48	moving-bass-three	5d7d3f9527feb6d0ab10ee65fd1583528ab025acb29dc839b28aa9e9dd318234	Ba câu nền liền bậc
+g1-n50-012	n50	39	R	49	39	10	4	10	40	ten-flowing-bars	08606e7ffd75acb66c399297ffcf6a8c1eaea96bd933879d269912107f89c933	Mười ô chảy đều
+g1-n50-013	n50	48	R	45	35	10	4	10	40	ten-soft-bars	8f1c3d1bd2a799d562bf28b05a605de7edb41c72029fcb9fe8627804deab8e78	Mười ô dịu lại
+g1-n50-014	n50	41	R	46	36	10	4	10	40	ten-upper-bars	2e3c5404d7fbc7e10f411f717cac324855763b0f9ce89f686ff86e0946c3739a	Mười ô vòng cao
+g1-n50-015	n50	52	R	64	48	16	4	16	64	four-short-scenes	1ce9392e5325ed2188d823ca1a471b5786d1269b9373cbf6bf2c187716d55ebd	Bốn cảnh nhỏ
+g1-n50-016	n50	45	R	64	48	16	4	16	64	four-high-scenes	1372fd21545c2ce1e4a2b4ea641d1d76bef5eaa70a4ab84d8e8372ef67d581aa	Bốn cảnh nhìn lên
+g1-n50-017	n50	55	R	54	38	16	3	16	48	three-waltz-scenes	291d4f6e86293800ba99b069195a1ea0ff6042e0500a4931b0f9e5385911be89	Ba cảnh nhịp ba
+g1-n50-018	n50	65	R	54	38	16	3	16	48	upper-waltz-scenes	d2990ce30bdd48555192cc5645baaaf68f2a3127571c31fd7238057a617dae05	Nhịp ba trên cao
+g1-n50-019	n50	59	R	56	40	16	3	16	48	repeated-waltz	8fff01fa74d0e840551c564a8bc9cd1ef015d470f496fc654fd3b069ebac6195	Nhịp ba có lời nhắc
+g1-n50-020	n50	68	R	51	35	16	3	16	48	breathing-waltz	2121ec147a3ee2586be414829e2f78fb8bf12e83676900c465aa00880e0f5c73	Nhịp ba có hơi thở
+g1-n50-021	n50	61	R	46	34	12	3	12	36	twelve-flowing	7af7a3352616a888230e5bfb4f44235b1585ad987c3539fb2eeedfec034d0e51	Mười hai ô nhịp ba
+g1-n50-022	n50	72	R	46	34	12	3	12	36	twelve-upper	3012bc2b435c47c4020449469b2eb897c521d3158952a8e15ed38c530f743329	Mười hai ô phía trên
+g1-n50-023	n50	81	R	44	28	16	2	16	32	sixteen-small-steps	af49d061c3cdfba4222a7941d70aca72fe9009cf7ca1f01b95c37af1cf8976e3	Mười sáu bước nhỏ
+g1-n50-024	n50	75	R	43	27	16	2	16	32	sixteen-upper-steps	231f23ccb66e47a2dbf3fb05ee816302623cc4044b29909da955c6048d77850a	Mười sáu bước nhìn lên
+g1-n50-025	n50	85	R	45	29	16	2	16	32	sixteen-repeated	210b2bf2fb894d8af71a15b786b7d544a6bedec7b4e004ea2cc24b354ccefe76	Mười sáu bước nhắc lại
+g1-n50-026	n50	79	R	49	37	12	4	12	48	e-foundation-three	3e3c795a2ea88492407d175650d688be53b9300334acb2abee1a0d094783364e	Ba câu trên nền Mi
+g1-n50-027	n50	88	R	51	39	12	4	12	48	g-foundation-three	8f3e3b33ee5e61c08633edfb3336b22a75bd53d7659f5d4a787df7f5843e6c43	Ba câu trên nền Sol
+g1-n50-028	n50	96	R	57	41	16	3	16	48	moving-three-foundation	1bfdcff1a03d0ea441a9176a7f5c2785196703cf0f1eef369622b1f5af1446f5	Ba phách nền chuyển
+g1-n50-029	n50	92	R	69	53	16	4	16	64	four-full-scenes	d8f1827e6d0a3170f1b440cb8010bf36c017229ed8f22ae58d479238c2673ee3	Bốn cảnh đầy bước chân
+g1-n50-030	n50	100	R	51	39	12	4	12	48	three-final-scenes	a98b521a3c732dba5c0ff58b0af82e87a2a4d5cbbed121d51e84e3c3c0a12ce2	Ba cảnh cuối chiều
+g1-n50-031	n50	2	L	47	12	35	4	12	48	bass-three-scenes	8420a2f4b7c310535f095b353c6d7f69d904aa23ab5e46202d6d1aad1f1cb734	Ba khúc trầm
+g1-n50-032	n50	6	L	50	12	38	4	12	48	bass-three-questions	bf7db859c2dfa3ee975f20cdabd18f22b1f567cec4dc64bb42d26190dae24111	Ba câu hỏi trầm
+g1-n50-033	n50	16	L	49	12	37	4	12	48	bass-low-waves	00a0082ab0964b12755ef379c8551f79caf2d15346a71f688d3d63a932174a7f	Ba làn sóng trầm thấp
+g1-n50-034	n50	9	L	50	12	38	4	12	48	bass-high-waves	b0eaab51c512e95964b829529674e4ad8e08bea02d6c78c9ec0f41148449fff1	Ba làn sóng trầm cao
+g1-n50-035	n50	20	L	53	12	41	4	12	48	bass-three-repeat	b4d972cc3e902f8015624cfa392d15c91f825fdadfc94a5010dac6644f6a9a02	Ba lời nhắc trầm thay đổi
+g1-n50-036	n50	13	L	47	12	35	4	12	48	bass-three-breaths	b9c077c57e547c9fcaa7fd8838a55cee0035caf6694632967853640279b2fe50	Ba câu trầm và hơi thở
+g1-n50-037	n50	22	L	51	12	39	4	12	48	bass-descending-scenes	3d2c29646044140fb7ccf9ec4295a885d68be68482ce67e4319f193fc135bc13	Ba cảnh trầm đi xuống
+g1-n50-038	n50	33	L	50	12	38	4	12	48	bass-moving-arch	1f825235c887e75c1e54916c8dc9e5bfadffe28643c095b5d3cd4a3d88328e2b	Câu trầm trên bước nền
+g1-n50-039	n50	26	L	51	12	39	4	12	48	bass-moving-reply	2b7bb9a9c458704bc6a60486c29026df460549b2408a33fa59723d6cba0b644c	Câu đáp trầm nền chuyển
+g1-n50-040	n50	36	L	50	12	38	4	12	48	bass-moving-three	5d7d3f9527feb6d0ab10ee65fd1583528ab025acb29dc839b28aa9e9dd318234	Ba câu trầm nền liền bậc
+g1-n50-041	n50	29	L	49	10	39	4	10	40	bass-ten-flowing	08606e7ffd75acb66c399297ffcf6a8c1eaea96bd933879d269912107f89c933	Mười ô trầm chảy đều
+g1-n50-042	n50	40	L	45	10	35	4	10	40	bass-ten-soft	8f1c3d1bd2a799d562bf28b05a605de7edb41c72029fcb9fe8627804deab8e78	Mười ô trầm dịu lại
+g1-n50-043	n50	49	L	46	10	36	4	10	40	bass-ten-upper	2e3c5404d7fbc7e10f411f717cac324855763b0f9ce89f686ff86e0946c3739a	Mười ô trầm vòng cao
+g1-n50-044	n50	42	L	64	16	48	4	16	64	bass-four-scenes	1ce9392e5325ed2188d823ca1a471b5786d1269b9373cbf6bf2c187716d55ebd	Bốn cảnh trầm nhỏ
+g1-n50-045	n50	53	L	64	16	48	4	16	64	bass-four-high	1372fd21545c2ce1e4a2b4ea641d1d76bef5eaa70a4ab84d8e8372ef67d581aa	Bốn cảnh trầm nhìn lên
+g1-n50-046	n50	46	L	54	16	38	3	16	48	bass-waltz-scenes	291d4f6e86293800ba99b069195a1ea0ff6042e0500a4931b0f9e5385911be89	Những cảnh trầm nhịp ba
+g1-n50-047	n50	56	L	54	16	38	3	16	48	bass-upper-waltz	d2990ce30bdd48555192cc5645baaaf68f2a3127571c31fd7238057a617dae05	Nhịp ba trầm trên cao
+g1-n50-048	n50	66	L	56	16	40	3	16	48	bass-repeated-waltz	8fff01fa74d0e840551c564a8bc9cd1ef015d470f496fc654fd3b069ebac6195	Nhịp ba trầm nhắc lời
+g1-n50-049	n50	60	L	51	16	35	3	16	48	bass-breathing-waltz	2121ec147a3ee2586be414829e2f78fb8bf12e83676900c465aa00880e0f5c73	Nhịp ba trầm có nghỉ
+g1-n50-050	n50	69	L	46	12	34	3	12	36	bass-twelve-flowing	7af7a3352616a888230e5bfb4f44235b1585ad987c3539fb2eeedfec034d0e51	Mười hai ô trầm nhịp ba
+g1-n50-051	n50	62	L	46	12	34	3	12	36	bass-twelve-upper	3012bc2b435c47c4020449469b2eb897c521d3158952a8e15ed38c530f743329	Mười hai ô trầm phía trên
+g1-n50-052	n50	73	L	44	16	28	2	16	32	bass-sixteen-small	af49d061c3cdfba4222a7941d70aca72fe9009cf7ca1f01b95c37af1cf8976e3	Mười sáu bước trầm nhỏ
+g1-n50-053	n50	82	L	43	16	27	2	16	32	bass-sixteen-upper	231f23ccb66e47a2dbf3fb05ee816302623cc4044b29909da955c6048d77850a	Mười sáu bước trầm lên cao
+g1-n50-054	n50	76	L	45	16	29	2	16	32	bass-sixteen-repeat	210b2bf2fb894d8af71a15b786b7d544a6bedec7b4e004ea2cc24b354ccefe76	Mười sáu bước trầm nhắc lại
+g1-n50-055	n50	86	L	49	12	37	4	12	48	bass-e-three	3e3c795a2ea88492407d175650d688be53b9300334acb2abee1a0d094783364e	Ba câu trầm nền Mi
+g1-n50-056	n50	80	L	51	12	39	4	12	48	bass-g-three	8f3e3b33ee5e61c08633edfb3336b22a75bd53d7659f5d4a787df7f5843e6c43	Ba câu trầm nền Sol
+g1-n50-057	n50	89	L	57	16	41	3	16	48	bass-moving-three	1bfdcff1a03d0ea441a9176a7f5c2785196703cf0f1eef369622b1f5af1446f5	Nhịp ba trầm trên nền chuyển
+g1-n50-058	n50	99	L	69	16	53	4	16	64	bass-four-full	d8f1827e6d0a3170f1b440cb8010bf36c017229ed8f22ae58d479238c2673ee3	Bốn cảnh trầm đầy bước
+g1-n50-059	n50	93	L	51	12	39	4	12	48	bass-final-scenes	a98b521a3c732dba5c0ff58b0af82e87a2a4d5cbbed121d51e84e3c3c0a12ce2	Ba cảnh trầm cuối chiều
+g1-n50-060	n50	95	L	54	16	38	3	16	48	bass-four-arcs	20b08dd7baf3f8ab381731b6c90ee680095688ed1e8c20225dfffc839ad0f388	Bốn vòng lá trầm
+g1-n50-061	n50	3	A	48	24	24	4	12	48	long-dialogue	8be6b3f1fe9205d33811270ed1125d87f8664882d2a4d006c62047e6319b38af	Dạo chơi và kể lại
+g1-n50-062	n50	7	A	43	22	21	4	12	48	six-arched-answers	112b23c24ee106f4e8645ed17631f5fdfe36196dc381957a3e12326494d8a96f	Sáu lời qua đồi
+g1-n50-063	n50	11	A	44	21	23	4	12	48	six-upper-answers	18a20b5d76750cd6bd27de61c24847ce7b3c26bd65c133cc03a56d97aa1e3405	Sáu lời trên cao
+g1-n50-064	n50	14	A	46	23	23	4	12	48	six-repeat-answers	c5517ea019d282a77a384de761bdb92a24f45cc70621de34e423f61d30cac0ae	Sáu lời nhắc có đổi
+g1-n50-065	n50	18	A	41	20	21	4	12	48	six-breath-answers	9fc2a359553bd66a18f127da7971d93ba004ccb3015ab01fa075cff1b18c48c7	Sáu câu có chỗ thở
+g1-n50-066	n50	23	A	43	22	21	4	12	48	left-six-arches	944f715794f39e258def646b79b7910a2ca83b7a975214c06cb1d6fe18bd184f	Sáu lời từ khuông dưới
+g1-n50-067	n50	27	A	44	21	23	4	12	48	left-six-upper	5a2ad5859514e7d18749691465530087dd93a7fda3587acc76aa3119a2d19d12	Sáu lời trầm nhìn lên
+g1-n50-068	n50	31	A	46	23	23	4	12	48	left-six-repeat	101fa1f859d14cc88c6e6efcabc9ef2d7a6f5cfad7a87f952851bbdf53439912	Sáu lời trầm nhắc lại
+g1-n50-069	n50	34	A	44	22	22	3	16	48	eight-three-calls	22590a868838fd04f7dd1d6cf0bb747ca71f139161e98fe2fa86e8e0455c98f0	Tám lời nhịp ba
+g1-n50-070	n50	38	A	42	21	21	3	16	48	eight-three-turns	801537faabfa59e23ba9c70aacaabc362e465e6e85d0082474d1453635764770	Tám vòng đối đáp
+g1-n50-071	n50	43	A	42	21	21	3	16	48	eight-three-upper	77f0e92d0217a6b9553cd9b1ec2e53f2f45213657af9e295ab71b3fd11b74591	Tám lời từ trên đồi
+g1-n50-072	n50	47	A	44	22	22	3	16	48	left-eight-three	40a8b160e071e9fbab6d996f31ae821c7967c8211b1f8314cacc870ad4d149f8	Tám lời trầm ba phách
+g1-n50-073	n50	51	A	42	21	21	3	16	48	left-eight-turns	38267a8239d20e117e5f1ea2b9f938512787f0ffd8311fdad44a5963b30e0cb1	Tám vòng trầm mở
+g1-n50-074	n50	54	A	49	25	24	4	14	56	seven-short-long	074ab854cdc7a8fec57428a13687ee3fccfb66f999f880870b55598b25822dfb	Bảy câu dài ngắn
+g1-n50-075	n50	58	A	50	25	25	4	14	56	seven-descending	13f9d5518bf74788f481ae0328b0800f67ab8ac2287181db90089e0055967aee	Bảy câu đi về
+g1-n50-076	n50	63	A	49	25	24	4	14	56	left-seven-short	3f6dd99ce9ae8046410693549c8fcbd04f2f21b08c876c4ef00bd146d97e1884	Bảy câu trầm dài ngắn
+g1-n50-077	n50	67	A	48	24	24	3	18	54	nine-three-calls	c81c1f5993b557b8a202f6cf37e267e030948d071c7a30ffbd08749ad47001a4	Chín câu ba phách
+g1-n50-078	n50	71	A	50	25	25	3	18	54	nine-three-repeat	421f78b61959d519fb5297a278da7c32ed68ebe9804f02249a838af040881242	Chín câu nhắc nhỏ
+g1-n50-079	n50	74	A	42	21	21	4	12	48	six-gentle	83886042447312c484d0a75a72acf1505e84f32b3d033a098e0210631cb693af	Sáu câu êm qua lại
+g1-n50-080	n50	78	A	59	30	29	4	16	64	eight-stepwise	bd6bf7693d3f749ca449c3d50c41ef65645f17a9c0640a0af8a8365624e5991e	Tám câu liền bước
+g1-n50-081	n50	83	A	42	21	21	2	22	44	twenty-two-turns	37f9250575b9ccd94d04c13d4623bd927c687c8a72caac8bdad52c9c61c45bbd	Hai mươi hai lời ngắn
+g1-n50-082	n50	87	A	46	23	23	2	24	48	twenty-four-turns	2e79fa3fc2e2d02bae0e80b648506d51a8ccc83e25b414d499230d1d1a255d61	Hai mươi bốn lời ngắn
+g1-n50-083	n50	91	A	41	20	21	4	12	48	left-six-breaths	753b7390c8cb2d4d78c18c50c3e87a32b20f77e314b04ec64965bd402f29c7db	Sáu câu trầm có hơi thở
+g1-n50-084	n50	94	A	42	21	21	3	16	48	eight-rested	15547037d281fdc6b89d0b252d3e986c11654393e0a757cc02a8ccc197ed4102	Tám lời có khoảng thở
+g1-n50-085	n50	98	A	43	22	21	4	12	48	six-final-replies	6fde4a655ef82a3c73649a9c69c0f82d621b6d1ef6f084ad9cf9a31d3ef0c5b4	Sáu lời cuối chiều
+g1-n50-086	n50	4	S	48	24	24	4	8	32	octave-three-scenes	8cb50c983438ae2961a03ccd486f764684f7765260d8b8a1bd0f35cc93234500	Sóng đôi quanh vườn
+g1-n50-087	n50	10	S	50	25	25	4	8	32	octave-two-questions	853e7b4af4afda03e4ea630561ab8810ff865bb44bc82fa8e11ca2998f3c8873	Hai tay hỏi rồi đáp
+g1-n50-088	n50	17	S	50	25	25	4	8	32	octave-two-upper	85c3aaaccafe44d1fab6336e7ce09c454b10286c07cef256caab64bcea7450df	Hai tay hai câu trên cao
+g1-n50-089	n50	24	S	54	27	27	4	8	32	octave-two-repeats	4ba3ebafc623f10c89fd56402f72270683cea6ee8ddd01620c4192070ca462c6	Hai tay hai lời nhắc
+g1-n50-090	n50	30	S	46	23	23	4	8	32	octave-two-breaths	7a151c6d3c9a0a50ef5b6833cd6ba120af2b9b1dcf39e8f087a1bda1cf3dca05	Hai tay hai hơi thở
+g1-n50-091	n50	37	S	66	33	33	4	10	40	octave-ten-flow	3bdffc238f26cfcb9ce01a938694a449ac9ac6f27b2d6ca3c44001f357ae6546	Mười ô hai tay chảy đều
+g1-n50-092	n50	44	S	50	25	25	3	10	30	octave-ten-three	cd8373f796a02f26c7e3f7cda002dbffc2e17b7b1f1977677e909a79e5788a95	Mười ô hai tay nhịp ba
+g1-n50-093	n50	50	S	56	28	28	3	12	36	octave-twelve-three	0bc5e941f64038cca03f118eb4a251b63a690a4fd1ef0982de4e7df6bc042f0c	Mười hai ô sóng đôi
+g1-n50-094	n50	57	S	46	23	23	3	10	30	octave-ten-upper	7b8bed96a4ea6b38bc21c1b18b52554aac0f7952db020d357ae10b6f45a3baf7	Mười ô hai tay trên cao
+g1-n50-095	n50	64	S	48	24	24	3	10	30	sixths-ten	413eeb7c1e050a1349c3cec2e6dd9ecb6c8546741783301b6cdc5758346aa3f8	Mười ô song hành
+g1-n50-096	n50	70	S	50	25	25	2	14	28	octave-fourteen	da9e0196a58b57df61d224fdf9ec2be1baa0dedb26b47e8ad14afe4cef328489	Mười bốn bước đôi
+g1-n50-097	n50	77	S	56	28	28	2	16	32	octave-sixteen	9153611a9f137f99147f10338074db3a90ec8764c141ef6e9e5f6ef2738eba39	Mười sáu ô song hành
+g1-n50-098	n50	84	S	50	25	25	4	8	32	sixths-eight	3990f647740eef45425b856520642f6439a18afa131d5b0bc9e6ae093f9c4639	Tám ô hai đường song hành
+g1-n50-099	n50	90	S	58	29	29	3	12	36	sixths-twelve	5f32669e94cc46253101b2feaffde0544f8ff351e049d7b21b98792ad6390cc9	Mười hai ô hai đường
+g1-n50-100	n50	97	S	50	25	25	4	8	32	octave-eight-return	c2f832f1bf26334687cafb4e30080b8477cf56597a9f67ac8e475f2315d95e7b	Tám ô cùng trở về
+g1-n100-001	n100	1	R	93	73	20	4	20	80	five-scenes	7a425c08733e4017c1233fe7106266d8a720a58d60bf211ac121af58f7d58bd3	Một buổi sáng trong vườn
+g1-n100-002	n100	5	R	87	63	24	3	24	72	six-three-scenes	13df57a3ecea31188ebb79f69bd5ede57e59af5bc6d0c1882f596fee6d9ea2de	Chuyến đi qua sáu góc sân
+g1-n100-003	n100	15	R	85	65	20	4	20	80	five-questions	764e1af0c4c44ad482c56f3dc276e38d4a428e8e91f6c1dd4a6bcf0afa7c94a7	Năm câu hỏi trong ngày
+g1-n100-004	n100	8	R	84	64	20	4	20	80	five-low-waves	1477903d4e25771f9485f51dd062e9e374bf3937db3fa096a0df344c1c62b637	Năm làn sóng bên thềm
+g1-n100-005	n100	19	R	84	64	20	4	20	80	five-high-waves	06447b9d946f0490adce62e33508b0507646ea4c51a89e89444ba8f13fb8933d	Năm làn sóng phía trên
+g1-n100-006	n100	12	R	88	68	20	4	20	80	five-repeated-ideas	262a2bf383c72d9f41f7660c258a228329b665b3ce50afc69b6fc106b56fa865	Năm lời nhắc thay hình
+g1-n100-007	n100	21	R	81	61	20	4	20	80	five-breaths	7a9827d809bdfea24595a2a97da1145df08d91c91ffbcccdb07ababe9b497ef9	Năm câu thở nhẹ
+g1-n100-008	n100	32	R	86	66	20	4	20	80	five-descending-scenes	625821fb4eb1153a8c479e2423e4fbbe6766235eb2808dfcf991ead0bc25b942	Năm cảnh đường về
+g1-n100-009	n100	25	R	87	67	20	4	20	80	moving-foundation-five	1e6b70904d2a9121099dd5e3f888d668374cd4c5ee7747c7453c74c654f13287	Câu nhạc và con đường nền
+g1-n100-010	n100	35	R	87	67	20	4	20	80	moving-foundation-answer	b117c28d37315eca773fb57f2fa870654daadf684bf3955a223d69351409265b	Những câu đáp trên nền chuyển
+g1-n100-011	n100	28	R	84	64	20	4	20	80	moving-foundation-upper	0955ecea6472b15f586dfe3b2dd970841900f4f006761be5e4f9c05d22f2ef27	Những bậc nền dưới câu cao
+g1-n100-012	n100	39	R	78	62	16	4	16	64	four-flowing-scenes	72939f5e4dc4ce1961bd960cd219035a35f270963eac5188a45001a937a22309	Bốn cảnh bước chân liên tục
+g1-n100-013	n100	48	R	78	62	16	4	16	64	four-flowing-upper	3a377fcaf84d0e3b8323d1844d52f3e68f02cc518c93e610dd38f66e09510c9e	Bốn cảnh bước cao thấp
+g1-n100-014	n100	41	R	78	62	16	4	16	64	four-flowing-repeat	3859fa3f9cae03a914ae2534ad8c37167392feedd9a54657a94c8e17a0d56f51	Bốn cảnh nhắc bước đều
+g1-n100-015	n100	52	R	97	73	24	4	24	96	six-small-scenes	1f5af955340e764f17af540e5c4f316a6bf93f074ff89460e6285d41443e2f00	Sáu cảnh yên nhỏ
+g1-n100-016	n100	45	R	97	73	24	4	24	96	six-high-scenes	9ce200e5f2bb912710641a2ff819bbce7316ae744171a5e8d91d44fe48b9f307	Sáu lần nhìn lên
+g1-n100-017	n100	55	R	82	58	24	3	24	72	six-three-arcs	9a63f050b914b26b95517dd813b6b075478b6dca22595ce6296af57f907f97c8	Sáu vòng nhịp ba
+g1-n100-018	n100	65	R	82	58	24	3	24	72	six-three-upper	1b3e5499a624edecaafe276a8ca58e9678128eb4b606ac172733ee56f5de02ec	Sáu vòng nhịp ba trên cao
+g1-n100-019	n100	59	R	83	59	24	3	24	72	six-three-repeat	618b4ffa3126375104eb56fc68d0b000cfe58c4b47ef1da0efe9796be5f099c1	Sáu lời nhắc nhịp ba
+g1-n100-020	n100	68	R	78	54	24	3	24	72	six-three-breath	2fa4f3d16455d0ab6c7106091eb120e054542df17009b2315a2195b4064750fa	Sáu hơi thở nhịp ba
+g1-n100-021	n100	61	R	76	56	20	3	20	60	twenty-flowing	76a72e9c096dba3db027691ecfcfae446a2fa8a9636b900948b4aa201c3eb8a8	Hai mươi ô nhịp ba
+g1-n100-022	n100	72	R	76	56	20	3	20	60	twenty-upper	41c7f71a25ceb38f566fa7e461a7b58d07de91746d84bf5801fa3671f290ae58	Hai mươi ô ba phách cao
+g1-n100-023	n100	81	R	77	61	16	4	16	64	four-dense-questions	319f8f01bbed07f839b88b48c09ef7de3a7ce5a2c30092ca0eaefb20f2411ae8	Bốn câu hỏi bước đều
+g1-n100-024	n100	75	R	78	62	16	4	16	64	four-dense-hills	3f97db3bd31b9355ac7dc399c3cd71a4fa390212d497a5a4e8225d3093505cbb	Bốn ngọn đồi nối nhau
+g1-n100-025	n100	85	R	88	68	20	4	20	80	five-rest-and-rise	6fb6e0aa9774959106446300429df39b5a9a3be0668742301ee9969c8df32b81	Nghỉ nhẹ rồi bước tiếp
+g1-n100-026	n100	79	R	85	65	20	4	20	80	e-foundation-five	c7b575e0dfbc227b8c11b49cdaaae741f1dc1f8e602cb05c26c3cbbb5956791a	Năm câu trên nền Mi
+g1-n100-027	n100	88	R	86	66	20	4	20	80	g-foundation-five	a07203f0cf5354054838b9b27149cdcc30037362749b7a794733e71f607cde02	Năm câu trên nền Sol
+g1-n100-028	n100	96	R	85	61	24	3	24	72	moving-three-six	1064b573f5e1fb167597a2321ff43b0962980fedcb1ce74881e76529bfb2e0d8	Sáu câu trên nền chuyển
+g1-n100-029	n100	92	R	87	67	20	4	20	80	five-full-scenes	1c2e0cc38e24c2cdeb4326f04e94addf346aa8c1739d9d55e929127845027611	Năm cảnh đầy bước chân
+g1-n100-030	n100	100	R	87	67	20	4	20	80	five-final-scenes	1a1e0ce9cd9189326472f2b8ccee7a714b364bb50bb039cce50245640c667ed6	Năm cảnh cuối buổi
+g1-n100-031	n100	2	L	89	20	69	4	20	80	bass-five-scenes	5165f104acf04d65b707e994a5253f2ee54f64191ebf360900bd098c17270717	Nhật ký của tay trái
+g1-n100-032	n100	6	L	85	20	65	4	20	80	bass-five-questions	764e1af0c4c44ad482c56f3dc276e38d4a428e8e91f6c1dd4a6bcf0afa7c94a7	Năm câu hỏi trầm trong ngày
+g1-n100-033	n100	16	L	84	20	64	4	20	80	bass-five-low-waves	1477903d4e25771f9485f51dd062e9e374bf3937db3fa096a0df344c1c62b637	Năm làn sóng trầm bên thềm
+g1-n100-034	n100	9	L	84	20	64	4	20	80	bass-five-high-waves	06447b9d946f0490adce62e33508b0507646ea4c51a89e89444ba8f13fb8933d	Năm làn sóng trầm phía trên
+g1-n100-035	n100	20	L	88	20	68	4	20	80	bass-five-repeated	262a2bf383c72d9f41f7660c258a228329b665b3ce50afc69b6fc106b56fa865	Năm lời nhắc trầm thay hình
+g1-n100-036	n100	13	L	81	20	61	4	20	80	bass-five-breaths	7a9827d809bdfea24595a2a97da1145df08d91c91ffbcccdb07ababe9b497ef9	Năm câu trầm thở nhẹ
+g1-n100-037	n100	22	L	86	20	66	4	20	80	bass-five-descending	625821fb4eb1153a8c479e2423e4fbbe6766235eb2808dfcf991ead0bc25b942	Năm cảnh trầm đường về
+g1-n100-038	n100	33	L	87	20	67	4	20	80	bass-moving-five	1e6b70904d2a9121099dd5e3f888d668374cd4c5ee7747c7453c74c654f13287	Câu trầm và con đường nền
+g1-n100-039	n100	26	L	87	20	67	4	20	80	bass-moving-answer	b117c28d37315eca773fb57f2fa870654daadf684bf3955a223d69351409265b	Câu đáp trầm và nền chuyển
+g1-n100-040	n100	36	L	84	20	64	4	20	80	bass-moving-upper	0955ecea6472b15f586dfe3b2dd970841900f4f006761be5e4f9c05d22f2ef27	Câu trầm cao trên nền bước
+g1-n100-041	n100	29	L	78	16	62	4	16	64	bass-four-flowing	72939f5e4dc4ce1961bd960cd219035a35f270963eac5188a45001a937a22309	Bốn cảnh trầm bước liên tục
+g1-n100-042	n100	40	L	78	16	62	4	16	64	bass-four-flowing-upper	3a377fcaf84d0e3b8323d1844d52f3e68f02cc518c93e610dd38f66e09510c9e	Bốn cảnh trầm cao thấp
+g1-n100-043	n100	49	L	78	16	62	4	16	64	bass-four-flowing-repeat	3859fa3f9cae03a914ae2534ad8c37167392feedd9a54657a94c8e17a0d56f51	Bốn cảnh trầm nhắc đều
+g1-n100-044	n100	42	L	97	24	73	4	24	96	bass-six-small	1f5af955340e764f17af540e5c4f316a6bf93f074ff89460e6285d41443e2f00	Sáu cảnh trầm yên nhỏ
+g1-n100-045	n100	53	L	97	24	73	4	24	96	bass-six-high	9ce200e5f2bb912710641a2ff819bbce7316ae744171a5e8d91d44fe48b9f307	Sáu lần tay trái nhìn lên
+g1-n100-046	n100	46	L	82	24	58	3	24	72	bass-six-three	9a63f050b914b26b95517dd813b6b075478b6dca22595ce6296af57f907f97c8	Sáu vòng trầm nhịp ba
+g1-n100-047	n100	56	L	82	24	58	3	24	72	bass-six-three-upper	1b3e5499a624edecaafe276a8ca58e9678128eb4b606ac172733ee56f5de02ec	Sáu vòng trầm nhịp ba cao
+g1-n100-048	n100	66	L	83	24	59	3	24	72	bass-six-three-repeat	618b4ffa3126375104eb56fc68d0b000cfe58c4b47ef1da0efe9796be5f099c1	Sáu lời nhắc trầm nhịp ba
+g1-n100-049	n100	60	L	78	24	54	3	24	72	bass-six-three-breath	2fa4f3d16455d0ab6c7106091eb120e054542df17009b2315a2195b4064750fa	Sáu hơi thở trầm nhịp ba
+g1-n100-050	n100	69	L	76	20	56	3	20	60	bass-twenty-flow	76a72e9c096dba3db027691ecfcfae446a2fa8a9636b900948b4aa201c3eb8a8	Hai mươi ô trầm ba phách
+g1-n100-051	n100	62	L	76	20	56	3	20	60	bass-twenty-upper	41c7f71a25ceb38f566fa7e461a7b58d07de91746d84bf5801fa3671f290ae58	Hai mươi ô trầm ba phách cao
+g1-n100-052	n100	73	L	77	16	61	4	16	64	bass-four-dense-questions	319f8f01bbed07f839b88b48c09ef7de3a7ce5a2c30092ca0eaefb20f2411ae8	Bốn câu trầm bước đều
+g1-n100-053	n100	82	L	78	16	62	4	16	64	bass-four-dense-hills	3f97db3bd31b9355ac7dc399c3cd71a4fa390212d497a5a4e8225d3093505cbb	Bốn ngọn đồi trầm nối nhau
+g1-n100-054	n100	76	L	88	20	68	4	20	80	bass-five-rest-rise	6fb6e0aa9774959106446300429df39b5a9a3be0668742301ee9969c8df32b81	Trầm nghỉ rồi bước tiếp
+g1-n100-055	n100	86	L	85	20	65	4	20	80	bass-e-five	c7b575e0dfbc227b8c11b49cdaaae741f1dc1f8e602cb05c26c3cbbb5956791a	Năm câu trầm nền Mi
+g1-n100-056	n100	80	L	86	20	66	4	20	80	bass-g-five	a07203f0cf5354054838b9b27149cdcc30037362749b7a794733e71f607cde02	Năm câu trầm nền Sol
+g1-n100-057	n100	89	L	85	24	61	3	24	72	bass-moving-six-three	1064b573f5e1fb167597a2321ff43b0962980fedcb1ce74881e76529bfb2e0d8	Sáu câu trầm nền chuyển
+g1-n100-058	n100	99	L	87	20	67	4	20	80	bass-five-full	1c2e0cc38e24c2cdeb4326f04e94addf346aa8c1739d9d55e929127845027611	Năm cảnh trầm đầy bước chân
+g1-n100-059	n100	93	L	87	20	67	4	20	80	bass-five-final	1a1e0ce9cd9189326472f2b8ccee7a714b364bb50bb039cce50245640c667ed6	Năm cảnh trầm cuối buổi
+g1-n100-060	n100	95	L	87	24	63	3	24	72	bass-six-corners	13df57a3ecea31188ebb79f69bd5ede57e59af5bc6d0c1882f596fee6d9ea2de	Chuyến đi trầm qua sáu góc sân
+g1-n100-061	n100	3	A	80	40	40	4	20	80	ten-answers	1c85665f6bbade4e4fbcfc402df05f3dcfeeb3f32329fb697dfb7358845d7a61	Mười lời qua cửa sổ
+g1-n100-062	n100	7	A	74	37	37	4	20	80	ten-arched-answers	f22f0fb60a9702eaffdac6328b51e063064e34b82d4c95c7f74aa35b46de9031	Mười lời qua cầu
+g1-n100-063	n100	11	A	74	37	37	4	20	80	ten-upper-answers	9d9c96febc6ddd4e430ec8bfc42537d589f6bae58f3e9937b39df6969450c722	Mười lời trên đồi
+g1-n100-064	n100	14	A	75	38	37	4	20	80	ten-repeat-answers	004b9643b066d20874cc6d91728d1737bb0f8c67ee5ebf7a5c6e232680a76a90	Mười lời nhắc đổi ý
+g1-n100-065	n100	18	A	73	36	37	4	20	80	ten-breath-answers	853fa4988a877b1c0ddda111d03be2fbaad8860bd9dfdf00b014fa56dec2d2d8	Mười câu có hơi thở
+g1-n100-066	n100	23	A	74	37	37	4	20	80	left-ten-arches	0916f613afd8ae15f93bf4da67c09749510604331e1dfbef505b7e28c991355b	Mười lời trầm qua cầu
+g1-n100-067	n100	27	A	74	37	37	4	20	80	left-ten-upper	10fdc9a29d62d2a1a755bf7b663d0517d6d9db4c23ec8364dc7ae16e0338406c	Mười lời trầm trên đồi
+g1-n100-068	n100	31	A	75	38	37	4	20	80	left-ten-repeat	2e00430694204ed21a474b94aea1543477d518ff1a23a717da9fa894ecf4055d	Mười lời nhắc từ khuông trầm
+g1-n100-069	n100	34	A	70	36	34	3	24	72	twelve-three-calls	23122d0f2c02c1e93dab12ec458bb4e4d88f1dc7869fbb5ef88287420c3ec54b	Mười hai lời nhịp ba
+g1-n100-070	n100	38	A	70	35	35	3	24	72	twelve-three-turns	09f29846d444ca544715b9897456e5c7cb043a54d0e8af8a44e51bd9969512ab	Mười hai vòng đối đáp
+g1-n100-071	n100	43	A	70	35	35	3	24	72	twelve-three-upper	2f18d5b033c9909d0a61c5a4c377d61d1d3c5ebbcda8f373d5143a367b419b84	Mười hai lời từ đỉnh nhỏ
+g1-n100-072	n100	47	A	70	36	34	3	24	72	left-twelve-three	5e8ce3292c78b0d2bebc11b6e9e78511cfa65afd863580cc208d896d905f5145	Mười hai lời trầm ba phách
+g1-n100-073	n100	51	A	70	35	35	3	24	72	left-twelve-turns	17c1cc50985dabac4c3dd71383836c6170a7f00fe955a20d30b9a086c17e1ad6	Mười hai vòng trầm mở
+g1-n100-074	n100	54	A	80	39	41	4	22	88	eleven-short-long	910f14ecb0ecd59d6119b224e75a93bd2fc09e83105a62dc03257d9728a3436a	Mười một câu dài ngắn
+g1-n100-075	n100	58	A	82	41	41	4	22	88	eleven-descending	299cc30696d698f94597d4ea5bb2b919fb73fc92d57ee55aa92a51a18fd10887	Mười một câu đường về
+g1-n100-076	n100	63	A	80	39	41	4	22	88	left-eleven-short	2406045fd13b8193db56795506720179281fbfa6f95d75e80b0fa4e4007b33fb	Mười một câu trầm dài ngắn
+g1-n100-077	n100	67	A	82	41	41	4	24	96	twelve-four-calls	0b06d570048560358fb67c28518a44d3d7740458a9723d6f826bbf0ea132f0ce	Mười hai lời bốn phách
+g1-n100-078	n100	71	A	82	41	41	4	24	96	twelve-four-repeat	02af3256b966d84e4ea09a1d3ecb40ef589f7027310bf01731e72862e1f9ed79	Mười hai lời nhắc bốn phách
+g1-n100-079	n100	74	A	73	36	37	4	20	80	ten-gentle	2a74194d99490bc79693fc4d60a179a4f5b3a98f2252f3328820fdd6f4f80e72	Mười câu êm qua lại
+g1-n100-080	n100	78	A	86	44	42	4	24	96	twelve-stepwise	11e9c53a9fbbd6b3f33f42a6c509cdc9d9d5d0d555248890efc274c1fb20f726	Mười hai câu liền bước
+g1-n100-081	n100	83	A	76	38	38	4	20	80	ten-inward-calls	6d684a4777c4d61d20a85488ba8c934b0ccc0585e2bbd0bfe616119f36dccc39	Mười lời quanh nốt chủ
+g1-n100-082	n100	87	A	75	38	37	4	20	80	ten-outward-calls	443b3f3cd3891348cef271c29e4b8b0492579a1e1893780b9ae516d6617b2ef6	Mười lời hướng ra vườn
+g1-n100-083	n100	91	A	73	36	37	4	20	80	left-ten-breaths	9455f3ecc3df5cacad76121d500c672309af820b1a2ff711a17ad023bb3d9302	Mười câu trầm có hơi thở
+g1-n100-084	n100	94	A	81	39	42	4	24	96	twelve-rested	06f6356ff302f1969a1cb2f4ba2955f48a3f102a8e0d9b8dc0aa893404a42d5d	Mười hai lời có khoảng thở
+g1-n100-085	n100	98	A	73	37	36	4	20	80	ten-final-replies	57dc84213b317dd1c9fcd969d8b05448393a8299c29f6bd013e094fd7d9b711a	Mười lời cuối buổi chiều
+g1-n100-086	n100	4	S	96	48	48	4	16	64	octave-four-scenes	545804ab632359521c12424d66afe6466929e01c90656cf1b8e47bf8b237c841	Hai bàn tay cùng kể
+g1-n100-087	n100	10	S	106	53	53	4	16	64	octave-four-questions	7489b966a59fb7e641faae86997431f2c9d8a86a978fae897bd9af2c8b83c05d	Hai tay bốn câu hỏi
+g1-n100-088	n100	17	S	100	50	50	4	16	64	octave-four-upper	7bdc992519924735f95021f6b1be481aac9d12600eedfa191772156f18d2c7e3	Hai tay bốn câu trên cao
+g1-n100-089	n100	24	S	108	54	54	4	16	64	octave-four-repeat	2a7144757d2d6507e9b5d7676d5b83bda290b6555af2ac811d158bcee8fd775e	Hai tay bốn lời nhắc
+g1-n100-090	n100	30	S	98	49	49	4	16	64	octave-four-breath	ab2b95342cd8bea8e6aaa0b237b332c19ed474115e2a81fe04ee52c282f91224	Hai tay bốn hơi thở
+g1-n100-091	n100	37	S	120	60	60	4	16	64	octave-full-four	11d15ce5c5cde9f2ae7dd2ff2c143f382483344668e977edc1255e761d463696	Bốn câu hai tay bước đều
+g1-n100-092	n100	44	S	76	38	38	3	16	48	octave-sixteen-three	84ac49772653647cd738929163a8936307dc03f620975003525af464ef9f2f42	Mười sáu ô hai tay nhịp ba
+g1-n100-093	n100	50	S	102	51	51	3	20	60	octave-twenty-three	5c90e294e05b73a91dff1d15292b993e3db6ccc1883a64eef1e29d7de69478d9	Hai mươi ô sóng đôi
+g1-n100-094	n100	57	S	76	38	38	3	16	48	octave-sixteen-upper	496af9698d65db5a14f7903f7910be5fb44dad7bcd256bfd0e04a60bff1f53e8	Mười sáu ô hai tay nhìn lên
+g1-n100-095	n100	64	S	80	40	40	3	16	48	sixths-sixteen	62ce6e1c8d7d32ea0b2aa502590c0d0a7ec9ffadc16c4771ab716c42fca26979	Mười sáu ô hai đường song hành
+g1-n100-096	n100	70	S	88	44	44	2	24	48	octave-twenty-four	ab924cf4294de1db50c90780c16e490bcd7ad31e8a3d7187616f98e49c5b02f7	Hai mươi bốn bước đôi
+g1-n100-097	n100	77	S	84	42	42	2	24	48	octave-twenty-four-upper	b24506c64e2d284f6b010a724638f92508ed83bf6c0741f935f9138a23111687	Hai mươi bốn bước đôi qua đồi
+g1-n100-098	n100	84	S	104	52	52	4	16	64	sixths-sixteen	34b712d666c8a36217dd624434bc42322727e81d56f530e2b86b00988da55f32	Mười sáu ô hai đường bốn phách
+g1-n100-099	n100	90	S	98	49	49	3	20	60	sixths-twenty	301d4f4a90b348fe66f9d470448621d504a459520666e951ef06a67d88b686ae	Hai mươi ô hai đường trở về
+g1-n100-100	n100	97	S	106	53	53	4	16	64	octave-four-return	da04e68b3f29c49b21d61f57faf432176e51b126b271709a6fe94cdbcb1241fb	Bốn câu hai tay cùng về

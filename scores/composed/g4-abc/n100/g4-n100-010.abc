@@ -1,0 +1,25 @@
+%abc-2.1
+X:2710
+T:g4-n100-010 Nền nhắc dưới năm câu cao
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=upper; lead=RH; bucket=n100; notes=89; RH=69; LH=20
+% role=R; duration60=80s; related_pattern=0aa2e71af5af836c
+% authored_passages=U11 U13 U14 U06 U04
+% source=buildscripts/pianist/compositions/g4/n100.txt:11
+[V:RH] G2 B c | d2 c B | G A B c | G2 G2 |
+[V:LH] G,4 | G,4 | G,4 | G,4 |
+[V:RH] A B c2 | B G c B | A B d c | B A G2 |
+[V:LH] G,4 | G,4 | G,4 | G,4 |
+[V:RH] c2 G A | B A c B | A d c B | A G G2 |
+[V:LH] G,4 | G,4 | G,4 | G,4 |
+[V:RH] G B z A | B c d c | B A B G | A B G2 |
+[V:LH] G,4 | G,4 | G,4 | G,4 |
+[V:RH] c B A G | A B c d | c B A B | A B G2 |]
+[V:LH] G,4 | G,4 | G,4 | G,4 |]

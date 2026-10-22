@@ -1,0 +1,17 @@
+%abc-2.1
+X:1044
+T:g2-n20-044 Bước qua Fa thấp
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=third; lead=LH; bucket=n20; notes=16; RH=4; LH=12
+% role=L; duration60=12s; related_pattern=4d2269152c7a7645
+% authored_passages=U24
+% source=buildscripts/pianist/compositions/g2/n20.txt:45
+[V:RH] C3 | C3 | C3 | C3 |]
+[V:LH] C, D, F, | E, D, C, | D, F, E, | D, C, C, |]

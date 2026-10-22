@@ -1,0 +1,21 @@
+%abc-2.1
+X:1220
+T:g2-n50-020 Một cặp rồi câu nhắc
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=eighth; lead=RH; bucket=n50; notes=51; RH=39; LH=12
+% role=R; duration60=48s; related_pattern=8a4e6f6ed9fea44f
+% authored_passages=E05 E07 E19
+% source=buildscripts/pianist/compositions/g2/n50.txt:21
+[V:RH] C/2D/2 E E2 | D C C2 | C/2D/2 E D C | D C C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C/2D/2 E E2 | D C C2 | C D/2E/2 D C | C4 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C2 C/2D/2 E | D D E2 | D C C2 | C4 |]
+[V:LH] C,4 | C,4 | C,4 | C,4 |]

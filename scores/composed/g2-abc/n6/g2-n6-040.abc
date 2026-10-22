@@ -1,0 +1,17 @@
+%abc-2.1
+X:840
+T:g2-n6-040 Lời trầm có điểm dừng
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=third; lead=LH; bucket=n6; notes=7; RH=3; LH=4
+% role=L; duration60=6s; related_pattern=46c25a881d75440d
+% authored_passages=inline-n6-040
+% source=buildscripts/pianist/compositions/g2/n6.txt:41
+[V:RH] C C2 | C3 |]
+[V:LH] C, E, D, | C,3 |]

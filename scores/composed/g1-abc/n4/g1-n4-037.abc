@@ -1,0 +1,17 @@
+%abc-2.1
+X:37
+T:g1-n4-037 Tay trái đi xuống
+C:Nhạc do trợ lý AI biên soạn
+M:2/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n4; notes=3; RH=1; LH=2
+% role=L; family=bass-top-down; form=authored; duration60=2s
+% related_pattern=08671d29d6233e13
+% source=buildscripts/pianist/compositions/g1/n4.txt:40
+[V:RH] C2 |]
+[V:LH] G, F, |]

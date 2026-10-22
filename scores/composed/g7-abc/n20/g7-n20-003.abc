@@ -1,0 +1,19 @@
+%abc-2.1
+X:4503
+T:g7-n20-003 Mi Fa Sol dài ngắn
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G7; profile=dotted; lead=RH; bucket=n20; notes=18; RH=13; LH=5
+% duration60=20s; related_pattern=0bf8908a492c69c4
+% authored_passages=D03 DR3
+% source=buildscripts/pianist/compositions/g7/studies.txt:4
+[V:RH] E3/2 F/2 G2 | G3/2 F/2 E2 | D3/2 E/2 F G | E2 D2 |
+[V:LH] E,4 | C, z z z | D, z z z | G, z z z |
+[V:RH] C4 |]
+[V:LH] C, z z z |]

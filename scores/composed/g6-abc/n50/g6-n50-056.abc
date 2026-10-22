@@ -1,0 +1,23 @@
+%abc-2.1
+X:4056
+T:g6-n50-056 Đô giữa về Rê Mi
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G6; profile=m7-down; lead=LH; bucket=n50; notes=51; RH=13; LH=38
+% duration60=52s; related_pattern=658f76a72a09b427
+% authored_passages=S56 CX1 CX2 CX3
+% source=buildscripts/pianist/compositions/g6/studies.txt:57
+[V:RH] c4 | c z z z | c z z z | c z z z |
+[V:LH] B, C D, E, | G, B, C D, | E, F, G,2 | F, E, D,2 |
+[V:RH] c z z z | c z z z | c z z z | c z z z |
+[V:LH] E,2 C,2 | G,2 B, C | D, E, F,2 | G, E, D,2 |
+[V:RH] c z z z | c z z z | c z z z | c z z z |
+[V:LH] E,2 C,2 | G, A, B, C | D, E, G,2 | E,2 D,2 |
+[V:RH] c z z z |]
+[V:LH] E,2 C,2 |]

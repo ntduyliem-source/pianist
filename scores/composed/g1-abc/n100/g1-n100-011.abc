@@ -1,0 +1,25 @@
+%abc-2.1
+X:611
+T:g1-n100-011 Những bậc nền dưới câu cao
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n100; notes=84; RH=64; LH=20
+% role=R; family=moving-foundation-upper; form=authored; duration60=80s
+% related_pattern=0955ecea6472b15f
+% source=buildscripts/pianist/compositions/g1/n100.txt:14
+[V:RH] E F G2 | F E D C | C D E F | E4 |
+[V:LH] E,4 | D,4 | C,4 | C,4 |
+[V:RH] E F G F | E D C D | E F E D | C4 |
+[V:LH] D,4 | E,4 | D,4 | C,4 |
+[V:RH] C D E F | G F E D | E D C D | C4 |
+[V:LH] C,4 | D,4 | D,4 | C,4 |
+[V:RH] C C D E | F E F G | F E D C | C2 C2 |
+[V:LH] C,4 | D,4 | C,4 | C,4 |
+[V:RH] C D E F | G2 F E | D E D C | C4 |]
+[V:LH] D,4 | E,4 | D,4 | C,4 |]

@@ -1,0 +1,27 @@
+%abc-2.1
+X:5583
+T:g8-n100-083 Đôi Mi Sol rồi nối Đô
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G8; profile=dyad-tie; lead=RH; bucket=n100; notes=83; RH=62; LH=21
+% duration60=84s; related_pattern=2010775506496909
+% authored_passages=T08 TR4 TR2 TR3 TR1 TR4
+% source=buildscripts/pianist/compositions/g8/studies.txt:84
+[V:RH] [EG] D/2 C/2-C2 | [CG] D/2 E/2-E2 | F2 D2 | [DF] E/2 G/2-G2 |
+[V:LH] C,4 | C, z z z | D, z z z | D, z z z |
+[V:RH] [CE]4 | [EG] F/2 E/2-E2 | D2 C2 | [CG] E/2 G/2-G2 |
+[V:LH] C, z z z | C, z z z | C, z z z | C, z z z |
+[V:RH] E2 C2 | [DG] E/2 F/2-F2 | E D/2 C/2-C2 | [CE]2 G2 |
+[V:LH] C, z z z | D, z z z | C, z z z | C, z z z |
+[V:RH] C4 | [CE] D/2 E/2-E2 | [DF] E/2 D/2-D2 | E2 G2 |
+[V:LH] C, z z z | C, z z z | D, z z z | C, z z z |
+[V:RH] C4 | [CG] D/2 E/2-E2 | F2 D2 | [DF] E/2 G/2-G2 |
+[V:LH] C, z z z | C, z z z | D, z z z | D, z z z |
+[V:RH] [CE]4 |]
+[V:LH] C, z z z |]

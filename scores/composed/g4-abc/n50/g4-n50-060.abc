@@ -1,0 +1,21 @@
+%abc-2.1
+X:2660
+T:g4-n50-060 Đô giữa về đường Fa
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=span; lead=LH; bucket=n50; notes=45; RH=12; LH=33
+% role=L; duration60=36s; related_pattern=37bf4c557c9b6b8e
+% authored_passages=X22 X21 X24
+% source=buildscripts/pianist/compositions/g4/n50.txt:61
+[V:RH] E3 | E3 | E3 | E3 |
+[V:LH] C G, C, | E, F, G, | A, C B, | G, C,2 |
+[V:RH] E3 | E3 | E3 | E3 |
+[V:LH] C, G, C | B, A, G, | E, G, C | G, C,2 |
+[V:RH] E3 | E3 | E3 | E3 |]
+[V:LH] C, F, A, | C B, G, | E, D, C, | G, C,2 |]

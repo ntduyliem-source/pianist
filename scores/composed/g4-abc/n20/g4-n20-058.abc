@@ -1,0 +1,17 @@
+%abc-2.1
+X:2458
+T:g4-n20-058 Qua Fa La tới Đô giữa
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=span; lead=LH; bucket=n20; notes=19; RH=4; LH=15
+% role=L; duration60=16s; related_pattern=48be5c20fe5e4923
+% authored_passages=X04
+% source=buildscripts/pianist/compositions/g4/n20.txt:59
+[V:RH] E4 | E4 | E4 | E4 |]
+[V:LH] C, F, A, C | B, G, E, C, | D, F, A, G, | E, D, C,2 |]

@@ -1,0 +1,21 @@
+%abc-2.1
+X:3985
+T:g6-n30-085 Sol Mi lên tám rồi Rê
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G6; profile=P8-up; lead=RH; bucket=n30; notes=37; RH=28; LH=9
+% duration60=36s; related_pattern=06c17bea42ff2aeb
+% authored_passages=S85 EU2 EU1
+% source=buildscripts/pianist/compositions/g6/studies.txt:86
+[V:RH] G E e d | G E D d | c B A G | E2 G2 |
+[V:LH] C,4 | C, z z z | C, z z z | C, z z z |
+[V:RH] E2 C2 | G D C c | B A G2 | E F G2 |
+[V:LH] C, z z z | C, z z z | C, z z z | C, z z z |
+[V:RH] E2 C2 |]
+[V:LH] C, z z z |]

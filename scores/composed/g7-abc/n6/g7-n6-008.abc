@@ -1,0 +1,17 @@
+%abc-2.1
+X:4308
+T:g7-n6-008 Rê Fa Mi ngắn nối
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G7; profile=dotted; lead=RH; bucket=n6; notes=7; RH=5; LH=2
+% duration60=8s; related_pattern=6ed4b2c4fd945588
+% authored_passages=D08 CR3
+% source=buildscripts/pianist/compositions/g7/studies.txt:9
+[V:RH] D3/2 F/2 E2 | D2 C2 |]
+[V:LH] C,4 | G,4 |]

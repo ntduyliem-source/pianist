@@ -1,0 +1,17 @@
+%abc-2.1
+X:1745
+T:g3-n20-045 Nhắc trầm trong nhịp ba
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fourth; lead=LH; bucket=n20; notes=15; RH=4; LH=11
+% role=L; duration60=12s; related_pattern=b390b99e580758f8
+% authored_passages=G25
+% source=buildscripts/pianist/compositions/g3/n20.txt:46
+[V:RH] C3 | C3 | C3 | C3 |]
+[V:LH] C, C, F, | E, D, C, | D, G, F, | E, C,2 |]

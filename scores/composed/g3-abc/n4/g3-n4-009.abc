@@ -1,0 +1,17 @@
+%abc-2.1
+X:1409
+T:g3-n4-009 Mi dẫn tới Fa
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fourth; lead=RH; bucket=n4; notes=4; RH=3; LH=1
+% role=R; duration60=3s; related_pattern=0108eea57d476d11
+% authored_passages=inline-n4-009
+% source=buildscripts/pianist/compositions/g3/n4.txt:10
+[V:RH] E C F |]
+[V:LH] C,3 |]

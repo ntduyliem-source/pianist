@@ -1,0 +1,25 @@
+%abc-2.1
+X:2739
+T:g4-n100-039 Rê giữa bốn lời tiếp
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=upper; lead=LH; bucket=n100; notes=90; RH=22; LH=68
+% role=L; duration60=80s; related_pattern=865efc9a48dfcb19
+% authored_passages=V10 V09 V12 V05 V06
+% source=buildscripts/pianist/compositions/g4/n100.txt:40
+[V:RH] G4 | G4 | G4 | G4 |
+[V:LH] D C B, A, | G, B, D C | B, A, G, B, | A, G, G,2 |
+[V:RH] G4 | G4 | G4 | G4 |
+[V:LH] G, A, B,2 | C G, A, B, | C D C2 | B, A, G,2 |
+[V:RH] G2 G2 | G4 | G2 G2 | G4 |
+[V:LH] G, A, B, C | D B, C D | C B, A, G, | A, B, G,2 |
+[V:RH] G4 | G4 | G4 | G4 |
+[V:LH] G,2 B, A, | G,2 B, C | D C B,2 | G,2 G,2 |
+[V:RH] G4 | G4 | G4 | G4 |]
+[V:LH] G, B, z A, | B, C D C | B, A, B, G, | A, B, G,2 |]

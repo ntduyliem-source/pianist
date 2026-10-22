@@ -1,0 +1,101 @@
+# Complete short studies, all notes explicitly written.
+001;fourth;R;RH;Bốn tiếng qua Fa;4;C F E C;C,2 C,2
+002;fourth;R;RH;Từ Fa về rồi bước;4;F C D E;C,2 C,2
+003;fourth;R;RH;Đỉnh Sol theo quãng bốn;4;D G F E;C,2 C,2
+004;fourth;R;RH;Sol hạ xuống Rê;4;G D E C;C,2 C,2
+005;fourth;R;RH;Nhắc Đô trước Fa;4;C C F E;C,2 C,2
+006;fourth;R;RH;Hai nhịp quãng bốn;3;C F E | D E C;C,3 | C,3
+007;fourth;R;RH;Hai lần ghé Fa;3;C F E | F E C;C,3 | C,3
+008;fourth;R;RH;Mi mở đường tới Fa;3;E C F | E D C;C,3 | C,3
+009;fourth;R;RH;Quãng bốn ở cuối lời;3;C D E | D G E;C,3 | C,3
+010;fourth;R;RH;Nốt dài ở trước Fa;3;C2 F | E D C;C,3 | C,3
+011;fourth;R;RH;Giữ Fa rồi trở xuống;3;C F2 | E D C;C,3 | C,3
+012;fourth;R;RH;Đỉnh Sol khép Mi;3;D G F | E2 C;C,3 | C,3
+013;fourth;R;RH;Nhắc Fa rồi hạ;3;C F F | E C2;C,3 | C,3
+014;fourth;R;RH;Bước từ Rê qua Sol;3;D G F | E C2;C,3 | C,3
+015;fourth;R;RH;Mi ghé Fa về Đô;3;E C F | D C2;C,3 | C,3
+016;fifth;R;RH;Nhảy năm rồi hạ bậc;4;C G F E;C,2 C,2
+017;fifth;R;RH;Sol về Đô bước tiếp;4;G C D E;C,2 C,2
+018;fifth;R;RH;Hai phía của nốt Rê;4;C G D E;C,2 C,2
+019;fifth;R;RH;Đô gọi Sol hai lần;4;C G C D;C,2 C,2
+020;fifth;R;RH;Hai nhịp một quãng năm;3;C G F | E D C;C,3 | C,3
+021;fifth;R;RH;Về Đô qua hai nhịp;3;G C D | E D C;C,3 | C,3
+022;fifth;R;RH;Giữ Đô rồi nhảy xa;3;C2 G | F E D;C,3 | C,3
+023;fifth;R;RH;Giữ Sol rồi xuống dần;3;C G2 | F E C;C,3 | C,3
+024;fifth;R;RH;Tiếng nhắc trước quãng năm;3;C C G | F E2;C,3 | C,3
+025;arpeggio;R;RH;Bốn tiếng rải Đô;4;C G E C;C,2 C,2
+026;arpeggio;R;RH;Rải từ Mi ghé Đô;4;E C G E;C,2 C,2
+027;arpeggio;R;RH;Rải từ Sol rồi về;4;G C E C;C,2 C,2
+028;arpeggio;R;RH;Hai nhịp rải đều;3;C G E | G E C;C,3 | C,3
+029;arpeggio;R;RH;Rải rồi giữ nốt chủ;3;G C E | G C2;C,3 | C,3
+030;arpeggio;R;RH;Giữ đầu rải giữa;3;C2 E | C G E;C,3 | C,3
+031;fourth;L;LH;Bốn tiếng trầm qua Fa;4;C2 C2;C, F, E, C,
+032;fourth;L;LH;Từ Fa thấp bước về;4;C2 C2;F, C, D, E,
+033;fourth;L;LH;Sol thấp theo quãng bốn;4;C2 C2;D, G, F, E,
+034;fourth;L;LH;Sol trầm hạ Rê;4;C2 C2;G, D, E, C,
+035;fourth;L;LH;Nhắc Đô thấp trước Fa;4;C2 C2;C, C, F, E,
+036;fourth;L;LH;Hai nhịp quãng bốn trầm;3;C3 | C3;C, F, E, | D, E, C,
+037;fourth;L;LH;Hai lần ghé Fa trầm;3;C3 | C3;C, F, E, | F, E, C,
+038;fourth;L;LH;Mi thấp mở đường Fa;3;C3 | C3;E, C, F, | E, D, C,
+039;fourth;L;LH;Quãng bốn cuối câu trầm;3;C3 | C3;C, D, E, | D, G, E,
+040;fourth;L;LH;Nốt trầm dài trước Fa;3;C3 | C3;C,2 F, | E, D, C,
+041;fourth;L;LH;Giữ Fa thấp rồi về;3;C3 | C3;C, F,2 | E, D, C,
+042;fourth;L;LH;Đỉnh Sol trầm khép Mi;3;C3 | C3;D, G, F, | E,2 C,
+043;fourth;L;LH;Nhắc Fa thấp hạ dần;3;C3 | C3;C, F, F, | E, C,2
+044;fourth;L;LH;Từ Rê trầm qua Sol;3;C3 | C3;D, G, F, | E, C,2
+045;fourth;L;LH;Mi trầm ghé Fa về Đô;3;C3 | C3;E, C, F, | D, C,2
+046;fifth;L;LH;Nhảy năm trầm hạ bậc;4;C2 C2;C, G, F, E,
+047;fifth;L;LH;Sol thấp về Đô bước;4;C2 C2;G, C, D, E,
+048;fifth;L;LH;Hai phía Rê trầm;4;C2 C2;C, G, D, E,
+049;fifth;L;LH;Đô trầm gọi Sol hai lần;4;C2 C2;C, G, C, D,
+050;fifth;L;LH;Hai nhịp quãng năm thấp;3;C3 | C3;C, G, F, | E, D, C,
+051;fifth;L;LH;Về Đô thấp hai nhịp;3;C3 | C3;G, C, D, | E, D, C,
+052;fifth;L;LH;Đô trầm dài nhảy xa;3;C3 | C3;C,2 G, | F, E, D,
+053;fifth;L;LH;Sol trầm giữ xuống dần;3;C3 | C3;C, G,2 | F, E, C,
+054;fifth;L;LH;Nhắc thấp trước quãng năm;3;C3 | C3;C, C, G, | F, E,2
+055;arpeggio;L;LH;Bốn tiếng rải trầm;4;C2 C2;C, G, E, C,
+056;arpeggio;L;LH;Rải Mi trầm ghé Đô;4;C2 C2;E, C, G, E,
+057;arpeggio;L;LH;Rải Sol thấp trở về;4;C2 C2;G, C, E, C,
+058;arpeggio;L;LH;Hai nhịp rải dưới;3;C3 | C3;C, G, E, | G, E, C,
+059;arpeggio;L;LH;Rải trầm giữ nốt chủ;3;C3 | C3;G, C, E, | G, C,2
+060;arpeggio;L;LH;Giữ thấp rải giữa;3;C3 | C3;C,2 E, | C, G, E,
+061;fourth;A;RH;Quãng bốn hỏi bước đáp;3;C F E | z3;z3 | E, D, C,
+062;fourth;A;RH;Fa gọi Đô trả lời;3;F C D | z3;z3 | C, D, E,
+063;fourth;A;RH;Rê Sol gọi từ giữa;3;D G F | z3;z3 | E, D, C,
+064;fourth;A;RH;Sol Rê rồi lời đáp;3;G D E | z3;z3 | C, D, C,
+065;fourth;A;RH;Bốn tiếng hỏi hai tiếng đáp;4;C F E C | z4;z4 | C,2 C,2
+066;fourth;A;LH;Quãng bốn trầm hỏi bước;3;z3 | E D C;C, F, E, | z3
+067;fourth;A;LH;Fa thấp gọi Đô cao;3;z3 | C D E;F, C, D, | z3
+068;fourth;A;LH;Rê Sol trầm gọi giữa;3;z3 | E D C;D, G, F, | z3
+069;fourth;A;LH;Sol Rê thấp trao lời;3;z3 | C D C;G, D, E, | z3
+070;fourth;A;LH;Bốn tiếng thấp hai tiếng cao;4;z4 | C2 C2;C, F, E, C, | z4
+071;fifth;A;RH;Quãng năm hỏi bước đáp;3;C G F | z3;z3 | E, D, C,
+072;fifth;A;RH;Sol gọi từ phía trên;3;G C D | z3;z3 | C, D, E,
+073;fifth;A;RH;Bốn tiếng nhảy gọi đáp;4;C G F E | z4;z4 | C,2 C,2
+074;fifth;A;RH;Tiếng hỏi giữ nốt Đô;4;C2 G F | z4;z4 | E, D, C, C,
+075;fifth;A;LH;Quãng năm trầm hỏi bước;3;z3 | E D C;C, G, F, | z3
+076;fifth;A;LH;Sol trầm gọi từ dưới;3;z3 | C D E;G, C, D, | z3
+077;fifth;A;LH;Bốn tiếng trầm nhảy gọi;4;z4 | C2 C2;C, G, F, E, | z4
+078;arpeggio;A;RH;Đô Sol Mi hỏi ba tiếng;3;C G E | z3;z3 | E, D, C,
+079;arpeggio;A;RH;Sol Đô Mi hỏi ba tiếng;3;G C E | z3;z3 | C, D, E,
+080;arpeggio;A;RH;Rải Mi Đô Sol trao lời;4;E C G C | z4;z4 | C,2 C,2
+081;arpeggio;A;RH;Giữ Đô rải rồi đáp;4;C2 G E | z4;z4 | C, D, E, D,
+082;arpeggio;A;LH;Rải trầm hỏi ba tiếng;3;z3 | E D C;C, G, E, | z3
+083;arpeggio;A;LH;Sol thấp rải hỏi ba;3;z3 | C D E;G, C, E, | z3
+084;arpeggio;A;LH;Mi Đô Sol thấp trao lời;4;z4 | C2 C2;E, C, G, C, | z4
+085;arpeggio;A;LH;Giữ Đô trầm rải đáp;4;z4 | C D E D;C,2 G, E, | z4
+086;fourth;S;RH;Ba tiếng trên nhảy bốn;3;C F E;C, D, E,
+087;fourth;S;RH;Ba tiếng Fa về Đô;3;F C D;D, C, D,
+088;fourth;S;RH;Rê Sol nhịp ba chung;3;D G F;C, D, E,
+089;fourth;S;RH;Quãng bốn khép nốt dài;4;C F E2;C, D, E,2
+090;fourth;S;RH;Bốn tiếng quãng bốn chung;4;C F E C;C, D, E, D,
+091;fourth;S;LH;Ba tiếng trầm nhảy bốn;3;C D E;C, F, E,
+092;fourth;S;LH;Ba tiếng Fa thấp về;3;D C D;F, C, D,
+093;fourth;S;LH;Rê Sol trầm nhịp chung;3;C D E;D, G, F,
+094;fourth;S;LH;Quãng bốn trầm khép dài;4;C D E2;C, F, E,2
+095;fourth;S;LH;Bốn tiếng trầm nhảy chung;4;C D E D;C, F, E, C,
+096;fifth;S;RH;Ba tiếng trên nhảy năm;3;C G F;C, C, D,
+097;fifth;S;RH;Ba tiếng Sol về Đô;3;G C D;E, D, C,
+098;fifth;S;RH;Nhảy năm giữ Fa chung;4;C G F2;C, C, D,2
+099;fifth;S;LH;Ba tiếng dưới nhảy năm;3;C C D;C, G, F,
+100;fifth;S;LH;Nhảy trầm năm giữ chung;4;C C D2;C, G, F,2

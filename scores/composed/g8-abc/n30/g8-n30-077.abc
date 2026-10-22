@@ -1,0 +1,21 @@
+%abc-2.1
+X:5377
+T:g8-n30-077 Đôi Đô Mi rồi nối Mi
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G8; profile=dyad-tie; lead=RH; bucket=n30; notes=37; RH=28; LH=9
+% duration60=36s; related_pattern=4474ba6f50c6c2a8
+% authored_passages=T02 TR2 TR4
+% source=buildscripts/pianist/compositions/g8/studies.txt:78
+[V:RH] [CE] D/2 E/2-E2 | [EG] F/2 E/2-E2 | D2 C2 | [CG] E/2 G/2-G2 |
+[V:LH] C,4 | C, z z z | C, z z z | C, z z z |
+[V:RH] E2 C2 | [CG] D/2 E/2-E2 | F2 D2 | [DF] E/2 G/2-G2 |
+[V:LH] C, z z z | C, z z z | D, z z z | D, z z z |
+[V:RH] [CE]4 |]
+[V:LH] C, z z z |]

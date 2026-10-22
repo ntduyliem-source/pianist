@@ -1,0 +1,17 @@
+%abc-2.1
+X:5029
+T:g8-n6-029 Dòng phụ trầm Đô Mi Rê
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G8; profile=ledger-low; lead=LH; bucket=n6; notes=7; RH=2; LH=5
+% duration60=8s; related_pattern=2ecbd74508b385e1
+% authored_passages=L04 CB3
+% source=buildscripts/pianist/compositions/g8/studies.txt:30
+[V:RH] G4 | G4 |]
+[V:LH] C,,, E,,, D,,,2 | D,,,2 C,,,2 |]

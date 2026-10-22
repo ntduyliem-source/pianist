@@ -1,0 +1,25 @@
+%abc-2.1
+X:1350
+T:g2-n100-050 Nốt trầm giữ bước nhỏ
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=eighth; lead=LH; bucket=n100; notes=90; RH=20; LH=70
+% role=L; duration60=80s; related_pattern=02d33650526aedca
+% authored_passages=F05 F14 F09 F16 F07
+% source=buildscripts/pianist/compositions/g2/n100.txt:51
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C,/2D,/2 E, E,2 | D, C, C,2 | C,/2D,/2 E, D, C, | D, C, C,2 |
+[V:RH] C4 | C4 | D4 | C4 |
+[V:LH] C, D, E,/2D,/2 C, | C,/2D,/2 E, F, E, | D, C, D,2 | C,/2D,/2 C, C,2 |
+[V:RH] C4 | C4 | D4 | C4 |
+[V:LH] C, C,/2D,/2 E, D, | E, F,/2G,/2 F, E, | D,2 D,/2C,/2 C, | C,2 C,2 |
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C,2 C,/2D,/2 E, | D, C, C,2 | C,4 | C,4 |
+[V:RH] C4 | C4 | C4 | C4 |]
+[V:LH] C,/2D,/2 E, E,2 | D, C, C,2 | C, D,/2E,/2 D, C, | C,4 |]

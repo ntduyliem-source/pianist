@@ -1,0 +1,19 @@
+%abc-2.1
+X:2524
+T:g4-n30-024 La dài gọi Mi về
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=lower; lead=RH; bucket=n30; notes=31; RH=23; LH=8
+% role=R; duration60=24s; related_pattern=8550741a79c6cbbf
+% authored_passages=L23 L24
+% source=buildscripts/pianist/compositions/g4/n30.txt:25
+[V:RH] A,2 B, | C D E | D C B, | C B, A, |
+[V:LH] C,3 | C,3 | C,3 | C,3 |
+[V:RH] A, D C | B, A, C | E D C | B, A, A, |]
+[V:LH] C,3 | C,3 | C,3 | C,3 |]

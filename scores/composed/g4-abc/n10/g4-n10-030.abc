@@ -1,0 +1,17 @@
+%abc-2.1
+X:2330
+T:g4-n10-030 Mở tám trước phách nghỉ
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=span; lead=RH; bucket=n10; notes=9; RH=7; LH=2
+% role=R; duration60=8s; related_pattern=016a79ef6ce74cf9
+% authored_passages=inline-n10-030
+% source=buildscripts/pianist/compositions/g4/n10.txt:31
+[V:RH] C G c z | B G E C |]
+[V:LH] C,4 | C,4 |]

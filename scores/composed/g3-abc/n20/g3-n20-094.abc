@@ -1,0 +1,17 @@
+%abc-2.1
+X:1794
+T:g3-n20-094 Nhịp ba dưới nhảy bốn
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fourth; lead=LH; bucket=n20; notes=20; RH=10; LH=10
+% role=S; duration60=12s; related_pattern=bdacbc1b3e6a0882
+% authored_passages=S22
+% source=buildscripts/pianist/compositions/g3/n20.txt:95
+[V:RH] C D E | D D C | D E D | C3 |]
+[V:LH] C, F, E, | D, E, C, | F, E, D, | C,3 |]

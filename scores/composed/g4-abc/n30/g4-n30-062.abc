@@ -1,0 +1,19 @@
+%abc-2.1
+X:2562
+T:g4-n30-062 Si cao gọi Sol giữ
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=upper; lead=RH; bucket=n30; notes=31; RH=15; LH=16
+% role=A; duration60=32s; related_pattern=a372135e41ede2a0
+% authored_passages=Q02 Q04
+% source=buildscripts/pianist/compositions/g4/n30.txt:63
+[V:RH] B c d c | z4 | B A B G | z4 |
+[V:LH] z4 | G, F, E, F, | z4 | F, E, F, G, |
+[V:RH] G2 B c | z4 | d c B G | z4 |]
+[V:LH] z4 | G, F, E, F, | z4 | G, F, G, G, |]

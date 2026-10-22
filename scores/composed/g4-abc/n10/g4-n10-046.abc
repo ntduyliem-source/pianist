@@ -1,0 +1,17 @@
+%abc-2.1
+X:2346
+T:g4-n10-046 Câu từ La rất trầm
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=lower; lead=LH; bucket=n10; notes=10; RH=2; LH=8
+% role=L; duration60=8s; related_pattern=0809ecd282172f8e
+% authored_passages=inline-n10-046
+% source=buildscripts/pianist/compositions/g4/n10.txt:47
+[V:RH] C4 | C4 |]
+[V:LH] A,, B,, C, D, | E, D, C, A,, |]

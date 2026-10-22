@@ -1,0 +1,19 @@
+%abc-2.1
+X:3103
+T:g5-n20-003 Đô Fa thay lời
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=offset; lead=RH; bucket=n20; notes=20; RH=11; LH=9
+% duration60=20s; related_pattern=af99853b31b3b3dc
+% authored_passages=O03 OR4
+% source=buildscripts/pianist/compositions/g5/studies.txt:4
+[V:RH] C2 F z | D2 F z | E2 C2 | D E G2 |
+[V:LH] z C, z F, | z D, z F, | C, z E, z | z G, z G, |
+[V:RH] E2 C2 |]
+[V:LH] C,4 |]

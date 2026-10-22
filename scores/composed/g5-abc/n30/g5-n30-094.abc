@@ -1,0 +1,21 @@
+%abc-2.1
+X:3294
+T:g5-n30-094 Năm trầm ghé Fa
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=dyad; lead=LH; bucket=n30; notes=38; RH=14; LH=24
+% duration60=36s; related_pattern=b4614fac33ec4b7c
+% authored_passages=D44 DL4 DL5
+% source=buildscripts/pianist/compositions/g5/studies.txt:95
+[V:RH] C2 F2 | D2 D2 | C4 | E2 G2 |
+[V:LH] [C,G,]2 F,2 | [D,F,]2 D,2 | E,2 G,2 | [E,G,]2 D,2 |
+[V:RH] C4 | C2 C2 | D4 | D2 G2 |
+[V:LH] [C,E,]4 | [C,E,]2 C,2 | D, E, F,2 | [D,F,]2 G,2 |
+[V:RH] C4 |]
+[V:LH] [C,G,]4 |]

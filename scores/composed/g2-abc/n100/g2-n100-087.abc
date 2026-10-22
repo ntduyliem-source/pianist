@@ -1,0 +1,25 @@
+%abc-2.1
+X:1387
+T:g2-n100-087 Giữ và nhảy qua năm cảnh
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=third; lead=RH; bucket=n100; notes=100; RH=50; LH=50
+% role=S; duration60=80s; related_pattern=6c065e7b5f0562dd
+% authored_passages=S02 S10 S12 S25 S16
+% source=buildscripts/pianist/compositions/g2/n100.txt:88
+[V:RH] C E D2 | E2 D C | E2 D C | C4 |
+[V:LH] C, D, D,2 | C,2 D, C, | C,2 D, C, | C,4 |
+[V:RH] C E D2 | E2 G2 | F E D C | C4 |
+[V:LH] C, D, D,2 | C,2 C,2 | D, E, D, C, | C,4 |
+[V:RH] C E D C | E2 G2 | F E D C | C4 |
+[V:LH] C, D, C, C, | C,2 C,2 | D, E, D, C, | C,4 |
+[V:RH] C2 E D | E G F2 | E2 D C | D E C2 |
+[V:LH] C,2 D, C, | C, D, D,2 | C,2 D, C, | D, D, C,2 |
+[V:RH] C2 E2 | D E C2 | C4 | C4 |]
+[V:LH] C,2 C,2 | D, D, C,2 | C,4 | C,4 |]

@@ -1,0 +1,17 @@
+%abc-2.1
+X:2176
+T:g4-n4-076 Đô Si trầm gọi đáp
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=lower; lead=LH; bucket=n4; notes=3; RH=1; LH=2
+% role=A; duration60=3s; related_pattern=1dc0e4428efb9b26
+% authored_passages=inline-n4-076
+% source=buildscripts/pianist/compositions/g4/n4.txt:77
+[V:RH] z z C |]
+[V:LH] C, B,, z |]

@@ -1,0 +1,25 @@
+%abc-2.1
+X:2756
+T:g4-n100-056 Đô giữa về trầm mở rộng
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=span; lead=LH; bucket=n100; notes=84; RH=20; LH=64
+% role=L; duration60=80s; related_pattern=483c8aaf75c8a004
+% authored_passages=X02 X01 X03 X09 X05
+% source=buildscripts/pianist/compositions/g4/n100.txt:57
+[V:RH] E4 | E4 | E4 | E4 |
+[V:LH] C G, C, D, | E, G, A, C | B, A, G, E, | D, E, C,2 |
+[V:RH] E4 | E4 | E4 | E4 |
+[V:LH] C, G, C B, | A, G, E, C, | D, E, G, A, | G, E, C,2 |
+[V:RH] E4 | E4 | E4 | E4 |
+[V:LH] C,2 G, C | B, A, G,2 | E, F, A, G, | E, D, C,2 |
+[V:RH] E4 | E4 | E4 | E4 |
+[V:LH] C,2 G, C | B, G, E,2 | C,4 | C,4 |
+[V:RH] E4 | E4 | E4 | E4 |]
+[V:LH] C, G, C2 | G,2 E, D, | C, E, G, A, | G, E, C,2 |]

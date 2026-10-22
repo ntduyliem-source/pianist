@@ -1,0 +1,17 @@
+%abc-2.1
+X:2144
+T:g4-n4-044 Bốn bậc bass đi xuống
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=upper; lead=LH; bucket=n4; notes=5; RH=1; LH=4
+% role=L; duration60=4s; related_pattern=85f577ca88260eda
+% authored_passages=inline-n4-044
+% source=buildscripts/pianist/compositions/g4/n4.txt:45
+[V:RH] G4 |]
+[V:LH] D C B, A, |]

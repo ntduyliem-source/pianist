@@ -1,0 +1,25 @@
+%abc-2.1
+X:1366
+T:g2-n100-066 Những câu hỏi chia phách
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=eighth; lead=RH; bucket=n100; notes=85; RH=48; LH=37
+% role=A; duration60=80s; related_pattern=dbb9b2dfb3103742
+% authored_passages=B01 B05 B03 B07 B06
+% source=buildscripts/pianist/compositions/g2/n100.txt:67
+[V:RH] C/2D/2 E D C | z4 | C D E/2D/2 C | z4 |
+[V:LH] z4 | C, D, E, D, | z4 | D, C, C,2 |
+[V:RH] C2 C/2D/2 E | z4 | D/2E/2 D C2 | z4 |
+[V:LH] z4 | C, D, E, D, | z4 | D, E, D, C, |
+[V:RH] C/2D/2 E/2F/2 G F | z4 | E D C/2D/2 C | z4 |
+[V:LH] z4 | C, D, E, D, | z4 | D, E, D, C, |
+[V:RH] C D/2E/2 F/2G/2 F | z4 | E D E/2D/2 C | z4 |
+[V:LH] z4 | C, D, E, D, | z4 | D, C, C,2 |
+[V:RH] C2 C/2D/2 E | z4 | D/2C/2 C C2 | z4 |]
+[V:LH] z4 | C, D, E, D, | z4 | D, C, C,2 |]

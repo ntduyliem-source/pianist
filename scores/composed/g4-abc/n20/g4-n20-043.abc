@@ -1,0 +1,17 @@
+%abc-2.1
+X:2443
+T:g4-n20-043 Sol trầm dài phách cao
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=upper; lead=LH; bucket=n20; notes=15; RH=4; LH=11
+% role=L; duration60=12s; related_pattern=886dbead37683311
+% authored_passages=V23
+% source=buildscripts/pianist/compositions/g4/n20.txt:44
+[V:RH] G3 | G3 | G3 | G3 |]
+[V:LH] G,2 A, | B, C D | C B, A, | B, A, G, |]

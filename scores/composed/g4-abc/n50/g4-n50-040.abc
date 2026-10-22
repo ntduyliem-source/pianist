@@ -1,0 +1,21 @@
+%abc-2.1
+X:2640
+T:g4-n50-040 Rê giữa gọi Đô trả
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=upper; lead=LH; bucket=n50; notes=53; RH=12; LH=41
+% role=L; duration60=48s; related_pattern=07cffbf45bb86db9
+% authored_passages=V10 V05 V04
+% source=buildscripts/pianist/compositions/g4/n50.txt:41
+[V:RH] G4 | G4 | G4 | G4 |
+[V:LH] D C B, A, | G, B, D C | B, A, G, B, | A, G, G,2 |
+[V:RH] G4 | G4 | G4 | G4 |
+[V:LH] G,2 B, A, | G,2 B, C | D C B,2 | G,2 G,2 |
+[V:RH] G4 | G4 | G4 | G4 |]
+[V:LH] C B, A, G, | A, B, C D | C B, A, B, | A, B, G,2 |]

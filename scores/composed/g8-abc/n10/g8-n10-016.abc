@@ -1,0 +1,17 @@
+%abc-2.1
+X:5116
+T:g8-n10-016 Dòng phụ cao Fa Rê Đô
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G8; profile=ledger-high; lead=RH; bucket=n10; notes=10; RH=7; LH=3
+% duration60=12s; related_pattern=28b93829877d8260
+% authored_passages=H16 CH1 CH3
+% source=buildscripts/pianist/compositions/g8/studies.txt:17
+[V:RH] f' d' c'2 | g'2 e'2 | d'2 c'2 |]
+[V:LH] C,4 | C,4 | G,4 |]

@@ -1,0 +1,17 @@
+%abc-2.1
+X:3090
+T:g5-n10-090 Mi Sol trầm giữ Sol
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=dyad; lead=LH; bucket=n10; notes=11; RH=4; LH=7
+% duration60=12s; related_pattern=1ca853eed48f547a
+% authored_passages=D40 CL3 CL1
+% source=buildscripts/pianist/compositions/g5/studies.txt:91
+[V:RH] E2 G2 | G4 | C4 |]
+[V:LH] [E,G,]2 G,2 | D,2 C,2 | G,2 E,2 |]

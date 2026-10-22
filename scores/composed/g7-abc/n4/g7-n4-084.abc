@@ -1,0 +1,17 @@
+%abc-2.1
+X:4284
+T:g7-n4-084 Mi Rê Đô theo nhóm ba
+C:Nhạc do trợ lý AI biên soạn
+M:6/8
+L:1/4
+Q:3/8=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G7; profile=compound; lead=RH; bucket=n4; notes=4; RH=3; LH=1
+% duration60=2s; related_pattern=062bcad47db2f1e8
+% authored_passages=K09
+% source=buildscripts/pianist/compositions/g7/studies.txt:85
+[V:RH] E D/2 C3/2 |]
+[V:LH] C,3 |]

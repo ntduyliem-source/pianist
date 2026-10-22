@@ -1,0 +1,21 @@
+%abc-2.1
+X:2689
+T:g4-n50-089 Ba lời cao chung ba phách
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=upper; lead=RH; bucket=n50; notes=60; RH=30; LH=30
+% role=S; duration60=36s; related_pattern=03269b2deb024b4b
+% authored_passages=S21 S25 S23
+% source=buildscripts/pianist/compositions/g4/n50.txt:90
+[V:RH] G A B | c B G | A B G | G3 |
+[V:LH] G, G, G, | F, G, G, | G, G, G, | G,3 |
+[V:RH] c B A | G c B | A d c | B G2 |
+[V:LH] G, F, G, | G, F, G, | G, F, G, | G, G,2 |
+[V:RH] G2 A | B c G | A B G | G3 |]
+[V:LH] G,2 G, | G, F, G, | G, G, G, | G,3 |]

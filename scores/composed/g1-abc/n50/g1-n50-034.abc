@@ -1,0 +1,21 @@
+%abc-2.1
+X:534
+T:g1-n50-034 Ba làn sóng trầm cao
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n50; notes=50; RH=12; LH=38
+% role=L; family=bass-high-waves; form=authored; duration60=48s
+% related_pattern=b0eaab51c512e959
+% source=buildscripts/pianist/compositions/g1/n50.txt:36
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] E, F, G,2 | F, E, D, E, | F, G, F, E, | E,4 |
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] E,2 F, G, | F, G, F, E, | D, E, F, E, | E,2 E,2 |
+[V:RH] C4 | C4 | C4 | C4 |]
+[V:LH] E, F, F, G, | F, E, D, C, | D, E, F, E, | E,4 |]

@@ -1,0 +1,17 @@
+%abc-2.1
+X:4995
+T:g8-n4-095 Mi Sol trầm rồi nối Đô
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G8; profile=dyad-tie; lead=LH; bucket=n4; notes=5; RH=1; LH=4
+% duration60=4s; related_pattern=c9b076ebde6423b4
+% authored_passages=T20
+% source=buildscripts/pianist/compositions/g8/studies.txt:96
+[V:RH] C4 |]
+[V:LH] [E,G,] D,/2 C,/2-C,2 |]

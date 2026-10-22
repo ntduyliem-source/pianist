@@ -1,0 +1,17 @@
+%abc-2.1
+X:1058
+T:g2-n20-058 Vòm Mi trầm chia nhịp
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=eighth; lead=LH; bucket=n20; notes=18; RH=4; LH=14
+% role=L; duration60=12s; related_pattern=54303a94c24d7354
+% authored_passages=F23
+% source=buildscripts/pianist/compositions/g2/n20.txt:59
+[V:RH] C3 | C3 | C3 | C3 |]
+[V:LH] E,/2F,/2 G, F, | E, D, C, | C,/2D,/2 E, D, | C, C, C, |]

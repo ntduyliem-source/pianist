@@ -1,0 +1,21 @@
+%abc-2.1
+X:1270
+T:g2-n50-070 Giữ đầu chia giữa câu
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=eighth; lead=RH; bucket=n50; notes=51; RH=28; LH=23
+% role=A; duration60=48s; related_pattern=05e0cfbfb7951c1b
+% authored_passages=B05 B02 B07
+% source=buildscripts/pianist/compositions/g2/n50.txt:71
+[V:RH] C2 C/2D/2 E | z4 | D/2E/2 D C2 | z4 |
+[V:LH] z4 | C, D, E, D, | z4 | D, E, D, C, |
+[V:RH] C D E/2F/2 G | z4 | F/2E/2 D C2 | z4 |
+[V:LH] z4 | C, D, C, C, | z4 | C, D, C, C, |
+[V:RH] C D/2E/2 F/2G/2 F | z4 | E D E/2D/2 C | z4 |]
+[V:LH] z4 | C, D, E, D, | z4 | D, C, C,2 |]

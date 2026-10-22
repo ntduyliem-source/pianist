@@ -1,0 +1,19 @@
+%abc-2.1
+X:3847
+T:g6-n20-047 Bảy thứ Mi tay trái
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G6; profile=m7-up; lead=LH; bucket=n20; notes=21; RH=5; LH=16
+% duration60=20s; related_pattern=524246ee4d6e0d8c
+% authored_passages=S47 CLP2
+% source=buildscripts/pianist/compositions/g6/studies.txt:48
+[V:RH] c4 | c z z z | c z z z | c z z z |
+[V:LH] F, E, D C | G, F, E, D | C B, A, G, | E,2 G,2 |
+[V:RH] c z z z |]
+[V:LH] E,2 C,2 |]

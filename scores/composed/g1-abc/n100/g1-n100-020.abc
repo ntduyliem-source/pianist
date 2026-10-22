@@ -1,0 +1,27 @@
+%abc-2.1
+X:620
+T:g1-n100-020 Sáu hơi thở nhịp ba
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n100; notes=78; RH=54; LH=24
+% role=R; family=six-three-breath; form=authored; duration60=72s
+% related_pattern=2fa4f3d16455d0ab
+% source=buildscripts/pianist/compositions/g1/n100.txt:23
+[V:RH] C z D | E F E | D C2 | C3 |
+[V:LH] C,3 | C,3 | C,3 | C,3 |
+[V:RH] C D E | F z E | D E D | C3 |
+[V:LH] C,3 | C,3 | C,3 | C,3 |
+[V:RH] C2 D | E F G | F E D | C3 |
+[V:LH] C,3 | C,3 | C,3 | C,3 |
+[V:RH] C D E | D z C | C D C | C3 |
+[V:LH] C,3 | C,3 | C,3 | C,3 |
+[V:RH] C C D | E F E | D C2 | C3 |
+[V:LH] C,3 | C,3 | C,3 | C,3 |
+[V:RH] C D E | F E D | C D C | C3 |]
+[V:LH] C,3 | C,3 | C,3 | C,3 |]

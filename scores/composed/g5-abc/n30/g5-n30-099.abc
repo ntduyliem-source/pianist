@@ -1,0 +1,21 @@
+%abc-2.1
+X:3299
+T:g5-n30-099 Rê Sol trầm ghé Fa
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=dyad; lead=LH; bucket=n30; notes=38; RH=14; LH=24
+% duration60=36s; related_pattern=c8b36f33fd0ce161
+% authored_passages=D49 DL3 DL4
+% source=buildscripts/pianist/compositions/g5/studies.txt:100
+[V:RH] D2 F2 | C2 C2 | F4 | G2 G2 |
+[V:LH] [D,G,]2 F,2 | [C,G,]2 E,2 | F, E, D,2 | [D,G,]2 G,2 |
+[V:RH] C4 | D2 D2 | C4 | E2 G2 |
+[V:LH] [C,E,]4 | [D,F,]2 D,2 | E,2 G,2 | [E,G,]2 D,2 |
+[V:RH] C4 |]
+[V:LH] [C,E,]4 |]

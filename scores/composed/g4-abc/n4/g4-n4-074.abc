@@ -1,0 +1,17 @@
+%abc-2.1
+X:2174
+T:g4-n4-074 Mi Si thấp gọi Đô
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=lower; lead=RH; bucket=n4; notes=4; RH=3; LH=1
+% role=A; duration60=4s; related_pattern=c672ae104df33f48
+% authored_passages=inline-n4-074
+% source=buildscripts/pianist/compositions/g4/n4.txt:75
+[V:RH] E B, C z |]
+[V:LH] z z z C, |]

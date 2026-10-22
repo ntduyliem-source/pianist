@@ -1,0 +1,21 @@
+%abc-2.1
+X:2574
+T:g4-n30-074 Hai chuyện thấp nhịp ba
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=lower; lead=RH; bucket=n30; notes=32; RH=17; LH=15
+% role=A; duration60=36s; related_pattern=8f7f57ea9b8a6e43
+% authored_passages=T11 T13
+% source=buildscripts/pianist/compositions/g4/n30.txt:75
+[V:RH] A, B, C | z3 | D E D | z3 |
+[V:LH] z3 | C,2 D, | z3 | E,2 D, |
+[V:RH] C B, A, | z3 | E B, C | z3 |
+[V:LH] z3 | C,2 C, | z3 | C, D, E, |
+[V:RH] D C A, | z3 | B, A,2 | z3 |]
+[V:LH] z3 | D, C, D, | z3 | E, D, C, |]

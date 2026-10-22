@@ -1,0 +1,21 @@
+%abc-2.1
+X:3912
+T:g6-n30-012 Rê dẫn Đô về Mi
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G6; profile=m6-down; lead=RH; bucket=n30; notes=35; RH=26; LH=9
+% duration60=36s; related_pattern=b5a753a7006663d1
+% authored_passages=S12 AD2 AD3
+% source=buildscripts/pianist/compositions/g6/studies.txt:13
+[V:RH] d c E D | G2 B c | E F G E | D2 E2 |
+[V:LH] C,4 | C, z z z | C, z z z | C, z z z |
+[V:RH] G2 C2 | G A B c | E F G2 | E2 D2 |
+[V:LH] C, z z z | C, z z z | C, z z z | C, z z z |
+[V:RH] E2 C2 |]
+[V:LH] C, z z z |]

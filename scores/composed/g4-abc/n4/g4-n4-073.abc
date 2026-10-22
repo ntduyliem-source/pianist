@@ -1,0 +1,17 @@
+%abc-2.1
+X:2173
+T:g4-n4-073 La Đô Mi thấp trao
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=lower; lead=RH; bucket=n4; notes=4; RH=3; LH=1
+% role=A; duration60=4s; related_pattern=96a4b4f0ab5d1b1d
+% authored_passages=inline-n4-073
+% source=buildscripts/pianist/compositions/g4/n4.txt:74
+[V:RH] A, C E z |]
+[V:LH] z z z C, |]

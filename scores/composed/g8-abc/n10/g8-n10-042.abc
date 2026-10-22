@@ -1,0 +1,17 @@
+%abc-2.1
+X:5142
+T:g8-n10-042 Dòng phụ trầm Fa Rê Mi
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G8; profile=ledger-low; lead=LH; bucket=n10; notes=10; RH=3; LH=7
+% duration60=12s; related_pattern=1d2765984baaaf1c
+% authored_passages=L17 CB2 CB1
+% source=buildscripts/pianist/compositions/g8/studies.txt:43
+[V:RH] C4 | C4 | C4 |]
+[V:LH] F,,, D,,, E,,,2 | E,,,2 C,,,2 | G,,,2 E,,,2 |]

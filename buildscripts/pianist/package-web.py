@@ -39,9 +39,14 @@ if (OUT / 'library/catalog.json').exists():
     paths += ['library/catalog.json'] + [s['url'] for s in json.loads((OUT / 'library/catalog.json').read_text(encoding='utf-8'))['songs']]
 library_count = verify_library(lambda name: (OUT / name).read_bytes(), set(paths))
 bank = None
-if (OUT / 'curriculum/manifest.json').exists():
-    bank = verify_web_bank(lambda name: (OUT / name).read_bytes())
-    paths += bank['paths']
+if not (OUT / 'curriculum/manifest.json').exists():
+    raise ValueError('Package the composed G1–G8 bank first: python buildscripts/pianist/composed-reading-bank.py')
+pointer = json.loads((OUT / 'curriculum/manifest.json').read_text(encoding='utf-8'))
+bank_index = json.loads((OUT / 'curriculum' / pointer['index']['path']).read_text(encoding='utf-8'))
+if bank_index.get('kind') != 'composed-abc-v1':
+    raise ValueError('Legacy exercise bank is no longer served. Run composed-reading-bank.py before packaging.')
+bank = verify_web_bank(lambda name: (OUT / name).read_bytes())
+paths += bank['paths']
 files = []
 for name in sorted(set(paths)):
     path = OUT / name

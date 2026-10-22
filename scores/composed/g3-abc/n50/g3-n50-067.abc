@@ -1,0 +1,21 @@
+%abc-2.1
+X:1967
+T:g3-n50-067 Fa thấp gọi giữ trả
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fourth; lead=LH; bucket=n50; notes=46; RH=23; LH=23
+% role=A; duration60=48s; related_pattern=894b25d0cdd0b3e5
+% authored_passages=Q07 Q06 Q09
+% source=buildscripts/pianist/compositions/g3/n50.txt:68
+[V:RH] z4 | C D C C | z4 | C D C C |
+[V:LH] F, C, D, E, | z4 | F, E, D, C, | z4 |
+[V:RH] z4 | C D E D | z4 | D C C2 |
+[V:LH] C, F, E, D, | z4 | C, D, F, E, | z4 |
+[V:RH] z4 | C D E D | z4 | D E D C |]
+[V:LH] C,2 F, E, | z4 | D, G, F, E, | z4 |]

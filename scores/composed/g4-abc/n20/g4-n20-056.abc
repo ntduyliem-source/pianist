@@ -1,0 +1,17 @@
+%abc-2.1
+X:2456
+T:g4-n20-056 Từ giữa về trầm mở lại
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=span; lead=LH; bucket=n20; notes=19; RH=4; LH=15
+% role=L; duration60=16s; related_pattern=07491253b9c593a9
+% authored_passages=X02
+% source=buildscripts/pianist/compositions/g4/n20.txt:57
+[V:RH] E4 | E4 | E4 | E4 |]
+[V:LH] C G, C, D, | E, G, A, C | B, A, G, E, | D, E, C,2 |]

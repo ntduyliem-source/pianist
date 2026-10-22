@@ -1,0 +1,21 @@
+%abc-2.1
+X:1201
+T:g2-n50-001 Ba cửa sổ trong nắng
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=third; lead=RH; bucket=n50; notes=52; RH=40; LH=12
+% role=R; duration60=48s; related_pattern=8cd63a6b3c614ea8
+% authored_passages=T01 T03 T05
+% source=buildscripts/pianist/compositions/g2/n50.txt:2
+[V:RH] C E C2 | E G F E | D F E D | E D C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] E G F E | D F E D | C E D C | D E C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C2 E D | E2 G F | E D C2 | E2 C2 |]
+[V:LH] C,4 | C,4 | C,4 | C,4 |]

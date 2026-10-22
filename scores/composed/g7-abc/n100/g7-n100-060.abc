@@ -1,0 +1,27 @@
+%abc-2.1
+X:4860
+T:g7-n100-060 Mi đảo Rê Đô
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G7; profile=sync; lead=RH; bucket=n100; notes=87; RH=66; LH=21
+% duration60=84s; related_pattern=3a6ff61fb11d25e1
+% authored_passages=Y10 YR2 YR3 YR1 YR4 YR2
+% source=buildscripts/pianist/compositions/g7/studies.txt:61
+[V:RH] G/2 E D/2 C2 | E/2 F G/2 E2 | D/2 E F/2 D2 | E D C2 |
+[V:LH] C,4 | C, z z z | D, z z z | C, z z z |
+[V:RH] D2 C2 | G/2 F E/2 D2 | C2 E2 | F/2 E D/2 C2 |
+[V:LH] C, z z z | G, z z z | C, z z z | C, z z z |
+[V:RH] C4 | C/2 D E/2 G2 | F/2 E D/2 C2 | E2 G2 |
+[V:LH] C, z z z | C, z z z | C, z z z | C, z z z |
+[V:RH] D2 C2 | D/2 F E/2 G2 | F E D2 | E/2 D C/2 E2 |
+[V:LH] C, z z z | G, z z z | D, z z z | C, z z z |
+[V:RH] D2 C2 | E/2 F G/2 E2 | D/2 E F/2 D2 | E D C2 |
+[V:LH] C, z z z | C, z z z | D, z z z | C, z z z |
+[V:RH] D2 C2 |]
+[V:LH] C, z z z |]

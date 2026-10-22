@@ -1,0 +1,25 @@
+%abc-2.1
+X:2703
+T:g4-n100-003 Si Đô Rê qua năm lời
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=upper; lead=RH; bucket=n100; notes=86; RH=66; LH=20
+% role=R; duration60=80s; related_pattern=7b7f52d57b4fd76c
+% authored_passages=U03 U09 U13 U06 U05
+% source=buildscripts/pianist/compositions/g4/n100.txt:4
+[V:RH] B c d2 | c B A G | A B c B | A G G2 |
+[V:LH] G,4 | G,4 | G,4 | G,4 |
+[V:RH] G A B2 | c G A B | c d c2 | B A G2 |
+[V:LH] G,4 | G,4 | G,4 | G,4 |
+[V:RH] A B c2 | B G c B | A B d c | B A G2 |
+[V:LH] G,4 | G,4 | G,4 | G,4 |
+[V:RH] G B z A | B c d c | B A B G | A B G2 |
+[V:LH] G,4 | G,4 | G,4 | G,4 |
+[V:RH] G2 B A | G2 B c | d c B2 | G2 G2 |]
+[V:LH] G,4 | G,4 | G,4 | G,4 |]

@@ -1,0 +1,19 @@
+%abc-2.1
+X:1148
+T:g2-n30-048 Nền cao chuyển câu thấp
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=eighth; lead=LH; bucket=n30; notes=34; RH=8; LH=26
+% role=L; duration60=32s; related_pattern=2e945a71332802cd
+% authored_passages=F03 F18
+% source=buildscripts/pianist/compositions/g2/n30.txt:49
+[V:RH] C4 | D4 | C4 | C4 |
+[V:LH] C,/2D,/2 E, D, C, | D,2 D,/2E,/2 F, | E, D, C, D, | E,/2D,/2 C, C,2 |
+[V:RH] C4 | C4 | C4 | C4 |]
+[V:LH] C,4 | C,/2D,/2 E, D, C, | C,2 C,2 | C,4 |]

@@ -1,0 +1,17 @@
+%abc-2.1
+X:2337
+T:g4-n10-037 Si trầm giữ Đô giữa
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=upper; lead=LH; bucket=n10; notes=9; RH=2; LH=7
+% role=L; duration60=8s; related_pattern=44b617eb214468d5
+% authored_passages=inline-n10-037
+% source=buildscripts/pianist/compositions/g4/n10.txt:38
+[V:RH] G4 | G4 |]
+[V:LH] B, D C2 | B, A, B, G, |]

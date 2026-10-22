@@ -1,0 +1,19 @@
+%abc-2.1
+X:1803
+T:g3-n30-003 Giữ Mi mở khoảng thở
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fourth; lead=RH; bucket=n30; notes=30; RH=22; LH=8
+% role=R; duration60=32s; related_pattern=172601aa14f96d51
+% authored_passages=F03 F18
+% source=buildscripts/pianist/compositions/g3/n30.txt:4
+[V:RH] C F E2 | D E F C | D G F E | D E C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C4 | C F E2 | D E C2 | C4 |]
+[V:LH] C,4 | C,4 | C,4 | C,4 |]

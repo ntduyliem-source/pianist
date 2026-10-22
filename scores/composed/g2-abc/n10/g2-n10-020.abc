@@ -1,0 +1,17 @@
+%abc-2.1
+X:920
+T:g2-n10-020 Một nhịp sáng một nhịp êm
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=eighth; lead=RH; bucket=n10; notes=11; RH=9; LH=2
+% role=R; duration60=8s; related_pattern=074341094e764301
+% authored_passages=inline-n10-020
+% source=buildscripts/pianist/compositions/g2/n10.txt:21
+[V:RH] C/2D/2 E/2F/2 G F | E D C2 |]
+[V:LH] C,4 | C,4 |]

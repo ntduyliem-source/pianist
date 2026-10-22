@@ -1,0 +1,17 @@
+%abc-2.1
+X:1673
+T:g3-n10-073 Quãng năm gọi giữ cuối
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fifth; lead=RH; bucket=n10; notes=11; RH=7; LH=4
+% role=A; duration60=12s; related_pattern=556bb1cb90685e5b
+% authored_passages=inline-n10-073
+% source=buildscripts/pianist/compositions/g3/n10.txt:74
+[V:RH] C G F E | z4 | D C C2 |]
+[V:LH] z4 | C, D, E, D, | z4 |]

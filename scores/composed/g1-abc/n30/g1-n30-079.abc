@@ -1,0 +1,19 @@
+%abc-2.1
+X:479
+T:g1-n30-079 Bốn câu êm
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n30; notes=27; RH=13; LH=14
+% role=A; family=four-gentle; form=authored; duration60=32s
+% related_pattern=4ec98ce8816ff649
+% source=buildscripts/pianist/compositions/g1/n30.txt:80
+[V:RH] C D E2 | z4 | F2 E D | z4 |
+[V:LH] z4 | E, F, G,2 | z4 | F, E, D, E, |
+[V:RH] E F E D | z4 | C D C2 | z4 |]
+[V:LH] z4 | F, E, D, C, | z4 | C, D, C,2 |]

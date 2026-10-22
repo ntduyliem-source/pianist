@@ -1,0 +1,17 @@
+%abc-2.1
+X:1778
+T:g3-n20-078 Rải Đô hỏi bước đáp
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=arpeggio; lead=RH; bucket=n20; notes=15; RH=7; LH=8
+% role=A; duration60=16s; related_pattern=c974a866870ff907
+% authored_passages=H01
+% source=buildscripts/pianist/compositions/g3/n20.txt:79
+[V:RH] C G E C | z4 | G E C2 | z4 |]
+[V:LH] z4 | C, D, E, D, | z4 | D, C, D, C, |]

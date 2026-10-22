@@ -1,0 +1,17 @@
+%abc-2.1
+X:704
+T:g2-n4-004 Từ ngọn xuống
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=third; lead=RH; bucket=n4; notes=4; RH=3; LH=1
+% role=R; duration60=3s; related_pattern=1f1fa07c358b9fcf
+% authored_passages=inline-n4-004
+% source=buildscripts/pianist/compositions/g2/n4.txt:5
+[V:RH] G E D |]
+[V:LH] C,3 |]

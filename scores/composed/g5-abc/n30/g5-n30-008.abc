@@ -1,0 +1,21 @@
+%abc-2.1
+X:3208
+T:g5-n30-008 Rê Sol nối hai tay
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=offset; lead=RH; bucket=n30; notes=33; RH=17; LH=16
+% duration60=36s; related_pattern=1384de4005010b82
+% authored_passages=O08 OR8 OR5
+% source=buildscripts/pianist/compositions/g5/studies.txt:9
+[V:RH] D2 G z | G z E2 | F2 D2 | E D E2 |
+[V:LH] z D, z G, | G, z z C, | D, z G, z | z C, z G, |
+[V:RH] C4 | C z G2 | F2 E2 | D2 G z |
+[V:LH] C,4 | C, z z G, | F, z C, z | z G, z G, |
+[V:RH] C4 |]
+[V:LH] C,4 |]

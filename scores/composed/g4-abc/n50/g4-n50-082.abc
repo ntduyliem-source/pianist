@@ -1,0 +1,21 @@
+%abc-2.1
+X:2682
+T:g4-n50-082 Ba chuyện bass mở tám
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=span; lead=LH; bucket=n50; notes=46; RH=23; LH=23
+% role=A; duration60=48s; related_pattern=14a1fe8396b9c1c5
+% authored_passages=H05 H08 H07
+% source=buildscripts/pianist/compositions/g4/n50.txt:83
+[V:RH] z4 | E F G F | z4 | F E E2 |
+[V:LH] C, G, C B, | z4 | A, G, E, C, | z4 |
+[V:RH] z4 | E F G F | z4 | F E F E |
+[V:LH] C,2 G, C | z4 | B, A, G, C, | z4 |
+[V:RH] z4 | E F G F | z4 | F G F E |]
+[V:LH] C, F, A, C | z4 | B, G, E, C, | z4 |]

@@ -1,0 +1,17 @@
+%abc-2.1
+X:2373
+T:g4-n10-073 Thấp hỏi bốn phách giữ đáp
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=lower; lead=RH; bucket=n10; notes=11; RH=7; LH=4
+% role=A; duration60=12s; related_pattern=0e4f6773ee01838f
+% authored_passages=inline-n10-073
+% source=buildscripts/pianist/compositions/g4/n10.txt:74
+[V:RH] A, C E D | z4 | C A, A,2 |]
+[V:LH] z4 | C, D, E, D, | z4 |]

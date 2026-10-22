@@ -1,0 +1,17 @@
+%abc-2.1
+X:4213
+T:g7-n4-013 Mi Sol Rê khép câu
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G7; profile=dotted; lead=RH; bucket=n4; notes=4; RH=3; LH=1
+% duration60=4s; related_pattern=1145e353e2df6046
+% authored_passages=D13
+% source=buildscripts/pianist/compositions/g7/studies.txt:14
+[V:RH] E3/2 G/2 D2 |]
+[V:LH] G,4 |]

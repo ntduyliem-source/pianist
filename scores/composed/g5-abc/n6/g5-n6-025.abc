@@ -1,0 +1,17 @@
+%abc-2.1
+X:2925
+T:g5-n6-025 Sol đợi Đô khép
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=offset; lead=RH; bucket=n6; notes=7; RH=4; LH=3
+% duration60=8s; related_pattern=6ffa11acc2907a2b
+% authored_passages=O25 CR2
+% source=buildscripts/pianist/compositions/g5/studies.txt:26
+[V:RH] G z C2 | E2 C2 |]
+[V:LH] G, z z C, | C,4 |]

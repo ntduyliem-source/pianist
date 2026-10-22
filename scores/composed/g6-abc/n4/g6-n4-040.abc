@@ -1,0 +1,17 @@
+%abc-2.1
+X:3540
+T:g6-n4-040 La trầm mở Đô Mi
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G6; profile=M6-down; lead=LH; bucket=n4; notes=5; RH=1; LH=4
+% duration60=4s; related_pattern=2924e5b94e91edf6
+% authored_passages=S40
+% source=buildscripts/pianist/compositions/g6/studies.txt:41
+[V:RH] c4 |]
+[V:LH] B, A, C, E, |]

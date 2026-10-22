@@ -1,0 +1,21 @@
+%abc-2.1
+X:5400
+T:g8-n30-100 Rê Sol trầm rồi nối Rê
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G8; profile=dyad-tie; lead=LH; bucket=n30; notes=36; RH=9; LH=27
+% duration60=36s; related_pattern=7106cc5339fe832e
+% authored_passages=T25 TL1 TL2
+% source=buildscripts/pianist/compositions/g8/studies.txt:101
+[V:RH] G4 | C z z z | D z z z | C z z z |
+[V:LH] [D,G,] F,/2 D,/2-D,2 | [C,E,] D,/2 E,/2-E,2 | [D,F,] E,/2 D,/2-D,2 | E,2 G,2 |
+[V:RH] C z z z | C z z z | C z z z | C z z z |
+[V:LH] C,4 | [E,G,] F,/2 E,/2-E,2 | D,2 C,2 | [C,G,] E,/2 G,/2-G,2 |
+[V:RH] C z z z |]
+[V:LH] E,2 C,2 |]

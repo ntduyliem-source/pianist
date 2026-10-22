@@ -1,0 +1,17 @@
+%abc-2.1
+X:45
+T:g1-n4-045 Từ Sol về Mi
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n4; notes=4; RH=1; LH=3
+% role=L; family=bass-top-down; form=authored; duration60=3s
+% related_pattern=070ac53819c35610
+% source=buildscripts/pianist/compositions/g1/n4.txt:48
+[V:RH] C3 |]
+[V:LH] G, F, E, |]

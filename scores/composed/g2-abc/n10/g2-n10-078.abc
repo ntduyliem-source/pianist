@@ -1,0 +1,17 @@
+%abc-2.1
+X:978
+T:g2-n10-078 Lời trầm gọi xuống
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=eighth; lead=LH; bucket=n10; notes=9; RH=4; LH=5
+% role=A; duration60=8s; related_pattern=44cbc892c470845b
+% authored_passages=inline-n10-078
+% source=buildscripts/pianist/compositions/g2/n10.txt:79
+[V:RH] z4 | C D C C |]
+[V:LH] G,/2F,/2 E, D, C, | z4 |]

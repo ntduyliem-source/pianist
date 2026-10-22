@@ -1,0 +1,17 @@
+%abc-2.1
+X:221
+T:g1-n10-021 Bốn bước nhìn lên
+C:Nhạc do trợ lý AI biên soạn
+M:2/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n10; notes=10; RH=6; LH=4
+% role=R; family=four-upper-bars; form=authored; duration60=8s
+% related_pattern=a725e61fed5c4a8f
+% source=buildscripts/pianist/compositions/g1/n10.txt:24
+[V:RH] E F | G2 | F E | E2 |]
+[V:LH] C,2 | C,2 | C,2 | C,2 |]

@@ -1,0 +1,17 @@
+%abc-2.1
+X:2292
+T:g4-n6-092 Đô Rê giữa cùng nền
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=upper; lead=LH; bucket=n6; notes=6; RH=3; LH=3
+% role=S; duration60=3s; related_pattern=3d90fe87c3dcd5da
+% authored_passages=inline-n6-092
+% source=buildscripts/pianist/compositions/g4/n6.txt:93
+[V:RH] G F G |]
+[V:LH] C D C |]

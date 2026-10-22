@@ -1,0 +1,19 @@
+%abc-2.1
+X:2566
+T:g4-n30-066 Hai cuộc gọi bass cao
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=upper; lead=LH; bucket=n30; notes=30; RH=15; LH=15
+% role=A; duration60=32s; related_pattern=a5e2a0c89b9b98d0
+% authored_passages=Q06 Q08
+% source=buildscripts/pianist/compositions/g4/n30.txt:67
+[V:RH] z4 | G F E F | z4 | G F G2 |
+[V:LH] G, A, B, C | z4 | D C B, G, | z4 |
+[V:RH] z4 | G F E F | z4 | G F G G |]
+[V:LH] D C B, A, | z4 | B, A, G,2 | z4 |]

@@ -1,0 +1,25 @@
+%abc-2.1
+X:1977
+T:g3-n50-077 Ba chuyện năm thấp ba
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fifth; lead=LH; bucket=n50; notes=47; RH=21; LH=26
+% role=A; duration60=54s; related_pattern=0643a7ee22a61fb6
+% authored_passages=V12 V16 V14
+% source=buildscripts/pianist/compositions/g3/n50.txt:78
+[V:RH] z3 | C2 D | z3 | E2 D |
+[V:LH] C, G, F, | z3 | E, D, C, | z3 |
+[V:RH] z3 | C2 C | z3 | C2 D |
+[V:LH] D, E, C, | z3 | C, G, E, | z3 |
+[V:RH] z3 | E2 D | z3 | C2 C |
+[V:LH] F, E, D, | z3 | E, D, C, | z3 |
+[V:RH] z3 | C D E | z3 | D C D |
+[V:LH] G, C, D, | z3 | E, F, E, | z3 |
+[V:RH] z3 | E D C |]
+[V:LH] D, C,2 | z3 |]

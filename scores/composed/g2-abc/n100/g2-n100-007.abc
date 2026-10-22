@@ -1,0 +1,25 @@
+%abc-2.1
+X:1307
+T:g2-n100-007 Lối quanh Fa qua năm đoạn
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=third; lead=RH; bucket=n100; notes=84; RH=64; LH=20
+% role=R; duration60=80s; related_pattern=a04fcf743f47251c
+% authored_passages=T07 T02 T10 T08 T17
+% source=buildscripts/pianist/compositions/g2/n100.txt:8
+[V:RH] C D F E | D C E D | C2 E D | E D C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C D E G | F D E2 | E C D E | D C C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C E z D | E G F E | D E D C | D E C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C E D C | D F E2 | G F E D | E C C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C2 E2 | G2 E2 | D E C2 | C4 |]
+[V:LH] C,4 | C,4 | C,4 | C,4 |]

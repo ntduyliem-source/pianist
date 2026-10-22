@@ -1,0 +1,17 @@
+%abc-2.1
+X:304
+T:g1-n20-004 Hỏi ở bậc giữa
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n20; notes=15; RH=11; LH=4
+% role=R; family=question-turn; form=authored; duration60=16s
+% related_pattern=90d8e5636dee6f8c
+% source=buildscripts/pianist/compositions/g1/n20.txt:7
+[V:RH] C2 D E | F2 E D | E F E D | C4 |]
+[V:LH] C,4 | C,4 | C,4 | C,4 |]

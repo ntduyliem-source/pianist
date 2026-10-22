@@ -1,0 +1,17 @@
+%abc-2.1
+X:4354
+T:g7-n6-054 Mi đảo rồi Đô
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G7; profile=sync; lead=RH; bucket=n6; notes=8; RH=6; LH=2
+% duration60=8s; related_pattern=01423245f3d457cc
+% authored_passages=Y04 CR3
+% source=buildscripts/pianist/compositions/g7/studies.txt:55
+[V:RH] F/2 E D/2 C2 | D2 C2 |]
+[V:LH] C,4 | G,4 |]

@@ -1,0 +1,17 @@
+%abc-2.1
+X:220
+T:g1-n10-020 Bốn viên gạch
+C:Nhạc do trợ lý AI biên soạn
+M:2/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n10; notes=11; RH=7; LH=4
+% role=R; family=four-little-bars; form=authored; duration60=8s
+% related_pattern=77919da09e09e25d
+% source=buildscripts/pianist/compositions/g1/n10.txt:23
+[V:RH] C D | E F | E D | C2 |]
+[V:LH] C,2 | C,2 | C,2 | C,2 |]

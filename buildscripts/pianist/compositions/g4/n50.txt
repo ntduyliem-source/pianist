@@ -1,0 +1,101 @@
+# Three explicitly ordered sections, maintaining range and hand separation at every join.
+001;upper;R;RH;Ba cửa sổ trên khuông cao;U01 U03 U05
+002;upper;R;RH;Sol dài nhắc lời rồi yên;U02 U07 U17
+003;upper;R;RH;Si Đô Rê qua ba câu;U03 U06 U09
+004;upper;R;RH;Đô cao gọi nền nhắc;U04 U12 U14
+005;upper;R;RH;Từ nốt yên thành lời cao;U16 U17 U11
+006;upper;R;RH;Nghỉ trên cao nghe Sol dài;U06 U11 U05
+007;upper;R;RH;Nhắc Sol tìm đường Đô;U07 U08 U16
+008;upper;R;RH;Si qua Đô cao hai lời;U08 U13 U09
+009;upper;R;RH;Giữ Si mở lời Sol;U09 U02 U17
+010;upper;R;RH;Rê cao gọi Đô trả;U10 U04 U05
+011;upper;R;RH;Ba câu cao trong nhịp ba;U21 U23 U25
+012;upper;R;RH;Si Rê Đô đổi đường;U22 U24 U21
+013;upper;R;RH;Giữ Sol nhắc vùng cao;U23 U25 U22
+014;upper;R;RH;Sol Đô cao đổi lời;U24 U22 U25
+015;upper;R;RH;Nhắc đầu khép lời cao;U25 U21 U24
+016;lower;R;RH;Ba câu thấp rõ tiếng nền;L16 L17 L18
+017;lower;R;RH;La dài Mi gọi về;L02 L04 L11
+018;lower;R;RH;Đô Rê Mi nhắc rồi yên;L03 L07 L12
+019;lower;R;RH;Mi gọi giữ La thấp;L04 L05 L14
+020;lower;R;RH;Nốt giữ và hai câu thưa;L05 L09 L15
+021;lower;R;RH;Nghỉ phía thấp nghe nền;L06 L16 L13
+022;lower;R;RH;Ba câu thấp nhịp ba;L21 L23 L25
+023;lower;R;RH;Đô Mi Rê qua ba lời;L22 L24 L21
+024;lower;R;RH;La dài gọi Đô Mi;L23 L22 L24
+025;span;R;RH;Ba đường mở qua tám;W01 W04 W05
+026;span;R;RH;Đô cao về rồi giữ thấp;W02 W03 W09
+027;span;R;RH;Cao giữ nghe nghỉ rồi về;W07 W06 W11
+028;span;R;RH;Fa La rộng dưới nền nhắc;W04 W08 W12
+029;span;R;RH;Ba đường rộng nhịp ba;W21 W23 W24
+030;span;R;RH;Đô cao về qua đường Fa;W22 W24 W21
+031;upper;L;LH;Ba cửa bass phía cao;V01 V05 V03
+032;upper;L;LH;Sol trầm dài yên rồi nhắc;V02 V17 V07
+033;upper;L;LH;Si Đô Rê giữa ba câu;V03 V09 V06
+034;upper;L;LH;Đô giữa gọi nền cao;V04 V14 V12
+035;upper;L;LH;Từ bass yên thành cao;V17 V16 V11
+036;upper;L;LH;Nghỉ bass cao Sol dài;V06 V05 V11
+037;upper;L;LH;Nhắc trầm tìm Đô giữa;V07 V16 V08
+038;upper;L;LH;Si trầm qua Đô đáp;V08 V09 V13
+039;upper;L;LH;Giữ Si trầm mở Sol;V09 V17 V02
+040;upper;L;LH;Rê giữa gọi Đô trả;V10 V05 V04
+041;upper;L;LH;Ba câu bass cao nhịp ba;V21 V25 V23
+042;upper;L;LH;Si Rê Đô giữa đổi đường;V22 V21 V24
+043;upper;L;LH;Giữ Sol trầm nhắc cao;V23 V22 V25
+044;upper;L;LH;Sol Đô giữa đổi lời;V24 V25 V22
+045;upper;L;LH;Nhắc trầm khép lời cao;V25 V24 V21
+046;lower;L;LH;Ba câu rất trầm rõ nền;M18 M17 M16
+047;lower;L;LH;La trầm dài Mi về;M02 M11 M04
+048;lower;L;LH;Đô Rê Mi trầm nhắc;M03 M12 M07
+049;lower;L;LH;Mi trầm giữ La thấp;M04 M14 M05
+050;lower;L;LH;Giữ trầm hai câu thưa;M05 M15 M09
+051;lower;L;LH;Nghỉ rất trầm nghe nền;M06 M13 M16
+052;lower;L;LH;Ba câu rất trầm ba;M21 M25 M23
+053;lower;L;LH;Đô Mi Rê trầm ba lời;M22 M21 M24
+054;lower;L;LH;La trầm dài Đô Mi;M23 M24 M22
+055;span;L;LH;Ba đường bass mở tám;X01 X05 X04
+056;span;L;LH;Đô giữa về giữ trầm;X02 X09 X03
+057;span;L;LH;Giữa giữ nghỉ rồi trầm;X07 X11 X06
+058;span;L;LH;Fa La bass nền nhắc;X04 X12 X08
+059;span;L;LH;Ba đường bass rộng ba;X21 X24 X23
+060;span;L;LH;Đô giữa về đường Fa;X22 X21 X24
+061;upper;A;RH;Ba cuộc gọi vùng cao;Q01 Q03 Q05
+062;upper;A;RH;Si cao gọi giữ đáp;Q02 Q04 Q01
+063;upper;A;RH;Rê cao đổi lời hỏi;Q03 Q02 Q04
+064;upper;A;RH;Ba chuyện cao nhịp ba;Q11 Q13 Q15
+065;upper;A;RH;Giữ cao đổi thứ tự;Q13 Q15 Q11
+066;upper;A;LH;Ba cuộc gọi bass cao;Q06 Q10 Q08
+067;upper;A;LH;Si bass giữ lời đáp;Q07 Q06 Q09
+068;upper;A;LH;Rê giữa đổi câu hỏi;Q08 Q09 Q07
+069;upper;A;LH;Ba chuyện bass cao ba;Q12 Q16 Q14
+070;upper;A;LH;Giữ bass cao đổi thứ tự;Q14 Q12 Q16
+071;lower;A;RH;Ba cuộc gọi vùng thấp;T01 T03 T04
+072;lower;A;RH;Mi thấp gọi Đô trả;T02 T04 T01
+073;lower;A;RH;La dài và hai lời;T03 T02 T04
+074;lower;A;RH;Ba chuyện thấp nhịp ba;T11 T13 T15
+075;lower;A;LH;Ba cuộc gọi rất trầm;T05 T07 T06
+076;lower;A;LH;Mi trầm gọi Đô trả;T06 T05 T07
+077;lower;A;LH;Ba chuyện rất trầm ba;T12 T16 T14
+078;span;A;RH;Ba chuyện mở qua tám;H01 H03 H04
+079;span;A;RH;Đô cao gọi lời về;H02 H04 H01
+080;span;A;RH;Fa La rộng giữ cuối;H03 H01 H04
+081;span;A;RH;Cao về mở tám nhịp ba;H13 H15 H11
+082;span;A;LH;Ba chuyện bass mở tám;H05 H08 H07
+083;span;A;LH;Đô giữa gọi lời trầm;H06 H05 H08
+084;span;A;LH;Fa La bass giữ cuối;H07 H08 H05
+085;span;A;LH;Giữa về mở tám nhịp ba;H14 H16 H12
+086;upper;S;RH;Ba câu cao cùng nhịp;S01 S03 S13
+087;upper;S;RH;Sol dài cao chung ba đoạn;S02 S04 S14
+088;upper;S;RH;Si Đô Rê chung rồi yên;S03 S05 S11
+089;upper;S;RH;Ba lời cao chung ba phách;S21 S25 S23
+090;upper;S;RH;Giữ đầu cao ba lời chung;S23 S27 S21
+091;upper;S;LH;Ba câu bass cao chung;S06 S18 S08
+092;upper;S;LH;Sol dài bass chung ba đoạn;S07 S19 S09
+093;upper;S;LH;Si Đô Rê giữa rồi yên;S08 S16 S10
+094;upper;S;LH;Ba lời bass cao chung;S22 S24 S26
+095;upper;S;LH;Giữ bass cao ba lời;S24 S22 S28
+096;lower;S;RH;Ba câu thấp cùng nhịp;Y01 Y03 Y08
+097;lower;S;RH;La dài thấp nhắc lời chung;Y02 Y07 Y03
+098;lower;S;RH;Ba lời thấp chung ba phách;Y21 Y25 Y23
+099;lower;S;LH;Ba câu rất trầm chung;Y04 Y10 Y05
+100;lower;S;LH;Ba lời rất trầm chung;Y22 Y24 Y26

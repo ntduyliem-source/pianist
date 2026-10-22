@@ -1,0 +1,19 @@
+%abc-2.1
+X:4510
+T:g7-n20-010 Fa Rê Sol chuyển hướng
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G7; profile=dotted; lead=RH; bucket=n20; notes=19; RH=14; LH=5
+% duration60=20s; related_pattern=8329d99fa3fd706b
+% authored_passages=D10 DR2
+% source=buildscripts/pianist/compositions/g7/studies.txt:11
+[V:RH] F3/2 D/2 G2 | E3/2 G/2 E D | C2 E2 | F3/2 E/2 D2 |
+[V:LH] G,4 | C, z z z | C, z z z | D, z z z |
+[V:RH] E2 C2 |]
+[V:LH] C, z z z |]

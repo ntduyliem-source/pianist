@@ -1,0 +1,17 @@
+%abc-2.1
+X:1773
+T:g3-n20-073 Giữ Đô gọi năm bậc
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fifth; lead=RH; bucket=n20; notes=15; RH=7; LH=8
+% role=A; duration60=16s; related_pattern=0c0c4cbe14b2df64
+% authored_passages=V03
+% source=buildscripts/pianist/compositions/g3/n20.txt:74
+[V:RH] C2 G F | z4 | E D E C | z4 |]
+[V:LH] z4 | C, D, E, D, | z4 | D, E, D, C, |]

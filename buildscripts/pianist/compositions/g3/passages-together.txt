@@ -1,0 +1,31 @@
+# S fourth focus: 01–05 and 11–15 RH; 06–10 and 16–20 LH. W fifth focus: 01–03/06–08 RH, others LH.
+S01;4;C F E2 | D G F2 | E F C2 | D E C2;C, D, E,2 | D, E, D,2 | E, D, C,2 | D, D, C,2
+S02;4;C2 F E | D2 G F | E2 F C | D E C2;C,2 D, E, | D,2 E, D, | C,2 D, C, | D, D, C,2
+S03;4;F C E2 | D G F2 | E C F2 | E D C2;D, C, C,2 | D, E, D,2 | E, D, D,2 | C, D, C,2
+S04;4;E C F2 | E2 D C | D G F2 | E D C2;C, D, D,2 | C,2 D, C, | D, E, D,2 | C, D, C,2
+S05;4;C F E2 | F2 E C | D G F2 | E D C2;C, D, E,2 | D,2 E, D, | C, D, D,2 | C, D, C,2
+S06;4;C D E2 | D E D2 | E D C2 | D D C2;C, F, E,2 | D, G, F,2 | E, F, C,2 | D, E, C,2
+S07;4;C2 D E | D2 E D | C2 D C | D D C2;C,2 F, E, | D,2 G, F, | E,2 F, C, | D, E, C,2
+S08;4;D C C2 | D E D2 | E D D2 | C D C2;F, C, E,2 | D, G, F,2 | E, C, F,2 | E, D, C,2
+S09;4;C D D2 | C2 D C | D E D2 | C D C2;E, C, F,2 | E,2 D, C, | D, G, F,2 | E, D, C,2
+S10;4;C D E2 | D2 E D | C D D2 | C D C2;C, F, E,2 | F,2 E, C, | D, G, F,2 | E, D, C,2
+S11;4;C2 F2 | E D C2 | C4 | C4;C,2 D,2 | E, D, C,2 | C,4 | C,4
+S12;4;C4 | C F E2 | C4 | C4;C,4 | C, D, C,2 | C,4 | C,4
+S13;4;C2 F2 | E2 C2 | D E C2 | C4;C,2 D,2 | C,2 C,2 | D, D, C,2 | C,4
+S14;4;C F E2 | D G F2 | E D C2 | C4;C, D, E,2 | D, E, D,2 | C, D, C,2 | C,4
+S15;4;C2 F E | D E C2 | F2 E D | C4;C,2 D, E, | D, D, C,2 | D,2 E, D, | C,4
+S16;4;C2 D2 | E D C2 | C4 | C4;C,2 F,2 | E, D, C,2 | C,4 | C,4
+S17;4;C4 | C D C2 | C4 | C4;C,4 | C, F, E,2 | C,4 | C,4
+S18;4;C2 D2 | C2 C2 | D D C2 | C4;C,2 F,2 | E,2 C,2 | D, E, C,2 | C,4
+S19;4;C D E2 | D E D2 | C D C2 | C4;C, F, E,2 | D, G, F,2 | E, D, C,2 | C,4
+S20;4;C2 D E | D D C2 | D2 E D | C4;C,2 F, E, | D, E, C,2 | F,2 E, D, | C,4
+W01;4;C G F2 | E2 D C | D G F2 | E D C2;C, C, D,2 | C,2 D, C, | D, E, D,2 | C, D, C,2
+W02;4;G2 C D | E2 F E | C2 G F | E D C2;C,2 D, C, | C,2 D, C, | C,2 C, D, | C, D, C,2
+W03;4;C G E2 | F2 E D | C2 G F | E D C2;C, C, C,2 | D,2 E, D, | C,2 C, D, | C, D, C,2
+W04;4;C C D2 | C2 D C | D E D2 | C D C2;C, G, F,2 | E,2 D, C, | D, G, F,2 | E, D, C,2
+W05;4;C C C2 | D2 E D | C2 C D | C D C2;C, G, E,2 | F,2 E, D, | C,2 G, F, | E, D, C,2
+W06;4;C2 G2 | F E C2 | C4 | C4;C,2 C,2 | D, D, C,2 | C,4 | C,4
+W07;4;C4 | C G F2 | E2 C2 | C4;C,4 | C, C, D,2 | C,2 C,2 | C,4
+W08;4;C2 G F | E2 C2 | D E C2 | C4;C,2 C, D, | C,2 C,2 | D, D, C,2 | C,4
+W09;4;C2 C2 | D D C2 | C4 | C4;C,2 G,2 | F, E, C,2 | C,4 | C,4
+W10;4;C2 C D | C2 C2 | D D C2 | C4;C,2 G, F, | E,2 C,2 | D, E, C,2 | C,4

@@ -1,0 +1,21 @@
+%abc-2.1
+X:1279
+T:g2-n50-079 Mi trầm mở ba lời
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=eighth; lead=LH; bucket=n50; notes=54; RH=22; LH=32
+% role=A; duration60=48s; related_pattern=dfca0f9c68170c88
+% authored_passages=B14 B18 B11
+% source=buildscripts/pianist/compositions/g2/n50.txt:80
+[V:RH] z4 | C D E D | z4 | D C C2 |
+[V:LH] E,/2F,/2 G, F, E, | z4 | D, E, D,/2C,/2 C, | z4 |
+[V:RH] z4 | C D E D | z4 | D E D C |
+[V:LH] C,/2D,/2 E,/2F,/2 E, D, | z4 | C,/2D,/2 E, D,/2C,/2 C, | z4 |
+[V:RH] z4 | C D E D | z4 | D C C2 |]
+[V:LH] C,/2D,/2 E, D, C, | z4 | C, D, E,/2D,/2 C, | z4 |]

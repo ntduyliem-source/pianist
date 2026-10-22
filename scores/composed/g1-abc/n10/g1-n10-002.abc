@@ -1,0 +1,17 @@
+%abc-2.1
+X:202
+T:g1-n10-002 Chiếc cầu nhỏ
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n10; notes=10; RH=7; LH=3
+% role=R; family=arch-three; form=authored; duration60=9s
+% related_pattern=0876a06effc44e18
+% source=buildscripts/pianist/compositions/g1/n10.txt:2
+[V:RH] C D E | F E D | C3 |]
+[V:LH] C,3 | C,3 | C,3 |]

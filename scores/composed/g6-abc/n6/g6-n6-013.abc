@@ -1,0 +1,17 @@
+%abc-2.1
+X:3613
+T:g6-n6-013 Mi đón Sol sau nhảy
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G6; profile=m6-down; lead=RH; bucket=n6; notes=8; RH=6; LH=2
+% duration60=8s; related_pattern=9b9cd3a47450e943
+% authored_passages=S13 CR1
+% source=buildscripts/pianist/compositions/g6/studies.txt:14
+[V:RH] B c E G | G2 E2 |]
+[V:LH] C,4 | C,4 |]

@@ -1,0 +1,21 @@
+%abc-2.1
+X:2620
+T:g4-n50-020 Nốt giữ và hai câu thưa
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=lower; lead=RH; bucket=n50; notes=43; RH=31; LH=12
+% role=R; duration60=48s; related_pattern=9c4e4e9343a77af3
+% authored_passages=L05 L09 L15
+% source=buildscripts/pianist/compositions/g4/n50.txt:21
+[V:RH] A,2 C B, | A,2 C D | E D C2 | A,2 A,2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] A, B, C2 | D A, B, C | D E C2 | B, C A,2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] A,4 | A,2 E2 | D C A,2 | A,4 |]
+[V:LH] C,4 | C,4 | C,4 | C,4 |]

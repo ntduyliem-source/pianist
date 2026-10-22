@@ -1,0 +1,17 @@
+%abc-2.1
+X:231
+T:g1-n10-031 Câu chuyện dưới khuông
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n10; notes=10; RH=3; LH=7
+% role=L; family=bass-arch; form=authored; duration60=8s
+% related_pattern=0e2bb46970840099
+% source=buildscripts/pianist/compositions/g1/n10.txt:3
+[V:RH] C4 | C2 C2 |]
+[V:LH] C, D, E, F, | E, D, C,2 |]

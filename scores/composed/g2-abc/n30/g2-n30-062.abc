@@ -1,0 +1,19 @@
+%abc-2.1
+X:1162
+T:g2-n30-062 Trầm gọi đổi câu đáp
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=third; lead=LH; bucket=n30; notes=30; RH=15; LH=15
+% role=A; duration60=32s; related_pattern=0fb221d69b2d04de
+% authored_passages=Q06 Q08
+% source=buildscripts/pianist/compositions/g2/n30.txt:63
+[V:RH] z4 | C D E D | z4 | D C C2 |
+[V:LH] C, E, D, C, | z4 | D, F, E, C, | z4 |
+[V:RH] z4 | C D E D | z4 | D C D C |]
+[V:LH] E, G, F, E, | z4 | D, E, C,2 | z4 |]

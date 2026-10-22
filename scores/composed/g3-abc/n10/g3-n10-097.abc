@@ -1,0 +1,17 @@
+%abc-2.1
+X:1697
+T:g3-n10-097 Sol về Đô giữ chung
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fifth; lead=RH; bucket=n10; notes=10; RH=5; LH=5
+% role=S; duration60=6s; related_pattern=7c8c3b0ec6dff22e
+% authored_passages=inline-n10-097
+% source=buildscripts/pianist/compositions/g3/n10.txt:98
+[V:RH] G C D | E C2 |]
+[V:LH] E, D, C, | D, C,2 |]

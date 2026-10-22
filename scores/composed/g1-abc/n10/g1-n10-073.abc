@@ -1,0 +1,19 @@
+%abc-2.1
+X:273
+T:g1-n10-073 Năm lời về nhà
+C:Nhạc do trợ lý AI biên soạn
+M:2/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n10; notes=9; RH=5; LH=4
+% role=A; family=five-turns-home; form=authored; duration60=10s
+% related_pattern=7eeaf185c2bd006e
+% source=buildscripts/pianist/compositions/g1/n10.txt:74
+[V:RH] E F | z2 | E D | z2 |
+[V:LH] z2 | E, D, | z2 | C, C, |
+[V:RH] C2 |]
+[V:LH] z2 |]

@@ -1,0 +1,19 @@
+%abc-2.1
+X:1122
+T:g2-n30-022 Nhắc rồi đổi điểm tựa
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=eighth; lead=RH; bucket=n30; notes=35; RH=27; LH=8
+% role=R; duration60=32s; related_pattern=9c64c311357de57b
+% authored_passages=E07 E13
+% source=buildscripts/pianist/compositions/g2/n30.txt:23
+[V:RH] C/2D/2 E E2 | D C C2 | C D/2E/2 D C | C4 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C2 C/2D/2 E | D/2E/2 F F2 | E D C2 | D C C2 |]
+[V:LH] C,4 | D,4 | C,4 | C,4 |]

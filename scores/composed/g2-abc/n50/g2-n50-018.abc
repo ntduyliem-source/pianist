@@ -1,0 +1,21 @@
+%abc-2.1
+X:1218
+T:g2-n50-018 Hai nền dưới phách đôi
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=eighth; lead=RH; bucket=n50; notes=55; RH=43; LH=12
+% role=R; duration60=48s; related_pattern=1a4cbeaf6da7396a
+% authored_passages=E03 E13 E06
+% source=buildscripts/pianist/compositions/g2/n50.txt:19
+[V:RH] C/2D/2 E D C | D2 D/2E/2 F | E D C D | E/2D/2 C C2 |
+[V:LH] C,4 | D,4 | C,4 | C,4 |
+[V:RH] C2 C/2D/2 E | D/2E/2 F F2 | E D C2 | D C C2 |
+[V:LH] C,4 | D,4 | C,4 | C,4 |
+[V:RH] C2 C/2D/2 E | D D E2 | D/2C/2 C C2 | C4 |]
+[V:LH] C,4 | C,4 | C,4 | C,4 |]

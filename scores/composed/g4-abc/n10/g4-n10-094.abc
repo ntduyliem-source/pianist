@@ -1,0 +1,17 @@
+%abc-2.1
+X:2394
+T:g4-n10-094 Bass lên giữ cuối chung
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=upper; lead=LH; bucket=n10; notes=10; RH=5; LH=5
+% role=S; duration60=6s; related_pattern=04f65553460d9971
+% authored_passages=inline-n10-094
+% source=buildscripts/pianist/compositions/g4/n10.txt:95
+[V:RH] G G G | F G2 |]
+[V:LH] G, A, B, | C G,2 |]

@@ -1,0 +1,19 @@
+%abc-2.1
+X:1120
+T:g2-n30-020 Hai lời ngắn qua phách
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=eighth; lead=RH; bucket=n30; notes=30; RH=22; LH=8
+% role=R; duration60=32s; related_pattern=a48e717f49466b9b
+% authored_passages=E05 E20
+% source=buildscripts/pianist/compositions/g2/n30.txt:21
+[V:RH] C/2D/2 E E2 | D C C2 | C/2D/2 E D C | D C C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C4 | C2 C/2D/2 D | C4 | C4 |]
+[V:LH] C,4 | C,4 | C,4 | C,4 |]

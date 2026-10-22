@@ -1,0 +1,17 @@
+%abc-2.1
+X:399
+T:g1-n20-099 Ba câu hai đường
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n20; notes=20; RH=10; LH=10
+% role=S; family=sixths-three; form=authored; duration60=12s
+% related_pattern=b2b1cf58592e89d8
+% source=buildscripts/pianist/compositions/g1/n20.txt:99
+[V:RH] C D E2 | D C D E | D C C2 |]
+[V:LH] E, F, G,2 | F, E, F, G, | F, E, E,2 |]

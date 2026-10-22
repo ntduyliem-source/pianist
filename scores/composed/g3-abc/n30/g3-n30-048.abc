@@ -1,0 +1,19 @@
+%abc-2.1
+X:1848
+T:g3-n30-048 Nhảy trầm xa khép thưa
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fifth; lead=LH; bucket=n30; notes=28; RH=8; LH=20
+% role=L; duration60=32s; related_pattern=0259917d7a310e17
+% authored_passages=B03 B13
+% source=buildscripts/pianist/compositions/g3/n30.txt:49
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C,2 G, F, | E, D, C,2 | D, E, F, E, | D, C, C,2 |
+[V:RH] C4 | C4 | C4 | C4 |]
+[V:LH] C,2 G, F, | E,2 C,2 | C,4 | C,4 |]

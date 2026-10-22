@@ -1,0 +1,23 @@
+%abc-2.1
+X:687
+T:g1-n100-087 Hai tay bốn câu hỏi
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n100; notes=106; RH=53; LH=53
+% role=S; family=octave-four-questions; form=authored; duration60=64s
+% related_pattern=7489b966a59fb7e6
+% source=buildscripts/pianist/compositions/g1/n100.txt:87
+[V:RH] C2 D E | F2 E D | E F E D | C4 |
+[V:LH] C,2 D, E, | F,2 E, D, | E, F, E, D, | C,4 |
+[V:RH] C C D E | F E F G | F E D C | C2 C2 |
+[V:LH] C, C, D, E, | F, E, F, G, | F, E, D, C, | C,2 C,2 |
+[V:RH] C D E F | G F E D | C D E D | C4 |
+[V:LH] C, D, E, F, | G, F, E, D, | C, D, E, D, | C,4 |
+[V:RH] C D D E | F G F E | D C D E | D C C2 |]
+[V:LH] C, D, D, E, | F, G, F, E, | D, C, D, E, | D, C, C,2 |]

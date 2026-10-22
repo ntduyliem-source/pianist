@@ -13,6 +13,7 @@ import sys
 import zipfile
 from score_format_release import verify_formats
 from library_release import verify_library
+from web_bank_release import verify_web_bank
 
 ROOT = Path(__file__).resolve().parents[2]
 
@@ -69,8 +70,14 @@ def main():
         'title': 'Piano khởi động', 'filename': 'Piano khởi động.mxl', 'url': 'fixtures/piano.mxl'
     }]}, ensure_ascii=False, indent=2), encoding='utf-8')
     if release.get('exerciseBank'):
-        subprocess.run([sys.executable, str(ROOT / 'buildscripts/pianist/web-reading-bank.py'), '--public',
-                        '--output', str(site / 'curriculum')], cwd=ROOT, check=True)
+        bank = verify_web_bank(lambda name: (source / name).read_bytes(), public=True)
+        pointer = json.loads((source / 'curriculum/manifest.json').read_text(encoding='utf-8'))
+        index = json.loads((source / 'curriculum' / pointer['index']['path']).read_text(encoding='utf-8'))
+        if index.get('kind') != 'composed-abc-v1':
+            raise SystemExit('Package the composed G1–G8 bank before staging this application.')
+        for name in bank['paths']:
+            target = site / name; target.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(source / name, target)
     subprocess.run([sys.executable, str(ROOT / 'buildscripts/pianist/package-web.py'), '--directory', str(site)], cwd=ROOT, check=True)
     public = verify(site)
     source_zip = output / 'source' / f'pianist-source-{commit[:12]}.zip'; source_zip.parent.mkdir()

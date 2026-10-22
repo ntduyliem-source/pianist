@@ -1,0 +1,19 @@
+%abc-2.1
+X:1831
+T:g3-n30-031 Qua Fa trầm rồi lắng
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fourth; lead=LH; bucket=n30; notes=32; RH=8; LH=24
+% role=L; duration60=32s; related_pattern=5a5f76836f21646d
+% authored_passages=G01 G16
+% source=buildscripts/pianist/compositions/g3/n30.txt:32
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C, F, E, D, | C, D, F, E, | D, G, F, E, | D, E, C,2 |
+[V:RH] C4 | C4 | C4 | C4 |]
+[V:LH] C,2 F,2 | E, D, C,2 | F,2 E, D, | C,4 |]

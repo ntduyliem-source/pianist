@@ -1,0 +1,17 @@
+%abc-2.1
+X:2269
+T:g4-n6-069 Bốn tiếng bass hai đáp
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=upper; lead=LH; bucket=n6; notes=6; RH=2; LH=4
+% role=A; duration60=8s; related_pattern=2c35897e10852668
+% authored_passages=inline-n6-069
+% source=buildscripts/pianist/compositions/g4/n6.txt:70
+[V:RH] z4 | G2 G2 |]
+[V:LH] G, A, B, C | z4 |]

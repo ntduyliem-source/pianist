@@ -1,0 +1,17 @@
+%abc-2.1
+X:1692
+T:g3-n10-092 Fa thấp về Đô chung
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fourth; lead=LH; bucket=n10; notes=12; RH=6; LH=6
+% role=S; duration60=6s; related_pattern=01359816d853cf7a
+% authored_passages=inline-n10-092
+% source=buildscripts/pianist/compositions/g3/n10.txt:93
+[V:RH] D C C | D E D |]
+[V:LH] F, C, D, | E, F, E, |]

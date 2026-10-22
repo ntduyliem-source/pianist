@@ -1,0 +1,25 @@
+# W: RH C4–C5; X: LH C3–C4. Octave range is reached through smaller intervals.
+W01;4;C G c B | A G E C | D E G A | G E C2;C,4 | C,4 | C,4 | C,4
+W02;4;c G C D | E G A c | B A G E | D E C2;C,4 | C,4 | C,4 | C,4
+W03;4;C2 G c | B A G2 | E F A G | E D C2;C,4 | C,4 | C,4 | C,4
+W04;4;C F A c | B G E C | D F A G | E D C2;C,4 | C,4 | C,4 | C,4
+W05;4;C G c2 | G2 E D | C E G A | G E C2;C,4 | C,4 | C,4 | C,4
+W06;4;C G c z | B A G E | D F A G | E D C2;C,4 | C,4 | C,4 | C,4
+W07;4;c2 G C | E F G A | c B A G | E D C2;C,4 | C,4 | C,4 | C,4
+W08;4;C G c B | A G E C | E G c G | E D C2;C,2 C,2 | C,2 C,2 | C,2 C,2 | C,2 C,2
+W09;4;C2 G c | B G E2 | C4 | C4;C,4 | C,4 | C,4 | C,4
+W10;4;C4 | C G c G | E2 C2 | C4;C,4 | C,4 | C,4 | C,4
+W11;4;C2 G c | G2 C2 | C4 | C4;C,4 | C,4 | C,4 | C,4
+W12;4;C4 | C G c2 | G2 C2 | C4;C,4 | C,4 | C,4 | C,4
+X01;4;E4 | E4 | E4 | E4;C, G, C B, | A, G, E, C, | D, E, G, A, | G, E, C,2
+X02;4;E4 | E4 | E4 | E4;C G, C, D, | E, G, A, C | B, A, G, E, | D, E, C,2
+X03;4;E4 | E4 | E4 | E4;C,2 G, C | B, A, G,2 | E, F, A, G, | E, D, C,2
+X04;4;E4 | E4 | E4 | E4;C, F, A, C | B, G, E, C, | D, F, A, G, | E, D, C,2
+X05;4;E4 | E4 | E4 | E4;C, G, C2 | G,2 E, D, | C, E, G, A, | G, E, C,2
+X06;4;E4 | E4 | E4 | E4;C, G, C z | B, A, G, E, | D, F, A, G, | E, D, C,2
+X07;4;E4 | E4 | E4 | E4;C2 G, C, | E, F, G, A, | C B, A, G, | E, D, C,2
+X08;4;E2 E2 | E2 E2 | E2 E2 | E2 E2;C, G, C B, | A, G, E, C, | E, G, C G, | E, D, C,2
+X09;4;E4 | E4 | E4 | E4;C,2 G, C | B, G, E,2 | C,4 | C,4
+X10;4;E4 | E4 | E4 | E4;C,4 | C, G, C G, | E,2 C,2 | C,4
+X11;4;E4 | E4 | E4 | E4;C,2 G, C | G,2 C,2 | C,4 | C,4
+X12;4;E4 | E4 | E4 | E4;C,4 | C, G, C2 | G,2 C,2 | C,4

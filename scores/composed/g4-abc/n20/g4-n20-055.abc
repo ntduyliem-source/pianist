@@ -1,0 +1,17 @@
+%abc-2.1
+X:2455
+T:g4-n20-055 Bốn ô bass qua tám
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=span; lead=LH; bucket=n20; notes=19; RH=4; LH=15
+% role=L; duration60=16s; related_pattern=24f0af147549f6ac
+% authored_passages=X01
+% source=buildscripts/pianist/compositions/g4/n20.txt:56
+[V:RH] E4 | E4 | E4 | E4 |]
+[V:LH] C, G, C B, | A, G, E, C, | D, E, G, A, | G, E, C,2 |]

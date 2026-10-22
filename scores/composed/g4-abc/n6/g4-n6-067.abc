@@ -1,0 +1,17 @@
+%abc-2.1
+X:2267
+T:g4-n6-067 Si bass gọi ba tiếng
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=upper; lead=LH; bucket=n6; notes=6; RH=3; LH=3
+% role=A; duration60=6s; related_pattern=04e4da8762fc6b6c
+% authored_passages=inline-n6-067
+% source=buildscripts/pianist/compositions/g4/n6.txt:68
+[V:RH] z3 | E F G |]
+[V:LH] B, C D | z3 |]

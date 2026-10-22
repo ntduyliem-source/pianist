@@ -1,0 +1,25 @@
+%abc-2.1
+X:1981
+T:g3-n50-081 Ba chuyện rải ba phách
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=arpeggio; lead=RH; bucket=n50; notes=47; RH=26; LH=21
+% role=A; duration60=54s; related_pattern=5236138799ceabfb
+% authored_passages=H11 H13 H15
+% source=buildscripts/pianist/compositions/g3/n50.txt:82
+[V:RH] C G E | z3 | G E C | z3 |
+[V:LH] z3 | C,2 D, | z3 | E,2 D, |
+[V:RH] E G C | z3 | G C E | z3 |
+[V:LH] z3 | C,2 C, | z3 | C, D, E, |
+[V:RH] G E C | z3 | E C2 | z3 |
+[V:LH] z3 | D, C, D, | z3 | E, D, C, |
+[V:RH] E C G | z3 | E G C | z3 |
+[V:LH] z3 | C,2 D, | z3 | E,2 D, |
+[V:RH] G E C | z3 |]
+[V:LH] z3 | C,2 C, |]

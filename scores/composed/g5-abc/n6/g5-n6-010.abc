@@ -1,0 +1,17 @@
+%abc-2.1
+X:2910
+T:g5-n6-010 Mi Rê đổi lượt ngắn
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G5; profile=offset; lead=RH; bucket=n6; notes=7; RH=4; LH=3
+% duration60=8s; related_pattern=983d37a9a38d9671
+% authored_passages=O10 CR3
+% source=buildscripts/pianist/compositions/g5/studies.txt:11
+[V:RH] E2 D z | D2 C2 |]
+[V:LH] z E, z D, | G,4 |]

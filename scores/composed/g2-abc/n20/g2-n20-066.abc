@@ -1,0 +1,17 @@
+%abc-2.1
+X:1066
+T:g2-n20-066 Cặp đôi hỏi bước đều đáp
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=eighth; lead=RH; bucket=n20; notes=17; RH=10; LH=7
+% role=A; duration60=16s; related_pattern=670f4b0b1c971da8
+% authored_passages=B01
+% source=buildscripts/pianist/compositions/g2/n20.txt:67
+[V:RH] C/2D/2 E D C | z4 | C D E/2D/2 C | z4 |]
+[V:LH] z4 | C, D, E, D, | z4 | D, C, C,2 |]

@@ -1,0 +1,19 @@
+%abc-2.1
+X:1837
+T:g3-n30-037 Trầm nhắc đầu giữ cuối
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fourth; lead=LH; bucket=n30; notes=36; RH=8; LH=28
+% role=L; duration60=32s; related_pattern=c5de614206635bec
+% authored_passages=G07 G09
+% source=buildscripts/pianist/compositions/g3/n30.txt:38
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C, C, F, E, | D, G, F, E, | F, C, D, E, | D, C, C,2 |
+[V:RH] C4 | C4 | C4 | C4 |]
+[V:LH] C, F, E,2 | F, C, D, E, | D, E, F,2 | E, D, C,2 |]

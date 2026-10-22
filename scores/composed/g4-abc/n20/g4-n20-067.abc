@@ -1,0 +1,17 @@
+%abc-2.1
+X:2467
+T:g4-n20-067 Si bass cao đổi đáp
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=upper; lead=LH; bucket=n20; notes=16; RH=8; LH=8
+% role=A; duration60=16s; related_pattern=034ef394a13a6dbd
+% authored_passages=Q07
+% source=buildscripts/pianist/compositions/g4/n20.txt:68
+[V:RH] z4 | G F E F | z4 | F E F G |]
+[V:LH] B, C D C | z4 | B, A, B, G, | z4 |]

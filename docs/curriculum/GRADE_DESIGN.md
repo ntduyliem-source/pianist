@@ -1,5 +1,7 @@
 # Grade cho kho bài piano sinh sẵn
 
+> **Thiết kế grade mới:** xem [GRAND_STAFF_BANK_PLAN.md](GRAND_STAFF_BANK_PLAN.md), ngày 21/10/2026. Grade mới đánh giá cả đoạn hai tay; bỏ điều kiện chỉ lấy một dòng/tay và khóa tay theo bài tập. Các nguồn nghiên cứu và định nghĩa R0–R7 bên dưới vẫn là tài liệu tham chiếu; profile, điều kiện tìm ngón và trạng thái triển khai cũ không tự áp dụng cho kho mới.
+
 **Phạm vi đang chạy đã đổi theo yêu cầu mới:** [kế hoạch kho](GRADED_BANK_PLAN.md) và [reading-bank.v1.json](../../scores/curriculum/reading-bank.v1.json) quy định 300 bài cho **mỗi grade × độ dài**, xuất/kiểm MXL ngay theo từng nguồn và bỏ điều kiện tìm ngón/BPM mô hình. Các yêu cầu chứng nhận đường tay dưới đây mô tả thiết kế cũ, không còn là cửa chặn của kho đọc nhạc. Các sửa đổi cụ thể G3/G4/G8, mode chưa ghi và biên heuristic được ghi đầy đủ trong kế hoạch mới; không coi việc bỏ chứng nhận là đã chứng nhận.
 
 Cập nhật **21/10/2026, v2**. Thiết kế này dùng kho bài hoàn chỉnh được chuẩn bị/kiểm offline. Web chọn bài đã duyệt theo grade, tay, nhóm độ dài và mode; không tạo nốt mới trong phiên. [Kế hoạch Q](IMPLEMENTATION_PLAN.md) và [quy tắc xây kho](GENERATION_RULES.md) là hai tài liệu đi cùng.

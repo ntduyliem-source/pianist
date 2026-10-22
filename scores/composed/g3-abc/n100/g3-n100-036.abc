@@ -1,0 +1,25 @@
+%abc-2.1
+X:2036
+T:g3-n100-036 Trầm nghỉ theo nền cao Rê
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fourth; lead=LH; bucket=n100; notes=86; RH=20; LH=66
+% role=L; duration60=80s; related_pattern=a34a8305c30b431f
+% authored_passages=G06 G07 G13 G05 G11
+% source=buildscripts/pianist/compositions/g3/n100.txt:37
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C, F, z E, | D, G, F, E, | D, E, F, C, | D, E, C,2 |
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] C, C, F, E, | D, G, F, E, | F, C, D, E, | D, C, C,2 |
+[V:RH] D4 | C4 | C4 | C4 |
+[V:LH] D,2 G, F, | E, C, F, E, | D, F, E, C, | D, E, C,2 |
+[V:RH] C4 | D4 | C4 | C4 |
+[V:LH] C,2 F, E, | D,2 G, F, | E, D, C,2 | C,2 C,2 |
+[V:RH] C4 | D4 | C4 | C4 |]
+[V:LH] C,2 F, E, | F,2 E, D, | C, F, E, D, | C,2 C,2 |]

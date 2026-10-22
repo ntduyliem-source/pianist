@@ -1,0 +1,19 @@
+%abc-2.1
+X:2513
+T:g4-n30-013 Giữ Sol gọi Đô cao
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=upper; lead=RH; bucket=n30; notes=31; RH=23; LH=8
+% role=R; duration60=24s; related_pattern=60d7b62c4ee14ce8
+% authored_passages=U23 U24
+% source=buildscripts/pianist/compositions/g4/n30.txt:14
+[V:RH] G2 A | B c d | c B A | B A G |
+[V:LH] G,3 | G,3 | G,3 | G,3 |
+[V:RH] G c B | A G B | d c B | A G G |]
+[V:LH] G,3 | G,3 | G,3 | G,3 |]

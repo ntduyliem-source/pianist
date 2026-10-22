@@ -1,0 +1,27 @@
+%abc-2.1
+X:673
+T:g1-n100-073 Mười hai vòng trầm mở
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n100; notes=70; RH=35; LH=35
+% role=A; family=left-twelve-turns; form=authored; duration60=72s
+% related_pattern=17c1cc50985dabac
+% source=buildscripts/pianist/compositions/g1/n100.txt:74
+[V:RH] z3 | C D C | z3 | D E D |
+[V:LH] C, D, E, | z3 | F, E, D, | z3 |
+[V:RH] z3 | E F E | z3 | D C D |
+[V:LH] C, D, E, | z3 | D, C, D, | z3 |
+[V:RH] z3 | C C D | z3 | E F E |
+[V:LH] C, D, C, | z3 | D, E, F, | z3 |
+[V:RH] z3 | D E D | z3 | C D E |
+[V:LH] E, D, C, | z3 | C, C, D, | z3 |
+[V:RH] z3 | F E D | z3 | C D E |
+[V:LH] E, F, E, | z3 | D, C, D, | z3 |
+[V:RH] z3 | D E D | z3 | C2 C |]
+[V:LH] E, D, C, | z3 | C,2 C, | z3 |]

@@ -1,0 +1,19 @@
+%abc-2.1
+X:2549
+T:g4-n30-049 Mi trầm giữ La thấp
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=lower; lead=LH; bucket=n30; notes=31; RH=8; LH=23
+% role=L; duration60=32s; related_pattern=577874a71d8fb67a
+% authored_passages=M04 M14
+% source=buildscripts/pianist/compositions/g4/n30.txt:50
+[V:RH] C4 | C4 | C4 | C4 |
+[V:LH] E, B,, C, D, | C, A,, B,, C, | D, E, D, C, | B,, C, A,,2 |
+[V:RH] C4 | C4 | C4 | C4 |]
+[V:LH] A,, C, B,, A,, | C,2 A,,2 | A,,4 | A,,4 |]

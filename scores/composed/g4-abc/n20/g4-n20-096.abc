@@ -1,0 +1,17 @@
+%abc-2.1
+X:2496
+T:g4-n20-096 Vùng thấp trên nhịp chung
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=lower; lead=RH; bucket=n20; notes=24; RH=12; LH=12
+% role=S; duration60=16s; related_pattern=139fca8fb3df386f
+% authored_passages=Y01
+% source=buildscripts/pianist/compositions/g4/n20.txt:97
+[V:RH] A, B, C2 | D C A,2 | B, C E2 | D C A,2 |]
+[V:LH] C, C, C,2 | D, C, C,2 | C, D, E,2 | D, C, C,2 |]

@@ -1,0 +1,17 @@
+%abc-2.1
+X:951
+T:g2-n10-051 Hai nhịp trầm chia đều
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=eighth; lead=LH; bucket=n10; notes=13; RH=3; LH=10
+% role=L; duration60=8s; related_pattern=6ef50b9d657fe26f
+% authored_passages=inline-n10-051
+% source=buildscripts/pianist/compositions/g2/n10.txt:52
+[V:RH] C4 | C2 C2 |]
+[V:LH] C,/2D,/2 E, D, C, | C,/2D,/2 E, D, C, |]

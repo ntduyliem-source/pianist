@@ -1,0 +1,21 @@
+%abc-2.1
+X:1204
+T:g2-n50-004 Nhắc câu đổi nền
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=third; lead=RH; bucket=n50; notes=60; RH=44; LH=16
+% role=R; duration60=48s; related_pattern=7e30b7bf968c7198
+% authored_passages=T04 T11 T14
+% source=buildscripts/pianist/compositions/g2/n50.txt:5
+[V:RH] C C E D | E F D C | D E G F | E D E C |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C2 E D | F E D C | E G F E | D C C2 |
+[V:LH] C,2 C,2 | C,4 | C,2 C,2 | C,4 |
+[V:RH] C E D C | E2 G F | E D F E | D C C2 |]
+[V:LH] C,4 | C,2 C,2 | C,4 | C,2 C,2 |]

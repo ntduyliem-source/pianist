@@ -1,0 +1,25 @@
+%abc-2.1
+X:1319
+T:g2-n100-019 Đi nhẹ nghe phách tới cuối
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=eighth; lead=RH; bucket=n100; notes=94; RH=74; LH=20
+% role=R; duration60=80s; related_pattern=341f46818661dd1a
+% authored_passages=E04 E12 E08 E11 E15
+% source=buildscripts/pianist/compositions/g2/n100.txt:20
+[V:RH] C2 C/2D/2 E | F/2E/2 D C2 | D E F E | D/2C/2 C C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C D/2E/2 F E | D C/2D/2 E D | C2 D E | F E D/2C/2 C |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C4 | C/2D/2 E D C | D/2E/2 D C2 | C D C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C/2D/2 E z D | E/2F/2 G F2 | E2 D C | D C C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C2 C/2D/2 E | F E D C | C2 D/2C/2 C | C4 |]
+[V:LH] C,4 | C,4 | C,4 | C,4 |]

@@ -1,0 +1,21 @@
+%abc-2.1
+X:591
+T:g1-n50-091 Mười ô hai tay chảy đều
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G1; bucket=n50; notes=66; RH=33; LH=33
+% role=S; family=octave-ten-flow; form=authored; duration60=40s
+% related_pattern=3bdffc238f26cfcb
+% source=buildscripts/pianist/compositions/g1/n50.txt:91
+[V:RH] C D E2 | F E D C | C D E F | G2 F E |
+[V:LH] C, D, E,2 | F, E, D, C, | C, D, E, F, | G,2 F, E, |
+[V:RH] D E D C | C2 C2 | C C D E | F E D E |
+[V:LH] D, E, D, C, | C,2 C,2 | C, C, D, E, | F, E, D, E, |
+[V:RH] D C D C | C4 |]
+[V:LH] D, C, D, C, | C,4 |]

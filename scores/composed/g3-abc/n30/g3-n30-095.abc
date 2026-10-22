@@ -1,0 +1,19 @@
+%abc-2.1
+X:1895
+T:g3-n30-095 Giữ trầm nhắc nhịp chung
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fourth; lead=LH; bucket=n30; notes=38; RH=19; LH=19
+% role=S; duration60=24s; related_pattern=2a1715856e7897b3
+% authored_passages=S24 S22
+% source=buildscripts/pianist/compositions/g3/n30.txt:96
+[V:RH] C2 D | E D C | D E D | C3 |
+[V:LH] C,2 F, | E, D, C, | F, E, C, | C,3 |
+[V:RH] C D E | D D C | D E D | C3 |]
+[V:LH] C, F, E, | D, E, C, | F, E, D, | C,3 |]

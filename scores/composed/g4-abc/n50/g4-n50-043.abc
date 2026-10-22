@@ -1,0 +1,21 @@
+%abc-2.1
+X:2643
+T:g4-n50-043 Giữ Sol trầm nhắc cao
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=upper; lead=LH; bucket=n50; notes=46; RH=12; LH=34
+% role=L; duration60=36s; related_pattern=137e794714a99b07
+% authored_passages=V23 V22 V25
+% source=buildscripts/pianist/compositions/g4/n50.txt:44
+[V:RH] G3 | G3 | G3 | G3 |
+[V:LH] G,2 A, | B, C D | C B, A, | B, A, G, |
+[V:RH] G3 | G3 | G3 | G3 |
+[V:LH] B, D C | B, G, A, | B, A, G, | A, G, G, |
+[V:RH] G3 | G3 | G3 | G3 |]
+[V:LH] G, G, A, | B, A, G, | A, C B, | A, G,2 |]

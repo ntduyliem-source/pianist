@@ -1,0 +1,21 @@
+%abc-2.1
+X:1217
+T:g2-n50-017 Phách chia tới nốt thở
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=eighth; lead=RH; bucket=n50; notes=56; RH=44; LH=12
+% role=R; duration60=48s; related_pattern=2f7e12788ae241d2
+% authored_passages=E02 E04 E16
+% source=buildscripts/pianist/compositions/g2/n50.txt:18
+[V:RH] C D E/2F/2 G | F/2E/2 D C2 | C/2D/2 E F E | D E D/2C/2 C |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C2 C/2D/2 E | F/2E/2 D C2 | D E F E | D/2C/2 C C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C2 C/2D/2 E | D C C2 | C4 | C4 |]
+[V:LH] C,4 | C,4 | C,4 | C,4 |]

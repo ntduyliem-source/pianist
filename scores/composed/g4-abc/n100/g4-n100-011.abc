@@ -1,0 +1,25 @@
+%abc-2.1
+X:2711
+T:g4-n100-011 Năm vòng cao trong ba phách
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=upper; lead=RH; bucket=n100; notes=78; RH=58; LH=20
+% role=R; duration60=60s; related_pattern=b796a2109e013414
+% authored_passages=U21 U25 U24 U23 U21
+% source=buildscripts/pianist/compositions/g4/n100.txt:12
+[V:RH] G A B | c d c | B A B | A G G |
+[V:LH] G,3 | G,3 | G,3 | G,3 |
+[V:RH] G G A | B A G | A c B | A G2 |
+[V:LH] G,3 | G,3 | G,3 | G,3 |
+[V:RH] G c B | A G B | d c B | A G G |
+[V:LH] G,3 | G,3 | G,3 | G,3 |
+[V:RH] G2 A | B c d | c B A | B A G |
+[V:LH] G,3 | G,3 | G,3 | G,3 |
+[V:RH] G A B | c d c | B A B | A G G |]
+[V:LH] G,3 | G,3 | G,3 | G,3 |]

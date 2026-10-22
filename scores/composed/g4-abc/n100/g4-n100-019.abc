@@ -1,0 +1,25 @@
+%abc-2.1
+X:2719
+T:g4-n100-019 Mi ghé Si trong chuyến thấp
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=lower; lead=RH; bucket=n100; notes=83; RH=63; LH=20
+% role=R; duration60=80s; related_pattern=490f06f4d08a806d
+% authored_passages=L04 L06 L08 L05 L14
+% source=buildscripts/pianist/compositions/g4/n100.txt:20
+[V:RH] E B, C D | C A, B, C | D E D C | B, C A,2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] A, C z B, | C D E D | C B, C A, | B, C A,2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C A, D C | B, C D E | D B, C A, | B, A, A,2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] A,2 C B, | A,2 C D | E D C2 | A,2 A,2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] A, C B, A, | C2 A,2 | A,4 | A,4 |]
+[V:LH] C,4 | C,4 | C,4 | C,4 |]

@@ -1,0 +1,25 @@
+%abc-2.1
+X:2015
+T:g3-n100-015 Đô nhắc năm lời ba phách
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fourth; lead=RH; bucket=n100; notes=78; RH=58; LH=20
+% role=R; duration60=60s; related_pattern=00b4d21d8b25500a
+% authored_passages=F25 F23 F22 F24 F21
+% source=buildscripts/pianist/compositions/g3/n100.txt:16
+[V:RH] C C F | E D C | D G F | E C2 |
+[V:LH] C,3 | C,3 | C,3 | C,3 |
+[V:RH] C2 F | E D C | D G F | E D C |
+[V:LH] C,3 | C,3 | C,3 | C,3 |
+[V:RH] F C D | E F E | D G F | E D C |
+[V:LH] C,3 | C,3 | C,3 | C,3 |
+[V:RH] D G F | E C F | E D E | D C C |
+[V:LH] C,3 | C,3 | C,3 | C,3 |
+[V:RH] C F E | D G F | E D E | D C C |]
+[V:LH] C,3 | C,3 | C,3 | C,3 |]

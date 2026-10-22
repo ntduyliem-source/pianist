@@ -1,0 +1,19 @@
+%abc-2.1
+X:1125
+T:g2-n30-025 Nhiều cặp về nốt giữ
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=eighth; lead=RH; bucket=n30; notes=36; RH=28; LH=8
+% role=R; duration60=32s; related_pattern=5907cd4b9beb2e7b
+% authored_passages=E10 E18
+% source=buildscripts/pianist/compositions/g2/n30.txt:26
+[V:RH] C/2D/2 E/2F/2 G F | E D/2C/2 D E | F/2E/2 D C D | E D C2 |
+[V:LH] C,4 | C,4 | C,4 | C,4 |
+[V:RH] C4 | C/2D/2 E D C | C2 C2 | C4 |]
+[V:LH] C,4 | C,4 | C,4 | C,4 |]

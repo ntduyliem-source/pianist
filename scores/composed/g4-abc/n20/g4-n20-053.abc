@@ -1,0 +1,17 @@
+%abc-2.1
+X:2453
+T:g4-n20-053 Đô Mi Rê trầm nhịp ba
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G4; profile=lower; lead=LH; bucket=n20; notes=16; RH=4; LH=12
+% role=L; duration60=12s; related_pattern=03109437c8edcad7
+% authored_passages=M22
+% source=buildscripts/pianist/compositions/g4/n20.txt:54
+[V:RH] C3 | C3 | C3 | C3 |]
+[V:LH] C, E, D, | C, A,, B,, | C, B,, A,, | B,, A,, A,, |]

@@ -1,0 +1,17 @@
+%abc-2.1
+X:1414
+T:g3-n4-014 Bốn tiếng từ Rê
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G3; profile=fourth; lead=RH; bucket=n4; notes=5; RH=4; LH=1
+% role=R; duration60=4s; related_pattern=37bd98159a8929ef
+% authored_passages=inline-n4-014
+% source=buildscripts/pianist/compositions/g3/n4.txt:15
+[V:RH] D G E C |]
+[V:LH] C,4 |]

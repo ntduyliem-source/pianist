@@ -1,0 +1,17 @@
+%abc-2.1
+X:3636
+T:g6-n6-036 La trầm hạ Đô Rê
+C:Nhạc do trợ lý AI biên soạn
+M:4/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G6; profile=M6-down; lead=LH; bucket=n6; notes=8; RH=2; LH=6
+% duration60=8s; related_pattern=6f949795966d659e
+% authored_passages=S36 CL2
+% source=buildscripts/pianist/compositions/g6/studies.txt:37
+[V:RH] c4 | c4 |]
+[V:LH] G, A, C, D, | G,2 C,2 |]

@@ -1,0 +1,21 @@
+%abc-2.1
+X:1213
+T:g2-n50-013 Nốt dài và nốt nhắc
+C:Nhạc do trợ lý AI biên soạn
+M:3/4
+L:1/4
+Q:1/4=60
+%%score { RH | LH }
+V:RH clef=treble name="Piano"
+V:LH clef=bass
+K:C
+% grade=G2; profile=third; lead=RH; bucket=n50; notes=46; RH=34; LH=12
+% role=R; duration60=36s; related_pattern=8b8d7e6bf204d8a9
+% authored_passages=T23 T25 T22
+% source=buildscripts/pianist/compositions/g2/n50.txt:14
+[V:RH] C E D | C2 D | E G F | E D C |
+[V:LH] C,3 | C,3 | C,3 | C,3 |
+[V:RH] C C E | D E C | D F E | D C2 |
+[V:LH] C,3 | C,3 | C,3 | C,3 |
+[V:RH] E G F | E C D | E D C | D C C |]
+[V:LH] C,3 | C,3 | C,3 | C,3 |]
