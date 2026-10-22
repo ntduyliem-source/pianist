@@ -1,6 +1,6 @@
 {
-  "tag": "pianist-web-2026-10-22-piano-88",
-  "sha256": "7bed11dca27728df08d23d5f043d1e9fe628ac6f1ca10c78335941e7c4d9db0d",
-  "sourceCommit": "b62054787660bc79af44df9cd63cf51e09333d83",
-  "version": "c79614030b0484cd2b5c"
+  "tag": "pianist-web-2026-10-22-review-fixes",
+  "sha256": "d9d41584cb8fa4f3514fe02356755945f5893fb5dca0dfc947bbb06c61201787",
+  "sourceCommit": "3c77f2f4812bb2b915fde314384acacd1f6beec4",
+  "version": "577f1eeb77e3498ce5b0"
 }
