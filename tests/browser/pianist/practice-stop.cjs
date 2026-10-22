@@ -111,7 +111,10 @@ const hiddenOnly=process.argv.includes('--hidden-controls'),reportFile=path.join
     let timer;try{await Promise.race([request,new Promise((_,reject)=>{timer=setTimeout(()=>reject(Error('Pending playback did not request main native engine')),30000);})]);}finally{clearTimeout(timer);}
     assert(await top('Dừng nghe').isEnabled());await capture('grade-full-360-listen-pending');await top('Dừng nghe').click();
     await top('Nghe đoạn').waitFor();release();await page.unroute(engineUrl,hold);
-    await page.waitForFunction(()=>!!window.pianist?.getPracticePlayback,null,{timeout:150000});await idle();await page.waitForTimeout(1200);
+    // The diagnostics API appears before startAudioProcessing resolves. On a
+    // cold HTTPS load, wait for Workspace engineReady before timing a new run.
+    await page.waitForFunction(()=>!!window.pianist?.getPracticePlayback,null,{timeout:150000});
+    await page.waitForFunction(()=>document.querySelector('#save')?.disabled===false,null,{timeout:150000});await idle();await page.waitForTimeout(2000);
     assert.equal(await top('Tạm dừng nghe').count(),0);assert.equal(await page.locator('.note-marker.playback').count(),0);await silence('cancel pending preview');
     assert(await top('Bắt đầu tập').isEnabled());check('mobile full-sheet Stop cancels first native listening preparation; late engine completion cannot start audio');
 
