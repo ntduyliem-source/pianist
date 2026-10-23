@@ -1,6 +1,6 @@
 # Kiến trúc Pianist
 
-Bản đồ hiện trạng ngày 23/10/2026, cập nhật theo việc chia UI/CSS ở giai đoạn 2 của [kế hoạch refactor](../REFACTOR_PLAN.md). Hướng dẫn chạy ở [development.md](development.md), dữ liệu nhạc ở [content-pipeline.md](content-pipeline.md).
+Bản đồ hiện trạng ngày 23/10/2026, cập nhật theo các module của [kế hoạch refactor](../REFACTOR_PLAN.md). Trạng thái nghiệm thu mỗi giai đoạn nằm trong kế hoạch. Hướng dẫn chạy ở [development.md](development.md), dữ liệu nhạc ở [content-pipeline.md](content-pipeline.md).
 
 ## Các lớp đang có
 
@@ -41,13 +41,17 @@ Nguồn grade cố định → validator → ABC→MXL đã đối chiếu → m
 
 Các phiên bản thuật toán, symbol gốc và giấy phép ở [PROVENANCE.md](../../third_party/practice-sources/PROVENANCE.md). Engine ID trong `packages/practice-engine-v2/model.ts` quyết định khả năng replay/so sánh; không đổi chỉ để đổi tên file.
 
-## Chỗ ghép nối hiện cần tách
+## Quyền sở hữu và điểm ghép nối
 
 Entry `src/main.tsx` chỉ mount `app/App.tsx`. Shell/route/dialog ở `app/`; màn thư viện và chọn bài free play ở `features/library/`; thanh editor ở `features/editor/`; kết quả/lịch sử ở `features/results/`. `shared/ui/Icon.tsx` dùng chung biểu tượng. `practice/ui/` chứa các phần trình bày phản hồi, pedal, nghe mẫu và chọn A–B; chúng nhận dữ liệu/callback, không sở hữu Worker hoặc native engine.
 
-`workspace.ts` hiện giữ navigation, project/recovery, engine, MIDI và tham chiếu session. `PracticeScreen.tsx` vừa dựng UI vừa tạo/dừng session và nghe thử. `Exercises.tsx` vừa quản lý queue/renderer/prefetch, vừa dựng lựa chọn grade. Cả ba có thể kết thúc hoặc thay session.
+State/view types và factory state mới cho từng workspace nằm trong `application/workspace-state.ts`. `platform/engine-host.ts` sở hữu lần khởi động native dùng chung, chờ bộ tiếng sẵn sàng trước khi công bố bridge, metadata document và focus Qt. Service nhận callback có kiểu; chính sách revision/autosave, save/export và session thuộc lớp điều phối. Kiểu config mô tả hợp đồng glue hiện có, không thay runtime validation của native API. Tests của host kiểm lỗi/retry, thứ tự audio readiness, callback/revision và tránh giành focus khỏi dialog.
 
-Đây là lý do ưu tiên làm rõ quyền sở hữu vòng đời buổi tập. Mục tiêu là một coordinator nhận lệnh start/pause/resume/stop, còn UI và queue grade chỉ gọi API. `PracticeController`, `AudioClock`, native bridge và scorer vẫn giữ trách nhiệm hiện tại.
+`application/session-lifecycle.ts` là nơi tạo và sở hữu controller của lượt tập. `workspace.session` chỉ đọc; UI/queue grade dùng coordinator để tạo, thay callback kết quả và dọn đúng instance. Callback cũ không được công bố sau khi thay lượt; coordinator dọn và phát trạng thái khi startup thất bại. Kết quả đã chơi vẫn được lưu dù rời màn tập, nhưng việc chuyển sang Results phải kiểm lại chủ sở hữu sau khi lưu. Subscription vẽ sheet tách khỏi subscription trạng thái dùng cho navbar/grade; không còn `ws.patch({})` phát lại toàn bộ app mỗi frame. Calibration dùng coordinator riêng để giữ đường MIDI đổi cao độ về C4 hiện có, không đưa MIDI hai lần vào lượt tập chính.
+
+`application/practice-repository.ts` giữ cấu hình theo project, calibration theo thiết bị, danh sách thư viện/lịch sử và lưu kết quả. Các khóa IndexedDB, phạm vi ô nhịp, ưu tiên offset và lựa chọn giữ replay vẫn như trước. `application/grade-audio-loan.ts` giữ việc mượn engine để nghe grade, bản editor native được giữ cùng undo/redo và bản bytes dự phòng để tải khi lỗi; generation guard loại kết quả chờ âm thanh của bài cũ.
+
+`workspace.ts` còn là façade cho điều hướng, import/project/recovery/autosave và MIDI. `PracticeScreen.tsx` điều phối tương tác UI với coordinator và nghe thử; `Exercises.tsx` giữ queue/renderer/prefetch, lựa chọn grade và auto-next. Controller, AudioClock, native bridge và scorer không đổi thuật toán trong lần tách này. Những phần này vẫn là điểm ghép nối cần review khi thêm luồng mới; không tuyên bố workspace đã thành module nhỏ hay đã loại hết mọi coupling.
 
 `style.css` hiện là danh sách import theo đúng thứ tự cascade cũ. Rules của shell, thư viện, editor và kết quả nằm cạnh feature; base bàn phím 88 phím ở `practice/styles/piano.css`. Các lớp responsive/sửa đè dùng chung giữ trong `styles/`, CSS practice cũ còn ở `practice/styles/legacy-layout.css`. `practice-v2.css` vẫn là style màn sheet-first. Xem `src/styles/README.md` để biết các lớp phải giữ thứ tự; chưa xóa selector khi chưa có bằng chứng không dùng. Giá trị vị trí/zoom tính theo hình học tiếp tục dùng inline style.
 

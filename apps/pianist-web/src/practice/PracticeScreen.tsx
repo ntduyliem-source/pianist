@@ -8,7 +8,7 @@ import type {
 import { createTimeline } from '../../../../packages/practice-engine-v2/score-adapter';
 import { ManiaHitWindows } from '../../../../packages/practice-engine-v2/upstream/mania';
 import { workspace as ws } from '../workspace';
-import { PracticeController } from './controller-v2';
+import type { PracticeController } from './controller-v2';
 import { feedback } from './feedback-v2';
 import { Sheet } from './Sheet';
 import { PracticePiano } from './PracticePiano';
@@ -39,6 +39,7 @@ export interface ExercisePracticeContext {
   onSettings: (patch: Partial<PracticeSettings>) => void;
   onComplete: (result: AttemptResult) => Promise<void>;
   onStart?: () => void;
+  onSession?: (session: PracticeController) => void;
   onStop?: () => void;
   prepareListen: (signal: AbortSignal) => Promise<EngineBridge>;
 }
@@ -78,6 +79,8 @@ export function Practice({
   exercise?: ExercisePracticeContext;
 }) {
   useSyncExternalStore(ws.subscribe, ws.snapshot);
+  useSyncExternalStore(ws.sessions.subscribe, ws.sessions.snapshot);
+  const ownedSession = useRef<PracticeController | undefined>(undefined);
   const root = useRef<HTMLElement>(null),
     dialog = useRef<HTMLDialogElement>(null),
     preview = useRef<NativeAudition | null>(null),
@@ -277,10 +280,8 @@ export function Practice({
       preview.current?.stop();
       if (document.fullscreenElement === el) void document.exitFullscreen().catch(() => {});
       delete document.body.dataset.practiceFocus;
-      if (ws.session && ['ready', 'finished'].includes(ws.session.status)) {
-        ws.session.dispose();
-        ws.session = undefined;
-      }
+      const owned = ownedSession.current;
+      if (owned && ['ready', 'finished'].includes(owned.status)) ws.sessions.dispose(owned);
     };
   }, []);
   useEffect(() => {
@@ -324,30 +325,34 @@ export function Practice({
     setPanel(null);
     setSelecting(null);
     const next = createTimeline(snapshot, exercise ? c : (ws.state.config ?? c));
-    ws.session?.dispose();
-    const s = (ws.session = new PracticeController(
-      next,
-      snapshot.title,
-      async () => (await ws.ensureEngine(true)).api.Module.driver,
-    ));
-    s.onChange = () => {
-      refresh((n) => n + 1);
-      ws.patch({});
-    };
     const persist = (r: AttemptResult, show: boolean) => {
       if (simulationDelta !== undefined)
         r.simulation = {
           script: releaseReference ? 'native-release-pedal' : 'native-targets-onset',
           deltaMs: simulationDelta,
         };
-      return exercise ? exercise.onComplete(r) : ws.recordResult(r, keepReplay, show);
+      return exercise
+        ? exercise.onComplete(r)
+        : ws.recordResult(
+            r,
+            keepReplay,
+            show,
+            () => ws.session === s && ws.state.view === 'practice',
+          );
     };
     persistAttempt.current = persist;
-    s.onComplete = (r) => {
-      void persist(r, true);
-    };
+    const s = ws.sessions.create({
+      timeline: next,
+      title: snapshot.title,
+      nativeAudio: async () => (await ws.ensureEngine(true)).api.Module.driver,
+      onComplete: (r) => {
+        void persist(r, true);
+      },
+    });
+    ownedSession.current = s;
+    exercise?.onSession?.(s);
     setFollowToken((n) => n + 1);
-    await s.start(() => ws.midi.stateEvents());
+    await ws.sessions.start(s, () => ws.midi.stateEvents());
     if (simulationDelta !== undefined) simulateMidi(s, ws.midi, simulationDelta, releaseReference);
   };
   const lastAutoStart = useRef(0);
@@ -374,9 +379,9 @@ export function Practice({
     if (active) {
       let saving: Promise<void> | undefined;
       const persist = persistAttempt.current;
-      session!.onComplete = (r) => {
+      ws.sessions.setCompletion(session!, (r) => {
         saving = persist ? persist(r, false) : ws.recordResult(r, keepReplay, false);
-      };
+      });
       await session!.finish();
       if (session!.status !== 'finished')
         throw Error(session!.message || 'Chưa thể kết thúc lượt cũ.');
@@ -404,19 +409,16 @@ export function Practice({
       if (current && !['ready', 'finished'].includes(current.status)) {
         let saving: Promise<void> | undefined;
         const persist = persistAttempt.current;
-        current.onComplete = (r) => {
+        ws.sessions.setCompletion(current, (r) => {
           saving = persist ? persist(r, false) : ws.recordResult(r, keepReplay, false);
-        };
+        });
         await current.finish('aborted');
         if (current.status !== 'finished')
           throw Error(current.message || 'Chưa thể kết thúc lượt tập.');
         await saving;
       }
       if (current && current === ws.session && current.status === 'finished') {
-        current.dispose();
-        ws.session = undefined;
-        persistAttempt.current = null;
-        ws.patch({});
+        if (ws.sessions.dispose(current)) persistAttempt.current = null;
       }
     } finally {
       stoppingNow.current = false;

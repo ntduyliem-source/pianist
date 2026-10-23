@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState, useSyncExternalStore } from 'react';
 import { workspace as ws } from '../workspace';
 import { Practice } from '../practice/PracticeScreen';
+import type { PracticeController } from '../practice/controller-v2';
 import { ExerciseRenderer } from '../../../../packages/exercise-renderer';
 import type { ScoreSnapshot } from '../../../../packages/score-contracts';
 import { createTimeline } from '../../../../packages/practice-engine-v2/score-adapter';
@@ -40,6 +41,7 @@ const fallbackBuckets = LENGTHS.map((id, i) => ({
 }));
 type Ready = QueueItem & { bytes: Uint8Array; snapshot: ScoreSnapshot };
 type Run = {
+  session?: PracticeController;
   abort: AbortController;
   renderer: ExerciseRenderer;
   selector: ExerciseSelector;
@@ -74,6 +76,10 @@ function briefResult(signal: AbortSignal) {
 
 export function Exercises() {
   useSyncExternalStore(ws.subscribe, ws.snapshot);
+  const sessionStatus = useSyncExternalStore(
+    ws.sessions.subscribeStatus,
+    ws.sessions.statusSnapshot,
+  );
   const [bank, setBank] = useState<Bank>(),
     [selection, setSelection] = useState<Selection>(() => readSelection(DEFAULT_SELECTION)),
     [rows, setRows] = useState<Exercise[]>([]);
@@ -102,10 +108,7 @@ export function Exercises() {
     run.current = undefined;
     r?.abort.abort();
     r?.renderer.dispose();
-    if (r && ws.session) {
-      ws.session.dispose();
-      ws.session = undefined;
-    }
+    ws.sessions.dispose(r?.session);
     if (r) ws.midi.release();
   };
   const selectorView = () => {
@@ -163,7 +166,7 @@ export function Exercises() {
         if (alive.current && run.current === r && ws.midi.deviceId === deviceId)
           setError(message(e));
       });
-  }, [ws.midi.deviceId, config?.deviceId, ws.session?.status]);
+  }, [ws.midi.deviceId, config?.deviceId, sessionStatus]);
   useEffect(() => {
     void getData<{ id: string; selection: unknown }>('settings', 'selection-composed-v1')
       .then((s) => {
@@ -292,8 +295,8 @@ export function Exercises() {
     try {
       ensureCurrent(r);
       ws.bridge?.audition('reset');
-      ws.session?.dispose();
-      ws.session = undefined;
+      ws.sessions.dispose(r.session);
+      r.session = undefined;
       ws.midi.release();
       fill(r);
       const pending = r.queue[0];
@@ -379,7 +382,7 @@ export function Exercises() {
     r.manual = true;
     const attemptToken = r.attemptToken;
     try {
-      const closing = ws.session;
+      const closing = r.session;
       if (closing && !['ready', 'finished'].includes(closing.status)) {
         await closing.finish();
         ensureCurrent(r);
@@ -499,6 +502,9 @@ export function Exercises() {
           error,
           onSettings: updateSettings,
           onComplete: complete,
+          onSession: (session) => {
+            if (run.current === r) r.session = session;
+          },
           onStart: () => {
             if (run.current === r) {
               r.attemptToken++;

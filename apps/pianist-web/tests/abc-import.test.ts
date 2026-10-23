@@ -99,10 +99,10 @@ test('a newer import supersedes cancellable preparation; the old response cannot
 test('active practice locks all ABC entry points, including a session that starts during conversion',async t=>{
   let resolve!:(r:FormatResult)=>void;
   const {ws,calls}=setup(t,{run:()=>new Promise(r=>{resolve=r;})});
-  ws.session={status:'running'} as PracticeController;
+  ws.sessions.install({status:'running',onChange:()=>{},dispose:()=>{}} as PracticeController);
   await assert.rejects(ws.importFile(new File([abc],'active.abc'),true),/Kết thúc lượt/);
-  ws.session=undefined;const pending=ws.importFile(new File([abc],'race.abc'),true);while(!resolve)await tick();
-  ws.session={status:'paused'} as PracticeController;resolve(success);await assert.rejects(pending,/Kết thúc lượt/);assert.equal(calls.length,0);
+  ws.sessions.dispose(ws.session);const pending=ws.importFile(new File([abc],'race.abc'),true);while(!resolve)await tick();
+  ws.sessions.install({status:'paused',onChange:()=>{},dispose:()=>{}} as PracticeController);resolve(success);await assert.rejects(pending,/Kết thúc lượt/);assert.equal(calls.length,0);
 });
 test('native import rejection retains prior project, read-only practice mode and project count',async t=>{
   const {ws,api,bridge}=setup(t);api.prepareProject=()=>0;bridge.practiceActive=true;

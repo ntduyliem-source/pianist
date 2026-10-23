@@ -11,6 +11,12 @@ import {settingsFor} from '../../../packages/practice-engine-v2/score-adapter';
 import * as storage from '../src/platform/storage';
 import type {BundledScore} from '../src/platform/bundled-library';
 
+
+function mockSession(workspace: Workspace, status: PracticeController['status'], dispose = () => {}) {
+  if (workspace.session) { workspace.session.status = status; return; }
+  workspace.sessions.install({ status, dispose, onChange: () => {} } as PracticeController);
+}
+
 test('editor-only bundled versions cannot enter practice through the card or editor shortcut',async()=>{
   const workspace=new Workspace(),bytes=new TextEncoder().encode('native score with grace');
   const sha=Buffer.from(await crypto.subtle.digest('SHA-256',bytes)).toString('hex');
@@ -21,7 +27,7 @@ test('editor-only bundled versions cannot enter practice through the card or edi
 });
 
 test('reselecting grade practice navbar never releases held MIDI during a running attempt',()=>{
-  const workspace=new Workspace();workspace.patch({view:'practice',practiceKind:'grade'});workspace.session={status:'running'} as PracticeController;
+  const workspace=new Workspace();workspace.patch({view:'practice',practiceKind:'grade'});mockSession(workspace, 'running');
   workspace.midi.release=()=>{throw Error('held input must survive');};
   assert.doesNotThrow(()=>workspace.navigate('practice'));assert.equal(workspace.state.view,'practice');
 });
@@ -32,7 +38,7 @@ test('practice kind switches keep the editor project and open the matching selec
   workspace.patch({current,view:'practice',practicePicker:false});
   workspace.navigate=view=>workspace.patch({view});
   workspace.restoreExerciseEditor=()=>{restored++;};
-  workspace.session={status:'finished',dispose:()=>{disposed++;}} as unknown as PracticeController;
+  mockSession(workspace, 'finished', () => {disposed++;});
   workspace.selectPracticeKind('grade');
   assert.equal(workspace.state.practiceKind,'grade');assert.equal(workspace.state.practicePicker,true);
   assert.equal(workspace.state.current,current);assert.equal(disposed,1);assert.equal(restored,1);
@@ -43,7 +49,7 @@ test('practice kind switches keep the editor project and open the matching selec
 test('changing practice kind cannot dispose a running or paused attempt',()=>{
   const workspace=new Workspace();workspace.patch({practiceKind:'grade'});
   for(const status of ['counting','running','paused','interrupted'] as const){
-    workspace.session={status,dispose:()=>{throw Error('Must preserve attempt');}} as unknown as PracticeController;
+    mockSession(workspace, status, () => {throw Error('Must preserve attempt');});
     assert.throws(()=>workspace.selectPracticeKind('free'),/Kết thúc lượt/);
     assert.equal(workspace.state.practiceKind,'grade');
   }
@@ -95,6 +101,27 @@ test('restart saves the aborted attempt without navigating away or replacing the
   assert.equal((await storage.get<{outcome:string}>('sessions',result.id))?.outcome,'aborted');
 });
 
+test('delayed result persistence never returns to Results after navigation or a new attempt', async () => {
+  for (const replacement of [false, true]) {
+    const workspace = new Workspace(), t = timeline();
+    workspace.patch({view: 'practice'});
+    mockSession(workspace, 'finished');
+    const owner = workspace.session;
+    const result = resultFor(t, new PracticeEngine(t).view(), 'Delayed complete', 'complete', 100);
+    let release!: () => void;
+    workspace.refresh = () => new Promise<void>(resolve => {release = resolve;});
+    workspace.navigate = () => {throw Error('Stale result must not navigate');};
+    const pending = workspace.recordResult(result, false, true, () => workspace.session === owner && workspace.state.view === 'practice');
+    while (!release) await new Promise(resolve => setTimeout(resolve, 0));
+    if (replacement) workspace.sessions.install({status: 'running', onChange() {}, dispose() {}} as PracticeController);
+    else workspace.patch({view: 'library'});
+    release(); await pending;
+    assert.equal(workspace.state.result, undefined);
+    assert.equal(workspace.state.view, replacement ? 'practice' : 'library');
+    assert.equal((await storage.get<{outcome: string}>('sessions', result.id))?.outcome, 'complete');
+  }
+});
+
 test('retrying foreign-device history retains local calibration; device change resets it',async()=>{
   const workspace=new Workspace(),snapshot=scoreFixture();
   workspace.patch({snapshot,config:{...settingsFor(snapshot),offsetMs:35}});
@@ -121,7 +148,7 @@ test('an unavailable native engine cannot overwrite recovery or accept further e
 test('file drop and project commands cannot replace the score of an active or paused practice session', async () => {
   const workspace = new Workspace();
   for (const status of ['counting', 'running', 'paused', 'interrupted'] as const) {
-    workspace.session = {status} as PracticeController;
+    mockSession(workspace, status);
     await assert.rejects(workspace.importFile(new File(['bad'], 'new.musicxml')), /Kết thúc lượt/);
     await assert.rejects(workspace.newProject(), /Kết thúc lượt/);
     await assert.rejects(workspace.openProject('another-project'), /Kết thúc lượt/);
@@ -157,9 +184,9 @@ test('reselecting the Practice navbar during a session preserves held input and 
   workspace.patch({view: 'practice', practicePicker: false});
   workspace.navigate = () => {throw Error('Navigating again would release MIDI keys');};
   for (const status of ['counting', 'running', 'paused', 'interrupted'] as const) {
-    workspace.session = {status} as PracticeController;
+    mockSession(workspace, status);
     workspace.openPractice();
-    assert.equal(workspace.state.practicePicker, false); assert.equal(workspace.session.status, status);
+    assert.equal(workspace.state.practicePicker, false); assert.equal(workspace.session!.status, status);
   }
 });
 

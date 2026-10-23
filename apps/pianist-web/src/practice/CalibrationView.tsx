@@ -1,7 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import type { PracticeSettings } from '../../../../packages/practice-engine-v2/model';
 import { calibrationTimeline, calibrationReport } from '../platform/calibration-v2';
-import { PracticeController } from './controller-v2';
+import type { PracticeController } from './controller-v2';
+import { PracticeSessions } from '../application/session-lifecycle';
 import { workspace as ws } from '../workspace';
 
 export function CalibrationView({
@@ -11,6 +12,7 @@ export function CalibrationView({
   settings: PracticeSettings;
   onApply: (offset: number) => void;
 }) {
+  const [sessions] = useState(() => new PracticeSessions());
   const dialog = useRef<HTMLDialogElement>(null),
     controller = useRef<PracticeController | undefined>(undefined),
     unsubscribe = useRef<() => void>(() => {});
@@ -19,7 +21,7 @@ export function CalibrationView({
     [report, setReport] = useState<ReturnType<typeof calibrationReport> | null>(null);
   const stop = () => {
     unsubscribe.current();
-    controller.current?.dispose();
+    sessions.dispose(controller.current);
     controller.current = undefined;
     setRunning(false);
   };
@@ -34,7 +36,7 @@ export function CalibrationView({
     return () => {
       window.removeEventListener('blur', lost);
       unsubscribe.current();
-      controller.current?.dispose();
+      sessions.dispose(controller.current);
     };
   }, []);
   async function start() {
@@ -42,35 +44,36 @@ export function CalibrationView({
     setReport(null);
     setRunning(true);
     let pitch: number | undefined;
-    const c = (controller.current = new PracticeController(
-      calibrationTimeline({
+    const c = (controller.current = sessions.create({
+      timeline: calibrationTimeline({
         ...settings,
         inputSource: ws.midi.deviceId === 'virtual' ? 'virtual' : 'midi',
         deviceId: ws.midi.deviceId,
       }),
-      'Đo bù trễ',
-      async () => (await ws.ensureEngine(true)).api.Module.driver,
-    ));
-    c.onChange = () =>
-      setMessage(
-        c.status === 'counting'
-          ? 'Đếm vào 4 phách…'
-          : `${c.view.judgements.length}/12 phách · bấm cùng tiếng click`,
-      );
-    c.onComplete = (r) => {
-      setReport(calibrationReport(r));
-      stop();
-      setMessage(
-        'Đã đo xong. Đây là độ lệch của cả thiết bị và cách bạn bấm, không phải phép đo độ trễ phần cứng riêng.',
-      );
-    };
+      title: 'Đo bù trễ',
+      nativeAudio: async () => (await ws.ensureEngine(true)).api.Module.driver,
+      onChange: (c) =>
+        setMessage(
+          c.status === 'counting'
+            ? 'Đếm vào 4 phách…'
+            : `${c.view.judgements.length}/12 phách · bấm cùng tiếng click`,
+        ),
+      onComplete: (r) => {
+        setReport(calibrationReport(r));
+        stop();
+        setMessage(
+          'Đã đo xong. Đây là độ lệch của cả thiết bị và cách bạn bấm, không phải phép đo độ trễ phần cứng riêng.',
+        );
+      },
+    }));
     unsubscribe.current = ws.midi.subscribe((e) => {
       if (e.kind === 'on' && pitch === undefined) pitch = e.pitch;
       if (e.pitch === pitch && e.kind !== 'pedal') c.input({ ...e, pitch: 60 });
     });
     try {
-      await c.start(() => []);
+      await sessions.start(c, () => []);
     } catch (e) {
+      if (controller.current !== c) return;
       stop();
       setMessage(String(e));
     }

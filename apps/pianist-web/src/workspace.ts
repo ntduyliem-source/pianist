@@ -1,5 +1,4 @@
-import { EngineBridge, type NativeApi } from '../../../packages/engine-bridge/index';
-import { settingsFor } from '../../../packages/practice-engine-v2/score-adapter';
+import { EngineBridge } from '../../../packages/engine-bridge/index';
 import type {
   PracticeSettings,
   AttemptResult,
@@ -15,8 +14,18 @@ import { inspectAbc } from '../../../packages/score-formats/abc';
 import { exportAbc } from '../../../packages/score-formats/export';
 import { MidiRouter } from './platform/midi-v2';
 import * as storage from './platform/storage';
-import { PracticeController } from './practice/controller-v2';
-import { loadEngineAssets } from './platform/engine-assets';
+import { EngineHost } from './platform/engine-host';
+import { PracticeSessions } from './application/session-lifecycle';
+import { PracticeRepository } from './application/practice-repository';
+import { GradeAudioLoan } from './application/grade-audio-loan';
+import {
+  createInitialWorkspaceState,
+  type WorkspaceState,
+  type View,
+  type PracticeKind,
+  type TuneSelection,
+} from './application/workspace-state';
+export type { WorkspaceState, PracticeKind, TuneSelection } from './application/workspace-state';
 import {
   loadBundledCatalog,
   loadBundledScore,
@@ -25,70 +34,18 @@ import {
 } from './platform/bundled-library';
 import { requireLibraryScore } from './platform/library-admission';
 
-type View = 'library' | 'editor' | 'practice' | 'results' | 'history';
-export type PracticeKind = 'free' | 'grade';
-export interface TuneSelection {
-  requestId: number;
-  filename: string;
-  tunes: AbcTune[];
-  sourceBytes: number;
-  practice: boolean;
-  selected: number[];
-  openIndex: number;
-  errors: Record<number, string>;
-  error?: string;
-}
-export interface WorkspaceState {
-  view: View;
-  busy: string;
-  error: string;
-  toast: string;
-  projects: storage.ProjectRecord[];
-  history: SavedAttempt[];
-  current?: storage.ProjectRecord;
-  snapshot?: ScoreSnapshot;
-  config?: PracticeSettings;
-  result?: SavedAttempt;
-  revision: number;
-  savedRevision: number;
-  recoveryRevision: number;
-  saveState: string;
-  engineReady: boolean;
-  midiVersion: number;
-  exampleTitle: string;
-  bundledScores: BundledScore[];
-  practicePicker: boolean;
-  practiceKind: PracticeKind;
-  canCancelOpen?: boolean;
-  cancelOpenLabel?: string;
-  engineFailed?: boolean;
-  importDiagnostics?: FormatDiagnostic[];
-  tuneSelection?: TuneSelection;
-}
 export class Workspace {
-  state: WorkspaceState = {
-    view: 'library',
-    busy: '',
-    error: '',
-    toast: '',
-    projects: [],
-    history: [],
-    bundledScores: [],
-    revision: 0,
-    savedRevision: 0,
-    recoveryRevision: 0,
-    saveState: '',
-    engineReady: false,
-    midiVersion: 0,
-    exampleTitle: 'Piano khởi động',
-    practicePicker: true,
-    practiceKind: 'free',
-  };
+  state: WorkspaceState = createInitialWorkspaceState();
   bridge?: EngineBridge;
-  session?: PracticeController;
+  readonly sessions = new PracticeSessions();
+  private readonly repository = new PracticeRepository();
+  private readonly gradeAudio = new GradeAudioLoan();
+  private readonly engineHost = new EngineHost();
+  get session() {
+    return this.sessions.current;
+  }
   readonly midi = new MidiRouter();
   private listeners = new Set<() => void>();
-  private engineLoading?: Promise<EngineBridge>;
   private loadingDocument = false;
   private nativeBase = 0;
   private revisionBase = 0;
@@ -102,9 +59,6 @@ export class Workspace {
   private recovery?: storage.RecoveryRecord;
   private autosaving?: Promise<void>;
   private documentChange?: symbol;
-  private exerciseNative = false;
-  // Emergency download only. Restoration uses the retained native project.
-  private editorBeforeExercise?: Uint8Array;
   private resolveTunes?: (choice: { indices: number[]; openIndex: number }) => void;
   private diagnosticSamples: object[] = [];
   constructor(private readonly scoreConverter: ScoreConverter = new ScoreFormatClient()) {}
@@ -289,41 +243,18 @@ export class Workspace {
     });
   }
   async refresh(): Promise<void> {
-    const [projects, history] = await Promise.all([
-      storage.list<storage.ProjectRecord>('projects'),
-      storage.list<SavedAttempt>('sessions'),
-    ]);
-    this.patch({
-      projects: projects.sort((a, b) => b.updatedAt - a.updatedAt),
-      history: history.sort((a, b) => b.createdAt - a.createdAt),
-    });
+    this.patch(await this.repository.list());
   }
   focusEditor = (element?: Element): void => {
-    if (
-      this.state.engineFailed ||
-      this.state.view !== 'editor' ||
-      document.querySelector('dialog[open]')
-    )
-      return;
-    const root = document.querySelector('#screen #qt-shadow-container')?.shadowRoot;
-    const win = element ?? root?.querySelector('.qt-decorated-window:not(.inactive) .qt-window');
-    if (win && !win.contains(root?.activeElement ?? null))
-      (win.querySelector('.qt-window-focus-helper') as HTMLElement)?.focus({ preventScroll: true });
+    this.engineHost.focus(element, !this.state.engineFailed && this.state.view === 'editor');
   };
   async ensureEngine(background = false): Promise<EngineBridge> {
     if (this.state.engineFailed) throw Error('Tải lại trang để khởi động lại MuseScore.');
     if (this.bridge) return this.bridge;
-    if (this.engineLoading) return this.engineLoading;
     if (!background)
       this.patch({ busy: 'Đang tải MuseScore… Lần đầu cần tải bộ ký âm và tiếng piano.' });
-    this.engineLoading = (async () => {
-      const started = performance.now();
-      const wasmBinary = await loadEngineAssets();
-      const url = new URL('distr/muapi.js', location.href).href;
-      const createMuApi = (await import(/* @vite-ignore */ url)).default;
-      const api: NativeApi = await createMuApi({
-        screen: document.getElementById('screen'),
-        wasmBinary,
+    return this.engineHost.ensure({
+      callbacks: {
         onWebCommand: (command: string) => {
           if (this.state.view !== 'editor') return;
           void this.run(() =>
@@ -340,15 +271,15 @@ export class Workspace {
                       : this.showAbout(),
           );
         },
-        onDocumentState: (title: string, modified: boolean) => {
-          document.title = `${title}${modified ? ' *' : ''} — Pianist`;
-          const screen = document.getElementById('screen');
-          if (screen) screen.dataset.modified = String(modified);
-        },
         onRevisionChanged: (revision: number) => {
           this.nativeRevision = revision;
           if (this.bridge) this.bridge.revision = revision;
-          if (!this.loadingDocument && !this.exerciseNative && this.state.current && this.bridge) {
+          if (
+            !this.loadingDocument &&
+            !this.gradeAudio.active &&
+            this.state.current &&
+            this.bridge
+          ) {
             const logical = this.revisionBase + revision - this.nativeBase;
             this.patch({ revision: logical, saveState: 'Đang chờ tự lưu…' });
             clearTimeout(this.autosaveTimer);
@@ -367,36 +298,16 @@ export class Workspace {
           download(bytes, `${this.state.current?.title ?? 'score'}.musicxml`, 'application/xml'),
         onPdfExported: (bytes: Uint8Array) =>
           download(bytes, `${this.state.current?.title ?? 'score'}.pdf`, 'application/pdf'),
-      });
-      if (new URLSearchParams(location.search).has('diagnostics')) (window as any).pianist = api;
-      try {
-        await api.startAudioProcessing();
-      } catch (e) {
-        this.patch({ engineFailed: true });
-        throw e;
-      }
-      this.bridge = new EngineBridge(api);
-      this.bridge.revision = this.nativeRevision;
-      this.measureDiagnostic('engine-ready', started);
-      document.getElementById('screen')!.addEventListener(
-        'pointerdown',
-        (e) => {
-          api.Module.driver?.resume();
-          this.focusEditor(
-            e.composedPath().find((x: any) => x.classList?.contains('qt-window')) as Element,
-          );
-        },
-        true,
-      );
-      this.patch({ engineReady: true });
-      return this.bridge;
-    })();
-    try {
-      return await this.engineLoading;
-    } catch (e) {
-      this.engineLoading = undefined;
-      throw e;
-    }
+      },
+      currentRevision: () => this.nativeRevision,
+      onReady: (bridge, started) => {
+        this.bridge = bridge;
+        this.measureDiagnostic('engine-ready', started);
+        this.patch({ engineReady: true });
+      },
+      onAudioError: () => this.patch({ engineFailed: true }),
+      focus: this.focusEditor,
+    });
   }
   private async switchDocument(
     record: storage.ProjectRecord,
@@ -449,8 +360,7 @@ export class Workspace {
     }
   }
   private requireInactiveSession(): void {
-    if (this.session && !['ready', 'finished'].includes(this.session.status))
-      throw Error('Kết thúc lượt tập trước khi mở hoặc đổi bản nhạc.');
+    this.sessions.requireIdle();
   }
   private async changeDocument(action: () => Promise<void>): Promise<void> {
     this.requireInactiveSession();
@@ -482,8 +392,7 @@ export class Workspace {
   }
   selectPracticeKind(kind: PracticeKind): void {
     this.requireInactiveSession();
-    this.session?.dispose();
-    this.session = undefined;
+    this.sessions.dispose(this.session);
     this.restoreExerciseEditor();
     this.patch({ practiceKind: kind, practicePicker: true });
     try {
@@ -513,34 +422,16 @@ export class Workspace {
       (this.session && !['ready', 'finished'].includes(this.session.status))
     )
       return;
-    const config = { ...this.state.config, ...patch, version: 2 as const };
-    if (this.state.config.deviceId !== this.midi.deviceId) config.offsetMs = 0;
-    else if (patch.deviceId !== undefined && patch.deviceId !== this.midi.deviceId)
-      config.offsetMs = this.state.config.offsetMs;
-    config.fromMeasure = Math.max(
-      0,
-      Math.min(this.state.snapshot.measures.length - 1, config.fromMeasure),
+    const config = this.repository.updateSettings(
+      this.state.snapshot,
+      this.state.config,
+      patch,
+      this.midi.deviceId,
     );
-    config.toMeasure = Math.max(
-      config.fromMeasure,
-      Math.min(this.state.snapshot.measures.length - 1, config.toMeasure),
-    );
-    config.roles = { ...settingsFor(this.state.snapshot).roles, ...config.roles };
-    config.deviceId = this.midi.deviceId;
-    config.inputSource = this.midi.deviceId === 'virtual' ? 'virtual' : 'midi';
     this.patch({ config });
-    void storage
-      .put('settings', { id: 'practice-v2:' + this.state.snapshot.projectId, config })
+    void this.repository
+      .saveSettings(this.state.snapshot.projectId, config, patch)
       .catch((e) => this.fail(e));
-    if (
-      patch.offsetMs !== undefined &&
-      patch.deviceId === undefined &&
-      Number.isFinite(config.offsetMs) &&
-      Math.abs(config.offsetMs) <= 500
-    )
-      void storage
-        .put('settings', { id: 'calibration-v2:' + this.midi.deviceId, offsetMs: config.offsetMs })
-        .catch((e) => this.fail(e));
   }
   async newProject(): Promise<void> {
     return this.changeDocument(() => this.createNewProject());
@@ -1004,7 +895,7 @@ export class Workspace {
     if (
       this.state.engineFailed ||
       this.loadingDocument ||
-      this.exerciseNative ||
+      this.gradeAudio.active ||
       !this.state.current ||
       !this.bridge ||
       this.state.recoveryRevision >= this.state.revision
@@ -1049,7 +940,7 @@ export class Workspace {
   downloadProject(): void {
     if (this.bridge && this.state.current) {
       download(
-        this.editorBeforeExercise ?? this.bridge.serialize(),
+        this.gradeAudio.editorBackup ?? this.bridge.serialize(),
         `${this.state.current.title}.mscz`,
       );
       this.notice('Đã tải bản sao MSCZ.');
@@ -1113,8 +1004,7 @@ export class Workspace {
     }
     if (this.session && !['ready', 'finished'].includes(this.session.status))
       throw Error('Kết thúc lượt tập trước khi thay đổi bản nhạc.');
-    this.session?.dispose();
-    this.session = undefined;
+    this.sessions.dispose(this.session);
     this.patch({ busy: 'Đang tạo bản nhạc luyện chỉ đọc…' });
     try {
       this.midi.release();
@@ -1130,29 +1020,15 @@ export class Workspace {
         pages: snapshot.pages.length,
         anchors: snapshot.anchors.length,
       });
-      const saved = await storage.get<{ id: string; config: PracticeSettings }>(
-        'settings',
-        'practice-v2:' + snapshot.projectId,
+      const config = await this.repository.loadSettings(
+        snapshot,
+        this.midi.deviceId,
+        {
+          projectId: this.state.snapshot?.projectId,
+          config: this.state.config,
+        },
+        overrides,
       );
-      const calibration = await storage.get<{ id: string; offsetMs: number }>(
-        'settings',
-        'calibration-v2:' + this.midi.deviceId,
-      );
-      const prior =
-        this.state.snapshot?.projectId === snapshot.projectId ? this.state.config : saved?.config;
-      const config = { ...settingsFor(snapshot), ...prior, ...overrides, version: 2 as const };
-      config.roles = { ...settingsFor(snapshot).roles, ...config.roles };
-      config.fromMeasure = Math.max(0, Math.min(snapshot.measures.length - 1, config.fromMeasure));
-      config.toMeasure = Math.max(
-        config.fromMeasure,
-        Math.min(snapshot.measures.length - 1, config.toMeasure),
-      );
-      config.deviceId = this.midi.deviceId;
-      config.inputSource = this.midi.deviceId === 'virtual' ? 'virtual' : 'midi';
-      config.offsetMs =
-        overrides?.offsetMs ??
-        calibration?.offsetMs ??
-        (prior?.deviceId === this.midi.deviceId ? prior.offsetMs : 0);
       this.patch({ snapshot, config, practicePicker: snapshot.anchors.length === 0 });
       this.navigate('practice');
       if (!snapshot.anchors.length)
@@ -1209,16 +1085,20 @@ export class Workspace {
       });
     else (document.getElementById('view-heading') as HTMLElement)?.focus({ preventScroll: true });
   }
-  async recordResult(result: AttemptResult, keepReplay = false, showResult = true): Promise<void> {
-    if (!keepReplay) delete result.replay;
+  async recordResult(
+    result: AttemptResult,
+    keepReplay = false,
+    showResult = true,
+    canPresent: () => boolean = () => true,
+  ): Promise<void> {
     try {
-      await storage.saveSession(result);
+      await this.repository.saveAttempt(result, keepReplay);
       await this.refresh();
     } catch (e) {
       this.fail(e);
       this.notice('Chưa lưu được kết quả. Có thể tải JSON để giữ lại.');
     }
-    if (showResult) {
+    if (showResult && canPresent()) {
       this.patch({ result });
       this.navigate('results');
     }
@@ -1235,38 +1115,14 @@ export class Workspace {
     this.requireInactiveSession();
     if (this.state.view !== 'practice' || this.state.practiceKind !== 'grade')
       throw Error('Đã rời màn tập theo grade.');
-    bridge.setPractice(true);
-    const borrowed = this.exerciseNative;
-    if (!borrowed) this.editorBeforeExercise = this.state.current ? bridge.serialize() : undefined;
-    this.exerciseNative = true;
-    try {
-      if (!bridge.api.loadPracticeScore?.(bytes, 'exercise.mxl'))
-        throw Error('MuseScore chưa mở được bài nghe.');
-    } catch (e) {
-      this.exerciseNative = borrowed;
-      if (!borrowed) this.editorBeforeExercise = undefined;
-      throw e;
-    }
-    const deadline = performance.now() + 20000;
-    while (!bridge.auditionState().available) {
-      signal.throwIfAborted();
-      if (performance.now() > deadline)
-        throw Error('MuseScore chưa sẵn sàng phát bài. Bấm Nghe để thử lại.');
-      await new Promise((resolve) => setTimeout(resolve, 50));
-    }
-    signal.throwIfAborted();
+    await this.gradeAudio.borrow(bridge, bytes, signal, !!this.state.current);
     this.patch({ busy: '' });
     return bridge;
   }
   restoreExerciseEditor(): void {
-    if (!this.exerciseNative || !this.bridge) return;
-    this.bridge.audition('reset');
-    if (!this.bridge.api.restorePracticeScore?.())
-      throw Error('Chưa phục hồi được editor. Bản tự lưu vẫn còn trong thư viện.');
-    this.nativeBase = this.bridge.revision;
+    if (!this.gradeAudio.restore(this.bridge)) return;
+    this.nativeBase = this.bridge!.revision;
     this.revisionBase = this.state.revision;
-    this.editorBeforeExercise = undefined;
-    this.exerciseNative = false;
   }
   async rename(title: string): Promise<void> {
     this.requireInactiveSession();

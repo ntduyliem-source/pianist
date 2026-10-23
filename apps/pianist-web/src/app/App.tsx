@@ -14,6 +14,7 @@ import { Icon } from '../shared/ui/Icon';
 const run = (fn: () => unknown | Promise<unknown>) => () => void ws.run(fn);
 
 export function App() {
+  useSyncExternalStore(ws.sessions.subscribeStatus, ws.sessions.statusSnapshot);
   const state = useSyncExternalStore(ws.subscribe, ws.snapshot),
     file = useRef<HTMLInputElement>(null),
     practiceFile = useRef(false),
