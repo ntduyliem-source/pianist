@@ -37,16 +37,30 @@ const root=path.resolve(__dirname,'../../..'),out=path.join(root,'artifacts/libr
     await library().waitFor();const workCount=new Set(catalog.songs.map(groupId)).size;
     assert.equal(await library().locator('article').count(),workCount);
     assert.equal(await card(groupId(fly[0])).count(),1);assert.equal(await card(groupId(cause[0])).count(),1);
-    assert.equal(await library().getByRole('combobox').count(),2);
+    const works=new Map();for(const song of catalog.songs){const id=groupId(song);works.set(id,[...(works.get(id)||[]),song]);}
+    const multiple=[...works].filter(([,songs])=>songs.length>1);
+    assert.equal(await library().getByRole('combobox').count(),multiple.length);
+    for(const [id,songs] of multiple){
+      assert.equal(await card(id).count(),1);
+      assert.deepEqual((await card(id).getByRole('combobox').locator('option').evaluateAll(options=>options.map(o=>o.value))).sort(),songs.map(s=>s.id).sort());
+    }
+    const awake=catalog.songs.filter(s=>s.title==='Thức giấc').sort((a,b)=>version(a)-version(b));
+    if(awake.length){
+      assert.equal(awake.length,2);const select=card(groupId(awake[0])).getByRole('combobox');
+      await select.selectOption(awake[0].id);assert.equal(await card(groupId(awake[0])).getByRole('button',{name:'Tập',exact:true}).isEnabled(),awake[0].practiceReady!==false);
+      await select.selectOption(awake[1].id);assert.equal(await card(groupId(awake[0])).getByRole('button',{name:'Tập',exact:true}).isEnabled(),awake[1].practiceReady!==false);
+      report.checks.push('Thức giấc editions share one dropdown and retain their individual practice eligibility');
+    }
     assert.equal(await library().getByRole('heading',{name:'Lemon Tree',exact:true}).count(),1);
     for(const title of ['Ai đưa em về — Tia','Ai đưa em về — Nguyễn Ánh 9'])assert.equal(await library().getByRole('heading',{name:title,exact:true}).count(),1);
-    const flySelect=()=>page.getByRole('combobox',{name:'Chọn phiên bản Fly Me to the Moon',exact:true});
-    const causeSelect=()=>page.getByRole('combobox',{name:'Chọn phiên bản Cause I Love You',exact:true});
+    const flySelect=()=>library().getByRole('combobox',{name:'Chọn phiên bản Fly Me to the Moon',exact:true});
+    const causeSelect=()=>library().getByRole('combobox',{name:'Chọn phiên bản Cause I Love You',exact:true});
     assert.equal(await flySelect().inputValue(),fly[0].id);assert.equal(await causeSelect().inputValue(),cause[0].id);
     report.checks.push('one card per work, separate same-name compositions, no dropdown for a single version');
     for(const [width,height] of [[360,800],[390,844],[1440,1000]]){
       await page.setViewportSize({width,height});await flySelect().scrollIntoViewIfNeeded();
-      const box=await flySelect().boundingBox();assert.ok(box.x>=0&&box.x+box.width<=width+1);assert.ok(box.height>=40);
+      // Library v2's compact edition selector is 36px (the old card was 40px).
+      const box=await flySelect().boundingBox();assert.ok(box.x>=0&&box.x+box.width<=width+1);assert.ok(box.height>=36);
       const sizes=await page.evaluate(()=>({viewport:innerWidth,body:document.body.scrollWidth,content:document.querySelector('.library-content').scrollWidth,width:document.querySelector('.library-content').clientWidth}));
       assert.ok(sizes.body<=sizes.viewport+1);assert.ok(sizes.content<=sizes.width+1);
       await page.screenshot({path:path.join(out,`dropdown-${width}.png`)});

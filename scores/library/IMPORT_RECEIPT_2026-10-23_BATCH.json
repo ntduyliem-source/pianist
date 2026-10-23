@@ -1,0 +1,521 @@
+{
+  "summary": {
+    "inputs": 51,
+    "newWorks": 16,
+    "newVersions": 1,
+    "duplicates": 31,
+    "excluded": 3,
+    "editorOnly": 5,
+    "totalWorks": 74,
+    "totalVersions": 77
+  },
+  "results": [
+    {
+      "filename": "nguoi-ta-co-thuong-minh-dau-truc-nhan.mxl",
+      "title": "Người ta có thương mình đâu",
+      "status": "added",
+      "reason": "1570 nốt; 8 trang; MuseScore playback/mapping đạt",
+      "version": 1,
+      "workId": "2867abe483c81ea86f4a2815115750a1718d56225878f3f18803495c848dba55",
+      "id": "2867abe483c81ea86f4a2815115750a1718d56225878f3f18803495c848dba55",
+      "practiceReady": true,
+      "nativeAudit": {
+        "sourceNotes": 1570,
+        "nativeNotes": 1570,
+        "pages": 8,
+        "missingGlyphs": 0,
+        "nativePlayback": true
+      }
+    },
+    {
+      "filename": "nhieu-nguoi-om-giac-mo-le-cat-trong-ly (1).mxl",
+      "title": "Untitled score",
+      "status": "duplicate",
+      "reason": "Đã có cùng nội dung: Nhiều người ôm giấc mơ"
+    },
+    {
+      "filename": "chuyen-tau-hoang-hon-minh-ky (1).mxl",
+      "title": "Untitled score",
+      "status": "duplicate",
+      "reason": "Đã có cùng nội dung: Chuyến tàu hoàng hôn"
+    },
+    {
+      "filename": "xin-ma-ruoc-dau-dieu-kien (1).mxl",
+      "title": "Untitled score",
+      "status": "duplicate",
+      "reason": "Đã có cùng nội dung: Xin má rước dâu"
+    },
+    {
+      "filename": "chuyen-ba-mua-mua-minh-ky-da-cam (1).mxl",
+      "title": "Untitled score",
+      "status": "duplicate",
+      "reason": "Đã có cùng nội dung: Chuyện ba mùa mưa"
+    },
+    {
+      "filename": "mua-tren-cuoc-tinh.mxl",
+      "title": "Mưa trên cuộc tình",
+      "status": "added",
+      "reason": "741 nốt; 5 trang; MuseScore playback/mapping đạt",
+      "version": 1,
+      "workId": "a1fd18fe5571482bc4c012ef554ac38524052c1c4773a6fe81d354495897c3f9",
+      "id": "a1fd18fe5571482bc4c012ef554ac38524052c1c4773a6fe81d354495897c3f9",
+      "practiceReady": true,
+      "nativeAudit": {
+        "sourceNotes": 741,
+        "nativeNotes": 741,
+        "pages": 5,
+        "missingGlyphs": 0,
+        "nativePlayback": true
+      }
+    },
+    {
+      "filename": "anh-nang-cua-anh.mxl",
+      "title": "Ánh nắng của anh",
+      "status": "added",
+      "reason": "Nghe/chỉnh sửa đầy đủ 1086 nốt; bộ tập chưa hỗ trợ 3 nốt hoa mỹ.",
+      "version": 1,
+      "workId": "d2adebf695715810f98c90c9516cf99458c2ee33d6aa769f28111bbeaec9166f",
+      "id": "d2adebf695715810f98c90c9516cf99458c2ee33d6aa769f28111bbeaec9166f",
+      "practiceReady": false,
+      "nativeAudit": {
+        "sourceNotes": 1086,
+        "nativeNotes": 1083,
+        "pages": 4,
+        "missingGlyphs": 0,
+        "nativePlayback": true,
+        "editorNotes": 1086,
+        "editorGraceNotes": 3
+      }
+    },
+    {
+      "filename": "nho-lam-khong-tu-quynh.mxl",
+      "title": "Nhớ lắm",
+      "status": "added",
+      "reason": "998 nốt; 6 trang; MuseScore playback/mapping đạt",
+      "version": 1,
+      "workId": "6582c4d9d715069d17594d976d9005764c77adf01ab916d9183aac8e7c62fc7d",
+      "id": "6582c4d9d715069d17594d976d9005764c77adf01ab916d9183aac8e7c62fc7d",
+      "practiceReady": true,
+      "nativeAudit": {
+        "sourceNotes": 998,
+        "nativeNotes": 998,
+        "pages": 6,
+        "missingGlyphs": 0,
+        "nativePlayback": true
+      }
+    },
+    {
+      "filename": "thuc-giac-dalab.mxl",
+      "title": "Thức giấc",
+      "status": "added",
+      "reason": "Nghe/chỉnh sửa đầy đủ 1889 nốt; bộ tập chưa hỗ trợ 2 nốt hoa mỹ.",
+      "version": 1,
+      "workId": "79c6d1000e255616150b5ca622baa190e8f2eadd238ca3920e79eefb15c3c0bc",
+      "id": "79c6d1000e255616150b5ca622baa190e8f2eadd238ca3920e79eefb15c3c0bc",
+      "practiceReady": false,
+      "nativeAudit": {
+        "sourceNotes": 1889,
+        "nativeNotes": 1887,
+        "pages": 8,
+        "missingGlyphs": 0,
+        "nativePlayback": true,
+        "editorNotes": 1889,
+        "editorGraceNotes": 2
+      }
+    },
+    {
+      "filename": "nguoi-yeu-cu-khoi-my.mxl",
+      "title": "Người yêu cũ",
+      "status": "added",
+      "reason": "Nghe/chỉnh sửa đầy đủ 1170 nốt; bộ tập chưa hỗ trợ 2 nốt hoa mỹ.",
+      "version": 1,
+      "workId": "4f6bda43dcb8d092b71af487febf561fb169a308ee565485e4bd62ac9784ea25",
+      "id": "4f6bda43dcb8d092b71af487febf561fb169a308ee565485e4bd62ac9784ea25",
+      "practiceReady": false,
+      "nativeAudit": {
+        "sourceNotes": 1170,
+        "nativeNotes": 1168,
+        "pages": 5,
+        "missingGlyphs": 0,
+        "nativePlayback": true,
+        "editorNotes": 1170,
+        "editorGraceNotes": 2
+      }
+    },
+    {
+      "filename": "tinh-thoi-xot-xa (1).mxl",
+      "title": "Tình thôi xót xa",
+      "status": "added",
+      "reason": "504 nốt; 4 trang; MuseScore playback/mapping đạt",
+      "version": 1,
+      "workId": "79355b0966ac51e036f0ccdaf6ca174ec71c5bb5c0f9be055bd3eb444fd9abb4",
+      "id": "79355b0966ac51e036f0ccdaf6ca174ec71c5bb5c0f9be055bd3eb444fd9abb4",
+      "practiceReady": true,
+      "nativeAudit": {
+        "sourceNotes": 504,
+        "nativeNotes": 504,
+        "pages": 4,
+        "missingGlyphs": 0,
+        "nativePlayback": true
+      }
+    },
+    {
+      "filename": "katy-katy-lam-truong.mxl",
+      "title": "Katy Katy",
+      "status": "added",
+      "reason": "Nghe/chỉnh sửa đầy đủ 957 nốt; bộ tập chưa hỗ trợ 6 nốt hoa mỹ.",
+      "version": 1,
+      "workId": "5b21ffd4dd6e203af97fe8f7cf6b1c0a599a8d86ec1670188eb94d89d49aa861",
+      "id": "5b21ffd4dd6e203af97fe8f7cf6b1c0a599a8d86ec1670188eb94d89d49aa861",
+      "practiceReady": false,
+      "nativeAudit": {
+        "sourceNotes": 957,
+        "nativeNotes": 951,
+        "pages": 7,
+        "missingGlyphs": 0,
+        "nativePlayback": true,
+        "editorNotes": 957,
+        "editorGraceNotes": 6
+      }
+    },
+    {
+      "filename": "du-cho-tan-the-erik (1).mxl",
+      "title": "DÙ CHO TẬN THẾ",
+      "status": "excluded",
+      "reason": "Không đạt chuẩn hai khuông piano: Expected 2 structural staves; found 1"
+    },
+    {
+      "filename": "bien-nho-sheet-piano.mxl",
+      "title": "Biển nhớ",
+      "status": "added",
+      "reason": "315 nốt; 3 trang; MuseScore playback/mapping đạt",
+      "version": 1,
+      "workId": "8b4ed706653900badd2086def2ba498c5e03f91218d19a42830395232402b0b3",
+      "id": "8b4ed706653900badd2086def2ba498c5e03f91218d19a42830395232402b0b3",
+      "practiceReady": true,
+      "nativeAudit": {
+        "sourceNotes": 315,
+        "nativeNotes": 315,
+        "pages": 3,
+        "missingGlyphs": 0,
+        "nativePlayback": true
+      }
+    },
+    {
+      "filename": "cuoi-cung-thi-jack-j97.mxl",
+      "title": "Cuối cùng thì",
+      "status": "added",
+      "reason": "Nghe/chỉnh sửa đầy đủ 1069 nốt; bộ tập chưa hỗ trợ 24 nốt hoa mỹ.",
+      "version": 1,
+      "workId": "3181d63343cc7568c7ac3d056fa1c46bfb0ad08451c01544b8482e1493c603e6",
+      "id": "3181d63343cc7568c7ac3d056fa1c46bfb0ad08451c01544b8482e1493c603e6",
+      "practiceReady": false,
+      "nativeAudit": {
+        "sourceNotes": 1069,
+        "nativeNotes": 1045,
+        "pages": 5,
+        "missingGlyphs": 0,
+        "nativePlayback": true,
+        "editorNotes": 1069,
+        "editorGraceNotes": 24
+      }
+    },
+    {
+      "filename": "ngoi-sao-co-don-jack-j97.mxl",
+      "title": "Ngôi sao cô đơn",
+      "status": "added",
+      "reason": "1442 nốt; 6 trang; MuseScore playback/mapping đạt",
+      "version": 1,
+      "workId": "fcdc9d20abdffab418db27a374381fb6db017426f01e6ca204d7a3caf3e656f6",
+      "id": "fcdc9d20abdffab418db27a374381fb6db017426f01e6ca204d7a3caf3e656f6",
+      "practiceReady": true,
+      "nativeAudit": {
+        "sourceNotes": 1442,
+        "nativeNotes": 1442,
+        "pages": 6,
+        "missingGlyphs": 0,
+        "nativePlayback": true
+      }
+    },
+    {
+      "filename": "ngay-tet-que-em (1).mxl",
+      "title": "Ngày Tết quê em",
+      "status": "added",
+      "reason": "333 nốt; 3 trang; MuseScore playback/mapping đạt",
+      "version": 1,
+      "workId": "5ca03ab09c905ffedd3a11fc2f37e03c933b10cdbeac7abd0a49a6a8d1067bbc",
+      "id": "5ca03ab09c905ffedd3a11fc2f37e03c933b10cdbeac7abd0a49a6a8d1067bbc",
+      "practiceReady": true,
+      "nativeAudit": {
+        "sourceNotes": 333,
+        "nativeNotes": 333,
+        "pages": 3,
+        "missingGlyphs": 0,
+        "nativePlayback": true
+      }
+    },
+    {
+      "filename": "ung-qua-chung-amee-piano-sheet.mxl",
+      "title": "Ưng quá chừng",
+      "status": "added",
+      "reason": "516 nốt; 2 trang; MuseScore playback/mapping đạt",
+      "version": 1,
+      "workId": "9f978abc1a17c51e0c800ce060b1408c44837cc8be1dc9d476f6e6e7e45517d0",
+      "id": "9f978abc1a17c51e0c800ce060b1408c44837cc8be1dc9d476f6e6e7e45517d0",
+      "practiceReady": true,
+      "nativeAudit": {
+        "sourceNotes": 516,
+        "nativeNotes": 516,
+        "pages": 2,
+        "missingGlyphs": 0,
+        "nativePlayback": true
+      }
+    },
+    {
+      "filename": "shay-nanggg-amee-x-obito-x-hua-kim-tuyen.mxl",
+      "title": "Shay Nắnggg",
+      "status": "added",
+      "reason": "769 nốt; 5 trang; MuseScore playback/mapping đạt",
+      "version": 1,
+      "workId": "2177c558e5bcab97f7be1fe500392efc4038c086f467089c175350b154e3b635",
+      "id": "2177c558e5bcab97f7be1fe500392efc4038c086f467089c175350b154e3b635",
+      "practiceReady": true,
+      "nativeAudit": {
+        "sourceNotes": 769,
+        "nativeNotes": 769,
+        "pages": 5,
+        "missingGlyphs": 0,
+        "nativePlayback": true
+      }
+    },
+    {
+      "filename": "sai-gon-dau-long-qua.mxl",
+      "title": "Sài Gòn đau lòng quá",
+      "status": "added",
+      "reason": "1214 nốt; 9 trang; MuseScore playback/mapping đạt",
+      "version": 1,
+      "workId": "d17bdecb956ccad647971e7713957a1d909446ac48e7afa9605900449b8bab58",
+      "id": "d17bdecb956ccad647971e7713957a1d909446ac48e7afa9605900449b8bab58",
+      "practiceReady": true,
+      "nativeAudit": {
+        "sourceNotes": 1214,
+        "nativeNotes": 1214,
+        "pages": 9,
+        "missingGlyphs": 0,
+        "nativePlayback": true
+      }
+    },
+    {
+      "filename": "thuc-giac-da-lab.mxl",
+      "title": "Thức giấc",
+      "status": "version-added",
+      "reason": "659 nốt; 5 trang; MuseScore playback/mapping đạt",
+      "version": 2,
+      "workId": "79c6d1000e255616150b5ca622baa190e8f2eadd238ca3920e79eefb15c3c0bc",
+      "id": "8f5b5cb28b6d9a009f53a5e30266e915e856b3269c24eae499ff3f330ee96d54",
+      "practiceReady": true,
+      "nativeAudit": {
+        "sourceNotes": 659,
+        "nativeNotes": 659,
+        "pages": 5,
+        "missingGlyphs": 0,
+        "nativePlayback": true
+      }
+    },
+    {
+      "filename": "fly-me-to-the-moon-easy-piano-solo.mxl",
+      "title": "Fly me to the Moon",
+      "status": "duplicate",
+      "reason": "Đã có cùng nội dung: Fly Me to the Moon"
+    },
+    {
+      "filename": "fly-me-to-the-moon.mxl",
+      "title": "FLY ME TO THE MOON",
+      "status": "duplicate",
+      "reason": "Đã có cùng nội dung: Fly Me to the Moon"
+    },
+    {
+      "filename": "cause-i-love-you.mxl",
+      "title": "cause-i-love-you",
+      "status": "duplicate",
+      "reason": "Đã có cùng nội dung: Cause I Love You"
+    },
+    {
+      "filename": "lemon-tree.mxl",
+      "title": "Lemon Tree",
+      "status": "duplicate",
+      "reason": "Đã có cùng nội dung: Lemon Tree"
+    },
+    {
+      "filename": "silent-night.mxl",
+      "title": "Silent Night",
+      "status": "duplicate",
+      "reason": "Đã có cùng nội dung: Silent Night"
+    },
+    {
+      "filename": "hotel-california-joji.mxl",
+      "title": "Untitled score",
+      "status": "duplicate",
+      "reason": "Đã có cùng nội dung: Hotel California"
+    },
+    {
+      "filename": "white-christmas-piano.mxl",
+      "title": "White Christmas",
+      "status": "duplicate",
+      "reason": "Đã có cùng nội dung: White Christmas"
+    },
+    {
+      "filename": "we-wish-you-a-merry-christmas-g-major.mxl",
+      "title": "We Wish You A Merry Christmas",
+      "status": "duplicate",
+      "reason": "Đã có cùng nội dung: We Wish You a Merry Christmas"
+    },
+    {
+      "filename": "have-yourself-a-merry-little-christmas.mxl",
+      "title": "Have Yourself a Merry Little Christmas",
+      "status": "duplicate",
+      "reason": "Đã có cùng nội dung: Have Yourself a Merry Little Christmas"
+    },
+    {
+      "filename": "its-beginning-to-look-a-lot-like-christmas.mxl",
+      "title": "its-beginning-to-look-a-lot-like-christmas",
+      "status": "duplicate",
+      "reason": "Đã có cùng nội dung: It’s Beginning to Look a Lot Like Christmas"
+    },
+    {
+      "filename": "cho-em-mot-lan-yeu-duc-tri-cho-em-mot-lan-yeu.mxl",
+      "title": "Title",
+      "status": "excluded",
+      "reason": "Không đạt chuẩn hai khuông piano: Expected 2 structural staves; found 3"
+    },
+    {
+      "filename": "mong-manh-tinh-ve-duc-tri.mxl",
+      "title": "Mong Manh Tình Về",
+      "status": "duplicate",
+      "reason": "Đã có cùng nội dung: Mong manh tình về"
+    },
+    {
+      "filename": "chac-ai-do-se-ve-son-tung-m-tp (1).mxl",
+      "title": "Chắc ai đó sẽ về",
+      "status": "duplicate",
+      "reason": "Đã có cùng nội dung: Chắc ai đó sẽ về"
+    },
+    {
+      "filename": "diem-xua-cover-by-an-coong.mxl",
+      "title": "Diễm xưa",
+      "status": "added",
+      "reason": "1535 nốt; 8 trang; MuseScore playback/mapping đạt",
+      "version": 1,
+      "workId": "12e5e83f220a84a24cfcb516157df5d8507c65ebf29168d7a122f7ae8092581d",
+      "id": "12e5e83f220a84a24cfcb516157df5d8507c65ebf29168d7a122f7ae8092581d",
+      "practiceReady": true,
+      "nativeAudit": {
+        "sourceNotes": 1535,
+        "nativeNotes": 1535,
+        "pages": 8,
+        "missingGlyphs": 0,
+        "nativePlayback": true
+      }
+    },
+    {
+      "filename": "PDF đính kèm (không nhập)",
+      "title": "",
+      "status": "excluded",
+      "reason": "Không phải MXL/MusicXML; không đọc hoặc nhập PDF vào thư viện."
+    },
+    {
+      "filename": "yeu-thuong-ngay-do-soobin-hoang-son.mxl",
+      "title": "Yêy thương ngày đó",
+      "status": "duplicate",
+      "reason": "Đã có cùng nội dung: Yêu thương ngày đó"
+    },
+    {
+      "filename": "con-mua-ngang-qua-son-tung-mtp.mxl",
+      "title": "Cơn mưa ngang qua",
+      "status": "duplicate",
+      "reason": "Đã có cùng nội dung: Cơn mưa ngang qua"
+    },
+    {
+      "filename": "chac-ai-do-se-ve-son-tung-m-tp.mxl",
+      "title": "Chắc ai đó sẽ về",
+      "status": "duplicate",
+      "reason": "Đã có cùng nội dung: Chắc ai đó sẽ về"
+    },
+    {
+      "filename": "nang-thuy-tinh-trinh-cong-son-ost-em-va-trinh.mxl",
+      "title": "NẮNG THỦY TINH (Em và Trịnh)",
+      "status": "duplicate",
+      "reason": "Đã có cùng nội dung: Nắng thủy tinh"
+    },
+    {
+      "filename": "ai-dua-em-ve-take-me-back-home-tia-feat-le-thien-hieu-low-cortisol-song.mxl",
+      "title": " Ai Đưa Em Về",
+      "status": "duplicate",
+      "reason": "Đã có cùng nội dung: Ai đưa em về — Tia"
+    },
+    {
+      "filename": "feliz-navidad.mxl",
+      "title": "Feliz Navidad",
+      "status": "duplicate",
+      "reason": "Đã có cùng nội dung: Feliz Navidad"
+    },
+    {
+      "filename": "jingle-bells-kids-piano-jingle-bells.mxl",
+      "title": "jingle-bells-kids-piano-jingle-bells",
+      "status": "duplicate",
+      "reason": "Đã có cùng nội dung: Jingle Bells"
+    },
+    {
+      "filename": "minuet-in-g.mxl",
+      "title": "minuet-in-g",
+      "status": "duplicate",
+      "reason": "Đã có cùng nội dung: Minuet in G"
+    },
+    {
+      "filename": "santa-claus-is-coming-to-town-santa-claus-is-coming-to-town.mxl",
+      "title": "santa-claus-is-coming-to-town-santa-claus-is-coming-to-town",
+      "status": "duplicate",
+      "reason": "Đã có cùng nội dung: Santa Claus Is Coming to Town"
+    },
+    {
+      "filename": "ai-dua-em-ve-nguyen-anh-9-ai-dua-em-ve.mxl",
+      "title": "Bản nhạc không tên",
+      "status": "duplicate",
+      "reason": "Đã có cùng nội dung: Ai đưa em về — Nguyễn Ánh 9"
+    },
+    {
+      "filename": "lemon-tree (1).mxl",
+      "title": "Lemon Tree",
+      "status": "duplicate",
+      "reason": "Đã có cùng nội dung: Lemon Tree"
+    },
+    {
+      "filename": "bai-ca-dat-phuong-nam-trich-doan-lu-nhat-vu-1997.mxl",
+      "title": "Bài ca đất phương nam",
+      "status": "duplicate",
+      "reason": "Đã có cùng nội dung: Bài ca đất phương Nam"
+    },
+    {
+      "filename": "co-dai-va-hoa-danh-danh-full-tukeotau.mxl",
+      "title": "Bản nhạc không tên",
+      "status": "duplicate",
+      "reason": "Đã có cùng nội dung: Cỏ dại và hoa dành dành"
+    },
+    {
+      "filename": "tim-em-chorus-hngle-ft-bao-anh-piano.mxl",
+      "title": "Untitled score",
+      "status": "duplicate",
+      "reason": "Đã có cùng nội dung: Tìm em"
+    },
+    {
+      "filename": "cho-nguoi-noi-ay.mxl",
+      "title": "cho-nguoi-noi-ay",
+      "status": "duplicate",
+      "reason": "Đã có cùng nội dung: Chờ người nơi ấy"
+    }
+  ],
+  "date": "2026-10-23",
+  "policy": "piano-two-staves-v1",
+  "existingEditionsPreserved": 60,
+  "sourceBytesModified": false
+}

@@ -26,6 +26,11 @@ phiên bản N+1 khi xác định được cùng tác phẩm. Mọi bản mới 
 
 ## Đối soát ngày 23/10/2026
 
+Sau lô bổ sung cùng ngày, catalog hiện có **77 phiên bản / 74 tác phẩm**: thêm 16
+tác phẩm mới và một phiên bản Thức giấc; 31 bản trùng được bỏ qua, hai MXL sai số
+khuông và một PDF không được nhận. 12 bản mới tập được, năm bản có nốt hoa mỹ
+chỉ nghe/chỉnh sửa sau khi kiểm native đầy đủ. Xem [báo cáo lô mới](IMPORT_REPORT_2026-10-23_BATCH.md).
+
 Đã đọc toàn bộ 65 MXL; giữ **60 phiên bản thuộc 58 tác phẩm**. Các MXL còn lại,
 ID, `workId`, số phiên bản và thứ tự giữ nguyên. Hai nhóm có nhiều phiên bản vẫn giữ đủ.
 
