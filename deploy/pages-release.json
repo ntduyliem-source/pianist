@@ -1,6 +1,6 @@
 {
-  "tag": "pianist-web-2026-10-23-refactor",
-  "sha256": "c0f00b2059a5a71ac89613a637e77d11abea4bd7f8d92adf765731ec66c4a432",
-  "sourceCommit": "82dff10f9b0285d7d9b2682063ec6a24ca411d74",
-  "version": "93080e30321dc2f33475"
+  "tag": "pianist-web-2026-10-23-mobile-library",
+  "sha256": "98b06c045ecdcc645075bd8dea606fb6e16b36bf16babb97c773775d824282c2",
+  "sourceCommit": "fcea08df636d1675b0a731068cbcc02aae3f1593",
+  "version": "b6cfebbf06b11adfe9ec"
 }
