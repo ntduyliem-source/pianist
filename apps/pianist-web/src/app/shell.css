@@ -1,0 +1,101 @@
+.appbar {
+  height: 49px;
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  gap: 35px;
+  background: #fff;
+  border-bottom: 1px solid #d9e1ec;
+  padding: 0 20px;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.8px;
+  color: #284468;
+}
+.brand-symbol {
+  height: 29px;
+  width: 29px;
+  border-radius: 7px 7px 7px 1px;
+  background: #356bb6;
+  display: inline-grid;
+  place-content: center;
+  color: #fff;
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 30px;
+  line-height: 1;
+  letter-spacing: -3px;
+  padding-right: 5px;
+}
+.edition {
+  font-size: 8px;
+  letter-spacing: 1.4px;
+  color: #9aa8bc;
+  font-weight: 600;
+  align-self: flex-end;
+  margin: 0 0 4px -4px;
+}
+.appbar nav {
+  display: flex;
+  align-self: stretch;
+  gap: 5px;
+}
+.appbar nav button {
+  border: 0;
+  border-radius: 0;
+  position: relative;
+  background: none;
+  font-size: 12px;
+  padding: 0 18px;
+  gap: 8px;
+  color: #8d9bb0;
+}
+.appbar nav button.selected {
+  color: #3267b0;
+  background: #f7f9fc;
+}
+.appbar nav button.selected:after {
+  content: '';
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  bottom: 0;
+  height: 3px;
+  background: #427ecf;
+  border-radius: 2px;
+}
+.appbar-end {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+.local-tag {
+  font-size: 11px;
+  color: #9aa8ba;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.local-tag > span {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #82a39a;
+}
+.icon-button {
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  padding: 0;
+  font-size: 12px;
+  color: #8b9db6;
+  border-color: #e0e7f0;
+}

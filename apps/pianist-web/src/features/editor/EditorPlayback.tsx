@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import type { EditorPlaybackState } from '../../../packages/engine-bridge';
-import { workspace as ws } from './workspace';
+import type { EditorPlaybackState } from '../../../../../packages/engine-bridge';
+import { workspace as ws } from '../../workspace';
 
 const time = (n: number) => {
   const s = Math.max(0, Math.floor(n || 0));

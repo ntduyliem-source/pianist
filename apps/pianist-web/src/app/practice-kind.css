@@ -1,0 +1,64 @@
+.practice-kind {
+  position: fixed;
+  top: calc(var(--app-top) + 14px);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: flex;
+  gap: 12px;
+  max-width: 760px;
+  width: calc(100% - 48px);
+  height: 72px;
+}
+.practice-kind + .page {
+  top: calc(var(--app-top) + 100px);
+}
+.practice-kind > button {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-align: left;
+  padding: 14px 18px;
+  border-radius: 12px;
+  min-width: 0;
+  background: #fff;
+  border: 1px solid #ddd;
+}
+.practice-kind > button[aria-pressed='true'] {
+  border-color: var(--blue);
+  background: #edf3fc;
+  box-shadow: 0 0 0 1px var(--blue);
+}
+.practice-kind span {
+  font-weight: 650;
+  font-size: 16px;
+}
+.practice-kind small {
+  display: block;
+  font-size: 12px;
+  color: #68716d;
+  font-weight: 400;
+  margin-top: 4px;
+}
+@media (max-width: 600px) {
+  .practice-kind {
+    width: calc(100% - 24px);
+    gap: 8px;
+    height: 64px;
+  }
+  .practice-kind + .page {
+    top: calc(var(--app-top) + 92px);
+  }
+  .practice-kind > button {
+    padding: 12px 10px;
+    gap: 8px;
+  }
+  .practice-kind small {
+    font-size: 11px;
+  }
+  .practice-kind .icon {
+    width: 20px;
+    flex-shrink: 0;
+  }
+}

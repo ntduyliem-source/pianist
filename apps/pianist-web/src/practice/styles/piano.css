@@ -1,0 +1,78 @@
+.piano {
+  height: 102px;
+  display: flex;
+  position: relative;
+  border: 1px solid #b6c3d5;
+  border-radius: 0 0 5px 5px;
+  background: #50617a;
+  box-shadow: 0 3px 5px #253a5910;
+  touch-action: none;
+  user-select: none;
+  overflow: hidden;
+}
+.piano button {
+  padding: 0;
+  position: relative;
+  border-radius: 0 0 3px 3px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  touch-action: none;
+  font-weight: 400;
+  gap: 0;
+}
+.white-key {
+  height: 100%;
+  background: linear-gradient(#fff, #f5f7fc);
+  border: 0;
+  border-right: 1px solid #c4cddc;
+  box-shadow: inset 0 -4px 0 #e4e9f1;
+  flex: none;
+}
+.black-key {
+  position: absolute !important;
+  top: 0;
+  height: 62%;
+  background: linear-gradient(#46566e, #25374f);
+  border: 1px solid #283c57;
+  box-shadow: inset 0 -4px 0 #1b2d44;
+  z-index: 2;
+}
+.piano button span {
+  font-size: 7px;
+  color: #99a9be;
+  padding-bottom: 10px;
+  line-height: 1;
+}
+.piano button.black-key span {
+  color: #a8bed9;
+  font-size: 6px;
+  padding-bottom: 8px;
+}
+.white-key.expected {
+  background: linear-gradient(#f0f6ff, #dfeeff);
+  box-shadow: inset 0 -4px 0 #a7c8eb;
+}
+.black-key.expected {
+  background: linear-gradient(#678fbf, #426b9c);
+}
+.white-key.held {
+  background: #a5c8ef;
+  box-shadow: inset 0 -4px 0 #78a5d7;
+}
+.black-key.held {
+  background: #6599d5;
+  box-shadow: inset 0 -4px 0 #467fb9;
+}
+.piano button i {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  bottom: 26px;
+  background: #78a7dc;
+}
+.piano button.black-key i {
+  bottom: 20px;
+  background: #afc8e9;
+}

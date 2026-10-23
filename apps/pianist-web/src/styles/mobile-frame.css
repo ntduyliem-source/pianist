@@ -1,0 +1,167 @@
+/* Shared mobile frame, including the native Qt canvas viewport. */
+:root {
+  --app-top: calc(49px + env(safe-area-inset-top));
+  --editor-meta-height: 48px;
+  --editor-playback-height: 48px;
+}
+.appbar {
+  height: var(--app-top);
+  padding-top: env(safe-area-inset-top);
+}
+.page {
+  top: var(--app-top);
+}
+.editor-meta {
+  top: var(--app-top);
+  height: var(--editor-meta-height);
+  gap: 8px;
+  padding: 2px 14px;
+}
+.editor-meta > strong {
+  flex: 1;
+  min-width: 0;
+  max-width: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.editor-meta button {
+  min-height: 40px;
+  font-size: 12px;
+  padding: 7px 12px;
+}
+.editor-desktop-actions {
+  display: flex;
+  gap: 8px;
+}
+.editor-more {
+  display: none;
+}
+.editor-playback {
+  top: calc(var(--app-top) + var(--editor-meta-height));
+  height: var(--editor-playback-height);
+}
+.editor-playback button {
+  min-height: 40px;
+}
+.editor-playback input[type='range'] {
+  height: 40px;
+  accent-color: #386dbb;
+}
+body[data-view='editor'] #screen {
+  inset: calc(var(--app-top) + var(--editor-meta-height) + var(--editor-playback-height)) 0
+    env(safe-area-inset-bottom);
+  height: auto;
+}
+.editor-actions-dialog > button {
+  display: flex;
+  width: 100%;
+  margin-top: 10px;
+  min-height: 44px;
+  justify-content: flex-start;
+}
+.editor-actions-dialog > p {
+  white-space: normal;
+  overflow-wrap: anywhere;
+  margin-block: 12px;
+}
+@media (max-width: 900px) {
+  .editor-desktop-actions,
+  .editor-desktop-label {
+    display: none;
+  }
+  .editor-more {
+    display: inline-flex;
+  }
+  .editor-meta {
+    padding-inline: 8px;
+    gap: 5px;
+  }
+  .editor-meta > strong {
+    max-width: none;
+    font-size: 12px;
+  }
+  .editor-meta > span {
+    display: none;
+  }
+  .editor-meta button {
+    font-size: 12px;
+    min-height: 44px;
+    padding: 7px 10px;
+  }
+  .editor-playback {
+    padding-inline: 8px;
+    gap: 5px;
+  }
+  .editor-playback button {
+    min-height: 44px;
+    font-size: 12px;
+    padding-inline: 8px;
+  }
+  .editor-playback-time {
+    min-width: 30px;
+    font-size: 11px;
+  }
+  .editor-playback-state {
+    display: none;
+  }
+  dialog {
+    min-width: 0;
+    max-width: calc(100vw - 24px);
+    width: calc(100vw - 24px);
+    max-height: calc(100dvh - 24px);
+    padding: 20px;
+    overflow: auto;
+  }
+  dialog input,
+  dialog select {
+    max-width: 100%;
+    font-size: 16px;
+  }
+  dialog .dialog-actions {
+    flex-wrap: wrap;
+  }
+  dialog button {
+    min-height: 44px;
+  }
+}
+@media (max-width: 480px) {
+  .appbar {
+    padding-inline: 8px;
+    gap: 8px;
+  }
+  .appbar nav button {
+    padding-inline: 7px;
+    min-height: 44px;
+  }
+  .brand {
+    font-size: 15px;
+    gap: 5px;
+  }
+  .appbar-end {
+    margin-left: auto;
+  }
+  .appbar-end .icon-button {
+    width: 32px;
+    min-width: 32px;
+  }
+  .editor-meta > strong {
+    font-size: 12px;
+  }
+  .editor-playback button {
+    white-space: nowrap;
+  }
+}
+@media (max-height: 500px) and (min-width: 700px) and (max-width: 1000px) {
+  .editor-meta {
+    right: 55%;
+    border-right: 1px solid var(--line);
+  }
+  .editor-playback {
+    top: var(--app-top);
+    left: 45%;
+  }
+  body[data-view='editor'] #screen {
+    top: calc(var(--app-top) + var(--editor-meta-height));
+  }
+}

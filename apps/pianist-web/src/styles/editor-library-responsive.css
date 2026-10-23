@@ -1,0 +1,23 @@
+@media (max-width: 800px) {
+  .editor-playback {
+    gap: 6px;
+    padding-inline: 8px;
+  }
+  .editor-playback-state {
+    display: none;
+  }
+  .editor-playback label {
+    font-size: 0;
+    gap: 0;
+  }
+  .editor-playback select {
+    font-size: 11px;
+  }
+  .editor-playback button {
+    font-size: 11px;
+    padding: 6px 8px;
+  }
+  .bundled-library > .section-top > .muted {
+    display: none;
+  }
+}

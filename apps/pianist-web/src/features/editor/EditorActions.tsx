@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { workspace as ws } from './workspace';
+import { workspace as ws } from '../../workspace';
 
 export function EditorActions({
   title,

@@ -15,13 +15,15 @@ Kế hoạch thực hiện được chấp thuận ngày 23/10/2026. Làm lần 
 
 | Giai đoạn | Sản phẩm cụ thể | Cổng hoàn thành | Trạng thái |
 |---|---|---|---|
-| 1. Tài liệu, inventory, kiểm thống nhất/CI | Điểm vào docs; kiến trúc/source content/release; kiểm source và dữ liệu có lệnh rõ | Link/path và inventory đúng; suite/check CI đúng phạm vi; mốc commit | Đang thực hiện |
-| 2. Format và chia UI/CSS | Source đọc được; tách shell/library/editor/results, các phần UI practice; style thuộc đúng feature | Commit format tách khỏi hành vi; unit/build và browser/mobile cần thiết đạt; style piano/sheet còn đủ | Chưa bắt đầu |
+| 1. Tài liệu, inventory, kiểm thống nhất/CI | Điểm vào docs; kiến trúc/source content/release; kiểm source và dữ liệu có lệnh rõ | Link/path và inventory đúng; suite/check CI đúng phạm vi; mốc commit | Hoàn thành · `165ca9` |
+| 2. Format và chia UI/CSS | Source đọc được; tách shell/library/editor/results, các phần UI practice; style thuộc đúng feature | Commit format tách khỏi hành vi; unit/build và browser/mobile cần thiết đạt; style piano/sheet còn đủ | Đang thực hiện · format `2061aaaa12` |
 | 3. Một nơi sở hữu session, chia trách nhiệm workspace | Coordinator duy nhất cho lifecycle; UI/grade dùng lệnh; workspace tách trách nhiệm engine/document/navigation | Start/Stop khi tải, pause/resume, auto-next, A–B, giữ editor và persist không đổi | Chưa bắt đầu |
 | 4. Nguồn grade, manifest và tooling đang dùng/lịch sử | Nguồn + index + schema có điểm vào rõ; phân loại tools active/legacy; đường truy từ score ID tới MXL | 5.600 nội dung/hash/order giữ nguyên; catalog/manifest/hash kiểm; không chạy pipeline lịch sử ngoài ý muốn | Chưa bắt đầu |
 | 5. API package công khai, kiểu native và guard | Import qua entrypoint ổn định; typed native boundary; kiểm hướng phụ thuộc và dữ liệu | Typecheck/test/build/guard đạt; release verifier + smoke gói cuối; tài liệu phản ánh cấu trúc thực tế | Chưa bắt đầu |
 
 Trạng thái chỉ chuyển thành hoàn thành khi đã có bằng chứng tương ứng. Kế hoạch không tự xác nhận binary hoặc website đã được cập nhật.
+
+Mốc 1: cổng source đạt 194 test TypeScript, 45 test Python và duyệt đủ 5.600 nguồn grade, kể cả kiểm từ bản sao chỉ có source. Mốc định dạng `2061aaaa12` giữ hành vi và đạt unit/build. Các số này là kết quả tại mốc, không phải tổng cố định cho các bước sau.
 
 ## Cách chia thay đổi
 

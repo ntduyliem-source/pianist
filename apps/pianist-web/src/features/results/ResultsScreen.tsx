@@ -1,49 +1,20 @@
-import React, { useState, useSyncExternalStore } from 'react';
+import React, { useState } from 'react';
 import {
   ENGINE_ID,
   type SavedAttempt,
   type AttemptResult,
-  type ReleaseJudgement,
-} from '../../../../packages/practice-engine-v2/model';
-import { assessReleases } from '../../../../packages/practice-engine-v2/release-assessment';
+} from '../../../../../packages/practice-engine-v2/model';
+import { assessReleases } from '../../../../../packages/practice-engine-v2/release-assessment';
 import {
   attemptCsv,
   canCompare,
   replayAttempt,
-} from '../../../../packages/practice-engine-v2/results';
-import { workspace as ws } from '../workspace';
-import { download } from '../platform/files';
-import { noteName } from '../platform/midi-v2';
-
+} from '../../../../../packages/practice-engine-v2/results';
+import { workspace as ws } from '../../workspace';
+import { download } from '../../platform/files';
+import { noteName } from '../../platform/midi-v2';
+import { percent, date, gradeText, releaseText, releaseLabel } from './presentation';
 const run = (f: () => unknown) => () => void ws.run(f);
-const percent = (n: number | null) => (n === null ? '—' : (n * 100).toFixed(1) + '%');
-const date = (n: number) => new Date(n).toLocaleString('vi');
-const gradeText = {
-  perfect: 'Perfect',
-  great: 'Great',
-  good: 'Good',
-  ok: 'OK',
-  meh: 'Meh',
-  miss: 'Miss',
-};
-const releaseText: Record<ReleaseJudgement['status'], string> = {
-  correct: 'Đúng nhả',
-  early: 'Nhả sớm',
-  late: 'Nhả trễ',
-  unreleased: 'Chưa nhả',
-  interrupted: 'Bị ngắt',
-  pending: 'Đang giữ',
-  unavailable: 'Thiếu mốc native',
-  'no-attack': 'Chưa đánh đúng nốt',
-};
-const releaseDelta = (ms: number) =>
-  Math.abs(ms) < 0.05 ? '0.0' : `${ms > 0 ? '+' : ''}${ms.toFixed(1)}`;
-const releaseLabel = (r?: ReleaseJudgement) =>
-  r
-    ? `${releaseText[r.status]}${r.deltaMs !== null && ['correct', 'early', 'late'].includes(r.status) ? ` · ${releaseDelta(r.deltaMs)} ms` : ''}`
-    : '—';
-
-export { Practice } from './PracticeScreen';
 
 export function Results({ result: r }: { result: SavedAttempt }) {
   const [replay, setReplay] = useState('');
@@ -350,57 +321,5 @@ function ReleaseResults({ result: r }: { result: AttemptResult }) {
         </>
       )}
     </section>
-  );
-}
-
-export function History() {
-  const state = useSyncExternalStore(ws.subscribe, ws.snapshot);
-  return (
-    <main className="page history-page">
-      <div className="page-title">
-        <h1 id="view-heading" tabIndex={-1}>
-          Lịch sử luyện tập
-        </h1>
-        <button onClick={() => ws.navigate('library')}>Thư viện</button>
-      </div>
-      <table>
-        <thead>
-          <tr>
-            <th>Bài / thời điểm</th>
-            <th>Bộ chấm</th>
-            <th>Kết quả</th>
-            <th />
-          </tr>
-        </thead>
-        <tbody>
-          {state.history.map((r) => (
-            <tr key={r.id}>
-              <td>
-                {r.title}
-                <br />
-                {date(r.createdAt)}
-              </td>
-              <td>{r.schemaVersion === 2 ? 'V2 · osu! / PTS' : 'Bản cũ · chỉ đọc'}</td>
-              <td>
-                {r.schemaVersion === 2
-                  ? `${r.metrics.hits}/${r.metrics.evaluated} nốt · ${r.metrics.extras} input thừa`
-                  : 'Giữ nguyên dữ liệu đã lưu'}
-              </td>
-              <td>
-                <button
-                  onClick={() => {
-                    ws.patch({ result: r });
-                    ws.navigate('results');
-                  }}
-                >
-                  Xem kết quả
-                </button>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-      {!state.history.length && <p>Chưa có lượt tập được lưu.</p>}
-    </main>
   );
 }

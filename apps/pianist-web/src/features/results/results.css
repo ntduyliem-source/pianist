@@ -1,0 +1,251 @@
+.results-page,
+.history-page {
+  padding: 35px 48px 50px;
+}
+.result-outcome {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  padding: 19px 24px;
+  background: #edf6f2;
+  border: 1px solid #daeae2;
+  border-radius: 7px;
+  color: #6b9b85;
+  margin-bottom: 23px;
+}
+.result-outcome > .icon {
+  width: 25px;
+  height: 25px;
+}
+.result-outcome > div {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.result-outcome strong {
+  font-size: 13px;
+  font-weight: 600;
+  color: #527e69;
+}
+.result-outcome span {
+  font-size: 11px;
+  color: #8ba899;
+}
+.result-outcome > span {
+  margin-left: auto;
+  font-size: 22px;
+  font-variant-numeric: tabular-nums;
+}
+.result-outcome.aborted,
+.result-outcome.interrupted {
+  background: #fbf5eb;
+  border-color: #ede2cf;
+  color: #b6a07b;
+}
+.result-outcome.aborted strong,
+.result-outcome.interrupted strong {
+  color: #9d8865;
+}
+.result-outcome.aborted span,
+.result-outcome.interrupted span {
+  color: #baa98e;
+}
+.metric-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 23px;
+}
+.metric {
+  background: #fff;
+  border: 1px solid #e0e6ee;
+  border-radius: 7px;
+  padding: 21px;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+.metric > span {
+  font-size: 11px;
+  color: #8b99ac;
+}
+.metric strong {
+  font-size: 31px;
+  line-height: 1.2;
+  font-weight: 600;
+  letter-spacing: -1px;
+  color: #526f94;
+}
+.metric small {
+  font-size: 9px;
+  color: #a5afbe;
+}
+.result-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 22px;
+}
+.result-box {
+  background: #fff;
+  border: 1px solid #e1e6ee;
+  border-radius: 7px;
+  padding: 23px;
+  overflow: auto;
+}
+.result-box h2 {
+  font-size: 14px;
+  margin-bottom: 8px;
+  color: #5f728e;
+}
+.result-box > .muted {
+  font-size: 10px;
+  margin-bottom: 17px;
+}
+.weak-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eef1f6;
+  padding: 11px 0;
+  gap: 15px;
+}
+.weak-row > div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.weak-row strong {
+  font-size: 11px;
+  font-weight: 600;
+  color: #8192aa;
+}
+.weak-row span {
+  font-size: 9px;
+  color: #a3afbf;
+}
+.weak-row button {
+  font-size: 9px;
+  padding: 6px 8px;
+  border-color: #e3e9f2;
+  color: #8199b7;
+}
+.weak-row .icon {
+  width: 12px;
+  height: 12px;
+}
+.empty-success {
+  padding: 28px 0;
+  color: #95aa9d;
+  font-size: 12px;
+  line-height: 1.7;
+}
+.result-details {
+  margin: 15px 0 20px;
+}
+.result-details > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 8px 0;
+  border-bottom: 1px solid #eef1f6;
+  font-size: 10px;
+}
+.result-details dt {
+  color: #a0adbd;
+}
+.result-details dd {
+  margin: 0;
+  color: #8194ad;
+}
+.result-box .button-row button {
+  font-size: 10px;
+  padding: 7px 9px;
+}
+.result-box .button-row .icon {
+  width: 13px;
+  height: 13px;
+}
+.loop-results {
+  display: flex;
+  flex-direction: column;
+  font-size: 10px;
+  gap: 7px;
+  color: #96a5b9;
+  margin-bottom: 17px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 11px;
+  text-align: left;
+}
+th {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  color: #a1afc0;
+  padding: 14px 12px;
+  border-bottom: 1px solid #e4eaf2;
+}
+td {
+  padding: 12px;
+  color: #7f92ac;
+  border-bottom: 1px solid #eef2f7;
+  line-height: 1.6;
+}
+td strong {
+  font-weight: 500;
+  color: #7188a7;
+}
+td button {
+  font-size: 10px;
+  padding: 7px 10px;
+}
+.table-sub {
+  display: block;
+  font-size: 9px;
+  color: #a8b4c5;
+  margin-top: 3px;
+}
+.grade {
+  padding: 3px 7px;
+  border-radius: 3px;
+  font-size: 9px;
+  color: #7fa08d;
+  background: #f0f6f2;
+}
+.grade-miss {
+  color: #bf8e7e;
+  background: #fbf2ee;
+}
+.grade-outside {
+  color: #b8a06e;
+  background: #fcf7ed;
+}
+.grade-perfect {
+  background: #eaf4ef;
+  color: #6b9b81;
+}
+.empty-history {
+  text-align: center;
+  padding: 70px 20px;
+  color: #9baabc;
+}
+.empty-history > .icon {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 20px;
+}
+.empty-history h2 {
+  color: #8196b0;
+}
+.empty-history p {
+  font-size: 12px;
+  margin: 14px 0 23px;
+}
+.result-table > p {
+  font-size: 11px;
+  color: #a4afbd;
+  padding-top: 18px;
+}

@@ -3,13 +3,11 @@ import type { ScoreSnapshot } from '../../../../packages/score-contracts';
 import type {
   PracticeSettings,
   EngineView,
-  ReleaseJudgement,
   AttemptResult,
 } from '../../../../packages/practice-engine-v2/model';
 import { createTimeline } from '../../../../packages/practice-engine-v2/score-adapter';
 import { ManiaHitWindows } from '../../../../packages/practice-engine-v2/upstream/mania';
 import { workspace as ws } from '../workspace';
-import { noteName } from '../platform/midi-v2';
 import { PracticeController } from './controller-v2';
 import { feedback } from './feedback-v2';
 import { Sheet } from './Sheet';
@@ -24,6 +22,10 @@ import {
   type AuditionState,
 } from './native-audition';
 import { NumberField } from './NumberField';
+import { PracticeFeedback } from './ui/PracticeFeedback';
+import { PedalToggle } from './ui/PedalToggle';
+import { AuditionControls } from './ui/AuditionControls';
+import { RangeSettings } from './ui/RangeSettings';
 import './practice-v2.css';
 import type { EngineBridge } from '../../../../packages/engine-bridge';
 
@@ -52,24 +54,6 @@ const empty: EngineView = {
   processedMs: 0,
   faults: [],
 };
-const gradeText = {
-  perfect: 'Perfect',
-  great: 'Great',
-  good: 'Good',
-  ok: 'OK',
-  meh: 'Meh',
-  miss: 'Bỏ lỡ',
-};
-const releaseText: Record<ReleaseJudgement['status'], string> = {
-  correct: 'Nhả đúng',
-  early: 'Nhả sớm',
-  late: 'Nhả trễ',
-  unreleased: 'Chưa nhả',
-  interrupted: 'Bị ngắt',
-  pending: 'Đang giữ nốt',
-  unavailable: 'Chưa có mốc nhả',
-  'no-attack': 'Chưa nhận đúng nốt',
-};
 type Presentation = { keyboard: boolean; scroll: boolean; zoom: number | 'fit' | 'auto' };
 function presentation(): Presentation {
   try {
@@ -83,10 +67,6 @@ function presentation(): Presentation {
     return { keyboard: false, scroll: true, zoom: 'auto' };
   }
 }
-const time = (ms: number) => {
-  const s = Math.max(0, Math.floor(ms / 1000));
-  return `${Math.floor(s / 60)}:${String(s % 60).padStart(2, '0')}`;
-};
 
 export function Practice({
   snapshot,
@@ -175,7 +155,6 @@ export function Practice({
       : 0;
   const currentMeasure = cursor?.measure ?? c.fromMeasure,
     loop = cursor?.loop ?? 0;
-  const names = (pitches: number[]) => [...new Set(pitches)].map(noteName).join(' · ') || '—';
   const targetIndex = useMemo(() => new Map(t?.targets.map((n) => [n.id, n]) ?? []), [t]);
   const judged = useMemo(() => new Set(view.judgements.map((j) => j.id)), [view.judgements]);
   const missing =
@@ -185,8 +164,7 @@ export function Practice({
           .map((id) => targetIndex.get(id)!.pitch) ?? [])
       : [];
   const latest = view.judgements.at(-1),
-    lastNote = latest ? targetIndex.get(latest.id) : undefined,
-    release = view.releaseFeedback;
+    lastNote = latest ? targetIndex.get(latest.id) : undefined;
   const timing =
     latest?.seq !== null && latest?.seq !== undefined
       ? `${latest.delta < 0 ? 'Sớm' : latest.delta > 0 ? 'Trễ' : 'Đúng mốc'}${latest.delta ? ` ${Math.abs(latest.delta).toFixed(0)} ms` : ''}`
@@ -511,16 +489,11 @@ export function Practice({
     setSelecting(null);
   };
   const pedalToggle = (
-    <label className="v2-check">
-      <input
-        aria-label="Dùng pedal khi tập"
-        type="checkbox"
-        checked={c.pedalEnabled !== false}
-        disabled={active || !!exercise?.loading}
-        onChange={(e) => update({ pedalEnabled: e.target.checked })}
-      />
-      Pedal
-    </label>
+    <PedalToggle
+      enabled={c.pedalEnabled !== false}
+      disabled={active || !!exercise?.loading}
+      onChange={(enabled) => update({ pedalEnabled: enabled })}
+    />
   );
   const canStop =
     active || !!audition || preparingListen || (!!exercise && (!!session || exercise.loading));
@@ -543,47 +516,25 @@ export function Practice({
   );
 
   const auditionControls = audition && (
-    <div className="v2-audition" role="region" aria-label="Nghe bằng MuseScore">
-      <span className="v2-time">{time(audition.elapsedMs)}</span>
-      <input
-        type="range"
-        aria-label="Vị trí nghe"
-        min={Math.floor(preview.current?.range.startMs ?? 0)}
-        max={Math.ceil(preview.current?.range.endMs ?? 1)}
-        step={1}
-        value={Math.round(audition.positionMs)}
-        onChange={(e) => {
-          preview.current?.seek(+e.target.value);
-          setFollowToken((n) => n + 1);
-        }}
-      />
-      <select
-        aria-label="Tốc độ nghe"
-        disabled={audition.preparing}
-        value={listenSpeed}
-        onChange={(e) => {
-          const value = +e.target.value;
-          void ws.run(() => preview.current?.speed(value));
-          setListenSpeed(value);
-        }}
-      >
-        {[0.25, 0.5, 0.75, 1, 1.25, 1.5, 2].map((n) => (
-          <option key={n} value={n}>
-            {Math.round(n * 100)}%
-          </option>
-        ))}
-      </select>
-      <button
-        aria-label="Lặp khi nghe"
-        aria-pressed={listenLoop}
-        onClick={() => {
-          preview.current?.loop(!listenLoop);
-          setListenLoop(!listenLoop);
-        }}
-      >
-        ↻
-      </button>
-    </div>
+    <AuditionControls
+      audition={audition}
+      startMs={preview.current?.range.startMs ?? 0}
+      endMs={preview.current?.range.endMs ?? 1}
+      speed={listenSpeed}
+      loop={listenLoop}
+      onSeek={(positionMs) => {
+        preview.current?.seek(positionMs);
+        setFollowToken((n) => n + 1);
+      }}
+      onSpeed={(value) => {
+        void ws.run(() => preview.current?.speed(value));
+        setListenSpeed(value);
+      }}
+      onLoop={() => {
+        preview.current?.loop(!listenLoop);
+        setListenLoop(!listenLoop);
+      }}
+    />
   );
 
   return (
@@ -822,109 +773,26 @@ export function Practice({
         onMeasure={selectMeasure}
       />
 
-      <details className="v2-feedback-panel" hidden={focus}>
-        <summary>
-          <span>
-            {count
-              ? `Đếm vào ${count}`
-              : active
-                ? c.mode === 'bpm'
-                  ? timing
-                  : `Còn thiếu: ${names(missing)}`
-                : `${c.hand === 'both' ? 'Hai tay' : c.hand === 'left' ? 'Tay trái' : 'Tay phải'} · ${device}`}
-          </span>
-          <span>
-            {active ? `${view.judgements.length} nốt · ${view.extras.length} thừa` : 'Phản hồi'} ⌄
-          </span>
-        </summary>
-        <section className="v2-feedback" aria-label="Phản hồi luyện tập">
-          <div>
-            <span className="v2-label">
-              {c.mode === 'wait' ? 'Hợp âm cần chơi' : 'Nốt vừa chơi'}
-            </span>
-            <strong>
-              {c.mode === 'wait'
-                ? names(f.expected)
-                : lastNote
-                  ? `${noteName(lastNote.pitch)} · ${latest?.grade === 'miss' ? 'Bỏ lỡ' : 'Đã nhận'}`
-                  : 'Sẵn sàng nhận phím'}
-            </strong>
-            <small>
-              {c.mode === 'wait'
-                ? `Còn thiếu: ${names(missing)}`
-                : held.length
-                  ? `Đang giữ ${names(held)}`
-                  : `Sắp chơi: ${names(f.expected)}`}
-            </small>
-          </div>
-          <div>
-            <span className="v2-label">{c.mode === 'bpm' ? 'Thời điểm vào nốt' : 'Tiến độ'}</span>
-            <strong
-              className={
-                latest && ['good', 'ok', 'meh', 'miss'].includes(latest.grade) ? 'v2-attention' : ''
-              }
-            >
-              {c.mode === 'bpm'
-                ? timing
-                : `${view.judgements.length} / ${t?.targets.length ?? 0} nốt`}
-            </strong>
-            <small>
-              {c.mode === 'bpm' && latest ? `${gradeText[latest.grade]} · ` : ''}
-              {view.extras.length} phím thừa ·{' '}
-              {view.judgements.filter((j) => j.grade === 'miss').length} nốt bỏ lỡ
-            </small>
-          </div>
-          <div>
-            <span className="v2-label">Trường độ</span>
-            <strong>
-              {c.mode === 'wait'
-                ? 'Không chấm ở Đúng nốt'
-                : c.durationEnabled === false
-                  ? 'Đã tắt chấm nhả phím'
-                  : release
-                    ? releaseText[release.status]
-                    : 'Chờ nốt đầu tiên'}
-            </strong>
-            <small>
-              {release?.deltaMs !== null && release?.deltaMs !== undefined
-                ? `${release.deltaMs > 0 ? '+' : ''}${release.deltaMs.toFixed(0)} ms`
-                : 'Theo mốc nhả của bản nhạc'}
-            </small>
-          </div>
-        </section>
-        <div className="v2-pedal-row" hidden={focus}>
-          {pedalToggle}
-          <span>
-            Bài yêu cầu:{' '}
-            <strong>
-              {c.pedalEnabled === false
-                ? 'Đã tắt'
-                : !pedalReference
-                  ? 'Không có ký hiệu'
-                  : !active || c.mode === 'wait'
-                    ? '—'
-                    : pedalExpected
-                      ? 'Đạp'
-                      : 'Nhả'}
-            </strong>
-          </span>
-          <span>
-            Đàn đang:{' '}
-            <strong className={ws.midi.pedal ? 'v2-pedal-down' : ''}>
-              {ws.midi.pedal ? 'Đạp' : 'Nhả'}
-            </strong>
-          </span>
-          <span className="v2-flex" />
-          <button
-            disabled={ws.midi.deviceId !== 'virtual' || c.pedalEnabled === false}
-            aria-label="Đạp hoặc nhả pedal ảo"
-            aria-pressed={ws.midi.pedal}
-            onClick={() => ws.midi.receive([0xb0, 64, ws.midi.pedal ? 0 : 127], performance.now())}
-          >
-            {ws.midi.pedal ? 'Nhả pedal' : 'Đạp pedal'}
-          </button>
-        </div>
-      </details>
+      <PracticeFeedback
+        config={c}
+        view={view}
+        active={active}
+        count={count}
+        focus={focus}
+        timing={timing}
+        expected={f.expected}
+        held={held}
+        missing={missing}
+        lastNote={lastNote}
+        total={t?.targets.length ?? 0}
+        device={device}
+        pedalReference={pedalReference}
+        pedalExpected={pedalExpected}
+        pedalDown={ws.midi.pedal}
+        virtualInput={ws.midi.deviceId === 'virtual'}
+        pedalToggle={pedalToggle}
+        onPedal={() => ws.midi.receive([0xb0, 64, ws.midi.pedal ? 0 : 127], performance.now())}
+      />
       <PracticePiano
         held={held}
         expected={f.expected}
@@ -1013,74 +881,17 @@ export function Practice({
           </fieldset>
         )}
         {!exercise && (
-          <fieldset disabled={active}>
-            <legend>Đoạn A–B và vòng tập</legend>
-            <div className="v2-field-pair">
-              <label>
-                Từ ô
-                <NumberField
-                  aria-label="Từ ô nhịp"
-                  type="number"
-                  min={1}
-                  max={snapshot.measures.length}
-                  value={c.fromMeasure + 1}
-                  onValue={(value) => rangeEdit(value - 1, 'a')}
-                />
-              </label>
-              <label>
-                Đến ô
-                <NumberField
-                  aria-label="Đến ô nhịp"
-                  type="number"
-                  min={1}
-                  max={snapshot.measures.length}
-                  value={c.toMeasure + 1}
-                  onValue={(value) => rangeEdit(value - 1, 'b')}
-                />
-              </label>
-            </div>
-            <div className="v2-row">
-              <button
-                onClick={() => {
-                  setSelecting('a');
-                  setPanel(null);
-                }}
-              >
-                Chọn A trên bài
-              </button>
-              <button
-                onClick={() => {
-                  setSelecting('b');
-                  setPanel(null);
-                }}
-              >
-                Chọn B trên bài
-              </button>
-            </div>
-            <div className="v2-field-pair">
-              <label>
-                Số vòng
-                <NumberField
-                  aria-label="Số vòng"
-                  type="number"
-                  min={1}
-                  max={10}
-                  value={c.loops}
-                  onValue={(value) => update({ loops: value })}
-                />
-              </label>
-              <label>
-                Tăng BPM mỗi vòng
-                <NumberField
-                  type="number"
-                  min={0}
-                  max={50}
-                  value={c.loopBpmStep}
-                  onValue={(value) => update({ loopBpmStep: value })}
-                />
-              </label>
-            </div>
-          </fieldset>
+          <RangeSettings
+            config={c}
+            disabled={active}
+            measureCount={snapshot.measures.length}
+            onRange={rangeEdit}
+            onSelect={(side) => {
+              setSelecting(side);
+              setPanel(null);
+            }}
+            onSettings={update}
+          />
         )}
         {panel === 'settings' && (
           <>
