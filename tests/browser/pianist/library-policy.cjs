@@ -16,7 +16,7 @@ const invalidAbc='X:2\nT:One staff rejected\nM:4/4\nL:1/4\nV:RH clef=treble name
   await fs.mkdir(out,{recursive:true});
   const browser=await chromium.launch({headless:true,channel:process.env.PIANIST_BROWSER_CHANNEL||'msedge',args:['--enable-unsafe-swiftshader']});
   const page=await browser.newPage({viewport:{width:1440,height:1000},serviceWorkers:'block'});
-  const report={checks:[],errors:[],native:[]};
+  const report={checks:[],errors:[],native:[],catalog:[]};
   page.on('pageerror',e=>report.errors.push(String(e)));
   page.on('dialog',d=>d.type()==='beforeunload'?d.accept():d.dismiss());
   const check=message=>{report.checks.push(message);console.log('PASS',message);};
@@ -48,8 +48,35 @@ const invalidAbc='X:2\nT:One staff rejected\nM:4/4\nL:1/4\nV:RH clef=treble name
     await dialog.locator('input[type=checkbox]').nth(1).uncheck();await dialog.getByRole('button',{name:'Nhập 1 bài',exact:true}).click();await ready('mixed-policy-book.abc');
     assert.equal((await records()).length,saved.length+1);assert.equal((await semantics()).staves.length,2);
     check('Mixed ABC batch is atomic; deselecting the invalid tune imports exactly one valid project');
+    // Prepare every shipped song with the real engine without admitting it to
+    // personal storage. Parse only after C++ has destroyed its temporary score.
+    const catalog=await page.evaluate(async()=>{const response=await fetch(new URL('library/catalog.json',location.href));if(!response.ok)throw Error('Bundled catalog unavailable');return response.json();});
+    const sourceCatalog=JSON.parse(await fs.readFile(path.join(root,'scores/library/catalog.json'),'utf8'));
+    assert.deepEqual(catalog,sourceCatalog,'served catalog must match the curated source under review');
+    const beforeCatalog=await semantics(),savedBeforeCatalog=await records();
+    for(const song of catalog.songs){
+      const facts=await page.evaluate(async song=>{
+        const response=await fetch(new URL(song.url,location.href));if(!response.ok)throw Error('Missing bundled song '+song.url);
+        const bytes=new Uint8Array(await response.arrayBuffer());
+        const sha=[...new Uint8Array(await crypto.subtle.digest('SHA-256',bytes))].map(n=>n.toString(16).padStart(2,'0')).join('');
+        if(sha!==song.sha256||bytes.length!==song.bytes)throw Error('Bundled song integrity mismatch '+song.url);
+        const api=window.pianist,previous=api.Module.onPreparedSemantics;let raw;
+        api.Module.onPreparedSemantics=json=>{raw=String(json);};
+        try{if(!api.prepareProject(bytes,song.filename,true)||!raw)throw Error('Native preparation failed '+song.url);}
+        finally{api.Module.onPreparedSemantics=previous;}
+        const score=JSON.parse(raw);
+        return {id:song.id,title:song.title,url:song.url,sha256:sha,staves:score.staves,notes:score.anchors.length};
+      },song);
+      assert.equal(facts.staves.length,2,song.title+' must have exactly two native staves');
+      assert(facts.staves.every(s=>s.instruments?.length&&s.instruments.every(i=>i.programs?.length&&i.programs.every(p=>Number.isInteger(p)&&p>=0&&p<=5))),song.title+' must remain piano at every native instrument change');
+      assert.deepEqual(await semantics(),beforeCatalog,song.title+' temporary score must not change the editor');
+      facts.passed=true;report.catalog.push(facts);
+      console.log('CATALOG',report.catalog.length+'/'+catalog.songs.length,song.title);
+    }
+    assert.deepEqual(await records(),savedBeforeCatalog,'catalog verification must not create or alter personal projects');
+    check('Every bundled song agrees with native two-staff piano admission; SHA and the current editor/library remain unchanged');
     assert.deepEqual(report.errors,[]);report.passed=true;
   }catch(error){report.passed=false;report.error=String(error.stack||error);report.banners=await page.locator('.error-banner').allTextContents();process.exitCode=1;await page.screenshot({path:path.join(out,'failure.png')}).catch(()=>{});}
   finally{await fs.writeFile(path.join(out,'report.json'),JSON.stringify(report,null,2));await browser.close();}
-  console.log(JSON.stringify(report,null,2));
+  console.log(JSON.stringify({passed:report.passed,checks:report.checks,errors:report.errors,catalogVerified:report.catalog.length,error:report.error,report:path.join(out,'report.json')},null,2));
 })();
