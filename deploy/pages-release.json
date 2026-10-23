@@ -1,6 +1,6 @@
 {
-  "tag": "pianist-web-2026-10-23-audit-fixes",
-  "sha256": "d17ba1c3bd66bfe803e865700af7e3d082a2373649d2d3ad394632ab9f0f56ec",
-  "sourceCommit": "81659158ca0f145494c584120f647d992a03228c",
-  "version": "6614d73f7986b62e724d"
+  "tag": "pianist-web-2026-10-23-refactor",
+  "sha256": "c0f00b2059a5a71ac89613a637e77d11abea4bd7f8d92adf765731ec66c4a432",
+  "sourceCommit": "82dff10f9b0285d7d9b2682063ec6a24ca411d74",
+  "version": "93080e30321dc2f33475"
 }
