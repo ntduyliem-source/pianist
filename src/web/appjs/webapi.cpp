@@ -407,7 +407,7 @@ void WebApi::resetPracticePlayback()
     ++m_auditionGeneration; // Invalidates prepareToPlay callbacks after navigation/stop.
     m_auditionPreparing = false;
     m_auditionError.clear();
-    if (!m_auditionConfigured) { return; }
+    if (!m_auditionConfigured) { publishPracticeClock(); return; }
     const auto player = m_auditionPlayer;
     if (player) {
         player->stop();
@@ -420,6 +420,25 @@ void WebApi::resetPracticePlayback()
         player->setDuration(audio::secsToMilisecs(playbackController()->totalPlayTime()));
     }
     m_auditionConfigured = false;
+    ++m_auditionNotesRevision;
+    publishPracticeClock();
+}
+
+void WebApi::publishPracticeClock()
+{
+    ++m_auditionClockEpoch;
+#ifdef Q_OS_WASM
+    const auto callback = emscripten::val::module_property("onPracticeClock");
+    if (callback.isUndefined() || callback.isNull()) { return; }
+    // The JS adapter sends this marker on the SAME ordered RPC port as the
+    // preceding seek/play/tempo operations. The worklet then samples native
+    // playbackPosition and status for the PCM blocks it actually produces.
+    const QJsonObject data{{"epoch", int(m_auditionClockEpoch)},
+        {"active", m_auditionConfigured && bool(m_auditionPlayer)},
+        {"sequenceId", m_auditionPlayer ? int(m_auditionPlayer->sequenceId()) : -1},
+        {"tempoMultiplier", m_currentProject ? playbackController()->tempoMultiplier() : 1.0}};
+    callback(QJsonDocument(data).toJson(QJsonDocument::Compact).toStdString());
+#endif
 }
 
 void WebApi::applyPracticePlaybackRange()
@@ -456,6 +475,7 @@ void WebApi::preparePracticePlayback()
             player->seek(audio::secs_t(m_auditionStart / speed));
         }
         player->play();
+        publishPracticeClock();
     });
 }
 
@@ -471,6 +491,8 @@ bool WebApi::getPracticePlayback()
         { "durationSeconds", m_currentProject ? double(playbackController()->totalPlayTime()) : 0.0 },
         { "tempoMultiplier", m_currentProject ? playbackController()->tempoMultiplier() : 1.0 },
         { "preparing", m_auditionPreparing },
+        { "clockEpoch", int(m_auditionClockEpoch) },
+        { "notesRevision", int(m_auditionNotesRevision) },
         { "error", m_auditionError }
     };
 #ifdef Q_OS_WASM
@@ -507,6 +529,8 @@ bool WebApi::practicePlayback(const std::string& command, double value, double e
         m_auditionEnd = end;
         applyPracticePlaybackRange();
         player->seek(audio::secs_t(value));
+        ++m_auditionNotesRevision;
+        publishPracticeClock();
         return true;
     }
     if (!m_auditionConfigured) { return false; }
@@ -526,6 +550,7 @@ bool WebApi::practicePlayback(const std::string& command, double value, double e
         const bool playing = playbackController()->isPlaying();
         if (playing) { player->pause(); }
         m_currentProject->masterNotation()->playback()->setTempoMultiplier(value);
+        ++m_auditionNotesRevision;
         applyPracticePlaybackRange();
         // Preserve the performed occurrence across repeats, not just the raw tick.
         player->seek(audio::secs_t(std::clamp(position, m_auditionStart, m_auditionEnd) / value));
@@ -534,6 +559,7 @@ bool WebApi::practicePlayback(const std::string& command, double value, double e
         m_auditionLoop = value != 0.0;
         applyPracticePlaybackRange();
     } else { return false; }
+    if (command != "loop") { publishPracticeClock(); }
     return true;
 }
 

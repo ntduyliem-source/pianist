@@ -71,6 +71,7 @@ public:
     bool getEditorPlayback();
     bool editorPlayback(const std::string& command, double value);
     bool getPracticePlayback();
+    bool getPracticePlaybackNotes();
     bool practicePlayback(const std::string& command, double value, double end);
     void checkAudioReady();
     void addSoundFont(const std::string& uri);
@@ -86,6 +87,7 @@ private:
     void resetPracticePlayback();
     void applyPracticePlaybackRange();
     void preparePracticePlayback();
+    void publishPracticeClock();
 
     enum class PreparedOutput { Project, Semantics, Snapshot };
     bool prepareTemporaryProject(const void* source, unsigned int len, const std::string& filename, PreparedOutput outputKind);
@@ -99,6 +101,8 @@ private:
     bool m_auditionLoop = false;
     bool m_auditionPreparing = false;
     unsigned int m_auditionGeneration = 0;
+    unsigned int m_auditionClockEpoch = 0;
+    unsigned int m_auditionNotesRevision = 0;
     double m_auditionStart = 0.0;
     double m_auditionEnd = 0.0;
     double m_editorTempo = 1.0;

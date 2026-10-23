@@ -30,6 +30,8 @@
 #include "audio/common/rpc/platform/web/webrpcchannel.h"
 
 #include "audio/engine/internal/enginecontroller.h"
+#include "audio/engine/iengineplayback.h"
+#include <algorithm>
 
 #include "log.h"
 
@@ -86,6 +88,7 @@ void WebAudioEngine::init()
 
     m_controller = std::make_shared<EngineController>(m_rpcChannel, std::make_shared<modularity::Context>(0));
     m_controller->registerExports();
+    m_playback = ioc()->resolve<IEnginePlayback>(moduleName());
     m_controller->onStartRunning();
 
     LOGI() << "Web audio engine running";
@@ -96,4 +99,14 @@ void WebAudioEngine::process(float* stream, unsigned samplesPerChannel)
     // The worklet has no Qt event loop to deliver deferred engine callbacks.
     async::processMessages();
     m_controller->process(stream, samplesPerChannel);
+}
+
+bool WebAudioEngine::playbackFrame(unsigned int sequenceId, double* frame) const
+{
+    if (!m_playback) { return false; }
+    const auto ids = m_playback->sequenceIdList();
+    if (std::find(ids.begin(), ids.end(), sequenceId) == ids.end()) { return false; }
+    frame[0] = double(m_playback->playbackPosition(sequenceId));
+    frame[1] = int(m_playback->playbackStatus(sequenceId));
+    return true;
 }

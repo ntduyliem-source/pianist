@@ -44,6 +44,9 @@ class MuseDriverProcessor extends AudioWorkletProcessor {
         super(options)
 
         this.port.onmessage = this.onMessageFromMain.bind(this);
+        this.clockBinding = null;
+        this.clockFrames = [];
+        this.clockPtr = 0;
 
         this.debugLog("end of constructor MuseDriverProcessor")
 
@@ -78,8 +81,13 @@ class MuseDriverProcessor extends AudioWorkletProcessor {
 
             MuseAudio.main_worker_rpcListen = function(data) {} // will be overridden
             MuseAudio.mainPort.onmessage = function(event) {
-                MuseAudio.main_worker_rpcListen(event.data)
-            }
+                if (event.data?.type === 'OBSERVE_PLAYBACK') {
+                    this.clockBinding = event.data.active ? event.data : null;
+                    this.clockFrames = [];
+                } else {
+                    MuseAudio.main_worker_rpcListen(event.data)
+                }
+            }.bind(this);
 
             // Init wasm
             try {
@@ -163,6 +171,21 @@ class MuseDriverProcessor extends AudioWorkletProcessor {
             }
 
             MuseAudio._process(this.wasmBuffer.ptr, samplesPerCh);
+
+            if (this.clockBinding) {
+                if (!this.clockPtr) this.clockPtr = MuseAudio._malloc(16);
+                if (MuseAudio._playbackFrame(this.clockBinding.sequenceId, this.clockPtr)) {
+                    const state = new Float64Array(MuseAudio.HEAPU8.buffer, this.clockPtr, 2);
+                    this.clockFrames.push({contextTime: currentTime + samplesPerCh / sampleRate,
+                        positionSeconds: state[0], status: state[1]});
+                    // Batch transport messages, never synthesize transport
+                    // time. Every point is the native clock for a PCM block.
+                    if (this.clockFrames.length >= 4) {
+                        this.port.postMessage({type: 'PLAYBACK_FRAMES', binding: this.clockBinding, frames: this.clockFrames});
+                        this.clockFrames = [];
+                    }
+                }
+            }
 
             const view = new Float32Array(MuseAudio.HEAPU8.buffer, this.wasmBuffer.ptr, totalSamples);
 

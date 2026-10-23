@@ -45,6 +45,10 @@ struct ArrangementContext
     staff_layer_idx_t staffLayerIndex = 0;
     double bps = 0.0;
 
+    // Local engraving provenance for web playback visuals. Not serialized to
+    // the audio engine, compared, or used to schedule/grade musical events.
+    uintptr_t sourceId = 0;
+
     bool hasStart() const
     {
         return actualDuration > 0;
@@ -117,13 +121,15 @@ struct NoteEvent
                        const ArticulationMap& articulationsApplied,
                        const double bps,
                        const float requiredVelocityFraction = 0.f,
-                       const PitchCurve& requiredPitchCurve = {})
+                       const PitchCurve& requiredPitchCurve = {},
+                       uintptr_t sourceId = 0)
     {
         m_arrangementCtx.nominalDuration = nominalDuration;
         m_arrangementCtx.nominalTimestamp = nominalTimestamp;
         m_arrangementCtx.voiceLayerIndex = voiceIdx;
         m_arrangementCtx.staffLayerIndex = staffIdx;
         m_arrangementCtx.bps = bps;
+        m_arrangementCtx.sourceId = sourceId;
 
         m_pitchCtx.nominalPitchLevel = nominalPitchLevel;
 

@@ -52,10 +52,11 @@ export function Practice({snapshot,config:c,exercise}:{snapshot:ScoreSnapshot;co
   const t=active?session!.timeline:parsed.timeline,view=active?session!.view:empty,held=ws.midi.heldPitches();
   const position=previewAt??(active?session!.elapsedMs:0);
   const heldNotes=playing?ws.midi.heldNotes():[];
-  const nativeFrame=useMemo(()=>auditionPresentation(snapshot),[snapshot]);
-  const f=useMemo(()=>previewAt!==null?{...nativeFrame(previewAt),currentAnchors:[],visit:0}:t?feedback(t,view,position,heldNotes):{markers:new Map(),currentAnchors:[],expected:[],visit:0},[t,view,position,heldNotes.map(e=>e.sequence).join(','),previewAt,nativeFrame]);
+  const nativeFrame=useMemo(()=>auditionPresentation(snapshot,audition?.notes??[],audition?.tempoMultiplier??1),[snapshot,audition?.notes,audition?.tempoMultiplier]);
+  const previewFrame=useMemo(()=>previewAt!==null?nativeFrame(previewAt,!!audition?.sounding):null,[previewAt,nativeFrame,audition?.sounding]);
+  const f=useMemo(()=>previewFrame?{...previewFrame,currentAnchors:[],visit:0}:t?feedback(t,view,position,heldNotes):{markers:new Map(),currentAnchors:[],expected:[],visit:0},[t,view,position,heldNotes.map(e=>e.sequence).join(','),previewFrame]);
   const locate=useMemo(()=>t?scorePositions(snapshot,t):undefined,[snapshot,t]);
-  const cursor=previewAt!==null?nativeFrame(previewAt).cursor:locate?.(position,c.mode==='wait'?view.group:undefined);
+  const cursor=previewFrame?.cursor??locate?.(position,c.mode==='wait'?view.group:undefined);
   const beat=t?beatPosition(t,position):{beat:0,total:0,bpm:c.bpm};
   const count=active&&status==='counting'?Math.max(1,Math.ceil((session!.transport.mapping.resumeAtMs-session!.transport.now)/(60000/c.bpm))):0;
   const currentMeasure=cursor?.measure??c.fromMeasure,loop=cursor?.loop??0;
@@ -138,7 +139,7 @@ export function Practice({snapshot,config:c,exercise}:{snapshot:ScoreSnapshot;co
     }finally{stoppingNow.current=false;setStopping(false);refresh(n=>n+1);}
   };
   const listen=async()=>{
-    if(preview.current&&audition){preview.current.toggle(audition);return;}if(active)return;
+    if(preview.current&&audition){await preview.current.toggle(audition);return;}if(active)return;
     const request=new AbortController();listenRequest.current=request;setPreparingListen(true);
     try{
       const bridge=exercise?await exercise.prepareListen(request.signal):ws.bridge;
@@ -146,7 +147,7 @@ export function Practice({snapshot,config:c,exercise}:{snapshot:ScoreSnapshot;co
       const p=new NativeAudition(bridge,auditionRange(snapshot,c.fromMeasure,c.toMeasure,listenWhole));
       preview.current=p;setFollowToken(n=>n+1);
       p.onChange=setAudition;p.onError=error=>{if(preview.current!==p)return;preview.current=null;setAudition(null);ws.patch({error:String(error instanceof Error?error.message:error)});};
-      try{p.start(listenSpeed,listenLoop);}catch(e){p.stop();preview.current=null;setAudition(null);throw e;}
+      try{await p.start(listenSpeed,listenLoop);}catch(e){p.stop();if(preview.current===p){preview.current=null;setAudition(null);}throw e;}
     }catch(e){if(!request.signal.aborted)throw e;}
     finally{if(listenRequest.current===request){listenRequest.current=null;setPreparingListen(false);}}
   };

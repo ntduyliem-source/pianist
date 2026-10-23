@@ -28,6 +28,7 @@
 #include "engraving/dom/staff.h"
 #include "engraving/dom/system.h"
 #include "engraving/dom/tie.h"
+#include "notation/inotationplayback.h"
 #include "importexport/imagesexport/iimagesexportconfiguration.h"
 
 using namespace mu;
@@ -46,6 +47,65 @@ bool WebApi::getSnapshot()
 bool WebApi::getScoreSemantics()
 {
     return snapshotFor(m_currentProject, false, "onScoreSemantics");
+}
+
+bool WebApi::getPracticePlaybackNotes()
+{
+    if (!m_practiceActive || !m_currentProject || !m_auditionConfigured) { return false; }
+    const auto playback = m_currentProject->masterNotation()->playback();
+    auto* score = m_currentProject->masterNotation()->notation()->elements()->msScore();
+    std::map<uintptr_t, QString> ids;
+    std::map<uintptr_t, const engraving::Note*> sources;
+    int measureIndex = 0;
+    for (auto* measure = score->firstMeasure(); measure; measure = measure->nextMeasure(), ++measureIndex) {
+        for (auto* segment = measure->first(); segment; segment = segment->next()) {
+            if (!segment->isChordRestType()) { continue; }
+            for (const auto* element : segment->elist()) {
+                if (!element || !element->isChord()) { continue; }
+                const auto* chord = engraving::toChord(element);
+                int n = 0;
+                for (const auto* note : chord->notes()) {
+                    const auto key = reinterpret_cast<uintptr_t>(note);
+                    ids[key] = QString("m%1-t%2-v%3-n%4").arg(measureIndex).arg(segment->tick().ticks()).arg(chord->track()).arg(n++);
+                    sources[key] = note;
+                }
+            }
+        }
+    }
+    QJsonArray events;
+    for (const auto& track : playback->existingTrackIdSet()) {
+        // Read the very same MPE events delivered to FluidSequencer. In
+        // particular, do not substitute CompatMidiRender's different timings.
+        for (const auto& entry : playback->trackPlaybackData(track).originEvents) {
+            for (const auto& value : entry.second) {
+                const auto* event = std::get_if<muse::mpe::NoteEvent>(&value);
+                if (!event) { continue; }
+                const auto& arrangement = event->arrangementCtx();
+                const auto source = sources.find(arrangement.sourceId);
+                if (source == sources.end() || !arrangement.hasStart()) { continue; }
+                QJsonArray anchors;
+                std::set<const engraving::Note*> visited;
+                for (const auto* note = source->second; note && visited.insert(note).second;) {
+                    const auto id = ids.find(reinterpret_cast<uintptr_t>(note));
+                    if (id != ids.end()) { anchors.append(id->second); }
+                    const auto* tie = note->tieFor();
+                    note = tie && tie->playSpanner() ? tie->endNote() : nullptr;
+                }
+                const double end = arrangement.hasEnd()
+                    ? double(arrangement.actualTimestamp + arrangement.actualDuration) / 1000.0
+                    : double(playback->totalPlayTime()) * 1000.0;
+                events.append(QJsonObject{{"anchors", anchors}, {"atMs", double(arrangement.actualTimestamp) / 1000.0},
+                    {"endMs", end}, {"pitch", int(std::clamp(muse::mpe::ZERO_PITCH_LEVEL_MIDI_EQUIVALENT
+                        + event->pitchCtx().nominalPitchLevel / float(muse::mpe::PITCH_LEVEL_STEP), 0.f, 127.f))}});
+                if (events.size() > 200000) { return false; }
+            }
+        }
+    }
+    const QJsonObject result{{"source", "musescore-mpe"}, {"revision", int(m_auditionNotesRevision)}, {"events", events}};
+    const auto callback = emscripten::val::module_property("onPracticePlaybackNotes");
+    if (callback.isUndefined() || callback.isNull()) { return false; }
+    callback(QJsonDocument(result).toJson(QJsonDocument::Compact).toStdString());
+    return true;
 }
 
 bool WebApi::snapshotFor(const project::INotationProjectPtr& project, bool drawings, const char* callback)

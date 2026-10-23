@@ -33,6 +33,7 @@ class IRpcChannel;
 
 namespace muse::audio::engine {
 class EngineController;
+class IEnginePlayback;
 class WebAudioEngine
 {
 public:
@@ -41,11 +42,13 @@ public:
 
     void init();
     void process(float* stream, unsigned samplesPerChannel);
+    bool playbackFrame(unsigned int sequenceId, double* frame) const;
 
 private:
     WebAudioEngine() = default;
 
     std::shared_ptr<rpc::IRpcChannel> m_rpcChannel;
     std::shared_ptr<engine::EngineController> m_controller;
+    std::shared_ptr<engine::IEnginePlayback> m_playback;
 };
 }

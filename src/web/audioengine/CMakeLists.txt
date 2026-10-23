@@ -121,7 +121,7 @@ target_link_options(MuseAudio PRIVATE "SHELL:-s FETCH=1")
 target_link_options(MuseAudio PRIVATE "SHELL:-s INITIAL_MEMORY=50MB")
 target_link_options(MuseAudio PRIVATE "SHELL:-s ALLOW_MEMORY_GROWTH=1")
 target_link_options(MuseAudio PRIVATE "SHELL:-s EXPORTED_RUNTIME_METHODS=ccall,cwrap,HEAPU8")
-target_link_options(MuseAudio PRIVATE "SHELL:-s EXPORTED_FUNCTIONS=[_main,_malloc,_free,_Init,_process]")
+target_link_options(MuseAudio PRIVATE "SHELL:-s EXPORTED_FUNCTIONS=[_main,_malloc,_free,_Init,_process,_playbackFrame]")
 
 if (MUSE_MODULE_AUDIO_WORKER)
     target_link_options(MuseAudio PRIVATE "SHELL:-s ENVIRONMENT=worker")

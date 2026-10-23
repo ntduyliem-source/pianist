@@ -46,6 +46,7 @@ copyFile(HERE+"/distr/qtloader.js", OUTPUT_DIR+"/distr/qtloader.js");
 copyFile(HERE+"/distr/audioworker.js", OUTPUT_DIR+"/distr/audioworker.js");
 copyFile(HERE+"/distr/audiodriver.js", OUTPUT_DIR+"/distr/audiodriver.js"); 
 copyFile(HERE+"/distr/audio-ready.js", OUTPUT_DIR+"/distr/audio-ready.js");
+copyFile(HERE+"/distr/native-playback-clock.js", OUTPUT_DIR+"/distr/native-playback-clock.js");
 copyFile(HERE+"/distr/audio_worklet_processor.js", OUTPUT_DIR+"/distr/audio_worklet_processor.js");
 
 // Copy viewer

@@ -1,4 +1,4 @@
-
+import {NativePlaybackClock} from './native-playback-clock.js';
 
 async function URLFromFiles(files) {
     const promises = files.map(file =>
@@ -15,6 +15,7 @@ let AudioDriver = (function () {
 
     let audioContext = null;
     let processor = null;
+    const playbackClock = new NativePlaybackClock();
 
     var api = {
 
@@ -50,6 +51,10 @@ let AudioDriver = (function () {
 
             // driver (processor) -> main
             processor.port.onmessage = function(event) {
+                if (event.data.type === 'PLAYBACK_FRAMES') {
+                    playbackClock.receive(event.data);
+                    return;
+                }
                 console.log("[processor]", event.data)
 
                 if (event.data.type == "DRIVER_INITED") {
@@ -84,8 +89,11 @@ let AudioDriver = (function () {
 
         resume: function() {
             console.log("[driver]", "resume")
-            audioContext.resume()
+            return audioContext.resume()
         },
+
+        observePlayback: binding => playbackClock.observe(binding),
+        playbackFrame: epoch => playbackClock.read(audioContext, epoch),
 
         suspend: function() {
             console.log("[driver]", "suspend")

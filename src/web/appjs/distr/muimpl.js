@@ -5,6 +5,16 @@ import {waitForAudioReady} from "./audio-ready.js";
 
 function setupInternalCallbacks(Module) {
 
+    Module.onPracticeClock = json => {
+        const binding = JSON.parse(json);
+        Module.driver?.observePlayback(binding);
+        if (config.MUSE_MODULE_AUDIO_WORKER !== 'ON') {
+            // Preserve order with native seek/play requests; a separate worklet
+            // control port could label old audio blocks with the new tempo.
+            Module.main_worker_rpcSend({type: 'OBSERVE_PLAYBACK', ...binding});
+        }
+    };
+
     // Interactive
     Module.openFileDialog = function(callback) {
         console.log("[js] openFileDialog")

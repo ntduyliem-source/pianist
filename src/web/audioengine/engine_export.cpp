@@ -44,4 +44,9 @@ void process(uintptr_t ptr, unsigned samplesPerChannel)
     std::memset(stream, 0, samplesPerChannel * 2 * sizeof(float));
     WebAudioEngine::instance()->process(stream, samplesPerChannel);
 }
+
+bool playbackFrame(unsigned int sequenceId, uintptr_t ptr)
+{
+    return WebAudioEngine::instance()->playbackFrame(sequenceId, reinterpret_cast<double*>(ptr));
+}
 }

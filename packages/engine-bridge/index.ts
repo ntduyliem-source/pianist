@@ -13,13 +13,17 @@ export interface NativeApi {
   getEditorPlayback?(): number;
   editorPlayback?(command: string, value?: number): number;
   getPracticePlayback?(): number;
+  getPracticePlaybackNotes?(): number;
   practicePlayback?(command: string, value?: number, end?: number): number;
 }
 export interface EditorPlaybackState {
   available: boolean; status: 'playing' | 'paused' | 'stopped';
   positionSeconds: number; durationSeconds: number; tempoMultiplier: number;
 }
-export interface PracticePlaybackState extends EditorPlaybackState {preparing: boolean; error: string}
+export interface PracticePlaybackState extends EditorPlaybackState {preparing: boolean; error: string; clockEpoch:number; notesRevision:number}
+export interface PlaybackNote {anchors:string[];pitch:number;atMs:number;endMs:number}
+export interface PlaybackNotes {source:'musescore-mpe';revision:number;events:PlaybackNote[]}
+export interface PlaybackFrame {epoch:number;sequenceId:number;tempoMultiplier:number;positionSeconds:number;status:0|1|2;contextTime:number;outputContextTime:number}
 export type AuditionCommand = 'range'|'play'|'pause'|'stop'|'seek'|'tempo'|'loop'|'reset';
 export class EngineBridge {
   readonly schemaVersion = 1;
@@ -35,6 +39,12 @@ export class EngineBridge {
   auditionState(): PracticePlaybackState {
     return this.capture('onPracticePlayback', () => this.api.getPracticePlayback?.() ?? 0,
       value => JSON.parse(value), 'Không đọc được trạng thái nghe MuseScore.');
+  }
+  auditionNotes(): PlaybackNotes {
+    const notes=this.capture<PlaybackNotes>('onPracticePlaybackNotes', () => this.api.getPracticePlaybackNotes?.() ?? 0,
+      value => JSON.parse(value), 'Không đọc được lịch phát nốt MuseScore.');
+    if(notes.source!=='musescore-mpe'||!Array.isArray(notes.events))throw Error('Lịch phát nốt MuseScore không hợp lệ.');
+    return notes;
   }
   audition(command: AuditionCommand, value = 0, end = 0): void {
     if (!this.practiceActive || !this.api.practicePlayback?.(command, value, end)) throw Error('MuseScore chưa sẵn sàng nghe bài này.');
