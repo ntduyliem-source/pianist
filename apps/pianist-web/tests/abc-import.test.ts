@@ -9,6 +9,8 @@ import {CONVERTER_VERSION, type FormatResult} from '../../../packages/score-form
 import type {ScoreConverter} from '../../../packages/score-formats';
 import type {PracticeController} from '../src/practice/controller-v2';
 import * as storage from '../src/platform/storage';
+import {scoreFixture} from './helpers/fixtures-v2';
+import {pianoStaves} from './helpers/library-fixture';
 
 const encode=(text:string)=>new TextEncoder().encode(text);
 const abc='X:1\nT:Bài tiếng Việt\nM:4/4\nL:1/4\nK:C\nC D E F |';
@@ -44,10 +46,23 @@ function setup(t:TestContext, formats:ScoreConverter=converter) {
     serializeProject(){(api.Module as any).onProjectSerialized(Uint8Array.of(80,75,1,2));return 1;},
     prepareProject(){(api.Module as any).onProjectPrepared(Uint8Array.of(80,75,1,2));return 1;}};
   const bridge=ws.bridge=new EngineBridge(api as unknown as NativeApi);ws.ensureEngine=async()=>bridge;
+  bridge.semantics=()=>({...scoreFixture(),staves:pianoStaves()});
   t.after(async()=>{if(ws.state.current)await storage.releaseProject(ws.state.current.id);});
   return {ws,calls,bridge,api};
 }
 const tick=()=>new Promise<void>(resolve=>setImmediate(resolve));
+
+test('one-staff native and ABC imports are rejected before replacing the score or writing library rows',async t=>{
+  const {ws,bridge,calls}=setup(t);
+  bridge.semantics=()=>({...scoreFixture(),staves:pianoStaves().slice(0,1)});
+  const count=(await storage.list('projects')).length;
+  for(const file of [new File([xml],'one.musicxml'),new File([abc],'one.abc')]) {
+    await assert.rejects(ws.importFile(file),/đúng 2 khuông/);
+    assert.equal(calls.length,0);
+    assert.equal((await storage.list('projects')).length,count);
+    assert.equal(ws.state.current,undefined);
+  }
+});
 
 test('ABC imports once into native, retains source, saves MSCZ and reopens without reconversion',async t=>{
   let count=0;const {ws,calls}=setup(t,{run:async()=>{count++;return success;}});

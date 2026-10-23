@@ -6,6 +6,7 @@ import json
 import re
 import shutil
 import unicodedata
+from library_staff_policy import inspect_two_staff_piano
 
 ROOT = Path(__file__).resolve().parents[2]
 TITLES = {
@@ -52,6 +53,10 @@ def main():
         if sha != original['sha256'] or sha != row['sha256']: raise ValueError('Source changed after validation')
         if not row['nativePlayback'] or row['missingGlyphs'] or row['nativeNotes'] != original['writtenNotes']:
             raise ValueError('Incomplete native validation')
+        policy = inspect_two_staff_piano(data)
+        if not policy['accepted']:
+            row.update(status='excluded', reason='Chỉ nhận đúng hai khuông piano: ' + '; '.join(v['message'] for v in policy['violations']))
+            continue
         slug = Path(row['filename'].replace(' (1)', '')).stem.lower()
         if not re.fullmatch('[a-z0-9-]+', slug): raise ValueError('Unsafe library slug')
         name = slug + '.mxl'

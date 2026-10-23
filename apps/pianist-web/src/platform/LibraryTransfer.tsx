@@ -22,7 +22,7 @@ export function LibraryTransfer() {
   });
   const restore = () => run(async () => {
     if (!preview) return;
-    await ws.autosave(true); await storage.restoreLibrary(restoredCopies(preview)); await ws.refresh();
+    await ws.restoreLibrary(restoredCopies(preview));
     setStatus(`Đã thêm ${preview.data.projects.length} bài và ${preview.data.sessions.length} lượt tập từ bản sao lưu.`);
     dialog.current?.close(); setPreview(undefined); ws.notice('Đã khôi phục thành các bản riêng. Hãy hiệu chuẩn lại trên thiết bị này.');
   });

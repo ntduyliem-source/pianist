@@ -11,15 +11,6 @@
       "composer": "Soạn: Thảo Chi"
     },
     {
-      "id": "ec15898245d922abc02d620fac52f3b9b50776720110bbe2c900edb8cfe4ac76",
-      "title": "Và thế là hết",
-      "filename": "Và thế là hết.mxl",
-      "url": "library/songs/va-the-la-het-chillies.mxl",
-      "bytes": 5396,
-      "sha256": "ec15898245d922abc02d620fac52f3b9b50776720110bbe2c900edb8cfe4ac76",
-      "composer": "Sáng tác: Chillies"
-    },
-    {
       "id": "2e2490f9a94ccdc7fa42642af6ec9ee25830604e817bf433932d3fc488cab9c3",
       "title": "Chỉ là",
       "filename": "Chỉ là.mxl",
@@ -27,15 +18,6 @@
       "bytes": 15145,
       "sha256": "2e2490f9a94ccdc7fa42642af6ec9ee25830604e817bf433932d3fc488cab9c3",
       "composer": "Composer / arranger"
-    },
-    {
-      "id": "5bdeefdb654f36998ebdc961430b10746c4b5629bb2d6927791d2f5fde9cba8d",
-      "title": "Tình em là đại dương — bản ngắn",
-      "filename": "Tình em là đại dương — bản ngắn.mxl",
-      "url": "library/songs/tinh-em-la-dai-duong.mxl",
-      "bytes": 3948,
-      "sha256": "5bdeefdb654f36998ebdc961430b10746c4b5629bb2d6927791d2f5fde9cba8d",
-      "composer": "Duy Mạnh"
     },
     {
       "id": "81f4fbcc40582825325196446a4e75916bf3a46a1347bf3b49258f8e01af7b34",
@@ -250,14 +232,6 @@
       "composer": "Sơn Tùng;Việt Hùng"
     },
     {
-      "id": "bf072fa0127d106593b0ba726448f1929ac0fae9921c5e61defc2ca2fe0f07ac",
-      "title": "Mojito",
-      "filename": "Mojito.mxl",
-      "url": "library/songs/chinesepop-mojitobyjaychou.mxl",
-      "bytes": 12946,
-      "sha256": "bf072fa0127d106593b0ba726448f1929ac0fae9921c5e61defc2ca2fe0f07ac"
-    },
-    {
       "id": "86b93d7639a4857e04e07e6621cfa2c4c0b50a28ccab68bfcdc5f3477ce6a7d5",
       "title": "Sóng gió",
       "filename": "Sóng gió.mxl",
@@ -289,14 +263,6 @@
       "url": "library/songs/anh-trang-noi-ho-long-toi-the-moon-represents-my-heart.mxl",
       "bytes": 5149,
       "sha256": "d170791f68eeafe0ac726baaacac949879eee9f3465f334b60722ba8c9908947"
-    },
-    {
-      "id": "a816a37a3161fa0d3b466107530ed71b72f23f42f5cf2ba0f5d36b7a9eb9ae28",
-      "title": "Chính Chúa chọn con",
-      "filename": "Chính Chúa chọn con.mxl",
-      "url": "library/songs/chinh-chua-chon-con.mxl",
-      "bytes": 20551,
-      "sha256": "a816a37a3161fa0d3b466107530ed71b72f23f42f5cf2ba0f5d36b7a9eb9ae28"
     },
     {
       "id": "226d761f16ee0de517b4b2dec9a19572e378f42dea417b183913c2011ebcfe4c",
@@ -391,16 +357,6 @@
       "url": "library/songs/its-beginning-to-look-a-lot-like-christmas.mxl",
       "bytes": 3729,
       "workId": "e0dab8ca0ae49dbbd10d49d2766fcb40b2487924e46dbac57799d7c1c963a60c",
-      "version": 1
-    },
-    {
-      "id": "5e0619eac60059e57393729afbd65b9a543001fc2bf57f1ea602657aaabdb962",
-      "sha256": "5e0619eac60059e57393729afbd65b9a543001fc2bf57f1ea602657aaabdb962",
-      "title": "Cho em một lần yêu",
-      "filename": "Cho em một lần yêu.mxl",
-      "url": "library/songs/cho-em-mot-lan-yeu-duc-tri-cho-em-mot-lan-yeu.mxl",
-      "bytes": 10465,
-      "workId": "5e0619eac60059e57393729afbd65b9a543001fc2bf57f1ea602657aaabdb962",
       "version": 1
     },
     {

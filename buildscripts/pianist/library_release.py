@@ -3,6 +3,7 @@ import hashlib
 import json
 import re
 from pathlib import Path
+from library_staff_policy import require_two_staff_piano
 
 ROOT = Path(__file__).resolve().parents[2]
 
@@ -62,6 +63,7 @@ def verify_library(read, paths):
         data = read(name)
         if len(data) != song['bytes'] or hashlib.sha256(data).hexdigest() != song['sha256']:
             raise ValueError('Library integrity failed: ' + name)
+        require_two_staff_piano(data)
         identities.add(song['id'])
         expected.add(name)
     if {p for p in paths if p.startswith('library/')} != expected:

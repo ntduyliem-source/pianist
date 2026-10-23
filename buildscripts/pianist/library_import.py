@@ -16,6 +16,7 @@ from xml.etree import ElementTree as ET
 import zipfile
 
 from library_release import validate_versions
+from library_staff_policy import read_musicxml, require_two_staff_piano, inspect_two_staff_piano
 
 
 def sha(data):
@@ -63,19 +64,9 @@ def choose_work(source, title, composer, ident, names, groups):
 
 
 def musicxml(data):
-    if not 0 < len(data) <= 32 * 1024**2:
-        raise ValueError('Invalid MXL size')
-    with zipfile.ZipFile(BytesIO(data)) as archive:
-        if archive.getinfo('META-INF/container.xml').file_size > 64 * 1024:
-            raise ValueError('MusicXML container too large')
-        container = ET.fromstring(archive.read('META-INF/container.xml'))
-        name = next(e.attrib['full-path'] for e in container.iter() if e.tag.endswith('rootfile'))
-        if archive.getinfo(name).file_size > 32 * 1024**2:
-            raise ValueError('MusicXML score too large')
-        xml = archive.read(name)
-    score = ET.fromstring(xml)
-    if score.tag != 'score-partwise':
-        raise ValueError('MusicXML score must be partwise')
+    if not zipfile.is_zipfile(BytesIO(data)):
+        raise ValueError('Curated .mxl assets must be compressed MusicXML')
+    xml, score = read_musicxml(data)
     notes = [n for n in score.findall('.//note') if n.find('pitch') is not None]
     if not notes:
         raise ValueError('MusicXML has no pitched notes')
@@ -100,6 +91,7 @@ def append_library(inputs, audit, output, allow_editor_only=False):
         data = (output / relative).read_bytes()
         if sha(data) != song['sha256'] or song['id'] != song['sha256'] or song['id'] in by_id or len(data) != song['bytes']:
             raise ValueError('Existing library integrity failed')
+        require_two_staff_piano(data)
         by_id[song['id']] = song
         by_xml[musicxml(data)[0]] = song
         names.setdefault(name_key(song['title']), set()).add(song.get('workId', song['id']))
@@ -123,6 +115,12 @@ def append_library(inputs, audit, output, allow_editor_only=False):
         ident = sha(data)
         if ident != source['sha256'] or ident != result['sha256']:
             raise ValueError('Source changed after native validation')
+        staff_policy = inspect_two_staff_piano(data)
+        if not staff_policy['accepted']:
+            row.update(status='excluded', reason='Chỉ nhận đúng hai khuông piano: ' + '; '.join(v['message'] for v in staff_policy['violations']),
+                       staffPolicy=staff_policy)
+            decisions.append(row)
+            continue
         xml_hash, count, grace = musicxml(data)
         if count != source['writtenNotes'] or result['sourceNotes'] != count:
             raise ValueError('Source note count differs from native audit')

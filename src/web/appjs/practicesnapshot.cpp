@@ -17,6 +17,7 @@
 #include "engraving/dom/chord.h"
 #include "engraving/dom/dynamic.h"
 #include "engraving/dom/keysig.h"
+#include "engraving/dom/instrument.h"
 #include "engraving/dom/rest.h"
 #include "engraving/dom/measure.h"
 #include "engraving/dom/note.h"
@@ -173,8 +174,16 @@ bool WebApi::snapshotFor(const project::INotationProjectPtr& project, bool drawi
     }
     for (size_t s = 0; s < score->nstaves(); ++s) {
         auto* staff = score->staff(s);
+        QJsonArray instruments;
+        for (const auto& entry : staff->part()->instruments()) {
+            const auto* instrument = entry.second;
+            QJsonArray programs;
+            for (const auto* channel : instrument->channel()) { programs.append(channel->program()); }
+            instruments.append(QJsonObject{{"tick", entry.first}, {"id", instrument->id().toQString()},
+                {"soundId", instrument->soundId().toQString()}, {"programs", programs}});
+        }
         staves.append(QJsonObject{{"id", static_cast<int>(s)}, {"part", staff->part()->partName().toQString()},
-                                  {"partId", QString::number(staff->part()->id().toUint64())}});
+                                  {"partId", QString::number(staff->part()->id().toUint64())}, {"instruments", instruments}});
     }
     int measureIndex = 0;
     for (auto* measure = score->firstMeasure(); measure; measure = measure->nextMeasure(), ++measureIndex) {

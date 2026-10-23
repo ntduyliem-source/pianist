@@ -14,6 +14,7 @@ import * as storage from './platform/storage';
 import {PracticeController} from './practice/controller-v2';
 import { loadEngineAssets } from './platform/engine-assets';
 import {loadBundledCatalog,loadBundledScore,bundledPracticeNotice,type BundledScore} from './platform/bundled-library';
+import {requireLibraryScore} from './platform/library-admission';
 
 type View = 'library' | 'editor' | 'practice' | 'results' | 'history';
 export type PracticeKind = 'free' | 'grade';
@@ -265,6 +266,7 @@ export class Workspace {
     try {
       const response = await fetch('templates/blank-piano.mscz'); if (!response.ok) throw Error('Không tải được mẫu piano.');
       const bytes = new Uint8Array(await response.arrayBuffer());
+      const bridge = await this.ensureEngine(); requireLibraryScore(bridge.semantics(bytes, 'blank-piano.mscz'));
       const record: storage.ProjectRecord = {id: crypto.randomUUID(), title: 'Bản nhạc mới', filename: 'Bản nhạc mới.mscz', bytes, revision: 1, createdAt: Date.now(), updatedAt: Date.now()};
       await this.switchDocument(record, bytes, record.filename, false); this.navigate('editor');
       await storage.saveProject(record); this.patch({savedRevision: record.revision, recoveryRevision: record.revision, saveState: 'Đã lưu trong thư viện'}); await this.refresh();
@@ -297,6 +299,7 @@ export class Workspace {
       if (token !== this.operation) return;
       this.requireInactiveSession();
       this.patch({busy: 'Đang nhập bản nhạc vào MuseScore…', canCancelOpen: false});
+      requireLibraryScore(this.bridge!.semantics(prepared.bytes, prepared.filename));
       const record: storage.ProjectRecord = {id: crypto.randomUUID(), title: prepared.title || file.name.replace(/\.[^.]+$/, ''), filename: prepared.filename, bytes: prepared.bytes, source: data, sourceName: file.name, revision: 1, createdAt: Date.now(), updatedAt: Date.now()};
       await this.switchDocument(record, prepared.bytes, prepared.filename, false);
       if (!practice) this.navigate('editor');
@@ -359,7 +362,7 @@ export class Workspace {
           // releases its temporary project before the next one starts.
           await new Promise(resolve => setTimeout(resolve, 0)); signal.throwIfAborted();
           let bytes: Uint8Array;
-          try {bytes = bridge.prepare(prepared.bytes, prepared.filename);}
+          try {requireLibraryScore(bridge.semantics(prepared.bytes, prepared.filename)); bytes = bridge.prepare(prepared.bytes, prepared.filename);}
           catch (error) {errors[index] = storage.storageError(error); throw error;}
           prepared.bytes = new Uint8Array();
           const title = prepared.title!, tune = tunes[index], now = Date.now();
@@ -433,6 +436,7 @@ export class Workspace {
   async saveLibrary(): Promise<void> {
     await this.autosaving; clearTimeout(this.autosaveTimer);
     if (!this.state.current || !this.bridge) return;
+    requireLibraryScore(this.bridge.semantics());
     const revision = this.state.revision, bytes = this.bridge.serialize();
     const record = {...this.state.current, bytes, filename: `${this.state.current.title}.mscz`, revision, updatedAt: Date.now()};
     await storage.saveProject(record);
@@ -445,6 +449,7 @@ export class Workspace {
   private async saveCopy(title: string): Promise<void> {
     this.requireInactiveSession();
     await this.autosave(true); if (!this.state.current || !this.bridge || !title.trim()) return;
+    requireLibraryScore(this.bridge.semantics());
     const old = this.state.current, bridge = this.bridge, bytes = bridge.serialize();
     const record: storage.ProjectRecord = {...old, id: crypto.randomUUID(), title: title.trim().slice(0, 150), bytes,
       revision: 1, createdAt: Date.now(), updatedAt: Date.now(), archived: false};
@@ -510,6 +515,7 @@ export class Workspace {
       await this.autosave(true); this.bridge.setPractice(true);
       const started = performance.now();
       const snapshot = await this.bridge.cancellableSnapshot(this.state.current.id, fingerprint); snapshot.revision = this.state.revision;
+      requireLibraryScore(snapshot);
       this.measureDiagnostic('practice-snapshot', started, {pages: snapshot.pages.length, anchors: snapshot.anchors.length});
       const saved = await storage.get<{id:string; config:PracticeSettings}>('settings','practice-v2:'+snapshot.projectId);
       const calibration=await storage.get<{id:string;offsetMs:number}>('settings','calibration-v2:'+this.midi.deviceId);
@@ -581,12 +587,31 @@ export class Workspace {
     this.revisionBase += 1; await this.saveLibrary();
   }
   async archive(record: storage.ProjectRecord): Promise<void> {
+    if (record.archived) {
+      this.requireInactiveSession();
+      const bridge = await this.ensureEngine();
+      requireLibraryScore(bridge.semantics(record.bytes, record.filename));
+    }
     await storage.claimProject(record.id);
     const latest = await storage.get<storage.ProjectRecord>('projects', record.id);
     if (!latest) throw Error('Không tìm thấy bản nhạc.');
     await storage.saveProject({...latest, archived: !latest.archived}, false, false);
     if (this.state.current?.id === record.id) this.patch({current: {...this.state.current, archived: !latest.archived}});
     if (this.state.current?.id !== record.id) await storage.releaseProject(record.id); await this.refresh();
+  }
+  async restoreLibrary(data: storage.LibraryData): Promise<void> {
+    return this.changeDocument(async () => {
+      await this.autosave(true);
+      const bridge = await this.ensureEngine();
+      for (const project of data.projects) {
+        if (project.archived) continue;
+        try {requireLibraryScore(bridge.semantics(project.bytes, project.filename));}
+        catch (error) {throw Error(`${project.title}: ${storage.storageError(error)} Chưa nhập bản sao lưu vào thư viện.`);}
+        await new Promise(resolve => setTimeout(resolve, 0));
+        this.requireInactiveSession();
+      }
+      await storage.restoreLibrary(data); await this.refresh();
+    });
   }
 }
 export const workspace = new Workspace();

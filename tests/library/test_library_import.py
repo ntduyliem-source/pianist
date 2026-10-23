@@ -13,10 +13,10 @@ from library_import import append_library, sha, musicxml
 from library_release import validate_versions
 
 
-def mxl(step='C', grace=False, year=2000):
+def mxl(step='C', grace=False, year=2000, staves=2):
     notes = ''.join(f'<note>{"<grace/>" if grace and i == 0 else ""}<pitch><step>{step}</step><octave>4</octave></pitch>'
                     + ('' if grace and i == 0 else '<duration>1</duration>') + '</note>' for i in range(3))
-    xml = f'<score-partwise><work><work-title>Test fixture</work-title></work><part-list/><part id="P1"><measure number="1">{notes}</measure></part></score-partwise>'.encode()
+    xml = f'<score-partwise><work><work-title>Test fixture</work-title></work><part-list><score-part id="P1"><part-name>Piano</part-name><midi-instrument id="I1"><midi-program>1</midi-program></midi-instrument></score-part></part-list><part id="P1"><measure number="1"><attributes><staves>{staves}</staves></attributes>{notes}</measure></part></score-partwise>'.encode()
     out = BytesIO()
     with zipfile.ZipFile(out, 'w') as archive:
         for name, data in [('META-INF/container.xml', b'<container><rootfiles><rootfile full-path="score.xml"/></rootfiles></container>'), ('score.xml', xml)]:
@@ -66,6 +66,23 @@ class LibraryImportTests(unittest.TestCase):
         self.assertEqual(report['summary']['newVersions'], 1)
         self.assertEqual(report['summary']['totalWorks'], 1)
         self.assertEqual(songs[1]['url'], 'library/songs/another-v2.mxl')
+
+    def test_native_accepted_single_staff_is_excluded_without_catalog_mutation(self):
+        before = (self.library / 'catalog.json').read_bytes()
+        report = append_library(*self.inputs(mxl('D', staves=1)), self.library)
+        self.assertEqual(report['summary']['excluded'], 1)
+        self.assertEqual(report['results'][0]['staffPolicy']['totalStaves'], 1)
+        self.assertEqual((self.library / 'catalog.json').read_bytes(), before)
+        self.assertEqual(len(list((self.library / 'songs').glob('*.mxl'))), 1)
+
+    def test_existing_noncompliant_library_blocks_append_without_mutation(self):
+        data = mxl(staves=1)
+        (self.library / 'songs/original.mxl').write_bytes(data)
+        self.write_catalog([{**self.original, 'id': sha(data), 'sha256': sha(data), 'bytes': len(data)}])
+        before = (self.library / 'catalog.json').read_bytes()
+        with self.assertRaisesRegex(ValueError, 'exactly two piano staves'):
+            append_library(*self.inputs(mxl('D')), self.library)
+        self.assertEqual((self.library / 'catalog.json').read_bytes(), before)
 
     def test_exact_musicxml_copy_skips_even_if_zip_bytes_differ(self):
         different_zip = mxl(year=2001)
