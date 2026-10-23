@@ -1,31 +1,60 @@
 import { EngineBridge, type NativeApi } from '../../../packages/engine-bridge/index';
-import {settingsFor} from '../../../packages/practice-engine-v2/score-adapter';
-import type {PracticeSettings,AttemptResult,SavedAttempt} from '../../../packages/practice-engine-v2/model';
-import type {ScoreSnapshot} from '../../../packages/score-contracts';
+import { settingsFor } from '../../../packages/practice-engine-v2/score-adapter';
+import type {
+  PracticeSettings,
+  AttemptResult,
+  SavedAttempt,
+} from '../../../packages/practice-engine-v2/model';
+import type { ScoreSnapshot } from '../../../packages/score-contracts';
 import { download, fingerprint, prepareScoreFile } from './platform/files';
-import {ScoreFormatClient} from '../../../packages/score-formats/client';
-import type {ScoreConverter} from '../../../packages/score-formats';
-import type {FormatDiagnostic} from '../../../packages/score-formats/model';
-import {CONVERTER_VERSION, type AbcTune} from '../../../packages/score-formats/model';
-import {inspectAbc} from '../../../packages/score-formats/abc';
-import {exportAbc} from '../../../packages/score-formats/export';
+import { ScoreFormatClient } from '../../../packages/score-formats/client';
+import type { ScoreConverter } from '../../../packages/score-formats';
+import type { FormatDiagnostic } from '../../../packages/score-formats/model';
+import { CONVERTER_VERSION, type AbcTune } from '../../../packages/score-formats/model';
+import { inspectAbc } from '../../../packages/score-formats/abc';
+import { exportAbc } from '../../../packages/score-formats/export';
 import { MidiRouter } from './platform/midi-v2';
 import * as storage from './platform/storage';
-import {PracticeController} from './practice/controller-v2';
+import { PracticeController } from './practice/controller-v2';
 import { loadEngineAssets } from './platform/engine-assets';
-import {loadBundledCatalog,loadBundledScore,bundledPracticeNotice,type BundledScore} from './platform/bundled-library';
-import {requireLibraryScore} from './platform/library-admission';
+import {
+  loadBundledCatalog,
+  loadBundledScore,
+  bundledPracticeNotice,
+  type BundledScore,
+} from './platform/bundled-library';
+import { requireLibraryScore } from './platform/library-admission';
 
 type View = 'library' | 'editor' | 'practice' | 'results' | 'history';
 export type PracticeKind = 'free' | 'grade';
 export interface TuneSelection {
-  requestId: number; filename: string; tunes: AbcTune[]; sourceBytes: number; practice: boolean;
-  selected: number[]; openIndex: number; errors: Record<number, string>; error?: string;
+  requestId: number;
+  filename: string;
+  tunes: AbcTune[];
+  sourceBytes: number;
+  practice: boolean;
+  selected: number[];
+  openIndex: number;
+  errors: Record<number, string>;
+  error?: string;
 }
 export interface WorkspaceState {
-  view: View; busy: string; error: string; toast: string; projects: storage.ProjectRecord[]; history: SavedAttempt[];
-  current?: storage.ProjectRecord; snapshot?: ScoreSnapshot; config?: PracticeSettings; result?: SavedAttempt;
-  revision: number; savedRevision: number; recoveryRevision: number; saveState: string; engineReady: boolean; midiVersion: number;
+  view: View;
+  busy: string;
+  error: string;
+  toast: string;
+  projects: storage.ProjectRecord[];
+  history: SavedAttempt[];
+  current?: storage.ProjectRecord;
+  snapshot?: ScoreSnapshot;
+  config?: PracticeSettings;
+  result?: SavedAttempt;
+  revision: number;
+  savedRevision: number;
+  recoveryRevision: number;
+  saveState: string;
+  engineReady: boolean;
+  midiVersion: number;
   exampleTitle: string;
   bundledScores: BundledScore[];
   practicePicker: boolean;
@@ -37,63 +66,143 @@ export interface WorkspaceState {
   tuneSelection?: TuneSelection;
 }
 export class Workspace {
-  state: WorkspaceState = {view: 'library', busy: '', error: '', toast: '', projects: [], history: [], bundledScores: [], revision: 0, savedRevision: 0, recoveryRevision: 0, saveState: '', engineReady: false, midiVersion: 0, exampleTitle: 'Piano khởi động', practicePicker: true, practiceKind: 'free'};
-  bridge?: EngineBridge; session?: PracticeController; readonly midi = new MidiRouter();
-  private listeners = new Set<() => void>(); private engineLoading?: Promise<EngineBridge>; private loadingDocument = false;
-  private nativeBase = 0; private revisionBase = 0; private nativeRevision = 0; private autosaveTimer?: number; private leaseTimer?: number; private toastTimer?: number;
-  private operation = 0; private fileAbort?: AbortController; private source?: {bytes: Uint8Array; filename: string}; private recovery?: storage.RecoveryRecord;
+  state: WorkspaceState = {
+    view: 'library',
+    busy: '',
+    error: '',
+    toast: '',
+    projects: [],
+    history: [],
+    bundledScores: [],
+    revision: 0,
+    savedRevision: 0,
+    recoveryRevision: 0,
+    saveState: '',
+    engineReady: false,
+    midiVersion: 0,
+    exampleTitle: 'Piano khởi động',
+    practicePicker: true,
+    practiceKind: 'free',
+  };
+  bridge?: EngineBridge;
+  session?: PracticeController;
+  readonly midi = new MidiRouter();
+  private listeners = new Set<() => void>();
+  private engineLoading?: Promise<EngineBridge>;
+  private loadingDocument = false;
+  private nativeBase = 0;
+  private revisionBase = 0;
+  private nativeRevision = 0;
+  private autosaveTimer?: number;
+  private leaseTimer?: number;
+  private toastTimer?: number;
+  private operation = 0;
+  private fileAbort?: AbortController;
+  private source?: { bytes: Uint8Array; filename: string };
+  private recovery?: storage.RecoveryRecord;
   private autosaving?: Promise<void>;
   private documentChange?: symbol;
   private exerciseNative = false;
   // Emergency download only. Restoration uses the retained native project.
   private editorBeforeExercise?: Uint8Array;
-  private resolveTunes?: (choice: {indices: number[]; openIndex: number}) => void;
+  private resolveTunes?: (choice: { indices: number[]; openIndex: number }) => void;
   private diagnosticSamples: object[] = [];
   constructor(private readonly scoreConverter: ScoreConverter = new ScoreFormatClient()) {}
-  chooseFile: (practice?: boolean) => void = () => {}; showExport: () => void = () => {}; showAbout: () => void = () => {}; showSaveAs: () => void = () => {};
-  subscribe = (listener: () => void) => {this.listeners.add(listener); return () => this.listeners.delete(listener);};
+  chooseFile: (practice?: boolean) => void = () => {};
+  showExport: () => void = () => {};
+  showAbout: () => void = () => {};
+  showSaveAs: () => void = () => {};
+  subscribe = (listener: () => void) => {
+    this.listeners.add(listener);
+    return () => this.listeners.delete(listener);
+  };
   snapshot = () => this.state;
-  patch(patch: Partial<WorkspaceState>): void {this.state = {...this.state, ...patch}; this.listeners.forEach(fn => fn());}
-  notice(message: string): void {this.patch({toast: message}); clearTimeout(this.toastTimer); this.toastTimer = window.setTimeout(() => this.patch({toast: ''}), 5000);}
-  private diagnostic(message: string): void {const status = document.getElementById('status'); if (status) status.textContent = message;}
+  patch(patch: Partial<WorkspaceState>): void {
+    this.state = { ...this.state, ...patch };
+    this.listeners.forEach((fn) => fn());
+  }
+  notice(message: string): void {
+    this.patch({ toast: message });
+    clearTimeout(this.toastTimer);
+    this.toastTimer = window.setTimeout(() => this.patch({ toast: '' }), 5000);
+  }
+  private diagnostic(message: string): void {
+    const status = document.getElementById('status');
+    if (status) status.textContent = message;
+  }
   private measureDiagnostic(operation: string, started: number, details: object = {}): void {
     if (!new URLSearchParams(location.search).has('diagnostics')) return;
-    const jsMemory = (performance as Performance & {memory?: {usedJSHeapSize: number}}).memory;
-    this.diagnosticSamples.push({operation, elapsedMs: Math.round(performance.now() - started),
-      wasmHeapBytes: this.bridge?.api.Module.HEAPU8?.byteLength ?? null, jsUsedHeapBytes: jsMemory?.usedJSHeapSize ?? null, ...details});
+    const jsMemory = (performance as Performance & { memory?: { usedJSHeapSize: number } }).memory;
+    this.diagnosticSamples.push({
+      operation,
+      elapsedMs: Math.round(performance.now() - started),
+      wasmHeapBytes: this.bridge?.api.Module.HEAPU8?.byteLength ?? null,
+      jsUsedHeapBytes: jsMemory?.usedJSHeapSize ?? null,
+      ...details,
+    });
     this.diagnosticSamples = this.diagnosticSamples.slice(-12);
-    const log = document.getElementById('log'); if (log) log.textContent = JSON.stringify(this.diagnosticSamples);
+    const log = document.getElementById('log');
+    if (log) log.textContent = JSON.stringify(this.diagnosticSamples);
   }
   fail(e: unknown): void {
     console.error(e);
     if (e instanceof WebAssembly.RuntimeError) {
-      clearTimeout(this.autosaveTimer); this.session?.pause('Engine ký âm bị gián đoạn.', true);
-      this.patch({engineFailed: true, busy: '', canCancelOpen: false});
+      clearTimeout(this.autosaveTimer);
+      this.session?.pause('Engine ký âm bị gián đoạn.', true);
+      this.patch({ engineFailed: true, busy: '', canCancelOpen: false });
     }
-    const message = this.state.engineFailed ? 'MuseScore bị gián đoạn. Tải lại trang để mở bản đã lưu gần nhất; thư viện và bản tự lưu đã ghi vẫn được giữ.' : storage.storageError(e);
-    this.diagnostic('Lỗi: ' + message); this.patch({error: message});
+    const message = this.state.engineFailed
+      ? 'MuseScore bị gián đoạn. Tải lại trang để mở bản đã lưu gần nhất; thư viện và bản tự lưu đã ghi vẫn được giữ.'
+      : storage.storageError(e);
+    this.diagnostic('Lỗi: ' + message);
+    this.patch({ error: message });
   }
-  async run(action: () => unknown | Promise<unknown>): Promise<void> {try {if (this.state.engineFailed) return; await action();} catch (e) {if(!(e instanceof DOMException&&e.name==='AbortError'))this.fail(e);} finally {this.focusEditor();}}
-  async init(): Promise<void> {
-    const catalog = await fetch('examples/catalog.json').then(r => r.ok ? r.json() : null).catch(() => null);
-    if (catalog?.examples?.[0]?.title) this.patch({exampleTitle: catalog.examples[0].title});
-    this.patch({bundledScores:await loadBundledCatalog().catch(()=>[])});
-    const initialView = location.hash.slice(2);
-    try {if(localStorage.getItem('pianist.practice-kind')==='grade')this.patch({practiceKind:'grade'});} catch {}
-    if(initialView==='exercises'){
-      this.patch({practiceKind:'grade'});
-      try {localStorage.setItem('pianist.practice-kind','grade');} catch {}
+  async run(action: () => unknown | Promise<unknown>): Promise<void> {
+    try {
+      if (this.state.engineFailed) return;
+      await action();
+    } catch (e) {
+      if (!(e instanceof DOMException && e.name === 'AbortError')) this.fail(e);
+    } finally {
+      this.focusEditor();
     }
-    const initialPractice=initialView==='practice'||initialView==='exercises';
-    history.replaceState(null, '', location.pathname + location.search + (initialPractice ? '#/practice' : '#/library'));
-    if(initialPractice)this.openPractice();
+  }
+  async init(): Promise<void> {
+    const catalog = await fetch('examples/catalog.json')
+      .then((r) => (r.ok ? r.json() : null))
+      .catch(() => null);
+    if (catalog?.examples?.[0]?.title) this.patch({ exampleTitle: catalog.examples[0].title });
+    this.patch({ bundledScores: await loadBundledCatalog().catch(() => []) });
+    const initialView = location.hash.slice(2);
+    try {
+      if (localStorage.getItem('pianist.practice-kind') === 'grade')
+        this.patch({ practiceKind: 'grade' });
+    } catch {}
+    if (initialView === 'exercises') {
+      this.patch({ practiceKind: 'grade' });
+      try {
+        localStorage.setItem('pianist.practice-kind', 'grade');
+      } catch {}
+    }
+    const initialPractice = initialView === 'practice' || initialView === 'exercises';
+    history.replaceState(
+      null,
+      '',
+      location.pathname + location.search + (initialPractice ? '#/practice' : '#/library'),
+    );
+    if (initialPractice) this.openPractice();
     window.addEventListener('hashchange', () => {
       const route = location.hash.slice(2);
-      if(route==='exercises') {
-        if(this.session&&!['ready','finished'].includes(this.session.status)){
-          history.replaceState(null,'',location.pathname+location.search+'#/'+this.state.view);
-          if(this.state.practiceKind!=='grade')this.notice('Kết thúc lượt trước khi chuyển sang tập theo grade.');
-        }else void this.run(()=>this.selectPracticeKind('grade'));
+      if (route === 'exercises') {
+        if (this.session && !['ready', 'finished'].includes(this.session.status)) {
+          history.replaceState(
+            null,
+            '',
+            location.pathname + location.search + '#/' + this.state.view,
+          );
+          if (this.state.practiceKind !== 'grade')
+            this.notice('Kết thúc lượt trước khi chuyển sang tập theo grade.');
+        } else void this.run(() => this.selectPracticeKind('grade'));
         return;
       }
       const view = route as View;
@@ -105,23 +214,48 @@ export class Workspace {
         else this.navigate(view);
       }
     });
-    try {await this.refresh();
+    try {
+      await this.refresh();
       const recoveries = await storage.list<storage.RecoveryRecord>('recovery');
       this.recovery = recoveries.sort((a, b) => b.updatedAt - a.updatedAt)[0];
-      if (this.recovery) this.notice('Có bản tự lưu. Mở bài trong thư viện sẽ phục hồi các thay đổi gần nhất.');
-    } catch (e) {this.fail(e);}
+      if (this.recovery)
+        this.notice('Có bản tự lưu. Mở bài trong thư viện sẽ phục hồi các thay đổi gần nhất.');
+    } catch (e) {
+      this.fail(e);
+    }
     this.midi.onChange = () => {
-      if(!(this.state.view==='practice'&&this.state.practiceKind==='grade')&&this.state.config&&this.state.config.deviceId!==this.midi.deviceId&&(!this.session||['ready','finished'].includes(this.session.status))){
-        const deviceId=this.midi.deviceId;
-        this.updatePracticeSettings({deviceId,offsetMs:0});
-        void storage.get<{id:string;offsetMs:number}>('settings','calibration-v2:'+deviceId).then(profile=>{
-          if(profile&&this.midi.deviceId===deviceId&&(!this.session||['ready','finished'].includes(this.session.status)))this.updatePracticeSettings({offsetMs:profile.offsetMs});
-        }).catch(e=>this.fail(e));
+      if (
+        !(this.state.view === 'practice' && this.state.practiceKind === 'grade') &&
+        this.state.config &&
+        this.state.config.deviceId !== this.midi.deviceId &&
+        (!this.session || ['ready', 'finished'].includes(this.session.status))
+      ) {
+        const deviceId = this.midi.deviceId;
+        this.updatePracticeSettings({ deviceId, offsetMs: 0 });
+        void storage
+          .get<{ id: string; offsetMs: number }>('settings', 'calibration-v2:' + deviceId)
+          .then((profile) => {
+            if (
+              profile &&
+              this.midi.deviceId === deviceId &&
+              (!this.session || ['ready', 'finished'].includes(this.session.status))
+            )
+              this.updatePracticeSettings({ offsetMs: profile.offsetMs });
+          })
+          .catch((e) => this.fail(e));
       }
-      this.patch({midiVersion: this.state.midiVersion + 1});
+      this.patch({ midiVersion: this.state.midiVersion + 1 });
     };
-    this.midi.onDisconnect = () => {this.session?.pause('Đàn MIDI đã ngắt kết nối. Kết nối/chọn lại thiết bị rồi Tiếp tục.', true); this.notice('Thiết bị MIDI đã ngắt kết nối.');};
-    this.midi.onReset = () => {this.session?.pause('Đàn gửi lệnh xóa trạng thái phím. Nhả phím rồi bấm Tiếp tục.', true);};
+    this.midi.onDisconnect = () => {
+      this.session?.pause(
+        'Đàn MIDI đã ngắt kết nối. Kết nối/chọn lại thiết bị rồi Tiếp tục.',
+        true,
+      );
+      this.notice('Thiết bị MIDI đã ngắt kết nối.');
+    };
+    this.midi.onReset = () => {
+      this.session?.pause('Đàn gửi lệnh xóa trạng thái phím. Nhả phím rồi bấm Tiếp tục.', true);
+    };
     this.midi.onInput = (e, bytes) => {
       if (this.state.engineFailed) return;
       if (this.state.view === 'editor') this.bridge?.api.midiInput(bytes[0], bytes[1], bytes[2]);
@@ -129,93 +263,210 @@ export class Workspace {
         this.session?.input(e);
       }
     };
-    document.addEventListener('visibilitychange', () => {if (document.hidden) {this.session?.pause('Tab đã bị ẩn. Tiếp tục sẽ đếm vào lại.', true); this.midi.release(); void this.autosave();}});
-    window.addEventListener('blur', () => {this.midi.release(); this.session?.pause('Cửa sổ mất focus. Tiếp tục sẽ đếm vào lại.', true);});
-    window.addEventListener('beforeunload', e => {if (this.state.current && this.state.recoveryRevision < this.state.revision) {e.preventDefault(); e.returnValue = '';}});
-    window.addEventListener('pagehide', () => {if (this.state.current) void storage.releaseProject(this.state.current.id);});
-    window.addEventListener('pageshow', e => {if (e.persisted && this.state.current) void this.run(() => storage.claimProject(this.state.current!.id));});
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) {
+        this.session?.pause('Tab đã bị ẩn. Tiếp tục sẽ đếm vào lại.', true);
+        this.midi.release();
+        void this.autosave();
+      }
+    });
+    window.addEventListener('blur', () => {
+      this.midi.release();
+      this.session?.pause('Cửa sổ mất focus. Tiếp tục sẽ đếm vào lại.', true);
+    });
+    window.addEventListener('beforeunload', (e) => {
+      if (this.state.current && this.state.recoveryRevision < this.state.revision) {
+        e.preventDefault();
+        e.returnValue = '';
+      }
+    });
+    window.addEventListener('pagehide', () => {
+      if (this.state.current) void storage.releaseProject(this.state.current.id);
+    });
+    window.addEventListener('pageshow', (e) => {
+      if (e.persisted && this.state.current)
+        void this.run(() => storage.claimProject(this.state.current!.id));
+    });
   }
   async refresh(): Promise<void> {
-    const [projects, history] = await Promise.all([storage.list<storage.ProjectRecord>('projects'), storage.list<SavedAttempt>('sessions')]);
-    this.patch({projects: projects.sort((a, b) => b.updatedAt - a.updatedAt), history: history.sort((a, b) => b.createdAt - a.createdAt)});
+    const [projects, history] = await Promise.all([
+      storage.list<storage.ProjectRecord>('projects'),
+      storage.list<SavedAttempt>('sessions'),
+    ]);
+    this.patch({
+      projects: projects.sort((a, b) => b.updatedAt - a.updatedAt),
+      history: history.sort((a, b) => b.createdAt - a.createdAt),
+    });
   }
   focusEditor = (element?: Element): void => {
-    if (this.state.engineFailed || this.state.view !== 'editor' || document.querySelector('dialog[open]')) return;
+    if (
+      this.state.engineFailed ||
+      this.state.view !== 'editor' ||
+      document.querySelector('dialog[open]')
+    )
+      return;
     const root = document.querySelector('#screen #qt-shadow-container')?.shadowRoot;
     const win = element ?? root?.querySelector('.qt-decorated-window:not(.inactive) .qt-window');
-    if (win && !win.contains(root?.activeElement ?? null)) (win.querySelector('.qt-window-focus-helper') as HTMLElement)?.focus({preventScroll: true});
+    if (win && !win.contains(root?.activeElement ?? null))
+      (win.querySelector('.qt-window-focus-helper') as HTMLElement)?.focus({ preventScroll: true });
   };
   async ensureEngine(background = false): Promise<EngineBridge> {
     if (this.state.engineFailed) throw Error('Tải lại trang để khởi động lại MuseScore.');
     if (this.bridge) return this.bridge;
     if (this.engineLoading) return this.engineLoading;
-    if(!background)this.patch({busy: 'Đang tải MuseScore… Lần đầu cần tải bộ ký âm và tiếng piano.'});
+    if (!background)
+      this.patch({ busy: 'Đang tải MuseScore… Lần đầu cần tải bộ ký âm và tiếng piano.' });
     this.engineLoading = (async () => {
       const started = performance.now();
       const wasmBinary = await loadEngineAssets();
       const url = new URL('distr/muapi.js', location.href).href;
       const createMuApi = (await import(/* @vite-ignore */ url)).default;
-      const api: NativeApi = await createMuApi({screen: document.getElementById('screen'), wasmBinary,
+      const api: NativeApi = await createMuApi({
+        screen: document.getElementById('screen'),
+        wasmBinary,
         onWebCommand: (command: string) => {
           if (this.state.view !== 'editor') return;
-          void this.run(() => command === 'new' ? this.newProject() : command === 'open' ? this.chooseFile() : command === 'save' ? this.saveLibrary() : command === 'save-as' ? this.showSaveAs() : command === 'export' ? this.showExport() : this.showAbout());
+          void this.run(() =>
+            command === 'new'
+              ? this.newProject()
+              : command === 'open'
+                ? this.chooseFile()
+                : command === 'save'
+                  ? this.saveLibrary()
+                  : command === 'save-as'
+                    ? this.showSaveAs()
+                    : command === 'export'
+                      ? this.showExport()
+                      : this.showAbout(),
+          );
         },
         onDocumentState: (title: string, modified: boolean) => {
           document.title = `${title}${modified ? ' *' : ''} — Pianist`;
-          const screen = document.getElementById('screen'); if (screen) screen.dataset.modified = String(modified);
+          const screen = document.getElementById('screen');
+          if (screen) screen.dataset.modified = String(modified);
         },
         onRevisionChanged: (revision: number) => {
-          this.nativeRevision = revision; if (this.bridge) this.bridge.revision = revision;
+          this.nativeRevision = revision;
+          if (this.bridge) this.bridge.revision = revision;
           if (!this.loadingDocument && !this.exerciseNative && this.state.current && this.bridge) {
             const logical = this.revisionBase + revision - this.nativeBase;
-            this.patch({revision: logical, saveState: 'Đang chờ tự lưu…'});
-            clearTimeout(this.autosaveTimer); this.autosaveTimer = window.setTimeout(() => void this.autosave(), 1600);
+            this.patch({ revision: logical, saveState: 'Đang chờ tự lưu…' });
+            clearTimeout(this.autosaveTimer);
+            this.autosaveTimer = window.setTimeout(() => void this.autosave(), 1600);
           }
         },
-        onExit: (data: {text?: string}) => {this.patch({engineFailed: true}); this.fail(Error('Engine đã dừng: ' + (data.text ?? 'Hãy tải lại trang.')));},
-        onProjectSaved: (bytes: Uint8Array) => download(bytes, `${this.state.current?.title ?? 'score'}.mscz`),
-        onMxlExported: (bytes: Uint8Array) => download(bytes, `${this.state.current?.title ?? 'score'}.mxl`),
-        onXmlExported: (bytes: Uint8Array) => download(bytes, `${this.state.current?.title ?? 'score'}.musicxml`, 'application/xml'),
-        onPdfExported: (bytes: Uint8Array) => download(bytes, `${this.state.current?.title ?? 'score'}.pdf`, 'application/pdf'),
+        onExit: (data: { text?: string }) => {
+          this.patch({ engineFailed: true });
+          this.fail(Error('Engine đã dừng: ' + (data.text ?? 'Hãy tải lại trang.')));
+        },
+        onProjectSaved: (bytes: Uint8Array) =>
+          download(bytes, `${this.state.current?.title ?? 'score'}.mscz`),
+        onMxlExported: (bytes: Uint8Array) =>
+          download(bytes, `${this.state.current?.title ?? 'score'}.mxl`),
+        onXmlExported: (bytes: Uint8Array) =>
+          download(bytes, `${this.state.current?.title ?? 'score'}.musicxml`, 'application/xml'),
+        onPdfExported: (bytes: Uint8Array) =>
+          download(bytes, `${this.state.current?.title ?? 'score'}.pdf`, 'application/pdf'),
       });
       if (new URLSearchParams(location.search).has('diagnostics')) (window as any).pianist = api;
-      try {await api.startAudioProcessing();} catch(e) {this.patch({engineFailed:true});throw e;}
-      this.bridge = new EngineBridge(api); this.bridge.revision = this.nativeRevision;
+      try {
+        await api.startAudioProcessing();
+      } catch (e) {
+        this.patch({ engineFailed: true });
+        throw e;
+      }
+      this.bridge = new EngineBridge(api);
+      this.bridge.revision = this.nativeRevision;
       this.measureDiagnostic('engine-ready', started);
-      document.getElementById('screen')!.addEventListener('pointerdown', e => {api.Module.driver?.resume(); this.focusEditor(e.composedPath().find((x: any) => x.classList?.contains('qt-window')) as Element);}, true);
-      this.patch({engineReady: true}); return this.bridge;
+      document.getElementById('screen')!.addEventListener(
+        'pointerdown',
+        (e) => {
+          api.Module.driver?.resume();
+          this.focusEditor(
+            e.composedPath().find((x: any) => x.classList?.contains('qt-window')) as Element,
+          );
+        },
+        true,
+      );
+      this.patch({ engineReady: true });
+      return this.bridge;
     })();
-    try {return await this.engineLoading;} catch (e) {this.engineLoading = undefined; throw e;}
+    try {
+      return await this.engineLoading;
+    } catch (e) {
+      this.engineLoading = undefined;
+      throw e;
+    }
   }
-  private async switchDocument(record: storage.ProjectRecord, data: Uint8Array, filename: string, durable = true): Promise<void> {
+  private async switchDocument(
+    record: storage.ProjectRecord,
+    data: Uint8Array,
+    filename: string,
+    durable = true,
+  ): Promise<void> {
     await storage.claimProject(record.id);
-    const old = this.state.current, wasPractice = this.bridge?.practiceActive;
+    const old = this.state.current,
+      wasPractice = this.bridge?.practiceActive;
     try {
       const bridge = await this.ensureEngine();
       this.requireInactiveSession();
-      this.loadingDocument = true; bridge.setPractice(false);
+      this.loadingDocument = true;
+      bridge.setPractice(false);
       const started = performance.now();
-      if (!bridge.api.loadScoreData(data, filename)) throw Error('Không mở được bản nhạc. Bài đang mở vẫn được giữ.');
-      this.measureDiagnostic('native-import', started, {inputBytes: data.length});
-      this.nativeBase = bridge.revision; this.revisionBase = record.revision;
-      this.source = {bytes: record.source ?? data, filename: record.sourceName ?? filename};
+      if (!bridge.api.loadScoreData(data, filename))
+        throw Error('Không mở được bản nhạc. Bài đang mở vẫn được giữ.');
+      this.measureDiagnostic('native-import', started, { inputBytes: data.length });
+      this.nativeBase = bridge.revision;
+      this.revisionBase = record.revision;
+      this.source = { bytes: record.source ?? data, filename: record.sourceName ?? filename };
       if (old && old.id !== record.id) await storage.releaseProject(old.id);
-      this.patch({current: record, revision: record.revision, savedRevision: durable ? record.revision : 0,
-        recoveryRevision: durable ? record.revision : 0, saveState: durable ? 'Đã lưu trong thư viện' : 'Chưa lưu trong thư viện', snapshot: undefined, config: undefined, importDiagnostics: undefined});
-      clearInterval(this.leaseTimer); this.leaseTimer = window.setInterval(() => {const id = this.state.current?.id; if (id) void storage.claimProject(id).catch(e => {this.session?.pause('Tab khác đã giữ quyền ghi bài này.', true); this.fail(e); this.navigate('library');});}, 5000);
-    } catch (e) {if (old?.id !== record.id) await storage.releaseProject(record.id); if (wasPractice && !this.state.engineFailed) this.bridge?.setPractice(true); throw e;}
-    finally {this.loadingDocument = false;}
+      this.patch({
+        current: record,
+        revision: record.revision,
+        savedRevision: durable ? record.revision : 0,
+        recoveryRevision: durable ? record.revision : 0,
+        saveState: durable ? 'Đã lưu trong thư viện' : 'Chưa lưu trong thư viện',
+        snapshot: undefined,
+        config: undefined,
+        importDiagnostics: undefined,
+      });
+      clearInterval(this.leaseTimer);
+      this.leaseTimer = window.setInterval(() => {
+        const id = this.state.current?.id;
+        if (id)
+          void storage.claimProject(id).catch((e) => {
+            this.session?.pause('Tab khác đã giữ quyền ghi bài này.', true);
+            this.fail(e);
+            this.navigate('library');
+          });
+      }, 5000);
+    } catch (e) {
+      if (old?.id !== record.id) await storage.releaseProject(record.id);
+      if (wasPractice && !this.state.engineFailed) this.bridge?.setPractice(true);
+      throw e;
+    } finally {
+      this.loadingDocument = false;
+    }
   }
   private requireInactiveSession(): void {
-    if (this.session && !['ready', 'finished'].includes(this.session.status)) throw Error('Kết thúc lượt tập trước khi mở hoặc đổi bản nhạc.');
+    if (this.session && !['ready', 'finished'].includes(this.session.status))
+      throw Error('Kết thúc lượt tập trước khi mở hoặc đổi bản nhạc.');
   }
   private async changeDocument(action: () => Promise<void>): Promise<void> {
     this.requireInactiveSession();
     this.restoreExerciseEditor();
-    if (this.documentChange) throw Error('Đang xử lý một bản nhạc. Hãy chờ hoàn tất hoặc hủy mở file.');
-    const owner = this.documentChange = Symbol(); this.patch({busy: 'Đang chuẩn bị bản nhạc…'});
-    try {await action();}
-    finally {if (this.documentChange === owner) {this.documentChange = undefined; this.patch({busy: '', canCancelOpen: false});}}
+    if (this.documentChange)
+      throw Error('Đang xử lý một bản nhạc. Hãy chờ hoàn tất hoặc hủy mở file.');
+    const owner = (this.documentChange = Symbol());
+    this.patch({ busy: 'Đang chuẩn bị bản nhạc…' });
+    try {
+      await action();
+    } finally {
+      if (this.documentChange === owner) {
+        this.documentChange = undefined;
+        this.patch({ busy: '', canCancelOpen: false });
+      }
+    }
   }
   async openEditor(): Promise<void> {
     this.requireInactiveSession();
@@ -226,51 +477,105 @@ export class Workspace {
     // Selecting the practice feature does not require a loaded editor document.
     // Keep an in-progress session intact when its own navbar item is pressed.
     if (this.session && !['ready', 'finished'].includes(this.session.status)) return;
-    this.patch({practicePicker: true});
+    this.patch({ practicePicker: true });
     this.navigate('practice');
   }
   selectPracticeKind(kind: PracticeKind): void {
     this.requireInactiveSession();
-    this.session?.dispose();this.session=undefined;
+    this.session?.dispose();
+    this.session = undefined;
     this.restoreExerciseEditor();
-    this.patch({practiceKind:kind,practicePicker:true});
-    try {localStorage.setItem('pianist.practice-kind',kind);} catch {}
+    this.patch({ practiceKind: kind, practicePicker: true });
+    try {
+      localStorage.setItem('pianist.practice-kind', kind);
+    } catch {}
     this.navigate('practice');
   }
   async enterPractice(): Promise<void> {
-    if (this.session && !['ready','finished'].includes(this.session.status)) {this.navigate('practice');return;}
-    if(this.state.practiceKind==='grade'){this.openPractice();return;}
-    if (!this.state.current || !this.bridge) {this.openPractice();return;}
+    if (this.session && !['ready', 'finished'].includes(this.session.status)) {
+      this.navigate('practice');
+      return;
+    }
+    if (this.state.practiceKind === 'grade') {
+      this.openPractice();
+      return;
+    }
+    if (!this.state.current || !this.bridge) {
+      this.openPractice();
+      return;
+    }
     await this.practice();
   }
   updatePracticeSettings(patch: Partial<PracticeSettings>): void {
-    if (!this.state.config || !this.state.snapshot || this.session && !['ready','finished'].includes(this.session.status)) return;
-    const config = {...this.state.config,...patch,version:2 as const};
-    if(this.state.config.deviceId!==this.midi.deviceId)config.offsetMs=0;
-    else if(patch.deviceId!==undefined&&patch.deviceId!==this.midi.deviceId)config.offsetMs=this.state.config.offsetMs;
-    config.fromMeasure=Math.max(0,Math.min(this.state.snapshot.measures.length-1,config.fromMeasure));
-    config.toMeasure=Math.max(config.fromMeasure,Math.min(this.state.snapshot.measures.length-1,config.toMeasure));
-    config.roles={...settingsFor(this.state.snapshot).roles,...config.roles};
-    config.deviceId=this.midi.deviceId;config.inputSource=this.midi.deviceId==='virtual'?'virtual':'midi';
-    this.patch({config});
-    void storage.put('settings',{id:'practice-v2:'+this.state.snapshot.projectId,config}).catch(e=>this.fail(e));
-    if(patch.offsetMs!==undefined&&patch.deviceId===undefined&&Number.isFinite(config.offsetMs)&&Math.abs(config.offsetMs)<=500)
-      void storage.put('settings',{id:'calibration-v2:'+this.midi.deviceId,offsetMs:config.offsetMs}).catch(e=>this.fail(e));
+    if (
+      !this.state.config ||
+      !this.state.snapshot ||
+      (this.session && !['ready', 'finished'].includes(this.session.status))
+    )
+      return;
+    const config = { ...this.state.config, ...patch, version: 2 as const };
+    if (this.state.config.deviceId !== this.midi.deviceId) config.offsetMs = 0;
+    else if (patch.deviceId !== undefined && patch.deviceId !== this.midi.deviceId)
+      config.offsetMs = this.state.config.offsetMs;
+    config.fromMeasure = Math.max(
+      0,
+      Math.min(this.state.snapshot.measures.length - 1, config.fromMeasure),
+    );
+    config.toMeasure = Math.max(
+      config.fromMeasure,
+      Math.min(this.state.snapshot.measures.length - 1, config.toMeasure),
+    );
+    config.roles = { ...settingsFor(this.state.snapshot).roles, ...config.roles };
+    config.deviceId = this.midi.deviceId;
+    config.inputSource = this.midi.deviceId === 'virtual' ? 'virtual' : 'midi';
+    this.patch({ config });
+    void storage
+      .put('settings', { id: 'practice-v2:' + this.state.snapshot.projectId, config })
+      .catch((e) => this.fail(e));
+    if (
+      patch.offsetMs !== undefined &&
+      patch.deviceId === undefined &&
+      Number.isFinite(config.offsetMs) &&
+      Math.abs(config.offsetMs) <= 500
+    )
+      void storage
+        .put('settings', { id: 'calibration-v2:' + this.midi.deviceId, offsetMs: config.offsetMs })
+        .catch((e) => this.fail(e));
   }
   async newProject(): Promise<void> {
     return this.changeDocument(() => this.createNewProject());
   }
   private async createNewProject(): Promise<void> {
     this.requireInactiveSession();
-    await this.autosave(true); this.patch({busy: 'Đang tạo bản nhạc…'});
+    await this.autosave(true);
+    this.patch({ busy: 'Đang tạo bản nhạc…' });
     try {
-      const response = await fetch('templates/blank-piano.mscz'); if (!response.ok) throw Error('Không tải được mẫu piano.');
+      const response = await fetch('templates/blank-piano.mscz');
+      if (!response.ok) throw Error('Không tải được mẫu piano.');
       const bytes = new Uint8Array(await response.arrayBuffer());
-      const bridge = await this.ensureEngine(); requireLibraryScore(bridge.semantics(bytes, 'blank-piano.mscz'));
-      const record: storage.ProjectRecord = {id: crypto.randomUUID(), title: 'Bản nhạc mới', filename: 'Bản nhạc mới.mscz', bytes, revision: 1, createdAt: Date.now(), updatedAt: Date.now()};
-      await this.switchDocument(record, bytes, record.filename, false); this.navigate('editor');
-      await storage.saveProject(record); this.patch({savedRevision: record.revision, recoveryRevision: record.revision, saveState: 'Đã lưu trong thư viện'}); await this.refresh();
-    } finally {this.patch({busy: ''});}
+      const bridge = await this.ensureEngine();
+      requireLibraryScore(bridge.semantics(bytes, 'blank-piano.mscz'));
+      const record: storage.ProjectRecord = {
+        id: crypto.randomUUID(),
+        title: 'Bản nhạc mới',
+        filename: 'Bản nhạc mới.mscz',
+        bytes,
+        revision: 1,
+        createdAt: Date.now(),
+        updatedAt: Date.now(),
+      };
+      await this.switchDocument(record, bytes, record.filename, false);
+      this.navigate('editor');
+      await storage.saveProject(record);
+      this.patch({
+        savedRevision: record.revision,
+        recoveryRevision: record.revision,
+        saveState: 'Đã lưu trong thư viện',
+      });
+      await this.refresh();
+    } finally {
+      this.patch({ busy: '' });
+    }
   }
   async importFile(file: File, practice = false): Promise<void> {
     // A later file replaces only a cancellable preparation, never native commit.
@@ -280,9 +585,13 @@ export class Workspace {
   }
   private async importDocument(file: File, practice: boolean): Promise<void> {
     this.requireInactiveSession();
-    if (!file) return; this.diagnostic('Đang mở ' + file.name + '…'); await this.autosave(true); const token = ++this.operation;
-    this.fileAbort?.abort(); const abort = this.fileAbort = new AbortController();
-    this.patch({busy: 'Đang kiểm tra và mở ' + file.name + '…', canCancelOpen: true, error: ''});
+    if (!file) return;
+    this.diagnostic('Đang mở ' + file.name + '…');
+    await this.autosave(true);
+    const token = ++this.operation;
+    this.fileAbort?.abort();
+    const abort = (this.fileAbort = new AbortController());
+    this.patch({ busy: 'Đang kiểm tra và mở ' + file.name + '…', canCancelOpen: true, error: '' });
     try {
       if (file.size > 32 * 1024 * 1024) throw Error('File vượt giới hạn 32 MiB.');
       const data = new Uint8Array(await file.arrayBuffer());
@@ -291,52 +600,141 @@ export class Workspace {
         await this.importAbc(data, file.name, practice, abort.signal, token);
         return;
       }
-      if (/\.abc$/i.test(file.name)) this.patch({busy: 'Đang chuẩn bị bộ đọc ABC…'});
-      const prepared = await prepareScoreFile(data, file.name, this.scoreConverter, abort.signal,
-        () => {if (token === this.operation) this.patch({busy: 'Đang chuyển ABC thành bản nhạc…'});});
+      if (/\.abc$/i.test(file.name)) this.patch({ busy: 'Đang chuẩn bị bộ đọc ABC…' });
+      const prepared = await prepareScoreFile(
+        data,
+        file.name,
+        this.scoreConverter,
+        abort.signal,
+        () => {
+          if (token === this.operation) this.patch({ busy: 'Đang chuyển ABC thành bản nhạc…' });
+        },
+      );
       if (token !== this.operation) return;
       await this.ensureEngine();
       if (token !== this.operation) return;
       this.requireInactiveSession();
-      this.patch({busy: 'Đang nhập bản nhạc vào MuseScore…', canCancelOpen: false});
+      this.patch({ busy: 'Đang nhập bản nhạc vào MuseScore…', canCancelOpen: false });
       requireLibraryScore(this.bridge!.semantics(prepared.bytes, prepared.filename));
-      const record: storage.ProjectRecord = {id: crypto.randomUUID(), title: prepared.title || file.name.replace(/\.[^.]+$/, ''), filename: prepared.filename, bytes: prepared.bytes, source: data, sourceName: file.name, revision: 1, createdAt: Date.now(), updatedAt: Date.now()};
+      const record: storage.ProjectRecord = {
+        id: crypto.randomUUID(),
+        title: prepared.title || file.name.replace(/\.[^.]+$/, ''),
+        filename: prepared.filename,
+        bytes: prepared.bytes,
+        source: data,
+        sourceName: file.name,
+        revision: 1,
+        createdAt: Date.now(),
+        updatedAt: Date.now(),
+      };
       await this.switchDocument(record, prepared.bytes, prepared.filename, false);
       if (!practice) this.navigate('editor');
-      record.bytes = this.bridge!.serialize(); record.filename = `${record.title}.mscz`;
-      await storage.saveProject(record); this.patch({current: record, savedRevision: record.revision, recoveryRevision: record.revision, saveState: 'Đã lưu trong thư viện'}); await this.refresh(); this.notice('Đã nhập bài và giữ bản nguồn trong thư viện.');
-      this.patch({importDiagnostics: prepared.diagnostics.length ? prepared.diagnostics : undefined});
+      record.bytes = this.bridge!.serialize();
+      record.filename = `${record.title}.mscz`;
+      await storage.saveProject(record);
+      this.patch({
+        current: record,
+        savedRevision: record.revision,
+        recoveryRevision: record.revision,
+        saveState: 'Đã lưu trong thư viện',
+      });
+      await this.refresh();
+      this.notice('Đã nhập bài và giữ bản nguồn trong thư viện.');
+      this.patch({
+        importDiagnostics: prepared.diagnostics.length ? prepared.diagnostics : undefined,
+      });
       this.diagnostic('Đã mở ' + file.name + '.');
       if (practice) await this.practice();
-    } catch (error) {if (token === this.operation) throw error;}
-    finally {if (token === this.operation) this.patch({busy: '', canCancelOpen: false});}
+    } catch (error) {
+      if (token === this.operation) throw error;
+    } finally {
+      if (token === this.operation) this.patch({ busy: '', canCancelOpen: false });
+    }
   }
-  cancelOpen(): void {if (!this.state.canCancelOpen) return; ++this.operation; this.documentChange = undefined; this.fileAbort?.abort(); this.bridge?.cancel(); this.patch({busy: '', canCancelOpen: false, cancelOpenLabel: undefined, tuneSelection: undefined}); this.diagnostic('Đã hủy thao tác.');}
+  cancelOpen(): void {
+    if (!this.state.canCancelOpen) return;
+    ++this.operation;
+    this.documentChange = undefined;
+    this.fileAbort?.abort();
+    this.bridge?.cancel();
+    this.patch({
+      busy: '',
+      canCancelOpen: false,
+      cancelOpenLabel: undefined,
+      tuneSelection: undefined,
+    });
+    this.diagnostic('Đã hủy thao tác.');
+  }
   selectTunes(indices: number[], openIndex: number): void {
     const selection = this.state.tuneSelection;
-    if (!selection || !indices.length || new Set(indices).size !== indices.length
-      || indices.some(i => !Number.isInteger(i) || !selection.tunes[i]) || !indices.includes(openIndex)) return;
-    this.resolveTunes?.({indices: [...indices], openIndex});
+    if (
+      !selection ||
+      !indices.length ||
+      new Set(indices).size !== indices.length ||
+      indices.some((i) => !Number.isInteger(i) || !selection.tunes[i]) ||
+      !indices.includes(openIndex)
+    )
+      return;
+    this.resolveTunes?.({ indices: [...indices], openIndex });
   }
-  private chooseTunes(selection: TuneSelection, signal: AbortSignal): Promise<{indices: number[]; openIndex: number}> {
+  private chooseTunes(
+    selection: TuneSelection,
+    signal: AbortSignal,
+  ): Promise<{ indices: number[]; openIndex: number }> {
     signal.throwIfAborted();
     return new Promise((resolve, reject) => {
-      const cleanup = () => {signal.removeEventListener('abort', cancel); this.resolveTunes = undefined; this.patch({tuneSelection: undefined});};
-      const cancel = () => {cleanup(); reject(signal.reason);};
-      this.resolveTunes = choice => {cleanup(); resolve(choice);};
-      signal.addEventListener('abort', cancel, {once: true});
-      this.patch({tuneSelection: selection, busy: 'Chọn bài trong file ABC'});
+      const cleanup = () => {
+        signal.removeEventListener('abort', cancel);
+        this.resolveTunes = undefined;
+        this.patch({ tuneSelection: undefined });
+      };
+      const cancel = () => {
+        cleanup();
+        reject(signal.reason);
+      };
+      this.resolveTunes = (choice) => {
+        cleanup();
+        resolve(choice);
+      };
+      signal.addEventListener('abort', cancel, { once: true });
+      this.patch({ tuneSelection: selection, busy: 'Chọn bài trong file ABC' });
     });
   }
-  private async importAbc(data: Uint8Array, filename: string, practice: boolean, signal: AbortSignal, token: number): Promise<void> {
-    const {tunes} = inspectAbc(data);
-    const sourceHash = [...new Uint8Array(await crypto.subtle.digest('SHA-256', data.slice().buffer))].map(n => n.toString(16).padStart(2, '0')).join('');
-    let choice = {indices: [0], openIndex: 0}, errors: Record<number, string> = {}, batchError: string | undefined;
+  private async importAbc(
+    data: Uint8Array,
+    filename: string,
+    practice: boolean,
+    signal: AbortSignal,
+    token: number,
+  ): Promise<void> {
+    const { tunes } = inspectAbc(data);
+    const sourceHash = [
+      ...new Uint8Array(await crypto.subtle.digest('SHA-256', data.slice().buffer)),
+    ]
+      .map((n) => n.toString(16).padStart(2, '0'))
+      .join('');
+    let choice = { indices: [0], openIndex: 0 },
+      errors: Record<number, string> = {},
+      batchError: string | undefined;
     while (true) {
       signal.throwIfAborted();
-      if (tunes.length > 1) choice = await this.chooseTunes({requestId: token, filename, tunes, sourceBytes: data.length, practice,
-        selected: choice.indices, openIndex: choice.openIndex, errors, error: batchError}, signal);
-      errors = {}; batchError = undefined;
+      if (tunes.length > 1)
+        choice = await this.chooseTunes(
+          {
+            requestId: token,
+            filename,
+            tunes,
+            sourceBytes: data.length,
+            practice,
+            selected: choice.indices,
+            openIndex: choice.openIndex,
+            errors,
+            error: batchError,
+          },
+          signal,
+        );
+      errors = {};
+      batchError = undefined;
       const records: storage.ProjectRecord[] = [];
       try {
         await storage.checkImportCapacity(data.length * choice.indices.length);
@@ -346,55 +744,105 @@ export class Workspace {
         let transientBytes = data.length * choice.indices.length;
         for (const index of choice.indices) {
           signal.throwIfAborted();
-          this.patch({busy: `Đang chuyển bài ${index + 1}: ${tunes[index].title}…`});
+          this.patch({ busy: `Đang chuyển bài ${index + 1}: ${tunes[index].title}…` });
           try {
-            const prepared = await prepareScoreFile(data, filename, this.scoreConverter, signal, undefined, index);
+            const prepared = await prepareScoreFile(
+              data,
+              filename,
+              this.scoreConverter,
+              signal,
+              undefined,
+              index,
+            );
             transientBytes += prepared.bytes.length;
-            if (transientBytes > storage.MAX_IMPORT_BATCH_BYTES) throw Error('Lô chuyển đổi vượt 128 MiB. Hãy chọn ít bài hơn.');
-            converted.push({index, prepared});
-          } catch (error) {signal.throwIfAborted(); errors[index] = storage.storageError(error);}
+            if (transientBytes > storage.MAX_IMPORT_BATCH_BYTES)
+              throw Error('Lô chuyển đổi vượt 128 MiB. Hãy chọn ít bài hơn.');
+            converted.push({ index, prepared });
+          } catch (error) {
+            signal.throwIfAborted();
+            errors[index] = storage.storageError(error);
+          }
         }
-        if (Object.keys(errors).length) throw Error(tunes.length === 1 ? errors[0] : 'Bỏ chọn bài lỗi hoặc sửa nguồn rồi nhập lại.');
-        const bridge = await this.ensureEngine(); signal.throwIfAborted(); this.requireInactiveSession();
-        for (const {index, prepared} of converted) {
-          this.patch({busy: `Đang chuẩn bị ${prepared.title} trong MuseScore…`});
+        if (Object.keys(errors).length)
+          throw Error(
+            tunes.length === 1 ? errors[0] : 'Bỏ chọn bài lỗi hoặc sửa nguồn rồi nhập lại.',
+          );
+        const bridge = await this.ensureEngine();
+        signal.throwIfAborted();
+        this.requireInactiveSession();
+        for (const { index, prepared } of converted) {
+          this.patch({ busy: `Đang chuẩn bị ${prepared.title} trong MuseScore…` });
           // Yield between native calls so cancel can run. Each call owns and
           // releases its temporary project before the next one starts.
-          await new Promise(resolve => setTimeout(resolve, 0)); signal.throwIfAborted();
+          await new Promise((resolve) => setTimeout(resolve, 0));
+          signal.throwIfAborted();
           let bytes: Uint8Array;
-          try {requireLibraryScore(bridge.semantics(prepared.bytes, prepared.filename)); bytes = bridge.prepare(prepared.bytes, prepared.filename);}
-          catch (error) {errors[index] = storage.storageError(error); throw error;}
+          try {
+            requireLibraryScore(bridge.semantics(prepared.bytes, prepared.filename));
+            bytes = bridge.prepare(prepared.bytes, prepared.filename);
+          } catch (error) {
+            errors[index] = storage.storageError(error);
+            throw error;
+          }
           prepared.bytes = new Uint8Array();
-          const title = prepared.title!, tune = tunes[index], now = Date.now();
-          records.push({id: crypto.randomUUID(), title, filename: title + '.mscz', bytes, source: data, sourceName: filename,
-            sourceFormat: 'abc', sourceHash, sourceTuneIndex: index, sourceTuneId: tune.id.slice(0, 4096),
-            sourceTuneTitle: tune.title.slice(0, 4096), converterVersion: CONVERTER_VERSION,
-            importDiagnostics: prepared.diagnostics, revision: 1, createdAt: now, updatedAt: now});
-          await storage.checkImportCapacity(records.reduce((sum, p) => sum + p.bytes.length + data.length, 0));
+          const title = prepared.title!,
+            tune = tunes[index],
+            now = Date.now();
+          records.push({
+            id: crypto.randomUUID(),
+            title,
+            filename: title + '.mscz',
+            bytes,
+            source: data,
+            sourceName: filename,
+            sourceFormat: 'abc',
+            sourceHash,
+            sourceTuneIndex: index,
+            sourceTuneId: tune.id.slice(0, 4096),
+            sourceTuneTitle: tune.title.slice(0, 4096),
+            converterVersion: CONVERTER_VERSION,
+            importDiagnostics: prepared.diagnostics,
+            revision: 1,
+            createdAt: now,
+            updatedAt: now,
+          });
+          await storage.checkImportCapacity(
+            records.reduce((sum, p) => sum + p.bytes.length + data.length, 0),
+          );
         }
-        signal.throwIfAborted(); this.requireInactiveSession();
-        this.patch({busy: `Đang lưu ${records.length} bài vào thư viện…`, canCancelOpen: false});
+        signal.throwIfAborted();
+        this.requireInactiveSession();
+        this.patch({ busy: `Đang lưu ${records.length} bài vào thư viện…`, canCancelOpen: false });
         await storage.insertProjects(records, signal);
       } catch (error) {
         signal.throwIfAborted();
         if (error instanceof WebAssembly.RuntimeError || tunes.length === 1) throw error;
-        batchError = storage.storageError(error); this.patch({canCancelOpen: true}); continue;
+        batchError = storage.storageError(error);
+        this.patch({ canCancelOpen: true });
+        continue;
       }
       // Commit succeeded. Opening is deliberately separate: an opening error
       // must never tell the user the already durable batch was rolled back.
-      const record = records.find(p => p.sourceTuneIndex === choice.openIndex)!;
+      const record = records.find((p) => p.sourceTuneIndex === choice.openIndex)!;
       try {
         await this.refresh();
         await this.switchDocument(record, record.bytes, record.filename);
-        this.patch({importDiagnostics: record.importDiagnostics?.length ? record.importDiagnostics : undefined});
-        if (practice) await this.practice(); else this.navigate('editor');
+        this.patch({
+          importDiagnostics: record.importDiagnostics?.length
+            ? record.importDiagnostics
+            : undefined,
+        });
+        if (practice) await this.practice();
+        else this.navigate('editor');
         this.notice(`Đã nhập ${records.length} bài và giữ nguyên file ABC nguồn.`);
         this.diagnostic('Đã mở ' + filename + '.');
       } catch (error) {
         if (error instanceof WebAssembly.RuntimeError) throw error;
-        throw Error(`Đã lưu đủ ${records.length} bài trong thư viện, nhưng chưa mở được bài đã chọn: ${storage.storageError(error)}`);
+        throw Error(
+          `Đã lưu đủ ${records.length} bài trong thư viện, nhưng chưa mở được bài đã chọn: ${storage.storageError(error)}`,
+        );
       }
-      if (token === this.operation) this.patch({canCancelOpen: false});
+      if (token === this.operation) this.patch({ canCancelOpen: false });
       return;
     }
   }
@@ -403,188 +851,432 @@ export class Workspace {
   }
   private async openStoredProject(id: string, practice = false): Promise<void> {
     this.requireInactiveSession();
-    if (this.state.current?.id === id && this.bridge) {if (practice) await this.practice(); else this.navigate('editor'); return;}
-    await this.autosave(true); this.patch({busy: 'Đang mở bản nhạc…'});
+    if (this.state.current?.id === id && this.bridge) {
+      if (practice) await this.practice();
+      else this.navigate('editor');
+      return;
+    }
+    await this.autosave(true);
+    this.patch({ busy: 'Đang mở bản nhạc…' });
     try {
-      const record = await storage.get<storage.ProjectRecord>('projects', id); if (!record) throw Error('Không tìm thấy bài trong thư viện.');
+      const record = await storage.get<storage.ProjectRecord>('projects', id);
+      if (!record) throw Error('Không tìm thấy bài trong thư viện.');
       const recovery = await storage.get<storage.RecoveryRecord>('recovery', id);
-      const useRecovery = recovery && (recovery.revision > record.revision || recovery.revision === record.revision && recovery.updatedAt > record.updatedAt);
-      const loaded = useRecovery ? {...record, revision: recovery.revision, title: recovery.title} : record;
-      await this.switchDocument(loaded, useRecovery ? recovery.bytes : record.bytes, useRecovery ? recovery.filename : record.filename);
-      if (useRecovery) {this.patch({savedRevision: record.revision, saveState: 'Đã phục hồi bản tự lưu'}); this.notice('Đã phục hồi thay đổi gần nhất. Bấm Lưu thư viện để giữ bản này.');}
-      if (practice) await this.practice(); else this.navigate('editor');
-    } finally {this.patch({busy: ''});}
+      const useRecovery =
+        recovery &&
+        (recovery.revision > record.revision ||
+          (recovery.revision === record.revision && recovery.updatedAt > record.updatedAt));
+      const loaded = useRecovery
+        ? { ...record, revision: recovery.revision, title: recovery.title }
+        : record;
+      await this.switchDocument(
+        loaded,
+        useRecovery ? recovery.bytes : record.bytes,
+        useRecovery ? recovery.filename : record.filename,
+      );
+      if (useRecovery) {
+        this.patch({ savedRevision: record.revision, saveState: 'Đã phục hồi bản tự lưu' });
+        this.notice('Đã phục hồi thay đổi gần nhất. Bấm Lưu thư viện để giữ bản này.');
+      }
+      if (practice) await this.practice();
+      else this.navigate('editor');
+    } finally {
+      this.patch({ busy: '' });
+    }
   }
   async sample(practice = false): Promise<void> {
-    const catalog = await fetch('examples/catalog.json').then(r => r.ok ? r.json() : null).catch(() => null);
-    const example = catalog?.examples?.[0] ?? {url: 'fixtures/piano.mxl', filename: 'Piano khởi động.mxl'};
-    const response = await fetch(example.url); if (!response.ok) throw Error('Không tải được bài mẫu.');
+    const catalog = await fetch('examples/catalog.json')
+      .then((r) => (r.ok ? r.json() : null))
+      .catch(() => null);
+    const example = catalog?.examples?.[0] ?? {
+      url: 'fixtures/piano.mxl',
+      filename: 'Piano khởi động.mxl',
+    };
+    const response = await fetch(example.url);
+    if (!response.ok) throw Error('Không tải được bài mẫu.');
     const bytes = new Uint8Array(await response.arrayBuffer());
-    const existing = this.state.projects.find(p => !p.archived && p.sourceName === example.filename
-      && p.source?.length === bytes.length && p.source.every((byte, i) => byte === bytes[i]));
-    if (existing) {await this.openProject(existing.id, practice); return;}
+    const existing = this.state.projects.find(
+      (p) =>
+        !p.archived &&
+        p.sourceName === example.filename &&
+        p.source?.length === bytes.length &&
+        p.source.every((byte, i) => byte === bytes[i]),
+    );
+    if (existing) {
+      await this.openProject(existing.id, practice);
+      return;
+    }
     await this.importFile(new File([bytes], example.filename), practice);
   }
-  async openBundledScore(score:BundledScore,practice=false):Promise<void>{
+  async openBundledScore(score: BundledScore, practice = false): Promise<void> {
     this.requireInactiveSession();
-    if(practice&&score.practiceReady===false)throw Error(score.practiceNotice||'Phiên bản này hiện hỗ trợ nghe và chỉnh sửa.');
-    const bytes=await loadBundledScore(score);
-    const existing=this.state.projects.find(p=>!p.archived&&p.sourceName===score.filename&&p.source?.length===bytes.length&&p.source.every((b,i)=>b===bytes[i]));
-    if(existing){await this.openProject(existing.id,practice);return;}
-    await this.importFile(new File([bytes.buffer as ArrayBuffer],score.filename),practice);
+    if (practice && score.practiceReady === false)
+      throw Error(score.practiceNotice || 'Phiên bản này hiện hỗ trợ nghe và chỉnh sửa.');
+    const bytes = await loadBundledScore(score);
+    const existing = this.state.projects.find(
+      (p) =>
+        !p.archived &&
+        p.sourceName === score.filename &&
+        p.source?.length === bytes.length &&
+        p.source.every((b, i) => b === bytes[i]),
+    );
+    if (existing) {
+      await this.openProject(existing.id, practice);
+      return;
+    }
+    await this.importFile(new File([bytes.buffer as ArrayBuffer], score.filename), practice);
   }
   async saveLibrary(): Promise<void> {
-    await this.autosaving; clearTimeout(this.autosaveTimer);
+    await this.autosaving;
+    clearTimeout(this.autosaveTimer);
     if (!this.state.current || !this.bridge) return;
     requireLibraryScore(this.bridge.semantics());
-    const revision = this.state.revision, bytes = this.bridge.serialize();
-    const record = {...this.state.current, bytes, filename: `${this.state.current.title}.mscz`, revision, updatedAt: Date.now()};
+    const revision = this.state.revision,
+      bytes = this.bridge.serialize();
+    const record = {
+      ...this.state.current,
+      bytes,
+      filename: `${this.state.current.title}.mscz`,
+      revision,
+      updatedAt: Date.now(),
+    };
     await storage.saveProject(record);
-    if (this.state.current?.id === record.id) this.patch({current: record, savedRevision: revision, recoveryRevision: revision, saveState: 'Đã lưu trong thư viện'});
-    await this.refresh(); this.notice('Đã lưu bản nhạc trong thư viện trên thiết bị này.');
+    if (this.state.current?.id === record.id)
+      this.patch({
+        current: record,
+        savedRevision: revision,
+        recoveryRevision: revision,
+        saveState: 'Đã lưu trong thư viện',
+      });
+    await this.refresh();
+    this.notice('Đã lưu bản nhạc trong thư viện trên thiết bị này.');
   }
   async saveAs(title: string): Promise<void> {
     return this.changeDocument(() => this.saveCopy(title));
   }
   private async saveCopy(title: string): Promise<void> {
     this.requireInactiveSession();
-    await this.autosave(true); if (!this.state.current || !this.bridge || !title.trim()) return;
+    await this.autosave(true);
+    if (!this.state.current || !this.bridge || !title.trim()) return;
     requireLibraryScore(this.bridge.semantics());
-    const old = this.state.current, bridge = this.bridge, bytes = bridge.serialize();
-    const record: storage.ProjectRecord = {...old, id: crypto.randomUUID(), title: title.trim().slice(0, 150), bytes,
-      revision: 1, createdAt: Date.now(), updatedAt: Date.now(), archived: false};
-    record.filename = record.title + '.mscz'; await storage.claimProject(record.id);
-    try {await storage.saveProject(record);} catch (e) {await storage.releaseProject(record.id); throw e;}
-    await storage.releaseProject(old.id); this.nativeBase = bridge.revision; this.revisionBase = 1;
-    this.patch({current: record, revision: 1, savedRevision: 1, recoveryRevision: 1, saveState: 'Đã lưu bản mới', snapshot: undefined, config: undefined});
-    await this.refresh(); this.notice('Đã lưu bản mới. Nội dung và undo của editor được giữ nguyên.');
+    const old = this.state.current,
+      bridge = this.bridge,
+      bytes = bridge.serialize();
+    const record: storage.ProjectRecord = {
+      ...old,
+      id: crypto.randomUUID(),
+      title: title.trim().slice(0, 150),
+      bytes,
+      revision: 1,
+      createdAt: Date.now(),
+      updatedAt: Date.now(),
+      archived: false,
+    };
+    record.filename = record.title + '.mscz';
+    await storage.claimProject(record.id);
+    try {
+      await storage.saveProject(record);
+    } catch (e) {
+      await storage.releaseProject(record.id);
+      throw e;
+    }
+    await storage.releaseProject(old.id);
+    this.nativeBase = bridge.revision;
+    this.revisionBase = 1;
+    this.patch({
+      current: record,
+      revision: 1,
+      savedRevision: 1,
+      recoveryRevision: 1,
+      saveState: 'Đã lưu bản mới',
+      snapshot: undefined,
+      config: undefined,
+    });
+    await this.refresh();
+    this.notice('Đã lưu bản mới. Nội dung và undo của editor được giữ nguyên.');
   }
   async autosave(strict = false): Promise<void> {
-    if (this.autosaving) {await this.autosaving; if (this.state.recoveryRevision < this.state.revision) return this.autosave(strict); return;}
-    if (this.state.engineFailed || this.loadingDocument || this.exerciseNative || !this.state.current || !this.bridge || this.state.recoveryRevision >= this.state.revision) return;
-    const current = this.state.current, bridge = this.bridge;
+    if (this.autosaving) {
+      await this.autosaving;
+      if (this.state.recoveryRevision < this.state.revision) return this.autosave(strict);
+      return;
+    }
+    if (
+      this.state.engineFailed ||
+      this.loadingDocument ||
+      this.exerciseNative ||
+      !this.state.current ||
+      !this.bridge ||
+      this.state.recoveryRevision >= this.state.revision
+    )
+      return;
+    const current = this.state.current,
+      bridge = this.bridge;
     clearTimeout(this.autosaveTimer);
     const operation = (async () => {
-      const revision = this.state.revision, record: storage.RecoveryRecord = {id: current.id, title: current.title,
-        filename: `${current.title}.mscz`, revision, bytes: bridge.serialize(), updatedAt: Date.now()};
+      const revision = this.state.revision,
+        record: storage.RecoveryRecord = {
+          id: current.id,
+          title: current.title,
+          filename: `${current.title}.mscz`,
+          revision,
+          bytes: bridge.serialize(),
+          updatedAt: Date.now(),
+        };
       await storage.saveProject(record, true);
-      if (this.state.current?.id === record.id) this.patch({recoveryRevision: revision, saveState: 'Đã tự lưu · ' + new Date(record.updatedAt).toLocaleTimeString('vi', {hour: '2-digit', minute: '2-digit'})});
+      if (this.state.current?.id === record.id)
+        this.patch({
+          recoveryRevision: revision,
+          saveState:
+            'Đã tự lưu · ' +
+            new Date(record.updatedAt).toLocaleTimeString('vi', {
+              hour: '2-digit',
+              minute: '2-digit',
+            }),
+        });
     })();
     this.autosaving = operation;
-    try {await operation;}
-    catch (e) {this.patch({saveState: 'Chưa lưu được'}); this.fail(e); if (strict) throw e;}
-    finally {if (this.autosaving === operation) this.autosaving = undefined;}
+    try {
+      await operation;
+    } catch (e) {
+      this.patch({ saveState: 'Chưa lưu được' });
+      this.fail(e);
+      if (strict) throw e;
+    } finally {
+      if (this.autosaving === operation) this.autosaving = undefined;
+    }
   }
-  downloadProject(): void {if (this.bridge && this.state.current) {download(this.editorBeforeExercise??this.bridge.serialize(), `${this.state.current.title}.mscz`); this.notice('Đã tải bản sao MSCZ.');}}
+  downloadProject(): void {
+    if (this.bridge && this.state.current) {
+      download(
+        this.editorBeforeExercise ?? this.bridge.serialize(),
+        `${this.state.current.title}.mscz`,
+      );
+      this.notice('Đã tải bản sao MSCZ.');
+    }
+  }
   async export(format: string): Promise<void> {
-    if (format !== 'abc') {if (!this.bridge?.api.exportScore(format)) throw Error('Không xuất được định dạng này.'); return;}
+    if (format !== 'abc') {
+      if (!this.bridge?.api.exportScore(format)) throw Error('Không xuất được định dạng này.');
+      return;
+    }
     await this.changeDocument(async () => {
       if (!this.bridge || !this.state.current) throw Error('Mở bản nhạc trước khi xuất ABC.');
-      const token = ++this.operation, abort = this.fileAbort = new AbortController();
-      const current = this.state.current, revision = this.state.revision;
-      this.patch({busy: 'Đang xuất ABC và đối chiếu với bản đang sửa…', canCancelOpen: true, cancelOpenLabel: 'Hủy xuất ABC', error: ''});
+      const token = ++this.operation,
+        abort = (this.fileAbort = new AbortController());
+      const current = this.state.current,
+        revision = this.state.revision;
+      this.patch({
+        busy: 'Đang xuất ABC và đối chiếu với bản đang sửa…',
+        canCancelOpen: true,
+        cancelOpenLabel: 'Hủy xuất ABC',
+        error: '',
+      });
       try {
         const result = await exportAbc(this.bridge, this.scoreConverter, abort.signal);
         abort.signal.throwIfAborted();
-        if (this.state.current?.id !== current.id || this.state.revision !== revision) throw Error('Bản nhạc đã thay đổi. Hãy xuất lại.');
+        if (this.state.current?.id !== current.id || this.state.revision !== revision)
+          throw Error('Bản nhạc đã thay đổi. Hãy xuất lại.');
         download(result.text, current.title + '.abc', 'text/vnd.abc;charset=utf-8');
         this.notice('Đã xuất ABC từ bản hiện tại và đối chiếu dữ liệu nhạc khi mở lại.');
       } catch (error) {
         if (!abort.signal.aborted) {
           if (error instanceof WebAssembly.RuntimeError) throw error;
-          throw Error(`Chưa xuất ABC: ${storage.storageError(error)} Bạn vẫn có thể xuất MXL; tải MSCZ để giữ đầy đủ dữ liệu đang sửa.`);
+          throw Error(
+            `Chưa xuất ABC: ${storage.storageError(error)} Bạn vẫn có thể xuất MXL; tải MSCZ để giữ đầy đủ dữ liệu đang sửa.`,
+          );
         }
-      } finally {if (token === this.operation) {this.fileAbort = undefined; this.patch({busy: '', canCancelOpen: false, cancelOpenLabel: undefined});}}
+      } finally {
+        if (token === this.operation) {
+          this.fileAbort = undefined;
+          this.patch({ busy: '', canCancelOpen: false, cancelOpenLabel: undefined });
+        }
+      }
     });
   }
   async practice(overrides?: Partial<PracticeSettings>): Promise<void> {
-    const practiceNotice=await bundledPracticeNotice(this.state.bundledScores,this.state.current?.sourceName,this.state.current?.source);
-    if(practiceNotice)throw Error(practiceNotice);
+    const practiceNotice = await bundledPracticeNotice(
+      this.state.bundledScores,
+      this.state.current?.sourceName,
+      this.state.current?.source,
+    );
+    if (practiceNotice) throw Error(practiceNotice);
     this.requireInactiveSession();
     this.restoreExerciseEditor();
-    this.patch({practiceKind:'free'});
-    try {localStorage.setItem('pianist.practice-kind','free');} catch {}
-    if (!this.state.current || !this.bridge) {this.openPractice(); return;}
-    if (this.session && !['ready', 'finished'].includes(this.session.status)) throw Error('Kết thúc lượt tập trước khi thay đổi bản nhạc.');
-    this.session?.dispose(); this.session = undefined;
-    this.patch({busy: 'Đang tạo bản nhạc luyện chỉ đọc…'});
+    this.patch({ practiceKind: 'free' });
+    try {
+      localStorage.setItem('pianist.practice-kind', 'free');
+    } catch {}
+    if (!this.state.current || !this.bridge) {
+      this.openPractice();
+      return;
+    }
+    if (this.session && !['ready', 'finished'].includes(this.session.status))
+      throw Error('Kết thúc lượt tập trước khi thay đổi bản nhạc.');
+    this.session?.dispose();
+    this.session = undefined;
+    this.patch({ busy: 'Đang tạo bản nhạc luyện chỉ đọc…' });
     try {
       this.midi.release();
       // Drain the native MIDI input timer and pending layout before taking the immutable snapshot.
-      await new Promise<void>(resolve => setTimeout(resolve, 40));
-      await this.autosave(true); this.bridge.setPractice(true);
+      await new Promise<void>((resolve) => setTimeout(resolve, 40));
+      await this.autosave(true);
+      this.bridge.setPractice(true);
       const started = performance.now();
-      const snapshot = await this.bridge.cancellableSnapshot(this.state.current.id, fingerprint); snapshot.revision = this.state.revision;
+      const snapshot = await this.bridge.cancellableSnapshot(this.state.current.id, fingerprint);
+      snapshot.revision = this.state.revision;
       requireLibraryScore(snapshot);
-      this.measureDiagnostic('practice-snapshot', started, {pages: snapshot.pages.length, anchors: snapshot.anchors.length});
-      const saved = await storage.get<{id:string; config:PracticeSettings}>('settings','practice-v2:'+snapshot.projectId);
-      const calibration=await storage.get<{id:string;offsetMs:number}>('settings','calibration-v2:'+this.midi.deviceId);
-      const prior = this.state.snapshot?.projectId === snapshot.projectId ? this.state.config : saved?.config;
-      const config = {...settingsFor(snapshot), ...prior, ...overrides, version:2 as const};
-      config.roles={...settingsFor(snapshot).roles,...config.roles};
+      this.measureDiagnostic('practice-snapshot', started, {
+        pages: snapshot.pages.length,
+        anchors: snapshot.anchors.length,
+      });
+      const saved = await storage.get<{ id: string; config: PracticeSettings }>(
+        'settings',
+        'practice-v2:' + snapshot.projectId,
+      );
+      const calibration = await storage.get<{ id: string; offsetMs: number }>(
+        'settings',
+        'calibration-v2:' + this.midi.deviceId,
+      );
+      const prior =
+        this.state.snapshot?.projectId === snapshot.projectId ? this.state.config : saved?.config;
+      const config = { ...settingsFor(snapshot), ...prior, ...overrides, version: 2 as const };
+      config.roles = { ...settingsFor(snapshot).roles, ...config.roles };
       config.fromMeasure = Math.max(0, Math.min(snapshot.measures.length - 1, config.fromMeasure));
-      config.toMeasure = Math.max(config.fromMeasure, Math.min(snapshot.measures.length - 1, config.toMeasure));
-      config.deviceId = this.midi.deviceId; config.inputSource = this.midi.deviceId === 'virtual' ? 'virtual' : 'midi'; config.offsetMs = overrides?.offsetMs ?? calibration?.offsetMs ?? (prior?.deviceId===this.midi.deviceId?prior.offsetMs:0);
-      this.patch({snapshot, config, practicePicker: snapshot.anchors.length === 0}); this.navigate('practice');
-      if (!snapshot.anchors.length) this.notice('Bản nhạc đang mở chưa có nốt. Chọn hoặc nhập một bài để tập.');
-    } catch (e) {this.bridge.setPractice(false); throw e;}
-    finally {this.patch({busy: ''});}
+      config.toMeasure = Math.max(
+        config.fromMeasure,
+        Math.min(snapshot.measures.length - 1, config.toMeasure),
+      );
+      config.deviceId = this.midi.deviceId;
+      config.inputSource = this.midi.deviceId === 'virtual' ? 'virtual' : 'midi';
+      config.offsetMs =
+        overrides?.offsetMs ??
+        calibration?.offsetMs ??
+        (prior?.deviceId === this.midi.deviceId ? prior.offsetMs : 0);
+      this.patch({ snapshot, config, practicePicker: snapshot.anchors.length === 0 });
+      this.navigate('practice');
+      if (!snapshot.anchors.length)
+        this.notice('Bản nhạc đang mở chưa có nốt. Chọn hoặc nhập một bài để tập.');
+    } catch (e) {
+      this.bridge.setPractice(false);
+      throw e;
+    } finally {
+      this.patch({ busy: '' });
+    }
   }
   navigate(view: View): void {
     if (this.state.engineFailed) return;
-    if(view===this.state.view&&this.session&&!['ready','finished'].includes(this.session.status))return;
-    if (view==='practice' && this.state.practiceKind==='free' && !this.state.practicePicker && this.state.snapshot && (this.state.snapshot.projectId!==this.state.current?.id || this.state.snapshot.revision!==this.state.revision)) {void this.run(()=>this.enterPractice());return;}
-    if (this.session && !['ready', 'finished'].includes(this.session.status) && view !== this.state.view) {
-      location.hash='/'+this.state.view;
-      this.notice('Bấm Kết thúc lượt tập trước khi chuyển màn hình.'); return;
+    if (
+      view === this.state.view &&
+      this.session &&
+      !['ready', 'finished'].includes(this.session.status)
+    )
+      return;
+    if (
+      view === 'practice' &&
+      this.state.practiceKind === 'free' &&
+      !this.state.practicePicker &&
+      this.state.snapshot &&
+      (this.state.snapshot.projectId !== this.state.current?.id ||
+        this.state.snapshot.revision !== this.state.revision)
+    ) {
+      void this.run(() => this.enterPractice());
+      return;
     }
-    if(view!=='practice'||this.state.practiceKind!=='grade')this.restoreExerciseEditor();
+    if (
+      this.session &&
+      !['ready', 'finished'].includes(this.session.status) &&
+      view !== this.state.view
+    ) {
+      location.hash = '/' + this.state.view;
+      this.notice('Bấm Kết thúc lượt tập trước khi chuyển màn hình.');
+      return;
+    }
+    if (view !== 'practice' || this.state.practiceKind !== 'grade') this.restoreExerciseEditor();
     this.midi.release();
-    if (view === 'editor') this.bridge?.setPractice(false); else if (this.bridge) this.bridge.setPractice(true);
-    this.patch({view}); location.hash = '/' + view;
-    const screen = document.getElementById('screen')!; screen.inert = view !== 'editor'; screen.setAttribute('aria-hidden', String(view !== 'editor'));
+    if (view === 'editor') this.bridge?.setPractice(false);
+    else if (this.bridge) this.bridge.setPractice(true);
+    this.patch({ view });
+    location.hash = '/' + view;
+    const screen = document.getElementById('screen')!;
+    screen.inert = view !== 'editor';
+    screen.setAttribute('aria-hidden', String(view !== 'editor'));
     document.body.dataset.view = view;
-    if (view === 'editor') requestAnimationFrame(() => {window.dispatchEvent(new Event('resize')); this.focusEditor();});
-    else (document.getElementById('view-heading') as HTMLElement)?.focus({preventScroll: true});
+    if (view === 'editor')
+      requestAnimationFrame(() => {
+        window.dispatchEvent(new Event('resize'));
+        this.focusEditor();
+      });
+    else (document.getElementById('view-heading') as HTMLElement)?.focus({ preventScroll: true });
   }
   async recordResult(result: AttemptResult, keepReplay = false, showResult = true): Promise<void> {
     if (!keepReplay) delete result.replay;
-    try {await storage.saveSession(result); await this.refresh();}
-    catch (e) {this.fail(e); this.notice('Chưa lưu được kết quả. Có thể tải JSON để giữ lại.');}
-    if (showResult) {this.patch({result}); this.navigate('results');}
+    try {
+      await storage.saveSession(result);
+      await this.refresh();
+    } catch (e) {
+      this.fail(e);
+      this.notice('Chưa lưu được kết quả. Có thể tải JSON để giữ lại.');
+    }
+    if (showResult) {
+      this.patch({ result });
+      this.navigate('results');
+    }
   }
   /** Borrow the native audio engine only while idle. The exercise renderer and
    * scorer remain independent; editor content is never written under this loan. */
-  async exerciseAudition(bytes:Uint8Array,signal:AbortSignal):Promise<EngineBridge>{
-    this.requireInactiveSession();signal.throwIfAborted();
+  async exerciseAudition(bytes: Uint8Array, signal: AbortSignal): Promise<EngineBridge> {
+    this.requireInactiveSession();
+    signal.throwIfAborted();
     await this.autosave(true);
     // The practice transport owns its loading state so Stop remains reachable.
-    const bridge=await this.ensureEngine(true);
-    signal.throwIfAborted();this.requireInactiveSession();
-    if(this.state.view!=='practice'||this.state.practiceKind!=='grade')throw Error('Đã rời màn tập theo grade.');
+    const bridge = await this.ensureEngine(true);
+    signal.throwIfAborted();
+    this.requireInactiveSession();
+    if (this.state.view !== 'practice' || this.state.practiceKind !== 'grade')
+      throw Error('Đã rời màn tập theo grade.');
     bridge.setPractice(true);
-    const borrowed=this.exerciseNative;
-    if(!borrowed)this.editorBeforeExercise=this.state.current?bridge.serialize():undefined;
-    this.exerciseNative=true;
-    try{if(!bridge.api.loadPracticeScore?.(bytes,'exercise.mxl'))throw Error('MuseScore chưa mở được bài nghe.');}
-    catch(e){this.exerciseNative=borrowed;if(!borrowed)this.editorBeforeExercise=undefined;throw e;}
-    const deadline=performance.now()+20000;
-    while(!bridge.auditionState().available){signal.throwIfAborted();if(performance.now()>deadline)throw Error('MuseScore chưa sẵn sàng phát bài. Bấm Nghe để thử lại.');await new Promise(resolve=>setTimeout(resolve,50));}
-    signal.throwIfAborted();this.patch({busy:''});
+    const borrowed = this.exerciseNative;
+    if (!borrowed) this.editorBeforeExercise = this.state.current ? bridge.serialize() : undefined;
+    this.exerciseNative = true;
+    try {
+      if (!bridge.api.loadPracticeScore?.(bytes, 'exercise.mxl'))
+        throw Error('MuseScore chưa mở được bài nghe.');
+    } catch (e) {
+      this.exerciseNative = borrowed;
+      if (!borrowed) this.editorBeforeExercise = undefined;
+      throw e;
+    }
+    const deadline = performance.now() + 20000;
+    while (!bridge.auditionState().available) {
+      signal.throwIfAborted();
+      if (performance.now() > deadline)
+        throw Error('MuseScore chưa sẵn sàng phát bài. Bấm Nghe để thử lại.');
+      await new Promise((resolve) => setTimeout(resolve, 50));
+    }
+    signal.throwIfAborted();
+    this.patch({ busy: '' });
     return bridge;
   }
-  restoreExerciseEditor():void{
-    if(!this.exerciseNative||!this.bridge)return;
+  restoreExerciseEditor(): void {
+    if (!this.exerciseNative || !this.bridge) return;
     this.bridge.audition('reset');
-    if(!this.bridge.api.restorePracticeScore?.())throw Error('Chưa phục hồi được editor. Bản tự lưu vẫn còn trong thư viện.');
-    this.nativeBase=this.bridge.revision;this.revisionBase=this.state.revision;
-    this.editorBeforeExercise=undefined;this.exerciseNative=false;
+    if (!this.bridge.api.restorePracticeScore?.())
+      throw Error('Chưa phục hồi được editor. Bản tự lưu vẫn còn trong thư viện.');
+    this.nativeBase = this.bridge.revision;
+    this.revisionBase = this.state.revision;
+    this.editorBeforeExercise = undefined;
+    this.exerciseNative = false;
   }
   async rename(title: string): Promise<void> {
     this.requireInactiveSession();
     if (!this.state.current || !title.trim()) return;
-    this.patch({current: {...this.state.current, title: title.trim().slice(0, 150)}, revision: this.state.revision + 1});
-    this.revisionBase += 1; await this.saveLibrary();
+    this.patch({
+      current: { ...this.state.current, title: title.trim().slice(0, 150) },
+      revision: this.state.revision + 1,
+    });
+    this.revisionBase += 1;
+    await this.saveLibrary();
   }
   async archive(record: storage.ProjectRecord): Promise<void> {
     if (record.archived) {
@@ -595,9 +1287,11 @@ export class Workspace {
     await storage.claimProject(record.id);
     const latest = await storage.get<storage.ProjectRecord>('projects', record.id);
     if (!latest) throw Error('Không tìm thấy bản nhạc.');
-    await storage.saveProject({...latest, archived: !latest.archived}, false, false);
-    if (this.state.current?.id === record.id) this.patch({current: {...this.state.current, archived: !latest.archived}});
-    if (this.state.current?.id !== record.id) await storage.releaseProject(record.id); await this.refresh();
+    await storage.saveProject({ ...latest, archived: !latest.archived }, false, false);
+    if (this.state.current?.id === record.id)
+      this.patch({ current: { ...this.state.current, archived: !latest.archived } });
+    if (this.state.current?.id !== record.id) await storage.releaseProject(record.id);
+    await this.refresh();
   }
   async restoreLibrary(data: storage.LibraryData): Promise<void> {
     return this.changeDocument(async () => {
@@ -605,12 +1299,18 @@ export class Workspace {
       const bridge = await this.ensureEngine();
       for (const project of data.projects) {
         if (project.archived) continue;
-        try {requireLibraryScore(bridge.semantics(project.bytes, project.filename));}
-        catch (error) {throw Error(`${project.title}: ${storage.storageError(error)} Chưa nhập bản sao lưu vào thư viện.`);}
-        await new Promise(resolve => setTimeout(resolve, 0));
+        try {
+          requireLibraryScore(bridge.semantics(project.bytes, project.filename));
+        } catch (error) {
+          throw Error(
+            `${project.title}: ${storage.storageError(error)} Chưa nhập bản sao lưu vào thư viện.`,
+          );
+        }
+        await new Promise((resolve) => setTimeout(resolve, 0));
         this.requireInactiveSession();
       }
-      await storage.restoreLibrary(data); await this.refresh();
+      await storage.restoreLibrary(data);
+      await this.refresh();
     });
   }
 }
