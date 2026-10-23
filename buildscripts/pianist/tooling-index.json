@@ -14,7 +14,7 @@
     "library": {
       "status": "active",
       "description": "Curated song admission, edition grouping and release verification.",
-      "files": ["curate-library.py", "library_import.py", "library_release.py", "library_staff_policy.py"]
+      "files": ["build-library-previews.cjs", "curate-library.py", "library_import.py", "library_release.py", "library_staff_policy.py"]
     },
     "grades": {
       "status": "active",

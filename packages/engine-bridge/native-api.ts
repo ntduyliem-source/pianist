@@ -86,6 +86,7 @@ export interface NativeApi {
   getScoreSemantics(): number;
   getPracticeSnapshot(): number;
   setPracticeActive(active: boolean): number;
+  setUiTheme?(theme: 'light' | 'dark'): number;
   midiInput(status: number, data1: number, data2: number): number;
   startAudioProcessing(): Promise<void>;
   getEditorPlayback?(): number;

@@ -67,7 +67,10 @@ const root=path.resolve(__dirname,'../../..'),channel=process.env.PIANIST_BROWSE
     }
     assert.deepEqual(runs.abc.metrics,runs.mxl.metrics);assert.deepEqual(runs.abcEarly.metrics,runs.mxlEarly.metrics);checks.push('ABC/MXL real WebAudio BPM and -120 ms results match');
     await page.getByRole('button',{name:'Tập lại',exact:true}).click();await idle();await page.getByRole('button',{name:'Đúng nốt',exact:true}).click();
-    await settings();await field('Đếm vào',0);await page.getByRole('button',{name:'Kết nối MIDI',exact:true}).click();await close();await page.getByRole('button',{name:/Bắt đầu/}).click();
+    await settings();await field('Đếm vào',0);await close();
+    await page.getByRole('button',{name:/^MIDI:/}).filter({visible:true}).click();
+    await page.getByRole('dialog',{name:'Kết nối đàn MIDI'}).getByRole('button',{name:'Kết nối MIDI',exact:true}).click();
+    await page.getByRole('button',{name:'Đóng MIDI',exact:true}).click();await page.getByRole('button',{name:/Bắt đầu/}).click();
     await page.waitForFunction(()=>window.a5.timeline&&document.querySelector('.v2-status')?.textContent.includes('Đang tập'));
     const first=await page.evaluate(()=>window.a5.timeline.targets.filter(n=>n.atMs===0).map(n=>n.pitch));
     await page.evaluate(()=>window.a5Midi([0x90,84,90]));await page.waitForFunction(()=>!!document.querySelector('.note-marker.wrong'));assert.equal(await page.evaluate(()=>window.a5.view.group),0);await page.evaluate(()=>window.a5Midi([0x80,84,0]));

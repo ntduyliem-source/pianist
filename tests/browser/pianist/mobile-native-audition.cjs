@@ -93,7 +93,7 @@ const deviceScaleFactor=Number(process.env.PIANIST_DPR||1);
     await page.getByRole('dialog').getByRole('button',{name:'Ẩn thanh điều khiển'}).click();
     await page.getByRole('button',{name:/Hiện điều khiển/}).click();
     await page.getByRole('button',{name:'Tiếp tục nghe',exact:true}).click();await state('playing');
-    assert(await pedal.isVisible());assert(await page.getByRole('button',{name:'Tạm dừng nghe'}).isVisible());
+    assert(await pedal.isVisible());await page.getByRole('button',{name:'Tạm dừng nghe'}).waitFor({state:'visible'});
     await settings();
     await page.getByRole('button',{name:'Lặp khi nghe'}).click();
     await page.getByRole('slider',{name:'Vị trí nghe'}).fill(String(Math.round(rangeEnd-300)));await page.waitForTimeout(100);

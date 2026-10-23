@@ -87,6 +87,8 @@ MIDI mô phỏng kiểm đường router/controller/Worker production, nhưng kh
 
 ## Chuẩn bị phát hành
 
+Suite `python buildscripts/pianist/check-pianist.py browser --suite ux-upgrade` chạy MuseScore thật cho thư viện nghe/pause/seek/Stop, giữ editor/Undo, theme native, nhiều layout/version và pinch trang 2. MIDI và sự kiện Audio Session trong suite là mô phỏng; không thay cho kiểm iPhone/iPad Safari với công tắc im lặng hoặc đàn thật. Cần Safari có Audio Session API để yêu cầu `type='playback'`; không thể suy ra trạng thái công tắc vật lý từ browser desktop.
+
 Sau khi kiểm và commit source sạch:
 
 ```powershell

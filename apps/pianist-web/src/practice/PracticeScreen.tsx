@@ -12,6 +12,7 @@ import { workspace as ws } from '../workspace';
 import type { PracticeController } from './controller-v2';
 import { feedback } from './feedback-v2';
 import { Sheet } from './Sheet';
+import { MidiStatus } from '../shared/ui/MidiStatus';
 import { PracticePiano } from './PracticePiano';
 import { CalibrationView } from './CalibrationView';
 import { simulateMidi } from './midi-simulation-v2';
@@ -63,7 +64,10 @@ function presentation(): Presentation {
     return {
       keyboard: p.keyboard === true,
       scroll: p.scroll !== false,
-      zoom: [60, 80, 100, 120, 150, 180, 'fit'].includes(p.zoom) ? p.zoom : 'auto',
+      zoom:
+        p.zoom === 'fit' || (typeof p.zoom === 'number' && p.zoom >= 25 && p.zoom <= 400)
+          ? p.zoom
+          : 'auto',
     };
   } catch {
     return { keyboard: false, scroll: true, zoom: 'auto' };
@@ -514,7 +518,8 @@ export function Practice({
       disabled={!canStop || stopping}
       onClick={() => void ws.run(stop)}
     >
-      ■ Dừng
+      <span aria-hidden="true">■</span>
+      <span className="v2-stop-label">Dừng</span>
     </button>
   );
 
@@ -548,19 +553,12 @@ export function Practice({
       }
       data-testid="practice-v2"
     >
-      <header className="v2-heading" hidden={focus}>
-        <div className="v2-title">
-          <h1 id="view-heading" tabIndex={-1}>
-            {snapshot.title}
-          </h1>
-        </div>
-        <span className="v2-position">
-          Ô {currentMeasure + 1} / {snapshot.measures.length}
-        </span>
-        <span className="v2-status" role="status">
-          {message}
-        </span>
-      </header>
+      <h1 id="view-heading" className="sr-only" tabIndex={-1}>
+        {snapshot.title}
+      </h1>
+      <span className="sr-only v2-status" role="status">
+        {message}
+      </span>
       <div
         className="v2-transport"
         hidden={barHidden && focus}
@@ -607,7 +605,10 @@ export function Practice({
           aria-pressed={audition?.status === 'playing'}
           onClick={act(listen)}
         >
-          {audition?.status === 'playing' ? 'Ⅱ Nghe' : '♫ Nghe'}
+          <span className="v2-listen-icon" aria-hidden="true">
+            {audition?.status === 'playing' ? 'Ⅱ' : '♫'}
+          </span>
+          <span>Nghe</span>
         </button>
         <button
           className="v2-pedal-toggle"
@@ -622,6 +623,7 @@ export function Practice({
           Pedal
         </button>
         <span className="v2-flex" />
+        {focus && <MidiStatus compact />}
         <span className="v2-focus-context" hidden={!focus}>
           Ô {currentMeasure + 1} · Vòng {loop + 1}/{c.loops} · {message}
         </span>
@@ -735,11 +737,23 @@ export function Practice({
         >
           <option value="auto">Tự động · dễ đọc</option>
           <option value="fit">Vừa chiều rộng</option>
-          {[60, 80, 100, 120, 150, 180].map((n) => (
-            <option key={n} value={n}>
-              {n}%
-            </option>
-          ))}
+          {[
+            ...new Set([
+              60,
+              80,
+              100,
+              120,
+              150,
+              180,
+              ...(typeof prefs.zoom === 'number' ? [prefs.zoom] : []),
+            ]),
+          ]
+            .sort((a, b) => a - b)
+            .map((n) => (
+              <option key={n} value={n}>
+                {n}%
+              </option>
+            ))}
         </select>
       </div>
       {!focus && auditionControls}
@@ -774,6 +788,7 @@ export function Practice({
         toMeasure={c.toMeasure}
         selecting={selecting}
         onMeasure={selectMeasure}
+        onZoom={(zoom) => setPref({ zoom })}
       />
 
       <PracticeFeedback
@@ -818,6 +833,7 @@ export function Practice({
             ×
           </button>
         </div>
+        <p className="practice-score-name">{snapshot.title}</p>
         {focus && auditionControls}
         <div className="v2-row v2-session-actions">
           <button
@@ -850,38 +866,6 @@ export function Practice({
           <p className="v2-info">
             Kết thúc lượt để thay đổi cấu hình chấm. Lượt hiện tại vẫn được giữ.
           </p>
-        )}
-        {panel === 'settings' && (
-          <fieldset disabled={active && !['paused', 'interrupted'].includes(status)}>
-            <legend>Đàn MIDI</legend>
-            <div className="v2-row">
-              <span>{device}</span>
-              <button onClick={act(() => ws.midi.connect())}>Kết nối MIDI</button>
-            </div>
-            <label>
-              Đầu vào
-              <select
-                aria-label="Thiết bị MIDI"
-                value={ws.midi.deviceId}
-                onChange={(e) =>
-                  void ws.run(async () => {
-                    await ws.midi.select(e.target.value);
-                    update({
-                      deviceId: ws.midi.deviceId,
-                      inputSource: ws.midi.deviceId === 'virtual' ? 'virtual' : 'midi',
-                    });
-                  })
-                }
-              >
-                <option value="virtual">Bàn phím ảo</option>
-                {ws.midi.ports.map((p) => (
-                  <option key={p.id} value={p.id}>
-                    {p.name}
-                  </option>
-                ))}
-              </select>
-            </label>
-          </fieldset>
         )}
         {!exercise && (
           <RangeSettings

@@ -19,9 +19,12 @@ import {
 import { MidiRouter } from './platform/midi-v2';
 import * as storage from './platform/storage';
 import { EngineHost } from './platform/engine-host';
+import { installAudioSession } from './platform/audio-session';
+import { subscribeTheme, themeSnapshot } from './platform/theme';
 import { PracticeSessions } from './application/session-lifecycle';
 import { PracticeRepository } from './application/practice-repository';
 import { GradeAudioLoan } from './application/grade-audio-loan';
+import { LibraryPlayer } from './application/library-player';
 import {
   createInitialWorkspaceState,
   type WorkspaceState,
@@ -44,6 +47,33 @@ export class Workspace {
   readonly sessions = new PracticeSessions();
   private readonly repository = new PracticeRepository();
   private readonly gradeAudio = new GradeAudioLoan();
+  readonly libraryPlayer = new LibraryPlayer({
+    prepare: async (data, signal) => {
+      this.requireInactiveSession();
+      if (this.documentChange) throw Error('Chờ mở/lưu bản nhạc xong trước khi nghe.');
+      await this.autosave(true);
+      signal.throwIfAborted();
+      const bridge = await this.ensureEngine(true);
+      signal.throwIfAborted();
+      this.requireInactiveSession();
+      if (
+        !['library', 'practice'].includes(this.state.view) ||
+        this.documentChange ||
+        (this.state.view === 'practice' &&
+          (!this.state.practicePicker || this.state.practiceKind !== 'free'))
+      )
+        throw Error('Đã rời danh sách bản nhạc.');
+      requireLibraryScore(bridge.semantics(data.bytes, data.filename));
+      return this.gradeAudio.borrow(
+        bridge,
+        data.bytes,
+        signal,
+        !!this.state.current,
+        data.filename,
+      );
+    },
+    restore: () => this.restoreExerciseEditor(),
+  });
   private readonly engineHost = new EngineHost();
   get session() {
     return this.sessions.current;
@@ -189,7 +219,11 @@ export class Workspace {
         (!this.session || ['ready', 'finished'].includes(this.session.status))
       ) {
         const deviceId = this.midi.deviceId;
-        this.updatePracticeSettings({ deviceId, offsetMs: 0 });
+        this.updatePracticeSettings({
+          deviceId,
+          inputSource: deviceId === 'virtual' ? 'virtual' : 'midi',
+          offsetMs: 0,
+        });
         void storage
           .get<{ id: string; offsetMs: number }>('settings', 'calibration-v2:' + deviceId)
           .then((profile) => {
@@ -211,6 +245,19 @@ export class Workspace {
       );
       this.notice('Thiết bị MIDI đã ngắt kết nối.');
     };
+    installAudioSession(() => {
+      this.libraryPlayer.pause();
+      this.session?.pause('Âm thanh bị hệ thống gián đoạn. Bấm Tiếp tục khi sẵn sàng.', true);
+      this.midi.release();
+      if (!this.bridge) return;
+      try {
+        if (this.bridge.practiceActive) {
+          if (this.bridge.auditionState().status === 'playing') this.bridge.audition('pause');
+        } else if (this.bridge.playbackState().status === 'playing') this.bridge.playback('pause');
+      } catch (error) {
+        this.fail(error);
+      }
+    });
     this.midi.onReset = () => {
       this.session?.pause('Đàn gửi lệnh xóa trạng thái phím. Nhả phím rồi bấm Tiếp tục.', true);
     };
@@ -223,12 +270,14 @@ export class Workspace {
     };
     document.addEventListener('visibilitychange', () => {
       if (document.hidden) {
+        this.libraryPlayer.pause();
         this.session?.pause('Tab đã bị ẩn. Tiếp tục sẽ đếm vào lại.', true);
         this.midi.release();
         void this.autosave();
       }
     });
     window.addEventListener('blur', () => {
+      this.libraryPlayer.pause();
       this.midi.release();
       this.session?.pause('Cửa sổ mất focus. Tiếp tục sẽ đếm vào lại.', true);
     });
@@ -306,6 +355,9 @@ export class Workspace {
       currentRevision: () => this.nativeRevision,
       onReady: (bridge, started) => {
         this.bridge = bridge;
+        const applyTheme = () => bridge.api.setUiTheme?.(themeSnapshot().mode);
+        applyTheme();
+        subscribeTheme(applyTheme);
         this.measureDiagnostic('engine-ready', started);
         this.patch({ engineReady: true });
       },
@@ -368,6 +420,7 @@ export class Workspace {
   }
   private async changeDocument(action: () => Promise<void>): Promise<void> {
     this.requireInactiveSession();
+    this.libraryPlayer.stop();
     this.restoreExerciseEditor();
     if (this.documentChange)
       throw Error('Đang xử lý một bản nhạc. Hãy chờ hoàn tất hoặc hủy mở file.');
@@ -391,11 +444,13 @@ export class Workspace {
     // Selecting the practice feature does not require a loaded editor document.
     // Keep an in-progress session intact when its own navbar item is pressed.
     if (this.session && !['ready', 'finished'].includes(this.session.status)) return;
+    this.libraryPlayer.stop();
     this.patch({ practicePicker: true });
     this.navigate('practice');
   }
   selectPracticeKind(kind: PracticeKind): void {
     this.requireInactiveSession();
+    this.libraryPlayer.stop();
     this.sessions.dispose(this.session);
     this.restoreExerciseEditor();
     this.patch({ practiceKind: kind, practicePicker: true });
@@ -817,9 +872,24 @@ export class Workspace {
     );
     if (existing) {
       await this.openProject(existing.id, practice);
-      return;
+    } else await this.importFile(new File([bytes.buffer as ArrayBuffer], score.filename), practice);
+    const current = this.state.current;
+    if (
+      current?.sourceName === score.filename &&
+      current.source?.length === bytes.length &&
+      current.source.every((b, i) => b === bytes[i])
+    ) {
+      const linked = {
+        ...current,
+        workId: current.workId ?? score.workId ?? score.id,
+        version: current.version ?? score.version ?? 1,
+        sourceHash: score.sha256,
+        sourceFormat: 'mxl',
+      };
+      await storage.saveProject(linked, false, false);
+      if (this.state.current?.id === linked.id) this.patch({ current: linked });
+      await this.refresh();
     }
-    await this.importFile(new File([bytes.buffer as ArrayBuffer], score.filename), practice);
   }
   async saveLibrary(): Promise<void> {
     await this.autosaving;
@@ -860,6 +930,14 @@ export class Workspace {
     const record: storage.ProjectRecord = {
       ...old,
       id: crypto.randomUUID(),
+      workId: old.workId ?? old.id,
+      version:
+        Math.max(
+          1,
+          ...this.state.projects
+            .filter((p) => (p.workId ?? p.id) === (old.workId ?? old.id))
+            .map((p) => p.version ?? 1),
+        ) + 1,
       title: title.trim().slice(0, 150),
       bytes,
       revision: 1,
@@ -990,6 +1068,7 @@ export class Workspace {
     });
   }
   async practice(overrides?: Partial<PracticeSettings>): Promise<void> {
+    this.libraryPlayer.stop();
     const practiceNotice = await bundledPracticeNotice(
       this.state.bundledScores,
       this.state.current?.sourceName,
@@ -1046,6 +1125,7 @@ export class Workspace {
   }
   navigate(view: View): void {
     if (this.state.engineFailed) return;
+    if (view === 'library' && view === this.state.view) return;
     if (
       view === this.state.view &&
       this.session &&
@@ -1072,6 +1152,7 @@ export class Workspace {
       this.notice('Bấm Kết thúc lượt tập trước khi chuyển màn hình.');
       return;
     }
+    if (view !== this.state.view) this.libraryPlayer.stop();
     if (view !== 'practice' || this.state.practiceKind !== 'grade') this.restoreExerciseEditor();
     this.midi.release();
     if (view === 'editor') this.bridge?.setPractice(false);
@@ -1137,6 +1218,31 @@ export class Workspace {
     });
     this.revisionBase += 1;
     await this.saveLibrary();
+  }
+  async groupProjectVersion(project: storage.ProjectRecord, workId: string): Promise<void> {
+    this.requireInactiveSession();
+    this.libraryPlayer.stop();
+    const known = this.state.projects.some((p) => p.id === workId || p.workId === workId);
+    if (!known || !workId) throw Error('Không tìm thấy nhóm phiên bản.');
+    await storage.claimProject(project.id);
+    try {
+      const latest = await storage.get<storage.ProjectRecord>('projects', project.id);
+      if (!latest) throw Error('Bài đã được chuyển hoặc xóa.');
+      const version =
+        Math.max(
+          0,
+          ...this.state.projects
+            .filter((p) => p.id !== project.id && (p.workId ?? p.id) === workId)
+            .map((p) => p.version ?? 1),
+        ) + 1;
+      const next = { ...latest, workId, version };
+      await storage.saveProject(next, false, false);
+      if (this.state.current?.id === project.id)
+        this.patch({ current: { ...this.state.current, workId, version } });
+      await this.refresh();
+    } finally {
+      if (this.state.current?.id !== project.id) await storage.releaseProject(project.id);
+    }
   }
   async archive(record: storage.ProjectRecord): Promise<void> {
     this.requireInactiveSession();

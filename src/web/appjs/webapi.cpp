@@ -74,6 +74,15 @@ WebApi* WebApi::instance(const muse::modularity::ContextPtr& ctx)
     return &a;
 }
 
+bool WebApi::setWebTheme(const std::string& theme)
+{
+    if (theme != muse::ui::LIGHT_THEME_CODE && theme != muse::ui::DARK_THEME_CODE) {
+        return false;
+    }
+    uiConfiguration()->setCurrentTheme(theme);
+    return true;
+}
+
 void WebApi::init()
 {
     auto onProjectChanged = [this]() {

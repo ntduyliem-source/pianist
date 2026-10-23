@@ -17,6 +17,7 @@ export class GradeAudioLoan {
     bytes: Uint8Array,
     signal: AbortSignal,
     hasEditor: boolean,
+    filename = 'exercise.mxl',
   ): Promise<EngineBridge> {
     signal.throwIfAborted();
     if (this.bridge && this.bridge !== bridge) throw Error('Engine nghe đã thay đổi.');
@@ -26,7 +27,7 @@ export class GradeAudioLoan {
     const generation = ++this.generation;
     this.bridge = bridge;
     try {
-      if (!bridge.api.loadPracticeScore?.(bytes, 'exercise.mxl'))
+      if (!bridge.api.loadPracticeScore?.(bytes, filename))
         throw Error('MuseScore chưa mở được bài nghe.');
     } catch (error) {
       this.bridge = prior;

@@ -133,9 +133,12 @@ export async function loadBundledCatalog(): Promise<BundledScore[]> {
   if (!r.ok) throw Error('Không tải được danh mục bài hát.');
   return parseBundledCatalog(await r.json());
 }
-export async function loadBundledScore(score: BundledScore): Promise<Uint8Array> {
+export async function loadBundledScore(
+  score: BundledScore,
+  signal?: AbortSignal,
+): Promise<Uint8Array> {
   validateScore(score);
-  const r = await fetch(score.url);
+  const r = await fetch(score.url, { signal });
   if (!r.ok) throw Error('Không tải được ' + score.title + '.');
   const bytes = new Uint8Array(await r.arrayBuffer());
   const hash = [...new Uint8Array(await crypto.subtle.digest('SHA-256', bytes))]

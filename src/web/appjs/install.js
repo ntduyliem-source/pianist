@@ -119,6 +119,16 @@ if (fs.existsSync(library+"/catalog.json")) {
         const filename = song.url.split('/').pop();
         copyFile(library+"/songs/"+filename, OUTPUT_DIR+"/library/songs/"+filename);
     }
+    const previewsPath = path.join(library, 'previews/manifest.json');
+    if (fs.existsSync(previewsPath)) {
+        const previews = JSON.parse(fs.readFileSync(previewsPath, 'utf8'));
+        fs.mkdirSync(path.join(OUTPUT_DIR,'library/previews'), {recursive:true});
+        copyFile(previewsPath,path.join(OUTPUT_DIR,'library/previews/manifest.json'));
+        for (const image of previews.files) {
+            if (!/^library\/previews\/[a-f0-9]{64}\.webp$/.test(image.path)) throw new Error('Unsafe preview path');
+            copyFile(path.join(library,'previews',path.basename(image.path)),path.join(OUTPUT_DIR,image.path));
+        }
+    }
 }
 fs.cpSync(ROOT+"/tests/fixtures/pianist/practice", OUTPUT_DIR+"/fixtures/practice", {recursive:true});
 

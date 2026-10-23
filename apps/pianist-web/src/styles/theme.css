@@ -1,0 +1,362 @@
+:root {
+  --canvas: #f5f6f8;
+  --surface: #ffffff;
+  --surface-muted: #f0f3f7;
+  --text: #28364a;
+  --muted: #617087;
+  --line: #d7dfe9;
+  --blue: #386dbb;
+  --accent-soft: #eaf1fc;
+  --danger: #b63838;
+  --success: #20845d;
+  --paper: #fff;
+  --shadow: 0 8px 28px #14233c14;
+}
+:root[data-theme='dark'] {
+  --canvas: #101620;
+  --surface: #192230;
+  --surface-muted: #222e3e;
+  --text: #e4eaf3;
+  --muted: #a5b4c8;
+  --line: #38475c;
+  --blue: #95bcff;
+  --accent-soft: #253c5d;
+  --danger: #ffaaaa;
+  --success: #75d8af;
+  --shadow: 0 8px 28px #0005;
+}
+html,
+body {
+  background: var(--canvas);
+  color: var(--text);
+}
+button,
+input,
+select,
+textarea {
+  color: var(--text);
+  background-color: var(--surface);
+  border-color: var(--line);
+}
+button:hover:not(:disabled) {
+  background-color: var(--surface-muted);
+  border-color: var(--blue);
+}
+.muted,
+.storage-note {
+  color: var(--muted);
+}
+[data-theme='dark'] .score-card-body .bundled-practice-notice {
+  color: #ebc276;
+}
+.appbar,
+.editor-meta,
+.editor-playback,
+dialog,
+.loading-overlay,
+.practice-v2,
+.v2-transport,
+.v2-sheet-tools,
+.v2-drawer,
+.v2-drawer-heading,
+.practice-kind,
+.score-card,
+.result-card {
+  color: var(--text);
+  background: var(--surface);
+  border-color: var(--line);
+}
+.appbar {
+  gap: 20px;
+}
+.appbar-end {
+  gap: 8px;
+}
+.appbar nav button,
+.brand,
+.editor-meta strong {
+  color: var(--text);
+}
+.appbar nav button.selected {
+  color: var(--blue);
+  background: var(--accent-soft);
+}
+.midi-status {
+  min-height: 40px;
+  max-width: 230px;
+  padding: 6px 10px;
+  font-size: 12px;
+  gap: 7px;
+}
+.midi-device-name {
+  max-width: 125px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.connection-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--muted);
+  flex: none;
+}
+.connected .connection-dot {
+  background: var(--success);
+}
+.midi-status.connected {
+  color: var(--success);
+}
+.theme-control {
+  display: inline-flex;
+  gap: 4px;
+  align-items: center;
+}
+.theme-control select {
+  max-width: 108px;
+  font-size: 12px;
+  min-height: 40px;
+}
+.device-dialog {
+  width: min(460px, calc(100vw - 24px));
+}
+.device-dialog .dialog-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.device-dialog p {
+  white-space: normal;
+  line-height: 1.6;
+}
+.device-dialog label {
+  display: grid;
+  gap: 8px;
+  margin: 16px 0;
+}
+.device-dialog select {
+  width: 100%;
+  min-height: 44px;
+}
+.device-dialog button {
+  min-height: 44px;
+}
+[data-theme='dark'] .primary,
+[data-theme='dark'] .practice-v2 button.primary {
+  background: #376bb5;
+  color: #fff;
+  border-color: #688bc2;
+}
+[data-theme='dark'] .primary-light,
+[data-theme='dark'] button[aria-pressed='true'] {
+  background: var(--accent-soft);
+  color: var(--blue);
+  border-color: var(--blue);
+}
+[data-theme='dark'] .library-content,
+[data-theme='dark'] .page {
+  background: var(--canvas);
+  color: var(--text);
+}
+[data-theme='dark'] .library-sidebar,
+[data-theme='dark'] .exercise-session-bar,
+[data-theme='dark'] .exercise-source,
+[data-theme='dark'] .exercise-choices,
+[data-theme='dark'] .practice-kind > button,
+[data-theme='dark'] .v2-feedback-panel,
+[data-theme='dark'] .v2-feedback,
+[data-theme='dark'] .v2-row,
+[data-theme='dark'] .practice-piano,
+[data-theme='dark'] .result-box,
+[data-theme='dark'] .metric {
+  background-color: var(--surface);
+  color: var(--text);
+  border-color: var(--line);
+}
+[data-theme='dark'] .exercise-lengths > label {
+  border-color: var(--line);
+}
+[data-theme='dark'] .exercise-lengths > label.selected {
+  background: var(--accent-soft);
+  border-color: var(--blue);
+  box-shadow: inset 0 0 0 1px var(--blue);
+}
+[data-theme='dark'] .practice-kind > button[aria-pressed='true'] {
+  background: var(--accent-soft);
+}
+[data-theme='dark']
+  :is(
+    .exercise-intro p,
+    .exercise-total small,
+    .exercise-grade-picker p,
+    .exercise-length-field legend span,
+    .exercise-lengths small,
+    .exercise-random span,
+    .exercise-launch p,
+    .exercise-help,
+    .exercise-summary,
+    .practice-kind small,
+    .v2-muted,
+    .v2-feedback small,
+    .v2-label,
+    .metric > span,
+    .metric small,
+    .result-details dt,
+    .result-details dd,
+    .weak-row span,
+    .table-sub,
+    .loop-results
+  ) {
+  color: var(--muted);
+}
+[data-theme='dark']
+  :is(
+    .exercise-total,
+    .metric strong,
+    .result-box h2,
+    .weak-row strong,
+    .v2-feedback-panel > summary,
+    .results-page td,
+    .history-page td,
+    .results-page td strong,
+    .history-page td strong
+  ) {
+  color: var(--text);
+}
+[data-theme='dark']
+  :is(
+    .exercise-launch,
+    .v2-pedal-row,
+    .weak-row,
+    .result-details > div,
+    .results-page th,
+    .results-page td,
+    .history-page th,
+    .history-page td
+  ) {
+  border-color: var(--line);
+}
+[data-theme='dark'] :is(.exercise-error, .policy-warning) {
+  color: var(--danger);
+}
+[data-theme='dark'] .v2-attention {
+  color: #ebc276;
+}
+[data-theme='dark'] .result-outcome {
+  background: #1e3a31;
+  border-color: #38634f;
+}
+[data-theme='dark'] .result-outcome :is(strong, span) {
+  color: var(--success);
+}
+[data-theme='dark'] :is(.result-outcome.aborted, .result-outcome.interrupted) {
+  background: #3e3526;
+  border-color: #665433;
+}
+[data-theme='dark'] :is(.result-outcome.aborted, .result-outcome.interrupted) :is(strong, span) {
+  color: #ebc276;
+}
+[data-theme='dark'] .library-sidebar button,
+[data-theme='dark'] .page-title h1,
+[data-theme='dark'] .section-top h2,
+[data-theme='dark'] .score-card h3,
+[data-theme='dark'] .v2-drawer label,
+[data-theme='dark'] .v2-drawer legend {
+  color: var(--text);
+}
+[data-theme='dark'] .library-sidebar button.active {
+  background: var(--accent-soft);
+  color: var(--blue);
+}
+[data-theme='dark'] .practice-sheet-region,
+[data-theme='dark'] .practice-sheet-scroll {
+  background: #222833;
+}
+[data-theme='dark'] .practice-system {
+  background: var(--paper);
+  color-scheme: light;
+}
+[data-theme='dark'] .practice-v2 button,
+[data-theme='dark'] .practice-v2 select,
+[data-theme='dark'] .practice-v2 input {
+  border-color: var(--line);
+}
+[data-theme='dark'] .v2-info,
+[data-theme='dark'] .v2-selection,
+[data-theme='dark'] .import-notice {
+  background: var(--accent-soft);
+  color: var(--text);
+}
+[data-theme='dark'] .error-banner,
+[data-theme='dark'] .v2-alert {
+  background: #452b30;
+  color: #ffd2d2;
+}
+[data-theme='dark'] .toast {
+  background: #e4eaf3;
+  color: #192230;
+}
+@media (max-width: 1050px) {
+  .midi-device-name {
+    display: none;
+  }
+  .appbar {
+    gap: 10px;
+    padding-inline: 12px;
+  }
+  .appbar nav button {
+    padding-inline: 10px;
+  }
+}
+@media (max-width: 650px) {
+  :root {
+    --app-top: calc(92px + env(safe-area-inset-top));
+  }
+  .appbar {
+    flex-wrap: wrap;
+    gap: 0 8px;
+    padding-inline: 10px;
+    align-content: flex-start;
+  }
+  .brand {
+    height: 44px;
+    font-size: 17px;
+  }
+  .appbar-end {
+    height: 44px;
+    margin-left: auto;
+    gap: 6px;
+  }
+  .appbar nav {
+    order: 3;
+    width: 100%;
+    height: 48px;
+    justify-content: stretch;
+  }
+  .appbar nav button {
+    flex: 1;
+    min-height: 44px;
+    justify-content: center;
+  }
+  .appbar-end .icon-button {
+    width: 32px;
+    height: 40px;
+  }
+  .theme-control > span {
+    display: none;
+  }
+  .theme-control select {
+    width: 85px;
+  }
+  .midi-status {
+    min-height: 40px;
+    padding-inline: 8px;
+  }
+  .practice-v2.sheet-focus .midi-status {
+    padding-inline: 6px;
+    max-width: 60px;
+  }
+  .practice-v2.sheet-focus .v2-focus-context {
+    display: none;
+  }
+}

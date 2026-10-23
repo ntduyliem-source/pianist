@@ -79,6 +79,9 @@ EMSCRIPTEN_KEEPALIVE
 bool dispatchAction(const char* action) { return action && WebApi::instance()->dispatchAction(action); }
 
 EMSCRIPTEN_KEEPALIVE
+bool setWebTheme(const char* theme) { return theme && WebApi::instance()->setWebTheme(theme); }
+
+EMSCRIPTEN_KEEPALIVE
 bool getEditorPlayback() { return WebApi::instance()->getEditorPlayback(); }
 
 EMSCRIPTEN_KEEPALIVE

@@ -35,6 +35,7 @@
 #include "project/inotationwritersregister.h"
 #include "playback/iplaybackcontroller.h"
 #include "practicetiming.h"
+#include "ui/iuiconfiguration.h"
 
 namespace mu::appjs {
 class WebApi : public muse::async::Asyncable, public muse::Contextable
@@ -48,6 +49,7 @@ class WebApi : public muse::async::Asyncable, public muse::Contextable
     muse::ContextInject<playback::IPlaybackController> playbackController = { this };
     muse::ContextInject<muse::audio::IPlayback> audioPlayback = { this };
     muse::GlobalInject<project::IProjectCreator> projectCreator;
+    muse::GlobalInject<muse::ui::IUiConfiguration> uiConfiguration;
 
 public:
 
@@ -69,6 +71,7 @@ public:
     bool midiInput(int status, int data1, int data2);
     bool exportScore(const std::string& format);
     bool dispatchAction(const std::string& action);
+    bool setWebTheme(const std::string& theme);
     bool getEditorPlayback();
     bool editorPlayback(const std::string& command, double value);
     bool getPracticePlayback();

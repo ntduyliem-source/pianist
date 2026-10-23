@@ -5,7 +5,7 @@ Trang này là bản đồ đường đi release. Lệnh và yêu cầu GitHub P
 ## Nguồn nào đi vào gói
 
 - Shell React từ `apps/pianist-web/`; native app/audio/renderer từ các target trong `buildscripts/pianist/`.
-- Thư viện chỉ gồm catalog được duyệt và đúng các MXL catalog tham chiếu trong `scores/library/`.
+- Thư viện gồm catalog được duyệt, đúng các MXL catalog tham chiếu và ảnh xem trước có hash/provenance trong `scores/library/previews/`.
 - Grade chỉ gồm release được `build.artifacts/curriculum/manifest.json` trỏ tới, các index và MXL có hash khớp. Nguồn ABC được giữ trong source archive; browser tập bằng MXL đã kiểm.
 - Converter, nguồn tham khảo, giấy phép và toolchain pins theo scripts chuẩn bị và verifier.
 - `warehouse/`, corpus Q/K, ví dụ local, logs và cache không tự động được đưa vào web ZIP.

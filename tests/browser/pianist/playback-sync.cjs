@@ -32,7 +32,7 @@ const out=path.resolve(process.env.PIANIST_QA_DIR||path.join(root,'artifacts/pla
    const d=window.pianist.Module.driver,read=d.playbackFrame.bind(d);
    d.playbackFrame=epoch=>{const frame=read(epoch);window.syncFrame=frame;return frame;};
    const sample=()=>{if(window.syncRecording){const slider=document.querySelector('[aria-label="Vị trí nghe"]');window.syncSamples.push({perf:performance.now(),ui:slider?Number(slider.value):null,
-     state:window.syncRead('onPracticePlayback','getPracticePlayback'),frame:window.syncFrame,measure:document.querySelector('.v2-position')?.textContent,
+     state:window.syncRead('onPracticePlayback','getPracticePlayback'),frame:window.syncFrame,measure:Number(document.querySelector('[data-testid="score-playhead"]')?.dataset.measure),
      markers:[...document.querySelectorAll('.note-marker.playback')].filter(n=>!n.getAttribute('data-note-anchors')?.includes(' ')).map(n=>({anchor:n.getAttribute('data-anchor'),part:n.getAttribute('data-native-part')}))});}requestAnimationFrame(sample);};requestAnimationFrame(sample);
   });
   const semantics=await page.evaluate(()=>window.syncRead('onScoreSemantics','getScoreSemantics'));
@@ -64,7 +64,7 @@ const out=path.resolve(process.env.PIANIST_QA_DIR||path.join(root,'artifacts/pla
   const audible=samples.filter(s=>s.ui!==null&&s.frame?.status===2&&s.frame.epoch===s.state.clockEpoch);
   assert(audible.every(s=>s.ui>=Math.floor(a)-2&&s.ui<=Math.ceil(b)+2));
   const wraps=audible.filter((s,i,all)=>i>0&&s.ui<all[i-1].ui-1000);assert(wraps.length>=2,'native A–B loops twice');
-  assert(wraps.every(s=>s.measure?.startsWith('Ô 6 /')));report.measurements.ab={a,b,wraps};check('A–B 6–8 wraps twice to the correct passage using the audio clock');
+  assert(wraps.every(s=>s.measure===5));report.measurements.ab={a,b,wraps};check('A–B 6–8 wraps twice to the correct passage using the audio clock');
   await stop();
   await load('ai-dua-em-ve-take-me-back-home-tia-feat-le-thien-hieu-low-cortisol-song.mxl');
   await record();await play();const firstNotes=await notes();await page.waitForTimeout(500);samples=await collect();

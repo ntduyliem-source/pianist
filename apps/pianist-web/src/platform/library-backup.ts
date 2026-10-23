@@ -50,6 +50,9 @@ function metadata(record: unknown): asserts record is SavedProject {
     fail();
 }
 function sourceMetadata(record: SavedProject): void {
+  if (record.workId !== undefined && !text(record.workId, 500)) fail();
+  if (record.version !== undefined && (!Number.isSafeInteger(record.version) || record.version < 1))
+    fail();
   if (
     record.sourceFormat !== undefined &&
     !['abc', 'mxl', 'musicxml', 'xml', 'mscz', 'mscx'].includes(record.sourceFormat)
@@ -451,6 +454,7 @@ export function restoredCopies(backup: LibraryBackup): LibraryData {
   for (const id of [...data.projects.map((p) => p.id), ...data.sessions.map((s) => s.projectId)])
     if (!ids.has(id)) ids.set(id, crypto.randomUUID());
   for (const project of data.projects) {
+    if (project.workId && ids.has(project.workId)) project.workId = ids.get(project.workId)!;
     project.id = ids.get(project.id)!;
     project.title = (project.title + ' — khôi phục').slice(0, 150);
   }

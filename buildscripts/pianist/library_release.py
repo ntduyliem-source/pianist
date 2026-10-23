@@ -66,6 +66,27 @@ def verify_library(read, paths):
         require_two_staff_piano(data)
         identities.add(song['id'])
         expected.add(name)
+    preview_source = ROOT / 'scores/library/previews/manifest.json'
+    if preview_source.exists():
+        preview_name = 'library/previews/manifest.json'
+        previews = json.loads(read(preview_name))
+        if previews != json.loads(preview_source.read_text(encoding='utf-8')) or previews.get('schemaVersion') != 1 or previews.get('kind') != 'musescore-first-page-webp-v1':
+            raise ValueError('Library previews differ from the native render receipt')
+        if not re.fullmatch(r'[a-f0-9]{64}', previews.get('rendererVersion', '')):
+            raise ValueError('Missing thumbnail renderer provenance')
+        covered = set()
+        for image in previews['files']:
+            source_hash, name = image['sourceHash'], image['path']
+            if source_hash not in identities or source_hash in covered or name != 'library/previews/' + source_hash + '.webp':
+                raise ValueError('Invalid or duplicate score thumbnail')
+            data = read(name)
+            if len(data) != image['bytes'] or hashlib.sha256(data).hexdigest() != image['sha256'] or data[:4] != b'RIFF' or data[8:12] != b'WEBP':
+                raise ValueError('Thumbnail integrity failed: ' + name)
+            covered.add(source_hash)
+            expected.add(name)
+        if covered != identities:
+            raise ValueError('Generate previews for every library edition: node buildscripts/pianist/build-library-previews.cjs')
+        expected.add(preview_name)
     if {p for p in paths if p.startswith('library/')} != expected:
         raise ValueError('Missing or unexpected library assets')
     return len(songs)

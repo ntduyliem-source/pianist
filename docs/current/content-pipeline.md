@@ -4,6 +4,10 @@ Cập nhật ngày 23/10/2026. Phân biệt **thư viện bài hát**, **nguồn
 
 ## Tìm đúng file
 
+Ảnh xem trước thư viện ở `scores/library/previews/<source-sha256>.webp`; `manifest.json` ghi hash MXL, hash/bytes ảnh và hash WASM renderer. Đây là trang đầu do MuseScore dựng, giữ tỷ lệ nguyên trang, không phải ảnh trang trí. Khi catalog hoặc renderer thay đổi: build/install app và renderer vào server local, chạy `node buildscripts/pianist/build-library-previews.cjs`, rồi install/package lại. Script mặc định dùng `http://127.0.0.1:8787/pianist.html` (`PIANIST_URL` để đổi), cần dependency Playwright của `tests/browser/pianist`; chỉ render những ảnh chưa có cache đúng hash. Commit ảnh và manifest cùng catalog. Release verifier từ chối thiếu ảnh, sai hash hoặc ảnh không thuộc catalog; nội dung bản nhạc không bị sửa.
+
+Bản nhạc người dùng có thumbnail riêng được render khi gần vào viewport và cache trên thiết bị (tối đa 200 ảnh). Cache có thể tạo lại, không phải dữ liệu bài hát. Các bản người dùng có cùng `workId` hiện chung một card; `version` được lưu rõ và giữ qua backup. `Lưu bản sao` nối vào nhóm cũ; nhóm các bản độc lập bằng mục Chi tiết để tránh tự gộp hai bài chỉ vì cùng tên.
+
 | Cần tìm | Nơi lưu | Vai trò |
 |---|---|---|
 | Catalog bài hát được phát hành | `scores/library/catalog.json` | Tên, tác giả, version, URL, bytes, SHA-256; nguồn quyết định danh sách |

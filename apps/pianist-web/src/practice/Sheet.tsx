@@ -9,6 +9,7 @@ import {
   type ScoreSystem,
 } from './score-viewport';
 import { NoteInk } from './NoteInk';
+import { useSheetGesture } from './useSheetGesture';
 import { parseNativeGlyphs, type NativeGlyph } from './note-ink';
 interface Props {
   snapshot: ScoreSnapshot;
@@ -21,6 +22,7 @@ interface Props {
   toMeasure: number;
   selecting: 'a' | 'b' | null;
   onMeasure: (index: number) => void;
+  onZoom: (zoom: number) => void;
 }
 const Page = memo(function Page({
   snapshot,
@@ -124,6 +126,8 @@ const Page = memo(function Page({
               <line
                 className="practice-playhead"
                 data-testid="score-playhead"
+                data-measure={cursor.measure}
+                data-visit={cursor.visit}
                 x1={cursor.x - page.offsetX}
                 x2={cursor.x - page.offsetX}
                 y1={system.box.y - page.offsetY - 12}
@@ -275,6 +279,13 @@ export const Sheet = memo(function Sheet(props: Props) {
       if (el) el.scrollTo({ top: el.scrollTop, left: el.scrollLeft, behavior: 'instant' });
     }
   };
+  const gesture = useSheetGesture(
+    scroll,
+    props.zoom,
+    snapshot.pages[0]?.displayWidth ?? 800,
+    props.onZoom,
+    suspend,
+  );
   return (
     <div className="practice-sheet-region">
       <div
@@ -283,13 +294,14 @@ export const Sheet = memo(function Sheet(props: Props) {
         ref={scroll}
         tabIndex={0}
         aria-label="Bản nhạc chỉ đọc"
+        {...gesture}
         onWheel={suspend}
-        onTouchMove={suspend}
         onKeyDown={(e) => {
           if (['ArrowUp', 'ArrowDown', 'PageUp', 'PageDown', 'Home', 'End'].includes(e.key))
             suspend();
         }}
         onPointerDown={(e) => {
+          gesture.onPointerDown(e);
           const el = e.currentTarget;
           if (e.clientX >= el.getBoundingClientRect().left + el.clientWidth) suspend();
         }}

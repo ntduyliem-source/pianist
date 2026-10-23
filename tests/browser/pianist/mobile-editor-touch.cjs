@@ -1,4 +1,4 @@
-// Touch gestures on the real Qt canvas at a fixed 390px/100% layout.
+// Touch gestures relative to the real Qt canvas at a fixed 390px/100% layout.
 // The fixture's note and toolbar positions are verified in the saved screenshots.
 const {chromium}=require('playwright'),assert=require('node:assert/strict'),fs=require('node:fs/promises'),path=require('node:path');
 const root=path.resolve(__dirname,'../../..'),out=path.resolve(process.env.PIANIST_QA_DIR||path.join(root,'artifacts/mobile-native/editor-touch'));
@@ -21,11 +21,13 @@ const root=path.resolve(__dirname,'../../..'),out=path.resolve(process.env.PIANI
     const before=await read(),first=before.anchors.find(a=>a.staff===0&&a.tick===0);
     assert.equal(first.pitch,60);assert.equal(first.durationTicks,480);
     await page.screenshot({path:path.join(out,'before.png')});
-    await page.touchscreen.tap(185,535);await page.waitForTimeout(150);
-    await page.touchscreen.tap(206,260);await page.waitForTimeout(300);
+    const screen=await page.locator('#screen').boundingBox();assert(screen);
+    // Native fixture coordinates inside the canvas; the web header may grow.
+    await page.touchscreen.tap(screen.x+185,screen.y+390);await page.waitForTimeout(150);
+    await page.touchscreen.tap(screen.x+206,screen.y+115);await page.waitForTimeout(300);
     const edited=await read();assert.equal(edited.anchors.find(a=>a.id===first.id).durationTicks,240);
     await page.screenshot({path:path.join(out,'eighth-note.png')});
-    await page.touchscreen.tap(331,212);await page.waitForTimeout(300);
+    await page.touchscreen.tap(screen.x+331,screen.y+67);await page.waitForTimeout(300);
     const undone=await read();assert.deepEqual(notes(undone),notes(before));
     await page.screenshot({path:path.join(out,'undone.png')});
     report.checks.push('Touch selects the native C4, the native eighth-note toolbar changes 480 to 240 ticks, and native Undo restores every note');

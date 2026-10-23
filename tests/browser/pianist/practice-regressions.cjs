@@ -58,7 +58,7 @@ const retryOnly=process.argv.includes('--retry-only');
         await top(page,'Tiếp tục lượt tập').click();await page.waitForFunction(()=>document.querySelector('.v2-status')?.textContent==='Đang tập');
         const commands=await page.evaluate(()=>window.reviewMessages.flatMap(m=>m.command??[]));
         assert.equal(commands.find(c=>c.kind==='pause').atMs,0);assert.equal(commands.find(c=>c.kind==='resume').atMs,0);
-        assert(commands.find(c=>c.type==='clock').atMs<150);assert.equal(await page.locator('.v2-position').innerText(),'Ô 1 / 4');
+        assert(commands.find(c=>c.type==='clock').atMs<150);assert.equal(await page.getByTestId('score-playhead').getAttribute('data-measure'),'0');
         await top(page,'Dừng lượt tập').click();check('Pause during delayed Worker startup resumes at zero on measure 1');
       }finally{release?.();await context.close();}
     }

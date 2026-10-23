@@ -20,6 +20,8 @@ Các tên trong `{…}` và `*` là cách gộp đường dẫn để đọc b�
 
 ## Đối chiếu trước khi nâng phiên bản
 
+Giao diện sáng/tối: `WebApi::setWebTheme` trong `webapi.cpp`, export `setWebTheme` và glue `setUiTheme` chỉ chuyển `light`/`dark` tới API upstream `muse::ui::IUiConfiguration::setCurrentTheme`. Shell theo lựa chọn hệ thống hoặc người dùng; native nhận theme đã giải quyết. Thay đổi này cần build lại app, không cần đổi engine chấm/audio/renderer. Suite `ux-upgrade` kiểm native chấp nhận theme và dữ liệu nốt/Undo còn nguyên.
+
 Từ root repo, lấy mốc đang ghim trong toolchain rồi xem diff thực tế. Các lệnh sau dùng mốc của bản đồ này:
 
 ```powershell

@@ -229,6 +229,7 @@
   background: #fff;
 }
 .practice-sheet-scroll {
+  touch-action: none;
   position: absolute;
   inset: 0;
   overflow: auto;
@@ -237,6 +238,10 @@
   overscroll-behavior: contain;
   overflow-anchor: none;
   scrollbar-gutter: stable;
+}
+.practice-score-name {
+  margin: 8px 0;
+  color: var(--muted);
 }
 .practice-sheet-stack {
   display: flex;
@@ -808,5 +813,29 @@ body[data-practice-focus='true'] .appbar {
 @media (prefers-reduced-motion: reduce) {
   .practice-v2 * {
     scroll-behavior: auto !important;
+  }
+}
+@media (max-width: 480px) {
+  .practice-v2.sheet-focus .v2-transport .v2-stop,
+  .practice-v2.sheet-focus .v2-transport .v2-listen {
+    min-width: 44px;
+    width: 44px;
+    padding-inline: 4px;
+  }
+  .practice-v2.sheet-focus .v2-stop-label,
+  .practice-v2.sheet-focus .v2-listen-icon {
+    display: none;
+  }
+  .practice-v2.sheet-focus .v2-transport .midi-status {
+    min-width: 44px;
+    width: 44px;
+    max-width: 44px;
+    font-size: 10px;
+    gap: 4px;
+    padding-inline: 4px;
+  }
+  .practice-v2.sheet-focus .midi-status .connection-dot {
+    width: 6px;
+    height: 6px;
   }
 }

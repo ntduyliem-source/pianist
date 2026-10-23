@@ -2,6 +2,7 @@ import type { Timeline, MidiEvent } from '../../../../packages/practice-engine-v
 import { tempoAt } from '../../../../packages/practice-engine-v2';
 
 import type { NativePracticeAudio } from '../../../../packages/engine-bridge';
+import { activatePlaybackAudio } from './audio-session';
 export type { NativePracticeAudio } from '../../../../packages/engine-bridge';
 export type NativePracticeAudioProvider = () => Promise<NativePracticeAudio>;
 
@@ -50,6 +51,7 @@ export class AudioClock {
     return this.origin + positionMs;
   }
   async start(timeline: Timeline, resumeAt = 0, signal?: AbortSignal) {
+    activatePlaybackAudio();
     signal?.throwIfAborted();
     this.silence();
     const ctx = (this.context ??= new AudioContext({ latencyHint: 'interactive' }));

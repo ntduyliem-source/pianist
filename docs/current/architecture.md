@@ -35,6 +35,12 @@ Nguồn grade cố định → validator → ABC→MXL đã đối chiếu → m
 
 ## Hai đường âm thanh và một bộ chấm
 
+Thư viện dùng `application/library-player.ts` với `NativeAudition` và cùng `GradeAudioLoan` để nghe MXL/MSCZ mà không thay project/Undo editor. Stop, đổi bài và chuyển màn hủy yêu cầu cũ, trả native project trước khi tiếp tục. Player có subscription hoạt động riêng để các card không render lại theo từng frame âm thanh. Thumbnail do `platform/score-thumbnail.ts` gọi renderer Worker riêng, cache theo hash nguồn và phiên bản renderer; không mượn editor để chụp ảnh.
+
+Theme và Audio Session nằm ở `platform/theme.ts` / `platform/audio-session.ts`. Theme web gọi `setUiTheme` để đổi cả giao diện native qua `IUiConfiguration`, không invert canvas. Audio Session yêu cầu `playback` khi API tồn tại và dừng/pause đúng chủ sở hữu khi hệ thống ngắt âm thanh. MIDI là một router thuộc workspace; các `MidiStatus` ở header chỉ là view của cùng router, không tạo kết nối theo tab.
+
+`practice/useSheetGesture.ts` chỉ xử lý camera: pinch giữ điểm neo theo tọa độ từng trang, pan và tạm ngừng bám sheet. Nó không đổi SVG, nốt hoặc timestamp chấm. Title của bài vẫn có trong bản nhạc gốc/settings và heading trợ năng; không chiếm thêm một hàng trên sheet.
+
 - **Nghe mẫu/editor:** MuseScore native playback cung cấp âm thanh, tempo map, repeat, vị trí và spans. Thanh chạy/đầu nốt theo các mốc đó; pause cố định không được co giãn như toàn bộ timeline.
 - **Tập:** MIDI đi qua router → đồng hồ đầu ra Web Audio → controller/Worker → bộ chấm ghim. Bàn phím ảo và tay đệm dùng MS Basic qua native FluidSynth. Oscillator chỉ làm metronome. Tay đệm hiện dùng velocity/mốc nhả CompatMidi; không tuyên bố tái hiện mọi articulation MPE.
 - **Hiển thị:** SVG nguyên trang do MuseScore xuất; camera dùng system box, highlight dùng định danh/path native. Render frame không quyết định judgement hoặc sửa timestamp MIDI.

@@ -1,5 +1,8 @@
 import React, { useEffect, useRef, useState, useSyncExternalStore } from 'react';
 import { workspace as ws } from '../workspace';
+import { MidiStatus } from '../shared/ui/MidiStatus';
+import { ThemeControl } from '../shared/ui/ThemeControl';
+import { LibraryPlayback } from '../features/library/LibraryPlayback';
 import { download } from '../platform/files';
 import { TuneImportDialog } from '../platform/TuneImportDialog';
 import { Practice } from '../practice/PracticeScreen';
@@ -204,10 +207,8 @@ export function App() {
           </button>
         </nav>
         <div className="appbar-end">
-          <span className="local-tag">
-            <span />
-            Lưu trên thiết bị
-          </span>
+          <MidiStatus />
+          <ThemeControl />
           <button
             className="icon-button"
             title="Giới thiệu và giấy phép"
@@ -400,6 +401,9 @@ export function App() {
           </button>
         </div>
       </dialog>
+      {(state.view === 'library' || (state.view === 'practice' && state.practicePicker)) && (
+        <LibraryPlayback />
+      )}
       <dialog ref={about}>
         <h2>Pianist Web</h2>
         <p>

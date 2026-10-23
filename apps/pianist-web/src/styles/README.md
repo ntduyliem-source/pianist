@@ -3,6 +3,8 @@
 `../style.css` is the only entry for the historical global sheet. Its ordered imports reconstruct the pre-extraction rule stream exactly. Keep import order stable; moving a rule between layers is a separate visual change.
 
 - `base.css`: reset, tokens and shared element primitives.
+- `theme.css`: shared light/dark tokens, native-compatible shell colors and persistent header MIDI/theme controls. Loaded after legacy layers.
+- `../features/library/library-v2.css`: compact list/small/large layouts, real score thumbnails, version controls and shared audition player. Loaded last for the upgraded library.
 - `../app/`: shell and free-play/grade navigation.
 - `../features/library/`, `../features/editor/`, `../features/results/`: their existing feature rules.
 - `../practice/styles/piano.css`: live 88-key base styling, required by PracticePiano.

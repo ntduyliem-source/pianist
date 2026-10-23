@@ -18,6 +18,10 @@ export const noteName = (n: number) =>
 export class MidiRouter {
   private access: any;
   private selected?: Port;
+  private connecting?: Promise<void>;
+  private selection = 0;
+  connection: 'idle' | 'connecting' | 'ready' | 'denied' | 'disconnected' = 'idle';
+  connectionError = '';
   private serial = 0;
   private keys = new Map<string, MidiEvent>();
   private pedals = new Map<string, MidiEvent>();
@@ -44,20 +48,44 @@ export class MidiRouter {
     return [...this.keys.values()];
   }
   async connect(autoSelect = true) {
+    if (this.connecting) return this.connecting;
+    this.connecting = this.openAccess(autoSelect).finally(() => {
+      this.connecting = undefined;
+    });
+    return this.connecting;
+  }
+  private async openAccess(autoSelect: boolean) {
     const nav = navigator as Navigator & {
       requestMIDIAccess?: (o: { sysex: boolean }) => Promise<unknown>;
     };
     if (!isSecureContext || !nav.requestMIDIAccess)
       throw Error('MIDI cần Chrome/Edge trên HTTPS hoặc localhost.');
+    this.connection = 'connecting';
+    this.connectionError = '';
+    this.onChange();
     try {
       this.access ??= await nav.requestMIDIAccess({ sysex: false });
     } catch {
-      throw Error('Chưa được cấp quyền MIDI. Cho phép MIDI trong cài đặt trang rồi kết nối lại.');
+      this.connection = 'denied';
+      this.connectionError =
+        'Chưa được cấp quyền MIDI. Cho phép MIDI trong cài đặt trang rồi kết nối lại.';
+      this.onChange();
+      throw Error(this.connectionError);
     }
     this.access.onstatechange = () => this.refresh();
     this.refresh();
-    if (autoSelect && this.ports.length === 1) await this.select(this.ports[0].id);
-    if (!this.ports.length) throw Error('Chưa có đàn MIDI. Có thể kiểm tra bằng bàn phím ảo.');
+    this.connection = 'ready';
+    let preferred: string | null = null;
+    try {
+      preferred = localStorage.getItem('pianist.midi-port');
+    } catch {}
+    if (autoSelect) {
+      const chosen =
+        this.ports.find((p) => p.id === preferred) ??
+        (this.ports.length === 1 ? this.ports[0] : undefined);
+      if (chosen) await this.select(chosen.id);
+    }
+    this.onChange();
   }
   private refresh() {
     this.ports = [...this.access.inputs.values()]
@@ -70,30 +98,55 @@ export class MidiRouter {
       this.selected.onmidimessage = null;
       this.selected = undefined;
       this.deviceId = 'virtual';
+      this.selection++;
+      this.connection = 'disconnected';
       this.onDisconnect();
     }
     this.onChange();
   }
   async select(id: string) {
     if (id === this.deviceId) return;
+    const selection = ++this.selection;
+    const previous = this.selected;
+    this.selected = undefined;
     this.release();
     this.keys.clear();
     this.pedals.clear();
-    if (this.selected) {
-      this.selected.onmidimessage = null;
-      await this.selected.close();
-    }
-    this.selected = undefined;
+    if (previous) previous.onmidimessage = null;
     this.deviceId = 'virtual';
-    if (id !== 'virtual') {
-      const p = this.access?.inputs.get(id) as Port | undefined;
-      if (!p || p.state !== 'connected') throw Error('Đàn đã ngắt kết nối.');
-      await p.open();
-      this.selected = p;
-      this.deviceId = p.id;
-      p.onmidimessage = (e) => this.receive([...e.data], e.timeStamp, p.id, 'midi');
-    }
+    this.connection = 'connecting';
+    this.connectionError = '';
     this.onChange();
+    try {
+      if (previous) await previous.close();
+      if (selection !== this.selection) return;
+      if (id !== 'virtual') {
+        const p = this.access?.inputs.get(id) as Port | undefined;
+        if (!p || p.state !== 'connected') throw Error('Đàn đã ngắt kết nối.');
+        await p.open();
+        if (selection !== this.selection || p.state !== 'connected') {
+          if (this.selected !== p) await p.close();
+          if (selection === this.selection) throw Error('Đàn đã ngắt kết nối.');
+          return;
+        }
+        this.selected = p;
+        this.deviceId = p.id;
+        p.onmidimessage = (e) => this.receive([...e.data], e.timeStamp, p.id, 'midi');
+      }
+      this.connection = 'ready';
+      try {
+        if (id === 'virtual') localStorage.removeItem('pianist.midi-port');
+        else localStorage.setItem('pianist.midi-port', id);
+      } catch {}
+    } catch (error) {
+      if (selection === this.selection) {
+        this.connection = 'disconnected';
+        this.connectionError = error instanceof Error ? error.message : String(error);
+      }
+      throw error;
+    } finally {
+      this.onChange();
+    }
   }
   receive(
     bytes: number[],

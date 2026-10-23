@@ -37,6 +37,8 @@ if (OUT / 'renderer').exists():
     paths += ['renderer/build.json'] + ['renderer/' + name for name in sorted(expected_paths)]
 if (OUT / 'library/catalog.json').exists():
     paths += ['library/catalog.json'] + [s['url'] for s in json.loads((OUT / 'library/catalog.json').read_text(encoding='utf-8'))['songs']]
+    if (OUT / 'library/previews/manifest.json').exists():
+        paths += ['library/previews/manifest.json'] + [f['path'] for f in json.loads((OUT / 'library/previews/manifest.json').read_text(encoding='utf-8'))['files']]
 library_count = verify_library(lambda name: (OUT / name).read_bytes(), set(paths))
 bank = None
 if not (OUT / 'curriculum/manifest.json').exists():

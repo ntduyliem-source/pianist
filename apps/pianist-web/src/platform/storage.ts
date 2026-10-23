@@ -11,6 +11,8 @@ export interface SourceMetadata {
   importDiagnostics?: FormatDiagnostic[];
 }
 export interface ProjectRecord extends SourceMetadata {
+  workId?: string;
+  version?: number;
   id: string;
   title: string;
   filename: string;
