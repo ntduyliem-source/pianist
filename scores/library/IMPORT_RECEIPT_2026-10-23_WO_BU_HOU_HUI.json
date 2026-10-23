@@ -1,0 +1,67 @@
+{
+  "summary": {
+    "inputs": 1,
+    "newWorks": 1,
+    "newVersions": 0,
+    "duplicates": 0,
+    "excluded": 0,
+    "editorOnly": 0,
+    "totalWorks": 75,
+    "totalVersions": 78
+  },
+  "results": [
+    {
+      "filename": "wo-bu-hou-hui.mxl",
+      "title": "我不后悔 / I Don’t Regret",
+      "status": "added",
+      "reason": "681 nốt; 4 trang; MuseScore playback/mapping đạt",
+      "version": 1,
+      "workId": "1c2d5455c6ebf964f3e5cdd85ea30f220d8ffbc912add86189fd4238c8f1aa8c",
+      "id": "1c2d5455c6ebf964f3e5cdd85ea30f220d8ffbc912add86189fd4238c8f1aa8c",
+      "practiceReady": true,
+      "originalFilename": "Wo_Bu_Hou_Hui (2).mxl",
+      "staffPolicy": {
+        "policyVersion": "piano-two-staves-v1",
+        "accepted": true,
+        "totalStaves": 2,
+        "parts": [
+          {
+            "id": "P1",
+            "staves": 2,
+            "instrument": {
+              "piano": true,
+              "labels": [
+                "Piano",
+                "Pno.",
+                "Piano"
+              ],
+              "programs": [
+                1
+              ],
+              "sounds": [],
+              "contradictions": []
+            },
+            "pitchedNotes": 681
+          }
+        ],
+        "violations": []
+      },
+      "sourceSha256": "1c2d5455c6ebf964f3e5cdd85ea30f220d8ffbc912add86189fd4238c8f1aa8c",
+      "nativeAudit": {
+        "editorNotes": 681,
+        "editorGraceNotes": 0,
+        "nativeNotes": 681,
+        "sourceNotes": 681,
+        "measures": 47,
+        "pages": 4,
+        "performed": 918,
+        "keyReleases": 867,
+        "pedals": 0,
+        "durationMs": 248000,
+        "missingGlyphs": 0,
+        "nativePlayback": true,
+        "playbackDuration": 251
+      }
+    }
+  ]
+}

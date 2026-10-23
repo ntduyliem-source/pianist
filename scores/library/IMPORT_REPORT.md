@@ -1,6 +1,6 @@
 # Kiểm bộ bài hát nhập ngày 19/10/2026
 
-**Trạng thái hiện hành 23/10/2026:** catalog có 77 bản/74 tác phẩm sau [lô bổ sung mới](IMPORT_REPORT_2026-10-23_BATCH.md). Đợt áp dụng chuẩn đúng hai khuông trước đó giữ 60 bản/58 tác phẩm, xem [receipt nhận/loại theo chuẩn](STAFF_POLICY_REPORT.json). Các kết quả bên dưới là lịch sử nhập trước khi áp dụng chuẩn mới, không phải danh sách phát hành hiện tại.
+**Trạng thái hiện hành 23/10/2026:** catalog có 78 bản/75 tác phẩm sau khi bổ sung [Wo Bu Hou Hui](IMPORT_REPORT_2026-10-23_WO_BU_HOU_HUI.md); xem thêm [lô bổ sung trước](IMPORT_REPORT_2026-10-23_BATCH.md). Đợt áp dụng chuẩn đúng hai khuông trước đó giữ 60 bản/58 tác phẩm, xem [receipt nhận/loại theo chuẩn](STAFF_POLICY_REPORT.json). Các kết quả bên dưới là lịch sử nhập trước khi áp dụng chuẩn mới, không phải danh sách phát hành hiện tại.
 
 Các file do người dùng chỉ định để đưa vào thư viện và xuất bản. Giữ nguyên bytes MXL; chỉ đặt tên hiển thị trong catalog.
 

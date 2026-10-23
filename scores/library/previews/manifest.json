@@ -541,6 +541,13 @@
       "sha256": "0198b26aa995e7dce9748693c36b1afe9bb9465bc8142d14104eedbae0ec09eb",
       "bytes": 30586,
       "pages": 8
+    },
+    {
+      "sourceHash": "1c2d5455c6ebf964f3e5cdd85ea30f220d8ffbc912add86189fd4238c8f1aa8c",
+      "path": "library/previews/1c2d5455c6ebf964f3e5cdd85ea30f220d8ffbc912add86189fd4238c8f1aa8c.webp",
+      "sha256": "e300f2449472ae658603ddaaf253769dd9d7f0937d29849f12ac92dcf29fc36c",
+      "bytes": 25604,
+      "pages": 4
     }
   ]
 }
