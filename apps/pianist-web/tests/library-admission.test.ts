@@ -33,3 +33,17 @@ test('saving and restoring reject invalid scores before any library mutation',as
   assert.equal((await storage.list('projects')).length,before);
   assert.equal(ws.state.current,record);
 });
+
+test('unarchive checks the stored revision, not stale card data, and releases its lease on rejection',async()=>{
+  const ws=new Workspace();
+  const record:storage.ProjectRecord={id:crypto.randomUUID(),title:'Archived',filename:'one.mscz',bytes:Uint8Array.of(2),revision:2,createdAt:0,updatedAt:0,archived:true};
+  await storage.claimProject(record.id);
+  await storage.saveProject(record,false,false);
+  await storage.releaseProject(record.id);
+  const bridge={semantics:(bytes:Uint8Array)=>{assert.equal(bytes[0],2);return {staves:pianoStaves().slice(0,1)};}} as unknown as EngineBridge;
+  ws.ensureEngine=async()=>bridge;
+  await assert.rejects(ws.archive({...record,archived:false,bytes:Uint8Array.of(1),revision:1}),/đúng 2 khuông/);
+  assert.equal((await storage.get<storage.ProjectRecord>('projects',record.id))!.archived,true);
+  const lease=await storage.get<{owner?:string}>('leases',record.id);
+  assert.equal(lease,undefined);
+});

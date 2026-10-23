@@ -1279,18 +1279,22 @@ export class Workspace {
     await this.saveLibrary();
   }
   async archive(record: storage.ProjectRecord): Promise<void> {
-    if (record.archived) {
-      this.requireInactiveSession();
-      const bridge = await this.ensureEngine();
-      requireLibraryScore(bridge.semantics(record.bytes, record.filename));
-    }
+    this.requireInactiveSession();
     await storage.claimProject(record.id);
-    const latest = await storage.get<storage.ProjectRecord>('projects', record.id);
-    if (!latest) throw Error('Không tìm thấy bản nhạc.');
-    await storage.saveProject({ ...latest, archived: !latest.archived }, false, false);
-    if (this.state.current?.id === record.id)
-      this.patch({ current: { ...this.state.current, archived: !latest.archived } });
-    if (this.state.current?.id !== record.id) await storage.releaseProject(record.id);
+    try {
+      const latest = await storage.get<storage.ProjectRecord>('projects', record.id);
+      if (!latest) throw Error('Không tìm thấy bản nhạc.');
+      if (latest.archived) {
+        const bridge = await this.ensureEngine();
+        this.requireInactiveSession();
+        requireLibraryScore(bridge.semantics(latest.bytes, latest.filename));
+      }
+      await storage.saveProject({ ...latest, archived: !latest.archived }, false, false);
+      if (this.state.current?.id === record.id)
+        this.patch({ current: { ...this.state.current, archived: !latest.archived } });
+    } finally {
+      if (this.state.current?.id !== record.id) await storage.releaseProject(record.id);
+    }
     await this.refresh();
   }
   async restoreLibrary(data: storage.LibraryData): Promise<void> {
