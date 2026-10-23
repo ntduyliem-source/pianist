@@ -109,6 +109,7 @@ struct NominalNoteCtx {
     RenderingContext chordCtx;
     muse::mpe::ArticulationMap articulations;
     uintptr_t sourceId = 0;
+    std::vector<muse::mpe::PlaybackSourceLocation> tiedSources;
 
     explicit NominalNoteCtx(const Note* note, const RenderingContext& ctx)
         : voiceIdx(note->voice()),
@@ -140,6 +141,7 @@ inline muse::mpe::NoteEvent buildNoteEvent(const NominalNoteCtx& ctx, const muse
                                 ctx.tempo.val,
                                 ctx.userVelocityFraction,
                                 pitchCurve,
-                                ctx.sourceId);
+                                ctx.sourceId,
+                                ctx.tiedSources);
 }
 }

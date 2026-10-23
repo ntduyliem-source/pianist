@@ -16,13 +16,13 @@ import sys
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(Path(__file__).parent))
+from abc_grade_pitches import parse_basic, hand_ranges, matches_interval
 SOURCE = ROOT / 'buildscripts/pianist/compositions/g2'
 OUTPUT = ROOT / 'scores/composed/g2-abc'
 BUCKETS = {'n4': (3, 5), 'n6': (6, 8), 'n10': (9, 14),
            'n20': (15, 24), 'n30': (25, 39), 'n50': (40, 69), 'n100': (70, 120)}
 ROLES = {'R': 30, 'L': 30, 'A': 25, 'S': 15}
-PC = {'C': 0, 'D': 2, 'E': 4, 'F': 5, 'G': 7}
-TOKEN = re.compile(r'([CDEFGz])(,?)(/2|[234])?')
 
 # Reuse the independently implemented MusicXML walker from the G1 packager.
 spec = importlib.util.spec_from_file_location('g1_packaging', Path(__file__).with_name('package-g1-abc.py'))
@@ -30,49 +30,8 @@ g1 = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(g1)
 
 
-def parse_voice(body, meter, staff, maximum):
-    events, intervals = [], []
-    previous = None
-    bars = body.split('|')
-    for bi, bar in enumerate(bars):
-        cursor, offset, parsed = Fraction(0), 0, []
-        while offset < len(bar):
-            if bar[offset].isspace():
-                offset += 1
-                continue
-            match = TOKEN.match(bar, offset)
-            assert match, f'unsupported ABC near {bar[offset:]!r}'
-            offset = match.end()
-            letter, comma, length = match.groups()
-            duration = Fraction(1, 2) if length == '/2' else Fraction(int(length or 1))
-            if letter == 'z':
-                assert not comma and (duration == 1 or (cursor == 0 and duration == meter)), 'rest placement'
-                assert duration != Fraction(1, 2), 'eighth rest'
-                pitch = None
-            else:
-                assert comma == (',' if staff == 2 else ''), 'wrong octave'
-                degree = 'CDEFG'.index(letter)
-                if previous is not None:
-                    distance = abs(degree - previous)
-                    assert distance <= maximum, f'leap across notes/rests/bars: {previous}->{degree}, bar {bi+1}'
-                    intervals.append(distance)
-                previous = degree
-                pitch = (48 if staff == 2 else 60) + PC[letter]
-                if duration == 2:
-                    assert cursor in ({0, 2} if meter == 4 else {0, 1} if meter == 3 else {0}), 'half note syncopation'
-                if duration >= 3:
-                    assert cursor == 0 and duration == meter, 'long note must fill bar'
-            parsed.append((bi * meter + cursor, duration, pitch, staff))
-            cursor += duration
-        assert cursor == meter, f'bar {bi+1}: {cursor} beats, expected {meter}'
-        for i, (onset, duration, pitch, _) in enumerate(parsed):
-            if duration == Fraction(1, 2):
-                if onset.denominator == 1:
-                    assert i+1 < len(parsed) and parsed[i+1][1] == Fraction(1, 2) and parsed[i+1][2] is not None, 'unpaired eighth'
-                else:
-                    assert i > 0 and parsed[i-1][1] == Fraction(1, 2) and parsed[i-1][0].denominator == 1, 'offbeat eighth pair'
-        events += parsed
-    return events, intervals, len(bars)
+def parse_voice(body, meter, staff, maximum, key='C'):
+    return parse_basic(body, meter, staff, maximum, 2, key)
 
 
 def fingerprint(events, normalized=False, swap=False):
@@ -85,17 +44,18 @@ def fingerprint(events, normalized=False, swap=False):
     return hashlib.sha256(json.dumps(sorted(result, key=lambda e: (e[3], Fraction(e[0]))), separators=(',', ':')).encode()).hexdigest()
 
 
-def validate(rh, lh, meter, profile, role, lead):
+def validate(rh, lh, meter, profile, role, lead, key='C'):
     leadstaff = 1 if lead == 'RH' else 2
-    right, ri, rbars = parse_voice(rh, meter, 1, 2 if profile == 'third' and leadstaff == 1 else 1)
-    left, li, lbars = parse_voice(lh, meter, 2, 2 if profile == 'third' and leadstaff == 2 else 1)
+    right, ri, rbars = parse_voice(rh, meter, 1, 2 if profile == 'third' and leadstaff == 1 else 1, key)
+    left, li, lbars = parse_voice(lh, meter, 2, 2 if profile == 'third' and leadstaff == 2 else 1, key)
+    hand_ranges(right, left)
     assert rbars == lbars, 'different hand lengths'
     rn, ln = ([e for e in ee if e[2] is not None] for ee in (right, left))
     assert rn and ln, 'silent hand'
     focus, support = (rn, ln) if leadstaff == 1 else (ln, rn)
     fi = ri if leadstaff == 1 else li
     if profile == 'third':
-        assert 2 in fi and 1 in fi, 'third and step witnesses required in focus hand'
+        assert any(matches_interval(a[2], b[2], {(2, 3), (2, 4)}) for a, b in zip(focus, focus[1:])) and 1 in fi, 'minor/major third and step witnesses required in focus hand'
         assert all(e[1] >= 1 for e in right+left), 'third profile contains eighths'
     else:
         assert profile == 'eighth' and 1 in fi, 'step witness required'
@@ -164,7 +124,7 @@ def read_scores(partial=False):
                 witness = []
                 if profile == 'third':
                     for a, b in zip(focus, focus[1:]):
-                        if abs(a[2]-b[2]) in (3, 4):
+                        if matches_interval(a[2], b[2], {(2, 3), (2, 4)}):
                             witness.append({'atBeat': str(b[0]+1), 'fromMidi': a[2], 'toMidi': b[2]})
                 else:
                     witness = [{'atBeat': str(e[0]+1)} for e in focus if e[1] == Fraction(1, 2) and e[0].denominator == 1]
@@ -201,7 +161,7 @@ Q:1/4=60
 %%score {{ RH | LH }}
 V:RH clef=treble name="Piano"
 V:LH clef=bass
-K:C
+K:{row.get('key', 'C')}
 % grade=G2; profile={row['profile']}; lead={row['lead']}; bucket={row['group']}; notes={row['count']}; RH={row['right']}; LH={row['left']}
 % role={row['role']}; duration60={row['seconds']}s; related_pattern={row['normalizedHash'][:16]}
 % authored_passages={' '.join(row['passages'])}

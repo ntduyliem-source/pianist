@@ -23,6 +23,7 @@ export function attachReleaseReferences(score:ScoreSnapshot,t:Timeline):void {
       // Multiple ornaments/re-articulations have no single key-release reference.
       if(candidates.length!==1)continue;
       const r=candidates[0];let last=first;
+      if(r.velocity!==undefined)target.velocity=Math.max(target.velocity??0,r.velocity);
       if((releases.get(a.id)??[]).filter(event=>event.utick>=r.utick&&event.utick<r.utick+a.durationTicks).length!==1)continue;
       for(let i=first.id;i<t.visits.length;i++){
         const v=t.visits[i],native=occurrences.get(v.occurrence)!,measure=measures.get(v.measure)!;

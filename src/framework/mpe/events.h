@@ -35,6 +35,11 @@
 #include "playbacksetupdata.h"
 
 namespace muse::mpe {
+struct PlaybackSourceLocation {
+    uintptr_t sourceId = 0;
+    timestamp_t timestamp = 0;
+};
+
 struct ArrangementContext
 {
     timestamp_t nominalTimestamp = 0;
@@ -48,6 +53,7 @@ struct ArrangementContext
     // Local engraving provenance for web playback visuals. Not serialized to
     // the audio engine, compared, or used to schedule/grade musical events.
     uintptr_t sourceId = 0;
+    std::vector<PlaybackSourceLocation> tiedSources;
 
     bool hasStart() const
     {
@@ -122,7 +128,8 @@ struct NoteEvent
                        const double bps,
                        const float requiredVelocityFraction = 0.f,
                        const PitchCurve& requiredPitchCurve = {},
-                       uintptr_t sourceId = 0)
+                       uintptr_t sourceId = 0,
+                       const std::vector<PlaybackSourceLocation>& tiedSources = {})
     {
         m_arrangementCtx.nominalDuration = nominalDuration;
         m_arrangementCtx.nominalTimestamp = nominalTimestamp;
@@ -130,6 +137,7 @@ struct NoteEvent
         m_arrangementCtx.staffLayerIndex = staffIdx;
         m_arrangementCtx.bps = bps;
         m_arrangementCtx.sourceId = sourceId;
+        m_arrangementCtx.tiedSources = tiedSources;
 
         m_pitchCtx.nominalPitchLevel = nominalPitchLevel;
 

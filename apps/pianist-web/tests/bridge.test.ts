@@ -2,13 +2,16 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {EngineBridge, type NativeApi} from '../../../packages/engine-bridge/index';
 
-test('R4 key releases and pedal instructions are part of the score fingerprint',async()=>{
+test('native releases, pedal, tempo and unsupported grading techniques are part of the score fingerprint',async()=>{
   const Module:any={},raw:any={schemaVersion:1,revision:0,anchors:[],performed:[],occurrences:[],beats:[],durationReference:'musescore-midi',keyReleases:[],pedals:[]};
   const bridge=new EngineBridge({Module,getPracticeSnapshot(){Module.onPracticeSnapshot(JSON.stringify(raw));return 1;}} as NativeApi);
   const hash=async(value:unknown)=>JSON.stringify(value);
   const before=await bridge.cancellableSnapshot('p',hash);raw.pedals.push({id:0,atMs:0,endMs:1000});
   const pedal=await bridge.cancellableSnapshot('p',hash);assert.notEqual(before.fingerprint,pedal.fingerprint);
   raw.keyReleases.push({anchor:'a',endMs:400});assert.notEqual(pedal.fingerprint,(await bridge.cancellableSnapshot('p',hash)).fingerprint);
+  const released=await bridge.cancellableSnapshot('p',hash);raw.tempos=[{occurrence:0,atMs:0,quarterBpm:100}];
+  const tempo=await bridge.cancellableSnapshot('p',hash);assert.notEqual(released.fingerprint,tempo.fingerprint);
+  raw.unsupported=[{kind:'arpeggio',measure:0}];assert.notEqual(tempo.fingerprint,(await bridge.cancellableSnapshot('p',hash)).fingerprint);
 });
 
 test('cancel and revision changes discard an asynchronous snapshot before it enters practice', async () => {

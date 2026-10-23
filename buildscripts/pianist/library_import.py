@@ -1,7 +1,8 @@
 """Append audited MXL without overwriting songs; alternate arrangements get N+1.
 
 Same compressed bytes or canonical MusicXML are duplicates. Matching work names
-group arrangements; an explicit workId resolves genuinely ambiguous names.
+and known composers group arrangements; uncertain identity needs an explicit
+workId or newWork decision instead of silently merging unrelated songs.
 Editor-only admission requires native round-trip and exact grace-note evidence.
 """
 from collections import Counter
@@ -24,6 +25,41 @@ def sha(data):
 def name_key(title):
     title = unicodedata.normalize('NFC', title).casefold()
     return ''.join(character for character in title if character.isalnum())
+
+
+def composer_name(value):
+    value = unicodedata.normalize('NFC', value or '').strip()
+    if value.casefold() in {'composer', 'composer / arranger', 'compositeur / arrangeur', 'unknown', 'none', 'tác giả'}:
+        return ''
+    return value[:180]
+
+
+def choose_work(source, title, composer, ident, names, groups):
+    if 'newWork' in source and type(source['newWork']) is not bool:
+        raise ValueError('newWork must be a boolean')
+    if source.get('newWork') and source.get('workId'):
+        raise ValueError('Choose either explicit workId or newWork')
+    if source.get('workId'):
+        if source['workId'] not in groups:
+            raise ValueError('Unknown explicit workId')
+        return source['workId']
+    if source.get('newWork'):
+        return ident
+    matches = names.get(name_key(title), set())
+    if not matches:
+        return ident
+    # A title alone cannot distinguish unrelated works, and an absent author
+    # cannot establish that a new arrangement belongs to an existing work.
+    author = name_key(composer)
+    composers = {work: {name_key(composer_name(song.get('composer'))) for song in groups[work].values()
+                        if composer_name(song.get('composer'))} for work in matches}
+    exact = {work for work, authors in composers.items() if authors == {author} and author}
+    if len(exact) == 1:
+        return next(iter(exact))
+    if len(exact) > 1 or not author or any(not authors or len(authors) > 1 for authors in composers.values()):
+        raise ValueError('Ambiguous work title/composer: provide workId or newWork')
+    # Every existing matching-title work has a different, known composer.
+    return ident
 
 
 def musicxml(data):
@@ -106,15 +142,8 @@ def append_library(inputs, audit, output, allow_editor_only=False):
         title = unicodedata.normalize('NFC', source['title']).strip()
         if not title or len(title) > 180:
             raise ValueError('Invalid display title')
-        matches = names.get(name_key(title), set())
-        if source.get('workId'):
-            work = source['workId']
-            if work not in groups:
-                raise ValueError('Unknown explicit workId')
-        elif len(matches) > 1:
-            raise ValueError('Ambiguous work title: provide workId')
-        else:
-            work = next(iter(matches), ident)
+        composer = composer_name(source.get('composer'))
+        work = choose_work(source, title, composer, ident, names, groups)
         versions = groups.get(work, {})
         number = max(versions, default=0) + 1
         slug = re.sub(r'\s*\(\d+\)$', '', Path(source['filename']).stem).lower()
@@ -127,9 +156,8 @@ def append_library(inputs, audit, output, allow_editor_only=False):
                     url='library/songs/' + slug + '.mxl', bytes=len(data), workId=work, version=number)
         if source.get('versionLabel'):
             song['versionLabel'] = source['versionLabel']
-        composer = unicodedata.normalize('NFC', source.get('composer', '')).strip()
-        if composer and composer.casefold() not in {'composer', 'composer / arranger', 'compositeur / arrangeur', 'unknown', 'none', 'tác giả'}:
-            song['composer'] = composer[:180]
+        if composer:
+            song['composer'] = composer
         if editor_only:
             song.update(practiceReady=False, practiceNotice=f'Nghe và chỉnh sửa được. Chưa hỗ trợ tập {grace} nốt hoa mỹ của bản này.')
         destination = output / song['url'].removeprefix('library/')

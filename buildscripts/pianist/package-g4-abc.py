@@ -16,68 +16,22 @@ import sys
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(Path(__file__).parent))
+from abc_grade_pitches import parse_basic, hand_ranges
 SOURCE = ROOT / 'buildscripts/pianist/compositions/g4'
 OUTPUT = ROOT / 'scores/composed/g4-abc'
 BUCKETS = {'n4': (3, 5), 'n6': (6, 8), 'n10': (9, 14),
            'n20': (15, 24), 'n30': (25, 39), 'n50': (40, 69), 'n100': (70, 120)}
 ROLES = {'R': 30, 'L': 30, 'A': 25, 'S': 15}
-PC = {'C': 0, 'D': 2, 'E': 4, 'F': 5, 'G': 7, 'A': 9, 'B': 11}
-TOKEN = re.compile(r"([A-Ga-gz])([,']*)(/2|[234])?")
 
 # Reuse the independently implemented MusicXML walker from the G1 packager.
 spec = importlib.util.spec_from_file_location('g1_packaging', Path(__file__).with_name('package-g1-abc.py'))
 g1 = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(g1)
-g1.PC.update(PC)
 
 
-def decode_note(letter, marks):
-    assert not ("," in marks and "'" in marks), 'mixed octave marks'
-    octave = (5 if letter.islower() else 4) - marks.count(',') + marks.count("'")
-    name = letter.upper()
-    return (octave+1)*12+PC[name], octave*7+'CDEFGAB'.index(name)
-
-
-def parse_voice(body, meter, staff, maximum):
-    events, intervals, previous, previous_pitch = [], [], None, None
-    bars = body.split('|')
-    for bi, bar in enumerate(bars):
-        cursor, offset, parsed = Fraction(0), 0, []
-        while offset < len(bar):
-            if bar[offset].isspace():
-                offset += 1
-                continue
-            match = TOKEN.match(bar, offset)
-            assert match, f'unsupported ABC near {bar[offset:]!r}'
-            offset = match.end()
-            letter, marks, length = match.groups()
-            duration = Fraction(1, 2) if length == '/2' else Fraction(int(length or 1))
-            if letter == 'z':
-                assert not marks and (duration == 1 or (cursor == 0 and duration == meter)), 'rest placement'
-                assert duration != Fraction(1, 2), 'eighth rest'
-                pitch = None
-            else:
-                pitch, degree = decode_note(letter, marks)
-                if previous is not None:
-                    distance, semitones = abs(degree-previous), abs(pitch-previous_pitch)
-                    assert distance <= maximum and semitones <= 7 and semitones != 6, f'leap across notes/rests/bars: {previous_pitch}->{pitch}, bar {bi+1}'
-                    intervals.append(distance)
-                previous, previous_pitch = degree, pitch
-                if duration == 2:
-                    assert cursor in ({0,2} if meter == 4 else {0,1} if meter == 3 else {0}), 'half note syncopation'
-                if duration >= 3:
-                    assert cursor == 0 and duration == meter, 'long note must fill bar'
-            parsed.append((bi*meter+cursor, duration, pitch, staff))
-            cursor += duration
-        assert cursor == meter, f'bar {bi+1}: {cursor} beats, expected {meter}'
-        for i, (onset, duration, pitch, _) in enumerate(parsed):
-            if duration == Fraction(1,2):
-                if onset.denominator == 1:
-                    assert i+1 < len(parsed) and parsed[i+1][1] == Fraction(1,2) and parsed[i+1][2] is not None, 'unpaired eighth'
-                else:
-                    assert i > 0 and parsed[i-1][1] == Fraction(1,2) and parsed[i-1][0].denominator == 1, 'offbeat eighth pair'
-        events += parsed
-    return events, intervals, len(bars)
+def parse_voice(body, meter, staff, maximum, key='C'):
+    return parse_basic(body, meter, staff, maximum, 4, key)
 
 
 def fingerprint(events, normalized=False, swap=False):
@@ -90,10 +44,13 @@ def fingerprint(events, normalized=False, swap=False):
     return hashlib.sha256(json.dumps(sorted(result, key=lambda e: (e[3], Fraction(e[0]))), separators=(',', ':')).encode()).hexdigest()
 
 
-def focus_witnesses(events, meter, profile, leadstaff):
+def focus_witnesses(events, meter, profile, leadstaff, home_range=None):
     ee = [e for e in events if e[3] == leadstaff]
     if profile in ('upper','lower'):
-        boundary = (67 if leadstaff == 1 else 55) if profile == 'upper' else (60 if leadstaff == 1 else 48)
+        # The original C-position books declare this starting position. New
+        # material can declare its own home window; it is context, not a key gate.
+        home = home_range or ((60, 67) if leadstaff == 1 else (48, 55))
+        boundary = home[1] if profile == 'upper' else home[0]
         for a,d,p,s in ee:
             if p is not None and (p > boundary if profile == 'upper' else p < boundary):
                 return [{'kind': 'new-register', 'atBeat': str(a+1), 'midi': p, 'oldBoundaryMidi': boundary, 'direction': profile}]
@@ -111,26 +68,22 @@ def focus_witnesses(events, meter, profile, leadstaff):
     return []
 
 
-def validate(rh, lh, meter, profile, role, lead):
+def validate(rh, lh, meter, profile, role, lead, key='C', home_range=None):
     assert profile in ('upper','lower','span') and lead in ('RH','LH'), 'invalid G4 profile or focus hand'
     assert meter in (2,3,4), 'unsupported meter'
     leadstaff = 1 if lead == 'RH' else 2
-    right, ri, rbars = parse_voice(rh,meter,1,4 if leadstaff == 1 else 1)
-    left, li, lbars = parse_voice(lh,meter,2,4 if leadstaff == 2 else 1)
+    right, ri, rbars = parse_voice(rh,meter,1,4 if leadstaff == 1 else 1,key)
+    left, li, lbars = parse_voice(lh,meter,2,4 if leadstaff == 2 else 1,key)
+    hand_ranges(right,left,12 if profile == 'span' else 7,7,leadstaff)
     assert rbars == lbars, 'different hand lengths'
     rn, ln = ([e for e in ee if e[2] is not None] for ee in (right,left))
     assert rn and ln, 'silent hand'
     focus, support = (rn,ln) if leadstaff == 1 else (ln,rn)
-    windows = {'upper': ((67,74),(55,62)), 'lower': ((57,64),(45,52)), 'span': ((60,72),(48,60))}
-    low, high = windows[profile][leadstaff-1]
-    assert all(low <= e[2] <= high for e in focus), 'focus leaves declared register'
-    slow, shigh = (48,55) if leadstaff == 1 else (60,67)
-    assert all(slow <= e[2] <= shigh for e in support), 'support leaves familiar register'
     assert len({e[2] for e in focus}) >= 2, 'focus is a single repeated pitch'
     assert max(e[2] for e in ln) < min(e[2] for e in rn), 'hands overlap or cross keyboard regions'
     assert all(e[1] >= 1 for e in right+left), 'this G4 collection keeps familiar basic rhythm'
     events = right+left
-    assert focus_witnesses(events,meter,profile,leadstaff), 'no G4 register or continuous octave-range witness'
+    assert focus_witnesses(events,meter,profile,leadstaff,home_range), 'no G4 register or continuous octave-range witness'
     if role == 'R':
         assert lead == 'RH' and len(rn) >= len(ln), 'RH lead mismatch'
     elif role == 'L':
@@ -224,7 +177,7 @@ Q:1/4=60
 %%score {{ RH | LH }}
 V:RH clef=treble name="Piano"
 V:LH clef=bass
-K:C
+K:{row.get('key', 'C')}
 % grade=G4; profile={row['profile']}; lead={row['lead']}; bucket={row['group']}; notes={row['count']}; RH={row['right']}; LH={row['left']}
 % role={row['role']}; duration60={row['seconds']}s; related_pattern={row['normalizedHash'][:16]}
 % authored_passages={' '.join(row['passages'])}

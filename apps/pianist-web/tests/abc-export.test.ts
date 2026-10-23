@@ -23,7 +23,8 @@ test('ABC fidelity rejects exact tick, voice, pitch, tie, repeat, BPM, native re
 });
 
 function setup() {
-  const snapshot=Object.assign(scoreFixture(),{rests:[],keys:[],slurs:[]}),Module:any={},jobs:FormatJob[]=[],xml=new TextEncoder().encode('<score-partwise/>');let captured=0;
+  const snapshot=Object.assign(scoreFixture(),{rests:[],keys:[],slurs:[],dynamics:[]}),Module:any={},jobs:FormatJob[]=[],xml=new TextEncoder().encode('<score-partwise/>');let captured=0;
+  snapshot.anchors.forEach(n=>{n.userVelocity=0;});
   const api={Module,exportScore(){Module.onXmlExported(xml);return 1;},getScoreSemantics(){Module.onScoreSemantics(JSON.stringify(snapshot));return 1;},
     prepareProject(){captured++;Module.onPreparedSemantics(JSON.stringify(snapshot));return 1;}} as unknown as NativeApi;
   const bridge=new EngineBridge(api);
@@ -51,4 +52,36 @@ test('fidelity includes written rests, key changes, slur endpoints and pitch spe
   }
   const changed=structuredClone(source);Object.assign(changed.anchors[0],{spelling:15});
   assert.throws(()=>assertAbcFidelity(source,changed),/Chưa xuất file/);
+});
+
+test('ABC fidelity rejects lost note velocity and dynamic expression, preserving identical native dynamics',()=>{
+  const source=scoreFixture();
+  source.anchors[0].userVelocity=27;
+  source.dynamics=[{tick:0,track:0,type:12,text:'<sym>dynamicForte</sym><sym>dynamicPiano</sym>',velocity:96,
+    changeInVelocity:-47,velocityChangeTicks:240,speed:1,play:true}];
+  assert.doesNotThrow(()=>assertAbcFidelity(source,structuredClone(source)));
+  const noVelocity=structuredClone(source);noVelocity.anchors[0].userVelocity=0;
+  assert.throws(()=>assertAbcFidelity(source,noVelocity),/cường độ từng nốt/);
+  const noFp=structuredClone(source);noFp.dynamics=[];
+  assert.throws(()=>assertAbcFidelity(source,noFp),/sắc thái/);
+  for(const mutate of [
+    (s:typeof source)=>{s.dynamics![0].velocity--;},
+    (s:typeof source)=>{s.dynamics![0].changeInVelocity++;},
+    (s:typeof source)=>{s.dynamics![0].velocityChangeTicks++;},
+    (s:typeof source)=>{s.dynamics![0].track++;},
+    (s:typeof source)=>{s.dynamics![0].play=false;},
+  ]) {const changed=structuredClone(source);mutate(changed);assert.throws(()=>assertAbcFidelity(source,changed),/sắc thái/);}
+});
+
+test('ABC export fails closed if either native engine omits dynamics or explicit zero velocities',async()=>{
+  for(const field of ['dynamics','userVelocity'] as const) {
+    for(const side of ['before','after']) {
+      const s=setup();
+      const omit=(value:typeof s.snapshot)=>{if(field==='dynamics')delete (value as any).dynamics;else delete value.anchors[0].userVelocity;};
+      if(side==='before')omit(s.snapshot);
+      else s.bridge.api.prepareProject=()=>{const changed=structuredClone(s.snapshot);omit(changed);s.bridge.api.Module.onPreparedSemantics(JSON.stringify(changed));return 1;};
+      await assert.rejects(exportAbc(s.bridge,s.converter),/Engine chưa có đủ dữ liệu/);
+      if(side==='before')assert.equal(s.jobs.length,0);
+    }
+  }
 });

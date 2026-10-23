@@ -1,4 +1,4 @@
-param([int]$Jobs = 10, [switch]$FastLink, [switch]$Publish)
+param([int]$Jobs = 10, [switch]$FastLink, [switch]$Publish, [switch]$SkipConfigure)
 $ErrorActionPreference = 'Stop'
 $rendererRoot = (Resolve-Path (Join-Path $PSScriptRoot '../..')).Path
 Set-Location $rendererRoot
@@ -12,8 +12,20 @@ New-Item -ItemType Directory -Force artifacts/q0/renderer | Out-Null
 $cmakeExe = (Get-Command cmake -ErrorAction SilentlyContinue).Source
 if (!$cmakeExe) { $cmakeExe = Join-Path (& python -c 'import cmake; print(cmake.CMAKE_BIN_DIR)') 'cmake.exe' }
 $mode = if ($FastLink) { 'ON' } else { 'OFF' }
-& $cmakeExe -S . -B build.m0 "-DPIANIST_RENDERER_FAST_LINK=$mode" *> artifacts/q0/renderer/configure.log
-if ($LASTEXITCODE -ne 0) { Get-Content artifacts/q0/renderer/configure.log -Tail 70; throw 'Renderer configuration failed' }
+if ($SkipConfigure) {
+    $cachedMode = Select-String -LiteralPath 'build.m0/CMakeCache.txt' -Pattern '^PIANIST_RENDERER_FAST_LINK:[^=]+='
+    if (!$cachedMode -or $cachedMode.Line.Split('=', 2)[1] -ne $mode) { throw 'Renderer link mode differs from the CMake cache. Run without -SkipConfigure.' }
+} else {
+    # Windows PowerShell 5 treats redirected native stderr as error records.
+    # A CMake warning is not a failed configure; use its process exit code.
+    $savedErrorPreference = $ErrorActionPreference
+    try {
+        $ErrorActionPreference = 'Continue'
+        & $cmakeExe -S . -B build.m0 "-DPIANIST_RENDERER_FAST_LINK=$mode" *> artifacts/q0/renderer/configure.log
+        $configureExitCode = $LASTEXITCODE
+    } finally { $ErrorActionPreference = $savedErrorPreference }
+    if ($configureExitCode -ne 0) { Get-Content artifacts/q0/renderer/configure.log -Tail 70; throw 'Renderer configuration failed' }
+}
 & $cmakeExe --build build.m0 --target PianistRenderer --parallel $Jobs *> artifacts/q0/renderer/build.log
 if ($LASTEXITCODE -ne 0) { Get-Content artifacts/q0/renderer/build.log -Tail 70; throw 'Renderer build failed' }
 Get-Content artifacts/q0/renderer/build.log -Tail 8

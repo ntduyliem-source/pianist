@@ -11,7 +11,7 @@ export function CalibrationView({settings,onApply}:{settings:PracticeSettings;on
   useEffect(()=>{const lost=()=>{if(controller.current){stop();setMessage('Đã hủy phép đo vì mất focus. Bắt đầu lại để có đồng hồ liên tục.');}};window.addEventListener('blur',lost);return()=>{window.removeEventListener('blur',lost);unsubscribe.current();controller.current?.dispose();};},[]);
   async function start(){
     stop();setReport(null);setRunning(true);let pitch:number|undefined;
-    const c=controller.current=new PracticeController(calibrationTimeline({...settings,inputSource:ws.midi.deviceId==='virtual'?'virtual':'midi',deviceId:ws.midi.deviceId}),'Đo bù trễ');
+    const c=controller.current=new PracticeController(calibrationTimeline({...settings,inputSource:ws.midi.deviceId==='virtual'?'virtual':'midi',deviceId:ws.midi.deviceId}),'Đo bù trễ',async()=>(await ws.ensureEngine(true)).api.Module.driver);
     c.onChange=()=>setMessage(c.status==='counting'?'Đếm vào 4 phách…':`${c.view.judgements.length}/12 phách · bấm cùng tiếng click`);
     c.onComplete=r=>{setReport(calibrationReport(r));stop();setMessage('Đã đo xong. Đây là độ lệch của cả thiết bị và cách bạn bấm, không phải phép đo độ trễ phần cứng riêng.');};
     unsubscribe.current=ws.midi.subscribe(e=>{if(e.kind==='on'&&pitch===undefined)pitch=e.pitch;if(e.pitch===pitch&&e.kind!=='pedal')c.input({...e,pitch:60});});

@@ -28,6 +28,7 @@
 
 #include "global/io/file.h"
 #include "global/io/buffer.h"
+#include "engraving/infrastructure/mscwriter.h"
 #include "midi/midievent.h"
 #include "notation/inotation.h"
 #include "notation/inotationplayback.h"
@@ -86,6 +87,8 @@ void WebApi::init()
         ++m_auditionGeneration;
         m_auditionPlayer.reset();
         m_auditionConfigured = false;
+        m_auditionReferenceTimePoints.clear();
+        m_auditionTimeMapping.clear();
         m_auditionPreparing = false;
 
         if (m_currentProject) {
@@ -111,6 +114,26 @@ void WebApi::deinit()
     }
 }
 
+static bool prepareNativeInput(ByteArray& data, std::string& format)
+{
+    if (format != "mscx") { return true; }
+    // Native MSCX loading uses a directory reader. WASM's MemFileSystem has
+    // files but no directories, so package the unchanged XML with the native
+    // container writer and use the same MSCZ reader as a saved project.
+    io::Buffer buffer;
+    mu::engraving::MscWriter::Params params;
+    params.device = &buffer;
+    params.mode = mu::engraving::MscIoMode::Zip;
+    mu::engraving::MscWriter writer(params);
+    if (!writer.open()) { return false; }
+    writer.writeScoreFile(data);
+    writer.close();
+    if (writer.hasError() || buffer.data().empty()) { return false; }
+    data = buffer.data();
+    format = "mscz";
+    return true;
+}
+
 bool WebApi::load(const void* source, unsigned int len, const std::string& filename)
 {
     if (m_practiceActive) { return false; }
@@ -123,6 +146,7 @@ bool WebApi::load(const void* source, unsigned int len, const std::string& filen
         return false;
     }
     ByteArray data = ByteArray::fromRawData(reinterpret_cast<const char*>(source), len);
+    if (!prepareNativeInput(data, format)) { return false; }
     const io::path_t tempFilePath = std::string("/mu/temp/input.") + format;
     if (!io::File::writeFile(tempFilePath, data)) {
         return false;
@@ -244,9 +268,11 @@ bool WebApi::prepareTemporaryProject(const void* source, unsigned int len, const
     std::transform(format.begin(), format.end(), format.begin(), [](unsigned char c) { return std::tolower(c); });
     static const std::set<std::string> formats { "mxl", "xml", "musicxml", "mscz", "mscx" };
     if (!source || !len || len > 64 * 1024 * 1024 || !formats.count(format)) { return false; }
+    ByteArray data = ByteArray::fromRawData(reinterpret_cast<const char*>(source), len);
+    if (!prepareNativeInput(data, format)) { return false; }
     const io::path_t input = std::string("/mu/temp/pianist-prepare.") + format;
     const io::path_t output = "/mu/temp/pianist-prepared.mscz";
-    if (!io::File::writeFile(input, ByteArray::fromRawData(reinterpret_cast<const char*>(source), len))) { return false; }
+    if (!io::File::writeFile(input, data)) { return false; }
     auto project = projectCreator()->newProject(iocContext());
     const Ret loaded = project->load(input, {}, format);
     io::File::remove(input);
@@ -254,7 +280,7 @@ bool WebApi::prepareTemporaryProject(const void* source, unsigned int len, const
     if (outputKind == PreparedOutput::Semantics) { return snapshotFor(project, false, "onPreparedSemantics"); }
     if (outputKind == PreparedOutput::Snapshot) { return snapshotFor(project, true, "onPreparedSnapshot"); }
     const Ret saved = project->save(output, project::SaveMode::AutoSave, false);
-    ByteArray data;
+    data.clear();
     const bool read = saved && io::File::readFile(output, data);
     io::File::remove(output);
     if (!read || data.empty() || data.size() > 32 * 1024 * 1024) { return false; }
@@ -407,7 +433,12 @@ void WebApi::resetPracticePlayback()
     ++m_auditionGeneration; // Invalidates prepareToPlay callbacks after navigation/stop.
     m_auditionPreparing = false;
     m_auditionError.clear();
-    if (!m_auditionConfigured) { publishPracticeClock(); return; }
+    if (!m_auditionConfigured) {
+        m_auditionReferenceTimePoints.clear();
+        m_auditionTimeMapping.clear();
+        publishPracticeClock();
+        return;
+    }
     const auto player = m_auditionPlayer;
     if (player) {
         player->stop();
@@ -420,6 +451,8 @@ void WebApi::resetPracticePlayback()
         player->setDuration(audio::secsToMilisecs(playbackController()->totalPlayTime()));
     }
     m_auditionConfigured = false;
+    m_auditionReferenceTimePoints.clear();
+    m_auditionTimeMapping.clear();
     ++m_auditionNotesRevision;
     publishPracticeClock();
 }
@@ -445,16 +478,54 @@ void WebApi::applyPracticePlaybackRange()
 {
     const auto player = m_auditionPlayer;
     if (!player || !m_auditionConfigured) { return; }
-    const double speed = playbackController()->tempoMultiplier();
-    player->setDuration(audio::secsToMilisecs(audio::secs_t(m_auditionEnd / speed)));
+    player->setDuration(audio::secsToMilisecs(audio::secs_t(mapPracticeTime(m_auditionEnd, false))));
     // These are the upstream PlaybackController::updateLoop / IPlayer APIs.
     // The engine's audio Clock owns the boundary, including while JS is busy.
     if (m_auditionLoop) {
-        player->setLoop(audio::secsToMilisecs(audio::secs_t(m_auditionStart / speed)),
-                        audio::secsToMilisecs(audio::secs_t(m_auditionEnd / speed)));
+        player->setLoop(audio::secsToMilisecs(audio::secs_t(mapPracticeTime(m_auditionStart, false))),
+                        audio::secsToMilisecs(audio::secs_t(mapPracticeTime(m_auditionEnd, false))));
     } else {
         player->resetLoop();
     }
+}
+
+void WebApi::updatePracticeTimeMapping()
+{
+    auto* score = m_currentProject->masterNotation()->notation()->elements()->msScore();
+    const auto current = practiceTimePoints(score);
+    if (m_auditionReferenceTimePoints.empty()) { m_auditionReferenceTimePoints = current; }
+    m_auditionTimeMapping.clear();
+    if (current.size() != m_auditionReferenceTimePoints.size()) { return; }
+    for (size_t i = 0; i < current.size(); ++i) {
+        const auto& reference = m_auditionReferenceTimePoints[i];
+        if (reference.occurrence != current[i].occurrence || reference.tick != current[i].tick
+            || reference.utick != current[i].utick) {
+            m_auditionTimeMapping.clear();
+            return;
+        }
+        m_auditionTimeMapping.emplace_back(reference.atMs / 1000.0, current[i].atMs / 1000.0);
+        if (i && (reference.atMs < m_auditionReferenceTimePoints[i - 1].atMs || current[i].atMs < current[i - 1].atMs)) {
+            m_auditionTimeMapping.clear();
+            return;
+        }
+    }
+}
+
+double WebApi::mapPracticeTime(double seconds, bool toReference) const
+{
+    if (m_auditionTimeMapping.empty()) { return seconds; }
+    const auto input = [toReference](const auto& point) { return toReference ? point.second : point.first; };
+    const auto output = [toReference](const auto& point) { return toReference ? point.first : point.second; };
+    const auto after = std::upper_bound(m_auditionTimeMapping.begin(), m_auditionTimeMapping.end(), seconds,
+                                       [&](double time, const auto& point) { return time < input(point); });
+    if (after == m_auditionTimeMapping.begin()) { return output(*after); }
+    const auto before = std::prev(after);
+    if (after == m_auditionTimeMapping.end()) { return output(*before); }
+    const double duration = input(*after) - input(*before);
+    if (duration <= 0.0) { return output(*before); }
+    // Each interval comes from adjacent native TempoMap breakpoints. Musical
+    // intervals and fixed-pause intervals therefore retain their own mapping.
+    return output(*before) + (seconds - input(*before)) / duration * (output(*after) - output(*before));
 }
 
 void WebApi::preparePracticePlayback()
@@ -469,10 +540,9 @@ void WebApi::preparePracticePlayback()
         m_auditionPreparing = false;
         if (!ret) { m_auditionError = QString::fromStdString(ret.toString()); return; }
         applyPracticePlaybackRange();
-        const double speed = playbackController()->tempoMultiplier();
-        const double pos = double(player->playbackPosition()) * speed;
+        const double pos = mapPracticeTime(double(player->playbackPosition()), true);
         if (pos < m_auditionStart || pos >= m_auditionEnd - 0.002) {
-            player->seek(audio::secs_t(m_auditionStart / speed));
+            player->seek(audio::secs_t(mapPracticeTime(m_auditionStart, false)));
         }
         player->play();
         publishPracticeClock();
@@ -493,6 +563,8 @@ bool WebApi::getPracticePlayback()
         { "preparing", m_auditionPreparing },
         { "clockEpoch", int(m_auditionClockEpoch) },
         { "notesRevision", int(m_auditionNotesRevision) },
+        { "rangeStartSeconds", mapPracticeTime(m_auditionStart, false) },
+        { "rangeEndSeconds", mapPracticeTime(m_auditionEnd, false) },
         { "error", m_auditionError }
     };
 #ifdef Q_OS_WASM
@@ -518,17 +590,18 @@ bool WebApi::practicePlayback(const std::string& command, double value, double e
     }
     const auto player = m_auditionPlayer;
     if (!player) { return false; }
-    const double speed = playbackController()->tempoMultiplier();
     if (command == "range") {
-        if (value < 0 || end <= value || end > double(playbackController()->totalPlayTime()) * speed + 0.01) { return false; }
+        if (value < 0 || end <= value) { return false; }
         resetPracticePlayback();
+        updatePracticeTimeMapping();
+        if (m_auditionTimeMapping.empty() || end > m_auditionTimeMapping.back().first + 0.01) { return false; }
         player->stop();
         m_auditionConfigured = true;
         m_auditionLoop = false;
         m_auditionStart = value;
         m_auditionEnd = end;
         applyPracticePlaybackRange();
-        player->seek(audio::secs_t(value));
+        player->seek(audio::secs_t(mapPracticeTime(value, false)));
         ++m_auditionNotesRevision;
         publishPracticeClock();
         return true;
@@ -541,19 +614,25 @@ bool WebApi::practicePlayback(const std::string& command, double value, double e
         ++m_auditionGeneration;
         m_auditionPreparing = false;
         if (command == "pause") { player->pause(); }
-        else { player->stop(); player->seek(audio::secs_t(m_auditionStart / speed)); }
+        else { player->stop(); player->seek(audio::secs_t(mapPracticeTime(m_auditionStart, false))); }
     } else if (command == "seek") {
-        player->seek(audio::secs_t(std::clamp(value, m_auditionStart, m_auditionEnd) / speed));
+        player->seek(audio::secs_t(mapPracticeTime(std::clamp(value, m_auditionStart, m_auditionEnd), false)));
     } else if (command == "tempo") {
         if (value < 0.25 || value > 2.0 || m_auditionPreparing) { return false; }
-        const double position = double(player->playbackPosition()) * speed;
+        const double position = mapPracticeTime(double(player->playbackPosition()), true);
         const bool playing = playbackController()->isPlaying();
         if (playing) { player->pause(); }
         m_currentProject->masterNotation()->playback()->setTempoMultiplier(value);
+        updatePracticeTimeMapping();
+        if (m_auditionTimeMapping.empty()) {
+            player->stop();
+            m_auditionError = QStringLiteral("Native playback time map changed unexpectedly");
+            return false;
+        }
         ++m_auditionNotesRevision;
         applyPracticePlaybackRange();
         // Preserve the performed occurrence across repeats, not just the raw tick.
-        player->seek(audio::secs_t(std::clamp(position, m_auditionStart, m_auditionEnd) / value));
+        player->seek(audio::secs_t(mapPracticeTime(std::clamp(position, m_auditionStart, m_auditionEnd), false)));
         if (playing) { preparePracticePlayback(); }
     } else if (command == "loop") {
         m_auditionLoop = value != 0.0;

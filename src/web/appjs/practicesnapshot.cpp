@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: GPL-3.0-only
 // Immutable practice data and drawings from the same, currently edited score.
 #include "webapi.h"
+#include "practicetiming.h"
 
 #include <QJsonArray>
 #include <QJsonDocument>
@@ -14,6 +15,7 @@
 #include "engraving/dom/articulation.h"
 #include "engraving/dom/arpeggio.h"
 #include "engraving/dom/chord.h"
+#include "engraving/dom/dynamic.h"
 #include "engraving/dom/keysig.h"
 #include "engraving/dom/rest.h"
 #include "engraving/dom/measure.h"
@@ -28,6 +30,7 @@
 #include "engraving/dom/staff.h"
 #include "engraving/dom/system.h"
 #include "engraving/dom/tie.h"
+#include "engraving/dom/tempo.h"
 #include "notation/inotationplayback.h"
 #include "importexport/imagesexport/iimagesexportconfiguration.h"
 
@@ -72,6 +75,17 @@ bool WebApi::getPracticePlaybackNotes()
             }
         }
     }
+    struct Visit { int index; const engraving::Measure* measure; double startMs; double endMs; };
+    std::map<const engraving::Measure*, std::vector<Visit>> visitsByMeasure;
+    int visitIndex = 0;
+    for (const auto* repeat : score->repeatList()) {
+        for (const auto* measure : repeat->measureList()) {
+            const int offset = repeat->utick - repeat->tick;
+            visitsByMeasure[measure].push_back({ visitIndex++, measure,
+                score->utick2utime(measure->tick().ticks() + offset) * 1000.0,
+                score->utick2utime(measure->endTick().ticks() + offset) * 1000.0 });
+        }
+    }
     QJsonArray events;
     for (const auto& track : playback->existingTrackIdSet()) {
         // Read the very same MPE events delivered to FluidSequencer. In
@@ -83,25 +97,42 @@ bool WebApi::getPracticePlaybackNotes()
                 const auto& arrangement = event->arrangementCtx();
                 const auto source = sources.find(arrangement.sourceId);
                 if (source == sources.end() || !arrangement.hasStart()) { continue; }
-                QJsonArray anchors;
-                std::set<const engraving::Note*> visited;
-                for (const auto* note = source->second; note && visited.insert(note).second;) {
-                    const auto id = ids.find(reinterpret_cast<uintptr_t>(note));
-                    if (id != ids.end()) { anchors.append(id->second); }
-                    const auto* tie = note->tieFor();
-                    note = tie && tie->playSpanner() ? tie->endNote() : nullptr;
-                }
+                const double start = double(arrangement.actualTimestamp) / 1000.0;
                 const double end = arrangement.hasEnd()
                     ? double(arrangement.actualTimestamp + arrangement.actualDuration) / 1000.0
                     : double(playback->totalPlayTime()) * 1000.0;
-                events.append(QJsonObject{{"anchors", anchors}, {"atMs", double(arrangement.actualTimestamp) / 1000.0},
+                // These are the sources actually accepted by NoteRenderer's
+                // normal/partial tie implementation, not a second tie walk.
+                std::vector<muse::mpe::PlaybackSourceLocation> locations { { arrangement.sourceId, arrangement.actualTimestamp } };
+                locations.insert(locations.end(), arrangement.tiedSources.begin(), arrangement.tiedSources.end());
+                QJsonArray anchors, spans;
+                for (size_t i = 0; i < locations.size(); ++i) {
+                    const auto found = sources.find(locations[i].sourceId);
+                    if (found == sources.end()) { continue; }
+                    const QString id = ids.at(locations[i].sourceId);
+                    const double from = std::max(start, double(locations[i].timestamp) / 1000.0);
+                    const double to = std::min(end, i + 1 < locations.size() ? double(locations[i + 1].timestamp) / 1000.0 : end);
+                    if (to <= from) { continue; }
+                    if (!anchors.contains(id)) { anchors.append(id); }
+                    for (const auto& visit : visitsByMeasure[found->second->chord()->measure()]) {
+                        if (from >= visit.endMs || to <= visit.startMs) { continue; }
+                        spans.append(QJsonObject{{"anchor", id}, {"occurrence", visit.index},
+                            {"atMs", std::max(from, visit.startMs)}, {"endMs", std::min(to, visit.endMs)}});
+                    }
+                }
+                events.append(QJsonObject{{"anchors", anchors}, {"spans", spans}, {"atMs", start},
                     {"endMs", end}, {"pitch", int(std::clamp(muse::mpe::ZERO_PITCH_LEVEL_MIDI_EQUIVALENT
                         + event->pitchCtx().nominalPitchLevel / float(muse::mpe::PITCH_LEVEL_STEP), 0.f, 127.f))}});
                 if (events.size() > 200000) { return false; }
             }
         }
     }
-    const QJsonObject result{{"source", "musescore-mpe"}, {"revision", int(m_auditionNotesRevision)}, {"events", events}};
+    QJsonArray timeMap;
+    for (const auto& point : m_auditionTimeMapping) {
+        timeMap.append(QJsonObject{{"referenceMs", point.first * 1000.0}, {"playbackMs", point.second * 1000.0}});
+    }
+    const QJsonObject result{{"source", "musescore-mpe"}, {"revision", int(m_auditionNotesRevision)},
+        {"events", events}, {"timeMap", timeMap}};
     const auto callback = emscripten::val::module_property("onPracticePlaybackNotes");
     if (callback.isUndefined() || callback.isNull()) { return false; }
     callback(QJsonDocument(result).toJson(QJsonDocument::Compact).toStdString());
@@ -117,7 +148,7 @@ bool WebApi::snapshotFor(const project::INotationProjectPtr& project, bool drawi
     if (!score || (drawings && (!svgWriter || score->pages().empty() || score->pages().size() > 40))) { return false; }
 
     QJsonArray pages, measures, staves, occurrences, performed, beats, pedals, keyReleases;
-    QJsonArray rests, keys, slurs;
+    QJsonArray rests, keys, slurs, dynamics, cursorSegments, timeMap, tempos, unsupported;
     std::map<const engraving::Note*, QString> noteIds;
     std::map<const engraving::Measure*, int> measureIds;
     std::map<const engraving::Note*, QJsonObject> notes;
@@ -156,6 +187,25 @@ bool WebApi::snapshotFor(const project::INotationProjectPtr& project, bool drawi
         measures.append(QJsonObject{{"index", measureIndex}, {"label", measure->no() + (measure->irregular() ? 0 : 1)}, {"tick", measure->tick().ticks()},
                                     {"endTick", measure->endTick().ticks()}, {"page", page}, {"box", box(r)},
                                     {"numerator", measure->timesig().numerator()}, {"denominator", measure->timesig().denominator()}});
+        // Geometry from PlaybackCursor::resolveCursorRectByTick, including
+        // rest segments and the real end barline (not a notehead approximation).
+        const auto* displayed = score->tick2measureMM(measure->tick());
+        if (drawings && displayed && displayed->system() && displayed->system()->page()) {
+            const double pageX = displayed->system()->page()->canvasPos().x();
+            const double spatium = score->style().spatium();
+            for (auto* segment = displayed->first(engraving::SegmentType::ChordRest); segment;) {
+                auto* next = segment->next(engraving::SegmentType::ChordRest);
+                while (next && !next->visible()) { next = next->next(engraving::SegmentType::ChordRest); }
+                const int startTick = segment->tick().ticks();
+                const int endTick = next ? next->tick().ticks() : displayed->endTick().ticks();
+                const auto* bar = displayed->findSegment(engraving::SegmentType::EndBarLine, displayed->endTick());
+                const double endX = next ? next->canvasPos().x() : bar ? bar->canvasPos().x()
+                    : displayed->canvasPos().x() + displayed->width();
+                cursorSegments.append(QJsonObject{{"measure", measureIndex}, {"tick", startTick}, {"endTick", endTick},
+                    {"x", int(segment->canvasPos().x()) - pageX - spatium}, {"endX", endX - pageX - spatium}});
+                segment = next;
+            }
+        }
         for (auto* segment = measure->first(); segment; segment = segment->next()) {
             if (!drawings) {
                 for (const auto* element : segment->elist()) {
@@ -173,16 +223,30 @@ bool WebApi::snapshotFor(const project::INotationProjectPtr& project, bool drawi
             }
             for (const auto* annotation : segment->annotations()) {
                 if (annotation && annotation->isFermata()) { warnings.insert("fermata"); }
+                if (!drawings && annotation && annotation->isDynamic()) {
+                    const auto* dynamic = engraving::toDynamic(annotation);
+                    dynamics.append(QJsonObject{{"tick", segment->tick().ticks()}, {"track", int(dynamic->track())},
+                        {"type", int(dynamic->dynamicType())}, {"text", dynamic->xmlText().toQString()},
+                        {"velocity", dynamic->velocity()}, {"changeInVelocity", dynamic->changeInVelocity()},
+                        {"velocityChangeTicks", dynamic->velocityChangeLength().ticks()},
+                        {"speed", int(dynamic->velChangeSpeed())}, {"play", dynamic->playDynamic()}});
+                }
             }
             if (!segment->isChordRestType()) { continue; }
             for (const auto* element : segment->elist()) {
                 if (!element || !element->isChord()) { continue; }
                 const auto* chord = engraving::toChord(element);
-                if (!chord->graceNotes().empty()) { warnings.insert("grace"); }
-                if (chord->arpeggio()) { warnings.insert("arpeggio"); }
+                const auto unsupportedChord = [&](const char* kind) {
+                    unsupported.append(QJsonObject{{"kind", kind}, {"measure", measureIndex},
+                        {"staff", int(chord->staffIdx())}, {"voice", int(chord->voice())}});
+                };
+                if (!chord->graceNotes().empty()) { warnings.insert("grace"); unsupportedChord("grace"); }
+                if (chord->arpeggio() && chord->arpeggio()->arpeggioType() != engraving::ArpeggioType::BRACKET) {
+                    warnings.insert("arpeggio"); unsupportedChord("arpeggio");
+                }
                 QJsonArray articulations;
                 for (const auto* articulation : chord->articulations()) {
-                    if (articulation->isOrnament()) { warnings.insert("ornament"); }
+                    if (articulation->isOrnament()) { warnings.insert("ornament"); unsupportedChord("ornament"); }
                     articulations.append(articulation->articulationName().toQString());
                 }
                 int n = 0;
@@ -206,7 +270,7 @@ bool WebApi::snapshotFor(const project::INotationProjectPtr& project, bool drawi
                         }
                     }
                     notes[note] = data;
-                    if (!drawings) { notes[note]["spelling"] = note->tpc(); }
+                    if (!drawings) { notes[note]["spelling"] = note->tpc(); notes[note]["userVelocity"] = note->userVelocity(); }
                     if (notes.size() > 50000) { return false; }
                 }
             }
@@ -222,6 +286,9 @@ bool WebApi::snapshotFor(const project::INotationProjectPtr& project, bool drawi
     }
     // MuseScore expands repeats, voltas and jumps. Do not reimplement that interpreter in JS.
     const auto& repeats = score->repeatList(true);
+    for (const auto& point : practiceTimePoints(score)) {
+        timeMap.append(QJsonObject{{"occurrence", point.occurrence}, {"tick", point.tick}, {"atMs", point.atMs}});
+    }
     // R4 references use MuseScore's MIDI renderer, including its articulation
     // gate times and ties. No release percentage or grading rule lives here.
     engraving::EventsHolder midi;
@@ -229,18 +296,19 @@ bool WebApi::snapshotFor(const project::INotationProjectPtr& project, bool drawi
     midiContext.harmonyChannelSetting = engraving::CompatMidiRendererInternal::HarmonyChannelSetting::DISABLED;
     engraving::CompatMidiRender::renderScore(score, midi, midiContext, true);
     for (size_t channel = 0; channel < midi.size(); ++channel) {
-        std::map<std::pair<const engraving::Note*, int>, int> starts;
+        std::map<std::pair<const engraving::Note*, int>, std::pair<int, int>> starts;
         for (const auto& [tick, event] : midi[channel]) {
             if (event.type() != engraving::ME_NOTEON || !event.note() || event.discard()) { continue; }
             const auto identity = std::make_pair(event.note(), static_cast<int>(event.pitch()));
-            if (event.velo()) { starts[identity] = tick; continue; }
+            if (event.velo()) { starts[identity] = {tick, event.velo()}; continue; }
             const auto start = starts.find(identity);
             const auto anchor = noteIds.find(event.note());
             if (start != starts.end()) {
-                if (anchor != noteIds.end() && tick > start->second) {
+                if (anchor != noteIds.end() && tick > start->second.first) {
                     keyReleases.append(QJsonObject{{"anchor", anchor->second}, {"pitch", event.pitch()},
-                        {"utick", start->second}, {"endUtick", tick},
-                        {"atMs", repeats.utick2utime(start->second) * 1000},
+                        {"velocity", start->second.second},
+                        {"utick", start->second.first}, {"endUtick", tick},
+                        {"atMs", repeats.utick2utime(start->second.first) * 1000},
                         {"endMs", repeats.utick2utime(tick) * 1000}});
                 }
                 starts.erase(start);
@@ -270,6 +338,17 @@ bool WebApi::snapshotFor(const project::INotationProjectPtr& project, bool drawi
             const double to = repeats.utick2utime(end + shift) * 1000;
             occurrences.append(QJsonObject{{"index", occurrence}, {"measure", measureIds[measure]},
                                            {"startMs", from}, {"endMs", to}, {"utick", start + shift}});
+            tempos.append(QJsonObject{{"occurrence", occurrence}, {"atMs", from},
+                {"quarterBpm", score->tempo(engraving::Fraction::fromTicks(start)).val * 60}});
+            for (auto it = score->tempomap()->upper_bound(start); it != score->tempomap()->end() && it->first <= end; ++it) {
+                if (it->second.pause > 0.0) {
+                    unsupported.append(QJsonObject{{"kind", "pause"}, {"measure", measureIds[measure]}});
+                }
+                if (it->first < end) {
+                    tempos.append(QJsonObject{{"occurrence", occurrence}, {"atMs", repeats.utick2utime(it->first + shift) * 1000},
+                        {"quarterBpm", score->tempo(engraving::Fraction::fromTicks(it->first)).val * 60}});
+                }
+            }
             for (size_t p = 0; p < pedalSpans.size(); ++p) {
                 const auto* span = pedalSpans[p];
                 const int a = std::max(start, span->tick().ticks());
@@ -313,8 +392,9 @@ bool WebApi::snapshotFor(const project::INotationProjectPtr& project, bool drawi
                              {"durationMs", repeats.utick2utime(repeats.ticks()) * 1000}, {"staves", staves},
                              {"pages", pages}, {"measures", measures}, {"anchors", anchors}, {"occurrences", occurrences},
                              {"performed", performed}, {"beats", beats}, {"warnings", warningList},
+                             {"cursorSegments", cursorSegments}, {"timeMap", timeMap}, {"tempos", tempos}, {"unsupported", unsupported},
                              {"durationReference", "musescore-midi"}, {"keyReleases", keyReleases}, {"pedals", pedals}};
-    if (!drawings) { result["rests"] = rests; result["keys"] = keys; result["slurs"] = slurs; }
+    if (!drawings) { result["rests"] = rests; result["keys"] = keys; result["slurs"] = slurs; result["dynamics"] = dynamics; }
     const auto json = QJsonDocument(result).toJson(QJsonDocument::Compact);
     emscripten::val::module_property(callback)(json.toStdString());
     return true;

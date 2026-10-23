@@ -74,16 +74,19 @@ test('R4 adapter uses native key release rather than notation duration and never
   assert(t.targets[1].releaseMs!>t.targets[1].atMs);assert(t.targets[1].releaseMs!-t.targets[1].atMs<199);
   const absent=createTimeline(scoreFixture(),settingsFor(scoreFixture()));assert.equal(absent.targets[0].releaseMs,undefined);assert.equal(absent.pedalReference,false);
 });
-test('virtual monitor pedal sustains after Note Off, releases on CC64 off, re-strike and pause; off mode ignores it',async()=>{
-  const descriptor=Object.getOwnPropertyDescriptor(globalThis,'AudioContext');const voices:{stops:number}[]=[];
+test('virtual monitor sends real MIDI to native piano, preserves Note Off under pedal, and stops native voices on pause',async()=>{
+  const descriptor=Object.getOwnPropertyDescriptor(globalThis,'AudioContext');const events:number[][]=[];let stops=0;
   class Audio {state='running';destination={};get currentTime(){return performance.now()/1000;}async resume(){}async close(){}
-    createOscillator(){const v={stops:0};voices.push(v);return{frequency:{value:0},type:'',connect:(g:unknown)=>g,start(){},stop(){v.stops++;},disconnect(){}};}
-    createGain(){return{gain:{value:0,setValueAtTime(){},linearRampToValueAtTime(){},exponentialRampToValueAtTime(){},setTargetAtTime(){}},connect(){},disconnect(){}};}}
-  Object.defineProperty(globalThis,'AudioContext',{value:Audio,configurable:true});const audio=new AudioClock();
+    createOscillator(){throw Error('Piano preview must not create an oscillator');}}
+  Object.defineProperty(globalThis,'AudioContext',{value:Audio,configurable:true});
+  const audio=new AudioClock(async()=>({async resume(){},async preparePreview(){},previewMidi:(...event:number[])=>{events.push(event);},stopPreview:()=>{stops++;}}));
   try{const t=exercise();t.settings.countIn=0;t.settings.metronome=false;await audio.start(t);
-    audio.monitor(midi(1,'pedal',0,64,127));audio.monitor(midi(2,'on',0));audio.monitor(midi(3,'off',100));assert.equal(voices.at(-1)!.stops,0);
-    audio.monitor(midi(4,'on',200));assert.equal(voices.at(-2)!.stops,1);audio.monitor(midi(5,'off',300));audio.monitor(midi(6,'pedal',400,64,0));assert.equal(voices.at(-1)!.stops,1);
-    audio.monitor(midi(7,'on',500));audio.silence();assert.equal(voices.at(-1)!.stops,1);
-    t.settings.pedalEnabled=false;await audio.start(t);audio.monitor(midi(8,'pedal',0,64,127));audio.monitor(midi(9,'on',0));audio.monitor(midi(10,'off',100));assert.equal(voices.at(-1)!.stops,1);
+    audio.monitor(midi(1,'pedal',0,64,127));audio.monitor(midi(2,'on',0));audio.monitor(midi(3,'off',100));
+    assert.deepEqual(events,[[0xb0,64,127],[0x90,60,90],[0x80,60,0]]);
+    audio.monitor(midi(4,'on',200));audio.monitor(midi(5,'off',300));audio.monitor(midi(6,'pedal',400,64,0));
+    assert.deepEqual(events.slice(-3),[[0x90,60,90],[0x80,60,0],[0xb0,64,0]]);
+    audio.monitor(midi(7,'on',500));const before=stops;audio.silence();assert.equal(stops,before+1);
+    t.settings.pedalEnabled=false;await audio.start(t);audio.monitor(midi(8,'pedal',0,64,127));assert.deepEqual(events.at(-1),[0xb0,64,0]);
+    const count=events.length;audio.monitor({...midi(9,'on',0),stateOnly:true});assert.equal(events.length,count);
   }finally{await audio.dispose();if(descriptor)Object.defineProperty(globalThis,'AudioContext',descriptor);else Reflect.deleteProperty(globalThis,'AudioContext');}
 });

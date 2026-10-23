@@ -1,9 +1,9 @@
 import {ENGINE_ID,type AttemptStatus,type EngineView,type MidiEvent,type ReplayCommand,type Timeline,type AttemptResult} from '../../../../packages/practice-engine-v2/model';
 import {resultFor} from '../../../../packages/practice-engine-v2/results';
-import {AudioClock} from '../platform/audio-clock-v2';
+import {AudioClock,type NativePracticeAudioProvider} from '../platform/audio-clock-v2';
 
 export class PracticeController {
-  readonly transport=new AudioClock();readonly commands:ReplayCommand[]=[];
+  readonly transport:AudioClock;readonly commands:ReplayCommand[]=[];
   status:AttemptStatus='ready';message='';elapsedMs=0;replayComplete=true;
   view:EngineView={judgements:[],extras:[],held:[],pedal:false,intervals:[],group:0,done:false,processedMs:0,faults:[]};
   onChange=()=>{};onComplete:(r:AttemptResult)=>void=()=>{};
@@ -19,7 +19,7 @@ export class PracticeController {
   private lastTick=0;
   private clockSegments:NonNullable<AttemptResult['clock']>['segments']=[];
   private lastClockCheck=0;
-  constructor(readonly timeline:Timeline,readonly title:string){}
+  constructor(readonly timeline:Timeline,readonly title:string,nativeAudio?:NativePracticeAudioProvider){this.transport=new AudioClock(nativeAudio);}
   private log(command:ReplayCommand){
     if(this.commands.length<400000)this.commands.push(structuredClone(command));else this.replayComplete=false;
     this.worker?.postMessage({type:'command',generation:this.generation,command});

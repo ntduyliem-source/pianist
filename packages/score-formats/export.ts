@@ -20,9 +20,10 @@ function music(score: ScoreSnapshot) {
   const symbols=score as ScoreSnapshot & {rests?:number[][];keys?:number[][];slurs?:number[][]};
   return {
     rests:sorted([...(symbols.rests ?? [])]), keys:sorted([...(symbols.keys ?? [])]), slurs:sorted([...(symbols.slurs ?? [])]),
+    dynamics:sorted([...(score.dynamics ?? [])]),
     staves: score.staves.map(s => [s.id,parts.indexOf(s.partId)]),
     notes: sorted(score.anchors.map(n => ({identity:anchors.get(n.id), spelling:(n as typeof n & {spelling?:number}).spelling,
-      visualStaff:n.visualStaff, play:n.play, tie:n.tieBack ? anchors.get(n.tieBack) : null,
+      visualStaff:n.visualStaff, play:n.play, userVelocity:n.userVelocity, tie:n.tieBack ? anchors.get(n.tieBack) : null,
       articulations:sorted([...(n.articulations ?? [])]), arpeggio:n.arpeggio ?? null,
       arpeggioGroup:n.arpeggioGroup ? groups.get(n.arpeggioGroup) : null}))),
     measures: score.measures.map(m => [m.tick,m.endTick,m.numerator,m.denominator]),
@@ -44,7 +45,7 @@ function equivalent(a: unknown, b: unknown, key = ''): boolean {
 }
 export function assertAbcFidelity(before: ScoreSnapshot, after: ScoreSnapshot): void {
   const a=music(before),b=music(after);
-  const labels:Record<keyof typeof a,string>={rests:'dấu nghỉ',keys:'hóa biểu',slurs:'dấu luyến',staves:'tay/khuông',notes:'nốt, bè, tie hoặc articulation',measures:'ô nhịp',performed:'thời điểm nốt',occurrences:'thứ tự lặp',beats:'nhịp/BPM',releases:'mốc nhả phím',pedals:'pedal',durationMs:'thời lượng',baseQuarterBpm:'tempo'};
+  const labels:Record<keyof typeof a,string>={rests:'dấu nghỉ',keys:'hóa biểu',slurs:'dấu luyến',dynamics:'sắc thái và cường độ âm thanh',staves:'tay/khuông',notes:'nốt, bè, cường độ từng nốt, tie hoặc articulation',measures:'ô nhịp',performed:'thời điểm nốt',occurrences:'thứ tự lặp',beats:'nhịp/BPM',releases:'mốc nhả phím',pedals:'pedal',durationMs:'thời lượng',baseQuarterBpm:'tempo'};
   for (const key of Object.keys(a) as (keyof typeof a)[]) if (!equivalent(a[key],b[key],key))
     throw Error(`ABC không giữ nguyên ${labels[key]} khi mở lại bằng MuseScore. Chưa xuất file; hãy dùng MXL hoặc MSCZ.`);
 }
@@ -54,7 +55,10 @@ export async function exportAbc(bridge: EngineBridge, converter: ScoreConverter,
   const expressions:Record<string,string>={grace:'grace note',ornament:'ornament',fermata:'fermata','custom-key':'hóa biểu tùy chỉnh'};
   const unsupported=before.warnings.filter(w => expressions[w]);
   if (unsupported.length) throw Error(`ABC chưa được kiểm chứng cho ${unsupported.map(w=>expressions[w]).join(', ')} của bài này. Hãy xuất MXL/MSCZ để giữ đủ thông tin.`);
-  const complete=(s:ScoreSnapshot) => ['rests','keys','slurs'].every(k=>Array.isArray((s as unknown as Record<string,unknown>)[k]));
+  // Older engines omit these fields entirely. Do not mistake missing evidence
+  // for an empty dynamic map and allow a lossy converter round trip.
+  const complete=(s:ScoreSnapshot) => ['rests','keys','slurs','dynamics'].every(k=>Array.isArray((s as unknown as Record<string,unknown>)[k]))
+    && s.anchors.every(n=>Number.isInteger(n.userVelocity));
   if (!complete(before)) throw Error('Engine chưa có đủ dữ liệu đối chiếu ABC. Hãy tải lại trang.');
   if (xml.length > MAX_OUTPUT_BYTES) throw Error('MusicXML vượt giới hạn 64 MiB. Hãy lưu MSCZ.');
   const output=await converter.run({operation:'xml-to-abc',text:new TextDecoder('utf-8',{fatal:true}).decode(xml)},signal);

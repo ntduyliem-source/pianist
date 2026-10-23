@@ -1,8 +1,9 @@
-import type {EngineBridge, PracticePlaybackState, PlaybackNote, PlaybackNotes, PlaybackFrame} from '../../../../packages/engine-bridge';
+import type {EngineBridge, PracticePlaybackState, PlaybackNote, PlaybackNotes, PlaybackFrame, PlaybackTimePoint} from '../../../../packages/engine-bridge';
 import type {ScoreSnapshot} from '../../../../packages/score-contracts';
 import type {Target} from '../../../../packages/practice-engine-v2/model';
 import type {Marker} from './feedback-v2';
 import {scorePositions} from './score-viewport';
+import {mapPlaybackTime} from './playback-time';
 
 export interface AuditionRange {startMs:number;endMs:number}
 
@@ -23,7 +24,7 @@ export function auditionRange(score:ScoreSnapshot,from:number,to:number,whole=fa
 
 // Visual adapter only: native unrolled times and anchor IDs, with no input,
 // matching, grading, oscillator or wall-clock scheduling.
-export function auditionPresentation(score:ScoreSnapshot,notes:readonly PlaybackNote[],tempoMultiplier:number) {
+export function auditionPresentation(score:ScoreSnapshot,notes:readonly PlaybackNote[],timeMap:readonly PlaybackTimePoint[]) {
   const anchors=new Map(score.anchors.map(a=>[a.id,a]));
   const visits=score.occurrences.map((o,id)=>({id,loop:0,occurrence:o.index,measure:o.measure,startMs:o.startMs,endMs:o.endMs}));
   const visitIds=new Map(visits.map(v=>[v.occurrence,v.id]));
@@ -33,29 +34,39 @@ export function auditionPresentation(score:ScoreSnapshot,notes:readonly Playback
       anchors:[a.id],spans:[{anchor:a.id,visit,atMs:p.atMs,endMs:p.endMs}],roles:[],voices:[a.voice]}]:[];
   });
   const locate=scorePositions(score,{visits,targets,guide:[],groups:[]});
-  const visitsByMeasure=new Map<number,typeof visits>();
-  for(const visit of visits){const list=visitsByMeasure.get(visit.measure)??[];list.push(visit);visitsByMeasure.set(visit.measure,list);}
   const notesByVisit=new Map<number,{anchor:string;pitch:number;atMs:number;endMs:number}[]>();
-  for(const note of notes)for(const id of note.anchors){
-    const a=anchors.get(id);if(!a)continue;
-    // Native MPE times are regenerated at the selected tempo (arpeggio offsets
-    // are not necessarily proportional to tempo). Only convert to the layout's
-    // reference coordinate; never manufacture attack/release times here.
-    const atMs=note.atMs*tempoMultiplier,endMs=note.endMs*tempoMultiplier;
-    for(const visit of visitsByMeasure.get(a.measure)??[]){
-      if(atMs>=visit.endMs||endMs<=visit.startMs)continue;
-      const list=notesByVisit.get(visit.id)??[];
-      list.push({anchor:id,pitch:note.pitch,atMs,endMs});notesByVisit.set(visit.id,list);
+  const soundsByVisit=new Map<number,{pitch:number;atMs:number;endMs:number}[]>();
+  for(const note of notes){
+    const atMs=mapPlaybackTime(timeMap,note.atMs),endMs=mapPlaybackTime(timeMap,note.endMs);
+    let lo=0,hi=visits.length;
+    while(lo<hi){const mid=(lo+hi)>>>1;if(visits[mid].endMs<=atMs)lo=mid+1;else hi=mid;}
+    for(let i=lo;i<visits.length&&visits[i].startMs<endMs;i++){
+      const visit=visits[i];
+      if(atMs<visit.endMs&&endMs>visit.startMs){
+        const list=soundsByVisit.get(visit.id)??[];list.push({pitch:note.pitch,atMs,endMs});soundsByVisit.set(visit.id,list);
+      }
+    }
+    for(const span of note.spans){
+      const visit=visitIds.get(span.occurrence);if(visit===undefined||!anchors.has(span.anchor))continue;
+      const list=notesByVisit.get(visit)??[];
+      list.push({anchor:span.anchor,pitch:note.pitch,atMs:mapPlaybackTime(timeMap,span.atMs),endMs:mapPlaybackTime(timeMap,span.endMs)});
+      notesByVisit.set(visit,list);
     }
   }
   let lastMarkers=new Map<string,Marker>(),lastExpected:number[]=[];
   return(position:number,sounding=true)=>{
     const cursor=locate(position),markers=new Map<string,Marker>(),expected:number[]=[];
-    for(const n of sounding?notesByVisit.get(cursor?.visit??-1)??[]:[]){
+    let lo=0,hi=visits.length;
+    while(lo<hi){const mid=(lo+hi)>>>1;if(visits[mid].startMs<=position)lo=mid+1;else hi=mid;}
+    const visit=visits[Math.max(0,lo-1)]?.id??-1;
+    for(const n of sounding?notesByVisit.get(visit)??[]:[]){
       if(n.atMs<=position&&position<n.endMs){
-        markers.set(n.anchor,{kind:'playback',symbol:'•',label:'Đang nghe MuseScore'});expected.push(n.pitch);
+        markers.set(n.anchor,{kind:'playback',symbol:'•',label:'Đang nghe MuseScore'});
       }
     }
+    // A native measure-repeat symbol can sound without owning a new notehead.
+    // Keyboard activity follows MPE events independently of glyph ownership.
+    for(const n of sounding?soundsByVisit.get(visit)??[]:[]){if(n.atMs<=position&&position<n.endMs)expected.push(n.pitch);}
     // Cursor animation must not repaint every native glyph on every frame.
     if(markers.size!==lastMarkers.size||[...markers.keys()].some(id=>!lastMarkers.has(id))
       ||expected.length!==lastExpected.length||expected.some((p,i)=>p!==lastExpected[i])){
@@ -65,7 +76,7 @@ export function auditionPresentation(score:ScoreSnapshot,notes:readonly Playback
   };
 }
 
-export interface AuditionState extends PracticePlaybackState {positionMs:number;sounding:boolean;notes:readonly PlaybackNote[]}
+export interface AuditionState extends PracticePlaybackState {positionMs:number;elapsedMs:number;sounding:boolean;notes:readonly PlaybackNote[];timeMap:readonly PlaybackTimePoint[]}
 export class NativeAudition {
   private animation?:number;
   private disposed=false;
@@ -83,8 +94,9 @@ export class NativeAudition {
       const driver=this.bridge.api.Module.driver;
       if(!driver?.playbackFrame)throw Error('Bộ âm thanh chưa hỗ trợ đồng bộ MuseScore. Hãy tải lại ứng dụng.');
       const frame:PlaybackFrame|null=driver.playbackFrame(state.clockEpoch);
-      if(frame)this.positionMs=Math.max(this.range.startMs,Math.min(this.range.endMs,frame.positionSeconds*frame.tempoMultiplier*1000));
-      this.onChange({...state,positionMs:this.positionMs,sounding:!!frame&&frame.status===2&&!state.preparing,notes:this.notes.events});
+      if(frame)this.positionMs=Math.max(this.range.startMs,Math.min(this.range.endMs,mapPlaybackTime(this.notes.timeMap,frame.positionSeconds*1000)));
+      const elapsedMs=mapPlaybackTime(this.notes.timeMap,this.positionMs,false)-mapPlaybackTime(this.notes.timeMap,this.range.startMs,false);
+      this.onChange({...state,positionMs:this.positionMs,elapsedMs,sounding:!!frame&&frame.status===2&&!state.preparing,notes:this.notes.events,timeMap:this.notes.timeMap});
     }catch(error){this.stop();this.onError(error);}
   };
   private tick=()=>{this.refresh();if(!this.disposed)this.animation=requestAnimationFrame(this.tick);};

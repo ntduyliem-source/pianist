@@ -265,6 +265,16 @@ bool FluidSynth::handleEvent(const midi::Event& event)
     return ret == FLUID_OK;
 }
 
+bool FluidSynth::previewEvent(const midi::Event& event)
+{
+    return processSequence({ event }, 0, nullptr);
+}
+
+bool FluidSynth::previewRender(float* buffer, samples_t samples)
+{
+    return processSequence({}, samples, buffer);
+}
+
 void FluidSynth::setOutputSpec(const OutputSpec& spec)
 {
     if (m_outputSpec == spec) {

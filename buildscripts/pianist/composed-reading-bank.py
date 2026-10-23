@@ -176,7 +176,10 @@ def mxl_bytes(xml):
 
 def pipeline_hash():
     files = [Path(__file__), ROOT/'packages/score-formats/python/converter.py',
-             ROOT/'third_party/score-format-sources/abc2xml/abc2xml.py']
+             ROOT/'third_party/score-format-sources/abc2xml/abc2xml.py',
+             Path(__file__).with_name('abc_grade_pitches.py'),
+             Path(__file__).with_name('package-advanced-abc.py')]
+    files += [Path(__file__).with_name(f'package-g{grade}-abc.py') for grade in range(1, 5)]
     return sha(encode([(p.name, sha(p.read_bytes())) for p in files]))[:20]
 
 

@@ -1,0 +1,99 @@
+PIANIST — SỬA CÁC PHÁT HIỆN RÀ SOÁT 23/10/2026
+
+Phạm vi: D01–D10 trong báo cáo rà soát, âm piano khi tập và logic duyệt
+tám grade. Không thay các phép chấm được port từ osu!, PianoTrainer,
+mir_eval, note-seq; nguồn ghim trong third_party/practice-sources giữ nguyên.
+
+THAY ĐỔI
+
+D01. Bỏ nhân/chia toàn bộ giây nghe theo speed. Bảng chuyển thời gian lấy
+từ TempoMap + RepeatList của MuseScore, gồm hai đầu của pause cố định.
+Seek, A–B, đổi tốc độ và vị trí sheet dùng cùng bảng đó.
+
+D02. Lọc tay/bè trước khi nối/gộp nốt vật lý. Mốc nhả và velocity chỉ lấy
+từ Note On/Off gốc thuộc nguồn được chọn; tay không chọn không kéo dài
+thời gian nhả của tay đang tập.
+
+D03–D04. Đếm vào khi tiếp tục và nhãn BPM đọc tempo tại vị trí hiện tại.
+Không suy tempo qua khoảng cách click cuối vòng hoặc phần phách còn lại.
+
+D05. Hiển thị nguyên trang SVG MuseScore. Bbox khuông chỉ hướng dẫn camera,
+không cắt ảnh. Sáu trang Tình đơn phương giữ nguyên từng byte SVG, bao gồm
+pedal ở đáy trang. Khóa Sol/Sol 8 có trong MXL nguồn, không sửa ký âm đó.
+
+D06. Vị trí ngang lấy từ ChordRest segment và EndBarLine, theo phép nội suy
+tick của PlaybackCursor gốc. Dấu nghỉ có vị trí thật; pause giữ nguyên tick.
+Vùng chọn A–B nhận click, Enter và Space trên ô nhịp.
+
+D07. NoteRenderer gốc ghi thêm metadata những nguồn thực sự được nối.
+Bridge không tự lần chuỗi tieFor/endNote. Từng nốt nối có khoảng highlight
+riêng; nhánh partial tie qua repeat giữ đúng nguồn. Phím đàn theo MPE ngay
+cả khi ký hiệu lặp ô không có notehead mới.
+
+D08. Semantic roundtrip của ABC kiểm thêm dynamics và userVelocity từng
+nốt. Nếu converter làm mất fp/velocity thì từ chối xuất ABC, giữ bản đang
+mở và khả năng lưu MXL/MSCZ. Không tự sửa converter để phỏng đoán dynamics.
+
+D09. Import thư viện phân biệt tên + tác giả. Hai tác giả đã biết nhưng khác
+nhau không bị gộp vì trùng tên. Danh tính chưa rõ cần workId/newWork tường
+minh; bản trùng byte vẫn được bỏ qua. Không đổi 65 file thư viện hiện có.
+
+D10. MSCX được đưa nguyên XML vào container bằng MscWriter gốc, rồi dùng
+reader MSCZ trong filesystem WASM. Cả mở editor và prepare tạm dùng cùng
+đường nạp; file sai không thay bản đang mở.
+
+ÂM THANH VÀ GIỚI HẠN CHẤM
+
+Bàn phím ảo/tay đệm dùng MS Basic qua FluidSynth gốc. MIDI được chuyển sang
+đồng hồ đầu ra của AudioContext và gửi ở vị trí mẫu PCM tương ứng. Stop
+xóa hàng đợi, nhả pedal và tắt voice. Oscillator chỉ còn làm metronome.
+Tay đệm lấy velocity và mốc nhả từ CompatMidiRender; đây chưa phải toàn bộ
+diễn giải MPE của mọi articulation. Nghe mẫu vẫn dùng MPE MuseScore.
+
+Đoạn được chọn có arpeggio, ornament hoặc grace chưa được adapter chấm BPM
+đúng sẽ bị chặn rõ ràng; áp dụng cả tay đệm đang bật. Pause tính bằng giây
+riêng cũng bị chặn ở chế độ theo tempo bản nhạc. Người dùng có thể chọn
+đoạn khác, tắt tay đệm nếu phù hợp, chuyển Đúng nốt hoặc nghe MuseScore.
+Không tuyên bố đã hỗ trợ chấm mọi kỹ thuật piano, half-pedal hoặc đàn MIDI
+thật. Các kiểm tra đầu vào trong lượt này dùng MIDI mô phỏng.
+
+GRADE — CHỈ ĐỔI LOGIC DUYỆT THEO YÊU CẦU ĐÃ ĐÍNH CHÍNH
+
+Giữ nguyên 5.600 nguồn/bài MXL, thứ tự, 56 lựa chọn và release kho
+web-19bd56fc7a853511a57a. Đọc dấu hóa/hóa biểu và tên bậc viết riêng với
+MIDI; kiểm quãng bằng cặp số bậc/bán cung chính xác và đúng chiều.
+Quãng tăng/giảm không được nhận nhầm thành quãng chuẩn chỉ vì cùng số
+bán cung. Tie giữ đúng tên nốt/octave theo converter gốc, không gộp
+C♯→D♭ hoặc cách viết octave khác nhau. G8 có thể duyệt A0–C8.
+Các giới hạn dòng kẻ phụ là quy tắc nội bộ, chưa được kiểm chứng hiệu quả
+học tập. Xem docs/curriculum/GRADE_PITCH_VALIDATION.md.
+Kho thực tế vẫn dùng 29 phím; khả năng duyệt 88 phím không sinh thêm bài.
+
+KIỂM CHỨNG
+
+- 191 kiểm thử TypeScript; 30 kiểm thử Python thư viện/grade.
+- Bộ kiểm cắt bỏ logic cũ: 13 file cũ không còn, 75 file nguồn/build/map sạch.
+- 5.600 nguồn ABC và 5.600 MXL giữ hash/sự kiện; đóng gói lại không dùng
+  cache cũng đạt exact event parity 5.600/5.600, release kho không đổi.
+- native-time-ties: 3 nhóm, fixture pauses/partial_tie gốc và Tình đơn phương.
+- playback-sync: 6 nhóm, clock đầu ra, tốc độ, seek, A–B, arpeggio, mobile.
+- native-preview/free-play: 6 nhóm, PCM A0/C4/C8, pedal, Stop/hủy nốt hẹn,
+  provider UI, tay đệm và thông báo kỹ thuật chưa chấm được.
+- native-preview/grade-startup: 2 nhóm, Stop giữa lúc tải engine lần đầu
+  không làm lượt tập/âm thanh chạy muộn; sau đó mở lại grade phát piano thật.
+- grade-practice: 9 nhóm, hai khuông thật, MIDI ảo/highlight/chuyển bài,
+  nghe MuseScore, giữ pedal, thứ tự bài/hủy tải, mobile 360/390 px và không
+  làm đổi bài/phiên bản đang mở trong editor hoặc thư viện.
+- native-sheet-integrity: 4 nhóm, SVG nguyên trang, cursor ở dấu nghỉ đầu,
+  nút Nghe/pedal trên mobile dọc/ngang và chọn A–B bằng Enter/Space.
+- format-integrity: 6 nhóm native, ABC thường/p, chặn mất velocity/fp,
+  raw MSCX/prepare/MSCZ parity và giữ bản cũ khi MSCX sai.
+- abc-practice-ui: 6 nhóm, ABC/MXL cùng kết quả; MIDI mô phỏng đúng và
+  sớm 120 ms; ba vòng A–B trả camera về A, xóa màu cũ, giữ highlight đúng
+  nốt. Đúng nốt không nhận sai octave hoặc cộng lặp Note On; Pause/Resume
+  giữ tiến độ; Stop lưu lượt dở dang và giữ nguyên màn hình bản nhạc.
+
+Bằng chứng máy đọc nằm trong artifacts/native-time-ties,
+artifacts/playback-sync-fixed, artifacts/native-sheet-integrity và
+artifacts/audit-custom-2026-10-23/native-preview. Đây là kiểm thử trình
+duyệt desktop/emulation, không phải kiểm trên điện thoại hoặc đàn thật.

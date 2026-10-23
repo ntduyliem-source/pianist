@@ -253,6 +253,10 @@ void NoteRenderer::renderNormalTie(const Note* firstNote, NominalNoteCtx& firstN
 
 void NoteRenderer::addTiedNote(const NominalNoteCtx& tiedNoteCtx, NominalNoteCtx& firstNoteCtx)
 {
+    // Read-only provenance for visual clients. This runs only after the native
+    // renderer has resolved shouldRender/repeat-jump rules for this tie.
+    firstNoteCtx.tiedSources.push_back({ tiedNoteCtx.sourceId, tiedNoteCtx.timestamp });
+    firstNoteCtx.tiedSources.insert(firstNoteCtx.tiedSources.end(), tiedNoteCtx.tiedSources.begin(), tiedNoteCtx.tiedSources.end());
     if (tiedNoteCtx.articulations.size() == 1) {
         if (tiedNoteCtx.articulations.begin()->first == mpe::ArticulationType::Standard) {
             firstNoteCtx.duration += tiedNoteCtx.duration;

@@ -20,9 +20,11 @@ export interface EditorPlaybackState {
   available: boolean; status: 'playing' | 'paused' | 'stopped';
   positionSeconds: number; durationSeconds: number; tempoMultiplier: number;
 }
-export interface PracticePlaybackState extends EditorPlaybackState {preparing: boolean; error: string; clockEpoch:number; notesRevision:number}
-export interface PlaybackNote {anchors:string[];pitch:number;atMs:number;endMs:number}
-export interface PlaybackNotes {source:'musescore-mpe';revision:number;events:PlaybackNote[]}
+export interface PracticePlaybackState extends EditorPlaybackState {preparing: boolean; error: string; clockEpoch:number; notesRevision:number;rangeStartSeconds?:number;rangeEndSeconds?:number}
+export interface PlaybackNoteSpan {anchor:string;occurrence:number;atMs:number;endMs:number}
+export interface PlaybackNote {anchors:string[];pitch:number;atMs:number;endMs:number;spans:PlaybackNoteSpan[]}
+export interface PlaybackTimePoint {referenceMs:number;playbackMs:number}
+export interface PlaybackNotes {source:'musescore-mpe';revision:number;events:PlaybackNote[];timeMap:PlaybackTimePoint[]}
 export interface PlaybackFrame {epoch:number;sequenceId:number;tempoMultiplier:number;positionSeconds:number;status:0|1|2;contextTime:number;outputContextTime:number}
 export type AuditionCommand = 'range'|'play'|'pause'|'stop'|'seek'|'tempo'|'loop'|'reset';
 export class EngineBridge {
@@ -43,7 +45,8 @@ export class EngineBridge {
   auditionNotes(): PlaybackNotes {
     const notes=this.capture<PlaybackNotes>('onPracticePlaybackNotes', () => this.api.getPracticePlaybackNotes?.() ?? 0,
       value => JSON.parse(value), 'Không đọc được lịch phát nốt MuseScore.');
-    if(notes.source!=='musescore-mpe'||!Array.isArray(notes.events))throw Error('Lịch phát nốt MuseScore không hợp lệ.');
+    if(notes.source!=='musescore-mpe'||!Array.isArray(notes.events)||!Array.isArray(notes.timeMap)||notes.timeMap.length<2
+      ||notes.events.some(n=>!Array.isArray(n.spans)))throw Error('Lịch phát nốt MuseScore không hợp lệ. Hãy tải lại ứng dụng.');
     return notes;
   }
   audition(command: AuditionCommand, value = 0, end = 0): void {
@@ -105,7 +108,7 @@ export class EngineBridge {
     const content = raw.anchors.map(({id, pitch, tick, durationTicks, staff, track, voice, tieBack, play, articulations, arpeggio, arpeggioGroup}) =>
       ({id, pitch, tick, durationTicks, staff, track, voice, tieBack, play, articulations, arpeggio, arpeggioGroup})).sort((a, b) => a.id.localeCompare(b.id));
     const fingerprint = await hash({anchors: content, performed: raw.performed, occurrences: raw.occurrences, beats: raw.beats,
-      durationReference:raw.durationReference,keyReleases:raw.keyReleases,pedals:raw.pedals});
+      durationReference:raw.durationReference,keyReleases:raw.keyReleases,pedals:raw.pedals,tempos:raw.tempos,unsupported:raw.unsupported});
     if (request !== this.request || revision !== this.revision) throw Error('Đã hủy snapshot cũ.');
     return {...raw, projectId, fingerprint};
   }

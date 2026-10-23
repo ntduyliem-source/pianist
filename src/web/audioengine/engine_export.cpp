@@ -49,4 +49,11 @@ bool playbackFrame(unsigned int sequenceId, uintptr_t ptr)
 {
     return WebAudioEngine::instance()->playbackFrame(sequenceId, reinterpret_cast<double*>(ptr));
 }
+bool preparePreview() { return WebAudioEngine::instance()->preparePreview(); }
+void previewMidi(int status, int data1, int data2) { WebAudioEngine::instance()->previewMidi(status, data1, data2); }
+void previewRender(uintptr_t ptr, unsigned samplesPerChannel)
+{
+    WebAudioEngine::instance()->previewRender(reinterpret_cast<float*>(ptr), samplesPerChannel);
+}
+void stopPreview() { WebAudioEngine::instance()->stopPreview(); }
 }

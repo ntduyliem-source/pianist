@@ -17,61 +17,26 @@ import xml.etree.ElementTree as ET
 from concurrent.futures import ProcessPoolExecutor, as_completed
 
 ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(Path(__file__).parent))
+from abc_grade_pitches import parse_basic, hand_ranges, PC as PIANO_PC
 SOURCE = ROOT / 'buildscripts/pianist/compositions/g1'
 OUTPUT = ROOT / 'scores/composed/g1-abc'
 BUCKETS = {'n4': (3, 5), 'n6': (6, 8), 'n10': (9, 14),
            'n20': (15, 24), 'n30': (25, 39), 'n50': (40, 69), 'n100': (70, 120)}
 ROLES = {'R': 'Tay phải dẫn', 'L': 'Tay trái dẫn', 'A': 'Hai tay đối đáp', 'S': 'Hai tay cùng nhịp'}
 TARGET_ROLES = {'R': 30, 'L': 30, 'A': 25, 'S': 15}
-TOKEN = re.compile(r'([CDEFGz])(,?)([234]?)')
-PC = {'C': 0, 'D': 2, 'E': 4, 'F': 5, 'G': 7}
+PC = dict(PIANO_PC)
 
 
 def fail(message):
     raise ValueError(message)
 
 
-def parse_voice(body, meter, staff):
-    bars = [b.strip() for b in body.split('|')]
-    if not bars or any(not b for b in bars):
-        fail('empty bar')
-    events = []
-    last = None
-    steps = 0
-    for bi, bar in enumerate(bars):
-        cursor = 0
-        tokens = bar.split()
-        for token in tokens:
-            m = TOKEN.fullmatch(token)
-            if not m:
-                fail('unsupported token: ' + token)
-            letter, comma, length = m.groups()
-            duration = int(length or 1)
-            if letter == 'z':
-                if comma or (duration != 1 and not (cursor == 0 and duration == meter and len(tokens) == 1)):
-                    fail('rest placement: ' + token)
-                pitch = None
-            else:
-                if comma != (',' if staff == 2 else ''):
-                    fail('wrong octave: ' + token)
-                pitch = (48 if staff == 2 else 60) + PC[letter]
-                degree = 'CDEFG'.index(letter)
-                if last is not None:
-                    if abs(degree - last) > 1:
-                        fail(f'leap across notes/rests/bars: {last}->{degree}, bar {bi + 1}')
-                    steps += abs(degree - last)
-                last = degree
-                if duration == 2 and cursor not in ({0, 2} if meter == 4 else {0, 1} if meter == 3 else {0}):
-                    fail('half note syncopation')
-                if duration >= 3 and not (duration == meter and cursor == 0):
-                    fail('long note must fill its bar')
-            events.append((bi * meter + cursor, duration, pitch, staff))
-            cursor += duration
-        if cursor != meter:
-            fail(f'bar {bi + 1}: {cursor} beats, expected {meter}')
-    if not any(e[2] is not None for e in events):
-        fail('silent hand')
-    return events, steps, len(bars)
+def parse_voice(body, meter, staff, key='C'):
+    events, intervals, bars = parse_basic(body, meter, staff, 1, 1, key)
+    events = [(int(a), int(d), p, s) for a, d, p, s in events]
+    assert any(e[2] is not None for e in events), 'silent hand'
+    return events, sum(intervals), bars
 
 
 def fingerprint(events, normalized=False, swap=False):
@@ -108,6 +73,7 @@ def read_scores(partial=False):
                 assert rsteps + lsteps > 0, 'no stepwise reading focus'
                 rn = [e for e in right if e[2] is not None]
                 ln = [e for e in left if e[2] is not None]
+                hand_ranges(right, left)
                 count = len(rn) + len(ln)
                 assert limits[0] <= count <= limits[1], f'{count} attacks outside {limits}'
                 if role == 'S':
@@ -162,7 +128,7 @@ Q:1/4=60
 %%score {{ RH | LH }}
 V:RH clef=treble name="Piano"
 V:LH clef=bass
-K:C
+K:{row.get('key', 'C')}
 % grade=G1; bucket={row['group']}; notes={row['count']}; RH={row['right']}; LH={row['left']}
 % role={row['role']}; family={row['family']}; form=authored; duration60={row['seconds']}s
 % related_pattern={row['normalizedHash'][:16]}

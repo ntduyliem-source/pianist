@@ -70,6 +70,11 @@ public:
 
     bool isValid() const override;
 
+    // Web practice preview: use the same MIDI interpreter and renderer without
+    // creating notation edits or a second event sequencer.
+    bool previewEvent(const midi::Event& event);
+    bool previewRender(float* buffer, samples_t samples);
+
 private:
     struct KeyTuning {
         std::vector<int> keys;

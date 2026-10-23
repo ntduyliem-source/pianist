@@ -34,6 +34,7 @@
 #include "project/iprojectcreator.h"
 #include "project/inotationwritersregister.h"
 #include "playback/iplaybackcontroller.h"
+#include "practicetiming.h"
 
 namespace mu::appjs {
 class WebApi : public muse::async::Asyncable, public muse::Contextable
@@ -88,6 +89,8 @@ private:
     void applyPracticePlaybackRange();
     void preparePracticePlayback();
     void publishPracticeClock();
+    void updatePracticeTimeMapping();
+    double mapPracticeTime(double seconds, bool toReference) const;
 
     enum class PreparedOutput { Project, Semantics, Snapshot };
     bool prepareTemporaryProject(const void* source, unsigned int len, const std::string& filename, PreparedOutput outputKind);
@@ -105,6 +108,8 @@ private:
     unsigned int m_auditionNotesRevision = 0;
     double m_auditionStart = 0.0;
     double m_auditionEnd = 0.0;
+    std::vector<PracticeTimePoint> m_auditionReferenceTimePoints;
+    std::vector<std::pair<double, double>> m_auditionTimeMapping;
     double m_editorTempo = 1.0;
     QString m_auditionError;
     muse::audio::IPlayerPtr m_auditionPlayer;

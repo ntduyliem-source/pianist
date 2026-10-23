@@ -47,6 +47,9 @@ class MuseDriverProcessor extends AudioWorkletProcessor {
         this.clockBinding = null;
         this.clockFrames = [];
         this.clockPtr = 0;
+        this.previewQueue = [];
+        this.previewPending = null;
+        this.previewReady = false;
 
         this.debugLog("end of constructor MuseDriverProcessor")
 
@@ -112,6 +115,17 @@ class MuseDriverProcessor extends AudioWorkletProcessor {
     onMessageFromMain(event) {
         if (event.data.type == "INITIALIZE_DRIVER") {
             this.init(event.data)
+        } else if (event.data.type === 'PREVIEW_PREPARE') {
+            this.previewPending = event.data.request;
+        } else if (event.data.type === 'PREVIEW_MIDI') {
+            if (this.previewReady) {
+                this.previewQueue.push(event.data);
+                this.previewQueue.sort((a, b) => a.when - b.when || a.order - b.order);
+            }
+        } else if (event.data.type === 'PREVIEW_STOP') {
+            this.previewPending = null;
+            this.previewQueue = [];
+            if (MuseAudio.inited) MuseAudio._stopPreview();
         }
     }
 
@@ -171,6 +185,25 @@ class MuseDriverProcessor extends AudioWorkletProcessor {
             }
 
             MuseAudio._process(this.wasmBuffer.ptr, samplesPerCh);
+
+            if (this.previewPending !== null && MuseAudio._preparePreview()) {
+                this.previewReady = true;
+                this.port.postMessage({type: 'PREVIEW_READY', request: this.previewPending});
+                this.previewPending = null;
+            }
+            if (this.previewReady) {
+                // Timestamp transport only. FluidSynth itself interprets MIDI
+                // and renders each piece of the PCM block at the event sample.
+                let offset = 0;
+                while (this.previewQueue.length && this.previewQueue[0].when < currentTime + samplesPerCh / sampleRate) {
+                    const event = this.previewQueue.shift();
+                    const frame = Math.max(offset, Math.min(samplesPerCh, Math.round((event.when - currentTime) * sampleRate)));
+                    if (frame > offset) MuseAudio._previewRender(this.wasmBuffer.ptr + offset * 8, frame - offset);
+                    MuseAudio._previewMidi(event.status, event.data1, event.data2);
+                    offset = frame;
+                }
+                if (offset < samplesPerCh) MuseAudio._previewRender(this.wasmBuffer.ptr + offset * 8, samplesPerCh - offset);
+            }
 
             if (this.clockBinding) {
                 if (!this.clockPtr) this.clockPtr = MuseAudio._malloc(16);

@@ -17,31 +17,23 @@ import xml.etree.ElementTree as ET
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(Path(__file__).parent))
+from abc_grade_pitches import PitchContext, PITCH, NOTE, degree, pitch_load, hand_ranges, ledger_lines, matches_interval, small_interval
 BUCKETS = {'n4': (3, 5), 'n6': (6, 8), 'n10': (9, 14),
            'n20': (15, 24), 'n30': (25, 39), 'n50': (40, 69), 'n100': (70, 120)}
 PC = dict(zip('CDEFGAB', (0, 2, 4, 5, 7, 9, 11)))
-NOTE = re.compile(r"([A-Ga-g])([,']*)")
-ATOM = re.compile(r"(\[[A-Ga-g,' ]+\]|[A-Ga-gz][,']*)(\d+/\d+|/\d+|\d+)?(-)?")
+ATOM = re.compile(r'(\[(?:' + PITCH + r'\s*)+\]|' + PITCH + r'|z)(\d+/\d+|/\d+|\d+)?(-)?')
 TARGETS = {5: {'offset': 50, 'dyad': 50},
            6: {f'{quality}-{direction}': 10 for quality in ('m6', 'M6', 'm7', 'M7', 'P8') for direction in ('up', 'down')},
            7: {'dotted': 25, 'tie': 25, 'sync': 25, 'compound': 25},
            8: {'ledger-high': 25, 'ledger-low': 25, 'dyad-dotted': 25, 'dyad-tie': 25}}
 
 
-def decode(token):
-    match = NOTE.fullmatch(token)
-    assert match, f'unsupported pitch {token!r}'
-    letter, marks = match.groups()
-    assert not (',' in marks and "'" in marks), 'mixed octave marks'
-    octave = (5 if letter.islower() else 4) - marks.count(',') + marks.count("'")
-    return (octave+1)*12 + PC[letter.upper()]
+def decode(token, key='C'):
+    return PitchContext(key).decode(token)
 
 
-def degree(pitch):
-    return (pitch//12-1)*7 + 'CDEFGAB'.index(next(k for k, v in PC.items() if v == pitch % 12))
-
-
-def parse_voice(body, meter, staff):
+def parse_voice(body, meter, staff, key='C'):
     """Return atoms and flat written events, including both sides of each tie.
 
     Event = onset, duration, MIDI/rest, staff, tie-in, tie-out. All times use
@@ -49,8 +41,10 @@ def parse_voice(body, meter, staff):
     """
     bar_length = F(meter.split('/')[0])*4/int(meter.split('/')[1])
     atoms, events, pending = [], [], None
+    context = PitchContext(key)
     bars = body.split('|')
     for bi, bar in enumerate(bars):
+        context.bar()
         cursor, offset = F(0), 0
         while offset < len(bar):
             if bar[offset].isspace():
@@ -63,16 +57,16 @@ def parse_voice(body, meter, staff):
             duration = F('1'+length if length and length.startswith('/') else length or '1')
             assert duration in (F(1, 2), F(1), F(3, 2), F(2), F(3), F(4)), 'unsupported duration'
             if token.startswith('['):
-                tokens = NOTE.findall(token[1:-1].replace(' ', ''))
-                pitches = tuple(sorted(decode(a+b) for a, b in tokens))
+                tokens = [m.group(0) for m in NOTE.finditer(token[1:-1].replace(' ', ''))]
+                pitches = tuple(sorted(context.decode(t, pending[1] if pending else ()) for t in tokens))
                 assert len(pitches) == 2 and len(set(pitches)) == 2, 'only distinct two-note dyads'
             else:
-                pitches = () if token == 'z' else (decode(token),)
+                pitches = () if token == 'z' else (context.decode(token, pending[1] if pending else ()),)
             assert pitches or not out, 'tied rest'
             start = bi*bar_length + cursor
             tied_in = pending is not None
             if tied_in:
-                assert pending == (start, pitches), 'tie must continue the same pitch/chord immediately'
+                assert pending[0] == start and tuple((p.identity, int(p)) for p in pending[1]) == tuple((p.identity, int(p)) for p in pitches), 'tie must continue the same upstream note/octave identity immediately'
             atom = dict(at=start, dur=duration, pitches=pitches, staff=staff,
                         tieIn=tied_in, tieOut=bool(out), bar=bi)
             atoms.append(atom)
@@ -121,7 +115,7 @@ def small_movement(atoms):
     for a, b in zip(pitched, pitched[1:]):
         for p in a['pitches']:
             for q in b['pitches']:
-                assert abs(q-p) <= 7 and abs(q-p) != 6 and abs(degree(q)-degree(p)) <= 4, f'movement exceeds P5: {p}->{q}'
+                assert small_interval(p, q), f'movement outside supported P1–P5 intervals: {p}->{q}'
 
 
 def rhythm_witness(atoms, profile, bar_length):
@@ -157,12 +151,12 @@ def simple_rhythm(atoms, bar_length):
             assert phase == 0 and a['dur'] == bar_length, 'long note/rest must fill bar'
 
 
-def validate(grade, rh, lh, meter, profile, lead):
+def validate(grade, rh, lh, meter, profile, lead, key='C'):
     assert profile in TARGETS[grade] and lead in ('RH', 'LH'), 'unknown profile or focus hand'
     assert meter in ('4/4', '6/8'), 'unsupported meter'
     assert (meter == '6/8') == (grade == 7 and profile == 'compound'), 'meter/profile mismatch'
-    right, revents, rbars = parse_voice(rh, meter, 1)
-    left, levents, lbars = parse_voice(lh, meter, 2)
+    right, revents, rbars = parse_voice(rh, meter, 1, key)
+    left, levents, lbars = parse_voice(lh, meter, 2, key)
     assert rbars == lbars, 'unequal hand lengths'
     atoms, events = right+left, revents+levents
     leadstaff = 1 if lead == 'RH' else 2
@@ -179,21 +173,16 @@ def validate(grade, rh, lh, meter, profile, lead):
     for a in atoms:
         if len(a['pitches']) == 2:
             p, q = a['pitches']
-            assert 3 <= q-p <= 7 and q-p != 6, 'unfamiliar dyad interval'
-    if grade == 6:
-        low, high = (60, 76) if leadstaff == 1 else (48, 64)
-        support_low, support_high = (48, 55) if leadstaff == 1 else (67, 72)
-    elif grade == 8 and profile == 'ledger-high':
-        assert lead == 'RH', 'high-ledger focus must be in treble staff'
-        low, high, support_low, support_high = 84, 91, 48, 55
-    elif grade == 8 and profile == 'ledger-low':
-        assert lead == 'LH', 'low-ledger focus must be in bass staff'
-        low, high, support_low, support_high = 24, 31, 60, 67
-    else:
-        low, high = (60, 67) if leadstaff == 1 else (48, 55)
-        support_low, support_high = (48, 55) if leadstaff == 1 else (60, 67)
-    assert all(low <= p <= high for a in focus for p in a['pitches']), 'focus leaves declared register'
-    assert all(support_low <= p <= support_high for a in support for p in a['pitches']), 'support leaves declared register'
+            assert matches_interval(p, q, {(2, 3), (2, 4), (3, 5), (4, 7)}), 'unfamiliar written/semitone dyad interval'
+    pitch_load(events, grade)
+    hand_ranges(revents, levents, 16 if grade == 6 else 7, 7, leadstaff)
+    focus_pitches = [p for a in focus for p in a['pitches']]
+    low, high = min(focus_pitches), max(focus_pitches)
+    if grade == 8 and profile in ('ledger-high', 'ledger-low'):
+        assert lead == ('RH' if profile == 'ledger-high' else 'LH'), 'ledger profile/focus hand mismatch'
+        assert any(ledger_lines(p, leadstaff) >= 2 and
+                   (degree(p) > 38 if profile == 'ledger-high' else degree(p) < 18)
+                   for p in focus_pitches), 'missing written ledger-line focus'
     assert len({p for a in focus for p in a['pitches']}) >= 2, 'focus has only one repeated pitch'
     if grade != 6:
         small_movement(focus)
@@ -221,13 +210,13 @@ def validate(grade, rh, lh, meter, profile, lead):
         for i, (a, b) in enumerate(zip(melodic, melodic[1:])):
             p, q = a['pitches'][0], b['pitches'][0]
             delta, steps = q-p, degree(q)-degree(p)
-            if abs(steps) <= 4 and abs(delta) <= 7 and abs(delta) != 6:
+            if small_interval(p, q):
                 continue
-            assert (abs(steps), abs(delta)) == target and (delta > 0) == (direction == 'up'), f'other large interval/direction: {p}->{q}, expected {profile}'
+            assert matches_interval(p, q, {target}) and (delta > 0) == (direction == 'up'), f'other large interval/direction: {p}->{q}, expected {profile}'
             assert i > 0 and i+2 < len(melodic), 'leap lacks approach or departure'
             before, after = melodic[i-1], melodic[i+2]
             assert before['at']+before['dur'] == a['at'] and b['at']+b['dur'] == after['at'], 'leap context interrupted by rest'
-            assert abs(before['pitches'][0]-p) <= 4 and abs(after['pitches'][0]-q) <= 4, 'context must approach/depart by step or third'
+            assert small_interval(before['pitches'][0], p, 2) and small_interval(q, after['pitches'][0], 2), 'context must approach/depart by supported step or third'
             witnesses.append(dict(kind='contextual-leap', family=quality, direction=direction, atQuarter=str(a['at']), midiRoute=[before['pitches'][0], p, q, after['pitches'][0]]))
         assert witnesses, 'no specified large interval with context'
     else:
@@ -345,7 +334,7 @@ Q:{tempo}
 %%score {{ RH | LH }}
 V:RH clef=treble name="Piano"
 V:LH clef=bass
-K:C
+K:{row.get('key', 'C')}
 % grade=G{row['grade']}; profile={row['profile']}; lead={row['lead']}; bucket={row['group']}; notes={row['count']}; RH={row['right']}; LH={row['left']}
 % duration60={row['seconds']}s; related_pattern={row['normalizedHash'][:16]}
 % authored_passages={' '.join(row['passages'])}

@@ -30,6 +30,23 @@ export function validateSettings(c: PracticeSettings, score: ScoreSnapshot): voi
 
 export function createTimeline(score: ScoreSnapshot, settings: PracticeSettings): Timeline {
   const c = structuredClone(settings); validateSettings(c, score);
+  if(c.mode==='bpm'){
+    const selectedWritten=(measure:number,staff?:number,voice?:number)=>measure>=c.fromMeasure&&measure<=c.toMeasure
+      &&(voice===undefined||c.voices.includes(voice))&&(staff===undefined||c.roles[staff]!=='off'&&(c.hand==='both'||c.roles[staff]===c.hand||c.accompaniment));
+    const unsupported=score.unsupported?.filter(n=>selectedWritten(n.measure,n.staff,n.voice)
+      &&(n.kind!=='pause'||c.tempoMode==='score')).map(n=>n.kind)??[];
+    if(score.unsupported===undefined){
+      // Older cached snapshots lack per-segment provenance. Never silently
+      // award timing grades for musical events this adapter cannot represent.
+      if(score.anchors.some(n=>n.arpeggio&&selectedWritten(n.measure,n.staff,n.voice)))unsupported.push('arpeggio');
+      for(const kind of ['ornament','grace'] as const)if(score.warnings.includes(kind))unsupported.push(kind);
+      if(c.tempoMode==='score'&&score.warnings.includes('pause'))unsupported.push('pause');
+    }
+    if(unsupported.length){
+      const labels:Record<string,string>={arpeggio:'rải hợp âm',ornament:'nốt hoa mỹ',grace:'nốt luyến nhỏ',pause:'nghỉ có thời lượng riêng'};
+      throw Error(`Chưa chấm BPM cho đoạn có ${[...new Set(unsupported)].map(k=>labels[k]??k).join(', ')}${c.accompaniment?' ở tay tập hoặc tay đệm':''}. Hãy chọn đoạn khác${c.accompaniment?', tắt tay đệm nếu ký hiệu chỉ nằm ở tay đó':''} hoặc chuyển sang Đúng nốt; Nghe MuseScore vẫn phát đúng bản gốc.`);
+    }
+  }
   const measures = new Map(score.measures.map(m => [m.index, m]));
   const anchors = new Map(score.anchors.map(n => [n.id, n]));
   const performed = new Map<number, typeof score.performed>();
@@ -42,8 +59,8 @@ export function createTimeline(score: ScoreSnapshot, settings: PracticeSettings)
   const selected = score.occurrences.filter(o => o.measure >= c.fromMeasure && o.measure <= c.toMeasure);
   if (!selected.length) throw Error('Đoạn đã chọn không có trong lịch phát bản nhạc.');
   const timeline: Timeline = {version: 2, engine: ENGINE_ID, projectId: score.projectId, revision: score.revision,
-    fingerprint: score.fingerprint, settings: c, targets: [], groups: [], visits: [], clicks: [], guide: [], durationMs: 0, warnings: [...score.warnings]};
-  const all: Target[] = [];
+    fingerprint: score.fingerprint, settings: c, targets: [], groups: [], visits: [], clicks: [], guide: [], tempos: [], durationMs: 0, warnings: [...score.warnings]};
+  const all: Target[] = [], guide: Target[] = [];
   let origin = 0;
   for (let loop = 0; loop < c.loops; loop++) {
     const bpm = c.bpm + loop * c.loopBpmStep;
@@ -62,6 +79,13 @@ export function createTimeline(score: ScoreSnapshot, settings: PracticeSettings)
       if (!(lengthMs > 0) || !Number.isFinite(lengthMs)) throw Error('Lịch thời gian của bản nhạc không hợp lệ.');
       const visit = {id: timeline.visits.length, loop, occurrence: occurrence.index, measure: occurrence.measure, startMs: origin, endMs: origin + lengthMs};
       timeline.visits.push(visit);
+      if(c.tempoMode==='fixed')timeline.tempos!.push({atMs:origin,bpm});
+      else{
+        const tempos=score.tempos?.filter(p=>p.occurrence===occurrence.index)??[];
+        // Native snapshots include the tempo at every occurrence start, not
+        // just explicit marks, so cuts and repeats retain their actual tempo.
+        for(const p of tempos)timeline.tempos!.push({atMs:origin+(p.atMs-occurrence.startMs)*tempoScale,bpm:p.quarterBpm/tempoScale/c.beatQuarter});
+      }
       if (c.tempoMode === 'fixed') {
         for (let unit = 0; unit * c.beatQuarter < lengthQuarter - 1e-9; unit++) timeline.clicks.push({atMs: origin + unit * c.beatQuarter * quarterMs, accent: unit === 0});
       } else {
@@ -72,48 +96,50 @@ export function createTimeline(score: ScoreSnapshot, settings: PracticeSettings)
       for (const item of [...performed.get(occurrence.index) ?? []].sort((a, b) => a.atMs - b.atMs || a.anchor.localeCompare(b.anchor))) {
         const note = anchors.get(item.anchor);
         if (!note || !note.play || note.durationTicks <= 0) continue;
+        const role = c.roles[note.staff] ?? 'off';
+        if (!c.voices.includes(note.voice) || role === 'off') continue;
+        const selectedHand = c.hand === 'both' || role === c.hand;
+        if (!selectedHand && !(c.accompaniment && c.mode === 'bpm')) continue;
+        // Filter written notes before tying/merging physical keys. Unselected
+        // voices or hands must not extend the selected note's release reference.
+        const lane = selectedHand ? 'target:' : 'guide:';
         const atMs = origin + (c.tempoMode === 'fixed' ? (note.tick - measure.tick) / 480 * quarterMs : (item.atMs - occurrence.startMs) * tempoScale);
         const endMs = c.tempoMode === 'fixed' ? atMs + note.durationTicks / 480 * quarterMs : origin + (item.endMs - occurrence.startMs) * tempoScale;
-        const role = c.roles[note.staff] ?? 'off';
         const span = {anchor: note.id, visit: visit.id, atMs, endMs};
-        const prior = note.tieBack ? tails.get(note.tieBack) : undefined;
+        const prior = note.tieBack ? tails.get(lane + note.tieBack) : undefined;
         if (prior && prior.target.pitch === note.pitch && Math.abs(prior.end - atMs) < 1e-6) {
           prior.target.endMs = Math.max(prior.target.endMs, endMs);
           prior.target.anchors.push(note.id); prior.target.spans.push(span);
           prior.target.roles = [...new Set([...prior.target.roles, role])];
           prior.target.voices = [...new Set([...prior.target.voices, note.voice])];
-          tails.set(note.id, {target: prior.target, end: endMs});
+          tails.set(lane + note.id, {target: prior.target, end: endMs});
         } else {
           const target: Target = {id: `${loop}:${occurrence.index}:${note.id}`, pitch: note.pitch, atMs, endMs,
             measure: note.measure, occurrence: occurrence.index, loop, anchors: [note.id], spans: [span], roles: [role], voices: [note.voice]};
-          all.push(target); tails.set(note.id, {target, end: endMs});
+          (selectedHand ? all : guide).push(target); tails.set(lane + note.id, {target, end: endMs});
         }
       }
       origin = visit.endMs;
     }
     if (loop < c.loops - 1) origin += 60000 / bpm;
   }
-  const physical = new Map<string, Target>();
-  for (const note of all) {
-    const identity = `${note.loop}/${note.atMs}/${note.pitch}`;
-    const prior = physical.get(identity);
-    if (!prior) physical.set(identity, note);
-    else {
-      prior.endMs = Math.max(prior.endMs, note.endMs); prior.anchors.push(...note.anchors); prior.spans.push(...note.spans);
-      prior.roles = [...new Set([...prior.roles, ...note.roles])]; prior.voices = [...new Set([...prior.voices, ...note.voices])];
+  const identity = (note: Target) => `${note.loop}/${note.atMs}/${note.pitch}`;
+  const merge = (notes: Target[]) => {
+    const physical = new Map<string, Target>();
+    for (const note of notes) {
+      const key = identity(note), prior = physical.get(key);
+      if (!prior) physical.set(key, note);
+      else {
+        prior.endMs = Math.max(prior.endMs, note.endMs); prior.anchors.push(...note.anchors); prior.spans.push(...note.spans);
+        prior.roles = [...new Set([...prior.roles, ...note.roles])]; prior.voices = [...new Set([...prior.voices, ...note.voices])];
+      }
     }
-  }
-  // A voice and a hand must belong to the SAME written note. A physical unison
-  // can merge anchors from two staves with different roles/voices.
-  const voiceSelected = (t: Target) => t.anchors.some(id => c.voices.includes(anchors.get(id)!.voice));
-  const handSelected = (t: Target) => t.anchors.some(id => {
-    const a = anchors.get(id)!, r = c.roles[a.staff];
-    return c.voices.includes(a.voice) && r !== 'off' && (c.hand === 'both' || r === c.hand);
-  });
-  const targets = [...physical.values()].sort((a, b) => a.atMs - b.atMs || a.pitch - b.pitch);
-  timeline.targets = targets.filter(t => voiceSelected(t) && handSelected(t));
+    return [...physical.values()].sort((a, b) => a.atMs - b.atMs || a.pitch - b.pitch);
+  };
+  timeline.targets = merge(all);
   if (!timeline.targets.length) throw Error('Đoạn này không có nốt cho tay/bè đã chọn.');
-  if (c.accompaniment && c.mode === 'bpm' && c.hand !== 'both') timeline.guide = targets.filter(t => voiceSelected(t) && !handSelected(t) && t.roles.some(r => r !== 'off'));
+  const played = new Set(timeline.targets.map(identity));
+  timeline.guide = merge(guide).filter(n => !played.has(identity(n)));
   timeline.durationMs = origin;
   if (timeline.targets.length > 100000 || origin > 7200000) throw Error('Chọn đoạn ngắn hơn: tối đa 100.000 nốt và 2 giờ.');
   for (const target of timeline.targets) {
@@ -123,5 +149,6 @@ export function createTimeline(score: ScoreSnapshot, settings: PracticeSettings)
     else timeline.groups.push({atMs: target.atMs, ids: [target.id]});
   }
   attachReleaseReferences(score,timeline);
+  if(timeline.guide.length)attachReleaseReferences(score,{...timeline,targets:timeline.guide});
   return timeline;
 }

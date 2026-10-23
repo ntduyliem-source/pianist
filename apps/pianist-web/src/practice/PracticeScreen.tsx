@@ -48,17 +48,17 @@ export function Practice({snapshot,config:c,exercise}:{snapshot:ScoreSnapshot;co
   // occurrence outside the selected range. Transport time itself stays exact.
   const previewAt=audition?Math.min(audition.positionMs,(preview.current?.range.endMs??Infinity)-.001):null;
   const session=ws.session,status=session?.status??'ready',active=!!session&&!['ready','finished'].includes(status),playing=active&&['running','counting'].includes(status);
-  const parsed=useMemo(()=>{try{return{timeline:createTimeline(snapshot,c),error:''};}catch(e){return{timeline:undefined,error:String(e)};}},[snapshot,c]);
+  const parsed=useMemo(()=>{try{return{timeline:createTimeline(snapshot,c),error:''};}catch(e){return{timeline:undefined,error:e instanceof Error?e.message:String(e)};}},[snapshot,c]);
   const t=active?session!.timeline:parsed.timeline,view=active?session!.view:empty,held=ws.midi.heldPitches();
   const position=previewAt??(active?session!.elapsedMs:0);
   const heldNotes=playing?ws.midi.heldNotes():[];
-  const nativeFrame=useMemo(()=>auditionPresentation(snapshot,audition?.notes??[],audition?.tempoMultiplier??1),[snapshot,audition?.notes,audition?.tempoMultiplier]);
+  const nativeFrame=useMemo(()=>auditionPresentation(snapshot,audition?.notes??[],audition?.timeMap??[]),[snapshot,audition?.notes,audition?.timeMap]);
   const previewFrame=useMemo(()=>previewAt!==null?nativeFrame(previewAt,!!audition?.sounding):null,[previewAt,nativeFrame,audition?.sounding]);
   const f=useMemo(()=>previewFrame?{...previewFrame,currentAnchors:[],visit:0}:t?feedback(t,view,position,heldNotes):{markers:new Map(),currentAnchors:[],expected:[],visit:0},[t,view,position,heldNotes.map(e=>e.sequence).join(','),previewFrame]);
   const locate=useMemo(()=>t?scorePositions(snapshot,t):undefined,[snapshot,t]);
   const cursor=previewFrame?.cursor??locate?.(position,c.mode==='wait'?view.group:undefined);
   const beat=t?beatPosition(t,position):{beat:0,total:0,bpm:c.bpm};
-  const count=active&&status==='counting'?Math.max(1,Math.ceil((session!.transport.mapping.resumeAtMs-session!.transport.now)/(60000/c.bpm))):0;
+  const count=active&&status==='counting'?Math.max(1,Math.ceil((session!.transport.mapping.resumeAtMs-session!.transport.now)/session!.transport.countInBeatMs)):0;
   const currentMeasure=cursor?.measure??c.fromMeasure,loop=cursor?.loop??0;
   const names=(pitches:number[])=>[...new Set(pitches)].map(noteName).join(' · ')||'—';
   const targetIndex=useMemo(()=>new Map(t?.targets.map(n=>[n.id,n])??[]),[t]);
@@ -99,7 +99,7 @@ export function Practice({snapshot,config:c,exercise}:{snapshot:ScoreSnapshot;co
     exercise?.onStart?.();
     stopPreview();setPanel(null);setSelecting(null);
     const next=createTimeline(snapshot,exercise?c:ws.state.config??c);ws.session?.dispose();
-    const s=ws.session=new PracticeController(next,snapshot.title);s.onChange=()=>{refresh(n=>n+1);ws.patch({});};
+    const s=ws.session=new PracticeController(next,snapshot.title,async()=>(await ws.ensureEngine(true)).api.Module.driver);s.onChange=()=>{refresh(n=>n+1);ws.patch({});};
     const persist=(r:AttemptResult,show:boolean)=>{if(simulationDelta!==undefined)r.simulation={script:releaseReference?'native-release-pedal':'native-targets-onset',deltaMs:simulationDelta};return exercise?exercise.onComplete(r):ws.recordResult(r,keepReplay,show);};
     persistAttempt.current=persist;s.onComplete=r=>{void persist(r,true);};
     setFollowToken(n=>n+1);await s.start(()=>ws.midi.stateEvents());if(simulationDelta!==undefined)simulateMidi(s,ws.midi,simulationDelta,releaseReference);
@@ -159,7 +159,7 @@ export function Practice({snapshot,config:c,exercise}:{snapshot:ScoreSnapshot;co
   const stopButton=<button className="v2-stop" aria-label={audition||preparingListen?'Dừng nghe':active||exercise&&session?'Dừng lượt tập':'Dừng'} title="Dừng và trở về đầu đoạn" disabled={!canStop||stopping} onClick={()=>void ws.run(stop)}>■ Dừng</button>;
 
   const auditionControls=audition&&<div className="v2-audition" role="region" aria-label="Nghe bằng MuseScore">
-      <span className="v2-time">{time((audition.positionMs-(preview.current?.range.startMs??0))/listenSpeed)}</span>
+      <span className="v2-time">{time(audition.elapsedMs)}</span>
       <input type="range" aria-label="Vị trí nghe" min={Math.floor(preview.current?.range.startMs??0)} max={Math.ceil(preview.current?.range.endMs??1)} step={1} value={Math.round(audition.positionMs)} onChange={e=>{preview.current?.seek(+e.target.value);setFollowToken(n=>n+1);}}/>
       <select aria-label="Tốc độ nghe" disabled={audition.preparing} value={listenSpeed} onChange={e=>{const value=+e.target.value;void ws.run(()=>preview.current?.speed(value));setListenSpeed(value);}}>{[.25,.5,.75,1,1.25,1.5,2].map(n=><option key={n} value={n}>{Math.round(n*100)}%</option>)}</select>
       <button aria-label="Lặp khi nghe" aria-pressed={listenLoop} onClick={()=>{preview.current?.loop(!listenLoop);setListenLoop(!listenLoop);}}>↻</button>
@@ -196,7 +196,7 @@ export function Practice({snapshot,config:c,exercise}:{snapshot:ScoreSnapshot;co
     </div>
     {!focus&&auditionControls}
     {exercise&&!focus&&<div className="exercise-source">{exercise.details}</div>}
-    {parsed.error&&<p role="alert" className="v2-alert">{parsed.error}</p>}
+    {parsed.error&&<p role="alert" className="v2-alert">{parsed.error} {c.mode==='bpm'&&parsed.error.startsWith('Chưa chấm BPM')&&<button onClick={()=>update({mode:'wait'})}>Chuyển sang Đúng nốt</button>}</p>}
     {status==='interrupted'&&<p role="alert" className="v2-alert">{session?.message}</p>}
     {selecting&&<div className="v2-selection" role="status">Chọn ô nhịp {selecting.toUpperCase()} trên khuông nhạc.<button onClick={()=>setSelecting(null)}>Hủy chọn</button></div>}
     <Sheet snapshot={snapshot} markers={f.markers} cursor={cursor} zoom={prefs.zoom} autoScroll={prefs.scroll} followToken={followToken} fromMeasure={c.fromMeasure} toMeasure={c.toMeasure} selecting={selecting} onMeasure={selectMeasure}/>

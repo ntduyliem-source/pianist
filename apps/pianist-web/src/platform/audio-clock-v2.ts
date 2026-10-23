@@ -1,15 +1,25 @@
 import type {Timeline,MidiEvent} from '../../../../packages/practice-engine-v2/model';
+import {tempoAt} from '../../../../packages/practice-engine-v2/tempo';
+
+export interface NativePracticeAudio {
+  resume():Promise<void>;
+  preparePreview(signal?:AbortSignal):Promise<void>;
+  previewMidi(status:number,data1:number,data2:number,performanceMs?:number):void;
+  stopPreview():void;
+}
+export type NativePracticeAudioProvider=()=>Promise<NativePracticeAudio>;
 
 // One affine mapping from performance timestamps to Web Audio time per run.
 // It never follows the player's tempo or silently adjusts calibration.
 export class AudioClock {
   context?:AudioContext; private origin=0; private audioMinusPerf=0;
   private scheduled=new Set<number>();private nodes=new Set<AudioScheduledSourceNode>();
-  private monitors=new Map<string,{osc:OscillatorNode;gain:GainNode;held:boolean;channel:number}>();
-  private monitorPedals=new Set<number>();
-  private timeline?:Timeline;private resumeAt=0;private count=0;
+  private native?:NativePracticeAudio;
+  private timeline?:Timeline;private resumeAt=0;private count=0;private countInBpm=60;
   private source:'output-timestamp'|'audio-current-time'='audio-current-time';
+  constructor(private readonly nativeAudio?:NativePracticeAudioProvider){}
   get mapping(){return{originPerformanceMs:this.origin,audioMinusPerformanceSeconds:this.audioMinusPerf,source:this.source,resumeAtMs:this.resumeAt};}
+  get countInBeatMs(){return 60000/this.countInBpm;}
   coherent(){
     if(!this.context)return false;
     const pair=this.context.getOutputTimestamp?.();
@@ -23,6 +33,11 @@ export class AudioClock {
     signal?.throwIfAborted();
     this.silence();const ctx=this.context??=new AudioContext({latencyHint:'interactive'});await ctx.resume();
     signal?.throwIfAborted();
+    if(this.nativeAudio){
+      this.native=await this.nativeAudio();signal?.throwIfAborted();
+      await this.native.resume();signal?.throwIfAborted();
+      await this.native.preparePreview(signal);signal?.throwIfAborted();
+    }
     if(this.context!==ctx||ctx.state!=='running')throw Error('Chưa bật được âm thanh. Bấm Bắt đầu lại.');
     let pair=ctx.getOutputTimestamp?.();
     // Web Audio returns zero timestamps before its first rendered block.
@@ -39,9 +54,10 @@ export class AudioClock {
     signal?.throwIfAborted();
     if(this.context!==ctx||ctx.state!=='running')throw Error('Khởi động âm thanh đã bị ngắt. Bấm Bắt đầu lại.');
     this.timeline=timeline;this.resumeAt=resumeAt;this.count=timeline.settings.countIn;
+    this.countInBpm=tempoAt(timeline,resumeAt);
     this.source=pair?.contextTime&&pair.performanceTime?'output-timestamp':'audio-current-time';
     this.audioMinusPerf=pair?.contextTime&&pair.performanceTime?pair.contextTime-pair.performanceTime/1000:ctx.currentTime-performance.now()/1000;
-    this.origin=performance.now()+160+this.count*60000/timeline.settings.bpm-resumeAt;
+    this.origin=performance.now()+160+this.count*this.countInBeatMs-resumeAt;
     this.scheduled.clear();this.pump();
   }
   private audioTime(atMs:number){return (atMs+this.origin)/1000+this.audioMinusPerf;}
@@ -57,7 +73,7 @@ export class AudioClock {
     const t=this.timeline,now=this.now,horizon=now+250;
     const beats=t.settings.mode==='bpm'&&t.settings.metronome?t.clicks:[];
     for(let i=0;i<this.count;i++){
-      const at=this.resumeAt-(this.count-i)*60000/t.settings.bpm,id=-1-i;
+      const at=this.resumeAt-(this.count-i)*this.countInBeatMs,id=-1-i;
       if(at<=horizon&&!this.scheduled.has(id)){this.scheduled.add(id);this.sound(at,60,i===0?88:81,.12);}
     }
     // Binary-search the current audio horizon; long scores do not scan every note.
@@ -66,28 +82,24 @@ export class AudioClock {
       for(let i=lo;i<items.length&&items[i].atMs<=horizon;i++)if(!this.scheduled.has(base+i)){this.scheduled.add(base+i);play(i);}
     };
     schedule(beats,0,i=>this.sound(beats[i].atMs,45,beats[i].accent?88:81,.09));
-    schedule(t.guide,1000000,i=>this.sound(t.guide[i].atMs,t.guide[i].endMs-t.guide[i].atMs,t.guide[i].pitch,.035));
+    schedule(t.guide,1000000,i=>{
+      const n=t.guide[i];
+      this.native?.previewMidi(0x9f,n.pitch,n.velocity??90,this.performanceAt(n.atMs));
+      this.native?.previewMidi(0x8f,n.pitch,0,this.performanceAt(n.releaseMs??n.endMs));
+    });
   }
   monitor(event:MidiEvent){
     if(event.source!=='virtual')return;
     if(event.kind==='pedal'){
-      if(event.value>=64&&this.timeline?.settings.pedalEnabled!==false&&!event.synthetic)this.monitorPedals.add(event.channel);
-      else{this.monitorPedals.delete(event.channel);for(const [key,n] of this.monitors)if(n.channel===event.channel&&!n.held)this.stopMonitor(key);}
-    }else if(!event.stateOnly)this.tone(event.pitch,event.kind==='on',event.channel,!!event.synthetic);
+      this.native?.previewMidi(0xb0|event.channel,64,this.timeline?.settings.pedalEnabled===false||event.synthetic?0:event.value);
+    }else if(!event.stateOnly)this.native?.previewMidi((event.kind==='on'?0x90:0x80)|event.channel,event.pitch,event.kind==='on'?event.value:0);
   }
-  private stopMonitor(key:string){
-    const prior=this.monitors.get(key),ctx=this.context;if(!prior||!ctx)return;
-    prior.gain.gain.setTargetAtTime(.0001,ctx.currentTime,.015);prior.osc.stop(ctx.currentTime+.1);this.monitors.delete(key);
-  }
-  // Live voice adapter follows note-seq's sustain/re-strike event semantics.
-  // The audible envelope below does not participate in duration assessment.
+  // MuseScore's FluidSynth handles key release, sustain and re-strike. Only
+  // the metronome above uses an oscillator; it is never used as a piano voice.
   tone(pitch:number,on:boolean,channel=0,force=false){
-    const ctx=this.context;if(!ctx||ctx.state!=='running')return;
-    const key=`${channel}/${pitch}`,prior=this.monitors.get(key);
-    if(!on&&prior&&!force&&this.monitorPedals.has(channel)){prior.held=false;return;}
-    this.stopMonitor(key);
-    if(!on)return;const osc=ctx.createOscillator(),gain=ctx.createGain();osc.type='triangle';osc.frequency.value=440*2**((pitch-69)/12);gain.gain.value=.055;osc.connect(gain).connect(ctx.destination);osc.start();this.monitors.set(key,{osc,gain,held:true,channel});osc.onended=()=>{osc.disconnect();gain.disconnect();};
+    if(force)this.native?.previewMidi(0xb0|channel,64,0);
+    this.native?.previewMidi((on?0x90:0x80)|channel,pitch,on?90:0);
   }
-  silence(){for(const n of this.nodes){try{n.stop();}catch{}}this.nodes.clear();for(const key of this.monitors.keys())this.stopMonitor(key);this.monitorPedals.clear();this.timeline=undefined;}
+  silence(){for(const n of this.nodes){try{n.stop();}catch{}}this.nodes.clear();this.native?.stopPreview();this.timeline=undefined;}
   async dispose(){this.silence();await this.context?.close();this.context=undefined;}
 }

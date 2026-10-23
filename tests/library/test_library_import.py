@@ -55,7 +55,9 @@ class LibraryImportTests(unittest.TestCase):
 
     def test_arrangements_append_and_old_assets_stay_untouched(self):
         before = (self.library / 'songs/original.mxl').read_bytes()
-        report = append_library(*self.inputs(mxl('D')), self.library)
+        inputs, audit = self.inputs(mxl('D'))
+        inputs[0]['workId'] = self.original['id']
+        report = append_library(inputs, audit, self.library)
         songs = self.catalog()['songs']
         self.assertEqual(songs[0], self.original)
         self.assertEqual((self.library / 'songs/original.mxl').read_bytes(), before)
@@ -76,12 +78,15 @@ class LibraryImportTests(unittest.TestCase):
 
     def test_repeat_import_is_idempotent_and_next_different_arrangement_gets_three(self):
         inputs, audit = self.inputs(mxl('D'))
+        inputs[0]['workId'] = self.original['id']
         append_library(inputs, audit, self.library)
         before = (self.library / 'catalog.json').read_bytes()
         report = append_library(inputs, audit, self.library)
         self.assertEqual(report['summary']['duplicates'], 1)
         self.assertEqual((self.library / 'catalog.json').read_bytes(), before)
-        append_library(*self.inputs(mxl('E'), 'another-third.mxl'), self.library)
+        inputs, audit = self.inputs(mxl('E'), 'another-third.mxl')
+        inputs[0]['workId'] = self.original['id']
+        append_library(inputs, audit, self.library)
         self.assertEqual(self.catalog()['songs'][-1]['version'], 3)
 
     def test_new_work_same_download_basename_number_becomes_one_version(self):
@@ -93,6 +98,7 @@ class LibraryImportTests(unittest.TestCase):
 
     def test_editor_only_requires_complete_round_trip_and_exact_grace_evidence(self):
         inputs, audit = self.inputs(mxl('G', grace=True), editor_only=True)
+        inputs[0]['workId'] = self.original['id']
         before = (self.library / 'catalog.json').read_bytes()
         with self.assertRaisesRegex(ValueError, 'exact native grace-note'):
             append_library(inputs, audit, self.library)
@@ -143,6 +149,64 @@ class LibraryImportTests(unittest.TestCase):
         report = append_library(*self.inputs(mxl('F'), 'another-work.mxl', 'Mở'), self.library)
         self.assertEqual(report['summary']['newWorks'], 1)
         self.assertEqual(self.catalog()['songs'][-1]['version'], 1)
+
+    def test_same_title_different_composers_are_separate_works(self):
+        self.write_catalog([{**self.original, 'composer': 'Nguyễn Anh 9'}])
+        inputs, audit = self.inputs(mxl('D'))
+        inputs[0]['composer'] = 'Tia'
+        report = append_library(inputs, audit, self.library)
+        song = self.catalog()['songs'][-1]
+        self.assertEqual((song['workId'], song['version']), (song['id'], 1))
+        self.assertEqual(report['summary']['totalWorks'], 2)
+
+    def test_same_known_composer_normalization_groups_arrangements(self):
+        self.write_catalog([{**self.original, 'composer': 'Nguyễn Anh 9'}])
+        inputs, audit = self.inputs(mxl('D'))
+        inputs[0]['composer'] = '  NGUYE\u0302\u0303N ANH 9  '
+        append_library(inputs, audit, self.library)
+        song = self.catalog()['songs'][-1]
+        self.assertEqual((song['workId'], song['version']), (self.original['id'], 2))
+
+    def test_unknown_author_requires_decision_and_cannot_modify_assets(self):
+        before = (self.library / 'catalog.json').read_bytes()
+        for composer in ('', 'Unknown', 'A known author'):
+            inputs, audit = self.inputs(mxl('D'))
+            inputs[0]['composer'] = composer
+            with self.assertRaisesRegex(ValueError, 'Ambiguous work title/composer'):
+                append_library(inputs, audit, self.library)
+            self.assertEqual((self.library / 'catalog.json').read_bytes(), before)
+            self.assertEqual(len(list((self.library / 'songs').glob('*.mxl'))), 1)
+        inputs[0]['newWork'] = True
+        append_library(inputs, audit, self.library)
+        self.assertEqual(self.catalog()['songs'][-1]['version'], 1)
+
+    def test_known_composer_selects_correct_homonym_in_a_batch(self):
+        self.write_catalog([{**self.original, 'composer': 'Author A'}])
+        first, first_audit = self.inputs(mxl('D'), 'homonym.mxl')
+        first[0]['composer'] = 'Author B'
+        second, second_audit = self.inputs(mxl('E'), 'homonym-arrangement.mxl')
+        second[0]['composer'] = 'Author B'
+        audit = dict(errors=[], results=first_audit['results'] + second_audit['results'])
+        report = append_library(first + second, audit, self.library)
+        songs = self.catalog()['songs']
+        self.assertEqual((songs[-1]['workId'], songs[-1]['version']), (songs[-2]['id'], 2))
+        self.assertEqual((report['summary']['newWorks'], report['summary']['newVersions']), (1, 1))
+
+    def test_explicit_identity_can_resolve_conflicting_composer_metadata(self):
+        self.write_catalog([{**self.original, 'composer': 'Author A'}])
+        inputs, audit = self.inputs(mxl('D'))
+        inputs[0].update(composer='Different attribution', workId=self.original['id'])
+        append_library(inputs, audit, self.library)
+        self.assertEqual(self.catalog()['songs'][-1]['version'], 2)
+
+    def test_explicit_identity_options_must_be_unambiguous(self):
+        inputs, audit = self.inputs(mxl('D'))
+        inputs[0]['newWork'] = 'false'
+        with self.assertRaisesRegex(ValueError, 'must be a boolean'):
+            append_library(inputs, audit, self.library)
+        inputs[0].update(newWork=True, workId=self.original['id'])
+        with self.assertRaisesRegex(ValueError, 'either explicit workId or newWork'):
+            append_library(inputs, audit, self.library)
 
 
 if __name__ == '__main__':

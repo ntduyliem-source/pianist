@@ -1,7 +1,7 @@
 import type {ScoreSnapshot} from '../score-contracts/index';
 import type {Grade, Judgement} from './upstream/mania';
 
-export const ENGINE_ID = 'pianist-v2.osu-676f3b0.pts-b40e412.mir-fe73b35.ns-3582550.2';
+export const ENGINE_ID = 'pianist-v2.osu-676f3b0.pts-b40e412.mir-fe73b35.ns-3582550.3';
 export type Hand = 'left' | 'right' | 'off';
 export interface PracticeSettings {
   version: 2; mode: 'wait' | 'bpm'; bpm: number; beatQuarter: .5 | 1 | 1.5;
@@ -17,6 +17,7 @@ export interface Target {
   anchors: string[]; spans: {anchor: string; visit: number; atMs: number; endMs: number}[];
   roles: Hand[]; voices: number[];
   releaseMs?: number;
+  velocity?: number;
 }
 export interface PedalTarget {id:string; atMs:number; endMs:number; loop:number}
 export interface Visit {id: number; measure: number; occurrence: number; loop: number; startMs: number; endMs: number}
@@ -25,6 +26,8 @@ export interface Timeline {
   settings: PracticeSettings; targets: Target[]; visits: Visit[];
   groups: {atMs: number; ids: string[]}[]; clicks: {atMs: number; accent: boolean}[];
   guide: Target[]; durationMs: number; warnings: string[];
+  // BPM in the selected beat unit, exported from native tempo at each position.
+  tempos?: {atMs:number; bpm:number}[];
   pedals?: PedalTarget[]; pedalReference?: boolean;
 }
 export interface MidiEvent {

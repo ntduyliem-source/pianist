@@ -22,6 +22,7 @@
 #pragma once
 
 #include <memory>
+#include <vector>
 
 namespace muse {
 class GlobalModule;
@@ -30,6 +31,8 @@ class GlobalModule;
 namespace muse::audio::rpc {
 class IRpcChannel;
 }
+
+namespace muse::audio::synth { class FluidSynth; }
 
 namespace muse::audio::engine {
 class EngineController;
@@ -43,6 +46,10 @@ public:
     void init();
     void process(float* stream, unsigned samplesPerChannel);
     bool playbackFrame(unsigned int sequenceId, double* frame) const;
+    bool preparePreview();
+    void previewMidi(int status, int data1, int data2);
+    void previewRender(float* stream, unsigned samplesPerChannel);
+    void stopPreview();
 
 private:
     WebAudioEngine() = default;
@@ -50,5 +57,7 @@ private:
     std::shared_ptr<rpc::IRpcChannel> m_rpcChannel;
     std::shared_ptr<engine::EngineController> m_controller;
     std::shared_ptr<engine::IEnginePlayback> m_playback;
+    std::shared_ptr<synth::FluidSynth> m_preview;
+    std::vector<float> m_previewBuffer;
 };
 }
