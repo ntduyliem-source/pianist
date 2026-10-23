@@ -1,6 +1,6 @@
 {
-  "tag": "pianist-web-2026-10-22-review-fixes",
-  "sha256": "d9d41584cb8fa4f3514fe02356755945f5893fb5dca0dfc947bbb06c61201787",
-  "sourceCommit": "3c77f2f4812bb2b915fde314384acacd1f6beec4",
-  "version": "577f1eeb77e3498ce5b0"
+  "tag": "pianist-web-2026-10-23-playback-sync",
+  "sha256": "3d7e864894719edaf00f365dce12726eac07d2d4c2d62cba70a8b68f84048dc6",
+  "sourceCommit": "f064a409ca52e277f54db0d3b27ce2a1161b158e",
+  "version": "84c73c92e0b80566a4be"
 }
