@@ -26,6 +26,7 @@ SUITES = {
     'playback-sync': ('playback-sync.cjs', [], ''),
     'native-sheet-integrity': ('native-sheet-integrity.cjs', [], ''),
     'format-integrity': ('format-integrity.cjs', [], '?diagnostics=1#/library'),
+    'library-policy': ('library-policy.cjs', [], '?diagnostics=1#/library'),
     'native-preview-free': ('native-preview.cjs', ['--skip-grade'], '?diagnostics=1#/library'),
     'native-preview-grade': ('native-preview.cjs', ['--grade-only'], '?diagnostics=1#/library'),
     'practice-stop': ('practice-stop.cjs', [], '?diagnostics=1#/exercises'),
@@ -47,7 +48,7 @@ def main():
     if args.suite and args.mode != 'browser':
         parser.error('--suite is only for browser iteration; native always runs every critical suite')
     suites = args.suite or list(SUITES)
-    fast_labels = ['source-pins', 'typecheck', 'typescript-oracles', 'python-library-grade', 'authored-grades', 'source-cutover']
+    fast_labels = ['source-pins', 'format', 'typecheck', 'typescript-oracles', 'python-library-grade', 'authored-grades', 'source-cutover']
     labels = fast_labels if args.mode == 'fast' else ['browser-fixtures', *suites]
     if args.mode == 'native':
         labels = ['release-integrity', 'native-cutover', *labels]
@@ -83,6 +84,7 @@ def main():
             if not npm or not (APP / 'node_modules/typescript').is_dir():
                 raise RuntimeError('Install Node and run npm ci --prefix apps/pianist-web first.')
             run('source-pins', [sys.executable, SCRIPTS / 'check-source-pins.py'])
+            run('format', [npm, 'run', 'format:check'], APP)
             run('typecheck', [npm, 'exec', '--', 'tsc', '--noEmit'], APP)
             run('typescript-oracles', [npm, 'test'], APP)
             run('python-library-grade', [sys.executable, '-m', 'unittest', 'discover', '-s', 'tests/library', '-p', 'test_*.py'])

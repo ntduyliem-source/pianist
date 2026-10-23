@@ -7,6 +7,10 @@ const root=path.resolve(__dirname,'../../..'),output=path.join(root,'artifacts/a
 const base=process.env.PIANIST_URL || 'http://127.0.0.1:8787/pianist.html?diagnostics=1';
 (async()=>{
   await fs.mkdir(output,{recursive:true});
+  // Product admission requires two piano staves. Keep the original one-staff
+  // converter fixture unchanged, and add an explicit bass voice for this UI case.
+  const rhythmPiano=path.join(output,'rhythm-tempo.abc');
+  await fs.writeFile(rhythmPiano,'%abc-2.1\nX:2\nT:Lấy đà liên ba và đổi nhịp\nC:Pianist test fixture CC0\nM:6/8\nL:1/8\nQ:3/8=60\n%%score { RH | LH }\nV:RH clef=treble name="Piano"\n%%MIDI program 0\nV:LH clef=bass\n%%MIDI program 0\nK:D\n[V:RH] A | (3Bcd e2 f2 | [M:3/4][Q:1/4=96]g2 f>e d2 |]\n[V:LH] z | D,6 | [M:3/4]G,6 |]\n');
   const browser=await chromium.launch({headless:true,channel:process.env.PIANIST_BROWSER_CHANNEL || 'msedge',args:['--enable-unsafe-swiftshader']});
   const context=await browser.newContext({viewport:{width:1440,height:1000},acceptDownloads:true});
   const page=await context.newPage(),requests=[],errors=[],checks=[];
@@ -67,7 +71,7 @@ const base=process.env.PIANIST_URL || 'http://127.0.0.1:8787/pianist.html?diagno
     await page.locator('#screen canvas').waitFor({state:'visible',timeout:120000});await page.locator('.loading-overlay').waitFor({state:'hidden'});
     const preserved=await native();const cancelCount=await countProjects();
     const bootRequest=page.waitForRequest('**/score-formats/pyodide/pyodide.asm.wasm');
-    await page.locator('#file').setInputFiles(path.join(root,'tests/fixtures/pianist/abc/rhythm-tempo.abc'));await bootRequest;
+    await page.locator('#file').setInputFiles(rhythmPiano);await bootRequest;
     await page.getByRole('button',{name:'Hủy mở file',exact:true}).click();release();
     await page.unroute('**/score-formats/pyodide/pyodide.asm.wasm');
     assert.deepEqual((await native()).anchors,preserved.anchors);assert.equal(await countProjects(),cancelCount);
@@ -98,7 +102,7 @@ const base=process.env.PIANIST_URL || 'http://127.0.0.1:8787/pianist.html?diagno
     await page.screenshot({path:path.join(output,'results.png')});
     await page.getByRole('button',{name:'Tập piano',exact:true}).click();
     const choose=page.waitForEvent('filechooser');await page.getByRole('button',{name:'Nhập bản nhạc để tập',exact:true}).click();
-    await (await choose).setFiles(path.join(root,'tests/fixtures/pianist/abc/rhythm-tempo.abc'));await ready('rhythm-tempo.abc');
+    await (await choose).setFiles(rhythmPiano);await ready('rhythm-tempo.abc');
     await page.getByTestId('practice-v2').waitFor();assert.equal(await page.locator('#screen').getAttribute('aria-hidden'),'true');
     check('practice picker imports ABC directly into the read-only practice screen');
     assert.equal(errors.length,0);result.passed=true;

@@ -14,7 +14,8 @@ python -m pip install -r buildscripts/pianist/check-requirements.txt
 python buildscripts/pianist/check-pianist.py fast
 ```
 
-This verifies pinned converter/reference bytes, TypeScript types, every app unit
+This verifies pinned converter/reference bytes, application source formatting
+(`npm run format:check` in `apps/pianist-web`), TypeScript types, every app unit
 test (including the committed C# oracle comparisons and live Python R4/ABC
 oracles), Python library/grade regressions, all 5,600 committed authored source
 rows through the existing G1–G8 validators, and source cutover. The C# oracle
@@ -45,6 +46,7 @@ Use `--site path/to/staged/site --public` to check a public release candidate.
 
 Critical suites cover native pauses/ties, playback synchronization, full native
 sheet/mobile/A–B selection, import/export integrity, virtual piano/pedal PCM,
+two-staff piano library admission and atomic rejection of invalid/batched imports,
 fresh grade startup, practice/listen Stop, grade navigation and queue behavior,
 and ABC/MXL MIDI simulation with loop/highlight/viewport parity. Hardware MIDI
 and a physical mobile device remain separate acceptance tasks.

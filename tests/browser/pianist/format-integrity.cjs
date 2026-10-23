@@ -69,19 +69,19 @@ const out=path.join(root,'artifacts/format-integrity');
       result.checks.push(file+': lossy ABC rejected without download or score change; MXL remains available');
     }
 
-    const source=path.join(root,'src/engraving/tests/playback/playbackeventsrenderer_data/pauses/pauses.mscx');
+    const source=path.join(root,'src/engraving/tests/playback/playbackeventsrenderer_data/single_note_no_articulations/no_articulations.mscx');
     const bytes=await fs.readFile(source);
     const wrapped=zipSync({'score.mscx':bytes,'META-INF/container.xml':strToU8('<container><rootfiles><rootfile full-path="score.mscx"/></rootfiles></container>')});
-    await fs.writeFile(path.join(out,'pauses.mscz'),wrapped);
-    await open(source);const raw=await semantics();assert.equal(raw.anchors.length,8);
+    await fs.writeFile(path.join(out,'two-staff-native.mscz'),wrapped);
+    await open(source);const raw=await semantics();assert.equal(raw.staves.length,2);assert.equal(raw.anchors.length,1);
     const prepared=await page.evaluate(data=>{
       const api=window.pianist,previous=api.Module.onPreparedSemantics;let value;
       api.Module.onPreparedSemantics=json=>value=JSON.parse(json);
-      try{if(!api.prepareProject(new Uint8Array(data),'pauses.mscx',true))throw Error('Raw MSCX prepare failed');return value;}
+      try{if(!api.prepareProject(new Uint8Array(data),'no_articulations.mscx',true))throw Error('Raw MSCX prepare failed');return value;}
       finally{api.Module.onPreparedSemantics=previous;}
     },Array.from(bytes));
     assert.deepEqual(music(prepared),music(raw));assert.equal((await semantics()).revision,raw.revision);
-    await open(path.join(out,'pauses.mscz'));assert.deepEqual(music(await semantics()),music(raw));
+    await open(path.join(out,'two-staff-native.mscz'));assert.deepEqual(music(await semantics()),music(raw));
     result.checks.push('Raw upstream MSCX opens in UI and temporary prepare with exact musical parity to unchanged XML in MSCZ');
 
     const before=await semantics();
