@@ -1,0 +1,1146 @@
+{
+  "summary": {
+    "inputs": 16,
+    "newWorks": 14,
+    "newVersions": 1,
+    "duplicates": 0,
+    "excluded": 1,
+    "editorOnly": 6,
+    "totalWorks": 89,
+    "totalVersions": 93
+  },
+  "results": [
+    {
+      "filename": "999-doa-hong.mxl",
+      "title": "999 đóa hồng",
+      "status": "added",
+      "reason": "Nghe/chỉnh sửa đầy đủ 278 nốt; bộ tập chưa hỗ trợ 1 nốt hoa mỹ.",
+      "version": 1,
+      "workId": "9aee989cc4b46efefad5c4e60fbd6ed8582bf90a6ddab5b35ccc97f85b9277d0",
+      "id": "9aee989cc4b46efefad5c4e60fbd6ed8582bf90a6ddab5b35ccc97f85b9277d0",
+      "practiceReady": false,
+      "originalFilename": "01-999-Doa-Hong.mxl",
+      "sourceSha256": "9aee989cc4b46efefad5c4e60fbd6ed8582bf90a6ddab5b35ccc97f85b9277d0",
+      "sourceTitle": "999 đóa hồng / 九百九十九朵玫瑰",
+      "sourceCredits": [
+        {
+          "type": "composer",
+          "text": "Source: EveryonePiano"
+        }
+      ],
+      "staffPolicy": {
+        "policyVersion": "piano-two-staves-v1",
+        "accepted": true,
+        "totalStaves": 2,
+        "parts": [
+          {
+            "id": "P45f86a92cea18896bb9eff98ad78866f",
+            "staves": 2,
+            "instrument": {
+              "piano": true,
+              "labels": [
+                "Piano",
+                "Pno.",
+                "Piano",
+                "Pno"
+              ],
+              "programs": [
+                1
+              ],
+              "sounds": [],
+              "contradictions": []
+            },
+            "pitchedNotes": 278
+          }
+        ],
+        "violations": []
+      },
+      "xmlSchema": {
+        "filename": "999-doa-hong.mxl",
+        "passed": true,
+        "errors": []
+      },
+      "nativeAudit": {
+        "sourceNotes": 278,
+        "nativeNotes": 277,
+        "editorNotes": 278,
+        "editorGraceNotes": 1,
+        "measures": 23,
+        "pages": 1,
+        "missingGlyphs": 0,
+        "nativePlayback": true,
+        "performed": 432,
+        "keyReleases": 422,
+        "pedals": 0,
+        "durationMs": 108000.02700000672,
+        "playbackDuration": 111.00002700000672
+      }
+    },
+    {
+      "filename": "nguoi-tinh-mua-dong.mxl",
+      "title": "Người tình mùa đông",
+      "status": "added",
+      "reason": "Nghe/chỉnh sửa đầy đủ 1336 nốt; bộ tập chưa hỗ trợ 14 nốt hoa mỹ.",
+      "version": 1,
+      "workId": "f0e14f7f4811936ef83faebcb51c0a7a3c6c9fd0cb7eb979ba10441d9a52fabf",
+      "id": "f0e14f7f4811936ef83faebcb51c0a7a3c6c9fd0cb7eb979ba10441d9a52fabf",
+      "practiceReady": false,
+      "originalFilename": "02-Nguoi-Tinh-Mua-Dong.mxl",
+      "sourceSha256": "f0e14f7f4811936ef83faebcb51c0a7a3c6c9fd0cb7eb979ba10441d9a52fabf",
+      "sourceTitle": "Người tình mùa đông / 容易受伤的女人",
+      "sourceCredits": [
+        {
+          "type": "composer",
+          "text": "王菲; piano arrangement lms"
+        }
+      ],
+      "staffPolicy": {
+        "policyVersion": "piano-two-staves-v1",
+        "accepted": true,
+        "totalStaves": 2,
+        "parts": [
+          {
+            "id": "P5b423961d6953f479e3a2d101f03cb8f",
+            "staves": 2,
+            "instrument": {
+              "piano": true,
+              "labels": [
+                "Piano"
+              ],
+              "programs": [],
+              "sounds": [],
+              "contradictions": []
+            },
+            "pitchedNotes": 1336
+          }
+        ],
+        "violations": []
+      },
+      "xmlSchema": {
+        "filename": "nguoi-tinh-mua-dong.mxl",
+        "passed": true,
+        "errors": []
+      },
+      "nativeAudit": {
+        "sourceNotes": 1336,
+        "nativeNotes": 1322,
+        "editorNotes": 1336,
+        "editorGraceNotes": 14,
+        "measures": 66,
+        "pages": 4,
+        "missingGlyphs": 0,
+        "nativePlayback": true,
+        "performed": 1322,
+        "keyReleases": 1297,
+        "pedals": 0,
+        "durationMs": 198000.04950001236,
+        "playbackDuration": 201.00004950001235
+      }
+    },
+    {
+      "filename": "dong-thoai.mxl",
+      "title": "Đồng thoại",
+      "status": "added",
+      "reason": "Nghe/chỉnh sửa đầy đủ 914 nốt; bộ tập chưa hỗ trợ 15 nốt hoa mỹ.",
+      "version": 1,
+      "workId": "63607a457e74ae70c4c7636c271a61d3d33c9ea21933e22fa61b70a03695c58c",
+      "id": "63607a457e74ae70c4c7636c271a61d3d33c9ea21933e22fa61b70a03695c58c",
+      "practiceReady": false,
+      "originalFilename": "03-Dong-Thoai.mxl",
+      "sourceSha256": "63607a457e74ae70c4c7636c271a61d3d33c9ea21933e22fa61b70a03695c58c",
+      "sourceTitle": "Đồng thoại / 童话",
+      "sourceCredits": [
+        {
+          "type": "composer",
+          "text": "Source: EveryonePiano"
+        }
+      ],
+      "staffPolicy": {
+        "policyVersion": "piano-two-staves-v1",
+        "accepted": true,
+        "totalStaves": 2,
+        "parts": [
+          {
+            "id": "P1",
+            "staves": 2,
+            "instrument": {
+              "piano": true,
+              "labels": [
+                "Piano",
+                "Piano",
+                "Acoustic Grand Piano",
+                "Pno"
+              ],
+              "programs": [
+                1
+              ],
+              "sounds": [],
+              "contradictions": []
+            },
+            "pitchedNotes": 914
+          }
+        ],
+        "violations": []
+      },
+      "xmlSchema": {
+        "filename": "dong-thoai.mxl",
+        "passed": true,
+        "errors": []
+      },
+      "nativeAudit": {
+        "sourceNotes": 914,
+        "nativeNotes": 899,
+        "editorNotes": 914,
+        "editorGraceNotes": 15,
+        "measures": 51,
+        "pages": 4,
+        "missingGlyphs": 0,
+        "nativePlayback": true,
+        "performed": 1170,
+        "keyReleases": 1071,
+        "pedals": 0,
+        "durationMs": 233041.6666666667,
+        "playbackDuration": 236.04166666666669
+      }
+    },
+    {
+      "filename": "than-thoai.mxl",
+      "title": "Thần thoại",
+      "status": "added",
+      "reason": "1484 nốt; 6 trang; MuseScore playback/mapping đạt",
+      "version": 1,
+      "workId": "acf1c8918b5d478fa469ed6602314ddf196b7662c8611776dee26a291d1878fe",
+      "id": "acf1c8918b5d478fa469ed6602314ddf196b7662c8611776dee26a291d1878fe",
+      "practiceReady": true,
+      "originalFilename": "04-Than-Thoai.mxl",
+      "sourceSha256": "acf1c8918b5d478fa469ed6602314ddf196b7662c8611776dee26a291d1878fe",
+      "sourceTitle": "Thần thoại / 美丽的神话 (Beautiful Myth)",
+      "sourceCredits": [
+        {
+          "type": "lyricist",
+          "text": "Everyone Piano"
+        },
+        {
+          "type": "lyricist",
+          "text": "www.EveryonePiano.com"
+        },
+        {
+          "type": "lyricist",
+          "text": "Everyone Piano"
+        },
+        {
+          "type": "lyricist",
+          "text": "www.EveryonePiano.com"
+        },
+        {
+          "type": "lyricist",
+          "text": "Everyone Piano"
+        },
+        {
+          "type": "lyricist",
+          "text": "www.EveryonePiano.com"
+        },
+        {
+          "type": "lyricist",
+          "text": "Everyone Piano"
+        },
+        {
+          "type": "lyricist",
+          "text": "www.EveryonePiano.com"
+        },
+        {
+          "type": "lyricist",
+          "text": "Everyone Piano"
+        },
+        {
+          "type": "lyricist",
+          "text": "www.EveryonePiano.com"
+        },
+        {
+          "type": "lyricist",
+          "text": "Everyone Piano"
+        },
+        {
+          "type": "lyricist",
+          "text": "www.EveryonePiano.com"
+        }
+      ],
+      "staffPolicy": {
+        "policyVersion": "piano-two-staves-v1",
+        "accepted": true,
+        "totalStaves": 2,
+        "parts": [
+          {
+            "id": "P1",
+            "staves": 2,
+            "instrument": {
+              "piano": true,
+              "labels": [
+                "Piano",
+                "Piano",
+                "Acoustic Grand Piano"
+              ],
+              "programs": [
+                1
+              ],
+              "sounds": [],
+              "contradictions": []
+            },
+            "pitchedNotes": 1484
+          }
+        ],
+        "violations": []
+      },
+      "xmlSchema": {
+        "filename": "than-thoai.mxl",
+        "passed": true,
+        "errors": []
+      },
+      "nativeAudit": {
+        "sourceNotes": 1484,
+        "nativeNotes": 1484,
+        "editorNotes": 1484,
+        "editorGraceNotes": 0,
+        "measures": 75,
+        "pages": 6,
+        "missingGlyphs": 0,
+        "nativePlayback": true,
+        "performed": 1484,
+        "keyReleases": 1336,
+        "pedals": 0,
+        "durationMs": 282830.8571418025,
+        "playbackDuration": 285.8308571418025
+      }
+    },
+    {
+      "filename": "tan-uyen-uong-ho-diep-mong.mxl",
+      "title": "Tân uyên ương hồ điệp mộng",
+      "status": "added",
+      "reason": "217 nốt; 1 trang; MuseScore playback/mapping đạt",
+      "version": 1,
+      "workId": "f41e07dc6ef0c3b44905a6bbd08f884d6b8a73321c0f2bef022d436d60384a11",
+      "id": "f41e07dc6ef0c3b44905a6bbd08f884d6b8a73321c0f2bef022d436d60384a11",
+      "practiceReady": true,
+      "originalFilename": "05-Tan-Uyen-Uong-Ho-Diep-Mong.mxl",
+      "sourceSha256": "f41e07dc6ef0c3b44905a6bbd08f884d6b8a73321c0f2bef022d436d60384a11",
+      "sourceTitle": "Tân uyên ương hồ điệp mộng / 新鸳鸯蝴蝶梦",
+      "sourceCredits": [
+        {
+          "type": "composer",
+          "text": "Arr. Lingtin (source credit)"
+        }
+      ],
+      "staffPolicy": {
+        "policyVersion": "piano-two-staves-v1",
+        "accepted": true,
+        "totalStaves": 2,
+        "parts": [
+          {
+            "id": "P0266198e3e585bdb13773ed874493313",
+            "staves": 2,
+            "instrument": {
+              "piano": true,
+              "labels": [
+                "Piano",
+                "Pno",
+                "Piano",
+                "Pno"
+              ],
+              "programs": [
+                1
+              ],
+              "sounds": [],
+              "contradictions": []
+            },
+            "pitchedNotes": 217
+          }
+        ],
+        "violations": []
+      },
+      "xmlSchema": {
+        "filename": "tan-uyen-uong-ho-diep-mong.mxl",
+        "passed": true,
+        "errors": []
+      },
+      "nativeAudit": {
+        "sourceNotes": 217,
+        "nativeNotes": 217,
+        "editorNotes": 217,
+        "editorGraceNotes": 0,
+        "measures": 20,
+        "pages": 1,
+        "missingGlyphs": 0,
+        "nativePlayback": true,
+        "performed": 217,
+        "keyReleases": 215,
+        "pedals": 0,
+        "durationMs": 46199.990760001856,
+        "playbackDuration": 49.19999076000185
+      }
+    },
+    {
+      "filename": "anh-trang-noi-ho-long-toi.mxl",
+      "title": "Ánh trăng nói hộ lòng tôi",
+      "status": "version-added",
+      "reason": "361 nốt; 2 trang; MuseScore playback/mapping đạt",
+      "version": 2,
+      "workId": "d170791f68eeafe0ac726baaacac949879eee9f3465f334b60722ba8c9908947",
+      "id": "a4d1c86379114fbcfc86e6d22776507f87d31f9146a38e7770d75d13f05dc339",
+      "practiceReady": true,
+      "originalFilename": "06-Anh-Trang-Noi-Ho-Long-Toi.mxl",
+      "sourceSha256": "a4d1c86379114fbcfc86e6d22776507f87d31f9146a38e7770d75d13f05dc339",
+      "sourceTitle": "Ánh trăng nói hộ lòng tôi / The Moon Represents My Heart",
+      "sourceCredits": [
+        {
+          "type": "composer",
+          "text": "Tang Ni"
+        }
+      ],
+      "staffPolicy": {
+        "policyVersion": "piano-two-staves-v1",
+        "accepted": true,
+        "totalStaves": 2,
+        "parts": [
+          {
+            "id": "P0ee80fda27008905fd13780ba2e0b23c",
+            "staves": 2,
+            "instrument": {
+              "piano": true,
+              "labels": [
+                "Piano",
+                "Pno."
+              ],
+              "programs": [],
+              "sounds": [],
+              "contradictions": []
+            },
+            "pitchedNotes": 361
+          }
+        ],
+        "violations": []
+      },
+      "xmlSchema": {
+        "filename": "anh-trang-noi-ho-long-toi.mxl",
+        "passed": true,
+        "errors": []
+      },
+      "identityReason": "Tên tiếng Việt và The Moon Represents My Heart trong nguồn khớp tác phẩm đang có; đây là bản phối khác theo bytes và MusicXML canonical.",
+      "nativeAudit": {
+        "sourceNotes": 361,
+        "nativeNotes": 361,
+        "editorNotes": 361,
+        "editorGraceNotes": 0,
+        "measures": 40,
+        "pages": 2,
+        "missingGlyphs": 0,
+        "nativePlayback": true,
+        "performed": 361,
+        "keyReleases": 357,
+        "pedals": 0,
+        "durationMs": 137142.8179591949,
+        "playbackDuration": 140.14281795919487
+      }
+    },
+    {
+      "filename": "nu-hon-biet-ly.mxl",
+      "title": "Nụ hôn biệt ly",
+      "status": "added",
+      "reason": "516 nốt; 2 trang; MuseScore playback/mapping đạt",
+      "version": 1,
+      "workId": "b81f9e80632a318289f6b7a5c7d39afb1a91a718e409066cfd17e8798179607a",
+      "id": "b81f9e80632a318289f6b7a5c7d39afb1a91a718e409066cfd17e8798179607a",
+      "practiceReady": true,
+      "originalFilename": "07-Nu-Hon-Biet-Ly.mxl",
+      "sourceSha256": "b81f9e80632a318289f6b7a5c7d39afb1a91a718e409066cfd17e8798179607a",
+      "sourceTitle": "Nụ hôn biệt ly / 吻别",
+      "sourceCredits": [
+        {
+          "type": "composer",
+          "text": "Everyone Piano arrangement"
+        }
+      ],
+      "staffPolicy": {
+        "policyVersion": "piano-two-staves-v1",
+        "accepted": true,
+        "totalStaves": 2,
+        "parts": [
+          {
+            "id": "P7d4a3afe1777583812b8f389c568b4ba",
+            "staves": 2,
+            "instrument": {
+              "piano": true,
+              "labels": [
+                "Piano",
+                "Pno",
+                "Piano",
+                "Pno"
+              ],
+              "programs": [
+                1
+              ],
+              "sounds": [],
+              "contradictions": []
+            },
+            "pitchedNotes": 516
+          }
+        ],
+        "violations": []
+      },
+      "xmlSchema": {
+        "filename": "nu-hon-biet-ly.mxl",
+        "passed": true,
+        "errors": []
+      },
+      "nativeAudit": {
+        "sourceNotes": 516,
+        "nativeNotes": 516,
+        "editorNotes": 516,
+        "editorGraceNotes": 0,
+        "measures": 30,
+        "pages": 2,
+        "missingGlyphs": 0,
+        "nativePlayback": true,
+        "performed": 880,
+        "keyReleases": 792,
+        "pedals": 0,
+        "durationMs": 160000,
+        "playbackDuration": 163
+      }
+    },
+    {
+      "filename": "ben-thuong-hai.mxl",
+      "title": "Bến Thượng Hải",
+      "status": "added",
+      "reason": "Nghe/chỉnh sửa đầy đủ 721 nốt; bộ tập chưa hỗ trợ 4 nốt hoa mỹ.",
+      "version": 1,
+      "workId": "1d9ca368efc012e1ebecd4fe652af730ba6a0d078648ed56ecc5327a0bd57f72",
+      "id": "1d9ca368efc012e1ebecd4fe652af730ba6a0d078648ed56ecc5327a0bd57f72",
+      "practiceReady": false,
+      "originalFilename": "08-Ben-Thuong-Hai.mxl",
+      "sourceSha256": "1d9ca368efc012e1ebecd4fe652af730ba6a0d078648ed56ecc5327a0bd57f72",
+      "sourceTitle": "Bến Thượng Hải / 上海滩",
+      "sourceCredits": [
+        {
+          "type": "composer",
+          "text": "MuYun Piano arrangement"
+        }
+      ],
+      "staffPolicy": {
+        "policyVersion": "piano-two-staves-v1",
+        "accepted": true,
+        "totalStaves": 2,
+        "parts": [
+          {
+            "id": "Pde0f791200421f81afeb6de8cc95624f",
+            "staves": 1,
+            "instrument": {
+              "piano": true,
+              "labels": [
+                "Piano",
+                "Pno",
+                "Piano",
+                "Pno"
+              ],
+              "programs": [
+                1
+              ],
+              "sounds": [],
+              "contradictions": []
+            },
+            "pitchedNotes": 401
+          },
+          {
+            "id": "Pa865673bcbf757f488d0f37bd43da6e0",
+            "staves": 1,
+            "instrument": {
+              "piano": true,
+              "labels": [
+                "Piano",
+                "Pno",
+                "Piano",
+                "Pno"
+              ],
+              "programs": [
+                1
+              ],
+              "sounds": [],
+              "contradictions": []
+            },
+            "pitchedNotes": 320
+          }
+        ],
+        "violations": []
+      },
+      "xmlSchema": {
+        "filename": "ben-thuong-hai.mxl",
+        "passed": true,
+        "errors": []
+      },
+      "nativeAudit": {
+        "sourceNotes": 721,
+        "nativeNotes": 717,
+        "editorNotes": 721,
+        "editorGraceNotes": 4,
+        "measures": 43,
+        "pages": 3,
+        "missingGlyphs": 0,
+        "nativePlayback": true,
+        "performed": 717,
+        "keyReleases": 717,
+        "pedals": 0,
+        "durationMs": 117272.70061984078,
+        "playbackDuration": 120.27270061984078
+      }
+    },
+    {
+      "filename": "diem-mat-mat.mxl",
+      "title": "Điềm mật mật",
+      "status": "added",
+      "reason": "521 nốt; 2 trang; MuseScore playback/mapping đạt",
+      "version": 1,
+      "workId": "f7db7ea3cb5f2331e5d0a0ffbcb362700db19c0861ffe978f42193303ee478e4",
+      "id": "f7db7ea3cb5f2331e5d0a0ffbcb362700db19c0861ffe978f42193303ee478e4",
+      "practiceReady": true,
+      "originalFilename": "09-Diem-Mat-Mat.mxl",
+      "sourceSha256": "f7db7ea3cb5f2331e5d0a0ffbcb362700db19c0861ffe978f42193303ee478e4",
+      "sourceTitle": "Điềm mật mật / Tian Mi Mi",
+      "sourceCredits": [
+        {
+          "type": "composer",
+          "text": "Traditional melody; source arrangement 音乐符"
+        }
+      ],
+      "staffPolicy": {
+        "policyVersion": "piano-two-staves-v1",
+        "accepted": true,
+        "totalStaves": 2,
+        "parts": [
+          {
+            "id": "Pf7eb430b8df57a4cc6776a8c23e10f3f",
+            "staves": 2,
+            "instrument": {
+              "piano": true,
+              "labels": [
+                "Piano",
+                "Pno."
+              ],
+              "programs": [],
+              "sounds": [],
+              "contradictions": []
+            },
+            "pitchedNotes": 521
+          }
+        ],
+        "violations": []
+      },
+      "xmlSchema": {
+        "filename": "diem-mat-mat.mxl",
+        "passed": true,
+        "errors": []
+      },
+      "nativeAudit": {
+        "sourceNotes": 521,
+        "nativeNotes": 521,
+        "editorNotes": 521,
+        "editorGraceNotes": 0,
+        "measures": 59,
+        "pages": 2,
+        "missingGlyphs": 0,
+        "nativePlayback": true,
+        "performed": 521,
+        "keyReleases": 513,
+        "pedals": 0,
+        "durationMs": 113371.43049142933,
+        "playbackDuration": 116.37143049142934
+      }
+    },
+    {
+      "filename": "chuot-yeu-gao.mxl",
+      "title": "Chuột yêu gạo",
+      "status": "added",
+      "reason": "Nghe/chỉnh sửa đầy đủ 1288 nốt; bộ tập chưa hỗ trợ 2 nốt hoa mỹ.",
+      "version": 1,
+      "workId": "514591366d7731e3137b225dbf087e957bd7491125fc7c3d29107465124f8fb6",
+      "id": "514591366d7731e3137b225dbf087e957bd7491125fc7c3d29107465124f8fb6",
+      "practiceReady": false,
+      "originalFilename": "10-Chuot-Yeu-Gao.mxl",
+      "sourceSha256": "514591366d7731e3137b225dbf087e957bd7491125fc7c3d29107465124f8fb6",
+      "sourceTitle": "Chuột yêu gạo / Mouse Love Rice",
+      "sourceCredits": [
+        {
+          "type": "composer",
+          "text": "Source: Everyone Piano"
+        }
+      ],
+      "staffPolicy": {
+        "policyVersion": "piano-two-staves-v1",
+        "accepted": true,
+        "totalStaves": 2,
+        "parts": [
+          {
+            "id": "P53d7c35b286b46511c84be5c811e19ac",
+            "staves": 2,
+            "instrument": {
+              "piano": true,
+              "labels": [
+                "Piano",
+                "Pno."
+              ],
+              "programs": [],
+              "sounds": [],
+              "contradictions": []
+            },
+            "pitchedNotes": 1288
+          }
+        ],
+        "violations": []
+      },
+      "xmlSchema": {
+        "filename": "chuot-yeu-gao.mxl",
+        "passed": true,
+        "errors": []
+      },
+      "nativeAudit": {
+        "sourceNotes": 1288,
+        "nativeNotes": 1286,
+        "editorNotes": 1288,
+        "editorGraceNotes": 2,
+        "measures": 75,
+        "pages": 4,
+        "missingGlyphs": 0,
+        "nativePlayback": true,
+        "performed": 1448,
+        "keyReleases": 1393,
+        "pedals": 0,
+        "durationMs": 250689.6634615385,
+        "playbackDuration": 253.6896634615385
+      }
+    },
+    {
+      "filename": "sau-nay.mxl",
+      "title": "Sau này",
+      "status": "added",
+      "reason": "787 nốt; 3 trang; MuseScore playback/mapping đạt",
+      "version": 1,
+      "workId": "3c31e998d826c7e9b17c4ad9e32c2355e0b99ab4fd8373ee843c0deafc79512b",
+      "id": "3c31e998d826c7e9b17c4ad9e32c2355e0b99ab4fd8373ee843c0deafc79512b",
+      "practiceReady": true,
+      "originalFilename": "11-Sau-Nay.mxl",
+      "sourceSha256": "3c31e998d826c7e9b17c4ad9e32c2355e0b99ab4fd8373ee843c0deafc79512b",
+      "sourceTitle": "Sau này / 后来 - 抒情好听版",
+      "sourceCredits": [
+        {
+          "type": "composer",
+          "text": "Music21"
+        }
+      ],
+      "staffPolicy": {
+        "policyVersion": "piano-two-staves-v1",
+        "accepted": true,
+        "totalStaves": 2,
+        "parts": [
+          {
+            "id": "P10b56beccdf2335e609339a137365ac8",
+            "staves": 2,
+            "instrument": {
+              "piano": true,
+              "labels": [
+                "Piano",
+                "Pno",
+                "Piano",
+                "Pno"
+              ],
+              "programs": [
+                1
+              ],
+              "sounds": [],
+              "contradictions": []
+            },
+            "pitchedNotes": 787
+          }
+        ],
+        "violations": []
+      },
+      "xmlSchema": {
+        "filename": "sau-nay.mxl",
+        "passed": true,
+        "errors": []
+      },
+      "nativeAudit": {
+        "sourceNotes": 787,
+        "nativeNotes": 787,
+        "editorNotes": 787,
+        "editorGraceNotes": 0,
+        "measures": 52,
+        "pages": 3,
+        "missingGlyphs": 0,
+        "nativePlayback": true,
+        "performed": 787,
+        "keyReleases": 757,
+        "pedals": 0,
+        "durationMs": 178285.66334695337,
+        "playbackDuration": 181.28566334695336
+      }
+    },
+    {
+      "filename": "nhung-nam-ay.mxl",
+      "title": "Những năm ấy",
+      "status": "added",
+      "reason": "716 nốt; 3 trang; MuseScore playback/mapping đạt",
+      "version": 1,
+      "workId": "6c58faf58f0e10d54bb03c817d9a35d9dd61c746f14b3b44cc0c7fac45eed9d8",
+      "id": "6c58faf58f0e10d54bb03c817d9a35d9dd61c746f14b3b44cc0c7fac45eed9d8",
+      "practiceReady": true,
+      "originalFilename": "12-Nhung-Nam-Ay.mxl",
+      "sourceSha256": "6c58faf58f0e10d54bb03c817d9a35d9dd61c746f14b3b44cc0c7fac45eed9d8",
+      "sourceTitle": "Những năm ấy / 那些年",
+      "sourceCredits": [
+        {
+          "type": "composer",
+          "text": "Piano arrangement: Everyone Piano"
+        }
+      ],
+      "staffPolicy": {
+        "policyVersion": "piano-two-staves-v1",
+        "accepted": true,
+        "totalStaves": 2,
+        "parts": [
+          {
+            "id": "P8a837005046d14dd13bfa79fa860b87e",
+            "staves": 2,
+            "instrument": {
+              "piano": true,
+              "labels": [
+                "Piano",
+                "Pno.",
+                "Piano",
+                "Pno"
+              ],
+              "programs": [
+                1
+              ],
+              "sounds": [],
+              "contradictions": []
+            },
+            "pitchedNotes": 716
+          }
+        ],
+        "violations": []
+      },
+      "xmlSchema": {
+        "filename": "nhung-nam-ay.mxl",
+        "passed": true,
+        "errors": []
+      },
+      "nativeAudit": {
+        "sourceNotes": 716,
+        "nativeNotes": 716,
+        "editorNotes": 716,
+        "editorGraceNotes": 0,
+        "measures": 55,
+        "pages": 3,
+        "missingGlyphs": 0,
+        "nativePlayback": true,
+        "performed": 1361,
+        "keyReleases": 1281,
+        "pedals": 0,
+        "durationMs": 343333.3333333334,
+        "playbackDuration": 346.33333333333337
+      }
+    },
+    {
+      "filename": "may-man-be-nho.mxl",
+      "title": "May mắn bé nhỏ",
+      "status": "added",
+      "reason": "714 nốt; 3 trang; MuseScore playback/mapping đạt",
+      "version": 1,
+      "workId": "dcd9a71a73306d74602b5a50c6cbb8ecab3eb7c68944d00aa40fff15ba3e2fd6",
+      "id": "dcd9a71a73306d74602b5a50c6cbb8ecab3eb7c68944d00aa40fff15ba3e2fd6",
+      "practiceReady": true,
+      "originalFilename": "13-May-Man-Be-Nho.mxl",
+      "sourceSha256": "dcd9a71a73306d74602b5a50c6cbb8ecab3eb7c68944d00aa40fff15ba3e2fd6",
+      "sourceTitle": "May mắn bé nhỏ / 小幸运",
+      "sourceCredits": [
+        {
+          "type": "composer",
+          "text": "Jerry C"
+        }
+      ],
+      "staffPolicy": {
+        "policyVersion": "piano-two-staves-v1",
+        "accepted": true,
+        "totalStaves": 2,
+        "parts": [
+          {
+            "id": "Pb4f3eaff5bf2aad7cbbe640e701ee45f",
+            "staves": 2,
+            "instrument": {
+              "piano": true,
+              "labels": [
+                "Piano",
+                "Pno.",
+                "Piano",
+                "Pno"
+              ],
+              "programs": [
+                1
+              ],
+              "sounds": [],
+              "contradictions": []
+            },
+            "pitchedNotes": 714
+          }
+        ],
+        "violations": []
+      },
+      "xmlSchema": {
+        "filename": "may-man-be-nho.mxl",
+        "passed": true,
+        "errors": []
+      },
+      "nativeAudit": {
+        "sourceNotes": 714,
+        "nativeNotes": 714,
+        "editorNotes": 714,
+        "editorGraceNotes": 0,
+        "measures": 60,
+        "pages": 3,
+        "missingGlyphs": 0,
+        "nativePlayback": true,
+        "performed": 1029,
+        "keyReleases": 926,
+        "pedals": 0,
+        "durationMs": 252000.06300001574,
+        "playbackDuration": 255.00006300001573
+      }
+    },
+    {
+      "filename": "thanh-hoa-su.mxl",
+      "title": "Thanh hoa sứ",
+      "status": "added",
+      "reason": "Nghe/chỉnh sửa đầy đủ 1040 nốt; bộ tập chưa hỗ trợ 2 nốt hoa mỹ.",
+      "version": 1,
+      "workId": "f161272b882a9accef08097308c4ff0bca750270dc730a65f5947f2092ec12bc",
+      "id": "f161272b882a9accef08097308c4ff0bca750270dc730a65f5947f2092ec12bc",
+      "practiceReady": false,
+      "originalFilename": "14-Thanh-Hoa-Su.mxl",
+      "sourceSha256": "f161272b882a9accef08097308c4ff0bca750270dc730a65f5947f2092ec12bc",
+      "sourceTitle": "Thanh hoa sứ / 青花瓷 (Blue and White Porcelain)",
+      "sourceCredits": [
+        {
+          "type": "composer",
+          "text": "Music21"
+        }
+      ],
+      "staffPolicy": {
+        "policyVersion": "piano-two-staves-v1",
+        "accepted": true,
+        "totalStaves": 2,
+        "parts": [
+          {
+            "id": "P1",
+            "staves": 2,
+            "instrument": {
+              "piano": true,
+              "labels": [
+                "Piano",
+                "Pno.",
+                "Acoustic Grand Piano",
+                "Pno"
+              ],
+              "programs": [
+                1
+              ],
+              "sounds": [],
+              "contradictions": []
+            },
+            "pitchedNotes": 1040
+          }
+        ],
+        "violations": []
+      },
+      "xmlSchema": {
+        "filename": "thanh-hoa-su.mxl",
+        "passed": true,
+        "errors": []
+      },
+      "sourceCorrection": {
+        "passed": true,
+        "libraryFileId": "libfile_c1164b1e4668819192eb236bb7f8f29c",
+        "version": 0,
+        "bytes": 15079,
+        "sha256": "f161272b882a9accef08097308c4ff0bca750270dc730a65f5947f2092ec12bc",
+        "replacesSha256": "5082f6dc18bcd39d774e1204e5de45320f36003ff06c2ce9068ec76b3d2ba0b3",
+        "replacesBytes": 15078,
+        "onlyEndingOrderChanged": true,
+        "changes": [
+          {
+            "part": "P1",
+            "measure": "25"
+          }
+        ],
+        "sourceNotes": 1040,
+        "graceNotes": 2,
+        "schemaPassed": true,
+        "schema": "MuseScore vendored W3C MusicXML 4.0 XSD"
+      },
+      "nativeAudit": {
+        "sourceNotes": 1040,
+        "nativeNotes": 1038,
+        "editorNotes": 1040,
+        "editorGraceNotes": 2,
+        "measures": 39,
+        "pages": 4,
+        "missingGlyphs": 0,
+        "nativePlayback": true,
+        "performed": 1412,
+        "keyReleases": 1327,
+        "pedals": 0,
+        "durationMs": 106998.95833333333,
+        "playbackDuration": 109.99895833333333
+      }
+    },
+    {
+      "filename": "hoa-tam.mxl",
+      "title": "Họa tâm",
+      "status": "excluded",
+      "reason": "Cách ly nguồn thiếu: tay phải ô 69 chưa xác định 3,5 phách. Không tự điền hoặc bật tập tính điểm.",
+      "originalFilename": "15-Hoa-Tam.mxl",
+      "sourceSha256": "969b79c151463a49e44a10ba6ec9efc5e30d334e10ecbbf36659d4857c4b4232",
+      "sourceTitle": "Họa tâm / 画心",
+      "sourceCredits": [
+        {
+          "type": "composer",
+          "text": "Source: EveryonePiano"
+        }
+      ],
+      "staffPolicy": {
+        "policyVersion": "piano-two-staves-v1",
+        "accepted": true,
+        "totalStaves": 2,
+        "parts": [
+          {
+            "id": "P1",
+            "staves": 2,
+            "instrument": {
+              "piano": true,
+              "labels": [
+                "Piano",
+                "Piano",
+                "Acoustic Grand Piano",
+                "Pno"
+              ],
+              "programs": [
+                1
+              ],
+              "sounds": [],
+              "contradictions": []
+            },
+            "pitchedNotes": 1300
+          }
+        ],
+        "violations": []
+      },
+      "xmlSchema": {
+        "filename": "hoa-tam.mxl",
+        "passed": true,
+        "errors": []
+      }
+    },
+    {
+      "filename": "do-ta-khong-do-nang.mxl",
+      "title": "Độ ta không độ nàng",
+      "status": "added",
+      "reason": "338 nốt; 2 trang; MuseScore playback/mapping đạt",
+      "version": 1,
+      "workId": "882c520ef4219fb54be6549a5bef952f67ecfe0d30b4fc6ce1dce6c60ffd90b5",
+      "id": "882c520ef4219fb54be6549a5bef952f67ecfe0d30b4fc6ce1dce6c60ffd90b5",
+      "practiceReady": true,
+      "originalFilename": "16-Do-Ta-Khong-Do-Nang.mxl",
+      "sourceSha256": "882c520ef4219fb54be6549a5bef952f67ecfe0d30b4fc6ce1dce6c60ffd90b5",
+      "sourceTitle": "Độ ta không độ nàng / 渡我不渡她",
+      "sourceCredits": [
+        {
+          "type": "composer",
+          "text": "Piano arrangement: Everyone Piano"
+        }
+      ],
+      "staffPolicy": {
+        "policyVersion": "piano-two-staves-v1",
+        "accepted": true,
+        "totalStaves": 2,
+        "parts": [
+          {
+            "id": "P28c1a3f48c5ab2f9cf38d2c708c49687",
+            "staves": 2,
+            "instrument": {
+              "piano": true,
+              "labels": [
+                "Piano",
+                "Pno.",
+                "Piano",
+                "Pno"
+              ],
+              "programs": [
+                1
+              ],
+              "sounds": [],
+              "contradictions": []
+            },
+            "pitchedNotes": 338
+          }
+        ],
+        "violations": []
+      },
+      "xmlSchema": {
+        "filename": "do-ta-khong-do-nang.mxl",
+        "passed": true,
+        "errors": []
+      },
+      "nativeAudit": {
+        "sourceNotes": 338,
+        "nativeNotes": 338,
+        "editorNotes": 338,
+        "editorGraceNotes": 0,
+        "measures": 33,
+        "pages": 2,
+        "missingGlyphs": 0,
+        "nativePlayback": true,
+        "performed": 676,
+        "keyReleases": 668,
+        "pedals": 0,
+        "durationMs": 174545.41487604208,
+        "playbackDuration": 177.5454148760421
+      }
+    }
+  ],
+  "package": {
+    "passed": true,
+    "bytes": 184494,
+    "sha256": "246babe915f2bf4720f20e265a818c5baf69dcd1a870d6051d8f542a15492e23",
+    "mxlCount": 16,
+    "entries": 35,
+    "filename": "16-Bai-Nhac-Hoa-MXL-ABC.zip"
+  },
+  "sourceCorrection": {
+    "passed": true,
+    "libraryFileId": "libfile_c1164b1e4668819192eb236bb7f8f29c",
+    "version": 0,
+    "bytes": 15079,
+    "sha256": "f161272b882a9accef08097308c4ff0bca750270dc730a65f5947f2092ec12bc",
+    "replacesSha256": "5082f6dc18bcd39d774e1204e5de45320f36003ff06c2ce9068ec76b3d2ba0b3",
+    "replacesBytes": 15078,
+    "onlyEndingOrderChanged": true,
+    "changes": [
+      {
+        "part": "P1",
+        "measure": "25"
+      }
+    ],
+    "sourceNotes": 1040,
+    "graceNotes": 2,
+    "schemaPassed": true,
+    "schema": "MuseScore vendored W3C MusicXML 4.0 XSD"
+  },
+  "validationScope": "MXL ZIP/XML, W3C MusicXML 4.0 XSD, đúng hai khuông piano; native import/export, note counts, SVG mapping and playback. Bằng chứng đối chiếu ảnh/ABC do bên bàn giao cung cấp, không phải kiểm độc lập toàn bộ ảnh nguồn trong đợt nhập này."
+}

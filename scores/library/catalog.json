@@ -769,6 +769,168 @@
       "bytes": 5163,
       "workId": "1c2d5455c6ebf964f3e5cdd85ea30f220d8ffbc912add86189fd4238c8f1aa8c",
       "version": 1
+    },
+    {
+      "id": "9aee989cc4b46efefad5c4e60fbd6ed8582bf90a6ddab5b35ccc97f85b9277d0",
+      "sha256": "9aee989cc4b46efefad5c4e60fbd6ed8582bf90a6ddab5b35ccc97f85b9277d0",
+      "title": "999 đóa hồng",
+      "filename": "999 đóa hồng.mxl",
+      "url": "library/songs/999-doa-hong.mxl",
+      "bytes": 3642,
+      "workId": "9aee989cc4b46efefad5c4e60fbd6ed8582bf90a6ddab5b35ccc97f85b9277d0",
+      "version": 1,
+      "practiceReady": false,
+      "practiceNotice": "Nghe và chỉnh sửa được. Chưa hỗ trợ tập 1 nốt hoa mỹ của bản này."
+    },
+    {
+      "id": "f0e14f7f4811936ef83faebcb51c0a7a3c6c9fd0cb7eb979ba10441d9a52fabf",
+      "sha256": "f0e14f7f4811936ef83faebcb51c0a7a3c6c9fd0cb7eb979ba10441d9a52fabf",
+      "title": "Người tình mùa đông",
+      "filename": "Người tình mùa đông.mxl",
+      "url": "library/songs/nguoi-tinh-mua-dong.mxl",
+      "bytes": 17248,
+      "workId": "f0e14f7f4811936ef83faebcb51c0a7a3c6c9fd0cb7eb979ba10441d9a52fabf",
+      "version": 1,
+      "practiceReady": false,
+      "practiceNotice": "Nghe và chỉnh sửa được. Chưa hỗ trợ tập 14 nốt hoa mỹ của bản này."
+    },
+    {
+      "id": "63607a457e74ae70c4c7636c271a61d3d33c9ea21933e22fa61b70a03695c58c",
+      "sha256": "63607a457e74ae70c4c7636c271a61d3d33c9ea21933e22fa61b70a03695c58c",
+      "title": "Đồng thoại",
+      "filename": "Đồng thoại.mxl",
+      "url": "library/songs/dong-thoai.mxl",
+      "bytes": 13198,
+      "workId": "63607a457e74ae70c4c7636c271a61d3d33c9ea21933e22fa61b70a03695c58c",
+      "version": 1,
+      "practiceReady": false,
+      "practiceNotice": "Nghe và chỉnh sửa được. Chưa hỗ trợ tập 15 nốt hoa mỹ của bản này."
+    },
+    {
+      "id": "acf1c8918b5d478fa469ed6602314ddf196b7662c8611776dee26a291d1878fe",
+      "sha256": "acf1c8918b5d478fa469ed6602314ddf196b7662c8611776dee26a291d1878fe",
+      "title": "Thần thoại",
+      "filename": "Thần thoại.mxl",
+      "url": "library/songs/than-thoai.mxl",
+      "bytes": 19882,
+      "workId": "acf1c8918b5d478fa469ed6602314ddf196b7662c8611776dee26a291d1878fe",
+      "version": 1
+    },
+    {
+      "id": "f41e07dc6ef0c3b44905a6bbd08f884d6b8a73321c0f2bef022d436d60384a11",
+      "sha256": "f41e07dc6ef0c3b44905a6bbd08f884d6b8a73321c0f2bef022d436d60384a11",
+      "title": "Tân uyên ương hồ điệp mộng",
+      "filename": "Tân uyên ương hồ điệp mộng.mxl",
+      "url": "library/songs/tan-uyen-uong-ho-diep-mong.mxl",
+      "bytes": 2760,
+      "workId": "f41e07dc6ef0c3b44905a6bbd08f884d6b8a73321c0f2bef022d436d60384a11",
+      "version": 1
+    },
+    {
+      "id": "a4d1c86379114fbcfc86e6d22776507f87d31f9146a38e7770d75d13f05dc339",
+      "sha256": "a4d1c86379114fbcfc86e6d22776507f87d31f9146a38e7770d75d13f05dc339",
+      "title": "Ánh trăng nói hộ lòng tôi",
+      "filename": "Ánh trăng nói hộ lòng tôi — v2.mxl",
+      "url": "library/songs/anh-trang-noi-ho-long-toi-v2.mxl",
+      "bytes": 3392,
+      "workId": "d170791f68eeafe0ac726baaacac949879eee9f3465f334b60722ba8c9908947",
+      "version": 2
+    },
+    {
+      "id": "b81f9e80632a318289f6b7a5c7d39afb1a91a718e409066cfd17e8798179607a",
+      "sha256": "b81f9e80632a318289f6b7a5c7d39afb1a91a718e409066cfd17e8798179607a",
+      "title": "Nụ hôn biệt ly",
+      "filename": "Nụ hôn biệt ly.mxl",
+      "url": "library/songs/nu-hon-biet-ly.mxl",
+      "bytes": 6826,
+      "workId": "b81f9e80632a318289f6b7a5c7d39afb1a91a718e409066cfd17e8798179607a",
+      "version": 1
+    },
+    {
+      "id": "1d9ca368efc012e1ebecd4fe652af730ba6a0d078648ed56ecc5327a0bd57f72",
+      "sha256": "1d9ca368efc012e1ebecd4fe652af730ba6a0d078648ed56ecc5327a0bd57f72",
+      "title": "Bến Thượng Hải",
+      "filename": "Bến Thượng Hải.mxl",
+      "url": "library/songs/ben-thuong-hai.mxl",
+      "bytes": 8807,
+      "workId": "1d9ca368efc012e1ebecd4fe652af730ba6a0d078648ed56ecc5327a0bd57f72",
+      "version": 1,
+      "practiceReady": false,
+      "practiceNotice": "Nghe và chỉnh sửa được. Chưa hỗ trợ tập 4 nốt hoa mỹ của bản này."
+    },
+    {
+      "id": "f7db7ea3cb5f2331e5d0a0ffbcb362700db19c0861ffe978f42193303ee478e4",
+      "sha256": "f7db7ea3cb5f2331e5d0a0ffbcb362700db19c0861ffe978f42193303ee478e4",
+      "title": "Điềm mật mật",
+      "filename": "Điềm mật mật.mxl",
+      "url": "library/songs/diem-mat-mat.mxl",
+      "bytes": 5213,
+      "workId": "f7db7ea3cb5f2331e5d0a0ffbcb362700db19c0861ffe978f42193303ee478e4",
+      "version": 1
+    },
+    {
+      "id": "514591366d7731e3137b225dbf087e957bd7491125fc7c3d29107465124f8fb6",
+      "sha256": "514591366d7731e3137b225dbf087e957bd7491125fc7c3d29107465124f8fb6",
+      "title": "Chuột yêu gạo",
+      "filename": "Chuột yêu gạo.mxl",
+      "url": "library/songs/chuot-yeu-gao.mxl",
+      "bytes": 9897,
+      "workId": "514591366d7731e3137b225dbf087e957bd7491125fc7c3d29107465124f8fb6",
+      "version": 1,
+      "practiceReady": false,
+      "practiceNotice": "Nghe và chỉnh sửa được. Chưa hỗ trợ tập 2 nốt hoa mỹ của bản này."
+    },
+    {
+      "id": "3c31e998d826c7e9b17c4ad9e32c2355e0b99ab4fd8373ee843c0deafc79512b",
+      "sha256": "3c31e998d826c7e9b17c4ad9e32c2355e0b99ab4fd8373ee843c0deafc79512b",
+      "title": "Sau này",
+      "filename": "Sau này.mxl",
+      "url": "library/songs/sau-nay.mxl",
+      "bytes": 11463,
+      "workId": "3c31e998d826c7e9b17c4ad9e32c2355e0b99ab4fd8373ee843c0deafc79512b",
+      "version": 1
+    },
+    {
+      "id": "6c58faf58f0e10d54bb03c817d9a35d9dd61c746f14b3b44cc0c7fac45eed9d8",
+      "sha256": "6c58faf58f0e10d54bb03c817d9a35d9dd61c746f14b3b44cc0c7fac45eed9d8",
+      "title": "Những năm ấy",
+      "filename": "Những năm ấy.mxl",
+      "url": "library/songs/nhung-nam-ay.mxl",
+      "bytes": 7057,
+      "workId": "6c58faf58f0e10d54bb03c817d9a35d9dd61c746f14b3b44cc0c7fac45eed9d8",
+      "version": 1
+    },
+    {
+      "id": "dcd9a71a73306d74602b5a50c6cbb8ecab3eb7c68944d00aa40fff15ba3e2fd6",
+      "sha256": "dcd9a71a73306d74602b5a50c6cbb8ecab3eb7c68944d00aa40fff15ba3e2fd6",
+      "title": "May mắn bé nhỏ",
+      "filename": "May mắn bé nhỏ.mxl",
+      "url": "library/songs/may-man-be-nho.mxl",
+      "bytes": 6288,
+      "workId": "dcd9a71a73306d74602b5a50c6cbb8ecab3eb7c68944d00aa40fff15ba3e2fd6",
+      "version": 1
+    },
+    {
+      "id": "882c520ef4219fb54be6549a5bef952f67ecfe0d30b4fc6ce1dce6c60ffd90b5",
+      "sha256": "882c520ef4219fb54be6549a5bef952f67ecfe0d30b4fc6ce1dce6c60ffd90b5",
+      "title": "Độ ta không độ nàng",
+      "filename": "Độ ta không độ nàng.mxl",
+      "url": "library/songs/do-ta-khong-do-nang.mxl",
+      "bytes": 3556,
+      "workId": "882c520ef4219fb54be6549a5bef952f67ecfe0d30b4fc6ce1dce6c60ffd90b5",
+      "version": 1
+    },
+    {
+      "id": "f161272b882a9accef08097308c4ff0bca750270dc730a65f5947f2092ec12bc",
+      "sha256": "f161272b882a9accef08097308c4ff0bca750270dc730a65f5947f2092ec12bc",
+      "title": "Thanh hoa sứ",
+      "filename": "Thanh hoa sứ.mxl",
+      "url": "library/songs/thanh-hoa-su.mxl",
+      "bytes": 15079,
+      "workId": "f161272b882a9accef08097308c4ff0bca750270dc730a65f5947f2092ec12bc",
+      "version": 1,
+      "practiceReady": false,
+      "practiceNotice": "Nghe và chỉnh sửa được. Chưa hỗ trợ tập 2 nốt hoa mỹ của bản này."
     }
   ]
 }

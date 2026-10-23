@@ -26,7 +26,9 @@ phiên bản N+1 khi xác định được cùng tác phẩm. Mọi bản mới 
 
 ## Đối soát ngày 23/10/2026
 
-Catalog hiện có **78 phiên bản / 75 tác phẩm** sau khi bổ sung
+Catalog hiện có **93 phiên bản / 89 tác phẩm** sau [gói 16 bài nhạc Hoa](IMPORT_REPORT_2026-10-23_CHINESE_16.md): nhận 15 bản (9 tập được, 6 chỉ nghe/chỉnh sửa), cách ly Họa tâm thiếu nguồn. Thanh hoa sứ dùng bản thay thế đã kiểm sửa cấu trúc/XSD và kiểm native lại.
+
+Trước đó có **78 phiên bản / 75 tác phẩm** sau khi bổ sung
 [Wo Bu Hou Hui](IMPORT_REPORT_2026-10-23_WO_BU_HOU_HUI.md), đủ hai khuông,
 681 nốt, nghe/chỉnh sửa/tập được.
 
