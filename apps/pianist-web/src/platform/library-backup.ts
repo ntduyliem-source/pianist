@@ -1,8 +1,8 @@
 import { Unzip, UnzipInflate, zip, strToU8, strFromU8 } from 'fflate';
 import type { LibraryData, ProjectRecord, RecoveryRecord } from './storage';
-import type { SavedAttempt } from '../../../../packages/practice-engine-v2/model';
+import type { SavedAttempt } from '../../../../packages/practice-engine-v2';
 import { validateFile } from './files';
-import { inspectAbc } from '../../../../packages/score-formats/abc';
+import { inspectAbc } from '../../../../packages/score-formats';
 
 const LIMIT = 256 * 1024 * 1024;
 type FileRef = { path: string; bytes: number; sha256: string };

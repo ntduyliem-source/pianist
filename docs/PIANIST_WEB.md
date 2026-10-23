@@ -10,6 +10,8 @@ Nhập ABC, MXL/MusicXML, MSCZ hoặc MSCX, tối đa 32 MiB. Có thể chọn f
 
 **Bài hát có sẵn** lấy từ [catalog được duyệt](../scores/library/catalog.json). Mỗi tác phẩm có nhiều bản sẽ có dropdown chọn version; bản trùng byte không thêm version. Khi mở, ứng dụng kiểm bytes/SHA-256, nhập rồi giữ bản riêng trên thiết bị. Lần mở lại dùng bản đã lưu, giữ các chỉnh sửa của bạn. Danh sách nhận/bỏ theo đợt ở [report thư viện](../scores/library/IMPORT_REPORT.md); catalog hiện hành quyết định các bản được đóng gói.
 
+**Chuẩn nhận thư viện:** bản nhạc phải có đúng hai khuông piano theo dữ liệu MuseScore, kể cả ABC sau chuyển đổi. Một part hai khuông hoặc hai part piano mỗi part một khuông đều hợp lệ; khóa nhạc, ô nhịp nghỉ và việc chọn tập một tay không làm thay đổi chuẩn này. Nhập, lưu bản, khôi phục và mở tập đều kiểm chuẩn; tự lưu/recovery vẫn giữ công việc đang sửa để tránh mất dữ liệu.
+
 Editor dùng MuseScore để chỉnh nốt, undo/redo, lưu và phát nhạc. **Lưu thư viện/Ctrl+S** lưu trong trình duyệt. **Lưu bản mới/Ctrl+Shift+S** tạo project riêng. Tải MSCZ giữ dự án native; xuất MXL/MusicXML để trao đổi notation, PDF để in.
 
 **Phát nhạc**, **Tạm dừng**, **Dừng** và thanh tua điều khiển playback native MuseScore, dùng tiếng MS Basic và bản nhạc đang sửa. Space phát/tạm dừng khi focus thuộc editor; trong nút/ô nhập, Space giữ hành vi của control đó. Chuyển khỏi editor dừng playback editor. Phát editor không tạo lượt tập hoặc điểm.

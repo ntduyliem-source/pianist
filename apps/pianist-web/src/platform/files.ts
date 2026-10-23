@@ -1,10 +1,11 @@
 import { Unzip, UnzipInflate } from 'fflate';
-import { inspectAbc } from '../../../../packages/score-formats/abc';
 import {
+  inspectAbc,
   prepareImport,
   type ScoreConverter,
   type PreparedScore,
 } from '../../../../packages/score-formats';
+
 const MAX = 32 * 1024 * 1024,
   EXPANDED = 64 * 1024 * 1024;
 function checkEntities(text: string): void {

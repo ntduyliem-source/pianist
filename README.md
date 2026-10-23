@@ -4,7 +4,7 @@ Pianist là ứng dụng web chỉnh sửa và tập piano, fork từ MuseScore 
 
 **[Mở ứng dụng online](https://ntduyliem-source.github.io/pianist/)**
 
-- Thư viện nhận MXL/MusicXML, MSCZ/MSCX và ABC; có bộ bài piano được kiểm trước khi đóng gói.
+- Thư viện nhận MXL/MusicXML, MSCZ/MSCX và ABC, bắt buộc đúng hai khuông piano; có bộ bài được kiểm trước khi đóng gói.
 - Editor MuseScore chỉnh sửa, lưu, xuất và phát bản nhạc bằng tiếng MS Basic. Phát/tạm dừng bằng Space; có nút dừng và thanh tua.
 - Màn tập riêng: Đúng nốt hoặc BPM, nhả phím/pedal, A–B, full sheet, highlight native và cuộn theo bài.
 - Xử lý trong trình duyệt. Bản chỉnh sửa lưu bằng MSCZ trên thiết bị; hỗ trợ sao lưu/khôi phục và chuẩn bị offline.

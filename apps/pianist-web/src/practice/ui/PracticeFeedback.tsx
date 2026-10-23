@@ -4,7 +4,7 @@ import type {
   EngineView,
   ReleaseJudgement,
   Target,
-} from '../../../../../packages/practice-engine-v2/model';
+} from '../../../../../packages/practice-engine-v2';
 import { noteName } from '../../platform/midi-v2';
 
 const gradeText = {

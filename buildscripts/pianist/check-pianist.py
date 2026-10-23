@@ -48,7 +48,7 @@ def main():
     if args.suite and args.mode != 'browser':
         parser.error('--suite is only for browser iteration; native always runs every critical suite')
     suites = args.suite or list(SUITES)
-    fast_labels = ['source-pins', 'tooling-index', 'format', 'typecheck', 'typescript-oracles', 'python-library-grade', 'authored-grades', 'source-cutover']
+    fast_labels = ['source-pins', 'tooling-index', 'dependencies', 'format', 'typecheck', 'typescript-oracles', 'python-library-grade', 'authored-grades', 'source-cutover']
     labels = fast_labels if args.mode == 'fast' else ['browser-fixtures', *suites]
     if args.mode == 'native':
         labels = ['release-integrity', 'native-cutover', *labels]
@@ -85,6 +85,7 @@ def main():
                 raise RuntimeError('Install Node and run npm ci --prefix apps/pianist-web first.')
             run('source-pins', [sys.executable, SCRIPTS / 'check-source-pins.py'])
             run('tooling-index', [sys.executable, SCRIPTS / 'check-tooling.py'])
+            run('dependencies', ['node', SCRIPTS / 'check-dependencies.cjs'])
             run('format', [npm, 'run', 'format:check'], APP)
             run('typecheck', [npm, 'exec', '--', 'tsc', '--noEmit'], APP)
             run('typescript-oracles', [npm, 'test'], APP)

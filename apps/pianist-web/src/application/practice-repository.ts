@@ -1,10 +1,11 @@
 import type { ScoreSnapshot } from '../../../../packages/score-contracts';
-import type {
-  PracticeSettings,
-  AttemptResult,
-  SavedAttempt,
-} from '../../../../packages/practice-engine-v2/model';
-import { settingsFor } from '../../../../packages/practice-engine-v2/score-adapter';
+import {
+  type PracticeSettings,
+  type AttemptResult,
+  type SavedAttempt,
+  settingsFor,
+} from '../../../../packages/practice-engine-v2';
+
 import * as storage from '../platform/storage';
 
 /** Persistence and device-local preferences; never owns grading or transport time. */

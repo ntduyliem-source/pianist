@@ -3,7 +3,7 @@ import type {
   AttemptStatus,
   MidiEvent,
   Timeline,
-} from '../../../../packages/practice-engine-v2/model';
+} from '../../../../packages/practice-engine-v2';
 import type { NativePracticeAudioProvider } from '../platform/audio-clock-v2';
 import { PracticeController } from '../practice/controller-v2';
 

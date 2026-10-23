@@ -1,5 +1,5 @@
-import type { SavedAttempt } from '../../../../packages/practice-engine-v2/model';
-import type { FormatDiagnostic } from '../../../../packages/score-formats/model';
+import type { SavedAttempt } from '../../../../packages/practice-engine-v2';
+import type { FormatDiagnostic } from '../../../../packages/score-formats';
 
 export interface SourceMetadata {
   sourceFormat?: string;

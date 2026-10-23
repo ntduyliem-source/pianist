@@ -1,12 +1,13 @@
 import React, { useEffect, useMemo, useRef, useState, useSyncExternalStore } from 'react';
 import type { ScoreSnapshot } from '../../../../packages/score-contracts';
-import type {
-  PracticeSettings,
-  EngineView,
-  AttemptResult,
-} from '../../../../packages/practice-engine-v2/model';
-import { createTimeline } from '../../../../packages/practice-engine-v2/score-adapter';
-import { ManiaHitWindows } from '../../../../packages/practice-engine-v2/upstream/mania';
+import {
+  type PracticeSettings,
+  type EngineView,
+  type AttemptResult,
+  createTimeline,
+  hitWindows,
+} from '../../../../packages/practice-engine-v2';
+
 import { workspace as ws } from '../workspace';
 import type { PracticeController } from './controller-v2';
 import { feedback } from './feedback-v2';
@@ -180,7 +181,7 @@ export function Practice({
     c.mode === 'bpm' &&
     t?.pedals?.some((p) => p.atMs <= position && p.endMs > position)
   );
-  const windows = new ManiaHitWindows(c.difficulty).values;
+  const windows = hitWindows(c.difficulty);
   const device =
     ws.midi.deviceId === 'virtual'
       ? 'Bàn phím ảo'
@@ -344,7 +345,7 @@ export function Practice({
     const s = ws.sessions.create({
       timeline: next,
       title: snapshot.title,
-      nativeAudio: async () => (await ws.ensureEngine(true)).api.Module.driver,
+      nativeAudio: async () => (await ws.ensureEngine(true)).practiceAudio(),
       onComplete: (r) => {
         void persist(r, true);
       },

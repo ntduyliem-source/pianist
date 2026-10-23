@@ -14,6 +14,7 @@ Cập nhật ngày 23/10/2026. Đây là điểm vào cho phần Pianist của r
 | Theo dõi việc tổ chức lại code | [Kế hoạch refactor năm giai đoạn](../REFACTOR_PLAN.md) |
 | Đóng gói và cập nhật online | [Release và GitHub Pages](release.md) |
 | Xem thuật toán chấm được lấy từ đâu | [Provenance](../../third_party/practice-sources/PROVENANCE.md) |
+| Tìm patch của fork và chuẩn bị nâng MuseScore | [Bản đồ thay đổi native](native-patches.md) |
 | Xem chính xác quy tắc duyệt cao độ tám grade | [Grade pitch validation](../curriculum/GRADE_PITCH_VALIDATION.md) |
 | Xem nội dung thực tế của kho grade | [G1–G8 và hướng dẫn từng bộ](../../scores/grades/generated/G1_G8_ABC_GUIDE.md) |
 

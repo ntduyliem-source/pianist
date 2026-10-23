@@ -1,6 +1,6 @@
-import type { PracticeSettings, SavedAttempt } from '../../../../packages/practice-engine-v2/model';
+import type { PracticeSettings, SavedAttempt } from '../../../../packages/practice-engine-v2';
 import type { ScoreSnapshot } from '../../../../packages/score-contracts';
-import type { AbcTune, FormatDiagnostic } from '../../../../packages/score-formats/model';
+import type { AbcTune, FormatDiagnostic } from '../../../../packages/score-formats';
 import type { ProjectRecord } from '../platform/storage';
 import type { BundledScore } from '../platform/bundled-library';
 

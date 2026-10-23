@@ -1,4 +1,4 @@
-import type { PracticeSettings } from '../../../../../packages/practice-engine-v2/model';
+import type { PracticeSettings } from '../../../../../packages/practice-engine-v2';
 import { NumberField } from '../NumberField';
 interface RangeSettingsProps {
   config: PracticeSettings;

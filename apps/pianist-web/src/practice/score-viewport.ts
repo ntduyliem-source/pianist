@@ -1,6 +1,5 @@
 import type { Anchor, Box, ScoreSnapshot } from '../../../../packages/score-contracts';
-import type { Timeline } from '../../../../packages/practice-engine-v2/model';
-import { tempoAt } from '../../../../packages/practice-engine-v2/tempo';
+import { type Timeline, tempoAt } from '../../../../packages/practice-engine-v2';
 
 // Presentation only: native layout and performed spans determine where to look.
 // This module never associates input or grades notes.

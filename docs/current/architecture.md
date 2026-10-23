@@ -12,7 +12,7 @@ Bản đồ hiện trạng ngày 23/10/2026, cập nhật theo các module của
 | `packages/exercise-renderer/` | Dựng snapshot grade bằng native renderer trong Worker | Sửa nội dung bài khi tải |
 | `packages/practice-engine-v2/` | Adapter timeline, bộ chấm, kết quả và replay | Import React hoặc quyết định bố cục màn hình |
 | `packages/practice-worker-v2/` | Thực thi engine chấm ở Worker | Quản lý thư viện hoặc điều hướng |
-| `packages/score-formats/`, `score-format-worker/` | Chuyển ABC bằng converter ghim và kiểm bảo toàn nhạc | Đoán thêm dữ liệu converter không giữ được |
+| `packages/score-formats/` | Chuyển ABC bằng converter ghim, Worker nội bộ và kiểm bảo toàn nhạc | Đoán thêm dữ liệu converter không giữ được |
 | `apps/pianist-web/src/platform/` | IndexedDB, MIDI, audio clock, offline, tải engine và file | Định nghĩa lại grade hoặc matcher |
 | `src/web/` và các thay đổi native MuseScore | Editor, engraving, playback, timing, âm piano, dữ liệu gốc cho web | Nhận luật UI làm nguồn thời gian hoặc cao độ |
 | `buildscripts/pianist/`, `deploy/` | Build, kiểm nội dung, đóng gói, xác minh và phát hành | Lấy mọi file local đưa lên web |
@@ -55,7 +55,7 @@ State/view types và factory state mới cho từng workspace nằm trong `appli
 
 `style.css` hiện là danh sách import theo đúng thứ tự cascade cũ. Rules của shell, thư viện, editor và kết quả nằm cạnh feature; base bàn phím 88 phím ở `practice/styles/piano.css`. Các lớp responsive/sửa đè dùng chung giữ trong `styles/`, CSS practice cũ còn ở `practice/styles/legacy-layout.css`. `practice-v2.css` vẫn là style màn sheet-first. Xem `src/styles/README.md` để biết các lớp phải giữ thứ tự; chưa xóa selector khi chưa có bằng chứng không dùng. Giá trị vị trí/zoom tính theo hình học tiếp tục dùng inline style.
 
-## Ranh giới mong muốn sau refactor
+## API và ranh giới được kiểm
 
 ```text
 app composition / navigation
@@ -64,6 +64,12 @@ app composition / navigation
       → platform adapters + packages domain/native
 ```
 
-Đây là hướng phụ thuộc; không bắt buộc mọi thao tác tạo một class hay package mới. Module chỉ phục vụ một feature nên nằm cạnh feature. Chỉ tách shared khi có trách nhiệm hoặc hợp đồng được dùng thật ở nhiều nơi.
+Đây là hướng tổ chức trách nhiệm; không bắt buộc mọi thao tác tạo một class hay package mới. Module chỉ phục vụ một feature nằm cạnh feature. Các import xuyên package phải đi qua `index.ts`; app không import implementation sâu hoặc nguồn upstream của bộ chấm. `practice-engine-v2` công bố engine, model, timeline, replay/kết quả và hàm trình bày cửa sổ timing dùng nguyên quy tắc upstream. Factory của `practice-worker-v2` tạo Worker khi được gọi; chỉ import API không tự khởi động Worker.
+
+`score-formats` công bố client, import/export và kiểm fidelity; converter Worker nằm trong package này. Native API, callback và audio driver được mô tả ở `engine-bridge/native-api.ts`. Snapshot native và semantics có kiểu riêng, không giả định chúng đã chứa project ID/hash do ứng dụng bổ sung. `score-contracts/native-decoder.ts` kiểm cấu trúc, giới hạn, revision và liên kết ID cho cả bridge và renderer. Nó không chỉnh, sắp xếp hoặc lượng tử hóa dữ liệu nhạc; chính sách nhận piano hai khuông nằm riêng trong library admission.
+
+Callback JSON chỉ nhận dữ liệu thô, việc parse/kiểm diễn ra sau khi lệnh C++ đã trả về và dọn project tạm. Dữ liệu nhị phân phải được sao chép khi vùng nhớ native còn sống; lỗi sao chép được giữ lại để ném sau khi native đã dọn. Các callback trước đó được khôi phục kể cả khi lệnh thất bại. Khi nâng MuseScore, đối chiếu [bản đồ patch native](native-patches.md), kiểu API và decoder cùng nhau.
+
+`buildscripts/pianist/check-dependencies.cjs` phân tích AST để chặn import sâu xuyên package, package phụ thuộc app, domain phụ thuộc UI/I/O và hướng phụ thuộc trái danh sách đã khai báo. Nó kiểm cả import type, re-export, dynamic import có đường dẫn tĩnh và URL Worker. Đây là kiểm ranh giới package, không phải bằng chứng mọi phụ thuộc giữa các folder UI đều được loại bỏ; đường dẫn module native động vẫn do runtime asset loader xác minh.
 
 Giới hạn nhập/xuất, tính hai khuông, data schema, ID/hash bài và hành vi Stop phải có kiểm hồi quy trước/sau khi chuyển. Bất kỳ thay đổi bản nhạc hoặc luật chấm nào là công việc riêng, không được lẫn vào commit refactor.

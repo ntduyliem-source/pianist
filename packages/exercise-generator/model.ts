@@ -1,7 +1,7 @@
 // Q0 exercise contracts; Q2's unreviewed source/voice data is deliberately kept
 // in source-verification.ts. Fragment hands and grade profiles require Q3 review.
 import type {ScoreSnapshot} from '../score-contracts/index';
-import type {PracticeSettings, AttemptResult, Timeline} from '../practice-engine-v2/model';
+import type {PracticeSettings, AttemptResult, Timeline} from '../practice-engine-v2';
 
 export const EXERCISE_SCHEMA_VERSION = 1 as const;
 export type ExerciseGrade = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8;

@@ -7,6 +7,7 @@
 | Dựng ứng dụng hoàn chỉnh | `setup-web.ps1`, `build-pianist.ps1` |
 | Chạy local | `serve-web.py` |
 | Kiểm source / gói native / một nhóm browser | `check-pianist.py fast` / `native` / `browser --suite …` |
+| Kiểm API package và hướng phụ thuộc | `node buildscripts/pianist/check-dependencies.cjs` (cũng thuộc cổng `fast`) |
 | Nhận bài vào thư viện | `curate-library.py --append`; luật hai khuông dùng chung trong `library_staff_policy.py` |
 | Kiểm nguồn tám grade hiện dùng | `check-authored-grades.py`; cấu hình ở `scores/grades/definition.json` |
 | Đóng gói grade hiện có sang MXL để chạy web | `composed-reading-bank.py` |

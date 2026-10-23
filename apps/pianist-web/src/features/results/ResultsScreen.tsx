@@ -3,13 +3,12 @@ import {
   ENGINE_ID,
   type SavedAttempt,
   type AttemptResult,
-} from '../../../../../packages/practice-engine-v2/model';
-import { assessReleases } from '../../../../../packages/practice-engine-v2/release-assessment';
-import {
+  assessReleases,
   attemptCsv,
   canCompare,
   replayAttempt,
-} from '../../../../../packages/practice-engine-v2/results';
+} from '../../../../../packages/practice-engine-v2';
+
 import { workspace as ws } from '../../workspace';
 import { download } from '../../platform/files';
 import { noteName } from '../../platform/midi-v2';

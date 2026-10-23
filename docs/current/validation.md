@@ -15,7 +15,8 @@ python buildscripts/pianist/check-pianist.py fast
 ```
 
 This verifies pinned converter/reference bytes, the active/reference/historical
-tool inventory (`check-tooling.py`), application source formatting
+tool inventory (`check-tooling.py`), static production dependency boundaries
+(`check-dependencies.cjs`), application source formatting
 (`npm run format:check` in `apps/pianist-web`), TypeScript types, every app unit
 test (including the committed C# oracle comparisons and live Python R4/ABC
 oracles), Python library/grade regressions, all 5,600 committed authored source
@@ -23,6 +24,13 @@ rows through the existing G1–G8 validators, and source cutover. The C# oracle
 JSON is compared, not regenerated; no .NET, WASM, warehouse, downloaded corpus,
 authored-bank output or submodule is required. Python oracle dependencies are
 pinned in `check-requirements.txt`; upstream source bytes are already committed.
+
+The dependency gate parses TypeScript/JS/TSX through the pinned Prettier parser,
+including reexports, type imports and static worker URLs. App/package consumers
+use public package indexes; packages cannot import the app; score contracts and
+the practice engine cannot acquire UI/browser I/O dependencies. Tests/oracles may
+inspect internals deliberately. Runtime native module URLs are verified by the
+asset loader, not inferred by this static check.
 
 `pianist-checks.yml` runs this gate on relevant PRs/pushes and manual dispatch.
 Make the `fast` job required in GitHub branch protection separately. A successful

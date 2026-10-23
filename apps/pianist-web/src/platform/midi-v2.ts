@@ -1,4 +1,4 @@
-import type { MidiEvent } from '../../../../packages/practice-engine-v2/model';
+import type { MidiEvent } from '../../../../packages/practice-engine-v2';
 
 type Port = {
   id: string;

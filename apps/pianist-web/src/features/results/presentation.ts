@@ -1,4 +1,4 @@
-import type { ReleaseJudgement } from '../../../../../packages/practice-engine-v2/model';
+import type { ReleaseJudgement } from '../../../../../packages/practice-engine-v2';
 
 export const percent = (n: number | null) => (n === null ? '—' : (n * 100).toFixed(1) + '%');
 export const date = (n: number) => new Date(n).toLocaleString('vi');

@@ -1,7 +1,7 @@
 import {readFileSync} from 'node:fs';
-import {replayAttempt} from '../../../packages/practice-engine-v2/results';
-import {assessReleases} from '../../../packages/practice-engine-v2/release-assessment';
-import {ENGINE_ID,type AttemptResult} from '../../../packages/practice-engine-v2/model';
+import { replayAttempt, assessReleases, ENGINE_ID, type AttemptResult } from '../../../packages/practice-engine-v2';
+
+
 const filename=process.argv[2];if(!filename)throw Error('Usage: node --import tsx scripts/replay.ts result.json');
 const result=JSON.parse(readFileSync(filename,'utf8')) as AttemptResult;
 if(result.schemaVersion!==2||result.engine!==ENGINE_ID||!result.replay)throw Error('Replay requires a complete event log from the current engine version. Older results remain read-only.');

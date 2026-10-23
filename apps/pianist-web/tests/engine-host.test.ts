@@ -46,7 +46,17 @@ function makeApi(
   resume: () => void = () => {},
 ): NativeApi {
   return {
-    Module: { driver: { resume } },
+    Module: {
+      driver: {
+        resume: async () => {
+          resume();
+        },
+        preparePreview: async () => {},
+        previewMidi() {},
+        stopPreview() {},
+        playbackFrame: () => null,
+      },
+    },
     startAudioProcessing,
     loadScoreData: () => true,
     saveProject: () => 1,

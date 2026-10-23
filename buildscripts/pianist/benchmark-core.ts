@@ -1,7 +1,7 @@
 import {performance} from 'node:perf_hooks';
 import {writeFileSync,mkdirSync} from 'node:fs';
-import {PracticeEngine} from '../../packages/practice-engine-v2/engine';
-import {ENGINE_ID} from '../../packages/practice-engine-v2/model';
+import { PracticeEngine, ENGINE_ID } from '../../packages/practice-engine-v2';
+
 import {timeline} from '../../apps/pianist-web/tests/helpers/fixtures-v2';
 const count=50000,start=performance.now();
 const t=timeline(Array.from({length:count},(_,i)=>1000+i*50),Array.from({length:count},(_,i)=>21+i%88));

@@ -1,12 +1,8 @@
-import type { Timeline, MidiEvent } from '../../../../packages/practice-engine-v2/model';
-import { tempoAt } from '../../../../packages/practice-engine-v2/tempo';
+import type { Timeline, MidiEvent } from '../../../../packages/practice-engine-v2';
+import { tempoAt } from '../../../../packages/practice-engine-v2';
 
-export interface NativePracticeAudio {
-  resume(): Promise<void>;
-  preparePreview(signal?: AbortSignal): Promise<void>;
-  previewMidi(status: number, data1: number, data2: number, performanceMs?: number): void;
-  stopPreview(): void;
-}
+import type { NativePracticeAudio } from '../../../../packages/engine-bridge';
+export type { NativePracticeAudio } from '../../../../packages/engine-bridge';
 export type NativePracticeAudioProvider = () => Promise<NativePracticeAudio>;
 
 // One affine mapping from performance timestamps to Web Audio time per run.

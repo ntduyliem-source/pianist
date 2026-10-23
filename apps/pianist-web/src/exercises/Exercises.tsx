@@ -4,11 +4,12 @@ import { Practice } from '../practice/PracticeScreen';
 import type { PracticeController } from '../practice/controller-v2';
 import { ExerciseRenderer } from '../../../../packages/exercise-renderer';
 import type { ScoreSnapshot } from '../../../../packages/score-contracts';
-import { createTimeline } from '../../../../packages/practice-engine-v2/score-adapter';
-import type {
-  AttemptResult,
-  PracticeSettings,
-} from '../../../../packages/practice-engine-v2/model';
+import {
+  createTimeline,
+  type AttemptResult,
+  type PracticeSettings,
+} from '../../../../packages/practice-engine-v2';
+
 import { loadBank, getData, putData, type Bank, type Exercise, type Hand } from './bank';
 import { ExerciseSelector, type QueueItem } from './selector';
 import { RetryableLoad } from './retryable-load';

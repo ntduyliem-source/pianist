@@ -1,5 +1,7 @@
 # Kiểm bộ bài hát nhập ngày 19/10/2026
 
+**Trạng thái hiện hành 23/10/2026:** đã áp dụng chuẩn đúng hai khuông piano; catalog còn 60 bản/58 tác phẩm. Xem [receipt nhận/loại theo chuẩn](STAFF_POLICY_REPORT.json). Các kết quả bên dưới là lịch sử nhập trước khi áp dụng chuẩn mới, không phải danh sách phát hành hiện tại.
+
 Các file do người dùng chỉ định để đưa vào thư viện và xuất bản. Giữ nguyên bytes MXL; chỉ đặt tên hiển thị trong catalog.
 
 Đã nhận 23 file; đưa vào thư viện 18 bản. Kiểm bằng MuseScore native, playback thật và mapping SVG của từng lần nhập.

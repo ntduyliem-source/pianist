@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import type { PracticeSettings } from '../../../../packages/practice-engine-v2/model';
+import type { PracticeSettings } from '../../../../packages/practice-engine-v2';
 import { calibrationTimeline, calibrationReport } from '../platform/calibration-v2';
 import type { PracticeController } from './controller-v2';
 import { PracticeSessions } from '../application/session-lifecycle';
@@ -51,7 +51,7 @@ export function CalibrationView({
         deviceId: ws.midi.deviceId,
       }),
       title: 'Đo bù trễ',
-      nativeAudio: async () => (await ws.ensureEngine(true)).api.Module.driver,
+      nativeAudio: async () => (await ws.ensureEngine(true)).practiceAudio(),
       onChange: (c) =>
         setMessage(
           c.status === 'counting'

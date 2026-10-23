@@ -1,7 +1,7 @@
 // V2: immutable offline exercises. V1 candidates cannot be cast into this type.
 import type {ExerciseGrade, Fraction, Hand} from './model';
 import type {ScoreSnapshot} from '../score-contracts';
-import type {PracticeSettings, AttemptResult} from '../practice-engine-v2/model';
+import type {PracticeSettings, AttemptResult} from '../practice-engine-v2';
 
 export type LengthBucketId = 'n4'|'n6'|'n10'|'n20'|'n30'|'n50'|'n100';
 export interface LengthBucket {id:LengthBucketId; label:string; min:number; max:number}

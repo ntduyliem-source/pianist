@@ -1,4 +1,4 @@
-import type {Timeline} from '../practice-engine-v2/model';
+import type {Timeline} from '../practice-engine-v2';
 import type {ExerciseSettings} from './model';
 
 /** Physical key attacks, as resolved by the existing score adapter, not XML <note>s. */

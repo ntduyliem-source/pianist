@@ -2,10 +2,10 @@ name: Pianist source checks
 
 on:
   pull_request:
-    paths: ['apps/pianist-web/**', 'packages/**', 'buildscripts/pianist/**', 'tests/**', 'third_party/**', 'scores/**', 'src/web/**', 'src/engraving/**', 'src/framework/**', 'CMakeLists.txt', 'package*.json', '.gitattributes', '.github/workflows/pianist-checks.yml']
+    paths: ['apps/pianist-web/**', 'packages/**', 'buildscripts/pianist/**', 'tests/**', 'third_party/**', 'scores/**', 'src/**', 'CMakeLists.txt', 'package*.json', '.gitattributes', '.github/workflows/pianist-checks.yml']
   push:
     branches: ['pianist/m0-web', 'codex/**']
-    paths: ['apps/pianist-web/**', 'packages/**', 'buildscripts/pianist/**', 'tests/**', 'third_party/**', 'scores/**', 'src/web/**', 'src/engraving/**', 'src/framework/**', 'CMakeLists.txt', 'package*.json', '.gitattributes', '.github/workflows/pianist-checks.yml']
+    paths: ['apps/pianist-web/**', 'packages/**', 'buildscripts/pianist/**', 'tests/**', 'third_party/**', 'scores/**', 'src/**', 'CMakeLists.txt', 'package*.json', '.gitattributes', '.github/workflows/pianist-checks.yml']
   workflow_dispatch:
 
 permissions:

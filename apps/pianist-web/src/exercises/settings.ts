@@ -1,6 +1,6 @@
 import type { ScoreSnapshot } from '../../../../packages/score-contracts';
-import { settingsFor } from '../../../../packages/practice-engine-v2/score-adapter';
-import type { PracticeSettings } from '../../../../packages/practice-engine-v2/model';
+import { settingsFor, type PracticeSettings } from '../../../../packages/practice-engine-v2';
+
 import type { Exercise, Hand } from './bank';
 import { GRADE_IDS, LENGTHS } from './definition';
 

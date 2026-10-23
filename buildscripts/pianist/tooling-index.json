@@ -9,7 +9,7 @@
     "checks": {
       "status": "active",
       "description": "Current source/native gates, test fixture preparation and performance diagnostics.",
-      "files": ["audit-practice-cutover.py", "benchmark-core.ts", "check-authored-grades.py", "check-pianist.py", "check-source-pins.py", "check-tooling.py", "prepare-check-fixtures.py"]
+      "files": ["audit-practice-cutover.py", "benchmark-core.ts", "check-authored-grades.py", "check-dependencies.cjs", "check-pianist.py", "check-source-pins.py", "check-tooling.py", "prepare-check-fixtures.py"]
     },
     "library": {
       "status": "active",

@@ -1,3 +1,4 @@
+import { decodePlaybackFrame } from '../../../../packages/engine-bridge';
 import type {
   EngineBridge,
   PracticePlaybackState,
@@ -7,7 +8,7 @@ import type {
   PlaybackTimePoint,
 } from '../../../../packages/engine-bridge';
 import type { ScoreSnapshot } from '../../../../packages/score-contracts';
-import type { Target } from '../../../../packages/practice-engine-v2/model';
+import type { Target } from '../../../../packages/practice-engine-v2';
 import type { Marker } from './feedback-v2';
 import { scorePositions } from './score-viewport';
 import { mapPlaybackTime } from './playback-time';
@@ -179,7 +180,9 @@ export class NativeAudition {
       const driver = this.bridge.api.Module.driver;
       if (!driver?.playbackFrame)
         throw Error('Bộ âm thanh chưa hỗ trợ đồng bộ MuseScore. Hãy tải lại ứng dụng.');
-      const frame: PlaybackFrame | null = driver.playbackFrame(state.clockEpoch);
+      const frame: PlaybackFrame | null = decodePlaybackFrame(
+        driver.playbackFrame(state.clockEpoch),
+      );
       if (frame)
         this.positionMs = Math.max(
           this.range.startMs,

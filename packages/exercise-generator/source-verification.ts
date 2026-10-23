@@ -1,5 +1,5 @@
 // Q2 offline/native admission check. No new grading or target-merging algorithm.
-import {createTimeline, settingsFor} from '../practice-engine-v2/score-adapter';
+import {createTimeline, settingsFor} from '../practice-engine-v2';
 import type {Anchor, ScoreSnapshot} from '../score-contracts';
 import type {Fraction, SpelledPitch} from './model';
 

@@ -6,8 +6,10 @@ import {
   type ReplayCommand,
   type Timeline,
   type AttemptResult,
-} from '../../../../packages/practice-engine-v2/model';
-import { resultFor } from '../../../../packages/practice-engine-v2/results';
+  resultFor,
+} from '../../../../packages/practice-engine-v2';
+
+import { createPracticeWorker, type PracticeWorker } from '../../../../packages/practice-worker-v2';
 import { AudioClock, type NativePracticeAudioProvider } from '../platform/audio-clock-v2';
 
 export class PracticeController {
@@ -30,7 +32,7 @@ export class PracticeController {
   };
   onChange = () => {};
   onComplete: (r: AttemptResult) => void = () => {};
-  private worker?: Worker;
+  private worker?: PracticeWorker;
   private generation = crypto.randomUUID();
   private timer?: number;
   private resumeAt = 0;
@@ -62,10 +64,7 @@ export class PracticeController {
     this.worker?.postMessage({ type: 'command', generation: this.generation, command });
   }
   private async load() {
-    this.worker = new Worker(
-      new URL('../../../../packages/practice-worker-v2/worker.ts', import.meta.url),
-      { type: 'module' },
-    );
+    this.worker = createPracticeWorker();
     this.worker.onerror = (e) => {
       const error = Error(e.message || 'Worker luyện tập dừng đột ngột.');
       this.rejectReady?.(error);
@@ -81,7 +80,7 @@ export class PracticeController {
         this.pause(error.message, true);
         return;
       }
-      const incoming = data.view as EngineView;
+      const incoming = data.view;
       this.view = {
         ...incoming,
         judgements: [...this.view.judgements, ...incoming.judgements],

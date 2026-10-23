@@ -2,7 +2,7 @@ import lengths from '../../scores/curriculum/length-buckets.v2.json';
 import profiles from '../../scores/curriculum/grades.v2.json';
 import type {LengthBucket, LengthBucketId, PreparedExercise, PreparedCatalog, PreparedExerciseSettings} from './prepared-model';
 import type {ScoreSnapshot} from '../score-contracts';
-import {createTimeline,settingsFor} from '../practice-engine-v2/score-adapter';
+import {createTimeline,settingsFor} from '../practice-engine-v2';
 import {exerciseCounts} from './contract';
 
 export const LENGTH_BUCKETS = lengths.buckets as readonly LengthBucket[];

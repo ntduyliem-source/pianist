@@ -1,9 +1,10 @@
-import type {
-  Timeline,
-  AttemptResult,
-  PracticeSettings,
-} from '../../../../packages/practice-engine-v2/model';
-import { ENGINE_ID } from '../../../../packages/practice-engine-v2/model';
+import {
+  type Timeline,
+  type AttemptResult,
+  type PracticeSettings,
+  ENGINE_ID,
+} from '../../../../packages/practice-engine-v2';
+
 // Calibration is a diagnostic exercise, not another matcher: taps go through
 // the same production controller/Worker/ManiaKernel with upstream OD0 windows.
 export function calibrationTimeline(settings: PracticeSettings): Timeline {

@@ -3,15 +3,19 @@ import type {
   PracticeSettings,
   AttemptResult,
   SavedAttempt,
-} from '../../../packages/practice-engine-v2/model';
+} from '../../../packages/practice-engine-v2';
 import type { ScoreSnapshot } from '../../../packages/score-contracts';
 import { download, fingerprint, prepareScoreFile } from './platform/files';
-import { ScoreFormatClient } from '../../../packages/score-formats/client';
-import type { ScoreConverter } from '../../../packages/score-formats';
-import type { FormatDiagnostic } from '../../../packages/score-formats/model';
-import { CONVERTER_VERSION, type AbcTune } from '../../../packages/score-formats/model';
-import { inspectAbc } from '../../../packages/score-formats/abc';
-import { exportAbc } from '../../../packages/score-formats/export';
+import {
+  ScoreFormatClient,
+  type ScoreConverter,
+  type FormatDiagnostic,
+  CONVERTER_VERSION,
+  type AbcTune,
+  inspectAbc,
+  exportAbc,
+} from '../../../packages/score-formats';
+
 import { MidiRouter } from './platform/midi-v2';
 import * as storage from './platform/storage';
 import { EngineHost } from './platform/engine-host';

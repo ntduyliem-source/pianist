@@ -1,8 +1,4 @@
-import type {
-  EngineView,
-  Timeline,
-  MidiEvent,
-} from '../../../../packages/practice-engine-v2/model';
+import type { EngineView, Timeline, MidiEvent } from '../../../../packages/practice-engine-v2';
 export interface Marker {
   kind: 'current' | 'hit' | 'timing' | 'miss' | 'wrong' | 'playback';
   label: string;
