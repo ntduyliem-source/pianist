@@ -1,5 +1,7 @@
 # Editor playback và thư viện bài hát
 
+> **Tài liệu theo mốc:** giữ để truy vết quyết định và kết quả tại thời điểm viết. Hướng dẫn vận hành, kiến trúc và pipeline đang dùng nằm ở [tài liệu hiện hành](current/README.md); không dùng số lượng hoặc checklist cũ thay cho catalog/manifest hiện tại.
+
 Ngày 19/10/2026. Bản này bổ sung playback trong editor, bộ bài MXL người dùng
 cung cấp và đường phát hành GitHub Pages. Bộ chấm BPM/Đúng nốt/R4 giữ nguyên.
 

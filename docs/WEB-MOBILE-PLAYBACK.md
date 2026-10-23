@@ -1,5 +1,7 @@
 # Mobile editor and native practice listening
 
+> **Tài liệu theo mốc:** giữ để truy vết quyết định và kết quả tại thời điểm viết. Hướng dẫn vận hành, kiến trúc và pipeline đang dùng nằm ở [tài liệu hiện hành](current/README.md); không dùng số lượng hoặc checklist cũ thay cho catalog/manifest hiện tại.
+
 The practice score remains read-only. Listening and a graded attempt are mutually
 exclusive. This change does not alter `packages/practice-engine-v2`, the grading
 worker, `controller-v2.ts`, or the practice audio/input clock.

@@ -1,5 +1,7 @@
 # Kế hoạch Q0–Q9: kho bài tập piano sinh sẵn theo grade
 
+> **Tài liệu theo mốc:** giữ để truy vết quyết định và kết quả tại thời điểm viết. Hướng dẫn vận hành, kiến trúc và pipeline đang dùng nằm ở [tài liệu hiện hành](../current/README.md); không dùng số lượng hoặc checklist cũ thay cho catalog/manifest hiện tại.
+
 > **Đổi yêu cầu kho — 21/10/2026:** [GRAND_STAFF_BANK_PLAN.md](GRAND_STAFF_BANK_PLAN.md) thay mọi quy tắc cho phép xuất bài một tay/một khuông bên dưới. Phải xây lại từ nguồn, mỗi MXL đủ hai khuông, chọn tay tại lúc tập. Các kết quả K/Q đã ghi là lịch sử của bản cũ; không chứng minh đã hoàn thành kho mới hoặc thay kho trên web.
 
 Cập nhật **21/10/2026 — đã hoàn tất lượt quét/kiểm/đóng gói K của kho hiện tại**: gói K5 có **5.460 MXL không trùng**, 9/56 lựa chọn đạt quota 300. Có 14.840 nguồn hiện giữ đã quét; 120 nguồn có lý do cần xác minh hoặc chưa xử lý được. Xem [báo cáo K5 và toàn bộ số lượng](K5_BANK_RESULTS.md), [lệnh build và thêm nguồn](BANK_BUILD.md). **Quota vẫn chưa hoàn tất.**

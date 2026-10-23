@@ -1,5 +1,7 @@
 # Pianist Web — kết quả triển khai M1–M6
 
+> **Tài liệu theo mốc:** giữ để truy vết quyết định và kết quả tại thời điểm viết. Hướng dẫn vận hành, kiến trúc và pipeline đang dùng nằm ở [tài liệu hiện hành](current/README.md); không dùng số lượng hoặc checklist cũ thay cho catalog/manifest hiện tại.
+
 > Báo cáo lịch sử trước lần thay engine 18/10/2026. Các mô tả matcher,
 > ngưỡng, duration/arpeggio và số test ở đây không phải nghiệm thu bản hiện tại.
 > Xem [R0–R7 V2](R0_R7_RESULTS.md) và [hướng dẫn hiện tại](PIANIST_WEB.md).

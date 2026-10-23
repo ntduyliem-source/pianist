@@ -1,5 +1,7 @@
 # Chạy bản thử Pianist Web M0
 
+> **Tài liệu theo mốc:** giữ để truy vết quyết định và kết quả tại thời điểm viết. Hướng dẫn vận hành, kiến trúc và pipeline đang dùng nằm ở [tài liệu hiện hành](current/README.md); không dùng số lượng hoặc checklist cũ thay cho catalog/manifest hiện tại.
+
 > Tài liệu này lưu quy trình M0. Shell hiện đã có Thư viện/Editor/Tập/Kết quả;
 > dùng [hướng dẫn hiện tại](PIANIST_WEB.md). Sau khi build engine, cần build
 > React/TypeScript bằng `build-pianist.ps1 -SkipEngine` trước khi mở trang.

@@ -1,5 +1,7 @@
 # Nghiệm thu ABC/MusicXML — A5–A7
 
+> **Tài liệu theo mốc:** giữ để truy vết quyết định và kết quả tại thời điểm viết. Hướng dẫn vận hành, kiến trúc và pipeline đang dùng nằm ở [tài liệu hiện hành](current/README.md); không dùng số lượng hoặc checklist cũ thay cho catalog/manifest hiện tại.
+
 Ngày 19/10/2026. Mốc đầu vào: A4 `8ad8b2be`; bản an toàn trước ABC:
 `f87189eefc45b64e828ebf6d196016d5f20c3985`.
 

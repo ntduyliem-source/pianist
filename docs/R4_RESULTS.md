@@ -1,5 +1,7 @@
 # R4 — nhả phím và pedal có đối chiếu nguồn
 
+> **Tài liệu theo mốc:** giữ để truy vết quyết định và kết quả tại thời điểm viết. Hướng dẫn vận hành, kiến trúc và pipeline đang dùng nằm ở [tài liệu hiện hành](current/README.md); không dùng số lượng hoặc checklist cũ thay cho catalog/manifest hiện tại.
+
 Ngày 18/10/2026. Engine `pianist-v2.osu-676f3b0.pts-b40e412.mir-fe73b35.ns-3582550.2`.
 Hoàn tất phạm vi **nhả phím, sustain và pedal CC64 nhị phân** trên web.
 Điểm BPM osu! giữ nguyên. Không bật lại grader duration/arpeggio cũ.

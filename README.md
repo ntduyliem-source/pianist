@@ -11,7 +11,9 @@ Pianist là ứng dụng web chỉnh sửa và tập piano, fork từ MuseScore 
 
 ## Hướng dẫn
 
+- [Tài liệu hiện hành: kiến trúc, nguồn bài, phát triển và release](docs/current/README.md)
 - [Sử dụng và build](docs/PIANIST_WEB.md)
+- [Kế hoạch tổ chức lại code và các mốc kiểm](docs/REFACTOR_PLAN.md)
 - [Bộ bài được nhận và các file bị loại](scores/library/IMPORT_REPORT.md)
 - [Nguồn thuật toán chấm](third_party/practice-sources/PROVENANCE.md)
 - [Profile ABC và giới hạn chuyển đổi](docs/ABC_CONVERTER_RESULTS.md)

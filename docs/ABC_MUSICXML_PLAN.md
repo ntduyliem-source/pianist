@@ -1,5 +1,7 @@
 # Kế hoạch hỗ trợ ABC và MusicXML trong Pianist Web
 
+> **Tài liệu theo mốc:** giữ để truy vết quyết định và kết quả tại thời điểm viết. Hướng dẫn vận hành, kiến trúc và pipeline đang dùng nằm ở [tài liệu hiện hành](current/README.md); không dùng số lượng hoặc checklist cũ thay cho catalog/manifest hiện tại.
+
 Cập nhật: 19/10/2026. Trạng thái: **A1 đạt profile giới hạn; A2–A3 hoàn thành; A4–A7 hoàn thành trong profile đã đối chiếu**. Bằng chứng và giới hạn: [ABC_CONVERTER_RESULTS.md](ABC_CONVERTER_RESULTS.md), [ABC_MUSICXML_RESULTS.md](ABC_MUSICXML_RESULTS.md). Commit A1: `fb526afc`; A3: `ac14354f`, nghiệm thu `80cd335a`; A4: `8ad8b2be`; A5: `83e07db1`; A6: `9834e38b`. Phố Xa ABC không đạt fidelity; MXL gốc vẫn dùng bình thường. MIDI thật và HTTPS tiếp tục để sau.
 
 Mục tiêu: người dùng nhập ABC hoặc MXL/MusicXML vào cùng thư viện, mở bằng editor MuseScore, sửa và lưu, rồi tập bằng chế độ Đúng nốt hoặc BPM. Màn tập riêng, chỉ đọc. Dữ liệu sau chỉnh sửa là nội dung được dùng để tập và xuất file.

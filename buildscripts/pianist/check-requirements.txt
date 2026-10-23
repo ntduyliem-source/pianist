@@ -1,0 +1,4 @@
+# CPython 3.11 oracle and library checks. Converter sources are vendored and hash-checked.
+numpy==1.26.4
+decorator==5.2.1
+defusedxml==0.7.1

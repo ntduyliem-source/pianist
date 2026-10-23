@@ -1,5 +1,7 @@
 # Kế hoạch code Pianist Web
 
+> **Tài liệu theo mốc:** giữ để truy vết quyết định và kết quả tại thời điểm viết. Hướng dẫn vận hành, kiến trúc và pipeline đang dùng nằm ở [tài liệu hiện hành](current/README.md); không dùng số lượng hoặc checklist cũ thay cho catalog/manifest hiện tại.
+
 Cập nhật: 19/10/2026. Nền tảng: **web chạy trong trình duyệt**. M0/editor MuseScore và thư viện được giữ. Bộ chấm cũ đã xóa khỏi source sản phẩm, thay bằng engine V2 đối chiếu code gốc. Màn tập riêng, chỉ đọc, không notation edit. **R4 đã thay bằng mir_eval + Magenta note-seq, mốc Note Off từ MuseScore; có công tắc pedal. Arpeggio/diễn cảm nâng cao của M7 vẫn chưa hoàn tất.** Xem [nghiệm thu R4](R4_RESULTS.md), [hướng dẫn hiện tại](PIANIST_WEB.md), [nghiệm thu R0–R7](R0_R7_RESULTS.md), [bằng chứng M0](M0_RESULTS.md). MIDI thật và hosting HTTPS để sau theo yêu cầu người dùng.
 
 **Kế hoạch hỗ trợ ABC và MXL ngày 19/10/2026:** [phạm vi, nguồn chuyển đổi và các mốc A0–A7](ABC_MUSICXML_PLAN.md). Mốc an toàn trước ABC: `f87189eefc45b64e828ebf6d196016d5f20c3985`; đã kiểm lại 83/83 test và build web. A1–A7 chưa triển khai. ABC sẽ đi qua chuyển đổi upstream vào cùng MuseScore/editor/snapshot tập; bộ chấm BPM, nhả phím và pedal hiện tại được dùng chung.

@@ -1,0 +1,52 @@
+name: Pianist source checks
+
+on:
+  pull_request:
+    paths: ['apps/pianist-web/**', 'packages/**', 'buildscripts/pianist/**', 'tests/**', 'third_party/**', 'scores/**', 'src/web/**', 'src/engraving/**', 'src/framework/**', 'CMakeLists.txt', 'package*.json', '.gitattributes', '.github/workflows/pianist-checks.yml']
+  push:
+    branches: ['pianist/m0-web', 'codex/**']
+    paths: ['apps/pianist-web/**', 'packages/**', 'buildscripts/pianist/**', 'tests/**', 'third_party/**', 'scores/**', 'src/web/**', 'src/engraving/**', 'src/framework/**', 'CMakeLists.txt', 'package*.json', '.gitattributes', '.github/workflows/pianist-checks.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pianist-checks-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  fast:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: apps/pianist-web/package-lock.json
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+          cache: pip
+          cache-dependency-path: buildscripts/pianist/check-requirements.txt
+      - name: Install locked dependencies
+        run: |
+          npm ci --prefix apps/pianist-web --no-audit --no-fund
+          python -m pip install -r buildscripts/pianist/check-requirements.txt
+      - name: Check source, types, upstream oracles and authored grades
+        run: python buildscripts/pianist/check-pianist.py fast
+      - name: Keep check evidence
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: pianist-source-checks
+          path: |
+            artifacts/checks/
+            artifacts/r0-r7/cutover-source.json
+          if-no-files-found: warn
+
+# Native/PCM/browser acceptance needs an already packaged optimized main engine,
+# renderer, audio engine and 5,600-score bank. Run check-pianist.py native on that
+# package before staging a release; a source checkout alone is not a native build.

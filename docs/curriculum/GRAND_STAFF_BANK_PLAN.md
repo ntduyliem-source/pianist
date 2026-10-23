@@ -1,5 +1,7 @@
 # Xây lại kho bài tập: mỗi MXL luôn đủ hai khuông piano
 
+> **Tài liệu theo mốc:** giữ để truy vết quyết định và kết quả tại thời điểm viết. Hướng dẫn vận hành, kiến trúc và pipeline đang dùng nằm ở [tài liệu hiện hành](../current/README.md); không dùng số lượng hoặc checklist cũ thay cho catalog/manifest hiện tại.
+
 Quyết định ngày **21/10/2026**. Đây là **kế hoạch thay thế**, chưa phải báo cáo đã tạo kho mới. Tài liệu này thay quy tắc xây kho trong kế hoạch K/Q trước đó khi có mâu thuẫn. K1–K6 bên dưới là các bước của **lần xây lại**, không kế thừa trạng thái hoàn thành của K cũ.
 
 **Yêu cầu bắt buộc:** mỗi bài là một đoạn nhạc thật giữ nguyên cả hai khuông piano. Người dùng chọn **hai tay / tay phải / tay trái lúc tập**, trên cùng một MXL. Mặc định mở bài là hai tay.

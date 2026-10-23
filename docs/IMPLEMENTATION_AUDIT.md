@@ -1,5 +1,7 @@
 # Đối chiếu lộ trình và logic tham khảo
 
+> **Tài liệu theo mốc:** giữ để truy vết quyết định và kết quả tại thời điểm viết. Hướng dẫn vận hành, kiến trúc và pipeline đang dùng nằm ở [tài liệu hiện hành](current/README.md); không dùng số lượng hoặc checklist cũ thay cho catalog/manifest hiện tại.
+
 Ngày 16/10/2026, rà soát theo phản hồi của người dùng. Source trước rà soát:
 `33b68f61`; đợt hoàn thiện tiếp theo bắt đầu từ `c52e83ce`. Kết luận: triển khai bám nhiều nguyên tắc đã thống nhất, nhưng
 **chưa đủ điều kiện tuyên bố hoàn tất toàn bộ các M hoặc nghiệm thu v1**.

@@ -1,142 +1,92 @@
-# Pianist Web — sử dụng bản V2
+# Pianist Web — hướng dẫn hiện hành
 
-Cập nhật 19/10/2026. **Thư viện**, **Editor MuseScore** và **Tập piano** là ba màn riêng. Màn tập chỉ đọc bản nhạc; nhập/sửa/lưu vẫn dùng MuseScore WASM. Bộ chấm cũ đã bị xóa. Xem [nguồn và symbol](../third_party/practice-sources/PROVENANCE.md), [báo cáo R0–R7](R0_R7_RESULTS.md).
+Cập nhật ngày 23/10/2026. **Thư viện**, **Editor MuseScore** và **Tập piano** là ba màn riêng. Màn tập chỉ đọc bản nhạc. [Mở ứng dụng online](https://ntduyliem-source.github.io/pianist/).
 
-Mở bản online tại **https://ntduyliem-source.github.io/pianist/**. Hướng dẫn đóng gói và triển khai ở [GitHub Pages](../deploy/PAGES.md).
+[Tài liệu cho người phát triển](current/README.md) gồm kiến trúc, vị trí nguồn bài, build/kiểm thử và release. Những kết quả nghiệm thu ở các tài liệu M/R/A/Q/K mô tả phiên bản tại thời điểm viết, không thay hướng dẫn này.
 
-## Chạy local và build
+## Thư viện và editor
 
-```powershell
-# Sau khi đã build native; -SkipEngine dùng cặp JS/WASM hiện có:
-.\buildscripts\pianist\build-pianist.ps1 -SkipEngine -SkipInstall
-python buildscripts/pianist/serve-web.py
-```
+Nhập ABC, MXL/MusicXML, MSCZ hoặc MSCX, tối đa 32 MiB. Có thể chọn file hoặc kéo thả. ABC nhiều bài mở hộp chọn các tune cần nhập và tune sẽ mở trước. File đọc lỗi không được thay bản đang mở.
 
-Mở <http://127.0.0.1:8787/pianist.html>. Server phục vụ loopback, port 8787. Checkout mới cần `setup-web.ps1` rồi `build-pianist.ps1`. Build native mặc định tối ưu; `-FastLink` dành cho phát triển, không được đóng gói phát hành.
+**Bài hát có sẵn** lấy từ [catalog được duyệt](../scores/library/catalog.json). Mỗi tác phẩm có nhiều bản sẽ có dropdown chọn version; bản trùng byte không thêm version. Khi mở, ứng dụng kiểm bytes/SHA-256, nhập rồi giữ bản riêng trên thiết bị. Lần mở lại dùng bản đã lưu, giữ các chỉnh sửa của bạn. Danh sách nhận/bỏ theo đợt ở [report thư viện](../scores/library/IMPORT_REPORT.md); catalog hiện hành quyết định các bản được đóng gói.
 
-## Luồng sử dụng
+Editor dùng MuseScore để chỉnh nốt, undo/redo, lưu và phát nhạc. **Lưu thư viện/Ctrl+S** lưu trong trình duyệt. **Lưu bản mới/Ctrl+Shift+S** tạo project riêng. Tải MSCZ giữ dự án native; xuất MXL/MusicXML để trao đổi notation, PDF để in.
 
-1. Nhập ABC hoặc MXL/MusicXML/MSCZ (tối đa 32 MiB), hay mở bài trong thư viện. Với ABC nhiều bài, chọn các bài cần nhập và bài sẽ mở. Thanh **Tập piano** mở trang chọn bài, dùng được cả khi chưa mở editor.
-2. **Lưu thư viện/Ctrl+S** lưu IndexedDB. **Lưu bản mới/Ctrl+Shift+S** tạo project riêng. Tải MSCZ/xuất MXL, XML, PDF hoặc ABC tạo file trên máy.
-3. **Tập bài này** lấy snapshot hiện tại, gồm sửa đổi chưa xuất file. Chọn A/B bằng ô nhịp trên bản nhạc hoặc trường số, tay/khuông/voice, BPM/đơn vị phách, tempo cố định hoặc tempo score, số vòng và mức tăng BPM.
-4. Kết nối/chọn đàn MIDI hoặc dùng phím ảo/phím máy tính A W S E D F T G Y H U J. Bàn phím hiển thị một quãng có thể đổi, nhận toàn dải MIDI 0–127.
-5. Bắt đầu, tạm dừng/tiếp tục hoặc kết thúc. Kết quả có delta từng nốt, miss, input thừa, JSON, CSV và replay. Nút tập lại ô nhịp mở đúng project.
+**Phát nhạc**, **Tạm dừng**, **Dừng** và thanh tua điều khiển playback native MuseScore, dùng tiếng MS Basic và bản nhạc đang sửa. Space phát/tạm dừng khi focus thuộc editor; trong nút/ô nhập, Space giữ hành vi của control đó. Chuyển khỏi editor dừng playback editor. Phát editor không tạo lượt tập hoặc điểm.
 
-Cấu hình đoạn/BPM thuộc từng bài. Quay lại từ editor, kể cả Browser Back, tạo snapshot mới. Lượt đang chạy/đang tạm dừng khóa thao tác đổi bài. Phố Xa là ví dụ local. Gói public có bài khởi động CC0 và **18 bài người dùng cung cấp**, đã kiểm nhập native, ánh xạ nốt và playback. Xem [danh sách nhận/bỏ](../scores/library/IMPORT_REPORT.md).
+Bản nhạc đang sửa có thể được đưa sang tập bằng snapshot native, gồm các thay đổi hiện tại. Snapshot tập không sửa lại bản nhạc. Các khóa/biểu cảm có trong file nguồn được giữ, không tự coi ký hiệu khác thường là lỗi để xóa.
 
-## Nghe bản nhạc trong editor
+## Hai cách chọn bài tập
 
-Mở bài rồi bấm **Phát nhạc**, **Tạm dừng**, **Dừng** hoặc kéo thanh vị trí. Khi con trỏ đang ở editor, **Space** phát/tạm dừng. Khi đang đặt focus vào nút hay ô nhập, phím giữ hành vi bàn phím thông thường của control đó. Thanh phát phản ánh thời gian từ playback native MuseScore, dùng tiếng MS Basic và cả các sửa đổi hiện tại của bản nhạc.
+Trong **Tập piano**:
 
-Lần mở đầu tiên chờ bộ tiếng được tải và đăng ký vào audio engine trước khi tạo bài; giao diện hiện tiến trình chuẩn bị. Chuyển sang Thư viện/Tập piano sẽ dừng playback editor. Nếu tốc độ nghe được thay đổi qua công cụ native, màn tập vẫn dùng tempo viết trong bản nhạc; tốc độ editor được khôi phục khi quay lại. Playback editor không tạo lượt tập hay điểm.
+- **Free play:** chọn bài từ thư viện hoặc nhập file. Chọn đoạn A–B, số vòng, tay/khuông/bè, tempo và chế độ chấm.
+- **Theo grade:** chọn G1–G8, một hoặc nhiều khoảng nốt, random hoặc theo thứ tự. Kho hiện có 5.600 bài, 100 bài cho mỗi grade × khoảng nốt; mỗi bài giữ đủ hai khuông. Chọn một tay chỉ thay phần được chấm. Có **Bài kế** và **Tự chuyển**.
 
-Phần **Bài hát có sẵn** hiện ở Thư viện và trang chọn bài tập. Mỗi bài chỉ tải khi mở, được kiểm dung lượng/SHA-256 rồi nhập vào thư viện trên thiết bị. Mở lại dùng bản đã lưu, giữ các sửa đổi của bạn. Bộ MXL 18 bài chỉ khoảng 211 KiB; phần tải lớn của ứng dụng là engine và tiếng đàn.
+Grade là bộ nội bộ Pianist đã biên soạn sẵn; ứng dụng chọn/sắp bài trong kho, không sinh nốt hoặc trích nhạc theo thời gian thực. Nguồn ABC được chuyển sang MXL và đối chiếu trước khi phát hành. Xem [nội dung/giới hạn kho](../scores/composed/G1_G8_ABC_GUIDE.md) và [bản đồ file](current/content-pipeline.md). Kho hiện tại chưa phủ đủ 88 phím; việc mở rộng bộ duyệt không tự thay bài.
 
-## Nhập, sửa và xuất ABC
+**Đúng nốt** chuyển khi đã nhận đủ nốt của lượt. **BPM** kết thúc theo timeline rồi báo kết quả; tự sang bài không có nghĩa lượt vừa rồi đã đạt. Cả free play và grade dùng cùng màn tập và cùng engine chấm.
 
-Nút mở file và kéo thả nhận `.abc` UTF-8. abc2xml 2.68 nguyên bản chạy trong Worker Pyodide cùng website, rồi MusicXML đi vào editor MuseScore. Có thể sửa, undo/redo, lưu thư viện, tải MSCZ/MXL và tập như bài nhập từ MXL. Bài đã lưu mở bằng MSCZ, không chuyển ABC lại. Màn tập giữ bộ chấm BPM/Đúng nốt/R4 hiện có.
+## Điều khiển buổi tập và nghe mẫu
 
-Lần mở ABC đầu tải thêm khoảng 13,5 MB runtime; MXL không tải phần này. `build-pianist.ps1` chuẩn bị runtime tự động; nếu chỉ build web bằng npm, chạy thêm `python buildscripts/pianist/prepare-score-format-sources.py`. Tất cả xử lý tại máy, không gửi bản nhạc đi.
+**Tập / Tạm dừng / Tiếp** điều khiển lượt chấm. **Dừng** kết thúc lượt hiện tại, lưu lượt dở dang và giữ màn bản nhạc. **Tập lại đoạn** kết thúc lượt cũ rồi bắt đầu lượt mới tại A. Stop vẫn dùng được trong lúc đang chuẩn bị âm thanh hoặc đếm vào.
 
-ABC nhiều bài mở hộp chọn theo từng bài, kể cả khi trùng `X:` hoặc tên. Toàn bộ bài được chọn phải chuyển đổi và chuẩn bị thành công trước khi lưu cùng một lượt. Thư viện giữ bytes nguồn, bài đã chọn và phiên bản converter; lưu bản sao và backup/restore giữ các thông tin này. File backup v1 và project cũ vẫn đọc được.
+**Nghe MuseScore** có phát/tạm dừng và nút dừng riêng. Phạm vi nghe là đoạn A–B hoặc toàn bài, có lặp và tốc độ nghe riêng trong Thiết lập. Nghe dùng native playback, không tạo điểm, không thay BPM chấm. Đổi tốc độ/seek/A–B dùng mapping thời gian native, gồm tempo, dấu lặp và pause; không lấy tỷ lệ thời gian toàn bài để đoán vị trí.
 
-**Editor → Xuất… → ABC notation (.abc)** chuyển nội dung đang sửa bằng xml2abc 1.77 nguyên bản. Ứng dụng nhập lại kết quả vào project native tạm để kiểm dữ liệu nhạc trước khi cho tải. ABC có thể thay đổi trình bày; nếu cao độ, nhịp, trường độ, bè, repeat, nhả phím hoặc pedal không được giữ đúng, xuất sẽ bị từ chối và bài đang sửa vẫn còn nguyên. Dùng MSCZ để giữ dự án native; MXL tiếp tục dùng để trao đổi notation.
+Kết nối/chọn MIDI trong Thiết lập hoặc dùng bàn phím ảo **đủ 88 phím A0–C8**, không có nút chọn quãng. Phím máy tính `A W S E D F T G Y H U J K O L P ;` tương ứng C4–E5; đây là vùng gõ nhanh, không phải toàn bộ 88 phím. Có thể dùng chuột/cảm ứng cho các phím khác. Bàn phím ảo và tay đệm phát MS Basic qua native FluidSynth; metronome dùng tiếng click riêng.
 
-Converter có giới hạn: trường độ bị làm tròn, tie/jump/cross-staff ngoài profile, một số biểu cảm và pedal có offset. ABC ngoài không có bản gốc đối chiếu không được gắn nhãn tương đương nguồn. Với **Phố Xa, tiếp tục dùng MXL gốc**; bản ABC hiện bị từ chối vì trường độ/tie. Xem [profile và code upstream](ABC_CONVERTER_RESULTS.md), [nghiệm thu A5–A7](ABC_MUSICXML_RESULTS.md).
+Công tắc **Pedal** có ở giao diện thường, Thiết lập và thanh full sheet. **Đạp/Nhả pedal ảo** dùng khi đầu vào là bàn phím ảo. Tắt pedal dừng sustain ảo và chấm pedal/âm ngân; chấm Note Off vẫn có nếu bật chấm nhả phím. Kết thúc lượt trước khi đổi cấu hình chấm để kết quả không trộn hai chính sách.
 
-Hủy khi đang đọc/chuyển ABC dừng Worker. Chọn file khác trong giai đoạn có thể hủy sẽ thay lượt mở cũ; bước nhập native cuối khóa thay file. Sau **Chuẩn bị dùng offline** hoàn tất và mở lại app, có thể nhập ABC mới, sửa, xuất ABC/MXL và tập khi mất mạng. Mẫu ABC CC0 nằm ở `fixtures/piano.abc` trong gói web.
+## Sheet, full sheet và chọn đoạn
 
-## Màn tập v2 và toàn màn hình
+**Chỉ bản nhạc** mở fullscreen khi trình duyệt hỗ trợ, hoặc phủ vùng ứng dụng. Thanh nhỏ vẫn có Nghe, Dừng, pedal và điều khiển cần thiết. Có thể ẩn thanh rồi dùng nút **Hiện điều khiển** để đưa lại. Escape/Thoát toàn màn hình trở về bố cục thường.
 
-**Chỉ bản nhạc** mở fullscreen nếu trình duyệt hỗ trợ, hoặc phủ vùng ứng dụng khi fullscreen không khả dụng. Thanh điều khiển trên cùng cao khoảng 39 px ở desktop; **Ẩn thanh điều khiển** dành toàn bộ viewport cho sheet. Nút nhỏ **Hiện điều khiển** đưa thanh trở lại. Bấm **Thoát toàn màn hình** hoặc Escape để về bố cục thường. Không có thao tác chỉnh sửa notation trong màn tập.
+Ứng dụng hiển thị **nguyên trang SVG do MuseScore xuất**. System box chỉ hướng dẫn camera, không dùng cắt mép trang làm mất pedal, dynamics hoặc ký hiệu nằm ngoài khuông. Thu phóng Tự động, Vừa chiều rộng và 60–180% thay cách nhìn, không ký âm lại bản nhạc. Vừa chiều rộng trên màn hẹp sẽ làm nốt nhỏ hơn.
 
-Bản nhạc dùng SVG do MuseScore xuất, xếp liên tục theo system và giữ cả hai khuông piano, dynamics/pedal, tên nhạc cụ. Không ký âm lại bằng một renderer khác. **Vừa chiều rộng** tự thích ứng kích thước cửa sổ; có các mức zoom 60–180%. Bàn phím hỗ trợ có thể thu gọn; phím máy tính vẫn hoạt động khi ẩn bàn phím hoặc mở fullscreen.
+**Cuộn theo nhạc** giữ vùng đang chơi trong tầm nhìn. Khi nghe, cursor/highlight dùng mốc native; khi tập BPM dùng timeline đã chọn; Đúng nốt theo nhóm hiện tại. Repeat/A–B/vòng tập quay về vị trí tương ứng và xóa màu của lần diễn trước. Cuộn tay tạm ngưng bám; **Tiếp tục theo bài** bật lại.
 
-**Cuộn theo nhạc** giữ system đang chơi trong vùng đọc, chừa chỗ nhìn trước. BPM đi theo thời gian diễn tấu của bản nhạc kể cả khi người chơi bỏ nốt hoặc gặp dấu nghỉ; Đúng nốt đi theo nhóm hiện tại của engine. Repeat, A–B và vòng tập quay về đúng vị trí. Cuộn tay bằng chuột, cảm ứng hoặc phím điều hướng tạm ngưng bám bài; **Tiếp tục theo bài** khôi phục. Đây là logic trình bày, không thay matcher, clock hoặc điểm của engine.
+**Chọn đoạn** mở các trường ô A/B hoặc bật chọn trực tiếp trên sheet. Có thể chọn vùng ô bằng chuột, hoặc focus vùng chọn rồi Enter/Space. Mở Thiết lập khi đang chơi sẽ tạm dừng.
 
-**Chọn đoạn** mở A–B theo ô nhịp; nhập đủ số rồi Enter/rời trường hoặc chọn A/B trực tiếp trên sheet. **Nghe đoạn** phát âm hướng dẫn theo timeline, không tạo kết quả chấm. **Lại đoạn** lưu lượt hiện tại với trạng thái dừng sớm rồi bắt đầu lượt mới tại A, giữ màn tập. **Thiết lập** gom MIDI, tay/bè, count-in, vòng tập, tempo, trường độ, pedal và hiệu chuẩn; mở thiết lập khi đang chơi sẽ tạm dừng lượt.
+Highlight tô nét nốt MuseScore theo định danh native: cần chơi xanh lam, đúng xanh lá, timing chưa tốt vàng, Miss đỏ. Note On/Off cùng lần đánh điều khiển trạng thái giữ; không tô nốt tương lai chỉ vì trùng pitch. Nghe mẫu tô theo span native và không tạo judgement. Bàn phím hỗ trợ hiện phím đang giữ.
 
-Kiểm tra v2 ban đầu: 83 test tự động, gồm oracle C#/Python của BPM/R4 và các ca camera, repeat, A–B, lưu lượt khi restart, màu nốt và giữ/nhả đúng lần đánh; build TypeScript/Vite và audit loại bỏ bộ chấm cũ đạt. Kiểm trình duyệt local với Phố Xa: nhập A–B nhiều chữ số, nghe đoạn và chạy BPM, di chuyển viewport, cuộn tay/quay lại, tạm dừng/restart, fullscreen và ẩn thanh. Đàn MIDI thật chưa kiểm; kiểm thử bổ sung ghi tại [playback và thư viện](EDITOR_PLAYBACK_LIBRARY.md).
+## Đúng nốt, BPM, trường độ và pedal
 
-## Đúng nốt — Piano Trainer Studio
+**Đúng nốt** dùng phần Wait ghim từ Piano Trainer Studio. Cần đúng pitch MIDI gồm octave; hợp âm ghi nhận từng nốt đúng, không bắt buộc giữ tất cả cùng lúc. Nốt lặp cần nhả rồi đánh lại. Phím đã giữ từ count-in/resume không tự được cộng điểm. Chế độ này không chấm timing/nhả/pedal.
 
-Dùng bốn hàm Wait nguyên văn của upstream ghim `b40e412`. Mỗi nhóm yêu cầu đúng pitch MIDI, gồm octave. Nhóm tiến khi đã ghi nhận đủ nốt; **không bắt buộc giữ đồng thời toàn bộ hợp âm**. Đây là hành vi latch của nguồn gốc. Nốt lặp cần nhả rồi đánh lại; Note On trùng khi còn giữ được router chuẩn hóa. Phím giữ từ count-in/resume không tự ghi thêm điểm. Chế độ này không cho điểm timing và không áp dụng Follow/Realtime reservation của upstream.
+**BPM** dùng osu!mania, lịch độc lập với người chơi. Mỗi pitch là một làn; mỗi input tiêu thụ tối đa một target theo thứ tự/notelock upstream. Accuracy, input thừa, precision và coverage được hiển thị riêng; dừng sớm không biến nốt tương lai thành Miss. Hệ thống không sửa nhịp theo người chơi để làm đẹp điểm.
 
-## Theo BPM — osu!mania
+R4 đánh giá nhả phím, âm ngân sustain và CC64 nhị phân riêng với điểm onset. Mốc nhả/velocity lấy từ CompatMidi MuseScore, theo tay/bè đã chọn. Phép đánh giá offset dùng mir_eval; sustain/đánh lại dùng Magenta note-seq. Đây là đối chiếu với tham chiếu native, không khẳng định chỉ có một cách diễn tấu đúng. Half-pedal và diễn cảm nâng cao chưa được chấm.
 
-Lịch chạy độc lập với người chơi. Mỗi pitch là một làn, xét theo thứ tự và notelock của osu!mania `676f3b0`. Mỗi input tiêu thụ tối đa một target; không có matcher DP, cụm 8 nốt hoặc ranh giới 1,5 giây. Các nốt cùng pitch dày vẫn có thể nhập nhằng về ý định người chơi; bản này tuân theo policy nguồn gốc.
+Đoạn có **arpeggio, ornament hoặc grace** chưa được adapter chấm BPM đúng sẽ bị chặn rõ ràng, kể cả tay đệm đang bật. Pause cố định bằng giây cũng bị chặn khi chấm theo tempo của bản nhạc. Có thể chọn đoạn khác, tắt tay đệm nếu phù hợp, dùng Đúng nốt hoặc nghe MuseScore. Không giả vờ đã chấm đủ bằng cách bỏ nốt hoa mỹ hay đánh arpeggio thành hợp âm đồng thời.
 
-Profile modern Mania, không Classic/mods. Ở OD 5 mặc định:
+Xem [nguồn thuật toán, commit và symbol](../third_party/practice-sources/PROVENANCE.md), [kết quả sửa đã xác nhận](AUDIT_FIXES_2026-10-23.txt). Các ngưỡng nội bộ không phải chứng nhận kỹ năng piano hoặc grade thi.
 
-| Grade | Cửa sổ tuyệt đối của upstream | Điểm gốc |
-| --- | ---: | ---: |
-| Perfect | 19,5 ms | 305 |
-| Great | 49,5 ms | 300 |
-| Good | 82,5 ms | 200 |
-| OK | 112,5 ms | 100 |
-| Meh | 136,5 ms | 50 |
-| Miss | 173,5 ms | 0 |
+## Clock và gián đoạn
 
-Bảng là `ResultFor`; đường dispatch còn áp dụng notelock và tự Miss ngay sau cửa sổ Meh. Không hiểu dòng Miss là cho phép hit muộn 173,5 ms. Thay OD dùng đúng hàm nội suy/floor của upstream, không đổi ngưỡng ngầm cho piano.
+Timestamp MIDI được đổi về cùng trục với target/metronome bằng đồng hồ đầu ra Web Audio. Worker chấm event; frame UI không quyết định điểm. Offset chỉ áp dụng một lần, lưu theo thiết bị. Hiệu chuẩn đề xuất từ các lần bấm theo click, có cả phản ứng người chơi, không phải phép đo riêng latency phần cứng.
 
-Accuracy = tổng trọng số judgement / (305 × số nốt đã đánh giá). Upstream không trừ input thừa vào accuracy; UI luôn hiển thị riêng input thừa và precision = nốt nhận đúng / số lần bấm đã chấm, gồm lần bấm bị nhận Miss. Coverage = nốt nhận đúng / số nốt đã đánh giá. Lượt dừng sớm không biến các nốt tương lai thành Miss. Trung vị/P90 sai lệch tuyệt đối tách khỏi xu hướng sớm/trễ có dấu: −100/+100 ms không tạo thành cả hợp âm Perfect.
+Pause, ẩn tab, mất focus, ngắt đàn, audio suspend hoặc lịch âm thanh bị trễ có thể đóng băng lượt. Resume đếm vào lại, nhận trạng thái phím/pedal đang giữ mà không tạo attack mới. CC64 ≥64 bật, ≤63 tắt; không biến Pause/Stop thành sự kiện nhả thật để tính điểm.
 
-## Clock, MIDI, hiệu chuẩn và highlight
+## ABC: nhập và xuất có kiểm
 
-Input giữ timestamp Web MIDI, đổi về cùng trục với target/metronome qua Web Audio `getOutputTimestamp`, fallback `currentTime` có ghi provenance. UI frame không quyết định điểm. Worker xử lý theo thời gian event và ngân sách giao 150 ms; vượt hạn báo gián đoạn. Offset được trừ đúng một lần. Bài hiệu chuẩn 12 click dùng controller/Worker thật, cần ít nhất 8 hit; đề xuất median offset có cả sai lệch phản ứng người chơi, không phải đo riêng latency phần cứng. Chỉ áp dụng khi bấm xác nhận, lưu theo device ID.
+Nút mở file nhận ABC UTF-8. abc2xml 2.68 ghim chạy trong Worker Pyodide, rồi MusicXML đi vào MuseScore. Bài đã lưu dùng MSCZ để mở lại, không chuyển ABC lại. ABC nhiều tune chỉ lưu cùng lượt sau khi toàn bộ tune được chọn chuẩn bị thành công; có hủy khi còn trong giai đoạn cho phép.
 
-Count-in vẫn nhận Note Off/CC64. CC64 ≥64 bật, ≤63 tắt, tách từng channel/port. Đổi thiết bị không mang offset của đàn cũ. Pause/ẩn tab/disconnect/audio suspend hoặc lịch audio bị trễ trên 250 ms đóng băng lượt; resume đếm vào lại và chỉ phục hồi phím đang giữ dưới dạng state, không tự tạo attack.
+**Xuất ABC** dùng xml2abc 1.77 ghim rồi nhập lại vào project native tạm để đối chiếu. Nếu pitch, nhịp/trường độ, bè, repeat/tie, nhả/pedal, velocity hoặc dynamics không được bảo toàn theo profile, ứng dụng từ chối xuất và giữ bản đang sửa. ABC vẫn có thể thay bố cục/font/khoảng cách. MSCZ giữ đầy đủ project; MXL là đường trao đổi notation.
 
-Highlight tô trực tiếp **nét nốt MuseScore** theo cách trình bày của HTML Liem Piano Coach được cung cấp (`assets/js/render.js`, `assets/css/components.css`), không phủ khung chữ nhật. Nốt cần chơi xanh lam, đúng xanh lá, timing chưa tốt vàng, Miss đỏ. Phím đang giữ có quầng sáng nhẹ, nối đúng sequence của lần Note On đã được engine chấm với trạng thái Note Off từ MIDI router; không dùng giới hạn 250 ms hoặc so pitch để làm sáng nốt tương lai. Bàn phím hỗ trợ vẫn hiện phím đang giữ bằng xanh lam. Nghe đoạn tô màu theo từng span/trường độ native và không tạo judgement.
+Lần đầu dùng ABC cần tải runtime bổ sung; chỉ mở MXL không cần runtime này. Không gửi bản nhạc lên server. Converter có giới hạn; nguồn ABC ngoài không có bản gốc đối chiếu không được gắn nhãn tương đương một MXL chưa biết. [Profile và bằng chứng converter](ABC_CONVERTER_RESULTS.md) là báo cáo theo phiên bản; kiểm bảo toàn hiện hành nằm trong source và tests.
 
-SVG exporter gắn `data-practice-notes` từ chính Note/Chord vào đầu nốt, dấu hóa, dấu chấm, thân/móc nốt. UI dùng định danh tick/track/note tương ứng snapshot để vẽ lại đúng path gốc bằng màu phản hồi; không suy đoán vị trí từ bounding box. Các đầu nốt trong hợp âm giữ màu độc lập; thân chung hiện vàng nếu trạng thái các nốt khác nhau. Đúng nốt hiển thị đỏ tại bước có input thừa, nhưng không ghi Miss giả cho target. Màu judgement lấy từ engine; UI không có matcher tạm hay công thức điểm riêng. Repeat/loop bỏ màu của lần diễn trước khi A bắt đầu, giữ màu cuối vòng trong khoảng nghỉ giữa hai vòng.
+## Lưu, backup và lịch sử
 
-Kiểm trình duyệt ngày 18/10/2026: Phố Xa có đủ 1.282 đầu nốt khớp định danh SVG; anchors, performed, keyReleases, pedal, beats và occurrences trước/sau thay đổi giống nhau. Chạy MIDI mô phỏng 80 BPM, A4–B10, 3 vòng hoàn thành 273/273 onset, không Miss/input thừa. Nốt giữ dài có hiệu ứng giữ phím; đổi hệ 4–7 sang 8–10 và quay A đưa camera về đúng hệ, xóa màu vòng cũ. R4 có 240 mốc nhả đúng và 33 target thiếu mốc native (giới hạn đã ghi nhận), không diễn giải thành đủ 273 nhả đúng. Bằng chứng local ở `artifacts/practice-v2/demo/` (snapshot, audit, MIDI result và ảnh).
+Projects, source, recovery, kết quả và settings lưu trên thiết bị trong IndexedDB. Tự lưu sau khoảng 1,6 giây không sửa; thông báo lưu chỉ sau transaction commit. Web Locks/lease ngăn hai tab cùng ghi project. Lỗi dung lượng vẫn có đường tải MSCZ; lưu trữ bài có thể phục hồi.
 
-## Trường độ, pedal và ký hiệu
+**Tải toàn bộ thư viện** tạo `.pianist.zip`; khôi phục kiểm hash/giới hạn, tạo ID mới và không ghi đè project hiện có. Thư viện local không tự nằm trên GitHub hay đồng bộ sang thiết bị khác.
 
-R4 chấm **nhả phím**, **âm ngân theo sustain** và **pedal CC64 nhị phân** riêng với điểm BPM. Bật/tắt **Chấm nhả phím khi tập BPM** trong Thiết lập. Công tắc **Pedal** nằm ngay trên bàn phím, trong Thiết lập và trên thanh fullscreen; nút **Đạp pedal / Nhả pedal** dùng với bàn phím ảo. Công tắc được khóa trong lượt để cấu hình chấm không thay đổi giữa chừng; kết thúc lượt để đổi. Cấu hình được lưu theo bài. Tắt pedal sẽ ngừng sustain ảo và chấm pedal/âm ngân; vẫn nhận Note Off và chấm nhả phím nếu được bật. Dữ liệu MIDI gốc vẫn được giữ.
+Kết quả mới dùng schema 2 và engine ID trong `packages/practice-engine-v2/model.ts`. Lịch sử khác engine giữ dữ liệu để đọc, không replay hoặc so sánh bằng luật mới. Chọn lưu MIDI trước lượt để giữ replay; JSON có dữ liệu đầy đủ, CSV có judgement và mốc nhả/sustain. Chỉ so các lượt cùng engine/bài/cấu hình/device/loại clock phù hợp; lượt mô phỏng được ghi nhãn riêng.
 
-Mốc nhả lấy trực tiếp từ `CompatMidiRender` của MuseScore, gồm staccato/staccatissimo và tie, không đặt lại tỷ lệ articulation trong JavaScript. Phép kiểm offset của **mir_eval** dùng sai lệch làm tròn 4 chữ số thập phân giây, dung sai `max(20% trường độ tham chiếu, 50 ms)`. Nốt được ghép bởi bộ BPM hiện có; bộ nhả không ghép lại để sửa điểm onset. Đây là so với cách MuseScore phát bài, không phải khẳng định chỉ có một cách diễn tấu đúng.
+## Offline và chạy local
 
-**Magenta note-seq** xử lý sustain và đánh lại cùng cao độ. `soundOffMs` raw trong JSON vẫn là lúc đóng cổng sustain; phần `r4.sound` chứa offset do thuật toán note-seq suy ra, có cắt âm trước tại lần đánh lại. Cả hai không đo acoustic decay. Pedal so với ký hiệu rõ trong bản nhạc, đi theo repeat/A–B/loop; profile có nguồn từ piano_transcription sử dụng mir_eval, cửa sổ đạp 200 ms và nhả `max(20% đoạn pedal, 50 ms)`. Kết quả có matching/precision/recall/F1, không trộn thành một điểm tổng tự đặt.
+**Chuẩn bị dùng offline** tải/kiểm SHA-256 các tài nguyên của release, gồm native engine, bộ tiếng, grade và runtime ABC. Dung lượng lấy từ manifest hiện tại, không dùng con số cố định trong hướng dẫn. Chờ hoàn tất, đóng các tab Pianist rồi mở lại. Mỗi service worker giữ một release; bản cập nhật không được trộn JS/WASM khác phiên bản. IndexedDB vẫn giữ thư viện người dùng.
 
-Không có ký hiệu pedal hoặc chọn nhiều part thì không suy đoán pedal đúng. Mốc nhả native thiếu/nhập nhằng, ornament nhiều attack hoặc arpeggio không được bù bằng hệ số đoán. Pause/disconnect/stop không được coi là nhả thật; pedal chưa nhả đủ không hiện F1 hoàn chỉnh. Chế độ Đúng nốt không chấm timing nhả/pedal. Half-pedal, legato theo câu, arpeggio và diễn cảm nâng cao vẫn chưa hỗ trợ. Xem [đối chiếu R4 và giới hạn](R4_RESULTS.md).
+Có thể chuyển **Dùng online**. Nếu cache thiếu/sai, kết nối lại và chuẩn bị offline để xác minh/khôi phục đúng bytes. Kho local nghiên cứu không được tải theo gói public.
 
-Tie liên tục không cần attack mới; vào giữa tie/A–B hoặc vòng mới cần đánh lại. Unison cùng pitch/onset gộp một attack, giữ anchor của các bè. Grace bị bỏ qua, ornament chấm nốt chính; arpeggio chưa được realize thành onset rải. Các giới hạn hiển thị trong phần cảnh báo của lượt. Khi chọn một tay có thể phát tay còn lại bằng âm hướng dẫn tổng hợp; âm hướng dẫn không được chấm.
-
-## Lưu, lịch sử và replay
-
-Thư viện, nguồn, recovery, kết quả và settings nằm trong IndexedDB v2. Tự lưu sau khoảng 1,6 giây không sửa. Web Locks/lease tránh hai tab ghi cùng project. Chỉ báo lưu sau khi transaction commit; lỗi quota vẫn có đường tải MSCZ. Lưu trữ bài có thể phục hồi, không xóa vĩnh viễn.
-
-**Tải toàn bộ thư viện** tạo `.pianist.zip`; khôi phục kiểm hash/giới hạn và tạo ID mới, không ghi đè. Giới hạn 256 MiB nén/giải nén, 1.000 bài, 10.000 lượt/settings. Calibration thiết bị khác không được tự kích hoạt.
-
-Kết quả mới dùng schema 2, engine `pianist-v2.osu-676f3b0.pts-b40e412.mir-fe73b35.ns-3582550.2`. Lịch sử khác engine giữ dữ liệu chỉ đọc, không chạy lại hoặc so điểm bằng bộ luật mới. Chọn lưu replay trước lượt tập; log gồm input gốc, clock, boundary và các mapping clock khi resume. JSON chứa đầy đủ; CSV có judgement BPM, mốc nhả/delta/dung sai và sustain; bảng UI hiển thị tối đa 1.000 nốt. Replay quá giới hạn không được giữ như log đầy đủ. Chỉ so lượt hoàn thành cùng engine/score/cấu hình/device/loại clock; lượt mô phỏng, nhả bị ngắt hoặc pedal chưa đầy đủ không tham gia so sánh tiến bộ.
-
-```powershell
-cd apps/pianist-web
-npm ci
-npm test
-npm run test:midi
-npm run build
-node --import tsx scripts/replay.ts C:\path\to\result-v2.json
-```
-
-`test:midi` kiểm engine và đường router/controller/Worker production, chỉ thay phần I/O thiết bị, clock/audio có kiểm soát. Không cần đàn thật. Test R4 cần `python -m pip install --target .tools/r4-python -r tests/reference-runners/r4/requirements.txt` từ root để chạy code Python gốc. Thêm `?diagnostics=1` vào URL sẽ có nút MIDI mô phỏng −120 ms và **MIDI mô phỏng trường độ + pedal**: đi qua router production, ghi nhãn rõ trong kết quả. Đây không phải lượt người chơi. Bài kiểm CC0: `fixtures/pedal-duration.musicxml`.
-
-## Offline và gói triển khai
-
-**Chuẩn bị dùng offline** tải và kiểm SHA-256 toàn bộ JS/WASM/tài nguyên, gồm bộ đọc/xuất ABC, khoảng 150 MiB. Dung lượng chính xác lấy từ manifest; cần đủ chỗ cho phần còn thiếu cộng 10% dự phòng. Chờ thông báo hoàn tất rồi đóng tất cả tab Pianist và mở lại. Mỗi service worker giữ một release; bản cập nhật chờ tab cũ đóng, giữ nguyên IndexedDB/thư viện.
-
-Nếu cache thiếu file, ứng dụng chặn dùng code khác phiên bản. Kết nối lại mạng và bấm **Chuẩn bị dùng offline** để kiểm/khôi phục đúng bytes. File sai hash không được cài; bản cập nhật lỗi không thay bản đang dùng. Offline là lựa chọn của người dùng: mở thư viện/MXL online không tự tải runtime ABC.
-
-```powershell
-# Sau build tối ưu, test và commit source sạch:
-python buildscripts/pianist/package-web.py
-python buildscripts/pianist/stage-release.py --output artifacts/releases/pianist-web-2026-10-19-abc-r2
-python buildscripts/pianist/verify-release.py --directory artifacts/releases/pianist-web-2026-10-19-abc-r2/site --public
-# Chạy thử chính gói đã đóng, trên port riêng:
-python buildscripts/pianist/serve-web.py --directory artifacts/releases/pianist-web-2026-10-19-abc-r2/site --port 8788
-```
-
-Gói có site, zip web, source đúng commit, toolchain/lockfile, hash, Caddy/Compose và DEPLOY.txt. Hosting hiện dùng [GitHub Pages](../deploy/PAGES.md), phát hành đúng gói tối ưu đã kiểm. Phải cung cấp source tương ứng và notices của PTS AGPL, osu! MIT, MuseScore/Qt khi phân phối; xem [inventory](THIRD_PARTY_NOTICES.md). Đàn MIDI thật chưa kiểm. Giới hạn snapshot 40 trang/50.000 nốt viết/24 MiB SVG, timeline 100.000 target/2 giờ/10 vòng; stress Node không thay benchmark máy/đàn.
+Để build/chạy <http://127.0.0.1:8787/pianist.html>, xem [hướng dẫn phát triển](current/development.md). Để phát hành, xem [release](current/release.md). MIDI thật và điện thoại thật chưa được xác nhận bởi các test mô phỏng; kết quả từng đợt ghi rõ giới hạn kiểm.

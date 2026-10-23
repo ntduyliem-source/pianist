@@ -1,5 +1,7 @@
 # Kho MXL theo grade × độ dài
 
+> **Tài liệu theo mốc:** giữ để truy vết quyết định và kết quả tại thời điểm viết. Hướng dẫn vận hành, kiến trúc và pipeline đang dùng nằm ở [tài liệu hiện hành](../current/README.md); không dùng số lượng hoặc checklist cũ thay cho catalog/manifest hiện tại.
+
 > **ĐÃ THAY THẾ — 21/10/2026.** Kế hoạch hiện hành là [xây lại 100% bài tập đủ hai khuông](GRAND_STAFF_BANK_PLAN.md). Mỗi bài giữ cả hai tay; người dùng chọn tay khi tập. Kho 5.460 bài và quy tắc trích một tay dưới đây chỉ còn là lịch sử, không được cộng vào kho mới. Các bước K mới chưa được triển khai.
 
 Cập nhật 21/10/2026 theo yêu cầu mới: **mỗi lựa chọn độ dài trong mỗi grade phải có tối thiểu 300 bài**. Có 8 grade × 7 độ dài = **56 ô**, tối thiểu 16.800 lượt bài trong các ô. Không dùng tổng của grade để bù ô thiếu.

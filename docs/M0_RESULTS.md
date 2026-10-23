@@ -1,5 +1,7 @@
 # Kết quả M0 — Pianist Web
 
+> **Tài liệu theo mốc:** giữ để truy vết quyết định và kết quả tại thời điểm viết. Hướng dẫn vận hành, kiến trúc và pipeline đang dùng nằm ở [tài liệu hiện hành](current/README.md); không dùng số lượng hoặc checklist cũ thay cho catalog/manifest hiện tại.
+
 Ngày kiểm chứng: 16/10/2026.
 
 > Đây là bằng chứng của M0. Các thay đổi Thư viện/Tập piano sau đó được ghi

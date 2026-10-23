@@ -1,5 +1,7 @@
 # Pianist Web V2 — nghiệm thu R0–R7
 
+> **Tài liệu theo mốc:** giữ để truy vết quyết định và kết quả tại thời điểm viết. Hướng dẫn vận hành, kiến trúc và pipeline đang dùng nằm ở [tài liệu hiện hành](current/README.md); không dùng số lượng hoặc checklist cũ thay cho catalog/manifest hiện tại.
+
 Ngày 18/10/2026. Báo cáo đợt thay lõi BPM; phần R4 đã được bổ sung ở [R4_RESULTS](R4_RESULTS.md), engine hiện tại `pianist-v2.osu-676f3b0.pts-b40e412.mir-fe73b35.ns-3582550.2`, schema kết quả 2. Số liệu 56 test và artifact v2-final bên dưới là mốc trước R4; không dùng để mô tả bản R4 mới.
 Bản này thay toàn bộ bộ chấm tự viết cũ, ưu tiên onset theo BPM. Editor
 MuseScore, nhập/xuất, thư viện và dữ liệu người dùng được giữ.

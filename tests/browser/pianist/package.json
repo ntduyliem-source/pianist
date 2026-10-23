@@ -1,6 +1,11 @@
 {
   "name": "pianist-m0-browser-checks",
   "private": true,
-  "scripts": { "test": "node m0-smoke.cjs" },
+  "scripts": {
+    "test": "python ../../../buildscripts/pianist/check-pianist.py browser",
+    "test:critical": "python ../../../buildscripts/pianist/check-pianist.py browser",
+    "test:native": "python ../../../buildscripts/pianist/check-pianist.py native",
+    "test:legacy-m0": "node m0-smoke.cjs"
+  },
   "devDependencies": { "playwright": "1.62.1" }
 }

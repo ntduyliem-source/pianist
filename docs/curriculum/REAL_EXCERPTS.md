@@ -1,5 +1,7 @@
 # Hai mươi bốn trích đoạn nhạc thật
 
+> **Tài liệu theo mốc:** giữ để truy vết quyết định và kết quả tại thời điểm viết. Hướng dẫn vận hành, kiến trúc và pipeline đang dùng nằm ở [tài liệu hiện hành](../current/README.md); không dùng số lượng hoặc checklist cũ thay cho catalog/manifest hiện tại.
+
 Các số level trong tài liệu này thuộc đề xuất lộ trình cũ. Phải phân loại lại theo [thiết kế grade hiện hành](GRADE_DESIGN.md) trước khi dùng trong quiz liên tục; chưa có ánh xạ tự động giữa hai hệ thống.
 
 Đây là các **cửa sổ một staff đã đọc cấu trúc XML**, được chọn làm ứng viên bài tập. Chưa gọi chúng là 24 câu nhạc đã được giáo viên duyệt. Mỗi bài giữ nguyên cao độ và nhịp gốc; tốc độ chậm hơn trong bảng là tempo luyện đề xuất. Các số level áp dụng cho staff được chọn, không áp dụng cho cả tác phẩm.
