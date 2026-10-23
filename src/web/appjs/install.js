@@ -1,4 +1,5 @@
 const fs = require('fs');
+const path = require('path');
 
 console.log("install js api step")
 
@@ -99,7 +100,20 @@ fs.writeFileSync(OUTPUT_DIR+"/examples/catalog.json", JSON.stringify({examples:[
 const library = ROOT+"/scores/library";
 if (fs.existsSync(library+"/catalog.json")) {
     const catalog = JSON.parse(fs.readFileSync(library+"/catalog.json", "utf8"));
-    fs.mkdirSync(OUTPUT_DIR+"/library/songs", {recursive:true});
+    const songsDir = path.resolve(OUTPUT_DIR, 'library/songs');
+    const approved = new Set(catalog.songs.map(song => {
+        if (!/^library\/songs\/[a-z0-9-]+\.mxl$/.test(song.url)) throw new Error('Invalid curated score path');
+        return path.basename(song.url);
+    }));
+    fs.mkdirSync(songsDir, {recursive:true});
+    // A removed catalog edition must not survive at its former local URL.
+    // Only generated score files in this exact output directory are removed.
+    for (const entry of fs.readdirSync(songsDir, {withFileTypes:true})) {
+        if (!entry.isFile() || !entry.name.endsWith('.mxl') || approved.has(entry.name)) continue;
+        const target = path.resolve(songsDir, entry.name);
+        if (path.dirname(target) !== songsDir) throw new Error('Unsafe stale score path');
+        fs.unlinkSync(target);
+    }
     copyFile(library+"/catalog.json", OUTPUT_DIR+"/library/catalog.json");
     for (const song of catalog.songs) {
         const filename = song.url.split('/').pop();
