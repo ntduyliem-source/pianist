@@ -1,0 +1,3194 @@
+{
+  "summary": {
+    "inputs": 42,
+    "newWorks": 38,
+    "newVersions": 0,
+    "duplicates": 0,
+    "excluded": 4,
+    "editorOnly": 4,
+    "totalWorks": 127,
+    "totalVersions": 131
+  },
+  "results": [
+    {
+      "filename": "vi-mot-nguoi-ra-di.mxl",
+      "title": "Vì một người ra đi",
+      "status": "added",
+      "reason": "Nghe/chỉnh sửa đầy đủ 1204 nốt; bộ tập chưa hỗ trợ 18 nốt hoa mỹ.",
+      "version": 1,
+      "workId": "2b86139ef7affed54d00f7f0f691b27d6fed95ded767a5b24473281119b0b66d",
+      "id": "2b86139ef7affed54d00f7f0f691b27d6fed95ded767a5b24473281119b0b66d",
+      "practiceReady": false,
+      "originalFilename": "01-Vi-Mot-Nguoi-Ra-Di.mxl",
+      "sourceSha256": "2b86139ef7affed54d00f7f0f691b27d6fed95ded767a5b24473281119b0b66d",
+      "sourceTitle": "Vì một người ra đi / 笑看风云",
+      "sourceCredits": [
+        {
+          "type": "composer",
+          "text": "Source: EveryonePiano"
+        }
+      ],
+      "staffPolicy": {
+        "policyVersion": "piano-two-staves-v1",
+        "accepted": true,
+        "totalStaves": 2,
+        "parts": [
+          {
+            "id": "P77e7a48fec2d6991c0c20ee695c0c871",
+            "staves": 2,
+            "instrument": {
+              "piano": true,
+              "labels": [
+                "Piano",
+                "Pno.",
+                "Piano",
+                "Pno"
+              ],
+              "programs": [
+                1
+              ],
+              "sounds": [],
+              "contradictions": []
+            },
+            "pitchedNotes": 1204
+          }
+        ],
+        "violations": []
+      },
+      "xmlSchema": {
+        "passed": true,
+        "errors": []
+      },
+      "suppliedSourceReview": {
+        "score_number": 1,
+        "mxl_file": "01-Vi-Mot-Nguoi-Ra-Di.mxl",
+        "abc_file": "01-Vi-Mot-Nguoi-Ra-Di.abc",
+        "status": "SOURCE_CHECKED",
+        "source_timing_status": "SOURCE_CHECKED",
+        "staff_count": 2,
+        "safe_for_automatic_timed_quiz_import": true,
+        "schema_order_fix": null,
+        "notes_vi": "Đã đối chiếu 6 trang, 65 ô nhịp, cả hai tay; 1204 nốt (gồm 18 nốt hoa mỹ) khớp giữa MXL và ABC. Giữ ô chuyển giọng 1 phách và nốt F#4 tay phải thấp khác thường ở ô 14 đúng nguồn."
+      },
+      "nativeAudit": {
+        "sourceNotes": 1204,
+        "nativeNotes": 1186,
+        "editorNotes": 1204,
+        "editorGraceNotes": 18,
+        "measures": 65,
+        "pages": 4,
+        "missingGlyphs": 0,
+        "nativePlayback": true,
+        "performed": 1186,
+        "keyReleases": 1050,
+        "pedals": 0,
+        "durationMs": 246000,
+        "playbackDuration": 249
+      }
+    },
+    {
+      "filename": "vi-sao-trong-long-toi.mxl",
+      "title": "Vì sao trong lòng tôi",
+      "status": "added",
+      "reason": "544 nốt; 2 trang; MuseScore playback/mapping đạt",
+      "version": 1,
+      "workId": "d2d4d347ae1d15027ccdea9ef68da7d90d7b2a76412366163faafad57d5031b0",
+      "id": "d2d4d347ae1d15027ccdea9ef68da7d90d7b2a76412366163faafad57d5031b0",
+      "practiceReady": true,
+      "originalFilename": "02-Vi-Sao-Trong-Long-Toi.mxl",
+      "sourceSha256": "d2d4d347ae1d15027ccdea9ef68da7d90d7b2a76412366163faafad57d5031b0",
+      "sourceTitle": "Vì sao trong lòng tôi / 谁明浪子心",
+      "sourceCredits": [
+        {
+          "type": "composer",
+          "text": "NGERN (source credit)"
+        }
+      ],
+      "staffPolicy": {
+        "policyVersion": "piano-two-staves-v1",
+        "accepted": true,
+        "totalStaves": 2,
+        "parts": [
+          {
+            "id": "P1901acc9eae530e49417bbc9e64570f4",
+            "staves": 2,
+            "instrument": {
+              "piano": true,
+              "labels": [
+                "Piano",
+                "Pno.",
+                "Piano",
+                "Pno"
+              ],
+              "programs": [
+                1
+              ],
+              "sounds": [],
+              "contradictions": []
+            },
+            "pitchedNotes": 544
+          }
+        ],
+        "violations": []
+      },
+      "xmlSchema": {
+        "passed": true,
+        "errors": []
+      },
+      "suppliedSourceReview": {
+        "score_number": 2,
+        "mxl_file": "02-Vi-Sao-Trong-Long-Toi.mxl",
+        "abc_file": "02-Vi-Sao-Trong-Long-Toi.abc",
+        "status": "SOURCE_CHECKED",
+        "source_timing_status": "SOURCE_CHECKED",
+        "staff_count": 2,
+        "safe_for_automatic_timed_quiz_import": true,
+        "schema_order_fix": null,
+        "notes_vi": "Đã đối chiếu 3 trang, 39 ô nhịp, cả hai tay. Sửa lỗi hợp âm, nhịp và dấu nối từ nhận dạng; 544 nốt khớp chính xác giữa MXL và ABC."
+      },
+      "nativeAudit": {
+        "sourceNotes": 544,
+        "nativeNotes": 544,
+        "editorNotes": 544,
+        "editorGraceNotes": 0,
+        "measures": 39,
+        "pages": 2,
+        "missingGlyphs": 0,
+        "nativePlayback": true,
+        "performed": 544,
+        "keyReleases": 510,
+        "pedals": 0,
+        "durationMs": 130000,
+        "playbackDuration": 133
+      }
+    },
+    {
+      "filename": "dan-ong-khong-duoc-quen-het-tinh-con-nghia.mxl",
+      "title": "Đàn ông không được quên hết tình còn nghĩa",
+      "status": "added",
+      "reason": "1152 nốt; 3 trang; MuseScore playback/mapping đạt",
+      "version": 1,
+      "workId": "343921226f9b603c742662247adc077d49688f1806bc79b93f07798a38e34231",
+      "id": "343921226f9b603c742662247adc077d49688f1806bc79b93f07798a38e34231",
+      "practiceReady": true,
+      "originalFilename": "03-Dan-Ong-Khong-Duoc-Quen-Het-Tinh-Con-Nghia.mxl",
+      "sourceSha256": "343921226f9b603c742662247adc077d49688f1806bc79b93f07798a38e34231",
+      "sourceTitle": "Đàn ông không được quên hết tình còn nghĩa / 无间道",
+      "sourceCredits": [
+        {
+          "type": "composer",
+          "text": "Arrangement: cxj / EveryonePiano"
+        }
+      ],
+      "staffPolicy": {
+        "policyVersion": "piano-two-staves-v1",
+        "accepted": true,
+        "totalStaves": 2,
+        "parts": [
+          {
+            "id": "Pe56090cf37d4299e008ca2a0b3c8130f",
+            "staves": 2,
+            "instrument": {
+              "piano": true,
+              "labels": [
+                "Piano",
+                "Pno.",
+                "Piano",
+                "Pno"
+              ],
+              "programs": [
+                1
+              ],
+              "sounds": [],
+              "contradictions": []
+            },
+            "pitchedNotes": 1152
+          }
+        ],
+        "violations": []
+      },
+      "xmlSchema": {
+        "passed": true,
+        "errors": []
+      },
+      "suppliedSourceReview": {
+        "score_number": 3,
+        "mxl_file": "03-Dan-Ong-Khong-Duoc-Quen-Het-Tinh-Con-Nghia.mxl",
+        "abc_file": "03-Dan-Ong-Khong-Duoc-Quen-Het-Tinh-Con-Nghia.abc",
+        "status": "SOURCE_CHECKED",
+        "source_timing_status": "SOURCE_CHECKED",
+        "staff_count": 2,
+        "safe_for_automatic_timed_quiz_import": true,
+        "schema_order_fix": null,
+        "notes_vi": "Đã đối chiếu 3 trang, 73 ô nhịp, cả hai tay; 1152 nốt khớp giữa MXL và ABC. Giữ dấu Ped. dạng chữ, không tự thêm vị trí nhả pedal mà nguồn không ghi."
+      },
+      "nativeAudit": {
+        "sourceNotes": 1152,
+        "nativeNotes": 1152,
+        "editorNotes": 1152,
+        "editorGraceNotes": 0,
+        "measures": 73,
+        "pages": 3,
+        "missingGlyphs": 0,
+        "nativePlayback": true,
+        "performed": 1152,
+        "keyReleases": 1152,
+        "pedals": 0,
+        "durationMs": 129043.17935864805,
+        "playbackDuration": 132.04317935864805
+      }
+    },
+    {
+      "filename": "anh-khong-muon-bat-cong-voi-em.mxl",
+      "title": "Anh không muốn bất công với em",
+      "status": "added",
+      "reason": "520 nốt; 3 trang; MuseScore playback/mapping đạt",
+      "version": 1,
+      "workId": "ac151684902047b4de4bec18dc0a82107a726d609a622df662e2895479cf196f",
+      "id": "ac151684902047b4de4bec18dc0a82107a726d609a622df662e2895479cf196f",
+      "practiceReady": true,
+      "originalFilename": "04-Anh-Khong-Muon-Bat-Cong-Voi-Em.mxl",
+      "sourceSha256": "ac151684902047b4de4bec18dc0a82107a726d609a622df662e2895479cf196f",
+      "sourceTitle": "Anh không muốn bất công với em / 练习",
+      "sourceCredits": [
+        {
+          "type": "composer",
+          "text": "Source: EveryonePiano / 离之殇"
+        }
+      ],
+      "staffPolicy": {
+        "policyVersion": "piano-two-staves-v1",
+        "accepted": true,
+        "totalStaves": 2,
+        "parts": [
+          {
+            "id": "P2b4808c63d1ad718d10d0e73e5c00690",
+            "staves": 2,
+            "instrument": {
+              "piano": true,
+              "labels": [
+                "Piano",
+                "Pno.",
+                "Piano",
+                "Pno"
+              ],
+              "programs": [
+                1
+              ],
+              "sounds": [],
+              "contradictions": []
+            },
+            "pitchedNotes": 520
+          }
+        ],
+        "violations": []
+      },
+      "xmlSchema": {
+        "passed": true,
+        "errors": []
+      },
+      "suppliedSourceReview": {
+        "score_number": 4,
+        "mxl_file": "04-Anh-Khong-Muon-Bat-Cong-Voi-Em.mxl",
+        "abc_file": "04-Anh-Khong-Muon-Bat-Cong-Voi-Em.abc",
+        "status": "SOURCE_CHECKED",
+        "source_timing_status": "SOURCE_CHECKED",
+        "staff_count": 2,
+        "safe_for_automatic_timed_quiz_import": true,
+        "schema_order_fix": null,
+        "notes_vi": "Đã đối chiếu 3 trang, 58 ô nhịp, cả hai tay. Sửa cao độ theo đổi khóa tay trái ô 2–3, nốt hợp âm và đoạn kết; giữ nhóm liên ba, không đoán tốc độ. 520 nốt khớp giữa MXL và ABC."
+      },
+      "nativeAudit": {
+        "sourceNotes": 520,
+        "nativeNotes": 520,
+        "editorNotes": 520,
+        "editorGraceNotes": 0,
+        "measures": 58,
+        "pages": 3,
+        "missingGlyphs": 0,
+        "nativePlayback": true,
+        "performed": 520,
+        "keyReleases": 476,
+        "pedals": 0,
+        "durationMs": 116000,
+        "playbackDuration": 119
+      }
+    },
+    {
+      "filename": "khi-nguoi-dan-ong-khoc.mxl",
+      "title": "Khi người đàn ông khóc",
+      "status": "added",
+      "reason": "756 nốt; 3 trang; MuseScore playback/mapping đạt",
+      "version": 1,
+      "workId": "d9e9f33395bb7581a7958206194130ca31c5758fe17806f83cc68a646e6dee4e",
+      "id": "d9e9f33395bb7581a7958206194130ca31c5758fe17806f83cc68a646e6dee4e",
+      "practiceReady": true,
+      "originalFilename": "05-Khi-Nguoi-Dan-Ong-Khoc.mxl",
+      "sourceSha256": "d9e9f33395bb7581a7958206194130ca31c5758fe17806f83cc68a646e6dee4e",
+      "sourceTitle": "Khi người đàn ông khóc / 男人哭吧不是罪",
+      "sourceCredits": [
+        {
+          "type": "composer",
+          "text": "Arrangement: yin / EveryonePiano"
+        }
+      ],
+      "staffPolicy": {
+        "policyVersion": "piano-two-staves-v1",
+        "accepted": true,
+        "totalStaves": 2,
+        "parts": [
+          {
+            "id": "Pb6133b1f0ba8de65a63e6c8d8f07aaa4",
+            "staves": 2,
+            "instrument": {
+              "piano": true,
+              "labels": [
+                "Piano",
+                "Pno.",
+                "Piano",
+                "Pno"
+              ],
+              "programs": [
+                1
+              ],
+              "sounds": [],
+              "contradictions": []
+            },
+            "pitchedNotes": 756
+          }
+        ],
+        "violations": []
+      },
+      "xmlSchema": {
+        "passed": true,
+        "errors": []
+      },
+      "suppliedSourceReview": {
+        "score_number": 5,
+        "mxl_file": "05-Khi-Nguoi-Dan-Ong-Khoc.mxl",
+        "abc_file": "05-Khi-Nguoi-Dan-Ong-Khoc.abc",
+        "status": "SOURCE_CHECKED",
+        "source_timing_status": "SOURCE_CHECKED",
+        "staff_count": 2,
+        "safe_for_automatic_timed_quiz_import": true,
+        "schema_order_fix": null,
+        "notes_vi": "Đã đối chiếu 4 trang, 53 ô nhịp, cả hai tay. Khôi phục dấu nối, sửa hợp âm E thăng tay trái ô 8 và phách giả do nhận dạng; 756 nốt khớp giữa MXL và ABC."
+      },
+      "nativeAudit": {
+        "sourceNotes": 756,
+        "nativeNotes": 756,
+        "editorNotes": 756,
+        "editorGraceNotes": 0,
+        "measures": 53,
+        "pages": 3,
+        "missingGlyphs": 0,
+        "nativePlayback": true,
+        "performed": 756,
+        "keyReleases": 710,
+        "pedals": 0,
+        "durationMs": 212000,
+        "playbackDuration": 215
+      }
+    },
+    {
+      "filename": "lieu-thuoc-cho-trai-tim.mxl",
+      "title": "Liều thuốc cho trái tim",
+      "status": "added",
+      "reason": "Nghe/chỉnh sửa đầy đủ 871 nốt; bộ tập chưa hỗ trợ 2 nốt hoa mỹ.",
+      "version": 1,
+      "workId": "7e3632eb3a2047d47178ed07e403f7028110fb0e493847ee316295aade3424b2",
+      "id": "7e3632eb3a2047d47178ed07e403f7028110fb0e493847ee316295aade3424b2",
+      "practiceReady": false,
+      "originalFilename": "06-Lieu-Thuoc-Cho-Trai-Tim.mxl",
+      "sourceSha256": "7e3632eb3a2047d47178ed07e403f7028110fb0e493847ee316295aade3424b2",
+      "sourceTitle": "Liều thuốc cho trái tim / 伤心1999",
+      "sourceCredits": [
+        {
+          "type": "composer",
+          "text": "Source: EveryonePiano"
+        }
+      ],
+      "staffPolicy": {
+        "policyVersion": "piano-two-staves-v1",
+        "accepted": true,
+        "totalStaves": 2,
+        "parts": [
+          {
+            "id": "Pd692c728d41193ca8cf9d29de92f5c97",
+            "staves": 2,
+            "instrument": {
+              "piano": true,
+              "labels": [
+                "Piano",
+                "Pno.",
+                "Piano",
+                "Pno"
+              ],
+              "programs": [
+                1
+              ],
+              "sounds": [],
+              "contradictions": []
+            },
+            "pitchedNotes": 871
+          }
+        ],
+        "violations": []
+      },
+      "xmlSchema": {
+        "passed": true,
+        "errors": []
+      },
+      "suppliedSourceReview": {
+        "score_number": 6,
+        "mxl_file": "06-Lieu-Thuoc-Cho-Trai-Tim.mxl",
+        "abc_file": "06-Lieu-Thuoc-Cho-Trai-Tim.abc",
+        "status": "SOURCE_CHECKED",
+        "source_timing_status": "SOURCE_CHECKED",
+        "staff_count": 2,
+        "safe_for_automatic_timed_quiz_import": true,
+        "schema_order_fix": null,
+        "notes_vi": "Đã đối chiếu 6 trang, 53 ô nhịp, cả hai tay; 871 nốt gồm 2 nốt hoa mỹ khớp giữa MXL và ABC. Sửa nhóm liên ba, D thăng và bè giả chồng lên; giữ âm vực B6 và ô 39 nhịp 2/4."
+      },
+      "nativeAudit": {
+        "sourceNotes": 871,
+        "nativeNotes": 869,
+        "editorNotes": 871,
+        "editorGraceNotes": 2,
+        "measures": 53,
+        "pages": 3,
+        "missingGlyphs": 0,
+        "nativePlayback": true,
+        "performed": 869,
+        "keyReleases": 817,
+        "pedals": 0,
+        "durationMs": 210000,
+        "playbackDuration": 213
+      }
+    },
+    {
+      "filename": "neu-em-da-quen.mxl",
+      "title": "Nếu em đã quên — bản đầy đủ",
+      "status": "excluded",
+      "reason": "Cách ly nguồn mâu thuẫn nhịp: tay phải ô 2 có 4,5 phách trong 4/4; không tự sửa hoặc bật tập.",
+      "originalFilename": "07-Neu-Em-Da-Quen.mxl",
+      "sourceSha256": "3f70610db24acc09f10ddb2c45bfd6c201a144f34c31afa57e77f03a6f708feb",
+      "sourceTitle": "Nếu em đã quên / 太多 [source rhythm issue in bar 2]",
+      "sourceCredits": [
+        {
+          "type": "composer",
+          "text": "Source: EveryonePiano"
+        }
+      ],
+      "staffPolicy": {
+        "policyVersion": "piano-two-staves-v1",
+        "accepted": true,
+        "totalStaves": 2,
+        "parts": [
+          {
+            "id": "P1bd6adf8c4f4736121d28dd8389a6f32",
+            "staves": 2,
+            "instrument": {
+              "piano": true,
+              "labels": [
+                "Piano",
+                "Pno.",
+                "Piano",
+                "Pno"
+              ],
+              "programs": [
+                1
+              ],
+              "sounds": [],
+              "contradictions": []
+            },
+            "pitchedNotes": 990
+          }
+        ],
+        "violations": []
+      },
+      "xmlSchema": {
+        "passed": true,
+        "errors": []
+      },
+      "suppliedSourceReview": {
+        "score_number": 7,
+        "mxl_file": "07-Neu-Em-Da-Quen.mxl",
+        "abc_file": "07-Neu-Em-Da-Quen.abc",
+        "status": "NEEDS_SOURCE_REVIEW",
+        "source_timing_status": "NEEDS_SOURCE_REVIEW",
+        "staff_count": 2,
+        "safe_for_automatic_timed_quiz_import": false,
+        "schema_order_fix": null,
+        "notes_vi": "NGUỒN MÂU THUẪN NHỊP: tay phải ô 2 gồm hợp âm trắng chấm dôi, lặng đơn và nốt đen B4, tổng 4,5 phách trong 4/4. Giữ nguyên và chú thích; tay trái có khoảng căn chỉnh ẩn, không tự điền nốt. 78 ô, 990 nốt khớp giữa MXL và ABC. Chưa dùng tự động cho bài kiểm tra nhịp."
+      }
+    },
+    {
+      "filename": "tinh-don-coi-2-lac-mat-dong-song.mxl",
+      "title": "Tình đơn côi 2",
+      "status": "added",
+      "reason": "477 nốt; 2 trang; MuseScore playback/mapping đạt",
+      "version": 1,
+      "workId": "7b067a711a0ed45376253409256f4c98100d9f959fb881eb22c37b521bc95d7f",
+      "id": "7b067a711a0ed45376253409256f4c98100d9f959fb881eb22c37b521bc95d7f",
+      "practiceReady": true,
+      "originalFilename": "08-Tinh-Don-Coi-2-Lac-Mat-Dong-Song.mxl",
+      "sourceSha256": "7b067a711a0ed45376253409256f4c98100d9f959fb881eb22c37b521bc95d7f",
+      "sourceTitle": "Tình đơn côi 2 / 单身情歌",
+      "sourceCredits": [
+        {
+          "type": "composer",
+          "text": "Guanyuni (source credit)"
+        }
+      ],
+      "staffPolicy": {
+        "policyVersion": "piano-two-staves-v1",
+        "accepted": true,
+        "totalStaves": 2,
+        "parts": [
+          {
+            "id": "Pcb590b7a101c075aaaf83c80eb9d14ab",
+            "staves": 2,
+            "instrument": {
+              "piano": true,
+              "labels": [
+                "Piano",
+                "Pno.",
+                "Piano",
+                "Pno"
+              ],
+              "programs": [
+                1
+              ],
+              "sounds": [],
+              "contradictions": []
+            },
+            "pitchedNotes": 477
+          }
+        ],
+        "violations": []
+      },
+      "xmlSchema": {
+        "passed": true,
+        "errors": []
+      },
+      "suppliedSourceReview": {
+        "score_number": 8,
+        "mxl_file": "08-Tinh-Don-Coi-2-Lac-Mat-Dong-Song.mxl",
+        "abc_file": "08-Tinh-Don-Coi-2-Lac-Mat-Dong-Song.abc",
+        "status": "SOURCE_CHECKED",
+        "source_timing_status": "SOURCE_CHECKED",
+        "staff_count": 2,
+        "safe_for_automatic_timed_quiz_import": true,
+        "schema_order_fix": null,
+        "notes_vi": "Đã đối chiếu 3 trang, 47 ô nhịp, cả hai tay; 477 nốt khớp giữa MXL và ABC. Khôi phục dấu nối, sửa tay trái ô 44; giữ dấu lặp, đoạn kết và tốc độ 94 theo nguồn."
+      },
+      "nativeAudit": {
+        "sourceNotes": 477,
+        "nativeNotes": 477,
+        "editorNotes": 477,
+        "editorGraceNotes": 0,
+        "measures": 47,
+        "pages": 2,
+        "missingGlyphs": 0,
+        "nativePlayback": true,
+        "performed": 819,
+        "keyReleases": 772,
+        "pedals": 0,
+        "durationMs": 151276.56355817794,
+        "playbackDuration": 154.27656355817794
+      }
+    },
+    {
+      "filename": "noi-gi-di.mxl",
+      "title": "Nói gì đi",
+      "status": "added",
+      "reason": "1308 nốt; 4 trang; MuseScore playback/mapping đạt",
+      "version": 1,
+      "workId": "d4d620537f8749876b8107533a98ad781e0eed017f70c4f534af7ab30113e6ab",
+      "id": "d4d620537f8749876b8107533a98ad781e0eed017f70c4f534af7ab30113e6ab",
+      "practiceReady": true,
+      "originalFilename": "09-Noi-Gi-Di.mxl",
+      "sourceSha256": "d4d620537f8749876b8107533a98ad781e0eed017f70c4f534af7ab30113e6ab",
+      "sourceTitle": "Nói gì đi / 饿狼传说",
+      "sourceCredits": [
+        {
+          "type": "composer",
+          "text": "EveryonePiano (source credit)"
+        }
+      ],
+      "staffPolicy": {
+        "policyVersion": "piano-two-staves-v1",
+        "accepted": true,
+        "totalStaves": 2,
+        "parts": [
+          {
+            "id": "Pd8b20f3ac83669c14ac2ee2b06e1c813",
+            "staves": 2,
+            "instrument": {
+              "piano": true,
+              "labels": [
+                "Piano",
+                "Pno.",
+                "Piano",
+                "Pno"
+              ],
+              "programs": [
+                1
+              ],
+              "sounds": [],
+              "contradictions": []
+            },
+            "pitchedNotes": 1308
+          }
+        ],
+        "violations": []
+      },
+      "xmlSchema": {
+        "passed": true,
+        "errors": []
+      },
+      "suppliedSourceReview": {
+        "score_number": 9,
+        "mxl_file": "09-Noi-Gi-Di.mxl",
+        "abc_file": "09-Noi-Gi-Di.abc",
+        "status": "SOURCE_CHECKED",
+        "source_timing_status": "SOURCE_CHECKED",
+        "staff_count": 2,
+        "safe_for_automatic_timed_quiz_import": true,
+        "schema_order_fix": null,
+        "notes_vi": "Đã đối chiếu 3 trang, 86 ô nhịp, cả hai tay; 1308 nốt khớp giữa MXL và ABC. Sửa nốt chồng thời điểm, chấm dôi, nốt móc kép bị thiếu, dấu hóa và dấu nối qua ô."
+      },
+      "nativeAudit": {
+        "sourceNotes": 1308,
+        "nativeNotes": 1308,
+        "editorNotes": 1308,
+        "editorGraceNotes": 0,
+        "measures": 86,
+        "pages": 4,
+        "missingGlyphs": 0,
+        "nativePlayback": true,
+        "performed": 1308,
+        "keyReleases": 1238,
+        "pedals": 0,
+        "durationMs": 219574.42136714436,
+        "playbackDuration": 222.57442136714437
+      }
+    },
+    {
+      "filename": "neu-em-da-quen-ban-don-gian.mxl",
+      "title": "Nếu em đã quên",
+      "status": "added",
+      "reason": "366 nốt; 2 trang; MuseScore playback/mapping đạt",
+      "version": 1,
+      "workId": "753c393a1ad6489ffe37497764273bd60e4690eda907a36123c7c21d8fa7d01a",
+      "id": "753c393a1ad6489ffe37497764273bd60e4690eda907a36123c7c21d8fa7d01a",
+      "practiceReady": true,
+      "originalFilename": "10-Neu-Em-Da-Quen-Ban-Don-Gian.mxl",
+      "sourceSha256": "753c393a1ad6489ffe37497764273bd60e4690eda907a36123c7c21d8fa7d01a",
+      "sourceTitle": "Nếu em đã quên (bản đơn giản) / 太多",
+      "sourceCredits": [
+        {
+          "type": "composer",
+          "text": "NGERN (source credit)"
+        }
+      ],
+      "staffPolicy": {
+        "policyVersion": "piano-two-staves-v1",
+        "accepted": true,
+        "totalStaves": 2,
+        "parts": [
+          {
+            "id": "P792edcd1dfb10225116434f4b7f34449",
+            "staves": 2,
+            "instrument": {
+              "piano": true,
+              "labels": [
+                "Piano",
+                "Pno.",
+                "Piano",
+                "Pno"
+              ],
+              "programs": [
+                1
+              ],
+              "sounds": [],
+              "contradictions": []
+            },
+            "pitchedNotes": 366
+          }
+        ],
+        "violations": []
+      },
+      "xmlSchema": {
+        "passed": true,
+        "errors": []
+      },
+      "suppliedSourceReview": {
+        "score_number": 10,
+        "mxl_file": "10-Neu-Em-Da-Quen-Ban-Don-Gian.mxl",
+        "abc_file": "10-Neu-Em-Da-Quen-Ban-Don-Gian.abc",
+        "status": "SOURCE_CHECKED",
+        "source_timing_status": "SOURCE_CHECKED",
+        "staff_count": 2,
+        "safe_for_automatic_timed_quiz_import": true,
+        "schema_order_fix": null,
+        "notes_vi": "Đã đối chiếu 2 trang, 34 ô nhịp, cả hai tay; 366 nốt khớp giữa MXL và ABC. Khôi phục C5 tay phải ô 5, nốt móc kép ô 3/11, dấu nối và E2 tay trái ô 20."
+      },
+      "identityReason": "Bên bàn giao xác định bản 10 là bản phối đơn giản khác bản đầy đủ 07 đang cách ly. Không coi hai file là bản trùng; chỉ bản đơn giản đủ điều kiện mới được xét nhận.",
+      "nativeAudit": {
+        "sourceNotes": 366,
+        "nativeNotes": 366,
+        "editorNotes": 366,
+        "editorGraceNotes": 0,
+        "measures": 34,
+        "pages": 2,
+        "missingGlyphs": 0,
+        "nativePlayback": true,
+        "performed": 366,
+        "keyReleases": 332,
+        "pedals": 0,
+        "durationMs": 90666.66666666667,
+        "playbackDuration": 93.66666666666667
+      }
+    },
+    {
+      "filename": "tieng-sao-phieu-bong.mxl",
+      "title": "Tiếng sáo phiêu bồng",
+      "status": "added",
+      "reason": "967 nốt; 3 trang; MuseScore playback/mapping đạt",
+      "version": 1,
+      "workId": "51deb2a94c09ff4222f52a148da98e59080cc8521181eedfa8ca5594a681b659",
+      "id": "51deb2a94c09ff4222f52a148da98e59080cc8521181eedfa8ca5594a681b659",
+      "practiceReady": true,
+      "originalFilename": "11-Tieng-sao-phieu-bong.mxl",
+      "sourceSha256": "51deb2a94c09ff4222f52a148da98e59080cc8521181eedfa8ca5594a681b659",
+      "sourceTitle": "Tiếng sáo phiêu bồng / 刀剑如梦",
+      "sourceCredits": [
+        {
+          "type": "composer",
+          "text": "Source: EveryonePiano"
+        }
+      ],
+      "staffPolicy": {
+        "policyVersion": "piano-two-staves-v1",
+        "accepted": true,
+        "totalStaves": 2,
+        "parts": [
+          {
+            "id": "Pe54ca60f3f5deb97596b14d30ac2d66a",
+            "staves": 2,
+            "instrument": {
+              "piano": true,
+              "labels": [
+                "Piano",
+                "Pno.",
+                "Piano",
+                "Pno"
+              ],
+              "programs": [
+                1
+              ],
+              "sounds": [],
+              "contradictions": []
+            },
+            "pitchedNotes": 967
+          }
+        ],
+        "violations": []
+      },
+      "xmlSchema": {
+        "passed": true,
+        "errors": []
+      },
+      "suppliedSourceReview": {
+        "score_number": 11,
+        "mxl_file": "11-Tieng-sao-phieu-bong.mxl",
+        "abc_file": "11-Tieng-sao-phieu-bong.abc",
+        "status": "SOURCE_CHECKED",
+        "source_timing_status": "SOURCE_CHECKED",
+        "staff_count": 2,
+        "safe_for_automatic_timed_quiz_import": true,
+        "schema_order_fix": null,
+        "notes_vi": "Đã đối chiếu 4 trang, 49 ô nhịp, cả hai tay. Sửa nhóm nốt móc 32, trường độ, dấu nối, 2 hợp âm trầm và dấu bình cuối; 967 nốt khớp giữa MXL và ABC. Giữ nguyên hợp âm bảy khác thường đúng nguồn."
+      },
+      "nativeAudit": {
+        "sourceNotes": 967,
+        "nativeNotes": 967,
+        "editorNotes": 967,
+        "editorGraceNotes": 0,
+        "measures": 49,
+        "pages": 3,
+        "missingGlyphs": 0,
+        "nativePlayback": true,
+        "performed": 967,
+        "keyReleases": 935,
+        "pedals": 0,
+        "durationMs": 156666.66666666666,
+        "playbackDuration": 159.66666666666666
+      }
+    },
+    {
+      "filename": "sao-em-no-ra-di.mxl",
+      "title": "Sao em nỡ ra đi",
+      "status": "added",
+      "reason": "1138 nốt; 3 trang; MuseScore playback/mapping đạt",
+      "version": 1,
+      "workId": "438efdcc7a0171b5f42b3860609752016c0fd9a5af18e405af545e75883e1f24",
+      "id": "438efdcc7a0171b5f42b3860609752016c0fd9a5af18e405af545e75883e1f24",
+      "practiceReady": true,
+      "originalFilename": "12-Sao-em-no-ra-di.mxl",
+      "sourceSha256": "438efdcc7a0171b5f42b3860609752016c0fd9a5af18e405af545e75883e1f24",
+      "sourceTitle": "Sao em nỡ ra đi / 你怎么舍得我难过",
+      "sourceCredits": [
+        {
+          "type": "composer",
+          "text": "Source: EveryonePiano"
+        }
+      ],
+      "staffPolicy": {
+        "policyVersion": "piano-two-staves-v1",
+        "accepted": true,
+        "totalStaves": 2,
+        "parts": [
+          {
+            "id": "P94980f0d51b00e8382e6613694a9a224",
+            "staves": 2,
+            "instrument": {
+              "piano": true,
+              "labels": [
+                "Piano",
+                "Pno.",
+                "Piano",
+                "Pno"
+              ],
+              "programs": [
+                1
+              ],
+              "sounds": [],
+              "contradictions": []
+            },
+            "pitchedNotes": 1138
+          }
+        ],
+        "violations": []
+      },
+      "xmlSchema": {
+        "passed": true,
+        "errors": []
+      },
+      "suppliedSourceReview": {
+        "score_number": 12,
+        "mxl_file": "12-Sao-em-no-ra-di.mxl",
+        "abc_file": "12-Sao-em-no-ra-di.abc",
+        "status": "SOURCE_CHECKED",
+        "source_timing_status": "SOURCE_CHECKED",
+        "staff_count": 2,
+        "safe_for_automatic_timed_quiz_import": true,
+        "schema_order_fix": null,
+        "notes_vi": "Đã đối chiếu 4 trang, 55 ô nhịp, cả hai tay. Khôi phục ô 43 bị nhận dạng bỏ sót; sửa nhóm 7 nốt, câu chạy, dấu hóa, dấu nối và chấm dôi. 1138 nốt khớp giữa MXL và ABC."
+      },
+      "nativeAudit": {
+        "sourceNotes": 1138,
+        "nativeNotes": 1138,
+        "editorNotes": 1138,
+        "editorGraceNotes": 0,
+        "measures": 55,
+        "pages": 3,
+        "missingGlyphs": 0,
+        "nativePlayback": true,
+        "performed": 1677,
+        "keyReleases": 1529,
+        "pedals": 0,
+        "durationMs": 270857.0654694099,
+        "playbackDuration": 273.8570654694099
+      }
+    },
+    {
+      "filename": "cam-ta-tinh-em.mxl",
+      "title": "Cảm tạ tình em",
+      "status": "added",
+      "reason": "507 nốt; 2 trang; MuseScore playback/mapping đạt",
+      "version": 1,
+      "workId": "ce2eafe07a787ac70e9dc6410e7e81f4128fcdf8547d95633875f546c6cdb69e",
+      "id": "ce2eafe07a787ac70e9dc6410e7e81f4128fcdf8547d95633875f546c6cdb69e",
+      "practiceReady": true,
+      "originalFilename": "13-Cam-ta-tinh-em.mxl",
+      "sourceSha256": "ce2eafe07a787ac70e9dc6410e7e81f4128fcdf8547d95633875f546c6cdb69e",
+      "sourceTitle": "Cảm tạ tình em / 谢谢你的爱",
+      "sourceCredits": [
+        {
+          "type": "composer",
+          "text": "Source: EveryonePiano"
+        }
+      ],
+      "staffPolicy": {
+        "policyVersion": "piano-two-staves-v1",
+        "accepted": true,
+        "totalStaves": 2,
+        "parts": [
+          {
+            "id": "P0bf83e96480594ede9ab6f19e0247f35",
+            "staves": 2,
+            "instrument": {
+              "piano": true,
+              "labels": [
+                "Piano",
+                "Pno.",
+                "Piano",
+                "Pno"
+              ],
+              "programs": [
+                1
+              ],
+              "sounds": [],
+              "contradictions": []
+            },
+            "pitchedNotes": 507
+          }
+        ],
+        "violations": []
+      },
+      "xmlSchema": {
+        "passed": true,
+        "errors": []
+      },
+      "suppliedSourceReview": {
+        "score_number": 13,
+        "mxl_file": "13-Cam-ta-tinh-em.mxl",
+        "abc_file": "13-Cam-ta-tinh-em.abc",
+        "status": "SOURCE_CHECKED",
+        "source_timing_status": "SOURCE_CHECKED",
+        "staff_count": 2,
+        "safe_for_automatic_timed_quiz_import": true,
+        "schema_order_fix": null,
+        "notes_vi": "Đã đối chiếu 3 trang, 31 ô nhịp, cả hai tay; 507 nốt khớp giữa MXL và ABC. Sửa dấu thăng nhận nhầm thành hợp âm, trường độ tay trái, dấu lặng giả và dấu nối. Giữ nhãn lần 1 của nguồn, không tự thêm nhãn lần 2."
+      },
+      "nativeAudit": {
+        "sourceNotes": 507,
+        "nativeNotes": 507,
+        "editorNotes": 507,
+        "editorGraceNotes": 0,
+        "measures": 31,
+        "pages": 2,
+        "missingGlyphs": 0,
+        "nativePlayback": true,
+        "performed": 578,
+        "keyReleases": 551,
+        "pedals": 0,
+        "durationMs": 120000.03529412804,
+        "playbackDuration": 123.00003529412804
+      }
+    },
+    {
+      "filename": "hoang-hon-cung-say.mxl",
+      "title": "Hoàng hôn cũng say",
+      "status": "added",
+      "reason": "699 nốt; 3 trang; MuseScore playback/mapping đạt",
+      "version": 1,
+      "workId": "36910782c031721dd9708d609fa7174aa7d444c280bc06c333b300d4e160ab10",
+      "id": "36910782c031721dd9708d609fa7174aa7d444c280bc06c333b300d4e160ab10",
+      "practiceReady": true,
+      "originalFilename": "14-Hoang-hon-cung-say.mxl",
+      "sourceSha256": "36910782c031721dd9708d609fa7174aa7d444c280bc06c333b300d4e160ab10",
+      "sourceTitle": "Hoàng hôn cũng say / 夕阳醉了",
+      "sourceCredits": [
+        {
+          "type": "composer",
+          "text": "Source: EveryonePiano"
+        }
+      ],
+      "staffPolicy": {
+        "policyVersion": "piano-two-staves-v1",
+        "accepted": true,
+        "totalStaves": 2,
+        "parts": [
+          {
+            "id": "P303d2c92dd287da7ee73e9c077f1d7e1",
+            "staves": 2,
+            "instrument": {
+              "piano": true,
+              "labels": [
+                "Piano",
+                "Pno.",
+                "Piano",
+                "Pno"
+              ],
+              "programs": [
+                1
+              ],
+              "sounds": [],
+              "contradictions": []
+            },
+            "pitchedNotes": 699
+          }
+        ],
+        "violations": []
+      },
+      "xmlSchema": {
+        "passed": true,
+        "errors": []
+      },
+      "suppliedSourceReview": {
+        "score_number": 14,
+        "mxl_file": "14-Hoang-hon-cung-say.mxl",
+        "abc_file": "14-Hoang-hon-cung-say.abc",
+        "status": "SOURCE_CHECKED",
+        "source_timing_status": "SOURCE_CHECKED",
+        "staff_count": 2,
+        "safe_for_automatic_timed_quiz_import": true,
+        "schema_order_fix": null,
+        "notes_vi": "Đã đối chiếu 4 trang, 57 ô nhịp, cả hai tay; 699 nốt khớp giữa MXL và ABC. Sửa dấu thăng và vị trí nốt tay trái, chấm dôi giai điệu và dấu nối qua ô nhịp."
+      },
+      "nativeAudit": {
+        "sourceNotes": 699,
+        "nativeNotes": 699,
+        "editorNotes": 699,
+        "editorGraceNotes": 0,
+        "measures": 57,
+        "pages": 3,
+        "missingGlyphs": 0,
+        "nativePlayback": true,
+        "performed": 1304,
+        "keyReleases": 1222,
+        "pedals": 0,
+        "durationMs": 229090.9507438092,
+        "playbackDuration": 232.0909507438092
+      }
+    },
+    {
+      "filename": "nhung-loi-doi-gian.mxl",
+      "title": "Những lời dối gian",
+      "status": "added",
+      "reason": "628 nốt; 2 trang; MuseScore playback/mapping đạt",
+      "version": 1,
+      "workId": "b545277ae889650d05e3bd82a3b0729b110cf3b740ad28dbac9b6a7f900a697a",
+      "id": "b545277ae889650d05e3bd82a3b0729b110cf3b740ad28dbac9b6a7f900a697a",
+      "practiceReady": true,
+      "originalFilename": "15-Nhung-loi-doi-gian.mxl",
+      "sourceSha256": "b545277ae889650d05e3bd82a3b0729b110cf3b740ad28dbac9b6a7f900a697a",
+      "sourceTitle": "Những lời dối gian / 暗里着迷",
+      "sourceCredits": [
+        {
+          "type": "composer",
+          "text": "NGERN"
+        }
+      ],
+      "staffPolicy": {
+        "policyVersion": "piano-two-staves-v1",
+        "accepted": true,
+        "totalStaves": 2,
+        "parts": [
+          {
+            "id": "P59d55a1b78c7522573e59f3ed6cca353",
+            "staves": 2,
+            "instrument": {
+              "piano": true,
+              "labels": [
+                "Piano",
+                "Pno.",
+                "Piano",
+                "Pno"
+              ],
+              "programs": [
+                1
+              ],
+              "sounds": [],
+              "contradictions": []
+            },
+            "pitchedNotes": 628
+          }
+        ],
+        "violations": []
+      },
+      "xmlSchema": {
+        "passed": true,
+        "errors": []
+      },
+      "suppliedSourceReview": {
+        "score_number": 15,
+        "mxl_file": "15-Nhung-loi-doi-gian.mxl",
+        "abc_file": "15-Nhung-loi-doi-gian.abc",
+        "status": "SOURCE_CHECKED",
+        "source_timing_status": "SOURCE_CHECKED",
+        "staff_count": 2,
+        "safe_for_automatic_timed_quiz_import": true,
+        "schema_order_fix": null,
+        "notes_vi": "Đã đối chiếu 3 trang, 41 ô nhịp, cả hai tay; 628 nốt khớp giữa MXL và ABC. Khôi phục dấu nối qua trang; giữ dấu nhả pedal đầu bài chưa có dấu nhấn đi kèm đúng nguồn, không tự thêm dấu nhấn pedal."
+      },
+      "nativeAudit": {
+        "sourceNotes": 628,
+        "nativeNotes": 628,
+        "editorNotes": 628,
+        "editorGraceNotes": 0,
+        "measures": 41,
+        "pages": 2,
+        "missingGlyphs": 0,
+        "nativePlayback": true,
+        "performed": 628,
+        "keyReleases": 607,
+        "pedals": 0,
+        "durationMs": 156190.4761904762,
+        "playbackDuration": 159.1904761904762
+      }
+    },
+    {
+      "filename": "tinh-vo-canh-bay.mxl",
+      "title": "Tình vô cánh bay",
+      "status": "added",
+      "reason": "512 nốt; 2 trang; MuseScore playback/mapping đạt",
+      "version": 1,
+      "workId": "98bdb26fb417b27330f3de42d11990d7220593eb4b913ef68884ce838555e7cf",
+      "id": "98bdb26fb417b27330f3de42d11990d7220593eb4b913ef68884ce838555e7cf",
+      "practiceReady": true,
+      "originalFilename": "16-Tinh-vo-canh-bay.mxl",
+      "sourceSha256": "98bdb26fb417b27330f3de42d11990d7220593eb4b913ef68884ce838555e7cf",
+      "sourceTitle": "Tình vô cánh bay / 心太软",
+      "sourceCredits": [
+        {
+          "type": "composer",
+          "text": "NGERN"
+        }
+      ],
+      "staffPolicy": {
+        "policyVersion": "piano-two-staves-v1",
+        "accepted": true,
+        "totalStaves": 2,
+        "parts": [
+          {
+            "id": "P58c92f2d8ffc244e7a7d63b28adccb3c",
+            "staves": 2,
+            "instrument": {
+              "piano": true,
+              "labels": [
+                "Piano",
+                "Pno.",
+                "Piano",
+                "Pno"
+              ],
+              "programs": [
+                1
+              ],
+              "sounds": [],
+              "contradictions": []
+            },
+            "pitchedNotes": 512
+          }
+        ],
+        "violations": []
+      },
+      "xmlSchema": {
+        "passed": true,
+        "errors": []
+      },
+      "suppliedSourceReview": {
+        "score_number": 16,
+        "mxl_file": "16-Tinh-vo-canh-bay.mxl",
+        "abc_file": "16-Tinh-vo-canh-bay.abc",
+        "status": "SOURCE_CHECKED",
+        "source_timing_status": "SOURCE_CHECKED",
+        "staff_count": 2,
+        "safe_for_automatic_timed_quiz_import": true,
+        "schema_order_fix": null,
+        "notes_vi": "Đã đối chiếu 3 trang, 53 ô nhịp, cả hai tay; 512 nốt khớp giữa MXL và ABC. Khôi phục dấu nối tay phải ô 20–21; giữ dấu nhả pedal đơn lẻ ở đầu bài đúng nguồn."
+      },
+      "nativeAudit": {
+        "sourceNotes": 512,
+        "nativeNotes": 512,
+        "editorNotes": 512,
+        "editorGraceNotes": 0,
+        "measures": 53,
+        "pages": 2,
+        "missingGlyphs": 0,
+        "nativePlayback": true,
+        "performed": 512,
+        "keyReleases": 494,
+        "pedals": 0,
+        "durationMs": 121142.85714285714,
+        "playbackDuration": 124.14285714285714
+      }
+    },
+    {
+      "filename": "tien-ban-len-duong.mxl",
+      "title": "Tiễn bạn lên đường",
+      "status": "added",
+      "reason": "1212 nốt; 4 trang; MuseScore playback/mapping đạt",
+      "version": 1,
+      "workId": "922c72a8e8b678a8de8f21f3ce27ac9775028b13c1b9cd0a22fd1f3cc83451c6",
+      "id": "922c72a8e8b678a8de8f21f3ce27ac9775028b13c1b9cd0a22fd1f3cc83451c6",
+      "practiceReady": true,
+      "originalFilename": "17-Tien-ban-len-duong.mxl",
+      "sourceSha256": "922c72a8e8b678a8de8f21f3ce27ac9775028b13c1b9cd0a22fd1f3cc83451c6",
+      "sourceTitle": "Tiễn bạn lên đường / 祝你一路顺风",
+      "sourceCredits": [
+        {
+          "type": "composer",
+          "text": "吴奇隆; arrangement 天@涯"
+        }
+      ],
+      "staffPolicy": {
+        "policyVersion": "piano-two-staves-v1",
+        "accepted": true,
+        "totalStaves": 2,
+        "parts": [
+          {
+            "id": "Pc670d916b19bb950c933427a0e631857",
+            "staves": 2,
+            "instrument": {
+              "piano": true,
+              "labels": [
+                "Piano",
+                "Pno.",
+                "Piano",
+                "Pno"
+              ],
+              "programs": [
+                1
+              ],
+              "sounds": [],
+              "contradictions": []
+            },
+            "pitchedNotes": 1212
+          }
+        ],
+        "violations": []
+      },
+      "xmlSchema": {
+        "passed": true,
+        "errors": []
+      },
+      "suppliedSourceReview": {
+        "score_number": 17,
+        "mxl_file": "17-Tien-ban-len-duong.mxl",
+        "abc_file": "17-Tien-ban-len-duong.abc",
+        "status": "SOURCE_CHECKED",
+        "source_timing_status": "SOURCE_CHECKED",
+        "staff_count": 2,
+        "safe_for_automatic_timed_quiz_import": true,
+        "schema_order_fix": null,
+        "notes_vi": "Đã đối chiếu 5 trang, 77 ô nhịp, cả hai tay; 1212 nốt khớp giữa MXL và ABC. Khôi phục B bình tay phải ô 40, bỏ nốt trùng giả ô 49; giữ 7 dấu rải hợp âm, dấu lặp và đoạn lần 1."
+      },
+      "nativeAudit": {
+        "sourceNotes": 1212,
+        "nativeNotes": 1212,
+        "editorNotes": 1212,
+        "editorGraceNotes": 0,
+        "measures": 77,
+        "pages": 4,
+        "missingGlyphs": 0,
+        "nativePlayback": true,
+        "performed": 1737,
+        "keyReleases": 1613,
+        "pedals": 0,
+        "durationMs": 233454.58790083413,
+        "playbackDuration": 236.45458790083413
+      }
+    },
+    {
+      "filename": "chia-tay-trong-mua.mxl",
+      "title": "Chia tay trong mưa",
+      "status": "added",
+      "reason": "745 nốt; 3 trang; MuseScore playback/mapping đạt",
+      "version": 1,
+      "workId": "4b289f1e429042340a0cd2ec4d6eec970786657b6be5043583ad1846fea067e8",
+      "id": "4b289f1e429042340a0cd2ec4d6eec970786657b6be5043583ad1846fea067e8",
+      "practiceReady": true,
+      "originalFilename": "18-Chia-tay-trong-mua.mxl",
+      "sourceSha256": "4b289f1e429042340a0cd2ec4d6eec970786657b6be5043583ad1846fea067e8",
+      "sourceTitle": "Chia tay trong mưa / 分手总要在雨天",
+      "sourceCredits": [
+        {
+          "type": "composer",
+          "text": null
+        }
+      ],
+      "staffPolicy": {
+        "policyVersion": "piano-two-staves-v1",
+        "accepted": true,
+        "totalStaves": 2,
+        "parts": [
+          {
+            "id": "P9df9c206c46aa2415ba9c984fddc0041",
+            "staves": 2,
+            "instrument": {
+              "piano": true,
+              "labels": [
+                "Piano",
+                "Pno.",
+                "Piano",
+                "Pno"
+              ],
+              "programs": [
+                1
+              ],
+              "sounds": [],
+              "contradictions": []
+            },
+            "pitchedNotes": 745
+          }
+        ],
+        "violations": []
+      },
+      "xmlSchema": {
+        "passed": true,
+        "errors": []
+      },
+      "suppliedSourceReview": {
+        "score_number": 18,
+        "mxl_file": "18-Chia-tay-trong-mua.mxl",
+        "abc_file": "18-Chia-tay-trong-mua.abc",
+        "status": "SOURCE_CHECKED",
+        "source_timing_status": "SOURCE_CHECKED",
+        "staff_count": 2,
+        "safe_for_automatic_timed_quiz_import": true,
+        "schema_order_fix": null,
+        "notes_vi": "Đã đối chiếu 4 trang, 61 ô nhịp, cả hai tay; 745 nốt khớp giữa MXL và ABC. Khôi phục 5 dấu nối tay phải; giữ đổi giọng, dấu thăng kép, nhóm liên, dấu lặp và rải hợp âm."
+      },
+      "nativeAudit": {
+        "sourceNotes": 745,
+        "nativeNotes": 745,
+        "editorNotes": 745,
+        "editorGraceNotes": 0,
+        "measures": 61,
+        "pages": 3,
+        "missingGlyphs": 0,
+        "nativePlayback": true,
+        "performed": 1272,
+        "keyReleases": 1149,
+        "pedals": 0,
+        "durationMs": 262736.8974182941,
+        "playbackDuration": 265.7368974182941
+      }
+    },
+    {
+      "filename": "yeu-em-tron-doi.mxl",
+      "title": "Yêu em trọn đời",
+      "status": "excluded",
+      "reason": "Loại theo chuẩn hai khuông: nguồn có giọng hát + hai khuông piano (3 khuông); giữ nguyên nguồn, không bỏ bè hát.",
+      "originalFilename": "19-Yeu-em-tron-doi.mxl",
+      "sourceSha256": "7403fb5a2113372d4a3cbc26c2aa593888a9aa84d2b941e600aaa9a38f98768f",
+      "sourceTitle": "Yêu em trọn đời / 只想一生跟你走",
+      "sourceCredits": [
+        {
+          "type": "composer",
+          "text": "张学友; arrangement smswallow"
+        }
+      ],
+      "staffPolicy": {
+        "policyVersion": "piano-two-staves-v1",
+        "accepted": false,
+        "totalStaves": 3,
+        "parts": [
+          {
+            "id": "P31cf1033d67910d6bb3a1fcb865bcbd6",
+            "staves": 1,
+            "instrument": {
+              "piano": false,
+              "labels": [
+                "Voice",
+                "V.",
+                "Voice",
+                "V"
+              ],
+              "programs": [
+                54
+              ],
+              "sounds": [],
+              "contradictions": [
+                "MIDI program 54",
+                "instrument label Voice",
+                "instrument label Voice"
+              ]
+            },
+            "pitchedNotes": 258
+          },
+          {
+            "id": "P7515421d6b1658eca0a8afa6241dd899",
+            "staves": 2,
+            "instrument": {
+              "piano": true,
+              "labels": [
+                "Piano",
+                "Pno.",
+                "Piano",
+                "Pno"
+              ],
+              "programs": [
+                1
+              ],
+              "sounds": [],
+              "contradictions": []
+            },
+            "pitchedNotes": 816
+          }
+        ],
+        "violations": [
+          {
+            "code": "non-piano-instrument",
+            "message": "Non-piano or unidentified part P31cf1033d67910d6bb3a1fcb865bcbd6",
+            "partId": "P31cf1033d67910d6bb3a1fcb865bcbd6"
+          },
+          {
+            "code": "staff-count",
+            "message": "Expected 2 structural staves; found 3"
+          }
+        ]
+      },
+      "xmlSchema": {
+        "passed": true,
+        "errors": []
+      },
+      "suppliedSourceReview": {
+        "score_number": 19,
+        "mxl_file": "19-Yeu-em-tron-doi.mxl",
+        "abc_file": "19-Yeu-em-tron-doi.abc",
+        "status": "NEEDS_APP_COMPATIBILITY_REVIEW",
+        "source_timing_status": "SOURCE_CHECKED",
+        "staff_count": 3,
+        "safe_for_automatic_timed_quiz_import": false,
+        "schema_order_fix": null,
+        "notes_vi": "CẦN KIỂM TRA TƯƠNG THÍCH ỨNG DỤNG: bản này có 3 khuông (bè hát + piano 2 tay), không phù hợp để tự nhập vào ứng dụng chỉ nhận piano 2 khuông. Không bỏ bè hát. Đã đối chiếu 7 trang; giữ đủ bè hát và hai tay piano, 54 ô đầy và ô lấy đà 1 phách. 1074 nốt khớp giữa MXL và ABC. Sửa đổi khóa, 8va, liên ba và 4 nốt câu chạy cuối; giữ láy rền, nhấn, ngân và D.S./Coda (phát lại tùy phần mềm)."
+      }
+    },
+    {
+      "filename": "chi-co-doi-ta.mxl",
+      "title": "Chỉ có đôi ta",
+      "status": "excluded",
+      "reason": "Cách ly luồng nhảy chưa xác định: có Segno/D.S. al Coda nhưng thiếu To Coda/đích Coda rõ; không tự đặt đích hoặc bật tập.",
+      "originalFilename": "20-Chi-co-doi-ta.mxl",
+      "sourceSha256": "095d04f8e775c0aade8a1f1b2cb62307be427534703057fa7efcfcfe431fdcd8",
+      "sourceTitle": "Chỉ có đôi ta / 选择",
+      "sourceCredits": [
+        {
+          "type": "composer",
+          "text": "EveryonePiano"
+        }
+      ],
+      "staffPolicy": {
+        "policyVersion": "piano-two-staves-v1",
+        "accepted": true,
+        "totalStaves": 2,
+        "parts": [
+          {
+            "id": "P0289bd750c3bed8ff100aa62302ed36e",
+            "staves": 2,
+            "instrument": {
+              "piano": true,
+              "labels": [
+                "Piano",
+                "Pno.",
+                "Piano",
+                "Pno"
+              ],
+              "programs": [
+                1
+              ],
+              "sounds": [],
+              "contradictions": []
+            },
+            "pitchedNotes": 547
+          }
+        ],
+        "violations": []
+      },
+      "xmlSchema": {
+        "passed": true,
+        "errors": []
+      },
+      "suppliedSourceReview": {
+        "score_number": 20,
+        "mxl_file": "20-Chi-co-doi-ta.mxl",
+        "abc_file": "20-Chi-co-doi-ta.abc",
+        "status": "NEEDS_NAVIGATION_REVIEW",
+        "source_timing_status": "SOURCE_CHECKED",
+        "staff_count": 2,
+        "safe_for_automatic_timed_quiz_import": false,
+        "schema_order_fix": "Moved direction staff before sound.",
+        "notes_vi": "CẦN KIỂM TRA ĐƯỜNG PHÁT LẠI: nguồn có Segno ô11 và D.S. al Coda ô39 nhưng thiếu To Coda/đích Coda rõ. Giữ nhãn, không tự đặt đích nhảy. Đã đối chiếu 5 trang, 45 ô nhịp, 547 nốt; cao độ/nhịp khớp giữa MXL và ABC. Giữ luyến, ngón tay, lời hát, rit. và hợp âm rải cuối."
+      }
+    },
+    {
+      "filename": "lang-quen-chieu-thu.mxl",
+      "title": "Lãng quên chiều thu",
+      "status": "added",
+      "reason": "212 nốt; 2 trang; MuseScore playback/mapping đạt",
+      "version": 1,
+      "workId": "f9107bb5214c23f14396ae6d72a0c2fb8c0192724b5c43bce95f13e65ecc3df6",
+      "id": "f9107bb5214c23f14396ae6d72a0c2fb8c0192724b5c43bce95f13e65ecc3df6",
+      "practiceReady": true,
+      "originalFilename": "21-Lang-quen-chieu-thu.mxl",
+      "sourceSha256": "f9107bb5214c23f14396ae6d72a0c2fb8c0192724b5c43bce95f13e65ecc3df6",
+      "sourceTitle": "Lãng quên chiều thu / 其实不想走",
+      "sourceCredits": [
+        {
+          "type": "lyricist",
+          "text": "Everyone Piano"
+        },
+        {
+          "type": "composer",
+          "text": "Jeanie"
+        },
+        {
+          "type": "lyricist",
+          "text": "Everyone Piano"
+        },
+        {
+          "type": "lyricist",
+          "text": "www.EveryonePiano.com"
+        }
+      ],
+      "staffPolicy": {
+        "policyVersion": "piano-two-staves-v1",
+        "accepted": true,
+        "totalStaves": 2,
+        "parts": [
+          {
+            "id": "P1",
+            "staves": 2,
+            "instrument": {
+              "piano": true,
+              "labels": [
+                "Piano",
+                "Piano",
+                "Acoustic Grand Piano"
+              ],
+              "programs": [
+                1
+              ],
+              "sounds": [],
+              "contradictions": []
+            },
+            "pitchedNotes": 212
+          }
+        ],
+        "violations": []
+      },
+      "xmlSchema": {
+        "passed": true,
+        "errors": []
+      },
+      "suppliedSourceReview": {
+        "score_number": 21,
+        "mxl_file": "21-Lang-quen-chieu-thu.mxl",
+        "abc_file": "21-Lang-quen-chieu-thu.abc",
+        "status": "SOURCE_CHECKED",
+        "source_timing_status": "SOURCE_CHECKED",
+        "staff_count": 2,
+        "safe_for_automatic_timed_quiz_import": true,
+        "schema_order_fix": null,
+        "notes_vi": "Đã đối chiếu 2 trang, 22 ô nhịp, cả hai tay. Khôi phục dấu nối D#5 ô 3–4, tốc độ 110, bỏ dấu chấm nhận nhầm; 212 nốt khớp giữa MXL và ABC."
+      },
+      "nativeAudit": {
+        "sourceNotes": 212,
+        "nativeNotes": 212,
+        "editorNotes": 212,
+        "editorGraceNotes": 0,
+        "measures": 22,
+        "pages": 2,
+        "missingGlyphs": 0,
+        "nativePlayback": true,
+        "performed": 353,
+        "keyReleases": 342,
+        "pedals": 0,
+        "durationMs": 76363.6502479364,
+        "playbackDuration": 79.3636502479364
+      }
+    },
+    {
+      "filename": "melody.mxl",
+      "title": "Melody",
+      "status": "added",
+      "reason": "1779 nốt; 8 trang; MuseScore playback/mapping đạt",
+      "version": 1,
+      "workId": "bb7cccf98e705b6d0d95c0643b8c052ebf831aa4225ba1f3343c07afeef9d5f6",
+      "id": "bb7cccf98e705b6d0d95c0643b8c052ebf831aa4225ba1f3343c07afeef9d5f6",
+      "practiceReady": true,
+      "originalFilename": "22-Melody.mxl",
+      "sourceSha256": "bb7cccf98e705b6d0d95c0643b8c052ebf831aa4225ba1f3343c07afeef9d5f6",
+      "sourceTitle": "Melody",
+      "sourceCredits": [
+        {
+          "type": "composer",
+          "text": "化身无"
+        }
+      ],
+      "staffPolicy": {
+        "policyVersion": "piano-two-staves-v1",
+        "accepted": true,
+        "totalStaves": 2,
+        "parts": [
+          {
+            "id": "P1",
+            "staves": 2,
+            "instrument": {
+              "piano": true,
+              "labels": [
+                "Piano",
+                "Piano",
+                "Acoustic Grand Piano",
+                "Pno"
+              ],
+              "programs": [
+                1
+              ],
+              "sounds": [],
+              "contradictions": []
+            },
+            "pitchedNotes": 1779
+          }
+        ],
+        "violations": []
+      },
+      "xmlSchema": {
+        "passed": true,
+        "errors": []
+      },
+      "suppliedSourceReview": {
+        "score_number": 22,
+        "mxl_file": "22-Melody.mxl",
+        "abc_file": "22-Melody.abc",
+        "status": "SOURCE_CHECKED",
+        "source_timing_status": "SOURCE_CHECKED",
+        "staff_count": 2,
+        "safe_for_automatic_timed_quiz_import": true,
+        "schema_order_fix": null,
+        "notes_vi": "Đã đối chiếu 8 trang, 120 ô nhịp, cả hai tay. Sửa dấu thăng, dấu nối, đổi giọng, trường độ và nốt giả do hình mờ; 1779 nốt khớp giữa MXL và ABC."
+      },
+      "nativeAudit": {
+        "sourceNotes": 1779,
+        "nativeNotes": 1779,
+        "editorNotes": 1779,
+        "editorGraceNotes": 0,
+        "measures": 120,
+        "pages": 8,
+        "missingGlyphs": 0,
+        "nativePlayback": true,
+        "performed": 1779,
+        "keyReleases": 1482,
+        "pedals": 0,
+        "durationMs": 261818.22942149625,
+        "playbackDuration": 264.81822942149626
+      }
+    },
+    {
+      "filename": "tinh-nhu-la-bay-xa.mxl",
+      "title": "Tình như lá bay xa",
+      "status": "added",
+      "reason": "338 nốt; 2 trang; MuseScore playback/mapping đạt",
+      "version": 1,
+      "workId": "6b576ad45e03d48660658f6a869293283c9e839ec96e39f89c5af54dd19232d1",
+      "id": "6b576ad45e03d48660658f6a869293283c9e839ec96e39f89c5af54dd19232d1",
+      "practiceReady": true,
+      "originalFilename": "23-Tinh-nhu-la-bay-xa.mxl",
+      "sourceSha256": "6b576ad45e03d48660658f6a869293283c9e839ec96e39f89c5af54dd19232d1",
+      "sourceTitle": "Tình như lá bay xa / 难得有情人",
+      "sourceCredits": [
+        {
+          "type": "lyricist",
+          "text": "Everyone Piano"
+        },
+        {
+          "type": "lyricist",
+          "text": "www.EveryonePian0.com"
+        },
+        {
+          "type": "composer",
+          "text": "NGERN"
+        },
+        {
+          "type": "lyricist",
+          "text": "Everyone Piano"
+        },
+        {
+          "type": "lyricist",
+          "text": "www.EveryonePiano.com"
+        }
+      ],
+      "staffPolicy": {
+        "policyVersion": "piano-two-staves-v1",
+        "accepted": true,
+        "totalStaves": 2,
+        "parts": [
+          {
+            "id": "P1",
+            "staves": 2,
+            "instrument": {
+              "piano": true,
+              "labels": [
+                "Piano",
+                "Piano",
+                "Acoustic Grand Piano"
+              ],
+              "programs": [
+                1
+              ],
+              "sounds": [],
+              "contradictions": []
+            },
+            "pitchedNotes": 338
+          }
+        ],
+        "violations": []
+      },
+      "xmlSchema": {
+        "passed": true,
+        "errors": []
+      },
+      "suppliedSourceReview": {
+        "score_number": 23,
+        "mxl_file": "23-Tinh-nhu-la-bay-xa.mxl",
+        "abc_file": "23-Tinh-nhu-la-bay-xa.abc",
+        "status": "SOURCE_CHECKED",
+        "source_timing_status": "SOURCE_CHECKED",
+        "staff_count": 2,
+        "safe_for_automatic_timed_quiz_import": true,
+        "schema_order_fix": null,
+        "notes_vi": "Đã đối chiếu 2 trang, 33 ô nhịp, cả hai tay; 338 nốt khớp chính xác giữa MXL và ABC. Không còn điểm đọc nguồn chưa rõ."
+      },
+      "nativeAudit": {
+        "sourceNotes": 338,
+        "nativeNotes": 338,
+        "editorNotes": 338,
+        "editorGraceNotes": 0,
+        "measures": 33,
+        "pages": 2,
+        "missingGlyphs": 0,
+        "nativePlayback": true,
+        "performed": 338,
+        "keyReleases": 307,
+        "pedals": 0,
+        "durationMs": 79199.98416000317,
+        "playbackDuration": 82.19998416000317
+      }
+    },
+    {
+      "filename": "mua-tuyet.mxl",
+      "title": "Mưa tuyết",
+      "status": "added",
+      "reason": "503 nốt; 3 trang; MuseScore playback/mapping đạt",
+      "version": 1,
+      "workId": "1414e9821eb4aa4d1871c450ff8474065932d5c31a021ab70c895ac9a11b065f",
+      "id": "1414e9821eb4aa4d1871c450ff8474065932d5c31a021ab70c895ac9a11b065f",
+      "practiceReady": true,
+      "originalFilename": "24-Mua-tuyet.mxl",
+      "sourceSha256": "1414e9821eb4aa4d1871c450ff8474065932d5c31a021ab70c895ac9a11b065f",
+      "sourceTitle": "Mưa tuyết / 冰雨",
+      "sourceCredits": [
+        {
+          "type": "composer",
+          "text": "刘德华"
+        }
+      ],
+      "staffPolicy": {
+        "policyVersion": "piano-two-staves-v1",
+        "accepted": true,
+        "totalStaves": 2,
+        "parts": [
+          {
+            "id": "P1",
+            "staves": 2,
+            "instrument": {
+              "piano": true,
+              "labels": [
+                "Piano",
+                "Piano",
+                "Acoustic Grand Piano",
+                "Pno"
+              ],
+              "programs": [
+                1
+              ],
+              "sounds": [],
+              "contradictions": []
+            },
+            "pitchedNotes": 503
+          }
+        ],
+        "violations": []
+      },
+      "xmlSchema": {
+        "passed": true,
+        "errors": []
+      },
+      "suppliedSourceReview": {
+        "score_number": 24,
+        "mxl_file": "24-Mua-tuyet.mxl",
+        "abc_file": "24-Mua-tuyet.abc",
+        "status": "SOURCE_CHECKED",
+        "source_timing_status": "SOURCE_CHECKED",
+        "staff_count": 2,
+        "safe_for_automatic_timed_quiz_import": true,
+        "schema_order_fix": null,
+        "notes_vi": "Đã đối chiếu 3 trang, 36 ô nhịp, cả hai tay; 503 nốt đúng cao độ phát ra khớp giữa MXL và ABC. Khôi phục khóa trầm thấp một quãng tám và 8vb tay phải, bè chồng ở mở đầu; sửa ô 7/15/24 và dấu thăng."
+      },
+      "nativeAudit": {
+        "sourceNotes": 503,
+        "nativeNotes": 503,
+        "editorNotes": 503,
+        "editorGraceNotes": 0,
+        "measures": 36,
+        "pages": 3,
+        "missingGlyphs": 0,
+        "nativePlayback": true,
+        "performed": 503,
+        "keyReleases": 477,
+        "pedals": 0,
+        "durationMs": 137142.85714285713,
+        "playbackDuration": 140.14285714285714
+      }
+    },
+    {
+      "filename": "tinh-xua-nghia-cu-2.mxl",
+      "title": "Tình xưa nghĩa cũ 2",
+      "status": "added",
+      "reason": "525 nốt; 3 trang; MuseScore playback/mapping đạt",
+      "version": 1,
+      "workId": "bd6e4a99122b3dd87c780f3b10ad72b1e0f7fc24c7c14cb08941eb0f1f40afba",
+      "id": "bd6e4a99122b3dd87c780f3b10ad72b1e0f7fc24c7c14cb08941eb0f1f40afba",
+      "practiceReady": true,
+      "originalFilename": "25-Tinh-xua-nghia-cu-2.mxl",
+      "sourceSha256": "bd6e4a99122b3dd87c780f3b10ad72b1e0f7fc24c7c14cb08941eb0f1f40afba",
+      "sourceTitle": "Tình xưa nghĩa cũ 2 / 旧梦不须记",
+      "sourceCredits": [
+        {
+          "type": "lyricist",
+          "text": "Everyone Piano"
+        },
+        {
+          "type": "lyricist",
+          "text": "www.EveryonePiano.com"
+        },
+        {
+          "type": "lyricist",
+          "text": "Everyone Piano"
+        },
+        {
+          "type": "lyricist",
+          "text": "www.EveryonePiano.com"
+        },
+        {
+          "type": "lyricist",
+          "text": "Everyone Piano"
+        },
+        {
+          "type": "lyricist",
+          "text": "www.EveryonePiano.com"
+        }
+      ],
+      "staffPolicy": {
+        "policyVersion": "piano-two-staves-v1",
+        "accepted": true,
+        "totalStaves": 2,
+        "parts": [
+          {
+            "id": "P1",
+            "staves": 2,
+            "instrument": {
+              "piano": true,
+              "labels": [
+                "Piano",
+                "Piano",
+                "Acoustic Grand Piano"
+              ],
+              "programs": [
+                1
+              ],
+              "sounds": [],
+              "contradictions": []
+            },
+            "pitchedNotes": 525
+          }
+        ],
+        "violations": []
+      },
+      "xmlSchema": {
+        "passed": true,
+        "errors": []
+      },
+      "suppliedSourceReview": {
+        "score_number": 25,
+        "mxl_file": "25-Tinh-xua-nghia-cu-2.mxl",
+        "abc_file": "25-Tinh-xua-nghia-cu-2.abc",
+        "status": "SOURCE_CHECKED",
+        "source_timing_status": "SOURCE_CHECKED",
+        "staff_count": 2,
+        "safe_for_automatic_timed_quiz_import": true,
+        "schema_order_fix": "Moved ending before repeat in barline.",
+        "notes_vi": "Đã đối chiếu 3 trang, 47 ô nhịp, cả hai tay; 525 nốt khớp giữa MXL và ABC. Khôi phục nhãn đoạn lần 1 liên tục ô 36–44, bỏ nhãn lần 2 giả do nhận dạng."
+      },
+      "nativeAudit": {
+        "sourceNotes": 525,
+        "nativeNotes": 525,
+        "editorNotes": 525,
+        "editorGraceNotes": 0,
+        "measures": 47,
+        "pages": 3,
+        "missingGlyphs": 0,
+        "nativePlayback": true,
+        "performed": 774,
+        "keyReleases": 761,
+        "pedals": 0,
+        "durationMs": 210000.05250001312,
+        "playbackDuration": 213.0000525000131
+      }
+    },
+    {
+      "filename": "thang-tau-lai.mxl",
+      "title": "Thằng Tàu lai",
+      "status": "added",
+      "reason": "Nghe/chỉnh sửa đầy đủ 884 nốt; bộ tập chưa hỗ trợ 2 nốt hoa mỹ.",
+      "version": 1,
+      "workId": "0bd35da06f5f7e23c33bc6ea2f3c7d64f8979dcbd2e9ece05b704f9a30d74be2",
+      "id": "0bd35da06f5f7e23c33bc6ea2f3c7d64f8979dcbd2e9ece05b704f9a30d74be2",
+      "practiceReady": false,
+      "originalFilename": "26-Thang-Tau-lai.mxl",
+      "sourceSha256": "0bd35da06f5f7e23c33bc6ea2f3c7d64f8979dcbd2e9ece05b704f9a30d74be2",
+      "sourceTitle": "Thằng Tàu lai",
+      "sourceCredits": [
+        {
+          "type": "composer",
+          "text": "Music21"
+        }
+      ],
+      "staffPolicy": {
+        "policyVersion": "piano-two-staves-v1",
+        "accepted": true,
+        "totalStaves": 2,
+        "parts": [
+          {
+            "id": "P1",
+            "staves": 2,
+            "instrument": {
+              "piano": true,
+              "labels": [
+                "Piano",
+                "Piano",
+                "Acoustic Grand Piano",
+                "Pno"
+              ],
+              "programs": [
+                1
+              ],
+              "sounds": [],
+              "contradictions": []
+            },
+            "pitchedNotes": 884
+          }
+        ],
+        "violations": []
+      },
+      "xmlSchema": {
+        "passed": true,
+        "errors": []
+      },
+      "suppliedSourceReview": {
+        "score_number": 26,
+        "mxl_file": "26-Thang-Tau-lai.mxl",
+        "abc_file": "26-Thang-Tau-lai.abc",
+        "status": "SOURCE_CHECKED",
+        "source_timing_status": "SOURCE_CHECKED",
+        "staff_count": 2,
+        "safe_for_automatic_timed_quiz_import": true,
+        "schema_order_fix": null,
+        "notes_vi": "Đã đối chiếu 3 trang, 55 ô nhịp, cả hai tay; 884 nốt gồm nốt hoa mỹ khớp giữa MXL và ABC. Khôi phục 8va kéo dài, sửa khóa quãng tám giả, cao độ/nhịp, 2 nốt hoa mỹ và dấu ffff mở đầu."
+      },
+      "nativeAudit": {
+        "sourceNotes": 884,
+        "nativeNotes": 882,
+        "editorNotes": 884,
+        "editorGraceNotes": 2,
+        "measures": 55,
+        "pages": 3,
+        "missingGlyphs": 0,
+        "nativePlayback": true,
+        "performed": 979,
+        "keyReleases": 978,
+        "pedals": 0,
+        "durationMs": 63000,
+        "playbackDuration": 66
+      }
+    },
+    {
+      "filename": "trong-vang.mxl",
+      "title": "Trống vắng",
+      "status": "added",
+      "reason": "380 nốt; 3 trang; MuseScore playback/mapping đạt",
+      "version": 1,
+      "workId": "112fa436d4e9baf25ce5faf7e5723b97a235a349dbdd09e480a11ee0b118f5c9",
+      "id": "112fa436d4e9baf25ce5faf7e5723b97a235a349dbdd09e480a11ee0b118f5c9",
+      "practiceReady": true,
+      "originalFilename": "27-Trong-vang.mxl",
+      "sourceSha256": "112fa436d4e9baf25ce5faf7e5723b97a235a349dbdd09e480a11ee0b118f5c9",
+      "sourceTitle": "Trống vắng / 情网",
+      "sourceCredits": [
+        {
+          "type": "composer",
+          "text": "Music21"
+        }
+      ],
+      "staffPolicy": {
+        "policyVersion": "piano-two-staves-v1",
+        "accepted": true,
+        "totalStaves": 2,
+        "parts": [
+          {
+            "id": "P1",
+            "staves": 2,
+            "instrument": {
+              "piano": true,
+              "labels": [
+                "Piano",
+                "Piano",
+                "Acoustic Grand Piano",
+                "Pno"
+              ],
+              "programs": [
+                1
+              ],
+              "sounds": [],
+              "contradictions": []
+            },
+            "pitchedNotes": 380
+          }
+        ],
+        "violations": []
+      },
+      "xmlSchema": {
+        "passed": true,
+        "errors": []
+      },
+      "suppliedSourceReview": {
+        "score_number": 27,
+        "mxl_file": "27-Trong-vang.mxl",
+        "abc_file": "27-Trong-vang.abc",
+        "status": "SOURCE_CHECKED",
+        "source_timing_status": "SOURCE_CHECKED",
+        "staff_count": 2,
+        "safe_for_automatic_timed_quiz_import": true,
+        "schema_order_fix": null,
+        "notes_vi": "Đã đối chiếu 2 trang, 26 ô nhịp, cả hai tay; 380 nốt khớp giữa MXL và ABC. Sửa câu chạy qua hai khuông và hợp âm giữ ở ô 17, C giáng5, nốt hợp âm ô 20 và dấu nối cuối. Nguồn không in số chỉ nhịp; dùng 4/4 suy ra từ độ dài các ô, đã ghi rõ."
+      },
+      "nativeAudit": {
+        "sourceNotes": 380,
+        "nativeNotes": 380,
+        "editorNotes": 380,
+        "editorGraceNotes": 0,
+        "measures": 26,
+        "pages": 3,
+        "missingGlyphs": 0,
+        "nativePlayback": true,
+        "performed": 380,
+        "keyReleases": 364,
+        "pedals": 0,
+        "durationMs": 52000,
+        "playbackDuration": 55
+      }
+    },
+    {
+      "filename": "vo-tinh.mxl",
+      "title": "Vô tình",
+      "status": "added",
+      "reason": "364 nốt; 2 trang; MuseScore playback/mapping đạt",
+      "version": 1,
+      "workId": "53f055a15e93cc8f4466579b335cb8277989bac7f491d46cec703dfc9f780892",
+      "id": "53f055a15e93cc8f4466579b335cb8277989bac7f491d46cec703dfc9f780892",
+      "practiceReady": true,
+      "originalFilename": "28-Vo-tinh.mxl",
+      "sourceSha256": "53f055a15e93cc8f4466579b335cb8277989bac7f491d46cec703dfc9f780892",
+      "sourceTitle": "Vô tình / 回头太难",
+      "sourceCredits": [
+        {
+          "type": "composer",
+          "text": "Music21"
+        }
+      ],
+      "staffPolicy": {
+        "policyVersion": "piano-two-staves-v1",
+        "accepted": true,
+        "totalStaves": 2,
+        "parts": [
+          {
+            "id": "P1",
+            "staves": 2,
+            "instrument": {
+              "piano": true,
+              "labels": [
+                "Piano",
+                "Piano",
+                "Acoustic Grand Piano",
+                "Pno"
+              ],
+              "programs": [
+                1
+              ],
+              "sounds": [],
+              "contradictions": []
+            },
+            "pitchedNotes": 364
+          }
+        ],
+        "violations": []
+      },
+      "xmlSchema": {
+        "passed": true,
+        "errors": []
+      },
+      "suppliedSourceReview": {
+        "score_number": 28,
+        "mxl_file": "28-Vo-tinh.mxl",
+        "abc_file": "28-Vo-tinh.abc",
+        "status": "SOURCE_CHECKED",
+        "source_timing_status": "SOURCE_CHECKED",
+        "staff_count": 2,
+        "safe_for_automatic_timed_quiz_import": true,
+        "schema_order_fix": null,
+        "notes_vi": "Đã đối chiếu 2 trang, 28 ô nhịp, cả hai tay; 364 nốt khớp giữa MXL và ABC. Sửa nhịp ô đầu ở hai tay và ký hiệu liên ba do nhận dạng; không còn điểm đọc nguồn chưa rõ."
+      },
+      "nativeAudit": {
+        "sourceNotes": 364,
+        "nativeNotes": 364,
+        "editorNotes": 364,
+        "editorGraceNotes": 0,
+        "measures": 28,
+        "pages": 2,
+        "missingGlyphs": 0,
+        "nativePlayback": true,
+        "performed": 364,
+        "keyReleases": 355,
+        "pedals": 0,
+        "durationMs": 134400.05376002152,
+        "playbackDuration": 137.4000537600215
+      }
+    },
+    {
+      "filename": "ta-tro-ve.mxl",
+      "title": "Ta trở về",
+      "status": "added",
+      "reason": "1247 nốt; 4 trang; MuseScore playback/mapping đạt",
+      "version": 1,
+      "workId": "ce8a73e2f741490fcc5a939d10d722d3286e266877fa8ed15fdcdeb42e64e9d0",
+      "id": "ce8a73e2f741490fcc5a939d10d722d3286e266877fa8ed15fdcdeb42e64e9d0",
+      "practiceReady": true,
+      "originalFilename": "29-Ta-tro-ve.mxl",
+      "sourceSha256": "ce8a73e2f741490fcc5a939d10d722d3286e266877fa8ed15fdcdeb42e64e9d0",
+      "sourceTitle": "Ta trở về / 一千零一夜",
+      "sourceCredits": [
+        {
+          "type": "composer",
+          "text": "Music21"
+        }
+      ],
+      "staffPolicy": {
+        "policyVersion": "piano-two-staves-v1",
+        "accepted": true,
+        "totalStaves": 2,
+        "parts": [
+          {
+            "id": "P1",
+            "staves": 2,
+            "instrument": {
+              "piano": true,
+              "labels": [
+                "Piano",
+                "Piano",
+                "Acoustic Grand Piano",
+                "Pno"
+              ],
+              "programs": [
+                1
+              ],
+              "sounds": [],
+              "contradictions": []
+            },
+            "pitchedNotes": 1247
+          }
+        ],
+        "violations": []
+      },
+      "xmlSchema": {
+        "passed": true,
+        "errors": []
+      },
+      "suppliedSourceReview": {
+        "score_number": 29,
+        "mxl_file": "29-Ta-tro-ve.mxl",
+        "abc_file": "29-Ta-tro-ve.abc",
+        "status": "SOURCE_CHECKED",
+        "source_timing_status": "SOURCE_CHECKED",
+        "staff_count": 2,
+        "safe_for_automatic_timed_quiz_import": true,
+        "schema_order_fix": null,
+        "notes_vi": "Đã đối chiếu 4 trang, 71 ô nhịp, cả hai tay; 1247 nốt khớp giữa MXL và ABC. Khôi phục 4 dấu nối tay phải, dấu nối hợp âm tay trái và sửa nhịp hai tay ô 70."
+      },
+      "nativeAudit": {
+        "sourceNotes": 1247,
+        "nativeNotes": 1247,
+        "editorNotes": 1247,
+        "editorGraceNotes": 0,
+        "measures": 71,
+        "pages": 4,
+        "missingGlyphs": 0,
+        "nativePlayback": true,
+        "performed": 1247,
+        "keyReleases": 1177,
+        "pedals": 0,
+        "durationMs": 170399.96592000683,
+        "playbackDuration": 173.39996592000682
+      }
+    },
+    {
+      "filename": "le-tinh.mxl",
+      "title": "Lệ tình",
+      "status": "added",
+      "reason": "584 nốt; 6 trang; MuseScore playback/mapping đạt",
+      "version": 1,
+      "workId": "7c84ac8f39959fdb5ade2b25d91f0cec9835b6620ad4cd48936035916b6fd99f",
+      "id": "7c84ac8f39959fdb5ade2b25d91f0cec9835b6620ad4cd48936035916b6fd99f",
+      "practiceReady": true,
+      "originalFilename": "30-Le-tinh.mxl",
+      "sourceSha256": "7c84ac8f39959fdb5ade2b25d91f0cec9835b6620ad4cd48936035916b6fd99f",
+      "sourceTitle": "Lệ tình / 星语心愿",
+      "sourceCredits": [
+        {
+          "type": "composer",
+          "text": "Music21"
+        }
+      ],
+      "staffPolicy": {
+        "policyVersion": "piano-two-staves-v1",
+        "accepted": true,
+        "totalStaves": 2,
+        "parts": [
+          {
+            "id": "P1",
+            "staves": 2,
+            "instrument": {
+              "piano": true,
+              "labels": [
+                "Piano",
+                "Piano",
+                "Acoustic Grand Piano",
+                "Pno"
+              ],
+              "programs": [
+                1
+              ],
+              "sounds": [],
+              "contradictions": []
+            },
+            "pitchedNotes": 584
+          }
+        ],
+        "violations": []
+      },
+      "xmlSchema": {
+        "passed": true,
+        "errors": []
+      },
+      "suppliedSourceReview": {
+        "score_number": 30,
+        "mxl_file": "30-Le-tinh.mxl",
+        "abc_file": "30-Le-tinh.abc",
+        "status": "SOURCE_CHECKED",
+        "source_timing_status": "SOURCE_CHECKED",
+        "staff_count": 2,
+        "safe_for_automatic_timed_quiz_import": true,
+        "schema_order_fix": null,
+        "notes_vi": "Đã đối chiếu 6 trang, 44 ô nhịp, cả hai tay; 584 nốt khớp giữa MXL và ABC. Khôi phục dấu nối F5 và hợp âm cuối, nhịp cuối 9/8, lặng đơn tay phải, câu chạy 9 nốt tay trái và đổi khóa sol. Giữ F giáng2 khác thường in ngay trước đổi khóa đúng nguồn."
+      },
+      "nativeAudit": {
+        "sourceNotes": 584,
+        "nativeNotes": 584,
+        "editorNotes": 584,
+        "editorGraceNotes": 0,
+        "measures": 44,
+        "pages": 6,
+        "missingGlyphs": 0,
+        "nativePlayback": true,
+        "performed": 820,
+        "keyReleases": 772,
+        "pedals": 0,
+        "durationMs": 122250,
+        "playbackDuration": 125.25
+      }
+    },
+    {
+      "filename": "co-be-tieu-vy.mxl",
+      "title": "Cô bé Tiểu Vy",
+      "status": "added",
+      "reason": "387 nốt; 2 trang; MuseScore playback/mapping đạt",
+      "version": 1,
+      "workId": "6ee136ed36ece9c8ac0b8357676621829bb401b77d6f57747090976810425fe5",
+      "id": "6ee136ed36ece9c8ac0b8357676621829bb401b77d6f57747090976810425fe5",
+      "practiceReady": true,
+      "originalFilename": "31-Co-be-Tieu-Vy.mxl",
+      "sourceSha256": "6ee136ed36ece9c8ac0b8357676621829bb401b77d6f57747090976810425fe5",
+      "sourceTitle": "Cô bé Tiểu Vy / 小薇",
+      "sourceCredits": [
+        {
+          "type": "composer",
+          "text": "Renqin"
+        }
+      ],
+      "staffPolicy": {
+        "policyVersion": "piano-two-staves-v1",
+        "accepted": true,
+        "totalStaves": 2,
+        "parts": [
+          {
+            "id": "P1",
+            "staves": 2,
+            "instrument": {
+              "piano": true,
+              "labels": [
+                "Piano",
+                "Piano",
+                "Acoustic Grand Piano"
+              ],
+              "programs": [
+                1
+              ],
+              "sounds": [],
+              "contradictions": []
+            },
+            "pitchedNotes": 387
+          }
+        ],
+        "violations": []
+      },
+      "xmlSchema": {
+        "passed": true,
+        "errors": []
+      },
+      "suppliedSourceReview": {
+        "score_number": 31,
+        "mxl_file": "31-Co-be-Tieu-Vy.mxl",
+        "abc_file": "31-Co-be-Tieu-Vy.abc",
+        "status": "SOURCE_CHECKED",
+        "source_timing_status": "SOURCE_CHECKED",
+        "staff_count": 2,
+        "safe_for_automatic_timed_quiz_import": true,
+        "schema_order_fix": "Reordered movement-number header.",
+        "notes_vi": "Đã đối chiếu 2 trang, 33 ô nhịp, 387 nốt. ABC có nhãn kết thúc lần 2 suy ra sau đoạn lần 1 đã in; MXL giữ ký hiệu của bản gốc."
+      },
+      "nativeAudit": {
+        "sourceNotes": 387,
+        "nativeNotes": 387,
+        "editorNotes": 387,
+        "editorGraceNotes": 0,
+        "measures": 33,
+        "pages": 2,
+        "missingGlyphs": 0,
+        "nativePlayback": true,
+        "performed": 674,
+        "keyReleases": 672,
+        "pedals": 0,
+        "durationMs": 160975.57049376325,
+        "playbackDuration": 163.97557049376326
+      }
+    },
+    {
+      "filename": "biet-khuc-cho-nhau.mxl",
+      "title": "Biệt khúc cho nhau",
+      "status": "added",
+      "reason": "820 nốt; 3 trang; MuseScore playback/mapping đạt",
+      "version": 1,
+      "workId": "358a51e1b5a89e64966dcc932771eddd7ae63904f84ce0aae5748822ad397f14",
+      "id": "358a51e1b5a89e64966dcc932771eddd7ae63904f84ce0aae5748822ad397f14",
+      "practiceReady": true,
+      "originalFilename": "32-Biet-khuc-cho-nhau.mxl",
+      "sourceSha256": "358a51e1b5a89e64966dcc932771eddd7ae63904f84ce0aae5748822ad397f14",
+      "sourceTitle": "Biệt khúc cho nhau / 情深深雨濛濛",
+      "sourceCredits": [
+        {
+          "type": "composer",
+          "text": "kini (arrangement)"
+        }
+      ],
+      "staffPolicy": {
+        "policyVersion": "piano-two-staves-v1",
+        "accepted": true,
+        "totalStaves": 2,
+        "parts": [
+          {
+            "id": "Pc74c738b19be67d8676d8a4cb5623c69",
+            "staves": 2,
+            "instrument": {
+              "piano": true,
+              "labels": [
+                "Piano"
+              ],
+              "programs": [],
+              "sounds": [],
+              "contradictions": []
+            },
+            "pitchedNotes": 820
+          }
+        ],
+        "violations": []
+      },
+      "xmlSchema": {
+        "passed": true,
+        "errors": []
+      },
+      "suppliedSourceReview": {
+        "score_number": 32,
+        "mxl_file": "32-Biet-khuc-cho-nhau.mxl",
+        "abc_file": "32-Biet-khuc-cho-nhau.abc",
+        "status": "SOURCE_CHECKED",
+        "source_timing_status": "SOURCE_CHECKED",
+        "staff_count": 2,
+        "safe_for_automatic_timed_quiz_import": true,
+        "schema_order_fix": null,
+        "notes_vi": "Đã đối chiếu 4 trang, 48 ô nhịp, cả hai tay; 820 nốt khớp giữa MXL và ABC. Giữ Segno, đoạn lần 1, D.S. và coda. ABC có nhãn lần 2 suy ra; phát lại D.S./coda tùy phần mềm đọc."
+      },
+      "nativeAudit": {
+        "sourceNotes": 820,
+        "nativeNotes": 820,
+        "editorNotes": 820,
+        "editorGraceNotes": 0,
+        "measures": 48,
+        "pages": 3,
+        "missingGlyphs": 0,
+        "nativePlayback": true,
+        "performed": 1205,
+        "keyReleases": 1123,
+        "pedals": 0,
+        "durationMs": 198000,
+        "playbackDuration": 201
+      }
+    },
+    {
+      "filename": "thien-ha-huu-tinh-nhan.mxl",
+      "title": "Thiên hạ hữu tình nhân",
+      "status": "added",
+      "reason": "832 nốt; 2 trang; MuseScore playback/mapping đạt",
+      "version": 1,
+      "workId": "a5a9858cfb5d02ba77bd297eab1fc5735418452f9af0a90aca5c6e79b00656a3",
+      "id": "a5a9858cfb5d02ba77bd297eab1fc5735418452f9af0a90aca5c6e79b00656a3",
+      "practiceReady": true,
+      "originalFilename": "33-Thien-ha-huu-tinh-nhan.mxl",
+      "sourceSha256": "a5a9858cfb5d02ba77bd297eab1fc5735418452f9af0a90aca5c6e79b00656a3",
+      "sourceTitle": "Thiên hạ hữu tình nhân / 天下有情人",
+      "sourceCredits": [
+        {
+          "type": "composer",
+          "text": "Win"
+        }
+      ],
+      "staffPolicy": {
+        "policyVersion": "piano-two-staves-v1",
+        "accepted": true,
+        "totalStaves": 2,
+        "parts": [
+          {
+            "id": "P5508e3cccbacb1efc90c685d365a05fc",
+            "staves": 2,
+            "instrument": {
+              "piano": true,
+              "labels": [
+                "Piano"
+              ],
+              "programs": [],
+              "sounds": [],
+              "contradictions": []
+            },
+            "pitchedNotes": 832
+          }
+        ],
+        "violations": []
+      },
+      "xmlSchema": {
+        "passed": true,
+        "errors": []
+      },
+      "suppliedSourceReview": {
+        "score_number": 33,
+        "mxl_file": "33-Thien-ha-huu-tinh-nhan.mxl",
+        "abc_file": "33-Thien-ha-huu-tinh-nhan.abc",
+        "status": "SOURCE_CHECKED",
+        "source_timing_status": "SOURCE_CHECKED",
+        "staff_count": 2,
+        "safe_for_automatic_timed_quiz_import": true,
+        "schema_order_fix": null,
+        "notes_vi": "Đã đối chiếu 3 trang, 33 ô nhịp, cả hai tay; 832 nốt khớp giữa MXL và ABC. Khôi phục nốt lấy đà, sửa nốt trùng giả, E bình, dấu nối và nhóm ba giả; giữ quãng tay trái khác thường đúng nguồn."
+      },
+      "nativeAudit": {
+        "sourceNotes": 832,
+        "nativeNotes": 832,
+        "editorNotes": 832,
+        "editorGraceNotes": 0,
+        "measures": 33,
+        "pages": 2,
+        "missingGlyphs": 0,
+        "nativePlayback": true,
+        "performed": 832,
+        "keyReleases": 746,
+        "pedals": 0,
+        "durationMs": 104210.49889197397,
+        "playbackDuration": 107.21049889197397
+      }
+    },
+    {
+      "filename": "tam-hon-xao-dong.mxl",
+      "title": "Tâm hồn xao động",
+      "status": "added",
+      "reason": "1292 nốt; 4 trang; MuseScore playback/mapping đạt",
+      "version": 1,
+      "workId": "e72d451e050d28a1e966c0c66ec7c9be02d25828831bc3bc18dae2bfb7749beb",
+      "id": "e72d451e050d28a1e966c0c66ec7c9be02d25828831bc3bc18dae2bfb7749beb",
+      "practiceReady": true,
+      "originalFilename": "34-Tam-hon-xao-dong.mxl",
+      "sourceSha256": "e72d451e050d28a1e966c0c66ec7c9be02d25828831bc3bc18dae2bfb7749beb",
+      "sourceTitle": "Tâm hồn xao động / 英雄泪",
+      "sourceCredits": [
+        {
+          "type": "composer",
+          "text": "Win"
+        }
+      ],
+      "staffPolicy": {
+        "policyVersion": "piano-two-staves-v1",
+        "accepted": true,
+        "totalStaves": 2,
+        "parts": [
+          {
+            "id": "Pf985abf2b6d7987369ab894bc2bb4a97",
+            "staves": 2,
+            "instrument": {
+              "piano": true,
+              "labels": [
+                "Piano"
+              ],
+              "programs": [],
+              "sounds": [],
+              "contradictions": []
+            },
+            "pitchedNotes": 1292
+          }
+        ],
+        "violations": []
+      },
+      "xmlSchema": {
+        "passed": true,
+        "errors": []
+      },
+      "suppliedSourceReview": {
+        "score_number": 34,
+        "mxl_file": "34-Tam-hon-xao-dong.mxl",
+        "abc_file": "34-Tam-hon-xao-dong.abc",
+        "status": "SOURCE_CHECKED",
+        "source_timing_status": "SOURCE_CHECKED",
+        "staff_count": 2,
+        "safe_for_automatic_timed_quiz_import": true,
+        "schema_order_fix": null,
+        "notes_vi": "Đã đối chiếu 6 trang, 78 ô nhịp, cả hai tay; 1292 nốt khớp giữa MXL và ABC. Khôi phục nhóm 5 nốt mở đầu, hợp âm rải tay trái, nhịp/cao độ tay phải và dấu nối."
+      },
+      "nativeAudit": {
+        "sourceNotes": 1292,
+        "nativeNotes": 1292,
+        "editorNotes": 1292,
+        "editorGraceNotes": 0,
+        "measures": 78,
+        "pages": 4,
+        "missingGlyphs": 0,
+        "nativePlayback": true,
+        "performed": 1292,
+        "keyReleases": 1217,
+        "pedals": 0,
+        "durationMs": 301935.58126954234,
+        "playbackDuration": 304.93558126954235
+      }
+    },
+    {
+      "filename": "kiep-rong-buon.mxl",
+      "title": "Kiếp rong buồn",
+      "status": "added",
+      "reason": "441 nốt; 2 trang; MuseScore playback/mapping đạt",
+      "version": 1,
+      "workId": "3aa19196a4d9722f290903f0b30af2246594dd4fac6cf9b91ae2bded79e22ee2",
+      "id": "3aa19196a4d9722f290903f0b30af2246594dd4fac6cf9b91ae2bded79e22ee2",
+      "practiceReady": true,
+      "originalFilename": "35-Kiep-rong-buon.mxl",
+      "sourceSha256": "3aa19196a4d9722f290903f0b30af2246594dd4fac6cf9b91ae2bded79e22ee2",
+      "sourceTitle": "Kiếp rong buồn / 爱相随",
+      "sourceCredits": [
+        {
+          "type": "lyricist",
+          "text": "Everyone Piano"
+        },
+        {
+          "type": "composer",
+          "text": "EveryonePiano"
+        },
+        {
+          "type": "lyricist",
+          "text": "Everyone Piano"
+        },
+        {
+          "type": "lyricist",
+          "text": "www.EveryonePiano.com"
+        }
+      ],
+      "staffPolicy": {
+        "policyVersion": "piano-two-staves-v1",
+        "accepted": true,
+        "totalStaves": 2,
+        "parts": [
+          {
+            "id": "P1",
+            "staves": 2,
+            "instrument": {
+              "piano": true,
+              "labels": [
+                "Piano",
+                "Piano",
+                "Acoustic Grand Piano"
+              ],
+              "programs": [
+                1
+              ],
+              "sounds": [],
+              "contradictions": []
+            },
+            "pitchedNotes": 441
+          }
+        ],
+        "violations": []
+      },
+      "xmlSchema": {
+        "passed": true,
+        "errors": []
+      },
+      "suppliedSourceReview": {
+        "score_number": 35,
+        "mxl_file": "35-Kiep-rong-buon.mxl",
+        "abc_file": "35-Kiep-rong-buon.abc",
+        "status": "SOURCE_CHECKED",
+        "source_timing_status": "SOURCE_CHECKED",
+        "staff_count": 2,
+        "safe_for_automatic_timed_quiz_import": true,
+        "schema_order_fix": "Moved tie to schema-defined position and work to header.",
+        "notes_vi": "Đã đối chiếu 2 trang, 27 ô nhịp, cả hai tay; 441 nốt khớp giữa MXL và ABC. Nguồn cắt mất điểm kết dấu luyến tay phải ô 26: MXL giữ đầu luyến chưa đóng, ABC bỏ dấu luyến không đầy đủ. Dấu pedal đầu ô 10–12 không có nhả; giữ nguyên, không đoán. Cao độ và nhịp rõ."
+      },
+      "nativeAudit": {
+        "sourceNotes": 441,
+        "nativeNotes": 441,
+        "editorNotes": 441,
+        "editorGraceNotes": 0,
+        "measures": 27,
+        "pages": 2,
+        "missingGlyphs": 0,
+        "nativePlayback": true,
+        "performed": 747,
+        "keyReleases": 720,
+        "pedals": 8,
+        "durationMs": 90000,
+        "playbackDuration": 93
+      }
+    },
+    {
+      "filename": "khi-co-don-em-nho-ai.mxl",
+      "title": "Khi cô đơn em nhớ ai",
+      "status": "added",
+      "reason": "731 nốt; 3 trang; MuseScore playback/mapping đạt",
+      "version": 1,
+      "workId": "06fbb02a2ab7af712b038770135528e729fe0b89da65135f1ddd142ad2d76bca",
+      "id": "06fbb02a2ab7af712b038770135528e729fe0b89da65135f1ddd142ad2d76bca",
+      "practiceReady": true,
+      "originalFilename": "36-Khi-co-don-em-nho-ai.mxl",
+      "sourceSha256": "06fbb02a2ab7af712b038770135528e729fe0b89da65135f1ddd142ad2d76bca",
+      "sourceTitle": "Khi cô đơn em nhớ ai / 当你孤单你会想起谁",
+      "sourceCredits": [
+        {
+          "type": "composer",
+          "text": "EveryonePiano"
+        }
+      ],
+      "staffPolicy": {
+        "policyVersion": "piano-two-staves-v1",
+        "accepted": true,
+        "totalStaves": 2,
+        "parts": [
+          {
+            "id": "P10af6c7682f68bb5043ae427ec90047f",
+            "staves": 2,
+            "instrument": {
+              "piano": true,
+              "labels": [
+                "Piano"
+              ],
+              "programs": [],
+              "sounds": [],
+              "contradictions": []
+            },
+            "pitchedNotes": 731
+          }
+        ],
+        "violations": []
+      },
+      "xmlSchema": {
+        "passed": true,
+        "errors": []
+      },
+      "suppliedSourceReview": {
+        "score_number": 36,
+        "mxl_file": "36-Khi-co-don-em-nho-ai.mxl",
+        "abc_file": "36-Khi-co-don-em-nho-ai.abc",
+        "status": "SOURCE_CHECKED",
+        "source_timing_status": "SOURCE_CHECKED",
+        "staff_count": 2,
+        "safe_for_automatic_timed_quiz_import": true,
+        "schema_order_fix": "Moved ending before repeat in barline.",
+        "notes_vi": "Đã đối chiếu 3 trang, 56 ô nhịp, cả hai tay; 731 nốt khớp giữa MXL và ABC. Sửa ô 44, dấu nối, dấu ngân và đoạn kết. Giữ nốt C5 tròn màu xanh dưới giai điệu tay phải ô 52 thành một bè tay phải riêng."
+      },
+      "nativeAudit": {
+        "sourceNotes": 731,
+        "nativeNotes": 731,
+        "editorNotes": 731,
+        "editorGraceNotes": 0,
+        "measures": 56,
+        "pages": 3,
+        "missingGlyphs": 0,
+        "nativePlayback": true,
+        "performed": 1209,
+        "keyReleases": 1151,
+        "pedals": 0,
+        "durationMs": 240974.2358976369,
+        "playbackDuration": 243.9742358976369
+      }
+    },
+    {
+      "filename": "ao-mong-tinh-yeu.mxl",
+      "title": "Ảo mộng tình yêu",
+      "status": "added",
+      "reason": "879 nốt; 3 trang; MuseScore playback/mapping đạt",
+      "version": 1,
+      "workId": "f824fdd726b7ff301703f519a80072444cb8c55537d9e209321a3392af521334",
+      "id": "f824fdd726b7ff301703f519a80072444cb8c55537d9e209321a3392af521334",
+      "practiceReady": true,
+      "originalFilename": "37-Ao-mong-tinh-yeu.mxl",
+      "sourceSha256": "f824fdd726b7ff301703f519a80072444cb8c55537d9e209321a3392af521334",
+      "sourceTitle": "Ảo mộng tình yêu / 梦醒时分",
+      "sourceCredits": [
+        {
+          "type": "composer",
+          "text": "EveryonePiano"
+        }
+      ],
+      "staffPolicy": {
+        "policyVersion": "piano-two-staves-v1",
+        "accepted": true,
+        "totalStaves": 2,
+        "parts": [
+          {
+            "id": "Pcf489a544c09c03666e467cbdec58486",
+            "staves": 2,
+            "instrument": {
+              "piano": true,
+              "labels": [
+                "Piano"
+              ],
+              "programs": [],
+              "sounds": [],
+              "contradictions": []
+            },
+            "pitchedNotes": 879
+          }
+        ],
+        "violations": []
+      },
+      "xmlSchema": {
+        "passed": true,
+        "errors": []
+      },
+      "suppliedSourceReview": {
+        "score_number": 37,
+        "mxl_file": "37-Ao-mong-tinh-yeu.mxl",
+        "abc_file": "37-Ao-mong-tinh-yeu.abc",
+        "status": "SOURCE_CHECKED",
+        "source_timing_status": "SOURCE_CHECKED",
+        "staff_count": 2,
+        "safe_for_automatic_timed_quiz_import": true,
+        "schema_order_fix": null,
+        "notes_vi": "Đã đối chiếu 3 trang, 42 ô nhịp, cả hai tay; 879 nốt khớp giữa MXL và ABC. Khôi phục nốt ô 28/40/41 và nhiều dấu nối mờ. Giữ B5 trắng chồng lên ở thời điểm 0,5 ô đầu làm bè riêng theo cuống nốt in trên nguồn."
+      },
+      "nativeAudit": {
+        "sourceNotes": 879,
+        "nativeNotes": 879,
+        "editorNotes": 879,
+        "editorGraceNotes": 0,
+        "measures": 42,
+        "pages": 3,
+        "missingGlyphs": 0,
+        "nativePlayback": true,
+        "performed": 1316,
+        "keyReleases": 1233,
+        "pedals": 0,
+        "durationMs": 192000.048000012,
+        "playbackDuration": 195.000048000012
+      }
+    },
+    {
+      "filename": "tim-dau-yeu-xua.mxl",
+      "title": "Tìm dấu yêu xưa",
+      "status": "added",
+      "reason": "779 nốt; 3 trang; MuseScore playback/mapping đạt",
+      "version": 1,
+      "workId": "0fe0da859496350600df898d6ac7395102c628acab01c4044fd61e3428b9fb00",
+      "id": "0fe0da859496350600df898d6ac7395102c628acab01c4044fd61e3428b9fb00",
+      "practiceReady": true,
+      "originalFilename": "38-Tim-dau-yeu-xua.mxl",
+      "sourceSha256": "0fe0da859496350600df898d6ac7395102c628acab01c4044fd61e3428b9fb00",
+      "sourceTitle": "Tìm dấu yêu xưa / 忘了你忘了我",
+      "sourceCredits": [
+        {
+          "type": "composer",
+          "text": "EveryonePiano"
+        }
+      ],
+      "staffPolicy": {
+        "policyVersion": "piano-two-staves-v1",
+        "accepted": true,
+        "totalStaves": 2,
+        "parts": [
+          {
+            "id": "P526df039805c18dd025d6021817fc364",
+            "staves": 2,
+            "instrument": {
+              "piano": true,
+              "labels": [
+                "Piano"
+              ],
+              "programs": [],
+              "sounds": [],
+              "contradictions": []
+            },
+            "pitchedNotes": 779
+          }
+        ],
+        "violations": []
+      },
+      "xmlSchema": {
+        "passed": true,
+        "errors": []
+      },
+      "suppliedSourceReview": {
+        "score_number": 38,
+        "mxl_file": "38-Tim-dau-yeu-xua.mxl",
+        "abc_file": "38-Tim-dau-yeu-xua.abc",
+        "status": "SOURCE_CHECKED",
+        "source_timing_status": "SOURCE_CHECKED",
+        "staff_count": 2,
+        "safe_for_automatic_timed_quiz_import": true,
+        "schema_order_fix": "Moved ending before repeat in barline.",
+        "notes_vi": "Đã đối chiếu 4 trang, 52 ô nhịp, cả hai tay; 779 nốt khớp giữa MXL và ABC. Sửa hợp âm rải tay trái đầu bài, nốt trắng/thời điểm tay phải và dấu nối; giữ liên ba/móc32. MXL giữ lặp từ ô17 và đoạn lần1 ô33–41; ABC có nhãn lần2 suy ra tại42."
+      },
+      "nativeAudit": {
+        "sourceNotes": 779,
+        "nativeNotes": 779,
+        "editorNotes": 779,
+        "editorGraceNotes": 0,
+        "measures": 52,
+        "pages": 3,
+        "missingGlyphs": 0,
+        "nativePlayback": true,
+        "performed": 1034,
+        "keyReleases": 954,
+        "pedals": 0,
+        "durationMs": 233142.79053063132,
+        "playbackDuration": 236.14279053063132
+      }
+    },
+    {
+      "filename": "cuoc-tinh-trong-con-mua-tinh-yeu-con-xa.mxl",
+      "title": "Cuộc tình trong cơn mưa — Tình yêu còn xa",
+      "status": "added",
+      "reason": "Nghe/chỉnh sửa đầy đủ 1066 nốt; bộ tập chưa hỗ trợ 23 nốt hoa mỹ.",
+      "version": 1,
+      "workId": "64e66bf49f5926c1482318f6480827845ffa6966768ac582c52e6a89c9af8ec8",
+      "id": "64e66bf49f5926c1482318f6480827845ffa6966768ac582c52e6a89c9af8ec8",
+      "practiceReady": false,
+      "originalFilename": "39-Cuoc-tinh-trong-con-mua-Tinh-yeu-con-xa.mxl",
+      "sourceSha256": "64e66bf49f5926c1482318f6480827845ffa6966768ac582c52e6a89c9af8ec8",
+      "sourceTitle": "Cuộc tình trong cơn mưa / Tình yêu còn xa / 雨中的恋人们",
+      "sourceCredits": [
+        {
+          "type": "composer",
+          "text": "JenaV (source credit)"
+        }
+      ],
+      "staffPolicy": {
+        "policyVersion": "piano-two-staves-v1",
+        "accepted": true,
+        "totalStaves": 2,
+        "parts": [
+          {
+            "id": "P44e20a9f112d2317339f7684c66a7894",
+            "staves": 2,
+            "instrument": {
+              "piano": true,
+              "labels": [
+                "Piano",
+                "Pno.",
+                "Piano",
+                "Pno"
+              ],
+              "programs": [
+                1
+              ],
+              "sounds": [],
+              "contradictions": []
+            },
+            "pitchedNotes": 1066
+          }
+        ],
+        "violations": []
+      },
+      "xmlSchema": {
+        "passed": true,
+        "errors": []
+      },
+      "suppliedSourceReview": {
+        "score_number": 39,
+        "mxl_file": "39-Cuoc-tinh-trong-con-mua-Tinh-yeu-con-xa.mxl",
+        "abc_file": "39-Cuoc-tinh-trong-con-mua-Tinh-yeu-con-xa.abc",
+        "status": "SOURCE_CHECKED",
+        "source_timing_status": "SOURCE_CHECKED",
+        "staff_count": 2,
+        "safe_for_automatic_timed_quiz_import": true,
+        "schema_order_fix": null,
+        "notes_vi": "Đã đối chiếu 5 trang, 50 ô nhịp, cả hai tay; 1066 nốt gồm 23 nốt hoa mỹ khớp giữa MXL và ABC. Khôi phục nốt hoa mỹ, dấu nối và E thăng4; giữ ô 45 nhịp 2/4."
+      },
+      "nativeAudit": {
+        "sourceNotes": 1066,
+        "nativeNotes": 1043,
+        "editorNotes": 1066,
+        "editorGraceNotes": 23,
+        "measures": 50,
+        "pages": 3,
+        "missingGlyphs": 0,
+        "nativePlayback": true,
+        "performed": 1442,
+        "keyReleases": 1372,
+        "pedals": 0,
+        "durationMs": 252923.15474558607,
+        "playbackDuration": 255.92315474558606
+      }
+    },
+    {
+      "filename": "mua-xuan-ca-giua-que-huong.mxl",
+      "title": "Mùa xuân ca giữa quê hương",
+      "status": "added",
+      "reason": "430 nốt; 2 trang; MuseScore playback/mapping đạt",
+      "version": 1,
+      "workId": "a3f98a266a3b604efb06bc1c8232a4de8153c9097cdd7b81749aa3c079f00adf",
+      "id": "a3f98a266a3b604efb06bc1c8232a4de8153c9097cdd7b81749aa3c079f00adf",
+      "practiceReady": true,
+      "originalFilename": "40-Mua-xuan-ca-giua-que-huong.mxl",
+      "sourceSha256": "a3f98a266a3b604efb06bc1c8232a4de8153c9097cdd7b81749aa3c079f00adf",
+      "sourceTitle": "Mùa xuân ca giữa quê hương / 初恋情人",
+      "sourceCredits": [
+        {
+          "type": "composer",
+          "text": "小爽 (source credit)"
+        }
+      ],
+      "staffPolicy": {
+        "policyVersion": "piano-two-staves-v1",
+        "accepted": true,
+        "totalStaves": 2,
+        "parts": [
+          {
+            "id": "Pf05b7179ed5ed7d0525c3e1dbce5fbc2",
+            "staves": 2,
+            "instrument": {
+              "piano": true,
+              "labels": [
+                "Piano",
+                "Pno.",
+                "Piano",
+                "Pno"
+              ],
+              "programs": [
+                1
+              ],
+              "sounds": [],
+              "contradictions": []
+            },
+            "pitchedNotes": 430
+          }
+        ],
+        "violations": []
+      },
+      "xmlSchema": {
+        "passed": true,
+        "errors": []
+      },
+      "suppliedSourceReview": {
+        "score_number": 40,
+        "mxl_file": "40-Mua-xuan-ca-giua-que-huong.mxl",
+        "abc_file": "40-Mua-xuan-ca-giua-que-huong.abc",
+        "status": "SOURCE_CHECKED",
+        "source_timing_status": "SOURCE_CHECKED",
+        "staff_count": 2,
+        "safe_for_automatic_timed_quiz_import": true,
+        "schema_order_fix": null,
+        "notes_vi": "Đã đối chiếu 3 trang, 34 ô nhịp, cả hai tay; 430 nốt khớp giữa MXL và ABC. Khôi phục dấu nối và đoạn kết lặp; không còn điểm đọc nguồn chưa rõ."
+      },
+      "nativeAudit": {
+        "sourceNotes": 430,
+        "nativeNotes": 430,
+        "editorNotes": 430,
+        "editorGraceNotes": 0,
+        "measures": 34,
+        "pages": 2,
+        "missingGlyphs": 0,
+        "nativePlayback": true,
+        "performed": 505,
+        "keyReleases": 494,
+        "pedals": 0,
+        "durationMs": 93203.8653973077,
+        "playbackDuration": 96.2038653973077
+      }
+    },
+    {
+      "filename": "them-mot-lan-dau.mxl",
+      "title": "Thêm Một Lần Đau",
+      "status": "added",
+      "reason": "956 nốt; 4 trang; MuseScore playback/mapping đạt",
+      "version": 1,
+      "workId": "b58fa3fda1c37c042c6ccd6f5084fa1aef8b2c5a6404fbb21c527eb9b6abaa8f",
+      "id": "b58fa3fda1c37c042c6ccd6f5084fa1aef8b2c5a6404fbb21c527eb9b6abaa8f",
+      "practiceReady": true,
+      "originalFilename": "41-Them-Mot-Lan-Dau.mxl",
+      "sourceSha256": "b58fa3fda1c37c042c6ccd6f5084fa1aef8b2c5a6404fbb21c527eb9b6abaa8f",
+      "sourceTitle": "Thêm Một Lần Đau / 太木人道",
+      "sourceCredits": [
+        {
+          "type": "composer",
+          "text": "HKT"
+        }
+      ],
+      "staffPolicy": {
+        "policyVersion": "piano-two-staves-v1",
+        "accepted": true,
+        "totalStaves": 2,
+        "parts": [
+          {
+            "id": "P310fa323485e42c6aa2b6888907346e7",
+            "staves": 2,
+            "instrument": {
+              "piano": true,
+              "labels": [
+                "Piano"
+              ],
+              "programs": [],
+              "sounds": [],
+              "contradictions": []
+            },
+            "pitchedNotes": 956
+          }
+        ],
+        "violations": []
+      },
+      "xmlSchema": {
+        "passed": true,
+        "errors": []
+      },
+      "suppliedSourceReview": {
+        "score_number": 41,
+        "mxl_file": "41-Them-Mot-Lan-Dau.mxl",
+        "abc_file": "41-Them-Mot-Lan-Dau.abc",
+        "status": "SOURCE_CHECKED",
+        "source_timing_status": "SOURCE_CHECKED",
+        "staff_count": 2,
+        "safe_for_automatic_timed_quiz_import": true,
+        "schema_order_fix": null,
+        "notes_vi": "Đã đối chiếu 5 trang, 97 ô nhịp, cả hai tay; 956 nốt khớp giữa MXL và ABC. Khôi phục hóa biểu 6 dấu giáng, chấm dôi và dấu nối qua dòng. MXL giữ đoạn lần 1 ô 59–60; ABC có nhãn lần 2 suy ra ở ô 61."
+      },
+      "nativeAudit": {
+        "sourceNotes": 956,
+        "nativeNotes": 956,
+        "editorNotes": 956,
+        "editorGraceNotes": 0,
+        "measures": 97,
+        "pages": 4,
+        "missingGlyphs": 0,
+        "nativePlayback": true,
+        "performed": 1289,
+        "keyReleases": 1255,
+        "pedals": 0,
+        "durationMs": 193500,
+        "playbackDuration": 196.5
+      }
+    },
+    {
+      "filename": "mua-tren-cuoc-tinh.mxl",
+      "title": "Mưa trên cuộc tình",
+      "status": "excluded",
+      "reason": "Cách ly nguồn mâu thuẫn/thiếu nhịp: tay phải ô 4 có 5 phách trong 4/4, tay trái ô 4/12/47 thiếu trường độ xác định; không tự điền hoặc bật tập.",
+      "originalFilename": "42-Mua-Tren-Cuoc-Tinh.mxl",
+      "sourceSha256": "fa8b4d8a3351d4db546213faa63315865eabd197d278b48dc239f91a36cecfdb",
+      "sourceTitle": "Mưa trên cuộc tình / 珍惜",
+      "sourceCredits": [
+        {
+          "type": "composer",
+          "text": "Source: Tan8 37507; arranger label BECKHAM"
+        }
+      ],
+      "staffPolicy": {
+        "policyVersion": "piano-two-staves-v1",
+        "accepted": true,
+        "totalStaves": 2,
+        "parts": [
+          {
+            "id": "P2bde177538cea5d1ad8507ca34d32a7a",
+            "staves": 2,
+            "instrument": {
+              "piano": true,
+              "labels": [
+                "Piano",
+                "Pno",
+                "Piano",
+                "Pno"
+              ],
+              "programs": [
+                1
+              ],
+              "sounds": [],
+              "contradictions": []
+            },
+            "pitchedNotes": 689
+          }
+        ],
+        "violations": []
+      },
+      "xmlSchema": {
+        "passed": true,
+        "errors": []
+      },
+      "suppliedSourceReview": {
+        "score_number": 42,
+        "mxl_file": "42-Mua-Tren-Cuoc-Tinh.mxl",
+        "abc_file": "42-Mua-Tren-Cuoc-Tinh.abc",
+        "status": "NEEDS_SOURCE_REVIEW",
+        "source_timing_status": "NEEDS_SOURCE_REVIEW",
+        "staff_count": 2,
+        "safe_for_automatic_timed_quiz_import": false,
+        "schema_order_fix": "Moved dot to schema-defined position in note.",
+        "notes_vi": "NGUỒN MÂU THUẪN NHỊP: tay phải ô 4 ghi 5 phách trong 4/4, giữ nguyên; tay trái ô 4 thêm khoảng chưa xác định 3 phách để căn với ô đó, ô 12 thiếu 1 phách, ô 47 thiếu 2 phách. Không tự điền nốt. 58 ô, gồm ô nghỉ 52–58; 689 nốt khớp giữa MXL và ABC. Chưa được dùng tự động cho bài kiểm tra nhịp."
+      }
+    }
+  ],
+  "package": {
+    "passed": true,
+    "bytes": 420318,
+    "sha256": "6f5cf08b6086018f5a9659d3fe0afa61ef0b757a51da2f4ce17a980edb9a0bcf",
+    "mxlCount": 42,
+    "abcCount": 42,
+    "entries": 89,
+    "filename": "42-Ban-Nhac-Hoa-MXL-ABC-Day-Du.zip"
+  },
+  "validationScope": "Đọc Trang-thai-nhap.json như ghi chú nguồn; tự kiểm ZIP/XML/XSD MusicXML 4.0, hai khuông piano, chống trùng, native import/export/note counts/SVG mapping/playback. Các nhãn SOURCE_CHECKED/safe của bên bàn giao không thay thế kiểm ứng dụng; không xác minh độc lập toàn bộ ảnh nguồn."
+}
