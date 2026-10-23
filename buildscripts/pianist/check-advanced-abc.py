@@ -12,6 +12,8 @@ import re
 import unittest
 import zipfile
 
+from grade_definition import GENERATED_ROOT, generated
+
 ROOT = Path(__file__).resolve().parents[2]
 spec = importlib.util.spec_from_file_location('advanced_abc', Path(__file__).with_name('package-advanced-abc.py'))
 bank = importlib.util.module_from_spec(spec)
@@ -63,9 +65,13 @@ class NotationTests(unittest.TestCase):
         self.assertIn('Q:3/8=60', bank.abc(pick(7, 'compound')))
 
     def test_parser_rejects_broken_ties_and_chords(self):
-        for source in ('C2-D2', 'C2-C2-', 'z2-z2', '[CEG]4', '[CC]4', 'C3', 'C4 D', '^C4', 'C,\'4'):
+        for source in ('C2-D2', 'C2-C2-', 'z2-z2', '[CEG]4', '[CC]4', 'C3', 'C4 D', '^^^C4', 'C,\'4'):
             with self.subTest(source=source), self.assertRaises((AssertionError, ValueError)):
                 bank.parse_voice(source, '4/4', 1)
+
+    def test_valid_accidental_is_preserved_by_the_88_key_parser(self):
+        _, events, _ = bank.parse_voice('^C4', '4/4', 1)
+        self.assertEqual([(event[2], event[1]) for event in events], [(61, F(4))])
 
     def test_crossbar_tie_survives_converter(self):
         rh, lh = 'C2 D E- | E2 D C', 'C,4 | C,4'
@@ -147,7 +153,7 @@ class GradeTests(unittest.TestCase):
             bank.validate(7, 'C3/2 D/2 E2', 'C, z G, z', '4/4', 'dotted', 'RH')
 
     def test_g8_ledger_range_is_actual_octave(self):
-        with self.assertRaisesRegex(AssertionError, 'declared register'):
+        with self.assertRaisesRegex(AssertionError, 'missing written ledger-line focus'):
             bank.validate(8, 'C D E2', 'C,4', '4/4', 'ledger-high', 'RH')
         result = bank.validate(8, "c' d' e'2", 'C,4', '4/4', 'ledger-high', 'RH')
         self.assertEqual(result['witnesses'][0]['observedMidi'], [84, 86, 88])
@@ -186,7 +192,7 @@ class DeliveryTests(unittest.TestCase):
     def test_files_books_ids_and_validation_reports(self):
         identifiers = []
         for grade in range(5, 9):
-            output = ROOT/f'scores/composed/g{grade}-abc'
+            output = generated(grade)
             report = json.loads((output/'validation.json').read_text(encoding='utf-8'))
             self.assertEqual(report['total'], 700)
             self.assertTrue(report['complete'] and report['individualAndBookVerified'])
@@ -227,7 +233,7 @@ class DeliveryTests(unittest.TestCase):
 
     def test_grade_zip_crc_members_and_exact_bytes(self):
         for grade in range(5, 9):
-            output = ROOT/f'scores/composed/g{grade}-abc'
+            output = generated(grade)
             expected = {p.relative_to(output.parent).as_posix(): p for p in output.rglob('*') if p.is_file()}
             with zipfile.ZipFile(output.parent/f'g{grade}-abc-700.zip') as archive:
                 self.assertIsNone(archive.testzip())
@@ -240,7 +246,7 @@ class DeliveryTests(unittest.TestCase):
                     data.decode('utf-8')
 
     def test_cumulative_zip_contains_all_5600_studies(self):
-        output = ROOT/'scores/composed'
+        output = GENERATED_ROOT
         expected = {'README.md': output/'G1_G8_ABC_GUIDE.md'}
         for grade in range(1, 9):
             for path in (output/f'g{grade}-abc').rglob('*'):

@@ -2,6 +2,8 @@
 
 Điểm vào: [tài liệu hiện hành](README.md), [kiến trúc](architecture.md), [bản đồ nội dung](content-pipeline.md). Quy trình release ở [release.md](release.md) và [deploy/PAGES.md](../../deploy/PAGES.md).
 
+[Bản đồ công cụ](../../buildscripts/pianist/README.md) phân biệt pipeline đang dùng, công cụ đối chiếu nguồn upstream và thử nghiệm Q/K lịch sử. Mỗi script phải được đăng ký trong inventory; CI báo lỗi khi có script mới chưa phân loại hoặc đường dẫn đã mất.
+
 ## Chạy checkout trên Windows
 
 Dùng PowerShell 7 và toolchain đã ghim trong `buildscripts/pianist/toolchain.json`. Các lệnh dưới đây chạy từ root repository, trừ chỗ có `Push-Location`. `setup-web.ps1` chuẩn bị dependencies; checkout mới cần build native trước khi mở app.

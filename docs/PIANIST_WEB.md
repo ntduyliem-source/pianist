@@ -23,7 +23,7 @@ Trong **Tập piano**:
 - **Free play:** chọn bài từ thư viện hoặc nhập file. Chọn đoạn A–B, số vòng, tay/khuông/bè, tempo và chế độ chấm.
 - **Theo grade:** chọn G1–G8, một hoặc nhiều khoảng nốt, random hoặc theo thứ tự. Kho hiện có 5.600 bài, 100 bài cho mỗi grade × khoảng nốt; mỗi bài giữ đủ hai khuông. Chọn một tay chỉ thay phần được chấm. Có **Bài kế** và **Tự chuyển**.
 
-Grade là bộ nội bộ Pianist đã biên soạn sẵn; ứng dụng chọn/sắp bài trong kho, không sinh nốt hoặc trích nhạc theo thời gian thực. Nguồn ABC được chuyển sang MXL và đối chiếu trước khi phát hành. Xem [nội dung/giới hạn kho](../scores/composed/G1_G8_ABC_GUIDE.md) và [bản đồ file](current/content-pipeline.md). Kho hiện tại chưa phủ đủ 88 phím; việc mở rộng bộ duyệt không tự thay bài.
+Grade là bộ nội bộ Pianist đã biên soạn sẵn; ứng dụng chọn/sắp bài trong kho, không sinh nốt hoặc trích nhạc theo thời gian thực. Nguồn ABC được chuyển sang MXL và đối chiếu trước khi phát hành. Xem [nội dung/giới hạn kho](../scores/grades/generated/G1_G8_ABC_GUIDE.md) và [bản đồ file](current/content-pipeline.md). Kho hiện tại chưa phủ đủ 88 phím; việc mở rộng bộ duyệt không tự thay bài.
 
 **Đúng nốt** chuyển khi đã nhận đủ nốt của lượt. **BPM** kết thúc theo timeline rồi báo kết quả; tự sang bài không có nghĩa lượt vừa rồi đã đạt. Cả free play và grade dùng cùng màn tập và cùng engine chấm.
 

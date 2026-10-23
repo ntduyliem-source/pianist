@@ -14,7 +14,8 @@ python -m pip install -r buildscripts/pianist/check-requirements.txt
 python buildscripts/pianist/check-pianist.py fast
 ```
 
-This verifies pinned converter/reference bytes, application source formatting
+This verifies pinned converter/reference bytes, the active/reference/historical
+tool inventory (`check-tooling.py`), application source formatting
 (`npm run format:check` in `apps/pianist-web`), TypeScript types, every app unit
 test (including the committed C# oracle comparisons and live Python R4/ABC
 oracles), Python library/grade regressions, all 5,600 committed authored source

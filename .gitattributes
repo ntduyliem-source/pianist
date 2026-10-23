@@ -45,3 +45,10 @@ docs/curriculum/q3/*.json text eol=lf
 
 # K3 upstream copies are verified byte-for-byte, including the MIT license.
 third_party/curriculum-sources/pianoplayer/** -text -whitespace
+
+# Authored grade editions and packaged ABC bytes must hash identically on Windows/Linux.
+scores/grades/**/*.abc text eol=lf
+scores/grades/**/*.txt text eol=lf
+scores/grades/**/*.tsv text eol=lf
+scores/grades/**/*.json text eol=lf
+scores/grades/**/*.md text eol=lf

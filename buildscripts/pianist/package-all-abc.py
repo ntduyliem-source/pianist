@@ -6,37 +6,29 @@ import re
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[2]
-OUTPUT = ROOT/'scores/composed'
-TOPICS = {
-    1: 'Nốt lặp, bước liền, nhịp và phối hợp cơ bản',
-    2: 'Quãng ba hoặc cặp móc đơn đúng phách, hai nhánh riêng',
-    3: 'Quãng bốn, năm và mẫu rải đơn âm',
-    4: 'Vùng nốt mới hoặc span quãng tám với bước nhảy tối đa quãng năm',
-    5: 'Hai tay độc lập hoặc hợp âm hai nốt',
-    6: 'Quãng sáu, bảy, tám theo họ/hướng, có nốt dẫn vào và đi ra',
-    7: 'Chấm dôi, nối qua phách, đảo phách, 6/8 — bốn nhánh riêng',
-    8: 'Dòng phụ xa hoặc hợp âm hai nốt kết hợp chấm dôi/nối qua phách',
-}
+from grade_definition import GENERATED_ROOT, GRADES, GRADE_METADATA, BUCKETS, QUOTA, PER_GRADE, TOTAL
+OUTPUT = GENERATED_ROOT
+TOPICS = {grade: GRADE_METADATA[grade]['topic'] for grade in GRADES}
 
 
 def main():
     expected, identifiers, reports = {}, [], {}
-    for grade in range(1, 9):
+    for grade in GRADES:
         folder = OUTPUT/f'g{grade}-abc'
         report = json.loads((folder/'validation.json').read_text(encoding='utf-8'))
-        assert report['total'] == 700 and report['complete'] and report['individualAndBookVerified']
-        assert report['converterChecks'] == 1400
-        assert all(c['count'] == 100 for c in report['coverage'].values()) and len(report['coverage']) == 7
-        assert len(list(folder.glob('n*/*.abc'))) == 700
-        assert len(list((folder/'books').glob('*.abc'))) == 7
+        assert report['total'] == PER_GRADE and report['complete'] and report['individualAndBookVerified']
+        assert report['converterChecks'] == PER_GRADE * 2
+        assert all(c['count'] == QUOTA for c in report['coverage'].values()) and len(report['coverage']) == len(BUCKETS)
+        assert len(list(folder.glob('n*/*.abc'))) == PER_GRADE
+        assert len(list((folder/'books').glob('*.abc'))) == len(BUCKETS)
         for piece in folder.glob('n*/*.abc'):
             identifiers.extend(map(int, re.findall(r'(?m)^X:(\d+)$', piece.read_text(encoding='utf-8'))))
         for path in sorted(folder.rglob('*')):
             if path.is_file():
                 expected[path.relative_to(OUTPUT).as_posix()] = path
         reports[grade] = report
-    assert sorted(identifiers) == list(range(1, 5601))
-    table = '\n'.join(f'| [G{g}](g{g}-abc/README.md) | 700 | {TOPICS[g]} |' for g in range(1, 9))
+    assert sorted(identifiers) == list(range(1, TOTAL + 1))
+    table = '\n'.join(f'| [G{g}](g{g}-abc/README.md) | 700 | {TOPICS[g]} |' for g in GRADES)
     guide = f'''# Piano sight reading G1–G8 — 5.600 bài ABC
 
 Hoàn thành ngày 22/10/2026. Tám grade, mỗi grade 700 bài: 100 bài cho từng khoảng n4, n6, n10, n20, n30, n50, n100. Mỗi bài có hai khuông và nốt thật ở cả hai tay. Đây là grade nội bộ Pianist, không quy đổi cấp thi ABRSM.

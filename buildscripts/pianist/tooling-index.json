@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "groups": {
+    "build": {
+      "status": "active",
+      "description": "Build native/frontend, prepare runtime assets, and serve the complete application.",
+      "files": ["build-pianist.ps1", "build-renderer.ps1", "build-web.ps1", "prepare-fixtures.py", "prepare-notices.py", "prepare-score-format-sources.py", "serve-web.py", "setup-web.ps1"]
+    },
+    "checks": {
+      "status": "active",
+      "description": "Current source/native gates, test fixture preparation and performance diagnostics.",
+      "files": ["audit-practice-cutover.py", "benchmark-core.ts", "check-authored-grades.py", "check-pianist.py", "check-source-pins.py", "check-tooling.py", "prepare-check-fixtures.py"]
+    },
+    "library": {
+      "status": "active",
+      "description": "Curated song admission, edition grouping and release verification.",
+      "files": ["curate-library.py", "library_import.py", "library_release.py", "library_staff_policy.py"]
+    },
+    "grades": {
+      "status": "active",
+      "description": "The authored G1-G8 collection; these tools do not extract the historical Q/K warehouse.",
+      "files": ["abc_grade_pitches.py", "check-advanced-abc.py", "check-g2-abc.py", "check-g3-abc.py", "check-g4-abc.py", "composed-reading-bank.py", "grade_definition.py", "package-advanced-abc.py", "package-all-abc.py", "package-g1-abc.py", "package-g2-abc.py", "package-g3-abc.py", "package-g4-abc.py"]
+    },
+    "release": {
+      "status": "active",
+      "description": "Package, stage, verify and publish only the selected catalog/grade manifest.",
+      "files": ["deploy-pages.py", "package-web.py", "score_format_release.py", "stage-release.py", "verify-release.py", "web_bank_release.py"]
+    },
+    "references": {
+      "status": "maintained-reference",
+      "description": "Reproduce pinned upstream grading kernels and oracle fixtures; not routine build commands.",
+      "files": ["extract-reference-methods.py", "extract-wait-source.py", "prepare-practice-corpus.py", "prepare-reference-sources.py", "reference-corpus.py"]
+    },
+    "legacy-qk": {
+      "status": "historical",
+      "description": "Previous warehouse/excerpt experiments and their helpers; not the active G1-G8 content pipeline.",
+      "files": ["audit-curriculum-boundaries.py", "audit-reading-bank.py", "auto-curriculum.py", "collect-curriculum.py", "complete-curriculum-bank.py", "curriculum_adapter_cache.py", "curriculum_auto.py", "curriculum_bank.py", "curriculum_boundaries.py", "curriculum_catalog.py", "curriculum_evidence.py", "curriculum_fast_checks.py", "curriculum_fragments.py", "curriculum_grades.py", "curriculum_inventory.py", "curriculum_io.py", "curriculum_normalize.py", "curriculum_prepared.py", "curriculum_reading.py", "curriculum_regions.py", "curriculum_release.py", "curriculum_scan_storage.py", "curriculum_selection.py", "curriculum_source_adapter.py", "curriculum_source_cleanup.py", "curriculum_workers.py", "demo-curriculum-song.py", "finish-curriculum-scan.py", "fragment-curriculum.py", "grade-curriculum.py", "import-piano-sources.py", "normalize-curriculum.py", "package-reading-bank.py", "prepare-curriculum.py", "prepare-q2-fixtures.py", "prepare-q3-fixtures.py", "prepare-reading-bank.py", "prepare-supplemental-sources.py", "prune-curriculum-sources.py", "reading-bank-progress.py", "setup-curriculum.ps1", "web-reading-bank.py"]
+    }
+  }
+}

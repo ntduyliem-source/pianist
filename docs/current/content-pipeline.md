@@ -9,11 +9,12 @@ Cập nhật ngày 23/10/2026. Phân biệt **thư viện bài hát**, **nguồn
 | Catalog bài hát được phát hành | `scores/library/catalog.json` | Tên, tác giả, version, URL, bytes, SHA-256; nguồn quyết định danh sách |
 | MXL từng bài hát | `scores/library/songs/<slug>.mxl` | File được catalog tham chiếu; giữ nguyên nội dung nhạc đã duyệt |
 | Lịch sử nhận/bỏ thư viện | `scores/library/IMPORT_REPORT.md` và receipts liên quan | Bằng chứng theo đợt, không thay catalog hiện hành |
-| Nội dung biên soạn gốc của grade | `buildscripts/pianist/compositions/g1/` … `g8/` | Văn bản nguồn chứa các ô nhịp hai tay đã viết sẵn |
-| Từng bài ABC có tên dễ tìm | `scores/composed/g1-abc/n4/g1-n4-001.abc` | Sản phẩm đóng gói từ nguồn; đổi grade/khoảng/ID theo bài cần tìm |
-| Thứ tự trong tập và đặc điểm từng bài | `scores/composed/gN-abc/index.tsv` | Tra score ID, book position, số lần đánh và nhánh bài |
-| Tập ABC gộp | `scores/composed/gN-abc/books/` | Một tập 100 tune; không tính là 100 bài mới ngoài file riêng |
-| Hướng dẫn/kết quả kiểm từng grade | `scores/composed/gN-abc/README.md`, `validation.json` | Nội dung thực tế và bằng chứng đóng gói bộ đó |
+| Định nghĩa grade dùng chung | `scores/grades/definition.json` | Edition, IDs/chủ đề, 7 khoảng, quota100; Python và TypeScript đọc cùng nguồn |
+| Nội dung biên soạn gốc của grade | `scores/grades/authored/g1/` … `g8/` | Văn bản nguồn chứa các ô nhịp hai tay đã viết sẵn |
+| Từng bài ABC có tên dễ tìm | `scores/grades/generated/g1-abc/n4/g1-n4-001.abc` | Sản phẩm đóng gói từ nguồn; đổi grade/khoảng/ID theo bài cần tìm |
+| Thứ tự trong tập và đặc điểm từng bài | `scores/grades/generated/gN-abc/index.tsv` | Tra score ID, book position, số lần đánh và nhánh bài |
+| Tập ABC gộp | `scores/grades/generated/gN-abc/books/` | Một tập 100 tune; không tính là 100 bài mới ngoài file riêng |
+| Hướng dẫn/kết quả kiểm từng grade | `scores/grades/generated/gN-abc/README.md`, `validation.json` | Nội dung thực tế và bằng chứng đóng gói bộ đó |
 | MXL grade dùng trên web | `build.artifacts/curriculum/<release>/exercises/<sha256>.mxl` | Tài nguyên phát sinh, xác minh theo manifest; không sửa tay |
 | Map tên bài → MXL hash | `build.artifacts/curriculum/<release>/indexes/gN-nX.json` | Tra `scoreId`, `bookPosition`, `path`, `abcSha256`, số nốt từng tay |
 | Con trỏ release grade | `build.artifacts/curriculum/manifest.json` | Chỉ đúng bộ `index.json` + SHA-256 của release đang đóng gói |
@@ -28,7 +29,7 @@ Cập nhật ngày 23/10/2026. Phân biệt **thư viện bài hát**, **nguồn
 
 Kho đang dùng gồm **5.600 bài: 8 grade × 7 khoảng × 100 bài**, mỗi bài có đủ hai khuông và nốt thật ở hai tay. Người dùng chọn chấm một tay vẫn xem cùng bản nhạc hai khuông. Browser chọn thứ tự hoặc random trong bộ đã tải, không trích đoạn nhạc thật theo thời gian thực.
 
-Đây là nội dung AI biên soạn cố định trong `compositions/`, không phải 5.600 đoạn trích từ kho public MXL. Các bài có motif/biến thể liên quan; 5.600 file không có nghĩa 5.600 giai điệu độc lập. Xem [hướng dẫn kho](../../scores/composed/G1_G8_ABC_GUIDE.md).
+Đây là nội dung AI biên soạn cố định trong `scores/grades/authored/`, không phải 5.600 đoạn trích từ kho public MXL. Các bài có motif/biến thể liên quan; 5.600 file không có nghĩa 5.600 giai điệu độc lập. Xem [hướng dẫn kho](../../scores/grades/generated/G1_G8_ABC_GUIDE.md).
 
 | Option | Số lần đánh của cả hai tay |
 |---|---:|
@@ -61,7 +62,13 @@ Thứ tự ID `001` không nhất thiết là thứ tự khó hoặc vị trí t
 
 - **Thư viện:** chỉ nhận piano đủ hai khuông theo dữ liệu native; một part hai khuông hoặc hai part piano mỗi part một khuông đều có thể hợp lệ, không chỉ kiểm tên file hay số part. Chuẩn bị input + báo cáo kiểm native, dùng `curate-library.py --append`/`library_import.py`; bản trùng byte bỏ qua, bản khác cùng tác phẩm có version. Khi tên/tác giả chưa đủ định danh, khai báo `workId` hoặc `newWork`. Không tự gộp các tác giả đã biết nhưng khác nhau chỉ vì cùng tên.
 - **Loại bài:** thay catalog và file được duyệt trong cùng thay đổi, lưu lý do/receipt. Yêu cầu loại bài thư viện đã được người dùng cho phép là ngoại lệ nội dung của đợt refactor; không xóa kho grade hoặc sửa nhạc để che lỗi.
-- **Grade:** sửa nội dung nguồn chỉ khi có yêu cầu đổi kho; chạy bộ duyệt grade và converter trước khi đóng gói. Không chỉnh trực tiếp file trong `build.artifacts/`. Đổi số grade/option/định dạng cần cập nhật schema có version, loader và tests đồng bộ.
+- **Grade:** sửa nội dung nguồn chỉ khi có yêu cầu đổi kho; chạy bộ duyệt grade và converter trước khi đóng gói. Không chỉnh trực tiếp file trong `build.artifacts/`. Định nghĩa edition nằm trong `scores/grades/definition.json`; đổi số grade/option/quota cần edition mới, loader và tests đồng bộ. Không tự đổi nhạc khi chỉ tổ chức thư mục.
 - **Đóng gói:** `composed-reading-bank.py` đối chiếu nguồn, giữ số nốt/khuông/timing/tie, viết index + MXL + manifest. `package-web.py` và release verifier chỉ lấy những asset thuộc manifest/catalog.
 
 Các scripts Q/K và corpus cũ vẫn giữ để tra lịch sử. Không chạy lại một script lịch sử chỉ để bổ sung bài vào kho đang dùng; trước tiên xác định source, schema đầu ra và pipeline có thực sự đọc nó hay không.
+
+## Định danh nguồn khi chuyển thư mục
+
+Ngày 23/10/2026, 61 bảng nguồn và 5.690 sản phẩm đã được chuyển vào `scores/grades/authored/` và `scores/grades/generated/`, giữ nguyên byte của 5.751 file. Đường dẫn `buildscripts/pianist/compositions/...` trong `% source=` và metadata được giữ làm namespace nguồn lịch sử; `grade_definition.logical_source()` ánh xạ nguồn vật lý mới về namespace đó khi kiểm. Các README/report/ZIP được giữ nguyên, nên đường dẫn cũ trong tài liệu lịch sử được tra bằng [bản đồ kho grade](../../scores/grades/README.md).
+
+[Báo cáo chuyển thư mục](../../scores/grades/RELOCATION_REPORT.json) xác nhận 5.600 bài được chuyển mới và so sự kiện chính xác, 56 option vẫn đủ 100 bài, toàn bộ 5.658 file manifest/index/MXL trùng byte với release `web-19bd56fc7a853511a57a` trước refactor. Kho đang dùng được release verifier theo definition mới kiểm lại; không thay nhạc, ID, hash hay thứ tự tập.

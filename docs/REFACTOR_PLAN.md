@@ -17,8 +17,8 @@ Kế hoạch thực hiện được chấp thuận ngày 23/10/2026. Làm lần 
 |---|---|---|---|
 | 1. Tài liệu, inventory, kiểm thống nhất/CI | Điểm vào docs; kiến trúc/source content/release; kiểm source và dữ liệu có lệnh rõ | Link/path và inventory đúng; suite/check CI đúng phạm vi; mốc commit | Hoàn thành · `165ca9` |
 | 2. Format và chia UI/CSS | Source đọc được; tách shell/library/editor/results, các phần UI practice; style thuộc đúng feature | Commit format tách khỏi hành vi; unit/build và browser/mobile cần thiết đạt; style piano/sheet còn đủ | Hoàn thành · `5744bc4166`, `20578f2c2f` |
-| 3. Một nơi sở hữu session, chia trách nhiệm workspace | Coordinator duy nhất cho lifecycle; UI/grade dùng lệnh; workspace tách trách nhiệm engine/document/navigation | Start/Stop khi tải, pause/resume, auto-next, A–B, giữ editor và persist không đổi | Hoàn thành |
-| 4. Nguồn grade, manifest và tooling đang dùng/lịch sử | Nguồn + index + schema có điểm vào rõ; phân loại tools active/legacy; đường truy từ score ID tới MXL | 5.600 nội dung/hash/order giữ nguyên; catalog/manifest/hash kiểm; không chạy pipeline lịch sử ngoài ý muốn | Chưa bắt đầu |
+| 3. Một nơi sở hữu session, chia trách nhiệm workspace | Coordinator duy nhất cho lifecycle; UI/grade dùng lệnh; workspace tách trách nhiệm engine/document/navigation | Start/Stop khi tải, pause/resume, auto-next, A–B, giữ editor và persist không đổi | Hoàn thành · `fa690bf68e` |
+| 4. Nguồn grade, manifest và tooling đang dùng/lịch sử | Nguồn + index + schema có điểm vào rõ; phân loại tools active/legacy; đường truy từ score ID tới MXL | 5.600 nội dung/hash/order giữ nguyên; catalog/manifest/hash kiểm; không chạy pipeline lịch sử ngoài ý muốn | Hoàn thành |
 | 5. API package công khai, kiểu native và guard | Import qua entrypoint ổn định; typed native boundary; kiểm hướng phụ thuộc và dữ liệu | Typecheck/test/build/guard đạt; release verifier + smoke gói cuối; tài liệu phản ánh cấu trúc thực tế | Chưa bắt đầu |
 
 Trạng thái chỉ chuyển thành hoàn thành khi đã có bằng chứng tương ứng. Kế hoạch không tự xác nhận binary hoặc website đã được cập nhật.
@@ -30,6 +30,8 @@ Mốc 2: 195 test TypeScript, format và build đạt. Đối chiếu CSS giữ 
 Mốc 3: đã tách `application/session-lifecycle`, `practice-repository`, `grade-audio-loan`, `workspace-state` và `platform/engine-host`; UI không tạo controller trực tiếp. Typecheck/build và 209 test TypeScript đạt. Test bổ sung kiểm tách frame/status, callback/cleanup cũ, cleanup tái nhập hoặc ném lỗi, lỗi startup tự dọn controller, kết quả lưu chậm sau khi rời màn tập, chờ native bị thay thế, giữ undo editor và calibration theo thiết bị. Cổng source đạt ở `artifacts/checks/20261023T075453.100532Z-fast/report.json`. Năm suite browser đầu đạt ở `20261023T075017.279406Z-browser`; sau sửa các race đã chạy lại Stop, grade-practice và route-guard trên gói `080cb6778055131d7a2f`, đều đạt ở `artifacts/checks/20261023T075507.986289Z-browser/report.json`.
 
 ## Cách chia thay đổi
+
+Mốc 4: [receipt](../scores/grades/RELOCATION_REPORT.json) ghi 5.751 file chuyển nguyên byte/Git blob, 5.600 chuyển đổi mới và so sự kiện, toàn bộ 5.658 file release trùng byte với kho đang dùng. `scores/grades/definition.json` là nguồn metadata chung Python/TypeScript; chặn thiếu quota, sai khoảng/ID và trùng score ID. Inventory phân loại 85 script hiện hành/tham khảo/lịch sử. Cổng source đạt 211 test TypeScript, 51 test Python và 5.600 nguồn; advanced delivery đạt 27 test. Grade browser đạt 9 nhóm trên gói `3c515e4cf04c004b3852`; báo cáo ở `artifacts/checks/20261023T080950.672683Z-browser/report.json`.
 
 Giai đoạn 1 chốt bản đồ và baseline trước khi di chuyển. Giai đoạn 2 bắt đầu bằng commit chỉ định dạng; sau đó tách view/style theo trách nhiệm. Không tạo các wrapper chỉ chuyển tiếp mọi prop mà không làm rõ ranh giới.
 

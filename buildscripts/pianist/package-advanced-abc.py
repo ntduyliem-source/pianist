@@ -19,8 +19,7 @@ import zipfile
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(Path(__file__).parent))
 from abc_grade_pitches import PitchContext, PITCH, NOTE, degree, pitch_load, hand_ranges, ledger_lines, matches_interval, small_interval
-BUCKETS = {'n4': (3, 5), 'n6': (6, 8), 'n10': (9, 14),
-           'n20': (15, 24), 'n30': (25, 39), 'n50': (40, 69), 'n100': (70, 120)}
+from grade_definition import BUCKETS, QUOTA, PER_GRADE, authored, generated, logical_source, abc_index
 PC = dict(zip('CDEFGAB', (0, 2, 4, 5, 7, 9, 11)))
 ATOM = re.compile(r'(\[(?:' + PITCH + r'\s*)+\]|' + PITCH + r'|z)(\d+/\d+|/\d+|\d+)?(-)?')
 TARGETS = {5: {'offset': 50, 'dyad': 50},
@@ -262,7 +261,7 @@ def validate(grade, rh, lh, meter, profile, lead, key='C'):
 
 
 def read_scores(grade, partial=False):
-    source = ROOT/f'buildscripts/pianist/compositions/g{grade}'
+    source = authored(grade)
     cells = {}
     for li, line in enumerate((source/'cells.txt').read_text(encoding='utf-8').splitlines(), 1):
         if not line.strip() or line.startswith('#'):
@@ -301,7 +300,7 @@ def read_scores(grade, partial=False):
                 assert bounds[0] <= result['count'] <= bounds[1], f'{result["count"]} attacks outside {bounds}'
                 row = dict(id=f'g{grade}-{group}-{number:03d}', grade=grade, group=group, number=number,
                            profile=profile, lead=lead, title=title, meter=meter, rh=rh, lh=lh,
-                           passages=sequence.split(), source=f'{(source/"studies.txt").relative_to(ROOT).as_posix()}:{li}', **result)
+                           passages=sequence.split(), source=f'{logical_source(source/"studies.txt")}:{li}', **result)
                 row['contentHash'] = fingerprint(row['events'], row['duration'])
                 row['normalizedHash'] = min(fingerprint(row['events'], row['duration'], True), fingerprint(row['events'], row['duration'], True, True))
                 rows.append(row)
@@ -311,7 +310,7 @@ def read_scores(grade, partial=False):
         subset = [r for r in rows if r['group'] == group]
         assert len({r['number'] for r in subset}) == len(subset), 'duplicate study number'
         if not partial:
-            assert sorted(r['number'] for r in subset) == list(range(1, 101)), f'{group} incomplete'
+            assert sorted(r['number'] for r in subset) == list(range(1, QUOTA + 1)), f'{group} incomplete'
             assert Counter(r['profile'] for r in subset) == TARGETS[grade], f'{group} profile quota'
             assert Counter(r['lead'] for r in subset) == {'RH': 50, 'LH': 50}, f'{group} hand balance'
     hashes = {}
@@ -322,7 +321,7 @@ def read_scores(grade, partial=False):
 
 
 def abc(row):
-    index = (row['grade']-1)*700 + list(BUCKETS).index(row['group'])*100 + row['number']
+    index = abc_index(row['grade'], row['group'], row['number'])
     tempo = '3/8=60' if row['meter'] == '6/8' else '1/4=60'
     header = f'''%abc-2.1
 X:{index}
@@ -426,7 +425,7 @@ def main():
     if args.check_only:
         print(f'G{args.grade}: {len(rows)} authored studies passed source checks')
         return
-    output = ROOT/f'scores/composed/g{args.grade}-abc'
+    output = generated(args.grade)
     output.mkdir(parents=True, exist_ok=True)
     texts, books, book_rows = {}, {}, {}
     for row in rows:
@@ -465,7 +464,7 @@ def main():
     normalized = defaultdict(list)
     for row in rows:
         normalized[row['normalizedHash']].append(row['id'])
-    report = dict(schemaVersion=2, rules=f'g{args.grade}-authored-cells-v1', total=len(rows), complete=len(rows) == 700 and not args.partial,
+    report = dict(schemaVersion=2, rules=f'g{args.grade}-authored-cells-v1', total=len(rows), complete=len(rows) == PER_GRADE and not args.partial,
                   coverage=coverage, uniqueContent=len(rows), normalizedFamilies=len(normalized),
                   relatedVariants=[v for v in normalized.values() if len(v) > 1], converterChecks=len(verified),
                   individualAndBookVerified=bool(rows) and len(verified) == 2*len(rows),

@@ -41,8 +41,9 @@ quyền trên origin HTTPS; các lượt nghiệm thu tự động dùng MIDI m�
 Các bài đóng gói chỉ lấy từ `scores/library/catalog.json`; report ghi rõ bản
 được nhận/bỏ. Phố Xa và file trong `examples/local/` vẫn thuộc ví dụ local.
 
-Tab Tập piano dùng kho `scores/composed/g1-abc` đến `g8-abc`: 5.600 bài,
-100 bài mỗi grade × khoảng nốt. Gói phát hành lấy đúng manifest kho đã kiểm;
+Tab Tập piano dùng kho `scores/grades/generated/g1-abc` đến `g8-abc`: 5.600 bài,
+100 bài mỗi grade × khoảng nốt. IDs/chủ đề/7 khoảng/quota100 dùng chung từ
+`scores/grades/definition.json`; nguồn biên soạn ở `scores/grades/authored/`. Gói phát hành lấy đúng manifest kho đã kiểm;
 không chạy lại bộ trích K5 cũ khi staging. ABC là nguồn, MXL là tài nguyên
 được chuyển đổi và kiểm trước khi phát hành. Các file kho cũ trên đĩa không
 thuộc manifest mới và không được đưa vào web ZIP.

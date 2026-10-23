@@ -59,26 +59,30 @@ test('compound beat unit is preserved for 6/8 practice',()=>{
 });
 function indexFixture():BankIndex{
   const lengthBuckets=[[4,3,5],[6,6,8],[10,9,14],[20,15,24],[30,25,39],[50,40,69],[100,70,120]].map(([n,min,max])=>({id:'n'+n,label:'~'+n,min,max}));
-  const options=Array.from({length:8},(_,i)=>lengthBuckets.map(b=>({grade:i+1,lengthBucket:b.id,count:i===0&&b.id==='n4'?1:0,byHand:{both:i===0&&b.id==='n4'?1:0,right:0,left:0},path:`options/g${i+1}-${b.id}.json`,bytes:1,sha256:'a'.repeat(64)}))).flat();
-  return {schemaVersion:1,kind:'composed-abc-v1',releaseId:'web-'+'a'.repeat(20),sourceRelease:'composed',visibility:'composed',total:1,minimum:100,lengthBuckets,options};
+  const options=Array.from({length:8},(_,i)=>lengthBuckets.map(b=>({grade:i+1,lengthBucket:b.id,count:100,byHand:{both:100,right:0,left:0},path:`options/g${i+1}-${b.id}.json`,bytes:1,sha256:'a'.repeat(64)}))).flat();
+  return {schemaVersion:1,kind:'composed-abc-v1',releaseId:'web-'+'a'.repeat(20),sourceRelease:'composed',visibility:'composed',total:5600,minimum:100,lengthBuckets,options};
 }
-function validEntry():Exercise{const id='b'.repeat(64);return {...entry(id),sha256:id,path:'exercises/'+id+'.mxl',bytes:1,targetCount:4,countRight:2,countLeft:2,abcSha256:'c'.repeat(64),grades:[1],profiles:['g1'],title:'G1 first',sourceMeasures:[1,1],sources:[]};}
+function validEntry(position=1):Exercise{const id=String(position).padStart(64,'b');return {...entry(id,'n4',position),sha256:id,path:'exercises/'+id+'.mxl',bytes:1,targetCount:4,countRight:2,countLeft:2,abcSha256:'c'.repeat(64),grades:[1],profiles:['g1'],title:'G1 first',sourceMeasures:[1,1],sources:[]};}
+const validEntries=()=>Array.from({length:100},(_,i)=>validEntry(i+1));
 test('new catalog rejects legacy K5 metadata, broken totals and missing two-staff counts',()=>{
   const index=indexFixture();assert.equal(validateIndex(index),index);
   assert.throws(()=>validateIndex({...index,kind:undefined} as unknown as BankIndex));
   assert.throws(()=>validateIndex({...index,total:2}));
   assert.throws(()=>validateIndex({...index,options:index.options.map((o,i)=>i?o:{...o,byHand:{both:0,left:1,right:0}})}));
-  const e=validEntry();assert.equal(validateEntries([e],index,index.options[0])[0],e);
-  for(const patch of [{hand:'right'},{countLeft:0},{countRight:4},{lengthBucket:'n6'},{bookPosition:0},{bookPosition:2},{scoreId:'g2-n4-001'},{sha256:'d'.repeat(64)}])assert.throws(()=>validateEntries([{...e,...patch} as Exercise],index,index.options[0]));
+  assert.throws(()=>validateIndex({...index,minimum:99}));
+  assert.throws(()=>validateIndex({...index,total:5599,options:index.options.map((o,i)=>i?o:{...o,count:99,byHand:{both:99,left:0,right:0}})}));
+  const entries=validEntries(),e=entries[0];assert.equal(validateEntries(entries,index,index.options[0])[0],e);
+  assert.throws(()=>validateEntries([e,{...entries[1],scoreId:e.scoreId},...entries.slice(2)],index,index.options[0]));
+  for(const patch of [{hand:'right'},{countLeft:0},{countRight:4},{lengthBucket:'n6'},{bookPosition:0},{bookPosition:101},{scoreId:'g2-n4-001'},{scoreId:'g1-n4-101'},{sha256:'d'.repeat(64)}])assert.throws(()=>validateEntries([{...e,...patch} as Exercise,...entries.slice(1)],index,index.options[0]));
 });
 test('hosted loader ignores any old device bank and verifies its new manifest, index and option',async()=>{
-  const index=indexFixture(),e=validEntry(),encode=(v:unknown)=>new TextEncoder().encode(JSON.stringify(v));
-  const option=encode({releaseId:index.releaseId,grade:1,lengthBucket:'n4',entries:[e]});
+  const index=indexFixture(),entries=validEntries(),encode=(v:unknown)=>new TextEncoder().encode(JSON.stringify(v));
+  const option=encode({releaseId:index.releaseId,grade:1,lengthBucket:'n4',entries});
   index.options[0]={...index.options[0],bytes:option.length,sha256:await sha(option)};
   const raw=encode(index),path=index.releaseId+'/index.json';
   const manifest=encode({schemaVersion:1,releaseId:index.releaseId,index:{path,bytes:raw.length,sha256:await sha(raw)}});
   const prior={fetch:globalThis.fetch,location:globalThis.location,indexedDB:globalThis.indexedDB};
   const calls:string[]=[];
   Object.assign(globalThis,{location:{href:'http://localhost/pianist.html#/practice'},indexedDB:{open(){throw Error('Old bank must not be read');}},fetch:async(input:URL)=>{calls.push(String(input));return new Response(String(input).endsWith('manifest.json')?manifest:String(input).endsWith('index.json')?raw:option);}});
-  try{const bank=await loadBank();assert.equal(bank.index.kind,'composed-abc-v1');assert.deepEqual(await bank.option(bank.index.options[0]),[e]);assert.equal(calls.length,3);assert.ok(calls.every(url=>url.startsWith('http://localhost/curriculum/')));}finally{Object.assign(globalThis,prior);}
+  try{const bank=await loadBank();assert.equal(bank.index.kind,'composed-abc-v1');assert.deepEqual(await bank.option(bank.index.options[0]),entries);assert.equal(calls.length,3);assert.ok(calls.every(url=>url.startsWith('http://localhost/curriculum/')));}finally{Object.assign(globalThis,prior);}
 });

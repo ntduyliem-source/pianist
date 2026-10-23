@@ -22,10 +22,10 @@ import xml.etree.ElementTree as ET
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[2]
-BUCKETS = {'n4': (3, 5), 'n6': (6, 8), 'n10': (9, 14),
-           'n20': (15, 24), 'n30': (25, 39), 'n50': (40, 69), 'n100': (70, 120)}
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from grade_definition import (BUCKETS, GRADES, GRADE_METADATA, QUOTA, PER_GRADE, TOTAL,
+                              GENERATED_ROOT, DEFINITION_PATH, KIND, length_buckets)
 PC = dict(zip('CDEFGAB', (0, 2, 4, 5, 7, 9, 11)))
-KIND = 'composed-abc-v1'
 
 
 def encode(value):
@@ -51,15 +51,15 @@ def source_jobs(source):
     """Read all 5,600 existing files; bind them to source rules and book order."""
     jobs = []
     advanced = load_module('package-advanced-abc')
-    for grade in range(1, 9):
-        module = load_module(f'package-g{grade}-abc') if grade < 5 else advanced
+    for grade in GRADES:
+        module = load_module(GRADE_METADATA[grade]['validator']) if grade < 5 else advanced
         rows = module.read_scores() if grade < 5 else module.read_scores(grade)
         folder = source/f'g{grade}-abc'
         with (folder/'index.tsv').open(encoding='utf-8', newline='') as stream:
             index_rows = list(csv.DictReader(stream, delimiter='\t'))
         index = {r['id']: r for r in index_rows}
-        if len(rows) != 700 or len(index) != 700 or len(index_rows) != 700:
-            raise ValueError(f'G{grade}: expected exactly 700 distinct source/index rows')
+        if len(rows) != PER_GRADE or len(index) != PER_GRADE or len(index_rows) != PER_GRADE:
+            raise ValueError(f'G{grade}: expected exactly {PER_GRADE} distinct source/index rows')
         actual_files = set(folder.glob('n*/*.abc'))
         expected_files = {folder/r['group']/(r['id']+'.abc') for r in rows}
         if actual_files != expected_files:
@@ -88,7 +88,7 @@ def source_jobs(source):
                              'targetCount': row['count'], 'countRight': row['right'], 'countLeft': row['left'],
                              'motifGroupId': row['normalizedHash'], 'sourceId': f'g{grade}-study-{row["number"]:03d}',
                              'profiles': [row.get('profile', row.get('role', 'authored'))]})
-        print(f'G{grade}: 700 ABC source files, authored rules and book order verified', flush=True)
+        print(f'G{grade}: {PER_GRADE} ABC source files, authored rules and book order verified', flush=True)
     return jobs
 
 
@@ -178,7 +178,8 @@ def pipeline_hash():
     files = [Path(__file__), ROOT/'packages/score-formats/python/converter.py',
              ROOT/'third_party/score-format-sources/abc2xml/abc2xml.py',
              Path(__file__).with_name('abc_grade_pitches.py'),
-             Path(__file__).with_name('package-advanced-abc.py')]
+             Path(__file__).with_name('package-advanced-abc.py'),
+             Path(__file__).with_name('grade_definition.py'), DEFINITION_PATH]
     files += [Path(__file__).with_name(f'package-g{grade}-abc.py') for grade in range(1, 5)]
     return sha(encode([(p.name, sha(p.read_bytes())) for p in files]))[:20]
 
@@ -229,8 +230,8 @@ def build(source, destination, cache, workers=4):
                 print(f'Converted + exact event validation: {done}/{len(jobs)} (cache {cached_count})', flush=True)
     rows.sort(key=lambda pair: (pair[0]['grades'][0], list(BUCKETS).index(pair[0]['lengthBucket']), pair[0]['bookPosition']))
     entries = [row for row, _ in rows]
-    if len(entries) != 5600 or len({e['id'] for e in entries}) != 5600:
-        raise ValueError('Expected 5,600 distinct packaged exercises')
+    if len(entries) != TOTAL or len({e['id'] for e in entries}) != TOTAL:
+        raise ValueError(f'Expected {TOTAL} distinct packaged exercises')
     source_release = 'composed-abc-'+sha(encode([(e['scoreId'], e['abcSha256']) for e in entries]))[:20]
     release = 'web-'+sha(encode({'kind': KIND, 'source': source_release, 'entries': entries}))[:20]
     base = destination/release
@@ -238,11 +239,11 @@ def build(source, destination, cache, workers=4):
     for row, path in rows:
         shutil.copyfile(path, base/row['path'])
     options = []
-    for grade in range(1, 9):
+    for grade in GRADES:
         for bucket in BUCKETS:
             subset = [e for e in entries if e['grades'] == [grade] and e['lengthBucket'] == bucket]
-            if len(subset) != 100 or sorted(e['bookPosition'] for e in subset) != list(range(1, 101)):
-                raise ValueError(f'G{grade}/{bucket}: not exactly 100 exercises/book positions')
+            if len(subset) != QUOTA or sorted(e['bookPosition'] for e in subset) != list(range(1, QUOTA + 1)):
+                raise ValueError(f'G{grade}/{bucket}: not exactly {QUOTA} exercises/book positions')
             name = f'indexes/g{grade}-{bucket}.json'
             data = encode({'schemaVersion': 1, 'releaseId': release, 'grade': grade, 'lengthBucket': bucket, 'entries': subset})
             (base/name).parent.mkdir(parents=True, exist_ok=True)
@@ -250,8 +251,8 @@ def build(source, destination, cache, workers=4):
             options.append({**asset(name, data), 'grade': grade, 'lengthBucket': bucket,
                             'count': len(subset), 'byHand': {'left': 0, 'right': 0, 'both': len(subset)}})
     index = {'schemaVersion': 1, 'kind': KIND, 'releaseId': release, 'sourceRelease': source_release,
-             'visibility': 'composed', 'total': len(entries), 'minimum': 100,
-             'lengthBuckets': [{'id': k, 'label': f'~{k[1:]} nốt', 'min': v[0], 'max': v[1]} for k, v in BUCKETS.items()],
+             'visibility': 'composed', 'total': len(entries), 'minimum': QUOTA,
+             'lengthBuckets': length_buckets(),
              'options': options}
     data = encode(index)
     (base/'index.json').write_bytes(data)
@@ -270,7 +271,7 @@ def build(source, destination, cache, workers=4):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--source', type=Path, default=ROOT/'scores/composed')
+    parser.add_argument('--source', type=Path, default=GENERATED_ROOT)
     parser.add_argument('--output', type=Path, default=ROOT/'build.artifacts/curriculum')
     parser.add_argument('--cache', type=Path, default=ROOT/'artifacts/composed-reading-cache')
     parser.add_argument('--workers', type=int, choices=range(1, 9), default=4)

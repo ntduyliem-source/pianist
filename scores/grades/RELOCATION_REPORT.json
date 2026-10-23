@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "checkedOn": "2026-10-23",
+  "edition": "authored-2026-10-22-v1",
+  "mapping": {
+    "buildscripts/pianist/compositions/": "scores/grades/authored/",
+    "scores/composed/": "scores/grades/generated/"
+  },
+  "preservedFiles": 5751,
+  "authoredFiles": 61,
+  "generatedFiles": 5690,
+  "baselineManifestSha256": "c327fd6bb5cde89d4e244e22608be87cfd98940552606431a6a8e27ad6ac761e",
+  "relocationInventorySha256": "83f6f3530a5e9c20cc6898492d758e216b275aa4385df84bcc08b9ff5fa25719",
+  "allOriginalBytesPreserved": true,
+  "allOriginalFilesAccountedFor": true,
+  "exactGitBlobRenames": 5751,
+  "gitRenameProof": "artifacts/refactor-2026-10-23/grade-git-relocation.json",
+  "releaseId": "web-19bd56fc7a853511a57a",
+  "sourceRelease": "composed-abc-ca51443b193d68869cba",
+  "verifiedReleaseFiles": 5658,
+  "releaseGraphByteIdentical": true,
+  "abcSourceAndBookOrderParity": 5600,
+  "currentSourceExactEventParity": 5600,
+  "freshConverterChecks": 5600,
+  "freshConversionCacheHits": 0,
+  "currentPipelineHash": "8edcd479d938a7e036db",
+  "definitionSha256": "bb3a4e77631cfc2107a0ff7ec60f327b3c18fd72bec70c2c8cf660d50d1dda1c",
+  "gradeOptions": 56,
+  "exercisesPerOption": 100,
+  "mxlBytes": 7507141,
+  "validation": {
+    "advancedBankTests": { "passed": 27, "failed": 0, "log": "artifacts/refactor-2026-10-23/grade-advanced-tests.log" },
+    "fastGate": { "typescriptPassed": 211, "pythonPassed": 51, "authoredScoresAdmitted": 5600, "report": "artifacts/checks/20261023T080907.249155Z-fast/report.json" },
+    "browserGradeChecks": { "passed": 9, "report": "artifacts/checks/20261023T080950.672683Z-browser/report.json" }
+  },
+  "commands": [
+    "python buildscripts/pianist/check-authored-grades.py",
+    "python buildscripts/pianist/composed-reading-bank.py --output artifacts/refactor-2026-10-23/grade-bank-qa --cache artifacts/refactor-2026-10-23/grade-conversion-qa --workers 4"
+  ]
+}

@@ -18,10 +18,10 @@ import zipfile
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(Path(__file__).parent))
 from abc_grade_pitches import parse_basic, hand_ranges
-SOURCE = ROOT / 'buildscripts/pianist/compositions/g4'
-OUTPUT = ROOT / 'scores/composed/g4-abc'
-BUCKETS = {'n4': (3, 5), 'n6': (6, 8), 'n10': (9, 14),
-           'n20': (15, 24), 'n30': (25, 39), 'n50': (40, 69), 'n100': (70, 120)}
+from grade_definition import BUCKETS, QUOTA, PER_GRADE, authored, generated, logical_source, abc_index
+SOURCE = authored(4)
+OUTPUT = generated(4)
+
 ROLES = {'R': 30, 'L': 30, 'A': 25, 'S': 15}
 
 # Reuse the independently implemented MusicXML walker from the G1 packager.
@@ -113,7 +113,7 @@ def read_scores(partial=False):
                 continue
             key, meter, rh, lh = [v.strip() for v in line.split(';')]
             assert key not in passages, f'duplicate passage {key}'
-            passages[key] = (int(meter), rh, lh, f'{path.relative_to(ROOT).as_posix()}:{li}')
+            passages[key] = (int(meter), rh, lh, f'{logical_source(path)}:{li}')
     rows = []
     for group, bounds in BUCKETS.items():
         path = SOURCE / (group+'.txt')
@@ -127,7 +127,7 @@ def read_scores(partial=False):
                 fields = [v.strip() for v in line.split(';')]
                 number, profile, role, lead, title = fields[:5]
                 number = int(number)
-                assert 1 <= number <= 100 and lead in ('RH', 'LH')
+                assert 1 <= number <= QUOTA and lead in ('RH', 'LH')
                 if len(fields) == 8:
                     meter, right, left = fields[5:]
                     sequence = f'inline-{group}-{number:03d}'
@@ -147,14 +147,14 @@ def read_scores(partial=False):
                 group_rows.append(dict(id=f'g4-{group}-{number:03d}', group=group, number=number, profile=profile,
                                        role=role, lead=lead, title=title, meter=meter, rh=rh, lh=lh, events=events,
                                        bars=bars, count=nr+nl, right=nr, left=nl, seconds=bars*meter,
-                                       passages=sequence.split(), witnesses=witness, source=f'{path.relative_to(ROOT).as_posix()}:{li}',
+                                       passages=sequence.split(), witnesses=witness, source=f'{logical_source(path)}:{li}',
                                        contentHash=fingerprint(events),
                                        normalizedHash=min(fingerprint(events, True), fingerprint(events, True, True))))
             except Exception as exc:
                 raise ValueError(f'{path.name}:{li}: {exc}') from exc
         assert len({r['number'] for r in group_rows}) == len(group_rows), 'duplicate ID'
         if not partial:
-            assert sorted(r['number'] for r in group_rows) == list(range(1, 101)), f'{group} incomplete'
+            assert sorted(r['number'] for r in group_rows) == list(range(1, QUOTA + 1)), f'{group} incomplete'
             assert Counter(r['profile'] for r in group_rows) == {'upper': 50, 'lower': 30, 'span': 20}, f'{group} profiles'
             assert Counter(r['role'] for r in group_rows) == ROLES, f'{group} roles'
         rows += sorted(group_rows, key=lambda r: r['number'])
@@ -166,7 +166,7 @@ def read_scores(partial=False):
 
 
 def abc(row):
-    index = 2100 + list(BUCKETS).index(row['group'])*100 + row['number']
+    index = abc_index(4, row['group'], row['number'])
     header = f'''%abc-2.1
 X:{index}
 T:{row['id']} {row['title']}
@@ -255,7 +255,7 @@ def main():
     normalized = defaultdict(list)
     for row in rows:
         normalized[row['normalizedHash']].append(row['id'])
-    report = dict(schemaVersion=1, rules='g4-authored-passages-v1', total=len(rows), complete=len(rows) == 700 and not args.partial,
+    report = dict(schemaVersion=1, rules='g4-authored-passages-v1', total=len(rows), complete=len(rows) == PER_GRADE and not args.partial,
                   coverage=coverage, uniqueContent=len(rows), normalizedFamilies=len(normalized),
                   relatedVariants=[v for v in normalized.values() if len(v) > 1], converterChecks=len(verified),
                   individualAndBookVerified=bool(rows) and len(verified) == 2*len(rows),

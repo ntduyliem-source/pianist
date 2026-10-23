@@ -12,32 +12,17 @@ import type {
 import { loadBank, getData, putData, type Bank, type Exercise, type Hand } from './bank';
 import { ExerciseSelector, type QueueItem } from './selector';
 import { RetryableLoad } from './retryable-load';
-import {
-  exerciseSettings,
-  readSelection,
-  DEFAULT_SELECTION,
-  LENGTHS,
-  type Selection,
-} from './settings';
+import { exerciseSettings, readSelection, DEFAULT_SELECTION, type Selection } from './settings';
+import { GRADES, LENGTH_BUCKETS } from './definition';
 import * as libraryStorage from '../platform/storage';
 import './exercises.css';
 
-const grades = [
-  ['Nốt lặp và liền bậc', 'Nhận hướng nốt, giữ nhịp và phối hợp hai tay cơ bản.'],
-  ['Quãng ba và móc đơn', 'Hai nhánh riêng: quãng ba, hoặc cặp móc đơn đúng phách.'],
-  ['Quãng bốn, năm và nốt rải', 'Đọc bước nhảy và hình nốt rải đơn âm.'],
-  ['Vị trí mới', 'Vùng nốt mới hoặc span quãng tám; bước nhảy tối đa quãng năm.'],
-  ['Hai tay và hợp âm', 'Hai tay độc lập hoặc hợp âm hai nốt.'],
-  ['Quãng sáu đến tám', 'Bước nhảy rộng có nốt dẫn vào và đi ra.'],
-  ['Tiết tấu', 'Chấm dôi, nối qua phách, đảo phách và nhịp 6/8 theo từng nhánh.'],
-  ['Âm vực và kết hợp', 'Dòng phụ xa hoặc hợp âm kết hợp chấm dôi, nối qua phách.'],
-];
 const handName: Record<Hand, string> = { right: 'Tay phải', left: 'Tay trái', both: 'Hai tay' };
-const fallbackBuckets = LENGTHS.map((id, i) => ({
+const fallbackBuckets = LENGTH_BUCKETS.map(({ id, pickerLabel, min, max }) => ({
   id,
-  label: 'Khoảng ' + id.slice(1) + ' nốt',
-  min: [3, 6, 9, 15, 25, 40, 70][i],
-  max: [5, 8, 14, 24, 39, 69, 120][i],
+  label: pickerLabel,
+  min,
+  max,
 }));
 type Ready = QueueItem & { bytes: Uint8Array; snapshot: ScoreSnapshot };
 type Run = {
@@ -623,7 +608,7 @@ export function Exercises() {
         </div>
         <strong className="exercise-total">
           {bank ? bank.index.total.toLocaleString('vi') : '—'}
-          <small>bài · 8 grade</small>
+          <small>bài · {GRADES.length} grade</small>
         </strong>
       </div>
       <section className="exercise-choices" aria-label="Chọn bài theo grade">
@@ -635,14 +620,14 @@ export function Exercises() {
               value={selection.grade}
               onChange={(e) => change({ grade: +e.target.value })}
             >
-              {grades.map(([title], i) => (
-                <option key={i} value={i + 1}>
-                  G{i + 1} · {title}
+              {GRADES.map(({ id, title }) => (
+                <option key={id} value={id}>
+                  G{id} · {title}
                 </option>
               ))}
             </select>
           </label>
-          <p>{grades[selection.grade - 1][1]}</p>
+          <p>{GRADES.find((grade) => grade.id === selection.grade)?.description}</p>
         </div>
         <fieldset className="exercise-length-field">
           <legend>

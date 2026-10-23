@@ -2,8 +2,9 @@ import type { ScoreSnapshot } from '../../../../packages/score-contracts';
 import { settingsFor } from '../../../../packages/practice-engine-v2/score-adapter';
 import type { PracticeSettings } from '../../../../packages/practice-engine-v2/model';
 import type { Exercise, Hand } from './bank';
+import { GRADE_IDS, LENGTHS } from './definition';
 
-export const LENGTHS = ['n4', 'n6', 'n10', 'n20', 'n30', 'n50', 'n100'] as const;
+export { LENGTHS } from './definition';
 export interface Selection {
   grade: number;
   lengths: string[];
@@ -14,8 +15,8 @@ export interface Selection {
   auto: boolean;
 }
 export const DEFAULT_SELECTION: Selection = {
-  grade: 1,
-  lengths: ['n4'],
+  grade: GRADE_IDS[0],
+  lengths: [LENGTHS[0]],
   random: true,
   hand: 'both',
   mode: 'bpm',
@@ -25,7 +26,7 @@ export const DEFAULT_SELECTION: Selection = {
 export function readSelection(value: unknown): Selection {
   const v = value && typeof value === 'object' ? (value as Partial<Selection>) : {};
   return {
-    grade: Number.isInteger(v.grade) && v.grade! >= 1 && v.grade! <= 8 ? v.grade! : 1,
+    grade: Number.isInteger(v.grade) && GRADE_IDS.includes(v.grade!) ? v.grade! : GRADE_IDS[0],
     lengths: Array.isArray(v.lengths)
       ? LENGTHS.filter((id) => v.lengths!.includes(id))
       : [...DEFAULT_SELECTION.lengths],

@@ -7,6 +7,8 @@ from collections import Counter
 import importlib.util
 from pathlib import Path
 
+from grade_definition import GRADES, GRADE_METADATA, BUCKETS, QUOTA, PER_GRADE
+
 DIRECTORY = Path(__file__).resolve().parent
 
 
@@ -20,13 +22,13 @@ def load(name):
 if __name__ == '__main__':
     advanced = load('package-advanced-abc')
     total = 0
-    for grade in range(1, 9):
-        module = load(f'package-g{grade}-abc') if grade < 5 else advanced
+    for grade in GRADES:
+        module = load(GRADE_METADATA[grade]['validator']) if grade < 5 else advanced
         rows = module.read_scores() if grade < 5 else module.read_scores(grade)
         counts = Counter(row['group'] for row in rows)
-        expected = {f'n{size}': 100 for size in (4, 6, 10, 20, 30, 50, 100)}
-        if len(rows) != 700 or counts != expected:
+        expected = {bucket: QUOTA for bucket in BUCKETS}
+        if len(rows) != PER_GRADE or counts != expected:
             raise ValueError(f'G{grade}: authored inventory mismatch: {dict(counts)}')
         total += len(rows)
-        print(f'G{grade}: {len(rows)} authored scores admitted; all 7 length options present')
+        print(f'G{grade}: {len(rows)} authored scores admitted; all {len(BUCKETS)} length options present')
     print(f'Validated {total} existing authored scores; no bank files written.')

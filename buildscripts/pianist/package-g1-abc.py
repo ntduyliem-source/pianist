@@ -19,10 +19,10 @@ from concurrent.futures import ProcessPoolExecutor, as_completed
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(Path(__file__).parent))
 from abc_grade_pitches import parse_basic, hand_ranges, PC as PIANO_PC
-SOURCE = ROOT / 'buildscripts/pianist/compositions/g1'
-OUTPUT = ROOT / 'scores/composed/g1-abc'
-BUCKETS = {'n4': (3, 5), 'n6': (6, 8), 'n10': (9, 14),
-           'n20': (15, 24), 'n30': (25, 39), 'n50': (40, 69), 'n100': (70, 120)}
+from grade_definition import BUCKETS, QUOTA, PER_GRADE, authored, generated, logical_source, abc_index
+SOURCE = authored(1)
+OUTPUT = generated(1)
+
 ROLES = {'R': 'Tay phải dẫn', 'L': 'Tay trái dẫn', 'A': 'Hai tay đối đáp', 'S': 'Hai tay cùng nhịp'}
 TARGET_ROLES = {'R': 30, 'L': 30, 'A': 25, 'S': 15}
 PC = dict(PIANO_PC)
@@ -64,7 +64,7 @@ def read_scores(partial=False):
             try:
                 number, role, meter, family, title, rh, lh = [x.strip() for x in line.split(';')]
                 number, meter = int(number), int(meter)
-                assert 1 <= number <= 100 and role in ROLES and meter in (2, 3, 4)
+                assert 1 <= number <= QUOTA and role in ROLES and meter in (2, 3, 4)
                 expected_role = 'R' if number <= 30 else 'L' if number <= 60 else 'A' if number <= 85 else 'S'
                 assert role == expected_role, 'role/number mismatch'
                 right, rsteps, rbars = parse_voice(rh, meter, 1)
@@ -98,14 +98,14 @@ def read_scores(partial=False):
                            meter=meter, family=family, title=title, rh=rh, lh=lh,
                            events=events, bars=rbars, count=count, right=len(rn), left=len(ln),
                            seconds=rbars*meter, contentHash=digest, normalizedHash=family_digest,
-                           source=f'{source.relative_to(ROOT).as_posix()}:{li}')
+                           source=f'{logical_source(source)}:{li}')
                 group_rows.append(row)
             except Exception as exc:
                 fail(f'{source.name}:{li}: {exc}')
         numbers = [r['number'] for r in group_rows]
         assert len(numbers) == len(set(numbers)), 'duplicate number in ' + group
         if not partial:
-            assert sorted(numbers) == list(range(1,101)), f'{group}: {len(numbers)}/100'
+            assert sorted(numbers) == list(range(1, QUOTA + 1)), f'{group}: {len(numbers)}/100'
             assert dict(Counter(r['role'] for r in group_rows)) == TARGET_ROLES
         rows += sorted(group_rows,key=lambda r:r['number'])
     seen = {}
@@ -117,7 +117,7 @@ def read_scores(partial=False):
 
 
 def abc(row):
-    index = list(BUCKETS).index(row['group']) * 100 + row['number']
+    index = abc_index(1, row['group'], row['number'])
     header = f'''%abc-2.1
 X:{index}
 T:{row['id']} {row['title']}

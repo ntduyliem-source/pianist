@@ -1,3 +1,13 @@
+import {
+  GRADE_DEFINITION,
+  GRADE_IDS,
+  LENGTH_BUCKETS,
+  EXERCISES_PER_OPTION,
+  OPTION_COUNT,
+  TOTAL_EXERCISES,
+  scoreIdentityMatches,
+} from './definition';
+
 export type Hand = 'left' | 'right' | 'both';
 export type Asset = { path: string; sha256: string; bytes: number };
 export interface Exercise extends Asset {
@@ -80,24 +90,16 @@ export function validateIndex(index: BankIndex): BankIndex {
   if (
     !index ||
     index.schemaVersion !== 1 ||
-    index.kind !== 'composed-abc-v1' ||
+    index.kind !== GRADE_DEFINITION.kind ||
     !/^web-[a-f0-9]{20}$/.test(index.releaseId) ||
     !Array.isArray(index.options) ||
-    index.options.length !== 56 ||
-    index.lengthBuckets?.length !== 7
+    index.options.length !== OPTION_COUNT ||
+    index.lengthBuckets?.length !== LENGTH_BUCKETS.length ||
+    index.minimum !== EXERCISES_PER_OPTION
   )
     throw Error('Kho theo grade chưa đúng phiên bản hai khuông mới.');
-  const expected = [
-    [4, 3, 5],
-    [6, 6, 8],
-    [10, 9, 14],
-    [20, 15, 24],
-    [30, 25, 39],
-    [50, 40, 69],
-    [100, 70, 120],
-  ];
-  for (const [n, min, max] of expected) {
-    const b = index.lengthBuckets.find((b) => b.id === 'n' + n);
+  for (const { id, min, max } of LENGTH_BUCKETS) {
+    const b = index.lengthBuckets.find((b) => b.id === id);
     if (!b || b.min !== min || b.max !== max) throw Error('Khoảng nốt không hợp lệ.');
   }
   const keys = new Set<string>();
@@ -105,12 +107,11 @@ export function validateIndex(index: BankIndex): BankIndex {
     const key = o.grade + ':' + o.lengthBucket;
     if (
       !Number.isInteger(o.grade) ||
-      o.grade < 1 ||
-      o.grade > 8 ||
+      !GRADE_IDS.includes(o.grade) ||
       !index.lengthBuckets.some((b) => b.id === o.lengthBucket) ||
       keys.has(key) ||
       !Number.isInteger(o.count) ||
-      o.count < 0 ||
+      o.count !== EXERCISES_PER_OPTION ||
       !validAsset(o) ||
       o.byHand?.both !== o.count ||
       o.byHand.left !== 0 ||
@@ -120,7 +121,7 @@ export function validateIndex(index: BankIndex): BankIndex {
     keys.add(key);
   }
   if (
-    !Number.isSafeInteger(index.total) ||
+    index.total !== TOTAL_EXERCISES ||
     index.total !== index.options.reduce((n, o) => n + o.count, 0)
   )
     throw Error('Tổng số bài không khớp chỉ mục.');
@@ -135,6 +136,7 @@ export function validateEntries(entries: Exercise[], index: BankIndex, o: Option
   )
     throw Error('Số bài trong chỉ mục không khớp.');
   const positions = new Set<number>();
+  const scoreIds = new Set<string>();
   for (const e of entries) {
     if (
       !hash.test(e.id) ||
@@ -159,8 +161,8 @@ export function validateEntries(entries: Exercise[], index: BankIndex, o: Option
       e.countLeft < 1 ||
       e.countRight + e.countLeft !== e.targetCount ||
       typeof e.scoreId !== 'string' ||
-      !/^g[1-8]-n(?:4|6|10|20|30|50|100)-\d{3}$/.test(e.scoreId) ||
-      !e.scoreId.startsWith('g' + o.grade + '-' + o.lengthBucket + '-') ||
+      !scoreIdentityMatches(e.scoreId, o.grade, o.lengthBucket) ||
+      scoreIds.has(e.scoreId) ||
       typeof e.sourceId !== 'string' ||
       !e.sourceId ||
       typeof e.motifGroupId !== 'string' ||
@@ -172,6 +174,7 @@ export function validateEntries(entries: Exercise[], index: BankIndex, o: Option
     )
       throw Error('Bài tập không đủ hai khuông hoặc không thuộc lựa chọn đã tải.');
     positions.add(e.bookPosition);
+    scoreIds.add(e.scoreId);
   }
   return entries;
 }

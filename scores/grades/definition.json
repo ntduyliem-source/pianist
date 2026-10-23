@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "edition": "authored-2026-10-22-v1",
+  "kind": "composed-abc-v1",
+  "exercisesPerOption": 100,
+  "paths": {
+    "authoredRoot": "scores/grades/authored",
+    "generatedRoot": "scores/grades/generated",
+    "logicalSourceRoot": "buildscripts/pianist/compositions"
+  },
+  "grades": [
+    {
+      "id": 1,
+      "title": "Nốt lặp và liền bậc",
+      "description": "Nhận hướng nốt, giữ nhịp và phối hợp hai tay cơ bản.",
+      "topic": "Nốt lặp, bước liền, nhịp và phối hợp cơ bản",
+      "validator": "package-g1-abc"
+    },
+    {
+      "id": 2,
+      "title": "Quãng ba và móc đơn",
+      "description": "Hai nhánh riêng: quãng ba, hoặc cặp móc đơn đúng phách.",
+      "topic": "Quãng ba hoặc cặp móc đơn đúng phách, hai nhánh riêng",
+      "validator": "package-g2-abc"
+    },
+    {
+      "id": 3,
+      "title": "Quãng bốn, năm và nốt rải",
+      "description": "Đọc bước nhảy và hình nốt rải đơn âm.",
+      "topic": "Quãng bốn, năm và mẫu rải đơn âm",
+      "validator": "package-g3-abc"
+    },
+    {
+      "id": 4,
+      "title": "Vị trí mới",
+      "description": "Vùng nốt mới hoặc span quãng tám; bước nhảy tối đa quãng năm.",
+      "topic": "Vùng nốt mới hoặc span quãng tám với bước nhảy tối đa quãng năm",
+      "validator": "package-g4-abc"
+    },
+    {
+      "id": 5,
+      "title": "Hai tay và hợp âm",
+      "description": "Hai tay độc lập hoặc hợp âm hai nốt.",
+      "topic": "Hai tay độc lập hoặc hợp âm hai nốt",
+      "validator": "package-advanced-abc"
+    },
+    {
+      "id": 6,
+      "title": "Quãng sáu đến tám",
+      "description": "Bước nhảy rộng có nốt dẫn vào và đi ra.",
+      "topic": "Quãng sáu, bảy, tám theo họ/hướng, có nốt dẫn vào và đi ra",
+      "validator": "package-advanced-abc"
+    },
+    {
+      "id": 7,
+      "title": "Tiết tấu",
+      "description": "Chấm dôi, nối qua phách, đảo phách và nhịp 6/8 theo từng nhánh.",
+      "topic": "Chấm dôi, nối qua phách, đảo phách, 6/8 — bốn nhánh riêng",
+      "validator": "package-advanced-abc"
+    },
+    {
+      "id": 8,
+      "title": "Âm vực và kết hợp",
+      "description": "Dòng phụ xa hoặc hợp âm kết hợp chấm dôi, nối qua phách.",
+      "topic": "Dòng phụ xa hoặc hợp âm hai nốt kết hợp chấm dôi/nối qua phách",
+      "validator": "package-advanced-abc"
+    }
+  ],
+  "lengthBuckets": [
+    { "id": "n4", "label": "~4 nốt", "pickerLabel": "Khoảng 4 nốt", "min": 3, "max": 5 },
+    { "id": "n6", "label": "~6 nốt", "pickerLabel": "Khoảng 6 nốt", "min": 6, "max": 8 },
+    { "id": "n10", "label": "~10 nốt", "pickerLabel": "Khoảng 10 nốt", "min": 9, "max": 14 },
+    { "id": "n20", "label": "~20 nốt", "pickerLabel": "Khoảng 20 nốt", "min": 15, "max": 24 },
+    { "id": "n30", "label": "~30 nốt", "pickerLabel": "Khoảng 30 nốt", "min": 25, "max": 39 },
+    { "id": "n50", "label": "~50 nốt", "pickerLabel": "Khoảng 50 nốt", "min": 40, "max": 69 },
+    { "id": "n100", "label": "~100 nốt", "pickerLabel": "Khoảng 100 nốt", "min": 70, "max": 120 }
+  ]
+}
