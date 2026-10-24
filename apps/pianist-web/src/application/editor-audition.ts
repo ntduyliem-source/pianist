@@ -72,7 +72,8 @@ let nativeGeneration = 0;
 export function stopEditorPlayback(bridge?: EngineBridge) {
   nativeGeneration++;
   editorAudition.stop();
-  bridge?.api.editorPlayback?.('stop');
+  // A notation-only editor has no native player until optional audio is ready.
+  if (bridge?.playbackState().available) bridge.api.editorPlayback?.('stop');
 }
 export async function editorCommand(
   bridge: EngineBridge,
