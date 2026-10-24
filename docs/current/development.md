@@ -125,3 +125,8 @@ Stop/đổi màn/đổi output hủy quyền sở hữu lượt cũ; callback đ
 Lỗi nghe có nút thử lại tại cùng bài. Kiểm `sound-output.cjs` với cache mới để xác nhận
 mặc định không request `MuseAudio.js` hoặc `MS Basic.sf3`; các suite `native-*`
 chủ động chọn tiếng MuseScore để vẫn kiểm chính đường native.
+
+Piano nhẹ hiện dùng sustain CC64 của @tonejs/piano. Score có sostenuto CC66 hoặc
+pitch bend khác tâm được yêu cầu chọn tiếng MuseScore; không tự đổi chúng thành
+sustain, bỏ lệnh, hoặc tải MS Basic khi checkbox chưa được chọn. Bộ kiểm
+`native-sheet-integrity` dùng Tình Đơn Phương để kiểm đúng đường chuyển này.
