@@ -89,7 +89,7 @@ function options(overrides: Partial<EngineHostOptions> = {}): EngineHostOptions 
   };
 }
 
-test('engine host shares startup, preserves callbacks and waits for MS Basic before publishing a bridge', async (t) => {
+test('engine host shares startup, preserves callbacks without loading the optional sound engine', async (t) => {
   const descriptor = Object.getOwnPropertyDescriptor(globalThis, 'Element');
   Object.defineProperty(globalThis, 'Element', { value: Screen, configurable: true });
   t.after(() =>
@@ -139,7 +139,7 @@ test('engine host shares startup, preserves callbacks and waits for MS Basic bef
     onReady: (bridge, started) => {
       ready++;
       assert.equal(started, 123);
-      assert.equal(bridge.revision, 42);
+      assert.equal(bridge.revision, 7);
     },
     focus: (element) => {
       focused = element;
@@ -164,10 +164,11 @@ test('engine host shares startup, preserves callbacks and waits for MS Basic bef
   for (const key of Object.keys(settings.callbacks) as (keyof EngineHostOptions['callbacks'])[])
     assert.equal(config[key], settings.callbacks[key]);
   assert.equal(creates, 1);
-  assert.equal(starts, 1);
+  assert.equal(starts, 0);
+  assert.equal(config.deferAudio, true);
   assert.equal(exposed, 1);
-  assert.equal(ready, 0);
-  assert.equal(screen.pointerBindings, 0);
+  assert.equal(ready, 1);
+  assert.equal(screen.pointerBindings, 1);
   config.onDocumentState('Bản nhạc', true);
   assert.equal(doc.title, 'Bản nhạc * — Pianist');
   assert.equal(screen.dataset.modified, 'true');
@@ -217,14 +218,12 @@ test('failed native startup is retryable without a ready bridge or duplicate foc
   assert.equal(audioErrors, 0);
   assert.equal(ready, 0);
   assert.equal(screen.pointerBindings, 0);
-  await assert.rejects(host.ensure(settings), /MS Basic/);
-  assert.equal(audioErrors, 1);
-  assert.equal(ready, 0);
-  assert.equal(screen.pointerBindings, 0);
   await host.ensure(settings);
+  assert.equal(audioAttempt, 0, 'sound failures cannot block notation startup');
+  assert.equal(audioErrors, 0);
   assert.equal(ready, 1);
   assert.equal(screen.pointerBindings, 1);
-  assert.equal(loadAttempt, 3);
+  assert.equal(loadAttempt, 2);
 });
 
 test('Qt focus remains gated by editor/modal state and does not steal focus already inside its window', () => {

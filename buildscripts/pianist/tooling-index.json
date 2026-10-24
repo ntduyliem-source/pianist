@@ -4,7 +4,7 @@
     "build": {
       "status": "active",
       "description": "Build native/frontend, prepare runtime assets, and serve the complete application.",
-      "files": ["build-pianist.ps1", "build-renderer.ps1", "build-web.ps1", "prepare-fixtures.py", "prepare-notices.py", "prepare-score-format-sources.py", "serve-web.py", "setup-web.ps1"]
+      "files": ["build-pianist.ps1", "build-renderer.ps1", "build-web.ps1", "install-piano-samples.py", "prepare-fixtures.py", "prepare-notices.py", "prepare-score-format-sources.py", "serve-web.py", "setup-web.ps1"]
     },
     "checks": {
       "status": "active",

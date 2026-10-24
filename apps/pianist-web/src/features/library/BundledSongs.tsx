@@ -99,7 +99,6 @@ function BundledSongCard({ work, practice }: { work: BundledWork; practice: bool
         )}
         <div className="button-row">
           <ListenButton track={track} />
-          <button onClick={run(() => ws.openBundledScore(song))}>Chỉnh sửa</button>
           <button
             className="primary-light"
             disabled={!canPractice}
@@ -109,6 +108,7 @@ function BundledSongCard({ work, practice }: { work: BundledWork; practice: bool
             <Icon name="play" />
             Tập
           </button>
+          <button onClick={run(() => ws.openBundledScore(song))}>Chỉnh sửa</button>
           <button
             aria-label={'Chi tiết ' + work.title}
             title="Chi tiết bản nhạc"

@@ -8,6 +8,7 @@ const out=path.resolve(process.env.PIANIST_QA_DIR||path.join(root,'artifacts/pla
  await fs.mkdir(out,{recursive:true});
  const browser=await chromium.launch({channel:'msedge',headless:true,args:['--enable-unsafe-swiftshader']});
  const context=await browser.newContext({viewport:{width:1440,height:960},serviceWorkers:'block'}),page=await context.newPage();
+ await context.addInitScript(()=>localStorage.setItem('pianist.sound','musescore'));
  const report={base,checks:[],errors:[],measurements:{}};
  page.on('pageerror',e=>report.errors.push(String(e)));page.on('dialog',d=>d.dismiss());
  const check=s=>{report.checks.push(s);console.log('PASS',s);};
@@ -24,6 +25,9 @@ const out=path.resolve(process.env.PIANIST_QA_DIR||path.join(root,'artifacts/pla
   await page.locator('#file').setInputFiles(path.join(root,'scores/library/songs',name));
   await page.getByRole('region',{name:'Phát bản nhạc trong editor'}).waitFor({timeout:180000});await page.locator('.loading-overlay').waitFor({state:'hidden',timeout:180000});
   await page.waitForFunction(()=>!document.querySelector('.editor-playback button')?.disabled,null,{timeout:120000});
+  await page.getByRole('button',{name:'Phát nhạc',exact:true}).click();
+  await page.getByRole('button',{name:'Tạm dừng phát nhạc',exact:true}).waitFor({timeout:90000});
+  await page.getByRole('button',{name:'Dừng phát nhạc',exact:true}).click();
   await page.evaluate(()=>{
    window.syncRead=(cb,method)=>{const a=window.pianist,old=a.Module[cb];let result;a.Module[cb]=j=>result=JSON.parse(j);try{assertNative(a[method]());return result;}finally{a.Module[cb]=old;}function assertNative(ok){if(!ok)throw Error(method+' failed');}};
    window.syncSamples=[];window.syncRecording=false;window.syncFrame=null;

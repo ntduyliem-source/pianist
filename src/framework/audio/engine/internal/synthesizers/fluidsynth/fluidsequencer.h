@@ -44,6 +44,14 @@ public:
     const ChannelMap& channels() const;
     int lastStaff() const;
 
+    // Web sampled-piano adapter: reuse the exact FluidSequencer conversion
+    // without starting an audio device or subscribing to engine-thread streams.
+    EventSequenceMap exportEvents(const mpe::PlaybackData& data)
+    {
+        updateMainStreamEvents(data.originEvents, data.dynamics);
+        return m_mainStreamEvents;
+    }
+
 private:
     void updateOffStreamEvents(const mpe::PlaybackEventsMap& events, const mpe::DynamicLevelLayers& dynamics) override;
     void updateMainStreamEvents(const mpe::PlaybackEventsMap& events, const mpe::DynamicLevelLayers& dynamics) override;

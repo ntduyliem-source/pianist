@@ -28,8 +28,8 @@ const noteName=p=>['C','C♯','D','D♯','E','F','F♯','G','G♯','A','A♯','B
       });}
       postMessage(data,...rest){if(data?.type==='load'&&data.timeline)window.gradeLoads.push({generation:data.generation,timeline:data.timeline});return super.postMessage(data,...rest);}
     };
-    const connect=AudioWorkletNode.prototype.connect;
-    AudioWorkletNode.prototype.connect=function(...args){const result=connect.apply(this,args);if(args[0]===this.context.destination&&!this.gradeMeter){const m=this.gradeMeter=this.context.createAnalyser();m.fftSize=2048;connect.call(this,m);window.gradeMeters.push(m);}return result;};
+    const connect=AudioNode.prototype.connect;
+    AudioNode.prototype.connect=function(...args){const result=connect.apply(this,args);if(args[0]===this.context.destination&&!this.gradeMeter){const m=this.gradeMeter=this.context.createAnalyser();m.fftSize=2048;connect.call(this,m);window.gradeMeters.push(m);}return result;};
     window.gradeAudioPeak=()=>Math.max(0,...window.gradeMeters.map(m=>{const a=new Float32Array(m.fftSize);m.getFloatTimeDomainData(a);return Math.max(...a.map(Math.abs));}));
   });
   const nav=name=>page.getByRole('navigation',{name:'Chức năng chính'}).getByRole('button',{name,exact:true});

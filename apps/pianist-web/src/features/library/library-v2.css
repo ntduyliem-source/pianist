@@ -165,15 +165,15 @@
 }
 .library-view-list .score-grid {
   grid-template-columns: 1fr;
-  gap: 8px;
+  gap: 4px;
 }
 .library-view-list .score-card {
   flex-direction: row;
   align-items: center;
 }
 .library-view-list .score-cover {
-  width: 72px;
-  height: 90px;
+  width: 50px;
+  height: 64px;
   flex: none;
   padding: 5px;
 }

@@ -67,6 +67,7 @@ public:
     muse::async::Notification isPlayAllowedChanged() const override;
 
     bool isPlaying() const override;
+    void updateWebPlaybackPosition(double seconds, bool playing) override;
     muse::async::Notification isPlayingChanged() const override;
 
     void reset() override;
@@ -155,6 +156,7 @@ private:
     bool loopBoundariesSet() const;
 
     void onNotationChanged();
+    void onProjectChanged();
     void onPartChanged(const engraving::Part* part);
     void onPlaybackStatusChanged();
 
@@ -235,6 +237,13 @@ private:
 
     muse::async::Notification m_isPlayAllowedChanged;
     muse::async::Notification m_isPlayingChanged;
+    bool m_webPlaying = false;
+#ifdef Q_OS_WASM
+    bool m_webAudioReady = false;
+#else
+    bool m_webAudioReady = true;
+#endif
+    uint64_t m_sequenceGeneration = 0;
     muse::async::Notification m_totalPlayTimeChanged;
     muse::async::Notification m_currentTempoChanged;
     muse::async::Channel<muse::audio::secs_t, muse::midi::tick_t> m_currentPlaybackPositionChanged;

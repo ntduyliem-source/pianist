@@ -8,6 +8,7 @@ const root=path.resolve(__dirname,'../../..'),out=path.resolve(process.env.PIANI
   const browser=await chromium.launch({channel:process.env.PIANIST_BROWSER_CHANNEL||'msedge',headless:true,args:['--enable-unsafe-swiftshader']});
   const context=await browser.newContext({viewport:{width:390,height:844},isMobile:true,hasTouch:true});
   await context.addInitScript(()=>{
+    localStorage.setItem('pianist.sound','musescore');
     window.midiRequests=0;window.midiOpens=0;
     const input={id:'ux-test-piano',name:'UX Test Piano',state:'connected',connection:'closed',type:'input',onmidimessage:null,
       async open(){window.midiOpens++;this.connection='open';return this;},async close(){this.connection='closed';return this;}};
@@ -16,8 +17,8 @@ const root=path.resolve(__dirname,'../../..'),out=path.resolve(process.env.PIANI
     const audioSession=new EventTarget();audioSession.type='auto';audioSession.state='active';
     Object.defineProperty(navigator,'audioSession',{configurable:true,value:audioSession});
     window.nativeMeters=[];
-    const connect=AudioWorkletNode.prototype.connect;
-    AudioWorkletNode.prototype.connect=function(...args){const r=connect.apply(this,args);if(args[0]===this.context.destination&&!this.uxMeter){const m=this.uxMeter=this.context.createAnalyser();m.fftSize=2048;connect.call(this,m);window.nativeMeters.push(m);}return r;};
+    const connect=AudioNode.prototype.connect;
+    AudioNode.prototype.connect=function(...args){const r=connect.apply(this,args);if(args[0]===this.context.destination&&!this.uxMeter){const m=this.uxMeter=this.context.createAnalyser();m.fftSize=2048;connect.call(this,m);window.nativeMeters.push(m);}return r;};
     window.audioPeak=()=>Math.max(0,...window.nativeMeters.map(m=>{const a=new Float32Array(m.fftSize);m.getFloatTimeDomainData(a);return Math.max(...a.map(Math.abs));}));
   });
   const page=await context.newPage(),checks=[],errors=[],report={checks,errors,emulated:true,browser:browser.version()};
@@ -48,8 +49,8 @@ const root=path.resolve(__dirname,'../../..'),out=path.resolve(process.env.PIANI
       for(const mode of ['Danh sách','Ảnh nhỏ','Ảnh lớn']){await page.getByRole('button',{name:mode,exact:true}).click();await capture(`library-${w}-${mode==='Danh sách'?'list':mode==='Ảnh nhỏ'?'small':'large'}`);}
     }
     await page.setViewportSize({width:390,height:844});await page.getByRole('button',{name:'Danh sách',exact:true}).click();
-    await page.getByRole('combobox',{name:'Giao diện sáng tối'}).selectOption('dark');assert.equal(await page.locator('html').getAttribute('data-theme'),'dark');await capture('library-dark-mobile');
-    await page.getByRole('combobox',{name:'Giao diện sáng tối'}).selectOption('light');
+    await page.getByRole('button',{name:/Chuyển giao diện/}).click();assert.equal(await page.locator('html').getAttribute('data-theme'),'dark');await capture('library-dark-mobile');
+    await page.getByRole('button',{name:/Chuyển giao diện/}).click();
     await page.reload();await versions.waitFor();assert.equal(await versions.inputValue(),await versions.locator('option').nth(1).getAttribute('value'));
     assert.equal(await page.locator('html').getAttribute('data-theme'),'light');
     check('Actual version-specific thumbnails, 3 layouts at 360/390/768/1440, persistent theme and version');
@@ -59,9 +60,9 @@ const root=path.resolve(__dirname,'../../..'),out=path.resolve(process.env.PIANI
     const original=await score();await page.locator('#select').click();await page.locator('#up').click();const edited=await score();assert.notDeepEqual(original,edited);
     await page.addStyleTag({content:'#diagnostics{display:none!important}'});
     await page.evaluate(()=>{window.themeCalls=[];const a=window.pianist,original=a.setUiTheme;a.setUiTheme=value=>{const result=original(value);window.themeCalls.push({value,result});return result;};});
-    await page.getByRole('combobox',{name:'Giao diện sáng tối'}).selectOption('dark');await capture('editor-dark-mobile');
+    await page.getByRole('button',{name:/Chuyển giao diện/}).click();await capture('editor-dark-mobile');
     assert.deepEqual(await page.evaluate(()=>window.themeCalls.at(-1)),{value:'dark',result:1});
-    await page.getByRole('combobox',{name:'Giao diện sáng tối'}).selectOption('light');
+    await page.getByRole('button',{name:/Chuyển giao diện/}).click();
     assert.deepEqual(await score(),edited,'theme never changes music');
     await page.getByRole('button',{name:'MIDI: Chưa kết nối',exact:true}).click();
     await page.getByRole('button',{name:'Kết nối MIDI',exact:true}).click();

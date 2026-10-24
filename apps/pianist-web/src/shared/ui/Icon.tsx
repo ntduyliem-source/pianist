@@ -2,6 +2,21 @@ import type React from 'react';
 
 export function Icon({ name }: { name: string }) {
   const paths: Record<string, React.ReactNode> = {
+    sun: (
+      <>
+        <circle cx="12" cy="12" r="4" />
+        <path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5L19 19M5 19l1.5-1.5M17.5 6.5L19 5" />
+      </>
+    ),
+    moon: <path d="M20.5 13.5A9 9 0 0 1 10.5 3 9 9 0 1 0 20.5 13.5Z" />,
+    stop: <rect x="5" y="5" width="14" height="14" rx="1" />,
+    listen: (
+      <>
+        <path d="M4 14v-3a8 8 0 0 1 16 0v3" />
+        <rect x="3" y="12" width="4" height="8" rx="2" />
+        <rect x="17" y="12" width="4" height="8" rx="2" />
+      </>
+    ),
     score: (
       <>
         <path d="M6 3h9l4 4v14H6zM14 3v5h5M9 12h7M9 16h7" />

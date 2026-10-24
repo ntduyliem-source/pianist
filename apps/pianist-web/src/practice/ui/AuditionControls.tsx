@@ -24,7 +24,7 @@ export function AuditionControls({
   onLoop,
 }: AuditionControlsProps) {
   return (
-    <div className="v2-audition" role="region" aria-label="Nghe bằng MuseScore">
+    <div className="v2-audition" role="region" aria-label="Nghe bản nhạc">
       <span className="v2-time">{time(audition.elapsedMs)}</span>
       <input
         type="range"

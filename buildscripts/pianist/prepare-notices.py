@@ -40,7 +40,7 @@ for name in tracked:
     shutil.copy2(source, destination)
     inventory.append({'package': source.parent.relative_to(ROOT).as_posix(), 'file': destination.relative_to(OUT).as_posix(),
                       'sha256': hashlib.sha256(source.read_bytes()).hexdigest(), 'sourceNotice': True})
-for package in ('react', 'react-dom', 'scheduler', 'fflate'):
+for package in ('react', 'react-dom', 'scheduler', 'fflate', 'tone', '@tonejs/piano', 'tslib', 'standardized-audio-context', 'automation-events'):
     source = ROOT / 'apps/pianist-web/node_modules' / package
     metadata = json.loads((source / 'package.json').read_text(encoding='utf-8'))
     license_file = next(p for p in source.iterdir() if p.name.lower() in ('license', 'license.txt', 'license.md'))

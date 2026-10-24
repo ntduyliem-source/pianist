@@ -52,6 +52,9 @@ public:
     virtual void reset() = 0;
 
     virtual muse::async::Channel<muse::audio::secs_t, muse::midi::tick_t> currentPlaybackPositionChanged() const = 0;
+    // Web sample output publishes its actual output clock through the native
+    // cursor pipeline; desktop controllers never call this adapter.
+    virtual void updateWebPlaybackPosition(double, bool) {}
 
     virtual muse::audio::TrackSequenceId currentTrackSequenceId() const = 0;
     virtual muse::async::Notification currentTrackSequenceIdChanged() const = 0;

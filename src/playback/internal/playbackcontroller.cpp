@@ -133,28 +133,17 @@ void PlaybackController::init()
         onNotationChanged();
     });
 
-    globalContext()->currentProjectChanged().onNotify(this, [this]() {
-        if (m_currentSequenceId != -1) {
-            resetCurrentSequence();
-        }
-
-        if (!globalContext()->currentProject()) {
-            return;
-        }
-
-        m_loadingProgress.start();
-
-        // On the web, audio may start after several projects have been opened.
-        // Discard sequences requested for a project that is no longer current.
-        const std::weak_ptr expectedProject = globalContext()->currentProject();
-        playback()->addSequence().onResolve(this, [this, expectedProject](const TrackSequenceId& sequenceId) {
-            if (expectedProject.expired() || expectedProject.lock() != globalContext()->currentProject()) {
-                playback()->removeSequence(sequenceId);
-                return;
-            }
-            setupNewCurrentSequence(sequenceId);
-        });
+    globalContext()->currentProjectChanged().onNotify(this, [this]() { onProjectChanged(); });
+#ifdef Q_OS_WASM
+    // Opening/editing a score must not queue synth tracks before the optional
+    // MS Basic resource exists. The web soundfont handshake dispatches this.
+    dispatcher()->reg(this, "web-audio-ready", [this]() {
+        if (m_webAudioReady) { return; }
+        m_webAudioReady = true;
+        profilesRepo()->refresh();
+        onProjectChanged();
     });
+#endif
 
     m_totalPlayTimeChanged.onNotify(this, [this]() {
         updateCurrentTempo();
@@ -171,6 +160,31 @@ void PlaybackController::init()
     });
 
     m_measureInputLag = configuration()->shouldMeasureInputLag();
+}
+
+void PlaybackController::onProjectChanged()
+{
+    const auto generation = ++m_sequenceGeneration;
+    if (m_currentSequenceId != -1) {
+        resetCurrentSequence();
+    }
+
+    if (!globalContext()->currentProject() || !m_webAudioReady) {
+        return;
+    }
+
+    m_loadingProgress.start();
+
+    // On the web, audio may start after several projects have been opened.
+    // Discard sequences requested for a project that is no longer current.
+    const std::weak_ptr expectedProject = globalContext()->currentProject();
+    playback()->addSequence().onResolve(this, [this, expectedProject, generation](const TrackSequenceId& sequenceId) {
+        if (generation != m_sequenceGeneration || expectedProject.expired() || expectedProject.lock() != globalContext()->currentProject()) {
+            playback()->removeSequence(sequenceId);
+            return;
+        }
+        setupNewCurrentSequence(sequenceId);
+    });
 }
 
 void PlaybackController::updateCurrentTempo()
@@ -202,10 +216,22 @@ Notification PlaybackController::isPlayAllowedChanged() const
 
 bool PlaybackController::isPlaying() const
 {
+    if (m_webPlaying) { return true; }
     if (!currentPlayer()) {
         return false;
     }
     return currentPlayer()->playbackStatus() == PlaybackStatus::Running;
+}
+
+void PlaybackController::updateWebPlaybackPosition(double seconds, bool playing)
+{
+    if (!m_notation) { return; }
+    if (m_webPlaying != playing) {
+        m_webPlaying = playing;
+        m_isPlayingChanged.notify();
+    }
+    m_currentTick = notationPlayback()->secToTick(seconds);
+    m_currentPlaybackPositionChanged.send(seconds, m_currentTick);
 }
 
 bool PlaybackController::isPaused() const
@@ -1800,6 +1826,9 @@ void PlaybackController::setIsExportingAudio(bool exporting)
 
 bool PlaybackController::canReceiveAction(const ActionCode& code) const
 {
+#ifdef Q_OS_WASM
+    if (code == "web-audio-ready") { return true; }
+#endif
     if (!m_masterNotation || !m_masterNotation->hasParts()) {
         return false;
     }

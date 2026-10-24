@@ -51,6 +51,7 @@ CI `.github/workflows/pianist-checks.yml` chạy cổng source trên push/PR/man
 | TypeScript/domain/UI contracts | `npm test`, `npm run build` trong `apps/pianist-web/` |
 | Library/version/validator grade | Python `tests/library/`, kiểm catalog/hash và bank parity tương ứng |
 | Native timing/cursor/tie | `native-time-ties.cjs`, `playback-sync.cjs`, `native-sheet-integrity.cjs` |
+| Chọn tiếng, tải/hủy/thử lại, mobile compact | `sound-output.cjs`, unit sample-output |
 | Practice audio/Stop/pedal | `native-preview.cjs`, `practice-stop.cjs` |
 | Grade picker/prefetch/advance | `grade-practice.cjs`, unit bank/selector/retry/settings |
 | Nhập/xuất ABC/MSCX | `format-integrity.cjs`, suites converter/import/export theo thay đổi |
@@ -101,3 +102,26 @@ python buildscripts/pianist/serve-web.py --directory artifacts/releases/pianist-
 Chọn thư mục release mới cho mỗi lần staging, không ghi đè một gói đã phát hành. `package-web.py` tính integrity cho đúng bytes hiện có; không phải compiler và không thể tự sửa binary cũ. `stage-release.py` kiểm source sạch/binary tối ưu và tạo source archive đúng commit.
 
 Sau khi phát hành GitHub Release và cập nhật `deploy/pages-release.json`, chờ workflow thành công rồi kiểm URL bằng release verifier + smoke browser. Manifest deploy là con trỏ release; không sửa version hoặc hash bằng phỏng đoán. Xem [quy trình Pages](../../deploy/PAGES.md).
+
+
+## Piano nhẹ và tiếng MuseScore
+
+`npm ci` áp dụng patch ghim ở `apps/pianist-web/patches/@tonejs+piano+0.2.1.patch`.
+Patch chỉ truyền lỗi tải sampler và giải phóng sampler/components khi dispose; giữ nguyên
+thuật toán keyDown/keyUp/pedal của upstream. Không bỏ postinstall khi chuẩn bị build.
+
+`install-piano-samples.py` lấy 30 mẫu Salamander v8 (A0–C8) theo commit và SHA-256
+trong `piano-samples.json`, tổng 5,621,632 bytes MP3. Release phục vụ tại `sound/piano/`,
+không phụ thuộc CDN lúc người dùng tập. Dữ liệu giải mã trong RAM lớn hơn file MP3;
+đổi bài phải dispose sampler cũ. Mẫu có giấy phép CC BY 3.0, ghi công Alexander Holm.
+
+MuseScore notation vẫn cần WASM để mở/sửa bản nhạc và xuất diễn tấu. Bỏ tick
+Tiếng MuseScore chỉ tránh tải engine âm thanh và MS Basic 51 MB; không tuyên bố
+loại bỏ toàn bộ MuseScore khỏi website. Tick được lưu theo trình duyệt, không khởi tạo
+âm thanh khi chỉ đọc thư viện. Chuyển output dừng bản đang nghe trước khi đổi.
+
+Tải asset, sample, khởi động AudioContext và native soundfont đều có giới hạn chờ.
+Stop/đổi màn/đổi output hủy quyền sở hữu lượt cũ; callback đến muộn không được tự phát.
+Lỗi nghe có nút thử lại tại cùng bài. Kiểm `sound-output.cjs` với cache mới để xác nhận
+mặc định không request `MuseAudio.js` hoặc `MS Basic.sf3`; các suite `native-*`
+chủ động chọn tiếng MuseScore để vẫn kiểm chính đường native.

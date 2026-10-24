@@ -22,6 +22,8 @@ APP = ROOT / 'apps/pianist-web'
 SCRIPTS = ROOT / 'buildscripts/pianist'
 BROWSER = ROOT / 'tests/browser/pianist'
 SUITES = {
+    'sample-preview': ('sample-preview.cjs', [], '?diagnostics=1#/library'),
+    'sound-output': ('sound-output.cjs', [], '?diagnostics=1#/library'),
     'ux-upgrade': ('ux-upgrade.cjs', [], '?diagnostics=1#/library'),
     'native-time-ties': ('native-time-ties.cjs', [], ''),
     'playback-sync': ('playback-sync.cjs', [], ''),

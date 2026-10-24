@@ -1,5 +1,10 @@
 import type { EngineBridge } from '../../../../packages/engine-bridge';
-import { NativeAudition, type AuditionState } from '../practice/native-audition';
+import {
+  NativeAudition,
+  type Audition,
+  type AuditionRange,
+  type AuditionState,
+} from '../practice/native-audition';
 import { activatePlaybackAudio } from '../platform/audio-session';
 
 export interface LibraryTrack {
@@ -17,13 +22,15 @@ export interface LibraryPlayerState {
   error: string;
 }
 type Options = {
+  activate?(): void;
+  audition?(bridge: EngineBridge, range: AuditionRange): Audition;
   prepare(
     data: { bytes: Uint8Array; filename: string },
     signal: AbortSignal,
   ): Promise<EngineBridge>;
   restore(): void;
 };
-/** One audition owner for the library. NativeAudition supplies the audio clock. */
+/** One audition owner for the library; each output supplies its audible clock. */
 export class LibraryPlayer {
   private state: LibraryPlayerState = {
     loading: false,
@@ -36,7 +43,7 @@ export class LibraryPlayer {
   private listeners = new Set<() => void>();
   private statusListeners = new Set<() => void>();
   private request?: AbortController;
-  private preview?: NativeAudition;
+  private preview?: Audition;
   private native?: AuditionState;
   snapshot = () => this.state;
   activitySnapshot = () => this.activity;
@@ -72,13 +79,23 @@ export class LibraryPlayer {
     this.listeners.forEach((fn) => fn());
   }
   async play(track: LibraryTrack): Promise<void> {
+    this.options.activate?.();
     activatePlaybackAudio();
     if (this.state.track?.id === track.id && this.preview && this.native) {
-      await this.preview.toggle(this.native);
+      const preview = this.preview;
+      try {
+        await preview.toggle(this.native);
+      } catch (error) {
+        if (this.preview === preview) this.fail(error);
+      }
       return;
     }
     this.stop();
     const request = (this.request = new AbortController());
+    const timeout = setTimeout(() => {
+      if (this.request === request && this.state.loading)
+        this.fail(Error('Chuẩn bị bài quá lâu. Bấm Thử lại; không cần đổi bài.'));
+    }, 90000);
     this.patch({ track, loading: true, error: '', positionMs: 0, durationMs: 0 });
     try {
       const data = await track.load(request.signal);
@@ -89,7 +106,9 @@ export class LibraryPlayer {
       // API accepts score time: use the last performed native measure instead.
       const durationMs = bridge.semantics().occurrences.at(-1)?.endMs ?? 0;
       if (!(durationMs > 0)) throw Error('Bản nhạc chưa có nội dung để nghe.');
-      const preview = (this.preview = new NativeAudition(bridge, {
+      const preview = (this.preview = (
+        this.options.audition ?? ((b, r) => new NativeAudition(b, r))
+      )(bridge, {
         startMs: 0,
         endMs: durationMs,
       }));
@@ -109,6 +128,8 @@ export class LibraryPlayer {
       await preview.start(1, false);
     } catch (error) {
       if (this.request === request && !request.signal.aborted) this.fail(error);
+    } finally {
+      clearTimeout(timeout);
     }
   }
   private fail(error: unknown) {
@@ -125,7 +146,7 @@ export class LibraryPlayer {
   pause() {
     // No native range exists while booting/resuming the first AudioContext.
     // Cancel that pending Play so an interruption cannot start it later.
-    if (this.state.loading && !this.native) {
+    if (this.state.loading) {
       this.stop();
       return;
     }

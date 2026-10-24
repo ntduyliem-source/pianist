@@ -7,6 +7,7 @@ import {
   type BundledScore,
 } from '../../platform/bundled-library';
 import * as storage from '../../platform/storage';
+import { Icon } from '../../shared/ui/Icon';
 
 export const bundledTrack = (song: BundledScore): LibraryTrack => ({
   id: 'bundled:' + song.id,
@@ -42,12 +43,16 @@ export function ListenButton({ track }: { track: LibraryTrack }) {
       disabled={selected && activity.loading}
       onClick={() => void ws.run(() => player.play(track))}
     >
-      {selected && activity.loading ? '…' : selected && activity.status === 'playing' ? 'Ⅱ' : '▶'}
+      {selected && activity.loading ? (
+        '…'
+      ) : (
+        <Icon name={selected && activity.status === 'playing' ? 'pause' : 'play'} />
+      )}
       <span>
         {selected && activity.loading
           ? 'Đang tải'
           : selected && activity.status === 'playing'
-            ? 'Pause'
+            ? 'Tạm dừng'
             : 'Nghe'}
       </span>
     </button>
@@ -75,7 +80,7 @@ export function LibraryPlayback() {
         {state.loading ? '…' : state.status === 'playing' ? 'Ⅱ' : '▶'}
       </button>
       <button aria-label="Dừng nghe thư viện" onClick={() => void ws.run(() => player.stop())}>
-        ■ Stop
+        <Icon name="stop" /> Dừng
       </button>
       <span className="library-player-time">{time(state.positionMs)}</span>
       <input
@@ -91,9 +96,10 @@ export function LibraryPlayback() {
       <span className="library-player-time">{time(state.durationMs)}</span>
       {(state.loading || state.error) && (
         <span role={state.error ? 'alert' : 'status'}>
-          {state.error || 'Đang chuẩn bị tiếng MuseScore…'}
+          {state.error || 'Đang chuẩn bị bản nhạc và âm thanh…'}
         </span>
       )}
+      {state.error && <button onClick={() => void ws.run(() => player.toggle())}>Thử lại</button>}
     </div>
   );
 }

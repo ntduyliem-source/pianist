@@ -14,7 +14,7 @@
   max-width: 1000px;
 }
 .exercise-intro h1 {
-  font-size: clamp(24px, 3vw, 32px);
+  font-size: 24px;
   font-weight: 600;
   margin: 0 0 8px;
 }
@@ -25,7 +25,7 @@
   margin: 0;
 }
 .exercise-total {
-  font-size: 32px;
+  font-size: 18px;
   color: #3766a7;
   white-space: nowrap;
 }
@@ -39,7 +39,7 @@
 .exercise-choices {
   max-width: 1000px;
   margin: 0 auto 24px;
-  padding: 24px;
+  padding: 18px;
   border: 1px solid #dbe2ed;
   border-radius: 12px;
   background: white;

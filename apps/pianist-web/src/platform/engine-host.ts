@@ -12,6 +12,7 @@ export interface NativeEngineCallbacks {
 }
 
 export interface NativeEngineConfig extends NativeEngineCallbacks {
+  deferAudio: boolean;
   screen: HTMLElement;
   wasmBinary: Uint8Array;
   onDocumentState(title: string, modified: boolean): void;
@@ -87,6 +88,7 @@ export class EngineHost {
       ...options.callbacks,
       screen,
       wasmBinary,
+      deferAudio: true,
       onDocumentState: (title, modified) => {
         doc.title = `${title}${modified ? ' *' : ''} — Pianist`;
         const currentScreen = doc.getElementById('screen');
@@ -94,16 +96,10 @@ export class EngineHost {
       },
     });
     this.runtime.exposeDiagnostics(api);
-    try {
-      await api.startAudioProcessing();
-    } catch (error) {
-      options.onAudioError();
-      throw error;
-    }
     const bridge = new EngineBridge(api);
     bridge.revision = options.currentRevision();
     const pointer = (event: PointerEvent) => {
-      api.Module.driver?.resume();
+      void api.Module.driver?.resume().catch(() => {});
       options.focus(
         event
           .composedPath()

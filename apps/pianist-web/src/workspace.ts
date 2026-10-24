@@ -25,6 +25,8 @@ import { PracticeSessions } from './application/session-lifecycle';
 import { PracticeRepository } from './application/practice-repository';
 import { GradeAudioLoan } from './application/grade-audio-loan';
 import { LibraryPlayer } from './application/library-player';
+import { createAudition } from './practice/audition-factory';
+import { bounded, soundSnapshot, unlockSound } from './platform/audio-output';
 import {
   createInitialWorkspaceState,
   type WorkspaceState,
@@ -48,12 +50,24 @@ export class Workspace {
   private readonly repository = new PracticeRepository();
   private readonly gradeAudio = new GradeAudioLoan();
   readonly libraryPlayer = new LibraryPlayer({
+    activate: () => {
+      unlockSound();
+    },
+    audition: createAudition,
     prepare: async (data, signal) => {
       this.requireInactiveSession();
       if (this.documentChange) throw Error('Chờ mở/lưu bản nhạc xong trước khi nghe.');
       await this.autosave(true);
       signal.throwIfAborted();
       const bridge = await this.ensureEngine(true);
+      signal.throwIfAborted();
+      if (soundSnapshot() === 'musescore')
+        await bounded(
+          bridge.api.startAudioProcessing(unlockSound()),
+          60000,
+          'Chưa tải được tiếng MuseScore. Thử lại hoặc bỏ chọn Tiếng MuseScore.',
+          signal,
+        );
       signal.throwIfAborted();
       this.requireInactiveSession();
       if (
@@ -70,6 +84,7 @@ export class Workspace {
         signal,
         !!this.state.current,
         data.filename,
+        soundSnapshot() === 'musescore',
       );
     },
     restore: () => this.restoreExerciseEditor(),
@@ -361,7 +376,8 @@ export class Workspace {
         this.measureDiagnostic('engine-ready', started);
         this.patch({ engineReady: true });
       },
-      onAudioError: () => this.patch({ engineFailed: true }),
+      onAudioError: () =>
+        this.patch({ error: 'Chưa tải được âm thanh. Có thể thử lại hoặc dùng piano nhẹ.' }),
       focus: this.focusEditor,
     });
   }
@@ -1200,7 +1216,22 @@ export class Workspace {
     this.requireInactiveSession();
     if (this.state.view !== 'practice' || this.state.practiceKind !== 'grade')
       throw Error('Đã rời màn tập theo grade.');
-    await this.gradeAudio.borrow(bridge, bytes, signal, !!this.state.current);
+    if (soundSnapshot() === 'musescore')
+      await bounded(
+        bridge.api.startAudioProcessing(unlockSound()),
+        60000,
+        'Chưa tải được tiếng MuseScore. Thử lại hoặc bỏ chọn Tiếng MuseScore.',
+        signal,
+      );
+    signal.throwIfAborted();
+    await this.gradeAudio.borrow(
+      bridge,
+      bytes,
+      signal,
+      !!this.state.current,
+      'exercise.mxl',
+      soundSnapshot() === 'musescore',
+    );
     this.patch({ busy: '' });
     return bridge;
   }

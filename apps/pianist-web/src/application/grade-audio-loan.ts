@@ -18,6 +18,7 @@ export class GradeAudioLoan {
     signal: AbortSignal,
     hasEditor: boolean,
     filename = 'exercise.mxl',
+    nativeAudio = true,
   ): Promise<EngineBridge> {
     signal.throwIfAborted();
     if (this.bridge && this.bridge !== bridge) throw Error('Engine nghe đã thay đổi.');
@@ -40,7 +41,7 @@ export class GradeAudioLoan {
         throw new DOMException('Đã đổi bài nghe.', 'AbortError');
     };
     const deadline = performance.now() + 20000;
-    while (!bridge.auditionState().available) {
+    while (nativeAudio && !bridge.auditionState().available) {
       check();
       if (performance.now() > deadline)
         throw Error('MuseScore chưa sẵn sàng phát bài. Bấm Nghe để thử lại.');

@@ -12,6 +12,7 @@ import type { Target } from '../../../../packages/practice-engine-v2';
 import type { Marker } from './feedback-v2';
 import { scorePositions } from './score-viewport';
 import { mapPlaybackTime } from './playback-time';
+import { bounded, unlockSound } from '../platform/audio-output';
 
 export interface AuditionRange {
   startMs: number;
@@ -129,7 +130,7 @@ export function auditionPresentation(
     const visit = visits[Math.max(0, lo - 1)]?.id ?? -1;
     for (const n of sounding ? (notesByVisit.get(visit) ?? []) : []) {
       if (n.atMs <= position && position < n.endMs) {
-        markers.set(n.anchor, { kind: 'playback', symbol: '•', label: 'Đang nghe MuseScore' });
+        markers.set(n.anchor, { kind: 'playback', symbol: '•', label: 'Đang nghe' });
       }
     }
     // A native measure-repeat symbol can sound without owning a new notehead.
@@ -158,16 +159,39 @@ export interface AuditionState extends PracticePlaybackState {
   notes: readonly PlaybackNote[];
   timeMap: readonly PlaybackTimePoint[];
 }
+export interface Audition {
+  readonly range: AuditionRange;
+  onChange: (state: AuditionState) => void;
+  onError: (error: unknown) => void;
+  start(speed: number, loop: boolean): Promise<void>;
+  toggle(state: AuditionState): Promise<void>;
+  seek(ms: number): void;
+  speed(value: number): void;
+  loop(value: boolean): void;
+  pause(): void;
+  stop(): void;
+}
 export class NativeAudition {
   private animation?: number;
   private disposed = false;
   private positionMs: number;
   private notes?: PlaybackNotes;
+  private preparingSince = 0;
+  private configured = false;
+  private pauseRequested = false;
   onChange = (_state: AuditionState) => {};
   onError = (_error: unknown) => {};
   constructor(
     readonly bridge: EngineBridge,
     readonly range: AuditionRange,
+    private readonly prepareAudio = async () => {
+      await bridge.api.startAudioProcessing(unlockSound());
+      await bounded(
+        bridge.api.Module.driver!.resume(),
+        5000,
+        'Chưa bật được âm thanh. Bấm Nghe để thử lại.',
+      );
+    },
   ) {
     this.positionMs = range.startMs;
   }
@@ -175,6 +199,13 @@ export class NativeAudition {
     if (this.disposed) return;
     try {
       const state = this.bridge.auditionState();
+      if (state.preparing) {
+        this.preparingSince ||= performance.now();
+        if (performance.now() - this.preparingSince > 30000)
+          throw Error(
+            'MuseScore chuẩn bị quá lâu. Bấm Nghe để thử lại, hoặc bỏ chọn Tiếng MuseScore.',
+          );
+      } else this.preparingSince = 0;
       if (state.error) throw Error(state.error);
       if (this.notes?.revision !== state.notesRevision) this.notes = this.bridge.auditionNotes();
       const driver = this.bridge.api.Module.driver;
@@ -212,17 +243,29 @@ export class NativeAudition {
     if (!this.disposed) this.animation = requestAnimationFrame(this.tick);
   };
   async start(speed: number, loop: boolean) {
-    await this.bridge.api.Module.driver?.resume();
+    await this.prepareAudio();
+    const deadline = performance.now() + 20000;
+    while (!this.disposed && !this.bridge.auditionState().available) {
+      if (performance.now() >= deadline)
+        throw Error('MuseScore chưa chuẩn bị xong bài. Bấm Nghe để thử lại.');
+      await new Promise((resolve) => setTimeout(resolve, 25));
+    }
     if (this.disposed) return;
+    this.bridge.api.Module.driver?.setMuted?.(false);
     this.bridge.audition('range', this.range.startMs / 1000, this.range.endMs / 1000);
+    this.configured = true;
     this.bridge.audition('tempo', speed);
     this.bridge.audition('loop', Number(loop));
     this.notes = this.bridge.auditionNotes();
-    this.bridge.audition('play');
+    if (!this.pauseRequested) this.bridge.audition('play');
     this.tick();
   }
   async toggle(state: AuditionState) {
-    await this.bridge.api.Module.driver?.resume();
+    await bounded(
+      this.bridge.api.Module.driver!.resume(),
+      5000,
+      'Chưa bật được âm thanh. Thử lại.',
+    );
     if (this.disposed) return;
     this.bridge.audition(state.status === 'playing' || state.preparing ? 'pause' : 'play');
     this.refresh();
@@ -239,7 +282,9 @@ export class NativeAudition {
     this.bridge.audition('loop', Number(value));
   }
   pause() {
-    if (!this.disposed && this.bridge.practiceActive) this.bridge.audition('pause');
+    this.pauseRequested = true;
+    if (!this.disposed && this.configured && this.bridge.practiceActive)
+      this.bridge.audition('pause');
   }
   stop() {
     if (this.disposed) return;

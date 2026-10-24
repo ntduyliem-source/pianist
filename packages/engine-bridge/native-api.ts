@@ -36,6 +36,14 @@ export interface PlaybackNotes {
   events: PlaybackNote[];
   timeMap: PlaybackTimePoint[];
 }
+export interface SampleMidiEvent {
+  atMs: number;
+  channel: number;
+  opcode: number;
+  data1: number;
+  data2: number;
+}
+export interface SamplePlayback extends PlaybackNotes { midi: SampleMidiEvent[] }
 export interface PlaybackFrame {
   epoch: number;
   sequenceId: number;
@@ -52,6 +60,7 @@ export interface NativePracticeAudio {
   stopPreview(): void;
 }
 export interface NativeAudioDriver extends NativePracticeAudio {
+  setMuted?(muted: boolean): void;
   playbackFrame(epoch: number): PlaybackFrame | null;
 }
 
@@ -59,6 +68,7 @@ export type NativeTextCallback =
   | 'onEditorPlayback'
   | 'onPracticePlayback'
   | 'onPracticePlaybackNotes'
+  | 'onSamplePlayback'
   | 'onPreparedSnapshot'
   | 'onPreparedSemantics'
   | 'onScoreSemantics'
@@ -88,7 +98,9 @@ export interface NativeApi {
   setPracticeActive(active: boolean): number;
   setUiTheme?(theme: 'light' | 'dark'): number;
   midiInput(status: number, data1: number, data2: number): number;
-  startAudioProcessing(): Promise<void>;
+  startAudioProcessing(context?: AudioContext): Promise<void>;
+  getSamplePlayback?(speed: number): number;
+  sampleEditorPosition?(seconds: number, playing: boolean): void;
   getEditorPlayback?(): number;
   editorPlayback?(command: string, value?: number): number;
   getPracticePlayback?(): number;

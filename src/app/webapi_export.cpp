@@ -97,6 +97,12 @@ EMSCRIPTEN_KEEPALIVE
 bool getPracticePlaybackNotes() { return WebApi::instance()->getPracticePlaybackNotes(); }
 
 EMSCRIPTEN_KEEPALIVE
+bool getSamplePlayback(double speed) { return WebApi::instance()->getSamplePlayback(speed); }
+
+EMSCRIPTEN_KEEPALIVE
+void sampleEditorPosition(double seconds, bool playing) { WebApi::instance()->sampleEditorPosition(seconds, playing); }
+
+EMSCRIPTEN_KEEPALIVE
 bool practicePlayback(const char* command, double value, double end) { return command && WebApi::instance()->practicePlayback(command, value, end); }
 
 EMSCRIPTEN_KEEPALIVE

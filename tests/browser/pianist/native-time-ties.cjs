@@ -12,10 +12,21 @@ const base=process.env.PIANIST_URL||'http://127.0.0.1:8787/pianist.html';
  const report={base,checks:[],errors:[]};page.on('pageerror',e=>report.errors.push(String(e)));
  const check=message=>{report.checks.push(message);console.log('PASS',message);};
  try{
+  await page.addInitScript(()=>{
+   localStorage.setItem('pianist.sound','musescore');window.coldMeters=[];
+   const connect=AudioNode.prototype.connect;
+   AudioNode.prototype.connect=function(...args){const r=connect.apply(this,args);if(args[0]===this.context.destination&&!this.coldMeter){const m=this.coldMeter=this.context.createAnalyser();m.fftSize=2048;connect.call(this,m);window.coldMeters.push(m);}return r;};
+   window.coldPeak=()=>Math.max(0,...window.coldMeters.map(m=>{const a=new Float32Array(m.fftSize);m.getFloatTimeDomainData(a);return Math.max(...a.map(Math.abs));}));
+  });
   await page.goto(base+'?diagnostics=1#/library');
   await page.locator('#file').setInputFiles(path.join(root,'tests/fixtures/pianist/m0/piano.mxl'));
   await page.getByRole('region',{name:'Phát bản nhạc trong editor'}).waitFor({timeout:180000});
   await page.locator('.loading-overlay').waitFor({state:'hidden',timeout:180000});
+  await page.getByRole('button',{name:'Phát nhạc',exact:true}).click();
+  await page.getByRole('button',{name:'Tạm dừng phát nhạc',exact:true}).waitFor({timeout:90000});
+  await page.waitForFunction(()=>window.coldPeak()>1e-5,null,{timeout:15000});
+  check('Cold editor first click produces native MS Basic PCM without switching songs');
+  await page.getByRole('button',{name:'Dừng phát nhạc',exact:true}).click();
   await page.evaluate(()=>{window.nativeAuditRead=(method,callback)=>{const api=window.pianist,old=api.Module[callback];let result;
    api.Module[callback]=json=>result=JSON.parse(json);try{if(!api[method]())throw Error(method+' failed');return result;}finally{api.Module[callback]=old;}};});
   async function load(relative){

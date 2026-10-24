@@ -1,0 +1,159 @@
+{
+  "repository": "https://github.com/tambien/Piano",
+  "commit": "0cd2c034f820c53e83ab22f5c13bd490b9e4de85",
+  "velocityLayers": [
+    8
+  ],
+  "files": [
+    {
+      "path": "A0v8.mp3",
+      "bytes": 317747,
+      "sha256": "0e7869511bd3342a63fcb7df2fa1e9c4ab656d93a32d6dc472adbf98e10364d3"
+    },
+    {
+      "path": "A1v8.mp3",
+      "bytes": 307723,
+      "sha256": "ed415a636cd1ac0f461f55ab3997be6fa1f9877728077a91b89b1114e4339ae2"
+    },
+    {
+      "path": "A2v8.mp3",
+      "bytes": 239448,
+      "sha256": "ea3b12700be31a2d7fa1db672ced04802368f75f08162ce3afd20ee2c56b6b1e"
+    },
+    {
+      "path": "A3v8.mp3",
+      "bytes": 231394,
+      "sha256": "298d319fca1ca6934ea5b07d7100002f8dfdbf8cf36fa068c8df8b5a9eb49c13"
+    },
+    {
+      "path": "A4v8.mp3",
+      "bytes": 173442,
+      "sha256": "c5270f435ab7100e6fa4a363d985b7a41ab1c20ea0d12dd8fc1106e7e753cd7c"
+    },
+    {
+      "path": "A5v8.mp3",
+      "bytes": 135673,
+      "sha256": "4d8c5386a638ec0fd1f70081bf4b51cae2b8f6acf7ffc849052c37bb49da142c"
+    },
+    {
+      "path": "A6v8.mp3",
+      "bytes": 73955,
+      "sha256": "1b9106440f720f7120c7ef723e4b8c95bb887e4b3d3d57d6f84bf56d34ec9535"
+    },
+    {
+      "path": "A7v8.mp3",
+      "bytes": 44296,
+      "sha256": "08d8de462746153691f3ce4b3d822633713a324960f8861a172d46ffbe1bb02a"
+    },
+    {
+      "path": "C1v8.mp3",
+      "bytes": 288101,
+      "sha256": "eca440cecae64d3665235abc0001a1d2ec9e2717ef772268755115ba80acb785"
+    },
+    {
+      "path": "C2v8.mp3",
+      "bytes": 314035,
+      "sha256": "41664af78045c416e98c990d0bab0b6c26c61da63e2a7d62d6dd4dafc5a82167"
+    },
+    {
+      "path": "C3v8.mp3",
+      "bytes": 212578,
+      "sha256": "790bf54430365989ae14fad704264a46bce4baedced5298d6d700a1d3c7600c6"
+    },
+    {
+      "path": "C4v8.mp3",
+      "bytes": 219187,
+      "sha256": "497464f6d8e0455c6b72b35bf7fed1bbd14a382b90bb389c3c88ebf9ffc8a566"
+    },
+    {
+      "path": "C5v8.mp3",
+      "bytes": 172477,
+      "sha256": "9748a6d4668a571291983c3dbe3907cb3597a17f33cdb63672f25043c685b028"
+    },
+    {
+      "path": "C6v8.mp3",
+      "bytes": 95919,
+      "sha256": "583f570482c22e94fe37df0e31cadb005ba9f9ce742cc465311ba06c235d994d"
+    },
+    {
+      "path": "C7v8.mp3",
+      "bytes": 48513,
+      "sha256": "86faf0061f6aa4e47c8b50a656650bc3a274dbd3281668fcdd7bdebec9eaf9ec"
+    },
+    {
+      "path": "C8v8.mp3",
+      "bytes": 56836,
+      "sha256": "e1ecc25a213df0fe9493de7ffb101678a5d974fbbee84f0cf21e05fa9e7e40fc"
+    },
+    {
+      "path": "Ds1v8.mp3",
+      "bytes": 345891,
+      "sha256": "2675110d0f94adfafdd66a0c6d273c6897ccfc0f7419762e9c61590e01a9a690"
+    },
+    {
+      "path": "Ds2v8.mp3",
+      "bytes": 317075,
+      "sha256": "acd6c32d9a88675c1ae326f14727aae0a3667cc70f9ef7a39b6bc5c1a3a0342c"
+    },
+    {
+      "path": "Ds3v8.mp3",
+      "bytes": 225299,
+      "sha256": "dcca048dc25de903f86efddfac6b4320597deb4f300cea70f215dd1d900cdca6"
+    },
+    {
+      "path": "Ds4v8.mp3",
+      "bytes": 197277,
+      "sha256": "423aeb40f9719f32892eb313236b56e39a363e13616fccc7f721ab0427eb9150"
+    },
+    {
+      "path": "Ds5v8.mp3",
+      "bytes": 142556,
+      "sha256": "88ed771278770d796255976303d3645252f2b4299cf865df51d8e9ad44df84d1"
+    },
+    {
+      "path": "Ds6v8.mp3",
+      "bytes": 104470,
+      "sha256": "fecea39137ab19a7a45a5fe97e9b338eddbab7bd9bb15746cf185f49ddcfa4e9"
+    },
+    {
+      "path": "Ds7v8.mp3",
+      "bytes": 57956,
+      "sha256": "93af8aeafe102ac69c7ccfc447589a118392b4eb37d3a03cecc222cab8842d44"
+    },
+    {
+      "path": "Fs1v8.mp3",
+      "bytes": 304678,
+      "sha256": "9e908e308a21501ca3cd936d22922a83041674a1076528a137a31135d1b0d1a1"
+    },
+    {
+      "path": "Fs2v8.mp3",
+      "bytes": 292012,
+      "sha256": "710685dd1a82b0dfa849c0056b50f4e6836c818c393e582b3c07ff17ddcacd04"
+    },
+    {
+      "path": "Fs3v8.mp3",
+      "bytes": 227534,
+      "sha256": "e632f2dc532a3158693c026b93698c8ed6c6fc03c9854bb75c887542cef118da"
+    },
+    {
+      "path": "Fs4v8.mp3",
+      "bytes": 176999,
+      "sha256": "eefc4e8bc71867c06dbb5c926bff50ccde942d19ee885e958ec110186cf631b1"
+    },
+    {
+      "path": "Fs5v8.mp3",
+      "bytes": 130413,
+      "sha256": "7a0830da67ed80a322f9bd3718ef0050c8ba8a4588f7f33599b1719ad0fbdb67"
+    },
+    {
+      "path": "Fs6v8.mp3",
+      "bytes": 83193,
+      "sha256": "f6dd2f92614e9e07f10e0928f31ec887f6f5540952a2991b478d824ad3ffb087"
+    },
+    {
+      "path": "Fs7v8.mp3",
+      "bytes": 84955,
+      "sha256": "47ded87b96753c7f763b2f70ee777fd406fb369e0e29d957375a07e8c91bbcc6"
+    }
+  ]
+}

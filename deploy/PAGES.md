@@ -34,8 +34,8 @@ inventory; không yêu cầu header riêng. Build này dùng Qt/WASM single-thre
 đã được kiểm chạy thực tế trên host không có COOP/COEP. Với hosting Caddy,
 tiếp tục dùng chế độ kiểm header mặc định.
 
-Kiểm thêm trên browser thật: mở thư viện, mở bài đầu tiên, nghe được MS Basic,
-tạm dừng/tua/dừng, đổi sang tập và thử ABC. Đàn MIDI thật cần người dùng cấp
+Kiểm thêm trên browser thật: mở thư viện, nghe piano nhẹ ở lần đầu,
+tạm dừng/tua/dừng, bật “Tiếng MuseScore” rồi nghe MS Basic. Đổi sang tập và thử ABC. Đàn MIDI thật cần người dùng cấp
 quyền trên origin HTTPS; các lượt nghiệm thu tự động dùng MIDI mô phỏng.
 
 Các bài đóng gói chỉ lấy từ `scores/library/catalog.json`; report ghi rõ bản

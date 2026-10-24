@@ -2,6 +2,8 @@
 // Immutable practice data and drawings from the same, currently edited score.
 #include "webapi.h"
 #include "practicetiming.h"
+#include "audio/engine/internal/synthesizers/fluidsynth/fluidsequencer.h"
+#include <cmath>
 
 #include <QJsonArray>
 #include <QJsonDocument>
@@ -53,11 +55,12 @@ bool WebApi::getScoreSemantics()
     return snapshotFor(m_currentProject, false, "onScoreSemantics");
 }
 
-bool WebApi::getPracticePlaybackNotes()
+static QJsonObject playbackNotesFor(const project::INotationProjectPtr& project,
+                                    const std::vector<std::pair<double, double>>& mapping,
+                                    unsigned revision, bool sampled)
 {
-    if (!m_practiceActive || !m_currentProject || !m_auditionConfigured) { return false; }
-    const auto playback = m_currentProject->masterNotation()->playback();
-    auto* score = m_currentProject->masterNotation()->notation()->elements()->msScore();
+    const auto playback = project->masterNotation()->playback();
+    auto* score = project->masterNotation()->notation()->elements()->msScore();
     std::map<uintptr_t, QString> ids;
     std::map<uintptr_t, const engraving::Note*> sources;
     int measureIndex = 0;
@@ -87,8 +90,30 @@ bool WebApi::getPracticePlaybackNotes()
                 score->utick2utime(measure->endTick().ticks() + offset) * 1000.0 });
         }
     }
-    QJsonArray events;
+    QJsonArray events, midi;
+    int trackIndex = 0;
     for (const auto& track : playback->existingTrackIdSet()) {
+        if (sampled && (track == playback->metronomeTrackId() || playback->isChordSymbolsTrack(track))) { continue; }
+        if (sampled) {
+            const auto& data = playback->trackPlaybackData(track);
+            muse::audio::synth::FluidSequencer sequencer;
+            // Exactly the piano branch used by FluidSynth: dynamics in note
+            // velocity, actual MPE articulations, native CC64/66 and note-offs.
+            sequencer.init(data.setupData, std::nullopt, false);
+            for (const auto& entry : sequencer.exportEvents(data)) {
+                for (const auto& value : entry.second) {
+                    for (const auto& event : std::get<muse::midi::Event>(value).toMIDI10()) {
+                        const int opcode = int(event.opcode());
+                        if (opcode != 8 && opcode != 9 && opcode != 11 && opcode != 14) { continue; }
+                        midi.append(QJsonObject{{"atMs", double(entry.first) / 1000.0},
+                            {"channel", trackIndex * 16 + int(event.channel())}, {"opcode", opcode},
+                            {"data1", opcode == 8 || opcode == 9 ? int(event.note()) : opcode == 11 ? int(event.index()) : 0},
+                            {"data2", opcode == 8 || opcode == 9 ? int(event.velocity7()) : int(event.data())}});
+                    }
+                }
+            }
+            ++trackIndex;
+        }
         // Read the very same MPE events delivered to FluidSequencer. In
         // particular, do not substitute CompatMidiRender's different timings.
         for (const auto& entry : playback->trackPlaybackData(track).originEvents) {
@@ -97,7 +122,7 @@ bool WebApi::getPracticePlaybackNotes()
                 if (!event) { continue; }
                 const auto& arrangement = event->arrangementCtx();
                 const auto source = sources.find(arrangement.sourceId);
-                if (source == sources.end() || !arrangement.hasStart()) { continue; }
+                if ((!sampled && source == sources.end()) || !arrangement.hasStart()) { continue; }
                 const double start = double(arrangement.actualTimestamp) / 1000.0;
                 const double end = arrangement.hasEnd()
                     ? double(arrangement.actualTimestamp + arrangement.actualDuration) / 1000.0
@@ -124,18 +149,52 @@ bool WebApi::getPracticePlaybackNotes()
                 events.append(QJsonObject{{"anchors", anchors}, {"spans", spans}, {"atMs", start},
                     {"endMs", end}, {"pitch", int(std::clamp(muse::mpe::ZERO_PITCH_LEVEL_MIDI_EQUIVALENT
                         + event->pitchCtx().nominalPitchLevel / float(muse::mpe::PITCH_LEVEL_STEP), 0.f, 127.f))}});
-                if (events.size() > 200000) { return false; }
+                if (events.size() > 200000) { return {}; }
             }
         }
     }
     QJsonArray timeMap;
-    for (const auto& point : m_auditionTimeMapping) {
+    for (const auto& point : mapping) {
         timeMap.append(QJsonObject{{"referenceMs", point.first * 1000.0}, {"playbackMs", point.second * 1000.0}});
     }
-    const QJsonObject result{{"source", "musescore-mpe"}, {"revision", int(m_auditionNotesRevision)},
+    QJsonObject result{{"source", "musescore-mpe"}, {"revision", int(revision)},
         {"events", events}, {"timeMap", timeMap}};
+    if (sampled) { result.insert("midi", midi); }
+    return result;
+}
+
+bool WebApi::getPracticePlaybackNotes()
+{
+    if (!m_practiceActive || !m_currentProject || !m_auditionConfigured) { return false; }
+    const auto result = playbackNotesFor(m_currentProject, m_auditionTimeMapping, m_auditionNotesRevision, false);
     const auto callback = emscripten::val::module_property("onPracticePlaybackNotes");
-    if (callback.isUndefined() || callback.isNull()) { return false; }
+    if (result.isEmpty() || callback.isUndefined() || callback.isNull()) { return false; }
+    callback(QJsonDocument(result).toJson(QJsonDocument::Compact).toStdString());
+    return true;
+}
+
+bool WebApi::getSamplePlayback(double speed)
+{
+    if (!m_currentProject || !std::isfinite(speed) || speed < 0.25 || speed > 2.0 || m_auditionConfigured) { return false; }
+    const auto playback = m_currentProject->masterNotation()->playback();
+    auto* score = m_currentProject->masterNotation()->notation()->elements()->msScore();
+    const double previous = playback->tempoMultiplier();
+    playback->setTempoMultiplier(1.0);
+    const auto reference = practiceTimePoints(score);
+    playback->setTempoMultiplier(speed);
+    const auto current = practiceTimePoints(score);
+    std::vector<std::pair<double, double>> mapping;
+    if (reference.size() == current.size()) {
+        for (size_t i = 0; i < current.size(); ++i) {
+            mapping.emplace_back(reference[i].atMs / 1000.0, current[i].atMs / 1000.0);
+        }
+    }
+    // Generate events at the requested tempo, not scaled wall-clock times.
+    // Restoring tempo changes neither the score nor the editor undo history.
+    const auto result = playbackNotesFor(m_currentProject, mapping, m_revision, true);
+    playback->setTempoMultiplier(previous);
+    const auto callback = emscripten::val::module_property("onSamplePlayback");
+    if (mapping.size() < 2 || result.isEmpty() || callback.isUndefined() || callback.isNull()) { return false; }
     callback(QJsonDocument(result).toJson(QJsonDocument::Compact).toStdString());
     return true;
 }

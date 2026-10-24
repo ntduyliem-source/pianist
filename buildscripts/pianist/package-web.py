@@ -22,6 +22,14 @@ paths += [p.relative_to(OUT).as_posix() for d in ['app', 'distr'] for p in (OUT 
           if p.is_file() and p.suffix in ('.js', '.css')]
 paths += [p.relative_to(OUT).as_posix() for p in (OUT / 'examples').glob('*') if p.is_file()]
 paths += [p.relative_to(OUT).as_posix() for p in (OUT / 'notices').rglob('*') if p.is_file()]
+sample_manifest = json.loads((ROOT / 'buildscripts/pianist/piano-samples.json').read_text(encoding='utf-8'))
+for entry in sample_manifest['files']:
+    path = 'sound/piano/' + entry['path']
+    data = (OUT / path).read_bytes()
+    if len(data) != entry['bytes'] or hashlib.sha256(data).hexdigest() != entry['sha256']:
+        raise ValueError('Piano sample mismatch: ' + path)
+    paths.append(path)
+paths += ['sound/piano/manifest.json', 'sound/piano/NOTICE.txt']
 paths += [p.relative_to(OUT).as_posix() for p in (OUT / 'practice-sources').rglob('*') if p.is_file()]
 paths += ['score-formats/manifest.json'] + ['score-formats/' + entry['path'] for entry in formats['files']]
 renderer = None

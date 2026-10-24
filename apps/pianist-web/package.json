@@ -8,18 +8,22 @@
     "test": "node --import tsx --test tests/*.test.ts",
     "test:midi": "node --import tsx --test tests/engine-v2.test.ts tests/integration-v2.test.ts",
     "format": "prettier --write src",
-    "format:check": "prettier --check src"
+    "format:check": "prettier --check src",
+    "postinstall": "patch-package"
   },
   "dependencies": {
+    "@tonejs/piano": "0.2.1",
     "fflate": "0.8.3",
     "react": "19.3.1",
-    "react-dom": "19.3.1"
+    "react-dom": "19.3.1",
+    "tone": "14.9.17"
   },
   "devDependencies": {
     "@types/node": "^24.0.0",
     "@types/react": "^19.2.0",
     "@types/react-dom": "^19.2.0",
     "fake-indexeddb": "6.2.6",
+    "patch-package": "8.0.1",
     "prettier": "3.6.2",
     "tsx": "^4.20.6",
     "typescript": "7.0.2",

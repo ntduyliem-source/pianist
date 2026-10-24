@@ -398,6 +398,12 @@ bool WebApi::getEditorPlayback()
     return true;
 }
 
+void WebApi::sampleEditorPosition(double seconds, bool playing)
+{
+    if (m_practiceActive || !m_currentProject || !std::isfinite(seconds) || seconds < 0) { return; }
+    playbackController()->updateWebPlaybackPosition(seconds, playing);
+}
+
 void WebApi::checkAudioReady()
 {
     const auto notify = [](bool ready) {
@@ -409,10 +415,12 @@ void WebApi::checkAudioReady()
     if (!audioPlayback()->isAudioStarted()) { notify(false); return; }
     // The driver's "inited" flag precedes asynchronous soundfont installation.
     // Ask the actual audio engine's resource list before creating score tracks.
-    audioPlayback()->availableInputResources().onResolve(this, [notify](const audio::AudioResourceMetaList& resources) {
-        notify(std::any_of(resources.begin(), resources.end(), [](const audio::AudioResourceMeta& resource) {
+    audioPlayback()->availableInputResources().onResolve(this, [this, notify](const audio::AudioResourceMetaList& resources) {
+        const bool ready = std::any_of(resources.begin(), resources.end(), [](const audio::AudioResourceMeta& resource) {
             return resource.id == "MS Basic";
-        }));
+        });
+        if (ready) { dispatcher()->dispatch("web-audio-ready"); }
+        notify(ready);
     }).onReject(this, [notify](int, const std::string&) { notify(false); });
 }
 

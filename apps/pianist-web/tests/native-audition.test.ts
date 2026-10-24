@@ -163,7 +163,9 @@ test('tempo and seek transitions keep the last audible position until the matchi
     } as unknown as NativeApi;
     const bridge = new EngineBridge(api);
     bridge.practiceActive = true;
-    const session = new NativeAudition(bridge, { startMs: 0, endMs: 30000 }),
+    const session = new NativeAudition(bridge, { startMs: 0, endMs: 30000 }, () =>
+        api.Module.driver!.resume(),
+      ),
       changes: AuditionState[] = [];
     session.onChange = (s) => changes.push(s);
     await session.start(1, false);
@@ -290,7 +292,9 @@ test('Stop during AudioContext resume prevents a delayed native play', async () 
   } as unknown as NativeApi;
   const bridge = new EngineBridge(api);
   bridge.practiceActive = true;
-  const session = new NativeAudition(bridge, { startMs: 0, endMs: 2000 });
+  const session = new NativeAudition(bridge, { startMs: 0, endMs: 2000 }, () =>
+    api.Module.driver!.resume(),
+  );
   const pending = session.start(1, false);
   session.stop();
   resume();

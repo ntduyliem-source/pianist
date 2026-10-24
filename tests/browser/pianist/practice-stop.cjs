@@ -12,6 +12,7 @@ const hiddenOnly=process.argv.includes('--hidden-controls'),reportFile=path.join
   const report={url,browser:browser.version(),checks:[],errors:[],audio:[]};let unblock=()=>{};
   page.on('pageerror',e=>report.errors.push(String(e)));page.on('dialog',d=>d.type()==='beforeunload'?d.accept():d.dismiss());
   await context.addInitScript(()=>{
+    localStorage.setItem('pianist.sound','musescore');
     addEventListener('DOMContentLoaded',()=>{const s=document.createElement('style');s.textContent='#diagnostics{display:none!important}';document.head.appendChild(s);});
     window.stopLoads=[];window.stopReplies=[];window.stopMeters=[];
     const OriginalWorker=window.Worker;

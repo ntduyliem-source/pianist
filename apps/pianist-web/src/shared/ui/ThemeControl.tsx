@@ -1,24 +1,16 @@
 import { useSyncExternalStore } from 'react';
-import {
-  themeSnapshot,
-  subscribeTheme,
-  setTheme,
-  type ThemePreference,
-} from '../../platform/theme';
+import { themeSnapshot, subscribeTheme, setTheme } from '../../platform/theme';
+import { Icon } from './Icon';
 export function ThemeControl() {
   const theme = useSyncExternalStore(subscribeTheme, themeSnapshot);
   return (
-    <label className="theme-control">
-      <span aria-hidden="true">{theme.mode === 'dark' ? '☾' : '☀'}</span>
-      <select
-        aria-label="Giao diện sáng tối"
-        value={theme.preference}
-        onChange={(e) => setTheme(e.target.value as ThemePreference)}
-      >
-        <option value="system">Hệ thống</option>
-        <option value="light">Sáng</option>
-        <option value="dark">Tối</option>
-      </select>
-    </label>
+    <button
+      className="icon-button theme-toggle"
+      title={theme.mode === 'dark' ? 'Chuyển giao diện sáng' : 'Chuyển giao diện tối'}
+      aria-label={theme.mode === 'dark' ? 'Chuyển giao diện sáng' : 'Chuyển giao diện tối'}
+      onClick={() => setTheme(theme.mode === 'dark' ? 'light' : 'dark')}
+    >
+      <Icon name={theme.mode === 'dark' ? 'sun' : 'moon'} />
+    </button>
   );
 }

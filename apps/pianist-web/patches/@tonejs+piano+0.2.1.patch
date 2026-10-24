@@ -1,0 +1,80 @@
+diff --git a/node_modules/@tonejs/piano/build/piano/Piano.js b/node_modules/@tonejs/piano/build/piano/Piano.js
+index b0a634e..fd5a8e7 100644
+--- a/node_modules/@tonejs/piano/build/piano/Piano.js
++++ b/node_modules/@tonejs/piano/build/piano/Piano.js
+@@ -90,7 +90,7 @@ export class Piano extends ToneAudioNode {
+                 this._keybed.load(),
+                 this._harmonics.load(),
+             ]);
+-            this._loaded = true;
++            if (!this.disposed) this._loaded = true;
+         });
+     }
+     /**
+@@ -189,6 +189,15 @@ export class Piano extends ToneAudioNode {
+         }
+         return this;
+     }
++    dispose() {
++        this.stopAll();
++        this._loaded = false;
++        this._strings.dispose();
++        this._pedal.dispose();
++        this._keybed.dispose();
++        this._harmonics.dispose();
++        return super.dispose();
++    }
+     stopAll() {
+         this.pedalUp();
+         this._heldNotes.forEach((_, midi) => {
+diff --git a/node_modules/@tonejs/piano/build/piano/String.js b/node_modules/@tonejs/piano/build/piano/String.js
+index dd2cbce..38a28bf 100644
+--- a/node_modules/@tonejs/piano/build/piano/String.js
++++ b/node_modules/@tonejs/piano/build/piano/String.js
+@@ -13,18 +13,23 @@ export class PianoString extends ToneAudioNode {
+         this.samples = options.samples;
+     }
+     load() {
+-        return new Promise(onload => {
++        return new Promise((onload, onerror) => {
+             this._sampler = this.output = new Sampler({
+                 attack: 0,
+                 baseUrl: this.samples,
+                 curve: 'exponential',
+                 onload,
++                onerror,
+                 release: 0.4,
+                 urls: this._urls,
+                 volume: 3,
+             });
+         });
+     }
++    dispose() {
++        this._sampler?.dispose();
++        return super.dispose();
++    }
+     triggerAttack(note, time, velocity) {
+         this._sampler.triggerAttack(note, time, velocity);
+     }
+diff --git a/node_modules/@tonejs/piano/build/piano/Strings.js b/node_modules/@tonejs/piano/build/piano/Strings.js
+index 8072eb6..64df25e 100644
+--- a/node_modules/@tonejs/piano/build/piano/Strings.js
++++ b/node_modules/@tonejs/piano/build/piano/Strings.js
+@@ -54,11 +54,16 @@ export class PianoStrings extends PianoComponent {
+             this._activeNotes.delete(note);
+         }
+     }
++    dispose() {
++        this._strings.forEach(string => string.dispose());
++        this._activeNotes.clear();
++        return super.dispose();
++    }
+     _internalLoad() {
+         return __awaiter(this, void 0, void 0, function* () {
+             yield Promise.all(this._strings.map((s) => __awaiter(this, void 0, void 0, function* () {
+                 yield s.load();
+-                s.connect(this.output);
++                if (!this.disposed) s.connect(this.output);
+             })));
+         });
+     }

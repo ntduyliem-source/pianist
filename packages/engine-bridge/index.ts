@@ -13,6 +13,7 @@ import type {
   EditorPlaybackState,
   PracticePlaybackState,
   PlaybackNotes,
+  SamplePlayback,
 } from './native-api';
 import {
   decodeEditorPlayback,
@@ -32,6 +33,8 @@ export type {
   PlaybackTimePoint,
   PlaybackNotes,
   PlaybackFrame,
+  SamplePlayback,
+  SampleMidiEvent,
 } from './native-api';
 export { decodePlaybackFrame } from './playback-decoder';
 
@@ -83,6 +86,18 @@ export class EngineBridge {
         'Không đọc được lịch phát nốt MuseScore.',
       ),
     );
+  }
+  samplePlayback(speed: number): SamplePlayback {
+    const json = this.captureText('onSamplePlayback',
+      () => this.api.getSamplePlayback?.(speed) ?? 0, 'Không đọc được lịch piano. Hãy tải lại ứng dụng.');
+    const result = decodePlaybackNotes(json) as SamplePlayback;
+    if (!Array.isArray(result.midi) || result.midi.length > 500000 || result.midi.some(e =>
+      !Number.isFinite(e.atMs) || !Number.isSafeInteger(e.channel) || e.channel < 0 ||
+      ![8, 9, 11, 14].includes(e.opcode) || !Number.isSafeInteger(e.data1) ||
+      e.data1 < 0 || e.data1 > 127 || !Number.isSafeInteger(e.data2) || e.data2 < 0 || e.data2 > 16383))
+      throw Error('Lịch piano từ MuseScore không hợp lệ.');
+    result.midi.sort((a,b) => a.atMs-b.atMs);
+    return result;
   }
   audition(command: AuditionCommand, value = 0, end = 0): void {
     if (!this.practiceActive || !this.api.practicePlayback?.(command, value, end))

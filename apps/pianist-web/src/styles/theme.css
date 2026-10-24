@@ -72,6 +72,75 @@ dialog,
 .appbar-end {
   gap: 8px;
 }
+.sound-control {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 40px;
+  font-size: 12px;
+  white-space: nowrap;
+  cursor: pointer;
+  color: var(--muted);
+}
+.sound-control input {
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  accent-color: var(--blue);
+}
+.appbar-end .theme-toggle {
+  width: 36px;
+  height: 36px;
+  border: 0;
+  border-radius: 8px;
+  color: var(--text);
+}
+.theme-toggle .icon {
+  width: 20px;
+  height: 20px;
+}
+.practice-v2 .v2-mode button[aria-pressed='false'] {
+  background: var(--surface);
+  color: var(--muted);
+}
+.practice-v2 .v2-mode button[aria-pressed='true'] {
+  background: var(--accent-soft);
+  color: var(--blue);
+}
+.practice-v2 .v2-listen-icon {
+  display: inline-flex;
+}
+.practice-v2 .v2-transport .icon {
+  width: 17px;
+  height: 17px;
+}
+.practice-v2 .exercise-session-bar {
+  padding-block: 4px;
+  gap: 8px;
+}
+.practice-v2 .exercise-session-bar button {
+  font-size: 12px;
+}
+.library-player .icon {
+  width: 16px;
+  height: 16px;
+}
+@media (pointer: fine) and (min-width: 700px) {
+  .practice-v2 button {
+    min-height: 36px;
+    padding: 6px 10px;
+  }
+  .practice-v2 .v2-transport {
+    padding-block: 5px;
+  }
+  .practice-v2 .v2-sheet-tools {
+    padding-block: 4px;
+  }
+  .practice-v2 .v2-icon {
+    width: 36px;
+    min-width: 36px;
+  }
+}
 .appbar nav button,
 .brand,
 .editor-meta strong {
@@ -105,16 +174,6 @@ dialog,
 }
 .midi-status.connected {
   color: var(--success);
-}
-.theme-control {
-  display: inline-flex;
-  gap: 4px;
-  align-items: center;
-}
-.theme-control select {
-  max-width: 108px;
-  font-size: 12px;
-  min-height: 40px;
 }
 .device-dialog {
   width: min(460px, calc(100vw - 24px));
@@ -327,6 +386,27 @@ dialog,
     margin-left: auto;
     gap: 6px;
   }
+  .appbar-end > .icon-button:not(.theme-toggle) {
+    display: none;
+  }
+  .sound-control {
+    font-size: 11px;
+    gap: 4px;
+  }
+  .brand .edition {
+    display: none;
+  }
+  .brand {
+    gap: 5px;
+  }
+  .appbar-end {
+    gap: 4px;
+  }
+  .appbar-end .theme-toggle {
+    min-width: 40px;
+    width: 40px;
+    height: 44px;
+  }
   .appbar nav {
     order: 3;
     width: 100%;
@@ -341,12 +421,6 @@ dialog,
   .appbar-end .icon-button {
     width: 32px;
     height: 40px;
-  }
-  .theme-control > span {
-    display: none;
-  }
-  .theme-control select {
-    width: 85px;
   }
   .midi-status {
     min-height: 40px;

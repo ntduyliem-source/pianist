@@ -76,6 +76,8 @@ public:
     bool editorPlayback(const std::string& command, double value);
     bool getPracticePlayback();
     bool getPracticePlaybackNotes();
+    bool getSamplePlayback(double speed);
+    void sampleEditorPosition(double seconds, bool playing);
     bool practicePlayback(const std::string& command, double value, double end);
     void checkAudioReady();
     void addSoundFont(const std::string& uri);

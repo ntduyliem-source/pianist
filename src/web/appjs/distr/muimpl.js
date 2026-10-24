@@ -59,7 +59,7 @@ function setupRpc(Module)
     Module.driver_worker_rpcChannel = new MessageChannel();
 }
 
-async function setupDriver(Module) 
+async function setupDriver(Module, context)
 {
     Module.driver = AudioDriver;
 
@@ -74,9 +74,9 @@ async function setupDriver(Module)
     }
 
     if (config.MUSE_MODULE_AUDIO_WORKER == "ON") {
-        await AudioDriver.setup(Module.config, Module.driver_worker_rpcChannel.port1);
+        await AudioDriver.setup(Module.config, Module.driver_worker_rpcChannel.port1, context);
     } else {
-        await AudioDriver.setup(Module.config, Module.main_worker_rpcChannel.port2);
+        await AudioDriver.setup(Module.config, Module.main_worker_rpcChannel.port2, context);
     }
 
 }
@@ -124,6 +124,7 @@ const MuImpl = {
             },
 
             soundFont: opt.soundFont,
+            deferAudio: opt.deferAudio,
             onWebCommand: opt.onWebCommand,
             onDocumentState: opt.onDocumentState,
             onRevisionChanged: opt.onRevisionChanged,
@@ -145,6 +146,7 @@ const MuImpl = {
     },
 
     _onStartApp: async function() {
+        if (this.Module.deferAudio) return;
         console.info("STEP 1: Begin on onStartApp")
         await setupDriver(this.Module);
         console.info("STEP 1.1: End setupDriver")
@@ -202,7 +204,14 @@ const MuImpl = {
         }
     },
 
-    startAudioProcessing: async function() {
+    startAudioProcessing: async function(context) {
+        if (this.Module.deferAudio && !this.Module.driverSetup) {
+            this.Module.driverSetup = setupDriver(this.Module, context).catch(error => {
+                this.Module.driverSetup = undefined;
+                throw error;
+            });
+        }
+        if (this.Module.driverSetup) await this.Module.driverSetup;
         if (!this.Module.audioRequested) {
             this.Module.audioRequested = true;
             if (this.Module.driver?.inited) {
@@ -212,7 +221,18 @@ const MuImpl = {
                 this.Module.isNeedStartAudio = true;
             }
         }
-        await waitForAudioReady(this.Module);
+        if (this.Module.retrySoundFont && this.Module.driver?.inited) {
+            this.Module.retrySoundFont = false;
+            this.Module.ccall('addSoundFont', '', ['string'], [this.Module.soundFont]);
+        }
+        try { await waitForAudioReady(this.Module); }
+        catch (error) {
+            // Retry the soundfont request; a failed audio load never poisons
+            // the notation engine or requires switching to a different song.
+            this.Module.audioRequested = false;
+            this.Module.retrySoundFont = true;
+            throw error;
+        }
     }
 }
 

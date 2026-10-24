@@ -25,6 +25,8 @@ const MuApi = {
     editorPlayback: (command, value = 0) => MuImpl.Module.ccall('editorPlayback', 'number', ['string', 'number'], [command, value]),
     getPracticePlayback: () => MuImpl.Module.ccall('getPracticePlayback', 'number', [], []),
     getPracticePlaybackNotes: () => MuImpl.Module.ccall('getPracticePlaybackNotes', 'number', [], []),
+    getSamplePlayback: speed => MuImpl.Module.ccall('getSamplePlayback', 'number', ['number'], [speed]),
+    sampleEditorPosition: (seconds, playing) => MuImpl.Module.ccall('sampleEditorPosition', null, ['number', 'number'], [seconds, Number(playing)]),
     practicePlayback: (command, value = 0, end = 0) => MuImpl.Module.ccall('practicePlayback', 'number', ['string', 'number', 'number'], [command, value, end]),
 
     // Start audio

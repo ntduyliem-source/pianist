@@ -12,17 +12,21 @@ import { workspace as ws } from '../workspace';
 import type { PracticeController } from './controller-v2';
 import { feedback } from './feedback-v2';
 import { Sheet } from './Sheet';
+import { Icon } from '../shared/ui/Icon';
 import { MidiStatus } from '../shared/ui/MidiStatus';
 import { PracticePiano } from './PracticePiano';
 import { CalibrationView } from './CalibrationView';
 import { simulateMidi } from './midi-simulation-v2';
 import { scorePositions, beatPosition } from './score-viewport';
 import {
-  NativeAudition,
+  type Audition,
   auditionRange,
   auditionPresentation,
   type AuditionState,
 } from './native-audition';
+import { createAudition } from './audition-factory';
+import { bounded, soundSnapshot, subscribeSound, unlockSound } from '../platform/audio-output';
+import { practicePiano } from '../platform/sample-piano';
 import { NumberField } from './NumberField';
 import { PracticeFeedback } from './ui/PracticeFeedback';
 import { PedalToggle } from './ui/PedalToggle';
@@ -88,7 +92,7 @@ export function Practice({
   const ownedSession = useRef<PracticeController | undefined>(undefined);
   const root = useRef<HTMLElement>(null),
     dialog = useRef<HTMLDialogElement>(null),
-    preview = useRef<NativeAudition | null>(null),
+    preview = useRef<Audition | null>(null),
     working = useRef<symbol | undefined>(undefined);
   const listenRequest = useRef<AbortController | null>(null),
     stoppingNow = useRef(false);
@@ -196,7 +200,7 @@ export function Practice({
       ? audition.preparing
         ? 'Chuẩn bị nghe…'
         : audition.status === 'playing'
-          ? 'Đang nghe MuseScore'
+          ? 'Đang nghe'
           : 'Nghe · tạm dừng'
       : count
         ? `Đếm vào · ${count}`
@@ -254,7 +258,7 @@ export function Practice({
   useEffect(() => {
     const check = () => {
       try {
-        setNativeReady(!!exercise || !!ws.bridge?.auditionState().available);
+        setNativeReady(!!exercise || !!ws.bridge);
       } catch {
         setNativeReady(false);
       }
@@ -325,6 +329,7 @@ export function Practice({
   }, [focus]);
 
   const start = async (simulationDelta?: number, releaseReference = false) => {
+    unlockSound();
     exercise?.onStart?.();
     stopPreview();
     setPanel(null);
@@ -349,7 +354,17 @@ export function Practice({
     const s = ws.sessions.create({
       timeline: next,
       title: snapshot.title,
-      nativeAudio: async () => (await ws.ensureEngine(true)).practiceAudio(),
+      nativeAudio: async () => {
+        if (soundSnapshot() === 'piano') return practicePiano;
+        const bridge = await ws.ensureEngine(true);
+        await bounded(
+          bridge.api.startAudioProcessing(unlockSound()),
+          60000,
+          'Chưa tải được tiếng MuseScore. Thử lại.',
+        );
+        bridge.api.Module.driver?.setMuted?.(false);
+        return bridge.practiceAudio();
+      },
       onComplete: (r) => {
         void persist(r, true);
       },
@@ -371,6 +386,7 @@ export function Practice({
     void ws.run(() => start(exercise.simulation?.deltaMs, exercise.simulation?.reference));
   }, [exercise?.autoStart]);
   const toggle = async () => {
+    unlockSound();
     stopPreview();
     if (!active) await start();
     else if (playing) session!.pause();
@@ -431,7 +447,19 @@ export function Practice({
       refresh((n) => n + 1);
     }
   };
+  useEffect(
+    () =>
+      subscribeSound(() => {
+        listenRequest.current?.abort();
+        preview.current?.stop();
+        preview.current = null;
+        setAudition(null);
+        setPreparingListen(false);
+      }),
+    [],
+  );
   const listen = async () => {
+    unlockSound();
     if (preview.current && audition) {
       await preview.current.toggle(audition);
       return;
@@ -440,11 +468,20 @@ export function Practice({
     const request = new AbortController();
     listenRequest.current = request;
     setPreparingListen(true);
+    const deadline = setTimeout(() => {
+      if (listenRequest.current !== request) return;
+      request.abort();
+      preview.current?.stop();
+      preview.current = null;
+      setAudition(null);
+      setPreparingListen(false);
+      ws.patch({ error: 'Chuẩn bị quá lâu. Bấm Nghe để thử lại, hoặc đổi tiếng trên header.' });
+    }, 90000);
     try {
       const bridge = exercise ? await exercise.prepareListen(request.signal) : ws.bridge;
       request.signal.throwIfAborted();
       if (!bridge) return;
-      const p = new NativeAudition(
+      const p = createAudition(
         bridge,
         auditionRange(snapshot, c.fromMeasure, c.toMeasure, listenWhole),
       );
@@ -470,6 +507,7 @@ export function Practice({
     } catch (e) {
       if (!request.signal.aborted) throw e;
     } finally {
+      clearTimeout(deadline);
       if (listenRequest.current === request) {
         listenRequest.current = null;
         setPreparingListen(false);
@@ -578,22 +616,28 @@ export function Practice({
           }
           onClick={act(toggle)}
         >
-          <span aria-hidden="true">{playing ? 'Ⅱ' : '▶'}</span>
+          <Icon name={playing ? 'pause' : 'play'} />
           <span className="v2-play-label">{playing ? 'Tạm dừng' : active ? 'Tiếp' : 'Tập'}</span>
         </button>
         {stopButton}
         <button
           className="v2-listen"
           disabled={
-            active || busy || stopping || exercise?.loading || !nativeReady || audition?.preparing
+            active ||
+            busy ||
+            stopping ||
+            exercise?.loading ||
+            !nativeReady ||
+            preparingListen ||
+            audition?.preparing
           }
           aria-busy={!nativeReady || preparingListen || audition?.preparing}
           title={
             !nativeReady
-              ? 'Đang chuẩn bị âm thanh MuseScore'
+              ? 'Đang chuẩn bị bản nhạc'
               : active
                 ? 'Kết thúc lượt để nghe mẫu'
-                : 'Nghe bằng MuseScore'
+                : 'Nghe bản nhạc'
           }
           aria-label={
             audition?.status === 'playing'
@@ -606,7 +650,7 @@ export function Practice({
           onClick={act(listen)}
         >
           <span className="v2-listen-icon" aria-hidden="true">
-            {audition?.status === 'playing' ? 'Ⅱ' : '♫'}
+            <Icon name={audition?.status === 'playing' ? 'pause' : 'listen'} />
           </span>
           <span>Nghe</span>
         </button>
@@ -757,7 +801,7 @@ export function Practice({
         </select>
       </div>
       {!focus && auditionControls}
-      {exercise && !focus && <div className="exercise-source">{exercise.details}</div>}
+
       {parsed.error && (
         <p role="alert" className="v2-alert">
           {parsed.error}{' '}
@@ -835,6 +879,7 @@ export function Practice({
         </div>
         <p className="practice-score-name">{snapshot.title}</p>
         {focus && auditionControls}
+        {exercise && <div className="exercise-source">{exercise.details}</div>}
         <div className="v2-row v2-session-actions">
           <button
             disabled={busy || stopping || !t}

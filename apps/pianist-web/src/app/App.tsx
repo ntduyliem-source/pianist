@@ -2,6 +2,8 @@ import React, { useEffect, useRef, useState, useSyncExternalStore } from 'react'
 import { workspace as ws } from '../workspace';
 import { MidiStatus } from '../shared/ui/MidiStatus';
 import { ThemeControl } from '../shared/ui/ThemeControl';
+import { SoundControl } from '../shared/ui/SoundControl';
+import { editorCommand } from '../application/editor-audition';
 import { LibraryPlayback } from '../features/library/LibraryPlayback';
 import { download } from '../platform/files';
 import { TuneImportDialog } from '../platform/TuneImportDialog';
@@ -89,10 +91,7 @@ export function App() {
         event.preventDefault();
         event.stopImmediatePropagation();
         if (!event.repeat && !ws.state.busy && ws.bridge)
-          void ws.run(() => {
-            ws.bridge!.api.Module.driver?.resume();
-            ws.bridge!.playback('toggle');
-          });
+          void ws.run(() => editorCommand(ws.bridge!, 'toggle'));
         return;
       }
       if (!(event.ctrlKey || event.metaKey) || document.querySelector('dialog[open]')) return;
@@ -207,6 +206,7 @@ export function App() {
           </button>
         </nav>
         <div className="appbar-end">
+          <SoundControl />
           <MidiStatus />
           <ThemeControl />
           <button

@@ -10,7 +10,7 @@ export async function checkedAsset(
   const expected = release.files.find((f) => f.path === path);
   if (!expected)
     throw Error('Bản phát hành thiếu tài nguyên MuseScore. Hãy hoàn tất build rồi tải lại trang.');
-  const response = await fetcher(path);
+  const response = await fetcher(path, { signal: AbortSignal.timeout(60000) });
   if (!response.ok) throw Error('Không tải được ' + path);
   const bytes = new Uint8Array(await response.arrayBuffer());
   const hash = [...new Uint8Array(await crypto.subtle.digest('SHA-256', bytes))]
@@ -23,7 +23,7 @@ export async function checkedAsset(
   return bytes;
 }
 export async function loadEngineAssets(): Promise<Uint8Array> {
-  const response = await fetch('release.json');
+  const response = await fetch('release.json', { signal: AbortSignal.timeout(15000) });
   if (!response.ok) throw Error('Chưa có bản đóng gói hoàn chỉnh. Chạy build-pianist rồi mở lại.');
   const release = (await response.json()) as Release;
   // Verify the pair before executing either half. A dev build or an incomplete

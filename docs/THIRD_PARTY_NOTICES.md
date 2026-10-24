@@ -60,7 +60,16 @@ release verification checks their hashes against those pins.
 records its SHA-256 in `SOURCE.json`, and supplies the locked build scripts and
 dependency metadata. Qt source is identified at
 [Qt 6.10.2 source distribution](https://download.qt.io/official_releases/qt/6.10/6.10.2/single/).
+The light piano output uses Tone.js 14.9.17 and @tonejs/piano 0.2.1 (MIT), with
+the Salamander Grand Piano v3 samples by Alexander Holm (CC BY 3.0), distributed
+by tambien/Piano. The 30 original MP3 sample hashes and upstream commit are
+pinned in buildscripts/pianist/piano-samples.json. Full attribution ships in
+sound/piano/NOTICE.txt; runtime licenses ship in notices/javascript/.
+
 This bundle does not claim to contain the full Qt SDK/source or prove the whole
 static linked dependency graph. Review against
 [Qt's open-source distribution obligations](https://www.qt.io/development/open-source-lgpl-obligations)
 before a public distribution. No hosting or public release has been performed.
+
+The pinned @tonejs/piano 0.2.1 patch in apps/pianist-web/patches forwards sampler
+load errors and disposes sampler/components; it does not change note/pedal algorithms.

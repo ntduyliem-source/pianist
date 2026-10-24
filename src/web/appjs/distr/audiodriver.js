@@ -2,7 +2,10 @@ import {NativePlaybackClock} from './native-playback-clock.js';
 
 async function URLFromFiles(files) {
     const promises = files.map(file =>
-        fetch(file).then(response => response.text())
+        fetch(file, {signal: AbortSignal.timeout(30000)}).then(response => {
+            if (!response.ok) throw Error('Không tải được âm thanh MuseScore: ' + file);
+            return response.text();
+        })
     );
 
     const texts = await Promise.all(promises);
@@ -15,6 +18,8 @@ let AudioDriver = (function () {
 
     let audioContext = null;
     let processor = null;
+    let output = null;
+    let muted = true;
     const playbackClock = new NativePlaybackClock();
     let previewRequest = 0, previewOrder = 0;
     const previewWaiters = new Map();
@@ -39,7 +44,8 @@ let AudioDriver = (function () {
                     './distr/audio_worklet_processor.js'
                 ]);
 
-                await audioContext.audioWorklet.addModule(code)
+                try { await audioContext.audioWorklet.addModule(code); }
+                finally { URL.revokeObjectURL(code); }
                 processor = new AudioWorkletNode(audioContext, 'musedriver-processor', {
                                 numberOfInputs: 0,
                                 numberOfOutputs: 1,
@@ -48,7 +54,7 @@ let AudioDriver = (function () {
                 console.log("[processor-main] create AudioWorkletNode for audio_worklet_processor")
 
             } catch (error) {
-                console.error(error)
+                throw error;
             }
 
             // driver (processor) -> main
@@ -89,9 +95,13 @@ let AudioDriver = (function () {
 
         open: function() {
             console.log("[driver]", "open")
-            processor.connect(audioContext.destination)
+            output ??= audioContext.createGain();
+            output.gain.value = muted ? 0 : 1;
+            processor.connect(output);
+            output.connect(audioContext.destination);
             audioContext.resume()
         },
+        setMuted: function(value) { muted = value; if (output) output.gain.setValueAtTime(muted ? 0 : 1, audioContext.currentTime); },
 
         resume: function() {
             console.log("[driver]", "resume")

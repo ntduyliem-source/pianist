@@ -19,6 +19,8 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 muse_create_module(appjs)
+set_source_files_properties(../../framework/audio/engine/internal/synthesizers/fluidsynth/fluidsequencer.cpp
+    PROPERTIES SKIP_UNITY_BUILD_INCLUSION ON)
 
 target_sources(appjs PRIVATE
     appjsmodule.cpp
@@ -26,4 +28,7 @@ target_sources(appjs PRIVATE
     webapi.cpp
     webapi.h
     practicesnapshot.cpp
+    # Reuse MuseScore's MIDI articulation/pedal converter for web sample output.
+    # No FluidSynth device, soundfont or audio worker is linked into this adapter.
+    ../../framework/audio/engine/internal/synthesizers/fluidsynth/fluidsequencer.cpp
 )
