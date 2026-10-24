@@ -22,6 +22,7 @@ APP = ROOT / 'apps/pianist-web'
 SCRIPTS = ROOT / 'buildscripts/pianist'
 BROWSER = ROOT / 'tests/browser/pianist'
 SUITES = {
+    'library-range-ux': ('library-range-ux.cjs', [], '?diagnostics=1#/library'),
     'sample-preview': ('sample-preview.cjs', [], '?diagnostics=1#/library'),
     'sound-output': ('sound-output.cjs', [], '?diagnostics=1#/library'),
     'ux-upgrade': ('ux-upgrade.cjs', [], '?diagnostics=1#/library'),

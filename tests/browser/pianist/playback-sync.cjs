@@ -62,7 +62,7 @@ const out=path.resolve(process.env.PIANIST_QA_DIR||path.join(root,'artifacts/pla
   assert(samples.some(s=>s.ui>=23000&&s.ui<24000));
   const aligned=samples.filter(s=>s.frame?.status===2&&s.ui>=23000).map(s=>Math.abs(s.ui-s.frame.positionSeconds*s.frame.tempoMultiplier*1000));
   assert(Math.max(...aligned)<80,'UI seek follows the output clock');report.measurements.seek=samples;
-  await stop();await page.getByRole('button',{name:'Thiết lập',exact:true}).click();await field('Từ ô nhịp',6);await field('Đến ô nhịp',8);await page.getByRole('button',{name:'Xong',exact:true}).click();
+  await stop();await page.getByRole('button',{name:'Thiết lập',exact:true}).click();await page.getByRole('button',{name:/Chọn đoạn · ô/}).click();await field('Từ ô nhịp',6);await field('Đến ô nhịp',8);await page.getByRole('button',{name:'Áp dụng',exact:true}).click();
   await record();await play();await page.getByRole('button',{name:'Lặp khi nghe',exact:true}).click();await page.waitForTimeout(10000);samples=await collect();
   const a=merry.occurrences.find(o=>o.measure===5).startMs,b=merry.occurrences.find(o=>o.measure===7).endMs;
   const audible=samples.filter(s=>s.ui!==null&&s.frame?.status===2&&s.frame.epoch===s.state.clockEpoch);

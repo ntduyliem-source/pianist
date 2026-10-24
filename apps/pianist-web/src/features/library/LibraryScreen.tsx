@@ -8,6 +8,7 @@ import { ThumbnailProvider } from './ScoreThumbnail';
 import { LibraryViewSwitch, useLibraryView } from './LibraryView';
 import { prepareOffline, useOnline } from '../../platform/offline';
 import { LibraryTransfer } from '../../platform/LibraryTransfer';
+import { matchesSearch } from '../../shared/search';
 const run = (fn: () => unknown | Promise<unknown>) => () => void ws.run(fn);
 
 export function Library() {
@@ -17,9 +18,7 @@ export function Library() {
     [offline, setOffline] = useState('');
   const [view, setView] = useLibraryView();
   const projects = state.projects.filter((p) => !!p.archived === trash);
-  const hasProjectMatch = projects.some((p) =>
-    p.title.toLocaleLowerCase('vi').includes(search.toLocaleLowerCase('vi')),
-  );
+  const hasProjectMatch = projects.some((p) => matchesSearch(p.title, search));
   return (
     <ThumbnailProvider>
       <main className={'library library-v2 page library-view-' + view}>

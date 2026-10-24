@@ -65,7 +65,7 @@ const deviceScaleFactor=Number(process.env.PIANIST_DPR||1);
       const g=await capture(`practice-${width}x${height}`);assert(g.sheet.height>=height*.58,'sheet is primary');
     }
     await page.setViewportSize({width:390,height:844});
-    await settings();await field('Từ ô nhịp',2);await field('Đến ô nhịp',2);await close();
+    await settings();await page.getByRole('button',{name:/Chọn đoạn · ô/}).click();await field('Từ ô nhịp',2);await field('Đến ô nhịp',2);await page.getByRole('button',{name:'Áp dụng',exact:true}).click();
     const rangeStart=baseline.occurrences.find(o=>o.measure===1).startMs,rangeEnd=baseline.occurrences.find(o=>o.measure===1).endMs;
     await page.getByRole('button',{name:'Chỉ bản nhạc',exact:true}).click();
     const pedal=page.getByRole('switch',{name:'Dùng pedal khi tập'});await pedal.click();assert.equal(await pedal.getAttribute('aria-checked'),'false');await pedal.click();

@@ -532,11 +532,12 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 18px;
-  padding: 18px 22px;
-  margin-bottom: 28px;
+  gap: 12px;
+  padding: 12px 14px;
+  margin-bottom: 18px;
   border: 1px solid var(--line);
-  background: #fff;
+  background: var(--surface);
+  color: var(--text);
   border-radius: 8px;
 }
 .practice-current .eyebrow {
@@ -548,12 +549,6 @@
 }
 .practice-current button {
   font-size: 12px;
-}
-.practice-home .score-grid {
-  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
-}
-.practice-home .score-card-body .primary-light {
-  width: 100%;
 }
 .practice-empty {
   padding: 32px 20px;

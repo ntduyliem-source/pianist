@@ -103,6 +103,7 @@ export function Practice({
     [focus, setFocus] = useState(false),
     [barHidden, setBarHidden] = useState(false),
     [panel, setPanel] = useState<'settings' | 'range' | null>(null);
+  const [selectionStart, setSelectionStart] = useState<number | null>(null);
   const [selecting, setSelecting] = useState<'a' | 'b' | null>(null),
     [keepReplay, setReplay] = useState(true),
     [followToken, setFollowToken] = useState(0),
@@ -301,8 +302,8 @@ export function Practice({
     setFollowToken((n) => n + 1);
   }, [focus]);
   useEffect(() => {
-    if (panel && !dialog.current?.open) dialog.current?.showModal();
-    else if (!panel && dialog.current?.open) dialog.current.close();
+    if (panel === 'settings' && !dialog.current?.open) dialog.current?.showModal();
+    else if (panel !== 'settings' && dialog.current?.open) dialog.current.close();
   }, [panel]);
   const exitFocus = async () => {
     if (document.fullscreenElement === root.current) await document.exitFullscreen();
@@ -322,7 +323,12 @@ export function Practice({
   };
   useEffect(() => {
     const key = (e: KeyboardEvent) => {
-      if (e.key === 'Escape' && !dialog.current?.open && focus && !document.fullscreenElement) {
+      if (
+        e.key === 'Escape' &&
+        !root.current?.querySelector('dialog[open]') &&
+        focus &&
+        !document.fullscreenElement
+      ) {
         e.preventDefault();
         void exitFocus();
       }
@@ -520,21 +526,30 @@ export function Practice({
   const openPanel = (next: 'settings' | 'range') => {
     if (playing) session!.pause();
     preview.current?.pause();
+    setSelecting(null);
+    setSelectionStart(null);
     setPanel(next);
   };
-  const rangeEdit = (value: number, side: 'a' | 'b') => {
-    if (!Number.isFinite(value)) return;
-    const n = Math.max(0, Math.min(snapshot.measures.length - 1, Math.trunc(value)));
-    update(
-      side === 'a'
-        ? { fromMeasure: n, toMeasure: Math.max(n, c.toMeasure) }
-        : { toMeasure: n, fromMeasure: Math.min(n, c.fromMeasure) },
-    );
+  const applyRange = (range: { fromMeasure: number; toMeasure: number }) => {
+    if (active) return;
+    stopPreview();
+    update(range);
+    setPanel(null);
+    setSelecting(null);
+    setSelectionStart(null);
+    setFollowToken((n) => n + 1);
   };
   const selectMeasure = (index: number) => {
     if (!selecting || active) return;
-    rangeEdit(index, selecting);
-    setSelecting(null);
+    if (selecting === 'a') {
+      setSelectionStart(index);
+      setSelecting('b');
+    } else if (selectionStart !== null) {
+      applyRange({
+        fromMeasure: Math.min(selectionStart, index),
+        toMeasure: Math.max(selectionStart, index),
+      });
+    }
   };
   const pedalToggle = (
     <PedalToggle
@@ -820,7 +835,9 @@ export function Practice({
       )}
       {selecting && (
         <div className="v2-selection" role="status">
-          Chọn ô nhịp {selecting.toUpperCase()} trên khuông nhạc.
+          {selecting === 'a'
+            ? '1/2 · Chạm ô nhịp bắt đầu.'
+            : `2/2 · Đã chọn ô ${(selectionStart ?? 0) + 1}. Chạm ô kết thúc.`}
           <button onClick={() => setSelecting(null)}>Hủy chọn</button>
         </div>
       )}
@@ -831,8 +848,8 @@ export function Practice({
         zoom={prefs.zoom}
         autoScroll={prefs.scroll}
         followToken={followToken}
-        fromMeasure={c.fromMeasure}
-        toMeasure={c.toMeasure}
+        fromMeasure={selecting === 'b' ? (selectionStart ?? c.fromMeasure) : c.fromMeasure}
+        toMeasure={selecting === 'b' ? (selectionStart ?? c.toMeasure) : c.toMeasure}
         selecting={selecting}
         onMeasure={selectMeasure}
         onZoom={(zoom) => setPref({ zoom })}
@@ -866,16 +883,27 @@ export function Practice({
         onToggle={() => setPref({ keyboard: !prefs.keyboard })}
       />
 
+      {panel === 'range' && !exercise && (
+        <RangeSettings
+          config={c}
+          measureCount={snapshot.measures.length}
+          onApply={applyRange}
+          onCancel={() => setPanel(null)}
+          onSelect={() => {
+            setSelectionStart(null);
+            setSelecting('a');
+            setPanel(null);
+          }}
+        />
+      )}
       <dialog
         ref={dialog}
         className="v2-drawer"
         aria-labelledby="v2-settings-title"
-        onClose={() => setPanel(null)}
+        onClose={() => setPanel((current) => (current === 'settings' ? null : current))}
       >
         <div className="v2-drawer-heading">
-          <h2 id="v2-settings-title">
-            {panel === 'range' ? 'Đoạn luyện tập' : 'Thiết lập luyện tập'}
-          </h2>
+          <h2 id="v2-settings-title">Thiết lập luyện tập</h2>
           <button aria-label="Đóng thiết lập" onClick={() => setPanel(null)}>
             ×
           </button>
@@ -915,21 +943,38 @@ export function Practice({
             Kết thúc lượt để thay đổi cấu hình chấm. Lượt hiện tại vẫn được giữ.
           </p>
         )}
-        {!exercise && (
-          <RangeSettings
-            config={c}
-            disabled={active}
-            measureCount={snapshot.measures.length}
-            onRange={rangeEdit}
-            onSelect={(side) => {
-              setSelecting(side);
-              setPanel(null);
-            }}
-            onSettings={update}
-          />
-        )}
         {panel === 'settings' && (
           <>
+            {!exercise && (
+              <fieldset disabled={active}>
+                <legend>Đoạn tập và lặp lại</legend>
+                <button onClick={() => openPanel('range')}>
+                  Chọn đoạn · ô {c.fromMeasure + 1}–{c.toMeasure + 1}
+                </button>
+                <div className="v2-field-pair">
+                  <label>
+                    Số vòng tập
+                    <NumberField
+                      aria-label="Số vòng"
+                      min={1}
+                      max={10}
+                      value={c.loops}
+                      onValue={(loops) => update({ loops })}
+                    />
+                  </label>
+                  <label>
+                    Tăng BPM mỗi vòng
+                    <NumberField
+                      aria-label="Tăng BPM mỗi vòng"
+                      min={0}
+                      max={50}
+                      value={c.loopBpmStep}
+                      onValue={(loopBpmStep) => update({ loopBpmStep })}
+                    />
+                  </label>
+                </div>
+              </fieldset>
+            )}
             <fieldset disabled={active || !!exercise?.loading}>
               <legend>Nghe mẫu</legend>
               <label>

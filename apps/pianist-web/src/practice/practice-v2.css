@@ -479,12 +479,12 @@
   max-height: 100dvh;
   overflow: auto;
   padding: 18px 20px max(20px, env(safe-area-inset-bottom));
-  background: #fff;
+  background: var(--surface);
   border: 0;
-  border-left: 1px solid #dce3ec;
+  border-left: 1px solid var(--line);
   border-radius: 0;
   box-shadow: -10px 0 40px #22334a24;
-  color: #37485e;
+  color: var(--text);
   overscroll-behavior: contain;
 }
 .v2-drawer::backdrop {
@@ -498,7 +498,7 @@
   margin-bottom: 14px;
   position: sticky;
   top: -18px;
-  background: #fff;
+  background: var(--surface);
   z-index: 1;
   padding: 6px 0;
 }
@@ -521,10 +521,10 @@
 .v2-drawer legend {
   font-size: 12px;
   font-weight: 600;
-  color: #677c96;
+  color: var(--muted);
   margin: 0 0 10px;
   width: 100%;
-  border-top: 1px solid #e4e9f0;
+  border-top: 1px solid var(--line);
   padding-top: 15px;
 }
 .v2-drawer label:not(.v2-check) {
@@ -561,7 +561,7 @@
 }
 .v2-drawer summary {
   cursor: pointer;
-  color: #547297;
+  color: var(--blue);
   min-height: 44px;
   padding-block: 10px;
 }
@@ -838,4 +838,78 @@ body[data-practice-focus='true'] .appbar {
     width: 6px;
     height: 6px;
   }
+}
+
+.practice-v2 .range-dialog {
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  width: min(380px, calc(100vw - 24px));
+  min-width: 0;
+  max-width: none;
+  max-height: calc(100dvh - 24px);
+  overflow: auto;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  color: var(--text);
+  background: var(--surface);
+}
+.range-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.range-heading h2 {
+  margin: 0;
+  font-size: 18px;
+}
+.practice-v2 .range-heading button {
+  width: 44px;
+  padding: 0;
+  border: 0;
+  font-size: 22px;
+}
+.range-dialog .range-hint {
+  color: var(--muted);
+  margin: 0 0 16px;
+}
+.range-fields {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  gap: 12px;
+  align-items: end;
+}
+.range-fields label {
+  display: grid;
+  gap: 8px;
+  font-size: 13px;
+}
+.practice-v2 .range-fields input {
+  width: 100%;
+  min-height: 44px;
+  font-size: 16px;
+}
+.range-fields > span {
+  line-height: 44px;
+  color: var(--muted);
+}
+.range-shortcuts {
+  display: flex;
+  gap: 8px;
+  margin-top: 16px;
+}
+.range-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 24px;
+}
+.range-dialog .range-error {
+  color: var(--danger);
+  margin-top: 10px;
+}
+.v2-selection {
+  flex: none;
 }

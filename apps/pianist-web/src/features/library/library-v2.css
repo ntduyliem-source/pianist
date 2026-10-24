@@ -130,21 +130,23 @@
   font-size: 14px;
   line-height: 1.4;
   overflow-wrap: anywhere;
+  white-space: normal;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
-.library-v2 .score-card .button-row {
+.library-v2 .score-card .score-actions {
   display: flex;
-  gap: 5px;
-  flex-wrap: wrap;
+  gap: 6px;
+  flex-wrap: nowrap;
   margin-top: auto;
 }
-.library-v2 .score-card .button-row button {
+.library-v2 .score-card .score-actions button {
   min-height: 40px;
   padding: 7px 9px;
   font-size: 12px;
 }
-.library-v2 .score-card .button-row > button:last-child {
-  margin-left: auto;
-}
+
 .library-v2 .bundled-version {
   display: flex;
   flex-wrap: wrap;
@@ -190,7 +192,7 @@
 .library-view-list .bundled-version {
   grid-column: 2;
 }
-.library-view-list .score-card .button-row {
+.library-view-list .score-card .score-actions {
   grid-column: 3;
   grid-row: 1;
   margin: 0;
@@ -212,6 +214,7 @@
   font-size: 19px;
 }
 .score-info p {
+  font-size: 13px;
   white-space: normal;
   overflow-wrap: anywhere;
 }
@@ -226,6 +229,7 @@
 }
 .score-info button {
   min-height: 44px;
+  font-size: 14px;
 }
 .library-tools {
   margin-top: 28px;
@@ -294,7 +298,7 @@
   .library-view-list .score-card-body {
     grid-template-columns: minmax(0, 1fr) auto;
   }
-  .library-view-list .score-card .button-row {
+  .library-view-list .score-card .score-actions {
     grid-column: 2;
   }
   .library-view-list .bundled-version {
@@ -355,7 +359,7 @@
   .library-v2 .score-card-body {
     padding: 10px;
   }
-  .library-v2 .score-card .button-row button {
+  .library-v2 .score-card .score-actions button {
     min-height: 44px;
   }
   .library-view-list .score-cover {
@@ -367,7 +371,7 @@
     grid-template-columns: minmax(0, 1fr);
     gap: 7px;
   }
-  .library-view-list .score-card .button-row {
+  .library-view-list .score-card .score-actions {
     grid-column: 1;
     grid-row: auto;
     flex-wrap: wrap;
@@ -401,5 +405,111 @@
   .library-player [role='status'] {
     grid-column: 1 / -1;
     max-width: none;
+  }
+}
+
+.score-card-heading {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  min-width: 0;
+}
+.score-card-heading h3 {
+  flex: 1;
+  min-width: 0;
+}
+.library-v2 .score-more {
+  flex: none;
+  width: 36px;
+  height: 40px;
+  padding: 0;
+  margin-top: -8px;
+  border-color: transparent;
+  font-size: 20px;
+}
+.library-v2 .score-actions button {
+  flex: 1;
+  min-width: 0;
+  white-space: nowrap;
+  gap: 5px;
+}
+.library-v2 .score-actions .icon {
+  width: 14px;
+  height: 14px;
+}
+.library-view-list .score-actions {
+  min-width: 155px;
+}
+.score-info {
+  min-width: 0;
+  max-height: calc(100dvh - 24px);
+  padding: 20px;
+  background: var(--surface);
+  color: var(--text);
+}
+.score-info h2 {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+.score-info .dialog-heading button {
+  flex: none;
+}
+.score-info .score-version-label {
+  color: var(--muted);
+  margin: 8px 0 18px;
+}
+.score-menu-actions {
+  display: grid;
+  gap: 8px;
+}
+.score-menu-actions > button {
+  justify-content: flex-start;
+}
+.score-info .score-menu-help {
+  margin: 0 0 8px;
+  color: var(--muted);
+  font-size: 12px;
+}
+.score-info summary {
+  cursor: pointer;
+  min-height: 44px;
+  padding-block: 12px;
+  color: var(--text);
+}
+.score-file-info {
+  margin-top: 12px;
+  border-top: 1px solid var(--line);
+}
+.score-info details p {
+  margin-top: 4px;
+  color: var(--muted);
+}
+/* Pause/loading keep their full accessible name and icon on narrow cards. */
+@media (max-width: 480px) {
+  .library-v2 .score-actions .library-listen:is([aria-pressed='true'], :disabled) span {
+    display: none;
+  }
+}
+@media (max-width: 650px) {
+  .library-v2 .score-more {
+    min-width: 40px;
+    height: 44px;
+  }
+  .library-view-list .score-card-heading {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .practice-current {
+    flex-direction: row;
+    align-items: center;
+    padding: 12px;
+  }
+  .practice-current strong {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+  .practice-current button {
+    flex: none;
+    min-height: 44px;
   }
 }

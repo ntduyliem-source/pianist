@@ -1,7 +1,9 @@
-import { useMemo, useRef, useState, useSyncExternalStore } from 'react';
+import { useMemo, useState, useSyncExternalStore } from 'react';
 import { workspace as ws } from '../../workspace';
 import { groupProjects, type ProjectWork } from './project-versions';
-import { projectDate } from './presentation';
+import { matchesSearch } from '../../shared/search';
+import { Icon } from '../../shared/ui/Icon';
+import { ScoreMenu } from './ScoreMenu';
 import { projectTrack, ListenButton } from './LibraryPlayback';
 import { ScoreThumbnail } from './ScoreThumbnail';
 import type { ProjectRecord } from '../../platform/storage';
@@ -20,9 +22,7 @@ export function ProjectSongs({
   const groups = useMemo(
     () =>
       groupProjects(projects).filter((work) =>
-        work.versions.some((p) =>
-          p.title.toLocaleLowerCase('vi').includes(search.toLocaleLowerCase('vi')),
-        ),
+        work.versions.some((p) => matchesSearch(p.title, search)),
       ),
     [projects, search],
   );
@@ -52,7 +52,7 @@ function ProjectCard({
       return null;
     }
   });
-  const details = useRef<HTMLDialogElement>(null);
+  const [groupId, setGroupId] = useState('');
   const project = work.versions.find((p) => p.id === id) ?? work.versions[0];
   const version = 'Phiên bản ' + (project.version ?? work.versions.indexOf(project) + 1),
     track = projectTrack(project, version);
@@ -78,7 +78,69 @@ function ProjectCard({
         <ScoreThumbnail track={track} />
       </button>
       <div className="score-card-body">
-        <h3>{work.title}</h3>
+        <ScoreMenu
+          title={work.title}
+          version={version}
+          filename={project.sourceName ?? project.filename}
+          onEdit={trash ? undefined : () => void ws.run(() => ws.openProject(project.id))}
+        >
+          {(close) =>
+            !trash && (
+              <>
+                <button
+                  onClick={() =>
+                    void ws.run(async () => {
+                      await ws.archive(project);
+                      close();
+                    })
+                  }
+                >
+                  Chuyển vào lưu trữ
+                </button>
+                <p className="score-menu-help">
+                  Ẩn phiên bản này khỏi thư viện. Có thể khôi phục trong “Đã lưu trữ”.
+                </p>
+                {groups.some((g) => g.id !== work.id) && (
+                  <details className="score-version-tools">
+                    <summary>Chuyển sang nhóm bài khác…</summary>
+                    <p>
+                      Dùng khi đây là một bản phối khác của bài đã có. Chỉ chuyển phiên bản đang
+                      chọn.
+                    </p>
+                    <label>
+                      Bài nhận phiên bản
+                      <select
+                        aria-label="Bài nhận phiên bản"
+                        value={groupId}
+                        onChange={(e) => setGroupId(e.target.value)}
+                      >
+                        <option value="">Chọn bài…</option>
+                        {groups
+                          .filter((g) => g.id !== work.id)
+                          .map((g) => (
+                            <option key={g.id} value={g.id}>
+                              {g.title}
+                            </option>
+                          ))}
+                      </select>
+                    </label>
+                    <button
+                      disabled={!groups.some((g) => g.id === groupId && g.id !== work.id)}
+                      onClick={() =>
+                        void ws.run(async () => {
+                          await ws.groupProjectVersion(project, groupId);
+                          close();
+                        })
+                      }
+                    >
+                      Chuyển phiên bản
+                    </button>
+                  </details>
+                )}
+              </>
+            )
+          }
+        </ScoreMenu>
         {work.versions.length > 1 && (
           <label className="bundled-version">
             <span>{work.versions.length} phiên bản</span>
@@ -95,7 +157,7 @@ function ProjectCard({
             </select>
           </label>
         )}
-        <div className="button-row">
+        <div className="score-actions">
           {trash ? (
             <button onClick={() => void ws.run(() => ws.archive(project))}>Khôi phục</button>
           ) : (
@@ -106,70 +168,12 @@ function ProjectCard({
                 aria-label={practice ? 'Bắt đầu với ' + project.title : undefined}
                 onClick={() => void ws.run(() => ws.openProject(project.id, true))}
               >
-                Tập
-              </button>
-              <button onClick={() => void ws.run(() => ws.openProject(project.id))}>
-                Chỉnh sửa
+                <Icon name="play" /> Tập
               </button>
             </>
           )}
-          <button
-            aria-label={'Chi tiết ' + work.title}
-            title="Chi tiết và phiên bản"
-            onClick={() => details.current?.showModal()}
-          >
-            ⋯
-          </button>
         </div>
       </div>
-      <dialog ref={details} className="score-info" aria-label={'Chi tiết ' + work.title}>
-        <div className="dialog-heading">
-          <h2>{project.title}</h2>
-          <button aria-label="Đóng chi tiết" onClick={() => details.current?.close()}>
-            ×
-          </button>
-        </div>
-        <p>
-          {version} · {projectDate(project.updatedAt)} · {Math.round(project.bytes.length / 1024)}{' '}
-          KB
-        </p>
-        <p>Nguồn: {project.sourceName ?? project.filename}</p>
-        {!trash && (
-          <label>
-            Gộp thành phiên bản của bài
-            <select
-              aria-label="Gộp vào nhóm phiên bản"
-              value={work.id}
-              onChange={(e) =>
-                void ws.run(async () => {
-                  await ws.groupProjectVersion(project, e.target.value);
-                  details.current?.close();
-                })
-              }
-            >
-              {groups.map((g) => (
-                <option key={g.id} value={g.id}>
-                  {g.title}
-                </option>
-              ))}
-            </select>
-          </label>
-        )}
-        {!trash && (
-          <button
-            className="archive"
-            aria-label={'Lưu trữ ' + project.title}
-            onClick={() =>
-              void ws.run(async () => {
-                await ws.archive(project);
-                details.current?.close();
-              })
-            }
-          >
-            Lưu trữ phiên bản này
-          </button>
-        )}
-      </dialog>
     </article>
   );
 }

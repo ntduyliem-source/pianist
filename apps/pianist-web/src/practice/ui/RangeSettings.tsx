@@ -1,75 +1,105 @@
+import { useEffect, useRef, useState } from 'react';
 import type { PracticeSettings } from '../../../../../packages/practice-engine-v2';
-import { NumberField } from '../NumberField';
+import { parseMeasureRange } from '../measure-range';
+
 interface RangeSettingsProps {
   config: PracticeSettings;
-  disabled: boolean;
   measureCount: number;
-  onRange: (value: number, side: 'a' | 'b') => void;
-  onSelect: (side: 'a' | 'b') => void;
-  onSettings: (patch: Partial<PracticeSettings>) => void;
+  onApply: (range: { fromMeasure: number; toMeasure: number }) => void;
+  onSelect: () => void;
+  onCancel: () => void;
 }
+// A local draft: cancel and incomplete input must never change the live timeline.
 export function RangeSettings({
-  config: c,
-  disabled,
+  config,
   measureCount,
-  onRange,
+  onApply,
   onSelect,
-  onSettings,
+  onCancel,
 }: RangeSettingsProps) {
+  const dialog = useRef<HTMLDialogElement>(null);
+  const [from, setFrom] = useState(String(config.fromMeasure + 1));
+  const [to, setTo] = useState(String(config.toMeasure + 1));
+  const [error, setError] = useState('');
+  useEffect(() => {
+    dialog.current?.showModal();
+  }, []);
   return (
-    <fieldset disabled={disabled}>
-      <legend>Đoạn A–B và vòng tập</legend>
-      <div className="v2-field-pair">
-        <label>
-          Từ ô
-          <NumberField
-            aria-label="Từ ô nhịp"
-            type="number"
-            min={1}
-            max={measureCount}
-            value={c.fromMeasure + 1}
-            onValue={(value) => onRange(value - 1, 'a')}
-          />
-        </label>
-        <label>
-          Đến ô
-          <NumberField
-            aria-label="Đến ô nhịp"
-            type="number"
-            min={1}
-            max={measureCount}
-            value={c.toMeasure + 1}
-            onValue={(value) => onRange(value - 1, 'b')}
-          />
-        </label>
-      </div>
-      <div className="v2-row">
-        <button onClick={() => onSelect('a')}>Chọn A trên bài</button>
-        <button onClick={() => onSelect('b')}>Chọn B trên bài</button>
-      </div>
-      <div className="v2-field-pair">
-        <label>
-          Số vòng
-          <NumberField
-            aria-label="Số vòng"
-            type="number"
-            min={1}
-            max={10}
-            value={c.loops}
-            onValue={(value) => onSettings({ loops: value })}
-          />
-        </label>
-        <label>
-          Tăng BPM mỗi vòng
-          <NumberField
-            type="number"
-            min={0}
-            max={50}
-            value={c.loopBpmStep}
-            onValue={(value) => onSettings({ loopBpmStep: value })}
-          />
-        </label>
-      </div>
-    </fieldset>
+    <dialog ref={dialog} className="range-dialog" aria-labelledby="range-title" onCancel={onCancel}>
+      <form
+        noValidate
+        onSubmit={(e) => {
+          e.preventDefault();
+          const result = parseMeasureRange(from, to, measureCount);
+          if (typeof result === 'string') setError(result);
+          else onApply(result);
+        }}
+      >
+        <div className="range-heading">
+          <h2 id="range-title">Chọn đoạn tập</h2>
+          <button type="button" aria-label="Đóng chọn đoạn" onClick={onCancel}>
+            ×
+          </button>
+        </div>
+        <p className="range-hint">Bản nhạc có {measureCount} ô nhịp.</p>
+        <div className="range-fields">
+          <label>
+            Từ ô nhịp
+            <input
+              aria-label="Từ ô nhịp"
+              type="number"
+              inputMode="numeric"
+              min={1}
+              max={measureCount}
+              value={from}
+              onChange={(e) => {
+                setFrom(e.target.value);
+                setError('');
+              }}
+            />
+          </label>
+          <span aria-hidden="true">→</span>
+          <label>
+            Đến ô nhịp
+            <input
+              aria-label="Đến ô nhịp"
+              type="number"
+              inputMode="numeric"
+              min={1}
+              max={measureCount}
+              value={to}
+              onChange={(e) => {
+                setTo(e.target.value);
+                setError('');
+              }}
+            />
+          </label>
+        </div>
+        {error && (
+          <p className="range-error" role="alert">
+            {error}
+          </p>
+        )}
+        <div className="range-shortcuts">
+          <button type="button" onClick={onSelect}>
+            Chọn trên sheet
+          </button>
+          <button
+            type="button"
+            onClick={() => onApply({ fromMeasure: 0, toMeasure: measureCount - 1 })}
+          >
+            Toàn bài
+          </button>
+        </div>
+        <div className="range-footer">
+          <button type="button" onClick={onCancel}>
+            Hủy
+          </button>
+          <button type="submit" className="primary">
+            Áp dụng
+          </button>
+        </div>
+      </form>
+    </dialog>
   );
 }

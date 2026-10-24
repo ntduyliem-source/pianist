@@ -4,6 +4,8 @@ import { BundledSongs } from './BundledSongs';
 import { ProjectSongs } from './ProjectSongs';
 import { ThumbnailProvider } from './ScoreThumbnail';
 import { LibraryViewSwitch, useLibraryView } from './LibraryView';
+import { matchesSearch } from '../../shared/search';
+import { groupBundledScores, matchesBundledWork } from '../../platform/bundled-library';
 
 export function PracticeHome() {
   const state = useSyncExternalStore(ws.subscribe, ws.snapshot);
@@ -47,6 +49,10 @@ export function PracticeHome() {
             </section>
           )}
           <BundledSongs search={search} practice />
+          {!projects.some((p) => matchesSearch(p.title, search)) &&
+            !groupBundledScores(state.bundledScores).some((w) => matchesBundledWork(w, search)) && (
+              <p className="library-empty">Không tìm thấy bài phù hợp.</p>
+            )}
         </section>
       </main>
     </ThumbnailProvider>

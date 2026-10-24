@@ -1,4 +1,4 @@
-import React, { useMemo, useRef, useState, useSyncExternalStore } from 'react';
+import React, { useMemo, useState, useSyncExternalStore } from 'react';
 import { workspace as ws } from '../../workspace';
 import {
   groupBundledScores,
@@ -10,6 +10,7 @@ import {
 import { Icon } from '../../shared/ui/Icon';
 import { bundledTrack, ListenButton } from './LibraryPlayback';
 import { ScoreThumbnail } from './ScoreThumbnail';
+import { ScoreMenu } from './ScoreMenu';
 const run = (fn: () => unknown | Promise<unknown>) => () => void ws.run(fn);
 
 export function BundledSongs({
@@ -54,7 +55,6 @@ function BundledSongCard({ work, practice }: { work: BundledWork; practice: bool
   });
   const song = selectBundledVersion(work, selected),
     canPractice = song.practiceReady !== false;
-  const details = useRef<HTMLDialogElement>(null);
   const track = bundledTrack(song);
   const choose = (id: string) => {
     if (ws.libraryPlayer.activitySnapshot().id === 'bundled:' + song.id) ws.libraryPlayer.stop();
@@ -75,7 +75,12 @@ function BundledSongCard({ work, practice }: { work: BundledWork; practice: bool
         <ScoreThumbnail track={track} url={'library/previews/' + song.id + '.webp'} />
       </button>
       <div className="score-card-body">
-        <h3>{work.title}</h3>
+        <ScoreMenu
+          title={work.title}
+          version={bundledVersionLabel(song)}
+          filename={song.filename}
+          onEdit={run(() => ws.openBundledScore(song))}
+        />
         {work.versions.length > 1 && (
           <label className="bundled-version">
             <span>{work.versions.length} phiên bản</span>
@@ -97,7 +102,7 @@ function BundledSongCard({ work, practice }: { work: BundledWork; practice: bool
             {song.practiceNotice}
           </p>
         )}
-        <div className="button-row">
+        <div className="score-actions">
           <ListenButton track={track} />
           <button
             className="primary-light"
@@ -108,27 +113,8 @@ function BundledSongCard({ work, practice }: { work: BundledWork; practice: bool
             <Icon name="play" />
             Tập
           </button>
-          <button onClick={run(() => ws.openBundledScore(song))}>Chỉnh sửa</button>
-          <button
-            aria-label={'Chi tiết ' + work.title}
-            title="Chi tiết bản nhạc"
-            onClick={() => details.current?.showModal()}
-          >
-            ⋯
-          </button>
         </div>
       </div>
-      <dialog ref={details} className="score-info" aria-label={'Chi tiết ' + work.title}>
-        <div className="dialog-heading">
-          <h2>{work.title}</h2>
-          <button aria-label="Đóng chi tiết" onClick={() => details.current?.close()}>
-            ×
-          </button>
-        </div>
-        <p>{bundledVersionLabel(song)}</p>
-        <p>{song.composer || 'Bản piano'}</p>
-        <p>{song.filename}</p>
-      </dialog>
     </article>
   );
 }

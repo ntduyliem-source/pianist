@@ -1,3 +1,5 @@
+import { matchesSearch } from '../shared/search';
+
 export interface BundledScore {
   id: string;
   title: string;
@@ -79,14 +81,10 @@ export function bundledVersionLabel(score: BundledScore): string {
   return `Version ${score.version ?? 1}${score.versionLabel ? ' · ' + score.versionLabel : ''}`;
 }
 export function matchesBundledWork(work: BundledWork, search: string): boolean {
-  const query = search.trim().toLocaleLowerCase('vi');
-  return (
-    !query ||
-    [
-      work.title,
-      ...work.versions.flatMap((s) => [s.title, s.composer ?? '', s.versionLabel ?? '']),
-    ].some((s) => s.toLocaleLowerCase('vi').includes(query))
-  );
+  return [
+    work.title,
+    ...work.versions.flatMap((s) => [s.title, s.composer ?? '', s.versionLabel ?? '']),
+  ].some((s) => matchesSearch(s, search));
 }
 export async function bundledPracticeNotice(
   scores: BundledScore[],

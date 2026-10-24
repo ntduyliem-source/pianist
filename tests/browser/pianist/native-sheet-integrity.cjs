@@ -54,12 +54,14 @@ const root=path.resolve(__dirname,'../../..'),out=path.join(root,'artifacts/nati
   }
   check('Mobile portrait/landscape full sheet retains Listen and pedal controls without document overflow');
   await page.setViewportSize({width:1440,height:1000});
-  await settings();await page.getByRole('button',{name:'Chọn A trên bài',exact:true}).click();
+  await settings();await page.getByRole('button',{name:/Chọn đoạn · ô/}).click();
+  await page.getByRole('button',{name:'Chọn trên sheet',exact:true}).click();
   const measureA=page.getByRole('button',{name:'Ô 3 · chọn A',exact:true});await measureA.focus();await measureA.press('Enter');
-  await settings();assert.equal(await page.getByRole('spinbutton',{name:'Từ ô nhịp',exact:true}).inputValue(),'3');
-  await page.getByRole('button',{name:'Chọn B trên bài',exact:true}).click();
   const measureB=page.getByRole('button',{name:'Ô 5 · chọn B',exact:true});await measureB.focus();await measureB.press('Space');
-  await settings();assert.equal(await page.getByRole('spinbutton',{name:'Đến ô nhịp',exact:true}).inputValue(),'5');await close();
+  await settings();await page.getByRole('button',{name:/Chọn đoạn · ô/}).click();
+  assert.equal(await page.getByRole('spinbutton',{name:'Từ ô nhịp',exact:true}).inputValue(),'3');
+  assert.equal(await page.getByRole('spinbutton',{name:'Đến ô nhịp',exact:true}).inputValue(),'5');
+  await page.getByRole('button',{name:'Hủy',exact:true}).click();
   check('Full-page A–B measure overlays support keyboard Enter/Space and retain the chosen range');
   assert.deepEqual(report.errors,[]);report.passed=true;
  }catch(e){report.passed=false;report.error=String(e.stack);process.exitCode=1;console.error(report.error);await page.screenshot({path:path.join(out,'failure.png')}).catch(()=>{});}

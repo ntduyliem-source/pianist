@@ -71,8 +71,9 @@ const root=path.resolve(__dirname,'../../..'),out=path.join(root,'artifacts/soun
   await screenshot('practice-desktop');
   await page.getByRole('button',{name:'Dừng nghe',exact:true}).click();
   await page.getByRole('button',{name:'Thiết lập',exact:true}).click();
+  await page.getByRole('button',{name:/Chọn đoạn · ô/}).click();
   for(const [name,n] of [['Từ ô nhịp',6],['Đến ô nhịp',8]]){const input=page.getByRole('spinbutton',{name,exact:true});await input.fill(String(n));await input.press('Tab');}
-  await page.getByRole('button',{name:'Xong',exact:true}).click();
+  await page.getByRole('button',{name:'Áp dụng',exact:true}).click();
   await page.getByRole('button',{name:'Nghe đoạn',exact:true}).click();await peak();
   await page.getByRole('combobox',{name:'Tốc độ nghe'}).selectOption('2');
   await page.getByRole('button',{name:'Lặp khi nghe',exact:true}).click();
