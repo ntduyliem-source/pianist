@@ -1,6 +1,6 @@
 {
-  "tag": "pianist-web-2026-10-24-library-batch",
-  "sha256": "8bf840225d165ac6c20cdb500f38cca4249c2f61a4835e49bbe62d7e1d49cd75",
-  "sourceCommit": "dada894192853be6895a918598f4b58056c92134",
-  "version": "a99a0732c8bc0fd93eaf"
+  "tag": "pianist-web-2026-10-24-studio-design",
+  "sha256": "653cd183fed80cfc175346eb3fec6b7374b34dea576e215d411c93404d8ae486",
+  "sourceCommit": "aa4b34032b898a3024044558011153da15386e08",
+  "version": "55d7f60f78601152a99c"
 }
