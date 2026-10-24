@@ -1,6 +1,6 @@
 {
-  "tag": "pianist-web-2026-10-24-audio-ui",
-  "sha256": "6e8aff848ce3fc5f1df02a6327d36d06ad6b11b0cd65360bcdd27e8263923264",
-  "sourceCommit": "92a0c881206bfda1de68386ba3cdb89da9c0205a",
-  "version": "fcee872877c906c84f34"
+  "tag": "pianist-web-2026-10-24-library-range",
+  "sha256": "cdeb95129c408324258fa24c1ce587bd1d1127e465fc8c6de99518c8672033b7",
+  "sourceCommit": "089739d7002431595192228d5ce2e9677070e054",
+  "version": "7616771876af3872a364"
 }
