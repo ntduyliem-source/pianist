@@ -958,8 +958,8 @@ export function Practice({
                 Lặp khi nghe
               </label>
               <p className="v2-help">
-                Nghe theo tempo và dấu lặp của bản nhạc. Tốc độ nghe điều chỉnh riêng, không
-                thay BPM chấm.
+                Nghe theo tempo và dấu lặp của bản nhạc. Tốc độ nghe điều chỉnh riêng, không thay
+                BPM chấm.
               </p>
             </fieldset>
             <fieldset disabled={active || !!exercise?.loading}>
