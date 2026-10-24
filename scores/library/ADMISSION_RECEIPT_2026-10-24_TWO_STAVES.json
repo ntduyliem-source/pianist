@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "createdUtc": "2026-10-24T14:33:05.392179+00:00",
+  "createdUtc": "2026-10-24T14:48:23.461829+00:00",
   "policy": "two-staves-v2",
   "admissionDoesNotCertifySourceNotation": true,
   "summary": {
@@ -344,7 +344,7 @@
           "perfect": 419,
           "releaseUnavailable": 0,
           "releaseCorrect": 419,
-          "pedals": 6
+          "pedals": 27
         },
         {
           "mode": "bpm",
@@ -353,7 +353,7 @@
           "perfect": 419,
           "releaseUnavailable": 0,
           "releaseCorrect": 419,
-          "pedals": 6
+          "pedals": 27
         },
         {
           "mode": "wait",
@@ -362,7 +362,7 @@
           "perfect": 419,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 6
+          "pedals": 27
         },
         {
           "mode": "wait",
@@ -371,7 +371,7 @@
           "perfect": 419,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 6
+          "pedals": 27
         },
         {
           "mode": "bpm",
@@ -384,7 +384,7 @@
           "perfect": 96,
           "releaseUnavailable": 0,
           "releaseCorrect": 96,
-          "pedals": 2
+          "pedals": 8
         }
       ]
     },
@@ -415,7 +415,7 @@
           "perfect": 1535,
           "releaseUnavailable": 1,
           "releaseCorrect": 1534,
-          "pedals": 9
+          "pedals": 15
         },
         {
           "mode": "bpm",
@@ -424,7 +424,7 @@
           "perfect": 1535,
           "releaseUnavailable": 1,
           "releaseCorrect": 1534,
-          "pedals": 9
+          "pedals": 15
         },
         {
           "mode": "wait",
@@ -433,7 +433,7 @@
           "perfect": 1535,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 9
+          "pedals": 15
         },
         {
           "mode": "wait",
@@ -442,7 +442,7 @@
           "perfect": 1535,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 9
+          "pedals": 15
         },
         {
           "mode": "bpm",
@@ -486,7 +486,7 @@
           "perfect": 358,
           "releaseUnavailable": 0,
           "releaseCorrect": 358,
-          "pedals": 1
+          "pedals": 32
         },
         {
           "mode": "bpm",
@@ -495,7 +495,7 @@
           "perfect": 358,
           "releaseUnavailable": 0,
           "releaseCorrect": 358,
-          "pedals": 1
+          "pedals": 32
         },
         {
           "mode": "wait",
@@ -504,7 +504,7 @@
           "perfect": 358,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 1
+          "pedals": 32
         },
         {
           "mode": "wait",
@@ -513,7 +513,7 @@
           "perfect": 358,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 1
+          "pedals": 32
         },
         {
           "mode": "bpm",
@@ -526,7 +526,7 @@
           "perfect": 56,
           "releaseUnavailable": 0,
           "releaseCorrect": 56,
-          "pedals": 2
+          "pedals": 4
         }
       ]
     },
@@ -557,7 +557,7 @@
           "perfect": 666,
           "releaseUnavailable": 2,
           "releaseCorrect": 664,
-          "pedals": 2
+          "pedals": 51
         },
         {
           "mode": "bpm",
@@ -566,7 +566,7 @@
           "perfect": 666,
           "releaseUnavailable": 2,
           "releaseCorrect": 664,
-          "pedals": 2
+          "pedals": 51
         },
         {
           "mode": "wait",
@@ -575,7 +575,7 @@
           "perfect": 666,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 2
+          "pedals": 51
         },
         {
           "mode": "wait",
@@ -584,7 +584,7 @@
           "perfect": 666,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 2
+          "pedals": 51
         },
         {
           "mode": "bpm",
@@ -597,7 +597,7 @@
           "perfect": 34,
           "releaseUnavailable": 0,
           "releaseCorrect": 34,
-          "pedals": 2
+          "pedals": 4
         }
       ]
     },
@@ -628,7 +628,7 @@
           "perfect": 1698,
           "releaseUnavailable": 0,
           "releaseCorrect": 1698,
-          "pedals": 1
+          "pedals": 139
         },
         {
           "mode": "bpm",
@@ -637,7 +637,7 @@
           "perfect": 1698,
           "releaseUnavailable": 0,
           "releaseCorrect": 1698,
-          "pedals": 1
+          "pedals": 139
         },
         {
           "mode": "wait",
@@ -646,7 +646,7 @@
           "perfect": 1698,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 1
+          "pedals": 139
         },
         {
           "mode": "wait",
@@ -655,7 +655,7 @@
           "perfect": 1698,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 1
+          "pedals": 139
         },
         {
           "mode": "bpm",
@@ -668,7 +668,7 @@
           "perfect": 124,
           "releaseUnavailable": 0,
           "releaseCorrect": 124,
-          "pedals": 2
+          "pedals": 4
         }
       ]
     },
@@ -699,7 +699,7 @@
           "perfect": 687,
           "releaseUnavailable": 0,
           "releaseCorrect": 687,
-          "pedals": 2
+          "pedals": 62
         },
         {
           "mode": "bpm",
@@ -708,7 +708,7 @@
           "perfect": 687,
           "releaseUnavailable": 0,
           "releaseCorrect": 687,
-          "pedals": 2
+          "pedals": 62
         },
         {
           "mode": "wait",
@@ -717,7 +717,7 @@
           "perfect": 687,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 2
+          "pedals": 62
         },
         {
           "mode": "wait",
@@ -726,7 +726,7 @@
           "perfect": 687,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 2
+          "pedals": 62
         },
         {
           "mode": "bpm",
@@ -739,7 +739,7 @@
           "perfect": 38,
           "releaseUnavailable": 0,
           "releaseCorrect": 38,
-          "pedals": 2
+          "pedals": 4
         }
       ]
     },
@@ -770,7 +770,7 @@
           "perfect": 1017,
           "releaseUnavailable": 12,
           "releaseCorrect": 1005,
-          "pedals": 1
+          "pedals": 108
         },
         {
           "mode": "bpm",
@@ -779,7 +779,7 @@
           "perfect": 1017,
           "releaseUnavailable": 12,
           "releaseCorrect": 1005,
-          "pedals": 1
+          "pedals": 108
         },
         {
           "mode": "wait",
@@ -788,7 +788,7 @@
           "perfect": 1017,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 1
+          "pedals": 108
         },
         {
           "mode": "wait",
@@ -797,7 +797,7 @@
           "perfect": 1017,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 1
+          "pedals": 108
         },
         {
           "mode": "bpm",
@@ -810,7 +810,7 @@
           "perfect": 42,
           "releaseUnavailable": 2,
           "releaseCorrect": 40,
-          "pedals": 2
+          "pedals": 4
         }
       ]
     },
@@ -841,7 +841,7 @@
           "perfect": 889,
           "releaseUnavailable": 0,
           "releaseCorrect": 889,
-          "pedals": 1
+          "pedals": 75
         },
         {
           "mode": "bpm",
@@ -850,7 +850,7 @@
           "perfect": 889,
           "releaseUnavailable": 0,
           "releaseCorrect": 889,
-          "pedals": 1
+          "pedals": 75
         },
         {
           "mode": "wait",
@@ -859,7 +859,7 @@
           "perfect": 889,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 1
+          "pedals": 75
         },
         {
           "mode": "wait",
@@ -868,7 +868,7 @@
           "perfect": 889,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 1
+          "pedals": 75
         },
         {
           "mode": "bpm",
@@ -881,7 +881,7 @@
           "perfect": 22,
           "releaseUnavailable": 0,
           "releaseCorrect": 22,
-          "pedals": 2
+          "pedals": 4
         }
       ]
     },
@@ -983,7 +983,7 @@
           "perfect": 1013,
           "releaseUnavailable": 3,
           "releaseCorrect": 1010,
-          "pedals": 1
+          "pedals": 85
         },
         {
           "mode": "bpm",
@@ -992,7 +992,7 @@
           "perfect": 1013,
           "releaseUnavailable": 3,
           "releaseCorrect": 1010,
-          "pedals": 1
+          "pedals": 85
         },
         {
           "mode": "wait",
@@ -1001,7 +1001,7 @@
           "perfect": 1013,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 1
+          "pedals": 85
         },
         {
           "mode": "wait",
@@ -1010,7 +1010,7 @@
           "perfect": 1013,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 1
+          "pedals": 85
         },
         {
           "mode": "bpm",
@@ -1023,7 +1023,7 @@
           "perfect": 46,
           "releaseUnavailable": 0,
           "releaseCorrect": 46,
-          "pedals": 2
+          "pedals": 4
         }
       ]
     },
@@ -1054,7 +1054,7 @@
           "perfect": 811,
           "releaseUnavailable": 0,
           "releaseCorrect": 811,
-          "pedals": 1
+          "pedals": 72
         },
         {
           "mode": "bpm",
@@ -1063,7 +1063,7 @@
           "perfect": 811,
           "releaseUnavailable": 0,
           "releaseCorrect": 811,
-          "pedals": 1
+          "pedals": 72
         },
         {
           "mode": "wait",
@@ -1072,7 +1072,7 @@
           "perfect": 811,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 1
+          "pedals": 72
         },
         {
           "mode": "wait",
@@ -1081,7 +1081,7 @@
           "perfect": 811,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 1
+          "pedals": 72
         },
         {
           "mode": "bpm",
@@ -1094,7 +1094,7 @@
           "perfect": 60,
           "releaseUnavailable": 0,
           "releaseCorrect": 60,
-          "pedals": 2
+          "pedals": 6
         }
       ]
     },
@@ -1196,7 +1196,7 @@
           "perfect": 1404,
           "releaseUnavailable": 28,
           "releaseCorrect": 1376,
-          "pedals": 7
+          "pedals": 88
         },
         {
           "mode": "bpm",
@@ -1205,7 +1205,7 @@
           "perfect": 1404,
           "releaseUnavailable": 28,
           "releaseCorrect": 1376,
-          "pedals": 7
+          "pedals": 88
         },
         {
           "mode": "wait",
@@ -1214,7 +1214,7 @@
           "perfect": 1404,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 7
+          "pedals": 88
         },
         {
           "mode": "wait",
@@ -1223,7 +1223,7 @@
           "perfect": 1404,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 7
+          "pedals": 88
         },
         {
           "mode": "bpm",
@@ -1236,7 +1236,7 @@
           "perfect": 44,
           "releaseUnavailable": 0,
           "releaseCorrect": 44,
-          "pedals": 2
+          "pedals": 4
         }
       ]
     },
@@ -1267,7 +1267,7 @@
           "perfect": 994,
           "releaseUnavailable": 7,
           "releaseCorrect": 987,
-          "pedals": 4
+          "pedals": 40
         },
         {
           "mode": "bpm",
@@ -1276,7 +1276,7 @@
           "perfect": 994,
           "releaseUnavailable": 7,
           "releaseCorrect": 987,
-          "pedals": 4
+          "pedals": 40
         },
         {
           "mode": "wait",
@@ -1285,7 +1285,7 @@
           "perfect": 994,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 4
+          "pedals": 40
         },
         {
           "mode": "wait",
@@ -1294,7 +1294,7 @@
           "perfect": 994,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 4
+          "pedals": 40
         },
         {
           "mode": "bpm",
@@ -1338,7 +1338,7 @@
           "perfect": 1971,
           "releaseUnavailable": 12,
           "releaseCorrect": 1959,
-          "pedals": 7
+          "pedals": 90
         },
         {
           "mode": "bpm",
@@ -1347,7 +1347,7 @@
           "perfect": 1971,
           "releaseUnavailable": 12,
           "releaseCorrect": 1959,
-          "pedals": 7
+          "pedals": 90
         },
         {
           "mode": "wait",
@@ -1356,7 +1356,7 @@
           "perfect": 1971,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 7
+          "pedals": 90
         },
         {
           "mode": "wait",
@@ -1365,7 +1365,7 @@
           "perfect": 1971,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 7
+          "pedals": 90
         },
         {
           "mode": "bpm",
@@ -1409,7 +1409,7 @@
           "perfect": 1407,
           "releaseUnavailable": 9,
           "releaseCorrect": 1398,
-          "pedals": 6
+          "pedals": 102
         },
         {
           "mode": "bpm",
@@ -1418,7 +1418,7 @@
           "perfect": 1407,
           "releaseUnavailable": 9,
           "releaseCorrect": 1398,
-          "pedals": 6
+          "pedals": 102
         },
         {
           "mode": "wait",
@@ -1427,7 +1427,7 @@
           "perfect": 1407,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 6
+          "pedals": 102
         },
         {
           "mode": "wait",
@@ -1436,7 +1436,7 @@
           "perfect": 1407,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 6
+          "pedals": 102
         },
         {
           "mode": "bpm",
@@ -1449,7 +1449,7 @@
           "perfect": 66,
           "releaseUnavailable": 0,
           "releaseCorrect": 66,
-          "pedals": 2
+          "pedals": 4
         }
       ]
     },
@@ -1480,7 +1480,7 @@
           "perfect": 908,
           "releaseUnavailable": 1,
           "releaseCorrect": 907,
-          "pedals": 3
+          "pedals": 70
         },
         {
           "mode": "bpm",
@@ -1489,7 +1489,7 @@
           "perfect": 908,
           "releaseUnavailable": 1,
           "releaseCorrect": 907,
-          "pedals": 3
+          "pedals": 70
         },
         {
           "mode": "wait",
@@ -1498,7 +1498,7 @@
           "perfect": 908,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 3
+          "pedals": 70
         },
         {
           "mode": "wait",
@@ -1507,7 +1507,7 @@
           "perfect": 908,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 3
+          "pedals": 70
         },
         {
           "mode": "bpm",
@@ -1520,7 +1520,7 @@
           "perfect": 64,
           "releaseUnavailable": 0,
           "releaseCorrect": 64,
-          "pedals": 2
+          "pedals": 4
         }
       ]
     },
@@ -1551,7 +1551,7 @@
           "perfect": 1288,
           "releaseUnavailable": 3,
           "releaseCorrect": 1285,
-          "pedals": 1
+          "pedals": 75
         },
         {
           "mode": "bpm",
@@ -1560,7 +1560,7 @@
           "perfect": 1288,
           "releaseUnavailable": 3,
           "releaseCorrect": 1285,
-          "pedals": 1
+          "pedals": 75
         },
         {
           "mode": "wait",
@@ -1569,7 +1569,7 @@
           "perfect": 1288,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 1
+          "pedals": 75
         },
         {
           "mode": "wait",
@@ -1578,7 +1578,7 @@
           "perfect": 1288,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 1
+          "pedals": 75
         },
         {
           "mode": "bpm",
@@ -1591,7 +1591,7 @@
           "perfect": 44,
           "releaseUnavailable": 0,
           "releaseCorrect": 44,
-          "pedals": 2
+          "pedals": 4
         }
       ]
     },
@@ -1622,7 +1622,7 @@
           "perfect": 1534,
           "releaseUnavailable": 2,
           "releaseCorrect": 1532,
-          "pedals": 6
+          "pedals": 110
         },
         {
           "mode": "bpm",
@@ -1631,7 +1631,7 @@
           "perfect": 1534,
           "releaseUnavailable": 2,
           "releaseCorrect": 1532,
-          "pedals": 6
+          "pedals": 110
         },
         {
           "mode": "wait",
@@ -1640,7 +1640,7 @@
           "perfect": 1534,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 6
+          "pedals": 110
         },
         {
           "mode": "wait",
@@ -1649,7 +1649,7 @@
           "perfect": 1534,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 6
+          "pedals": 110
         },
         {
           "mode": "bpm",
@@ -1662,7 +1662,7 @@
           "perfect": 36,
           "releaseUnavailable": 0,
           "releaseCorrect": 36,
-          "pedals": 2
+          "pedals": 6
         }
       ]
     },
@@ -1693,7 +1693,7 @@
           "perfect": 1155,
           "releaseUnavailable": 3,
           "releaseCorrect": 1152,
-          "pedals": 4
+          "pedals": 91
         },
         {
           "mode": "bpm",
@@ -1702,7 +1702,7 @@
           "perfect": 1155,
           "releaseUnavailable": 3,
           "releaseCorrect": 1152,
-          "pedals": 4
+          "pedals": 91
         },
         {
           "mode": "wait",
@@ -1711,7 +1711,7 @@
           "perfect": 1155,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 4
+          "pedals": 91
         },
         {
           "mode": "wait",
@@ -1720,7 +1720,7 @@
           "perfect": 1155,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 4
+          "pedals": 91
         },
         {
           "mode": "bpm",
@@ -1733,7 +1733,7 @@
           "perfect": 112,
           "releaseUnavailable": 0,
           "releaseCorrect": 112,
-          "pedals": 2
+          "pedals": 16
         }
       ]
     },
@@ -1764,7 +1764,7 @@
           "perfect": 1033,
           "releaseUnavailable": 0,
           "releaseCorrect": 1033,
-          "pedals": 65
+          "pedals": 130
         },
         {
           "mode": "bpm",
@@ -1773,7 +1773,7 @@
           "perfect": 1033,
           "releaseUnavailable": 0,
           "releaseCorrect": 1033,
-          "pedals": 65
+          "pedals": 130
         },
         {
           "mode": "wait",
@@ -1782,7 +1782,7 @@
           "perfect": 1033,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 65
+          "pedals": 130
         },
         {
           "mode": "wait",
@@ -1791,7 +1791,7 @@
           "perfect": 1033,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 65
+          "pedals": 130
         },
         {
           "mode": "bpm",
@@ -1804,7 +1804,7 @@
           "perfect": 60,
           "releaseUnavailable": 0,
           "releaseCorrect": 60,
-          "pedals": 6
+          "pedals": 8
         }
       ]
     },
@@ -2261,7 +2261,7 @@
           "perfect": 708,
           "releaseUnavailable": 0,
           "releaseCorrect": 708,
-          "pedals": 10
+          "pedals": 63
         },
         {
           "mode": "bpm",
@@ -2270,7 +2270,7 @@
           "perfect": 708,
           "releaseUnavailable": 0,
           "releaseCorrect": 708,
-          "pedals": 10
+          "pedals": 63
         },
         {
           "mode": "wait",
@@ -2279,7 +2279,7 @@
           "perfect": 708,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 10
+          "pedals": 63
         },
         {
           "mode": "wait",
@@ -2288,7 +2288,7 @@
           "perfect": 708,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 10
+          "pedals": 63
         },
         {
           "mode": "bpm",
@@ -2474,7 +2474,7 @@
           "perfect": 826,
           "releaseUnavailable": 0,
           "releaseCorrect": 826,
-          "pedals": 12
+          "pedals": 35
         },
         {
           "mode": "bpm",
@@ -2483,7 +2483,7 @@
           "perfect": 826,
           "releaseUnavailable": 0,
           "releaseCorrect": 826,
-          "pedals": 12
+          "pedals": 36
         },
         {
           "mode": "wait",
@@ -2492,7 +2492,7 @@
           "perfect": 826,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 12
+          "pedals": 35
         },
         {
           "mode": "wait",
@@ -2501,7 +2501,7 @@
           "perfect": 826,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 12
+          "pedals": 36
         },
         {
           "mode": "bpm",
@@ -3042,7 +3042,7 @@
           "perfect": 1599,
           "releaseUnavailable": 3,
           "releaseCorrect": 1596,
-          "pedals": 2
+          "pedals": 89
         },
         {
           "mode": "bpm",
@@ -3051,7 +3051,7 @@
           "perfect": 1599,
           "releaseUnavailable": 3,
           "releaseCorrect": 1596,
-          "pedals": 2
+          "pedals": 89
         },
         {
           "mode": "wait",
@@ -3060,7 +3060,7 @@
           "perfect": 1599,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 2
+          "pedals": 89
         },
         {
           "mode": "wait",
@@ -3069,7 +3069,7 @@
           "perfect": 1599,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 2
+          "pedals": 89
         },
         {
           "mode": "bpm",
@@ -3082,7 +3082,7 @@
           "perfect": 108,
           "releaseUnavailable": 0,
           "releaseCorrect": 108,
-          "pedals": 2
+          "pedals": 4
         }
       ]
     },
@@ -3113,7 +3113,7 @@
           "perfect": 483,
           "releaseUnavailable": 1,
           "releaseCorrect": 482,
-          "pedals": 1
+          "pedals": 40
         },
         {
           "mode": "bpm",
@@ -3122,7 +3122,7 @@
           "perfect": 483,
           "releaseUnavailable": 1,
           "releaseCorrect": 482,
-          "pedals": 1
+          "pedals": 40
         },
         {
           "mode": "wait",
@@ -3131,7 +3131,7 @@
           "perfect": 483,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 1
+          "pedals": 40
         },
         {
           "mode": "wait",
@@ -3140,7 +3140,7 @@
           "perfect": 483,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 1
+          "pedals": 40
         },
         {
           "mode": "bpm",
@@ -3153,7 +3153,7 @@
           "perfect": 56,
           "releaseUnavailable": 0,
           "releaseCorrect": 56,
-          "pedals": 2
+          "pedals": 4
         }
       ]
     },
@@ -3184,7 +3184,7 @@
           "perfect": 545,
           "releaseUnavailable": 1,
           "releaseCorrect": 544,
-          "pedals": 1
+          "pedals": 42
         },
         {
           "mode": "bpm",
@@ -3193,7 +3193,7 @@
           "perfect": 545,
           "releaseUnavailable": 1,
           "releaseCorrect": 544,
-          "pedals": 1
+          "pedals": 42
         },
         {
           "mode": "wait",
@@ -3202,7 +3202,7 @@
           "perfect": 545,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 1
+          "pedals": 42
         },
         {
           "mode": "wait",
@@ -3211,7 +3211,7 @@
           "perfect": 545,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 1
+          "pedals": 42
         },
         {
           "mode": "bpm",
@@ -3224,7 +3224,7 @@
           "perfect": 52,
           "releaseUnavailable": 0,
           "releaseCorrect": 52,
-          "pedals": 2
+          "pedals": 4
         }
       ]
     },
@@ -3255,7 +3255,7 @@
           "perfect": 669,
           "releaseUnavailable": 7,
           "releaseCorrect": 662,
-          "pedals": 5
+          "pedals": 42
         },
         {
           "mode": "bpm",
@@ -3264,7 +3264,7 @@
           "perfect": 669,
           "releaseUnavailable": 7,
           "releaseCorrect": 662,
-          "pedals": 5
+          "pedals": 42
         },
         {
           "mode": "wait",
@@ -3273,7 +3273,7 @@
           "perfect": 669,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 5
+          "pedals": 42
         },
         {
           "mode": "wait",
@@ -3282,7 +3282,7 @@
           "perfect": 669,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 5
+          "pedals": 42
         },
         {
           "mode": "bpm",
@@ -3295,7 +3295,7 @@
           "perfect": 54,
           "releaseUnavailable": 0,
           "releaseCorrect": 54,
-          "pedals": 2
+          "pedals": 4
         }
       ]
     },
@@ -3326,7 +3326,7 @@
           "perfect": 1410,
           "releaseUnavailable": 12,
           "releaseCorrect": 1398,
-          "pedals": 2
+          "pedals": 79
         },
         {
           "mode": "bpm",
@@ -3335,7 +3335,7 @@
           "perfect": 1410,
           "releaseUnavailable": 12,
           "releaseCorrect": 1398,
-          "pedals": 2
+          "pedals": 79
         },
         {
           "mode": "wait",
@@ -3344,7 +3344,7 @@
           "perfect": 1410,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 2
+          "pedals": 79
         },
         {
           "mode": "wait",
@@ -3353,7 +3353,7 @@
           "perfect": 1410,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 2
+          "pedals": 79
         },
         {
           "mode": "bpm",
@@ -3366,7 +3366,7 @@
           "perfect": 154,
           "releaseUnavailable": 0,
           "releaseCorrect": 154,
-          "pedals": 2
+          "pedals": 4
         }
       ]
     },
@@ -3823,7 +3823,7 @@
           "perfect": 446,
           "releaseUnavailable": 0,
           "releaseCorrect": 446,
-          "pedals": 4
+          "pedals": 13
         },
         {
           "mode": "bpm",
@@ -3832,7 +3832,7 @@
           "perfect": 446,
           "releaseUnavailable": 0,
           "releaseCorrect": 446,
-          "pedals": 4
+          "pedals": 13
         },
         {
           "mode": "wait",
@@ -3841,7 +3841,7 @@
           "perfect": 446,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 4
+          "pedals": 13
         },
         {
           "mode": "wait",
@@ -3850,7 +3850,7 @@
           "perfect": 446,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 4
+          "pedals": 13
         },
         {
           "mode": "bpm",
@@ -3863,7 +3863,7 @@
           "perfect": 112,
           "releaseUnavailable": 0,
           "releaseCorrect": 112,
-          "pedals": 2
+          "pedals": 8
         }
       ]
     },
@@ -3965,7 +3965,7 @@
           "perfect": 181,
           "releaseUnavailable": 0,
           "releaseCorrect": 181,
-          "pedals": 1
+          "pedals": 11
         },
         {
           "mode": "bpm",
@@ -3974,7 +3974,7 @@
           "perfect": 181,
           "releaseUnavailable": 0,
           "releaseCorrect": 181,
-          "pedals": 1
+          "pedals": 11
         },
         {
           "mode": "wait",
@@ -3983,7 +3983,7 @@
           "perfect": 181,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 1
+          "pedals": 11
         },
         {
           "mode": "wait",
@@ -3992,7 +3992,7 @@
           "perfect": 181,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 1
+          "pedals": 11
         },
         {
           "mode": "bpm",
@@ -4005,7 +4005,7 @@
           "perfect": 108,
           "releaseUnavailable": 0,
           "releaseCorrect": 108,
-          "pedals": 2
+          "pedals": 8
         }
       ]
     },
@@ -4107,7 +4107,7 @@
           "perfect": 297,
           "releaseUnavailable": 0,
           "releaseCorrect": 297,
-          "pedals": 3
+          "pedals": 10
         },
         {
           "mode": "bpm",
@@ -4116,7 +4116,7 @@
           "perfect": 297,
           "releaseUnavailable": 0,
           "releaseCorrect": 297,
-          "pedals": 3
+          "pedals": 10
         },
         {
           "mode": "wait",
@@ -4125,7 +4125,7 @@
           "perfect": 297,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 3
+          "pedals": 10
         },
         {
           "mode": "wait",
@@ -4134,7 +4134,7 @@
           "perfect": 297,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 3
+          "pedals": 10
         },
         {
           "mode": "bpm",
@@ -4249,7 +4249,7 @@
           "perfect": 786,
           "releaseUnavailable": 2,
           "releaseCorrect": 784,
-          "pedals": 3
+          "pedals": 96
         },
         {
           "mode": "bpm",
@@ -4258,7 +4258,7 @@
           "perfect": 786,
           "releaseUnavailable": 2,
           "releaseCorrect": 784,
-          "pedals": 3
+          "pedals": 96
         },
         {
           "mode": "wait",
@@ -4267,7 +4267,7 @@
           "perfect": 786,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 3
+          "pedals": 96
         },
         {
           "mode": "wait",
@@ -4276,7 +4276,7 @@
           "perfect": 786,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 3
+          "pedals": 96
         },
         {
           "mode": "bpm",
@@ -4289,7 +4289,7 @@
           "perfect": 52,
           "releaseUnavailable": 2,
           "releaseCorrect": 50,
-          "pedals": 2
+          "pedals": 6
         }
       ]
     },
@@ -4320,7 +4320,7 @@
           "perfect": 1534,
           "releaseUnavailable": 5,
           "releaseCorrect": 1529,
-          "pedals": 1
+          "pedals": 98
         },
         {
           "mode": "bpm",
@@ -4329,7 +4329,7 @@
           "perfect": 1534,
           "releaseUnavailable": 5,
           "releaseCorrect": 1529,
-          "pedals": 1
+          "pedals": 98
         },
         {
           "mode": "wait",
@@ -4338,7 +4338,7 @@
           "perfect": 1534,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 1
+          "pedals": 98
         },
         {
           "mode": "wait",
@@ -4347,7 +4347,7 @@
           "perfect": 1534,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 1
+          "pedals": 98
         },
         {
           "mode": "bpm",
@@ -4360,7 +4360,7 @@
           "perfect": 58,
           "releaseUnavailable": 0,
           "releaseCorrect": 58,
-          "pedals": 2
+          "pedals": 4
         }
       ]
     },
@@ -4533,7 +4533,7 @@
           "perfect": 1129,
           "releaseUnavailable": 5,
           "releaseCorrect": 1124,
-          "pedals": 3
+          "pedals": 7
         },
         {
           "mode": "bpm",
@@ -4542,7 +4542,7 @@
           "perfect": 1129,
           "releaseUnavailable": 5,
           "releaseCorrect": 1124,
-          "pedals": 3
+          "pedals": 7
         },
         {
           "mode": "wait",
@@ -4551,7 +4551,7 @@
           "perfect": 1129,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 3
+          "pedals": 7
         },
         {
           "mode": "wait",
@@ -4560,7 +4560,7 @@
           "perfect": 1129,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 3
+          "pedals": 7
         },
         {
           "mode": "bpm",
@@ -4604,7 +4604,7 @@
           "perfect": 1959,
           "releaseUnavailable": 7,
           "releaseCorrect": 1952,
-          "pedals": 9
+          "pedals": 33
         },
         {
           "mode": "bpm",
@@ -4613,7 +4613,7 @@
           "perfect": 1959,
           "releaseUnavailable": 7,
           "releaseCorrect": 1952,
-          "pedals": 9
+          "pedals": 33
         },
         {
           "mode": "wait",
@@ -4622,7 +4622,7 @@
           "perfect": 1959,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 9
+          "pedals": 33
         },
         {
           "mode": "wait",
@@ -4631,7 +4631,7 @@
           "perfect": 1959,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 9
+          "pedals": 33
         },
         {
           "mode": "bpm",
@@ -4675,7 +4675,7 @@
           "perfect": 1252,
           "releaseUnavailable": 18,
           "releaseCorrect": 1234,
-          "pedals": 8
+          "pedals": 83
         },
         {
           "mode": "bpm",
@@ -4684,7 +4684,7 @@
           "perfect": 1252,
           "releaseUnavailable": 18,
           "releaseCorrect": 1234,
-          "pedals": 8
+          "pedals": 83
         },
         {
           "mode": "wait",
@@ -4693,7 +4693,7 @@
           "perfect": 1252,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 8
+          "pedals": 83
         },
         {
           "mode": "wait",
@@ -4702,7 +4702,7 @@
           "perfect": 1252,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 8
+          "pedals": 83
         },
         {
           "mode": "bpm",
@@ -4817,7 +4817,7 @@
           "perfect": 1382,
           "releaseUnavailable": 0,
           "releaseCorrect": 1382,
-          "pedals": 5
+          "pedals": 48
         },
         {
           "mode": "bpm",
@@ -4826,7 +4826,7 @@
           "perfect": 1382,
           "releaseUnavailable": 0,
           "releaseCorrect": 1382,
-          "pedals": 5
+          "pedals": 48
         },
         {
           "mode": "wait",
@@ -4835,7 +4835,7 @@
           "perfect": 1382,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 5
+          "pedals": 48
         },
         {
           "mode": "wait",
@@ -4844,7 +4844,7 @@
           "perfect": 1382,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 5
+          "pedals": 48
         },
         {
           "mode": "bpm",
@@ -4959,7 +4959,7 @@
           "perfect": 1142,
           "releaseUnavailable": 5,
           "releaseCorrect": 1137,
-          "pedals": 18
+          "pedals": 22
         },
         {
           "mode": "bpm",
@@ -4968,7 +4968,7 @@
           "perfect": 1142,
           "releaseUnavailable": 5,
           "releaseCorrect": 1137,
-          "pedals": 18
+          "pedals": 22
         },
         {
           "mode": "wait",
@@ -4977,7 +4977,7 @@
           "perfect": 1142,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 18
+          "pedals": 22
         },
         {
           "mode": "wait",
@@ -4986,7 +4986,7 @@
           "perfect": 1142,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 18
+          "pedals": 22
         },
         {
           "mode": "bpm",
@@ -4999,7 +4999,7 @@
           "perfect": 54,
           "releaseUnavailable": 0,
           "releaseCorrect": 54,
-          "pedals": 2
+          "pedals": 4
         }
       ]
     },
@@ -5030,7 +5030,7 @@
           "perfect": 1506,
           "releaseUnavailable": 0,
           "releaseCorrect": 1506,
-          "pedals": 1
+          "pedals": 76
         },
         {
           "mode": "bpm",
@@ -5039,7 +5039,7 @@
           "perfect": 1506,
           "releaseUnavailable": 0,
           "releaseCorrect": 1506,
-          "pedals": 1
+          "pedals": 76
         },
         {
           "mode": "wait",
@@ -5048,7 +5048,7 @@
           "perfect": 1506,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 1
+          "pedals": 76
         },
         {
           "mode": "wait",
@@ -5057,7 +5057,7 @@
           "perfect": 1506,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 1
+          "pedals": 76
         },
         {
           "mode": "bpm",
@@ -5070,7 +5070,7 @@
           "perfect": 102,
           "releaseUnavailable": 0,
           "releaseCorrect": 102,
-          "pedals": 2
+          "pedals": 4
         }
       ]
     },
@@ -5243,7 +5243,7 @@
           "perfect": 720,
           "releaseUnavailable": 1,
           "releaseCorrect": 719,
-          "pedals": 1
+          "pedals": 78
         },
         {
           "mode": "bpm",
@@ -5252,7 +5252,7 @@
           "perfect": 720,
           "releaseUnavailable": 1,
           "releaseCorrect": 719,
-          "pedals": 1
+          "pedals": 78
         },
         {
           "mode": "wait",
@@ -5261,7 +5261,7 @@
           "perfect": 720,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 1
+          "pedals": 78
         },
         {
           "mode": "wait",
@@ -5270,7 +5270,7 @@
           "perfect": 720,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 1
+          "pedals": 78
         },
         {
           "mode": "bpm",
@@ -5283,7 +5283,7 @@
           "perfect": 38,
           "releaseUnavailable": 0,
           "releaseCorrect": 38,
-          "pedals": 2
+          "pedals": 4
         }
       ]
     },
@@ -5456,7 +5456,7 @@
           "perfect": 1416,
           "releaseUnavailable": 6,
           "releaseCorrect": 1410,
-          "pedals": 7
+          "pedals": 109
         },
         {
           "mode": "bpm",
@@ -5465,7 +5465,7 @@
           "perfect": 1416,
           "releaseUnavailable": 6,
           "releaseCorrect": 1410,
-          "pedals": 7
+          "pedals": 109
         },
         {
           "mode": "wait",
@@ -5474,7 +5474,7 @@
           "perfect": 1416,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 7
+          "pedals": 109
         },
         {
           "mode": "wait",
@@ -5483,7 +5483,7 @@
           "perfect": 1416,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 7
+          "pedals": 109
         },
         {
           "mode": "bpm",
@@ -5496,7 +5496,7 @@
           "perfect": 48,
           "releaseUnavailable": 0,
           "releaseCorrect": 48,
-          "pedals": 2
+          "pedals": 4
         }
       ]
     },
@@ -8864,7 +8864,7 @@
           "perfect": 729,
           "releaseUnavailable": 4,
           "releaseCorrect": 725,
-          "pedals": 1
+          "pedals": 8
         },
         {
           "mode": "bpm",
@@ -8873,7 +8873,7 @@
           "perfect": 729,
           "releaseUnavailable": 4,
           "releaseCorrect": 725,
-          "pedals": 1
+          "pedals": 8
         },
         {
           "mode": "wait",
@@ -8882,7 +8882,7 @@
           "perfect": 729,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 1
+          "pedals": 8
         },
         {
           "mode": "wait",
@@ -8891,7 +8891,7 @@
           "perfect": 729,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 1
+          "pedals": 8
         },
         {
           "mode": "bpm",
@@ -9361,7 +9361,7 @@
           "perfect": 977,
           "releaseUnavailable": 5,
           "releaseCorrect": 972,
-          "pedals": 7
+          "pedals": 89
         },
         {
           "mode": "bpm",
@@ -9370,7 +9370,7 @@
           "perfect": 977,
           "releaseUnavailable": 5,
           "releaseCorrect": 972,
-          "pedals": 7
+          "pedals": 89
         },
         {
           "mode": "wait",
@@ -9379,7 +9379,7 @@
           "perfect": 977,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 7
+          "pedals": 89
         },
         {
           "mode": "wait",
@@ -9388,7 +9388,7 @@
           "perfect": 977,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 7
+          "pedals": 89
         },
         {
           "mode": "bpm",
@@ -9401,7 +9401,7 @@
           "perfect": 60,
           "releaseUnavailable": 2,
           "releaseCorrect": 58,
-          "pedals": 2
+          "pedals": 8
         }
       ]
     },
@@ -9432,7 +9432,7 @@
           "perfect": 886,
           "releaseUnavailable": 0,
           "releaseCorrect": 886,
-          "pedals": 1
+          "pedals": 60
         },
         {
           "mode": "bpm",
@@ -9441,7 +9441,7 @@
           "perfect": 886,
           "releaseUnavailable": 0,
           "releaseCorrect": 886,
-          "pedals": 1
+          "pedals": 60
         },
         {
           "mode": "wait",
@@ -9450,7 +9450,7 @@
           "perfect": 886,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 1
+          "pedals": 60
         },
         {
           "mode": "wait",
@@ -9459,7 +9459,7 @@
           "perfect": 886,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 1
+          "pedals": 60
         },
         {
           "mode": "bpm",
@@ -9472,7 +9472,7 @@
           "perfect": 76,
           "releaseUnavailable": 0,
           "releaseCorrect": 76,
-          "pedals": 2
+          "pedals": 4
         }
       ]
     },
@@ -9645,7 +9645,7 @@
           "perfect": 1128,
           "releaseUnavailable": 3,
           "releaseCorrect": 1125,
-          "pedals": 1
+          "pedals": 69
         },
         {
           "mode": "bpm",
@@ -9654,7 +9654,7 @@
           "perfect": 1128,
           "releaseUnavailable": 3,
           "releaseCorrect": 1125,
-          "pedals": 1
+          "pedals": 69
         },
         {
           "mode": "wait",
@@ -9663,7 +9663,7 @@
           "perfect": 1128,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 1
+          "pedals": 69
         },
         {
           "mode": "wait",
@@ -9672,7 +9672,7 @@
           "perfect": 1128,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 1
+          "pedals": 69
         },
         {
           "mode": "bpm",
@@ -9685,7 +9685,7 @@
           "perfect": 58,
           "releaseUnavailable": 0,
           "releaseCorrect": 58,
-          "pedals": 2
+          "pedals": 4
         }
       ]
     },
@@ -9716,7 +9716,7 @@
           "perfect": 627,
           "releaseUnavailable": 1,
           "releaseCorrect": 626,
-          "pedals": 2
+          "pedals": 67
         },
         {
           "mode": "bpm",
@@ -9725,7 +9725,7 @@
           "perfect": 627,
           "releaseUnavailable": 1,
           "releaseCorrect": 626,
-          "pedals": 2
+          "pedals": 67
         },
         {
           "mode": "wait",
@@ -9734,7 +9734,7 @@
           "perfect": 627,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 2
+          "pedals": 67
         },
         {
           "mode": "wait",
@@ -9743,7 +9743,7 @@
           "perfect": 627,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 2
+          "pedals": 67
         },
         {
           "mode": "bpm",
@@ -9756,7 +9756,7 @@
           "perfect": 56,
           "releaseUnavailable": 0,
           "releaseCorrect": 56,
-          "pedals": 2
+          "pedals": 8
         }
       ]
     },
@@ -9787,7 +9787,7 @@
           "perfect": 1195,
           "releaseUnavailable": 20,
           "releaseCorrect": 1175,
-          "pedals": 2
+          "pedals": 114
         },
         {
           "mode": "bpm",
@@ -9796,7 +9796,7 @@
           "perfect": 1195,
           "releaseUnavailable": 20,
           "releaseCorrect": 1175,
-          "pedals": 2
+          "pedals": 114
         },
         {
           "mode": "wait",
@@ -9805,7 +9805,7 @@
           "perfect": 1195,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 2
+          "pedals": 114
         },
         {
           "mode": "wait",
@@ -9814,7 +9814,7 @@
           "perfect": 1195,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 2
+          "pedals": 114
         },
         {
           "mode": "bpm",
@@ -9827,7 +9827,7 @@
           "perfect": 58,
           "releaseUnavailable": 2,
           "releaseCorrect": 56,
-          "pedals": 2
+          "pedals": 10
         }
       ]
     },
@@ -9858,7 +9858,7 @@
           "perfect": 494,
           "releaseUnavailable": 3,
           "releaseCorrect": 491,
-          "pedals": 1
+          "pedals": 37
         },
         {
           "mode": "bpm",
@@ -9867,7 +9867,7 @@
           "perfect": 494,
           "releaseUnavailable": 3,
           "releaseCorrect": 491,
-          "pedals": 1
+          "pedals": 37
         },
         {
           "mode": "wait",
@@ -9876,7 +9876,7 @@
           "perfect": 494,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 1
+          "pedals": 37
         },
         {
           "mode": "wait",
@@ -9885,7 +9885,7 @@
           "perfect": 494,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 1
+          "pedals": 37
         },
         {
           "mode": "bpm",
@@ -9898,7 +9898,7 @@
           "perfect": 66,
           "releaseUnavailable": 0,
           "releaseCorrect": 66,
-          "pedals": 2
+          "pedals": 4
         }
       ]
     },
@@ -9929,7 +9929,7 @@
           "perfect": 479,
           "releaseUnavailable": 2,
           "releaseCorrect": 477,
-          "pedals": 2
+          "pedals": 35
         },
         {
           "mode": "bpm",
@@ -9938,7 +9938,7 @@
           "perfect": 479,
           "releaseUnavailable": 2,
           "releaseCorrect": 477,
-          "pedals": 2
+          "pedals": 35
         },
         {
           "mode": "wait",
@@ -9947,7 +9947,7 @@
           "perfect": 479,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 2
+          "pedals": 35
         },
         {
           "mode": "wait",
@@ -9956,7 +9956,7 @@
           "perfect": 479,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 2
+          "pedals": 35
         },
         {
           "mode": "bpm",
@@ -9969,7 +9969,7 @@
           "perfect": 98,
           "releaseUnavailable": 0,
           "releaseCorrect": 98,
-          "pedals": 4
+          "pedals": 8
         }
       ]
     },
@@ -10000,7 +10000,7 @@
           "perfect": 1754,
           "releaseUnavailable": 0,
           "releaseCorrect": 1754,
-          "pedals": 11
+          "pedals": 144
         },
         {
           "mode": "bpm",
@@ -10009,7 +10009,7 @@
           "perfect": 1754,
           "releaseUnavailable": 0,
           "releaseCorrect": 1754,
-          "pedals": 11
+          "pedals": 144
         },
         {
           "mode": "wait",
@@ -10018,7 +10018,7 @@
           "perfect": 1754,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 11
+          "pedals": 144
         },
         {
           "mode": "wait",
@@ -10027,7 +10027,7 @@
           "perfect": 1754,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 11
+          "pedals": 144
         },
         {
           "mode": "bpm",
@@ -10040,7 +10040,7 @@
           "perfect": 74,
           "releaseUnavailable": 0,
           "releaseCorrect": 74,
-          "pedals": 2
+          "pedals": 6
         }
       ]
     },
@@ -10071,7 +10071,7 @@
           "perfect": 1829,
           "releaseUnavailable": 7,
           "releaseCorrect": 1822,
-          "pedals": 7
+          "pedals": 94
         },
         {
           "mode": "bpm",
@@ -10080,7 +10080,7 @@
           "perfect": 1829,
           "releaseUnavailable": 7,
           "releaseCorrect": 1822,
-          "pedals": 7
+          "pedals": 94
         },
         {
           "mode": "wait",
@@ -10089,7 +10089,7 @@
           "perfect": 1829,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 7
+          "pedals": 94
         },
         {
           "mode": "wait",
@@ -10098,7 +10098,7 @@
           "perfect": 1829,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 7
+          "pedals": 94
         },
         {
           "mode": "bpm",
@@ -10111,7 +10111,7 @@
           "perfect": 70,
           "releaseUnavailable": 0,
           "releaseCorrect": 70,
-          "pedals": 2
+          "pedals": 6
         }
       ]
     },
@@ -10142,7 +10142,7 @@
           "perfect": 2198,
           "releaseUnavailable": 0,
           "releaseCorrect": 2198,
-          "pedals": 90
+          "pedals": 214
         },
         {
           "mode": "bpm",
@@ -10151,7 +10151,7 @@
           "perfect": 2198,
           "releaseUnavailable": 0,
           "releaseCorrect": 2198,
-          "pedals": 90
+          "pedals": 214
         },
         {
           "mode": "wait",
@@ -10160,7 +10160,7 @@
           "perfect": 2198,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 90
+          "pedals": 214
         },
         {
           "mode": "wait",
@@ -10169,7 +10169,7 @@
           "perfect": 2198,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 90
+          "pedals": 214
         },
         {
           "mode": "bpm",
@@ -10213,7 +10213,7 @@
           "perfect": 907,
           "releaseUnavailable": 4,
           "releaseCorrect": 903,
-          "pedals": 46
+          "pedals": 87
         },
         {
           "mode": "bpm",
@@ -10222,7 +10222,7 @@
           "perfect": 907,
           "releaseUnavailable": 4,
           "releaseCorrect": 903,
-          "pedals": 46
+          "pedals": 87
         },
         {
           "mode": "wait",
@@ -10231,7 +10231,7 @@
           "perfect": 907,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 46
+          "pedals": 87
         },
         {
           "mode": "wait",
@@ -10240,7 +10240,7 @@
           "perfect": 907,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 46
+          "pedals": 87
         },
         {
           "mode": "bpm",
@@ -10284,7 +10284,7 @@
           "perfect": 823,
           "releaseUnavailable": 0,
           "releaseCorrect": 823,
-          "pedals": 1
+          "pedals": 8
         },
         {
           "mode": "bpm",
@@ -10293,7 +10293,7 @@
           "perfect": 823,
           "releaseUnavailable": 0,
           "releaseCorrect": 823,
-          "pedals": 1
+          "pedals": 8
         },
         {
           "mode": "wait",
@@ -10302,7 +10302,7 @@
           "perfect": 823,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 1
+          "pedals": 8
         },
         {
           "mode": "wait",
@@ -10311,7 +10311,7 @@
           "perfect": 823,
           "releaseUnavailable": 0,
           "releaseCorrect": 0,
-          "pedals": 1
+          "pedals": 8
         },
         {
           "mode": "bpm",

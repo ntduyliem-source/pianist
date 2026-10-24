@@ -205,6 +205,34 @@ test('overlapping voices keep both attacks without scoring an impossible physica
   );
 });
 
+test('adjacent native pedal spans retain the release and repress at their shared boundary', () => {
+  const s = score();
+  s.pedals = [
+    { id: 0, partId: 'p', occurrence: 0, tick: 0, endTick: 480, atMs: 0, endMs: 500 },
+    { id: 1, partId: 'p', occurrence: 0, tick: 480, endTick: 960, atMs: 500, endMs: 1000 },
+  ];
+  const t = createTimeline(s, { ...settingsFor(s), mode: 'bpm' });
+  assert.deepEqual(
+    t.pedals!.map((p) => [p.atMs, p.endMs]),
+    [
+      [0, 500],
+      [500, 1000],
+    ],
+  );
+  const engine = new PracticeEngine(t);
+  [
+    midi(1, 'pedal', 0, 64, 127),
+    midi(2, 'pedal', 500, 64, 0),
+    midi(3, 'pedal', 500, 64, 127),
+    midi(4, 'pedal', 1000, 64, 0),
+  ].forEach((e) => engine.input(e));
+  engine.clock(3000);
+  const r = resultFor(t, engine.view(), 'Pedal change', 'complete', 3000);
+  assert.equal(r.r4!.pedal.reference, 2);
+  assert.equal(r.r4!.pedal.performed, 2);
+  assert.equal(r.r4!.pedal.f1, 1);
+});
+
 for (const name of ['special-symbols', 'pedal-duration'])
   test(`captured native MPE ${name} remains playable in both grading modes`, () => {
     const json = readFileSync(

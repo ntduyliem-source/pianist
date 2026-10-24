@@ -67,7 +67,8 @@ export function attachReleaseReferences(score:ScoreSnapshot,t:Timeline):void {
   // pedal instructions still describe one physical sustain pedal.
   const physical:PedalTarget[]=[];
   for(const pedal of t.pedals){const last=physical.at(-1);
-    if(last&&last.loop===pedal.loop&&pedal.atMs<=last.endMs)last.endMs=Math.max(last.endMs,pedal.endMs);
+    // Equality is a real off/on pedal change, not an overlapping hold.
+    if(last&&last.loop===pedal.loop&&pedal.atMs<last.endMs)last.endMs=Math.max(last.endMs,pedal.endMs);
     else physical.push({...pedal});}
   t.pedals=physical;
 }
