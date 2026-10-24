@@ -37,10 +37,10 @@ const root=path.resolve(__dirname,'../../..'),out=path.resolve(process.env.PIANI
     const url=new URL(process.env.PIANIST_URL||'http://127.0.0.1:8787/pianist.html');url.searchParams.set('diagnostics','1');url.hash='/library';
     await page.goto(url.href);await page.getByRole('heading',{name:'Thư viện',exact:true}).waitFor();
     await page.addStyleTag({content:'#diagnostics{display:none!important}'});
-    await page.getByRole('searchbox',{name:'Tìm bản nhạc'}).fill('Fly Me');
-    const versions=page.getByRole('combobox',{name:'Chọn phiên bản Fly Me to the Moon'});
+    await page.getByRole('searchbox',{name:'Tìm bản nhạc'}).fill('anh trang noi ho');
+    const versions=page.getByRole('combobox',{name:'Chọn phiên bản Ánh trăng nói hộ lòng tôi'});
     await versions.waitFor();assert.equal(await versions.locator('option').count(),2);
-    const cover=page.getByAltText('Trang đầu: Fly Me to the Moon');
+    const cover=page.getByAltText('Trang đầu: Ánh trăng nói hộ lòng tôi');
     await page.waitForFunction(()=>document.querySelector('.score-thumbnail img')?.naturalWidth>0);
     const first=await cover.getAttribute('src');await versions.selectOption({index:1});
     assert.notEqual(await cover.getAttribute('src'),first,'version changes actual score thumbnail');
@@ -67,8 +67,8 @@ const root=path.resolve(__dirname,'../../..'),out=path.resolve(process.env.PIANI
     await page.getByRole('button',{name:'MIDI: Chưa kết nối',exact:true}).click();
     await page.getByRole('button',{name:'Kết nối MIDI',exact:true}).click();
     await page.getByText('Đã kết nối: UX Test Piano',{exact:true}).waitFor();await page.getByRole('button',{name:'Đóng MIDI'}).click();
-    await nav('Thư viện').click();await page.getByRole('searchbox',{name:'Tìm bản nhạc'}).fill('Fly Me');
-    await page.getByRole('button',{name:'Nghe Fly Me to the Moon',exact:true}).click();
+    await nav('Thư viện').click();await page.getByRole('searchbox',{name:'Tìm bản nhạc'}).fill('anh trang noi ho');
+    await page.getByRole('button',{name:'Nghe Ánh trăng nói hộ lòng tôi',exact:true}).click();
     const player=page.getByRole('region',{name:'Nghe nhạc thư viện'});await player.waitFor();
     await page.waitForFunction(()=>window.audioPeak()>1e-6||!!document.querySelector('.library-player [role="alert"]'),null,{timeout:120000});
     assert.equal(await player.locator('[role="alert"]').count(),0,await player.innerText());
@@ -96,11 +96,11 @@ const root=path.resolve(__dirname,'../../..'),out=path.resolve(process.env.PIANI
     await page.getByRole('textbox',{name:'Tên bản mới'}).fill('UX alternate arrangement');
     await page.getByRole('button',{name:'Lưu bản mới',exact:true}).click();await idle();
     await nav('Thư viện').click();await page.getByRole('searchbox',{name:'Tìm bản nhạc'}).fill('UX alternate');
-    const privateWork=page.getByRole('region',{name:'Bản nhạc của tôi'});
+    const privateWork=page.getByLabel('Danh sách bản nhạc',{exact:true});
     const privateVersion=privateWork.getByRole('combobox',{name:/Chọn phiên bản/});
     await privateVersion.waitFor();assert.equal(await privateVersion.locator('option').count(),2,'Save As adds a version, search retains the whole group');
     await privateVersion.selectOption({index:1});
-    await page.waitForFunction(()=>[...document.querySelectorAll('[aria-label="Bản nhạc của tôi"] .score-thumbnail img')].some(img=>img.naturalWidth>0),null,{timeout:60000});
+    await page.waitForFunction(()=>[...document.querySelectorAll('[aria-label="Danh sách bản nhạc"] .score-thumbnail img')].some(img=>img.naturalWidth>0),null,{timeout:60000});
     await privateWork.getByRole('button',{name:'Nghe UX alternate arrangement',exact:true}).click();
     await page.waitForFunction(()=>window.audioPeak()>1e-6||!!document.querySelector('.library-player [role="alert"]'),null,{timeout:30000});
     assert.equal(await player.locator('[role="alert"]').count(),0,await player.innerText());
@@ -108,8 +108,7 @@ const root=path.resolve(__dirname,'../../..'),out=path.resolve(process.env.PIANI
     await capture('private-versions-mobile');
     check('Save As groups private versions; search retains both; private MSCZ preview and playback work');
     // Exercise native grand-staff sheet: actual touch packets, pinch anchored on page 2.
-    await nav('Thư viện').click();await page.getByRole('searchbox',{name:'Tìm bản nhạc'}).fill('Tình Đơn Phương');
-    await page.getByRole('button',{name:'Mở bài có sẵn Tình Đơn Phương',exact:true}).click();await idle();
+    await nav('Thư viện').click();await page.locator('#file').setInputFiles(path.join(root,'tests/fixtures/pianist/regression/tinh-don-phuong.mxl'));await idle();
     await page.getByRole('button',{name:'Tập bài này',exact:true}).click();await page.getByTestId('practice-v2').waitFor();await idle();
     await page.getByRole('button',{name:'Chỉ bản nhạc',exact:true}).click();
     for(const width of [360,390,430]){await page.setViewportSize({width,height:844});await capture('fullsheet-'+width);}

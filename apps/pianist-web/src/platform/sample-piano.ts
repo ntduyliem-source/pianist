@@ -28,21 +28,34 @@ export function sampleRuntime() {
 /** Sound generation and sustain/restrike semantics are @tonejs/piano's, not the scorer's. */
 export class SamplePiano implements NativePracticeAudio {
   private instruments = new Map<number, Piano>();
+  private loads = new Map<number, Promise<void>>();
   private ready?: Promise<void>;
   private context?: Context;
   private pending = new Set<number>();
+  private generation = 0;
+  constructor(
+    private readonly runtime = sampleRuntime,
+    private readonly resumeAudio: () => Promise<unknown> = resumeSound,
+  ) {}
   async resume() {
-    await resumeSound();
+    await this.resumeAudio();
   }
   async prepare(channels: number[], signal?: AbortSignal) {
+    const generation = this.generation;
+    const check = () => {
+      signal?.throwIfAborted();
+      if (generation !== this.generation) throw new DOMException('Đã đóng bộ piano.', 'AbortError');
+    };
     const runtime = await bounded(
-      sampleRuntime(),
+      this.runtime(),
       15000,
       'Chưa tải được bộ piano nhẹ. Thử lại.',
       signal,
     );
+    check();
     this.context = runtime.context;
     await this.resume();
+    check();
     const added: Piano[] = [];
     try {
       for (const channel of new Set(channels)) {
@@ -59,29 +72,37 @@ export class SamplePiano implements NativePracticeAudio {
         });
         instrument.toDestination();
         this.instruments.set(channel, instrument);
+        this.loads.set(channel, instrument.load());
         added.push(instrument);
       }
       await bounded(
-        Promise.all(added.map((p) => p.load())),
+        // An existing instrument may still be loading. Every caller must wait
+        // for readiness; map membership alone does not mean samples are ready.
+        Promise.all([...new Set(channels)].map((channel) => this.loads.get(channel)!)),
         30000,
         'Tải mẫu piano quá lâu. Kiểm tra mạng rồi bấm Nghe để thử lại, hoặc chọn Tiếng MuseScore.',
         signal,
       );
+      check();
     } catch (error) {
       for (const [channel, piano] of this.instruments)
         if (added.includes(piano)) {
           piano.disconnect();
           piano.dispose();
           this.instruments.delete(channel);
+          this.loads.delete(channel);
         }
       throw error;
     }
   }
   async preparePreview(signal?: AbortSignal) {
-    this.ready ??= this.prepare([0, 15], signal).catch((e) => {
-      this.ready = undefined;
-      throw e;
-    });
+    if (!this.ready) {
+      const ready = this.prepare([0, 15], signal).catch((e) => {
+        if (this.ready === ready) this.ready = undefined;
+        throw e;
+      });
+      this.ready = ready;
+    }
     await bounded(this.ready, 35000, 'Chưa tải được piano. Thử lại.', signal);
   }
   event(event: SampleMidiEvent, time: number) {
@@ -133,12 +154,15 @@ export class SamplePiano implements NativePracticeAudio {
     }
   }
   dispose() {
+    this.generation++;
     this.stopPreview();
     for (const p of this.instruments.values()) {
       p.disconnect();
       p.dispose();
     }
     this.instruments.clear();
+    this.loads.clear();
+    this.ready = undefined;
   }
 }
 

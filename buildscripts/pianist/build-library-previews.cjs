@@ -10,6 +10,19 @@ const output = path.join(root,'scores/library/previews');
   const catalog = JSON.parse(await fs.readFile(path.join(root,'scores/library/catalog.json'),'utf8'));
   const previous = await fs.readFile(path.join(output,'manifest.json'),'utf8').then(JSON.parse).catch(()=>({files:[]}));
   const release = await fetch(new URL('release.json',base)).then(r=>{if(!r.ok)throw Error('Serve a packaged local build first.');return r.json();});
+  // Previews are needed before the next package can validate its catalog.
+  // Bootstrap a private builder manifest from the completed local renderer;
+  // do not publish a partial release.json to the application.
+  if (['127.0.0.1','localhost'].includes(base.hostname)) {
+    const build=JSON.parse((await fs.readFile(path.join(root,'build.artifacts/renderer/build.json'),'utf8')).replace(/^\uFEFF/,''));
+    for(const entry of build.files) {
+      const bytes=await fs.readFile(path.join(root,'build.artifacts/renderer',entry.path));
+      if(bytes.length!==entry.bytes||hash(bytes)!==entry.sha256) throw Error('Incomplete renderer build');
+      const name='renderer/'+entry.path;
+      release.files=release.files.filter(f=>f.path!==name);
+      release.files.push({...entry,path:name});
+    }
+  }
   const rendererVersion = release.files.find(f=>f.path==='renderer/PianistRenderer.wasm')?.sha256;
   if (!rendererVersion) throw Error('Release has no native renderer.');
   await fs.mkdir(output,{recursive:true});
@@ -19,6 +32,7 @@ const output = path.join(root,'scores/library/previews');
   const files = [];
   try {
     await page.route('**/__preview_builder__',route=>route.fulfill({contentType:'text/html',body:'<!doctype html><title>Native preview builder</title>'}));
+    await page.route('**/release.json',route=>route.fulfill({json:release}));
     await page.goto(new URL('__preview_builder__',base).href);
     await page.evaluate(async()=>{
       const {ExerciseRenderer} = await import('./app/exercise-renderer.js');

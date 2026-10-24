@@ -13,7 +13,7 @@ const root=path.resolve(__dirname,'../../..'),out=path.join(root,'artifacts/nati
  const close=()=>page.getByRole('button',{name:'Xong',exact:true}).click();
  try{
   await page.goto((process.env.PIANIST_URL||'http://127.0.0.1:8787/pianist.html')+'?diagnostics=1#/library');
-  await page.locator('#file').setInputFiles(path.join(root,'scores/library/songs/tinh-don-phuong-xin-yao-rang-ni-ting-jian-cover-by-vu-le.mxl'));
+  await page.locator('#file').setInputFiles(path.join(root,'tests/fixtures/pianist/regression/tinh-don-phuong.mxl'));
   await page.getByRole('region',{name:'Phát bản nhạc trong editor'}).waitFor({timeout:180000});await idle();
   await page.getByRole('button',{name:'Tập bài này',exact:true}).click();await page.getByTestId('practice-v2').waitFor();await idle();
   const snapshot=await page.evaluate(()=>{const a=window.pianist,old=a.Module.onPracticeSnapshot;let s;a.Module.onPracticeSnapshot=j=>s=JSON.parse(j);try{if(!a.getPracticeSnapshot())throw Error('snapshot');return s;}finally{a.Module.onPracticeSnapshot=old;}});

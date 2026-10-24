@@ -4,7 +4,7 @@ import type {
   SamplePlayback,
 } from '../../../../packages/engine-bridge';
 import { SamplePiano, sampleRuntime } from '../platform/sample-piano';
-import { resumeSound } from '../platform/audio-output';
+import { bounded, resumeSound } from '../platform/audio-output';
 import type { Part, Context } from 'tone';
 import type { Audition, AuditionRange, AuditionState } from './native-audition';
 import { mapPlaybackTime } from './playback-time';
@@ -169,7 +169,12 @@ export class SampleAudition implements Audition {
     this.emit();
     this.loadNotes(speed);
     this.looping = loop;
-    const runtime = await sampleRuntime();
+    const runtime = await bounded(
+      sampleRuntime(),
+      15000,
+      'Chưa tải được bộ piano. Bấm Nghe để thử lại.',
+      this.abort.signal,
+    );
     this.abort.signal.throwIfAborted();
     this.context = runtime.context;
     await this.piano.prepare(

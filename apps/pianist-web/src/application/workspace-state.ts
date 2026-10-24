@@ -38,6 +38,7 @@ export interface WorkspaceState {
   midiVersion: number;
   exampleTitle: string;
   bundledScores: BundledScore[];
+  excludedScoreHashes: string[];
   practicePicker: boolean;
   practiceKind: PracticeKind;
   canCancelOpen?: boolean;
@@ -57,6 +58,7 @@ export function createInitialWorkspaceState(): WorkspaceState {
     projects: [],
     history: [],
     bundledScores: [],
+    excludedScoreHashes: [],
     revision: 0,
     savedRevision: 0,
     recoveryRevision: 0,

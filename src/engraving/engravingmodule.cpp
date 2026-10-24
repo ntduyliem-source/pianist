@@ -86,6 +86,7 @@ static void engraving_init_qrc()
     Q_INIT_RESOURCE(fonts_Edwin);
     Q_INIT_RESOURCE(fonts_FreeSans);
     Q_INIT_RESOURCE(fonts_FreeSerif);
+    Q_INIT_RESOURCE(fonts_CJK);
     Q_INIT_RESOURCE(fonts_Gootville);
     Q_INIT_RESOURCE(fonts_MScore);
     Q_INIT_RESOURCE(fonts_MuseJazz);
@@ -207,6 +208,9 @@ void EngravingModule::onInit(const IApplication::RunMode&)
         fdb->addFont(FontDataKey(u"FreeSerif", false, true), ":/fonts/FreeSerifItalic.ttf");
         fdb->addFont(FontDataKey(u"FreeSerif", true, true), ":/fonts/FreeSerifBoldItalic.ttf");
         fdb->addFont(FontDataKey(u"FreeSans"), ":/fonts/FreeSans.ttf");
+        // Shared by the editor and the independent sheet renderer. Use the
+        // upstream font database's fallback path for imported CJK score text.
+        fdb->addAdditionalFonts(":/fonts/pianist-cjk");
         fdb->addFont(FontDataKey(u"MScoreTabulature"), ":/fonts/mscoreTab.ttf");
 
         // Figured Bass

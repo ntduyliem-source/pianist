@@ -38,19 +38,27 @@ export function ListenButton({ track }: { track: LibraryTrack }) {
   return (
     <button
       className="library-listen"
-      aria-label={(selected && activity.status === 'playing' ? 'Tạm dừng ' : 'Nghe ') + track.title}
+      aria-label={
+        (selected && activity.loading
+          ? 'Hủy tải '
+          : selected && activity.status === 'playing'
+            ? 'Tạm dừng '
+            : 'Nghe ') + track.title
+      }
       aria-pressed={selected && activity.status === 'playing'}
-      disabled={selected && activity.loading}
-      onClick={() => void ws.run(() => player.play(track))}
+      aria-busy={selected && activity.loading}
+      onClick={() =>
+        void ws.run(() => (selected && activity.loading ? player.stop() : player.play(track)))
+      }
     >
       {selected && activity.loading ? (
-        '…'
+        <span className="studio-spinner" aria-hidden="true" />
       ) : (
         <Icon name={selected && activity.status === 'playing' ? 'pause' : 'play'} />
       )}
       <span>
         {selected && activity.loading
-          ? 'Đang tải'
+          ? 'Hủy tải'
           : selected && activity.status === 'playing'
             ? 'Tạm dừng'
             : 'Nghe'}

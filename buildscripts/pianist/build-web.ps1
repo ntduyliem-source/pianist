@@ -7,6 +7,7 @@ param(
 )
 $ErrorActionPreference = 'Stop'
 $root = (Resolve-Path (Join-Path $PSScriptRoot '../..')).Path
+$stage = Join-Path $root '.tools/web-stage-app'
 Set-Location $root
 $env:TEMP = Join-Path $root '.tools/tmp'
 $env:TMP = $env:TEMP
@@ -36,7 +37,6 @@ $arguments = @('-S', $sourceDir, '-B', $buildDir, '-G', 'Ninja',
     "-DQT_HOST_PATH=$qtRoot/mingw_64")
 if ($Target -eq 'app') {
     # Link outside the live preview directory. Publish only completed binaries.
-    $stage = Join-Path $root '.tools/web-stage-app'
     $arguments += "-DCMAKE_RUNTIME_OUTPUT_DIRECTORY=$($stage.Replace('\', '/'))"
     $arguments += @('-DMUSESCORE_BUILD_CONFIGURATION=app-web', '-DMUSE_APP_BUILD_MODE=dev',
         '-DMUSE_COMPILE_USE_COMPILER_CACHE=OFF', '-DMUE_DOWNLOAD_SOUNDFONT=OFF',

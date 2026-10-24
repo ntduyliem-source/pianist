@@ -7,6 +7,8 @@ export interface BundledScore {
   url: string;
   bytes: number;
   sha256: string;
+  /** Original import hash, retained when typography is normalized. */
+  sourceSha256?: string;
   composer?: string;
   workId?: string;
   version?: number;
@@ -38,6 +40,8 @@ function validateScore(s: BundledScore): void {
     s.id !== s.sha256
   )
     throw Error('Bài trong danh mục không hợp lệ.');
+  if (s.sourceSha256 !== undefined && !hash.test(s.sourceSha256))
+    throw Error('Mã bản gốc trong danh mục không hợp lệ.');
   if (s.composer !== undefined && (typeof s.composer !== 'string' || s.composer.length > 180))
     throw Error('Tác giả trong danh mục không hợp lệ.');
   if (
@@ -117,19 +121,27 @@ export function parseBundledCatalog(data: unknown): BundledScore[] {
   }
   for (const work of groupBundledScores(d.songs)) {
     const versions = work.versions.map((s) => s.version ?? 1);
-    if (
-      !work.versions.some((s) => s.id === work.id && (s.version ?? 1) === 1) ||
-      new Set(versions).size !== versions.length
-    )
+    if (new Set(versions).size !== versions.length)
       throw Error('Nhóm phiên bản bài hát không hợp lệ.');
   }
   return d.songs;
 }
-export async function loadBundledCatalog(): Promise<BundledScore[]> {
+export async function loadBundledCatalog(
+  onExcluded?: (hashes: string[]) => void,
+): Promise<BundledScore[]> {
   const r = await fetch('library/catalog.json');
   if (r.status === 404) return [];
   if (!r.ok) throw Error('Không tải được danh mục bài hát.');
-  return parseBundledCatalog(await r.json());
+  const catalog = await r.json();
+  const songs = parseBundledCatalog(catalog);
+  const excluded = catalog.excluded ?? [];
+  if (
+    !Array.isArray(excluded) ||
+    excluded.some((s: { sha256?: string }) => !s || !hash.test(s.sha256 ?? ''))
+  )
+    throw Error('Danh sách bản nhạc bị loại không hợp lệ.');
+  onExcluded?.(excluded.map((s: { sha256: string }) => s.sha256));
+  return songs;
 }
 export async function loadBundledScore(
   score: BundledScore,

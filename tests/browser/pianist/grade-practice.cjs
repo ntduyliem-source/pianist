@@ -37,7 +37,7 @@ const noteName=p=>['C','C♯','D','D♯','E','F','F♯','G','G♯','A','A♯','B
   const grade=()=>page.getByRole('group',{name:'Cách tập piano'}).getByRole('button',{name:/^Theo grade/});
   const start=()=>page.getByRole('button',{name:'Bắt đầu tập theo grade',exact:true});
   const progress=()=>page.getByTestId('grade-progress');
-  const library=()=>page.getByRole('region',{name:'Bài hát có sẵn'});
+  const library=()=>page.getByLabel('Danh sách bản nhạc',{exact:true});
   const idle=()=>page.locator('.loading-overlay').waitFor({state:'hidden',timeout:180000});
   const count=()=>page.getByTestId('grade-count');
   const check=message=>{report.checks.push(message);console.log('PASS',message);};
@@ -135,7 +135,7 @@ const noteName=p=>['C','C♯','D','D♯','E','F','F♯','G','G♯','A','A♯','B
 
     // A user library/editor document must survive grade sessions and audio loans.
     await free().click();await library().waitFor();
-    const flySelect=page.getByRole('combobox',{name:'Chọn phiên bản Fly Me to the Moon',exact:true}),versions=await flySelect.locator('option').evaluateAll(nodes=>nodes.map(n=>n.value));
+    const flySelect=page.getByRole('combobox',{name:'Chọn phiên bản Ánh trăng nói hộ lòng tôi',exact:true}),versions=await flySelect.locator('option').evaluateAll(nodes=>nodes.map(n=>n.value));
     assert.equal(versions.length,2);await flySelect.selectOption(versions[1]);
     await nav('Thư viện').click();await page.locator('#file').setInputFiles(path.join(root,'tests/fixtures/pianist/m0/piano.mxl'));
     await page.getByRole('region',{name:'Phát bản nhạc trong editor'}).waitFor({timeout:180000});await idle();

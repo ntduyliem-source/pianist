@@ -1,8 +1,30 @@
 # Thư viện piano được phát hành
 
-`songs/` giữ nguyên MXL nguồn. `catalog.json` là danh mục đang dùng; tên hiển thị,
-tác phẩm, phiên bản và hash nằm ở đây. Không sửa trực tiếp MXL để ép qua bộ nhận.
+`songs/` giữ MXL dùng để phát hành. `catalog.json` là danh mục đang dùng; tên hiển thị,
+tác phẩm, phiên bản và hash nằm ở đây. Chỉ chuẩn hóa tên font chữ đã kiểm đối chiếu;
+không sửa nốt, tie hoặc thời điểm nhả pedal để ép qua bộ nhận.
 Các báo cáo `IMPORT_REPORT*.md` là lịch sử từng đợt nhập, không phải số lượng hiện tại.
+
+## Đối soát ngày 24/10/2026
+
+Catalog hiện có **110 phiên bản / 109 tác phẩm**. Kiểm lại 145 bản, loại 35 bản
+chưa đạt khỏi danh mục và tài nguyên phát hành. Lý do cụ thể, hash trước/sau và
+kết quả đối chiếu từng bản nằm trong [QUALITY_RECEIPT_2026-10-24.json](QUALITY_RECEIPT_2026-10-24.json).
+
+- Không nhận bản chỉ nghe/chỉnh sửa được nhưng bộ tập bỏ sót nốt hoa mỹ, hoặc
+  pedal không có điểm kết thúc / bắt đầu chồng nhau. Kiểm ở cả nhập và đóng gói
+  bằng `buildscripts/pianist/library_content_policy.py`.
+- Đối chiếu nguồn với nốt, thời điểm, trường độ, khuông hiển thị, MIDI và MusicXML
+  xuất lại từ MuseScore. Tình Đơn Phương có tie G♯ → G không nhất quán; một bản
+  Cause I Love You thiếu kết thúc volta. Hai bản này cũng bị loại.
+- 60 bản được đổi font chữ thiếu sang FreeSerif/FreeSans, không thay nội dung nhạc.
+  `sourceSha256` nối bản lưu trên thiết bị với nguồn trước khi chuẩn hóa.
+- Giữ `workId` và số phiên bản khi loại một bản; V2 vẫn là V2 nếu V1 bị loại.
+- Ảnh xem trước dựng lại từ chính MuseScore. Font Noto Sans CJK SC bổ sung ký tự
+  Hoa/Nhật, dùng cơ chế font dự phòng sẵn có của MuseScore.
+
+Nguồn cũ nằm trong Git và `artifacts/library-cleanup/originals/` ở máy phát triển.
+Không xóa tệp gốc trong Downloads hoặc bản chỉnh sửa đã lưu trên thiết bị.
 
 ## Điều kiện nhận bài
 
@@ -26,7 +48,7 @@ phiên bản N+1 khi xác định được cùng tác phẩm. Mọi bản mới 
 
 ## Đối soát ngày 23/10/2026
 
-Catalog hiện có **131 phiên bản / 127 tác phẩm** sau [lô 42 bài nhạc Hoa](IMPORT_REPORT_2026-10-23_CHINESE_42.md): nhận 38 bản (34 tập được, 4 chỉ nghe/chỉnh sửa); bốn đầu vào cảnh báo giữ ngoài phát hành.
+Catalog ở mốc này có **131 phiên bản / 127 tác phẩm** sau [lô 42 bài nhạc Hoa](IMPORT_REPORT_2026-10-23_CHINESE_42.md): nhận 38 bản (34 tập được, 4 chỉ nghe/chỉnh sửa); bốn đầu vào cảnh báo giữ ngoài phát hành.
 
 Mốc trước đó có **93 phiên bản / 89 tác phẩm** sau [gói 16 bài nhạc Hoa](IMPORT_REPORT_2026-10-23_CHINESE_16.md): nhận 15 bản (9 tập được, 6 chỉ nghe/chỉnh sửa), cách ly Họa tâm thiếu nguồn. Thanh hoa sứ dùng bản thay thế đã kiểm sửa cấu trúc/XSD và kiểm native lại.
 

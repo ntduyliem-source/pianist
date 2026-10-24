@@ -20,7 +20,7 @@ const root=path.resolve(__dirname,'../../..'),channel=process.env.PIANIST_BROWSE
   try{
     const base=new URL(process.env.PIANIST_URL||'http://127.0.0.1:8787/pianist.html');base.searchParams.set('diagnostics','1');await p.goto(base.href);
     const catalog=JSON.parse(await fs.readFile(path.join(root,'scores/library/catalog.json'),'utf8'));
-    const bundled=p.getByRole('region',{name:'Bài hát có sẵn'});await bundled.waitFor();assert.equal(await bundled.locator('article').count(),new Set(catalog.songs.map(s=>s.workId||s.id)).size);
+    const bundled=p.getByLabel('Danh sách bản nhạc',{exact:true});await bundled.waitFor();assert.equal(await bundled.locator('article').count(),new Set(catalog.songs.map(s=>s.workId||s.id)).size);
     // Use a real file-chooser gesture for cold-start audio permissions.
     const chooser=p.waitForEvent('filechooser');await p.getByRole('button',{name:'Nhập bản nhạc',exact:true}).click();await(await chooser).setFiles(path.join(root,'tests/fixtures/pianist/m0/piano.mxl'));
     await idle();const controls=p.getByRole('region',{name:'Phát bản nhạc trong editor'});
@@ -49,7 +49,7 @@ const root=path.resolve(__dirname,'../../..'),channel=process.env.PIANIST_BROWSE
     await p.locator('#select').click();await p.locator('#up').click();const edited=await semantics();assert.notDeepEqual(edited.anchors.map(n=>n.pitch).sort(),baseline.anchors.map(n=>n.pitch).sort());
     await p.getByRole('region',{name:'Phát bản nhạc trong editor'}).getByRole('button',{name:'Phát nhạc',exact:true}).click();await waitState('playing',.25);
     await p.getByRole('button',{name:'Thư viện',exact:true}).click();await waitState('stopped');assert.equal(await historyCount(),history);checks.push('edited revision plays; leaving editor stops audio and creates no practice history');
-    await p.getByRole('searchbox',{name:'Tìm bản nhạc',exact:true}).fill('Tràn bộ nhớ');assert.equal(await p.getByRole('region',{name:'Bài hát có sẵn'}).locator('article').count(),1);
+    await p.getByRole('searchbox',{name:'Tìm bản nhạc',exact:true}).fill('Tràn bộ nhớ');assert.equal(await p.getByLabel('Danh sách bản nhạc',{exact:true}).locator('article').count(),1);
     await p.getByRole('button',{name:'Mở bài có sẵn Tràn bộ nhớ',exact:true}).click();await idle();assert.ok((await semantics()).anchors.length>0);
     await p.getByRole('button',{name:'Thư viện',exact:true}).click();
     const beforeCount=await p.evaluate(()=>new Promise(resolve=>{const r=indexedDB.open('pianist-library');r.onsuccess=()=>{const db=r.result,q=db.transaction('projects').objectStore('projects').count();q.onsuccess=()=>{resolve(q.result);db.close();};};}));

@@ -19,9 +19,9 @@ test('arrangements group by stable work identity, preserve version numbers and n
   assert.equal(bundledVersionLabel(second),'Version 2 · Bản piano dễ');assert.equal(bundledVersionLabel(song),'Version 1');
   assert.equal(matchesBundledWork(groups[0],'piano dễ'),true);assert.equal(matchesBundledWork(groups[1],'piano dễ'),false);
 });
-test('catalog rejects orphaned versions, duplicate ordinals, malformed support flags and duplicate paths',()=>{
+test('catalog allows a retired root but rejects duplicate ordinals, malformed support flags and duplicate paths',()=>{
   const second={...song,id:'b'.repeat(64),sha256:'b'.repeat(64),url:'library/songs/another.mxl',workId:song.id,version:2};
-  assert.throws(()=>parseBundledCatalog({schemaVersion:1,songs:[second]}),/Nhóm phiên bản/);
+  assert.equal(parseBundledCatalog({schemaVersion:1,songs:[second]})[0].version,2);
   for(const patch of [{version:0},{version:2.5},{version:501},{version:undefined},{workId:'other'},
     {practiceReady:false},{practiceReady:'false'},{practiceNotice:''},{versionLabel:' '},{composer:2}]){
     assert.throws(()=>parseBundledCatalog({schemaVersion:1,songs:[song,{...second,...patch}]}));

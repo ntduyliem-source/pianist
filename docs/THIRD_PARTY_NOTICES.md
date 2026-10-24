@@ -15,6 +15,7 @@ The following components are included in the software/build workflow:
 | MuseScore engine and upstream dependencies | Root license, source headers and upstream third-party directories |
 | Qt 6.10.2 WebAssembly | Qt distribution licenses and corresponding Qt source for the pinned build; review static-link distribution before public release |
 | MuseScore fonts (including Edwin, Leland, Bravura and others) | Individual licenses in `fonts/`; packaging copies the supplied font notices |
+| Noto Sans CJK SC score-text fallback | SIL Open Font License 1.1; unmodified font and exact upstream revision in `fonts/noto-cjk/`, license distributed under `notices/fonts/noto-cjk/` |
 | Plus Jakarta Sans / Newsreader UI fonts | SIL Open Font License 1.1; original notices in `apps/pianist-web/src/assets/fonts/`, distributed under `notices/fonts/studio/` |
 | MS Basic soundfont | `share/sound/MS Basic_License.md` and `MS Basic_Readme.md`, copied beside the soundfont |
 | React / React DOM / scheduler | MIT; versions and integrity in `apps/pianist-web/package-lock.json` |

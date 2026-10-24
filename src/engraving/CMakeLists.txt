@@ -35,6 +35,7 @@ muse_module_add_qrc(engraving BIG_RESOURCES
     data/fonts/fonts_Edwin.qrc
     data/fonts/fonts_FreeSans.qrc
     data/fonts/fonts_FreeSerif.qrc
+    data/fonts/fonts_CJK.qrc
     data/fonts/fonts_Gootville.qrc
     data/fonts/fonts_Leland.qrc
     data/fonts/fonts_MScore.qrc

@@ -4,14 +4,18 @@ import json
 import re
 from pathlib import Path
 from library_staff_policy import require_two_staff_piano
+from library_content_policy import require_practice_content
 
 ROOT = Path(__file__).resolve().parents[2]
 
 
 def validate_versions(songs):
-    """Old entries are version 1; explicit versions belong to a real first entry."""
+    """Work identity and version numbers survive removal/normalization of an edition."""
     groups = {}
     for song in songs:
+        original = song.get('sourceSha256')
+        if original is not None and (not isinstance(original, str) or not re.fullmatch(r'[a-f0-9]{64}', original)):
+            raise ValueError('Invalid original library source hash')
         explicit = 'workId' in song
         if explicit != ('version' in song):
             raise ValueError('Incomplete library version metadata')
@@ -33,9 +37,6 @@ def validate_versions(songs):
         if number in versions:
             raise ValueError('Duplicate library version number')
         versions[number] = song
-    for work, versions in groups.items():
-        if versions.get(1, {}).get('id') != work:
-            raise ValueError('Missing first library version')
     return groups
 
 
@@ -64,6 +65,9 @@ def verify_library(read, paths):
         if len(data) != song['bytes'] or hashlib.sha256(data).hexdigest() != song['sha256']:
             raise ValueError('Library integrity failed: ' + name)
         require_two_staff_piano(data)
+        require_practice_content(data)
+        if song.get('practiceReady') is False:
+            raise ValueError('Editor-only edition is not admitted to the public practice library')
         identities.add(song['id'])
         expected.add(name)
     preview_source = ROOT / 'scores/library/previews/manifest.json'

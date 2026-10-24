@@ -1,14 +1,11 @@
 import { useState, useSyncExternalStore } from 'react';
 import { workspace as ws } from '../../workspace';
-import { groupBundledScores, matchesBundledWork } from '../../platform/bundled-library';
 import { Icon } from '../../shared/ui/Icon';
-import { BundledSongs } from './BundledSongs';
-import { ProjectSongs } from './ProjectSongs';
+import { SongCollection } from './SongCollection';
 import { ThumbnailProvider } from './ScoreThumbnail';
 import { LibraryViewSwitch, useLibraryView } from './LibraryView';
 import { prepareOffline, useOnline } from '../../platform/offline';
 import { LibraryTransfer } from '../../platform/LibraryTransfer';
-import { matchesSearch } from '../../shared/search';
 const run = (fn: () => unknown | Promise<unknown>) => () => void ws.run(fn);
 
 export function Library() {
@@ -17,8 +14,9 @@ export function Library() {
     [trash, setTrash] = useState(false),
     [offline, setOffline] = useState('');
   const [view, setView] = useLibraryView();
-  const projects = state.projects.filter((p) => !!p.archived === trash);
-  const hasProjectMatch = projects.some((p) => matchesSearch(p.title, search));
+  const projects = state.projects.filter(
+    (p) => !!p.archived === trash && !state.excludedScoreHashes.includes(p.sourceHash ?? ''),
+  );
   return (
     <ThumbnailProvider>
       <main className={'library library-v2 page library-view-' + view}>
@@ -63,30 +61,12 @@ export function Library() {
               Lịch sử tập
             </button>
           </div>
-          {(projects.length > 0 || trash) && (
-            <section aria-label={trash ? 'Bài đã lưu trữ' : 'Bản nhạc của tôi'}>
-              <div className="section-top">
-                <h2>
-                  {trash ? 'Đã lưu trữ' : 'Bản nhạc của tôi'} <span>{projects.length}</span>
-                </h2>
-              </div>
-              <ProjectSongs projects={projects} trash={trash} search={search} />
-            </section>
-          )}
-          {!trash && <BundledSongs search={search} />}
-          {!hasProjectMatch &&
-            (trash ||
-              !groupBundledScores(state.bundledScores).some((w) =>
-                matchesBundledWork(w, search),
-              )) && (
-              <p className="library-empty">
-                {search
-                  ? 'Không tìm thấy bài phù hợp.'
-                  : trash
-                    ? 'Chưa có bản nhạc lưu trữ.'
-                    : 'Nhập bản nhạc để bắt đầu.'}
-              </p>
-            )}
+          <SongCollection
+            songs={trash ? [] : state.bundledScores}
+            projects={projects}
+            trash={trash}
+            search={search}
+          />
           <details className="library-tools">
             <summary>Sao lưu, offline và bài mẫu</summary>
             <p className="storage-note">

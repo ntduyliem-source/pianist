@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/fonts/pianist-cjk">
+        <file alias="fontslist.json">../../../../fonts/noto-cjk/fontslist.json</file>
+        <file alias="NotoSansCJKsc-Regular.otf">../../../../fonts/noto-cjk/NotoSansCJKsc-Regular.otf</file>
+    </qresource>
+</RCC>

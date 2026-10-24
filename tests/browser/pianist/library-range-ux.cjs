@@ -18,11 +18,10 @@ const root=path.resolve(__dirname,'../../..'),out=path.join(root,'artifacts/libr
  const geometry=async()=>{
   const cards=await page.locator('.score-card').evaluateAll(cards=>cards.map(c=>{
    const box=e=>{const r=e.getBoundingClientRect();return{x:r.x,y:r.y,right:r.right,bottom:r.bottom,width:r.width,height:r.height};};
-   return {card:box(c),heading:box(c.querySelector('.score-card-heading')),more:box(c.querySelector('.score-more')),buttons:[...c.querySelectorAll('.score-actions button')].map(box)};
+   return {card:box(c),heading:box(c.querySelector('.score-card-heading')),buttons:[...c.querySelectorAll('.score-actions button')].map(box)};
   }));
   for(const c of cards){
-   assert(c.more.x>=c.card.x&&c.more.right<=c.card.right,'menu stays inside card');
-   assert(c.more.bottom<=c.heading.bottom+1,'menu stays with title');
+   assert.equal(c.buttons.length,3,'exactly three direct actions');
    for(const b of c.buttons){assert(b.x>=c.card.x&&b.right<=c.card.right,'action stays in card');assert(Math.abs(b.y-c.buttons[0].y)<1,'actions share one row');assert(b.height>=40,'touch target');}
   }
   assert(await page.evaluate(()=>document.body.scrollWidth<=innerWidth+1),'no document overflow');
@@ -31,7 +30,7 @@ const root=path.resolve(__dirname,'../../..'),out=path.join(root,'artifacts/libr
   const url=new URL(process.env.PIANIST_URL||'http://127.0.0.1:8787/pianist.html');url.hash='/library';
   await page.goto(url.href);await page.getByRole('heading',{name:'Thư viện',exact:true}).waitFor();
   const search=page.getByRole('searchbox',{name:'Tìm bản nhạc'});
-  for(const [q,title] of [['tran bo nho','Tràn bộ nhớ'],['tinh don phuong','Tình Đơn Phương']]){
+  for(const [q,title] of [['tran bo nho','Tràn bộ nhớ'],['tinh dau qua chen','Tình đầu quá chén']]){
    await search.fill(q);await page.getByRole('heading',{name:title,exact:true}).waitFor();
   }
   await search.fill('tran bo nho');
@@ -42,17 +41,14 @@ const root=path.resolve(__dirname,'../../..'),out=path.join(root,'artifacts/libr
   await page.setViewportSize({width:390,height:844});await page.getByRole('button',{name:'Ảnh nhỏ',exact:true}).click();
   await page.getByRole('button',{name:/Chuyển giao diện/}).click();
   await screenshot('library-dark');
-  await page.getByRole('button',{name:'Tùy chọn Tràn bộ nhớ',exact:true}).click();
-  const menu=page.getByRole('dialog',{name:'Tùy chọn Tràn bộ nhớ',exact:true});
-  assert(await menu.getByRole('button',{name:'Chỉnh sửa bản nhạc',exact:true}).isVisible());
-  assert.equal(await menu.locator('select').count(),0);
-  await screenshot('menu-dark');await page.getByRole('button',{name:'Đóng tùy chọn',exact:true}).click();
-  check('Accent-free search including Đ; stable action row and header menu at 320–1440 in three views');
+  assert.equal(await page.locator('.score-more').count(),0);
+  check('Accent-free search including Đ; three direct actions at 320–1440 in three views');
   await search.fill('Fly Me');
   await page.getByRole('button',{name:'Nghe Fly Me to the Moon',exact:true}).click();
   await page.getByRole('button',{name:'Tạm dừng Fly Me to the Moon',exact:true}).waitFor({timeout:120000});
   for(const width of [320,390]){
     await page.setViewportSize({width,height:844});await geometry();
+    assert(await page.locator('.score-actions .library-listen > span').isVisible(),'pause remains a visible text button on mobile');
     const buttons=await page.locator('.score-actions button').evaluateAll(nodes=>nodes.map(n=>({scroll:n.scrollWidth,client:n.clientWidth})));
     assert(buttons.every(b=>b.scroll<=b.client+1),'playing labels fit narrow cards');
   }
@@ -62,14 +58,9 @@ const root=path.resolve(__dirname,'../../..'),out=path.join(root,'artifacts/libr
   await page.locator('#file').setInputFiles(path.join(root,'tests/fixtures/pianist/m0/piano.mxl'));
   await page.getByRole('region',{name:'Phát bản nhạc trong editor'}).waitFor({timeout:180000});await idle();
   await nav('Thư viện').click();await search.fill('');
-  const own=page.getByRole('region',{name:'Bản nhạc của tôi'});
-  const title=await own.locator('h3').first().innerText();
-  await search.fill(title.normalize('NFD').replace(/\p{M}/gu,'').replace(/[đĐ]/g,'d'));
-  assert.equal(await own.locator('.score-card').count(),1);
-  await own.getByRole('button',{name:'Tùy chọn '+title,exact:true}).click();
-  assert(await page.getByRole('button',{name:'Chuyển vào lưu trữ',exact:true}).isVisible());
-  assert.equal(await page.getByRole('dialog').locator('select').count(),0,'no meaningless self-group dropdown');
-  await screenshot('private-menu-dark');await page.getByRole('button',{name:'Đóng tùy chọn',exact:true}).click();
+  const own=page.getByLabel('Danh sách bản nhạc',{exact:true});
+  await search.fill('Piano khởi động');
+  assert.equal(await own.locator('.score-more').count(),0);
   await nav('Tập piano').click();
   // Picker is available via the free-play tab even with a current score.
   const picker=page.getByRole('heading',{name:'Chọn bài để tập',exact:true});
@@ -79,10 +70,10 @@ const root=path.resolve(__dirname,'../../..'),out=path.join(root,'artifacts/libr
   const colors=await current.evaluate(el=>({bg:getComputedStyle(el).backgroundColor,color:getComputedStyle(el).color}));
   assert.notEqual(colors.bg,'rgb(255, 255, 255)');assert.notEqual(colors.bg,colors.color);
   await page.getByRole('searchbox',{name:'Tìm bài để tập'}).fill('tinh dau qua chen');
-  const song=page.locator('.bundled-library .score-card').first();await song.waitFor();
+  const song=page.locator('.score-card').first();await song.waitFor();
   await screenshot('picker-dark');await song.getByRole('button',{name:'Tập',exact:true}).click();
   await page.getByTestId('practice-v2').waitFor({timeout:180000});await idle();
-  check('Private menu explains archive, omits self-grouping; dark picker and its unaccented search work');
+  check('Unified library has direct actions; dark picker and unaccented search work');
   const initial=await page.getByRole('button',{name:'Chọn đoạn',exact:true}).innerText();
   await range();await field('Từ ô nhịp').fill('12');await field('Đến ô nhịp').fill('20');
   await page.getByRole('button',{name:'Hủy',exact:true}).click();
@@ -124,18 +115,6 @@ const root=path.resolve(__dirname,'../../..'),out=path.join(root,'artifacts/libr
   check('Range supports light/dark, touch viewport and Escape without exiting full-sheet mode');
   await page.getByRole('button',{name:'Thoát toàn màn hình',exact:true}).click();
   await page.getByRole('button',{name:'Đổi bài',exact:true}).click();await nav('Thư viện').click();
-  await search.fill('');assert.equal(await own.locator('.score-card').count(),2);
-  await own.getByRole('button',{name:'Tùy chọn '+title,exact:true}).click();
-  await page.getByRole('dialog',{name:'Tùy chọn '+title,exact:true}).getByText('Chuyển sang nhóm bài khác…',{exact:true}).click();
-  const destination=page.getByRole('combobox',{name:'Bài nhận phiên bản',exact:true});
-  assert.equal(await destination.locator('option').count(),2,'placeholder plus other work only');
-  await destination.selectOption({index:1});
-  assert.equal(await own.locator('.score-card').count(),2,'choosing destination does not silently merge');
-  await page.getByRole('button',{name:'Chuyển phiên bản',exact:true}).click();
-  await page.waitForFunction(()=>document.querySelectorAll('[aria-label="Bản nhạc của tôi"] .score-card').length===1);
-  assert.equal(await own.getByRole('combobox',{name:/Chọn phiên bản/}).locator('option').count(),2);
-  check('Version move excludes the current work, requires explicit submit, and preserves both editions');
-
   assert.deepEqual(report.errors,[]);report.passed=true;
  }catch(e){report.passed=false;report.error=String(e.stack);console.error(report.error);await screenshot('failure').catch(()=>{});process.exitCode=1;}
  finally{await fs.writeFile(path.join(out,'report.json'),JSON.stringify(report,null,2));await browser.close();}

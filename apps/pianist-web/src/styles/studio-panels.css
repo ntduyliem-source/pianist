@@ -1,12 +1,12 @@
 .application .exercises-home {
   background: var(--canvas);
   color: var(--text);
-  padding: 28px 24px 70px;
+  padding: 24px 24px 70px;
 }
 .application .exercise-intro {
   max-width: 1040px;
   align-items: flex-end;
-  margin-bottom: 26px;
+  margin-bottom: 24px;
 }
 .application .exercise-intro h1 {
   font-family: var(--font-serif);
@@ -34,7 +34,7 @@
 }
 .application .exercise-choices {
   max-width: 1040px;
-  padding: 28px;
+  padding: 24px;
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: 20px;
@@ -53,7 +53,7 @@
   font-size: 11px;
   font-weight: 600;
   color: var(--muted);
-  gap: 9px;
+  gap: 8px;
 }
 .application .exercise-grade-picker p {
   color: var(--muted);
@@ -72,7 +72,7 @@
   color: var(--text);
   font-size: 12px;
   font-weight: 600;
-  margin-bottom: 14px;
+  margin-bottom: 16px;
 }
 .application .exercise-length-field legend span {
   color: var(--muted);
@@ -80,14 +80,14 @@
   font-size: 11px;
 }
 .application .exercise-lengths {
-  gap: 10px;
+  gap: 8px;
 }
 .application .exercise-lengths > label {
   background: var(--input);
   border-color: var(--line);
   border-radius: 12px;
   padding: 16px 10px;
-  gap: 10px;
+  gap: 8px;
   transition:
     border-color 0.15s,
     background 0.15s;
@@ -116,10 +116,10 @@
 }
 .application .exercise-fields {
   gap: 20px;
-  margin-top: 22px;
+  margin-top: 24px;
 }
 .application .exercise-random {
-  margin-top: 20px;
+  margin-top: 24px;
   color: var(--text);
 }
 .application .exercise-random span {
@@ -128,7 +128,7 @@
 }
 .application .exercise-launch {
   border-color: var(--line);
-  margin-top: 26px;
+  margin-top: 24px;
   padding-top: 24px;
 }
 .application .exercise-launch strong {
@@ -148,7 +148,7 @@
   padding: 12px 22px;
 }
 .application .exercise-help {
-  margin-top: 20px;
+  margin-top: 24px;
 }
 .application .exercise-error {
   color: var(--danger);
@@ -330,7 +330,7 @@
   }
   .application .exercise-lengths {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 10px;
+    gap: 8px;
   }
   .application .exercise-lengths > label {
     padding: 13px 12px;

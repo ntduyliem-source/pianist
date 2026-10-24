@@ -106,6 +106,26 @@ class LibraryImportTests(unittest.TestCase):
         append_library(inputs, audit, self.library)
         self.assertEqual(self.catalog()['songs'][-1]['version'], 3)
 
+    def test_font_normalization_retains_original_duplicate_identity(self):
+        original = mxl()
+        output = BytesIO()
+        with zipfile.ZipFile(BytesIO(original)) as source, zipfile.ZipFile(output, 'w') as target:
+            for entry in source.infolist():
+                data = source.read(entry.filename)
+                if entry.filename == 'score.xml':
+                    data = data.replace(b'<part-list>', b'<defaults><word-font font-family="FreeSerif"/></defaults><part-list>')
+                target.writestr(entry, data)
+        normalized = output.getvalue()
+        self.assertNotEqual(musicxml(original)[0], musicxml(normalized)[0])
+        (self.library / 'songs/original.mxl').write_bytes(normalized)
+        self.write_catalog([{**self.original, 'id': sha(normalized), 'sha256': sha(normalized),
+                             'bytes': len(normalized), 'sourceSha256': sha(original),
+                             'workId': self.original['id'], 'version': 1}])
+        before = (self.library / 'catalog.json').read_bytes()
+        report = append_library(*self.inputs(original), self.library)
+        self.assertEqual(report['summary']['duplicates'], 1)
+        self.assertEqual((self.library / 'catalog.json').read_bytes(), before)
+
     def test_new_work_same_download_basename_number_becomes_one_version(self):
         report = append_library(*self.inputs(mxl('F'), 'new-work (2).mxl', 'Different work'), self.library)
         song = self.catalog()['songs'][-1]
@@ -113,22 +133,14 @@ class LibraryImportTests(unittest.TestCase):
         self.assertEqual(song['url'], 'library/songs/new-work.mxl')
         self.assertEqual(report['summary']['newWorks'], 1)
 
-    def test_editor_only_requires_complete_round_trip_and_exact_grace_evidence(self):
+    def test_editor_only_is_excluded_even_with_complete_grace_evidence(self):
         inputs, audit = self.inputs(mxl('G', grace=True), editor_only=True)
-        inputs[0]['workId'] = self.original['id']
         before = (self.library / 'catalog.json').read_bytes()
-        with self.assertRaisesRegex(ValueError, 'exact native grace-note'):
-            append_library(inputs, audit, self.library)
-        self.assertEqual((self.library / 'catalog.json').read_bytes(), before)
-        bad = deepcopy(audit)
-        bad['results'][0]['editorGraceNotes'] = 0
-        with self.assertRaisesRegex(ValueError, 'exact native grace-note'):
-            append_library(inputs, bad, self.library, allow_editor_only=True)
-        report = append_library(inputs, audit, self.library, allow_editor_only=True)
-        song = self.catalog()['songs'][-1]
-        self.assertFalse(song['practiceReady'])
-        self.assertIn('1 nốt hoa mỹ', song['practiceNotice'])
-        self.assertEqual(report['summary']['editorOnly'], 1)
+        for allow in (False, True):
+            report = append_library(inputs, audit, self.library, allow_editor_only=allow)
+            self.assertEqual(report['summary']['editorOnly'], 0)
+            self.assertEqual((self.library / 'catalog.json').read_bytes(), before)
+            self.assertEqual(len(self.catalog()['songs']), 1)
 
     def test_source_mutation_or_unfinished_audit_cannot_change_catalog(self):
         inputs, audit = self.inputs(mxl('D'))
@@ -153,10 +165,9 @@ class LibraryImportTests(unittest.TestCase):
         append_library(inputs, audit, self.library)
         self.assertEqual(self.catalog()['songs'][-1]['workId'], second['id'])
 
-    def test_release_checks_missing_root_and_duplicate_version_numbers(self):
+    def test_release_retains_work_identity_after_retiring_v1_and_rejects_duplicate_numbers(self):
         alternative = {**self.original, 'id': 'f' * 64, 'workId': self.original['id'], 'version': 2}
-        with self.assertRaisesRegex(ValueError, 'Missing first'):
-            validate_versions([alternative])
+        self.assertEqual(len(validate_versions([alternative])), 1)
         with self.assertRaisesRegex(ValueError, 'Duplicate library version'):
             validate_versions([self.original, {**alternative, 'version': 1}])
         self.assertEqual(len(validate_versions([self.original, alternative])), 1)

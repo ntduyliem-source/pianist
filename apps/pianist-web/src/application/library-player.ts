@@ -29,6 +29,7 @@ type Options = {
     signal: AbortSignal,
   ): Promise<EngineBridge>;
   restore(): void;
+  preparationTimeoutMs?: number;
 };
 /** One audition owner for the library; each output supplies its audible clock. */
 export class LibraryPlayer {
@@ -45,6 +46,7 @@ export class LibraryPlayer {
   private request?: AbortController;
   private preview?: Audition;
   private native?: AuditionState;
+  private deadline?: ReturnType<typeof setTimeout>;
   snapshot = () => this.state;
   activitySnapshot = () => this.activity;
   subscribe = (fn: () => void) => {
@@ -81,7 +83,7 @@ export class LibraryPlayer {
   async play(track: LibraryTrack): Promise<void> {
     this.options.activate?.();
     activatePlaybackAudio();
-    if (this.state.track?.id === track.id && this.preview && this.native) {
+    if (this.state.track?.id === track.id && this.preview && this.native && !this.state.loading) {
       const preview = this.preview;
       try {
         await preview.toggle(this.native);
@@ -92,10 +94,10 @@ export class LibraryPlayer {
     }
     this.stop();
     const request = (this.request = new AbortController());
-    const timeout = setTimeout(() => {
+    this.deadline = setTimeout(() => {
       if (this.request === request && this.state.loading)
         this.fail(Error('Chuẩn bị bài quá lâu. Bấm Thử lại; không cần đổi bài.'));
-    }, 90000);
+    }, this.options.preparationTimeoutMs ?? 90000);
     this.patch({ track, loading: true, error: '', positionMs: 0, durationMs: 0 });
     try {
       const data = await track.load(request.signal);
@@ -115,6 +117,10 @@ export class LibraryPlayer {
       preview.onChange = (state) => {
         if (this.preview !== preview || request.signal.aborted) return;
         this.native = state;
+        if (!state.preparing) {
+          clearTimeout(this.deadline);
+          this.deadline = undefined;
+        }
         this.patch({
           loading: state.preparing,
           status: state.status,
@@ -128,8 +134,6 @@ export class LibraryPlayer {
       await preview.start(1, false);
     } catch (error) {
       if (this.request === request && !request.signal.aborted) this.fail(error);
-    } finally {
-      clearTimeout(timeout);
     }
   }
   private fail(error: unknown) {
@@ -154,6 +158,8 @@ export class LibraryPlayer {
     this.preview?.pause();
   }
   stop() {
+    clearTimeout(this.deadline);
+    this.deadline = undefined;
     const owned = !!this.request || !!this.preview;
     this.request?.abort();
     this.request = undefined;
@@ -163,15 +169,18 @@ export class LibraryPlayer {
     try {
       preview?.stop();
     } finally {
-      if (owned) this.options.restore();
-      this.patch({
-        track: undefined,
-        loading: false,
-        status: 'stopped',
-        positionMs: 0,
-        durationMs: 0,
-        error: '',
-      });
+      try {
+        if (owned) this.options.restore();
+      } finally {
+        this.patch({
+          track: undefined,
+          loading: false,
+          status: 'stopped',
+          positionMs: 0,
+          durationMs: 0,
+          error: '',
+        });
+      }
     }
   }
 }

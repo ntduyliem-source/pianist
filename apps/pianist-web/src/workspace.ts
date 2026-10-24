@@ -176,7 +176,11 @@ export class Workspace {
       .then((r) => (r.ok ? r.json() : null))
       .catch(() => null);
     if (catalog?.examples?.[0]?.title) this.patch({ exampleTitle: catalog.examples[0].title });
-    this.patch({ bundledScores: await loadBundledCatalog().catch(() => []) });
+    this.patch({
+      bundledScores: await loadBundledCatalog((excludedScoreHashes) =>
+        this.patch({ excludedScoreHashes }),
+      ).catch(() => []),
+    });
     const initialView = location.hash.slice(2);
     try {
       if (localStorage.getItem('pianist.practice-kind') === 'grade')
@@ -315,7 +319,30 @@ export class Workspace {
     });
   }
   async refresh(): Promise<void> {
-    this.patch(await this.repository.list());
+    const data = await this.repository.list();
+    // Older saved copies predate sourceHash. Identify their source without
+    // modifying or deleting any locally edited project bytes.
+    const projects = await Promise.all(
+      data.projects.map(async (project) => {
+        if (project.sourceHash || !project.source) return project;
+        const digest = await crypto.subtle.digest('SHA-256', project.source.slice().buffer);
+        return {
+          ...project,
+          sourceHash: [...new Uint8Array(digest)]
+            .map((b) => b.toString(16).padStart(2, '0'))
+            .join(''),
+        };
+      }),
+    );
+    const current = this.state.current;
+    const sourceHash = current && projects.find((p) => p.id === current.id)?.sourceHash;
+    this.patch({
+      ...data,
+      projects,
+      ...(current && !current.sourceHash && sourceHash
+        ? { current: { ...current, sourceHash } }
+        : {}),
+    });
   }
   focusEditor = (element?: Element): void => {
     this.engineHost.focus(element, !this.state.engineFailed && this.state.view === 'editor');

@@ -3,7 +3,7 @@
 Same compressed bytes or canonical MusicXML are duplicates. Matching work names
 and known composers group arrangements; uncertain identity needs an explicit
 workId or newWork decision instead of silently merging unrelated songs.
-Editor-only admission requires native round-trip and exact grace-note evidence.
+Only practice-ready, two-staff piano editions pass the public content gate.
 """
 from collections import Counter
 from io import BytesIO
@@ -75,6 +75,7 @@ def musicxml(data):
 
 
 def append_library(inputs, audit, output, allow_editor_only=False):
+    from library_content_policy import content_issues
     output = Path(output)
     path = output / 'catalog.json'
     original = path.read_bytes()
@@ -93,6 +94,8 @@ def append_library(inputs, audit, output, allow_editor_only=False):
             raise ValueError('Existing library integrity failed')
         require_two_staff_piano(data)
         by_id[song['id']] = song
+        if song.get('sourceSha256'):
+            by_id[song['sourceSha256']] = song
         by_xml[musicxml(data)[0]] = song
         names.setdefault(name_key(song['title']), set()).add(song.get('workId', song['id']))
     if audit.get('errors'):
@@ -119,6 +122,11 @@ def append_library(inputs, audit, output, allow_editor_only=False):
         if not staff_policy['accepted']:
             row.update(status='excluded', reason='Chỉ nhận đúng hai khuông piano: ' + '; '.join(v['message'] for v in staff_policy['violations']),
                        staffPolicy=staff_policy)
+            decisions.append(row)
+            continue
+        issues = content_issues(data)
+        if issues:
+            row.update(status='excluded', reason='; '.join(issues))
             decisions.append(row)
             continue
         xml_hash, count, grace = musicxml(data)
