@@ -1,6 +1,6 @@
 {
-  "tag": "pianist-web-2026-10-24-library-cleanup",
-  "sha256": "7f84216dce6ca906ba03733863e60daf6a47ab59e0e938ac1e2df8474def60a5",
-  "sourceCommit": "f1e707e06a585537b547b3d2f6e05825c311eac2",
-  "version": "8b6412908305b562858b"
+  "tag": "pianist-web-2026-10-24-two-staff-mpe",
+  "sha256": "75a466f48089291c38944ce716f166919c03ea8da6ad5c981696fddfbb254e48",
+  "sourceCommit": "03e2bc3a1372c3255d6e3935726e8f7df08bfb04",
+  "version": "0cbc50f491c5aac025cb"
 }
