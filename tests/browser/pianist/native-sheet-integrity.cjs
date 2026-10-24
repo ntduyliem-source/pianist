@@ -33,7 +33,7 @@ const root=path.resolve(__dirname,'../../..'),out=path.join(root,'artifacts/nati
   await page.screenshot({path:path.join(out,'tinh-page2-pedal.png')});
   // At reference time zero the first rest supplies the native ChordRest X.
   await page.getByRole('button',{name:'Nghe đoạn',exact:true}).click();
-  await page.getByRole('alert').filter({hasText:'ngoài piano nhẹ'}).waitFor();
+  await page.getByRole('alert').filter({hasText:'ngoài piano nhẹ'}).first().waitFor();
   const sostenuto=await page.evaluate(()=>{const a=window.pianist,old=a.Module.onSamplePlayback;let data;a.Module.onSamplePlayback=j=>data=JSON.parse(j);try{a.getSamplePlayback(1);return data.midi.some(e=>e.opcode===11&&e.data1===66&&e.data2>=64);}finally{a.Module.onSamplePlayback=old;}});
   assert(sostenuto,'the fallback is required by original native CC66, not an inferred pedal');
   await page.getByRole('button',{name:'Thoát toàn màn hình',exact:true}).click();
