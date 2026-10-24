@@ -77,7 +77,11 @@ export function LibraryPlayback() {
         aria-label={state.status === 'playing' ? 'Tạm dừng nghe thư viện' : 'Phát nghe thư viện'}
         onClick={() => void ws.run(() => player.toggle())}
       >
-        {state.loading ? '…' : state.status === 'playing' ? 'Ⅱ' : '▶'}
+        {state.loading ? (
+          <span className="studio-spinner" aria-hidden="true" />
+        ) : (
+          <Icon name={state.status === 'playing' ? 'pause' : 'play'} />
+        )}
       </button>
       <button aria-label="Dừng nghe thư viện" onClick={() => void ws.run(() => player.stop())}>
         <Icon name="stop" /> Dừng

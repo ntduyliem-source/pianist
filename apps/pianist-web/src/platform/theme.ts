@@ -21,7 +21,7 @@ export function setTheme(preference: ThemePreference) {
   document.documentElement.style.colorScheme = mode;
   document
     .querySelector('meta[name="theme-color"]')
-    ?.setAttribute('content', mode === 'dark' ? '#151c28' : '#f5f6f8');
+    ?.setAttribute('content', mode === 'dark' ? '#090c14' : '#f8fafc');
   try {
     localStorage.setItem('pianist.theme', preference);
   } catch {}

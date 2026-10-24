@@ -1,0 +1,8 @@
+/* Presentation from the supplied Pianist-UI-Gemini design.
+   This entry owns the current skin; native engraving and score geometry stay in their feature sheets. */
+@import './studio-fonts.css';
+@import './studio-foundations.css';
+@import '../app/studio-shell.css';
+@import '../features/library/studio-library.css';
+@import '../practice/studio-practice.css';
+@import './studio-panels.css';

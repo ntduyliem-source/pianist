@@ -8,6 +8,15 @@ import hashlib
 ROOT = Path(__file__).resolve().parents[2]
 OUT = ROOT / 'build.artifacts/notices'
 inventory = []
+# The Studio UI embeds these variable fonts in its stylesheet. Ship their
+# supplied OFL texts with the web bundle as well as the source archive.
+for name in ('jakarta', 'newsreader'):
+    source = ROOT / 'apps/pianist-web/src/assets/fonts' / f'{name}-OFL.txt'
+    destination = OUT / 'fonts/studio' / source.name
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    shutil.copy2(source, destination)
+    inventory.append({'package': name, 'license': 'OFL-1.1', 'file': destination.relative_to(OUT).as_posix(),
+                      'sha256': hashlib.sha256(source.read_bytes()).hexdigest(), 'sourceNotice': True})
 # Explicit ABC notices include LGPL variants and the Pyodide/stdlib notice text;
 # their filenames do not all match the generic LICENSE/COPYING scan below.
 formats = ROOT / 'third_party/score-format-sources'

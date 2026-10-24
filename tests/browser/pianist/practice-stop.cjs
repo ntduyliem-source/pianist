@@ -56,7 +56,7 @@ const hiddenOnly=process.argv.includes('--hidden-controls'),reportFile=path.join
     if(phase==='counting')await page.waitForFunction(()=>document.querySelector('.v2-status')?.textContent.includes('Đếm vào'));
     else await page.waitForFunction(()=>document.querySelector('.v2-status')?.textContent==='Đang tập',null,{timeout:15000});
     if(phase==='paused'){await top('Tạm dừng lượt tập').click();await top('Tiếp tục lượt tập').waitFor();}
-    const stop=top('Dừng lượt tập');assert(await stop.isVisible());assert(await stop.isEnabled());assert.match(await stop.innerText(),/Dừng|■/);
+    const stop=top('Dừng lượt tập');assert(await stop.isVisible());assert(await stop.isEnabled());assert(await stop.locator('svg').isVisible(),'Stop retains its visible square icon');
     await capture(kind+'-'+layout+'-'+phase);await stop.click();await top('Bắt đầu tập').waitFor();
     await page.waitForFunction(()=>!document.querySelector('.v2-play')?.disabled);assert.equal(await top('Tiếp tục lượt tập').count(),0);
     assert.equal(await page.getByTestId('practice-v2').count(),1);assert.equal(new URL(page.url()).hash,'#/practice');
@@ -66,7 +66,7 @@ const hiddenOnly=process.argv.includes('--hidden-controls'),reportFile=path.join
     const last=await page.evaluate(()=>window.stopLoads.at(-1));assert.equal(last.generation,load.generation,'Stop must not restart a scorer');
     await settings();assert(await page.getByRole('combobox',{name:'Tay tập',exact:true}).isEnabled());
     assert(await page.getByRole('spinbutton',{name:'Đếm vào',exact:true}).isEnabled());await closeSettings();
-    assert.match(await transport().locator('.v2-stop').innerText(),/Dừng|■/);check(kind+' '+layout+': Stop from '+phase+' closes the attempt, keeps sheet, silences audio and unlocks settings');
+    assert(await transport().locator('.v2-stop svg').isVisible());check(kind+' '+layout+': Stop from '+phase+' closes the attempt, keeps sheet, silences audio and unlocks settings');
     return load.generation;
   };
   const listenCase=async(kind,phase,layout)=>{
@@ -123,6 +123,7 @@ const hiddenOnly=process.argv.includes('--hidden-controls'),reportFile=path.join
     const first=await stopPractice('grade','counting','desktop'),second=await stopPractice('grade','running','desktop');assert.notEqual(first,second,'restart must create new attempt');
     await listenCase('grade','playing','desktop');
     await page.setViewportSize({width:360,height:800});await focus(true);await stopPractice('grade','paused','full-360');await listenCase('grade','paused','full-360');
+    await focus(false);
     await page.getByRole('button',{name:'Chọn grade và độ dài',exact:true}).click();await page.getByRole('combobox',{name:'Grade',exact:true}).waitFor();
 
     // A finished grade attempt still has a short result pause. Explicit Stop

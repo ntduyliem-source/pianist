@@ -2,6 +2,46 @@ import type React from 'react';
 
 export function Icon({ name }: { name: string }) {
   const paths: Record<string, React.ReactNode> = {
+    search: (
+      <>
+        <circle cx="10.5" cy="10.5" r="6.5" />
+        <path d="m16 16 5 5" />
+      </>
+    ),
+    grid: (
+      <>
+        <rect x="3" y="3" width="7" height="7" rx="1.5" />
+        <rect x="14" y="3" width="7" height="7" rx="1.5" />
+        <rect x="3" y="14" width="7" height="7" rx="1.5" />
+        <rect x="14" y="14" width="7" height="7" rx="1.5" />
+      </>
+    ),
+    list: (
+      <>
+        <path d="M9 5h12M9 12h12M9 19h12" />
+        <path d="M3 5h1M3 12h1M3 19h1" strokeWidth="3" />
+      </>
+    ),
+    tile: (
+      <>
+        <rect x="3" y="3" width="18" height="18" rx="3" />
+        <path d="M3 15h18M7 18h5" />
+      </>
+    ),
+    settings: (
+      <>
+        <path d="M4 6h16M4 12h16M4 18h16" />
+        <circle cx="9" cy="6" r="2" fill="var(--surface)" />
+        <circle cx="16" cy="12" r="2" fill="var(--surface)" />
+        <circle cx="8" cy="18" r="2" fill="var(--surface)" />
+      </>
+    ),
+    expand: <path d="M9 3H3v6M15 3h6v6M21 15v6h-6M9 21H3v-6" />,
+    collapse: <path d="M3 9h6V3M15 3v6h6M21 15h-6v6M9 21v-6H3" />,
+    chevron: <path d="m6 14 6-6 6 6" />,
+    repeat: (
+      <path d="m17 2 4 4-4 4M3 11V8a2 2 0 0 1 2-2h16M7 22l-4-4 4-4M21 13v3a2 2 0 0 1-2 2H3" />
+    ),
     sun: (
       <>
         <circle cx="12" cy="12" r="4" />

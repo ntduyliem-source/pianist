@@ -1,0 +1,586 @@
+/* The active sheet is its own workspace. The picker keeps the normal app navigation. */
+.application:has(.practice-v2) > .appbar,
+.application:has(.practice-v2) > .mobile-navigation {
+  display: none;
+}
+.application .practice-v2 {
+  inset: 0;
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+  background: var(--canvas);
+  color: var(--text);
+}
+.application .practice-v2 .v2-transport {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 8px 16px;
+  border-bottom: 1px solid var(--line);
+  background: var(--glass);
+  min-height: 60px;
+}
+.studio-practice-context,
+.studio-practice-transport,
+.studio-practice-tools {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  min-width: 0;
+}
+.studio-practice-context {
+  flex: 1;
+  max-width: 330px;
+}
+.studio-practice-transport {
+  flex: none;
+  justify-content: center;
+}
+.studio-practice-tools {
+  justify-content: flex-end;
+  flex: none;
+}
+.studio-score-title {
+  min-width: 0;
+  flex: 1;
+}
+.studio-score-title strong {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 17px;
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.studio-score-title small {
+  display: block;
+  font-size: 10px;
+  color: var(--muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.application .practice-v2 .studio-back {
+  flex: none;
+  width: 36px;
+  min-width: 36px;
+  padding: 0;
+  border-color: transparent;
+  background: transparent;
+}
+.application .practice-v2 .v2-transport button {
+  min-height: 36px;
+  font-size: 12px;
+  padding: 7px 10px;
+  border-radius: 9px;
+}
+.application .practice-v2 .v2-play {
+  border-radius: 20px;
+  min-width: 74px;
+  padding-inline: 16px;
+}
+.application .practice-v2 .v2-stop {
+  color: var(--muted);
+  background: var(--surface);
+  border-color: var(--line);
+  min-width: 36px;
+  padding: 8px;
+}
+.application .practice-v2 .v2-stop:not(:disabled):hover {
+  background: color-mix(in srgb, var(--danger) 8%, var(--surface));
+  color: var(--danger);
+  border-color: color-mix(in srgb, var(--danger) 30%, transparent);
+}
+.application .v2-transport .v2-stop-label {
+  display: none;
+}
+.application .practice-v2 .v2-listen {
+  min-width: 0;
+}
+.application .practice-v2 .v2-listen-icon {
+  display: inline-flex;
+}
+.application .practice-v2 .v2-icon {
+  width: 36px;
+  min-width: 36px;
+  padding: 7px;
+}
+.application .practice-v2 .v2-mode {
+  background: var(--surface-muted);
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  padding: 2px;
+}
+.application .practice-v2 .v2-mode button {
+  min-height: 29px;
+  font-size: 10px;
+  padding: 4px 8px;
+  border-radius: 6px;
+  background: transparent;
+  border-color: transparent;
+  color: var(--muted);
+}
+.application .practice-v2 .v2-mode button[aria-pressed='true'] {
+  background: var(--surface-raised);
+  color: var(--blue);
+  box-shadow: 0 1px 4px #0002;
+}
+.application .practice-v2 .v2-tempo {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  gap: 2px;
+  padding: 0 7px 0 3px;
+}
+.application .practice-v2 .v2-tempo input {
+  background: transparent;
+  border: 0;
+  border-radius: 8px;
+  min-height: 34px;
+  width: 48px;
+  font-size: 13px;
+  padding: 2px;
+  font-weight: 700;
+  color: var(--text);
+}
+.application .v2-tempo span {
+  color: var(--muted);
+  font-size: 9px;
+}
+.application .practice-v2 .v2-range {
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+}
+.application .v2-switch-dot {
+  width: 7px;
+  height: 7px;
+  background: var(--muted);
+}
+.application .v2-switch-dot.on {
+  background: var(--success);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--success) 12%, transparent);
+}
+.application .practice-v2 .v2-pedal-toggle {
+  font-size: 11px;
+  gap: 7px;
+}
+.application .practice-v2 .studio-config {
+  display: none;
+}
+.application .practice-sheet-region,
+.application .practice-sheet-scroll {
+  background: var(--canvas);
+}
+.application .practice-sheet-stack {
+  padding: 24px 20px 50px;
+}
+.application .practice-system {
+  color-scheme: light;
+  box-shadow: 0 0 24px #00000006;
+}
+.application .v2-audition {
+  background: var(--surface-muted);
+  border-color: var(--line);
+  padding: 3px 18px;
+  gap: 12px;
+}
+.application .v2-time {
+  color: var(--muted);
+}
+.application .v2-audition input {
+  accent-color: var(--primary);
+}
+.application .v2-audition select {
+  min-height: 32px;
+  font-size: 12px;
+}
+.application .v2-audition button {
+  min-height: 32px;
+  padding: 5px 8px;
+}
+.application .v2-feedback-panel {
+  background: var(--surface);
+  border-color: var(--line);
+}
+.application .v2-feedback-panel > summary {
+  min-height: 32px;
+  padding: 6px 18px;
+  font-size: 11px;
+  color: var(--muted);
+}
+.application .v2-feedback-panel[open] > summary {
+  border-bottom: 1px solid var(--line);
+}
+.application .v2-feedback {
+  background: var(--surface);
+  color: var(--text);
+}
+.application .v2-feedback small,
+.application .v2-label {
+  color: var(--muted);
+}
+.application .v2-attention {
+  color: var(--warning);
+}
+.application .v2-pedal-row {
+  border-color: var(--line);
+}
+.application .practice-piano {
+  background: var(--surface-muted);
+  color: var(--text);
+  padding-inline: 18px;
+  border-color: var(--line);
+}
+.application .practice-piano-heading {
+  min-height: 36px;
+  gap: 14px;
+  font-size: 11px;
+}
+.application .practice-piano-heading > span {
+  margin-right: auto;
+}
+.application .practice-piano-heading .v2-muted {
+  color: var(--muted);
+  font-size: 10px;
+}
+.application .practice-v2 .practice-piano-heading button {
+  background: transparent;
+  border: 0;
+  color: var(--muted);
+  min-height: 36px;
+  font-size: 11px;
+  padding: 5px 4px;
+}
+.studio-sheet-view {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.application .studio-sheet-view .v2-check {
+  font-size: 10px;
+  min-height: 32px;
+  gap: 6px;
+}
+.application .studio-sheet-view input[type='checkbox'] {
+  width: 13px;
+  height: 13px;
+}
+.application .practice-v2 .studio-sheet-view select {
+  font-size: 10px;
+  min-height: 28px;
+  max-width: 140px;
+  padding: 3px 7px;
+  border-radius: 6px;
+  background: var(--surface);
+}
+.application .practice-piano .piano {
+  height: 105px;
+  margin-bottom: 12px;
+}
+.application .v2-selection,
+.application .v2-info {
+  background: var(--accent-soft);
+  color: var(--text);
+}
+.application .v2-alert {
+  background: color-mix(in srgb, var(--danger) 10%, var(--surface));
+  color: var(--danger);
+}
+.application .practice-v2 .v2-drawer {
+  border-radius: 0;
+  background: var(--surface);
+  padding-inline: 24px;
+  width: min(430px, 100vw);
+}
+.application .v2-drawer-heading {
+  background: var(--surface);
+}
+.application .v2-drawer legend {
+  color: var(--blue);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  font-size: 10px;
+  padding-top: 22px;
+}
+.application .v2-drawer .v2-row {
+  background: transparent;
+}
+.studio-device-settings {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px 0 16px;
+}
+.application .v2-drawer label.sound-control {
+  flex-direction: row;
+  align-items: center;
+  margin: 0;
+}
+.application .studio-device-settings .theme-toggle {
+  width: 40px;
+  padding: 0;
+}
+.application .v2-drawer .v2-session-actions {
+  gap: 8px;
+  margin-top: 14px;
+}
+.application .exercise-session-bar {
+  background: var(--surface-muted);
+  border-color: var(--line);
+  padding: 4px 18px;
+  font-size: 10px;
+}
+.application .exercise-session-bar button {
+  min-height: 32px;
+  padding: 5px 10px;
+  font-size: 11px;
+}
+.application .exercise-current,
+.application .exercise-summary {
+  color: var(--muted);
+}
+.application .practice-v2.sheet-focus .v2-transport {
+  min-height: 46px;
+  padding: 4px 10px;
+  gap: 10px;
+}
+.application .sheet-focus .studio-score-title,
+.application .sheet-focus .studio-back,
+.application .sheet-focus .v2-mode,
+.application .sheet-focus .v2-tempo,
+.application .sheet-focus .studio-config {
+  display: none;
+}
+.application .sheet-focus .studio-practice-context {
+  flex: none;
+}
+.application .sheet-focus .studio-practice-transport {
+  margin-right: auto;
+}
+.application .practice-v2.sheet-focus .practice-sheet-stack {
+  padding-top: 12px;
+}
+.application .practice-v2 .v2-reveal {
+  background: var(--glass);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+@media (max-width: 1150px) {
+  .application .practice-v2 .v2-transport {
+    gap: 8px;
+    padding-inline: 10px;
+  }
+  .studio-practice-context {
+    max-width: 260px;
+  }
+  .application .v2-transport .v2-mode,
+  .application .v2-transport .v2-tempo {
+    display: none;
+  }
+  .application .practice-v2 .studio-config {
+    display: inline-flex;
+    color: var(--blue);
+    font-size: 11px;
+  }
+  .application .sheet-focus .studio-config {
+    display: none;
+  }
+}
+@media (max-width: 760px) {
+  .application .practice-v2 .v2-transport {
+    display: grid;
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+    gap: 4px;
+    padding: 4px 8px 6px;
+  }
+  .studio-practice-context {
+    grid-column: 1 / 7;
+    grid-row: 1;
+    width: 100%;
+    max-width: none;
+    gap: 5px;
+  }
+  .studio-score-title strong {
+    font-size: 16px;
+  }
+  .studio-score-title small {
+    font-size: 9px;
+  }
+  .studio-practice-transport {
+    grid-column: 1 / 5;
+    grid-row: 2;
+    justify-content: flex-start;
+    gap: 5px;
+  }
+  .studio-practice-tools {
+    display: contents;
+  }
+  .application .practice-v2 .v2-transport button {
+    min-height: 44px;
+  }
+  .application .practice-v2 .studio-back {
+    width: 40px;
+    min-width: 40px;
+    padding: 6px;
+  }
+  .application .practice-v2 .v2-transport .midi-status {
+    padding-inline: 7px;
+    font-size: 10px;
+    gap: 4px;
+  }
+  .application .studio-practice-tools > .v2-icon {
+    grid-row: 1;
+    grid-column: 7;
+    width: 100%;
+    min-width: 0;
+  }
+  .application .studio-practice-tools > .v2-icon + .v2-icon {
+    grid-column: 8;
+  }
+  .application .studio-practice-tools > .v2-range {
+    grid-row: 2;
+    grid-column: 5 / 7;
+    padding: 6px 3px;
+    min-width: 0;
+    font-size: 10px;
+    flex-direction: column;
+    gap: 1px;
+  }
+  .application .studio-practice-tools > .v2-range span {
+    display: inline;
+    font-size: 10px;
+  }
+  .application .studio-practice-tools > .v2-pedal-toggle {
+    grid-row: 2;
+    grid-column: 7 / 9;
+    justify-self: stretch;
+    padding-inline: 6px;
+    min-width: 0;
+    font-size: 11px;
+  }
+  .application .practice-v2 .v2-play,
+  .application .practice-v2 .v2-stop,
+  .application .practice-v2 .v2-listen {
+    width: 44px;
+    min-width: 44px;
+    padding: 9px;
+    border-radius: 10px;
+  }
+  .application .v2-play-label,
+  .application .v2-listen > span:last-child {
+    display: none;
+  }
+  .application .practice-v2 .studio-config {
+    display: none;
+  }
+  .application .practice-sheet-stack {
+    padding: 12px 8px 50px;
+  }
+  .application .practice-piano {
+    padding-inline: 10px;
+  }
+  .application .practice-piano-heading {
+    gap: 8px;
+    min-height: 42px;
+  }
+  .application .practice-v2 .practice-piano-heading button {
+    min-height: 42px;
+  }
+  .application .studio-sheet-view {
+    display: none;
+  }
+  .application .practice-piano .piano {
+    height: 86px;
+  }
+  .application .practice-v2 .v2-drawer {
+    inset: auto 0 0;
+    width: 100%;
+    max-height: 90dvh;
+    height: auto;
+    border-radius: 20px 20px 0 0;
+    padding-inline: 20px;
+  }
+  .application .v2-feedback-panel > summary {
+    padding-inline: 10px;
+    font-size: 10px;
+  }
+  .application .exercise-session-bar {
+    padding: 4px 8px;
+    gap: 5px;
+  }
+  .application .exercise-session-bar button {
+    min-height: 44px;
+  }
+  .application .exercise-current {
+    flex: 1;
+    min-width: 100px;
+  }
+  .application .exercise-summary:empty {
+    display: none;
+  }
+  .application .practice-v2.sheet-focus .v2-transport {
+    display: flex;
+    gap: 4px;
+    padding: 3px 5px;
+  }
+  .application .sheet-focus .studio-practice-context {
+    width: auto;
+  }
+  .application .sheet-focus .studio-practice-transport {
+    gap: 4px;
+  }
+  .application .sheet-focus .studio-practice-tools {
+    display: flex;
+    gap: 4px;
+  }
+  .application .sheet-focus .v2-range,
+  .application .sheet-focus .v2-hide-controls {
+    display: none;
+  }
+  .application .sheet-focus .studio-practice-tools > .v2-icon {
+    width: 40px;
+    min-width: 40px;
+  }
+  .application .sheet-focus .studio-practice-tools > .v2-pedal-toggle {
+    font-size: 10px;
+    padding-inline: 6px;
+  }
+  .application .sheet-focus .v2-hide-mobile {
+    display: inline-flex !important;
+  }
+  .application .v2-audition {
+    padding-inline: 10px;
+    gap: 7px;
+  }
+}
+@media (max-width: 420px) {
+  .application .practice-v2 .studio-config {
+    display: none;
+  }
+  .application .sheet-focus .studio-practice-context .midi-status {
+    padding-inline: 4px;
+    gap: 3px;
+    font-size: 9px;
+  }
+}
+@media (max-width: 360px) {
+  .application .practice-v2.sheet-focus .v2-transport {
+    padding-inline: 3px;
+    gap: 2px;
+  }
+  .application .sheet-focus .studio-practice-transport,
+  .application .sheet-focus .studio-practice-tools {
+    gap: 2px;
+  }
+  .application .sheet-focus .studio-practice-tools > .v2-icon {
+    width: 36px;
+    min-width: 36px;
+  }
+  .application .sheet-focus .v2-play,
+  .application .sheet-focus .v2-stop,
+  .application .sheet-focus .v2-listen {
+    width: 40px;
+    min-width: 40px;
+  }
+}

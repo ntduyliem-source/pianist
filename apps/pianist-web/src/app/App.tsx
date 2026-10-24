@@ -16,6 +16,7 @@ import { Exercises } from '../exercises/Exercises';
 import { Library } from '../features/library/LibraryScreen';
 import { PracticeHome } from '../features/library/PracticeLibraryPicker';
 import { Icon } from '../shared/ui/Icon';
+import { AppNavigation } from './AppNavigation';
 const run = (fn: () => unknown | Promise<unknown>) => () => void ws.run(fn);
 
 export function App() {
@@ -177,34 +178,11 @@ export function App() {
             ws.navigate('library');
           }}
         >
-          <span className="brand-symbol">p</span>Pianist<span className="edition">WEB</span>
+          <span className="brand-symbol">p</span>
+          <span className="brand-title">Pianist</span>
+          <span className="edition">STUDIO</span>
         </a>
-        <nav aria-label="Chức năng chính">
-          <button
-            className={state.view === 'library' ? 'selected' : ''}
-            onClick={() => ws.navigate('library')}
-            disabled={!!active}
-          >
-            <Icon name="folder" />
-            Thư viện
-          </button>
-          <button
-            className={state.view === 'editor' ? 'selected' : ''}
-            disabled={!!active}
-            onClick={run(() => ws.openEditor())}
-          >
-            <Icon name="score" />
-            Editor
-          </button>
-          <button
-            className={state.view === 'practice' ? 'selected' : ''}
-            disabled={!!active && state.view !== 'practice'}
-            onClick={run(() => ws.openPractice())}
-          >
-            <Icon name="piano" />
-            Tập piano
-          </button>
-        </nav>
+        <AppNavigation />
         <div className="appbar-end">
           <SoundControl />
           <MidiStatus />
@@ -219,6 +197,7 @@ export function App() {
           </button>
         </div>
       </header>
+      <AppNavigation mobile />
       {state.error && !state.engineFailed && (
         <div className="error-banner" role="alert">
           <span>{state.error}</span>

@@ -91,10 +91,13 @@ const root=path.resolve(__dirname,'../../..'),out=path.join(root,'artifacts/soun
   const geometry=await page.evaluate(()=>({width:innerWidth,scroll:document.body.scrollWidth,
    buttons:[...document.querySelectorAll('.appbar button,.appbar input,.v2-transport button')].filter(x=>x.checkVisibility()).map(x=>({name:x.getAttribute('aria-label')||x.textContent,left:x.getBoundingClientRect().left,right:x.getBoundingClientRect().right}))}));
   assert(geometry.scroll<=geometry.width+1);for(const b of geometry.buttons)assert(b.left>=-1&&b.right<=geometry.width+1,JSON.stringify(b));
-  await page.getByRole('button',{name:/Chuyển giao diện/}).click();await screenshot('practice-mobile-dark');check('390px controls fit and theme uses a single icon button');
+  await page.getByRole('button',{name:'Thiết lập',exact:true}).click();
+  await page.getByRole('button',{name:/Chuyển giao diện/}).click();
+  await page.getByRole('button',{name:'Đóng thiết lập',exact:true}).click();await screenshot('practice-mobile-dark');check('390px controls fit and theme uses a single icon button');
   await page.getByRole('button',{name:'Chỉ bản nhạc',exact:true}).click();
   assert(await page.getByRole('button',{name:'Nghe đoạn',exact:true}).isVisible());assert(await page.getByRole('switch',{name:'Dùng pedal khi tập',exact:true}).isVisible());await screenshot('full-sheet-mobile');
   await page.getByRole('button',{name:'Thoát toàn màn hình',exact:true}).click();
+  await page.getByRole('button',{name:'Đổi bài',exact:true}).click();
   await page.getByRole('navigation',{name:'Chức năng chính'}).getByRole('button',{name:'Editor',exact:true}).click();
   await page.getByRole('button',{name:'Phát nhạc',exact:true}).click();await peak();
   await page.evaluate(()=>{navigator.audioSession.state='interrupted';navigator.audioSession.dispatchEvent(new Event('statechange'));});

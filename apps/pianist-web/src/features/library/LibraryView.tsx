@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Icon } from '../../shared/ui/Icon';
 export type LibraryViewMode = 'list' | 'small' | 'large';
 export function useLibraryView() {
   const [view, setView] = useState<LibraryViewMode>(() => {
@@ -29,9 +30,9 @@ export function LibraryViewSwitch({
     <div className="library-view-switch" role="group" aria-label="Kiểu xem thư viện">
       {(
         [
-          ['list', '☷', 'Danh sách'],
-          ['small', '▦', 'Ảnh nhỏ'],
-          ['large', '▣', 'Ảnh lớn'],
+          ['list', 'list', 'Danh sách'],
+          ['small', 'grid', 'Ảnh nhỏ'],
+          ['large', 'tile', 'Ảnh lớn'],
         ] as const
       ).map(([id, icon, label]) => (
         <button
@@ -41,7 +42,7 @@ export function LibraryViewSwitch({
           title={label}
           onClick={() => onChange(id)}
         >
-          {icon}
+          <Icon name={icon} />
           <span>{label}</span>
         </button>
       ))}

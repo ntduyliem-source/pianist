@@ -1,0 +1,207 @@
+:root {
+  --font-sans: 'Plus Jakarta Sans', 'Segoe UI', system-ui, sans-serif;
+  --font-serif: 'Newsreader', Georgia, serif;
+  --canvas: #f8fafc;
+  --surface: #fff;
+  --surface-muted: #f1f5f9;
+  --surface-raised: #fff;
+  --input: #f8fafc;
+  --text: #0f172a;
+  --muted: #52627a;
+  --line: #e1e6ef;
+  --line-strong: #c8d1e0;
+  --primary: #4f46e5;
+  --blue: #5145cd;
+  --accent-soft: #eeedfd;
+  --danger: #be304c;
+  --success: #087e60;
+  --warning: #94620d;
+  --paper: #fff;
+  --glass: #ffffffed;
+  --shadow: 0 10px 30px -10px #24335420;
+  --app-top: calc(60px + env(safe-area-inset-top));
+  --app-bottom: 0px;
+  font-family: var(--font-sans);
+}
+:root[data-theme='dark'] {
+  --canvas: #090c14;
+  --surface: #121826;
+  --surface-muted: #0f1422;
+  --surface-raised: #1a2338;
+  --input: #101624;
+  --text: #f1f5fb;
+  --muted: #9caac0;
+  --line: #ffffff14;
+  --line-strong: #ffffff26;
+  --primary: #635bff;
+  --blue: #a5a8ff;
+  --accent-soft: #6366f11a;
+  --danger: #fb8c9e;
+  --success: #42d5a5;
+  --warning: #ecc071;
+  --glass: #0e131ff2;
+  --shadow: 0 14px 36px -10px #0008;
+}
+body {
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+::selection {
+  background: var(--accent-soft);
+  color: var(--blue);
+}
+.application {
+  font-size: 13px;
+  line-height: 1.5;
+}
+.application button,
+.application input,
+.application select,
+.application textarea {
+  font-family: var(--font-sans);
+}
+.application button {
+  border-radius: 10px;
+  border-color: var(--line);
+  background: var(--surface);
+  color: var(--text);
+  min-height: 40px;
+  font-size: 12px;
+  padding: 8px 13px;
+  font-weight: 600;
+  transition:
+    background 0.15s,
+    border-color 0.15s,
+    box-shadow 0.15s;
+  touch-action: manipulation;
+}
+.application button:hover:not(:disabled) {
+  background: var(--surface-raised);
+  border-color: var(--line-strong);
+}
+.application button:focus-visible,
+.application a:focus-visible,
+.application input:focus-visible,
+.application select:focus-visible,
+.application summary:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 3px;
+}
+.application button.primary,
+.application .practice-v2 button.primary {
+  background: linear-gradient(120deg, #4f46e5, #426ee8);
+  color: #fff;
+  border-color: transparent;
+  box-shadow: 0 3px 12px #4f46e526;
+}
+.application button.primary:hover:not(:disabled) {
+  background: linear-gradient(120deg, #4338ca, #345ed4);
+}
+.application button.primary-light,
+.application button[aria-pressed='true'] {
+  background: var(--accent-soft);
+  color: var(--blue);
+  border-color: color-mix(in srgb, var(--blue) 35%, transparent);
+}
+.application input:not([type='range']):not([type='checkbox']),
+.application select,
+.application textarea {
+  background: var(--input);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  color: var(--text);
+}
+.application input[type='checkbox'],
+.application input[type='range'] {
+  accent-color: var(--primary);
+}
+.application input::placeholder {
+  color: var(--muted);
+  opacity: 0.8;
+}
+.application h1 {
+  font-family: var(--font-serif);
+  font-size: 36px;
+  font-weight: 500;
+  letter-spacing: -0.7px;
+}
+.application .eyebrow {
+  display: block;
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.8px;
+  margin-bottom: 9px;
+}
+.application .page {
+  background: var(--canvas);
+  color: var(--text);
+  bottom: var(--app-bottom);
+}
+.application dialog {
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--line-strong);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+}
+.application dialog::backdrop {
+  background: #02061799;
+  backdrop-filter: blur(5px);
+}
+.application dialog h2 {
+  font-family: var(--font-serif);
+  font-size: 25px;
+  font-weight: 500;
+}
+.application .dialog-heading button {
+  width: 40px;
+  padding: 0;
+  flex: none;
+}
+.application .loading-overlay {
+  background: var(--canvas);
+  color: var(--text);
+}
+.application .loading-overlay h2 {
+  font-family: var(--font-serif);
+  font-size: 27px;
+  font-weight: 500;
+}
+.application .loading-overlay p {
+  color: var(--muted);
+}
+.application .loading-bar {
+  background: var(--accent-soft);
+}
+.studio-spinner {
+  width: 17px;
+  height: 17px;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: studio-spin 0.8s linear infinite;
+}
+@keyframes studio-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@media (pointer: coarse) {
+  .application button {
+    min-height: 44px;
+  }
+  .application input:not([type='checkbox']):not([type='range']),
+  .application select {
+    font-size: 16px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .application *,
+  .application *::before,
+  .application *::after {
+    transition: none !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

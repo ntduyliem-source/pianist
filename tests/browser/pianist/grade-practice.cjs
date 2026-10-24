@@ -54,7 +54,10 @@ const noteName=p=>['C','C♯','D','D♯','E','F','F♯','G','G♯','A','A♯','B
   };
   const current=async()=>({id:await progress().getAttribute('data-exercise-id'),scoreId:await progress().getAttribute('data-score-id'),round:Number(await progress().getAttribute('data-round')),position:Number(await progress().getAttribute('data-position'))});
   const next=async()=>{const before=await current();await page.getByRole('button',{name:'Bài kế tiếp',exact:true}).click();await page.waitForFunction(id=>document.querySelector('[data-testid="grade-progress"]')?.getAttribute('data-exercise-id')!==id,before.id,{timeout:60000});await ready();return current();};
-  const returnChooser=async()=>{await page.getByRole('button',{name:'Chọn grade và độ dài',exact:true}).click();await choiceReady();await idle();};
+  const returnChooser=async()=>{
+    if(await page.locator('.practice-v2.sheet-focus').count())await page.getByRole('button',{name:'Thoát toàn màn hình',exact:true}).click();
+    await page.getByRole('button',{name:'Chọn grade và độ dài',exact:true}).click();await choiceReady();await idle();
+  };
   const settings=async()=>{await page.getByRole('button',{name:'Thiết lập',exact:true}).click();await page.getByRole('dialog').filter({has:page.getByRole('heading',{name:'Thiết lập luyện tập',exact:true})}).waitFor();};
   const closeSettings=()=>page.getByRole('button',{name:'Đóng thiết lập',exact:true}).click();
   const startTimeline=async()=>{
@@ -119,7 +122,7 @@ const noteName=p=>['C','C♯','D','D♯','E','F','F♯','G','G♯','A','A♯','B
       check('active free-play session rejects legacy grade navigation, preserves scorer/mode and explains why');
       assert.deepEqual(report.errors,[]);report.passed=true;console.log(JSON.stringify({passed:true,checks:report.checks.length,report:reportFile}));return;
     }
-    assert.deepEqual(await page.getByRole('navigation',{name:'Chức năng chính'}).getByRole('button').allTextContents(),['Thư viện','Editor','Tập piano']);
+    assert.deepEqual(await page.getByRole('navigation',{name:'Chức năng chính'}).getByRole('button').allTextContents(),['Thư viện','Tập piano','Editor']);
     assert.equal(await page.getByRole('combobox',{name:'Grade',exact:true}).locator('option').count(),8);
     assert.equal(await page.getByRole('checkbox',{name:/^Khoảng \d+ nốt$/}).count(),7);
     await countIs(100);await chooseLengths(lengths);await countIs(700);await chooseLengths([]);assert(await start().isDisabled());

@@ -1,0 +1,275 @@
+.application .appbar {
+  height: var(--app-top);
+  padding: env(safe-area-inset-top) 24px 0;
+  gap: 24px;
+  flex-wrap: nowrap;
+  background: var(--glass);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--line);
+}
+.application .brand {
+  gap: 9px;
+  color: var(--text);
+  flex: none;
+}
+.application .brand-title {
+  font-family: var(--font-serif);
+  font-size: 25px;
+  font-weight: 600;
+  letter-spacing: -0.7px;
+}
+.application .brand-symbol {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border-radius: 9px;
+  background: linear-gradient(135deg, #6366f1, #3b82f6);
+  font-family: var(--font-serif);
+  font-size: 28px;
+  letter-spacing: -1px;
+  box-shadow: 0 2px 8px #6366f133;
+}
+.application .edition {
+  font-size: 8px;
+  letter-spacing: 1.7px;
+  color: var(--muted);
+  margin: 0 0 7px -4px;
+}
+.application .desktop-navigation {
+  background: var(--surface-muted);
+  align-self: center;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 3px;
+  gap: 2px;
+  height: 44px;
+}
+.application .desktop-navigation button {
+  min-height: 36px;
+  padding: 6px 16px;
+  border-radius: 8px;
+  font-size: 12px;
+  background: transparent;
+  color: var(--muted);
+  border: 1px solid transparent;
+}
+.application .desktop-navigation button.selected {
+  color: var(--text);
+  border-color: var(--line);
+  background: var(--surface-raised);
+  box-shadow: 0 1px 5px #0000000d;
+}
+.application .desktop-navigation button.selected::after {
+  content: none;
+}
+.application .appbar-end {
+  gap: 10px;
+  height: auto;
+}
+.application .sound-control {
+  font-size: 11px;
+  gap: 6px;
+  color: var(--muted);
+}
+.application .sound-control input {
+  width: 14px;
+  height: 14px;
+}
+.application .midi-status {
+  min-height: 34px;
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 500;
+  background: var(--surface);
+}
+.application .midi-status.connected {
+  color: var(--success);
+  border-color: color-mix(in srgb, var(--success) 25%, transparent);
+  background: color-mix(in srgb, var(--success) 7%, var(--surface));
+}
+.application .appbar-end .icon-button {
+  width: 36px;
+  height: 36px;
+  min-height: 36px;
+  border-radius: 10px;
+  padding: 0;
+  border: 1px solid var(--line);
+}
+.application .appbar-end .theme-toggle {
+  color: var(--blue);
+}
+[data-theme='dark'] .application .theme-toggle {
+  color: #f6c766;
+}
+.mobile-navigation {
+  display: none;
+}
+.application .practice-kind {
+  background: var(--surface-muted);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 4px;
+  height: 50px;
+  top: calc(var(--app-top) + 12px);
+  gap: 4px;
+  width: 340px;
+  max-width: calc(100% - 32px);
+}
+.application .practice-kind > button {
+  background: transparent;
+  color: var(--muted);
+  border-color: transparent;
+  border-radius: 10px;
+  padding: 4px 14px;
+  min-height: 40px;
+  justify-content: center;
+  box-shadow: none;
+}
+.application .practice-kind > button[aria-pressed='true'] {
+  background: var(--surface-raised);
+  color: var(--blue);
+  border: 1px solid var(--line);
+  box-shadow: 0 2px 6px #0000000a;
+}
+.application .practice-kind span {
+  font-size: 12px;
+}
+.application .practice-kind + .page {
+  top: calc(var(--app-top) + 76px);
+}
+.application .editor-meta {
+  padding-inline: 18px;
+  background: var(--surface-muted);
+  border-color: var(--line);
+}
+.application .editor-meta strong {
+  font-family: var(--font-serif);
+  font-size: 17px;
+  font-weight: 500;
+}
+.application .editor-meta > span {
+  color: var(--muted);
+}
+.application .editor-playback {
+  background: var(--surface);
+  border-color: var(--line);
+}
+.application .editor-playback-time {
+  color: var(--muted);
+}
+@media (max-width: 1100px) {
+  .application .appbar {
+    padding-inline: 16px;
+    gap: 14px;
+  }
+  .application .desktop-navigation button {
+    padding-inline: 12px;
+  }
+  .application .midi-device-name,
+  .application .edition {
+    display: none;
+  }
+}
+@media (max-width: 760px) {
+  :root {
+    --app-top: calc(56px + env(safe-area-inset-top));
+    --app-bottom: calc(60px + env(safe-area-inset-bottom));
+  }
+  .application .appbar {
+    padding-inline: 14px;
+    gap: 8px;
+  }
+  .application .brand {
+    height: auto;
+  }
+  .application .brand-title {
+    font-size: 24px;
+  }
+  .application .appbar .desktop-navigation {
+    display: none;
+  }
+  .application .appbar-end {
+    gap: 8px;
+  }
+  .application .appbar-end > .icon-button:not(.theme-toggle) {
+    display: none;
+  }
+  .application .appbar-end .theme-toggle {
+    width: 40px;
+    height: 44px;
+    min-height: 44px;
+  }
+  .application .appbar .sound-control {
+    font-size: 10px;
+  }
+  .application .appbar .sound-control span {
+    max-width: 57px;
+    white-space: normal;
+    line-height: 1.3;
+  }
+  .application .midi-status {
+    min-height: 44px;
+  }
+  .application .mobile-navigation {
+    display: flex;
+    position: fixed;
+    inset: auto 0 0;
+    z-index: 40;
+    height: var(--app-bottom);
+    padding: 5px 12px calc(5px + env(safe-area-inset-bottom));
+    border-top: 1px solid var(--line);
+    background: var(--glass);
+    backdrop-filter: blur(20px);
+    gap: 12px;
+  }
+  .application .mobile-navigation button {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    border: 0;
+    border-radius: 10px;
+    background: transparent;
+    color: var(--muted);
+    min-height: 46px;
+    padding: 4px 12px;
+    font-size: 10px;
+  }
+  .application .mobile-navigation button.selected {
+    color: var(--blue);
+    background: var(--accent-soft);
+  }
+  .application .mobile-navigation .icon {
+    width: 20px;
+    height: 20px;
+  }
+  body[data-view='editor'] #screen {
+    bottom: var(--app-bottom);
+  }
+  .application .editor-meta {
+    padding-inline: 8px;
+  }
+  .application .editor-meta strong {
+    font-size: 15px;
+  }
+  .application .toast {
+    bottom: calc(var(--app-bottom) + 14px);
+    max-width: calc(100vw - 24px);
+  }
+}
+@media (max-width: 360px) {
+  .application .appbar {
+    padding-inline: 8px;
+  }
+  .application .appbar-end {
+    gap: 4px;
+  }
+  .application .brand-symbol {
+    width: 26px;
+    height: 29px;
+  }
+  .application .brand-title {
+    font-size: 21px;
+  }
+}

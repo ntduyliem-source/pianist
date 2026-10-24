@@ -8,12 +8,14 @@ export function PracticePiano({
   expanded,
   onToggle,
   hidden,
+  tools,
 }: {
   held: number[];
   expected: number[];
   expanded: boolean;
   onToggle: () => void;
   hidden: boolean;
+  tools?: React.ReactNode;
 }) {
   const notes = Array.from({ length: 88 }, (_, i) => 21 + i),
     black = (n: number) => [1, 3, 6, 8, 10].includes(n % 12),
@@ -114,6 +116,7 @@ export function PracticePiano({
             · A0–C8 · {held.length ? held.map(noteName).join(' · ') : 'Chưa giữ phím'}
           </span>
         </span>
+        {tools}
         <button aria-expanded={expanded} aria-controls="practice-keyboard" onClick={onToggle}>
           {expanded ? '⌄ Thu gọn' : '⌃ Mở bàn phím'}
         </button>

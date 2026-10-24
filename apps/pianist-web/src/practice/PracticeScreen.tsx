@@ -14,6 +14,8 @@ import { feedback } from './feedback-v2';
 import { Sheet } from './Sheet';
 import { Icon } from '../shared/ui/Icon';
 import { MidiStatus } from '../shared/ui/MidiStatus';
+import { SoundControl } from '../shared/ui/SoundControl';
+import { ThemeControl } from '../shared/ui/ThemeControl';
 import { PracticePiano } from './PracticePiano';
 import { CalibrationView } from './CalibrationView';
 import { simulateMidi } from './midi-simulation-v2';
@@ -48,6 +50,7 @@ export interface ExercisePracticeContext {
   onStart?: () => void;
   onSession?: (session: PracticeController) => void;
   onStop?: () => void;
+  onBack: () => unknown | Promise<unknown>;
   prepareListen: (signal: AbortSignal) => Promise<EngineBridge>;
 }
 
@@ -167,8 +170,6 @@ export function Practice({
           ),
         )
       : 0;
-  const currentMeasure = cursor?.measure ?? c.fromMeasure,
-    loop = cursor?.loop ?? 0;
   const targetIndex = useMemo(() => new Map(t?.targets.map((n) => [n.id, n]) ?? []), [t]);
   const judged = useMemo(() => new Set(view.judgements.map((j) => j.id)), [view.judgements]);
   const missing =
@@ -574,7 +575,7 @@ export function Practice({
       disabled={!canStop || stopping}
       onClick={() => void ws.run(stop)}
     >
-      <span aria-hidden="true">■</span>
+      <Icon name="stop" />
       <span className="v2-stop-label">Dừng</span>
     </button>
   );
@@ -621,99 +622,178 @@ export function Practice({
         role="group"
         aria-label="Điều khiển tập luyện"
       >
-        <button
-          className="primary v2-play"
-          title={playing ? 'Tạm dừng lượt tập' : active ? 'Tiếp tục lượt tập' : 'Bắt đầu tập'}
-          aria-label={playing ? 'Tạm dừng lượt tập' : active ? 'Tiếp tục lượt tập' : 'Bắt đầu tập'}
-          disabled={
-            busy ||
-            stopping ||
-            exercise?.loading ||
-            !t ||
-            (active && !playing && ws.midi.deviceId !== c.deviceId)
-          }
-          onClick={act(toggle)}
-        >
-          <Icon name={playing ? 'pause' : 'play'} />
-          <span className="v2-play-label">{playing ? 'Tạm dừng' : active ? 'Tiếp' : 'Tập'}</span>
-        </button>
-        {stopButton}
-        <button
-          className="v2-listen"
-          disabled={
-            active ||
-            busy ||
-            stopping ||
-            exercise?.loading ||
-            !nativeReady ||
-            preparingListen ||
-            audition?.preparing
-          }
-          aria-busy={!nativeReady || preparingListen || audition?.preparing}
-          title={
-            !nativeReady
-              ? 'Đang chuẩn bị bản nhạc'
-              : active
-                ? 'Kết thúc lượt để nghe mẫu'
-                : 'Nghe bản nhạc'
-          }
-          aria-label={
-            audition?.status === 'playing'
-              ? 'Tạm dừng nghe'
-              : audition
-                ? 'Tiếp tục nghe'
-                : 'Nghe đoạn'
-          }
-          aria-pressed={audition?.status === 'playing'}
-          onClick={act(listen)}
-        >
-          <span className="v2-listen-icon" aria-hidden="true">
-            <Icon name={audition?.status === 'playing' ? 'pause' : 'listen'} />
-          </span>
-          <span>Nghe</span>
-        </button>
-        <button
-          className="v2-pedal-toggle"
-          role="switch"
-          aria-label="Dùng pedal khi tập"
-          aria-checked={c.pedalEnabled !== false}
-          disabled={active || !!exercise?.loading}
-          title={active ? 'Kết thúc lượt để đổi cấu hình chấm pedal' : 'Bật/tắt dùng pedal khi tập'}
-          onClick={() => update({ pedalEnabled: c.pedalEnabled === false })}
-        >
-          <span className={'v2-switch-dot' + (c.pedalEnabled !== false ? ' on' : '')} />
-          Pedal
-        </button>
-        <span className="v2-flex" />
-        {focus && <MidiStatus compact />}
-        <span className="v2-focus-context" hidden={!focus}>
-          Ô {currentMeasure + 1} · Vòng {loop + 1}/{c.loops} · {message}
-        </span>
-        <button
-          className="v2-icon"
-          aria-label="Thiết lập"
-          onClick={() => openPanel('settings')}
-          title="Thiết lập"
-        >
-          ☷
-        </button>
-        <button
-          className="v2-icon"
-          aria-label={focus ? 'Thoát toàn màn hình' : 'Chỉ bản nhạc'}
-          title={focus ? 'Thoát toàn màn hình' : 'Chỉ bản nhạc'}
-          onClick={() => void (focus ? exitFocus() : enterFocus())}
-        >
-          ⛶
-        </button>
-        {focus && (
+        <div className="studio-practice-context">
           <button
-            className="v2-icon v2-hide-controls"
-            onClick={() => setBarHidden(true)}
-            aria-label="Ẩn thanh điều khiển"
+            className="studio-back"
+            aria-label={exercise ? 'Chọn grade và độ dài' : 'Đổi bài'}
+            title="Quay lại chọn bài"
+            disabled={(!exercise && active) || stopping}
+            onClick={() =>
+              void ws.run(async () => {
+                stopPreview();
+                await exitFocus();
+                if (exercise) await exercise.onBack();
+                else ws.openPractice();
+              })
+            }
           >
-            ⌃
+            <Icon name="back" />
           </button>
-        )}
+          <div className="studio-score-title">
+            <strong title={snapshot.title}>{snapshot.title}</strong>
+            <small>
+              {c.mode === 'wait' ? 'Đúng nốt' : `${Math.round(active ? beat.bpm : c.bpm)} BPM`} ·{' '}
+              {message}
+            </small>
+          </div>
+          <MidiStatus compact />
+        </div>
+        <div className="studio-practice-transport">
+          <button
+            className="primary v2-play"
+            title={playing ? 'Tạm dừng lượt tập' : active ? 'Tiếp tục lượt tập' : 'Bắt đầu tập'}
+            aria-label={
+              playing ? 'Tạm dừng lượt tập' : active ? 'Tiếp tục lượt tập' : 'Bắt đầu tập'
+            }
+            disabled={
+              busy ||
+              stopping ||
+              exercise?.loading ||
+              !t ||
+              (active && !playing && ws.midi.deviceId !== c.deviceId)
+            }
+            onClick={act(toggle)}
+          >
+            <Icon name={playing ? 'pause' : 'play'} />
+            <span className="v2-play-label">{playing ? 'Tạm dừng' : active ? 'Tiếp' : 'Tập'}</span>
+          </button>
+          {stopButton}
+          <button
+            className="v2-listen"
+            disabled={
+              active ||
+              busy ||
+              stopping ||
+              exercise?.loading ||
+              !nativeReady ||
+              preparingListen ||
+              audition?.preparing
+            }
+            aria-busy={!nativeReady || preparingListen || audition?.preparing}
+            title={
+              !nativeReady
+                ? 'Đang chuẩn bị bản nhạc'
+                : active
+                  ? 'Kết thúc lượt để nghe mẫu'
+                  : 'Nghe bản nhạc'
+            }
+            aria-label={
+              audition?.status === 'playing'
+                ? 'Tạm dừng nghe'
+                : audition
+                  ? 'Tiếp tục nghe'
+                  : 'Nghe đoạn'
+            }
+            aria-pressed={audition?.status === 'playing'}
+            onClick={act(listen)}
+          >
+            <span className="v2-listen-icon" aria-hidden="true">
+              <Icon name={audition?.status === 'playing' ? 'pause' : 'listen'} />
+            </span>
+            <span>Nghe</span>
+          </button>
+          <div className="v2-mode">
+            <button
+              disabled={active || !!exercise?.loading}
+              aria-pressed={c.mode === 'wait'}
+              onClick={() => update({ mode: 'wait' })}
+            >
+              Đúng nốt
+            </button>
+            <button
+              disabled={active || !!exercise?.loading}
+              aria-pressed={c.mode === 'bpm'}
+              onClick={() => update({ mode: 'bpm' })}
+            >
+              Theo BPM
+            </button>
+          </div>
+          <label className="v2-tempo">
+            <NumberField
+              aria-label="BPM"
+              type="number"
+              min={20}
+              max={300}
+              value={active ? beat.bpm : c.bpm}
+              disabled={active || !!exercise?.loading}
+              onValue={(value) => update({ bpm: value })}
+            />
+            <span>BPM</span>
+          </label>
+          <button
+            className="studio-config"
+            aria-label="Chế độ và BPM"
+            onClick={() => openPanel('settings')}
+          >
+            {c.mode === 'wait' ? 'Đúng nốt' : `${Math.round(active ? beat.bpm : c.bpm)} BPM`}
+          </button>
+        </div>
+        <div className="studio-practice-tools">
+          {!exercise && (
+            <button
+              className="v2-range"
+              aria-label="Chọn đoạn"
+              title={`Đoạn ô ${c.fromMeasure + 1}–${c.toMeasure + 1}`}
+              aria-expanded={panel === 'range'}
+              disabled={active}
+              onClick={() => openPanel('range')}
+            >
+              A–B{' '}
+              <span>
+                {c.fromMeasure + 1}–{c.toMeasure + 1}
+              </span>
+            </button>
+          )}
+          <button
+            className="v2-pedal-toggle"
+            role="switch"
+            aria-label="Dùng pedal khi tập"
+            aria-checked={c.pedalEnabled !== false}
+            disabled={active || !!exercise?.loading}
+            title={
+              active ? 'Kết thúc lượt để đổi cấu hình chấm pedal' : 'Bật/tắt dùng pedal khi tập'
+            }
+            onClick={() => update({ pedalEnabled: c.pedalEnabled === false })}
+          >
+            <span className={'v2-switch-dot' + (c.pedalEnabled !== false ? ' on' : '')} />
+            Pedal
+          </button>
+          <button
+            className="v2-icon"
+            aria-label="Thiết lập"
+            onClick={() => openPanel('settings')}
+            title="Thiết lập"
+          >
+            <Icon name="settings" />
+          </button>
+          <button
+            className="v2-icon"
+            aria-label={focus ? 'Thoát toàn màn hình' : 'Chỉ bản nhạc'}
+            title={focus ? 'Thoát toàn màn hình' : 'Chỉ bản nhạc'}
+            onClick={() => void (focus ? exitFocus() : enterFocus())}
+          >
+            <Icon name={focus ? 'collapse' : 'expand'} />
+          </button>
+          {focus && (
+            <button
+              className="v2-icon v2-hide-controls"
+              onClick={() => setBarHidden(true)}
+              aria-label="Ẩn thanh điều khiển"
+            >
+              <Icon name="chevron" />
+            </button>
+          )}
+        </div>
       </div>
       {exercise && <div className="exercise-session-bar">{exercise.controls}</div>}
       {exercise?.error && (
@@ -732,93 +812,7 @@ export function Practice({
           <button onClick={() => setBarHidden(false)}>⌄ Hiện điều khiển</button>
         </div>
       )}
-      <div className="v2-sheet-tools" hidden={focus}>
-        <div className="v2-mode">
-          <button
-            disabled={active || !!exercise?.loading}
-            aria-pressed={c.mode === 'wait'}
-            onClick={() => update({ mode: 'wait' })}
-          >
-            Đúng nốt
-          </button>
-          <button
-            disabled={active || !!exercise?.loading}
-            aria-pressed={c.mode === 'bpm'}
-            onClick={() => update({ mode: 'bpm' })}
-          >
-            Theo BPM
-          </button>
-        </div>
-        <label className="v2-tempo">
-          <NumberField
-            aria-label="BPM"
-            type="number"
-            min={20}
-            max={300}
-            value={active ? beat.bpm : c.bpm}
-            disabled={active || !!exercise?.loading}
-            onValue={(value) => update({ bpm: value })}
-          />
-          <span>BPM</span>
-        </label>
-        {!exercise && (
-          <button
-            className="v2-range"
-            aria-label="Chọn đoạn"
-            aria-expanded={panel === 'range'}
-            disabled={active}
-            onClick={() => openPanel('range')}
-          >
-            A–B{' '}
-            <span>
-              {c.fromMeasure + 1}–{c.toMeasure + 1}
-            </span>
-          </button>
-        )}
-        <span className="v2-flex" />
-        <label className="v2-check v2-desktop">
-          <input
-            type="checkbox"
-            aria-label="Cuộn theo nhạc"
-            checked={prefs.scroll}
-            onChange={(e) => setPref({ scroll: e.target.checked })}
-          />
-          Theo bài
-        </label>
-        <select
-          className="v2-desktop"
-          aria-label="Thu phóng bản nhạc"
-          value={prefs.zoom}
-          onChange={(e) =>
-            setPref({
-              zoom: ['auto', 'fit'].includes(e.target.value)
-                ? (e.target.value as 'auto' | 'fit')
-                : +e.target.value,
-            })
-          }
-        >
-          <option value="auto">Tự động · dễ đọc</option>
-          <option value="fit">Vừa chiều rộng</option>
-          {[
-            ...new Set([
-              60,
-              80,
-              100,
-              120,
-              150,
-              180,
-              ...(typeof prefs.zoom === 'number' ? [prefs.zoom] : []),
-            ]),
-          ]
-            .sort((a, b) => a - b)
-            .map((n) => (
-              <option key={n} value={n}>
-                {n}%
-              </option>
-            ))}
-        </select>
-      </div>
-      {!focus && auditionControls}
+      {(!focus || !barHidden) && auditionControls}
 
       {parsed.error && (
         <p role="alert" className="v2-alert">
@@ -876,6 +870,51 @@ export function Practice({
         onPedal={() => ws.midi.receive([0xb0, 64, ws.midi.pedal ? 0 : 127], performance.now())}
       />
       <PracticePiano
+        tools={
+          <div className="studio-sheet-view">
+            <label className="v2-check v2-desktop">
+              <input
+                type="checkbox"
+                aria-label="Cuộn theo nhạc"
+                checked={prefs.scroll}
+                onChange={(e) => setPref({ scroll: e.target.checked })}
+              />
+              Theo bài
+            </label>
+            <select
+              className="v2-desktop"
+              aria-label="Thu phóng bản nhạc"
+              value={prefs.zoom}
+              onChange={(e) =>
+                setPref({
+                  zoom: ['auto', 'fit'].includes(e.target.value)
+                    ? (e.target.value as 'auto' | 'fit')
+                    : +e.target.value,
+                })
+              }
+            >
+              <option value="auto">Tự động · dễ đọc</option>
+              <option value="fit">Vừa chiều rộng</option>
+              {[
+                ...new Set([
+                  60,
+                  80,
+                  100,
+                  120,
+                  150,
+                  180,
+                  ...(typeof prefs.zoom === 'number' ? [prefs.zoom] : []),
+                ]),
+              ]
+                .sort((a, b) => a - b)
+                .map((n) => (
+                  <option key={n} value={n}>
+                    {n}%
+                  </option>
+                ))}
+            </select>
+          </div>
+        }
         held={held}
         expected={f.expected}
         expanded={prefs.keyboard}
@@ -909,7 +948,10 @@ export function Practice({
           </button>
         </div>
         <p className="practice-score-name">{snapshot.title}</p>
-        {focus && auditionControls}
+        <div className="studio-device-settings">
+          <SoundControl />
+          <ThemeControl />
+        </div>
         {exercise && <div className="exercise-source">{exercise.details}</div>}
         <div className="v2-row v2-session-actions">
           <button
@@ -945,6 +987,33 @@ export function Practice({
         )}
         {panel === 'settings' && (
           <>
+            <fieldset disabled={active || !!exercise?.loading}>
+              <legend>Cách luyện tập</legend>
+              <div className="v2-field-pair">
+                <label>
+                  Chế độ
+                  <select
+                    aria-label="Chế độ tập"
+                    value={c.mode}
+                    onChange={(e) => update({ mode: e.target.value as PracticeSettings['mode'] })}
+                  >
+                    <option value="wait">Đúng nốt</option>
+                    <option value="bpm">Theo BPM</option>
+                  </select>
+                </label>
+                <label>
+                  BPM
+                  <NumberField
+                    aria-label="BPM trong thiết lập"
+                    type="number"
+                    min={20}
+                    max={300}
+                    value={c.bpm}
+                    onValue={(value) => update({ bpm: value })}
+                  />
+                </label>
+              </div>
+            </fieldset>
             {!exercise && (
               <fieldset disabled={active}>
                 <legend>Đoạn tập và lặp lại</legend>

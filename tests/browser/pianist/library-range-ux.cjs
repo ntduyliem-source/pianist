@@ -112,14 +112,18 @@ const root=path.resolve(__dirname,'../../..'),out=path.join(root,'artifacts/libr
   assert.equal(await page.locator('dialog[open]').count(),1);
   await page.getByRole('button',{name:'Hủy',exact:true}).click();
   check('Range is transactional: cancel/invalid/empty inputs, reverse two-tap selection, cancel after A, whole song, settings shortcut');
-  await page.getByRole('button',{name:/Chuyển giao diện/}).click();await range();await screenshot('range-light');
+  // The sheet now owns its command bar; appearance options live in its settings.
+  await page.getByRole('button',{name:'Thiết lập',exact:true}).click();
+  await page.getByRole('button',{name:/Chuyển giao diện/}).click();
+  await page.getByRole('button',{name:'Đóng thiết lập',exact:true}).click();await range();await screenshot('range-light');
   await page.getByRole('button',{name:'Hủy',exact:true}).click();
   await page.getByRole('button',{name:'Chỉ bản nhạc',exact:true}).click();
   await page.getByRole('button',{name:'Thiết lập',exact:true}).click();await page.getByRole('button',{name:/Chọn đoạn · ô/}).click();
   await page.keyboard.press('Escape');assert(await page.locator('.sheet-focus').count());
   assert.equal(await page.locator('dialog[open]').count(),0);
   check('Range supports light/dark, touch viewport and Escape without exiting full-sheet mode');
-  await page.getByRole('button',{name:'Thoát toàn màn hình',exact:true}).click();await nav('Thư viện').click();
+  await page.getByRole('button',{name:'Thoát toàn màn hình',exact:true}).click();
+  await page.getByRole('button',{name:'Đổi bài',exact:true}).click();await nav('Thư viện').click();
   await search.fill('');assert.equal(await own.locator('.score-card').count(),2);
   await own.getByRole('button',{name:'Tùy chọn '+title,exact:true}).click();
   await page.getByRole('dialog',{name:'Tùy chọn '+title,exact:true}).getByText('Chuyển sang nhóm bài khác…',{exact:true}).click();

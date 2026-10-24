@@ -24,9 +24,13 @@ export function Library() {
       <main className={'library library-v2 page library-view-' + view}>
         <section className="library-content">
           <div className="page-title">
-            <h1 id="view-heading" tabIndex={-1}>
-              Thư viện
-            </h1>
+            <div className="studio-page-heading">
+              <span className="eyebrow">KHÔNG GIAN ÂM NHẠC CỦA BẠN</span>
+              <h1 id="view-heading" tabIndex={-1}>
+                Thư viện
+              </h1>
+              <p>Nghe, biên soạn và luyện tập những bản nhạc bạn yêu thích.</p>
+            </div>
             <div className="button-row">
               <button onClick={run(() => ws.newProject())}>
                 <Icon name="add" />
@@ -39,18 +43,25 @@ export function Library() {
             </div>
           </div>
           <div className="library-toolbar">
-            <input
-              type="search"
-              aria-label="Tìm bản nhạc"
-              placeholder="Tìm tên bản nhạc…"
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-            />
+            <label className="library-search-wrap">
+              <Icon name="search" />
+              <input
+                type="search"
+                aria-label="Tìm bản nhạc"
+                placeholder="Tìm tên bản nhạc…"
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+              />
+            </label>
             <LibraryViewSwitch view={view} onChange={setView} />
+            <span className="toolbar-spacer" />
             <button aria-pressed={trash} onClick={() => setTrash(!trash)}>
               {trash ? 'Về thư viện' : 'Đã lưu trữ'}
             </button>
-            <button onClick={() => ws.navigate('history')}>Lịch sử tập</button>
+            <button onClick={() => ws.navigate('history')}>
+              <Icon name="history" />
+              Lịch sử tập
+            </button>
           </div>
           {(projects.length > 0 || trash) && (
             <section aria-label={trash ? 'Bài đã lưu trữ' : 'Bản nhạc của tôi'}>

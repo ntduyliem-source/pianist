@@ -37,12 +37,13 @@ const root=path.resolve(__dirname,'../../..'),out=path.join(root,'artifacts/nati
   const sostenuto=await page.evaluate(()=>{const a=window.pianist,old=a.Module.onSamplePlayback;let data;a.Module.onSamplePlayback=j=>data=JSON.parse(j);try{a.getSamplePlayback(1);return data.midi.some(e=>e.opcode===11&&e.data1===66&&e.data2>=64);}finally{a.Module.onSamplePlayback=old;}});
   assert(sostenuto,'the fallback is required by original native CC66, not an inferred pedal');
   await page.getByRole('button',{name:'Thoát toàn màn hình',exact:true}).click();
-  await page.getByRole('checkbox',{name:'Tiếng MuseScore',exact:true}).check();
+  await settings();await page.getByRole('checkbox',{name:'Tiếng MuseScore',exact:true}).check();await close();
   await page.getByRole('button',{name:'Chỉ bản nhạc',exact:true}).click();
   await page.getByRole('button',{name:'Nghe đoạn',exact:true}).click();
   await page.getByRole('button',{name:'Tạm dừng nghe',exact:true}).waitFor({timeout:120000});
   check('Native CC66 sostenuto requires explicit MuseScore sound; selecting it plays the same score');await page.getByRole('button',{name:'Tạm dừng nghe',exact:true}).click();
-  await settings();await page.getByRole('slider',{name:'Vị trí nghe'}).fill('0');await close();
+  // The full-sheet listening timeline is now visible directly in the workspace.
+  await page.getByRole('slider',{name:'Vị trí nghe'}).fill('0');
   await page.waitForFunction(expected=>{const x=document.querySelector('[data-testid="score-playhead"]')?.getAttribute('x1');return x!==null&&Math.abs(Number(x)-expected)<1;},snapshot.cursorSegments.find(s=>s.measure===0).x-snapshot.pages[0].offsetX,{timeout:15000});
   check('Paused listening at time zero positions the cursor at the native first rest segment');
   await page.getByRole('button',{name:'Dừng nghe',exact:true}).click();

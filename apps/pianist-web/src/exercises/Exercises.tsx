@@ -487,6 +487,7 @@ export function Exercises() {
           loading: !!busy,
           error,
           onSettings: updateSettings,
+          onBack: () => (busy ? selectorView() : manualNext(true)),
           onComplete: complete,
           onSession: (session) => {
             if (run.current === r) r.session = session;
@@ -535,12 +536,6 @@ export function Exercises() {
           },
           controls: (
             <>
-              <button
-                onClick={() => (busy ? selectorView() : void ws.run(() => manualNext(true)))}
-                aria-label="Chọn grade và độ dài"
-              >
-                ‹ Dừng · Chọn bài
-              </button>
               <span
                 className="exercise-current"
                 data-testid="grade-progress"
@@ -602,6 +597,7 @@ export function Exercises() {
     <main className="page exercises-home">
       <div className="exercise-intro">
         <div>
+          <span className="eyebrow">LUYỆN ĐỌC NHẠC MỖI NGÀY</span>
           <h1 id="view-heading" tabIndex={-1}>
             Tập theo grade
           </h1>

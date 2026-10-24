@@ -1,5 +1,7 @@
 # CSS ownership and cascade
 
+The current visual design is owned by `studio.css`, imported last. It adapts the user-supplied `Pianist-UI-Gemini.html`: self-hosted Jakarta/Newsreader fonts, light/dark tokens, desktop tabs/mobile bottom navigation, library cards, the standalone practice command bar, grade selection, dialogs and results. The imports split ownership between `studio-foundations.css`, `app/studio-shell.css`, `features/library/studio-library.css`, `practice/studio-practice.css` and `studio-panels.css`. Make visual changes in those owners; do not add screen-specific overrides to the old theme layer. Legacy layers retain the native editor sizing, notation/ink geometry, gesture handling and 88-key geometry. The HTML reference's simulated music, score, timing and statistics are not used.
+
 `../style.css` is the only entry for the historical global sheet. Its ordered imports reconstruct the pre-extraction rule stream exactly. Keep import order stable; moving a rule between layers is a separate visual change.
 
 - `base.css`: reset, tokens and shared element primitives.
