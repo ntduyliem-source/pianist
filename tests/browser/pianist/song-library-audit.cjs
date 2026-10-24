@@ -7,6 +7,9 @@ const root=path.resolve(__dirname,'../../..'),out=path.resolve(root,process.env.
   let firstImportDone=false;const consoleLog=[];p.on('console',m=>{consoleLog.push(m.text());if(consoleLog.length>250)consoleLog.shift();});p.on('pageerror',e=>errors.push(String(e)));p.on('dialog',d=>d.type()==='beforeunload'?d.accept():d.dismiss());
   const state=()=>p.evaluate(()=>{const api=window.pianist,old=api.Module.onEditorPlayback;let result;api.Module.onEditorPlayback=j=>result=JSON.parse(j);try{if(!api.getEditorPlayback())throw Error('Missing playback state');return result;}finally{api.Module.onEditorPlayback=old;}});
   try{
+    // This audit verifies the native MuseScore clock, including scores whose
+    // controllers are intentionally unsupported by the lightweight piano.
+    await p.addInitScript(()=>localStorage.setItem('pianist.sound','musescore'));
     await p.goto(process.env.PIANIST_URL||'http://127.0.0.1:8787/pianist.html?diagnostics=1');
     for(const row of inputs){
       const r={filename:row.filename,sha256:row.sha256,status:row.status,reason:row.reason};
@@ -16,7 +19,6 @@ const root=path.resolve(__dirname,'../../..'),out=path.resolve(root,process.env.
         await p.waitForFunction(name=>document.querySelector('#status')?.textContent==='Đã mở '+name+'.'||document.querySelector('.error-banner:not(.import-notice)'),row.filename,{timeout:120000});
         await p.locator('.loading-overlay').waitFor({state:'hidden',timeout:120000});
         const error=p.locator('.error-banner:not(.import-notice)');if(await error.count())throw Error(await error.innerText());
-        await p.waitForFunction(()=>{const a=window.pianist;if(!a?.getEditorPlayback)return false;const old=a.Module.onEditorPlayback;let r;a.Module.onEditorPlayback=j=>r=JSON.parse(j);try{a.getEditorPlayback();return r?.available;}finally{a.Module.onEditorPlayback=old;}},null,{timeout:60000});
         const snapshot=await p.evaluate(()=>{const a=window.pianist,old=a.Module.onPracticeSnapshot;let s;a.Module.onPracticeSnapshot=j=>s=JSON.parse(j);try{if(!a.getPracticeSnapshot())throw Error('Snapshot limits or import failure');return s;}finally{a.Module.onPracticeSnapshot=old;}});
         if(process.env.PIANIST_IMPORT_EDITOR_ONLY==='1'){
           Object.assign(r,await p.evaluate(()=>{
@@ -33,9 +35,11 @@ const root=path.resolve(__dirname,'../../..'),out=path.resolve(root,process.env.
         const ids=new Set(snapshot.pages.flatMap(pg=>[...pg.svg.matchAll(/data-practice-notes="([^"]+)"/g)].flatMap(m=>m[1].split(' '))));
         Object.assign(r,{nativeNotes:snapshot.anchors.length,sourceNotes:row.writtenNotes,measures:snapshot.measures.length,pages:snapshot.pages.length,performed:snapshot.performed.length,keyReleases:snapshot.keyReleases.length,pedals:snapshot.pedals.length,durationMs:snapshot.durationMs,missingGlyphs:snapshot.anchors.filter(a=>a.visible&&!ids.has(a.id.replace(/^m\d+-/,''))).length,features:snapshot.notationFeatures});
         assert.ok(snapshot.durationMs>0&&snapshot.performed.length>0,'empty practice');
-        const before=await state();await p.getByRole('region',{name:'Phát bản nhạc trong editor'}).getByRole('button',{name:'Phát nhạc',exact:true}).click();
-        await p.waitForFunction(()=>{const a=window.pianist,old=a.Module.onEditorPlayback;let r;a.Module.onEditorPlayback=j=>r=JSON.parse(j);try{a.getEditorPlayback();return r?.status==='playing'&&r.positionSeconds>.25;}finally{a.Module.onEditorPlayback=old;}},null,{timeout:20000});
-        await p.getByRole('button',{name:'Dừng phát nhạc',exact:true}).click();r.nativePlayback=true;r.playbackDuration=before.durationSeconds;
+        // Play initiates lazy sound loading; waiting for isPlayAllowed before
+        // this user gesture would deadlock a cold native import.
+        await p.getByRole('region',{name:'Phát bản nhạc trong editor'}).getByRole('button',{name:'Phát nhạc',exact:true}).click();
+        await p.waitForFunction(()=>{const a=window.pianist,old=a.Module.onEditorPlayback;let r;a.Module.onEditorPlayback=j=>r=JSON.parse(j);try{a.getEditorPlayback();return r?.status==='playing'&&r.positionSeconds>.25;}finally{a.Module.onEditorPlayback=old;}},null,{timeout:120000});
+        await p.getByRole('button',{name:'Dừng phát nhạc',exact:true}).click();r.nativePlayback=true;r.playbackDuration=(await state()).durationSeconds;
         assert.equal(r.missingGlyphs,0,'visible notes without native SVG mapping');
         if(r.nativeNotes!==r.sourceNotes){
           if(process.env.PIANIST_IMPORT_EDITOR_ONLY==='1'&&r.editorNotes===r.sourceNotes&&r.sourceNotes-r.nativeNotes===row.graceNotes&&row.graceNotes>0){
