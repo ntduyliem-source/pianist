@@ -1,6 +1,6 @@
 {
-  "tag": "pianist-web-2026-10-23-chinese-58",
-  "sha256": "2f05d671713e2e97364634fa7a891af47e401cc9c8b65904d25ad34486ffdc8b",
-  "sourceCommit": "5eac62d864a3c8407e523bce6bc964d3f6ee194f",
-  "version": "05a6e31fa6a63bb89e36"
+  "tag": "pianist-web-2026-10-24-audio-ui",
+  "sha256": "6e8aff848ce3fc5f1df02a6327d36d06ad6b11b0cd65360bcdd27e8263923264",
+  "sourceCommit": "92a0c881206bfda1de68386ba3cdb89da9c0205a",
+  "version": "fcee872877c906c84f34"
 }
