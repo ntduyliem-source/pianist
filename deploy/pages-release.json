@@ -1,6 +1,6 @@
 {
-  "tag": "pianist-web-2026-10-24-studio-design",
-  "sha256": "653cd183fed80cfc175346eb3fec6b7374b34dea576e215d411c93404d8ae486",
-  "sourceCommit": "aa4b34032b898a3024044558011153da15386e08",
-  "version": "55d7f60f78601152a99c"
+  "tag": "pianist-web-2026-10-24-library-cleanup",
+  "sha256": "7f84216dce6ca906ba03733863e60daf6a47ab59e0e938ac1e2df8474def60a5",
+  "sourceCommit": "f1e707e06a585537b547b3d2f6e05825c311eac2",
+  "version": "8b6412908305b562858b"
 }
