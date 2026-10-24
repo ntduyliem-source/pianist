@@ -1,6 +1,6 @@
 {
-  "tag": "pianist-web-2026-10-24-library-range",
-  "sha256": "cdeb95129c408324258fa24c1ce587bd1d1127e465fc8c6de99518c8672033b7",
-  "sourceCommit": "089739d7002431595192228d5ce2e9677070e054",
-  "version": "7616771876af3872a364"
+  "tag": "pianist-web-2026-10-24-library-batch",
+  "sha256": "8bf840225d165ac6c20cdb500f38cca4249c2f61a4835e49bbe62d7e1d49cd75",
+  "sourceCommit": "dada894192853be6895a918598f4b58056c92134",
+  "version": "a99a0732c8bc0fd93eaf"
 }
