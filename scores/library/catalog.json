@@ -52,6 +52,29 @@
       "practiceReady": true
     },
     {
+      "id": "c67bad42a95fbbcfc5118f38148d37840ed6a1d1be3c44b193b1d31a2d85dcfe",
+      "title": "Nơi này có anh",
+      "filename": "Nơi này có anh.mxl",
+      "url": "library/songs/noi-nay-co-anh.mxl",
+      "bytes": 6098,
+      "sha256": "c67bad42a95fbbcfc5118f38148d37840ed6a1d1be3c44b193b1d31a2d85dcfe",
+      "workId": "c67bad42a95fbbcfc5118f38148d37840ed6a1d1be3c44b193b1d31a2d85dcfe",
+      "version": 1,
+      "practiceReady": true
+    },
+    {
+      "id": "3ecf0d22910c8d5617a6015146be78f8f28669aa4cedf4e1fa6263142fc29e4b",
+      "title": "Tình Đơn Phương",
+      "filename": "Tình Đơn Phương.mxl",
+      "url": "library/songs/tinh-don-phuong-xin-yao-rang-ni-ting-jian-cover-by-vu-le.mxl",
+      "bytes": 14385,
+      "sha256": "3ecf0d22910c8d5617a6015146be78f8f28669aa4cedf4e1fa6263142fc29e4b",
+      "composer": "Transcribed by Lê Mạnh Hùng",
+      "workId": "3ecf0d22910c8d5617a6015146be78f8f28669aa4cedf4e1fa6263142fc29e4b",
+      "version": 1,
+      "practiceReady": true
+    },
+    {
       "id": "c9816abf48a1222191cdfea4c10cc1f5ef70fd2d669da00d5dc8d3e4ddf04fab",
       "title": "Rồi tới luôn",
       "filename": "Rồi tới luôn.mxl",
@@ -87,6 +110,19 @@
       "version": 1,
       "practiceReady": true,
       "sourceSha256": "18a73f7bc69dbac6ef6115bb67028edb5633dba59ab76c37344dd047e7a74de5"
+    },
+    {
+      "id": "5930bccc108b4bd981234989e01e423f839ad981510b1554572fad39872360ba",
+      "title": "Thích em hơi nhiều",
+      "filename": "Thích em hơi nhiều.mxl",
+      "url": "library/songs/thich-em-hoi-nhieu.mxl",
+      "bytes": 14388,
+      "sha256": "5930bccc108b4bd981234989e01e423f839ad981510b1554572fad39872360ba",
+      "composer": "Wrem Evans",
+      "workId": "8d3f63fa5365229cc0eb98c2db3e3f88b6a86fbed5b53bdd70e7e187bcb99393",
+      "version": 1,
+      "practiceReady": true,
+      "sourceSha256": "8d3f63fa5365229cc0eb98c2db3e3f88b6a86fbed5b53bdd70e7e187bcb99393"
     },
     {
       "id": "871baf0a9a07c00732921f5c68c0234aac65f9b90359ffd7a51539b93bb44c00",
@@ -346,6 +382,18 @@
       "practiceReady": true
     },
     {
+      "id": "0c7c4054287db97a5bb7ab279a100a3831ed28a7cec31a0d45c1ca5f5141346a",
+      "title": "Cause I Love You",
+      "filename": "Cause I Love You.mxl",
+      "url": "library/songs/cause-i-love-you-noo-phuoc-thinh-arrsemionhieu.mxl",
+      "bytes": 13787,
+      "sha256": "0c7c4054287db97a5bb7ab279a100a3831ed28a7cec31a0d45c1ca5f5141346a",
+      "workId": "226d761f16ee0de517b4b2dec9a19572e378f42dea417b183913c2011ebcfe4c",
+      "version": 1,
+      "practiceReady": true,
+      "sourceSha256": "226d761f16ee0de517b4b2dec9a19572e378f42dea417b183913c2011ebcfe4c"
+    },
+    {
       "id": "0d27e95a55f3112fb52a8f8d1fa3578ff9179ea0b44b61275f312de25fef372c",
       "title": "Người ấy",
       "filename": "Người ấy.mxl",
@@ -476,6 +524,45 @@
       "composer": "Soobin Hoàng Sơn odcvsn(piano)",
       "practiceReady": true,
       "sourceSha256": "26192a2a56fc5328fa2946cf922bc2530c68c4a64541c4b479ef33ca6c2dec34"
+    },
+    {
+      "id": "05b397ad27f5e04a12d775b05ce2815e4961261ea7cad50917b30552cfc42171",
+      "sha256": "05b397ad27f5e04a12d775b05ce2815e4961261ea7cad50917b30552cfc42171",
+      "title": "Cơn mưa ngang qua",
+      "filename": "Cơn mưa ngang qua.mxl",
+      "url": "library/songs/con-mua-ngang-qua-son-tung-mtp.mxl",
+      "bytes": 7948,
+      "workId": "dbc10a5697025d92ed0f10213191c4c42e86f79ae717ce024da986afc654c2ea",
+      "version": 1,
+      "composer": "Sơn Tùng M-TP",
+      "practiceReady": true,
+      "sourceSha256": "dbc10a5697025d92ed0f10213191c4c42e86f79ae717ce024da986afc654c2ea"
+    },
+    {
+      "id": "c663649593563754f2520ed626261b7ed5c028df29a40809115f4688644b225c",
+      "sha256": "c663649593563754f2520ed626261b7ed5c028df29a40809115f4688644b225c",
+      "title": "Chắc ai đó sẽ về",
+      "filename": "Chắc ai đó sẽ về.mxl",
+      "url": "library/songs/chac-ai-do-se-ve-son-tung-m-tp.mxl",
+      "bytes": 8463,
+      "workId": "46a548f8e667e3e4321a90215074d29d403df0fbed4cb385bdf43385944c936b",
+      "version": 1,
+      "composer": "Sơn Tùng M-TP",
+      "practiceReady": true,
+      "sourceSha256": "46a548f8e667e3e4321a90215074d29d403df0fbed4cb385bdf43385944c936b"
+    },
+    {
+      "id": "a841fbe4b9995fab94affe7327f83d0f5ef8793ca1852d0236633bccd55f2c8b",
+      "sha256": "a841fbe4b9995fab94affe7327f83d0f5ef8793ca1852d0236633bccd55f2c8b",
+      "title": "Nắng thủy tinh",
+      "filename": "Nắng thủy tinh.mxl",
+      "url": "library/songs/nang-thuy-tinh-trinh-cong-son-ost-em-va-trinh.mxl",
+      "bytes": 13067,
+      "workId": "0107d570559cc556c0afd45a4adc4fbdde04b1a188ef9405eacc96b20c619b99",
+      "version": 1,
+      "composer": "AVIN LU FT SUNI HẠ LINH  transcribed by QuangTrung2005",
+      "practiceReady": true,
+      "sourceSha256": "0107d570559cc556c0afd45a4adc4fbdde04b1a188ef9405eacc96b20c619b99"
     },
     {
       "id": "35446ded90c0442f9a58d70412f56d6b4f39d9572984ff8ab8f683944c73cbeb",
@@ -625,6 +712,32 @@
       "practiceReady": true
     },
     {
+      "id": "f1823da3bae3f3161651de87193692f5b6ba6129a286d44fa401a404cc81577c",
+      "sha256": "f1823da3bae3f3161651de87193692f5b6ba6129a286d44fa401a404cc81577c",
+      "title": "Fly Me to the Moon",
+      "filename": "Fly Me to the Moon — v2.mxl",
+      "url": "library/songs/fly-me-to-the-moon-v2.mxl",
+      "bytes": 14715,
+      "workId": "e52effe766b70b6832c37f44addb0b0565df12b302b15866039fab1a121572f0",
+      "version": 2,
+      "versionLabel": "Bản piano khác",
+      "composer": "arr. Thomas L.S. Pang",
+      "practiceReady": true
+    },
+    {
+      "id": "cf808c2f18484ca65fc38a7fa018571075100423203078eccbcd4751d92fac67",
+      "sha256": "cf808c2f18484ca65fc38a7fa018571075100423203078eccbcd4751d92fac67",
+      "title": "Cause I Love You",
+      "filename": "Cause I Love You — v2.mxl",
+      "url": "library/songs/cause-i-love-you-v2.mxl",
+      "bytes": 12846,
+      "workId": "226d761f16ee0de517b4b2dec9a19572e378f42dea417b183913c2011ebcfe4c",
+      "version": 2,
+      "versionLabel": "Bản phối khác",
+      "practiceReady": true,
+      "sourceSha256": "3a04952e72327e380208b21e0f0a7e1bd607d3c04b153cb5a0512a9d59c444a6"
+    },
+    {
       "id": "018f16651742750e29bdf5f3e01217b67d9e5d521ee4823dde40fbe21740883a",
       "sha256": "018f16651742750e29bdf5f3e01217b67d9e5d521ee4823dde40fbe21740883a",
       "title": "Người ta có thương mình đâu",
@@ -648,6 +761,17 @@
       "practiceReady": true
     },
     {
+      "id": "d2adebf695715810f98c90c9516cf99458c2ee33d6aa769f28111bbeaec9166f",
+      "sha256": "d2adebf695715810f98c90c9516cf99458c2ee33d6aa769f28111bbeaec9166f",
+      "title": "Ánh nắng của anh",
+      "filename": "Ánh nắng của anh.mxl",
+      "url": "library/songs/anh-nang-cua-anh.mxl",
+      "bytes": 15578,
+      "workId": "d2adebf695715810f98c90c9516cf99458c2ee33d6aa769f28111bbeaec9166f",
+      "version": 1,
+      "practiceReady": true
+    },
+    {
       "id": "6582c4d9d715069d17594d976d9005764c77adf01ab916d9183aac8e7c62fc7d",
       "sha256": "6582c4d9d715069d17594d976d9005764c77adf01ab916d9183aac8e7c62fc7d",
       "title": "Nhớ lắm",
@@ -659,6 +783,31 @@
       "practiceReady": true
     },
     {
+      "id": "dc0338936e7e12dd68d8d6ec6d432074c6a3aad7efadf8b87e641cab0ecc251f",
+      "sha256": "dc0338936e7e12dd68d8d6ec6d432074c6a3aad7efadf8b87e641cab0ecc251f",
+      "title": "Thức giấc",
+      "filename": "Thức giấc.mxl",
+      "url": "library/songs/thuc-giac-dalab.mxl",
+      "bytes": 24838,
+      "workId": "79c6d1000e255616150b5ca622baa190e8f2eadd238ca3920e79eefb15c3c0bc",
+      "version": 1,
+      "versionLabel": "Bản phối 1",
+      "practiceReady": true,
+      "sourceSha256": "79c6d1000e255616150b5ca622baa190e8f2eadd238ca3920e79eefb15c3c0bc"
+    },
+    {
+      "id": "7de5c790727a6bce99802cfe99805bd31f14232eece98e3f8cd61cb2d09ee398",
+      "sha256": "7de5c790727a6bce99802cfe99805bd31f14232eece98e3f8cd61cb2d09ee398",
+      "title": "Người yêu cũ",
+      "filename": "Người yêu cũ.mxl",
+      "url": "library/songs/nguoi-yeu-cu-khoi-my.mxl",
+      "bytes": 18316,
+      "workId": "4f6bda43dcb8d092b71af487febf561fb169a308ee565485e4bd62ac9784ea25",
+      "version": 1,
+      "practiceReady": true,
+      "sourceSha256": "4f6bda43dcb8d092b71af487febf561fb169a308ee565485e4bd62ac9784ea25"
+    },
+    {
       "id": "79355b0966ac51e036f0ccdaf6ca174ec71c5bb5c0f9be055bd3eb444fd9abb4",
       "sha256": "79355b0966ac51e036f0ccdaf6ca174ec71c5bb5c0f9be055bd3eb444fd9abb4",
       "title": "Tình thôi xót xa",
@@ -666,6 +815,17 @@
       "url": "library/songs/tinh-thoi-xot-xa.mxl",
       "bytes": 8260,
       "workId": "79355b0966ac51e036f0ccdaf6ca174ec71c5bb5c0f9be055bd3eb444fd9abb4",
+      "version": 1,
+      "practiceReady": true
+    },
+    {
+      "id": "5b21ffd4dd6e203af97fe8f7cf6b1c0a599a8d86ec1670188eb94d89d49aa861",
+      "sha256": "5b21ffd4dd6e203af97fe8f7cf6b1c0a599a8d86ec1670188eb94d89d49aa861",
+      "title": "Katy Katy",
+      "filename": "Katy Katy.mxl",
+      "url": "library/songs/katy-katy-lam-truong.mxl",
+      "bytes": 17997,
+      "workId": "5b21ffd4dd6e203af97fe8f7cf6b1c0a599a8d86ec1670188eb94d89d49aa861",
       "version": 1,
       "practiceReady": true
     },
@@ -680,6 +840,19 @@
       "version": 1,
       "practiceReady": true,
       "sourceSha256": "8b4ed706653900badd2086def2ba498c5e03f91218d19a42830395232402b0b3"
+    },
+    {
+      "id": "2dab3a5d916ddf35d44765904dca5790d34e6248d297990305f29ee99f3a25a9",
+      "sha256": "2dab3a5d916ddf35d44765904dca5790d34e6248d297990305f29ee99f3a25a9",
+      "title": "Cuối cùng thì",
+      "filename": "Cuối cùng thì.mxl",
+      "url": "library/songs/cuoi-cung-thi-jack-j97.mxl",
+      "bytes": 15614,
+      "workId": "3181d63343cc7568c7ac3d056fa1c46bfb0ad08451c01544b8482e1493c603e6",
+      "version": 1,
+      "composer": "Jack - J97",
+      "practiceReady": true,
+      "sourceSha256": "3181d63343cc7568c7ac3d056fa1c46bfb0ad08451c01544b8482e1493c603e6"
     },
     {
       "id": "c4e65b3803d00d309bba78f7f4c2a87ce754c89b661a0442e06d6c9784841918",
@@ -745,6 +918,19 @@
       "sourceSha256": "d17bdecb956ccad647971e7713957a1d909446ac48e7afa9605900449b8bab58"
     },
     {
+      "id": "de9001907a5b84ad19d2f1c5ac5a988051359c8e223194d569ebe02c729adad6",
+      "sha256": "de9001907a5b84ad19d2f1c5ac5a988051359c8e223194d569ebe02c729adad6",
+      "title": "Thức giấc",
+      "filename": "Thức giấc — v2.mxl",
+      "url": "library/songs/thuc-giac-da-lab-v2.mxl",
+      "bytes": 10908,
+      "workId": "79c6d1000e255616150b5ca622baa190e8f2eadd238ca3920e79eefb15c3c0bc",
+      "version": 2,
+      "versionLabel": "Bản phối 2",
+      "practiceReady": true,
+      "sourceSha256": "8f5b5cb28b6d9a009f53a5e30266e915e856b3269c24eae499ff3f330ee96d54"
+    },
+    {
       "id": "12e5e83f220a84a24cfcb516157df5d8507c65ebf29168d7a122f7ae8092581d",
       "sha256": "12e5e83f220a84a24cfcb516157df5d8507c65ebf29168d7a122f7ae8092581d",
       "title": "Diễm xưa",
@@ -766,6 +952,40 @@
       "workId": "1c2d5455c6ebf964f3e5cdd85ea30f220d8ffbc912add86189fd4238c8f1aa8c",
       "version": 1,
       "practiceReady": true
+    },
+    {
+      "id": "9aee989cc4b46efefad5c4e60fbd6ed8582bf90a6ddab5b35ccc97f85b9277d0",
+      "sha256": "9aee989cc4b46efefad5c4e60fbd6ed8582bf90a6ddab5b35ccc97f85b9277d0",
+      "title": "999 đóa hồng",
+      "filename": "999 đóa hồng.mxl",
+      "url": "library/songs/999-doa-hong.mxl",
+      "bytes": 3642,
+      "workId": "9aee989cc4b46efefad5c4e60fbd6ed8582bf90a6ddab5b35ccc97f85b9277d0",
+      "version": 1,
+      "practiceReady": true
+    },
+    {
+      "id": "f0e14f7f4811936ef83faebcb51c0a7a3c6c9fd0cb7eb979ba10441d9a52fabf",
+      "sha256": "f0e14f7f4811936ef83faebcb51c0a7a3c6c9fd0cb7eb979ba10441d9a52fabf",
+      "title": "Người tình mùa đông",
+      "filename": "Người tình mùa đông.mxl",
+      "url": "library/songs/nguoi-tinh-mua-dong.mxl",
+      "bytes": 17248,
+      "workId": "f0e14f7f4811936ef83faebcb51c0a7a3c6c9fd0cb7eb979ba10441d9a52fabf",
+      "version": 1,
+      "practiceReady": true
+    },
+    {
+      "id": "a5e995a9f831d621650c57c869f8facdd836d83e7ba694cbd544b631ca41f668",
+      "sha256": "a5e995a9f831d621650c57c869f8facdd836d83e7ba694cbd544b631ca41f668",
+      "title": "Đồng thoại",
+      "filename": "Đồng thoại.mxl",
+      "url": "library/songs/dong-thoai.mxl",
+      "bytes": 13196,
+      "workId": "63607a457e74ae70c4c7636c271a61d3d33c9ea21933e22fa61b70a03695c58c",
+      "version": 1,
+      "practiceReady": true,
+      "sourceSha256": "63607a457e74ae70c4c7636c271a61d3d33c9ea21933e22fa61b70a03695c58c"
     },
     {
       "id": "9e7935802784afefd98ae55f972432fc3b5f57d5ef930e7e98e6a7ac3177415d",
@@ -813,6 +1033,17 @@
       "practiceReady": true
     },
     {
+      "id": "1d9ca368efc012e1ebecd4fe652af730ba6a0d078648ed56ecc5327a0bd57f72",
+      "sha256": "1d9ca368efc012e1ebecd4fe652af730ba6a0d078648ed56ecc5327a0bd57f72",
+      "title": "Bến Thượng Hải",
+      "filename": "Bến Thượng Hải.mxl",
+      "url": "library/songs/ben-thuong-hai.mxl",
+      "bytes": 8807,
+      "workId": "1d9ca368efc012e1ebecd4fe652af730ba6a0d078648ed56ecc5327a0bd57f72",
+      "version": 1,
+      "practiceReady": true
+    },
+    {
       "id": "f7db7ea3cb5f2331e5d0a0ffbcb362700db19c0861ffe978f42193303ee478e4",
       "sha256": "f7db7ea3cb5f2331e5d0a0ffbcb362700db19c0861ffe978f42193303ee478e4",
       "title": "Điềm mật mật",
@@ -820,6 +1051,17 @@
       "url": "library/songs/diem-mat-mat.mxl",
       "bytes": 5213,
       "workId": "f7db7ea3cb5f2331e5d0a0ffbcb362700db19c0861ffe978f42193303ee478e4",
+      "version": 1,
+      "practiceReady": true
+    },
+    {
+      "id": "514591366d7731e3137b225dbf087e957bd7491125fc7c3d29107465124f8fb6",
+      "sha256": "514591366d7731e3137b225dbf087e957bd7491125fc7c3d29107465124f8fb6",
+      "title": "Chuột yêu gạo",
+      "filename": "Chuột yêu gạo.mxl",
+      "url": "library/songs/chuot-yeu-gao.mxl",
+      "bytes": 9897,
+      "workId": "514591366d7731e3137b225dbf087e957bd7491125fc7c3d29107465124f8fb6",
       "version": 1,
       "practiceReady": true
     },
@@ -868,6 +1110,29 @@
       "practiceReady": true
     },
     {
+      "id": "4a155af87fc73b0658e8f7b8f551eb1211c2071a8d8897f80936541d7e17bb67",
+      "sha256": "4a155af87fc73b0658e8f7b8f551eb1211c2071a8d8897f80936541d7e17bb67",
+      "title": "Thanh hoa sứ",
+      "filename": "Thanh hoa sứ.mxl",
+      "url": "library/songs/thanh-hoa-su.mxl",
+      "bytes": 15096,
+      "workId": "f161272b882a9accef08097308c4ff0bca750270dc730a65f5947f2092ec12bc",
+      "version": 1,
+      "practiceReady": true,
+      "sourceSha256": "f161272b882a9accef08097308c4ff0bca750270dc730a65f5947f2092ec12bc"
+    },
+    {
+      "id": "2b86139ef7affed54d00f7f0f691b27d6fed95ded767a5b24473281119b0b66d",
+      "sha256": "2b86139ef7affed54d00f7f0f691b27d6fed95ded767a5b24473281119b0b66d",
+      "title": "Vì một người ra đi",
+      "filename": "Vì một người ra đi.mxl",
+      "url": "library/songs/vi-mot-nguoi-ra-di.mxl",
+      "bytes": 10108,
+      "workId": "2b86139ef7affed54d00f7f0f691b27d6fed95ded767a5b24473281119b0b66d",
+      "version": 1,
+      "practiceReady": true
+    },
+    {
       "id": "d2d4d347ae1d15027ccdea9ef68da7d90d7b2a76412366163faafad57d5031b0",
       "sha256": "d2d4d347ae1d15027ccdea9ef68da7d90d7b2a76412366163faafad57d5031b0",
       "title": "Vì sao trong lòng tôi",
@@ -908,6 +1173,17 @@
       "url": "library/songs/khi-nguoi-dan-ong-khoc.mxl",
       "bytes": 6969,
       "workId": "d9e9f33395bb7581a7958206194130ca31c5758fe17806f83cc68a646e6dee4e",
+      "version": 1,
+      "practiceReady": true
+    },
+    {
+      "id": "7e3632eb3a2047d47178ed07e403f7028110fb0e493847ee316295aade3424b2",
+      "sha256": "7e3632eb3a2047d47178ed07e403f7028110fb0e493847ee316295aade3424b2",
+      "title": "Liều thuốc cho trái tim",
+      "filename": "Liều thuốc cho trái tim.mxl",
+      "url": "library/songs/lieu-thuoc-cho-trai-tim.mxl",
+      "bytes": 7856,
+      "workId": "7e3632eb3a2047d47178ed07e403f7028110fb0e493847ee316295aade3424b2",
       "version": 1,
       "practiceReady": true
     },
@@ -1094,6 +1370,18 @@
       "sourceSha256": "bd6e4a99122b3dd87c780f3b10ad72b1e0f7fc24c7c14cb08941eb0f1f40afba"
     },
     {
+      "id": "4e52d4a75099bebba598eca772a1af2996b2e152b1e046e3563553551867bded",
+      "sha256": "4e52d4a75099bebba598eca772a1af2996b2e152b1e046e3563553551867bded",
+      "title": "Thằng Tàu lai",
+      "filename": "Thằng Tàu lai.mxl",
+      "url": "library/songs/thang-tau-lai.mxl",
+      "bytes": 9627,
+      "workId": "0bd35da06f5f7e23c33bc6ea2f3c7d64f8979dcbd2e9ece05b704f9a30d74be2",
+      "version": 1,
+      "practiceReady": true,
+      "sourceSha256": "0bd35da06f5f7e23c33bc6ea2f3c7d64f8979dcbd2e9ece05b704f9a30d74be2"
+    },
+    {
       "id": "6f2e66904b7c09edf31b4abf295b0b57b934810f1dac46dfee36c4f93540d829",
       "sha256": "6f2e66904b7c09edf31b4abf295b0b57b934810f1dac46dfee36c4f93540d829",
       "title": "Trống vắng",
@@ -1187,6 +1475,18 @@
       "practiceReady": true
     },
     {
+      "id": "fd0345ea4ac2c37c3bb98ead5c7552aaa88317872a36a6a6bf39136343dd65c9",
+      "sha256": "fd0345ea4ac2c37c3bb98ead5c7552aaa88317872a36a6a6bf39136343dd65c9",
+      "title": "Kiếp rong buồn",
+      "filename": "Kiếp rong buồn.mxl",
+      "url": "library/songs/kiep-rong-buon.mxl",
+      "bytes": 7597,
+      "workId": "3aa19196a4d9722f290903f0b30af2246594dd4fac6cf9b91ae2bded79e22ee2",
+      "version": 1,
+      "practiceReady": true,
+      "sourceSha256": "3aa19196a4d9722f290903f0b30af2246594dd4fac6cf9b91ae2bded79e22ee2"
+    },
+    {
       "id": "06fbb02a2ab7af712b038770135528e729fe0b89da65135f1ddd142ad2d76bca",
       "sha256": "06fbb02a2ab7af712b038770135528e729fe0b89da65135f1ddd142ad2d76bca",
       "title": "Khi cô đơn em nhớ ai",
@@ -1220,6 +1520,17 @@
       "practiceReady": true
     },
     {
+      "id": "64e66bf49f5926c1482318f6480827845ffa6966768ac582c52e6a89c9af8ec8",
+      "sha256": "64e66bf49f5926c1482318f6480827845ffa6966768ac582c52e6a89c9af8ec8",
+      "title": "Cuộc tình trong cơn mưa — Tình yêu còn xa",
+      "filename": "Cuộc tình trong cơn mưa — Tình yêu còn xa.mxl",
+      "url": "library/songs/cuoc-tinh-trong-con-mua-tinh-yeu-con-xa.mxl",
+      "bytes": 8997,
+      "workId": "64e66bf49f5926c1482318f6480827845ffa6966768ac582c52e6a89c9af8ec8",
+      "version": 1,
+      "practiceReady": true
+    },
+    {
       "id": "a3f98a266a3b604efb06bc1c8232a4de8153c9097cdd7b81749aa3c079f00adf",
       "sha256": "a3f98a266a3b604efb06bc1c8232a4de8153c9097cdd7b81749aa3c079f00adf",
       "title": "Mùa xuân ca giữa quê hương",
@@ -1240,6 +1551,18 @@
       "workId": "b58fa3fda1c37c042c6ccd6f5084fa1aef8b2c5a6404fbb21c527eb9b6abaa8f",
       "version": 1,
       "practiceReady": true
+    },
+    {
+      "id": "eb9ca2f69956d5fbbe2b62df2d21aefaf6261baf88f973102da287f140bd4b4a",
+      "sha256": "eb9ca2f69956d5fbbe2b62df2d21aefaf6261baf88f973102da287f140bd4b4a",
+      "title": "Răng khôn",
+      "filename": "Răng khôn.mxl",
+      "url": "library/songs/rang-khon-quocbao159200.mxl",
+      "bytes": 16296,
+      "workId": "67a350e39abf331994bc154ac006525a1b8db8f3d8500d832eefed8864da1109",
+      "version": 1,
+      "practiceReady": true,
+      "sourceSha256": "67a350e39abf331994bc154ac006525a1b8db8f3d8500d832eefed8864da1109"
     },
     {
       "id": "10af673cec399b2bb85c7a5cc69ce2bf8fac823700bd9de363e5a8760def2e2e",
@@ -1264,6 +1587,58 @@
       "version": 1,
       "practiceReady": true,
       "sourceSha256": "600ec63a89fc5229f62de797c92dad7e3205463888297f320ccca00443314593"
+    },
+    {
+      "id": "49c44062329e76a18d035c6031ea072f74776f3b2cab138378e3cd804f2d49a8",
+      "sha256": "49c44062329e76a18d035c6031ea072f74776f3b2cab138378e3cd804f2d49a8",
+      "title": "Tình thôi xót xa",
+      "filename": "Tình thôi xót xa — v2.mxl",
+      "url": "library/songs/tinh-thoi-xot-xa-bao-chan-v2.mxl",
+      "bytes": 12326,
+      "workId": "79355b0966ac51e036f0ccdaf6ca174ec71c5bb5c0f9be055bd3eb444fd9abb4",
+      "version": 2,
+      "versionLabel": "Cuong Nguyen",
+      "composer": "Bảo Chấn",
+      "practiceReady": true
+    },
+    {
+      "id": "b6bb9f9817d0469cd05ac1194e50a269ca9d795ab21660b96f992063eb13ecb4",
+      "sha256": "b6bb9f9817d0469cd05ac1194e50a269ca9d795ab21660b96f992063eb13ecb4",
+      "title": "Chuyện người đan áo",
+      "filename": "Chuyện người đan áo.mxl",
+      "url": "library/songs/chuyen-nguoi-dan-ao-truong-sa.mxl",
+      "bytes": 19585,
+      "workId": "9d5a93e0f4068fdbce611b08dd4c95a63d98c10d1d2833e2602640935855522b",
+      "version": 1,
+      "composer": "Trường Sa",
+      "practiceReady": true,
+      "sourceSha256": "9d5a93e0f4068fdbce611b08dd4c95a63d98c10d1d2833e2602640935855522b"
+    },
+    {
+      "id": "c443d1e33584cd2ad007079a68216819cdee77039a6b6c353005bdae3a241f47",
+      "sha256": "c443d1e33584cd2ad007079a68216819cdee77039a6b6c353005bdae3a241f47",
+      "title": "Đi giữa trời rực rỡ",
+      "filename": "Đi giữa trời rực rỡ.mxl",
+      "url": "library/songs/di-giua-troi-ruc-ro-hoangdoan103.mxl",
+      "bytes": 12984,
+      "workId": "35a39a1c814a72c0bbe2de9309bb8b6b761ca995ce09d79f9f8f68931bf9b9c2",
+      "version": 1,
+      "composer": "Ngô Lan Hương",
+      "practiceReady": true,
+      "sourceSha256": "35a39a1c814a72c0bbe2de9309bb8b6b761ca995ce09d79f9f8f68931bf9b9c2"
+    },
+    {
+      "id": "bb50030b71644862ecc1d5e068e06884e7f7f87a32d28b178fedd60a14950cdc",
+      "sha256": "bb50030b71644862ecc1d5e068e06884e7f7f87a32d28b178fedd60a14950cdc",
+      "title": "Phép màu",
+      "filename": "Phép màu.mxl",
+      "url": "library/songs/phep-mau.mxl",
+      "bytes": 1421242,
+      "workId": "5b7b6d8ca9ca5e4719f7c3841d5e5dcd932460641e971019df9251ab6ca08132",
+      "version": 1,
+      "composer": "Melody",
+      "practiceReady": true,
+      "sourceSha256": "5b7b6d8ca9ca5e4719f7c3841d5e5dcd932460641e971019df9251ab6ca08132"
     },
     {
       "id": "51ae8d7c6d1d951194af0b88d30d7c0b29e1a215431c772714296b27b60bf4b2",
@@ -1292,6 +1667,56 @@
       "sourceSha256": "9650403fc1f8ec50658b5f06e9d6f1b1b2464d887fa12b8a980c0e7194e859d9"
     },
     {
+      "id": "6aeeb97081d5b64a5e84ac455adbc3207bd0d646fd90ced6359b6e104179d0d3",
+      "sha256": "6aeeb97081d5b64a5e84ac455adbc3207bd0d646fd90ced6359b6e104179d0d3",
+      "title": "50 năm về sau",
+      "filename": "50 năm về sau.mxl",
+      "url": "library/songs/wu-shi-nian-yi-hou-50-nam-ve-sau.mxl",
+      "bytes": 43660,
+      "workId": "224f0afb5a5dc9498d1bb97f397d65f8ee450bf12b5a3bc578020da081e70e16",
+      "version": 1,
+      "practiceReady": true,
+      "sourceSha256": "224f0afb5a5dc9498d1bb97f397d65f8ee450bf12b5a3bc578020da081e70e16"
+    },
+    {
+      "id": "dbc37c5af24060e374d6682a6152247a1ad27f44a54790b2d0c79cd0fe986533",
+      "sha256": "dbc37c5af24060e374d6682a6152247a1ad27f44a54790b2d0c79cd0fe986533",
+      "title": "Tìm em",
+      "filename": "Tìm em — v2.mxl",
+      "url": "library/songs/tim-em-v2.mxl",
+      "bytes": 55249,
+      "workId": "62fc1f9a5751ee44bb2a7a9909a463ce8d245597728d690d1ca0324ec35b470c",
+      "version": 2,
+      "versionLabel": "Bản đầy đủ · Melody",
+      "practiceReady": true,
+      "sourceSha256": "00601f0887362ea534d4c80d55dcf71a7f77b3663734e9254c2544b803e8e97f"
+    },
+    {
+      "id": "b0c768ada4d627b57b924bb1c5f3e71bd9a2f97f9e2cada749a6930696d4ec02",
+      "sha256": "b0c768ada4d627b57b924bb1c5f3e71bd9a2f97f9e2cada749a6930696d4ec02",
+      "title": "Đừng làm trái tim anh đau",
+      "filename": "Đừng làm trái tim anh đau — v2.mxl",
+      "url": "library/songs/dung-lam-trai-tim-anh-dau-v2.mxl",
+      "bytes": 141549,
+      "workId": "2d9a0093791b02acacc0b8b6cfdb09649f47f7fc623f57199ccdb9c3cb530500",
+      "version": 2,
+      "versionLabel": "Melody",
+      "practiceReady": true,
+      "sourceSha256": "a7c78d95908c276f89ef156b62ce8d82ee22d48de65ebe7d368e3f26f73448fe"
+    },
+    {
+      "id": "9738d3b2b7625ffd082aef8c3c600f055ae4b3dfe055505cfd6419849441e665",
+      "sha256": "9738d3b2b7625ffd082aef8c3c600f055ae4b3dfe055505cfd6419849441e665",
+      "title": "Giấy ghi chú tâm nguyện",
+      "filename": "Giấy ghi chú tâm nguyện.mxl",
+      "url": "library/songs/xin-yuan-bian-li-tie-giay-ghi-chu-tam-nguyen.mxl",
+      "bytes": 22520,
+      "workId": "08e0dc8955447b8b0840a58d99c55882f2f210c5e80d2685a0d3921930a301ce",
+      "version": 1,
+      "practiceReady": true,
+      "sourceSha256": "08e0dc8955447b8b0840a58d99c55882f2f210c5e80d2685a0d3921930a301ce"
+    },
+    {
       "id": "6957c7190c90cccf6eb692171d855e287eba3b7ab10a894f0b9d00004a331dab",
       "sha256": "6957c7190c90cccf6eb692171d855e287eba3b7ab10a894f0b9d00004a331dab",
       "title": "Let It Go",
@@ -1301,183 +1726,65 @@
       "workId": "6957c7190c90cccf6eb692171d855e287eba3b7ab10a894f0b9d00004a331dab",
       "version": 1,
       "practiceReady": true
+    },
+    {
+      "id": "9ef0beeeb0695859e2a5e3f530c369f200934b2d6457e1fbd845409b2bee52ce",
+      "sha256": "9ef0beeeb0695859e2a5e3f530c369f200934b2d6457e1fbd845409b2bee52ce",
+      "bytes": 15985,
+      "title": "Họa tâm",
+      "filename": "Họa tâm.mxl",
+      "url": "library/songs/hoa-tam.mxl",
+      "workId": "969b79c151463a49e44a10ba6ec9efc5e30d334e10ecbbf36659d4857c4b4232",
+      "version": 1,
+      "practiceReady": true,
+      "sourceSha256": "969b79c151463a49e44a10ba6ec9efc5e30d334e10ecbbf36659d4857c4b4232"
+    },
+    {
+      "id": "3f70610db24acc09f10ddb2c45bfd6c201a144f34c31afa57e77f03a6f708feb",
+      "sha256": "3f70610db24acc09f10ddb2c45bfd6c201a144f34c31afa57e77f03a6f708feb",
+      "bytes": 7944,
+      "title": "Nếu em đã quên",
+      "filename": "Nếu em đã quên — v2.mxl",
+      "url": "library/songs/neu-em-da-quen-v2.mxl",
+      "workId": "753c393a1ad6489ffe37497764273bd60e4690eda907a36123c7c21d8fa7d01a",
+      "version": 2,
+      "practiceReady": true,
+      "versionLabel": "Bản đầy đủ"
+    },
+    {
+      "id": "095d04f8e775c0aade8a1f1b2cb62307be427534703057fa7efcfcfe431fdcd8",
+      "sha256": "095d04f8e775c0aade8a1f1b2cb62307be427534703057fa7efcfcfe431fdcd8",
+      "bytes": 7060,
+      "title": "Chỉ có đôi ta",
+      "filename": "Chỉ có đôi ta.mxl",
+      "url": "library/songs/chi-co-doi-ta.mxl",
+      "workId": "095d04f8e775c0aade8a1f1b2cb62307be427534703057fa7efcfcfe431fdcd8",
+      "version": 1,
+      "practiceReady": true
+    },
+    {
+      "id": "fa8b4d8a3351d4db546213faa63315865eabd197d278b48dc239f91a36cecfdb",
+      "sha256": "fa8b4d8a3351d4db546213faa63315865eabd197d278b48dc239f91a36cecfdb",
+      "bytes": 9138,
+      "title": "Mưa trên cuộc tình",
+      "filename": "Mưa trên cuộc tình — v2.mxl",
+      "url": "library/songs/mua-tren-cuoc-tinh-v2.mxl",
+      "workId": "a1fd18fe5571482bc4c012ef554ac38524052c1c4773a6fe81d354495897c3f9",
+      "version": 2,
+      "practiceReady": true
+    },
+    {
+      "id": "c43805379fa05f71439160dd517f8435d61066755ebb0c05f3e62ca8452c96e1",
+      "sha256": "c43805379fa05f71439160dd517f8435d61066755ebb0c05f3e62ca8452c96e1",
+      "bytes": 13272,
+      "title": "White Blossoms",
+      "filename": "White Blossoms — v2.mxl",
+      "url": "library/songs/white-blossoms-mimokeys-v2.mxl",
+      "workId": "504ee5334b63ec00cfc17e8746082d579954e7ca5119e7370a5517366b14db59",
+      "version": 2,
+      "practiceReady": true,
+      "sourceSha256": "b901d399d1aa34c5d3417dd2781873f9fb9b086399ab65f2963353f0168cdd83"
     }
   ],
-  "excluded": [
-    {
-      "sha256": "c67bad42a95fbbcfc5118f38148d37840ed6a1d1be3c44b193b1d31a2d85dcfe",
-      "title": "Nơi này có anh",
-      "reason": "Pedal thiếu điểm nhả hoặc chồng lệnh bắt đầu"
-    },
-    {
-      "sha256": "3ecf0d22910c8d5617a6015146be78f8f28669aa4cedf4e1fa6263142fc29e4b",
-      "title": "Tình Đơn Phương",
-      "reason": "Round-trip khác notes"
-    },
-    {
-      "sha256": "8d3f63fa5365229cc0eb98c2db3e3f88b6a86fbed5b53bdd70e7e187bcb99393",
-      "title": "Thích em hơi nhiều",
-      "reason": "Pedal thiếu điểm nhả hoặc chồng lệnh bắt đầu"
-    },
-    {
-      "sha256": "226d761f16ee0de517b4b2dec9a19572e378f42dea417b183913c2011ebcfe4c",
-      "title": "Cause I Love You",
-      "reason": "Round-trip khác endings"
-    },
-    {
-      "sha256": "dbc10a5697025d92ed0f10213191c4c42e86f79ae717ce024da986afc654c2ea",
-      "title": "Cơn mưa ngang qua",
-      "reason": "Nghe và chỉnh sửa được. Chưa hỗ trợ tập 9 nốt hoa mỹ của bản này.; Native import thay đổi hoặc bỏ nốt/onset/trường độ/khuông"
-    },
-    {
-      "sha256": "46a548f8e667e3e4321a90215074d29d403df0fbed4cb385bdf43385944c936b",
-      "title": "Chắc ai đó sẽ về",
-      "reason": "Nghe và chỉnh sửa được. Chưa hỗ trợ tập 6 nốt hoa mỹ của bản này.; Native import thay đổi hoặc bỏ nốt/onset/trường độ/khuông"
-    },
-    {
-      "sha256": "0107d570559cc556c0afd45a4adc4fbdde04b1a188ef9405eacc96b20c619b99",
-      "title": "Nắng thủy tinh",
-      "reason": "Nghe và chỉnh sửa được. Chưa hỗ trợ tập 2 nốt hoa mỹ của bản này.; Pedal thiếu điểm nhả hoặc chồng lệnh bắt đầu; Native import thay đổi hoặc bỏ nốt/onset/trường độ/khuông"
-    },
-    {
-      "sha256": "f1823da3bae3f3161651de87193692f5b6ba6129a286d44fa401a404cc81577c",
-      "title": "Fly Me to the Moon",
-      "reason": "Nghe và chỉnh sửa được. Chưa hỗ trợ tập 23 nốt hoa mỹ của bản này.; Native import thay đổi hoặc bỏ nốt/onset/trường độ/khuông"
-    },
-    {
-      "sha256": "3a04952e72327e380208b21e0f0a7e1bd607d3c04b153cb5a0512a9d59c444a6",
-      "title": "Cause I Love You",
-      "reason": "Nghe và chỉnh sửa được. Chưa hỗ trợ tập 2 nốt hoa mỹ của bản này.; Native import thay đổi hoặc bỏ nốt/onset/trường độ/khuông"
-    },
-    {
-      "sha256": "d2adebf695715810f98c90c9516cf99458c2ee33d6aa769f28111bbeaec9166f",
-      "title": "Ánh nắng của anh",
-      "reason": "Nghe và chỉnh sửa được. Chưa hỗ trợ tập 3 nốt hoa mỹ của bản này.; Native import thay đổi hoặc bỏ nốt/onset/trường độ/khuông"
-    },
-    {
-      "sha256": "79c6d1000e255616150b5ca622baa190e8f2eadd238ca3920e79eefb15c3c0bc",
-      "title": "Thức giấc",
-      "reason": "Nghe và chỉnh sửa được. Chưa hỗ trợ tập 2 nốt hoa mỹ của bản này.; Native import thay đổi hoặc bỏ nốt/onset/trường độ/khuông"
-    },
-    {
-      "sha256": "4f6bda43dcb8d092b71af487febf561fb169a308ee565485e4bd62ac9784ea25",
-      "title": "Người yêu cũ",
-      "reason": "Nghe và chỉnh sửa được. Chưa hỗ trợ tập 2 nốt hoa mỹ của bản này.; Native import thay đổi hoặc bỏ nốt/onset/trường độ/khuông"
-    },
-    {
-      "sha256": "5b21ffd4dd6e203af97fe8f7cf6b1c0a599a8d86ec1670188eb94d89d49aa861",
-      "title": "Katy Katy",
-      "reason": "Nghe và chỉnh sửa được. Chưa hỗ trợ tập 6 nốt hoa mỹ của bản này.; Native import thay đổi hoặc bỏ nốt/onset/trường độ/khuông"
-    },
-    {
-      "sha256": "3181d63343cc7568c7ac3d056fa1c46bfb0ad08451c01544b8482e1493c603e6",
-      "title": "Cuối cùng thì",
-      "reason": "Nghe và chỉnh sửa được. Chưa hỗ trợ tập 24 nốt hoa mỹ của bản này.; Pedal thiếu điểm nhả hoặc chồng lệnh bắt đầu; Native import thay đổi hoặc bỏ nốt/onset/trường độ/khuông"
-    },
-    {
-      "sha256": "8f5b5cb28b6d9a009f53a5e30266e915e856b3269c24eae499ff3f330ee96d54",
-      "title": "Thức giấc",
-      "reason": "Pedal thiếu điểm nhả hoặc chồng lệnh bắt đầu"
-    },
-    {
-      "sha256": "9aee989cc4b46efefad5c4e60fbd6ed8582bf90a6ddab5b35ccc97f85b9277d0",
-      "title": "999 đóa hồng",
-      "reason": "Nghe và chỉnh sửa được. Chưa hỗ trợ tập 1 nốt hoa mỹ của bản này.; Native import thay đổi hoặc bỏ nốt/onset/trường độ/khuông"
-    },
-    {
-      "sha256": "f0e14f7f4811936ef83faebcb51c0a7a3c6c9fd0cb7eb979ba10441d9a52fabf",
-      "title": "Người tình mùa đông",
-      "reason": "Nghe và chỉnh sửa được. Chưa hỗ trợ tập 14 nốt hoa mỹ của bản này.; Native import thay đổi hoặc bỏ nốt/onset/trường độ/khuông"
-    },
-    {
-      "sha256": "63607a457e74ae70c4c7636c271a61d3d33c9ea21933e22fa61b70a03695c58c",
-      "title": "Đồng thoại",
-      "reason": "Nghe và chỉnh sửa được. Chưa hỗ trợ tập 15 nốt hoa mỹ của bản này.; Native import thay đổi hoặc bỏ nốt/onset/trường độ/khuông"
-    },
-    {
-      "sha256": "1d9ca368efc012e1ebecd4fe652af730ba6a0d078648ed56ecc5327a0bd57f72",
-      "title": "Bến Thượng Hải",
-      "reason": "Nghe và chỉnh sửa được. Chưa hỗ trợ tập 4 nốt hoa mỹ của bản này.; Native import thay đổi hoặc bỏ nốt/onset/trường độ/khuông"
-    },
-    {
-      "sha256": "514591366d7731e3137b225dbf087e957bd7491125fc7c3d29107465124f8fb6",
-      "title": "Chuột yêu gạo",
-      "reason": "Nghe và chỉnh sửa được. Chưa hỗ trợ tập 2 nốt hoa mỹ của bản này.; Native import thay đổi hoặc bỏ nốt/onset/trường độ/khuông"
-    },
-    {
-      "sha256": "f161272b882a9accef08097308c4ff0bca750270dc730a65f5947f2092ec12bc",
-      "title": "Thanh hoa sứ",
-      "reason": "Nghe và chỉnh sửa được. Chưa hỗ trợ tập 2 nốt hoa mỹ của bản này.; Native import thay đổi hoặc bỏ nốt/onset/trường độ/khuông"
-    },
-    {
-      "sha256": "2b86139ef7affed54d00f7f0f691b27d6fed95ded767a5b24473281119b0b66d",
-      "title": "Vì một người ra đi",
-      "reason": "Nghe và chỉnh sửa được. Chưa hỗ trợ tập 18 nốt hoa mỹ của bản này.; Native import thay đổi hoặc bỏ nốt/onset/trường độ/khuông"
-    },
-    {
-      "sha256": "7e3632eb3a2047d47178ed07e403f7028110fb0e493847ee316295aade3424b2",
-      "title": "Liều thuốc cho trái tim",
-      "reason": "Nghe và chỉnh sửa được. Chưa hỗ trợ tập 2 nốt hoa mỹ của bản này.; Native import thay đổi hoặc bỏ nốt/onset/trường độ/khuông"
-    },
-    {
-      "sha256": "0bd35da06f5f7e23c33bc6ea2f3c7d64f8979dcbd2e9ece05b704f9a30d74be2",
-      "title": "Thằng Tàu lai",
-      "reason": "Nghe và chỉnh sửa được. Chưa hỗ trợ tập 2 nốt hoa mỹ của bản này.; Native import thay đổi hoặc bỏ nốt/onset/trường độ/khuông"
-    },
-    {
-      "sha256": "3aa19196a4d9722f290903f0b30af2246594dd4fac6cf9b91ae2bded79e22ee2",
-      "title": "Kiếp rong buồn",
-      "reason": "Pedal thiếu điểm nhả hoặc chồng lệnh bắt đầu"
-    },
-    {
-      "sha256": "64e66bf49f5926c1482318f6480827845ffa6966768ac582c52e6a89c9af8ec8",
-      "title": "Cuộc tình trong cơn mưa — Tình yêu còn xa",
-      "reason": "Nghe và chỉnh sửa được. Chưa hỗ trợ tập 23 nốt hoa mỹ của bản này.; Native import thay đổi hoặc bỏ nốt/onset/trường độ/khuông"
-    },
-    {
-      "sha256": "67a350e39abf331994bc154ac006525a1b8db8f3d8500d832eefed8864da1109",
-      "title": "Răng khôn",
-      "reason": "Pedal thiếu điểm nhả hoặc chồng lệnh bắt đầu"
-    },
-    {
-      "sha256": "49c44062329e76a18d035c6031ea072f74776f3b2cab138378e3cd804f2d49a8",
-      "title": "Tình thôi xót xa",
-      "reason": "Nghe và chỉnh sửa được. Chưa hỗ trợ tập 5 nốt hoa mỹ của bản này.; Native import thay đổi hoặc bỏ nốt/onset/trường độ/khuông"
-    },
-    {
-      "sha256": "9d5a93e0f4068fdbce611b08dd4c95a63d98c10d1d2833e2602640935855522b",
-      "title": "Chuyện người đan áo",
-      "reason": "Nghe và chỉnh sửa được. Chưa hỗ trợ tập 2 nốt hoa mỹ của bản này.; Native import thay đổi hoặc bỏ nốt/onset/trường độ/khuông"
-    },
-    {
-      "sha256": "35a39a1c814a72c0bbe2de9309bb8b6b761ca995ce09d79f9f8f68931bf9b9c2",
-      "title": "Đi giữa trời rực rỡ",
-      "reason": "Nghe và chỉnh sửa được. Chưa hỗ trợ tập 2 nốt hoa mỹ của bản này.; Native import thay đổi hoặc bỏ nốt/onset/trường độ/khuông"
-    },
-    {
-      "sha256": "5b7b6d8ca9ca5e4719f7c3841d5e5dcd932460641e971019df9251ab6ca08132",
-      "title": "Phép màu",
-      "reason": "Nghe và chỉnh sửa được. Chưa hỗ trợ tập 19 nốt hoa mỹ của bản này.; Native import thay đổi hoặc bỏ nốt/onset/trường độ/khuông"
-    },
-    {
-      "sha256": "224f0afb5a5dc9498d1bb97f397d65f8ee450bf12b5a3bc578020da081e70e16",
-      "title": "50 năm về sau",
-      "reason": "Nghe và chỉnh sửa được. Chưa hỗ trợ tập 58 nốt hoa mỹ của bản này.; Native import thay đổi hoặc bỏ nốt/onset/trường độ/khuông"
-    },
-    {
-      "sha256": "00601f0887362ea534d4c80d55dcf71a7f77b3663734e9254c2544b803e8e97f",
-      "title": "Tìm em",
-      "reason": "Nghe và chỉnh sửa được. Chưa hỗ trợ tập 13 nốt hoa mỹ của bản này.; Native import thay đổi hoặc bỏ nốt/onset/trường độ/khuông"
-    },
-    {
-      "sha256": "a7c78d95908c276f89ef156b62ce8d82ee22d48de65ebe7d368e3f26f73448fe",
-      "title": "Đừng làm trái tim anh đau",
-      "reason": "Nghe và chỉnh sửa được. Chưa hỗ trợ tập 51 nốt hoa mỹ của bản này.; Native import thay đổi hoặc bỏ nốt/onset/trường độ/khuông"
-    },
-    {
-      "sha256": "08e0dc8955447b8b0840a58d99c55882f2f210c5e80d2685a0d3921930a301ce",
-      "title": "Giấy ghi chú tâm nguyện",
-      "reason": "Nghe và chỉnh sửa được. Chưa hỗ trợ tập 23 nốt hoa mỹ của bản này.; Native import thay đổi hoặc bỏ nốt/onset/trường độ/khuông"
-    }
-  ]
+  "excluded": []
 }

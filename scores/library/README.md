@@ -5,46 +5,38 @@ tác phẩm, phiên bản và hash nằm ở đây. Chỉ chuẩn hóa tên font
 không sửa nốt, tie hoặc thời điểm nhả pedal để ép qua bộ nhận.
 Các báo cáo `IMPORT_REPORT*.md` là lịch sử từng đợt nhập, không phải số lượng hiện tại.
 
-## Đối soát ngày 24/10/2026
+## Chính sách hiện hành: đủ hai khuông thì nhận
 
-Catalog hiện có **110 phiên bản / 109 tác phẩm**. Kiểm lại 145 bản, loại 35 bản
-chưa đạt khỏi danh mục và tài nguyên phát hành. Lý do cụ thể, hash trước/sau và
-kết quả đối chiếu từng bản nằm trong [QUALITY_RECEIPT_2026-10-24.json](QUALITY_RECEIPT_2026-10-24.json).
+Catalog có **150 phiên bản / 140 tác phẩm**. Khôi phục 35 bản từng bị loại ở đợt
+24/10 và nhận lại năm bản đủ hai khuông từng cách ly: Họa tâm, Nếu em đã quên
+(bản đầy đủ), Chỉ có đôi ta, Mưa trên cuộc tình (V2), White Blossoms (V2).
+Báo cáo QUALITY_RECEIPT_2026-10-24.json giữ nguyên làm lịch sử của chính sách cũ;
+không còn là danh sách được phép tập.
+[Đối soát chính sách mới và kiểm thử từng bản](ADMISSION_RECEIPT_2026-10-24_TWO_STAVES.json).
 
-- Không nhận bản chỉ nghe/chỉnh sửa được nhưng bộ tập bỏ sót nốt hoa mỹ, hoặc
-  pedal không có điểm kết thúc / bắt đầu chồng nhau. Kiểm ở cả nhập và đóng gói
-  bằng `buildscripts/pianist/library_content_policy.py`.
-- Đối chiếu nguồn với nốt, thời điểm, trường độ, khuông hiển thị, MIDI và MusicXML
-  xuất lại từ MuseScore. Tình Đơn Phương có tie G♯ → G không nhất quán; một bản
-  Cause I Love You thiếu kết thúc volta. Hai bản này cũng bị loại.
-- 60 bản được đổi font chữ thiếu sang FreeSerif/FreeSans, không thay nội dung nhạc.
-  `sourceSha256` nối bản lưu trên thiết bị với nguồn trước khi chuẩn hóa.
-- Giữ `workId` và số phiên bản khi loại một bản; V2 vẫn là V2 nếu V1 bị loại.
-- Ảnh xem trước dựng lại từ chính MuseScore. Font Noto Sans CJK SC bổ sung ký tự
-  Hoa/Nhật, dùng cơ chế font dự phòng sẵn có của MuseScore.
+- Điều kiện nội dung duy nhất để nhận là đúng hai khuông cấu trúc. Một part hai
+  khuông hoặc hai part một khuông đều hợp lệ; nghỉ, ẩn khuông và đổi khóa không
+  làm mất tư cách nhận bài. Các file hỏng/không đọc được và tham chiếu khuông
+  không hợp lệ vẫn được báo lỗi nhập.
+- Tên nhạc cụ, nốt hoa mỹ, ornament, rải hợp âm, tie, nhịp hoặc pedal thiếu dữ liệu
+  là thông tin kiểm tra, không phải lý do loại bài. Không viết thêm nốt, đổi nhịp
+  hoặc đoán điểm nhả pedal để ép nguồn qua kiểm tra.
+- Bộ tập dùng các lần phát nốt MPE từ MuseScore, gồm cả nốt hoa mỹ và các nốt bung
+  ra từ trill/tremolo/rải hợp âm. Pitch/onset/offset và ánh xạ nốt do engine cấp.
+  Bản nguồn thiếu nhịp/tie/đích nhảy được tập theo cách MuseScore đọc file đó;
+  nhận bài không có nghĩa xác nhận mọi ký hiệu trong nguồn đều chính xác.
+- Pedal chỉ chấm khi có khoảng chỉ dẫn trong MuseScore; không tự thêm thời điểm
+  nhả cho ký hiệu bắt đầu đơn lẻ. Tắt pedal vẫn có thể chấm nốt, BPM và nhả phím.
+  Khi nhiều bè yêu cầu giữ cùng một phím qua lần đánh lại, vẫn chấm đủ các lần
+  đánh; không kết luận sai trường độ ở chỗ không thể thực hiện bằng một phím.
+- Giữ nguyên workId, số version và bản MXL (ngoài chuẩn hóa tên font có đối soát).
+  sourceSha256 liên kết các bản lưu cũ với nguồn trước chuẩn hóa. Không xóa file
+  Downloads hay bản chỉnh sửa của người dùng.
 
-Nguồn cũ nằm trong Git và `artifacts/library-cleanup/originals/` ở máy phát triển.
-Không xóa tệp gốc trong Downloads hoặc bản chỉnh sửa đã lưu trên thiết bị.
-
-## Điều kiện nhận bài
-
-Từ 23/10/2026, thư viện chỉ nhận **đúng hai khuông piano về cấu trúc trên toàn bài**:
-
-- Một part piano có hai khuông, hoặc hai part piano mỗi part một khuông đều hợp lệ.
-- Đọc `<staves>` theo trạng thái MusicXML; không khai báo thì mặc định một khuông.
-  Số khuông không được đổi giữa bài; mọi tham chiếu khuông phải thuộc cấu trúc đã khai báo.
-- Không dùng số dòng khóa Sol/Fa hoặc số khuông nhìn thấy trên ảnh để suy số khuông.
-  Hai khóa Sol, đổi khóa, ẩn khuông trống, ô nghỉ và chỉ một tay có nốt đều được giữ.
-- Tổng hai khuông chưa đủ để nhận dàn nhạc: mỗi part phải có bằng chứng piano từ
-  chương trình General MIDI 1–6, `keyboard.piano`, hoặc nhãn piano rõ ràng.
-  Chương trình/âm sắc/nhãn nhạc cụ khác mâu thuẫn sẽ bị loại; thiếu bằng chứng phải kiểm lại.
-- Bộ kiểm này không thay kiểm nhập, playback, ánh xạ nốt và độ trung thực MuseScore.
-  File qua cấu trúc vẫn phải qua các bước kiểm native trước khi phát hành.
-
-Chính sách dùng chung tại `buildscripts/pianist/library_staff_policy.py`.
-Nhập nối bằng `curate-library.py` mặc định giữ các bài cũ, bỏ bản trùng và thêm
-phiên bản N+1 khi xác định được cùng tác phẩm. Mọi bản mới sai chính sách được ghi
-`excluded`; đóng gói release kiểm lại chính sách để không lọt file chỉ vì hash hợp lệ.
+Chính sách cấu trúc dùng chung ở library_staff_policy.py và library-admission.ts.
+library_content_policy.py chỉ ghi nhận thông tin; không chặn do ký hiệu.
+curate-library.py vẫn bỏ bản trùng nội dung và tạo version N+1 cho bản phối khác.
+Ảnh xem trước và hình sheet do MuseScore dựng từ chính bản MXL được giữ lại.
 
 ## Đối soát ngày 23/10/2026
 

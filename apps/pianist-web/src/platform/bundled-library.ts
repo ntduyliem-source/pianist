@@ -90,23 +90,6 @@ export function matchesBundledWork(work: BundledWork, search: string): boolean {
     ...work.versions.flatMap((s) => [s.title, s.composer ?? '', s.versionLabel ?? '']),
   ].some((s) => matchesSearch(s, search));
 }
-export async function bundledPracticeNotice(
-  scores: BundledScore[],
-  sourceName?: string,
-  source?: Uint8Array,
-): Promise<string | undefined> {
-  if (!source) return;
-  const candidates = scores.filter(
-    (s) => s.practiceReady === false && s.filename === sourceName && s.bytes === source.byteLength,
-  );
-  if (!candidates.length) return;
-  const sha = [
-    ...new Uint8Array(await crypto.subtle.digest('SHA-256', source as Uint8Array<ArrayBuffer>)),
-  ]
-    .map((x) => x.toString(16).padStart(2, '0'))
-    .join('');
-  return candidates.find((s) => s.sha256 === sha)?.practiceNotice;
-}
 export function parseBundledCatalog(data: unknown): BundledScore[] {
   const d = data as { schemaVersion?: number; songs?: BundledScore[] };
   if (d?.schemaVersion !== 1 || !Array.isArray(d.songs) || d.songs.length > 500)

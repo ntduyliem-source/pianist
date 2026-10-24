@@ -34,6 +34,9 @@ test('native releases, pedal, tempo and unsupported grading techniques are part 
   assert.notEqual(released.fingerprint, tempo.fingerprint);
   raw.unsupported = [{ kind: 'arpeggio', measure: 0 }];
   assert.notEqual(tempo.fingerprint, (await bridge.cancellableSnapshot('p', hash)).fingerprint);
+  const native = await bridge.cancellableSnapshot('p', hash);
+  raw.performance.events[0].atMs += 1;
+  assert.notEqual(native.fingerprint, (await bridge.cancellableSnapshot('p', hash)).fingerprint);
 });
 
 test('cancel and revision changes discard an asynchronous snapshot before it enters practice', async () => {

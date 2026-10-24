@@ -75,6 +75,12 @@ class LibraryImportTests(unittest.TestCase):
         self.assertEqual((self.library / 'catalog.json').read_bytes(), before)
         self.assertEqual(len(list((self.library / 'songs').glob('*.mxl'))), 1)
 
+    def test_non_score_attachments_are_skipped_without_reading_them(self):
+        inputs = [dict(filename='unrelated.env', path=str(self.root / 'does-not-exist.env'), title='')]
+        report = append_library(inputs, {'results':[dict(filename='unrelated.env',status='excluded')]}, self.library)
+        self.assertEqual(report['summary']['excluded'], 1)
+        self.assertEqual(len(self.catalog()['songs']), 1)
+
     def test_existing_noncompliant_library_blocks_append_without_mutation(self):
         data = mxl(staves=1)
         (self.library / 'songs/original.mxl').write_bytes(data)
@@ -133,14 +139,20 @@ class LibraryImportTests(unittest.TestCase):
         self.assertEqual(song['url'], 'library/songs/new-work.mxl')
         self.assertEqual(report['summary']['newWorks'], 1)
 
-    def test_editor_only_is_excluded_even_with_complete_grace_evidence(self):
+    def test_previous_editor_only_and_excluded_two_staff_grace_scores_are_admitted(self):
         inputs, audit = self.inputs(mxl('G', grace=True), editor_only=True)
-        before = (self.library / 'catalog.json').read_bytes()
-        for allow in (False, True):
-            report = append_library(inputs, audit, self.library, allow_editor_only=allow)
-            self.assertEqual(report['summary']['editorOnly'], 0)
-            self.assertEqual((self.library / 'catalog.json').read_bytes(), before)
-            self.assertEqual(len(self.catalog()['songs']), 1)
+        inputs[0]['newWork'] = True
+        report = append_library(inputs, audit, self.library)
+        self.assertEqual(report['summary']['newWorks'], 1)
+        self.assertTrue(self.catalog()['songs'][-1]['practiceReady'])
+        inputs, audit = self.inputs(mxl('A', grace=True), filename='formerly-rejected.mxl')
+        inputs[0]['newWork'] = True
+        audit['results'][0]['status'] = 'excluded'
+        audit['results'][0]['reason'] = 'Old native grace limitation'
+        report = append_library(inputs, audit, self.library)
+        self.assertEqual(report['summary']['newWorks'], 1)
+        self.assertEqual(report['summary']['excluded'], 0)
+        self.assertEqual(len(self.catalog()['songs']), 3)
 
     def test_source_mutation_or_unfinished_audit_cannot_change_catalog(self):
         inputs, audit = self.inputs(mxl('D'))

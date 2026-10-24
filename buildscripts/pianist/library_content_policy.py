@@ -1,4 +1,4 @@
-"""Conservative source checks for the practice-ready public song library.
+"""Informational notation diagnostics; admission depends on two staves.
 
 Do not repair missing notes, tie pitches or pedal releases by guessing.
 """
@@ -10,7 +10,7 @@ def content_issues(data):
     _, score = read_musicxml(data)
     issues = []
     if score.findall('.//note/grace'):
-        issues.append('Bộ tập chưa theo dõi đầy đủ nốt hoa mỹ của bản này.')
+        issues.append('Có nốt hoa mỹ; chấm theo lịch MPE của MuseScore.')
     for part in score.findall('part'):
         pedals = {}
         for measure in part.findall('measure'):
@@ -30,6 +30,4 @@ def content_issues(data):
 
 
 def require_practice_content(data):
-    issues = content_issues(data)
-    if issues:
-        raise ValueError('; '.join(issues))
+    return require_two_staff_piano(data)

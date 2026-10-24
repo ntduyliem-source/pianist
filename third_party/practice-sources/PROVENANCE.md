@@ -106,3 +106,44 @@ python buildscripts/pianist/audit-practice-cutover.py
 ```
 
 The source archive includes these scripts, original files, licenses, generated output and tests. Preserve copyright/license notices. The PTS-derived Wait module remains AGPL-3.0; it is not relicensed GPL/MIT by placement in this tree. Supply corresponding combined application source/build instructions to network users as required by that license. The deployment bundle contains the exact clean Git archive. See `docs/THIRD_PARTY_NOTICES.md`.
+
+## Two-staff admission and MPE reference upgrade (2026-10-24)
+
+The production snapshot now also exports `performance.source = musescore-mpe`.
+`practicesnapshot.cpp::playbackNotesFor` reads the same NoteEvents consumed by
+FluidSequencer and used by listening highlights. It does not implement grace,
+arpeggio, trill, tremolo, swing, tie or glissando timing. Those events come from
+MuseScore's existing `ChordArticulationsRenderer`, `GraceChordCtx`,
+`OrnamentsRenderer`, `ArpeggioRenderer`, `TremoloRenderer`, `NoteRenderer` and
+`GlissandosRenderer`. `RepeatList::utime2utick` supplies tick evidence; native
+time-map interpolation preserves sub-tick precision when converting BPM.
+Grace notes now have their own stable anchor and SVG IDs.
+
+`native-performance.ts` selects these events by hand/voice and contiguous A–B
+visits, clips boundary holds, merges exact same-time same-pitch physical keys,
+and hands targets to the unchanged osu/PTS kernels. Both Wait and BPM include
+expanded ornament/grace attacks. Key offsets use MPE actualDuration; historical
+snapshots retain their old CompatMidiRender data path. Missing MPE in a cached
+complex score requests reopening the score; it does not blacklist the source.
+The engine ID changes so previous attempts remain readable but are not replayed
+under new target semantics.
+
+`native-time.ts` converts native timing to the selected fixed BPM or scales the
+score tempo map. Equal-tick native breakpoints represent pauses: score-tempo mode
+retains their seconds, while fixed BPM omits them. The cursor uses that same
+converted map. This is a timeline coordinate adapter, not a new hit window or
+pitch matcher. The mir_eval and note-seq kernels and tolerances are unchanged.
+Overlapping independent voices on the same physical key retain every attack;
+an offset extending past the next strike is marked unavailable for key-hold
+grading, rather than replacing the native duration with a guessed one.
+Two piano parts' overlapping explicit pedal intervals are combined into one
+physical pedal reference. Missing pedal releases are never inferred; no-reference
+pedal results do not block note/BPM practice.
+
+Admission is independent of grading complexity: valid two-staff sources are
+retained, including native importer repairs/interpretations of ambiguous input.
+Source discrepancies remain audit information. No guarantee is made that an
+incomplete or contradictory MusicXML source equals an unavailable original score.
+`tests/browser/pianist/two-staff-upgrade.cjs` compares library MPE grading references
+against actual sample playback events, checks grace glyph mappings and captures
+native inputs for the scoring integration test.

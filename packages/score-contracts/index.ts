@@ -25,6 +25,16 @@ export interface Anchor {
   arpeggioGroup?: string;
   userVelocity?: number;
   spelling?: number;
+  grace?: boolean;
+}
+export interface NativePerformanceNote {
+  anchors: string[];
+  spans: {anchor: string; occurrence: number; atMs: number; endMs: number; utick: number; endUtick: number}[];
+  pitch: number;
+  atMs: number;
+  endMs: number;
+  utick: number;
+  endUtick: number;
 }
 export interface ScorePage {
   index: number;
@@ -80,6 +90,8 @@ export interface ScoreSnapshot {
   performed: { anchor: string; occurrence: number; atMs: number; endMs: number }[];
   beats: { atMs: number; accent: boolean; occurrence: number; beatQuarter?: number }[];
   warnings: string[];
+  /** Actual attacks/releases from MuseScore's MPE renderers, including ornaments. */
+  performance?: {source: 'musescore-mpe'; events: NativePerformanceNote[]};
   cursorSegments?: { measure: number; tick: number; endTick: number; x: number; endX: number }[];
   timeMap?: { occurrence: number; tick: number; atMs: number }[];
   tempos?: { occurrence: number; atMs: number; quarterBpm: number }[];
@@ -131,6 +143,7 @@ export interface NativeScoreData
   tempos: NonNullable<ScoreSnapshot['tempos']>;
   unsupported: NonNullable<ScoreSnapshot['unsupported']>;
   durationReference: 'musescore-midi';
+  performance: NonNullable<ScoreSnapshot['performance']>;
   keyReleases: NonNullable<ScoreSnapshot['keyReleases']>;
   pedals: NonNullable<ScoreSnapshot['pedals']>;
 }

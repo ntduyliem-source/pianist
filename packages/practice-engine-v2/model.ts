@@ -1,7 +1,7 @@
 import type {ScoreSnapshot} from '../score-contracts/index';
 import type {Grade, Judgement} from './upstream/mania';
 
-export const ENGINE_ID = 'pianist-v2.osu-676f3b0.pts-b40e412.mir-fe73b35.ns-3582550.3';
+export const ENGINE_ID = 'pianist-v2.osu-676f3b0.pts-b40e412.mir-fe73b35.ns-3582550.4-mpe';
 export type Hand = 'left' | 'right' | 'off';
 export interface PracticeSettings {
   version: 2; mode: 'wait' | 'bpm'; bpm: number; beatQuarter: .5 | 1 | 1.5;
@@ -29,6 +29,7 @@ export interface Timeline {
   // BPM in the selected beat unit, exported from native tempo at each position.
   tempos?: {atMs:number; bpm:number}[];
   pedals?: PedalTarget[]; pedalReference?: boolean;
+  timeMap?: {visit: number; tick: number; atMs: number}[];
 }
 export interface MidiEvent {
   sequence: number; kind: 'on' | 'off' | 'pedal'; pitch: number; value: number; channel: number;

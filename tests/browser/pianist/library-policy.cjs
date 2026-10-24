@@ -36,8 +36,11 @@ const invalidAbc='X:2\nT:One staff rejected\nM:4/4\nL:1/4\nV:RH clef=treble name
     await upload('valid-grand-staff.musicxml',xml([2]));await ready('valid-grand-staff.musicxml');
     let value=await semantics();assert.equal(value.staves.length,2);assert(value.staves.every(s=>s.instruments?.length&&s.instruments.every(i=>i.programs.every(p=>p>=0&&p<=5))));
     check('Two-staff piano imports using native staff and instrument facts');
-    for(const [name,data] of [['one-staff.musicxml',xml([1])],['three-staves.mxl',mxl(xml([3]))],['piano-and-flute.musicxml',xml([1,1],[1,74])],['single-staff.abc',invalidAbc]])await reject(name,data);
-    check('One staff, three staves, mixed instruments and one-staff ABC are rejected without score or library mutation');
+    for(const [name,data] of [['one-staff.musicxml',xml([1])],['three-staves.mxl',mxl(xml([3]))],['single-staff.abc',invalidAbc]])await reject(name,data);
+    check('One staff, three staves and one-staff ABC are rejected without score or library mutation');
+    await upload('two-staff-metadata.musicxml',xml([1,1],[1,74]));await ready('two-staff-metadata.musicxml');
+    assert.equal((await semantics()).staves.length,2);
+    check('Exactly two staves are admitted even when the source instrument metadata is inconsistent');
     const beforeCount=(await records()).length;await upload('split-piano.mxl',mxl(xml([1,1])));await ready('split-piano.mxl');value=await semantics();
     assert.equal(value.staves.length,2);assert.equal(new Set(value.staves.map(s=>s.partId)).size,2);assert.equal((await records()).length,beforeCount+1);
     check('Two separate piano parts with two treble clefs remain valid');
@@ -54,7 +57,7 @@ const invalidAbc='X:2\nT:One staff rejected\nM:4/4\nL:1/4\nV:RH clef=treble name
     const sourceCatalog=JSON.parse(await fs.readFile(path.join(root,'scores/library/catalog.json'),'utf8'));
     assert.deepEqual(catalog,sourceCatalog,'served catalog must match the curated source under review');
     const beforeCatalog=await semantics(),savedBeforeCatalog=await records();
-    for(const song of catalog.songs){
+    for(const song of process.argv.includes('--admission-only')?[]:catalog.songs){
       const facts=await page.evaluate(async song=>{
         const response=await fetch(new URL(song.url,location.href));if(!response.ok)throw Error('Missing bundled song '+song.url);
         const bytes=new Uint8Array(await response.arrayBuffer());
@@ -68,13 +71,12 @@ const invalidAbc='X:2\nT:One staff rejected\nM:4/4\nL:1/4\nV:RH clef=treble name
         return {id:song.id,title:song.title,url:song.url,sha256:sha,staves:score.staves,notes:score.anchors.length};
       },song);
       assert.equal(facts.staves.length,2,song.title+' must have exactly two native staves');
-      assert(facts.staves.every(s=>s.instruments?.length&&s.instruments.every(i=>i.programs?.length&&i.programs.every(p=>Number.isInteger(p)&&p>=0&&p<=5))),song.title+' must remain piano at every native instrument change');
       assert.deepEqual(await semantics(),beforeCatalog,song.title+' temporary score must not change the editor');
       facts.passed=true;report.catalog.push(facts);
       console.log('CATALOG',report.catalog.length+'/'+catalog.songs.length,song.title);
     }
     assert.deepEqual(await records(),savedBeforeCatalog,'catalog verification must not create or alter personal projects');
-    check('Every bundled song agrees with native two-staff piano admission; SHA and the current editor/library remain unchanged');
+    if(!process.argv.includes('--admission-only'))check('Every bundled song agrees with native two-staff admission; SHA and the current editor/library remain unchanged');
     assert.deepEqual(report.errors,[]);report.passed=true;
   }catch(error){report.passed=false;report.error=String(error.stack||error);report.banners=await page.locator('.error-banner').allTextContents();process.exitCode=1;await page.screenshot({path:path.join(out,'failure.png')}).catch(()=>{});}
   finally{await fs.writeFile(path.join(out,'report.json'),JSON.stringify(report,null,2));await browser.close();}

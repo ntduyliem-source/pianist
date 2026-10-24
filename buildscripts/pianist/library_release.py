@@ -66,8 +66,6 @@ def verify_library(read, paths):
             raise ValueError('Library integrity failed: ' + name)
         require_two_staff_piano(data)
         require_practice_content(data)
-        if song.get('practiceReady') is False:
-            raise ValueError('Editor-only edition is not admitted to the public practice library')
         identities.add(song['id'])
         expected.add(name)
     preview_source = ROOT / 'scores/library/previews/manifest.json'

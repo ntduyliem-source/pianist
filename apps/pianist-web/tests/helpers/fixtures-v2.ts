@@ -13,6 +13,9 @@ export function scoreFixture(): ScoreSnapshot {
 export function timeline(at:number[]= [500],pitches=at.map(()=>60)): Timeline {
   const s=scoreFixture(), c={...settingsFor(s),mode:'bpm' as const};
   const result=createTimeline(s,c);
+  // This helper replaces visits/targets freely; callers provide their own
+  // snapshot clock rather than retaining scoreFixture's unrelated time map.
+  delete result.timeMap;
   result.targets=at.map((a,i)=>({...result.targets[0],id:'n'+i,pitch:pitches[i],atMs:a,endMs:a+100}));
   result.groups=[];
   for(const t of result.targets){const g=result.groups.at(-1); if(g?.atMs===t.atMs)g.ids.push(t.id);else result.groups.push({atMs:t.atMs,ids:[t.id]});}

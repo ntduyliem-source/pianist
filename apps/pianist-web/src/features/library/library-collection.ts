@@ -18,7 +18,7 @@ export interface LibraryWork {
 /** One work, one card. A saved local edition replaces its bundled source in the picker. */
 export function libraryCollection(songs: BundledScore[], projects: ProjectRecord[], search = '') {
   const works = new Map<string, LibraryWork>();
-  for (const song of songs.filter((s) => s.practiceReady !== false)) {
+  for (const song of songs) {
     const id = song.workId ?? song.id;
     const work = works.get(id) ?? { id, title: song.title, editions: [] };
     work.editions.push({
@@ -33,11 +33,7 @@ export function libraryCollection(songs: BundledScore[], projects: ProjectRecord
     (a, b) => (a.version ?? 1) - (b.version ?? 1) || a.createdAt - b.createdAt,
   )) {
     const source = project.sourceHash
-      ? songs.find(
-          (s) =>
-            s.practiceReady !== false &&
-            (s.sha256 === project.sourceHash || s.sourceSha256 === project.sourceHash),
-        )
+      ? songs.find((s) => s.sha256 === project.sourceHash || s.sourceSha256 === project.sourceHash)
       : undefined;
     const id = source?.workId ?? source?.id ?? project.workId ?? project.id;
     const work = works.get(id) ?? { id, title: project.title, editions: [] };

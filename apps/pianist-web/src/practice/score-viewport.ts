@@ -49,7 +49,7 @@ function lastAt<T>(items: T[], position: number, time: (item: T) => number) {
 export function scorePositions(
   snapshot: ScoreSnapshot,
   t: Pick<Timeline, 'targets' | 'guide' | 'visits' | 'groups'> &
-    Partial<Pick<Timeline, 'settings'>>,
+    Partial<Pick<Timeline, 'settings' | 'timeMap'>>,
 ) {
   const anchors = new Map(snapshot.anchors.filter((a) => a.visible).map((a) => [a.id, a])),
     targets = new Map(t.targets.map((n) => [n.id, n]));
@@ -73,6 +73,12 @@ export function scorePositions(
     timePoints.set(p.occurrence, list);
   }
   const occurrences = new Map(snapshot.occurrences.map((o) => [o.index, o]));
+  const practicePoints = new Map<number, NonNullable<Timeline['timeMap']>>();
+  for (const p of t.timeMap ?? []) {
+    const list = practicePoints.get(p.visit) ?? [];
+    list.push(p);
+    practicePoints.set(p.visit, list);
+  }
   const nativeX = (measure: number, tick: number) => {
     const list = segments.get(measure);
     if (!list?.length) return;
@@ -117,7 +123,18 @@ export function scorePositions(
       Math.min(1, (position - visit.startMs) / Math.max(1, visit.endMs - visit.startMs)),
     );
     let tick: number;
-    if (t.settings?.tempoMode === 'fixed') tick = m.tick + (m.endTick - m.tick) * progress;
+    const mapped = practicePoints.get(visit.id);
+    if (mapped?.length) {
+      const i = Math.max(
+          0,
+          lastAt(mapped, position, (p) => p.atMs),
+        ),
+        a = mapped[i],
+        b = mapped[i + 1] ?? a;
+      const ratio =
+        b.atMs > a.atMs ? Math.max(0, Math.min(1, (position - a.atMs) / (b.atMs - a.atMs))) : 0;
+      tick = a.tick + (b.tick - a.tick) * ratio;
+    } else if (t.settings?.tempoMode === 'fixed') tick = m.tick + (m.endTick - m.tick) * progress;
     else {
       const occurrence = occurrences.get(visit.occurrence),
         list = timePoints.get(visit.occurrence);

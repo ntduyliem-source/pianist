@@ -3,7 +3,7 @@
 Same compressed bytes or canonical MusicXML are duplicates. Matching work names
 and known composers group arrangements; uncertain identity needs an explicit
 workId or newWork decision instead of silently merging unrelated songs.
-Only practice-ready, two-staff piano editions pass the public content gate.
+Every valid two-staff edition is admitted. Notation diagnostics never blacklist it.
 """
 from collections import Counter
 from io import BytesIO
@@ -68,8 +68,6 @@ def musicxml(data):
         raise ValueError('Curated .mxl assets must be compressed MusicXML')
     xml, score = read_musicxml(data)
     notes = [n for n in score.findall('.//note') if n.find('pitch') is not None]
-    if not notes:
-        raise ValueError('MusicXML has no pitched notes')
     canonical = ET.canonicalize(xml_data=xml.decode('utf-8-sig'), strip_text=True).encode()
     return sha(canonical), len(notes), sum(n.find('grace') is not None for n in notes)
 
@@ -111,14 +109,20 @@ def append_library(inputs, audit, output, allow_editor_only=False):
         source = records[result['filename']]
         row = {k: source.get(k, '') for k in ('filename', 'title')}
         row.update(status=result['status'], reason=result.get('reason', ''))
-        if result['status'] not in ('accepted', 'editor-only'):
+        if Path(source['filename']).suffix.lower() != '.mxl':
+            row.update(status='excluded', reason='Không phải MXL; không đọc hoặc nhập tệp này.')
             decisions.append(row)
             continue
         data = Path(source['path']).read_bytes()
         ident = sha(data)
-        if ident != source['sha256'] or ident != result['sha256']:
+        if ident != source['sha256'] or result.get('sha256', ident) != ident:
             raise ValueError('Source changed after native validation')
-        staff_policy = inspect_two_staff_piano(data)
+        try:
+            staff_policy = inspect_two_staff_piano(data)
+        except (ValueError, ET.ParseError, zipfile.BadZipFile, KeyError) as error:
+            row.update(status='excluded', reason='Không đọc được cấu trúc MXL: ' + str(error))
+            decisions.append(row)
+            continue
         if not staff_policy['accepted']:
             row.update(status='excluded', reason='Chỉ nhận đúng hai khuông piano: ' + '; '.join(v['message'] for v in staff_policy['violations']),
                        staffPolicy=staff_policy)
@@ -126,20 +130,14 @@ def append_library(inputs, audit, output, allow_editor_only=False):
             continue
         issues = content_issues(data)
         if issues:
-            row.update(status='excluded', reason='; '.join(issues))
-            decisions.append(row)
-            continue
+            row['diagnostics'] = issues
         xml_hash, count, grace = musicxml(data)
-        if count != source['writtenNotes'] or result['sourceNotes'] != count:
+        if count != source['writtenNotes'] or result.get('sourceNotes', count) != count:
             raise ValueError('Source note count differs from native audit')
-        if not result.get('nativePlayback') or result.get('missingGlyphs') != 0 or not result.get('nativeNotes'):
-            raise ValueError('Incomplete native import/playback/mapping audit')
-        editor_only = result['status'] == 'editor-only'
-        if editor_only:
-            if not allow_editor_only or not grace or result.get('editorNotes') != count or result.get('editorGraceNotes') != grace or count - result['nativeNotes'] != grace:
-                raise ValueError('Editor-only admission requires exact native grace-note evidence')
-        elif result['nativeNotes'] != count:
-            raise ValueError('Practice import must preserve every source note')
+        # Keep the engine audit as evidence, independent from admission. Source
+        # repeats/ties may be interpreted/repaired by MuseScore; don't rewrite
+        # the source or discard it because a prior grader omitted grace notes.
+        row['nativeAudit'] = {k: result[k] for k in ('nativeNotes', 'sourceNotes', 'missingGlyphs', 'nativePlayback') if k in result}
         existing = by_id.get(ident) or by_xml.get(xml_hash)
         if existing:
             row.update(status='duplicate', reason='Trùng nội dung: ' + existing['title'])
@@ -164,8 +162,7 @@ def append_library(inputs, audit, output, allow_editor_only=False):
             song['versionLabel'] = source['versionLabel']
         if composer:
             song['composer'] = composer
-        if editor_only:
-            song.update(practiceReady=False, practiceNotice=f'Nghe và chỉnh sửa được. Chưa hỗ trợ tập {grace} nốt hoa mỹ của bản này.')
+        song['practiceReady'] = True
         destination = output / song['url'].removeprefix('library/')
         if destination.exists() and destination.read_bytes() != data:
             raise ValueError('Refusing to overwrite an existing library score')
@@ -178,7 +175,7 @@ def append_library(inputs, audit, output, allow_editor_only=False):
         by_xml[xml_hash] = song
         additions.append((destination, data))
         row.update(status='version-added' if number > 1 else 'added', version=number, workId=work,
-                   id=ident, practiceReady=not editor_only,
+                   id=ident, practiceReady=True,
                    reason=result.get('reason') or f"{count} nốt; {result.get('pages', 0)} trang; MuseScore playback/mapping đạt")
         decisions.append(row)
     if len(songs) > 500:

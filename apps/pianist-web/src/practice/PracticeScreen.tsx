@@ -1282,9 +1282,10 @@ export function Practice({
                 Perfect ±{windows.perfect} ms · Great ±{windows.great} ms. Nhả phím theo MuseScore
                 và mir_eval; pedal nhị phân, chưa chấm half-pedal.
               </p>
-              {!!snapshot.warnings.length && (
+              {!!snapshot.warnings.length && snapshot.performance && (
                 <p>
-                  Ký hiệu: {snapshot.warnings.join(', ')}. Chưa mở rộng ornament hoặc rải hợp âm.
+                  Bài tập gồm cả nốt hoa mỹ, nốt trang trí và hợp âm rải theo cách phát của
+                  MuseScore. Pedal không có chỉ dẫn rõ sẽ không được tính điểm.
                 </p>
               )}
             </details>

@@ -20,9 +20,9 @@ test('library requires exactly two structural piano staves, independent of clefs
     soundId: 'wind.flutes.flute',
     programs: [73],
   });
-  assert.throws(() => requireLibraryScore({ staves }), /nhạc cụ khác/);
+  assert.doesNotThrow(() => requireLibraryScore({ staves }));
   Reflect.deleteProperty(staves[1], 'instruments');
-  assert.throws(() => requireLibraryScore({ staves }), /tải lại/);
+  assert.doesNotThrow(() => requireLibraryScore({ staves }));
 });
 
 test('saving and restoring reject invalid scores before any library mutation', async () => {

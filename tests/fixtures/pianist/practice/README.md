@@ -53,3 +53,13 @@ staccatissimo D4, half-note E4, a descending C/E/G arpeggio and trill D4.
 The obsolete snapshot and invented duration/arpeggio expectations were removed
 with the V2 cutover. Native now exports raw articulations. This file supplies
 notation input, not an oracle for musical duration or expression judgement.
+
+## MPE reference captures, 24 October 2026
+
+`special-symbols-mpe-snapshot.json` and `pedal-duration-mpe-snapshot.json` are
+captures of the current optimized native engine, taken by
+`tests/browser/pianist/two-staff-upgrade.cjs`. The runner compares every MPE
+pitch/onset/offset/source identity against the real sample-playback event list
+and checks SVG keys, then strips the SVG strings from the stored snapshots.
+These supplement the historical written-note snapshots above; grace and
+ornament expansions now participate in both Wait and BPM grading.

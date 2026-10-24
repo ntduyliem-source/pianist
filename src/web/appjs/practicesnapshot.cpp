@@ -45,6 +45,18 @@ static QJsonObject box(const muse::RectF& r)
     return {{"x", r.x()}, {"y", r.y()}, {"width", r.width()}, {"height", r.height()}};
 }
 
+// Keep main-note IDs stable. Grace notes belong to their principal chord but
+// have their own engraving geometry and MPE source identity.
+static std::vector<std::pair<const engraving::Chord*, QString>> practiceChords(const engraving::Chord* chord)
+{
+    std::vector<std::pair<const engraving::Chord*, QString>> result { { chord, "" } };
+    int index = 0;
+    for (const auto* grace : chord->graceNotes()) {
+        result.emplace_back(grace, QString("-g%1").arg(index++));
+    }
+    return result;
+}
+
 bool WebApi::getSnapshot()
 {
     return snapshotFor(m_currentProject, true, "onPracticeSnapshot");
@@ -70,11 +82,13 @@ static QJsonObject playbackNotesFor(const project::INotationProjectPtr& project,
             for (const auto* element : segment->elist()) {
                 if (!element || !element->isChord()) { continue; }
                 const auto* chord = engraving::toChord(element);
+                for (const auto& [sourceChord, suffix] : practiceChords(chord)) {
                 int n = 0;
-                for (const auto* note : chord->notes()) {
+                for (const auto* note : sourceChord->notes()) {
                     const auto key = reinterpret_cast<uintptr_t>(note);
-                    ids[key] = QString("m%1-t%2-v%3-n%4").arg(measureIndex).arg(segment->tick().ticks()).arg(chord->track()).arg(n++);
+                    ids[key] = QString("m%1-t%2-v%3%4-n%5").arg(measureIndex).arg(segment->tick().ticks()).arg(chord->track()).arg(suffix).arg(n++);
                     sources[key] = note;
+                }
                 }
             }
         }
@@ -93,7 +107,7 @@ static QJsonObject playbackNotesFor(const project::INotationProjectPtr& project,
     QJsonArray events, midi;
     int trackIndex = 0;
     for (const auto& track : playback->existingTrackIdSet()) {
-        if (sampled && (track == playback->metronomeTrackId() || playback->isChordSymbolsTrack(track))) { continue; }
+        if (track == playback->metronomeTrackId() || playback->isChordSymbolsTrack(track)) { continue; }
         if (sampled) {
             const auto& data = playback->trackPlaybackData(track);
             muse::audio::synth::FluidSequencer sequencer;
@@ -143,11 +157,16 @@ static QJsonObject playbackNotesFor(const project::INotationProjectPtr& project,
                     for (const auto& visit : visitsByMeasure[found->second->chord()->measure()]) {
                         if (from >= visit.endMs || to <= visit.startMs) { continue; }
                         spans.append(QJsonObject{{"anchor", id}, {"occurrence", visit.index},
-                            {"atMs", std::max(from, visit.startMs)}, {"endMs", std::min(to, visit.endMs)}});
+                            {"atMs", std::max(from, visit.startMs)}, {"endMs", std::min(to, visit.endMs)},
+                            {"utick", score->repeatList().utime2utick(std::max(from, visit.startMs) / 1000.0)},
+                            {"endUtick", score->repeatList().utime2utick(std::min(to, visit.endMs) / 1000.0)}});
                     }
                 }
                 events.append(QJsonObject{{"anchors", anchors}, {"spans", spans}, {"atMs", start},
-                    {"endMs", end}, {"pitch", int(std::clamp(muse::mpe::ZERO_PITCH_LEVEL_MIDI_EQUIVALENT
+                    {"endMs", end},
+                    {"utick", score->repeatList().utime2utick(start / 1000.0)},
+                    {"endUtick", score->repeatList().utime2utick(end / 1000.0)},
+                    {"pitch", int(std::clamp(muse::mpe::ZERO_PITCH_LEVEL_MIDI_EQUIVALENT
                         + event->pitchCtx().nominalPitchLevel / float(muse::mpe::PITCH_LEVEL_STEP), 0.f, 127.f))}});
                 if (events.size() > 200000) { return {}; }
             }
@@ -317,16 +336,18 @@ bool WebApi::snapshotFor(const project::INotationProjectPtr& project, bool drawi
                     if (articulation->isOrnament()) { warnings.insert("ornament"); unsupportedChord("ornament"); }
                     articulations.append(articulation->articulationName().toQString());
                 }
+                for (const auto& [sourceChord, suffix] : practiceChords(chord)) {
                 int n = 0;
-                for (const auto* note : chord->notes()) {
-                    const auto id = QString("m%1-t%2-v%3-n%4").arg(measureIndex).arg(segment->tick().ticks()).arg(chord->track()).arg(n++);
+                for (const auto* note : sourceChord->notes()) {
+                    const auto id = QString("m%1-t%2-v%3%4-n%5").arg(measureIndex).arg(segment->tick().ticks()).arg(chord->track()).arg(suffix).arg(n++);
                     noteIds[note] = id;
                     const auto pos = note->pagePos();
                     QJsonObject data{{"id", id}, {"pitch", note->ppitch()}, {"tick", segment->tick().ticks()},
-                                     {"durationTicks", chord->actualTicks().ticks()}, {"measure", measureIndex},
-                                     {"staff", static_cast<int>(chord->staffIdx())}, {"visualStaff", static_cast<int>(chord->vStaffIdx())},
-                                     {"voice", static_cast<int>(chord->voice())}, {"track", static_cast<int>(chord->track())},
+                                     {"durationTicks", sourceChord->actualTicks().ticks()}, {"measure", measureIndex},
+                                     {"staff", static_cast<int>(sourceChord->staffIdx())}, {"visualStaff", static_cast<int>(sourceChord->vStaffIdx())},
+                                     {"voice", static_cast<int>(sourceChord->voice())}, {"track", static_cast<int>(sourceChord->track())},
                                      {"page", page}, {"visible", note->visible()}, {"play", note->play()},
+                                     {"grace", !suffix.isEmpty()},
                                      {"articulations", articulations},
                                      {"box", box(muse::RectF(pos.x() - 2, pos.y() - note->headHeight() / 2 - 2,
                                                             note->headWidth() + 4, note->headHeight() + 4))}};
@@ -340,6 +361,7 @@ bool WebApi::snapshotFor(const project::INotationProjectPtr& project, bool drawi
                     notes[note] = data;
                     if (!drawings) { notes[note]["spelling"] = note->tpc(); notes[note]["userVelocity"] = note->userVelocity(); }
                     if (notes.size() > 50000) { return false; }
+                }
                 }
             }
         }
@@ -455,13 +477,17 @@ bool WebApi::snapshotFor(const project::INotationProjectPtr& project, bool drawi
     }
     QJsonArray warningList;
     for (const auto& warning : warnings) { warningList.append(warning); }
+    // The same MPE events used by FluidSequencer and the listening highlight.
+    // Do not invent timings or expand ornaments in the web grading adapter.
+    const auto performance = playbackNotesFor(project, {}, m_revision, false);
     QJsonObject result{{"schemaVersion", 1}, {"revision", static_cast<int>(m_revision)},
                              {"title", notation->workTitle()}, {"baseQuarterBpm", score->tempo(engraving::Fraction(0, 1)).val * 60},
                              {"durationMs", repeats.utick2utime(repeats.ticks()) * 1000}, {"staves", staves},
                              {"pages", pages}, {"measures", measures}, {"anchors", anchors}, {"occurrences", occurrences},
                              {"performed", performed}, {"beats", beats}, {"warnings", warningList},
                              {"cursorSegments", cursorSegments}, {"timeMap", timeMap}, {"tempos", tempos}, {"unsupported", unsupported},
-                             {"durationReference", "musescore-midi"}, {"keyReleases", keyReleases}, {"pedals", pedals}};
+                             {"durationReference", "musescore-midi"}, {"keyReleases", keyReleases}, {"pedals", pedals},
+                             {"performance", performance}};
     if (!drawings) { result["rests"] = rests; result["keys"] = keys; result["slurs"] = slurs; result["dynamics"] = dynamics; }
     const auto json = QJsonDocument(result).toJson(QJsonDocument::Compact);
     emscripten::val::module_property(callback)(json.toStdString());

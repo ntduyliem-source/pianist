@@ -3,6 +3,8 @@
 import type {ScoreSnapshot} from '../score-contracts/index';
 import {ENGINE_ID, type Hand, type PracticeSettings, type Target, type Timeline} from './model';
 import {attachReleaseReferences} from './reference-adapter-r4';
+import {nativePerformanceTargets} from './native-performance';
+import {nativeVisitClock} from './native-time';
 
 export function settingsFor(score: ScoreSnapshot): PracticeSettings {
   const roles: Record<number, Hand> = {};
@@ -30,7 +32,7 @@ export function validateSettings(c: PracticeSettings, score: ScoreSnapshot): voi
 
 export function createTimeline(score: ScoreSnapshot, settings: PracticeSettings): Timeline {
   const c = structuredClone(settings); validateSettings(c, score);
-  if(c.mode==='bpm'){
+  if(c.mode==='bpm'&&!score.performance){
     const selectedWritten=(measure:number,staff?:number,voice?:number)=>measure>=c.fromMeasure&&measure<=c.toMeasure
       &&(voice===undefined||c.voices.includes(voice))&&(staff===undefined||c.roles[staff]!=='off'&&(c.hand==='both'||c.roles[staff]===c.hand||c.accompaniment));
     const unsupported=score.unsupported?.filter(n=>selectedWritten(n.measure,n.staff,n.voice)
@@ -44,7 +46,7 @@ export function createTimeline(score: ScoreSnapshot, settings: PracticeSettings)
     }
     if(unsupported.length){
       const labels:Record<string,string>={arpeggio:'rải hợp âm',ornament:'nốt hoa mỹ',grace:'nốt luyến nhỏ',pause:'nghỉ có thời lượng riêng'};
-      throw Error(`Chưa chấm BPM cho đoạn có ${[...new Set(unsupported)].map(k=>labels[k]??k).join(', ')}${c.accompaniment?' ở tay tập hoặc tay đệm':''}. Hãy chọn đoạn khác${c.accompaniment?', tắt tay đệm nếu ký hiệu chỉ nằm ở tay đó':''} hoặc chuyển sang Đúng nốt; Nghe MuseScore vẫn phát đúng bản gốc.`);
+      throw Error(`Bản tập lưu cũ chưa có lịch MuseScore cho ${[...new Set(unsupported)].map(k=>labels[k]??k).join(', ')}. Mở lại bài để cập nhật bản tập.`);
     }
   }
   const measures = new Map(score.measures.map(m => [m.index, m]));
@@ -59,7 +61,7 @@ export function createTimeline(score: ScoreSnapshot, settings: PracticeSettings)
   const selected = score.occurrences.filter(o => o.measure >= c.fromMeasure && o.measure <= c.toMeasure);
   if (!selected.length) throw Error('Đoạn đã chọn không có trong lịch phát bản nhạc.');
   const timeline: Timeline = {version: 2, engine: ENGINE_ID, projectId: score.projectId, revision: score.revision,
-    fingerprint: score.fingerprint, settings: c, targets: [], groups: [], visits: [], clicks: [], guide: [], tempos: [], durationMs: 0, warnings: [...score.warnings]};
+    fingerprint: score.fingerprint, settings: c, targets: [], groups: [], visits: [], clicks: [], guide: [], tempos: [], timeMap: [], durationMs: 0, warnings: [...score.warnings]};
   const all: Target[] = [], guide: Target[] = [];
   let origin = 0;
   for (let loop = 0; loop < c.loops; loop++) {
@@ -75,25 +77,27 @@ export function createTimeline(score: ScoreSnapshot, settings: PracticeSettings)
       const measure = measures.get(occurrence.measure);
       if (!measure) throw Error('Snapshot thiếu ô nhịp.');
       const lengthQuarter = (measure.endTick - measure.tick) / 480;
-      const lengthMs = c.tempoMode === 'fixed' ? lengthQuarter * quarterMs : (occurrence.endMs - occurrence.startMs) * tempoScale;
+      const clock=nativeVisitClock(score,c,occurrence,loop);
+      const lengthMs = clock.lengthMs;
       if (!(lengthMs > 0) || !Number.isFinite(lengthMs)) throw Error('Lịch thời gian của bản nhạc không hợp lệ.');
       const visit = {id: timeline.visits.length, loop, occurrence: occurrence.index, measure: occurrence.measure, startMs: origin, endMs: origin + lengthMs};
       timeline.visits.push(visit);
+      for(const point of clock.points)timeline.timeMap!.push({visit:visit.id,tick:point.tick,atMs:origin+point.elapsed});
       if(c.tempoMode==='fixed')timeline.tempos!.push({atMs:origin,bpm});
       else{
         const tempos=score.tempos?.filter(p=>p.occurrence===occurrence.index)??[];
         // Native snapshots include the tempo at every occurrence start, not
         // just explicit marks, so cuts and repeats retain their actual tempo.
-        for(const p of tempos)timeline.tempos!.push({atMs:origin+(p.atMs-occurrence.startMs)*tempoScale,bpm:p.quarterBpm/tempoScale/c.beatQuarter});
+        for(const p of tempos)timeline.tempos!.push({atMs:origin+clock.at(p.atMs),bpm:p.quarterBpm/tempoScale/c.beatQuarter});
       }
       if (c.tempoMode === 'fixed') {
         for (let unit = 0; unit * c.beatQuarter < lengthQuarter - 1e-9; unit++) timeline.clicks.push({atMs: origin + unit * c.beatQuarter * quarterMs, accent: unit === 0});
       } else {
         const beats = (nativeClicks.get(occurrence.index) ?? []).filter(b => (b.beatQuarter ?? 1) === c.beatQuarter);
         if (!beats.length) throw Error('Snapshot thiếu lưới phách từ MuseScore. Hãy tạo lại bản tập.');
-        for (const beat of beats) timeline.clicks.push({atMs: origin + (beat.atMs - occurrence.startMs) * tempoScale, accent: beat.accent});
+        for (const beat of beats) timeline.clicks.push({atMs: origin + clock.at(beat.atMs), accent: beat.accent});
       }
-      for (const item of [...performed.get(occurrence.index) ?? []].sort((a, b) => a.atMs - b.atMs || a.anchor.localeCompare(b.anchor))) {
+      for (const item of (score.performance?[]:[...performed.get(occurrence.index) ?? []]).sort((a, b) => a.atMs - b.atMs || a.anchor.localeCompare(b.anchor))) {
         const note = anchors.get(item.anchor);
         if (!note || !note.play || note.durationTicks <= 0) continue;
         const role = c.roles[note.staff] ?? 'off';
@@ -123,6 +127,7 @@ export function createTimeline(score: ScoreSnapshot, settings: PracticeSettings)
     }
     if (loop < c.loops - 1) origin += 60000 / bpm;
   }
+  if(score.performance){const native=nativePerformanceTargets(score,timeline);all.push(...native.targets);guide.push(...native.guide);}
   const identity = (note: Target) => `${note.loop}/${note.atMs}/${note.pitch}`;
   const merge = (notes: Target[]) => {
     const physical = new Map<string, Target>();
@@ -131,6 +136,7 @@ export function createTimeline(score: ScoreSnapshot, settings: PracticeSettings)
       if (!prior) physical.set(key, note);
       else {
         prior.endMs = Math.max(prior.endMs, note.endMs); prior.anchors.push(...note.anchors); prior.spans.push(...note.spans);
+        if(note.releaseMs!==undefined)prior.releaseMs=Math.max(prior.releaseMs??0,note.releaseMs);
         prior.roles = [...new Set([...prior.roles, ...note.roles])]; prior.voices = [...new Set([...prior.voices, ...note.voices])];
       }
     }
@@ -149,6 +155,18 @@ export function createTimeline(score: ScoreSnapshot, settings: PracticeSettings)
     else timeline.groups.push({atMs: target.atMs, ids: [target.id]});
   }
   attachReleaseReferences(score,timeline);
+  if(score.performance){
+    // MPE preserves independent voices. A physical piano key cannot remain
+    // held while the same key is struck again. Keep both native attacks and
+    // their sounding spans, but do not certify an impossible key-hold offset.
+    // No replacement duration or tolerance is invented for these conflicts.
+    const nextAttack=new Map<number,number>();
+    for(const target of [...timeline.targets].reverse()){
+      const next=nextAttack.get(target.pitch);
+      if(next!==undefined&&target.releaseMs!==undefined&&target.releaseMs>next)target.releaseMs=undefined;
+      nextAttack.set(target.pitch,target.atMs);
+    }
+  }
   if(timeline.guide.length)attachReleaseReferences(score,{...timeline,targets:timeline.guide});
   return timeline;
 }

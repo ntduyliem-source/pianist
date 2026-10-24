@@ -43,6 +43,11 @@ class LibraryStaffPolicyTests(unittest.TestCase):
     def codes(self, data):
         return {v['code'] for v in inspect_two_staff_piano(data)['violations']}
 
+    def warnings(self, data):
+        proof = inspect_two_staff_piano(data)
+        self.assertTrue(proof['accepted'])
+        return {v['code'] for v in proof['warnings']}
+
     def test_grand_staff_and_two_piano_parts_are_equivalent_structurally(self):
         for xml in (score(), score((1, 1), (1, 1))):
             for data in (xml, mxl(xml)):
@@ -71,30 +76,30 @@ class LibraryStaffPolicyTests(unittest.TestCase):
         for xml in (score((1,)), score((3,)), score((1, 2), (1, 1))):
             self.assertIn('staff-count', self.codes(xml))
 
-    def test_two_instrument_ensemble_does_not_pass_by_total_staff_count(self):
+    def test_two_staff_admission_does_not_depend_on_instrument_metadata(self):
         xml = score((1, 1), (74, 41), ['Flute', 'Violin'])
-        self.assertIn('non-piano-instrument', self.codes(xml))
+        self.assertIn('non-piano-instrument', self.warnings(xml))
         self.assertNotIn('staff-count', self.codes(xml))
 
-    def test_piano_labels_do_not_override_non_piano_program_or_sound(self):
-        self.assertIn('non-piano-instrument', self.codes(score(programs=(41,))))
+    def test_instrument_conflicts_remain_diagnostics_without_discarding_music(self):
+        self.assertIn('non-piano-instrument', self.warnings(score(programs=(41,))))
         xml = score().replace(b'<instrument-name>Piano</instrument-name>', b'<instrument-name>Piano</instrument-name><instrument-sound>strings.violin</instrument-sound>')
-        self.assertIn('non-piano-instrument', self.codes(xml))
+        self.assertIn('non-piano-instrument', self.warnings(xml))
         xml = score(labels=['Violin'])
-        self.assertIn('non-piano-instrument', self.codes(xml))
-        self.assertIn('non-piano-instrument', self.codes(score(labels=['Piano and Violin'])))
+        self.assertIn('non-piano-instrument', self.warnings(xml))
+        self.assertIn('non-piano-instrument', self.warnings(score(labels=['Piano and Violin'])))
 
     def test_positive_evidence_accepts_translated_and_unnamed_piano(self):
         for label in ('', 'Part_1', 'Фортепиано', 'Đại dương cầm', 'Klavier'):
             self.assertTrue(inspect_two_staff_piano(score(labels=[label]))['accepted'])
         self.assertTrue(inspect_two_staff_piano(score(programs=(None,), labels=['Piano']))['accepted'])
-        self.assertIn('unidentified-instrument', self.codes(score(programs=(None,), labels=['Part_1'])))
+        self.assertIn('unidentified-instrument', self.warnings(score(programs=(None,), labels=['Part_1'])))
 
-    def test_later_instrument_change_and_unknown_note_instrument_fail(self):
+    def test_later_instrument_change_and_unknown_note_instrument_are_diagnostics(self):
         xml = score().replace(b'</measure>', b'<direction><sound><midi-instrument id="I0"><midi-program>41</midi-program></midi-instrument></sound></direction></measure>')
-        self.assertIn('non-piano-instrument', self.codes(xml))
+        self.assertIn('non-piano-instrument', self.warnings(xml))
         xml = score().replace(b'</note>', b'<instrument id="missing"/></note>')
-        self.assertIn('unidentified-instrument', self.codes(xml))
+        self.assertIn('unidentified-instrument', self.warnings(xml))
 
     def test_invalid_note_or_clef_staff_reference_cannot_hide_third_staff(self):
         self.assertIn('invalid-staff-reference', self.codes(score().replace(b'<staff>1</staff>', b'<staff>3</staff>')))

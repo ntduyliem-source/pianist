@@ -42,11 +42,11 @@ test('native tempo changes keep their BPM at a cut, repeat and selected beat uni
 });
 test('BPM refuses unsupported selected musical events without penalising a played native arpeggio; Wait and other hands remain available',()=>{
  const s=unison();s.unsupported=[{kind:'arpeggio',measure:0,staff:0,voice:0}];
- const c={...settingsFor(s),mode:'bpm' as const};assert.throws(()=>createTimeline(s,c),/Chưa chấm BPM.*rải hợp âm/);
+ const c={...settingsFor(s),mode:'bpm' as const};assert.throws(()=>createTimeline(s,c),/Bản tập lưu cũ.*rải hợp âm/);
  assert.doesNotThrow(()=>createTimeline(s,{...c,hand:'left'}));assert.doesNotThrow(()=>createTimeline(s,{...c,mode:'wait'}));
  for(const kind of ['arpeggio','ornament','grace'] as const){
   s.unsupported=[{kind,measure:0,staff:0,voice:0}];
-  assert.throws(()=>createTimeline(s,{...c,hand:'left',accompaniment:true}),/tay đệm.*tắt tay đệm/);
+  assert.throws(()=>createTimeline(s,{...c,hand:'left',accompaniment:true}),/Bản tập lưu cũ/);
   assert.doesNotThrow(()=>createTimeline(s,{...c,hand:'left',accompaniment:false}));
   s.unsupported=[{kind,measure:0,staff:0,voice:1}];
   assert.doesNotThrow(()=>createTimeline(s,{...c,hand:'left',accompaniment:true,voices:[0]}));

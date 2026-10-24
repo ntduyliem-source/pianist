@@ -18,7 +18,10 @@ const root=path.resolve(__dirname,'../../..'),out=path.join(root,'artifacts/nati
   await page.getByRole('button',{name:'Tập bài này',exact:true}).click();await page.getByTestId('practice-v2').waitFor();await idle();
   const snapshot=await page.evaluate(()=>{const a=window.pianist,old=a.Module.onPracticeSnapshot;let s;a.Module.onPracticeSnapshot=j=>s=JSON.parse(j);try{if(!a.getPracticeSnapshot())throw Error('snapshot');return s;}finally{a.Module.onPracticeSnapshot=old;}});
   assert.equal(snapshot.pages.length,6);assert(snapshot.cursorSegments.length>100);assert(snapshot.timeMap.length>100);
-  await settings();await page.getByRole('combobox',{name:'Thu phóng trong thiết lập'}).selectOption('fit');await close();
+  await settings();await page.getByRole('combobox',{name:'Thu phóng trong thiết lập'}).selectOption('fit');
+  // Programmatic inspection does not emit the wheel/touch gesture that normally
+  // suspends following. Disable it while inspecting every off-screen page.
+  await page.getByRole('dialog').getByRole('checkbox',{name:'Cuộn theo nhạc',exact:true}).uncheck();await close();
   await page.getByRole('button',{name:'Chỉ bản nhạc',exact:true}).click();
   for(const p of snapshot.pages){
    const block=page.locator(`.practice-system[data-page="${p.index}"]`);await block.scrollIntoViewIfNeeded();
@@ -31,6 +34,7 @@ const root=path.resolve(__dirname,'../../..'),out=path.join(root,'artifacts/nati
   const second=page.locator('.practice-system[data-page="1"]');
   await second.evaluate(el=>{const scroll=document.getElementById('sheet-scroll'),r=el.getBoundingClientRect(),v=scroll.getBoundingClientRect();scroll.scrollTop+=r.bottom-v.bottom;});
   await page.screenshot({path:path.join(out,'tinh-page2-pedal.png')});
+  await settings();await page.getByRole('dialog').getByRole('checkbox',{name:'Cuộn theo nhạc',exact:true}).check();await close();
   // At reference time zero the first rest supplies the native ChordRest X.
   await page.getByRole('button',{name:'Nghe đoạn',exact:true}).click();
   await page.getByRole('alert').filter({hasText:'ngoài piano nhẹ'}).first().waitFor();

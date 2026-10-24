@@ -144,7 +144,7 @@ export function Results({ result: r }: { result: SavedAttempt }) {
       </div>
       <p className="muted">
         Nguồn: osu! 676f3b0 · Piano Trainer Studio b40e412 · mir_eval fe73b35 · Magenta note-seq
-        3582550. Nhả phím theo MuseScore MIDI; pedal nhị phân CC64.
+        3582550. Nhả phím theo lịch phát MuseScore; pedal nhị phân CC64.
       </p>
       {r.r4 ? (
         <ReleaseResults result={r} />

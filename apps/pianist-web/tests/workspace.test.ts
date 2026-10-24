@@ -17,13 +17,18 @@ function mockSession(workspace: Workspace, status: PracticeController['status'],
   workspace.sessions.install({ status, dispose, onChange: () => {} } as PracticeController);
 }
 
-test('editor-only bundled versions cannot enter practice through the card or editor shortcut',async()=>{
+test('old editor-only metadata no longer blocks the practice shortcut',async()=>{
   const workspace=new Workspace(),bytes=new TextEncoder().encode('native score with grace');
   const sha=Buffer.from(await crypto.subtle.digest('SHA-256',bytes)).toString('hex');
-  const score:BundledScore={id:sha,sha256:sha,bytes:bytes.length,title:'Version two',filename:'Version two — v2.mxl',url:'library/songs/version-two-v2.mxl',practiceReady:false,practiceNotice:'Chưa hỗ trợ tập nốt hoa mỹ.'};
-  workspace.patch({bundledScores:[score],current:{id:'limited-version',title:score.title,filename:'two.mscz',sourceName:score.filename,source:bytes,bytes:new Uint8Array(),revision:1,createdAt:0,updatedAt:0}});
-  await assert.rejects(workspace.openBundledScore(score,true),/nốt hoa mỹ/);
-  await assert.rejects(workspace.practice(),/nốt hoa mỹ/);
+  const score:BundledScore={id:sha,sha256:sha,bytes:bytes.length,title:'Version two',filename:'Version two.mxl',url:'library/songs/version-two.mxl',practiceReady:false,practiceNotice:'Chưa hỗ trợ tập nốt hoa mỹ.'};
+  workspace.patch({bundledScores:[score],current:{id:'readmitted',title:score.title,filename:'two.mscz',sourceName:score.filename,source:bytes,bytes,revision:1,createdAt:0,updatedAt:0}});
+  const snapshot=scoreFixture();snapshot.staves.push({id:1,part:'Piano',partId:'p'});
+  let generated=false;
+  workspace.autosave=async()=>{};
+  (workspace as unknown as {measureDiagnostic:()=>void}).measureDiagnostic=()=>{};
+  workspace.bridge={setPractice(){},async cancellableSnapshot(){generated=true;return snapshot;}} as unknown as EngineBridge;
+  workspace.navigate=view=>workspace.patch({view});
+  await workspace.practice();assert.equal(generated,true);assert.equal(workspace.state.view,'practice');
 });
 
 test('reselecting grade practice navbar never releases held MIDI during a running attempt',()=>{

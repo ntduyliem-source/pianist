@@ -39,10 +39,10 @@ const geometry = new Set([
   'opacity',
   'vector-effect',
 ]);
-const keyPattern = /^t\d+-v\d+-n\d+$/;
+const keyPattern = /^t\d+-v\d+(?:-g\d+)?-n\d+$/;
 
 export function noteSvgKey(anchor: string) {
-  return /^m\d+-(t\d+-v\d+-n\d+)$/.exec(anchor)?.[1];
+  return /^m\d+-(t\d+-v\d+(?:-g\d+)?-n\d+)$/.exec(anchor)?.[1];
 }
 
 export function parseNativeGlyphs(svg: string): NativeGlyph[] {

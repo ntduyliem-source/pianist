@@ -155,7 +155,7 @@ static QString getClass(const mu::engraving::EngravingItem* e)
 // Written-note identity, shared with the t/voice/note suffix in the practice
 // snapshot. Emit it from the native owner, never infer it from SVG geometry.
 // A stem/hook belongs to the whole chord; heads, dots and accidentals keep
-// their individual note identity. Grace notes are not practice targets.
+// their individual note identity, including each grace chord.
 static QString practiceNoteKeys(const mu::engraving::EngravingItem* e)
 {
     using namespace mu::engraving;
@@ -168,12 +168,22 @@ static QString practiceNoteKeys(const mu::engraving::EngravingItem* e)
     if (!chord && (e->isStem() || e->isHook()) && e->explicitParent() && e->explicitParent()->isChord()) {
         chord = toChord(e->explicitParent());
     }
-    if (!chord || chord->isGrace()) { return {}; }
+    if (!chord) { return {}; }
+    QString suffix;
+    const Chord* principal = chord;
+    if (chord->isGrace()) {
+        if (!chord->explicitParent() || !chord->explicitParent()->isChord()) { return {}; }
+        principal = toChord(chord->explicitParent());
+        const auto& graces = principal->graceNotes();
+        const auto found = std::find(graces.begin(), graces.end(), chord);
+        if (found == graces.end()) { return {}; }
+        suffix = QString("-g%1").arg(std::distance(graces.begin(), found));
+    }
     QStringList keys;
     int index = 0;
     for (const auto* n : chord->notes()) {
         if ((!note || note == n) && n->visible()) {
-            keys.append(QString("t%1-v%2-n%3").arg(chord->tick().ticks()).arg(chord->track()).arg(index));
+            keys.append(QString("t%1-v%2%3-n%4").arg(principal->tick().ticks()).arg(principal->track()).arg(suffix).arg(index));
         }
         ++index;
     }

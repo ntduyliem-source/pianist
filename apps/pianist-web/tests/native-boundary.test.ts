@@ -86,6 +86,7 @@ test('current native contracts reject missing facts, invalid nested values and u
     'durationReference',
     'keyReleases',
     'pedals',
+    'performance',
   ];
   for (const key of missing) {
     const s = nativeSnapshot();

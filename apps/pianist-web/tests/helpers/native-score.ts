@@ -33,6 +33,8 @@ export function nativeSnapshot(revision = 0): NativePracticeSnapshot {
     durationReference: 'musescore-midi',
     keyReleases: [],
     pedals: [],
+    performance: {source:'musescore-mpe',events:[{anchors:['n'],pitch:60,atMs:500,endMs:975,utick:480,endUtick:936,
+      spans:[{anchor:'n',occurrence:0,atMs:500,endMs:975,utick:480,endUtick:936}]}]},
   };
 }
 export function nativeSemantics(revision = 0): NativeScoreSemantics {

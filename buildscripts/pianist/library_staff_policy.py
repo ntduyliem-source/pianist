@@ -2,7 +2,7 @@
 
 Count structural staves over the complete score. Two separate piano parts are
 valid; clefs, rests, hidden empty staves and simultaneous hand activity do not
-change the count. Instrument evidence is checked independently of staff count.
+change the count. Instrument evidence is diagnostic and cannot veto two staves.
 """
 from io import BytesIO
 import re
@@ -10,7 +10,7 @@ import unicodedata
 from xml.etree import ElementTree as ET
 import zipfile
 
-POLICY_VERSION = 'piano-two-staves-v1'
+POLICY_VERSION = 'two-staves-v2'
 MAX_SCORE_BYTES = 32 * 1024**2
 PIANO_PROGRAMS = frozenset(range(1, 7))  # MusicXML uses one-based General MIDI.
 PIANO_LABEL = re.compile(r'\b(?:piano|pianoforte|fortepiano|klavier|fl[uü]gel|pno)\b|фортепиано|пианино|钢琴|鋼琴|ピアノ|피아노|dương cầm', re.I)
@@ -78,10 +78,13 @@ def instrument_evidence(definition):
 def inspect_two_staff_piano(data):
     """Return a serializable decision and reasons. Malformed XML is not repaired."""
     _, score = read_musicxml(data)
-    proof = {'policyVersion': POLICY_VERSION, 'accepted': False, 'totalStaves': 0, 'parts': [], 'violations': []}
+    proof = {'policyVersion': POLICY_VERSION, 'accepted': False, 'totalStaves': 0, 'parts': [], 'violations': [], 'warnings': []}
 
     def reject(code, message, **context):
-        proof['violations'].append({'code': code, 'message': message, **context})
+        # Instrument labels/programs are descriptive metadata, not a reason to
+        # discard a structurally valid two-staff score (user policy 2026-10-24).
+        target = 'warnings' if code in ('non-piano-instrument', 'unidentified-instrument', 'unpitched-notes') else 'violations'
+        proof[target].append({'code': code, 'message': message, **context})
 
     definitions = score.findall('part-list/score-part')
     parts = score.findall('part')

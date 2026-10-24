@@ -165,6 +165,7 @@ function nativeScore(value: unknown, drawings: boolean, expectedRevision?: numbe
     if (row.arpeggio !== undefined && row.arpeggio !== 'up' && row.arpeggio !== 'down')
       invalid(p + '.arpeggio');
     if (row.arpeggioGroup !== undefined) string(row.arpeggioGroup, p + '.arpeggioGroup');
+    if (row.grace !== undefined) boolean(row.grace, p + '.grace');
     if (row.userVelocity !== undefined || !drawings)
       number(row.userVelocity, p + '.userVelocity', true);
     if (row.spelling !== undefined || !drawings) number(row.spelling, p + '.spelling', true);
@@ -184,6 +185,25 @@ function nativeScore(value: unknown, drawings: boolean, expectedRevision?: numbe
     reference(row.occurrence, occurrenceIds, p + '.occurrence');
     interval(row, 'atMs', 'endMs', p);
   });
+  {
+    const performance = object(root.performance, 'performance');
+    if (performance.source !== 'musescore-mpe') invalid('performance.source');
+    if (array(performance.events, 'performance.events').length > 200000) invalid('performance.events limit');
+    rows(performance, 'events', (row, p) => {
+      fields(row, ['pitch', 'utick', 'endUtick'], p, true);
+      if ((row.pitch as number) < 0 || (row.pitch as number) > 127) invalid(p + '.pitch');
+      interval(row, 'atMs', 'endMs', p);
+      interval(row, 'utick', 'endUtick', p);
+      array(row.anchors, p + '.anchors').forEach(id => reference(id, anchorIds, p + '.anchor'));
+      rows(row, 'spans', (span, s) => {
+        reference(span.anchor, anchorIds, s + '.anchor');
+        reference(span.occurrence, occurrenceIds, s + '.occurrence');
+        interval(span, 'atMs', 'endMs', s);
+        fields(span, ['utick','endUtick'], s, true);
+        interval(span, 'utick', 'endUtick', s);
+      });
+    });
+  }
   rows(root, 'beats', (row, p) => {
     number(row.atMs, p + '.atMs');
     reference(row.occurrence, occurrenceIds, p + '.occurrence');

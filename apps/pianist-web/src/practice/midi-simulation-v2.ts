@@ -9,12 +9,24 @@ export function simulateMidi(
   releaseReference = false,
 ) {
   if (router.deviceId !== 'virtual') throw Error('Chọn bàn phím ảo trước khi mô phỏng.');
+  // Separate score voices can overlap on one piano key. The virtual device
+  // must release that key before striking it again, just like physical MIDI.
+  const nextAttack = new Map<number, number>();
+  const releaseAt = new Map<string, number>();
+  for (const n of [...controller.timeline.targets].reverse()) {
+    releaseAt.set(
+      n.id,
+      Math.min(
+        releaseReference ? (n.releaseMs ?? n.endMs) : n.atMs + deltaMs + 20,
+        nextAttack.get(n.pitch) ?? Infinity,
+      ),
+    );
+    nextAttack.set(n.pitch, n.atMs + deltaMs);
+  }
   const events = controller.timeline.targets.flatMap((n) => [
     { at: n.atMs + deltaMs + controller.timeline.settings.offsetMs, bytes: [0x90, n.pitch, 90] },
     {
-      at:
-        (releaseReference ? (n.releaseMs ?? n.endMs) : n.atMs + deltaMs + 20) +
-        controller.timeline.settings.offsetMs,
+      at: releaseAt.get(n.id)! + controller.timeline.settings.offsetMs,
       bytes: [0x80, n.pitch, 0],
     },
   ]);

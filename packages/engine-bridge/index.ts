@@ -249,6 +249,8 @@ export class EngineBridge {
       pedals: raw.pedals,
       tempos: raw.tempos,
       unsupported: raw.unsupported,
+      performance: raw.performance,
+      timeMap: raw.timeMap,
     });
     if (request !== this.request || revision !== this.revision) throw Error('Đã hủy snapshot cũ.');
     return { ...raw, projectId, fingerprint };

@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {loadBundledScore,parseBundledCatalog,groupBundledScores,selectBundledVersion,bundledVersionLabel,matchesBundledWork,bundledPracticeNotice,type BundledScore} from '../src/platform/bundled-library';
+import {loadBundledScore,parseBundledCatalog,groupBundledScores,selectBundledVersion,bundledVersionLabel,matchesBundledWork,type BundledScore} from '../src/platform/bundled-library';
 const song:BundledScore={id:'a'.repeat(64),sha256:'a'.repeat(64),bytes:12,title:'Em ơi Hà Nội phố',filename:'Em ơi Hà Nội phố.mxl',url:'library/songs/em-oi-ha-noi-pho.mxl'};
 test('bundled library keeps Vietnamese titles and rejects duplicate or unsafe catalog entries',()=>{
   assert.equal(parseBundledCatalog({schemaVersion:1,songs:[song]})[0].title,song.title);
@@ -37,14 +37,6 @@ test('a selected alternate downloads its own bytes without requiring a one-item 
     globalThis.fetch=async url=>{requested=String(url);return new Response(bytes);};
     assert.deepEqual(await loadBundledScore(entry),bytes);assert.equal(requested,entry.url);
   }finally{globalThis.fetch=original;}
-});
-test('editor-only practice notice binds to the exact source bytes and version filename',async()=>{
-  const bytes=new TextEncoder().encode('source with grace'),sha=Buffer.from(await crypto.subtle.digest('SHA-256',bytes)).toString('hex');
-  const entry={...song,id:sha,sha256:sha,bytes:bytes.length,practiceReady:false,practiceNotice:'Chưa hỗ trợ tập nốt hoa mỹ.'};
-  assert.equal(await bundledPracticeNotice([entry],entry.filename,bytes),entry.practiceNotice);
-  assert.equal(await bundledPracticeNotice([entry],entry.filename,new Uint8Array(bytes.length)),undefined);
-  assert.equal(await bundledPracticeNotice([entry],'other.mxl',bytes),undefined);
-  assert.equal(await bundledPracticeNotice([{...entry,practiceReady:true}],entry.filename,bytes),undefined);
 });
 test('bundled song download verifies both size and SHA before import',async()=>{
   const original=globalThis.fetch,bytes=new TextEncoder().encode('real fixture'),sha=Buffer.from(await crypto.subtle.digest('SHA-256',bytes)).toString('hex');

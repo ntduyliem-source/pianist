@@ -39,7 +39,6 @@ export type { WorkspaceState, PracticeKind, TuneSelection } from './application/
 import {
   loadBundledCatalog,
   loadBundledScore,
-  bundledPracticeNotice,
   type BundledScore,
 } from './platform/bundled-library';
 import { requireLibraryScore } from './platform/library-admission';
@@ -907,8 +906,6 @@ export class Workspace {
   }
   async openBundledScore(score: BundledScore, practice = false): Promise<void> {
     this.requireInactiveSession();
-    if (practice && score.practiceReady === false)
-      throw Error(score.practiceNotice || 'Phiên bản này hiện hỗ trợ nghe và chỉnh sửa.');
     const bytes = await loadBundledScore(score);
     const existing = this.state.projects.find(
       (p) =>
@@ -1116,12 +1113,6 @@ export class Workspace {
   }
   async practice(overrides?: Partial<PracticeSettings>): Promise<void> {
     this.libraryPlayer.stop();
-    const practiceNotice = await bundledPracticeNotice(
-      this.state.bundledScores,
-      this.state.current?.sourceName,
-      this.state.current?.source,
-    );
-    if (practiceNotice) throw Error(practiceNotice);
     this.requireInactiveSession();
     this.restoreExerciseEditor();
     this.patch({ practiceKind: 'free' });
