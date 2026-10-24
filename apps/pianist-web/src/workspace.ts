@@ -25,6 +25,7 @@ import { PracticeSessions } from './application/session-lifecycle';
 import { PracticeRepository } from './application/practice-repository';
 import { GradeAudioLoan } from './application/grade-audio-loan';
 import { LibraryPlayer } from './application/library-player';
+import { editorAudition } from './application/editor-audition';
 import { createAudition } from './practice/audition-factory';
 import { bounded, soundSnapshot, unlockSound } from './platform/audio-output';
 import {
@@ -262,6 +263,7 @@ export class Workspace {
     };
     installAudioSession(() => {
       this.libraryPlayer.pause();
+      editorAudition.pause();
       this.session?.pause('Âm thanh bị hệ thống gián đoạn. Bấm Tiếp tục khi sẵn sàng.', true);
       this.midi.release();
       if (!this.bridge) return;
@@ -286,6 +288,7 @@ export class Workspace {
     document.addEventListener('visibilitychange', () => {
       if (document.hidden) {
         this.libraryPlayer.pause();
+        editorAudition.pause();
         this.session?.pause('Tab đã bị ẩn. Tiếp tục sẽ đếm vào lại.', true);
         this.midi.release();
         void this.autosave();
@@ -293,6 +296,7 @@ export class Workspace {
     });
     window.addEventListener('blur', () => {
       this.libraryPlayer.pause();
+      editorAudition.pause();
       this.midi.release();
       this.session?.pause('Cửa sổ mất focus. Tiếp tục sẽ đếm vào lại.', true);
     });

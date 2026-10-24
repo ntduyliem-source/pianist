@@ -144,9 +144,10 @@ export class LibraryPlayer {
     this.preview?.seek(Math.max(0, Math.min(this.state.durationMs, ms)));
   }
   pause() {
-    // No native range exists while booting/resuming the first AudioContext.
-    // Cancel that pending Play so an interruption cannot start it later.
-    if (this.state.loading) {
+    // Before an audition exists there is nothing to pause: cancel the load.
+    // Once created, its pause() cancels pending play while retaining the song
+    // and position, including an interruption during native preparation.
+    if (this.state.loading && !this.preview) {
       this.stop();
       return;
     }

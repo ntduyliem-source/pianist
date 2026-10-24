@@ -58,6 +58,9 @@ export class EditorAudition {
   seek(seconds: number) {
     this.preview?.seek(seconds * 1000);
   }
+  pause() {
+    this.preview?.pause();
+  }
   stop() {
     this.generation++;
     this.preview?.bridge.api.sampleEditorPosition?.(0, false);

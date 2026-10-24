@@ -27,6 +27,7 @@ import {
 import { createAudition } from './audition-factory';
 import { bounded, soundSnapshot, subscribeSound, unlockSound } from '../platform/audio-output';
 import { practicePiano } from '../platform/sample-piano';
+import { installAudioSession } from '../platform/audio-session';
 import { NumberField } from './NumberField';
 import { PracticeFeedback } from './ui/PracticeFeedback';
 import { PedalToggle } from './ui/PedalToggle';
@@ -278,6 +279,7 @@ export function Practice({
       if (document.hidden) preview.current?.pause();
     };
     const blur = () => preview.current?.pause();
+    const removeAudioSession = installAudioSession(blur);
     document.addEventListener('fullscreenchange', full);
     document.addEventListener('visibilitychange', hidden);
     window.addEventListener('blur', blur);
@@ -285,6 +287,7 @@ export function Practice({
       document.removeEventListener('fullscreenchange', full);
       document.removeEventListener('visibilitychange', hidden);
       window.removeEventListener('blur', blur);
+      removeAudioSession();
       listenRequest.current?.abort();
       preview.current?.stop();
       if (document.fullscreenElement === el) void document.exitFullscreen().catch(() => {});
@@ -928,7 +931,7 @@ export function Practice({
         {panel === 'settings' && (
           <>
             <fieldset disabled={active || !!exercise?.loading}>
-              <legend>Nghe mẫu · MuseScore</legend>
+              <legend>Nghe mẫu</legend>
               <label>
                 Phạm vi nghe
                 <select
@@ -955,7 +958,7 @@ export function Practice({
                 Lặp khi nghe
               </label>
               <p className="v2-help">
-                Nghe theo tempo, dấu lặp và âm sắc của bản nhạc. Tốc độ nghe điều chỉnh riêng, không
+                Nghe theo tempo và dấu lặp của bản nhạc. Tốc độ nghe điều chỉnh riêng, không
                 thay BPM chấm.
               </p>
             </fieldset>

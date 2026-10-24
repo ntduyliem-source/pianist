@@ -8,6 +8,8 @@ const root=path.resolve(__dirname,'../../..'),out=path.join(root,'artifacts/soun
  const context=await browser.newContext({viewport:{width:1440,height:1000},serviceWorkers:'block'});
  await context.addInitScript(()=>{
   addEventListener('DOMContentLoaded',()=>{const s=document.createElement('style');s.textContent='#diagnostics{display:none!important}';document.head.appendChild(s);});
+  const audioSession=new EventTarget();audioSession.type='auto';audioSession.state='active';
+  Object.defineProperty(navigator,'audioSession',{configurable:true,value:audioSession});
   window.outputMeters=[];
   const connect=AudioNode.prototype.connect;
   AudioNode.prototype.connect=function(...args){const r=connect.apply(this,args);if(args[0]===this.context.destination&&!this.outputMeter){const m=this.outputMeter=this.context.createAnalyser();m.fftSize=2048;connect.call(this,m);window.outputMeters.push(m);}return r;};
@@ -60,6 +62,10 @@ const root=path.resolve(__dirname,'../../..'),out=path.join(root,'artifacts/soun
   await page.getByRole('button',{name:'Nghe đoạn',exact:true}).click();
   await page.getByRole('region',{name:'Nghe bản nhạc',exact:true}).waitFor();await peak();
   const slider=page.getByRole('slider',{name:'Vị trí nghe',exact:true});
+  await page.evaluate(()=>{navigator.audioSession.state='interrupted';navigator.audioSession.dispatchEvent(new Event('statechange'));});
+  await page.getByRole('button',{name:'Tiếp tục nghe',exact:true}).waitFor();
+  await page.evaluate(()=>{navigator.audioSession.state='active';});
+  await page.getByRole('button',{name:'Tiếp tục nghe',exact:true}).click();await peak();
   await page.getByRole('combobox',{name:'Tốc độ nghe'}).selectOption('0.5');await peak();
   assert(await page.locator('svg.practice-system-svg').count()>0);check('Practice sample playback at 50% shares the native score timeline');
   await screenshot('practice-desktop');
@@ -90,7 +96,9 @@ const root=path.resolve(__dirname,'../../..'),out=path.join(root,'artifacts/soun
   await page.getByRole('button',{name:'Thoát toàn màn hình',exact:true}).click();
   await page.getByRole('navigation',{name:'Chức năng chính'}).getByRole('button',{name:'Editor',exact:true}).click();
   await page.getByRole('button',{name:'Phát nhạc',exact:true}).click();await peak();
-  await page.getByRole('button',{name:'Dừng phát nhạc',exact:true}).click();check('Editor also uses the selected sample output');
+  await page.evaluate(()=>{navigator.audioSession.state='interrupted';navigator.audioSession.dispatchEvent(new Event('statechange'));});
+  await page.getByRole('button',{name:'Phát nhạc',exact:true}).waitFor();
+  await page.getByRole('button',{name:'Dừng phát nhạc',exact:true}).click();check('Editor uses sample output and both sample listening screens pause on audio interruption');
   assert.deepEqual(errors,[]);
  } catch(error) { await screenshot('failure'); console.error(await page.locator('main').innerText()); throw error; } finally {await fs.writeFile(path.join(out,'report.json'),JSON.stringify({checks,errors,requests},null,2));await browser.close();}
 })().catch(e=>{console.error(e);process.exitCode=1;});

@@ -33,3 +33,14 @@ test('equal titles stay separate until explicitly grouped; saved version numbers
   assert.deepEqual(work.versions.map(p=>p.version),[1,4]);
   assert.equal(groupProjects([project('b',{workId:'a',version:4})])[0].versions[0].version,4);
 });
+
+test('interruption during prepared playback keeps the song and pauses instead of closing it', async()=>{
+  let paused=0, restored=0;
+  const preview:any={onChange(){},onError(){},async start(){this.onChange({preparing:true,status:'stopped',positionMs:1200});},pause(){paused++;},stop(){},toggle(){},seek(){},speed(){},loop(){}};
+  const bridge={semantics:()=>({occurrences:[{endMs:4000}]})} as unknown as EngineBridge;
+  const player=new LibraryPlayer({prepare:async()=>bridge,restore:()=>{restored++;},audition:()=>preview});
+  await player.play(track('a'));assert.equal(player.snapshot().loading,true);
+  player.pause();assert.equal(paused,1);assert.equal(restored,0);
+  assert.equal(player.snapshot().track?.id,'a');assert.equal(player.snapshot().positionMs,1200);
+  player.stop();assert.equal(restored,1);
+});
