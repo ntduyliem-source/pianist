@@ -12,12 +12,24 @@ const root=path.resolve(__dirname,'../../..'),channel=process.env.PIANIST_BROWSE
     Object.defineProperty(navigator,'requestMIDIAccess',{value:async()=>({inputs:new Map([[port.id,port]]),onstatechange:null}),configurable:true});
     window.a5Midi=bytes=>port.onmidimessage?.({data:new Uint8Array(bytes),timeStamp:performance.now()});
     setInterval(()=>{const root=document.querySelector('[data-testid=practice-v2]'),scroll=document.querySelector('#sheet-scroll');if(!root||!trace.timeline)return;
-      trace.frames.push({at:performance.now()-trace.origin,context:document.querySelector('.v2-focus-context')?.textContent,top:scroll?.scrollTop,playhead:document.querySelector('[data-testid=score-playhead]')?.closest('[data-system]')?.dataset.system,
+      const playhead=document.querySelector('[data-testid=score-playhead]'),visit=playhead?trace.timeline.visits.find(v=>v.id===Number(playhead.dataset.visit)):undefined;
+      trace.frames.push({at:performance.now()-trace.origin,loop:visit?.loop,measure:playhead?Number(playhead.dataset.measure):undefined,top:scroll?.scrollTop,playhead:playhead?.closest('[data-system]')?.dataset.system,
         glyphs:[...document.querySelectorAll('.note-marker')].map(n=>({ids:n.dataset.noteAnchors,part:n.dataset.nativePart,held:n.dataset.held,kind:n.getAttribute('class')}))});if(trace.frames.length>2000)trace.frames.shift();},50);
   });
   const page=await context.newPage(),errors=[],checks=[],result={browser:browser.version(),checks,errors};page.on('pageerror',e=>errors.push(String(e)));page.on('dialog',d=>d.type()==='beforeunload'?d.accept():d.dismiss());
   const idle=()=>page.locator('.loading-overlay').waitFor({state:'hidden',timeout:120000});
   const field=async(name,value)=>{const el=page.getByRole('spinbutton',{name,exact:true});await el.fill(String(value));await el.press('Tab');};
+  const sameMetrics=(a,b)=>{
+    const left={...a},right={...b};
+    // Separate WebAudio clock origins can differ at double precision. Keep all
+    // counts/grades exact and permit only one nanosecond in millisecond metrics.
+    for(const key of ['medianAbsMs','p90AbsMs','signedMeanMs']){
+      assert.equal(a[key]===null,b[key]===null,key+' availability');
+      if(a[key]!==null)assert(Number.isFinite(a[key])&&Number.isFinite(b[key])&&Math.abs(a[key]-b[key])<=1e-6,key+' timing equivalence');
+      delete left[key];delete right[key];
+    }
+    assert.deepEqual(left,right);
+  };
   const settings=async()=>{await page.getByRole('button',{name:/Thiết lập/}).first().click();await page.getByRole('dialog').waitFor();};
   const close=()=>page.getByRole('button',{name:'Xong',exact:true}).click();
   const report=async(name)=>{await page.waitForURL(u=>u.hash==='#/results',{timeout:60000});const p=page.waitForEvent('download');await page.getByRole('button',{name:'Tải JSON',exact:true}).click();const d=await p,file=path.join(out,name+'.json');await d.saveAs(file);return JSON.parse(await fs.readFile(file,'utf8'));};
@@ -51,13 +63,13 @@ const root=path.resolve(__dirname,'../../..'),channel=process.env.PIANIST_BROWSE
       const r=await report(format+'-perfect'),trace=await page.evaluate(()=>window.a5);
       assert.equal(r.metrics.planned,90);assert.equal(r.metrics.hits,90);assert.equal(r.metrics.misses,0);assert.equal(r.r4.pedal.f1,1);assert.ok(r.r4.key.every(k=>k.status==='correct'));
       const frames=trace.frames.filter(f=>f.playhead);assert.ok(new Set(frames.map(f=>f.playhead)).size>=2,'camera spans systems');assert.ok(Math.max(...frames.map(f=>f.top))>100,'camera scrolls');
-      const loops=[1,2,3].map(n=>frames.filter(f=>f.context?.includes('Vòng '+n+'/3')));assert.ok(loops.every(f=>f.length),'all three loops visible');
-      // The label/cursor commit can be sampled before Sheet's scroll effect.
+      const loops=[0,1,2].map(n=>frames.filter(f=>f.loop===n));assert.ok(loops.every(f=>f.length),'visible playhead visits all three loops');
+      // The cursor commit can be sampled before Sheet's scroll effect.
       // Allow one 80 ms UI update + 50 ms sample + one paint, still inside A.
       for(let i=1;i<3;i++){assert.equal(loops[i][0].playhead,loops[0][0].playhead,'camera returns to A');const priorBottom=Math.max(...loops[i-1].map(f=>f.top));assert.ok(loops[i].some(f=>f.at-loops[i][0].at<=150&&f.top<priorBottom-50),'camera returns upwards within 150 ms of loop A');}
       const anchors=new Map(r.timeline.targets.flatMap(n=>n.anchors.map(id=>[id,n])));
       let heldGlyphs=0;
-      for(const frame of frames)for(const g of frame.glyphs.filter(g=>g.held==='true'&&g.part==='Note'))for(const id of g.ids.split(' ')){heldGlyphs++;assert.ok(anchors.has(id),'highlight belongs to this import');const measure=Number(/Ô (\d+)/.exec(frame.context)?.[1])-1;assert.ok(anchors.get(id).measure<=measure,'same pitch in a future measure is never held');}
+      for(const frame of frames)for(const g of frame.glyphs.filter(g=>g.held==='true'&&g.part==='Note'))for(const id of g.ids.split(' ')){heldGlyphs++;assert.ok(anchors.has(id),'highlight belongs to this import');assert.ok(anchors.get(id).measure<=frame.measure,'same pitch in a future measure is never held');}
       assert.ok(heldGlyphs>0);
       for(const framesAtLoop of loops.slice(1))for(const g of framesAtLoop[0].glyphs.filter(g=>/\b(hit|timing|miss)\b/.test(g.kind)))for(const id of g.ids.split(' '))assert.ok(anchors.get(id).measure===2,'old B judgement colors clear on returning to A');
       await fs.writeFile(path.join(out,format+'-frames.json'),JSON.stringify(frames));runs[format]=r;
@@ -66,7 +78,7 @@ const root=path.resolve(__dirname,'../../..'),channel=process.env.PIANIST_BROWSE
       await page.getByRole('button',{name:'Tập lại',exact:true}).click();await idle();await settings();await field('Số vòng',1);await page.getByRole('button',{name:/Chọn đoạn · ô/}).click();await field('Từ ô nhịp',1);await field('Đến ô nhịp',2);await page.getByRole('button',{name:'Áp dụng',exact:true}).click();await settings();await page.getByRole('button',{name:'MIDI mô phỏng −120 ms',exact:true}).click();
       const early=await report(format+'-early');assert.ok(early.judgements.some(j=>Math.abs(j.delta+120)<.001));runs[format+'Early']=early;
     }
-    assert.deepEqual(runs.abc.metrics,runs.mxl.metrics);assert.deepEqual(runs.abcEarly.metrics,runs.mxlEarly.metrics);checks.push('ABC/MXL real WebAudio BPM and -120 ms results match');
+    sameMetrics(runs.abc.metrics,runs.mxl.metrics);sameMetrics(runs.abcEarly.metrics,runs.mxlEarly.metrics);checks.push('ABC/MXL real WebAudio BPM and -120 ms results match');
     await page.getByRole('button',{name:'Tập lại',exact:true}).click();await idle();await page.getByRole('button',{name:'Đúng nốt',exact:true}).click();
     await settings();await field('Đếm vào',0);await close();
     await page.getByRole('button',{name:/^MIDI:/}).filter({visible:true}).click();

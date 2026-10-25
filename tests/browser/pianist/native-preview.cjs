@@ -16,6 +16,7 @@ const gradeOnly=process.argv.includes('--grade-only');
   await context.addInitScript(()=>{
     addEventListener('DOMContentLoaded',()=>{const s=document.createElement('style');s.textContent='#diagnostics{display:none!important}';document.head.append(s);});
     localStorage.setItem('pianist.sound','musescore');
+    window.previewLoads=[];const NativeWorker=window.Worker;window.Worker=class extends NativeWorker{postMessage(data,...args){if(data?.type==='load'&&data.timeline)window.previewLoads.push(data);return super.postMessage(data,...args);}};
     window.previewMeters=[];
     const connect=AudioNode.prototype.connect;
     AudioNode.prototype.connect=function(...args){const r=connect.apply(this,args);if(args[0]===this.context.destination&&!this.previewMeter){const m=this.previewMeter=this.context.createAnalyser();m.fftSize=2048;connect.call(this,m);window.previewMeters.push(m);}return r;};
@@ -28,6 +29,14 @@ const gradeOnly=process.argv.includes('--grade-only');
   const midi=async(s,a,b,delay=0)=>page.evaluate(([s,a,b,delay])=>window.pianist.Module.driver.previewMidi(s,a,b,performance.now()+delay),[s,a,b,delay]);
   const settings=()=>top('Thiết lập').click(),closeSettings=()=>page.getByRole('button',{name:'Đóng thiết lập',exact:true}).click();
   const ready=async()=>{await page.getByTestId('practice-v2').waitFor({timeout:150000});await page.locator('svg.practice-system-svg').first().waitFor();};
+  const library=async()=>{
+    const close=page.getByRole('button',{name:'Đóng thiết lập',exact:true});if(await close.isVisible())await close.click();
+    const exit=page.getByRole('button',{name:'Thoát toàn màn hình',exact:true});if(await exit.isVisible())await exit.click();
+    assert.equal(await page.locator('.practice-v2.sheet-focus').count(),0,'leave sheet focus before using global navigation');
+    const choose=page.getByRole('button',{name:'Đổi bài',exact:true});if(await choose.isVisible())await choose.click();
+    await page.getByTestId('practice-v2').waitFor({state:'hidden'});
+    await page.getByRole('navigation',{name:'Chức năng chính'}).getByRole('button',{name:'Thư viện',exact:true}).click();
+  };
   try{
     if(!skipGrade){
     await page.goto(url.replace(/#.*$/,'#/exercises'));await page.getByRole('combobox',{name:'Grade',exact:true}).waitFor();await page.getByRole('button',{name:'Bắt đầu tập theo grade',exact:true}).click();await ready();
@@ -44,7 +53,7 @@ const gradeOnly=process.argv.includes('--grade-only');
     assert.equal(await page.evaluate(()=>typeof window.pianist.Module.driver.preparePreview),'function');await top('Dừng lượt tập').click();await silence('cold grade provider Stop');
     check('A prepared grade with no editor engine starts the real native piano provider and stops without late audio');
     if(gradeOnly){assert.deepEqual(report.errors,[]);report.passed=true;return;}
-    await page.getByRole('button',{name:'Chọn grade và độ dài',exact:true}).click();await page.getByRole('button',{name:'Free play',exact:true}).click();await page.getByRole('navigation',{name:'Chức năng chính'}).getByRole('button',{name:'Thư viện',exact:true}).click();
+    await page.getByRole('button',{name:'Chọn grade và độ dài',exact:true}).click();await page.getByRole('button',{name:'Free play',exact:true}).click();await library();
     }else await page.goto(url);
     await page.locator('#file').setInputFiles(path.join(root,'tests/fixtures/pianist/m0/piano.mxl'));
     await page.getByRole('region',{name:'Phát bản nhạc trong editor'}).waitFor({timeout:150000});await page.locator('.loading-overlay').waitFor({state:'hidden',timeout:150000});
@@ -79,17 +88,34 @@ const gradeOnly=process.argv.includes('--grade-only');
     assert((await peak('after cancelled future accompaniment',700))<1e-5);
     check('Stop silences pedal-held notes and cancels a future channel-15 accompaniment event');
 
-    // A score with a native arpeggio must never silently receive straight-chord BPM penalties.
-    await page.getByRole('navigation',{name:'Chức năng chính'}).getByRole('button',{name:'Thư viện',exact:true}).click();
+    // BPM targets must retain the native MPE arpeggio attacks, not a straight chord.
+    await library();
     let xml=await fs.readFile(path.join(root,'tests/fixtures/pianist/m0/piano.musicxml'),'utf8');
     xml=xml.replace('<work-title>Bài thử Pianist M0</work-title>','<work-title>Arpeggio native policy test</work-title>').replace('<type>whole</type><staff>2</staff>','<type>whole</type><staff>2</staff><notations><arpeggiate/></notations>');
     await page.locator('#file').setInputFiles({name:'arpeggio-policy.musicxml',mimeType:'application/xml',buffer:Buffer.from(xml)});
     await page.getByRole('region',{name:'Phát bản nhạc trong editor'}).waitFor();await page.locator('.loading-overlay').waitFor({state:'hidden',timeout:150000});await page.getByRole('button',{name:'Tập bài này',exact:true}).click();await ready();
-    await settings();await page.getByRole('combobox',{name:'Tay tập',exact:true}).selectOption('both');await closeSettings();
-    await page.getByRole('button',{name:'Theo BPM',exact:true}).click();await page.getByRole('alert').filter({hasText:'Chưa chấm BPM'}).waitFor();assert(await top('Bắt đầu tập').isDisabled());
-    assert(await top('Nghe đoạn').isEnabled());await top('Nghe đoạn').click();await page.waitForFunction(()=>window.previewPeak()>1e-5,null,{timeout:150000});await top('Dừng nghe').click();await silence('unsupported passage native listen');
-    await page.getByRole('button',{name:'Chuyển sang Đúng nốt',exact:true}).click();assert(await top('Bắt đầu tập').isEnabled());await top('Bắt đầu tập').click();await page.waitForFunction(()=>document.querySelector('.v2-status')?.textContent==='Đang tập',null,{timeout:30000});await top('Dừng lượt tập').click();await silence('unsupported passage wait Stop');
-    check('Native arpeggio BPM is visibly unavailable; the user can listen with MuseScore or practice Đúng nốt');
+    const native=await page.evaluate(()=>{const a=window.pianist;const read=(callback,method,...args)=>{const old=a.Module[callback];let value;a.Module[callback]=json=>value=JSON.parse(json);try{if(!a[method](...args))throw Error(method);return value;}finally{a.Module[callback]=old;}};return{snapshot:read('onPracticeSnapshot','getPracticeSnapshot'),sample:read('onSamplePlayback','getSamplePlayback',1)};});
+    const events=native.snapshot.performance?.events;assert(events?.length,'native arpeggio must include MPE performance');
+    const tuple=e=>[e.pitch,e.atMs,e.endMs,[...e.anchors].sort()];
+    assert.deepEqual(events.map(tuple),native.sample.events.filter(e=>e.anchors.length).map(tuple),'score snapshot and audible native MPE have identical pitches/attacks/releases/anchors');
+    assert(native.snapshot.anchors.some(a=>a.arpeggio),'fixture retains a native arpeggio marking');
+    const chordAnchors=new Set(native.snapshot.anchors.filter(a=>a.measure===0&&[48,52,55].includes(a.pitch)).map(a=>a.id));
+    const arpeggio=events.filter(e=>e.anchors.some(id=>chordAnchors.has(id)));report.arpeggio={native:events.map(tuple),rolledChord:arpeggio.map(tuple)};
+    assert.equal(arpeggio.length,3);assert.equal(new Set(arpeggio.map(e=>e.atMs)).size,3,'native arpeggio must have staggered attacks, not one chord onset');
+    await page.getByRole('button',{name:'Theo BPM',exact:true}).click();
+    await settings();await page.getByRole('combobox',{name:'Tay tập',exact:true}).selectOption('both');await page.getByRole('combobox',{name:'Tempo',exact:true}).selectOption('score');await page.getByRole('spinbutton',{name:'Đếm vào',exact:true}).fill('0');await page.getByRole('spinbutton',{name:'Số vòng',exact:true}).fill('1');await closeSettings();
+    const bpm=page.getByRole('spinbutton',{name:'BPM',exact:true});await bpm.fill(String(native.snapshot.baseQuarterBpm));await bpm.press('Tab');
+    assert.equal(await page.getByRole('alert').filter({hasText:'Chưa chấm BPM'}).count(),0);assert(await top('Bắt đầu tập').isEnabled());
+    await top('Nghe đoạn').click();await page.waitForFunction(()=>window.previewPeak()>1e-5,null,{timeout:150000});await top('Dừng nghe').click();await silence('arpeggio native listen Stop');
+    const before=await page.evaluate(()=>window.previewLoads.length);await top('Bắt đầu tập').click();await page.waitForFunction(n=>window.previewLoads.length>n&&document.querySelector('.v2-status')?.textContent==='Đang tập',before,{timeout:30000});
+    const timeline=await page.evaluate(()=>window.previewLoads.at(-1).timeline);assert.equal(timeline.settings.mode,'bpm');assert.equal(timeline.settings.hand,'both');assert.equal(timeline.settings.tempoMode,'score');assert.equal(timeline.settings.beatQuarter,1);
+    const from=native.snapshot.occurrences[0].startMs,to=native.snapshot.occurrences.at(-1).endMs;
+    const ordered=rows=>rows.map(e=>[e.pitch,Number(e.atMs.toFixed(6)),Number(e.endMs.toFixed(6)),[...e.anchors].sort()]).sort((a,b)=>JSON.stringify(a).localeCompare(JSON.stringify(b)));
+    assert.deepEqual(ordered(timeline.targets),ordered(events.map(e=>({...e,atMs:Math.max(e.atMs,from)-from,endMs:Math.min(e.endMs,to)-from}))),'production Worker BPM reference preserves native attacks/releases, including staggered chord notes');
+    report.arpeggio.workerTargets=ordered(timeline.targets);
+    await top('Dừng lượt tập').click();await silence('arpeggio BPM Stop');
+    await page.getByRole('button',{name:'Đúng nốt',exact:true}).click();await top('Bắt đầu tập').click();await page.waitForFunction(()=>document.querySelector('.v2-status')?.textContent==='Đang tập',null,{timeout:30000});await top('Dừng lượt tập').click();await silence('arpeggio wait Stop');
+    check('Native arpeggio MPE exactly drives BPM Worker targets with staggered attacks; real listen, BPM Stop and Đúng nốt Stop work');
     assert.deepEqual(report.errors,[]);assert(!report.consoleErrors.some(e=>/RuntimeError|Aborted\(|TypeError|Assertion failed/.test(e)),JSON.stringify(report.consoleErrors));report.passed=true;
   }catch(error){report.passed=false;report.error=String(error.stack||error);report.visible=await page.locator('main').allTextContents().catch(()=>[]);await page.screenshot({path:path.join(out,'failure.png')}).catch(()=>{});process.exitCode=1;}
   finally{releaseStartup();await fs.writeFile(path.join(out,gradeOnly?'grade-startup-report.json':skipGrade?'free-play-report.json':'report.json'),JSON.stringify(report,null,2));await browser.close();}
