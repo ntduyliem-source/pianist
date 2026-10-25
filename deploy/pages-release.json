@@ -1,6 +1,6 @@
 {
-  "tag": "pianist-web-2026-10-25-review-fixes",
-  "sha256": "19ab1748d172fd8ec65d44af01536eb82dd7fa70c68970420f2655b09833db6f",
-  "sourceCommit": "8f615b835b43881ce4cf1148888df27808af92c9",
-  "version": "a6603ca58acf07c355be"
+  "tag": "pianist-web-2026-10-25-library-normalization",
+  "sha256": "f37d7a186e78e0d9841ae6af93a26ac9a2d71ff42c13fbb6ef7a4af01e566b40",
+  "sourceCommit": "817996ffad628c3fa9cb107bcaf8f2cd817cf310",
+  "version": "dc9d7544f7d80b17d416"
 }
