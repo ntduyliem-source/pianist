@@ -1,6 +1,6 @@
 {
-  "tag": "pianist-web-2026-10-24-two-staff-mpe-r1",
-  "sha256": "e1ecf956903712d87c32737d841baef36472f2e20b6c9e8f9acd28e4a0bee97b",
-  "sourceCommit": "898927a876c974684eef5da8cbd346bb8ad5f0d0",
-  "version": "d637d1049b253c92dfe0"
+  "tag": "pianist-web-2026-10-25-method-books",
+  "sha256": "68b2e233b1e1d54bcd6c34fbd24814f5c9bbc0096f6a1265effa259f75968471",
+  "sourceCommit": "a91d5819c024b8b534f7614bbf6efe363b823539",
+  "version": "4234aae50643a13fcfc5"
 }
