@@ -39,31 +39,43 @@ fast gate does **not** claim native audio, browser or native cutover acceptance.
 ## Native release gate
 
 First build and package the optimized main engine, renderer, audio engine,
-frontend, runtime and grade bank with the existing build pipeline. Install the
+frontend, runtime and grade bank with the existing build pipeline. Commit source,
+package from that clean commit, then prepare a public candidate. Install the
 browser test dependencies and Microsoft Edge, then run:
 
 ```sh
 npm ci --prefix tests/browser/pianist
-python buildscripts/pianist/check-pianist.py native
+python buildscripts/pianist/stage-release.py --output artifacts/releases/candidate --prepare-only
+python buildscripts/pianist/check-pianist.py native --site artifacts/releases/candidate/site --public
+python buildscripts/pianist/stage-release.py --output artifacts/releases/candidate --finalize
 ```
 
-This verifies `build.artifacts/release.json` and all listed assets, runs full
+This verifies the candidate's `release.json` and all listed assets, runs full
 source/bundle/WASM cutover, prepares deterministic test inputs, starts its own
 loopback server, and runs all critical browser suites **sequentially**. It stops
 only its own server afterwards. It never downloads or builds a substitute WASM.
-Use `--site path/to/staged/site --public` to check a public release candidate.
+Omitting `--site` tests `build.artifacts`, but that receipt cannot certify a
+different public candidate. The native gate refuses dirty/stale source, native
+proofs with stale source inputs/output bytes, stale frontend or installed glue/HTML,
+and `--url` to another server.
 
 Critical suites cover native pauses/ties, playback synchronization, full native
 sheet/mobile/A–B selection, import/export integrity, virtual piano/pedal PCM,
 two-staff piano library admission and atomic rejection of invalid/batched imports,
 fresh grade startup, practice/listen Stop, grade navigation and queue behavior,
-and ABC/MXL MIDI simulation with loop/highlight/viewport parity. Hardware MIDI
+ABC/MXL MIDI simulation with loop/highlight/viewport parity, pickup/repeated native
+measure labels, editor playback ownership, quota-failed result recovery, offline
+worker lifecycle, and cold calibration with real audio/worker judgements. Hardware MIDI
 and a physical mobile device remain separate acceptance tasks.
 
 The native gate is deliberately manual on a machine with the packaged assets;
 there is no GitHub job pretending a fresh source checkout includes the WASM.
-Run it before `stage-release.py` and preserve its report with release evidence.
-The report identifies both checked-out source and the tested package commit.
+Run it between candidate preparation and finalization. Finalization requires its
+successful full receipt: exact release/service-worker/validation hashes, current
+clean source commit and every required suite once in order. Candidate assets are
+rehashed after the suites. Source or assets changing mid-run invalidate the gate.
+The report identifies both checked-out source and the tested package commit;
+`SOURCE.json` records the receipt hash with the final release artifacts.
 
 ## Focused browser iteration
 

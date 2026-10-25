@@ -51,14 +51,15 @@ export function canCompare(a: AttemptResult, b: AttemptResult): boolean {
 export function attemptCsv(result: AttemptResult): string {
   const quote = (value: unknown) => '"' + String(value ?? '').replaceAll('"', '""') + '"';
   const targets = new Map(result.timeline.targets.map(t => [t.id, t]));
+  const labels = new Map(result.measureLabels?.map(m => [m.index, m.label]));
   const release=new Map(result.r4?.key.map(n=>[n.id,n])),sound=new Map(result.r4?.sound.map(n=>[n.id,n]));
-  const lines = [['target', 'measure', 'loop', 'pitch', 'grade', 'offset_ms', 'event', 'engine','release_status','release_expected_ms','release_actual_ms','release_delta_ms','release_tolerance_ms','sustain_status','sustain_delta_ms','pedal_enabled']];
+  const lines = [['target', 'measure', 'loop', 'pitch', 'grade', 'offset_ms', 'event', 'engine','release_status','release_expected_ms','release_actual_ms','release_delta_ms','release_tolerance_ms','sustain_status','sustain_delta_ms','pedal_enabled','measure_order']];
   for (const j of result.judgements) {
     const t = targets.get(j.id)!;
-    lines.push([j.id, String(t.measure + 1), String(t.loop + 1), String(t.pitch), result.settings.mode === 'wait' ? 'hit' : j.grade,
+    lines.push([j.id, String(labels.get(t.measure) ?? ''), String(t.loop + 1), String(t.pitch), result.settings.mode === 'wait' ? 'hit' : j.grade,
       j.seq === null || result.settings.mode === 'wait' ? '' : String(j.delta), String(j.seq ?? ''), result.engine,
       release.get(j.id)?.status??'',String(release.get(j.id)?.expectedMs??''),String(release.get(j.id)?.actualMs??''),String(release.get(j.id)?.deltaMs??''),String(release.get(j.id)?.toleranceMs??''),
-      sound.get(j.id)?.status??'',String(sound.get(j.id)?.deltaMs??''),String(result.settings.pedalEnabled!==false)]);
+      sound.get(j.id)?.status??'',String(sound.get(j.id)?.deltaMs??''),String(result.settings.pedalEnabled!==false),String(t.measure + 1)]);
   }
   return '\uFEFF' + lines.map(row => row.map(quote).join(',')).join('\r\n');
 }

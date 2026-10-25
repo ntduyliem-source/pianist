@@ -10,7 +10,12 @@ xác minh toàn bộ tài nguyên rồi xuất bản. Không đưa binary WASM v
 
 1. Chạy test, build native/web và kiểm browser. Commit source sạch.
 2. Chạy `composed-reading-bank.py` để đóng gói kho ABC G1–G8, rồi
-   `package-web.py`, `stage-release.py` và `verify-release.py --public`.
+   `package-web.py`. Native phải có proof từ các build wrapper; package từ chối
+   WASM có input hoặc output không khớp dù HEAD đã đổi.
+   Tạo candidate với `stage-release.py --output artifacts/releases/candidate --prepare-only`;
+   chạy `check-pianist.py native --site artifacts/releases/candidate/site --public`;
+   cuối cùng `stage-release.py --output artifacts/releases/candidate --finalize`.
+   Finalize chỉ tạo ZIP/source archive khi receipt full-native khớp chính candidate.
 3. Push source commit lên `origin/pianist/m0-web`.
 4. Tạo GitHub Release trỏ đúng source commit; upload `pianist-web.zip`, source
    archive, `SOURCE.json`, `SHA256SUMS.json` và các file cấu hình triển khai.

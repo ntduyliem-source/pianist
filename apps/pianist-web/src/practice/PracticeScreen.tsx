@@ -27,14 +27,15 @@ import {
   type AuditionState,
 } from './native-audition';
 import { createAudition } from './audition-factory';
-import { bounded, soundSnapshot, subscribeSound, unlockSound } from '../platform/audio-output';
-import { practicePiano } from '../platform/sample-piano';
+import { subscribeSound, unlockSound } from '../platform/audio-output';
+import { practiceAudioProvider } from '../application/practice-audio';
 import { installAudioSession } from '../platform/audio-session';
 import { NumberField } from './NumberField';
 import { PracticeFeedback } from './ui/PracticeFeedback';
 import { PedalToggle } from './ui/PedalToggle';
 import { AuditionControls } from './ui/AuditionControls';
 import { RangeSettings } from './ui/RangeSettings';
+import { measureLabel } from './measure-range';
 import './practice-v2.css';
 import type { EngineBridge } from '../../../../packages/engine-bridge';
 
@@ -349,6 +350,7 @@ export function Practice({
     setSelecting(null);
     const next = createTimeline(snapshot, exercise ? c : (ws.state.config ?? c));
     const persist = (r: AttemptResult, show: boolean) => {
+      r.measureLabels = snapshot.measures.map(({ index, label }) => ({ index, label }));
       if (simulationDelta !== undefined)
         r.simulation = {
           script: releaseReference ? 'native-release-pedal' : 'native-targets-onset',
@@ -367,17 +369,7 @@ export function Practice({
     const s = ws.sessions.create({
       timeline: next,
       title: snapshot.title,
-      nativeAudio: async () => {
-        if (soundSnapshot() === 'piano') return practicePiano;
-        const bridge = await ws.ensureEngine(true);
-        await bounded(
-          bridge.api.startAudioProcessing(unlockSound()),
-          60000,
-          'Chưa tải được tiếng MuseScore. Thử lại.',
-        );
-        bridge.api.Module.driver?.setMuted?.(false);
-        return bridge.practiceAudio();
-      },
+      nativeAudio: practiceAudioProvider(() => ws.ensureEngine(true)),
       onComplete: (r) => {
         void persist(r, true);
       },
@@ -746,14 +738,15 @@ export function Practice({
             <button
               className="v2-range"
               aria-label="Chọn đoạn"
-              title={`Đoạn ô ${c.fromMeasure + 1}–${c.toMeasure + 1}`}
+              title={`Đoạn ô ${measureLabel(snapshot.measures, c.fromMeasure)}–${measureLabel(snapshot.measures, c.toMeasure)}`}
               aria-expanded={panel === 'range'}
               disabled={active || !!exercise?.loading}
               onClick={() => openPanel('range')}
             >
               A–B{' '}
               <span>
-                {c.fromMeasure + 1}–{c.toMeasure + 1}
+                {measureLabel(snapshot.measures, c.fromMeasure)}–
+                {measureLabel(snapshot.measures, c.toMeasure)}
               </span>
             </button>
           )}
@@ -834,7 +827,7 @@ export function Practice({
         <div className="v2-selection" role="status">
           {selecting === 'a'
             ? '1/2 · Chạm ô nhịp bắt đầu.'
-            : `2/2 · Đã chọn ô ${(selectionStart ?? 0) + 1}. Chạm ô kết thúc.`}
+            : `2/2 · Đã chọn ô ${measureLabel(snapshot.measures, selectionStart ?? 0)}. Chạm ô kết thúc.`}
           <button onClick={() => setSelecting(null)}>Hủy chọn</button>
         </div>
       )}
@@ -928,7 +921,7 @@ export function Practice({
       {panel === 'range' && !gradeExercise && (
         <RangeSettings
           config={c}
-          measureCount={snapshot.measures.length}
+          measures={snapshot.measures}
           onApply={applyRange}
           onCancel={() => setPanel(null)}
           onSelect={() => {
@@ -1021,7 +1014,8 @@ export function Practice({
               <fieldset disabled={active || !!exercise?.loading}>
                 <legend>Đoạn tập và lặp lại</legend>
                 <button onClick={() => openPanel('range')}>
-                  Chọn đoạn · ô {c.fromMeasure + 1}–{c.toMeasure + 1}
+                  Chọn đoạn · ô {measureLabel(snapshot.measures, c.fromMeasure)}–
+                  {measureLabel(snapshot.measures, c.toMeasure)}
                 </button>
                 <div className="v2-field-pair">
                   <label>

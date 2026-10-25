@@ -3,6 +3,8 @@ import type { PracticeSettings } from '../../../../packages/practice-engine-v2';
 import { calibrationTimeline, calibrationReport } from '../platform/calibration-v2';
 import type { PracticeController } from './controller-v2';
 import { PracticeSessions } from '../application/session-lifecycle';
+import { practiceAudioProvider } from '../application/practice-audio';
+import { unlockSound } from '../platform/audio-output';
 import { workspace as ws } from '../workspace';
 
 export function CalibrationView({
@@ -40,6 +42,7 @@ export function CalibrationView({
     };
   }, []);
   async function start() {
+    unlockSound();
     stop();
     setReport(null);
     setRunning(true);
@@ -51,7 +54,7 @@ export function CalibrationView({
         deviceId: ws.midi.deviceId,
       }),
       title: 'Đo bù trễ',
-      nativeAudio: async () => (await ws.ensureEngine(true)).practiceAudio(),
+      nativeAudio: practiceAudioProvider(() => ws.ensureEngine(true)),
       onChange: (c) =>
         setMessage(
           c.status === 'counting'
@@ -62,7 +65,9 @@ export function CalibrationView({
         setReport(calibrationReport(r));
         stop();
         setMessage(
-          'Đã đo xong. Đây là độ lệch của cả thiết bị và cách bạn bấm, không phải phép đo độ trễ phần cứng riêng.',
+          r.outcome === 'complete'
+            ? 'Đã đo xong. Đây là độ lệch của cả thiết bị và cách bạn bấm, không phải phép đo độ trễ phần cứng riêng.'
+            : 'Phép đo bị gián đoạn. Hãy bắt đầu lại trước khi áp dụng bù trễ.',
         );
       },
     }));

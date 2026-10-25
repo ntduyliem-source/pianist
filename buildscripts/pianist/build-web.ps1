@@ -56,6 +56,9 @@ if (!$SkipConfigure) {
     if ($LASTEXITCODE -ne 0) { Get-Content $configLog -Tail 90; throw "Configure failed: $Target" }
 }
 if ($ConfigureOnly) { Write-Output 'Configuration succeeded.'; exit 0 }
+$inputReceipt = Join-Path $root "$buildDir/pianist-$Target-inputs.json"
+python "$PSScriptRoot/native_provenance.py" begin --target $Target --build-dir $buildDir --receipt $inputReceipt
+if ($LASTEXITCODE -ne 0) { throw "Cannot capture native inputs: $Target" }
 $buildLog = Join-Path $root "artifacts/m0/build-$Target.log"
 Write-Output "Building $Target with $Jobs jobs. Log: $buildLog"
 & $cmakeExe --build $buildDir --parallel $Jobs *> $buildLog
@@ -63,8 +66,15 @@ if ($LASTEXITCODE -ne 0) { Get-Content $buildLog -Tail 90; throw "Build failed: 
 Get-Content $buildLog -Tail 8
 Write-Output "Build succeeded: $Target"
 $runtimeSetting = Select-String -LiteralPath "$buildDir/CMakeCache.txt" -Pattern '^CMAKE_RUNTIME_OUTPUT_DIRECTORY:[^=]+='
+$nativeDirectory = if ($Target -eq 'app' -and $runtimeSetting) { $runtimeSetting.Line.Split('=', 2)[1] } else { Join-Path $root 'build.artifacts' }
+$nativeStamp = Join-Path $nativeDirectory "native-$Target-build.json"
+python "$PSScriptRoot/native_provenance.py" complete --target $Target --build-dir $buildDir --receipt $inputReceipt --directory $nativeDirectory --output $nativeStamp
+if ($LASTEXITCODE -ne 0) { throw "Native inputs changed while building: $Target. Run the incremental build again." }
 if ($Target -eq 'app' -and $runtimeSetting -and ($runtimeSetting.Line.Split('=', 2)[1] -eq $stage.Replace('\', '/'))) {
     foreach ($name in @('MuseScoreStudio.wasm', 'MuseScoreStudio.js')) {
         Copy-Item -LiteralPath (Join-Path $stage $name) -Destination (Join-Path $root "build.artifacts/$name") -Force
     }
 }
+$provenanceDirectory = Join-Path $root 'build.artifacts/native'
+New-Item -ItemType Directory -Force -Path $provenanceDirectory | Out-Null
+Copy-Item -LiteralPath $nativeStamp -Destination (Join-Path $provenanceDirectory "$Target.json") -Force

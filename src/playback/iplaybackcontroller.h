@@ -55,6 +55,8 @@ public:
     // Web sample output publishes its actual output clock through the native
     // cursor pipeline; desktop controllers never call this adapter.
     virtual void updateWebPlaybackPosition(double, bool) {}
+    virtual void setWebPlaybackEnabled(bool) {}
+    virtual muse::async::Channel<std::string, double> webPlaybackCommand() const { return {}; }
 
     virtual muse::audio::TrackSequenceId currentTrackSequenceId() const = 0;
     virtual muse::async::Notification currentTrackSequenceIdChanged() const = 0;

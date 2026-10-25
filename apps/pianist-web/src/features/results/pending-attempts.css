@@ -1,0 +1,36 @@
+.pending-attempts {
+  position: fixed;
+  inset: auto 12px 12px auto;
+  z-index: 95;
+  width: min(560px, calc(100vw - 24px));
+  max-height: min(50vh, 360px);
+  overflow: auto;
+  padding: 12px;
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--danger);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+}
+.pending-attempts > p {
+  margin: 6px 0 10px;
+  font-size: 12px;
+}
+.pending-attempt {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-block: 8px;
+  border-top: 1px solid var(--line);
+}
+.pending-attempt > span {
+  flex: 1 1 200px;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.pending-attempt small {
+  display: block;
+  color: var(--muted);
+  margin-top: 4px;
+}

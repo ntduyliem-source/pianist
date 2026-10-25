@@ -10,6 +10,7 @@ import { TuneImportDialog } from '../platform/TuneImportDialog';
 import { Practice } from '../practice/PracticeScreen';
 import { Results } from '../features/results/ResultsScreen';
 import { History } from '../features/results/HistoryScreen';
+import { PendingAttempts } from '../features/results/PendingAttempts';
 import { EditorPlayback } from '../features/editor/EditorPlayback';
 import { EditorActions } from '../features/editor/EditorActions';
 import { Exercises } from '../exercises/Exercises';
@@ -199,6 +200,7 @@ export function App() {
         </div>
       </header>
       <AppNavigation mobile />
+      <PendingAttempts />
       {state.error && !state.engineFailed && (
         <div className="error-banner" role="alert">
           <span>{state.error}</span>

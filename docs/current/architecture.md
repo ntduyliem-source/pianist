@@ -57,6 +57,17 @@ State/view types và factory state mới cho từng workspace nằm trong `appli
 
 `application/practice-repository.ts` giữ cấu hình theo project, calibration theo thiết bị, danh sách thư viện/lịch sử và lưu kết quả. Các khóa IndexedDB, phạm vi ô nhịp, ưu tiên offset và lựa chọn giữ replay vẫn như trước. `application/grade-audio-loan.ts` giữ việc mượn engine để nghe grade, bản editor native được giữ cùng undo/redo và bản bytes dự phòng để tải khi lỗi; generation guard loại kết quả chờ âm thanh của bài cũ.
 
+Các ranh giới được củng cố sau review 25/10/2026:
+
+- `application/editor-audition.ts` sở hữu transport piano nhẹ của editor. Toolbar Qt và thanh web gửi lệnh đến cùng chủ sở hữu; vị trí hiển thị dùng performed time được ánh xạ từ tempo map native. Chuyển màn hoặc đổi bộ tiếng phải dừng chủ sở hữu trước khi đổi trạng thái native.
+- `application/practice-audio.ts` chọn và khởi tạo cùng output cho tập và đo bù trễ. Calibration không giả định notation engine đã tải driver MS Basic.
+- `platform/latest-project-document.ts` chọn bản lưu/recovery theo revision rồi updatedAt, lấy bytes, filename, title và revision cùng nhau. Nghe, thumbnail và mở editor dùng cùng quy tắc; liên kết metadata thư viện không nâng revision của bytes cũ.
+- `application/score-reference.ts` phân biệt project cá nhân với tài sản grade/giáo trình. Khôi phục backup đổi ID project được sao chép, giữ ID tài sản dùng chung để lịch sử vẫn mở đúng bài.
+- `application/attempt-persistence.ts` giữ kết quả chưa lưu độc lập với vòng đời màn tập. Banner ở shell cung cấp Lưu lại/Tải JSON và cảnh báo trước khi đóng tab; không hứa dữ liệu trong RAM sẽ sống qua reload.
+- `practice/measure-range.ts` phân biệt nhãn ô native với index nội bộ. Số ô trùng phải chọn rõ vị trí; kết quả cũ thiếu nhãn ghi thứ tự thay vì đoán số in trên sheet.
+- Worker chết hoặc không trả lời khi đóng lượt: controller giữ snapshot judgement cuối đã nhận, ghi outcome `interrupted`, không gắn replay đầy đủ, rồi giải phóng phiên. Không suy diễn thêm judgement từ dữ liệu thiếu.
+- Chuyển online chỉ unregister Service Worker. Các tab đang mở vẫn cần cache của worker cũ; worker mới chỉ thu gom cache cũ trong cùng scope khi không còn cửa sổ ở scope đó. Cache có thể còn chiếm dung lượng sau khi chuyển online để bảo vệ các tab đang tập.
+
 `workspace.ts` còn là façade cho điều hướng, import/project/recovery/autosave và MIDI. `PracticeScreen.tsx` điều phối tương tác UI với coordinator và nghe thử; `Exercises.tsx` giữ queue/renderer/prefetch, lựa chọn grade và auto-next. Controller, AudioClock, native bridge và scorer không đổi thuật toán trong lần tách này. Những phần này vẫn là điểm ghép nối cần review khi thêm luồng mới; không tuyên bố workspace đã thành module nhỏ hay đã loại hết mọi coupling.
 
 `style.css` hiện là danh sách import theo đúng thứ tự cascade cũ. Rules của shell, thư viện, editor và kết quả nằm cạnh feature; base bàn phím 88 phím ở `practice/styles/piano.css`. Các lớp responsive/sửa đè dùng chung giữ trong `styles/`, CSS practice cũ còn ở `practice/styles/legacy-layout.css`. `practice-v2.css` vẫn là style màn sheet-first. Xem `src/styles/README.md` để biết các lớp phải giữ thứ tự; chưa xóa selector khi chưa có bằng chứng không dùng. Giá trị vị trí/zoom tính theo hình học tiếp tục dùng inline style.

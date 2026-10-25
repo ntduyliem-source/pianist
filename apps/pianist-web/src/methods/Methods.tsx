@@ -387,6 +387,9 @@ export function Methods() {
               {(busy || summary) && (
                 <span className="method-result" role="status">
                   {busy || summary}
+                  {!busy &&
+                    ws.state.pendingAttempts.some((item) => item.result.id === r.lastResultId) &&
+                    ' · Chưa lưu kết quả'}
                 </span>
               )}
             </>

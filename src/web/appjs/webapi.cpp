@@ -85,6 +85,13 @@ bool WebApi::setWebTheme(const std::string& theme)
 
 void WebApi::init()
 {
+    playbackController()->webPlaybackCommand().onReceive(this, [this](const std::string& command, double value) {
+        if (m_practiceActive) { return; }
+#ifdef Q_OS_WASM
+        const auto callback = emscripten::val::module_property("onEditorPlaybackCommand");
+        if (!callback.isUndefined() && !callback.isNull()) { callback(command, value); }
+#endif
+    });
     auto onProjectChanged = [this]() {
         if (m_currentProject) {
             m_currentProject->saveComplited().disconnect(this);
@@ -308,6 +315,7 @@ void WebApi::bumpRevision()
 
 bool WebApi::setPracticeActive(bool active)
 {
+    if (active) { playbackController()->setWebPlaybackEnabled(false); }
     if (m_practiceActive == active) { return true; }
     resetPracticePlayback();
     if (active) {
@@ -400,7 +408,7 @@ bool WebApi::getEditorPlayback()
 
 void WebApi::sampleEditorPosition(double seconds, bool playing)
 {
-    if (m_practiceActive || !m_currentProject || !std::isfinite(seconds) || seconds < 0) { return; }
+    if (!std::isfinite(seconds) || seconds < 0 || (playing && (m_practiceActive || !m_currentProject))) { return; }
     playbackController()->updateWebPlaybackPosition(seconds, playing);
 }
 
@@ -426,11 +434,15 @@ void WebApi::checkAudioReady()
 
 bool WebApi::editorPlayback(const std::string& command, double value)
 {
+    if (command == "output" && std::isfinite(value)) {
+        playbackController()->setWebPlaybackEnabled(value != 0.0 && !m_practiceActive);
+        return true;
+    }
     if (m_practiceActive || !m_currentProject || !std::isfinite(value)) { return false; }
     // Use MuseScore's controller/actions for sequencing, repeat, tempo and cursor.
     // These are the same entry points as PlaybackToolBarModel, not a JS scheduler.
     if (command == "tempo") {
-        if (value < 0.25 || value > 2.0) { return false; }
+        if (value < 0.1 || value > 3.0) { return false; }
         playbackController()->setTempoMultiplier(value);
     } else if (command == "seek") {
         dispatcher()->dispatch("rewind", actions::ActionData::make_arg1<audio::secs_t>(value));

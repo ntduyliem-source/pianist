@@ -6,6 +6,7 @@ import {
   editorAudition,
   editorCommand,
   stopEditorPlayback,
+  bindEditorPlayback,
 } from '../../application/editor-audition';
 import { Icon } from '../../shared/ui/Icon';
 
@@ -52,6 +53,14 @@ export function EditorPlayback() {
       stopEditorPlayback(ws.bridge);
     };
   }, []);
+  useEffect(() => {
+    if (!ws.bridge) return;
+    return bindEditorPlayback(ws.bridge, (e) => {
+      const message = String(e instanceof Error ? e.message : e);
+      setError(message);
+      ws.patch({ error: message });
+    });
+  }, [ws.bridge, mode]);
   useEffect(
     () =>
       subscribeSound(() => {

@@ -16,31 +16,13 @@ import sys
 import time
 from urllib.parse import urlparse
 from urllib.request import urlopen
+from native_provenance import verify_native
+from release_gate import SUITES, gate_identity, verify_release_files, verify_archived_native_inputs, verify_frontend
 
 ROOT = Path(__file__).resolve().parents[2]
 APP = ROOT / 'apps/pianist-web'
 SCRIPTS = ROOT / 'buildscripts/pianist'
 BROWSER = ROOT / 'tests/browser/pianist'
-SUITES = {
-    'studio-workspace': ('studio-workspace.cjs', [], '?diagnostics=1#/library'),
-    'library-range-ux': ('library-range-ux.cjs', [], '?diagnostics=1#/library'),
-    'sample-preview': ('sample-preview.cjs', [], '?diagnostics=1#/library'),
-    'sound-output': ('sound-output.cjs', [], '?diagnostics=1#/library'),
-    'ux-upgrade': ('ux-upgrade.cjs', [], '?diagnostics=1#/library'),
-    'native-time-ties': ('native-time-ties.cjs', [], ''),
-    'playback-sync': ('playback-sync.cjs', [], ''),
-    'native-sheet-integrity': ('native-sheet-integrity.cjs', [], ''),
-    'format-integrity': ('format-integrity.cjs', [], '?diagnostics=1#/library'),
-    'library-policy': ('library-policy.cjs', [], '?diagnostics=1#/library'),
-    'native-preview-free': ('native-preview.cjs', ['--skip-grade'], '?diagnostics=1#/library'),
-    'native-preview-grade': ('native-preview.cjs', ['--grade-only'], '?diagnostics=1#/library'),
-    'practice-stop': ('practice-stop.cjs', [], '?diagnostics=1#/exercises'),
-    'grade-practice': ('grade-practice.cjs', [], '?diagnostics=1#/exercises'),
-    'grade-route-guard': ('grade-practice.cjs', ['--route-guard'], '?diagnostics=1#/exercises'),
-    'method-practice': ('method-practice.cjs', [], '?diagnostics=1#/practice'),
-    'method-native': ('method-native.cjs', [], '?diagnostics=1#/practice'),
-    'abc-practice-ui': ('abc-practice-ui.cjs', [], '?diagnostics=1#/library'),
-}
 
 
 def main():
@@ -54,6 +36,8 @@ def main():
     args = parser.parse_args()
     if args.suite and args.mode != 'browser':
         parser.error('--suite is only for browser iteration; native always runs every critical suite')
+    if args.url and args.mode == 'native':
+        parser.error('native evidence requires its own server for the exact --site bytes; use browser mode with --url')
     suites = args.suite or list(SUITES)
     fast_labels = ['source-pins', 'tooling-index', 'dependencies', 'format', 'typecheck', 'typescript-oracles', 'python-library-grade', 'authored-grades', 'source-cutover']
     labels = fast_labels if args.mode == 'fast' else ['browser-fixtures', *suites]
@@ -66,6 +50,7 @@ def main():
     output = ROOT / 'artifacts/checks' / (stamp + '-' + args.mode)
     output.mkdir(parents=True)
     report = {'mode': args.mode, 'passed': False, 'sourceCommit': subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip(), 'checks': []}
+    report['sourceDirty'] = bool(subprocess.check_output(['git', 'status', '--porcelain'], cwd=ROOT, text=True).strip())
     env = dict(os.environ, PYTHONUTF8='1', PIANIST_PYTHON=sys.executable)
     # The R4 oracle intentionally invokes `python`; use this runner's interpreter.
     env['PATH'] = str(Path(sys.executable).parent) + os.pathsep + env.get('PATH', '')
@@ -109,6 +94,12 @@ def main():
             release = json.loads((site / 'release.json').read_text(encoding='utf-8'))
             report['testedRelease'] = {key: release.get(key) for key in ['version', 'sourceCommit', 'sourceDirty']}
             if args.mode == 'native':
+                if report['sourceDirty'] or release.get('sourceDirty') is not False or release.get('sourceCommit') != report['sourceCommit']:
+                    raise ValueError('Full native release evidence requires the current clean source and its packaged commit. Use browser mode for dirty focused iteration.')
+                verify_native(ROOT, site)
+                verify_frontend(ROOT, site, public=True)
+                verify_archived_native_inputs(ROOT)
+                native_identity = gate_identity(ROOT, site, release)
                 run('release-integrity', [sys.executable, SCRIPTS / 'verify-release.py', '--directory', site, *(['--public'] if args.public else [])])
                 run('native-cutover', [sys.executable, SCRIPTS / 'audit-practice-cutover.py', '--build-directory', site])
             run('browser-fixtures', [sys.executable, SCRIPTS / 'prepare-check-fixtures.py'])
@@ -143,6 +134,15 @@ def main():
             for name in suites:
                 filename, options, suffix = SUITES[name]
                 run(name, ['node', BROWSER / filename, *options], extra={'PIANIST_URL': base + suffix, 'PIANIST_BROWSER_CHANNEL': 'msedge'})
+            if args.mode == 'native':
+                if subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip() != report['sourceCommit'] or subprocess.check_output(['git', 'status', '--porcelain'], cwd=ROOT, text=True).strip():
+                    raise ValueError('Source changed during native gate; the run cannot certify a release')
+                if gate_identity(ROOT, site, release) != native_identity:
+                    raise ValueError('Release or validation inputs changed during native gate')
+                # Recheck bytes too: a concurrent rebuild may leave release.json
+                # untouched while replacing one of the referenced assets.
+                verify_release_files(site, release, exact=args.public)
+                report['nativeGate'] = native_identity
         report['passed'] = True
     except (OSError, RuntimeError, ValueError, subprocess.SubprocessError) as error:
         report['error'] = str(error)

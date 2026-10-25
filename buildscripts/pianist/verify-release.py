@@ -13,9 +13,60 @@ from score_format_release import verify_formats
 from library_release import verify_library
 from methods_release import verify_methods
 from web_bank_release import verify_web_bank
+from native_provenance import OUTPUTS
 
 HEADERS = {'Cross-Origin-Opener-Policy': 'same-origin', 'Cross-Origin-Embedder-Policy': 'require-corp',
            'Cross-Origin-Resource-Policy': 'same-origin', 'X-Content-Type-Options': 'nosniff'}
+
+
+def verify_native_manifest(read, release):
+    """Verify published proof structure without comparing a host to local HEAD."""
+    summaries = release.get('nativeBuilds')
+    if summaries is None:
+        return  # Historical releases predate build provenance; staging requires it.
+    if set(summaries) != set(OUTPUTS):
+        raise ValueError('Native build proofs must cover app, audio and renderer')
+    inventory = {entry['path']: entry for entry in release['files']}
+    for target, names in OUTPUTS.items():
+        proof_path = 'native/' + target + '.json'
+        if proof_path not in inventory:
+            raise ValueError('Missing native build proof in release: ' + target)
+        proof = json.loads(read(proof_path))
+        summary = summaries[target]
+        if proof.get('schemaVersion') != 1 or proof.get('target') != target or proof.get('optimizedLink') is not True:
+            raise ValueError('Invalid or unoptimized native build proof: ' + target)
+        if summary != {'inputSha256': proof.get('inputSha256'), 'optimizedLink': True}:
+            raise ValueError('Native build proof/summary mismatch: ' + target)
+        files = proof.get('files', [])
+        if len(files) != len(names) or {entry['path'] for entry in files} != set(names):
+            raise ValueError('Native build proof has wrong outputs: ' + target)
+        for entry in files:
+            name = ('renderer/' if target == 'renderer' else '') + entry['path']
+            actual = inventory.get(name, {})
+            if actual.get('bytes') != entry.get('bytes') or actual.get('sha256') != entry.get('sha256'):
+                raise ValueError('Native build proof/output mismatch: ' + name)
+
+
+def verify_frontend_manifest(read, release):
+    summary = release.get('webBuild')
+    if summary is None:
+        return  # Historical releases; local packaging/staging require new proof.
+    inventory = {entry['path']: entry for entry in release['files']}
+    if 'web/frontend.json' not in inventory:
+        raise ValueError('Missing frontend build proof in release')
+    proof = json.loads(read('web/frontend.json'))
+    if proof.get('schemaVersion') != 1 or proof.get('target') != 'web':
+        raise ValueError('Invalid frontend build proof')
+    if any(summary.get(key) != proof.get(key) for key in ('inputSha256', 'sourceInputCount')):
+        raise ValueError('Frontend build proof/summary mismatch')
+    names = {name for name in inventory if name.startswith('app/') and Path(name).suffix in ('.js', '.css')}
+    files = proof.get('files', [])
+    if not names or len(files) != len(names) or {entry['path'] for entry in files} != names:
+        raise ValueError('Frontend build proof has wrong outputs')
+    for entry in files:
+        actual = inventory[entry['path']]
+        if actual.get('bytes') != entry.get('bytes') or actual.get('sha256') != entry.get('sha256'):
+            raise ValueError('Frontend build proof/output mismatch: ' + entry['path'])
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
@@ -73,6 +124,8 @@ def main():
         if args.public and name.startswith('examples/') and name != 'examples/catalog.json': raise ValueError('Private example in public release')
         data = read(name); total += len(data)
         if len(data) != entry['bytes'] or hashlib.sha256(data).hexdigest() != entry['sha256']: raise ValueError('Hash/size mismatch: ' + name)
+    verify_native_manifest(read, release)
+    verify_frontend_manifest(read, release)
     sw = read('sw.js').decode('utf-8')
     embedded, _ = json.JSONDecoder().raw_decode(sw.split('const RELEASE = ', 1)[1])
     if embedded != release: raise ValueError('Service worker/manifest version mismatch')

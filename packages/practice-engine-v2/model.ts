@@ -71,6 +71,8 @@ export interface AttemptResult {
   replay?: {engine: string; commands: ReplayCommand[]};
   clock?: {segments:{originPerformanceMs:number;audioMinusPerformanceSeconds:number;source:'output-timestamp'|'audio-current-time';resumeAtMs:number}[]};
   simulation?: {script:'native-targets-onset'|'native-release-pedal';deltaMs:number};
+  // Presentation metadata from the immutable native score, never used by grading.
+  measureLabels?: {index:number; label:number}[];
 }
 // Historical JSON is data only. There is no v1 evaluator, config adapter or replay loader.
 export interface ArchivedAttempt {

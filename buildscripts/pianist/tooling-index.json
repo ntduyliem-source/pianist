@@ -4,12 +4,12 @@
     "build": {
       "status": "active",
       "description": "Build native/frontend, prepare runtime assets, and serve the complete application.",
-      "files": ["build-pianist.ps1", "build-renderer.ps1", "build-web.ps1", "install-piano-samples.py", "prepare-fixtures.py", "prepare-notices.py", "prepare-score-format-sources.py", "serve-web.py", "setup-web.ps1"]
+      "files": ["build-pianist.ps1", "build-renderer.ps1", "build-web.ps1", "install-piano-samples.py", "native_provenance.py", "prepare-fixtures.py", "prepare-notices.py", "prepare-score-format-sources.py", "serve-web.py", "setup-web.ps1", "web_provenance.cjs"]
     },
     "checks": {
       "status": "active",
       "description": "Current source/native gates, test fixture preparation and performance diagnostics.",
-      "files": ["audit-practice-cutover.py", "benchmark-core.ts", "check-authored-grades.py", "check-dependencies.cjs", "check-pianist.py", "check-source-pins.py", "check-tooling.py", "prepare-check-fixtures.py"]
+      "files": ["audit-practice-cutover.py", "benchmark-core.ts", "check-authored-grades.py", "check-dependencies.cjs", "check-pianist.py", "check-source-pins.py", "check-tooling.py", "prepare-check-fixtures.py", "release_gate.py"]
     },
     "library": {
       "status": "active",

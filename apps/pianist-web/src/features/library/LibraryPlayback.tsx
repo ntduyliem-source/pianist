@@ -7,6 +7,7 @@ import {
   type BundledScore,
 } from '../../platform/bundled-library';
 import * as storage from '../../platform/storage';
+import { latestProjectDocument } from '../../platform/latest-project-document';
 import { Icon } from '../../shared/ui/Icon';
 
 export const bundledTrack = (song: BundledScore): LibraryTrack => ({
@@ -25,9 +26,12 @@ export const projectTrack = (project: storage.ProjectRecord, version: string): L
   load: async (signal) => {
     await ws.autosave(true);
     signal.throwIfAborted();
-    const recovery = await storage.get<storage.RecoveryRecord>('recovery', project.id);
+    const [saved, recovery] = await Promise.all([
+      storage.get<storage.ProjectRecord>('projects', project.id),
+      storage.get<storage.RecoveryRecord>('recovery', project.id),
+    ]);
     signal.throwIfAborted();
-    const record = recovery && recovery.revision > project.revision ? recovery : project;
+    const record = latestProjectDocument(saved ?? project, recovery);
     return { bytes: record.bytes, filename: record.filename };
   },
 });

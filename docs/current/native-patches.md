@@ -11,13 +11,14 @@ Mốc đối chiếu là MuseScore `v4.7.5`, commit `3654226c2e99289916916953a98
 | Thời gian, repeat và nhả phím | [practicetiming.h](../../src/web/appjs/practicetiming.h), `practicesnapshot.cpp`, `src/importexport/musicxml/internal/import/importmusicxmlpass2.cpp` | Dùng native RepeatList/tempo/pause và CompatMidiRender. Import giữ điều hướng MusicXML tường minh khi suy luận văn bản bị tắt; không tự tái tạo repeat/tempo bằng UI. | Native time/ties, playback-sync, A–B, format parity |
 | Đồng hồ âm thanh và lifecycle playback | `src/web/audioengine/`, `src/framework/audio/driver/platform/web/`, `src/framework/audio/main/internal/player.*`, `src/playback/internal/playbackcontroller.cpp`, `src/web/appjs/distr/{audiodriver.js,audio_worklet_processor.js,native-playback-clock.js,audio-ready.js}` | Vị trí nghe theo đồng hồ audio native; loại sequence/callback của project cũ, chỉ tạo sequence/track web sau handshake MS Basic (`web-audio-ready`), không giữ con trỏ player đã hủy. Khởi động notation không phụ thuộc âm thanh. | Native preview/PCM, playback-sync, Stop/pause/resume/chuyển bài |
 | MIDI cho piano nhẹ | `src/framework/audio/engine/internal/synthesizers/fluidsynth/fluidsequencer.h`, `practicesnapshot.cpp`, `webapi_export.cpp` | `getSamplePlayback(speed)` gọi `FluidSequencer` gốc trên MPE ở tốc độ yêu cầu; xuất MIDI + spans + tempo map. Không chép thuật toán trường độ/pedal sang JSX. | Sample output/PCM, A–B, seek, native pause/ties |
+| Quyền điều khiển âm thanh editor | `src/playback/{iplaybackcontroller.h,internal/playbackcontroller.*,tests/mocks/playbackcontrollermock.h}`, `src/web/appjs/webapi.cpp`, `application/editor-audition.ts` | `editorPlayback("output", 0/1)` chọn owner native hoặc piano nhẹ. Qt toolbar/shortcut gửi qua `webPlaybackCommand` → `Module.onEditorPlaybackCommand` đến cùng adapter của nút React. Dọn `m_webPlaying` cả khi notation tạm null hoặc chuyển sang practice; vô hiệu callback prepare của lượt cũ bằng generation. | `editor-audition.test.ts`, browser `editor-playback-owner`: 50/100/200%, seek/cursor, Pause Qt, đổi màn và đổi output |
 | Tiếng phím ảo và tay đệm | `src/framework/audio/engine/internal/synthesizers/fluidsynth/fluidsynth.*`, `src/web/audioengine/` | Preview gọi FluidSynth/MS Basic của native. Không thay tiếng piano bằng oscillator; metronome là đường riêng. | Native-preview PCM, 88 phím, pedal/Stop |
 | Định danh nốt được phát | `src/framework/mpe/events.h`, `src/engraving/playback/renderingcontext.h`, `src/engraving/playback/renderers/noterenderer.cpp` | `sourceId`/`tiedSources` chỉ mang provenance sau khi native quyết định tie/repeat. Không dùng chúng để thay thuật toán scheduling hoặc chấm; không serialize địa chỉ con trỏ sang audio engine. | Tied-source spans, playback-sync và native-time-ties |
 | Highlight và font SVG | `src/importexport/imagesexport/internal/svggenerator.cpp`, `src/framework/draw/types/font.cpp` | Native gắn `data-practice-notes` cho đầu nốt/dấu hóa/dấu chấm/cán. Không suy ID bằng khoảng cách hình học. Fallback Courier New→Edwin chỉ cho glyph vẽ WASM, giữ tên font trong score/XML. | Native sheet integrity, pedal/clef, note ink, format integrity |
 | Import lỗi và tương thích WASM | `src/importexport/musicxml/internal/import/importmusicxml.cpp`, `src/framework/audio/common/{audiotypes.h,workmode.cpp}`, soundfont/audio module headers, `src/framework/global/thirdparty/kors_async/async/internal/ringqueue.h` | MXL rỗng phải lỗi; web không chạy Qt dialog đồng bộ để chấp nhận import dở. Audio build không Qt dùng kiểu phù hợp; ringqueue tránh shift 32 trên `size_t` 32-bit. | Build native + import rejection/không mất project + playback startup |
 | Cài runtime và tài nguyên web | `src/web/appjs/{install.js,distr/muapi.js,distr/muimpl.js,templates/,viewer/}`, `src/web/renderer/` | Glue, template piano hai khuông, PWA/offline và renderer dùng asset đúng manifest. Installer chỉ giữ MXL curated còn thuộc catalog trong output. | Release inventory/hash, library-policy, renderer grade startup |
 
-Các tên trong `{…}` và `*` là cách gộp đường dẫn để đọc bảng, không phải lệnh shell. Đường âm nghe dùng MPE native; tham chiếu trường độ tập hiện dùng CompatMidi. Không tuyên bố hai đường tương đương mọi articulation.
+Các tên trong `{…}` và `*` là cách gộp đường dẫn để đọc bảng, không phải lệnh shell. Đường âm nghe và snapshot tập hiện dùng MPE native; CompatMidi còn là tham chiếu cho snapshot lưu từ phiên bản cũ. Không suy lại articulation hoặc trường độ từ hình dạng nốt.
 
 ## Đối chiếu trước khi nâng phiên bản
 
@@ -49,5 +50,17 @@ gửi `web-audio-ready`. Action này được nhận cả khi chưa mở score, 
 khởi tạo project hiện hành. Request sequence còn có generation + weak project guard.
 UI chờ native track available có deadline; Stop/đổi output loại request cũ.
 
-Editor piano nhẹ gọi `updateWebPlaybackPosition` theo đồng hồ đầu ra để cập nhật
-cursor native. Đây là adapter hiển thị; MPE/tempo/repeat vẫn do MuseScore quyết định.
+Editor piano nhẹ giữ phạm vi bài ở thời gian tham chiếu 100% lấy trực tiếp từ
+`getSamplePlayback(speed).timeMap`, rồi phát MIDI native ở đúng multiplier của
+editor. Slider/seek và `updateWebPlaybackPosition` dùng giây đã biểu diễn ở
+multiplier hiện tại. Chuyển đổi qua từng breakpoint native, không nhân/chia đều
+toàn bộ bài vì dấu nghỉ cố định không co giãn theo tempo.
+
+Khi owner là piano nhẹ, `PlaybackController` chuyển Play/Pause/Stop/seek/tempo
+từ toolbar Qt và shortcut qua một channel, không gọi player MS Basic ở phía sau.
+WebApi chuyển channel thành callback `Module.onEditorPlaybackCommand`; React
+gắn/hủy callback cùng vòng đời editor. Stop không dispatch vòng ngược trở lại Qt.
+Rời editor, đổi output hoặc mượn engine cho practice đều phải xóa trạng thái
+đang phát ngoài native, kể cả giai đoạn current notation bằng null. Callback
+`prepareToPlay()` cũ chỉ được phát khi generation và player vẫn đúng owner.
+Đây là adapter điều khiển/hiển thị; MPE/tempo/repeat và bộ chấm không thay đổi.

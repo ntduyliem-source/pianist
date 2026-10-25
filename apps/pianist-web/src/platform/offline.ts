@@ -106,16 +106,13 @@ async function prepare(progress: (message: string) => void): Promise<void> {
 }
 export async function useOnline(): Promise<void> {
   if (pending) throw Error('Chờ chuẩn bị offline hoàn tất trước khi chuyển sang online.');
-  const script = new URL('sw.js', location.href).href,
-    page = new URL('pianist.html', location.href);
+  const script = new URL('sw.js', location.href).href;
   const registrations = (await navigator.serviceWorker?.getRegistrations()) ?? [];
   for (const registration of registrations) {
     const worker = registration.active ?? registration.waiting ?? registration.installing;
     if (worker?.scriptURL === script) await registration.unregister();
   }
-  for (const key of await caches.keys())
-    if (key.startsWith('pianist-release-')) {
-      const cache = await caches.open(key);
-      if (await cache.match(page)) await caches.delete(key);
-    }
+  // unregister() does not detach the worker from already open tabs. They still
+  // need its pinned executable and lesson caches until they are closed. Leave
+  // both caches intact; a later worker activation can collect unused releases.
 }

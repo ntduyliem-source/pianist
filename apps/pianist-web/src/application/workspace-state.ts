@@ -3,6 +3,7 @@ import type { ScoreSnapshot } from '../../../../packages/score-contracts';
 import type { AbcTune, FormatDiagnostic } from '../../../../packages/score-formats';
 import type { ProjectRecord } from '../platform/storage';
 import type { BundledScore } from '../platform/bundled-library';
+import type { PendingAttempt } from './attempt-persistence';
 
 export type View = 'library' | 'editor' | 'practice' | 'results' | 'history';
 export type PracticeKind = 'free' | 'grade' | 'method';
@@ -26,6 +27,7 @@ export interface WorkspaceState {
   toast: string;
   projects: ProjectRecord[];
   history: SavedAttempt[];
+  pendingAttempts: PendingAttempt[];
   current?: ProjectRecord;
   snapshot?: ScoreSnapshot;
   config?: PracticeSettings;
@@ -63,6 +65,7 @@ export function createInitialWorkspaceState(): WorkspaceState {
     toast: '',
     projects: [],
     history: [],
+    pendingAttempts: [],
     bundledScores: [],
     excludedScoreHashes: [],
     revision: 0,

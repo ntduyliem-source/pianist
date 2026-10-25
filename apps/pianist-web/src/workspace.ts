@@ -23,9 +23,12 @@ import { installAudioSession } from './platform/audio-session';
 import { subscribeTheme, themeSnapshot } from './platform/theme';
 import { PracticeSessions } from './application/session-lifecycle';
 import { PracticeRepository } from './application/practice-repository';
+import { AttemptPersistence } from './application/attempt-persistence';
+import { scoreReference } from './application/score-reference';
+import { latestProjectDocument } from './platform/latest-project-document';
 import { GradeAudioLoan } from './application/grade-audio-loan';
 import { LibraryPlayer } from './application/library-player';
-import { editorAudition } from './application/editor-audition';
+import { editorAudition, stopEditorPlayback } from './application/editor-audition';
 import { createAudition } from './practice/audition-factory';
 import { bounded, soundSnapshot, unlockSound } from './platform/audio-output';
 import {
@@ -48,6 +51,10 @@ export class Workspace {
   bridge?: EngineBridge;
   readonly sessions = new PracticeSessions();
   private readonly repository = new PracticeRepository();
+  private readonly attempts = new AttemptPersistence(
+    (result, keepReplay) => this.repository.saveAttempt(result, keepReplay),
+    (pendingAttempts) => this.patch({ pendingAttempts }),
+  );
   private readonly gradeAudio = new GradeAudioLoan();
   readonly libraryPlayer = new LibraryPlayer({
     activate: () => {
@@ -304,7 +311,10 @@ export class Workspace {
       this.session?.pause('Cửa sổ mất focus. Tiếp tục sẽ đếm vào lại.', true);
     });
     window.addEventListener('beforeunload', (e) => {
-      if (this.state.current && this.state.recoveryRevision < this.state.revision) {
+      if (
+        (this.state.current && this.state.recoveryRevision < this.state.revision) ||
+        this.state.pendingAttempts.length
+      ) {
         e.preventDefault();
         e.returnValue = '';
       }
@@ -506,13 +516,13 @@ export class Workspace {
     this.navigate('practice');
   }
   resumeMethod(projectId: string, settings?: Partial<PracticeSettings>): void {
-    const match = /^method:([a-z0-9-]+):([a-z0-9-]+)$/.exec(projectId);
-    if (!match) throw Error('Không tìm thấy mã bài giáo trình.');
+    const reference = scoreReference(projectId);
+    if (reference.kind !== 'method') throw Error('Không tìm thấy mã bài giáo trình.');
     this.selectPracticeKind('method');
     this.patch({
       methodRequest: {
-        bookId: match[1],
-        lessonId: match[2],
+        bookId: reference.bookId,
+        lessonId: reference.lessonId,
         settings,
         requestId: ++this.operation,
       },
@@ -871,18 +881,9 @@ export class Workspace {
       const record = await storage.get<storage.ProjectRecord>('projects', id);
       if (!record) throw Error('Không tìm thấy bài trong thư viện.');
       const recovery = await storage.get<storage.RecoveryRecord>('recovery', id);
-      const useRecovery =
-        recovery &&
-        (recovery.revision > record.revision ||
-          (recovery.revision === record.revision && recovery.updatedAt > record.updatedAt));
-      const loaded = useRecovery
-        ? { ...record, revision: recovery.revision, title: recovery.title }
-        : record;
-      await this.switchDocument(
-        loaded,
-        useRecovery ? recovery.bytes : record.bytes,
-        useRecovery ? recovery.filename : record.filename,
-      );
+      const loaded = latestProjectDocument(record, recovery);
+      const useRecovery = loaded !== record;
+      await this.switchDocument(loaded, loaded.bytes, loaded.filename);
       if (useRecovery) {
         this.patch({ savedRevision: record.revision, saveState: 'Đã phục hồi bản tự lưu' });
         this.notice('Đã phục hồi thay đổi gần nhất. Bấm Lưu thư viện để giữ bản này.');
@@ -936,15 +937,19 @@ export class Workspace {
       current.source?.length === bytes.length &&
       current.source.every((b, i) => b === bytes[i])
     ) {
-      const linked = {
-        ...current,
+      const link = {
         workId: current.workId ?? score.workId ?? score.id,
         version: current.version ?? score.version ?? 1,
         sourceHash: score.sha256,
         sourceFormat: 'mxl',
       };
-      await storage.saveProject(linked, false, false);
-      if (this.state.current?.id === linked.id) this.patch({ current: linked });
+      // Linking a bundled source changes metadata only. The editor may be on
+      // recovery bytes; do not promote those revisions onto older saved bytes.
+      const saved = await storage.get<storage.ProjectRecord>('projects', current.id);
+      if (!saved) throw Error('Không tìm thấy bài trong thư viện.');
+      await storage.saveProject({ ...saved, ...link }, false, false);
+      if (this.state.current?.id === current.id)
+        this.patch({ current: { ...this.state.current, ...link } });
       await this.refresh();
     }
   }
@@ -1145,6 +1150,7 @@ export class Workspace {
       // Drain the native MIDI input timer and pending layout before taking the immutable snapshot.
       await new Promise<void>((resolve) => setTimeout(resolve, 40));
       await this.autosave(true);
+      if (this.state.view === 'editor') stopEditorPlayback(this.bridge);
       this.bridge.setPractice(true);
       const started = performance.now();
       const snapshot = await this.bridge.cancellableSnapshot(this.state.current.id, fingerprint);
@@ -1204,6 +1210,7 @@ export class Workspace {
       return;
     }
     if (view !== this.state.view) this.libraryPlayer.stop();
+    if (this.state.view === 'editor' && view !== 'editor') stopEditorPlayback(this.bridge);
     if (view !== 'practice' || this.state.practiceKind === 'free') this.restoreExerciseEditor();
     this.midi.release();
     if (view === 'editor') this.bridge?.setPractice(false);
@@ -1229,17 +1236,17 @@ export class Workspace {
     showResult = true,
     canPresent: () => boolean = () => true,
   ): Promise<void> {
-    try {
-      await this.repository.saveAttempt(result, keepReplay);
-      await this.refresh();
-    } catch (e) {
-      this.fail(e);
-      this.notice('Chưa lưu được kết quả. Có thể tải JSON để giữ lại.');
-    }
+    const retained = { ...result };
+    if (!keepReplay) delete retained.replay;
+    if (await this.attempts.save(retained, keepReplay))
+      await this.refresh().catch((error) => this.fail(error));
     if (showResult && canPresent()) {
-      this.patch({ result });
+      this.patch({ result: retained });
       this.navigate('results');
     }
+  }
+  async retryPendingAttempt(id: string): Promise<void> {
+    if (await this.attempts.retry(id)) await this.refresh().catch((error) => this.fail(error));
   }
   /** Borrow the native audio engine only while idle. The exercise renderer and
    * scorer remain independent; editor content is never written under this loan. */

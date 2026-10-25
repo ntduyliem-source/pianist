@@ -47,6 +47,8 @@ export class PracticeController {
   private loaded?: Promise<void>;
   private startup?: AbortController;
   private clockReady = false;
+  private workerReady = false;
+  private workerFailure?: Error;
   private lastPaint = 0;
   private lastTick = 0;
   private clockSegments: NonNullable<AttemptResult['clock']>['segments'] = [];
@@ -61,26 +63,38 @@ export class PracticeController {
   private log(command: ReplayCommand) {
     if (this.commands.length < 400000) this.commands.push(structuredClone(command));
     else this.replayComplete = false;
-    this.worker?.postMessage({ type: 'command', generation: this.generation, command });
+    try {
+      this.worker?.postMessage({ type: 'command', generation: this.generation, command });
+    } catch (error) {
+      // Finish outside the current input/pause boundary to avoid re-entrancy.
+      queueMicrotask(() => this.failWorker(error instanceof Error ? error : Error(String(error))));
+    }
+  }
+  private failWorker(error: Error) {
+    if (this.disposed || this.status === 'finished') return;
+    this.workerFailure ??= error;
+    this.replayComplete = false;
+    this.rejectReady?.(error);
+    this.rejectClose?.(error);
+    this.pause(error.message, true);
+    // Startup failures are rejected to the caller. A running attempt must be
+    // released even when its worker can no longer acknowledge a close request.
+    if (this.workerReady && !this.finishing) void this.finish('interrupted');
   }
   private async load() {
     this.worker = createPracticeWorker();
     this.worker.onerror = (e) => {
-      const error = Error(e.message || 'Worker luyện tập dừng đột ngột.');
-      this.rejectReady?.(error);
-      this.rejectClose?.(error);
-      this.pause(error.message, true);
+      this.failWorker(Error(e.message || 'Worker luyện tập dừng đột ngột.'));
     };
     this.worker.onmessage = ({ data }) => {
-      if (data.generation !== this.generation) return;
+      if (this.disposed || this.status === 'finished' || data.generation !== this.generation)
+        return;
       if (data.type === 'failure') {
-        const error = Error(data.message);
-        this.rejectReady?.(error);
-        this.rejectClose?.(error);
-        this.pause(error.message, true);
+        this.failWorker(Error(data.message));
         return;
       }
       const incoming = data.view;
+      this.workerReady = true;
       this.view = {
         ...incoming,
         judgements: [...this.view.judgements, ...incoming.judgements],
@@ -264,8 +278,10 @@ export class PracticeController {
     this.clockReady = false;
     this.log({ type: 'boundary', atMs: elapsed, kind: 'stop' });
     this.transport.silence();
+    let view: EngineView;
     try {
-      const view = await new Promise<EngineView>((resolve, reject) => {
+      if (this.workerFailure) throw this.workerFailure;
+      view = await new Promise<EngineView>((resolve, reject) => {
         const timeout = window.setTimeout(
           () => reject(Error('Không nhận được kết quả từ Worker.')),
           5000,
@@ -278,21 +294,34 @@ export class PracticeController {
           clearTimeout(timeout);
           reject(e);
         };
-        this.worker!.postMessage({ type: 'close', generation: this.generation });
+        try {
+          this.worker!.postMessage({ type: 'close', generation: this.generation });
+        } catch (error) {
+          this.rejectClose!(error instanceof Error ? error : Error(String(error)));
+        }
       });
-      const result = resultFor(this.timeline, view, this.title, outcome, Math.max(0, elapsed));
-      result.clock = { segments: this.clockSegments };
-      if (this.replayComplete) result.replay = { engine: ENGINE_ID, commands: this.commands };
-      this.status = 'finished';
+    } catch (e) {
+      if (this.disposed) return;
+      // Keep only acknowledged judgements. Never invent misses or mark a
+      // partial worker snapshot as a successfully completed/replayable attempt.
+      outcome = 'interrupted';
+      this.replayComplete = false;
+      this.message = 'Lượt tập bị gián đoạn: ' + String(e instanceof Error ? e.message : e);
+      view = { ...this.view, faults: [...this.view.faults, this.message] };
+    } finally {
+      this.closed = undefined;
+      this.rejectClose = undefined;
       this.worker?.terminate();
       this.worker = undefined;
-      this.onChange();
-      this.onComplete(result);
-    } catch (e) {
-      this.status = 'interrupted';
-      this.message = String(e);
-      this.onChange();
     }
+    if (this.disposed) return;
+    this.view = view;
+    const result = resultFor(this.timeline, view, this.title, outcome, Math.max(0, elapsed));
+    result.clock = { segments: this.clockSegments };
+    if (this.replayComplete) result.replay = { engine: ENGINE_ID, commands: this.commands };
+    this.status = 'finished';
+    this.onChange();
+    this.onComplete(result);
   }
   dispose() {
     this.disposed = true;
@@ -302,6 +331,9 @@ export class PracticeController {
     this.rejectReady?.(new DOMException('Đã hủy lượt tập.', 'AbortError'));
     this.rejectReady = undefined;
     this.ready = undefined;
+    this.rejectClose?.(new DOMException('Đã hủy lượt tập.', 'AbortError'));
+    this.rejectClose = undefined;
+    this.closed = undefined;
     this.worker?.terminate();
     this.worker = undefined;
     void this.transport.dispose();

@@ -26,10 +26,16 @@ if ($SkipConfigure) {
     } finally { $ErrorActionPreference = $savedErrorPreference }
     if ($configureExitCode -ne 0) { Get-Content artifacts/q0/renderer/configure.log -Tail 70; throw 'Renderer configuration failed' }
 }
+$inputReceipt = Join-Path $rendererRoot 'build.m0/pianist-renderer-inputs.json'
+python "$PSScriptRoot/native_provenance.py" begin --target renderer --build-dir build.m0 --receipt $inputReceipt
+if ($LASTEXITCODE -ne 0) { throw 'Cannot capture renderer source inputs' }
 & $cmakeExe --build build.m0 --target PianistRenderer --parallel $Jobs *> artifacts/q0/renderer/build.log
 if ($LASTEXITCODE -ne 0) { Get-Content artifacts/q0/renderer/build.log -Tail 70; throw 'Renderer build failed' }
 Get-Content artifacts/q0/renderer/build.log -Tail 8
 $rendererStage = Join-Path $rendererRoot '.tools/web-stage-renderer'
+$nativeStamp = Join-Path $rendererStage 'native-renderer-build.json'
+python "$PSScriptRoot/native_provenance.py" complete --target renderer --build-dir build.m0 --receipt $inputReceipt --directory $rendererStage --output $nativeStamp
+if ($LASTEXITCODE -ne 0) { throw 'Renderer inputs changed while building. Run the incremental build again.' }
 $rendererFiles = foreach ($name in @('PianistRenderer.mjs', 'PianistRenderer.wasm')) {
     $file = Get-Item -LiteralPath (Join-Path $rendererStage $name)
     @{ path = $name; bytes = $file.Length; sha256 = (Get-FileHash -LiteralPath $file.FullName -Algorithm SHA256).Hash.ToLower() }
@@ -45,6 +51,9 @@ if ($Publish) {
     foreach ($name in @('PianistRenderer.mjs', 'PianistRenderer.wasm', 'build.json')) {
         Copy-Item -LiteralPath (Join-Path $rendererStage $name) -Destination (Join-Path $destination $name) -Force
     }
+    $provenanceDirectory = Join-Path $rendererRoot 'build.artifacts/native'
+    New-Item -ItemType Directory -Force -Path $provenanceDirectory | Out-Null
+    Copy-Item -LiteralPath $nativeStamp -Destination (Join-Path $provenanceDirectory 'renderer.json') -Force
     Write-Output 'Renderer installed. Run package-web.py after building the web shell.'
 } else {
     Write-Output 'Renderer build complete in .tools/web-stage-renderer (not published).'

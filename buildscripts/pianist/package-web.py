@@ -8,17 +8,23 @@ from score_format_release import verify_formats
 from library_release import verify_library
 from methods_release import verify_methods
 from web_bank_release import verify_web_bank
+from native_provenance import verify_native
+from release_gate import verify_frontend
 
 ROOT = Path(__file__).resolve().parents[2]
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument('--directory', type=Path, default=ROOT / 'build.artifacts')
 args = parser.parse_args()
 OUT = args.directory.resolve()
+native = verify_native(ROOT, OUT)
+frontend = verify_frontend(ROOT, OUT)
 formats = verify_formats(lambda name: (OUT / name).read_bytes())
 paths = ['pianist.html', 'index.html', 'MuseScoreStudio.js', 'MuseScoreStudio.wasm',
          'MuseAudio.js', 'manifest.webmanifest', 'icon.svg', 'LICENSE.txt', 'THIRD_PARTY_NOTICES.md',
          'sound/MS Basic.sf3', 'sound/MS Basic_License.md', 'sound/MS Basic_Readme.md',
          'templates/blank-piano.mscz', 'fixtures/piano.mxl', 'fixtures/piano.abc', 'fixtures/pedal-duration.musicxml']
+paths += ['native/' + target + '.json' for target in native]
+paths += ['web/frontend.json']
 paths += [p.relative_to(OUT).as_posix() for d in ['app', 'distr'] for p in (OUT / d).rglob('*')
           if p.is_file() and p.suffix in ('.js', '.css')]
 paths += [p.relative_to(OUT).as_posix() for p in (OUT / 'examples').glob('*') if p.is_file()]
@@ -75,10 +81,10 @@ worker_hash = hashlib.sha256(template.encode()).hexdigest()
 version = hashlib.sha256(json.dumps({'files': files, 'workerTemplateSha256': worker_hash}, sort_keys=True).encode()).hexdigest()[:20]
 source_commit = subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip()
 source_dirty = bool(subprocess.check_output(['git', 'status', '--porcelain'], cwd=ROOT, text=True).strip())
-cache = (ROOT / 'build.m0/CMakeCache.txt').read_text(encoding='utf-8')
-fast_link = any(line.startswith('PIANIST_WASM_FAST_LINK:') and line.endswith('=ON') for line in cache.splitlines())
 release = {'schemaVersion': 1, 'version': version, 'engineBase': '3654226c2e99289916916953a98e585a3d3b315a',
-           'sourceCommit': source_commit, 'sourceDirty': source_dirty, 'optimizedLink': not fast_link, 'files': files,
+           'sourceCommit': source_commit, 'sourceDirty': source_dirty, 'optimizedLink': all(item['optimizedLink'] for item in native.values()), 'files': files,
+           'nativeBuilds': native,
+           'webBuild': frontend,
            'scoreFormats': formats['version'], 'workerTemplateSha256': worker_hash, 'libraryScores': library_count}
 if renderer:
     release['renderer'] = {'optimizedLink': renderer['optimizedLink'], 'qt': renderer['qt']}

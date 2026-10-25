@@ -11,6 +11,7 @@ import {
 import { NoteInk } from './NoteInk';
 import { useSheetGesture } from './useSheetGesture';
 import { parseNativeGlyphs, type NativeGlyph } from './note-ink';
+import { measureLabel } from './measure-range';
 interface Props {
   snapshot: ScoreSnapshot;
   markers: Map<string, Marker>;
@@ -105,7 +106,11 @@ const Page = memo(function Page({
               height={m.box.height}
               role={selecting ? 'button' : undefined}
               tabIndex={selecting ? 0 : undefined}
-              aria-label={selecting ? `Ô ${m.label} · chọn ${selecting.toUpperCase()}` : undefined}
+              aria-label={
+                selecting
+                  ? `Ô ${measureLabel(snapshot.measures, m.index)} · chọn ${selecting.toUpperCase()}`
+                  : undefined
+              }
               onKeyDown={(e) => {
                 if (selecting && ['Enter', ' '].includes(e.key)) {
                   e.preventDefault();
@@ -115,7 +120,7 @@ const Page = memo(function Page({
               onClick={() => onMeasure(m.index)}
             >
               <title>
-                Ô {m.label}
+                Ô {measureLabel(snapshot.measures, m.index)}
                 {selecting ? ' · chọn ' + selecting.toUpperCase() : ''}
               </title>
             </rect>

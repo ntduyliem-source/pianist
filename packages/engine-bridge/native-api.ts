@@ -81,6 +81,7 @@ export type NativeCallbacks = Partial<
 export interface NativeModule extends NativeCallbacks {
   HEAPU8?: Uint8Array;
   driver?: NativeAudioDriver;
+  onEditorPlaybackCommand?: (command: string, value: number) => void;
 }
 export interface NativeApi {
   Module: NativeModule;

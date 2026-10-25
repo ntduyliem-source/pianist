@@ -3,6 +3,7 @@ import type { LibraryData, ProjectRecord, RecoveryRecord } from './storage';
 import type { SavedAttempt } from '../../../../packages/practice-engine-v2';
 import { validateFile } from './files';
 import { inspectAbc } from '../../../../packages/score-formats';
+import { scoreReference } from '../application/score-reference';
 
 const LIMIT = 256 * 1024 * 1024;
 type FileRef = { path: string; bytes: number; sha256: string };
@@ -115,6 +116,20 @@ function resultValid(r: any): r is SavedAttempt {
   for (const name of ['judgements', 'extras', 'intervals', 'faults'])
     if (!Array.isArray(r[name]) || r[name].length > 250000) return false;
   if (!Array.isArray(r.timeline.targets) || r.timeline.targets.length > 100000) return false;
+  if (
+    r.measureLabels !== undefined &&
+    (!Array.isArray(r.measureLabels) ||
+      r.measureLabels.length > 6000 ||
+      new Set(r.measureLabels.map((m: any) => m?.index)).size !== r.measureLabels.length ||
+      !r.measureLabels.every(
+        (m: any) =>
+          object(m) &&
+          Number.isSafeInteger(m.index) &&
+          m.index >= 0 &&
+          Number.isSafeInteger(m.label),
+      ))
+  )
+    return false;
   const ids = new Set(r.timeline.targets.map((t: any) => t?.id));
   if (
     ids.size !== r.timeline.targets.length ||
@@ -451,7 +466,10 @@ export function restoredCopies(backup: LibraryBackup): LibraryData {
     ids = new Map<string, string>();
   // Histories whose original score was removed remain readable with an orphan
   // identity, never accidentally attach to a different score on this device.
-  for (const id of [...data.projects.map((p) => p.id), ...data.sessions.map((s) => s.projectId)])
+  for (const id of [
+    ...data.projects.map((p) => p.id),
+    ...data.sessions.map((s) => s.projectId).filter((id) => scoreReference(id).kind === 'project'),
+  ])
     if (!ids.has(id)) ids.set(id, crypto.randomUUID());
   for (const project of data.projects) {
     if (project.workId && ids.has(project.workId)) project.workId = ids.get(project.workId)!;
@@ -464,7 +482,9 @@ export function restoredCopies(backup: LibraryBackup): LibraryData {
   }
   for (const session of data.sessions) {
     session.id = crypto.randomUUID();
-    session.projectId = ids.get(session.projectId)!;
+    // Shared grade/method assets are not copied library projects. Keep their
+    // stable reference so restored history can still resolve the original lesson.
+    session.projectId = ids.get(session.projectId) ?? session.projectId;
     if (session.schemaVersion === 2) session.timeline.projectId = session.projectId;
     else {
       const replay = session.replay as any;

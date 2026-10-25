@@ -4,7 +4,7 @@
   "version": "0.2.0",
   "type": "module",
   "scripts": {
-    "build": "tsc --noEmit && vite build",
+    "build": "node ../../buildscripts/pianist/web_provenance.cjs build",
     "test": "node --import tsx --test tests/*.test.ts",
     "test:midi": "node --import tsx --test tests/engine-v2.test.ts tests/integration-v2.test.ts",
     "format": "prettier --write src",

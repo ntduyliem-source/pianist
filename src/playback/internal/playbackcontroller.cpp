@@ -164,6 +164,11 @@ void PlaybackController::init()
 
 void PlaybackController::onProjectChanged()
 {
+    ++m_transportGeneration;
+    if (m_webPlaying) {
+        m_webPlaying = false;
+        m_isPlayingChanged.notify();
+    }
     const auto generation = ++m_sequenceGeneration;
     if (m_currentSequenceId != -1) {
         resetCurrentSequence();
@@ -205,6 +210,7 @@ void PlaybackController::updateCurrentTempo()
 
 bool PlaybackController::isPlayAllowed() const
 {
+    if (m_webPlaybackEnabled) { return m_notation && m_notation->hasVisibleParts(); }
     bool allowed = m_currentSequenceId != -1 && m_notation != nullptr && m_notation->hasVisibleParts() && isLoaded();
     return allowed;
 }
@@ -225,13 +231,32 @@ bool PlaybackController::isPlaying() const
 
 void PlaybackController::updateWebPlaybackPosition(double seconds, bool playing)
 {
-    if (!m_notation) { return; }
+    // Cleanup must clear the external state even while native notation is
+    // temporarily null during a project/practice transition.
     if (m_webPlaying != playing) {
         m_webPlaying = playing;
         m_isPlayingChanged.notify();
     }
+    if (!m_notation) { return; }
     m_currentTick = notationPlayback()->secToTick(seconds);
     m_currentPlaybackPositionChanged.send(seconds, m_currentTick);
+}
+
+void PlaybackController::setWebPlaybackEnabled(bool enabled)
+{
+    if (m_webPlaybackEnabled == enabled) {
+        return;
+    }
+    ++m_transportGeneration;
+    if (currentPlayer()) { currentPlayer()->stop(); }
+    m_webPlaybackEnabled = enabled;
+    updateWebPlaybackPosition(0.0, false);
+    m_isPlayAllowedChanged.notify();
+}
+
+muse::async::Channel<std::string, double> PlaybackController::webPlaybackCommand() const
+{
+    return m_webPlaybackCommand;
 }
 
 bool PlaybackController::isPaused() const
@@ -283,6 +308,10 @@ void PlaybackController::seekRawTick(const midi::tick_t tick, const bool flushSo
 
 void PlaybackController::seek(const audio::secs_t secs, const bool flushSound)
 {
+    if (m_webPlaybackEnabled) {
+        m_webPlaybackCommand.send("seek", double(secs));
+        return;
+    }
     // Selecting notes is valid before the browser's audio gesture has occurred.
     if (!currentPlayer()) {
         return;
@@ -647,6 +676,10 @@ void PlaybackController::onSelectionChanged()
 
 void PlaybackController::togglePlay(bool showErrors)
 {
+    if (m_webPlaybackEnabled) {
+        m_webPlaybackCommand.send("toggle", 0.0);
+        return;
+    }
     if (!isPlayAllowed()) {
         LOGW() << "playback not allowed";
         return;
@@ -725,6 +758,10 @@ void PlaybackController::playFromSelection(bool showErrors)
 
 void PlaybackController::play()
 {
+    if (m_webPlaybackEnabled) {
+        m_webPlaybackCommand.send("play", 0.0);
+        return;
+    }
     IF_ASSERT_FAILED(currentPlayer()) {
         return;
     }
@@ -734,8 +771,10 @@ void PlaybackController::play()
         seek(startSecs);
     }
 
-    currentPlayer()->prepareToPlay().onResolve(this, [this](const Ret& ret) {
-        if (!currentPlayer()) {
+    const auto player = currentPlayer();
+    const auto generation = ++m_transportGeneration;
+    player->prepareToPlay().onResolve(this, [this, player, generation](const Ret& ret) {
+        if (generation != m_transportGeneration || currentPlayer() != player || m_webPlaybackEnabled) {
             return;
         }
 
@@ -764,6 +803,11 @@ void PlaybackController::rewind(const ActionData& args)
 
 void PlaybackController::pause(bool select)
 {
+    ++m_transportGeneration;
+    if (m_webPlaybackEnabled) {
+        m_webPlaybackCommand.send("pause", 0.0);
+        return;
+    }
     IF_ASSERT_FAILED(currentPlayer()) {
         return;
     }
@@ -782,6 +826,11 @@ void PlaybackController::pause(bool select)
 
 void PlaybackController::stop()
 {
+    ++m_transportGeneration;
+    if (m_webPlaybackEnabled) {
+        m_webPlaybackCommand.send("stop", 0.0);
+        return;
+    }
     IF_ASSERT_FAILED(currentPlayer()) {
         return;
     }
@@ -791,12 +840,18 @@ void PlaybackController::stop()
 
 void PlaybackController::resume()
 {
+    if (m_webPlaybackEnabled) {
+        m_webPlaybackCommand.send("play", 0.0);
+        return;
+    }
     IF_ASSERT_FAILED(currentPlayer()) {
         return;
     }
 
-    currentPlayer()->prepareToPlay().onResolve(this, [this](const Ret& ret) {
-        if (!currentPlayer()) {
+    const auto player = currentPlayer();
+    const auto generation = ++m_transportGeneration;
+    player->prepareToPlay().onResolve(this, [this, player, generation](const Ret& ret) {
+        if (generation != m_transportGeneration || currentPlayer() != player || m_webPlaybackEnabled) {
             return;
         }
 
@@ -1667,6 +1722,13 @@ double PlaybackController::tempoMultiplier() const
 void PlaybackController::setTempoMultiplier(double multiplier)
 {
     if (!notationPlayback()) {
+        return;
+    }
+
+    if (m_webPlaybackEnabled) {
+        notationPlayback()->setTempoMultiplier(multiplier);
+        updateCurrentTempo();
+        m_webPlaybackCommand.send("tempo", multiplier);
         return;
     }
 

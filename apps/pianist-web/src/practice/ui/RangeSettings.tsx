@@ -1,10 +1,15 @@
 import { useEffect, useRef, useState } from 'react';
 import type { PracticeSettings } from '../../../../../packages/practice-engine-v2';
-import { parseMeasureRange } from '../measure-range';
+import {
+  matchingMeasures,
+  measureLabel,
+  parseMeasureRange,
+  type MeasureLabel,
+} from '../measure-range';
 
 interface RangeSettingsProps {
   config: PracticeSettings;
-  measureCount: number;
+  measures: readonly MeasureLabel[];
   onApply: (range: { fromMeasure: number; toMeasure: number }) => void;
   onSelect: () => void;
   onCancel: () => void;
@@ -12,14 +17,22 @@ interface RangeSettingsProps {
 // A local draft: cancel and incomplete input must never change the live timeline.
 export function RangeSettings({
   config,
-  measureCount,
+  measures,
   onApply,
   onSelect,
   onCancel,
 }: RangeSettingsProps) {
   const dialog = useRef<HTMLDialogElement>(null);
-  const [from, setFrom] = useState(String(config.fromMeasure + 1));
-  const [to, setTo] = useState(String(config.toMeasure + 1));
+  const [from, setFrom] = useState(
+    String(measures.find((m) => m.index === config.fromMeasure)?.label ?? ''),
+  );
+  const [to, setTo] = useState(
+    String(measures.find((m) => m.index === config.toMeasure)?.label ?? ''),
+  );
+  const [fromIndex, setFromIndex] = useState<number | undefined>(config.fromMeasure);
+  const [toIndex, setToIndex] = useState<number | undefined>(config.toMeasure);
+  const fromMatches = matchingMeasures(from, measures),
+    toMatches = matchingMeasures(to, measures);
   const [error, setError] = useState('');
   useEffect(() => {
     dialog.current?.showModal();
@@ -30,7 +43,7 @@ export function RangeSettings({
         noValidate
         onSubmit={(e) => {
           e.preventDefault();
-          const result = parseMeasureRange(from, to, measureCount);
+          const result = parseMeasureRange(from, to, measures, { fromIndex, toIndex });
           if (typeof result === 'string') setError(result);
           else onApply(result);
         }}
@@ -41,7 +54,7 @@ export function RangeSettings({
             ×
           </button>
         </div>
-        <p className="range-hint">Bản nhạc có {measureCount} ô nhịp.</p>
+        <p className="range-hint">Nhập số ô nhịp trên sheet, kể cả ô lấy đà số 0.</p>
         <div className="range-fields">
           <label>
             Từ ô nhịp
@@ -49,14 +62,30 @@ export function RangeSettings({
               aria-label="Từ ô nhịp"
               type="number"
               inputMode="numeric"
-              min={1}
-              max={measureCount}
               value={from}
               onChange={(e) => {
                 setFrom(e.target.value);
+                setFromIndex(undefined);
                 setError('');
               }}
             />
+            {fromMatches.length > 1 && (
+              <select
+                aria-label="Vị trí ô bắt đầu"
+                value={fromIndex ?? ''}
+                onChange={(e) => {
+                  setFromIndex(e.target.value === '' ? undefined : Number(e.target.value));
+                  setError('');
+                }}
+              >
+                <option value="">Chọn vị trí ô {from}</option>
+                {fromMatches.map((m) => (
+                  <option key={m.index} value={m.index}>
+                    Ô {measureLabel(measures, m.index)}
+                  </option>
+                ))}
+              </select>
+            )}
           </label>
           <span aria-hidden="true">→</span>
           <label>
@@ -65,14 +94,30 @@ export function RangeSettings({
               aria-label="Đến ô nhịp"
               type="number"
               inputMode="numeric"
-              min={1}
-              max={measureCount}
               value={to}
               onChange={(e) => {
                 setTo(e.target.value);
+                setToIndex(undefined);
                 setError('');
               }}
             />
+            {toMatches.length > 1 && (
+              <select
+                aria-label="Vị trí ô kết thúc"
+                value={toIndex ?? ''}
+                onChange={(e) => {
+                  setToIndex(e.target.value === '' ? undefined : Number(e.target.value));
+                  setError('');
+                }}
+              >
+                <option value="">Chọn vị trí ô {to}</option>
+                {toMatches.map((m) => (
+                  <option key={m.index} value={m.index}>
+                    Ô {measureLabel(measures, m.index)}
+                  </option>
+                ))}
+              </select>
+            )}
           </label>
         </div>
         {error && (
@@ -86,7 +131,9 @@ export function RangeSettings({
           </button>
           <button
             type="button"
-            onClick={() => onApply({ fromMeasure: 0, toMeasure: measureCount - 1 })}
+            onClick={() =>
+              onApply({ fromMeasure: measures[0].index, toMeasure: measures.at(-1)!.index })
+            }
           >
             Toàn bài
           </button>

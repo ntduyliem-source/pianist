@@ -68,6 +68,8 @@ public:
 
     bool isPlaying() const override;
     void updateWebPlaybackPosition(double seconds, bool playing) override;
+    void setWebPlaybackEnabled(bool enabled) override;
+    muse::async::Channel<std::string, double> webPlaybackCommand() const override;
     muse::async::Notification isPlayingChanged() const override;
 
     void reset() override;
@@ -238,6 +240,9 @@ private:
     muse::async::Notification m_isPlayAllowedChanged;
     muse::async::Notification m_isPlayingChanged;
     bool m_webPlaying = false;
+    bool m_webPlaybackEnabled = false;
+    muse::async::Channel<std::string, double> m_webPlaybackCommand;
+    uint64_t m_transportGeneration = 0;
 #ifdef Q_OS_WASM
     bool m_webAudioReady = false;
 #else

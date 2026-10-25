@@ -7,6 +7,7 @@ import * as storage from '../src/platform/storage';
 import {timeline} from './helpers/fixtures-v2';
 import {PracticeEngine} from '../../../packages/practice-engine-v2/engine';
 import {resultFor} from '../../../packages/practice-engine-v2/results';
+import {scoreReference} from '../src/application/score-reference';
 
 const score = zipSync({'score.mscx': strToU8('<museScore version="4.0"><Score/></museScore>')});
 const source = strToU8('<score-partwise version="4.0"><part-list/></score-partwise>');
@@ -17,6 +18,34 @@ function library(): storage.LibraryData {
   return {projects: [{id: plan.projectId, title: 'Bài gốc', filename: 'score.mscz', bytes: score, source, sourceName: 'score.musicxml', revision: 1, updatedAt: 10, createdAt: 1, archived: true}],
     recovery: [{id: plan.projectId, title: 'Bài đang sửa', filename: 'recovery.mscz', bytes: score, revision: 2, updatedAt: 20}], sessions: [result], settings: [{id: 'calibration:piano', offsetMs: 80}]};
 }
+
+test('restoring shared method/grade history keeps lesson IDs while personal scores and true orphans get fresh IDs', async () => {
+  const data = library();
+  const method = structuredClone(data.sessions[0]);
+  const grade = structuredClone(data.sessions[0]);
+  const orphan = structuredClone(data.sessions[0]);
+  assert.equal(method.schemaVersion, 2);
+  if (method.schemaVersion !== 2 || grade.schemaVersion !== 2 || orphan.schemaVersion !== 2) return;
+  method.id = 'method-attempt';
+  method.projectId = method.timeline.projectId = 'method:hanon-part-1:hanon-part-1-001';
+  grade.id = 'grade-attempt';
+  grade.projectId = grade.timeline.projectId = 'grade:' + 'a'.repeat(64);
+  orphan.id = 'orphan-attempt';
+  orphan.projectId = orphan.timeline.projectId = 'deleted-personal-project';
+  data.sessions.push(method, grade, orphan);
+  const restored = restoredCopies(await decodeLibrary(await encodeLibrary(data)));
+  assert.equal(restored.sessions[1].projectId, method.projectId);
+  assert.equal(restored.sessions[2].projectId, grade.projectId);
+  assert.notEqual(restored.sessions[3].projectId, orphan.projectId);
+  assert.equal(restored.sessions[0].projectId, restored.projects[0].id);
+  assert.deepEqual(scoreReference(restored.sessions[1].projectId), {
+    kind: 'method', bookId: 'hanon-part-1', lessonId: 'hanon-part-1-001',
+  });
+  for (const result of restored.sessions) {
+    assert.equal(result.schemaVersion, 2);
+    if (result.schemaVersion === 2) assert.equal(result.timeline.projectId, result.projectId);
+  }
+});
 test('library backup round-trips original bytes, recovery, history/replay and settings', async () => {
   const data = library(), bytes = await encodeLibrary(data), backup = await decodeLibrary(bytes);
   assert.deepEqual(backup.data, data); assert.ok(backup.createdAt > 0);
@@ -39,6 +68,23 @@ test('R4 restores its report and rejects forged pedal matches before rendering',
   assert(saved.r4);const good=await decodeLibrary(await encodeLibrary(data));assert.deepEqual(good.data.sessions[0],saved);
   saved.r4.pedal.matching=[[0,999]];
   await assert.rejects(decodeLibrary(await encodeLibrary(data)),/không hợp lệ/);
+});
+
+test('backup accepts optional native measure labels and rejects malformed or duplicate indexes', async () => {
+  const data = library(), saved = data.sessions[0];
+  if (saved.schemaVersion !== 2) return;
+  saved.measureLabels = [{ index: 0, label: 0 }, { index: 1, label: -2 }, { index: 2, label: 0 }];
+  assert.deepEqual((await decodeLibrary(await encodeLibrary(data))).data.sessions[0], saved);
+  for (const invalid of [
+    [{ index: 0, label: '1' }], [{ index: -1, label: 1 }],
+    [{ index: 0, label: 1 }, { index: 0, label: 2 }],
+    [{ index: 0.5, label: 1 }], [{ index: 0, label: null }],
+  ]) {
+    (saved as unknown as { measureLabels: unknown }).measureLabels = invalid;
+    await assert.rejects(decodeLibrary(await encodeLibrary(data)), /không hợp lệ/);
+  }
+  delete saved.measureLabels;
+  assert.deepEqual((await decodeLibrary(await encodeLibrary(data))).data.sessions[0], saved);
 });
 test('tampered content, malformed manifest, traversal and unknown archive files are rejected before any writes', async () => {
   const bytes = await encodeLibrary(library());

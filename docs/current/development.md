@@ -94,12 +94,14 @@ Sau khi kiểm và commit source sạch:
 
 ```powershell
 python buildscripts/pianist/package-web.py
-python buildscripts/pianist/stage-release.py --output artifacts/releases/pianist-refactor-reviewed
+python buildscripts/pianist/stage-release.py --output artifacts/releases/pianist-refactor-reviewed --prepare-only
+python buildscripts/pianist/check-pianist.py native --site artifacts/releases/pianist-refactor-reviewed/site --public
+python buildscripts/pianist/stage-release.py --output artifacts/releases/pianist-refactor-reviewed --finalize
 python buildscripts/pianist/verify-release.py --directory artifacts/releases/pianist-refactor-reviewed/site --public
 python buildscripts/pianist/serve-web.py --directory artifacts/releases/pianist-refactor-reviewed/site --port 8788
 ```
 
-Chọn thư mục release mới cho mỗi lần staging, không ghi đè một gói đã phát hành. `package-web.py` tính integrity cho đúng bytes hiện có; không phải compiler và không thể tự sửa binary cũ. `stage-release.py` kiểm source sạch/binary tối ưu và tạo source archive đúng commit.
+Chọn thư mục release mới cho mỗi candidate, không ghi đè một gói đã phát hành. `package-web.py` kiểm proof build của native/frontend rồi tính integrity; source input thay đổi đòi hỏi build lại, không thể chỉ gắn commit mới lên binary cũ. `stage-release.py --prepare-only` tạo candidate public. Chỉ `--finalize` sau receipt full-native khớp chính candidate mới tạo ZIP/source archive đúng commit; xem [release.md](release.md).
 
 Sau khi phát hành GitHub Release và cập nhật `deploy/pages-release.json`, chờ workflow thành công rồi kiểm URL bằng release verifier + smoke browser. Manifest deploy là con trỏ release; không sửa version hoặc hash bằng phỏng đoán. Xem [quy trình Pages](../../deploy/PAGES.md).
 

@@ -14,6 +14,7 @@ import { workspace as ws } from '../../workspace';
 import { download } from '../../platform/files';
 import { noteName } from '../../platform/midi-v2';
 import { percent, date, gradeText, releaseText, releaseLabel } from './presentation';
+import { measureLabel } from '../../practice/measure-range';
 const run = (f: () => unknown) => () => void ws.run(f);
 
 export function Results({ result: r }: { result: SavedAttempt }) {
@@ -108,7 +109,7 @@ export function Results({ result: r }: { result: SavedAttempt }) {
       )}
       {!!r.faults.length && (
         <p role="alert">
-          Lỗi giao MIDI: {r.faults.join(', ')}. Không dùng lượt gián đoạn để so tiến bộ.
+          Lỗi lượt tập: {r.faults.join(', ')}. Không dùng lượt gián đoạn để so tiến bộ.
         </p>
       )}
       {r.simulation && (
@@ -175,7 +176,7 @@ export function Results({ result: r }: { result: SavedAttempt }) {
               return (
                 <tr key={j.id}>
                   <td>
-                    {t.measure + 1} / {t.loop + 1}
+                    {measureLabel(r.measureLabels, t.measure)} / {t.loop + 1}
                   </td>
                   <td>{noteName(t.pitch)}</td>
                   <td>{r.settings.mode === 'wait' ? 'Đúng nốt' : gradeText[j.grade]}</td>
@@ -194,7 +195,7 @@ export function Results({ result: r }: { result: SavedAttempt }) {
                         }),
                       )}
                     >
-                      Ô {t.measure + 1}
+                      Ô {measureLabel(r.measureLabels, t.measure)}
                     </button>
                   </td>
                 </tr>
@@ -262,7 +263,8 @@ function ReleaseResults({ result: r }: { result: AttemptResult }) {
                 return (
                   <tr key={n.id}>
                     <td>
-                      {t.measure + 1} / {t.loop + 1} · {noteName(t.pitch)}
+                      {measureLabel(r.measureLabels, t.measure)} / {t.loop + 1} ·{' '}
+                      {noteName(t.pitch)}
                     </td>
                     <td>{releaseLabel(n)}</td>
                     <td>

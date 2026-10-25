@@ -194,7 +194,9 @@ bool WebApi::getPracticePlaybackNotes()
 
 bool WebApi::getSamplePlayback(double speed)
 {
-    if (!m_currentProject || !std::isfinite(speed) || speed < 0.25 || speed > 2.0 || m_auditionConfigured) { return false; }
+    // Match the upstream editor speed control (10–300%). Practice's narrower
+    // UI range remains its own policy; MPE supplies timing for either caller.
+    if (!m_currentProject || !std::isfinite(speed) || speed < 0.1 || speed > 3.0 || m_auditionConfigured) { return false; }
     const auto playback = m_currentProject->masterNotation()->playback();
     auto* score = m_currentProject->masterNotation()->notation()->elements()->msScore();
     const double previous = playback->tempoMultiplier();

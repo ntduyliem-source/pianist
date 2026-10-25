@@ -883,11 +883,14 @@ body[data-practice-focus='true'] .appbar {
 }
 .range-fields label {
   display: grid;
+  min-width: 0;
   gap: 8px;
   font-size: 13px;
 }
-.practice-v2 .range-fields input {
+.practice-v2 .range-fields input,
+.practice-v2 .range-fields select {
   width: 100%;
+  min-width: 0;
   min-height: 44px;
   font-size: 16px;
 }

@@ -35,6 +35,9 @@ public:
 
     MOCK_METHOD(bool, isPlaying, (), (const, override));
     MOCK_METHOD(muse::async::Notification, isPlayingChanged, (), (const, override));
+    MOCK_METHOD(void, updateWebPlaybackPosition, (double, bool), (override));
+    MOCK_METHOD(void, setWebPlaybackEnabled, (bool), (override));
+    MOCK_METHOD((muse::async::Channel<std::string, double>), webPlaybackCommand, (), (const, override));
 
     MOCK_METHOD(void, reset, (), (override));
 

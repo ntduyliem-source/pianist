@@ -43,8 +43,13 @@ self.addEventListener('message',event=>{
   event.waitUntil(prepare().then(()=>event.ports[0]?.postMessage({ok:true,version:RELEASE.version,bytes:eagerFiles.reduce((n,f)=>n+f.bytes,0)}),error=>event.ports[0]?.postMessage({ok:false,message:String(error)})));
 });
 self.addEventListener('activate', event => event.waitUntil((async()=>{
-  // Activation waits for the previous worker's clients to close. At that point
-  // remove its executable cache, restricted to this app's URL scope.
+  // A registration recreated after unregister() can activate while tabs still
+  // use the unregistered worker. Conservatively retain old caches whenever any
+  // window in this app's scope is alive; do not strand those pinned clients.
+  const clients=await self.clients.matchAll({includeUncontrolled:true,type:'window'});
+  if(clients.some(client=>client.url?.startsWith(base.href))){
+    await report({type:'offline-active',version:RELEASE.version});return;
+  }
   for(const key of await caches.keys()){
     if(key===CACHE||key===LAZY_CACHE||!key.startsWith('pianist-release-'))continue;
     const cache=await caches.open(key);
