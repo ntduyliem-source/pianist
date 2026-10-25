@@ -4,6 +4,7 @@ import type { SavedAttempt } from '../../../../packages/practice-engine-v2';
 import { validateFile } from './files';
 import { inspectAbc } from '../../../../packages/score-formats';
 import { scoreReference } from '../application/score-reference';
+import { validScoreCredits } from '../shared/score-metadata';
 
 const LIMIT = 256 * 1024 * 1024;
 type FileRef = { path: string; bytes: number; sha256: string };
@@ -51,6 +52,7 @@ function metadata(record: unknown): asserts record is SavedProject {
     fail();
 }
 function sourceMetadata(record: SavedProject): void {
+  if (!validScoreCredits(record)) fail();
   if (record.workId !== undefined && !text(record.workId, 500)) fail();
   if (record.version !== undefined && (!Number.isSafeInteger(record.version) || record.version < 1))
     fail();

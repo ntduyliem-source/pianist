@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "policy": "Per-edition corrections. Null withholds an ambiguous role; original credits remain in the audit and original MXL. Source-declared credits are not independent authorship verification.",
+  "editions": {
+    "merry-go-round-of-life-easy-piano-excerpt.mxl": {
+      "fields": {"title": "Merry-Go-Round of Life", "composer": "Joe Hisaishi"},
+      "evidence": [{"source": "https://www.deutschegrammophon.com/en/catalogue/products/merry-go-round-of-life-joe-hisaishi-12956", "reason": "Composer and canonical English spelling from the record label; corrects Joe Hishashi."}]
+    },
+    "thich-em-hoi-nhieu.mxl": {
+      "fields": {"composer": "Wren Evans"},
+      "evidence": [{"source": "credit[1]", "reason": "Printed composer credit spells Wren; identification misspells Wrem. Additional co-writers remain unverified."}]
+    },
+    "dung-lam-trai-tim-anh-dau-son-tung-m-tp.mxl": {
+      "fields": {"composer": "Sơn Tùng M-TP", "arranger": "Việt Hùng (Hùng Music)"},
+      "evidence": [{"source": "credit[1]", "reason": "Printed credit explicitly separates Sơn Tùng MTP and Soạn Piano: Việt Hùng (Hùng Music)."}]
+    },
+    "yeu-thuong-ngay-do-soobin-hoang-son.mxl": {
+      "fields": {"composer": null},
+      "evidence": [{"source": "identification/creator[0]; credit[2]", "reason": "Soobin Hoàng Sơn odcvsn(piano) mixes artist and piano credit without an explicit role. Preserve pending verification."}]
+    },
+    "nang-thuy-tinh-trinh-cong-son-ost-em-va-trinh.mxl": {
+      "fields": {"performer": "Avin Lu · Suni Hạ Linh"},
+      "evidence": [{"source": "credit[1]", "reason": "Case/spacing only; preserve both explicit arrangement and transcription credits as declared."}]
+    },
+    "cause-i-love-you-v2.mxl": {
+      "fields": {"composer": null},
+      "evidence": [{"source": "credit[1]", "reason": "Artist-only printed credit does not establish composition. Do not propagate this ambiguous credit to another version."}]
+    },
+    "nguoi-ta-co-thuong-minh-dau-truc-nhan.mxl": {
+      "fields": {"arranger": "Trương Phi Long; bản chuyển soạn gốc: Bon KP"},
+      "evidence": [{"source": "credit[2]", "reason": "Keep the distinction between arr. and orig. arr. in the printed source."}]
+    },
+    "ung-qua-chung-amee-piano-sheet.mxl": {
+      "fields": {"composer": null},
+      "evidence": [{"source": "identification/creator[0]; credit[2]", "reason": "AMEE versus AMEE x TDK x KAI ĐINH artist credits do not identify which person composed the work."}]
+    },
+    "shay-nanggg-amee-x-obito-x-hua-kim-tuyen.mxl": {
+      "fields": {"title": "Shay Nắnggg", "composer": null},
+      "evidence": [{"source": "credit[1]", "reason": "Artist collaboration string does not distinguish composer, lyricist and performer."}]
+    },
+    "nguoi-tinh-mua-dong.mxl": {
+      "fields": {"composer": null, "arranger": "lms"},
+      "evidence": [{"source": "identification/creator[0]", "reason": "piano arrangement lms is explicit; 王菲 alone does not establish composition."}]
+    },
+    "nu-hon-biet-ly.mxl": {
+      "fields": {"composer": null, "arranger": "Everyone Piano"},
+      "evidence": [{"source": "identification/creator[0]", "reason": "Source says Everyone Piano arrangement, not composer."}]
+    },
+    "ben-thuong-hai.mxl": {
+      "fields": {"composer": null, "arranger": "MuYun Piano"},
+      "evidence": [{"source": "identification/creator[0]", "reason": "Source says MuYun Piano arrangement, not composer."}]
+    },
+    "diem-mat-mat.mxl": {
+      "fields": {"composer": "Dân ca (theo bản nguồn)", "arranger": "音乐符"},
+      "evidence": [{"source": "identification/creator[0]", "reason": "Source explicitly says Traditional melody; source arrangement 音乐符. Does not establish Vietnamese lyric authorship."}]
+    },
+    "mua-tuyet.mxl": {
+      "fields": {"composer": null},
+      "evidence": [{"source": "identification/creator[0]", "reason": "刘德华 artist-only source credit remains unresolved; do not assume composer."}]
+    },
+    "biet-khuc-cho-nhau.mxl": {
+      "fields": {"composer": null, "arranger": "kini"},
+      "evidence": [{"source": "identification/creator[0]", "reason": "Source explicitly says kini (arrangement)."}]
+    },
+    "white-blossoms-mimokeys.mxl": {
+      "fields": {"composer": null},
+      "evidence": [{"source": "credit[2]", "reason": "Mimokeys / HakerProX does not distinguish composer and arranger. Composer may be inherited only from the same stable work's unambiguous edition; arranger remains unknown."}]
+    },
+    "let-it-go-kristen-anderson-lopez-robert-lopez.mxl": {
+      "fields": {"composer": "Kristen Anderson-Lopez · Robert Lopez"},
+      "evidence": [{"source": "https://video.disney.com/watch/disney-s-frozen-let-it-go-sequence-performed-by-idina-menzel-4ecd3e729706a16e5090f1de", "reason": "Disney identifies both writers of the original song. No inference about this piano arrangement."}]
+    }
+  }
+}

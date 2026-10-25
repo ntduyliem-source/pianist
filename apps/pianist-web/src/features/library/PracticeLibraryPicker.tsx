@@ -41,7 +41,7 @@ export function PracticeHome() {
               <input
                 type="search"
                 aria-label="Tìm bài để tập"
-                placeholder="Tìm tên bản nhạc…"
+                placeholder="Tìm bài, tác giả, người chuyển soạn…"
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
               />

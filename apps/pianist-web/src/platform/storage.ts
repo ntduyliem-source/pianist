@@ -1,5 +1,6 @@
 import type { SavedAttempt } from '../../../../packages/practice-engine-v2';
 import type { FormatDiagnostic } from '../../../../packages/score-formats';
+import type { ScoreCredits } from '../shared/score-metadata';
 
 export interface SourceMetadata {
   sourceFormat?: string;
@@ -10,7 +11,7 @@ export interface SourceMetadata {
   converterVersion?: string;
   importDiagnostics?: FormatDiagnostic[];
 }
-export interface ProjectRecord extends SourceMetadata {
+export interface ProjectRecord extends SourceMetadata, ScoreCredits {
   workId?: string;
   version?: number;
   id: string;

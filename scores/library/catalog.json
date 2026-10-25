@@ -2,1789 +2,3162 @@
   "schemaVersion": 1,
   "songs": [
     {
-      "id": "4f03f428f96bbf9f67dec76138ad6b7bf96a94f3b8a66c3d9b680f277226028d",
+      "id": "42a6046639bb77cc35af557426a28a9d95b846f963ce01ab1f558a260821ed3e",
       "title": "Tình đầu quá chén",
       "filename": "Tình đầu quá chén.mxl",
       "url": "library/songs/tinh-dau-qua-chen-erik-quang-hung-masterd-negav-phap-kieu.mxl",
-      "bytes": 7154,
-      "sha256": "4f03f428f96bbf9f67dec76138ad6b7bf96a94f3b8a66c3d9b680f277226028d",
-      "composer": "Soạn: Thảo Chi",
+      "bytes": 5126,
+      "sha256": "42a6046639bb77cc35af557426a28a9d95b846f963ce01ab1f558a260821ed3e",
       "workId": "354280a125c519cd319aa232e7adad413fc98f73ab62d4c70f452260da95eb46",
       "version": 1,
       "practiceReady": true,
-      "sourceSha256": "354280a125c519cd319aa232e7adad413fc98f73ab62d4c70f452260da95eb46"
+      "sourceSha256": "354280a125c519cd319aa232e7adad413fc98f73ab62d4c70f452260da95eb46",
+      "sourceHashes": [
+        "354280a125c519cd319aa232e7adad413fc98f73ab62d4c70f452260da95eb46",
+        "4f03f428f96bbf9f67dec76138ad6b7bf96a94f3b8a66c3d9b680f277226028d"
+      ],
+      "arranger": "Thảo Chi",
+      "aliases": [
+        "TÌNH ĐẦU QUÁ CHÉN"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "06c131ae2aa2a98448bab1b8e79545aad5e6e6a7b46f2c7d918b8c5f678788ad"
     },
     {
-      "id": "6b7193d0c921851e79895628acce7296918716f84648bd9e2d78b5fedee09e69",
+      "id": "79c61c4f84bacee55969884b771046340965ca33ec18ff0501fd30b39035e609",
       "title": "Chỉ là",
       "filename": "Chỉ là.mxl",
       "url": "library/songs/chi-la-trang-phap.mxl",
-      "bytes": 15139,
-      "sha256": "6b7193d0c921851e79895628acce7296918716f84648bd9e2d78b5fedee09e69",
-      "composer": "Composer / arranger",
+      "bytes": 9303,
+      "sha256": "79c61c4f84bacee55969884b771046340965ca33ec18ff0501fd30b39035e609",
       "workId": "2e2490f9a94ccdc7fa42642af6ec9ee25830604e817bf433932d3fc488cab9c3",
       "version": 1,
       "practiceReady": true,
-      "sourceSha256": "2e2490f9a94ccdc7fa42642af6ec9ee25830604e817bf433932d3fc488cab9c3"
+      "sourceSha256": "2e2490f9a94ccdc7fa42642af6ec9ee25830604e817bf433932d3fc488cab9c3",
+      "sourceHashes": [
+        "2e2490f9a94ccdc7fa42642af6ec9ee25830604e817bf433932d3fc488cab9c3",
+        "6b7193d0c921851e79895628acce7296918716f84648bd9e2d78b5fedee09e69"
+      ],
+      "composer": "Trang Pháp",
+      "aliases": [
+        "Bản nhạc không tên"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "249bfd4d6821b551480fee584e77e19f2a72ae9f5b6e852bf191534c44f09109"
     },
     {
-      "id": "30a6f9916ca793fc2e1ed768ddf173f60cf1bf9fac719637d9fdf968b5a77cbd",
-      "title": "Triệu Đoá Hồng",
-      "filename": "Triệu Đoá Hồng.mxl",
+      "id": "343950dc1de56aa75054835cdb02ab2e978c2490af9c696bde9deba39451c612",
+      "title": "Triệu đóa hồng",
+      "filename": "Triệu đóa hồng.mxl",
       "url": "library/songs/trieu-doa-hoa-hong-misc-tunes-trieu-doa-hong-trieu-doa-hong-alpha-music.mxl",
-      "bytes": 7425,
-      "sha256": "30a6f9916ca793fc2e1ed768ddf173f60cf1bf9fac719637d9fdf968b5a77cbd",
+      "bytes": 5211,
+      "sha256": "343950dc1de56aa75054835cdb02ab2e978c2490af9c696bde9deba39451c612",
       "workId": "81f4fbcc40582825325196446a4e75916bf3a46a1347bf3b49258f8e01af7b34",
       "version": 1,
       "practiceReady": true,
-      "sourceSha256": "81f4fbcc40582825325196446a4e75916bf3a46a1347bf3b49258f8e01af7b34"
+      "sourceSha256": "81f4fbcc40582825325196446a4e75916bf3a46a1347bf3b49258f8e01af7b34",
+      "sourceHashes": [
+        "81f4fbcc40582825325196446a4e75916bf3a46a1347bf3b49258f8e01af7b34",
+        "30a6f9916ca793fc2e1ed768ddf173f60cf1bf9fac719637d9fdf968b5a77cbd"
+      ],
+      "arranger": "Alpha Music",
+      "aliases": [
+        "Triệu Đoá Hồng"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "2a881579d513685b1323fae2d4299e4b645520641a27c3373ba28840d9402657"
     },
     {
-      "id": "0fd610db5589836820b84a83b8018fee665e660682ec974d8122993661b61c38",
-      "title": "Merry Go Round of Life",
-      "filename": "Merry Go Round of Life.mxl",
+      "id": "785ca97f069633b42668eae276b192a5018706b76d84e5df031bc0a5fb7b9666",
+      "title": "Merry-Go-Round of Life",
+      "filename": "Merry-Go-Round of Life.mxl",
       "url": "library/songs/merry-go-round-of-life-easy-piano-excerpt.mxl",
-      "bytes": 5550,
-      "sha256": "0fd610db5589836820b84a83b8018fee665e660682ec974d8122993661b61c38",
-      "composer": "Joe Hishashi",
+      "bytes": 4342,
+      "sha256": "785ca97f069633b42668eae276b192a5018706b76d84e5df031bc0a5fb7b9666",
       "workId": "0fd610db5589836820b84a83b8018fee665e660682ec974d8122993661b61c38",
       "version": 1,
-      "practiceReady": true
+      "practiceReady": true,
+      "sourceHashes": [
+        "0fd610db5589836820b84a83b8018fee665e660682ec974d8122993661b61c38"
+      ],
+      "sourceSha256": "0fd610db5589836820b84a83b8018fee665e660682ec974d8122993661b61c38",
+      "composer": "Joe Hisaishi",
+      "arranger": "Rosanna D'Agnillo",
+      "aliases": [
+        "Merry Go Round of Life"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "fd601c569bc82abcff007437fd0e8791c95a4b9e1b367810aeecc43205845a2d"
     },
     {
-      "id": "c67bad42a95fbbcfc5118f38148d37840ed6a1d1be3c44b193b1d31a2d85dcfe",
+      "id": "7d8e12bee5cb5e90d5bdf0e0e91aae24f71cf5a9aa3464e48f5b3bf5fca03328",
       "title": "Nơi này có anh",
       "filename": "Nơi này có anh.mxl",
       "url": "library/songs/noi-nay-co-anh.mxl",
-      "bytes": 6098,
-      "sha256": "c67bad42a95fbbcfc5118f38148d37840ed6a1d1be3c44b193b1d31a2d85dcfe",
+      "bytes": 4551,
+      "sha256": "7d8e12bee5cb5e90d5bdf0e0e91aae24f71cf5a9aa3464e48f5b3bf5fca03328",
       "workId": "c67bad42a95fbbcfc5118f38148d37840ed6a1d1be3c44b193b1d31a2d85dcfe",
       "version": 1,
-      "practiceReady": true
+      "practiceReady": true,
+      "sourceHashes": [
+        "c67bad42a95fbbcfc5118f38148d37840ed6a1d1be3c44b193b1d31a2d85dcfe"
+      ],
+      "sourceSha256": "c67bad42a95fbbcfc5118f38148d37840ed6a1d1be3c44b193b1d31a2d85dcfe",
+      "arranger": "Mai Trọng Quý",
+      "aliases": [
+        "NƠI NÀY CÓ ANH"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "cff29335e20e659996dd4636738ea6905d4e35b6834164d1df83cdb96f86bd4b"
     },
     {
-      "id": "3ecf0d22910c8d5617a6015146be78f8f28669aa4cedf4e1fa6263142fc29e4b",
-      "title": "Tình Đơn Phương",
-      "filename": "Tình Đơn Phương.mxl",
+      "id": "721563543eec2b81b66709f740361d5182f76e68b86386b1ddbf33e3e145e664",
+      "title": "Tình đơn phương",
+      "filename": "Tình đơn phương.mxl",
       "url": "library/songs/tinh-don-phuong-xin-yao-rang-ni-ting-jian-cover-by-vu-le.mxl",
-      "bytes": 14385,
-      "sha256": "3ecf0d22910c8d5617a6015146be78f8f28669aa4cedf4e1fa6263142fc29e4b",
-      "composer": "Transcribed by Lê Mạnh Hùng",
+      "bytes": 14973,
+      "sha256": "721563543eec2b81b66709f740361d5182f76e68b86386b1ddbf33e3e145e664",
       "workId": "3ecf0d22910c8d5617a6015146be78f8f28669aa4cedf4e1fa6263142fc29e4b",
       "version": 1,
-      "practiceReady": true
+      "practiceReady": true,
+      "sourceHashes": [
+        "3ecf0d22910c8d5617a6015146be78f8f28669aa4cedf4e1fa6263142fc29e4b"
+      ],
+      "sourceSha256": "3ecf0d22910c8d5617a6015146be78f8f28669aa4cedf4e1fa6263142fc29e4b",
+      "transcriber": "Lê Mạnh Hùng",
+      "performer": "Vũ Lê",
+      "aliases": [
+        "Tình Đơn Phương"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "515871effd16586bcd1cf9c4c51370a3a19b6fd5d18cbcb8d8f9f8f0cc386af5"
     },
     {
-      "id": "c9816abf48a1222191cdfea4c10cc1f5ef70fd2d669da00d5dc8d3e4ddf04fab",
+      "id": "61814b9b4111d01927c55f553873babe982d03cd9e894227638afc5b548517ce",
       "title": "Rồi tới luôn",
       "filename": "Rồi tới luôn.mxl",
       "url": "library/songs/roi-toi-luon-nal.mxl",
-      "bytes": 6126,
-      "sha256": "c9816abf48a1222191cdfea4c10cc1f5ef70fd2d669da00d5dc8d3e4ddf04fab",
+      "bytes": 4259,
+      "sha256": "61814b9b4111d01927c55f553873babe982d03cd9e894227638afc5b548517ce",
       "workId": "7e4e2f99588844d726c7704a497c6f7d65ab5f58126eabdd98a7dd666a5b1a07",
       "version": 1,
       "practiceReady": true,
-      "sourceSha256": "7e4e2f99588844d726c7704a497c6f7d65ab5f58126eabdd98a7dd666a5b1a07"
+      "sourceSha256": "7e4e2f99588844d726c7704a497c6f7d65ab5f58126eabdd98a7dd666a5b1a07",
+      "sourceHashes": [
+        "7e4e2f99588844d726c7704a497c6f7d65ab5f58126eabdd98a7dd666a5b1a07",
+        "c9816abf48a1222191cdfea4c10cc1f5ef70fd2d669da00d5dc8d3e4ddf04fab"
+      ],
+      "aliases": [],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "c351d265580a9c61636d717e3cea49b9e51214f798952a54dda40479fdfbee93"
     },
     {
-      "id": "a1e9a8c4380d44191f34ce50878cad8cb0b05b38d9104b5a44c223b5f159188c",
-      "title": "Xuân Này Con Không Về",
-      "filename": "Xuân Này Con Không Về.mxl",
+      "id": "3682dcff40982cf2d136eab537633c1bd2f66bb8a3fe0ddcb2951efa759e3006",
+      "title": "Xuân này con không về",
+      "filename": "Xuân này con không về.mxl",
       "url": "library/songs/xuan-nay-con-khong-ve.mxl",
-      "bytes": 12741,
-      "sha256": "a1e9a8c4380d44191f34ce50878cad8cb0b05b38d9104b5a44c223b5f159188c",
+      "bytes": 8444,
+      "sha256": "3682dcff40982cf2d136eab537633c1bd2f66bb8a3fe0ddcb2951efa759e3006",
       "workId": "5888886405974ec933bb2b7ee1f212c554affe1eb6f5ef45cbe9d8f2384cc516",
       "version": 1,
       "practiceReady": true,
-      "sourceSha256": "5888886405974ec933bb2b7ee1f212c554affe1eb6f5ef45cbe9d8f2384cc516"
+      "sourceSha256": "5888886405974ec933bb2b7ee1f212c554affe1eb6f5ef45cbe9d8f2384cc516",
+      "sourceHashes": [
+        "5888886405974ec933bb2b7ee1f212c554affe1eb6f5ef45cbe9d8f2384cc516",
+        "a1e9a8c4380d44191f34ce50878cad8cb0b05b38d9104b5a44c223b5f159188c"
+      ],
+      "composer": "Trịnh Lâm Ngân",
+      "aliases": [
+        "Xuân Này Con Không Về"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "07cac946318d4906523e4657fec20316f746deaf27d71d4e925080a04e5cd60d"
     },
     {
-      "id": "f585a72ed253440feee11935126576b03c91dc8215b9d34df2be7b7ef4e1dae6",
-      "title": "Giọt Lệ Đài Trang",
-      "filename": "Giọt Lệ Đài Trang.mxl",
+      "id": "5d976d3e00e85bee2be541c10b8f0dfd79f49895544f0c2da1c324b13a9e0536",
+      "title": "Giọt lệ đài trang",
+      "filename": "Giọt lệ đài trang.mxl",
       "url": "library/songs/giot-le-dai-trang-chau-ky.mxl",
-      "bytes": 35486,
-      "sha256": "f585a72ed253440feee11935126576b03c91dc8215b9d34df2be7b7ef4e1dae6",
-      "composer": "Châu Kỳ",
+      "bytes": 20788,
+      "sha256": "5d976d3e00e85bee2be541c10b8f0dfd79f49895544f0c2da1c324b13a9e0536",
       "workId": "18a73f7bc69dbac6ef6115bb67028edb5633dba59ab76c37344dd047e7a74de5",
       "version": 1,
       "practiceReady": true,
-      "sourceSha256": "18a73f7bc69dbac6ef6115bb67028edb5633dba59ab76c37344dd047e7a74de5"
+      "sourceSha256": "18a73f7bc69dbac6ef6115bb67028edb5633dba59ab76c37344dd047e7a74de5",
+      "sourceHashes": [
+        "18a73f7bc69dbac6ef6115bb67028edb5633dba59ab76c37344dd047e7a74de5",
+        "f585a72ed253440feee11935126576b03c91dc8215b9d34df2be7b7ef4e1dae6"
+      ],
+      "composer": "Châu Kỳ",
+      "arranger": "Vũ Nguyên Đan",
+      "aliases": [
+        "Giọt Lệ Đài Trang"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "fbdf582081d3f47ef03165e8a0f79846dabe6d28f7a5f7c0b9d93e82cff03c78"
     },
     {
-      "id": "5930bccc108b4bd981234989e01e423f839ad981510b1554572fad39872360ba",
+      "id": "5c74f14c0ab1ff1b93cd79238f360a4ed6fecc93cb3a5654990e554ffbe7265f",
       "title": "Thích em hơi nhiều",
       "filename": "Thích em hơi nhiều.mxl",
       "url": "library/songs/thich-em-hoi-nhieu.mxl",
-      "bytes": 14388,
-      "sha256": "5930bccc108b4bd981234989e01e423f839ad981510b1554572fad39872360ba",
-      "composer": "Wrem Evans",
+      "bytes": 8845,
+      "sha256": "5c74f14c0ab1ff1b93cd79238f360a4ed6fecc93cb3a5654990e554ffbe7265f",
       "workId": "8d3f63fa5365229cc0eb98c2db3e3f88b6a86fbed5b53bdd70e7e187bcb99393",
       "version": 1,
       "practiceReady": true,
-      "sourceSha256": "8d3f63fa5365229cc0eb98c2db3e3f88b6a86fbed5b53bdd70e7e187bcb99393"
+      "sourceSha256": "8d3f63fa5365229cc0eb98c2db3e3f88b6a86fbed5b53bdd70e7e187bcb99393",
+      "sourceHashes": [
+        "8d3f63fa5365229cc0eb98c2db3e3f88b6a86fbed5b53bdd70e7e187bcb99393",
+        "5930bccc108b4bd981234989e01e423f839ad981510b1554572fad39872360ba"
+      ],
+      "composer": "Wren Evans",
+      "arranger": "Phương Thy",
+      "aliases": [],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "a25ebba4569b0341d6ee89f96f11b321196bd1f649d4a2b1f288e615103a2de5"
     },
     {
-      "id": "871baf0a9a07c00732921f5c68c0234aac65f9b90359ffd7a51539b93bb44c00",
-      "title": "Vết Mưa",
-      "filename": "Vết Mưa.mxl",
+      "id": "cf0ab3266de9805cb2e0a8733914dbe9ec943592578680ca89ec8c8d850b8ba0",
+      "title": "Vết mưa",
+      "filename": "Vết mưa.mxl",
       "url": "library/songs/vet-mua.mxl",
-      "bytes": 15442,
-      "sha256": "871baf0a9a07c00732921f5c68c0234aac65f9b90359ffd7a51539b93bb44c00",
-      "composer": "Piano arranged by Phương Thy",
+      "bytes": 9874,
+      "sha256": "cf0ab3266de9805cb2e0a8733914dbe9ec943592578680ca89ec8c8d850b8ba0",
       "workId": "1f6e6721c79f695b43cb13e1d293e9c3581ed196f8efd4645b64a997fe12c356",
       "version": 1,
       "practiceReady": true,
-      "sourceSha256": "1f6e6721c79f695b43cb13e1d293e9c3581ed196f8efd4645b64a997fe12c356"
+      "sourceSha256": "1f6e6721c79f695b43cb13e1d293e9c3581ed196f8efd4645b64a997fe12c356",
+      "sourceHashes": [
+        "1f6e6721c79f695b43cb13e1d293e9c3581ed196f8efd4645b64a997fe12c356",
+        "871baf0a9a07c00732921f5c68c0234aac65f9b90359ffd7a51539b93bb44c00"
+      ],
+      "arranger": "Phương Thy",
+      "aliases": [
+        "Vết Mưa"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "d59a59f867c5cb73cce5dc9ba4d0613b4a6429c98e642246c324e1b6a3460ab6"
     },
     {
-      "id": "64fbe981495b7f52e9d9e6e4a64b2950305f80fdc3edef010fd863542ffe1d31",
+      "id": "babc8bcc05a4226645301d51a8752c95ab5af37a5fd05e7e1c11d70ea81df5f0",
       "title": "Có không giữ mất đừng tìm",
       "filename": "Có không giữ mất đừng tìm.mxl",
       "url": "library/songs/co-khong-giu-mat-dung-tim.mxl",
-      "bytes": 17126,
-      "sha256": "64fbe981495b7f52e9d9e6e4a64b2950305f80fdc3edef010fd863542ffe1d31",
-      "composer": "Piang arranged by Phương Thy",
+      "bytes": 10626,
+      "sha256": "babc8bcc05a4226645301d51a8752c95ab5af37a5fd05e7e1c11d70ea81df5f0",
       "workId": "ffc42452ea013611d99c014eb24206d69111436233800af5a0b6e941cb0554bb",
       "version": 1,
       "practiceReady": true,
-      "sourceSha256": "ffc42452ea013611d99c014eb24206d69111436233800af5a0b6e941cb0554bb"
+      "sourceSha256": "ffc42452ea013611d99c014eb24206d69111436233800af5a0b6e941cb0554bb",
+      "sourceHashes": [
+        "ffc42452ea013611d99c014eb24206d69111436233800af5a0b6e941cb0554bb",
+        "64fbe981495b7f52e9d9e6e4a64b2950305f80fdc3edef010fd863542ffe1d31"
+      ],
+      "arranger": "Phương Thy",
+      "aliases": [],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "752c69e0bd7563a126c9bb8fa284fc2253b57da69b107ba1a964935049688872"
     },
     {
-      "id": "49179df154fcc2b7efacceee66d1ae3b7770314e586f11dd1dbfc5dd5938b5f5",
+      "id": "66c59305531d534453a964dc97c61237665ea1ce816479c65b3dc0521054c785",
       "title": "Sao mình chưa nắm tay nhau",
       "filename": "Sao mình chưa nắm tay nhau.mxl",
       "url": "library/songs/sao-minh-chua-nam-tay-nhau-yan-nguyen.mxl",
-      "bytes": 10463,
-      "sha256": "49179df154fcc2b7efacceee66d1ae3b7770314e586f11dd1dbfc5dd5938b5f5",
-      "composer": "Compositeur / Arrangeur",
+      "bytes": 6881,
+      "sha256": "66c59305531d534453a964dc97c61237665ea1ce816479c65b3dc0521054c785",
       "workId": "125424fdf3e0d13da5d2dde285113189b813fdfdd8c5b6c9338ccf1db5c076cc",
       "version": 1,
       "practiceReady": true,
-      "sourceSha256": "125424fdf3e0d13da5d2dde285113189b813fdfdd8c5b6c9338ccf1db5c076cc"
+      "sourceSha256": "125424fdf3e0d13da5d2dde285113189b813fdfdd8c5b6c9338ccf1db5c076cc",
+      "sourceHashes": [
+        "125424fdf3e0d13da5d2dde285113189b813fdfdd8c5b6c9338ccf1db5c076cc",
+        "49179df154fcc2b7efacceee66d1ae3b7770314e586f11dd1dbfc5dd5938b5f5"
+      ],
+      "composer": "YAN NGUYEN",
+      "arranger": "Syldodo",
+      "aliases": [
+        "Partition sans titre"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "0007d046af92e1033516e977fbea1c6dfb89aca37c50f6b35227c24efcca225a"
     },
     {
-      "id": "d4a5d5be606e3a3977b5748117424bd06a9de4cfbf8fe11dec04189328efd881",
-      "title": "Đưa Em Về Nhà",
-      "filename": "Đưa Em Về Nhà.mxl",
+      "id": "ba5a6c79cd051f6677bc91250e60eb652749b1b65d32ff5ec7a4228896b264f8",
+      "title": "Đưa em về nhà",
+      "filename": "Đưa em về nhà.mxl",
       "url": "library/songs/dua-em-ve-nha-dua-em-ve-nha.mxl",
-      "bytes": 15685,
-      "sha256": "d4a5d5be606e3a3977b5748117424bd06a9de4cfbf8fe11dec04189328efd881",
-      "composer": "Piano arranged by Phương Thy",
+      "bytes": 9942,
+      "sha256": "ba5a6c79cd051f6677bc91250e60eb652749b1b65d32ff5ec7a4228896b264f8",
       "workId": "b24471ea6c8e8e4165631ca7d1fabc00cc03308a792b7989db0467bd96c496ba",
       "version": 1,
       "practiceReady": true,
-      "sourceSha256": "b24471ea6c8e8e4165631ca7d1fabc00cc03308a792b7989db0467bd96c496ba"
+      "sourceSha256": "b24471ea6c8e8e4165631ca7d1fabc00cc03308a792b7989db0467bd96c496ba",
+      "sourceHashes": [
+        "b24471ea6c8e8e4165631ca7d1fabc00cc03308a792b7989db0467bd96c496ba",
+        "d4a5d5be606e3a3977b5748117424bd06a9de4cfbf8fe11dec04189328efd881"
+      ],
+      "arranger": "Phương Thy",
+      "aliases": [
+        "Đưa Em Về Nhà"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "1ce2ea7ec6e7ae9f501a273f7ee364c9d8573a56c5539f842bcea34d3fa7df3b"
     },
     {
-      "id": "6095f67b1cf346f9c5f621d5c3cc0b84b7a09c87807ae01d3cf5860a53c5a270",
-      "title": "Sau Tất Cả",
-      "filename": "Sau Tất Cả.mxl",
+      "id": "d1a5300791f3752d2441611d2537d15e45f784c6c99c7160bc85d2aa95cc5e12",
+      "title": "Sau tất cả",
+      "filename": "Sau tất cả.mxl",
       "url": "library/songs/sau-tat-ca-erik-st-319-sau-tat-ca.mxl",
-      "bytes": 15720,
-      "sha256": "6095f67b1cf346f9c5f621d5c3cc0b84b7a09c87807ae01d3cf5860a53c5a270",
-      "composer": "Khắc Hưng Piano arranged by Phương Thy",
+      "bytes": 9875,
+      "sha256": "d1a5300791f3752d2441611d2537d15e45f784c6c99c7160bc85d2aa95cc5e12",
       "workId": "999afa808786cf98610fcd4929025d5a2558f618ba9741afd47637cbb491ef38",
       "version": 1,
       "practiceReady": true,
-      "sourceSha256": "999afa808786cf98610fcd4929025d5a2558f618ba9741afd47637cbb491ef38"
+      "sourceSha256": "999afa808786cf98610fcd4929025d5a2558f618ba9741afd47637cbb491ef38",
+      "sourceHashes": [
+        "999afa808786cf98610fcd4929025d5a2558f618ba9741afd47637cbb491ef38",
+        "6095f67b1cf346f9c5f621d5c3cc0b84b7a09c87807ae01d3cf5860a53c5a270"
+      ],
+      "composer": "Khắc Hưng",
+      "arranger": "Phương Thy",
+      "aliases": [
+        "Sau Tất Cả"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "ae427b66e18321b0748c4e4ba2605ca47694ef1010d5f8ccc4539206cca078ed"
     },
     {
-      "id": "0d3966ad467b40549a1b908a9ad295c5addb2c2cd00162623b903dbba90da6a0",
+      "id": "4c94e5653805327916551a5f194bfad4af54661df1c7c46007c6847ae4e016ae",
       "title": "Tràn bộ nhớ",
       "filename": "Tràn bộ nhớ.mxl",
       "url": "library/songs/tran-bo-nho-duong-domic.mxl",
-      "bytes": 7108,
-      "sha256": "0d3966ad467b40549a1b908a9ad295c5addb2c2cd00162623b903dbba90da6a0",
-      "composer": "Soạn: Thảo Chi",
+      "bytes": 4855,
+      "sha256": "4c94e5653805327916551a5f194bfad4af54661df1c7c46007c6847ae4e016ae",
       "workId": "8bdbe9269ccd490d9165734928ab45d84856b183728e0eaa74907bfbe8b6d8b2",
       "version": 1,
       "practiceReady": true,
-      "sourceSha256": "8bdbe9269ccd490d9165734928ab45d84856b183728e0eaa74907bfbe8b6d8b2"
+      "sourceSha256": "8bdbe9269ccd490d9165734928ab45d84856b183728e0eaa74907bfbe8b6d8b2",
+      "sourceHashes": [
+        "8bdbe9269ccd490d9165734928ab45d84856b183728e0eaa74907bfbe8b6d8b2",
+        "0d3966ad467b40549a1b908a9ad295c5addb2c2cd00162623b903dbba90da6a0"
+      ],
+      "arranger": "Thảo Chi",
+      "aliases": [
+        "TRÀN BỘ NHỚ"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "36b97de2876095146f67497dbc931f76c6ce10806ca37cc592435d608954efe3"
     },
     {
-      "id": "fefb27ede1d7f164985d7e427e703a1079e54e06ce8b48272b135cd311cc386a",
+      "id": "32185e753e0a8c64588c7c49d4b36caa3be961d53c251765635ef4dec0885cf6",
       "title": "Chuyến tàu hoàng hôn",
       "filename": "Chuyến tàu hoàng hôn.mxl",
       "url": "library/songs/chuyen-tau-hoang-hon-minh-ky.mxl",
-      "bytes": 26466,
-      "sha256": "fefb27ede1d7f164985d7e427e703a1079e54e06ce8b48272b135cd311cc386a",
+      "bytes": 14660,
+      "sha256": "32185e753e0a8c64588c7c49d4b36caa3be961d53c251765635ef4dec0885cf6",
       "workId": "1143f88b9774a0b7dad434e2017dc1ece8f9bae9f78bfae0c403057ca8caa604",
       "version": 1,
       "practiceReady": true,
-      "sourceSha256": "1143f88b9774a0b7dad434e2017dc1ece8f9bae9f78bfae0c403057ca8caa604"
+      "sourceSha256": "1143f88b9774a0b7dad434e2017dc1ece8f9bae9f78bfae0c403057ca8caa604",
+      "sourceHashes": [
+        "1143f88b9774a0b7dad434e2017dc1ece8f9bae9f78bfae0c403057ca8caa604",
+        "fefb27ede1d7f164985d7e427e703a1079e54e06ce8b48272b135cd311cc386a"
+      ],
+      "composer": "Minh Kỳ",
+      "lyricist": "Hoài Linh",
+      "aliases": [
+        "Untitled score"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "6085a19ac42ab804b0178f7242505b0418242d017dd60f24599f6c4f3f992332"
     },
     {
-      "id": "d8346366bb4b8e55d443b9f25ddf27495b6c67f3d6dfa2332652fd4637c2b38f",
+      "id": "a05219b37faada9a07bac71daa99eb0f7ef2f640896681ea245af0d7f8531707",
       "title": "Em đi trên cỏ non",
       "filename": "Em đi trên cỏ non.mxl",
       "url": "library/songs/em-di-tren-co-non.mxl",
-      "bytes": 16731,
-      "sha256": "d8346366bb4b8e55d443b9f25ddf27495b6c67f3d6dfa2332652fd4637c2b38f",
+      "bytes": 10182,
+      "sha256": "a05219b37faada9a07bac71daa99eb0f7ef2f640896681ea245af0d7f8531707",
       "workId": "7c1790469b84585795d6dad45c094c6fef2b5a67ce620dd4d2640965dcf15239",
       "version": 1,
       "practiceReady": true,
-      "sourceSha256": "7c1790469b84585795d6dad45c094c6fef2b5a67ce620dd4d2640965dcf15239"
+      "sourceSha256": "7c1790469b84585795d6dad45c094c6fef2b5a67ce620dd4d2640965dcf15239",
+      "sourceHashes": [
+        "7c1790469b84585795d6dad45c094c6fef2b5a67ce620dd4d2640965dcf15239",
+        "d8346366bb4b8e55d443b9f25ddf27495b6c67f3d6dfa2332652fd4637c2b38f"
+      ],
+      "composer": "Bắc Sơn",
+      "arranger": "Trương Phi Long",
+      "aliases": [
+        "Untitled score"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "0b665252f5d49cb698c559731882c184d9323e88df89242cd94f65ae3a3d1c8e"
     },
     {
-      "id": "75e94d6c4ec72661f83b6778a4d46b49896ff2d04d0857b855024c21ad048e0f",
+      "id": "935a43cbe42b6876fa05b09d6f098cb8403c6ceb1c659278f6093afca4db6c9a",
       "title": "Gạt đi nước mắt",
       "filename": "Gạt đi nước mắt.mxl",
       "url": "library/songs/gat-di-nuoc-mat-noo-phuoc-thinh.mxl",
-      "bytes": 34136,
-      "sha256": "75e94d6c4ec72661f83b6778a4d46b49896ff2d04d0857b855024c21ad048e0f",
+      "bytes": 19216,
+      "sha256": "935a43cbe42b6876fa05b09d6f098cb8403c6ceb1c659278f6093afca4db6c9a",
       "workId": "5edbbd2a802726a0edcf57a899088e35162985eaacaec67e68f3398a5732ae31",
       "version": 1,
       "practiceReady": true,
-      "sourceSha256": "5edbbd2a802726a0edcf57a899088e35162985eaacaec67e68f3398a5732ae31"
+      "sourceSha256": "5edbbd2a802726a0edcf57a899088e35162985eaacaec67e68f3398a5732ae31",
+      "sourceHashes": [
+        "5edbbd2a802726a0edcf57a899088e35162985eaacaec67e68f3398a5732ae31",
+        "75e94d6c4ec72661f83b6778a4d46b49896ff2d04d0857b855024c21ad048e0f"
+      ],
+      "composer": "Đỗ Hiếu",
+      "arranger": "Trương Phi Long",
+      "aliases": [
+        "Bản nhạc không tên"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "6a547d9669d2719bdedd24018199261702c438274575d7bcf0fabf53593b67e4"
     },
     {
-      "id": "d765d5520fff92b753867df49f6309e114a6bf537870b70b7d83fc0955233f6d",
+      "id": "67325b83ce07fbab740c7e802e92d3a4c05de9c872a69eaf59fcaea16e5a3b4a",
       "title": "Về quê ngoại",
       "filename": "Về quê ngoại.mxl",
       "url": "library/songs/ve-que-ngoai.mxl",
-      "bytes": 23867,
-      "sha256": "d765d5520fff92b753867df49f6309e114a6bf537870b70b7d83fc0955233f6d",
+      "bytes": 13825,
+      "sha256": "67325b83ce07fbab740c7e802e92d3a4c05de9c872a69eaf59fcaea16e5a3b4a",
       "workId": "b720a83de58ffa32bbf8a2a7270823e9ae2e1e9eb2a842c4976f86c1698fa34c",
       "version": 1,
       "practiceReady": true,
-      "sourceSha256": "b720a83de58ffa32bbf8a2a7270823e9ae2e1e9eb2a842c4976f86c1698fa34c"
+      "sourceSha256": "b720a83de58ffa32bbf8a2a7270823e9ae2e1e9eb2a842c4976f86c1698fa34c",
+      "sourceHashes": [
+        "b720a83de58ffa32bbf8a2a7270823e9ae2e1e9eb2a842c4976f86c1698fa34c",
+        "d765d5520fff92b753867df49f6309e114a6bf537870b70b7d83fc0955233f6d"
+      ],
+      "composer": "Hàn Châu",
+      "aliases": [
+        "Untitled score"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "bf09e93a17f4676ceeb34a925970151a6e37ed174ad8a4877e99d822827b0ea2"
     },
     {
-      "id": "1023fbe87347690dd62d6310e954023ad9f9ca255a7a69b8cc799fa5570fcfe4",
+      "id": "bacfe2f30d41361c651d36f7660687d380276336a14e71dbb6a92f8e9dfcbab3",
       "title": "Rước tình về với quê hương",
       "filename": "Rước tình về với quê hương.mxl",
       "url": "library/songs/ruoc-tinh-ve-voi-que-huong.mxl",
-      "bytes": 13010,
-      "sha256": "1023fbe87347690dd62d6310e954023ad9f9ca255a7a69b8cc799fa5570fcfe4",
+      "bytes": 8303,
+      "sha256": "bacfe2f30d41361c651d36f7660687d380276336a14e71dbb6a92f8e9dfcbab3",
       "workId": "183a6adc1583485dee93a942816328e0422ee8f576a916cd8fe09dea5d70a6dc",
       "version": 1,
       "practiceReady": true,
-      "sourceSha256": "183a6adc1583485dee93a942816328e0422ee8f576a916cd8fe09dea5d70a6dc"
+      "sourceSha256": "183a6adc1583485dee93a942816328e0422ee8f576a916cd8fe09dea5d70a6dc",
+      "sourceHashes": [
+        "183a6adc1583485dee93a942816328e0422ee8f576a916cd8fe09dea5d70a6dc",
+        "1023fbe87347690dd62d6310e954023ad9f9ca255a7a69b8cc799fa5570fcfe4"
+      ],
+      "composer": "Hoàng Thi Thơ",
+      "aliases": [
+        "Untitled score"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "421a928a3e3048b95feeb4443b0cb36f1e124d490ffd6dae0aef9342400e0504"
     },
     {
-      "id": "775afc1bba11fd363b166e556349067f2b32a03499c71159b023ac013f9432d7",
+      "id": "886ee37c8d35cac231dd0180f18afda0508e4e03c058d02cf5ea5e8c0678c6f9",
       "title": "Xin má rước dâu",
       "filename": "Xin má rước dâu.mxl",
       "url": "library/songs/xin-ma-ruoc-dau-dieu-kien.mxl",
-      "bytes": 20604,
-      "sha256": "775afc1bba11fd363b166e556349067f2b32a03499c71159b023ac013f9432d7",
+      "bytes": 12044,
+      "sha256": "886ee37c8d35cac231dd0180f18afda0508e4e03c058d02cf5ea5e8c0678c6f9",
       "workId": "8bb5efc2f6b5accaf232697807385523f4f3136f5ef88f5a34604b43d8f85e3d",
       "version": 1,
       "practiceReady": true,
-      "sourceSha256": "8bb5efc2f6b5accaf232697807385523f4f3136f5ef88f5a34604b43d8f85e3d"
+      "sourceSha256": "8bb5efc2f6b5accaf232697807385523f4f3136f5ef88f5a34604b43d8f85e3d",
+      "sourceHashes": [
+        "8bb5efc2f6b5accaf232697807385523f4f3136f5ef88f5a34604b43d8f85e3d",
+        "775afc1bba11fd363b166e556349067f2b32a03499c71159b023ac013f9432d7"
+      ],
+      "composer": "Huỳnh Lê Hoài Bảo",
+      "aliases": [
+        "Untitled score"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "b73908187df8b627aa0b526239db4881a8a644295d5f79eb06b8790f0b6cd10f"
     },
     {
-      "id": "138a1d087e669f9ea863e762bfd09e8a5cbbbca78d6f2bc640fb336b65f0f071",
+      "id": "779ee462bbfc8ed7728372dc99c0cd4ce797d7e1f547fc4fef82681ddc6fdb0e",
       "title": "Day by Day",
       "filename": "Day by Day.mxl",
       "url": "library/songs/day-by-day-t-ara-tiala.mxl",
-      "bytes": 23360,
-      "sha256": "138a1d087e669f9ea863e762bfd09e8a5cbbbca78d6f2bc640fb336b65f0f071",
+      "bytes": 14197,
+      "sha256": "779ee462bbfc8ed7728372dc99c0cd4ce797d7e1f547fc4fef82681ddc6fdb0e",
       "workId": "6b5ed8aa0fa37c4c9e8195629360ada0c515c7984afe328f340512c98edb48c2",
       "version": 1,
       "practiceReady": true,
-      "sourceSha256": "6b5ed8aa0fa37c4c9e8195629360ada0c515c7984afe328f340512c98edb48c2"
+      "sourceSha256": "6b5ed8aa0fa37c4c9e8195629360ada0c515c7984afe328f340512c98edb48c2",
+      "sourceHashes": [
+        "6b5ed8aa0fa37c4c9e8195629360ada0c515c7984afe328f340512c98edb48c2",
+        "138a1d087e669f9ea863e762bfd09e8a5cbbbca78d6f2bc640fb336b65f0f071"
+      ],
+      "composer": "Kim Tae-hyun, Cho Young-soo",
+      "lyricist": "Kim Tae-hyun, Cho Young-soo, Ahn Young-min, K-Smith",
+      "aliases": [
+        "Untitled score"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "1093409c6a955219b0a8054ae408c701f1e63e8c8eecda09d6abd2be1639c2cc"
     },
     {
-      "id": "b13111473d5a3856578ea71fda175af66b7f9f0bcf16745adc32d3743bdeb3e8",
+      "id": "ac0d9a0ce8c0a6aca6c74162a5e917187c687d49c365dffcd5206f88115b948f",
       "title": "Chuyện ba mùa mưa",
       "filename": "Chuyện ba mùa mưa.mxl",
       "url": "library/songs/chuyen-ba-mua-mua-minh-ky-da-cam.mxl",
-      "bytes": 18390,
-      "sha256": "b13111473d5a3856578ea71fda175af66b7f9f0bcf16745adc32d3743bdeb3e8",
+      "bytes": 11184,
+      "sha256": "ac0d9a0ce8c0a6aca6c74162a5e917187c687d49c365dffcd5206f88115b948f",
       "workId": "d27171a04b85d7afab79875e0a08b90736fc4235232d575d32c82469c373432d",
       "version": 1,
       "practiceReady": true,
-      "sourceSha256": "d27171a04b85d7afab79875e0a08b90736fc4235232d575d32c82469c373432d"
+      "sourceSha256": "d27171a04b85d7afab79875e0a08b90736fc4235232d575d32c82469c373432d",
+      "sourceHashes": [
+        "d27171a04b85d7afab79875e0a08b90736fc4235232d575d32c82469c373432d",
+        "b13111473d5a3856578ea71fda175af66b7f9f0bcf16745adc32d3743bdeb3e8"
+      ],
+      "composer": "Minh Kỳ, Dạ Cầm",
+      "aliases": [
+        "Untitled score"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "f2c20972aa9468641a2a895d2ce189d62ed9b6dd5057899031b2b29b45e15da4"
     },
     {
-      "id": "1970e2e6b7766450c76a5d0961efcf4239014615106be34428707ca2c264a29b",
+      "id": "f3365b04ad82424b5abc093cd229008bb1bddc8fe564482d5ac96a128e6b2f92",
       "title": "Nhiều người ôm giấc mơ",
       "filename": "Nhiều người ôm giấc mơ.mxl",
       "url": "library/songs/nhieu-nguoi-om-giac-mo-le-cat-trong-ly.mxl",
-      "bytes": 21323,
-      "sha256": "1970e2e6b7766450c76a5d0961efcf4239014615106be34428707ca2c264a29b",
+      "bytes": 13341,
+      "sha256": "f3365b04ad82424b5abc093cd229008bb1bddc8fe564482d5ac96a128e6b2f92",
       "workId": "cb5f4563532b4da027ae4391e9ac92667bc88a7f51f0c394e89b633da04c9e19",
       "version": 1,
       "practiceReady": true,
-      "sourceSha256": "cb5f4563532b4da027ae4391e9ac92667bc88a7f51f0c394e89b633da04c9e19"
+      "sourceSha256": "cb5f4563532b4da027ae4391e9ac92667bc88a7f51f0c394e89b633da04c9e19",
+      "sourceHashes": [
+        "cb5f4563532b4da027ae4391e9ac92667bc88a7f51f0c394e89b633da04c9e19",
+        "1970e2e6b7766450c76a5d0961efcf4239014615106be34428707ca2c264a29b"
+      ],
+      "composer": "Lê Cát Trọng Lý",
+      "aliases": [
+        "Untitled score"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "2cd6adb8a904de8e18be10b580596821face09f314b6cab57139a5331e359610"
     },
     {
-      "id": "1c3f94604d86b987978cdca12499532f5de108c107b0563eb8ed305faa398064",
+      "id": "4eea5aa84f3657f05fa26b90b56b3aa26bddf8bc38708e784d99a0a4553b4792",
       "title": "Xin đừng lặng im",
       "filename": "Xin đừng lặng im.mxl",
       "url": "library/songs/xin-dung-lang-im.mxl",
-      "bytes": 8496,
-      "sha256": "1c3f94604d86b987978cdca12499532f5de108c107b0563eb8ed305faa398064",
-      "composer": "facebook. com/phamnguyenngocminh. I 993",
+      "bytes": 6117,
+      "sha256": "4eea5aa84f3657f05fa26b90b56b3aa26bddf8bc38708e784d99a0a4553b4792",
       "workId": "4f96c16a6aac6ce3ef66e76c5f616733598d8fab7e2200575b830cb7a43965d7",
       "version": 1,
       "practiceReady": true,
-      "sourceSha256": "4f96c16a6aac6ce3ef66e76c5f616733598d8fab7e2200575b830cb7a43965d7"
+      "sourceSha256": "4f96c16a6aac6ce3ef66e76c5f616733598d8fab7e2200575b830cb7a43965d7",
+      "sourceHashes": [
+        "4f96c16a6aac6ce3ef66e76c5f616733598d8fab7e2200575b830cb7a43965d7",
+        "1c3f94604d86b987978cdca12499532f5de108c107b0563eb8ed305faa398064"
+      ],
+      "aliases": [
+        "an"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "e77aa53703ba47e85b8dc6fb2e8d644a0324b839632b00a2c2ff41babe36989e"
     },
     {
-      "id": "55a2a033f28596a8985defb08c20a3880ad0b8a93d2f411bf277dc5da87b0df9",
+      "id": "0b18987e34753b558e64af0b2394efeacc3310e344c51065d7245b5ab919fc7c",
       "title": "Đừng làm trái tim anh đau",
       "filename": "Đừng làm trái tim anh đau.mxl",
       "url": "library/songs/dung-lam-trai-tim-anh-dau-son-tung-m-tp.mxl",
-      "bytes": 9534,
-      "sha256": "55a2a033f28596a8985defb08c20a3880ad0b8a93d2f411bf277dc5da87b0df9",
-      "composer": "Sơn Tùng;Việt Hùng",
+      "bytes": 6829,
+      "sha256": "0b18987e34753b558e64af0b2394efeacc3310e344c51065d7245b5ab919fc7c",
       "workId": "2d9a0093791b02acacc0b8b6cfdb09649f47f7fc623f57199ccdb9c3cb530500",
       "version": 1,
       "practiceReady": true,
-      "sourceSha256": "2d9a0093791b02acacc0b8b6cfdb09649f47f7fc623f57199ccdb9c3cb530500"
+      "sourceSha256": "2d9a0093791b02acacc0b8b6cfdb09649f47f7fc623f57199ccdb9c3cb530500",
+      "sourceHashes": [
+        "2d9a0093791b02acacc0b8b6cfdb09649f47f7fc623f57199ccdb9c3cb530500",
+        "55a2a033f28596a8985defb08c20a3880ad0b8a93d2f411bf277dc5da87b0df9"
+      ],
+      "composer": "Sơn Tùng M-TP",
+      "arranger": "Việt Hùng (Hùng Music)",
+      "aliases": [
+        "Đừng Làm Trái Tim Anh Đau"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "4e440ef10b98169beeea067a2754faaf31f0e21f7565300f190c6b1cfb88c33b"
     },
     {
-      "id": "86b93d7639a4857e04e07e6621cfa2c4c0b50a28ccab68bfcdc5f3477ce6a7d5",
+      "id": "c2c0d922d13f100ea1491a961e5b32f99b9afc381e5c98f793a0ff4ce5cc8e01",
       "title": "Sóng gió",
       "filename": "Sóng gió.mxl",
       "url": "library/songs/song-gio.mxl",
-      "bytes": 10595,
-      "sha256": "86b93d7639a4857e04e07e6621cfa2c4c0b50a28ccab68bfcdc5f3477ce6a7d5",
+      "bytes": 7047,
+      "sha256": "c2c0d922d13f100ea1491a961e5b32f99b9afc381e5c98f793a0ff4ce5cc8e01",
       "workId": "86b93d7639a4857e04e07e6621cfa2c4c0b50a28ccab68bfcdc5f3477ce6a7d5",
       "version": 1,
-      "practiceReady": true
+      "practiceReady": true,
+      "sourceHashes": [
+        "86b93d7639a4857e04e07e6621cfa2c4c0b50a28ccab68bfcdc5f3477ce6a7d5"
+      ],
+      "sourceSha256": "86b93d7639a4857e04e07e6621cfa2c4c0b50a28ccab68bfcdc5f3477ce6a7d5",
+      "aliases": [],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "f2a24e11c2f68f74b808e277475794517023a7e67acf29b1ac6506031ced986a"
     },
     {
-      "id": "f8ca880b74ffce7c7742e0b2f6e2a33533fdcbdd33c9b0f7643db0f9bff6495c",
+      "id": "cabe3d4b9917e50077ea783cd29d4a77f398c4fa6f819a0cf71611b7eb1be314",
       "title": "Nàng thơ",
       "filename": "Nàng thơ.mxl",
       "url": "library/songs/nang-tho.mxl",
-      "bytes": 6785,
-      "sha256": "f8ca880b74ffce7c7742e0b2f6e2a33533fdcbdd33c9b0f7643db0f9bff6495c",
-      "composer": "Hoàng Dũng",
+      "bytes": 5132,
+      "sha256": "cabe3d4b9917e50077ea783cd29d4a77f398c4fa6f819a0cf71611b7eb1be314",
       "workId": "f8ca880b74ffce7c7742e0b2f6e2a33533fdcbdd33c9b0f7643db0f9bff6495c",
       "version": 1,
-      "practiceReady": true
+      "practiceReady": true,
+      "sourceHashes": [
+        "f8ca880b74ffce7c7742e0b2f6e2a33533fdcbdd33c9b0f7643db0f9bff6495c"
+      ],
+      "sourceSha256": "f8ca880b74ffce7c7742e0b2f6e2a33533fdcbdd33c9b0f7643db0f9bff6495c",
+      "composer": "Hoàng Dũng",
+      "aliases": [
+        "Nàng Thơ"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "d2a68bf12bc407f0925cdc04b382053cff1b012c935f63d6f43c38d4373d8e45"
     },
     {
-      "id": "24c1dbe628b086e95141ace368dd19a8f85500acf53e9ab6d784bbd3998e0fb1",
+      "id": "31e4d036df78397da7902eb7cf57022f12cd69caf501ff067350ffd18114a4e6",
       "title": "Dấu mưa",
       "filename": "Dấu mưa.mxl",
       "url": "library/songs/dau-mua.mxl",
-      "bytes": 7681,
-      "sha256": "24c1dbe628b086e95141ace368dd19a8f85500acf53e9ab6d784bbd3998e0fb1",
+      "bytes": 5255,
+      "sha256": "31e4d036df78397da7902eb7cf57022f12cd69caf501ff067350ffd18114a4e6",
       "workId": "24c1dbe628b086e95141ace368dd19a8f85500acf53e9ab6d784bbd3998e0fb1",
       "version": 1,
-      "practiceReady": true
+      "practiceReady": true,
+      "sourceHashes": [
+        "24c1dbe628b086e95141ace368dd19a8f85500acf53e9ab6d784bbd3998e0fb1"
+      ],
+      "sourceSha256": "24c1dbe628b086e95141ace368dd19a8f85500acf53e9ab6d784bbd3998e0fb1",
+      "aliases": [
+        "dấu mưa"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "5f107cd6155a7c9307f3511e5ac4ae876d1c77c14f9feed3f2d89e702f89d43d"
     },
     {
-      "id": "d170791f68eeafe0ac726baaacac949879eee9f3465f334b60722ba8c9908947",
+      "id": "8744cbe0db97a1d36d12baabc06245a5194410e24d86e36adb43bae5f22c314d",
       "title": "Ánh trăng nói hộ lòng tôi",
       "filename": "Ánh trăng nói hộ lòng tôi.mxl",
       "url": "library/songs/anh-trang-noi-ho-long-toi-the-moon-represents-my-heart.mxl",
-      "bytes": 5149,
-      "sha256": "d170791f68eeafe0ac726baaacac949879eee9f3465f334b60722ba8c9908947",
+      "bytes": 4266,
+      "sha256": "8744cbe0db97a1d36d12baabc06245a5194410e24d86e36adb43bae5f22c314d",
       "workId": "d170791f68eeafe0ac726baaacac949879eee9f3465f334b60722ba8c9908947",
       "version": 1,
-      "practiceReady": true
+      "practiceReady": true,
+      "sourceHashes": [
+        "d170791f68eeafe0ac726baaacac949879eee9f3465f334b60722ba8c9908947"
+      ],
+      "sourceSha256": "d170791f68eeafe0ac726baaacac949879eee9f3465f334b60722ba8c9908947",
+      "aliases": [],
+      "composer": "Tang Ni",
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "24cd26191f1a88b782a7e3f91bb8221cb4b3e462ed5d380f51cbf3b6fdd4445a"
     },
     {
-      "id": "0c7c4054287db97a5bb7ab279a100a3831ed28a7cec31a0d45c1ca5f5141346a",
+      "id": "4e4d37ec7205c241331d5836aad5949c1ef1417e40d2a5057a5b659536b03b6c",
       "title": "Cause I Love You",
       "filename": "Cause I Love You.mxl",
       "url": "library/songs/cause-i-love-you-noo-phuoc-thinh-arrsemionhieu.mxl",
-      "bytes": 13787,
-      "sha256": "0c7c4054287db97a5bb7ab279a100a3831ed28a7cec31a0d45c1ca5f5141346a",
+      "bytes": 9051,
+      "sha256": "4e4d37ec7205c241331d5836aad5949c1ef1417e40d2a5057a5b659536b03b6c",
       "workId": "226d761f16ee0de517b4b2dec9a19572e378f42dea417b183913c2011ebcfe4c",
       "version": 1,
       "practiceReady": true,
-      "sourceSha256": "226d761f16ee0de517b4b2dec9a19572e378f42dea417b183913c2011ebcfe4c"
+      "sourceSha256": "226d761f16ee0de517b4b2dec9a19572e378f42dea417b183913c2011ebcfe4c",
+      "sourceHashes": [
+        "226d761f16ee0de517b4b2dec9a19572e378f42dea417b183913c2011ebcfe4c",
+        "0c7c4054287db97a5bb7ab279a100a3831ed28a7cec31a0d45c1ca5f5141346a"
+      ],
+      "arranger": "Hieubeono1",
+      "aliases": [
+        "brud"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "f43c397cacba6b687e191368bcb285fd3b3adcd3d037d07c9fc12053c9b22f6e"
     },
     {
-      "id": "0d27e95a55f3112fb52a8f8d1fa3578ff9179ea0b44b61275f312de25fef372c",
+      "id": "6ad6a09e4710bcb3b660fa834a12331a276f1f29b87a571887cdd2f761768031",
       "title": "Người ấy",
       "filename": "Người ấy.mxl",
       "url": "library/songs/nguoi-ay-sheet-easy.mxl",
-      "bytes": 6978,
-      "sha256": "0d27e95a55f3112fb52a8f8d1fa3578ff9179ea0b44b61275f312de25fef372c",
+      "bytes": 5016,
+      "sha256": "6ad6a09e4710bcb3b660fa834a12331a276f1f29b87a571887cdd2f761768031",
       "workId": "038289bb5ee8e14dde29bd7e3e75912430e2d952c9d8d5d0b006ccadad28650c",
       "version": 1,
       "practiceReady": true,
-      "sourceSha256": "038289bb5ee8e14dde29bd7e3e75912430e2d952c9d8d5d0b006ccadad28650c"
+      "sourceSha256": "038289bb5ee8e14dde29bd7e3e75912430e2d952c9d8d5d0b006ccadad28650c",
+      "sourceHashes": [
+        "038289bb5ee8e14dde29bd7e3e75912430e2d952c9d8d5d0b006ccadad28650c",
+        "0d27e95a55f3112fb52a8f8d1fa3578ff9179ea0b44b61275f312de25fef372c"
+      ],
+      "transcriber": "Minh LT",
+      "aliases": [
+        "Bản nhạc không tên"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "ab71a5b34b157d6d4435276d881b58afc59e868c73a08dbb74296f3eb9124446"
     },
     {
-      "id": "9c5b9a7feaa6d3b244e6d604393e3a018b58f82cf11f8033ae28509d2e0c96aa",
+      "id": "97ce3883b98bcd4d6d568993150bc03c633aeeaf1c00b9b8773e03b5b4b219e9",
       "title": "Doraemon no Uta",
       "filename": "Doraemon no Uta.mxl",
       "url": "library/songs/doraemon-no-uta.mxl",
-      "bytes": 9333,
-      "sha256": "9c5b9a7feaa6d3b244e6d604393e3a018b58f82cf11f8033ae28509d2e0c96aa",
+      "bytes": 6795,
+      "sha256": "97ce3883b98bcd4d6d568993150bc03c633aeeaf1c00b9b8773e03b5b4b219e9",
       "workId": "9c5b9a7feaa6d3b244e6d604393e3a018b58f82cf11f8033ae28509d2e0c96aa",
       "version": 1,
-      "practiceReady": true
+      "practiceReady": true,
+      "sourceHashes": [
+        "9c5b9a7feaa6d3b244e6d604393e3a018b58f82cf11f8033ae28509d2e0c96aa"
+      ],
+      "sourceSha256": "9c5b9a7feaa6d3b244e6d604393e3a018b58f82cf11f8033ae28509d2e0c96aa",
+      "aliases": [],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "7a6b3ce63544b87f1585483684b97f8e7e27a4e70ab82336a9fbe9e84dab49ce"
     },
     {
-      "id": "73dc290edbff4d2b22abea09caff34ee998e6a64f94e890b88317f4c4e8f48e6",
+      "id": "097565b4362f8cc62b7b47290a56ef665a7c40200ff0e27a6e78456016c75d23",
       "title": "Detective Conan Main Theme",
       "filename": "Detective Conan Main Theme.mxl",
       "url": "library/songs/detective-conan-main-theme.mxl",
-      "bytes": 23373,
-      "sha256": "73dc290edbff4d2b22abea09caff34ee998e6a64f94e890b88317f4c4e8f48e6",
-      "composer": "Katsuo Ono Band",
+      "bytes": 11843,
+      "sha256": "097565b4362f8cc62b7b47290a56ef665a7c40200ff0e27a6e78456016c75d23",
       "workId": "e765c8cf6e939b7ca4e449db8883402934887971c974728df55d473ccb283784",
       "version": 1,
       "practiceReady": true,
-      "sourceSha256": "e765c8cf6e939b7ca4e449db8883402934887971c974728df55d473ccb283784"
+      "sourceSha256": "e765c8cf6e939b7ca4e449db8883402934887971c974728df55d473ccb283784",
+      "sourceHashes": [
+        "e765c8cf6e939b7ca4e449db8883402934887971c974728df55d473ccb283784",
+        "73dc290edbff4d2b22abea09caff34ee998e6a64f94e890b88317f4c4e8f48e6"
+      ],
+      "composer": "Katsuo Ono Band",
+      "arranger": "Kim Taemyeong",
+      "aliases": [],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "75f633b00fc60aa89a7e5cdb417da41c20ed0470be23140434aba9e1abc2291f"
     },
     {
-      "id": "b6b76be16092052c58902e8c698a41e80449fccc0cd5e70d54488d2d5b41ee53",
-      "sha256": "b6b76be16092052c58902e8c698a41e80449fccc0cd5e70d54488d2d5b41ee53",
+      "id": "13a5ee729d696e774d43ae65977a654026d08003df62c254155ccc19f59805e0",
+      "sha256": "13a5ee729d696e774d43ae65977a654026d08003df62c254155ccc19f59805e0",
       "title": "Silent Night",
       "filename": "Silent Night.mxl",
       "url": "library/songs/silent-night.mxl",
-      "bytes": 3723,
+      "bytes": 3364,
       "workId": "b6b76be16092052c58902e8c698a41e80449fccc0cd5e70d54488d2d5b41ee53",
       "version": 1,
+      "practiceReady": true,
+      "sourceHashes": [
+        "b6b76be16092052c58902e8c698a41e80449fccc0cd5e70d54488d2d5b41ee53"
+      ],
+      "sourceSha256": "b6b76be16092052c58902e8c698a41e80449fccc0cd5e70d54488d2d5b41ee53",
       "composer": "Franz Gruber",
-      "practiceReady": true
+      "aliases": [],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "28b307944704d838752add34a2016e3d73583aa16ca5dfe5e5f86dffa9ee65e9"
     },
     {
-      "id": "9dcd5f7ea5a91e7518af33c5e0df423a8df128975b1e0ba0ea86424be39ec080",
-      "sha256": "9dcd5f7ea5a91e7518af33c5e0df423a8df128975b1e0ba0ea86424be39ec080",
+      "id": "d2ab448e15ea79b4a7d67ec8166509def7ca3bb24790021bf5b6f878a47e0753",
+      "sha256": "d2ab448e15ea79b4a7d67ec8166509def7ca3bb24790021bf5b6f878a47e0753",
       "title": "Hotel California",
       "filename": "Hotel California.mxl",
       "url": "library/songs/hotel-california-joji.mxl",
-      "bytes": 15319,
+      "bytes": 8582,
       "workId": "51e57f0bbdb8abef7c6ce6ef9717b070d3b0dbd7058cd61c53360ba1e9f83e61",
       "version": 1,
       "practiceReady": true,
-      "sourceSha256": "51e57f0bbdb8abef7c6ce6ef9717b070d3b0dbd7058cd61c53360ba1e9f83e61"
+      "sourceSha256": "51e57f0bbdb8abef7c6ce6ef9717b070d3b0dbd7058cd61c53360ba1e9f83e61",
+      "sourceHashes": [
+        "51e57f0bbdb8abef7c6ce6ef9717b070d3b0dbd7058cd61c53360ba1e9f83e61",
+        "9dcd5f7ea5a91e7518af33c5e0df423a8df128975b1e0ba0ea86424be39ec080"
+      ],
+      "composer": "George Kusonoki Miller, Joshua Coleman, Alexander Izquierdo, James Essien, Sam Homaee",
+      "arranger": "The Theorist",
+      "aliases": [
+        "Untitled score"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "36c002991c902f1e7eb5b1793adacf1836693930ccc57c6c0b527ea4cd218ae8"
     },
     {
-      "id": "32131fc657766628aa3fdef5fa1237484ea0f49420fc94e3af62a0ca76bc814f",
-      "sha256": "32131fc657766628aa3fdef5fa1237484ea0f49420fc94e3af62a0ca76bc814f",
+      "id": "add64fade744f3139d0fc8fbed10b09bb99ebff1d788024d306c3c1ee8affa6a",
+      "sha256": "add64fade744f3139d0fc8fbed10b09bb99ebff1d788024d306c3c1ee8affa6a",
       "title": "White Christmas",
       "filename": "White Christmas.mxl",
       "url": "library/songs/white-christmas-piano.mxl",
-      "bytes": 5107,
+      "bytes": 4004,
       "workId": "32131fc657766628aa3fdef5fa1237484ea0f49420fc94e3af62a0ca76bc814f",
       "version": 1,
+      "practiceReady": true,
+      "sourceHashes": [
+        "32131fc657766628aa3fdef5fa1237484ea0f49420fc94e3af62a0ca76bc814f"
+      ],
+      "sourceSha256": "32131fc657766628aa3fdef5fa1237484ea0f49420fc94e3af62a0ca76bc814f",
       "composer": "Irving Berlin",
-      "practiceReady": true
+      "aliases": [],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "8a9ad4ed2092e99f5e771f28bca7a10edea016f886e9c9d7e19508a721a78979"
     },
     {
-      "id": "285dc0cbe74b6b25ec9fcbe824f91c61ca401f11c157f9f2d5a182d03ea07937",
-      "sha256": "285dc0cbe74b6b25ec9fcbe824f91c61ca401f11c157f9f2d5a182d03ea07937",
+      "id": "c8fa57f0bcda56752d434223e32089272a593a826cf326f1e06e81e8035024a8",
+      "sha256": "c8fa57f0bcda56752d434223e32089272a593a826cf326f1e06e81e8035024a8",
       "title": "We Wish You a Merry Christmas",
       "filename": "We Wish You a Merry Christmas.mxl",
       "url": "library/songs/we-wish-you-a-merry-christmas-g-major.mxl",
-      "bytes": 3822,
+      "bytes": 3330,
       "workId": "eb83ddae4e88d62738fc4d86011a602a5cfc0979fe546c5cf40829cfc6a1177a",
       "version": 1,
       "practiceReady": true,
-      "sourceSha256": "eb83ddae4e88d62738fc4d86011a602a5cfc0979fe546c5cf40829cfc6a1177a"
+      "sourceSha256": "eb83ddae4e88d62738fc4d86011a602a5cfc0979fe546c5cf40829cfc6a1177a",
+      "sourceHashes": [
+        "eb83ddae4e88d62738fc4d86011a602a5cfc0979fe546c5cf40829cfc6a1177a",
+        "285dc0cbe74b6b25ec9fcbe824f91c61ca401f11c157f9f2d5a182d03ea07937"
+      ],
+      "aliases": [
+        "We Wish You A Merry Christmas"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "45b3964ebab26ecdd06c2ccac6445af3e09420214b24e5cf8f2f0dff044f8993"
     },
     {
-      "id": "b27c704e8fc0f0f8bfda8892206822e9f4d8f867a2593fabc8a89ef6a96ff3e4",
-      "sha256": "b27c704e8fc0f0f8bfda8892206822e9f4d8f867a2593fabc8a89ef6a96ff3e4",
+      "id": "4f8bcdbebbc885d53290ab6bdb5911549a201c482aa2a82b8f12775d77550301",
+      "sha256": "4f8bcdbebbc885d53290ab6bdb5911549a201c482aa2a82b8f12775d77550301",
       "title": "Have Yourself a Merry Little Christmas",
       "filename": "Have Yourself a Merry Little Christmas.mxl",
       "url": "library/songs/have-yourself-a-merry-little-christmas.mxl",
-      "bytes": 7320,
+      "bytes": 5283,
       "workId": "b27c704e8fc0f0f8bfda8892206822e9f4d8f867a2593fabc8a89ef6a96ff3e4",
       "version": 1,
-      "practiceReady": true
+      "practiceReady": true,
+      "sourceHashes": [
+        "b27c704e8fc0f0f8bfda8892206822e9f4d8f867a2593fabc8a89ef6a96ff3e4"
+      ],
+      "sourceSha256": "b27c704e8fc0f0f8bfda8892206822e9f4d8f867a2593fabc8a89ef6a96ff3e4",
+      "aliases": [],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "96039416aa67fcd336e755d318509432507cb31f01490255765a04bff95b2150"
     },
     {
-      "id": "e0dab8ca0ae49dbbd10d49d2766fcb40b2487924e46dbac57799d7c1c963a60c",
-      "sha256": "e0dab8ca0ae49dbbd10d49d2766fcb40b2487924e46dbac57799d7c1c963a60c",
+      "id": "011d990f527d7709480a18b7a6f772974bd7bdb3d8202bbe2025bd095f5a7178",
+      "sha256": "011d990f527d7709480a18b7a6f772974bd7bdb3d8202bbe2025bd095f5a7178",
       "title": "It’s Beginning to Look a Lot Like Christmas",
       "filename": "It’s Beginning to Look a Lot Like Christmas.mxl",
       "url": "library/songs/its-beginning-to-look-a-lot-like-christmas.mxl",
-      "bytes": 3729,
+      "bytes": 3309,
       "workId": "e0dab8ca0ae49dbbd10d49d2766fcb40b2487924e46dbac57799d7c1c963a60c",
       "version": 1,
-      "practiceReady": true
+      "practiceReady": true,
+      "sourceHashes": [
+        "e0dab8ca0ae49dbbd10d49d2766fcb40b2487924e46dbac57799d7c1c963a60c"
+      ],
+      "sourceSha256": "e0dab8ca0ae49dbbd10d49d2766fcb40b2487924e46dbac57799d7c1c963a60c",
+      "aliases": [],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "4a650da2fce3efa86d18713b6539513bd7236222a6afd37ab251abb4e413f7f7"
     },
     {
-      "id": "a72cf12bff1dd7df44b45792ef4a71c127d73f55cb8a287f5074d303b6274dc0",
-      "sha256": "a72cf12bff1dd7df44b45792ef4a71c127d73f55cb8a287f5074d303b6274dc0",
+      "id": "84b10e3e07d299b0b218a7b1fe8fb9d85dd4323fc846ffefd48f71b2e9c9e819",
+      "sha256": "84b10e3e07d299b0b218a7b1fe8fb9d85dd4323fc846ffefd48f71b2e9c9e819",
       "title": "Mong manh tình về",
       "filename": "Mong manh tình về.mxl",
       "url": "library/songs/mong-manh-tinh-ve-duc-tri.mxl",
-      "bytes": 18627,
+      "bytes": 11578,
       "workId": "d669457815aa9c80eb5787184bd5e9f23b29e2210377aa5f7f7b695059811e31",
       "version": 1,
-      "composer": "Đức Trí - Phương Nga",
       "practiceReady": true,
-      "sourceSha256": "d669457815aa9c80eb5787184bd5e9f23b29e2210377aa5f7f7b695059811e31"
+      "sourceSha256": "d669457815aa9c80eb5787184bd5e9f23b29e2210377aa5f7f7b695059811e31",
+      "sourceHashes": [
+        "d669457815aa9c80eb5787184bd5e9f23b29e2210377aa5f7f7b695059811e31",
+        "a72cf12bff1dd7df44b45792ef4a71c127d73f55cb8a287f5074d303b6274dc0"
+      ],
+      "composer": "Đức Trí - Phương Nga",
+      "transcriber": "THAIKEYBOARD",
+      "aliases": [
+        "Mong Manh Tình Về"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "039ccca825a3f6ff96b14a5997256ba979d51450e5932d5a2cc499ca3851d471"
     },
     {
-      "id": "da5ef13096f66e6fd3b03b839fdc33a9328b40f52d607d6517e6014d7d4983dc",
-      "sha256": "da5ef13096f66e6fd3b03b839fdc33a9328b40f52d607d6517e6014d7d4983dc",
+      "id": "98ec8db4fe1fc2eac75aa3ad61042f7479ed13c0529a37080e35154502aad373",
+      "sha256": "98ec8db4fe1fc2eac75aa3ad61042f7479ed13c0529a37080e35154502aad373",
       "title": "Yêu thương ngày đó",
       "filename": "Yêu thương ngày đó.mxl",
       "url": "library/songs/yeu-thuong-ngay-do-soobin-hoang-son.mxl",
-      "bytes": 30263,
+      "bytes": 17865,
       "workId": "26192a2a56fc5328fa2946cf922bc2530c68c4a64541c4b479ef33ca6c2dec34",
       "version": 1,
-      "composer": "Soobin Hoàng Sơn odcvsn(piano)",
       "practiceReady": true,
-      "sourceSha256": "26192a2a56fc5328fa2946cf922bc2530c68c4a64541c4b479ef33ca6c2dec34"
+      "sourceSha256": "26192a2a56fc5328fa2946cf922bc2530c68c4a64541c4b479ef33ca6c2dec34",
+      "sourceHashes": [
+        "26192a2a56fc5328fa2946cf922bc2530c68c4a64541c4b479ef33ca6c2dec34",
+        "da5ef13096f66e6fd3b03b839fdc33a9328b40f52d607d6517e6014d7d4983dc"
+      ],
+      "aliases": [
+        "Yêy thương ngày đó"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "2a44d8254ea84b4f776a4d1908f783473ef59723c4ec41201e8ee8aa7645fb1b"
     },
     {
-      "id": "05b397ad27f5e04a12d775b05ce2815e4961261ea7cad50917b30552cfc42171",
-      "sha256": "05b397ad27f5e04a12d775b05ce2815e4961261ea7cad50917b30552cfc42171",
+      "id": "b71b617c16f2cf48b7e6964fe6fa2636b10aaddc5e7b3482b6ad828d958e562a",
+      "sha256": "b71b617c16f2cf48b7e6964fe6fa2636b10aaddc5e7b3482b6ad828d958e562a",
       "title": "Cơn mưa ngang qua",
       "filename": "Cơn mưa ngang qua.mxl",
       "url": "library/songs/con-mua-ngang-qua-son-tung-mtp.mxl",
-      "bytes": 7948,
+      "bytes": 5322,
       "workId": "dbc10a5697025d92ed0f10213191c4c42e86f79ae717ce024da986afc654c2ea",
       "version": 1,
-      "composer": "Sơn Tùng M-TP",
       "practiceReady": true,
-      "sourceSha256": "dbc10a5697025d92ed0f10213191c4c42e86f79ae717ce024da986afc654c2ea"
+      "sourceSha256": "dbc10a5697025d92ed0f10213191c4c42e86f79ae717ce024da986afc654c2ea",
+      "sourceHashes": [
+        "dbc10a5697025d92ed0f10213191c4c42e86f79ae717ce024da986afc654c2ea",
+        "05b397ad27f5e04a12d775b05ce2815e4961261ea7cad50917b30552cfc42171"
+      ],
+      "composer": "Sơn Tùng M-TP",
+      "aliases": [],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "7d500c37817fc1e0e0eaa57ffd6997fd49005b4c3444c90fb25d7cb691b4482d"
     },
     {
-      "id": "c663649593563754f2520ed626261b7ed5c028df29a40809115f4688644b225c",
-      "sha256": "c663649593563754f2520ed626261b7ed5c028df29a40809115f4688644b225c",
+      "id": "87e20fced931fd1c0d11551a76e7d6cd4038b05b6a38455a1a72e56399f53255",
+      "sha256": "87e20fced931fd1c0d11551a76e7d6cd4038b05b6a38455a1a72e56399f53255",
       "title": "Chắc ai đó sẽ về",
       "filename": "Chắc ai đó sẽ về.mxl",
       "url": "library/songs/chac-ai-do-se-ve-son-tung-m-tp.mxl",
-      "bytes": 8463,
+      "bytes": 5688,
       "workId": "46a548f8e667e3e4321a90215074d29d403df0fbed4cb385bdf43385944c936b",
       "version": 1,
-      "composer": "Sơn Tùng M-TP",
       "practiceReady": true,
-      "sourceSha256": "46a548f8e667e3e4321a90215074d29d403df0fbed4cb385bdf43385944c936b"
+      "sourceSha256": "46a548f8e667e3e4321a90215074d29d403df0fbed4cb385bdf43385944c936b",
+      "sourceHashes": [
+        "46a548f8e667e3e4321a90215074d29d403df0fbed4cb385bdf43385944c936b",
+        "c663649593563754f2520ed626261b7ed5c028df29a40809115f4688644b225c"
+      ],
+      "composer": "Sơn Tùng M-TP",
+      "arranger": "JT",
+      "aliases": [],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "3953c0265c895f78588079dbfa1c28a3b3930112a42956bcac82c96d52658948"
     },
     {
-      "id": "a841fbe4b9995fab94affe7327f83d0f5ef8793ca1852d0236633bccd55f2c8b",
-      "sha256": "a841fbe4b9995fab94affe7327f83d0f5ef8793ca1852d0236633bccd55f2c8b",
+      "id": "21ec29b3e48c94a4c4c1c11c86db70830d4f86254c6d2973ed356b390ba1e27b",
+      "sha256": "21ec29b3e48c94a4c4c1c11c86db70830d4f86254c6d2973ed356b390ba1e27b",
       "title": "Nắng thủy tinh",
       "filename": "Nắng thủy tinh.mxl",
       "url": "library/songs/nang-thuy-tinh-trinh-cong-son-ost-em-va-trinh.mxl",
-      "bytes": 13067,
+      "bytes": 8950,
       "workId": "0107d570559cc556c0afd45a4adc4fbdde04b1a188ef9405eacc96b20c619b99",
       "version": 1,
-      "composer": "AVIN LU FT SUNI HẠ LINH  transcribed by QuangTrung2005",
       "practiceReady": true,
-      "sourceSha256": "0107d570559cc556c0afd45a4adc4fbdde04b1a188ef9405eacc96b20c619b99"
+      "sourceSha256": "0107d570559cc556c0afd45a4adc4fbdde04b1a188ef9405eacc96b20c619b99",
+      "sourceHashes": [
+        "0107d570559cc556c0afd45a4adc4fbdde04b1a188ef9405eacc96b20c619b99",
+        "a841fbe4b9995fab94affe7327f83d0f5ef8793ca1852d0236633bccd55f2c8b"
+      ],
+      "lyricist": "Trịnh Công Sơn",
+      "arranger": "QuangTrung2005",
+      "transcriber": "QuangTrung2005",
+      "performer": "Avin Lu · Suni Hạ Linh",
+      "aliases": [
+        "NẮNG THỦY TINH (Em và Trịnh)"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "698479c78b8a4bb59783f07aaf058c45ae2ec61d4cc6ac85a24d2b5cbbd07ac8"
     },
     {
-      "id": "35446ded90c0442f9a58d70412f56d6b4f39d9572984ff8ab8f683944c73cbeb",
-      "sha256": "35446ded90c0442f9a58d70412f56d6b4f39d9572984ff8ab8f683944c73cbeb",
-      "title": "Ai đưa em về — Tia",
-      "filename": "Ai đưa em về — Tia.mxl",
+      "id": "5bd6dda50c7e81d5df8a2f40986b6a9f5ad4d05b163415adf5ab67e892d4254c",
+      "sha256": "5bd6dda50c7e81d5df8a2f40986b6a9f5ad4d05b163415adf5ab67e892d4254c",
+      "title": "Ai đưa em về",
+      "filename": "Ai đưa em về.mxl",
       "url": "library/songs/ai-dua-em-ve-take-me-back-home-tia-feat-le-thien-hieu-low-cortisol-song.mxl",
-      "bytes": 23140,
+      "bytes": 13704,
       "workId": "37a71e3792a804df5defb93cddbed05f63b9df8a6f09f5237dab245cb9eaf95a",
       "version": 1,
-      "composer": "TIA",
       "practiceReady": true,
-      "sourceSha256": "37a71e3792a804df5defb93cddbed05f63b9df8a6f09f5237dab245cb9eaf95a"
+      "sourceSha256": "37a71e3792a804df5defb93cddbed05f63b9df8a6f09f5237dab245cb9eaf95a",
+      "sourceHashes": [
+        "37a71e3792a804df5defb93cddbed05f63b9df8a6f09f5237dab245cb9eaf95a",
+        "35446ded90c0442f9a58d70412f56d6b4f39d9572984ff8ab8f683944c73cbeb"
+      ],
+      "composer": "TIA",
+      "arranger": "Jun/odcvsn",
+      "performer": "Tia",
+      "aliases": [
+        "Ai đưa em về — Tia",
+        "Ai Đưa Em Về"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "dd9f65a2cb57d31ea961dc05fdb0ff20edcbd7a97f62d2c808e84b49e3beaae5"
     },
     {
-      "id": "1e910bbac0f3ce2483a7cfd3fa25b226173d371c756668343094066119655da7",
-      "sha256": "1e910bbac0f3ce2483a7cfd3fa25b226173d371c756668343094066119655da7",
+      "id": "e75d732f62cdd414727e2c418db4fefe20b2fdd20b7c19ee2380ecb4e539900e",
+      "sha256": "e75d732f62cdd414727e2c418db4fefe20b2fdd20b7c19ee2380ecb4e539900e",
       "title": "Feliz Navidad",
       "filename": "Feliz Navidad.mxl",
       "url": "library/songs/feliz-navidad.mxl",
-      "bytes": 5834,
+      "bytes": 4497,
       "workId": "e0e1553d511df2190b86197f3feff8365a583350e0f16ca5b924f9618645777b",
       "version": 1,
-      "composer": "Jose Feliciano",
       "practiceReady": true,
-      "sourceSha256": "e0e1553d511df2190b86197f3feff8365a583350e0f16ca5b924f9618645777b"
+      "sourceSha256": "e0e1553d511df2190b86197f3feff8365a583350e0f16ca5b924f9618645777b",
+      "sourceHashes": [
+        "e0e1553d511df2190b86197f3feff8365a583350e0f16ca5b924f9618645777b",
+        "1e910bbac0f3ce2483a7cfd3fa25b226173d371c756668343094066119655da7"
+      ],
+      "composer": "Jose Feliciano",
+      "aliases": [],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "07b11628169b02514114b34eaaa032e089d8f07718e2378f0b0e059b1cc1cbc6"
     },
     {
-      "id": "b490460dbc76c5ead4e4bb4b1229d202dae3bd3f2fff3d0727fa7647199c58cb",
-      "sha256": "b490460dbc76c5ead4e4bb4b1229d202dae3bd3f2fff3d0727fa7647199c58cb",
+      "id": "9d47b35190f02d834e58d311034fbb925c45eb697b91599db26c2d147c3554d7",
+      "sha256": "9d47b35190f02d834e58d311034fbb925c45eb697b91599db26c2d147c3554d7",
       "title": "Jingle Bells",
       "filename": "Jingle Bells.mxl",
       "url": "library/songs/jingle-bells-kids-piano-jingle-bells.mxl",
-      "bytes": 3375,
+      "bytes": 2921,
       "workId": "fc1eb7d8d36b443a4a923c7bfd0750aff9b8b98d7ee44025d0b4c7c046f8259c",
       "version": 1,
       "practiceReady": true,
-      "sourceSha256": "fc1eb7d8d36b443a4a923c7bfd0750aff9b8b98d7ee44025d0b4c7c046f8259c"
+      "sourceSha256": "fc1eb7d8d36b443a4a923c7bfd0750aff9b8b98d7ee44025d0b4c7c046f8259c",
+      "sourceHashes": [
+        "fc1eb7d8d36b443a4a923c7bfd0750aff9b8b98d7ee44025d0b4c7c046f8259c",
+        "b490460dbc76c5ead4e4bb4b1229d202dae3bd3f2fff3d0727fa7647199c58cb"
+      ],
+      "aliases": [],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "be0053a1bf512a122217f588f925edefbfd478da7d76dd625baddca01ac8d396"
     },
     {
-      "id": "8611e4073a04a5e02573fc083aa6d6ce4d9d74893073b310b20629fabf8975f7",
-      "sha256": "8611e4073a04a5e02573fc083aa6d6ce4d9d74893073b310b20629fabf8975f7",
+      "id": "751f02762211ac5805093a3a63c2c6d1f67f6afe2e3a28f3d0c3ea1337d928d2",
+      "sha256": "751f02762211ac5805093a3a63c2c6d1f67f6afe2e3a28f3d0c3ea1337d928d2",
       "title": "Minuet in G",
       "filename": "Minuet in G.mxl",
       "url": "library/songs/minuet-in-g.mxl",
-      "bytes": 2781,
+      "bytes": 2541,
       "workId": "964440dab507752154a4c38ad18c2423cfe399dbaee93790e9b5893cf569c248",
       "version": 1,
       "practiceReady": true,
-      "sourceSha256": "964440dab507752154a4c38ad18c2423cfe399dbaee93790e9b5893cf569c248"
+      "sourceSha256": "964440dab507752154a4c38ad18c2423cfe399dbaee93790e9b5893cf569c248",
+      "sourceHashes": [
+        "964440dab507752154a4c38ad18c2423cfe399dbaee93790e9b5893cf569c248",
+        "8611e4073a04a5e02573fc083aa6d6ce4d9d74893073b310b20629fabf8975f7"
+      ],
+      "aliases": [],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "76a6dd29a169be8cec7e87c00efc5215b5c6514cfbcd0b9c0427983d8cca163a"
     },
     {
-      "id": "8c9a7efb6f86e3eddcfce829402777c734156bf203fb1ff2dfcc74489b754760",
-      "sha256": "8c9a7efb6f86e3eddcfce829402777c734156bf203fb1ff2dfcc74489b754760",
+      "id": "a9222d5f7f998faa7c65d272672d144dd4d3f9a7f6ea47082d8807eae2810ea5",
+      "sha256": "a9222d5f7f998faa7c65d272672d144dd4d3f9a7f6ea47082d8807eae2810ea5",
       "title": "Santa Claus Is Coming to Town",
       "filename": "Santa Claus Is Coming to Town.mxl",
       "url": "library/songs/santa-claus-is-coming-to-town-santa-claus-is-coming-to-town.mxl",
-      "bytes": 4495,
+      "bytes": 3571,
       "workId": "cde4a83445c16c1bfd4c1acae017676204b77c33e972cda850a347af9723fc9b",
       "version": 1,
       "practiceReady": true,
-      "sourceSha256": "cde4a83445c16c1bfd4c1acae017676204b77c33e972cda850a347af9723fc9b"
+      "sourceSha256": "cde4a83445c16c1bfd4c1acae017676204b77c33e972cda850a347af9723fc9b",
+      "sourceHashes": [
+        "cde4a83445c16c1bfd4c1acae017676204b77c33e972cda850a347af9723fc9b",
+        "8c9a7efb6f86e3eddcfce829402777c734156bf203fb1ff2dfcc74489b754760"
+      ],
+      "aliases": [],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "16fe57abae8f979f95cf9ec90f372a7294adb5e99bbaee7e0ef66eeceae6620a"
     },
     {
-      "id": "c05cbf286abe7aeadbc11e6783848826133d720d40184506518729f5cdce1e62",
-      "sha256": "c05cbf286abe7aeadbc11e6783848826133d720d40184506518729f5cdce1e62",
-      "title": "Ai đưa em về — Nguyễn Ánh 9",
-      "filename": "Ai đưa em về — Nguyễn Ánh 9.mxl",
+      "id": "de49f649db784c4a23e43ede0a8aa766ef36e1c4a196956aa53aaa61f8daff59",
+      "sha256": "de49f649db784c4a23e43ede0a8aa766ef36e1c4a196956aa53aaa61f8daff59",
+      "title": "Ai đưa em về",
+      "filename": "Ai đưa em về.mxl",
       "url": "library/songs/ai-dua-em-ve-nguyen-anh-9-ai-dua-em-ve.mxl",
-      "bytes": 10951,
+      "bytes": 6969,
       "workId": "2200f0c6a53e6612be33bf60ae84f088a813ed33efd5fc7bafc00c8d4ecb19f1",
       "version": 1,
       "practiceReady": true,
-      "sourceSha256": "2200f0c6a53e6612be33bf60ae84f088a813ed33efd5fc7bafc00c8d4ecb19f1"
+      "sourceSha256": "2200f0c6a53e6612be33bf60ae84f088a813ed33efd5fc7bafc00c8d4ecb19f1",
+      "sourceHashes": [
+        "2200f0c6a53e6612be33bf60ae84f088a813ed33efd5fc7bafc00c8d4ecb19f1",
+        "c05cbf286abe7aeadbc11e6783848826133d720d40184506518729f5cdce1e62"
+      ],
+      "aliases": [
+        "Ai đưa em về — Nguyễn Ánh 9",
+        "Bản nhạc không tên"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "8afe1206c5f21b46633c00bb543d7da2fab038d1d9faeaaa7804f716c0ad2f61"
     },
     {
-      "id": "77c00d877dc31752b21d41e98231f16ca69199a796d1a3905d9412ab452e6f24",
-      "sha256": "77c00d877dc31752b21d41e98231f16ca69199a796d1a3905d9412ab452e6f24",
+      "id": "7bae55e893aa6502135644556f3abae0069de771e45cdac20da074811c144952",
+      "sha256": "7bae55e893aa6502135644556f3abae0069de771e45cdac20da074811c144952",
       "title": "Lemon Tree",
       "filename": "Lemon Tree.mxl",
       "url": "library/songs/lemon-tree.mxl",
-      "bytes": 11281,
+      "bytes": 7225,
       "workId": "77c00d877dc31752b21d41e98231f16ca69199a796d1a3905d9412ab452e6f24",
       "version": 1,
       "versionLabel": "Bản piano 1",
-      "practiceReady": true
+      "practiceReady": true,
+      "sourceHashes": [
+        "77c00d877dc31752b21d41e98231f16ca69199a796d1a3905d9412ab452e6f24"
+      ],
+      "sourceSha256": "77c00d877dc31752b21d41e98231f16ca69199a796d1a3905d9412ab452e6f24",
+      "aliases": [],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "acf6de87cbc1a05a9aefb78d01baa996d82418a0b00bdda56f003648df1b8f38"
     },
     {
-      "id": "df2e94d075787876db258014e2f1b8c8b983c1c2b8cc89b28c09ed3532d31fad",
-      "sha256": "df2e94d075787876db258014e2f1b8c8b983c1c2b8cc89b28c09ed3532d31fad",
+      "id": "9003a1ca39f6759240b1857884fee92eea4be9b8c8279f98e9cd7626b1e0775f",
+      "sha256": "9003a1ca39f6759240b1857884fee92eea4be9b8c8279f98e9cd7626b1e0775f",
       "title": "Bài ca đất phương Nam",
       "filename": "Bài ca đất phương Nam.mxl",
       "url": "library/songs/bai-ca-dat-phuong-nam-trich-doan-lu-nhat-vu-1997.mxl",
-      "bytes": 9697,
+      "bytes": 6718,
       "workId": "dfed945d2c66eb9d94d7a69f5a7681ec2a65b109fcb884afe58397f5454496d0",
       "version": 1,
-      "composer": "Nhạc: Lư Nhất Vũ",
       "practiceReady": true,
-      "sourceSha256": "dfed945d2c66eb9d94d7a69f5a7681ec2a65b109fcb884afe58397f5454496d0"
+      "sourceSha256": "dfed945d2c66eb9d94d7a69f5a7681ec2a65b109fcb884afe58397f5454496d0",
+      "sourceHashes": [
+        "dfed945d2c66eb9d94d7a69f5a7681ec2a65b109fcb884afe58397f5454496d0",
+        "df2e94d075787876db258014e2f1b8c8b983c1c2b8cc89b28c09ed3532d31fad"
+      ],
+      "composer": "Lư Nhất Vũ",
+      "lyricist": "Lê Giang",
+      "aliases": [
+        "Bài ca đất phương nam"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "e1ce5296689595b742acdaebc52c00209024e37fa3f4b457ff0b145debec7e99"
     },
     {
-      "id": "3f7b23509d643e538557c4ce5220696e32b3929d961bb62c6ebae812363fd7c6",
-      "sha256": "3f7b23509d643e538557c4ce5220696e32b3929d961bb62c6ebae812363fd7c6",
+      "id": "9a016d0a633a043d9a33fd23abc6428430e4538d354e03303e23d901eea86388",
+      "sha256": "9a016d0a633a043d9a33fd23abc6428430e4538d354e03303e23d901eea86388",
       "title": "Cỏ dại và hoa dành dành",
       "filename": "Cỏ dại và hoa dành dành.mxl",
       "url": "library/songs/co-dai-va-hoa-danh-danh-full-tukeotau.mxl",
-      "bytes": 7187,
+      "bytes": 4780,
       "workId": "213089ea8808be165667cb873bef1dddf18f8789bf78468d9e0bc942c8391bac",
       "version": 1,
       "practiceReady": true,
-      "sourceSha256": "213089ea8808be165667cb873bef1dddf18f8789bf78468d9e0bc942c8391bac"
+      "sourceSha256": "213089ea8808be165667cb873bef1dddf18f8789bf78468d9e0bc942c8391bac",
+      "sourceHashes": [
+        "213089ea8808be165667cb873bef1dddf18f8789bf78468d9e0bc942c8391bac",
+        "3f7b23509d643e538557c4ce5220696e32b3929d961bb62c6ebae812363fd7c6"
+      ],
+      "aliases": [
+        "Bản nhạc không tên"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "a4933836e9655050df926bf16da6f27c9ee40c996de5827589e899f2f7baaf1a"
     },
     {
-      "id": "86dc54c20952f5e3994573fbc7f37c0d1248472e35de16866be9892251abe639",
-      "sha256": "86dc54c20952f5e3994573fbc7f37c0d1248472e35de16866be9892251abe639",
+      "id": "01b1e50024643b70a1c22e65f94e2b3e4f6bbae915cd52734953315dd56b650d",
+      "sha256": "01b1e50024643b70a1c22e65f94e2b3e4f6bbae915cd52734953315dd56b650d",
       "title": "Tìm em",
       "filename": "Tìm em.mxl",
       "url": "library/songs/tim-em-chorus-hngle-ft-bao-anh-piano.mxl",
-      "bytes": 5182,
+      "bytes": 3979,
       "workId": "62fc1f9a5751ee44bb2a7a9909a463ce8d245597728d690d1ca0324ec35b470c",
       "version": 1,
       "practiceReady": true,
-      "sourceSha256": "62fc1f9a5751ee44bb2a7a9909a463ce8d245597728d690d1ca0324ec35b470c"
+      "sourceSha256": "62fc1f9a5751ee44bb2a7a9909a463ce8d245597728d690d1ca0324ec35b470c",
+      "sourceHashes": [
+        "62fc1f9a5751ee44bb2a7a9909a463ce8d245597728d690d1ca0324ec35b470c",
+        "86dc54c20952f5e3994573fbc7f37c0d1248472e35de16866be9892251abe639"
+      ],
+      "arranger": "CoiF",
+      "aliases": [
+        "Untitled score"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "f8c6944a7094a62f54dcc3115dd95d7c79b73fc587858a7840b4f7fcee8a68e8"
     },
     {
-      "id": "223ad965305e1f733f8e979c64504b71318f644c019412b6df76462c2e1e183a",
-      "sha256": "223ad965305e1f733f8e979c64504b71318f644c019412b6df76462c2e1e183a",
+      "id": "b8c3fada672f222dc90bc04d02e4d68626013f8a976d8e94a2b0e719e4504429",
+      "sha256": "b8c3fada672f222dc90bc04d02e4d68626013f8a976d8e94a2b0e719e4504429",
       "title": "Chờ người nơi ấy",
       "filename": "Chờ người nơi ấy.mxl",
       "url": "library/songs/cho-nguoi-noi-ay.mxl",
-      "bytes": 6758,
+      "bytes": 4997,
       "workId": "c22ea5420d9077affedcabd6b5fbd4529c6f2b73eceaab9aead4e3b8d26a6b71",
       "version": 1,
       "practiceReady": true,
-      "sourceSha256": "c22ea5420d9077affedcabd6b5fbd4529c6f2b73eceaab9aead4e3b8d26a6b71"
+      "sourceSha256": "c22ea5420d9077affedcabd6b5fbd4529c6f2b73eceaab9aead4e3b8d26a6b71",
+      "sourceHashes": [
+        "c22ea5420d9077affedcabd6b5fbd4529c6f2b73eceaab9aead4e3b8d26a6b71",
+        "223ad965305e1f733f8e979c64504b71318f644c019412b6df76462c2e1e183a"
+      ],
+      "aliases": [],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "0990d0f634674b87d03c8383fdbdd1d69feb47a4488e13825180df493e120a8a"
     },
     {
-      "id": "e52effe766b70b6832c37f44addb0b0565df12b302b15866039fab1a121572f0",
-      "sha256": "e52effe766b70b6832c37f44addb0b0565df12b302b15866039fab1a121572f0",
+      "id": "ddcdd10432082f19fff3f366bfac2efe0b66c6b8442e6f736c82604c01f4787a",
+      "sha256": "ddcdd10432082f19fff3f366bfac2efe0b66c6b8442e6f736c82604c01f4787a",
       "title": "Fly Me to the Moon",
       "filename": "Fly Me to the Moon.mxl",
       "url": "library/songs/fly-me-to-the-moon-easy-piano-solo.mxl",
-      "bytes": 6084,
+      "bytes": 4714,
       "workId": "e52effe766b70b6832c37f44addb0b0565df12b302b15866039fab1a121572f0",
       "version": 1,
       "versionLabel": "Piano solo dễ",
-      "practiceReady": true
+      "practiceReady": true,
+      "sourceHashes": [
+        "e52effe766b70b6832c37f44addb0b0565df12b302b15866039fab1a121572f0"
+      ],
+      "sourceSha256": "e52effe766b70b6832c37f44addb0b0565df12b302b15866039fab1a121572f0",
+      "arranger": "Flynn Parker",
+      "aliases": [
+        "Fly me to the Moon"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "12eb76b552d9939c21504bd4df3a53cd2c75dedec8d0bbe25f95cb2d433e4b42"
     },
     {
-      "id": "f1823da3bae3f3161651de87193692f5b6ba6129a286d44fa401a404cc81577c",
-      "sha256": "f1823da3bae3f3161651de87193692f5b6ba6129a286d44fa401a404cc81577c",
+      "id": "59725c5509d12122c9319e4793829939d1f863a520b07a6df507ef4a85dfd91b",
+      "sha256": "59725c5509d12122c9319e4793829939d1f863a520b07a6df507ef4a85dfd91b",
       "title": "Fly Me to the Moon",
       "filename": "Fly Me to the Moon — v2.mxl",
       "url": "library/songs/fly-me-to-the-moon-v2.mxl",
-      "bytes": 14715,
+      "bytes": 10350,
       "workId": "e52effe766b70b6832c37f44addb0b0565df12b302b15866039fab1a121572f0",
       "version": 2,
       "versionLabel": "Bản piano khác",
-      "composer": "arr. Thomas L.S. Pang",
-      "practiceReady": true
+      "practiceReady": true,
+      "sourceHashes": [
+        "f1823da3bae3f3161651de87193692f5b6ba6129a286d44fa401a404cc81577c"
+      ],
+      "sourceSha256": "f1823da3bae3f3161651de87193692f5b6ba6129a286d44fa401a404cc81577c",
+      "arranger": "Thomas L.S. Pang",
+      "aliases": [
+        "FLY ME TO THE MOON"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "fa44cc1c94aa45ec9aa672ae7aaa8f343228e70b4c0b57e085c79a71185535f7"
     },
     {
-      "id": "cf808c2f18484ca65fc38a7fa018571075100423203078eccbcd4751d92fac67",
-      "sha256": "cf808c2f18484ca65fc38a7fa018571075100423203078eccbcd4751d92fac67",
+      "id": "69535968213f13f7d075e343e17cd646e11936da41fc9cb0dc72ed699aa33605",
+      "sha256": "69535968213f13f7d075e343e17cd646e11936da41fc9cb0dc72ed699aa33605",
       "title": "Cause I Love You",
       "filename": "Cause I Love You — v2.mxl",
       "url": "library/songs/cause-i-love-you-v2.mxl",
-      "bytes": 12846,
+      "bytes": 7543,
       "workId": "226d761f16ee0de517b4b2dec9a19572e378f42dea417b183913c2011ebcfe4c",
       "version": 2,
       "versionLabel": "Bản phối khác",
       "practiceReady": true,
-      "sourceSha256": "3a04952e72327e380208b21e0f0a7e1bd607d3c04b153cb5a0512a9d59c444a6"
+      "sourceSha256": "3a04952e72327e380208b21e0f0a7e1bd607d3c04b153cb5a0512a9d59c444a6",
+      "sourceHashes": [
+        "3a04952e72327e380208b21e0f0a7e1bd607d3c04b153cb5a0512a9d59c444a6",
+        "cf808c2f18484ca65fc38a7fa018571075100423203078eccbcd4751d92fac67"
+      ],
+      "aliases": [],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "b5fa6c6b6bc4a07c6556b4d77c6a95eddf445d6bb086af4205bade45d2169726"
     },
     {
-      "id": "018f16651742750e29bdf5f3e01217b67d9e5d521ee4823dde40fbe21740883a",
-      "sha256": "018f16651742750e29bdf5f3e01217b67d9e5d521ee4823dde40fbe21740883a",
+      "id": "f60369baf12df8c1aca29ce0ad39a2b97beb82bfecb8cd34f901e65a55f49932",
+      "sha256": "f60369baf12df8c1aca29ce0ad39a2b97beb82bfecb8cd34f901e65a55f49932",
       "title": "Người ta có thương mình đâu",
       "filename": "Người ta có thương mình đâu.mxl",
       "url": "library/songs/nguoi-ta-co-thuong-minh-dau-truc-nhan.mxl",
-      "bytes": 23279,
+      "bytes": 13535,
       "workId": "2867abe483c81ea86f4a2815115750a1718d56225878f3f18803495c848dba55",
       "version": 1,
       "practiceReady": true,
-      "sourceSha256": "2867abe483c81ea86f4a2815115750a1718d56225878f3f18803495c848dba55"
+      "sourceSha256": "2867abe483c81ea86f4a2815115750a1718d56225878f3f18803495c848dba55",
+      "sourceHashes": [
+        "2867abe483c81ea86f4a2815115750a1718d56225878f3f18803495c848dba55",
+        "018f16651742750e29bdf5f3e01217b67d9e5d521ee4823dde40fbe21740883a"
+      ],
+      "composer": "Hứa Kim Tuyền, Trần Dũng Khánh, Nguyễn Công Thành, Nguyễn Hải Minh Cơ, Jean Paul Blada",
+      "arranger": "Trương Phi Long; bản chuyển soạn gốc: Bon KP",
+      "aliases": [
+        "Untitled score"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "f9b4b8802539dedc8862a9abd5a99af5557b173f84814059867d7284f6d155f5"
     },
     {
-      "id": "a1fd18fe5571482bc4c012ef554ac38524052c1c4773a6fe81d354495897c3f9",
-      "sha256": "a1fd18fe5571482bc4c012ef554ac38524052c1c4773a6fe81d354495897c3f9",
+      "id": "26f84b76fb7d3aea3ea48e2f1e6cb7840ff5d1d1c9457edcf6ad9f015835ce0a",
+      "sha256": "26f84b76fb7d3aea3ea48e2f1e6cb7840ff5d1d1c9457edcf6ad9f015835ce0a",
       "title": "Mưa trên cuộc tình",
       "filename": "Mưa trên cuộc tình.mxl",
       "url": "library/songs/mua-tren-cuoc-tinh.mxl",
-      "bytes": 10478,
+      "bytes": 6776,
       "workId": "a1fd18fe5571482bc4c012ef554ac38524052c1c4773a6fe81d354495897c3f9",
       "version": 1,
-      "practiceReady": true
+      "practiceReady": true,
+      "sourceHashes": [
+        "a1fd18fe5571482bc4c012ef554ac38524052c1c4773a6fe81d354495897c3f9"
+      ],
+      "sourceSha256": "a1fd18fe5571482bc4c012ef554ac38524052c1c4773a6fe81d354495897c3f9",
+      "aliases": [],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "e9855a633ee6e9ba008a31ac8885a4f4f46af68a74107177729a0e8cc0790a3c"
     },
     {
-      "id": "d2adebf695715810f98c90c9516cf99458c2ee33d6aa769f28111bbeaec9166f",
-      "sha256": "d2adebf695715810f98c90c9516cf99458c2ee33d6aa769f28111bbeaec9166f",
+      "id": "123e130d08aba6ee12689fbb08c70f1d355c6d02176b42e08e7ce8487f181ed7",
+      "sha256": "123e130d08aba6ee12689fbb08c70f1d355c6d02176b42e08e7ce8487f181ed7",
       "title": "Ánh nắng của anh",
       "filename": "Ánh nắng của anh.mxl",
       "url": "library/songs/anh-nang-cua-anh.mxl",
-      "bytes": 15578,
+      "bytes": 10208,
       "workId": "d2adebf695715810f98c90c9516cf99458c2ee33d6aa769f28111bbeaec9166f",
       "version": 1,
-      "practiceReady": true
+      "practiceReady": true,
+      "sourceHashes": [
+        "d2adebf695715810f98c90c9516cf99458c2ee33d6aa769f28111bbeaec9166f"
+      ],
+      "sourceSha256": "d2adebf695715810f98c90c9516cf99458c2ee33d6aa769f28111bbeaec9166f",
+      "aliases": [
+        "Anh nang cua anh"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "32a1f0e5dd89db707e5af29304ec4f23a0e980754ef4dc227a374397e23317a4"
     },
     {
-      "id": "6582c4d9d715069d17594d976d9005764c77adf01ab916d9183aac8e7c62fc7d",
-      "sha256": "6582c4d9d715069d17594d976d9005764c77adf01ab916d9183aac8e7c62fc7d",
+      "id": "a4f9757239a6dd08a034228930291d0ecfcf2f42405022a097050cfddd38ec60",
+      "sha256": "a4f9757239a6dd08a034228930291d0ecfcf2f42405022a097050cfddd38ec60",
       "title": "Nhớ lắm",
       "filename": "Nhớ lắm.mxl",
       "url": "library/songs/nho-lam-khong-tu-quynh.mxl",
-      "bytes": 19277,
+      "bytes": 11964,
       "workId": "6582c4d9d715069d17594d976d9005764c77adf01ab916d9183aac8e7c62fc7d",
       "version": 1,
-      "practiceReady": true
+      "practiceReady": true,
+      "sourceHashes": [
+        "6582c4d9d715069d17594d976d9005764c77adf01ab916d9183aac8e7c62fc7d"
+      ],
+      "sourceSha256": "6582c4d9d715069d17594d976d9005764c77adf01ab916d9183aac8e7c62fc7d",
+      "aliases": [],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "66ee82cc497628f0f5bfebcf86c0daffb2a9918995134009120074738f90436b"
     },
     {
-      "id": "dc0338936e7e12dd68d8d6ec6d432074c6a3aad7efadf8b87e641cab0ecc251f",
-      "sha256": "dc0338936e7e12dd68d8d6ec6d432074c6a3aad7efadf8b87e641cab0ecc251f",
+      "id": "f1a82ddfa646d25102721ccaea9d4183a6046b7b88611d43f91fd7a45364191f",
+      "sha256": "f1a82ddfa646d25102721ccaea9d4183a6046b7b88611d43f91fd7a45364191f",
       "title": "Thức giấc",
       "filename": "Thức giấc.mxl",
       "url": "library/songs/thuc-giac-dalab.mxl",
-      "bytes": 24838,
+      "bytes": 15437,
       "workId": "79c6d1000e255616150b5ca622baa190e8f2eadd238ca3920e79eefb15c3c0bc",
       "version": 1,
       "versionLabel": "Bản phối 1",
       "practiceReady": true,
-      "sourceSha256": "79c6d1000e255616150b5ca622baa190e8f2eadd238ca3920e79eefb15c3c0bc"
+      "sourceSha256": "79c6d1000e255616150b5ca622baa190e8f2eadd238ca3920e79eefb15c3c0bc",
+      "sourceHashes": [
+        "79c6d1000e255616150b5ca622baa190e8f2eadd238ca3920e79eefb15c3c0bc",
+        "dc0338936e7e12dd68d8d6ec6d432074c6a3aad7efadf8b87e641cab0ecc251f"
+      ],
+      "aliases": [],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "871109ec28687a5d7612ac218dc77414bb290ae84a3a315e1426965765a221a4"
     },
     {
-      "id": "7de5c790727a6bce99802cfe99805bd31f14232eece98e3f8cd61cb2d09ee398",
-      "sha256": "7de5c790727a6bce99802cfe99805bd31f14232eece98e3f8cd61cb2d09ee398",
+      "id": "c7fd1fe26fa3be78561ae9238c42131571108b874021eefcded5068d8a57cda4",
+      "sha256": "c7fd1fe26fa3be78561ae9238c42131571108b874021eefcded5068d8a57cda4",
       "title": "Người yêu cũ",
       "filename": "Người yêu cũ.mxl",
       "url": "library/songs/nguoi-yeu-cu-khoi-my.mxl",
-      "bytes": 18316,
+      "bytes": 11406,
       "workId": "4f6bda43dcb8d092b71af487febf561fb169a308ee565485e4bd62ac9784ea25",
       "version": 1,
       "practiceReady": true,
-      "sourceSha256": "4f6bda43dcb8d092b71af487febf561fb169a308ee565485e4bd62ac9784ea25"
+      "sourceSha256": "4f6bda43dcb8d092b71af487febf561fb169a308ee565485e4bd62ac9784ea25",
+      "sourceHashes": [
+        "4f6bda43dcb8d092b71af487febf561fb169a308ee565485e4bd62ac9784ea25",
+        "7de5c790727a6bce99802cfe99805bd31f14232eece98e3f8cd61cb2d09ee398"
+      ],
+      "aliases": [],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "4d04a997f58d4532289ff91538e0875ba9481d082f6c4c5d65eb8c13f8106a61"
     },
     {
-      "id": "79355b0966ac51e036f0ccdaf6ca174ec71c5bb5c0f9be055bd3eb444fd9abb4",
-      "sha256": "79355b0966ac51e036f0ccdaf6ca174ec71c5bb5c0f9be055bd3eb444fd9abb4",
+      "id": "e4c2e5dd0ed7adf2e5de281d9b23e3874c552efa6722d25f9e1eab1f0ad173c1",
+      "sha256": "e4c2e5dd0ed7adf2e5de281d9b23e3874c552efa6722d25f9e1eab1f0ad173c1",
       "title": "Tình thôi xót xa",
       "filename": "Tình thôi xót xa.mxl",
       "url": "library/songs/tinh-thoi-xot-xa.mxl",
-      "bytes": 8260,
+      "bytes": 6066,
       "workId": "79355b0966ac51e036f0ccdaf6ca174ec71c5bb5c0f9be055bd3eb444fd9abb4",
       "version": 1,
-      "practiceReady": true
+      "practiceReady": true,
+      "sourceHashes": [
+        "79355b0966ac51e036f0ccdaf6ca174ec71c5bb5c0f9be055bd3eb444fd9abb4"
+      ],
+      "sourceSha256": "79355b0966ac51e036f0ccdaf6ca174ec71c5bb5c0f9be055bd3eb444fd9abb4",
+      "aliases": [],
+      "composer": "Bảo Chấn",
+      "lyricist": "Bảo Chấn",
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "4dbdbcff26d3f5bbf938ca1edc54fecbd2579279403642fdce2aa614dfbf1d3c"
     },
     {
-      "id": "5b21ffd4dd6e203af97fe8f7cf6b1c0a599a8d86ec1670188eb94d89d49aa861",
-      "sha256": "5b21ffd4dd6e203af97fe8f7cf6b1c0a599a8d86ec1670188eb94d89d49aa861",
+      "id": "c0cd94e61ebcd5d18d00760e83a74a31c0f29d51ccba109bd4134bd1d0b07d78",
+      "sha256": "c0cd94e61ebcd5d18d00760e83a74a31c0f29d51ccba109bd4134bd1d0b07d78",
       "title": "Katy Katy",
       "filename": "Katy Katy.mxl",
       "url": "library/songs/katy-katy-lam-truong.mxl",
-      "bytes": 17997,
+      "bytes": 11388,
       "workId": "5b21ffd4dd6e203af97fe8f7cf6b1c0a599a8d86ec1670188eb94d89d49aa861",
       "version": 1,
-      "practiceReady": true
+      "practiceReady": true,
+      "sourceHashes": [
+        "5b21ffd4dd6e203af97fe8f7cf6b1c0a599a8d86ec1670188eb94d89d49aa861"
+      ],
+      "sourceSha256": "5b21ffd4dd6e203af97fe8f7cf6b1c0a599a8d86ec1670188eb94d89d49aa861",
+      "aliases": [],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "b61943ef372566a1b2c6378e68a3cda8471856380cfcccb0ee803addb2159804"
     },
     {
-      "id": "78fe654d486beb516564122c8d963cce2d5c3b08ed80b8ab64c7aed63d1a3c8e",
-      "sha256": "78fe654d486beb516564122c8d963cce2d5c3b08ed80b8ab64c7aed63d1a3c8e",
+      "id": "3bae10ad16f3be1b16cc1c7a96140eb43bc1e7038b762d0deaf03a73093b7fd4",
+      "sha256": "3bae10ad16f3be1b16cc1c7a96140eb43bc1e7038b762d0deaf03a73093b7fd4",
       "title": "Biển nhớ",
       "filename": "Biển nhớ.mxl",
       "url": "library/songs/bien-nho-sheet-piano.mxl",
-      "bytes": 8024,
+      "bytes": 6104,
       "workId": "8b4ed706653900badd2086def2ba498c5e03f91218d19a42830395232402b0b3",
       "version": 1,
       "practiceReady": true,
-      "sourceSha256": "8b4ed706653900badd2086def2ba498c5e03f91218d19a42830395232402b0b3"
+      "sourceSha256": "8b4ed706653900badd2086def2ba498c5e03f91218d19a42830395232402b0b3",
+      "sourceHashes": [
+        "8b4ed706653900badd2086def2ba498c5e03f91218d19a42830395232402b0b3",
+        "78fe654d486beb516564122c8d963cce2d5c3b08ed80b8ab64c7aed63d1a3c8e"
+      ],
+      "composer": "Trịnh Công Sơn",
+      "arranger": "Lý Trọng Nghĩa",
+      "aliases": [
+        "Bản nhạc không tên"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "013e1bf6d4075b8ef2f3fa9442219bb96abbd9b33b597c10b5c6f296557f2584"
     },
     {
-      "id": "2dab3a5d916ddf35d44765904dca5790d34e6248d297990305f29ee99f3a25a9",
-      "sha256": "2dab3a5d916ddf35d44765904dca5790d34e6248d297990305f29ee99f3a25a9",
+      "id": "475ff25f38b79be56008a4917bf4ba94d18203c7b5efc2abc15ea6d12cf3dc12",
+      "sha256": "475ff25f38b79be56008a4917bf4ba94d18203c7b5efc2abc15ea6d12cf3dc12",
       "title": "Cuối cùng thì",
       "filename": "Cuối cùng thì.mxl",
       "url": "library/songs/cuoi-cung-thi-jack-j97.mxl",
-      "bytes": 15614,
+      "bytes": 9563,
       "workId": "3181d63343cc7568c7ac3d056fa1c46bfb0ad08451c01544b8482e1493c603e6",
       "version": 1,
-      "composer": "Jack - J97",
       "practiceReady": true,
-      "sourceSha256": "3181d63343cc7568c7ac3d056fa1c46bfb0ad08451c01544b8482e1493c603e6"
+      "sourceSha256": "3181d63343cc7568c7ac3d056fa1c46bfb0ad08451c01544b8482e1493c603e6",
+      "sourceHashes": [
+        "3181d63343cc7568c7ac3d056fa1c46bfb0ad08451c01544b8482e1493c603e6",
+        "2dab3a5d916ddf35d44765904dca5790d34e6248d297990305f29ee99f3a25a9"
+      ],
+      "composer": "Jack - J97",
+      "transcriber": "T H AN PIANO",
+      "aliases": [
+        "Cuối Cùng Thì"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "91d509eb8b0fa6cf01b540623c9ebb1094537cc467373748bc11df41c6d8186a"
     },
     {
-      "id": "c4e65b3803d00d309bba78f7f4c2a87ce754c89b661a0442e06d6c9784841918",
-      "sha256": "c4e65b3803d00d309bba78f7f4c2a87ce754c89b661a0442e06d6c9784841918",
+      "id": "479b430e0cb8ca9138f402792e16363f056884c2b8de297f0962af1a8856c93c",
+      "sha256": "479b430e0cb8ca9138f402792e16363f056884c2b8de297f0962af1a8856c93c",
       "title": "Ngôi sao cô đơn",
       "filename": "Ngôi sao cô đơn.mxl",
       "url": "library/songs/ngoi-sao-co-don-jack-j97.mxl",
-      "bytes": 22199,
+      "bytes": 13534,
       "workId": "fcdc9d20abdffab418db27a374381fb6db017426f01e6ca204d7a3caf3e656f6",
       "version": 1,
-      "composer": "JACK (J97)",
       "practiceReady": true,
-      "sourceSha256": "fcdc9d20abdffab418db27a374381fb6db017426f01e6ca204d7a3caf3e656f6"
+      "sourceSha256": "fcdc9d20abdffab418db27a374381fb6db017426f01e6ca204d7a3caf3e656f6",
+      "sourceHashes": [
+        "fcdc9d20abdffab418db27a374381fb6db017426f01e6ca204d7a3caf3e656f6",
+        "c4e65b3803d00d309bba78f7f4c2a87ce754c89b661a0442e06d6c9784841918"
+      ],
+      "composer": "JACK (J97)",
+      "transcriber": "T H AN",
+      "aliases": [],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "6155143ad08244a96e195c424a2c057545d564557e5c1e5b66eb4208132b05b1"
     },
     {
-      "id": "8f7bae6629e3927e5fc40800b5524afd6e17c3d2d0ebbdcaa3b53ffa9c0d5231",
-      "sha256": "8f7bae6629e3927e5fc40800b5524afd6e17c3d2d0ebbdcaa3b53ffa9c0d5231",
+      "id": "84997081fe8edc822f7b24c9ca2717a748ebacfa40038e1279c75f239c68ed22",
+      "sha256": "84997081fe8edc822f7b24c9ca2717a748ebacfa40038e1279c75f239c68ed22",
       "title": "Ngày Tết quê em",
       "filename": "Ngày Tết quê em.mxl",
       "url": "library/songs/ngay-tet-que-em.mxl",
-      "bytes": 5288,
+      "bytes": 4248,
       "workId": "5ca03ab09c905ffedd3a11fc2f37e03c933b10cdbeac7abd0a49a6a8d1067bbc",
       "version": 1,
-      "composer": "Từ Huy",
       "practiceReady": true,
-      "sourceSha256": "5ca03ab09c905ffedd3a11fc2f37e03c933b10cdbeac7abd0a49a6a8d1067bbc"
+      "sourceSha256": "5ca03ab09c905ffedd3a11fc2f37e03c933b10cdbeac7abd0a49a6a8d1067bbc",
+      "sourceHashes": [
+        "5ca03ab09c905ffedd3a11fc2f37e03c933b10cdbeac7abd0a49a6a8d1067bbc",
+        "8f7bae6629e3927e5fc40800b5524afd6e17c3d2d0ebbdcaa3b53ffa9c0d5231"
+      ],
+      "composer": "Từ Huy",
+      "transcriber": "T.H.AN",
+      "aliases": [],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "d2b1979a1358c57743bc341f66f63a1fc93b97499194b384d750a449f9d58f7b"
     },
     {
-      "id": "9f978abc1a17c51e0c800ce060b1408c44837cc8be1dc9d476f6e6e7e45517d0",
-      "sha256": "9f978abc1a17c51e0c800ce060b1408c44837cc8be1dc9d476f6e6e7e45517d0",
+      "id": "440ab0b72a763cf78a44cdbab5b0fe5ef577ce1e56d5a2768f0f5793795d17cb",
+      "sha256": "440ab0b72a763cf78a44cdbab5b0fe5ef577ce1e56d5a2768f0f5793795d17cb",
       "title": "Ưng quá chừng",
       "filename": "Ưng quá chừng.mxl",
       "url": "library/songs/ung-qua-chung-amee-piano-sheet.mxl",
-      "bytes": 9136,
+      "bytes": 6174,
       "workId": "9f978abc1a17c51e0c800ce060b1408c44837cc8be1dc9d476f6e6e7e45517d0",
       "version": 1,
-      "composer": "AMEE",
-      "practiceReady": true
+      "practiceReady": true,
+      "sourceHashes": [
+        "9f978abc1a17c51e0c800ce060b1408c44837cc8be1dc9d476f6e6e7e45517d0"
+      ],
+      "sourceSha256": "9f978abc1a17c51e0c800ce060b1408c44837cc8be1dc9d476f6e6e7e45517d0",
+      "transcriber": "Minh_Cuteee",
+      "aliases": [
+        "Ưng Quá Chừng"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "691b061c35e6dd5f7e7503835fe5f55cc1c57cbfd7034e4b0c11f389cd29ca7a"
     },
     {
-      "id": "177596b70b6909c5519d54acf8099067c3a93682e9af2044392cf6c242f22e0a",
-      "sha256": "177596b70b6909c5519d54acf8099067c3a93682e9af2044392cf6c242f22e0a",
+      "id": "d2e4b56d4910f7af6476ba4cfd146f67776d6e8ac279294c4a1ab8a2e74c0a4c",
+      "sha256": "d2e4b56d4910f7af6476ba4cfd146f67776d6e8ac279294c4a1ab8a2e74c0a4c",
       "title": "Shay Nắnggg",
       "filename": "Shay Nắnggg.mxl",
       "url": "library/songs/shay-nanggg-amee-x-obito-x-hua-kim-tuyen.mxl",
-      "bytes": 15710,
+      "bytes": 9781,
       "workId": "2177c558e5bcab97f7be1fe500392efc4038c086f467089c175350b154e3b635",
       "version": 1,
-      "composer": "AMEE x OBITO x HỨA KIM TUYỀN",
       "practiceReady": true,
-      "sourceSha256": "2177c558e5bcab97f7be1fe500392efc4038c086f467089c175350b154e3b635"
+      "sourceSha256": "2177c558e5bcab97f7be1fe500392efc4038c086f467089c175350b154e3b635",
+      "sourceHashes": [
+        "2177c558e5bcab97f7be1fe500392efc4038c086f467089c175350b154e3b635",
+        "177596b70b6909c5519d54acf8099067c3a93682e9af2044392cf6c242f22e0a"
+      ],
+      "transcriber": "T H AN",
+      "aliases": [],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "20040c1da7ed88c231191caed291bb6ebd1e0ad835cb7218b56822de82fef578"
     },
     {
-      "id": "4935b547bcdec76eccf5709ff1f54a7d83aca88b50070c8114ae3342bca6e674",
-      "sha256": "4935b547bcdec76eccf5709ff1f54a7d83aca88b50070c8114ae3342bca6e674",
+      "id": "38098abf9f3b3c8aa49d10eb6dd9bd34dbdc071de50a4c3f173c9077d471dd56",
+      "sha256": "38098abf9f3b3c8aa49d10eb6dd9bd34dbdc071de50a4c3f173c9077d471dd56",
       "title": "Sài Gòn đau lòng quá",
       "filename": "Sài Gòn đau lòng quá.mxl",
       "url": "library/songs/sai-gon-dau-long-qua.mxl",
-      "bytes": 16886,
+      "bytes": 10718,
       "workId": "d17bdecb956ccad647971e7713957a1d909446ac48e7afa9605900449b8bab58",
       "version": 1,
       "practiceReady": true,
-      "sourceSha256": "d17bdecb956ccad647971e7713957a1d909446ac48e7afa9605900449b8bab58"
+      "sourceSha256": "d17bdecb956ccad647971e7713957a1d909446ac48e7afa9605900449b8bab58",
+      "sourceHashes": [
+        "d17bdecb956ccad647971e7713957a1d909446ac48e7afa9605900449b8bab58",
+        "4935b547bcdec76eccf5709ff1f54a7d83aca88b50070c8114ae3342bca6e674"
+      ],
+      "aliases": [
+        "Sài Gòn Đau Lòng Quá"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "deabd7a4e3dd9ee28b290c99e914551277f9959cb2b9ab9c046eba547a2aa80d"
     },
     {
-      "id": "de9001907a5b84ad19d2f1c5ac5a988051359c8e223194d569ebe02c729adad6",
-      "sha256": "de9001907a5b84ad19d2f1c5ac5a988051359c8e223194d569ebe02c729adad6",
+      "id": "c485fde57443272639a11bd49b295f31ac094b3e829284f129d9ead7b40d9609",
+      "sha256": "c485fde57443272639a11bd49b295f31ac094b3e829284f129d9ead7b40d9609",
       "title": "Thức giấc",
       "filename": "Thức giấc — v2.mxl",
       "url": "library/songs/thuc-giac-da-lab-v2.mxl",
-      "bytes": 10908,
+      "bytes": 6769,
       "workId": "79c6d1000e255616150b5ca622baa190e8f2eadd238ca3920e79eefb15c3c0bc",
       "version": 2,
       "versionLabel": "Bản phối 2",
       "practiceReady": true,
-      "sourceSha256": "8f5b5cb28b6d9a009f53a5e30266e915e856b3269c24eae499ff3f330ee96d54"
+      "sourceSha256": "8f5b5cb28b6d9a009f53a5e30266e915e856b3269c24eae499ff3f330ee96d54",
+      "sourceHashes": [
+        "8f5b5cb28b6d9a009f53a5e30266e915e856b3269c24eae499ff3f330ee96d54",
+        "de9001907a5b84ad19d2f1c5ac5a988051359c8e223194d569ebe02c729adad6"
+      ],
+      "arranger": "ngohhai",
+      "aliases": [
+        "Thức Giấc"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "60b5e84de11cb89fce8663f469a96f23cfc80c0a080bbda373c5cc2051f2e5ee"
     },
     {
-      "id": "12e5e83f220a84a24cfcb516157df5d8507c65ebf29168d7a122f7ae8092581d",
-      "sha256": "12e5e83f220a84a24cfcb516157df5d8507c65ebf29168d7a122f7ae8092581d",
+      "id": "d0876452c81c4c7885ff89b2bbff2c72abda0796206814af6d2bd98c587b3b0a",
+      "sha256": "d0876452c81c4c7885ff89b2bbff2c72abda0796206814af6d2bd98c587b3b0a",
       "title": "Diễm xưa",
       "filename": "Diễm xưa.mxl",
       "url": "library/songs/diem-xua-cover-by-an-coong.mxl",
-      "bytes": 15518,
+      "bytes": 16056,
       "workId": "12e5e83f220a84a24cfcb516157df5d8507c65ebf29168d7a122f7ae8092581d",
       "version": 1,
+      "practiceReady": true,
+      "sourceHashes": [
+        "12e5e83f220a84a24cfcb516157df5d8507c65ebf29168d7a122f7ae8092581d"
+      ],
+      "sourceSha256": "12e5e83f220a84a24cfcb516157df5d8507c65ebf29168d7a122f7ae8092581d",
       "composer": "Trịnh Công Sơn",
-      "practiceReady": true
+      "aliases": [
+        "Diễm Xưa"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "68219f6d5ca6d7587fb987e54c1ffe03d21c4d4c8bade7fb7a8f674c31f0ca43"
     },
     {
-      "id": "1c2d5455c6ebf964f3e5cdd85ea30f220d8ffbc912add86189fd4238c8f1aa8c",
-      "sha256": "1c2d5455c6ebf964f3e5cdd85ea30f220d8ffbc912add86189fd4238c8f1aa8c",
-      "title": "我不后悔 / I Don’t Regret",
-      "filename": "我不后悔 / I Don’t Regret.mxl",
+      "id": "6bd1aa557b1ad44789343af83da7d7764baeace252c6fcf9d4109b670eddec5c",
+      "sha256": "6bd1aa557b1ad44789343af83da7d7764baeace252c6fcf9d4109b670eddec5c",
+      "title": "我不后悔",
+      "filename": "我不后悔.mxl",
       "url": "library/songs/wo-bu-hou-hui.mxl",
-      "bytes": 5163,
+      "bytes": 5713,
       "workId": "1c2d5455c6ebf964f3e5cdd85ea30f220d8ffbc912add86189fd4238c8f1aa8c",
       "version": 1,
-      "practiceReady": true
+      "practiceReady": true,
+      "sourceHashes": [
+        "1c2d5455c6ebf964f3e5cdd85ea30f220d8ffbc912add86189fd4238c8f1aa8c"
+      ],
+      "sourceSha256": "1c2d5455c6ebf964f3e5cdd85ea30f220d8ffbc912add86189fd4238c8f1aa8c",
+      "aliases": [
+        "我不后悔 / I Don’t Regret",
+        "Wo Bu Hou Hui",
+        "I Don’t Regret"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "e8579d97ec50dfc926685e430fdaf43e9529a0ceea476674d7725925b7217c71"
     },
     {
-      "id": "9aee989cc4b46efefad5c4e60fbd6ed8582bf90a6ddab5b35ccc97f85b9277d0",
-      "sha256": "9aee989cc4b46efefad5c4e60fbd6ed8582bf90a6ddab5b35ccc97f85b9277d0",
+      "id": "11c177bb0c843b972b0a8bc97d6d9835d46450853e7f6cc50be94953a0ab3d9b",
+      "sha256": "11c177bb0c843b972b0a8bc97d6d9835d46450853e7f6cc50be94953a0ab3d9b",
       "title": "999 đóa hồng",
       "filename": "999 đóa hồng.mxl",
       "url": "library/songs/999-doa-hong.mxl",
-      "bytes": 3642,
+      "bytes": 4112,
       "workId": "9aee989cc4b46efefad5c4e60fbd6ed8582bf90a6ddab5b35ccc97f85b9277d0",
       "version": 1,
-      "practiceReady": true
+      "practiceReady": true,
+      "sourceHashes": [
+        "9aee989cc4b46efefad5c4e60fbd6ed8582bf90a6ddab5b35ccc97f85b9277d0"
+      ],
+      "sourceSha256": "9aee989cc4b46efefad5c4e60fbd6ed8582bf90a6ddab5b35ccc97f85b9277d0",
+      "aliases": [
+        "999 đóa hồng / 九百九十九朵玫瑰"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "8136d05ce42a45892bf474245a04831be72c6ea594cac18bd0a081347b203594"
     },
     {
-      "id": "f0e14f7f4811936ef83faebcb51c0a7a3c6c9fd0cb7eb979ba10441d9a52fabf",
-      "sha256": "f0e14f7f4811936ef83faebcb51c0a7a3c6c9fd0cb7eb979ba10441d9a52fabf",
+      "id": "d3a33a515f36462955e9f69d0730b00aa2363d169d1db6cd3403e0e070730cb7",
+      "sha256": "d3a33a515f36462955e9f69d0730b00aa2363d169d1db6cd3403e0e070730cb7",
       "title": "Người tình mùa đông",
       "filename": "Người tình mùa đông.mxl",
       "url": "library/songs/nguoi-tinh-mua-dong.mxl",
-      "bytes": 17248,
+      "bytes": 12008,
       "workId": "f0e14f7f4811936ef83faebcb51c0a7a3c6c9fd0cb7eb979ba10441d9a52fabf",
       "version": 1,
-      "practiceReady": true
+      "practiceReady": true,
+      "sourceHashes": [
+        "f0e14f7f4811936ef83faebcb51c0a7a3c6c9fd0cb7eb979ba10441d9a52fabf"
+      ],
+      "sourceSha256": "f0e14f7f4811936ef83faebcb51c0a7a3c6c9fd0cb7eb979ba10441d9a52fabf",
+      "aliases": [
+        "Người tình mùa đông / 容易受伤的女人"
+      ],
+      "arranger": "lms",
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "ade86f0c978ea61e22036f8fa7649c42b2bc0d8a689ea51303ea5c8ab1a91521"
     },
     {
-      "id": "a5e995a9f831d621650c57c869f8facdd836d83e7ba694cbd544b631ca41f668",
-      "sha256": "a5e995a9f831d621650c57c869f8facdd836d83e7ba694cbd544b631ca41f668",
+      "id": "c6ecb4077efb2a00ad02dc30361468fe48cfeeba9ce47ed6eca00f3bf6c17428",
+      "sha256": "c6ecb4077efb2a00ad02dc30361468fe48cfeeba9ce47ed6eca00f3bf6c17428",
       "title": "Đồng thoại",
       "filename": "Đồng thoại.mxl",
       "url": "library/songs/dong-thoai.mxl",
-      "bytes": 13196,
+      "bytes": 9331,
       "workId": "63607a457e74ae70c4c7636c271a61d3d33c9ea21933e22fa61b70a03695c58c",
       "version": 1,
       "practiceReady": true,
-      "sourceSha256": "63607a457e74ae70c4c7636c271a61d3d33c9ea21933e22fa61b70a03695c58c"
+      "sourceSha256": "63607a457e74ae70c4c7636c271a61d3d33c9ea21933e22fa61b70a03695c58c",
+      "sourceHashes": [
+        "63607a457e74ae70c4c7636c271a61d3d33c9ea21933e22fa61b70a03695c58c",
+        "a5e995a9f831d621650c57c869f8facdd836d83e7ba694cbd544b631ca41f668"
+      ],
+      "aliases": [
+        "Đồng thoại / 童话"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "78d172b1e8595b99ed9e3cf1bae150bf595bf438eeafb35adad999131cc60ce1"
     },
     {
-      "id": "9e7935802784afefd98ae55f972432fc3b5f57d5ef930e7e98e6a7ac3177415d",
-      "sha256": "9e7935802784afefd98ae55f972432fc3b5f57d5ef930e7e98e6a7ac3177415d",
+      "id": "35685ca582fb4d3359f25e6afa63896649979cdf537fadb138b62e842de6fd8c",
+      "sha256": "35685ca582fb4d3359f25e6afa63896649979cdf537fadb138b62e842de6fd8c",
       "title": "Thần thoại",
       "filename": "Thần thoại.mxl",
       "url": "library/songs/than-thoai.mxl",
-      "bytes": 19881,
+      "bytes": 13113,
       "workId": "acf1c8918b5d478fa469ed6602314ddf196b7662c8611776dee26a291d1878fe",
       "version": 1,
       "practiceReady": true,
-      "sourceSha256": "acf1c8918b5d478fa469ed6602314ddf196b7662c8611776dee26a291d1878fe"
+      "sourceSha256": "acf1c8918b5d478fa469ed6602314ddf196b7662c8611776dee26a291d1878fe",
+      "sourceHashes": [
+        "acf1c8918b5d478fa469ed6602314ddf196b7662c8611776dee26a291d1878fe",
+        "9e7935802784afefd98ae55f972432fc3b5f57d5ef930e7e98e6a7ac3177415d"
+      ],
+      "aliases": [
+        "Thần thoại / 美丽的神话 (Beautiful Myth)"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "6be42f42b18bc25f521437417c7addcb68770ca0b81bc0090c09e48b4a5a1ff5"
     },
     {
-      "id": "f41e07dc6ef0c3b44905a6bbd08f884d6b8a73321c0f2bef022d436d60384a11",
-      "sha256": "f41e07dc6ef0c3b44905a6bbd08f884d6b8a73321c0f2bef022d436d60384a11",
+      "id": "8e9cbe73d5dce3de159eb5c716b640a9a2a512573d452a7daf88cc4b58c4af48",
+      "sha256": "8e9cbe73d5dce3de159eb5c716b640a9a2a512573d452a7daf88cc4b58c4af48",
       "title": "Tân uyên ương hồ điệp mộng",
       "filename": "Tân uyên ương hồ điệp mộng.mxl",
       "url": "library/songs/tan-uyen-uong-ho-diep-mong.mxl",
-      "bytes": 2760,
+      "bytes": 3261,
       "workId": "f41e07dc6ef0c3b44905a6bbd08f884d6b8a73321c0f2bef022d436d60384a11",
       "version": 1,
-      "practiceReady": true
+      "practiceReady": true,
+      "sourceHashes": [
+        "f41e07dc6ef0c3b44905a6bbd08f884d6b8a73321c0f2bef022d436d60384a11"
+      ],
+      "sourceSha256": "f41e07dc6ef0c3b44905a6bbd08f884d6b8a73321c0f2bef022d436d60384a11",
+      "aliases": [
+        "Tân uyên ương hồ điệp mộng / 新鸳鸯蝴蝶梦"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "f5c930380897fa20943e88aced4367fecbe0f8bbf7e1da25ff2ddb2172ae935f"
     },
     {
-      "id": "a4d1c86379114fbcfc86e6d22776507f87d31f9146a38e7770d75d13f05dc339",
-      "sha256": "a4d1c86379114fbcfc86e6d22776507f87d31f9146a38e7770d75d13f05dc339",
+      "id": "6328e539bb52b11cbe0ef6685532ee99c0e6c651ad457180f559932eea27af10",
+      "sha256": "6328e539bb52b11cbe0ef6685532ee99c0e6c651ad457180f559932eea27af10",
       "title": "Ánh trăng nói hộ lòng tôi",
       "filename": "Ánh trăng nói hộ lòng tôi — v2.mxl",
       "url": "library/songs/anh-trang-noi-ho-long-toi-v2.mxl",
-      "bytes": 3392,
+      "bytes": 3899,
       "workId": "d170791f68eeafe0ac726baaacac949879eee9f3465f334b60722ba8c9908947",
       "version": 2,
-      "practiceReady": true
+      "practiceReady": true,
+      "sourceHashes": [
+        "a4d1c86379114fbcfc86e6d22776507f87d31f9146a38e7770d75d13f05dc339"
+      ],
+      "sourceSha256": "a4d1c86379114fbcfc86e6d22776507f87d31f9146a38e7770d75d13f05dc339",
+      "composer": "Tang Ni",
+      "aliases": [
+        "Ánh trăng nói hộ lòng tôi / The Moon Represents My Heart"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "ca5ad31d707dbd13e5b4be51db832e15fd4913b672b662d0e5f4756b18aba66e"
     },
     {
-      "id": "b81f9e80632a318289f6b7a5c7d39afb1a91a718e409066cfd17e8798179607a",
-      "sha256": "b81f9e80632a318289f6b7a5c7d39afb1a91a718e409066cfd17e8798179607a",
+      "id": "66f402253e23f3a684de1b794871c96457cfae77a80565fe899d21aa9c1732bb",
+      "sha256": "66f402253e23f3a684de1b794871c96457cfae77a80565fe899d21aa9c1732bb",
       "title": "Nụ hôn biệt ly",
       "filename": "Nụ hôn biệt ly.mxl",
       "url": "library/songs/nu-hon-biet-ly.mxl",
-      "bytes": 6826,
+      "bytes": 5409,
       "workId": "b81f9e80632a318289f6b7a5c7d39afb1a91a718e409066cfd17e8798179607a",
       "version": 1,
-      "practiceReady": true
+      "practiceReady": true,
+      "sourceHashes": [
+        "b81f9e80632a318289f6b7a5c7d39afb1a91a718e409066cfd17e8798179607a"
+      ],
+      "sourceSha256": "b81f9e80632a318289f6b7a5c7d39afb1a91a718e409066cfd17e8798179607a",
+      "aliases": [
+        "Nụ hôn biệt ly / 吻别"
+      ],
+      "arranger": "Everyone Piano",
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "1d03f4b555d37100d6baf4b42b789e5ac02f1321f251c6c4f94ac3842cd8201d"
     },
     {
-      "id": "1d9ca368efc012e1ebecd4fe652af730ba6a0d078648ed56ecc5327a0bd57f72",
-      "sha256": "1d9ca368efc012e1ebecd4fe652af730ba6a0d078648ed56ecc5327a0bd57f72",
+      "id": "c0b2822a2dc7201f6fa1f52ab44014890477f3ecacd36a0eb689ba61a573ae26",
+      "sha256": "c0b2822a2dc7201f6fa1f52ab44014890477f3ecacd36a0eb689ba61a573ae26",
       "title": "Bến Thượng Hải",
       "filename": "Bến Thượng Hải.mxl",
       "url": "library/songs/ben-thuong-hai.mxl",
-      "bytes": 8807,
+      "bytes": 6743,
       "workId": "1d9ca368efc012e1ebecd4fe652af730ba6a0d078648ed56ecc5327a0bd57f72",
       "version": 1,
-      "practiceReady": true
+      "practiceReady": true,
+      "sourceHashes": [
+        "1d9ca368efc012e1ebecd4fe652af730ba6a0d078648ed56ecc5327a0bd57f72"
+      ],
+      "sourceSha256": "1d9ca368efc012e1ebecd4fe652af730ba6a0d078648ed56ecc5327a0bd57f72",
+      "aliases": [
+        "Bến Thượng Hải / 上海滩"
+      ],
+      "arranger": "MuYun Piano",
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "7d1d0e1851bc046e94cb62a5e9bb371785da0a898489d8dc6d092fb2e31193e6"
     },
     {
-      "id": "f7db7ea3cb5f2331e5d0a0ffbcb362700db19c0861ffe978f42193303ee478e4",
-      "sha256": "f7db7ea3cb5f2331e5d0a0ffbcb362700db19c0861ffe978f42193303ee478e4",
+      "id": "b3f438798135d81cc40ce21dfee8eb716fea889e46051e21845db5e19daf94bc",
+      "sha256": "b3f438798135d81cc40ce21dfee8eb716fea889e46051e21845db5e19daf94bc",
       "title": "Điềm mật mật",
       "filename": "Điềm mật mật.mxl",
       "url": "library/songs/diem-mat-mat.mxl",
-      "bytes": 5213,
+      "bytes": 5860,
       "workId": "f7db7ea3cb5f2331e5d0a0ffbcb362700db19c0861ffe978f42193303ee478e4",
       "version": 1,
-      "practiceReady": true
+      "practiceReady": true,
+      "sourceHashes": [
+        "f7db7ea3cb5f2331e5d0a0ffbcb362700db19c0861ffe978f42193303ee478e4"
+      ],
+      "sourceSha256": "f7db7ea3cb5f2331e5d0a0ffbcb362700db19c0861ffe978f42193303ee478e4",
+      "composer": "Dân ca (theo bản nguồn)",
+      "aliases": [
+        "Điềm mật mật / Tian Mi Mi"
+      ],
+      "arranger": "音乐符",
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "a82d632fe534b902d1ed5b794d39f517e8ef3985bcb2e1c2f8955b33bc33708f"
     },
     {
-      "id": "514591366d7731e3137b225dbf087e957bd7491125fc7c3d29107465124f8fb6",
-      "sha256": "514591366d7731e3137b225dbf087e957bd7491125fc7c3d29107465124f8fb6",
+      "id": "a597e0cd0eb55788abf09301da188b138150ecc45ea8096ee89187694441fb61",
+      "sha256": "a597e0cd0eb55788abf09301da188b138150ecc45ea8096ee89187694441fb61",
       "title": "Chuột yêu gạo",
       "filename": "Chuột yêu gạo.mxl",
       "url": "library/songs/chuot-yeu-gao.mxl",
-      "bytes": 9897,
+      "bytes": 10506,
       "workId": "514591366d7731e3137b225dbf087e957bd7491125fc7c3d29107465124f8fb6",
       "version": 1,
-      "practiceReady": true
+      "practiceReady": true,
+      "sourceHashes": [
+        "514591366d7731e3137b225dbf087e957bd7491125fc7c3d29107465124f8fb6"
+      ],
+      "sourceSha256": "514591366d7731e3137b225dbf087e957bd7491125fc7c3d29107465124f8fb6",
+      "aliases": [
+        "Chuột yêu gạo / Mouse Love Rice"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "0c5d6168ef4ff76e29253df62fd9dcc41fed65f4cc825afdd485406832f292f4"
     },
     {
-      "id": "3c31e998d826c7e9b17c4ad9e32c2355e0b99ab4fd8373ee843c0deafc79512b",
-      "sha256": "3c31e998d826c7e9b17c4ad9e32c2355e0b99ab4fd8373ee843c0deafc79512b",
+      "id": "eafde777a31e28c96a3a7ffb03e9aae491ad8ba628493f66b5b09ca89a07a7b7",
+      "sha256": "eafde777a31e28c96a3a7ffb03e9aae491ad8ba628493f66b5b09ca89a07a7b7",
       "title": "Sau này",
       "filename": "Sau này.mxl",
       "url": "library/songs/sau-nay.mxl",
-      "bytes": 11463,
+      "bytes": 8379,
       "workId": "3c31e998d826c7e9b17c4ad9e32c2355e0b99ab4fd8373ee843c0deafc79512b",
       "version": 1,
-      "practiceReady": true
+      "practiceReady": true,
+      "sourceHashes": [
+        "3c31e998d826c7e9b17c4ad9e32c2355e0b99ab4fd8373ee843c0deafc79512b"
+      ],
+      "sourceSha256": "3c31e998d826c7e9b17c4ad9e32c2355e0b99ab4fd8373ee843c0deafc79512b",
+      "aliases": [
+        "Sau này / 后来 - 抒情好听版"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "a5ae5fc0390643c17566257efc8ec1064bd4cdf73ecfef0f139cb06a30a84f66"
     },
     {
-      "id": "6c58faf58f0e10d54bb03c817d9a35d9dd61c746f14b3b44cc0c7fac45eed9d8",
-      "sha256": "6c58faf58f0e10d54bb03c817d9a35d9dd61c746f14b3b44cc0c7fac45eed9d8",
+      "id": "51afa5d1644bee6619060cf902a0f3d717fa5f044c12b054c8c0f3782a539a6c",
+      "sha256": "51afa5d1644bee6619060cf902a0f3d717fa5f044c12b054c8c0f3782a539a6c",
       "title": "Những năm ấy",
       "filename": "Những năm ấy.mxl",
       "url": "library/songs/nhung-nam-ay.mxl",
-      "bytes": 7057,
+      "bytes": 7616,
       "workId": "6c58faf58f0e10d54bb03c817d9a35d9dd61c746f14b3b44cc0c7fac45eed9d8",
       "version": 1,
-      "practiceReady": true
+      "practiceReady": true,
+      "sourceHashes": [
+        "6c58faf58f0e10d54bb03c817d9a35d9dd61c746f14b3b44cc0c7fac45eed9d8"
+      ],
+      "sourceSha256": "6c58faf58f0e10d54bb03c817d9a35d9dd61c746f14b3b44cc0c7fac45eed9d8",
+      "arranger": "Everyone Piano",
+      "aliases": [
+        "Những năm ấy / 那些年"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "41e09acaae6fe2cde7f8a1000f9cd8babe6e825aab2530682c8b2ade1cc67e7c"
     },
     {
-      "id": "dcd9a71a73306d74602b5a50c6cbb8ecab3eb7c68944d00aa40fff15ba3e2fd6",
-      "sha256": "dcd9a71a73306d74602b5a50c6cbb8ecab3eb7c68944d00aa40fff15ba3e2fd6",
+      "id": "6424f55e5a3008599ac58661e1cc019ae86ef3522762033ce7c818bfa79e0827",
+      "sha256": "6424f55e5a3008599ac58661e1cc019ae86ef3522762033ce7c818bfa79e0827",
       "title": "May mắn bé nhỏ",
       "filename": "May mắn bé nhỏ.mxl",
       "url": "library/songs/may-man-be-nho.mxl",
-      "bytes": 6288,
+      "bytes": 6876,
       "workId": "dcd9a71a73306d74602b5a50c6cbb8ecab3eb7c68944d00aa40fff15ba3e2fd6",
       "version": 1,
-      "practiceReady": true
+      "practiceReady": true,
+      "sourceHashes": [
+        "dcd9a71a73306d74602b5a50c6cbb8ecab3eb7c68944d00aa40fff15ba3e2fd6"
+      ],
+      "sourceSha256": "dcd9a71a73306d74602b5a50c6cbb8ecab3eb7c68944d00aa40fff15ba3e2fd6",
+      "composer": "Jerry C",
+      "aliases": [
+        "May mắn bé nhỏ / 小幸运"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "503352cef96d6476ea3bf87ed8a5c7ddf618336ef1043aa91b517db57419fd44"
     },
     {
-      "id": "882c520ef4219fb54be6549a5bef952f67ecfe0d30b4fc6ce1dce6c60ffd90b5",
-      "sha256": "882c520ef4219fb54be6549a5bef952f67ecfe0d30b4fc6ce1dce6c60ffd90b5",
+      "id": "22b5b373b048424c610132b6962dcc87671ac1fd63a8b71f29ced694631f4f1f",
+      "sha256": "22b5b373b048424c610132b6962dcc87671ac1fd63a8b71f29ced694631f4f1f",
       "title": "Độ ta không độ nàng",
       "filename": "Độ ta không độ nàng.mxl",
       "url": "library/songs/do-ta-khong-do-nang.mxl",
-      "bytes": 3556,
+      "bytes": 4084,
       "workId": "882c520ef4219fb54be6549a5bef952f67ecfe0d30b4fc6ce1dce6c60ffd90b5",
       "version": 1,
-      "practiceReady": true
+      "practiceReady": true,
+      "sourceHashes": [
+        "882c520ef4219fb54be6549a5bef952f67ecfe0d30b4fc6ce1dce6c60ffd90b5"
+      ],
+      "sourceSha256": "882c520ef4219fb54be6549a5bef952f67ecfe0d30b4fc6ce1dce6c60ffd90b5",
+      "arranger": "Everyone Piano",
+      "aliases": [
+        "Độ ta không độ nàng / 渡我不渡她"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "33f5093b892607195cec4ae36baeccc3710f65a79ad1d04b1795a9486d827ca6"
     },
     {
-      "id": "4a155af87fc73b0658e8f7b8f551eb1211c2071a8d8897f80936541d7e17bb67",
-      "sha256": "4a155af87fc73b0658e8f7b8f551eb1211c2071a8d8897f80936541d7e17bb67",
+      "id": "8d54e1ed74aec2c294a4fd1d876338d635365889fee6c31c78e3aca929c9ff42",
+      "sha256": "8d54e1ed74aec2c294a4fd1d876338d635365889fee6c31c78e3aca929c9ff42",
       "title": "Thanh hoa sứ",
       "filename": "Thanh hoa sứ.mxl",
       "url": "library/songs/thanh-hoa-su.mxl",
-      "bytes": 15096,
+      "bytes": 10374,
       "workId": "f161272b882a9accef08097308c4ff0bca750270dc730a65f5947f2092ec12bc",
       "version": 1,
       "practiceReady": true,
-      "sourceSha256": "f161272b882a9accef08097308c4ff0bca750270dc730a65f5947f2092ec12bc"
+      "sourceSha256": "f161272b882a9accef08097308c4ff0bca750270dc730a65f5947f2092ec12bc",
+      "sourceHashes": [
+        "f161272b882a9accef08097308c4ff0bca750270dc730a65f5947f2092ec12bc",
+        "4a155af87fc73b0658e8f7b8f551eb1211c2071a8d8897f80936541d7e17bb67"
+      ],
+      "aliases": [
+        "Thanh hoa sứ / 青花瓷 (Blue and White Porcelain)"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "fffc6a13194399c19db9ea3d64eed690d07db7b652611fd52cd1fa326eca3674"
     },
     {
-      "id": "2b86139ef7affed54d00f7f0f691b27d6fed95ded767a5b24473281119b0b66d",
-      "sha256": "2b86139ef7affed54d00f7f0f691b27d6fed95ded767a5b24473281119b0b66d",
+      "id": "ae291e01a76b084cdc33d61d63edd836b46064245e30df81eb7ce3c28c74503d",
+      "sha256": "ae291e01a76b084cdc33d61d63edd836b46064245e30df81eb7ce3c28c74503d",
       "title": "Vì một người ra đi",
       "filename": "Vì một người ra đi.mxl",
       "url": "library/songs/vi-mot-nguoi-ra-di.mxl",
-      "bytes": 10108,
+      "bytes": 10584,
       "workId": "2b86139ef7affed54d00f7f0f691b27d6fed95ded767a5b24473281119b0b66d",
       "version": 1,
-      "practiceReady": true
+      "practiceReady": true,
+      "sourceHashes": [
+        "2b86139ef7affed54d00f7f0f691b27d6fed95ded767a5b24473281119b0b66d"
+      ],
+      "sourceSha256": "2b86139ef7affed54d00f7f0f691b27d6fed95ded767a5b24473281119b0b66d",
+      "aliases": [
+        "Vì một người ra đi / 笑看风云"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "a89e6becebd24e05d19097c3edce820a3e1434196d60e3fdc77ad9d72a1b5499"
     },
     {
-      "id": "d2d4d347ae1d15027ccdea9ef68da7d90d7b2a76412366163faafad57d5031b0",
-      "sha256": "d2d4d347ae1d15027ccdea9ef68da7d90d7b2a76412366163faafad57d5031b0",
+      "id": "a34d1aaadbc487846ce54939a47dd91f342c63c92c388d58bb48d65ea018ab4b",
+      "sha256": "a34d1aaadbc487846ce54939a47dd91f342c63c92c388d58bb48d65ea018ab4b",
       "title": "Vì sao trong lòng tôi",
       "filename": "Vì sao trong lòng tôi.mxl",
       "url": "library/songs/vi-sao-trong-long-toi.mxl",
-      "bytes": 4713,
+      "bytes": 5182,
       "workId": "d2d4d347ae1d15027ccdea9ef68da7d90d7b2a76412366163faafad57d5031b0",
       "version": 1,
-      "practiceReady": true
+      "practiceReady": true,
+      "sourceHashes": [
+        "d2d4d347ae1d15027ccdea9ef68da7d90d7b2a76412366163faafad57d5031b0"
+      ],
+      "sourceSha256": "d2d4d347ae1d15027ccdea9ef68da7d90d7b2a76412366163faafad57d5031b0",
+      "aliases": [
+        "Vì sao trong lòng tôi / 谁明浪子心"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "7f9993a103d2598d8941f77e9e1c86c5f8bc85661a4b25bdf50cec5409356a97"
     },
     {
-      "id": "343921226f9b603c742662247adc077d49688f1806bc79b93f07798a38e34231",
-      "sha256": "343921226f9b603c742662247adc077d49688f1806bc79b93f07798a38e34231",
+      "id": "1556a6b8817662fa0c2f885d0fabc939f861dba61c903c8763aba4238a994008",
+      "sha256": "1556a6b8817662fa0c2f885d0fabc939f861dba61c903c8763aba4238a994008",
       "title": "Đàn ông không được quên hết tình còn nghĩa",
       "filename": "Đàn ông không được quên hết tình còn nghĩa.mxl",
       "url": "library/songs/dan-ong-khong-duoc-quen-het-tinh-con-nghia.mxl",
-      "bytes": 8265,
+      "bytes": 8771,
       "workId": "343921226f9b603c742662247adc077d49688f1806bc79b93f07798a38e34231",
       "version": 1,
-      "practiceReady": true
+      "practiceReady": true,
+      "sourceHashes": [
+        "343921226f9b603c742662247adc077d49688f1806bc79b93f07798a38e34231"
+      ],
+      "sourceSha256": "343921226f9b603c742662247adc077d49688f1806bc79b93f07798a38e34231",
+      "arranger": "cxj / EveryonePiano",
+      "aliases": [
+        "Đàn ông không được quên hết tình còn nghĩa / 无间道"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "a215b7c72154a68f44c94409385c1dfa7e49519f66a403b1e039f37f99da86c5"
     },
     {
-      "id": "ac151684902047b4de4bec18dc0a82107a726d609a622df662e2895479cf196f",
-      "sha256": "ac151684902047b4de4bec18dc0a82107a726d609a622df662e2895479cf196f",
+      "id": "0143f965b7e519ff87a3f1abe60b189820a34b3e1cbe1225b49d2548b592de41",
+      "sha256": "0143f965b7e519ff87a3f1abe60b189820a34b3e1cbe1225b49d2548b592de41",
       "title": "Anh không muốn bất công với em",
       "filename": "Anh không muốn bất công với em.mxl",
       "url": "library/songs/anh-khong-muon-bat-cong-voi-em.mxl",
-      "bytes": 5702,
+      "bytes": 6168,
       "workId": "ac151684902047b4de4bec18dc0a82107a726d609a622df662e2895479cf196f",
       "version": 1,
-      "practiceReady": true
+      "practiceReady": true,
+      "sourceHashes": [
+        "ac151684902047b4de4bec18dc0a82107a726d609a622df662e2895479cf196f"
+      ],
+      "sourceSha256": "ac151684902047b4de4bec18dc0a82107a726d609a622df662e2895479cf196f",
+      "aliases": [
+        "Anh không muốn bất công với em / 练习"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "92a8cbfc1768487c1d527c1caf8f6946a27be92247820955dfbfd28333f029b8"
     },
     {
-      "id": "d9e9f33395bb7581a7958206194130ca31c5758fe17806f83cc68a646e6dee4e",
-      "sha256": "d9e9f33395bb7581a7958206194130ca31c5758fe17806f83cc68a646e6dee4e",
+      "id": "1e75c77a98cfe96b95bb90a7b50636e0769709768795f0c810c74029a3eaf141",
+      "sha256": "1e75c77a98cfe96b95bb90a7b50636e0769709768795f0c810c74029a3eaf141",
       "title": "Khi người đàn ông khóc",
       "filename": "Khi người đàn ông khóc.mxl",
       "url": "library/songs/khi-nguoi-dan-ong-khoc.mxl",
-      "bytes": 6969,
+      "bytes": 7457,
       "workId": "d9e9f33395bb7581a7958206194130ca31c5758fe17806f83cc68a646e6dee4e",
       "version": 1,
-      "practiceReady": true
+      "practiceReady": true,
+      "sourceHashes": [
+        "d9e9f33395bb7581a7958206194130ca31c5758fe17806f83cc68a646e6dee4e"
+      ],
+      "sourceSha256": "d9e9f33395bb7581a7958206194130ca31c5758fe17806f83cc68a646e6dee4e",
+      "arranger": "yin / EveryonePiano",
+      "aliases": [
+        "Khi người đàn ông khóc / 男人哭吧不是罪"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "cb8bd265d9299be873e005688fb64120a5c3244338eae596dded414a2beca956"
     },
     {
-      "id": "7e3632eb3a2047d47178ed07e403f7028110fb0e493847ee316295aade3424b2",
-      "sha256": "7e3632eb3a2047d47178ed07e403f7028110fb0e493847ee316295aade3424b2",
+      "id": "b5b949d06ca72de2c86c64458c044ebf8b05075a4ddfffed92511f0b33de5b4c",
+      "sha256": "b5b949d06ca72de2c86c64458c044ebf8b05075a4ddfffed92511f0b33de5b4c",
       "title": "Liều thuốc cho trái tim",
       "filename": "Liều thuốc cho trái tim.mxl",
       "url": "library/songs/lieu-thuoc-cho-trai-tim.mxl",
-      "bytes": 7856,
+      "bytes": 8327,
       "workId": "7e3632eb3a2047d47178ed07e403f7028110fb0e493847ee316295aade3424b2",
       "version": 1,
-      "practiceReady": true
+      "practiceReady": true,
+      "sourceHashes": [
+        "7e3632eb3a2047d47178ed07e403f7028110fb0e493847ee316295aade3424b2"
+      ],
+      "sourceSha256": "7e3632eb3a2047d47178ed07e403f7028110fb0e493847ee316295aade3424b2",
+      "aliases": [
+        "Liều thuốc cho trái tim / 伤心1999"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "e9c3f0df5a33b357cbe192c13d5aa140b3cdf7c7742526a835f26531d78440b5"
     },
     {
-      "id": "7b067a711a0ed45376253409256f4c98100d9f959fb881eb22c37b521bc95d7f",
-      "sha256": "7b067a711a0ed45376253409256f4c98100d9f959fb881eb22c37b521bc95d7f",
+      "id": "ab560063cfc711866ddd731c65ba932a37095dbdd7444c997c51d58fd577e902",
+      "sha256": "ab560063cfc711866ddd731c65ba932a37095dbdd7444c997c51d58fd577e902",
       "title": "Tình đơn côi 2",
       "filename": "Tình đơn côi 2.mxl",
       "url": "library/songs/tinh-don-coi-2-lac-mat-dong-song.mxl",
-      "bytes": 4654,
+      "bytes": 5088,
       "workId": "7b067a711a0ed45376253409256f4c98100d9f959fb881eb22c37b521bc95d7f",
       "version": 1,
-      "practiceReady": true
+      "practiceReady": true,
+      "sourceHashes": [
+        "7b067a711a0ed45376253409256f4c98100d9f959fb881eb22c37b521bc95d7f"
+      ],
+      "sourceSha256": "7b067a711a0ed45376253409256f4c98100d9f959fb881eb22c37b521bc95d7f",
+      "aliases": [
+        "Tình đơn côi 2 / 单身情歌"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "501afebf4bcfa100b2730b09bbc89263193ef853f3f2fbb73f5506476129920d"
     },
     {
-      "id": "d4d620537f8749876b8107533a98ad781e0eed017f70c4f534af7ab30113e6ab",
-      "sha256": "d4d620537f8749876b8107533a98ad781e0eed017f70c4f534af7ab30113e6ab",
+      "id": "a2e7a2edcebd88a90cc6f9b7a1eb45b76a077233941dcb82833ed6605a95b147",
+      "sha256": "a2e7a2edcebd88a90cc6f9b7a1eb45b76a077233941dcb82833ed6605a95b147",
       "title": "Nói gì đi",
       "filename": "Nói gì đi.mxl",
       "url": "library/songs/noi-gi-di.mxl",
-      "bytes": 9120,
+      "bytes": 9621,
       "workId": "d4d620537f8749876b8107533a98ad781e0eed017f70c4f534af7ab30113e6ab",
       "version": 1,
-      "practiceReady": true
+      "practiceReady": true,
+      "sourceHashes": [
+        "d4d620537f8749876b8107533a98ad781e0eed017f70c4f534af7ab30113e6ab"
+      ],
+      "sourceSha256": "d4d620537f8749876b8107533a98ad781e0eed017f70c4f534af7ab30113e6ab",
+      "aliases": [
+        "Nói gì đi / 饿狼传说"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "6d74d0bbf2110f36504109c19579cee02f3419b263cbe5e70cb5308b616019f1"
     },
     {
-      "id": "753c393a1ad6489ffe37497764273bd60e4690eda907a36123c7c21d8fa7d01a",
-      "sha256": "753c393a1ad6489ffe37497764273bd60e4690eda907a36123c7c21d8fa7d01a",
+      "id": "c2fe3c7ee4ca8eb81986d50b9f9d7bc15b8b39e95024d613d273d6bd6ed93415",
+      "sha256": "c2fe3c7ee4ca8eb81986d50b9f9d7bc15b8b39e95024d613d273d6bd6ed93415",
       "title": "Nếu em đã quên",
       "filename": "Nếu em đã quên.mxl",
       "url": "library/songs/neu-em-da-quen-ban-don-gian.mxl",
-      "bytes": 3993,
+      "bytes": 4418,
       "workId": "753c393a1ad6489ffe37497764273bd60e4690eda907a36123c7c21d8fa7d01a",
       "version": 1,
       "versionLabel": "Bản đơn giản",
-      "practiceReady": true
+      "practiceReady": true,
+      "sourceHashes": [
+        "753c393a1ad6489ffe37497764273bd60e4690eda907a36123c7c21d8fa7d01a"
+      ],
+      "sourceSha256": "753c393a1ad6489ffe37497764273bd60e4690eda907a36123c7c21d8fa7d01a",
+      "aliases": [
+        "Nếu em đã quên (bản đơn giản) / 太多"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "2c7def14f9c75012a4aad388cce1dc7094140dc013d2bc142a22f305ac78afb0"
     },
     {
-      "id": "51deb2a94c09ff4222f52a148da98e59080cc8521181eedfa8ca5594a681b659",
-      "sha256": "51deb2a94c09ff4222f52a148da98e59080cc8521181eedfa8ca5594a681b659",
+      "id": "c4c5aa851de2f2c3fcb88607ab9bdf44c937c4643d3bfb3faf0198a1e7b04322",
+      "sha256": "c4c5aa851de2f2c3fcb88607ab9bdf44c937c4643d3bfb3faf0198a1e7b04322",
       "title": "Tiếng sáo phiêu bồng",
       "filename": "Tiếng sáo phiêu bồng.mxl",
       "url": "library/songs/tieng-sao-phieu-bong.mxl",
-      "bytes": 8101,
+      "bytes": 8549,
       "workId": "51deb2a94c09ff4222f52a148da98e59080cc8521181eedfa8ca5594a681b659",
       "version": 1,
-      "practiceReady": true
+      "practiceReady": true,
+      "sourceHashes": [
+        "51deb2a94c09ff4222f52a148da98e59080cc8521181eedfa8ca5594a681b659"
+      ],
+      "sourceSha256": "51deb2a94c09ff4222f52a148da98e59080cc8521181eedfa8ca5594a681b659",
+      "aliases": [
+        "Tiếng sáo phiêu bồng / 刀剑如梦"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "afc32dbc697142ee63fbfad878e6844bd82c0964916a783d40fc91ebcde1b73e"
     },
     {
-      "id": "438efdcc7a0171b5f42b3860609752016c0fd9a5af18e405af545e75883e1f24",
-      "sha256": "438efdcc7a0171b5f42b3860609752016c0fd9a5af18e405af545e75883e1f24",
+      "id": "c6baa57a23cc0b12c3e591a5dba9e7d691dadda9195ea74f6e382185cbdd4e1b",
+      "sha256": "c6baa57a23cc0b12c3e591a5dba9e7d691dadda9195ea74f6e382185cbdd4e1b",
       "title": "Sao em nỡ ra đi",
       "filename": "Sao em nỡ ra đi.mxl",
       "url": "library/songs/sao-em-no-ra-di.mxl",
-      "bytes": 9303,
+      "bytes": 9812,
       "workId": "438efdcc7a0171b5f42b3860609752016c0fd9a5af18e405af545e75883e1f24",
       "version": 1,
-      "practiceReady": true
+      "practiceReady": true,
+      "sourceHashes": [
+        "438efdcc7a0171b5f42b3860609752016c0fd9a5af18e405af545e75883e1f24"
+      ],
+      "sourceSha256": "438efdcc7a0171b5f42b3860609752016c0fd9a5af18e405af545e75883e1f24",
+      "aliases": [
+        "Sao em nỡ ra đi / 你怎么舍得我难过"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "e8b039a5a51def89ffcdbb7eed428418dfe3a1d5dfa24708ed54a8046c9059e9"
     },
     {
-      "id": "ce2eafe07a787ac70e9dc6410e7e81f4128fcdf8547d95633875f546c6cdb69e",
-      "sha256": "ce2eafe07a787ac70e9dc6410e7e81f4128fcdf8547d95633875f546c6cdb69e",
+      "id": "4bc29c6ebaf33dcd8ceda2ab5ec32314b9ad90178bb54b06e3e37d3aac30013e",
+      "sha256": "4bc29c6ebaf33dcd8ceda2ab5ec32314b9ad90178bb54b06e3e37d3aac30013e",
       "title": "Cảm tạ tình em",
       "filename": "Cảm tạ tình em.mxl",
       "url": "library/songs/cam-ta-tinh-em.mxl",
-      "bytes": 5257,
+      "bytes": 5737,
       "workId": "ce2eafe07a787ac70e9dc6410e7e81f4128fcdf8547d95633875f546c6cdb69e",
       "version": 1,
-      "practiceReady": true
+      "practiceReady": true,
+      "sourceHashes": [
+        "ce2eafe07a787ac70e9dc6410e7e81f4128fcdf8547d95633875f546c6cdb69e"
+      ],
+      "sourceSha256": "ce2eafe07a787ac70e9dc6410e7e81f4128fcdf8547d95633875f546c6cdb69e",
+      "aliases": [
+        "Cảm tạ tình em / 谢谢你的爱"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "bc1e8dcaf9826473203440b406630f478158489df47a1440ae3784883ee893df"
     },
     {
-      "id": "36910782c031721dd9708d609fa7174aa7d444c280bc06c333b300d4e160ab10",
-      "sha256": "36910782c031721dd9708d609fa7174aa7d444c280bc06c333b300d4e160ab10",
+      "id": "8db88b5f87a897fa300050dbedd18f6dde45a2876cc954f94174cc81994c4587",
+      "sha256": "8db88b5f87a897fa300050dbedd18f6dde45a2876cc954f94174cc81994c4587",
       "title": "Hoàng hôn cũng say",
       "filename": "Hoàng hôn cũng say.mxl",
       "url": "library/songs/hoang-hon-cung-say.mxl",
-      "bytes": 5544,
+      "bytes": 6039,
       "workId": "36910782c031721dd9708d609fa7174aa7d444c280bc06c333b300d4e160ab10",
       "version": 1,
-      "practiceReady": true
+      "practiceReady": true,
+      "sourceHashes": [
+        "36910782c031721dd9708d609fa7174aa7d444c280bc06c333b300d4e160ab10"
+      ],
+      "sourceSha256": "36910782c031721dd9708d609fa7174aa7d444c280bc06c333b300d4e160ab10",
+      "aliases": [
+        "Hoàng hôn cũng say / 夕阳醉了"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "3bf036a9ca1830cec23d98afee35ce75a9b1005b32bfe359da522d4ec00cfcd7"
     },
     {
-      "id": "b545277ae889650d05e3bd82a3b0729b110cf3b740ad28dbac9b6a7f900a697a",
-      "sha256": "b545277ae889650d05e3bd82a3b0729b110cf3b740ad28dbac9b6a7f900a697a",
+      "id": "796cb4a7333919a2474320731355d7754c90c5c39d06ffcaa5d04a47c5476652",
+      "sha256": "796cb4a7333919a2474320731355d7754c90c5c39d06ffcaa5d04a47c5476652",
       "title": "Những lời dối gian",
       "filename": "Những lời dối gian.mxl",
       "url": "library/songs/nhung-loi-doi-gian.mxl",
-      "bytes": 5062,
+      "bytes": 5640,
       "workId": "b545277ae889650d05e3bd82a3b0729b110cf3b740ad28dbac9b6a7f900a697a",
       "version": 1,
-      "practiceReady": true
+      "practiceReady": true,
+      "sourceHashes": [
+        "b545277ae889650d05e3bd82a3b0729b110cf3b740ad28dbac9b6a7f900a697a"
+      ],
+      "sourceSha256": "b545277ae889650d05e3bd82a3b0729b110cf3b740ad28dbac9b6a7f900a697a",
+      "aliases": [
+        "Những lời dối gian / 暗里着迷"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "6c4c760757d61630d8649b41decc1fac3b1f745805c2922cf6b055cb4a2e3dfe"
     },
     {
-      "id": "98bdb26fb417b27330f3de42d11990d7220593eb4b913ef68884ce838555e7cf",
-      "sha256": "98bdb26fb417b27330f3de42d11990d7220593eb4b913ef68884ce838555e7cf",
+      "id": "5d9b77a83ad3d037772ad1066f4cb3300a1dad5007aa77dabb3cc137f6ed980f",
+      "sha256": "5d9b77a83ad3d037772ad1066f4cb3300a1dad5007aa77dabb3cc137f6ed980f",
       "title": "Tình vô cánh bay",
       "filename": "Tình vô cánh bay.mxl",
       "url": "library/songs/tinh-vo-canh-bay.mxl",
-      "bytes": 4430,
+      "bytes": 5003,
       "workId": "98bdb26fb417b27330f3de42d11990d7220593eb4b913ef68884ce838555e7cf",
       "version": 1,
-      "practiceReady": true
+      "practiceReady": true,
+      "sourceHashes": [
+        "98bdb26fb417b27330f3de42d11990d7220593eb4b913ef68884ce838555e7cf"
+      ],
+      "sourceSha256": "98bdb26fb417b27330f3de42d11990d7220593eb4b913ef68884ce838555e7cf",
+      "aliases": [
+        "Tình vô cánh bay / 心太软"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "37e531be6a4c81b168d6d56e06ecbdf3001e13d9baca64c0c7f3e2f9988de931"
     },
     {
-      "id": "922c72a8e8b678a8de8f21f3ce27ac9775028b13c1b9cd0a22fd1f3cc83451c6",
-      "sha256": "922c72a8e8b678a8de8f21f3ce27ac9775028b13c1b9cd0a22fd1f3cc83451c6",
+      "id": "12a8e2285c535d9be7461c0cccb1601bb89f349829fe2358861be12913a3d3e0",
+      "sha256": "12a8e2285c535d9be7461c0cccb1601bb89f349829fe2358861be12913a3d3e0",
       "title": "Tiễn bạn lên đường",
       "filename": "Tiễn bạn lên đường.mxl",
       "url": "library/songs/tien-ban-len-duong.mxl",
-      "bytes": 9263,
+      "bytes": 9706,
       "workId": "922c72a8e8b678a8de8f21f3ce27ac9775028b13c1b9cd0a22fd1f3cc83451c6",
       "version": 1,
-      "practiceReady": true
+      "practiceReady": true,
+      "sourceHashes": [
+        "922c72a8e8b678a8de8f21f3ce27ac9775028b13c1b9cd0a22fd1f3cc83451c6"
+      ],
+      "sourceSha256": "922c72a8e8b678a8de8f21f3ce27ac9775028b13c1b9cd0a22fd1f3cc83451c6",
+      "aliases": [
+        "Tiễn bạn lên đường / 祝你一路顺风"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "88a9e6d56d12c4ce814201c122437b7899da7a9ee1f48f7cb6366e86dd35b552"
     },
     {
-      "id": "4b289f1e429042340a0cd2ec4d6eec970786657b6be5043583ad1846fea067e8",
-      "sha256": "4b289f1e429042340a0cd2ec4d6eec970786657b6be5043583ad1846fea067e8",
+      "id": "173638f60ee8fadb20646ebcb05757f589cf10be2bfb00d20af5e5384a71af30",
+      "sha256": "173638f60ee8fadb20646ebcb05757f589cf10be2bfb00d20af5e5384a71af30",
       "title": "Chia tay trong mưa",
       "filename": "Chia tay trong mưa.mxl",
       "url": "library/songs/chia-tay-trong-mua.mxl",
-      "bytes": 7148,
+      "bytes": 7589,
       "workId": "4b289f1e429042340a0cd2ec4d6eec970786657b6be5043583ad1846fea067e8",
       "version": 1,
-      "practiceReady": true
+      "practiceReady": true,
+      "sourceHashes": [
+        "4b289f1e429042340a0cd2ec4d6eec970786657b6be5043583ad1846fea067e8"
+      ],
+      "sourceSha256": "4b289f1e429042340a0cd2ec4d6eec970786657b6be5043583ad1846fea067e8",
+      "aliases": [
+        "Chia tay trong mưa / 分手总要在雨天"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "d81d4db0253c1166ef24f437c6eb6da5cc61f67a081628828f3bbaaa63d85930"
     },
     {
-      "id": "cba8aa9ab738760324ca4df90d038a4de434eb3bca643f629462e5d44c67076d",
-      "sha256": "cba8aa9ab738760324ca4df90d038a4de434eb3bca643f629462e5d44c67076d",
+      "id": "ba1e82a30dc841ab2d1f373dbc0a539e9ee74fde6d7f4eaaf79b7518b0fe0612",
+      "sha256": "ba1e82a30dc841ab2d1f373dbc0a539e9ee74fde6d7f4eaaf79b7518b0fe0612",
       "title": "Lãng quên chiều thu",
       "filename": "Lãng quên chiều thu.mxl",
       "url": "library/songs/lang-quen-chieu-thu.mxl",
-      "bytes": 4928,
+      "bytes": 3997,
       "workId": "f9107bb5214c23f14396ae6d72a0c2fb8c0192724b5c43bce95f13e65ecc3df6",
       "version": 1,
       "practiceReady": true,
-      "sourceSha256": "f9107bb5214c23f14396ae6d72a0c2fb8c0192724b5c43bce95f13e65ecc3df6"
+      "sourceSha256": "f9107bb5214c23f14396ae6d72a0c2fb8c0192724b5c43bce95f13e65ecc3df6",
+      "sourceHashes": [
+        "f9107bb5214c23f14396ae6d72a0c2fb8c0192724b5c43bce95f13e65ecc3df6",
+        "cba8aa9ab738760324ca4df90d038a4de434eb3bca643f629462e5d44c67076d"
+      ],
+      "aliases": [
+        "Lãng quên chiều thu / 其实不想走"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "dcb4e7fcae2fa96450c3cf014e6b53bd39c497de8f739513cafe11e079b725f8"
     },
     {
-      "id": "983a46c9dc9ef4a2893cb95ca5b134827fc84581d655462d230a46dc9f9acdb3",
-      "sha256": "983a46c9dc9ef4a2893cb95ca5b134827fc84581d655462d230a46dc9f9acdb3",
+      "id": "5c5283ba7bca2a4857a36d790063a0866a959befd0e5ef082e5dc007c1b2b307",
+      "sha256": "5c5283ba7bca2a4857a36d790063a0866a959befd0e5ef082e5dc007c1b2b307",
       "title": "Melody",
       "filename": "Melody.mxl",
       "url": "library/songs/melody.mxl",
-      "bytes": 22002,
+      "bytes": 14807,
       "workId": "bb7cccf98e705b6d0d95c0643b8c052ebf831aa4225ba1f3343c07afeef9d5f6",
       "version": 1,
       "practiceReady": true,
-      "sourceSha256": "bb7cccf98e705b6d0d95c0643b8c052ebf831aa4225ba1f3343c07afeef9d5f6"
+      "sourceSha256": "bb7cccf98e705b6d0d95c0643b8c052ebf831aa4225ba1f3343c07afeef9d5f6",
+      "sourceHashes": [
+        "bb7cccf98e705b6d0d95c0643b8c052ebf831aa4225ba1f3343c07afeef9d5f6",
+        "983a46c9dc9ef4a2893cb95ca5b134827fc84581d655462d230a46dc9f9acdb3"
+      ],
+      "aliases": [],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "8d21b6077ba73a9c7d9415a7c94a824e9dee7762777d516fe149c930392159a1"
     },
     {
-      "id": "4f86af6f24632871a48750b2d28571843a2c23999c94d4705606778216bc2f5a",
-      "sha256": "4f86af6f24632871a48750b2d28571843a2c23999c94d4705606778216bc2f5a",
+      "id": "470a87e21cc9257440cfcd6777c710f34597f1e271aeb95ec8b67491fb513765",
+      "sha256": "470a87e21cc9257440cfcd6777c710f34597f1e271aeb95ec8b67491fb513765",
       "title": "Tình như lá bay xa",
       "filename": "Tình như lá bay xa.mxl",
       "url": "library/songs/tinh-nhu-la-bay-xa.mxl",
-      "bytes": 6019,
+      "bytes": 4499,
       "workId": "6b576ad45e03d48660658f6a869293283c9e839ec96e39f89c5af54dd19232d1",
       "version": 1,
       "practiceReady": true,
-      "sourceSha256": "6b576ad45e03d48660658f6a869293283c9e839ec96e39f89c5af54dd19232d1"
+      "sourceSha256": "6b576ad45e03d48660658f6a869293283c9e839ec96e39f89c5af54dd19232d1",
+      "sourceHashes": [
+        "6b576ad45e03d48660658f6a869293283c9e839ec96e39f89c5af54dd19232d1",
+        "4f86af6f24632871a48750b2d28571843a2c23999c94d4705606778216bc2f5a"
+      ],
+      "aliases": [
+        "Tình như lá bay xa / 难得有情人"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "e5c4579289cba5d19ab89c6f24d5a236e5c576d2a99c2a97ec8f21a71170dc05"
     },
     {
-      "id": "cf3a2883c0839ef7e7861fe0df81dd74779915c1146573448b6b1d23d0909055",
-      "sha256": "cf3a2883c0839ef7e7861fe0df81dd74779915c1146573448b6b1d23d0909055",
+      "id": "10cc54c4e8b9ec439f45162f6c203e135ebdd39592c500d069f2469432c770f4",
+      "sha256": "10cc54c4e8b9ec439f45162f6c203e135ebdd39592c500d069f2469432c770f4",
       "title": "Mưa tuyết",
       "filename": "Mưa tuyết.mxl",
       "url": "library/songs/mua-tuyet.mxl",
-      "bytes": 9065,
+      "bytes": 6895,
       "workId": "1414e9821eb4aa4d1871c450ff8474065932d5c31a021ab70c895ac9a11b065f",
       "version": 1,
       "practiceReady": true,
-      "sourceSha256": "1414e9821eb4aa4d1871c450ff8474065932d5c31a021ab70c895ac9a11b065f"
+      "sourceSha256": "1414e9821eb4aa4d1871c450ff8474065932d5c31a021ab70c895ac9a11b065f",
+      "sourceHashes": [
+        "1414e9821eb4aa4d1871c450ff8474065932d5c31a021ab70c895ac9a11b065f",
+        "cf3a2883c0839ef7e7861fe0df81dd74779915c1146573448b6b1d23d0909055"
+      ],
+      "aliases": [
+        "Mưa tuyết / 冰雨"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "4a16325319542eba674421367c4b338e22a8d627803c51e80da8089f83337068"
     },
     {
-      "id": "d990ee7629cffa02135a632a8a96e89731ef574a91a5a6ab988c86a8fccc9936",
-      "sha256": "d990ee7629cffa02135a632a8a96e89731ef574a91a5a6ab988c86a8fccc9936",
+      "id": "839d10cfd373ad7fa67c0b852142e513e2a6781ff0bf57faf4af0c1c690dd3d7",
+      "sha256": "839d10cfd373ad7fa67c0b852142e513e2a6781ff0bf57faf4af0c1c690dd3d7",
       "title": "Tình xưa nghĩa cũ 2",
       "filename": "Tình xưa nghĩa cũ 2.mxl",
       "url": "library/songs/tinh-xua-nghia-cu-2.mxl",
-      "bytes": 7738,
+      "bytes": 5542,
       "workId": "bd6e4a99122b3dd87c780f3b10ad72b1e0f7fc24c7c14cb08941eb0f1f40afba",
       "version": 1,
       "practiceReady": true,
-      "sourceSha256": "bd6e4a99122b3dd87c780f3b10ad72b1e0f7fc24c7c14cb08941eb0f1f40afba"
+      "sourceSha256": "bd6e4a99122b3dd87c780f3b10ad72b1e0f7fc24c7c14cb08941eb0f1f40afba",
+      "sourceHashes": [
+        "bd6e4a99122b3dd87c780f3b10ad72b1e0f7fc24c7c14cb08941eb0f1f40afba",
+        "d990ee7629cffa02135a632a8a96e89731ef574a91a5a6ab988c86a8fccc9936"
+      ],
+      "aliases": [
+        "Tình xưa nghĩa cũ 2 / 旧梦不须记"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "e2906b00d5ab6c308d4ad28a09b79b0e2445586f542477530f4600adc8ee0e1e"
     },
     {
-      "id": "4e52d4a75099bebba598eca772a1af2996b2e152b1e046e3563553551867bded",
-      "sha256": "4e52d4a75099bebba598eca772a1af2996b2e152b1e046e3563553551867bded",
+      "id": "d40a499c080a5a61d2ebc4f6cfc88d301cfd86f9f034562e4152e425c1344146",
+      "sha256": "d40a499c080a5a61d2ebc4f6cfc88d301cfd86f9f034562e4152e425c1344146",
       "title": "Thằng Tàu lai",
       "filename": "Thằng Tàu lai.mxl",
       "url": "library/songs/thang-tau-lai.mxl",
-      "bytes": 9627,
+      "bytes": 7059,
       "workId": "0bd35da06f5f7e23c33bc6ea2f3c7d64f8979dcbd2e9ece05b704f9a30d74be2",
       "version": 1,
       "practiceReady": true,
-      "sourceSha256": "0bd35da06f5f7e23c33bc6ea2f3c7d64f8979dcbd2e9ece05b704f9a30d74be2"
+      "sourceSha256": "0bd35da06f5f7e23c33bc6ea2f3c7d64f8979dcbd2e9ece05b704f9a30d74be2",
+      "sourceHashes": [
+        "0bd35da06f5f7e23c33bc6ea2f3c7d64f8979dcbd2e9ece05b704f9a30d74be2",
+        "4e52d4a75099bebba598eca772a1af2996b2e152b1e046e3563553551867bded"
+      ],
+      "aliases": [],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "a087147d167a53d454b0329036314b7bef8a107f528eaacd05f492b022db27e8"
     },
     {
-      "id": "6f2e66904b7c09edf31b4abf295b0b57b934810f1dac46dfee36c4f93540d829",
-      "sha256": "6f2e66904b7c09edf31b4abf295b0b57b934810f1dac46dfee36c4f93540d829",
+      "id": "d5cb305e9f993b9629b533d4e03e329bff55f2c85e9325e36b42e48e7248a08a",
+      "sha256": "d5cb305e9f993b9629b533d4e03e329bff55f2c85e9325e36b42e48e7248a08a",
       "title": "Trống vắng",
       "filename": "Trống vắng.mxl",
       "url": "library/songs/trong-vang.mxl",
-      "bytes": 6822,
+      "bytes": 5102,
       "workId": "112fa436d4e9baf25ce5faf7e5723b97a235a349dbdd09e480a11ee0b118f5c9",
       "version": 1,
       "practiceReady": true,
-      "sourceSha256": "112fa436d4e9baf25ce5faf7e5723b97a235a349dbdd09e480a11ee0b118f5c9"
+      "sourceSha256": "112fa436d4e9baf25ce5faf7e5723b97a235a349dbdd09e480a11ee0b118f5c9",
+      "sourceHashes": [
+        "112fa436d4e9baf25ce5faf7e5723b97a235a349dbdd09e480a11ee0b118f5c9",
+        "6f2e66904b7c09edf31b4abf295b0b57b934810f1dac46dfee36c4f93540d829"
+      ],
+      "aliases": [
+        "Trống vắng / 情网"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "a62a6ade9073da288ff1124287dfdfa2c0ca3ba8f54061b6a815bc913fe721d3"
     },
     {
-      "id": "65e44bedc6137cd13157cdf074357cf22708a14ccfe4252ac81438e8e4ef74be",
-      "sha256": "65e44bedc6137cd13157cdf074357cf22708a14ccfe4252ac81438e8e4ef74be",
+      "id": "a5330a96b0bf2c99611f14884610952a3a5ad61b38a7b0dfa4a763b62580af14",
+      "sha256": "a5330a96b0bf2c99611f14884610952a3a5ad61b38a7b0dfa4a763b62580af14",
       "title": "Vô tình",
       "filename": "Vô tình.mxl",
       "url": "library/songs/vo-tinh.mxl",
-      "bytes": 6578,
+      "bytes": 5019,
       "workId": "53f055a15e93cc8f4466579b335cb8277989bac7f491d46cec703dfc9f780892",
       "version": 1,
       "practiceReady": true,
-      "sourceSha256": "53f055a15e93cc8f4466579b335cb8277989bac7f491d46cec703dfc9f780892"
+      "sourceSha256": "53f055a15e93cc8f4466579b335cb8277989bac7f491d46cec703dfc9f780892",
+      "sourceHashes": [
+        "53f055a15e93cc8f4466579b335cb8277989bac7f491d46cec703dfc9f780892",
+        "65e44bedc6137cd13157cdf074357cf22708a14ccfe4252ac81438e8e4ef74be"
+      ],
+      "aliases": [
+        "Vô tình / 回头太难"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "e10ad92edfcad15a128dc243b6fbbc8d927607756471f338b1922a204106fc2e"
     },
     {
-      "id": "f839d2508c55828172b83c3e92cbc81bbec1fdcb4c88a7a0dc2e51e0ba1b1db8",
-      "sha256": "f839d2508c55828172b83c3e92cbc81bbec1fdcb4c88a7a0dc2e51e0ba1b1db8",
+      "id": "d51a5b77f12682e678cd996e371a4a3e050a8caf2753cf57cc32e877b727a90e",
+      "sha256": "d51a5b77f12682e678cd996e371a4a3e050a8caf2753cf57cc32e877b727a90e",
       "title": "Ta trở về",
       "filename": "Ta trở về.mxl",
       "url": "library/songs/ta-tro-ve.mxl",
-      "bytes": 14041,
+      "bytes": 9472,
       "workId": "ce8a73e2f741490fcc5a939d10d722d3286e266877fa8ed15fdcdeb42e64e9d0",
       "version": 1,
       "practiceReady": true,
-      "sourceSha256": "ce8a73e2f741490fcc5a939d10d722d3286e266877fa8ed15fdcdeb42e64e9d0"
+      "sourceSha256": "ce8a73e2f741490fcc5a939d10d722d3286e266877fa8ed15fdcdeb42e64e9d0",
+      "sourceHashes": [
+        "ce8a73e2f741490fcc5a939d10d722d3286e266877fa8ed15fdcdeb42e64e9d0",
+        "f839d2508c55828172b83c3e92cbc81bbec1fdcb4c88a7a0dc2e51e0ba1b1db8"
+      ],
+      "aliases": [
+        "Ta trở về / 一千零一夜"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "065459a617ea5fbe1a7f33e016e4b48b4f9eaa00375a03eeef82c04cb09da234"
     },
     {
-      "id": "f8974a46cb18adc4c6c62e711aa3e7af586b244b7bfe2b08d3a2cbd47964673f",
-      "sha256": "f8974a46cb18adc4c6c62e711aa3e7af586b244b7bfe2b08d3a2cbd47964673f",
+      "id": "065e75a78fa6641c377a391abd15df4648cbcd6c798145f31a8491df31708326",
+      "sha256": "065e75a78fa6641c377a391abd15df4648cbcd6c798145f31a8491df31708326",
       "title": "Lệ tình",
       "filename": "Lệ tình.mxl",
       "url": "library/songs/le-tinh.mxl",
-      "bytes": 7762,
+      "bytes": 5947,
       "workId": "7c84ac8f39959fdb5ade2b25d91f0cec9835b6620ad4cd48936035916b6fd99f",
       "version": 1,
       "practiceReady": true,
-      "sourceSha256": "7c84ac8f39959fdb5ade2b25d91f0cec9835b6620ad4cd48936035916b6fd99f"
+      "sourceSha256": "7c84ac8f39959fdb5ade2b25d91f0cec9835b6620ad4cd48936035916b6fd99f",
+      "sourceHashes": [
+        "7c84ac8f39959fdb5ade2b25d91f0cec9835b6620ad4cd48936035916b6fd99f",
+        "f8974a46cb18adc4c6c62e711aa3e7af586b244b7bfe2b08d3a2cbd47964673f"
+      ],
+      "aliases": [
+        "Lệ tình / 星语心愿"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "7357c21cbd38286fdee74a28876e507e84e832d8d781c247cd6a9481abbacd67"
     },
     {
-      "id": "f99cf10166f084a6f4fd64627f4627f6a407d02ddf84f099334c01668356d42f",
-      "sha256": "f99cf10166f084a6f4fd64627f4627f6a407d02ddf84f099334c01668356d42f",
+      "id": "3ead4cc6ec3c1bc7f9d55cd2555dafcd885139802ac8ce591e184795419fcc71",
+      "sha256": "3ead4cc6ec3c1bc7f9d55cd2555dafcd885139802ac8ce591e184795419fcc71",
       "title": "Cô bé Tiểu Vy",
       "filename": "Cô bé Tiểu Vy.mxl",
       "url": "library/songs/co-be-tieu-vy.mxl",
-      "bytes": 5506,
+      "bytes": 4386,
       "workId": "6ee136ed36ece9c8ac0b8357676621829bb401b77d6f57747090976810425fe5",
       "version": 1,
       "practiceReady": true,
-      "sourceSha256": "6ee136ed36ece9c8ac0b8357676621829bb401b77d6f57747090976810425fe5"
+      "sourceSha256": "6ee136ed36ece9c8ac0b8357676621829bb401b77d6f57747090976810425fe5",
+      "sourceHashes": [
+        "6ee136ed36ece9c8ac0b8357676621829bb401b77d6f57747090976810425fe5",
+        "f99cf10166f084a6f4fd64627f4627f6a407d02ddf84f099334c01668356d42f"
+      ],
+      "aliases": [
+        "Cô bé Tiểu Vy / 小薇"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "5dce4b403b5d7dc5bb89c41119e817be1e81e4a9b215817566a2dd10f98db3e8"
     },
     {
-      "id": "358a51e1b5a89e64966dcc932771eddd7ae63904f84ce0aae5748822ad397f14",
-      "sha256": "358a51e1b5a89e64966dcc932771eddd7ae63904f84ce0aae5748822ad397f14",
+      "id": "a8857276f95436e1a0911c38ec7eec4b84413fc701769c0da7e5589001598482",
+      "sha256": "a8857276f95436e1a0911c38ec7eec4b84413fc701769c0da7e5589001598482",
       "title": "Biệt khúc cho nhau",
       "filename": "Biệt khúc cho nhau.mxl",
       "url": "library/songs/biet-khuc-cho-nhau.mxl",
-      "bytes": 10593,
+      "bytes": 7838,
       "workId": "358a51e1b5a89e64966dcc932771eddd7ae63904f84ce0aae5748822ad397f14",
       "version": 1,
-      "practiceReady": true
+      "practiceReady": true,
+      "sourceHashes": [
+        "358a51e1b5a89e64966dcc932771eddd7ae63904f84ce0aae5748822ad397f14"
+      ],
+      "sourceSha256": "358a51e1b5a89e64966dcc932771eddd7ae63904f84ce0aae5748822ad397f14",
+      "aliases": [
+        "Biệt khúc cho nhau / 情深深雨濛濛"
+      ],
+      "arranger": "kini",
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "1885190b308fe4a11b5e20327da0e03096b56fff9fcf1772c2840e9652871c7b"
     },
     {
-      "id": "a5a9858cfb5d02ba77bd297eab1fc5735418452f9af0a90aca5c6e79b00656a3",
-      "sha256": "a5a9858cfb5d02ba77bd297eab1fc5735418452f9af0a90aca5c6e79b00656a3",
+      "id": "8fe672e05574d1857e2fc50a43cd690b19b54ba3c61f920f7844b1afc937675e",
+      "sha256": "8fe672e05574d1857e2fc50a43cd690b19b54ba3c61f920f7844b1afc937675e",
       "title": "Thiên hạ hữu tình nhân",
       "filename": "Thiên hạ hữu tình nhân.mxl",
       "url": "library/songs/thien-ha-huu-tinh-nhan.mxl",
-      "bytes": 7461,
+      "bytes": 7879,
       "workId": "a5a9858cfb5d02ba77bd297eab1fc5735418452f9af0a90aca5c6e79b00656a3",
       "version": 1,
-      "practiceReady": true
+      "practiceReady": true,
+      "sourceHashes": [
+        "a5a9858cfb5d02ba77bd297eab1fc5735418452f9af0a90aca5c6e79b00656a3"
+      ],
+      "sourceSha256": "a5a9858cfb5d02ba77bd297eab1fc5735418452f9af0a90aca5c6e79b00656a3",
+      "aliases": [
+        "Thiên hạ hữu tình nhân / 天下有情人"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "306a1f1862f7fad0dd0a5e244e42320dadec6d72991bdf59002cafa2571d94f2"
     },
     {
-      "id": "e72d451e050d28a1e966c0c66ec7c9be02d25828831bc3bc18dae2bfb7749beb",
-      "sha256": "e72d451e050d28a1e966c0c66ec7c9be02d25828831bc3bc18dae2bfb7749beb",
+      "id": "f73be99f2cbc0e0ce8896fe84761f015d925d38305deee790541945e0094f1ae",
+      "sha256": "f73be99f2cbc0e0ce8896fe84761f015d925d38305deee790541945e0094f1ae",
       "title": "Tâm hồn xao động",
       "filename": "Tâm hồn xao động.mxl",
       "url": "library/songs/tam-hon-xao-dong.mxl",
-      "bytes": 9443,
+      "bytes": 9885,
       "workId": "e72d451e050d28a1e966c0c66ec7c9be02d25828831bc3bc18dae2bfb7749beb",
       "version": 1,
-      "practiceReady": true
+      "practiceReady": true,
+      "sourceHashes": [
+        "e72d451e050d28a1e966c0c66ec7c9be02d25828831bc3bc18dae2bfb7749beb"
+      ],
+      "sourceSha256": "e72d451e050d28a1e966c0c66ec7c9be02d25828831bc3bc18dae2bfb7749beb",
+      "aliases": [
+        "Tâm hồn xao động / 英雄泪"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "6f9d47ef78fdec8ef4b405198ac237db5f8c373dad19bd90be4d70594cc8d6d8"
     },
     {
-      "id": "fd0345ea4ac2c37c3bb98ead5c7552aaa88317872a36a6a6bf39136343dd65c9",
-      "sha256": "fd0345ea4ac2c37c3bb98ead5c7552aaa88317872a36a6a6bf39136343dd65c9",
+      "id": "4c846f2becc2916c65be328b651ac6be217c345143af7694f337e0a5ad024a51",
+      "sha256": "4c846f2becc2916c65be328b651ac6be217c345143af7694f337e0a5ad024a51",
       "title": "Kiếp rong buồn",
       "filename": "Kiếp rong buồn.mxl",
       "url": "library/songs/kiep-rong-buon.mxl",
-      "bytes": 7597,
+      "bytes": 5702,
       "workId": "3aa19196a4d9722f290903f0b30af2246594dd4fac6cf9b91ae2bded79e22ee2",
       "version": 1,
       "practiceReady": true,
-      "sourceSha256": "3aa19196a4d9722f290903f0b30af2246594dd4fac6cf9b91ae2bded79e22ee2"
+      "sourceSha256": "3aa19196a4d9722f290903f0b30af2246594dd4fac6cf9b91ae2bded79e22ee2",
+      "sourceHashes": [
+        "3aa19196a4d9722f290903f0b30af2246594dd4fac6cf9b91ae2bded79e22ee2",
+        "fd0345ea4ac2c37c3bb98ead5c7552aaa88317872a36a6a6bf39136343dd65c9"
+      ],
+      "aliases": [
+        "Kiếp rong buồn / 爱相随"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "c020c5d6244c5ed4f0bf92607d2980e56c830df580213e68c44fb2df27de5162"
     },
     {
-      "id": "06fbb02a2ab7af712b038770135528e729fe0b89da65135f1ddd142ad2d76bca",
-      "sha256": "06fbb02a2ab7af712b038770135528e729fe0b89da65135f1ddd142ad2d76bca",
+      "id": "2c5476edcfd62ce39bba70d82f112847adf8d739f84eec675f811849920e74d3",
+      "sha256": "2c5476edcfd62ce39bba70d82f112847adf8d739f84eec675f811849920e74d3",
       "title": "Khi cô đơn em nhớ ai",
       "filename": "Khi cô đơn em nhớ ai.mxl",
       "url": "library/songs/khi-co-don-em-nho-ai.mxl",
-      "bytes": 5546,
+      "bytes": 6084,
       "workId": "06fbb02a2ab7af712b038770135528e729fe0b89da65135f1ddd142ad2d76bca",
       "version": 1,
-      "practiceReady": true
+      "practiceReady": true,
+      "sourceHashes": [
+        "06fbb02a2ab7af712b038770135528e729fe0b89da65135f1ddd142ad2d76bca"
+      ],
+      "sourceSha256": "06fbb02a2ab7af712b038770135528e729fe0b89da65135f1ddd142ad2d76bca",
+      "aliases": [
+        "Khi cô đơn em nhớ ai / 当你孤单你会想起谁"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "09fc559020d94cf73ca8354d866e5470959e6f459b716a6a763b5abebec84368"
     },
     {
-      "id": "f824fdd726b7ff301703f519a80072444cb8c55537d9e209321a3392af521334",
-      "sha256": "f824fdd726b7ff301703f519a80072444cb8c55537d9e209321a3392af521334",
+      "id": "c488a92a69da0e4c792717ade56809f303e54d17130f1c0e4fb8a2c56dd6f487",
+      "sha256": "c488a92a69da0e4c792717ade56809f303e54d17130f1c0e4fb8a2c56dd6f487",
       "title": "Ảo mộng tình yêu",
       "filename": "Ảo mộng tình yêu.mxl",
       "url": "library/songs/ao-mong-tinh-yeu.mxl",
-      "bytes": 7226,
+      "bytes": 7813,
       "workId": "f824fdd726b7ff301703f519a80072444cb8c55537d9e209321a3392af521334",
       "version": 1,
-      "practiceReady": true
+      "practiceReady": true,
+      "sourceHashes": [
+        "f824fdd726b7ff301703f519a80072444cb8c55537d9e209321a3392af521334"
+      ],
+      "sourceSha256": "f824fdd726b7ff301703f519a80072444cb8c55537d9e209321a3392af521334",
+      "aliases": [
+        "Ảo mộng tình yêu / 梦醒时分"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "1e16df017d696dd5ea771dc12df4301c2d1a22b83408520f36c4eb77d9256d5d"
     },
     {
-      "id": "0fe0da859496350600df898d6ac7395102c628acab01c4044fd61e3428b9fb00",
-      "sha256": "0fe0da859496350600df898d6ac7395102c628acab01c4044fd61e3428b9fb00",
+      "id": "8a920cf0491246890e06076f5dd33e2ba43e9018a3a928b11a31d1b0f8a97ffd",
+      "sha256": "8a920cf0491246890e06076f5dd33e2ba43e9018a3a928b11a31d1b0f8a97ffd",
       "title": "Tìm dấu yêu xưa",
       "filename": "Tìm dấu yêu xưa.mxl",
       "url": "library/songs/tim-dau-yeu-xua.mxl",
-      "bytes": 6876,
+      "bytes": 7448,
       "workId": "0fe0da859496350600df898d6ac7395102c628acab01c4044fd61e3428b9fb00",
       "version": 1,
-      "practiceReady": true
+      "practiceReady": true,
+      "sourceHashes": [
+        "0fe0da859496350600df898d6ac7395102c628acab01c4044fd61e3428b9fb00"
+      ],
+      "sourceSha256": "0fe0da859496350600df898d6ac7395102c628acab01c4044fd61e3428b9fb00",
+      "aliases": [
+        "Tìm dấu yêu xưa / 忘了你忘了我"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "4840284316bf2d5fe96b89d783edc9dfc380de89ca693563bd9d9a666c306735"
     },
     {
-      "id": "64e66bf49f5926c1482318f6480827845ffa6966768ac582c52e6a89c9af8ec8",
-      "sha256": "64e66bf49f5926c1482318f6480827845ffa6966768ac582c52e6a89c9af8ec8",
+      "id": "6682ad4d883eac6fe5576ff390a14f239cad66574c22e2bad1718cf58ccc4d4e",
+      "sha256": "6682ad4d883eac6fe5576ff390a14f239cad66574c22e2bad1718cf58ccc4d4e",
       "title": "Cuộc tình trong cơn mưa — Tình yêu còn xa",
       "filename": "Cuộc tình trong cơn mưa — Tình yêu còn xa.mxl",
       "url": "library/songs/cuoc-tinh-trong-con-mua-tinh-yeu-con-xa.mxl",
-      "bytes": 8997,
+      "bytes": 9417,
       "workId": "64e66bf49f5926c1482318f6480827845ffa6966768ac582c52e6a89c9af8ec8",
       "version": 1,
-      "practiceReady": true
+      "practiceReady": true,
+      "sourceHashes": [
+        "64e66bf49f5926c1482318f6480827845ffa6966768ac582c52e6a89c9af8ec8"
+      ],
+      "sourceSha256": "64e66bf49f5926c1482318f6480827845ffa6966768ac582c52e6a89c9af8ec8",
+      "aliases": [
+        "Cuộc tình trong cơn mưa / Tình yêu còn xa / 雨中的恋人们"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "5a9ae3882b86fd22515c801c659762dcecd881742d571c744b028ef57993fdb4"
     },
     {
-      "id": "a3f98a266a3b604efb06bc1c8232a4de8153c9097cdd7b81749aa3c079f00adf",
-      "sha256": "a3f98a266a3b604efb06bc1c8232a4de8153c9097cdd7b81749aa3c079f00adf",
+      "id": "9aa0f3a3747627e303a4f905f25a1b14a824dd3416e0224bde515d628c38aa76",
+      "sha256": "9aa0f3a3747627e303a4f905f25a1b14a824dd3416e0224bde515d628c38aa76",
       "title": "Mùa xuân ca giữa quê hương",
       "filename": "Mùa xuân ca giữa quê hương.mxl",
       "url": "library/songs/mua-xuan-ca-giua-que-huong.mxl",
-      "bytes": 4057,
+      "bytes": 4510,
       "workId": "a3f98a266a3b604efb06bc1c8232a4de8153c9097cdd7b81749aa3c079f00adf",
       "version": 1,
-      "practiceReady": true
+      "practiceReady": true,
+      "sourceHashes": [
+        "a3f98a266a3b604efb06bc1c8232a4de8153c9097cdd7b81749aa3c079f00adf"
+      ],
+      "sourceSha256": "a3f98a266a3b604efb06bc1c8232a4de8153c9097cdd7b81749aa3c079f00adf",
+      "aliases": [
+        "Mùa xuân ca giữa quê hương / 初恋情人"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "e7372198a1d0cef936c649c53ccd59f99b7414ccda3c90b5048576ec534130c1"
     },
     {
-      "id": "b58fa3fda1c37c042c6ccd6f5084fa1aef8b2c5a6404fbb21c527eb9b6abaa8f",
-      "sha256": "b58fa3fda1c37c042c6ccd6f5084fa1aef8b2c5a6404fbb21c527eb9b6abaa8f",
-      "title": "Thêm Một Lần Đau",
-      "filename": "Thêm Một Lần Đau.mxl",
+      "id": "32372134dc19f3774425aa0e616eae9f421b8e8567cf628993cd957f86eebe8c",
+      "sha256": "32372134dc19f3774425aa0e616eae9f421b8e8567cf628993cd957f86eebe8c",
+      "title": "Thêm một lần đau",
+      "filename": "Thêm một lần đau.mxl",
       "url": "library/songs/them-mot-lan-dau.mxl",
-      "bytes": 6865,
+      "bytes": 7372,
       "workId": "b58fa3fda1c37c042c6ccd6f5084fa1aef8b2c5a6404fbb21c527eb9b6abaa8f",
       "version": 1,
-      "practiceReady": true
+      "practiceReady": true,
+      "sourceHashes": [
+        "b58fa3fda1c37c042c6ccd6f5084fa1aef8b2c5a6404fbb21c527eb9b6abaa8f"
+      ],
+      "sourceSha256": "b58fa3fda1c37c042c6ccd6f5084fa1aef8b2c5a6404fbb21c527eb9b6abaa8f",
+      "aliases": [
+        "Thêm Một Lần Đau",
+        "Thêm Một Lần Đau / 太木人道"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "decbafb48a6c382bd92ce253b2d6e7f1cd0484527f3327aa1843a404e22a3a7f"
     },
     {
-      "id": "eb9ca2f69956d5fbbe2b62df2d21aefaf6261baf88f973102da287f140bd4b4a",
-      "sha256": "eb9ca2f69956d5fbbe2b62df2d21aefaf6261baf88f973102da287f140bd4b4a",
+      "id": "bcb00cd67a3a2baefa77bf21b9430b1d1ecb1a6adf6613f0d9fdda1efca4bca7",
+      "sha256": "bcb00cd67a3a2baefa77bf21b9430b1d1ecb1a6adf6613f0d9fdda1efca4bca7",
       "title": "Răng khôn",
       "filename": "Răng khôn.mxl",
       "url": "library/songs/rang-khon-quocbao159200.mxl",
-      "bytes": 16296,
+      "bytes": 10148,
       "workId": "67a350e39abf331994bc154ac006525a1b8db8f3d8500d832eefed8864da1109",
       "version": 1,
       "practiceReady": true,
-      "sourceSha256": "67a350e39abf331994bc154ac006525a1b8db8f3d8500d832eefed8864da1109"
+      "sourceSha256": "67a350e39abf331994bc154ac006525a1b8db8f3d8500d832eefed8864da1109",
+      "sourceHashes": [
+        "67a350e39abf331994bc154ac006525a1b8db8f3d8500d832eefed8864da1109",
+        "eb9ca2f69956d5fbbe2b62df2d21aefaf6261baf88f973102da287f140bd4b4a"
+      ],
+      "performer": "Tùng Dương",
+      "aliases": [],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "ea6b4e2b054396fed17d5d8731478014f33289a3c4f0a3cb45fa2298e1d8a77a"
     },
     {
-      "id": "10af673cec399b2bb85c7a5cc69ce2bf8fac823700bd9de363e5a8760def2e2e",
-      "sha256": "10af673cec399b2bb85c7a5cc69ce2bf8fac823700bd9de363e5a8760def2e2e",
+      "id": "82acd947ffc12ff9b40d03de2d7a04f2a4c87967fb3d126fa3ed29884cddc555",
+      "sha256": "82acd947ffc12ff9b40d03de2d7a04f2a4c87967fb3d126fa3ed29884cddc555",
       "title": "White Blossoms",
       "filename": "White Blossoms.mxl",
       "url": "library/songs/white-blossoms-mimokeys.mxl",
-      "bytes": 11369,
+      "bytes": 7996,
       "workId": "504ee5334b63ec00cfc17e8746082d579954e7ca5119e7370a5517366b14db59",
       "version": 1,
       "practiceReady": true,
-      "sourceSha256": "504ee5334b63ec00cfc17e8746082d579954e7ca5119e7370a5517366b14db59"
+      "sourceSha256": "504ee5334b63ec00cfc17e8746082d579954e7ca5119e7370a5517366b14db59",
+      "sourceHashes": [
+        "504ee5334b63ec00cfc17e8746082d579954e7ca5119e7370a5517366b14db59",
+        "10af673cec399b2bb85c7a5cc69ce2bf8fac823700bd9de363e5a8760def2e2e"
+      ],
+      "aliases": [
+        "Partitura sin título"
+      ],
+      "composer": "Mimokeys",
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "1c795aad6ebc76f86465849c3a9769e88ab72d6362ec1816123fde3d2dd698ee"
     },
     {
-      "id": "ce681341af03540b87cf6b37b971f38fd34c6f60dd7aa6bdf13835bff1977f99",
-      "sha256": "ce681341af03540b87cf6b37b971f38fd34c6f60dd7aa6bdf13835bff1977f99",
+      "id": "9fc666a10d471035a1d8ff47b015a3abd45f7399dd4711d79ed7583d30674e3a",
+      "sha256": "9fc666a10d471035a1d8ff47b015a3abd45f7399dd4711d79ed7583d30674e3a",
       "title": "You Qing Sui Yue",
       "filename": "You Qing Sui Yue.mxl",
       "url": "library/songs/you-qing-sui-yue.mxl",
-      "bytes": 8416,
+      "bytes": 5464,
       "workId": "600ec63a89fc5229f62de797c92dad7e3205463888297f320ccca00443314593",
       "version": 1,
       "practiceReady": true,
-      "sourceSha256": "600ec63a89fc5229f62de797c92dad7e3205463888297f320ccca00443314593"
+      "sourceSha256": "600ec63a89fc5229f62de797c92dad7e3205463888297f320ccca00443314593",
+      "sourceHashes": [
+        "600ec63a89fc5229f62de797c92dad7e3205463888297f320ccca00443314593",
+        "ce681341af03540b87cf6b37b971f38fd34c6f60dd7aa6bdf13835bff1977f99"
+      ],
+      "aliases": [
+        "友情岁月"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "7eea4a83c0bdd5e405db0fe1a8c2aa764a2a676a3a603ca74f010fa3a2f44830"
     },
     {
-      "id": "49c44062329e76a18d035c6031ea072f74776f3b2cab138378e3cd804f2d49a8",
-      "sha256": "49c44062329e76a18d035c6031ea072f74776f3b2cab138378e3cd804f2d49a8",
+      "id": "0ab5be2b3dd1b27d99c61bd15ba13c095b3ba971eaf3921c512f698457cf7f52",
+      "sha256": "0ab5be2b3dd1b27d99c61bd15ba13c095b3ba971eaf3921c512f698457cf7f52",
       "title": "Tình thôi xót xa",
       "filename": "Tình thôi xót xa — v2.mxl",
       "url": "library/songs/tinh-thoi-xot-xa-bao-chan-v2.mxl",
-      "bytes": 12326,
+      "bytes": 8700,
       "workId": "79355b0966ac51e036f0ccdaf6ca174ec71c5bb5c0f9be055bd3eb444fd9abb4",
       "version": 2,
       "versionLabel": "Cuong Nguyen",
+      "practiceReady": true,
+      "sourceHashes": [
+        "49c44062329e76a18d035c6031ea072f74776f3b2cab138378e3cd804f2d49a8"
+      ],
+      "sourceSha256": "49c44062329e76a18d035c6031ea072f74776f3b2cab138378e3cd804f2d49a8",
       "composer": "Bảo Chấn",
-      "practiceReady": true
+      "lyricist": "Bảo Chấn",
+      "aliases": [],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "4dbdbcff26d3f5bbf938ca1edc54fecbd2579279403642fdce2aa614dfbf1d3c"
     },
     {
-      "id": "b6bb9f9817d0469cd05ac1194e50a269ca9d795ab21660b96f992063eb13ecb4",
-      "sha256": "b6bb9f9817d0469cd05ac1194e50a269ca9d795ab21660b96f992063eb13ecb4",
+      "id": "c10640766ca0da8af79a830c1e60f8d85c159bfeeff02a55cdd4cce80e176ebe",
+      "sha256": "c10640766ca0da8af79a830c1e60f8d85c159bfeeff02a55cdd4cce80e176ebe",
       "title": "Chuyện người đan áo",
       "filename": "Chuyện người đan áo.mxl",
       "url": "library/songs/chuyen-nguoi-dan-ao-truong-sa.mxl",
-      "bytes": 19585,
+      "bytes": 12080,
       "workId": "9d5a93e0f4068fdbce611b08dd4c95a63d98c10d1d2833e2602640935855522b",
       "version": 1,
-      "composer": "Trường Sa",
       "practiceReady": true,
-      "sourceSha256": "9d5a93e0f4068fdbce611b08dd4c95a63d98c10d1d2833e2602640935855522b"
+      "sourceSha256": "9d5a93e0f4068fdbce611b08dd4c95a63d98c10d1d2833e2602640935855522b",
+      "sourceHashes": [
+        "9d5a93e0f4068fdbce611b08dd4c95a63d98c10d1d2833e2602640935855522b",
+        "b6bb9f9817d0469cd05ac1194e50a269ca9d795ab21660b96f992063eb13ecb4"
+      ],
+      "composer": "Trường Sa",
+      "arranger": "Vũ Nguyên Đan",
+      "aliases": [
+        "CHUYỆN NGƯỜI ĐAN ÁO"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "a3567a3bbeed29c872f5f92bd31f44fdd1381f3c989df7e6eb133ded3dd74690"
     },
     {
-      "id": "c443d1e33584cd2ad007079a68216819cdee77039a6b6c353005bdae3a241f47",
-      "sha256": "c443d1e33584cd2ad007079a68216819cdee77039a6b6c353005bdae3a241f47",
+      "id": "1a4720bff34f7f95b7f5b87c5ba4ceff37af2938e252e3b39160535bf3025b9a",
+      "sha256": "1a4720bff34f7f95b7f5b87c5ba4ceff37af2938e252e3b39160535bf3025b9a",
       "title": "Đi giữa trời rực rỡ",
       "filename": "Đi giữa trời rực rỡ.mxl",
       "url": "library/songs/di-giua-troi-ruc-ro-hoangdoan103.mxl",
-      "bytes": 12984,
+      "bytes": 8649,
       "workId": "35a39a1c814a72c0bbe2de9309bb8b6b761ca995ce09d79f9f8f68931bf9b9c2",
       "version": 1,
-      "composer": "Ngô Lan Hương",
       "practiceReady": true,
-      "sourceSha256": "35a39a1c814a72c0bbe2de9309bb8b6b761ca995ce09d79f9f8f68931bf9b9c2"
+      "sourceSha256": "35a39a1c814a72c0bbe2de9309bb8b6b761ca995ce09d79f9f8f68931bf9b9c2",
+      "sourceHashes": [
+        "35a39a1c814a72c0bbe2de9309bb8b6b761ca995ce09d79f9f8f68931bf9b9c2",
+        "c443d1e33584cd2ad007079a68216819cdee77039a6b6c353005bdae3a241f47"
+      ],
+      "composer": "Ngô Lan Hương",
+      "aliases": [
+        "Đi Giữa Trời Rực Rỡ"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "bbb25c2fe1b71faba3cb0163ad63416bb69bec791bd7f9edceb20ec46129606c"
     },
     {
-      "id": "bb50030b71644862ecc1d5e068e06884e7f7f87a32d28b178fedd60a14950cdc",
-      "sha256": "bb50030b71644862ecc1d5e068e06884e7f7f87a32d28b178fedd60a14950cdc",
+      "id": "bb17b9ec1fa0d2e0e90f78799ad1a6a2be2a2e58950989e1fd55749b3d07ebc4",
+      "sha256": "bb17b9ec1fa0d2e0e90f78799ad1a6a2be2a2e58950989e1fd55749b3d07ebc4",
       "title": "Phép màu",
       "filename": "Phép màu.mxl",
       "url": "library/songs/phep-mau.mxl",
-      "bytes": 1421242,
+      "bytes": 14779,
       "workId": "5b7b6d8ca9ca5e4719f7c3841d5e5dcd932460641e971019df9251ab6ca08132",
       "version": 1,
-      "composer": "Melody",
       "practiceReady": true,
-      "sourceSha256": "5b7b6d8ca9ca5e4719f7c3841d5e5dcd932460641e971019df9251ab6ca08132"
+      "sourceSha256": "5b7b6d8ca9ca5e4719f7c3841d5e5dcd932460641e971019df9251ab6ca08132",
+      "sourceHashes": [
+        "5b7b6d8ca9ca5e4719f7c3841d5e5dcd932460641e971019df9251ab6ca08132",
+        "bb50030b71644862ecc1d5e068e06884e7f7f87a32d28b178fedd60a14950cdc"
+      ],
+      "aliases": [],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "a06b4bd254531ddb4023664bea8e2227a5c03f512cc2fdde9d93b42c7b3836c0"
     },
     {
-      "id": "51ae8d7c6d1d951194af0b88d30d7c0b29e1a215431c772714296b27b60bf4b2",
-      "sha256": "51ae8d7c6d1d951194af0b88d30d7c0b29e1a215431c772714296b27b60bf4b2",
+      "id": "9ca9cc10e93cb2c1588a120578893fa11f542b4d20dc6b216f861eefa222786f",
+      "sha256": "9ca9cc10e93cb2c1588a120578893fa11f542b4d20dc6b216f861eefa222786f",
       "title": "Trả lại thanh xuân cho em x Nắng dưới chân mây x Hoa cỏ lau",
       "filename": "Trả lại thanh xuân cho em x Nắng dưới chân mây x Hoa cỏ lau.mxl",
       "url": "library/songs/mashup-1.mxl",
-      "bytes": 11049,
+      "bytes": 7340,
       "workId": "0563b1eab6093fb8bd8fc678767aee817c32c73a0f6d10fff40725ffcf0aa70c",
       "version": 1,
-      "composer": "Melody",
       "practiceReady": true,
-      "sourceSha256": "0563b1eab6093fb8bd8fc678767aee817c32c73a0f6d10fff40725ffcf0aa70c"
+      "sourceSha256": "0563b1eab6093fb8bd8fc678767aee817c32c73a0f6d10fff40725ffcf0aa70c",
+      "sourceHashes": [
+        "0563b1eab6093fb8bd8fc678767aee817c32c73a0f6d10fff40725ffcf0aa70c",
+        "51ae8d7c6d1d951194af0b88d30d7c0b29e1a215431c772714296b27b60bf4b2"
+      ],
+      "aliases": [],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "57180d28865c1ce94728977748b2f882521bb6df029b8d69ad99e89764dbda3f"
     },
     {
-      "id": "4de20c0f530169ecb06f184af395da180870a169816dae3806df34e5ae02a700",
-      "sha256": "4de20c0f530169ecb06f184af395da180870a169816dae3806df34e5ae02a700",
+      "id": "0b76b6fb973800006ab050666f3ea139e3571fc5d14a94c5e87fb6fdeb79fd25",
+      "sha256": "0b76b6fb973800006ab050666f3ea139e3571fc5d14a94c5e87fb6fdeb79fd25",
       "title": "Rồi em sẽ gặp một chàng trai khác",
       "filename": "Rồi em sẽ gặp một chàng trai khác.mxl",
       "url": "library/songs/roi-em-se-gap-mot-chang-trai-khac.mxl",
-      "bytes": 14094,
+      "bytes": 9479,
       "workId": "9650403fc1f8ec50658b5f06e9d6f1b1b2464d887fa12b8a980c0e7194e859d9",
       "version": 1,
-      "composer": "Melody",
       "practiceReady": true,
-      "sourceSha256": "9650403fc1f8ec50658b5f06e9d6f1b1b2464d887fa12b8a980c0e7194e859d9"
+      "sourceSha256": "9650403fc1f8ec50658b5f06e9d6f1b1b2464d887fa12b8a980c0e7194e859d9",
+      "sourceHashes": [
+        "9650403fc1f8ec50658b5f06e9d6f1b1b2464d887fa12b8a980c0e7194e859d9",
+        "4de20c0f530169ecb06f184af395da180870a169816dae3806df34e5ae02a700"
+      ],
+      "aliases": [
+        "RỒI EM SẼ GẶP MỘT CHÀNG TRAI KHÁC"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "2cc0bdbbf9f12ecca85d55dc5e3f1ea9bb84cd18a310f6dc8e8a50e4636bdf6d"
     },
     {
-      "id": "6aeeb97081d5b64a5e84ac455adbc3207bd0d646fd90ced6359b6e104179d0d3",
-      "sha256": "6aeeb97081d5b64a5e84ac455adbc3207bd0d646fd90ced6359b6e104179d0d3",
+      "id": "c39eca44ba738ec46569f8a7bea77cd8e7b4fe24f50be7efefc8d5e8f166f1eb",
+      "sha256": "c39eca44ba738ec46569f8a7bea77cd8e7b4fe24f50be7efefc8d5e8f166f1eb",
       "title": "50 năm về sau",
       "filename": "50 năm về sau.mxl",
       "url": "library/songs/wu-shi-nian-yi-hou-50-nam-ve-sau.mxl",
-      "bytes": 43660,
+      "bytes": 25820,
       "workId": "224f0afb5a5dc9498d1bb97f397d65f8ee450bf12b5a3bc578020da081e70e16",
       "version": 1,
       "practiceReady": true,
-      "sourceSha256": "224f0afb5a5dc9498d1bb97f397d65f8ee450bf12b5a3bc578020da081e70e16"
+      "sourceSha256": "224f0afb5a5dc9498d1bb97f397d65f8ee450bf12b5a3bc578020da081e70e16",
+      "sourceHashes": [
+        "224f0afb5a5dc9498d1bb97f397d65f8ee450bf12b5a3bc578020da081e70e16",
+        "6aeeb97081d5b64a5e84ac455adbc3207bd0d646fd90ced6359b6e104179d0d3"
+      ],
+      "arranger": "Melody",
+      "aliases": [
+        "五十年以后 (50 năm về sau)"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "9e2b403fb215856f449ed2a1c0efb83a83e13cee8b439cff69a7793c42006e88"
     },
     {
-      "id": "dbc37c5af24060e374d6682a6152247a1ad27f44a54790b2d0c79cd0fe986533",
-      "sha256": "dbc37c5af24060e374d6682a6152247a1ad27f44a54790b2d0c79cd0fe986533",
+      "id": "75cf60ca07c7f5919790902bbbe9cc4360fc9cbee31374696a7bfc6ee458dac6",
+      "sha256": "75cf60ca07c7f5919790902bbbe9cc4360fc9cbee31374696a7bfc6ee458dac6",
       "title": "Tìm em",
       "filename": "Tìm em — v2.mxl",
       "url": "library/songs/tim-em-v2.mxl",
-      "bytes": 55249,
+      "bytes": 19401,
       "workId": "62fc1f9a5751ee44bb2a7a9909a463ce8d245597728d690d1ca0324ec35b470c",
       "version": 2,
       "versionLabel": "Bản đầy đủ · Melody",
       "practiceReady": true,
-      "sourceSha256": "00601f0887362ea534d4c80d55dcf71a7f77b3663734e9254c2544b803e8e97f"
+      "sourceSha256": "00601f0887362ea534d4c80d55dcf71a7f77b3663734e9254c2544b803e8e97f",
+      "sourceHashes": [
+        "00601f0887362ea534d4c80d55dcf71a7f77b3663734e9254c2544b803e8e97f",
+        "dbc37c5af24060e374d6682a6152247a1ad27f44a54790b2d0c79cd0fe986533"
+      ],
+      "arranger": "Melody",
+      "aliases": [],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "d56a548e46cedf384893f07bd1357418efed8e74ac7e89794e86f4d36b7e9d6b"
     },
     {
-      "id": "b0c768ada4d627b57b924bb1c5f3e71bd9a2f97f9e2cada749a6930696d4ec02",
-      "sha256": "b0c768ada4d627b57b924bb1c5f3e71bd9a2f97f9e2cada749a6930696d4ec02",
+      "id": "1fc8a6bce2f9ae004ebc12e03f5904954f7ed4ef656ef5786297cb54b041943a",
+      "sha256": "1fc8a6bce2f9ae004ebc12e03f5904954f7ed4ef656ef5786297cb54b041943a",
       "title": "Đừng làm trái tim anh đau",
       "filename": "Đừng làm trái tim anh đau — v2.mxl",
       "url": "library/songs/dung-lam-trai-tim-anh-dau-v2.mxl",
-      "bytes": 141549,
+      "bytes": 24634,
       "workId": "2d9a0093791b02acacc0b8b6cfdb09649f47f7fc623f57199ccdb9c3cb530500",
       "version": 2,
       "versionLabel": "Melody",
       "practiceReady": true,
-      "sourceSha256": "a7c78d95908c276f89ef156b62ce8d82ee22d48de65ebe7d368e3f26f73448fe"
+      "sourceSha256": "a7c78d95908c276f89ef156b62ce8d82ee22d48de65ebe7d368e3f26f73448fe",
+      "sourceHashes": [
+        "a7c78d95908c276f89ef156b62ce8d82ee22d48de65ebe7d368e3f26f73448fe",
+        "b0c768ada4d627b57b924bb1c5f3e71bd9a2f97f9e2cada749a6930696d4ec02"
+      ],
+      "arranger": "Melody",
+      "aliases": [
+        "ĐỪNG LÀM TRÁI TIM ANH ĐAU"
+      ],
+      "composer": "Sơn Tùng M-TP",
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "12c2536b4522a72ddce2077f5f41f7cee8c54ee48fa7c0a414c4ae5a7a6aaa1e"
     },
     {
-      "id": "9738d3b2b7625ffd082aef8c3c600f055ae4b3dfe055505cfd6419849441e665",
-      "sha256": "9738d3b2b7625ffd082aef8c3c600f055ae4b3dfe055505cfd6419849441e665",
+      "id": "aa7f19272fff9ad10ab8d3a6e1bbae2f2c249d1e95bcfe91f56d00b210b6d5ba",
+      "sha256": "aa7f19272fff9ad10ab8d3a6e1bbae2f2c249d1e95bcfe91f56d00b210b6d5ba",
       "title": "Giấy ghi chú tâm nguyện",
       "filename": "Giấy ghi chú tâm nguyện.mxl",
       "url": "library/songs/xin-yuan-bian-li-tie-giay-ghi-chu-tam-nguyen.mxl",
-      "bytes": 22520,
+      "bytes": 12858,
       "workId": "08e0dc8955447b8b0840a58d99c55882f2f210c5e80d2685a0d3921930a301ce",
       "version": 1,
       "practiceReady": true,
-      "sourceSha256": "08e0dc8955447b8b0840a58d99c55882f2f210c5e80d2685a0d3921930a301ce"
+      "sourceSha256": "08e0dc8955447b8b0840a58d99c55882f2f210c5e80d2685a0d3921930a301ce",
+      "sourceHashes": [
+        "08e0dc8955447b8b0840a58d99c55882f2f210c5e80d2685a0d3921930a301ce",
+        "9738d3b2b7625ffd082aef8c3c600f055ae4b3dfe055505cfd6419849441e665"
+      ],
+      "arranger": "Melody",
+      "aliases": [
+        "心愿便利帖 (Giấy ghi chú tâm nguyện)"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "6ed2fcb11f42b2afc5bb39cc886959a574cd90bcc5139926efa34986a7c2bd21"
     },
     {
-      "id": "6957c7190c90cccf6eb692171d855e287eba3b7ab10a894f0b9d00004a331dab",
-      "sha256": "6957c7190c90cccf6eb692171d855e287eba3b7ab10a894f0b9d00004a331dab",
+      "id": "21ac3e5cd48af19f6fd22eb5e975f85cf8a6099a3f60157b77a3035c0d470f74",
+      "sha256": "21ac3e5cd48af19f6fd22eb5e975f85cf8a6099a3f60157b77a3035c0d470f74",
       "title": "Let It Go",
       "filename": "Let It Go.mxl",
       "url": "library/songs/let-it-go-kristen-anderson-lopez-robert-lopez.mxl",
-      "bytes": 13903,
+      "bytes": 9261,
       "workId": "6957c7190c90cccf6eb692171d855e287eba3b7ab10a894f0b9d00004a331dab",
       "version": 1,
-      "practiceReady": true
+      "practiceReady": true,
+      "sourceHashes": [
+        "6957c7190c90cccf6eb692171d855e287eba3b7ab10a894f0b9d00004a331dab"
+      ],
+      "sourceSha256": "6957c7190c90cccf6eb692171d855e287eba3b7ab10a894f0b9d00004a331dab",
+      "aliases": [
+        "Let it go"
+      ],
+      "composer": "Kristen Anderson-Lopez · Robert Lopez",
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "fbaf0c6cd254d755fbab7729bc7e9203e0b0106ab65153ffca83af7af04bdf32"
     },
     {
-      "id": "9ef0beeeb0695859e2a5e3f530c369f200934b2d6457e1fbd845409b2bee52ce",
-      "sha256": "9ef0beeeb0695859e2a5e3f530c369f200934b2d6457e1fbd845409b2bee52ce",
-      "bytes": 15985,
+      "id": "6bc430934faed5c0b4b57c15d030931206d25a9d7ffe12b9b87530c0e9fc4048",
+      "sha256": "6bc430934faed5c0b4b57c15d030931206d25a9d7ffe12b9b87530c0e9fc4048",
+      "bytes": 11043,
       "title": "Họa tâm",
       "filename": "Họa tâm.mxl",
       "url": "library/songs/hoa-tam.mxl",
       "workId": "969b79c151463a49e44a10ba6ec9efc5e30d334e10ecbbf36659d4857c4b4232",
       "version": 1,
       "practiceReady": true,
-      "sourceSha256": "969b79c151463a49e44a10ba6ec9efc5e30d334e10ecbbf36659d4857c4b4232"
+      "sourceSha256": "969b79c151463a49e44a10ba6ec9efc5e30d334e10ecbbf36659d4857c4b4232",
+      "sourceHashes": [
+        "969b79c151463a49e44a10ba6ec9efc5e30d334e10ecbbf36659d4857c4b4232",
+        "9ef0beeeb0695859e2a5e3f530c369f200934b2d6457e1fbd845409b2bee52ce"
+      ],
+      "aliases": [
+        "Họa tâm / 画心"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "189ce1c4431c8fbbfa1131001070e5d9a1209887674e848308ad68158128a376"
     },
     {
-      "id": "3f70610db24acc09f10ddb2c45bfd6c201a144f34c31afa57e77f03a6f708feb",
-      "sha256": "3f70610db24acc09f10ddb2c45bfd6c201a144f34c31afa57e77f03a6f708feb",
-      "bytes": 7944,
+      "id": "f6b3dd390d40baef40a5224d930cdf5f0164f81a11de217932dffa3b7a39dad8",
+      "sha256": "f6b3dd390d40baef40a5224d930cdf5f0164f81a11de217932dffa3b7a39dad8",
+      "bytes": 8460,
       "title": "Nếu em đã quên",
       "filename": "Nếu em đã quên — v2.mxl",
       "url": "library/songs/neu-em-da-quen-v2.mxl",
       "workId": "753c393a1ad6489ffe37497764273bd60e4690eda907a36123c7c21d8fa7d01a",
       "version": 2,
       "practiceReady": true,
-      "versionLabel": "Bản đầy đủ"
+      "versionLabel": "Bản đầy đủ",
+      "sourceHashes": [
+        "3f70610db24acc09f10ddb2c45bfd6c201a144f34c31afa57e77f03a6f708feb"
+      ],
+      "sourceSha256": "3f70610db24acc09f10ddb2c45bfd6c201a144f34c31afa57e77f03a6f708feb",
+      "aliases": [
+        "Nếu em đã quên / 太多 [source rhythm issue in bar 2]"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "5fe8eed6c39fc8f4dac2f896a175f1301c6e6c641bf14ba217ee2a6fb2a78a39"
     },
     {
-      "id": "095d04f8e775c0aade8a1f1b2cb62307be427534703057fa7efcfcfe431fdcd8",
-      "sha256": "095d04f8e775c0aade8a1f1b2cb62307be427534703057fa7efcfcfe431fdcd8",
-      "bytes": 7060,
+      "id": "0fa9698e3db2de3b1def9bfba9fc7b395dbb427342a1f845f61dfb0934100eea",
+      "sha256": "0fa9698e3db2de3b1def9bfba9fc7b395dbb427342a1f845f61dfb0934100eea",
+      "bytes": 7853,
       "title": "Chỉ có đôi ta",
       "filename": "Chỉ có đôi ta.mxl",
       "url": "library/songs/chi-co-doi-ta.mxl",
       "workId": "095d04f8e775c0aade8a1f1b2cb62307be427534703057fa7efcfcfe431fdcd8",
       "version": 1,
-      "practiceReady": true
+      "practiceReady": true,
+      "sourceHashes": [
+        "095d04f8e775c0aade8a1f1b2cb62307be427534703057fa7efcfcfe431fdcd8"
+      ],
+      "sourceSha256": "095d04f8e775c0aade8a1f1b2cb62307be427534703057fa7efcfcfe431fdcd8",
+      "aliases": [
+        "Chỉ có đôi ta / 选择"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "76ea4d4ea9d9289c309879da0b156ba4fb36a66aae0e4f5e697088e573b0fef4"
     },
     {
-      "id": "fa8b4d8a3351d4db546213faa63315865eabd197d278b48dc239f91a36cecfdb",
-      "sha256": "fa8b4d8a3351d4db546213faa63315865eabd197d278b48dc239f91a36cecfdb",
-      "bytes": 9138,
+      "id": "49d5ce83ac560218a82b71c239a23fa4a56a8173088a8be5cf6cb9f9d0eabced",
+      "sha256": "49d5ce83ac560218a82b71c239a23fa4a56a8173088a8be5cf6cb9f9d0eabced",
+      "bytes": 6964,
       "title": "Mưa trên cuộc tình",
       "filename": "Mưa trên cuộc tình — v2.mxl",
       "url": "library/songs/mua-tren-cuoc-tinh-v2.mxl",
       "workId": "a1fd18fe5571482bc4c012ef554ac38524052c1c4773a6fe81d354495897c3f9",
       "version": 2,
-      "practiceReady": true
+      "practiceReady": true,
+      "sourceHashes": [
+        "fa8b4d8a3351d4db546213faa63315865eabd197d278b48dc239f91a36cecfdb"
+      ],
+      "sourceSha256": "fa8b4d8a3351d4db546213faa63315865eabd197d278b48dc239f91a36cecfdb",
+      "aliases": [
+        "Mưa trên cuộc tình / 珍惜"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "ef5891ccf0caab14de3a7eaabe0113361ba3c9c9446b1bb20bae0391ff88d2ab"
     },
     {
-      "id": "c43805379fa05f71439160dd517f8435d61066755ebb0c05f3e62ca8452c96e1",
-      "sha256": "c43805379fa05f71439160dd517f8435d61066755ebb0c05f3e62ca8452c96e1",
-      "bytes": 13272,
+      "id": "cf3aa2c2aa5aba1a1346669179ae53ed97e0e97ef2664e16a36f096f8fa3c3bc",
+      "sha256": "cf3aa2c2aa5aba1a1346669179ae53ed97e0e97ef2664e16a36f096f8fa3c3bc",
+      "bytes": 8803,
       "title": "White Blossoms",
       "filename": "White Blossoms — v2.mxl",
       "url": "library/songs/white-blossoms-mimokeys-v2.mxl",
       "workId": "504ee5334b63ec00cfc17e8746082d579954e7ca5119e7370a5517366b14db59",
       "version": 2,
       "practiceReady": true,
-      "sourceSha256": "b901d399d1aa34c5d3417dd2781873f9fb9b086399ab65f2963353f0168cdd83"
+      "sourceSha256": "b901d399d1aa34c5d3417dd2781873f9fb9b086399ab65f2963353f0168cdd83",
+      "sourceHashes": [
+        "b901d399d1aa34c5d3417dd2781873f9fb9b086399ab65f2963353f0168cdd83",
+        "c43805379fa05f71439160dd517f8435d61066755ebb0c05f3e62ca8452c96e1"
+      ],
+      "composer": "Mimokeys",
+      "aliases": [],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "b31885c049a4ee35d9918ad7d612476507eb73a1ceaebe0f8177aa98cc50c90f"
+    },
+    {
+      "id": "eaabf0640420683ceba0fc3785f39cf8fc87b48919e12c99b170ec7c89d8f21a",
+      "sha256": "eaabf0640420683ceba0fc3785f39cf8fc87b48919e12c99b170ec7c89d8f21a",
+      "title": "Dù cho tận thế",
+      "filename": "Dù cho tận thế.mxl",
+      "url": "library/songs/du-cho-tan-the-manh-piano.mxl",
+      "bytes": 9922,
+      "workId": "7f9eedbdc54efd90ca2b1f1c7abb0de619840fb9eadb673f75b28fed67845b92",
+      "version": 1,
+      "practiceReady": true,
+      "sourceSha256": "740924c620fc8df28c7d4e283db698eee396b4ec384f578bb8d23c2590fe3048",
+      "practiceNotice": "Pedal và hợp âm được giữ dạng chữ từ bản gốc. Nguồn thiếu điểm nhả pedal nên không có tham chiếu chấm pedal; vẫn nghe, sửa và tập nốt/BPM được.",
+      "sourceHashes": [
+        "740924c620fc8df28c7d4e283db698eee396b4ec384f578bb8d23c2590fe3048",
+        "7f9eedbdc54efd90ca2b1f1c7abb0de619840fb9eadb673f75b28fed67845b92"
+      ],
+      "composer": "Nguyễn Phúc Thiện & Trần Thân",
+      "arranger": "Manh Piano",
+      "aliases": [
+        "DÙ CHO TẬN THẾ"
+      ],
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "068e334f3c06a381dd3adcc71f8b6424292c3bf4a8938d5a92bc68741b92fbbe"
     }
   ],
-  "excluded": []
+  "excluded": [],
+  "presentationProfile": "pianist-a4-v1"
 }

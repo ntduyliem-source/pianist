@@ -1,0 +1,146 @@
+{
+  "summary": {
+    "inputs": 1,
+    "newWorks": 1,
+    "newVersions": 0,
+    "duplicates": 0,
+    "excluded": 0,
+    "editorOnly": 0,
+    "totalWorks": 141,
+    "totalVersions": 151
+  },
+  "results": [
+    {
+      "filename": "du-cho-tan-the-manh-piano.mxl",
+      "title": "Dù cho tận thế",
+      "status": "added",
+      "reason": "587 nốt; 4 trang; MuseScore playback/mapping đạt",
+      "nativeAudit": {
+        "nativeNotes": 587,
+        "sourceNotes": 587,
+        "missingGlyphs": 0,
+        "nativePlayback": true
+      },
+      "version": 1,
+      "workId": "7f9eedbdc54efd90ca2b1f1c7abb0de619840fb9eadb673f75b28fed67845b92",
+      "id": "7f9eedbdc54efd90ca2b1f1c7abb0de619840fb9eadb673f75b28fed67845b92",
+      "practiceReady": true
+    }
+  ],
+  "status": "admitted-local",
+  "published": false,
+  "publicReleaseChanged": false,
+  "sourceCommitBefore": "e958d603ee02cbc4526d09bfc8266a7181ef85b9",
+  "supersedes": "artifacts/du-cho-tan-the-2026-10-24/receipt.json (historical quarantine under the former notation policy)",
+  "policy": "two-staves-v2",
+  "representation": "One compatibility derivative, same arrangement; not two versions",
+  "canonical": {
+    "path": "artifacts/du-cho-tan-the-2026-10-25/source/Du_Cho_Tan_The.mxl",
+    "sha256": "740924c620fc8df28c7d4e283db698eee396b4ec384f578bb8d23c2590fe3048",
+    "bytes": 9406,
+    "preservedByteExactly": true
+  },
+  "admitted": {
+    "url": "library/songs/du-cho-tan-the-manh-piano.mxl",
+    "id": "7f9eedbdc54efd90ca2b1f1c7abb0de619840fb9eadb673f75b28fed67845b92",
+    "sha256": "7f9eedbdc54efd90ca2b1f1c7abb0de619840fb9eadb673f75b28fed67845b92",
+    "bytes": 9631,
+    "workId": "7f9eedbdc54efd90ca2b1f1c7abb0de619840fb9eadb673f75b28fed67845b92",
+    "version": 1,
+    "sourceSha256": "740924c620fc8df28c7d4e283db698eee396b4ec384f578bb8d23c2590fe3048",
+    "preservedDerivativeByteExactly": true
+  },
+  "dedup": {
+    "editionsChecked": 150,
+    "worksChecked": 140,
+    "catalogSha256Before": "5b48f0dcf9ac9ff2c20ac6adc61caa07add64744f1a04e4513bbfeb5d289ea47",
+    "duplicates": [],
+    "semanticComparisonErrors": [],
+    "canonicalSemanticSha256": "f42c477a698511e9aa3862a8cb6ac2348a6ea1076012d70f3edd1b3ef892a9a6",
+    "canonicalAndDerivativeSameNoteContent": true
+  },
+  "previousEditionsUnchanged": 150,
+  "validation": {
+    "twoStaves": true,
+    "measures": 86,
+    "pitchedNotes": 587,
+    "rests": 163,
+    "xmlNoteElements": 750,
+    "groupedEvents": 734,
+    "pages": 4,
+    "repeatOrder": "1–66 → 18–49 → 67–86",
+    "performedMeasures": 118,
+    "allNoteRestOnsetsDurationsStaffPreserved": true,
+    "missingGlyphs": 0,
+    "editorNativeAudioAndStop": true,
+    "practiceNativeAudioAndStop": true,
+    "practiceVisibleHighlights": 3,
+    "correctNoteAndBpmSessionsStartAndStop": true,
+    "mxlExportReimportAndMsczSaveReopen": true,
+    "pedalTexts": 74,
+    "harmonyTexts": 66,
+    "originalTexts": 16,
+    "textStaffAndOnsetRoundtripExact": true,
+    "noNumericTempoInvented": true,
+    "font": "Liberation Serif",
+    "utf8AndNfc": true,
+    "musicxml4XsdBothInputs": true,
+    "nativeThumbnail": {
+      "sourceHash": "7f9eedbdc54efd90ca2b1f1c7abb0de619840fb9eadb673f75b28fed67845b92",
+      "path": "library/previews/7f9eedbdc54efd90ca2b1f1c7abb0de619840fb9eadb673f75b28fed67845b92.webp",
+      "sha256": "ac67fb81f96b0a7ff572d9b28c4e6ca017f355bd1afafdd50d527eef773b1382",
+      "bytes": 33528,
+      "pages": 4
+    },
+    "reimportCanonicalAndDerivativeBothSkipped": true,
+    "actualBundledLibrarySmoke": {
+      "passed": true,
+      "checks": [
+        "Actual local catalog has 151 editions / 141 works; song V1 serves the exact audited derivative bytes",
+        "Unaccented search finds one work card with correct title and actual loaded native thumbnail",
+        "Cold library Listen produces actual native MuseScore PCM; Stop closes player and silences output",
+        "Library Tập opens both staves with exact 587 native anchors and 118 repeat visits",
+        "Library Sửa opens the same edition in the native editor without an extra work card"
+      ],
+      "errors": [],
+      "libraryPeak": 0.03759705275297165,
+      "libraryStopPeak": 0,
+      "practice": {
+        "anchors": 587,
+        "staffs": [
+          0,
+          1
+        ],
+        "measureVisits": 118
+      },
+      "editorAnchors": 587
+    },
+    "libraryPythonTests": {
+      "passed": true,
+      "tests": 36,
+      "command": "python -m unittest discover -s tests/library -p 'test_library_*.py'"
+    },
+    "previous150MxlAndThumbnailsUnchanged": true,
+    "localPackage": {
+      "version": "0a6d3f141bc00657cf27",
+      "files": 6323,
+      "libraryScores": 151,
+      "publicDeployChanged": false
+    }
+  },
+  "limits": [
+    "Canonical has 74 pedal starts and no release positions. No sustain or pedal scoring reference was invented.",
+    "Compatibility derivative retains pedal and chord labels as text. These are not semantic pedal spans or editable harmony symbols.",
+    "Glissando endpoints at measures 75–76 survive. MXL roundtrip represents it as wavy glissando; MSCZ re-export represents it as solid slide. Native MSCX retains Glissando spanner.",
+    "Source contains no numerical tempo. Playback uses MuseScore defaults and native fermata handling.",
+    "No PDF transcription audit, physical MIDI or iOS-device test in this import."
+  ],
+  "evidence": {
+    "sourceAudit": "artifacts/du-cho-tan-the-2026-10-25/source-semantic-audit.json",
+    "nativeAudit": "artifacts/du-cho-tan-the-2026-10-25/native/native-audit.json",
+    "roundtripComparison": "artifacts/du-cho-tan-the-2026-10-25/native/native-semantic-comparison.json",
+    "reimportDedup": "artifacts/du-cho-tan-the-2026-10-25/reimport-dedup.json",
+    "actualLibrarySmoke": "artifacts/du-cho-tan-the-2026-10-25/native/library-smoke.json"
+  },
+  "localUrl": "http://127.0.0.1:8787/pianist.html#/library"
+}

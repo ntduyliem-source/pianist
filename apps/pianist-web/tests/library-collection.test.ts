@@ -45,3 +45,17 @@ test('retiring version one keeps version two; unrelated same-title works stay se
   assert.equal(works.length, 2);
   assert.equal(works[0].editions[0].version, 2);
 });
+
+test('multiple presentation revisions keep the saved edition and search all contributor roles without accents', () => {
+  const intermediate = 'c'.repeat(64);
+  const updated = { ...song, sourceHashes: [originalHash, intermediate], composer: 'Nhạc Sĩ',
+    arranger: 'Phương Thy', aliases: ['Moon Song'] };
+  const saved = project({ sourceHash: intermediate, version: 1 });
+  for (const term of ['phuong thy', 'nhac si', 'moon song']) {
+    const works = libraryCollection([updated], [saved], term);
+    assert.equal(works.length, 1);
+    assert.equal(works[0].editions.length, 1);
+    assert.equal(works[0].editions[0].project, saved);
+  }
+  assert.equal(saved.sourceHash, intermediate);
+});

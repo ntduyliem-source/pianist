@@ -1,4 +1,5 @@
-import type { BundledScore } from '../../platform/bundled-library';
+import { isBundledSource, type BundledScore } from '../../platform/bundled-library';
+import { creditSearch } from '../../shared/score-metadata';
 import type { ProjectRecord } from '../../platform/storage';
 import { matchesSearch } from '../../shared/search';
 
@@ -33,7 +34,7 @@ export function libraryCollection(songs: BundledScore[], projects: ProjectRecord
     (a, b) => (a.version ?? 1) - (b.version ?? 1) || a.createdAt - b.createdAt,
   )) {
     const source = project.sourceHash
-      ? songs.find((s) => s.sha256 === project.sourceHash || s.sourceSha256 === project.sourceHash)
+      ? songs.find((s) => isBundledSource(s, project.sourceHash))
       : undefined;
     const id = source?.workId ?? source?.id ?? project.workId ?? project.id;
     const work = works.get(id) ?? { id, title: project.title, editions: [] };
@@ -60,6 +61,14 @@ export function libraryCollection(songs: BundledScore[], projects: ProjectRecord
     works.set(id, work);
   }
   return [...works.values()]
-    .filter((w) => matchesSearch([w.title, ...w.editions.map((e) => e.label)].join(' '), search))
+    .filter((w) =>
+      matchesSearch(
+        [
+          w.title,
+          ...w.editions.flatMap((e) => [e.label, creditSearch(e.song), creditSearch(e.project)]),
+        ].join(' '),
+        search,
+      ),
+    )
     .map((w) => ({ ...w, editions: w.editions.sort((a, b) => a.version - b.version) }));
 }

@@ -1,5 +1,7 @@
 import { useRef } from 'react';
 import { workspace as ws } from '../../workspace';
+import { ScoreCredits } from '../../shared/ui/ScoreCredits';
+import { creditSummary } from '../../shared/score-metadata';
 
 export function EditorActions({
   title,
@@ -18,7 +20,9 @@ export function EditorActions({
   };
   return (
     <div className="editor-meta">
-      <strong title={title}>{title}</strong>
+      <strong title={[title, creditSummary(ws.currentCredits())].filter(Boolean).join(' — ')}>
+        {title}
+      </strong>
       <span data-testid="save-state">{saveState}</span>
       <button aria-label="Lưu thư viện" onClick={action(() => ws.saveLibrary())}>
         Lưu
@@ -48,6 +52,7 @@ export function EditorActions({
         <p>
           {title} · {saveState}
         </p>
+        <ScoreCredits value={ws.currentCredits()} />
         <button onClick={action(() => ws.showSaveAs())}>Lưu thành bản mới…</button>
         <button onClick={action(() => ws.downloadProject())}>Tải MSCZ</button>
         <button onClick={action(onExport)}>Xuất MusicXML / ABC / PDF…</button>

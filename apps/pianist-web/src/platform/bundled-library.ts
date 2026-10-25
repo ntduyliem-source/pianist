@@ -1,6 +1,7 @@
 import { matchesSearch } from '../shared/search';
+import { creditSearch, validScoreCredits, type ScoreCredits } from '../shared/score-metadata';
 
-export interface BundledScore {
+export interface BundledScore extends ScoreCredits {
   id: string;
   title: string;
   filename: string;
@@ -9,7 +10,9 @@ export interface BundledScore {
   sha256: string;
   /** Original import hash, retained when typography is normalized. */
   sourceSha256?: string;
-  composer?: string;
+  /** All previous published hashes of this edition, never other versions. */
+  sourceHashes?: string[];
+  layoutProfile?: string;
   workId?: string;
   version?: number;
   versionLabel?: string;
@@ -42,8 +45,15 @@ function validateScore(s: BundledScore): void {
     throw Error('Bài trong danh mục không hợp lệ.');
   if (s.sourceSha256 !== undefined && !hash.test(s.sourceSha256))
     throw Error('Mã bản gốc trong danh mục không hợp lệ.');
-  if (s.composer !== undefined && (typeof s.composer !== 'string' || s.composer.length > 180))
-    throw Error('Tác giả trong danh mục không hợp lệ.');
+  if (!validScoreCredits(s)) throw Error('Thông tin ghi công trong danh mục không hợp lệ.');
+  if (
+    s.sourceHashes !== undefined &&
+    (!Array.isArray(s.sourceHashes) ||
+      s.sourceHashes.length > 100 ||
+      s.sourceHashes.some((h) => typeof h !== 'string' || !hash.test(h)) ||
+      new Set(s.sourceHashes).size !== s.sourceHashes.length)
+  )
+    throw Error('Lịch sử bản nguồn không hợp lệ.');
   if (
     (s.workId !== undefined) !== (s.version !== undefined) ||
     (s.workId !== undefined &&
@@ -79,7 +89,13 @@ export function groupBundledScores(scores: BundledScore[]): BundledWork[] {
   return [...groups.values()];
 }
 export function selectBundledVersion(work: BundledWork, id?: string): BundledScore {
-  return work.versions.find((s) => s.id === id) ?? work.versions[0];
+  return work.versions.find((s) => isBundledSource(s, id)) ?? work.versions[0];
+}
+export function isBundledSource(score: BundledScore, hash?: string | null): boolean {
+  return (
+    !!hash &&
+    (score.sha256 === hash || score.sourceSha256 === hash || !!score.sourceHashes?.includes(hash))
+  );
 }
 export function bundledVersionLabel(score: BundledScore): string {
   return `Version ${score.version ?? 1}${score.versionLabel ? ' · ' + score.versionLabel : ''}`;
@@ -87,7 +103,7 @@ export function bundledVersionLabel(score: BundledScore): string {
 export function matchesBundledWork(work: BundledWork, search: string): boolean {
   return [
     work.title,
-    ...work.versions.flatMap((s) => [s.title, s.composer ?? '', s.versionLabel ?? '']),
+    ...work.versions.flatMap((s) => [s.title, creditSearch(s), s.versionLabel ?? '']),
   ].some((s) => matchesSearch(s, search));
 }
 export function parseBundledCatalog(data: unknown): BundledScore[] {
@@ -96,11 +112,21 @@ export function parseBundledCatalog(data: unknown): BundledScore[] {
     throw Error('Danh mục bài hát không hợp lệ.');
   const ids = new Set<string>(),
     urls = new Set<string>();
+  const sources = new Map<string, string>();
   for (const s of d.songs) {
     validateScore(s);
     if (ids.has(s.id) || urls.has(s.url)) throw Error('Bài trong danh mục bị trùng.');
     ids.add(s.id);
     urls.add(s.url);
+    for (const hash of [
+      s.sha256,
+      ...(s.sourceHashes ?? []),
+      ...(s.sourceSha256 ? [s.sourceSha256] : []),
+    ]) {
+      if (sources.has(hash) && sources.get(hash) !== s.id)
+        throw Error('Một bản nguồn đang được gán cho nhiều phiên bản.');
+      sources.set(hash, s.id);
+    }
   }
   for (const work of groupBundledScores(d.songs)) {
     const versions = work.versions.map((s) => s.version ?? 1);

@@ -1,0 +1,72 @@
+.score-credits {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+  margin: 0;
+  font: 12px/1.5 var(--font-sans, sans-serif);
+  color: var(--muted);
+}
+.score-credits > div {
+  min-width: 0;
+}
+.score-credits dt {
+  display: inline;
+  margin-right: 5px;
+  opacity: 0.85;
+}
+.score-credits dt::after {
+  content: ':';
+}
+.score-credits dd {
+  display: inline;
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+.library-v2 .score-credits > div {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.application .library-v2.library-view-list .score-card-body {
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.4fr) 228px;
+}
+.application .library-v2.library-view-list .score-credits {
+  grid-column: 2;
+  grid-row: 1;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 16px;
+}
+.application .library-v2.library-view-list .score-actions {
+  grid-column: 3;
+}
+@media (min-width: 1001px) {
+  .application .library-v2.library-view-list .score-credits > [data-credit-role='arranger'],
+  .application .library-v2.library-view-list .score-credits > [data-credit-role='transcriber'] {
+    grid-column: 2;
+    grid-row: 1;
+  }
+}
+@media (max-width: 1000px) {
+  .application .library-v2.library-view-list .score-card-body {
+    grid-template-columns: minmax(0, 1fr) 216px;
+  }
+  .application .library-v2.library-view-list .score-credits {
+    grid-column: 1;
+    grid-row: 2;
+    grid-template-columns: 1fr;
+  }
+  .application .library-v2.library-view-list .score-actions {
+    grid-column: 2;
+    grid-row: 1 / 3;
+  }
+}
+@media (max-width: 760px) {
+  .application .library-v2.library-view-list .score-card-body {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .application .library-v2.library-view-list .score-actions {
+    grid-column: 1;
+    grid-row: 3;
+  }
+}

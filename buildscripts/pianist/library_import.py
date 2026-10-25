@@ -17,6 +17,7 @@ import zipfile
 
 from library_release import validate_versions
 from library_staff_policy import read_musicxml, require_two_staff_piano, inspect_two_staff_piano
+from library_metadata import extract, FIELDS
 
 
 def sha(data):
@@ -72,6 +73,28 @@ def musicxml(data):
     return sha(canonical), len(notes), sum(n.find('grace') is not None for n in notes)
 
 
+def archived_xml_sources(output, by_id, by_xml):
+    """Repacked originals still deduplicate after their display XML is normalized."""
+    for path in sorted((output / 'originals').glob('*.zip')):
+        if not re.fullmatch(r'[a-f0-9]{64}', path.stem):
+            continue
+        with zipfile.ZipFile(path) as archive:
+            raw = archive.read('catalog.json')
+            if sha(raw) != path.stem:
+                raise ValueError('Original catalog archive integrity failed')
+            for original in json.loads(raw)['songs']:
+                current = by_id.get(original['sha256'])
+                if current is None:
+                    continue  # An archived/deleted work is not a current duplicate.
+                relative = original['url'].removeprefix('library/')
+                if not re.fullmatch(r'songs/[a-z0-9-]+\.mxl', relative):
+                    raise ValueError('Unsafe original archive member')
+                data = archive.read(relative)
+                if sha(data) != original['sha256']:
+                    raise ValueError('Original score archive integrity failed')
+                by_xml[musicxml(data)[0]] = current
+
+
 def append_library(inputs, audit, output, allow_editor_only=False):
     from library_content_policy import content_issues
     output = Path(output)
@@ -94,8 +117,11 @@ def append_library(inputs, audit, output, allow_editor_only=False):
         by_id[song['id']] = song
         if song.get('sourceSha256'):
             by_id[song['sourceSha256']] = song
+        for previous_hash in song.get('sourceHashes', []):
+            by_id[previous_hash] = song
         by_xml[musicxml(data)[0]] = song
         names.setdefault(name_key(song['title']), set()).add(song.get('workId', song['id']))
+    archived_xml_sources(output, by_id, by_xml)
     if audit.get('errors'):
         raise ValueError('Resolve native engine errors before import')
     records = {r['filename']: r for r in inputs}
@@ -146,7 +172,9 @@ def append_library(inputs, audit, output, allow_editor_only=False):
         title = unicodedata.normalize('NFC', source['title']).strip()
         if not title or len(title) > 180:
             raise ValueError('Invalid display title')
-        composer = composer_name(source.get('composer'))
+        _, source_score = read_musicxml(data)
+        metadata = extract(source_score, {**source, 'title': title})['metadata']
+        composer = composer_name(metadata.get('composer'))
         work = choose_work(source, title, composer, ident, names, groups)
         versions = groups.get(work, {})
         number = max(versions, default=0) + 1
@@ -162,6 +190,9 @@ def append_library(inputs, audit, output, allow_editor_only=False):
             song['versionLabel'] = source['versionLabel']
         if composer:
             song['composer'] = composer
+        for field in (*FIELDS[1:], 'aliases'):
+            if metadata.get(field):
+                song[field] = metadata[field]
         song['practiceReady'] = True
         destination = output / song['url'].removeprefix('library/')
         if destination.exists() and destination.read_bytes() != data:

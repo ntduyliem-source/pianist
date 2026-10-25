@@ -1,6 +1,8 @@
 import { useMemo, useState } from 'react';
 import { workspace as ws } from '../../workspace';
-import type { BundledScore } from '../../platform/bundled-library';
+import { isBundledSource, type BundledScore } from '../../platform/bundled-library';
+import { ScoreCredits } from '../../shared/ui/ScoreCredits';
+import { scoreCredits, creditSummary } from '../../shared/score-metadata';
 import type { ProjectRecord } from '../../platform/storage';
 import { libraryCollection, type LibraryWork } from './library-collection';
 import { bundledTrack, projectTrack, ListenButton } from './LibraryPlayback';
@@ -61,9 +63,10 @@ function SongCard({
   });
   const edition =
     work.editions.find(
-      (e) => e.id === selected || (!!selected && e.song?.sourceSha256 === selected),
+      (e) => e.id === selected || (!!e.song && isBundledSource(e.song, selected)),
     ) ?? work.editions[0];
   const { song, project } = edition;
+  const credits = { ...scoreCredits(song), ...scoreCredits(project) };
   const track = project
     ? projectTrack(project, 'Phiên bản ' + edition.version)
     : bundledTrack(song!);
@@ -72,7 +75,11 @@ function SongCard({
       project ? ws.openProject(project.id, practice) : ws.openBundledScore(song!, practice),
     );
   return (
-    <article className="score-card" data-work-id={work.id}>
+    <article
+      className="score-card"
+      data-work-id={work.id}
+      title={creditSummary(credits) || undefined}
+    >
       <button
         className="score-cover"
         aria-label={(song ? 'Mở bài có sẵn ' : 'Mở ') + work.title}
@@ -105,13 +112,14 @@ function SongCard({
                 {work.editions.map((v) => (
                   <option key={v.id} value={v.id}>
                     Phiên bản {v.version}
-                    {v.label ? ' · ' + v.label : ''}
+                    {v.song?.arranger ? ' · ' + v.song.arranger : v.label ? ' · ' + v.label : ''}
                   </option>
                 ))}
               </select>
             </label>
           )}
         </div>
+        <ScoreCredits value={credits} compact />
         <div className="score-actions">
           {trash && project ? (
             <button onClick={() => void ws.run(() => ws.archive(project))}>Khôi phục</button>

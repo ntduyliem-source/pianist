@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "editions": {
+    "ai-dua-em-ve-nguyen-anh-9-ai-dua-em-ve.mxl": {
+      "preservePrintedBreaks": true,
+      "reason": "Native repeat traversal changes around ending 1 at written measures 45–47 if source new-system/new-page flags are removed. Isolated MuseScore imports prove that restoring only these flags preserves the original 60 measure visits and 154285.67020409423 ms at source tempo. Keep these boundaries; still normalize A4, margins, staff scale, text fonts and credits. No ending/repeat is invented or changed.",
+      "evidence": "artifacts/library-standardization-2026-10-25/probe-volta2.cjs"
+    },
+    "neu-em-da-quen-v2.mxl": {
+      "reason": "Keep the exact source diagnostic text; wrap it within the page rather than letting it clip at the right edge.",
+      "words": [{"text": "SOURCE ERROR: RH totals 4.5 beats; printed 4/4. Do not use for timed exercises.", "count": 1, "wrap": 34}]
+    },
+    "biet-khuc-cho-nhau.mxl": {
+      "reason": "The pinned native import does not anchor this source direction to the right. Preserve the words and musical offset; wrap the label into two lines instead of clipping it outside the page.",
+      "words": [{"text": "Dal Segno al Coda", "count": 1, "wrap": 9}]
+    },
+    "mua-tren-cuoc-tinh-v2.mxl": {
+      "reason": "Preserve source diagnostic wording at its original musical position. Native import ignores right anchoring here; 8 pt text with short lines fits the page. Compared both musical snapshots and all rendered pages.",
+      "words": [
+        {"text": "SOURCE CONFLICT: printed RH totals 5 beats in 4/4; review required", "count": 1, "wrap": 15, "fontSize": 8},
+        {"text": "SOURCE INCOMPLETE: 3 beats unspecified (spacing only)", "count": 1, "wrap": 15, "fontSize": 8},
+        {"text": "SOURCE INCOMPLETE: 1 beats unspecified (spacing only)", "count": 1, "wrap": 15, "fontSize": 8},
+        {"text": "SOURCE INCOMPLETE: 2 beats unspecified (spacing only)", "count": 1, "wrap": 15, "fontSize": 8}
+      ]
+    }
+  }
+}

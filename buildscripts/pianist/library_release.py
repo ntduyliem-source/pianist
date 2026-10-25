@@ -5,6 +5,7 @@ import re
 from pathlib import Path
 from library_staff_policy import require_two_staff_piano
 from library_content_policy import require_practice_content
+from library_metadata import FIELDS
 
 ROOT = Path(__file__).resolve().parents[2]
 
@@ -12,10 +13,25 @@ ROOT = Path(__file__).resolve().parents[2]
 def validate_versions(songs):
     """Work identity and version numbers survive removal/normalization of an edition."""
     groups = {}
+    aliases = {}
     for song in songs:
         original = song.get('sourceSha256')
         if original is not None and (not isinstance(original, str) or not re.fullmatch(r'[a-f0-9]{64}', original)):
             raise ValueError('Invalid original library source hash')
+        history = song.get('sourceHashes', [])
+        if not isinstance(history, list) or len(history) > 100 or any(not isinstance(h, str) or not re.fullmatch(r'[a-f0-9]{64}', h) for h in history) or len(set(history)) != len(history):
+            raise ValueError('Invalid library source hash history')
+        for h in [song['id'], *history, *([original] if original else [])]:
+            if h in aliases and aliases[h] != song['id']:
+                raise ValueError('Source hash belongs to multiple library editions')
+            aliases[h] = song['id']
+        for role in FIELDS:
+            value = song.get(role)
+            if value is not None and (not isinstance(value, str) or not value.strip() or len(value) > 300):
+                raise ValueError('Invalid library credit: ' + role)
+        names = song.get('aliases', [])
+        if not isinstance(names, list) or len(names) > 20 or any(not isinstance(n, str) or not n.strip() or len(n) > 180 for n in names):
+            raise ValueError('Invalid library search aliases')
         explicit = 'workId' in song
         if explicit != ('version' in song):
             raise ValueError('Incomplete library version metadata')
@@ -56,6 +72,8 @@ def verify_library(read, paths):
     expected = {'library/catalog.json'}
     identities = set()
     for song in songs:
+        if catalog.get('presentationProfile') and song.get('layoutProfile') != catalog['presentationProfile']:
+            raise ValueError('Normalize and audit this edition before release: ' + song['url'])
         name = song['url']
         if not re.fullmatch(r'library/songs/[a-z0-9-]+\.mxl', name) or name in expected:
             raise ValueError('Unsafe or duplicate library path')

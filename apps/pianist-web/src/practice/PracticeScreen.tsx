@@ -31,6 +31,8 @@ import { subscribeSound, unlockSound } from '../platform/audio-output';
 import { practiceAudioProvider } from '../application/practice-audio';
 import { installAudioSession } from '../platform/audio-session';
 import { NumberField } from './NumberField';
+import { ScoreCredits } from '../shared/ui/ScoreCredits';
+import { creditSummary } from '../shared/score-metadata';
 import { PracticeFeedback } from './ui/PracticeFeedback';
 import { PedalToggle } from './ui/PedalToggle';
 import { AuditionControls } from './ui/AuditionControls';
@@ -635,7 +637,13 @@ export function Practice({
             <Icon name="back" />
           </button>
           <div className="studio-score-title">
-            <strong title={snapshot.title}>{snapshot.title}</strong>
+            <strong
+              title={[snapshot.title, !exercise && creditSummary(ws.currentCredits())]
+                .filter(Boolean)
+                .join(' — ')}
+            >
+              {snapshot.title}
+            </strong>
             <small>
               {c.mode === 'wait' ? 'Đúng nốt' : `${Math.round(active ? beat.bpm : c.bpm)} BPM`} ·{' '}
               {message}
@@ -944,6 +952,7 @@ export function Practice({
           </button>
         </div>
         <p className="practice-score-name">{snapshot.title}</p>
+        {!exercise && <ScoreCredits value={ws.currentCredits()} />}
         <div className="studio-device-settings">
           <SoundControl />
           <ThemeControl />

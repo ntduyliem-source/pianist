@@ -47,6 +47,18 @@ test('linking a recovered bundled song cannot promote stale bytes; playback read
   assert.equal(saved.revision, 1, 'a metadata link must not mark recovery as manually saved');
   assert.deepEqual(saved.bytes, project.bytes);
   assert.equal(saved.sourceHash, hash);
+  const normalized = new Uint8Array([11, 21]);
+  const normalizedHash = Buffer.from(await crypto.subtle.digest('SHA-256', normalized)).toString('hex');
+  t.mock.method(globalThis, 'fetch', async () => new Response(normalized));
+  await ws.openBundledScore({ id: normalizedHash, sha256: normalizedHash, sourceHashes: [hash],
+    workId: hash, version: 1, bytes: normalized.length, title: 'Tên chuẩn hóa',
+    arranger: 'Người Soạn', filename: 'Tên chuẩn hóa.mxl', url: 'library/songs/recovery.mxl' });
+  assert.deepEqual(loaded, [2], 'normalization keeps the already-open recovery and its undo history');
+  assert.equal(ws.state.current!.id, project.id);
+  assert.equal(ws.state.current!.title, 'Edited recovery');
+  assert.equal(ws.state.current!.sourceHash, hash, 'source hash still describes retained original bytes');
+  assert.equal(ws.state.current!.arranger, 'Người Soạn');
+  assert.deepEqual((await storage.get<storage.ProjectRecord>('projects', project.id))!.bytes, project.bytes);
   assert.deepEqual(await projectTrack(saved, 'V1').load(new AbortController().signal), {
     bytes: recovery.bytes, filename: recovery.filename,
   });

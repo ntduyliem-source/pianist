@@ -46,7 +46,7 @@ export function Library() {
               <input
                 type="search"
                 aria-label="Tìm bản nhạc"
-                placeholder="Tìm tên bản nhạc…"
+                placeholder="Tìm bài, tác giả, người chuyển soạn…"
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
               />

@@ -42,11 +42,18 @@ export type { WorkspaceState, PracticeKind, TuneSelection } from './application/
 import {
   loadBundledCatalog,
   loadBundledScore,
+  isBundledSource,
   type BundledScore,
 } from './platform/bundled-library';
 import { requireLibraryScore } from './platform/library-admission';
+import { scoreCredits } from './shared/score-metadata';
 
 export class Workspace {
+  currentCredits() {
+    const current = this.state.current;
+    const source = this.state.bundledScores.find((s) => isBundledSource(s, current?.sourceHash));
+    return { ...scoreCredits(source), ...scoreCredits(current) };
+  }
   state: WorkspaceState = createInitialWorkspaceState();
   bridge?: EngineBridge;
   readonly sessions = new PracticeSessions();
@@ -924,23 +931,30 @@ export class Workspace {
     const existing = this.state.projects.find(
       (p) =>
         !p.archived &&
-        p.sourceName === score.filename &&
-        p.source?.length === bytes.length &&
-        p.source.every((b, i) => b === bytes[i]),
+        (p.version === undefined || p.version === (score.version ?? 1)) &&
+        (isBundledSource(score, p.sourceHash) ||
+          (p.sourceName === score.filename &&
+            p.source?.length === bytes.length &&
+            p.source.every((b, i) => b === bytes[i]))),
     );
     if (existing) {
       await this.openProject(existing.id, practice);
     } else await this.importFile(new File([bytes.buffer as ArrayBuffer], score.filename), practice);
     const current = this.state.current;
     if (
-      current?.sourceName === score.filename &&
-      current.source?.length === bytes.length &&
-      current.source.every((b, i) => b === bytes[i])
+      current &&
+      ((existing && current.id === existing.id) ||
+        (current.sourceName === score.filename &&
+          current.source?.length === bytes.length &&
+          current.source.every((b, i) => b === bytes[i])))
     ) {
       const link = {
+        ...scoreCredits(score),
+        // Keep edits and the hash of the actual retained source bytes.
+        ...(existing ? scoreCredits(current) : { title: score.title }),
         workId: current.workId ?? score.workId ?? score.id,
         version: current.version ?? score.version ?? 1,
-        sourceHash: score.sha256,
+        sourceHash: existing?.sourceHash ?? score.sha256,
         sourceFormat: 'mxl',
       };
       // Linking a bundled source changes metadata only. The editor may be on

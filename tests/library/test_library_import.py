@@ -114,6 +114,12 @@ class LibraryImportTests(unittest.TestCase):
 
     def test_font_normalization_retains_original_duplicate_identity(self):
         original = mxl()
+        archive_catalog=(self.library/'catalog.json').read_bytes()
+        (self.library/'originals').mkdir()
+        archive_path=self.library/'originals'/(sha(archive_catalog)+'.zip')
+        with zipfile.ZipFile(archive_path,'w') as archive:
+            archive.writestr('catalog.json',archive_catalog)
+            archive.writestr('songs/original.mxl',original)
         output = BytesIO()
         with zipfile.ZipFile(BytesIO(original)) as source, zipfile.ZipFile(output, 'w') as target:
             for entry in source.infolist():
@@ -131,6 +137,17 @@ class LibraryImportTests(unittest.TestCase):
         report = append_library(*self.inputs(original), self.library)
         self.assertEqual(report['summary']['duplicates'], 1)
         self.assertEqual((self.library / 'catalog.json').read_bytes(), before)
+        # A fresh ZIP has a new byte hash but the exact original XML; it must
+        # still match the archived source of the normalized edition.
+        report = append_library(*self.inputs(mxl(year=2025)), self.library)
+        self.assertEqual(report['summary']['duplicates'], 1)
+        self.assertEqual((self.library / 'catalog.json').read_bytes(), before)
+        with zipfile.ZipFile(archive_path,'w') as archive:
+            archive.writestr('catalog.json',archive_catalog)
+            archive.writestr('songs/original.mxl',mxl('G'))
+        with self.assertRaisesRegex(ValueError,'Original score archive integrity'):
+            append_library(*self.inputs(mxl(year=2025)),self.library)
+        self.assertEqual((self.library / 'catalog.json').read_bytes(),before)
 
     def test_new_work_same_download_basename_number_becomes_one_version(self):
         report = append_library(*self.inputs(mxl('F'), 'new-work (2).mxl', 'Different work'), self.library)

@@ -50,3 +50,15 @@ test('bundled song download verifies both size and SHA before import',async()=>{
     await assert.rejects(loadBundledScore(entry),/Không tải được/);
   }finally{globalThis.fetch=original;}
 });
+
+test('metadata validation and version preference survive several layout-only revisions', () => {
+  const revised = {...song, workId:'b'.repeat(64), version:2, sourceHashes:['c'.repeat(64)],
+    arranger:'Phương Thy', lyricist:'Tác Giả Lời', aliases:['Hanoi song']};
+  const scores=parseBundledCatalog({schemaVersion:1,songs:[revised]});
+  const work=groupBundledScores(scores)[0];
+  assert.equal(selectBundledVersion(work,'c'.repeat(64)),revised);
+  assert.equal(matchesBundledWork(work,'phuong thy'),true);
+  assert.equal(matchesBundledWork(work,'hanoi song'),true);
+  for(const patch of [{arranger:42},{aliases:['']},{aliases:['x'.repeat(181)]},{sourceHashes:['bad']},{sourceHashes:['c'.repeat(64),'c'.repeat(64)]}])
+    assert.throws(()=>parseBundledCatalog({schemaVersion:1,songs:[{...revised,...patch}]}));
+});
