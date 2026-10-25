@@ -25,7 +25,7 @@ const root=path.resolve(__dirname,'../../..'),out=path.join(root,'artifacts/soun
  try {
   await page.goto(process.env.PIANIST_URL||'http://127.0.0.1:8787/pianist.html?diagnostics=1#/library');
   await page.getByRole('searchbox',{name:'Tìm bản nhạc'}).fill('Merry Go Round');
-  const listen=page.locator('.score-card').filter({has:page.getByRole('heading',{name:/Merry Go Round/i})}).getByRole('button',{name:/^Nghe /}).first();
+  const listen=page.locator('.score-card').filter({has:page.getByRole('heading',{name:/Merry[- ]Go[- ]Round/i})}).getByRole('button',{name:/^Nghe /}).first();
   await listen.waitFor();assert.equal(await page.getByRole('checkbox',{name:'Tiếng MuseScore',exact:true}).isChecked(),false);
   await screenshot('library-desktop');
   let failSample=true;
