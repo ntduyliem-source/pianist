@@ -14,6 +14,7 @@ const gradeOnly=process.argv.includes('--grade-only');
   page.on('pageerror',e=>report.errors.push(String(e)));page.on('dialog',d=>d.type()==='beforeunload'?d.accept():d.dismiss());
   page.on('console',m=>{if(m.type()==='error')report.consoleErrors.push(m.text());});
   await context.addInitScript(()=>{
+    addEventListener('DOMContentLoaded',()=>{const s=document.createElement('style');s.textContent='#diagnostics{display:none!important}';document.head.append(s);});
     localStorage.setItem('pianist.sound','musescore');
     window.previewMeters=[];
     const connect=AudioNode.prototype.connect;

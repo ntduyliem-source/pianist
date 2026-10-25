@@ -13,6 +13,7 @@ const base=process.env.PIANIST_URL||'http://127.0.0.1:8787/pianist.html';
  const check=message=>{report.checks.push(message);console.log('PASS',message);};
  try{
   await page.addInitScript(()=>{
+    addEventListener('DOMContentLoaded',()=>{const s=document.createElement('style');s.textContent='#diagnostics{display:none!important}';document.head.append(s);});
    localStorage.setItem('pianist.sound','musescore');window.coldMeters=[];
    const connect=AudioNode.prototype.connect;
    AudioNode.prototype.connect=function(...args){const r=connect.apply(this,args);if(args[0]===this.context.destination&&!this.coldMeter){const m=this.coldMeter=this.context.createAnalyser();m.fftSize=2048;connect.call(this,m);window.coldMeters.push(m);}return r;};

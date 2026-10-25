@@ -8,7 +8,7 @@ const out=path.resolve(process.env.PIANIST_QA_DIR||path.join(root,'artifacts/pla
  await fs.mkdir(out,{recursive:true});
  const browser=await chromium.launch({channel:'msedge',headless:true,args:['--enable-unsafe-swiftshader']});
  const context=await browser.newContext({viewport:{width:1440,height:960},serviceWorkers:'block'}),page=await context.newPage();
- await context.addInitScript(()=>localStorage.setItem('pianist.sound','musescore'));
+  await context.addInitScript(()=>{localStorage.setItem('pianist.sound','musescore');addEventListener('DOMContentLoaded',()=>{const s=document.createElement('style');s.textContent='#diagnostics{display:none!important}';document.head.append(s);});});
  const report={base,checks:[],errors:[],measurements:{}};
  page.on('pageerror',e=>report.errors.push(String(e)));page.on('dialog',d=>d.dismiss());
  const check=s=>{report.checks.push(s);console.log('PASS',s);};

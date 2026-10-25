@@ -16,6 +16,7 @@ const invalidAbc='X:2\nT:One staff rejected\nM:4/4\nL:1/4\nV:RH clef=treble name
   await fs.mkdir(out,{recursive:true});
   const browser=await chromium.launch({headless:true,channel:process.env.PIANIST_BROWSER_CHANNEL||'msedge',args:['--enable-unsafe-swiftshader']});
   const page=await browser.newPage({viewport:{width:1440,height:1000},serviceWorkers:'block'});
+  await page.addInitScript(()=>{addEventListener('DOMContentLoaded',()=>{const s=document.createElement('style');s.textContent='#diagnostics{display:none!important}';document.head.append(s);});});
   const report={checks:[],errors:[],native:[],catalog:[]};
   page.on('pageerror',e=>report.errors.push(String(e)));
   page.on('dialog',d=>d.type()==='beforeunload'?d.accept():d.dismiss());

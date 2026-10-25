@@ -4,6 +4,7 @@ const root=path.resolve(__dirname,'../../..'),channel=process.env.PIANIST_BROWSE
 (async()=>{
   await fs.mkdir(out,{recursive:true});const browser=await chromium.launch({headless:true,channel,args:['--enable-unsafe-swiftshader']}),context=await browser.newContext({viewport:{width:1280,height:650},acceptDownloads:true});
   await context.addInitScript(()=>{
+    addEventListener('DOMContentLoaded',()=>{const s=document.createElement('style');s.textContent='#diagnostics{display:none!important}';document.head.append(s);});
     const trace=window.a5={timeline:null,view:null,frames:[],commands:[],judgements:[],origin:0};
     const NativeWorker=window.Worker;
     window.Worker=class extends NativeWorker{constructor(...args){super(...args);this.addEventListener('message',({data})=>{if(data.view){trace.view=data.view;trace.judgements.push(...data.view.judgements);}});}postMessage(data,...args){if(data.type==='load'&&data.timeline){trace.timeline=data.timeline;trace.commands=[];trace.frames=[];trace.judgements=[];trace.view=null;}if(data.type==='command'){trace.commands.push(data.command);if(data.command.type==='clock')trace.origin=performance.now()-data.command.atMs;}return super.postMessage(data,...args);}};

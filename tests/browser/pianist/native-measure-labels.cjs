@@ -5,6 +5,7 @@ const root=path.resolve(__dirname,'../../..'), out=path.join(root,'artifacts/nat
   await fs.mkdir(out,{recursive:true});
   const browser=await chromium.launch({channel:'msedge',headless:true,args:['--enable-unsafe-swiftshader']});
   const page=await browser.newPage({viewport:{width:1440,height:1000},serviceWorkers:'block'}), report={checks:[],errors:[]};
+  await page.addInitScript(()=>{addEventListener('DOMContentLoaded',()=>{const s=document.createElement('style');s.textContent='#diagnostics{display:none!important}';document.head.append(s);});});
   page.on('pageerror',e=>report.errors.push(String(e)));
   page.on('dialog',d=>d.type()==='beforeunload'?d.accept():d.dismiss());
   const check=message=>{report.checks.push(message);console.log('PASS',message)};

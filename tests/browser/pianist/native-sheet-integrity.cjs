@@ -6,6 +6,7 @@ const root=path.resolve(__dirname,'../../..'),out=path.join(root,'artifacts/nati
  await fs.mkdir(out,{recursive:true});
  const browser=await chromium.launch({channel:'msedge',headless:true,args:['--enable-unsafe-swiftshader']});
  const page=await browser.newPage({viewport:{width:1440,height:1000},serviceWorkers:'block'});
+  await page.addInitScript(()=>{addEventListener('DOMContentLoaded',()=>{const s=document.createElement('style');s.textContent='#diagnostics{display:none!important}';document.head.append(s);});});
  const report={checks:[],errors:[]};page.on('pageerror',e=>report.errors.push(String(e)));
  const check=s=>{report.checks.push(s);console.log('PASS',s);};
  const idle=()=>page.locator('.loading-overlay').waitFor({state:'hidden',timeout:180000});

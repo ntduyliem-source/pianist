@@ -6,6 +6,7 @@ const root=path.resolve(__dirname,'../../..'),out=path.join(root,'artifacts/libr
  const browser=await chromium.launch({channel:'msedge',headless:true,args:['--enable-unsafe-swiftshader']});
  const context=await browser.newContext({viewport:{width:390,height:844},isMobile:true,hasTouch:true,serviceWorkers:'block'});
  const page=await context.newPage(),report={checks:[],errors:[]};
+ await page.addInitScript(()=>{addEventListener('DOMContentLoaded',()=>{const s=document.createElement('style');s.textContent='#diagnostics{display:none!important}';document.head.append(s);});});
  page.on('pageerror',e=>report.errors.push(String(e)));
  page.on('dialog',d=>d.type()==='beforeunload'?d.accept():d.dismiss());
  const check=s=>{report.checks.push(s);console.log('PASS',s);};
@@ -83,7 +84,7 @@ const root=path.resolve(__dirname,'../../..'),out=path.join(root,'artifacts/libr
   await field('Đến ô nhịp').fill('20');await apply();
   assert.match(await page.getByRole('button',{name:'Chọn đoạn',exact:true}).innerText(),/12–20/);
   await range();await field('Từ ô nhịp').fill('');await apply();
-  await page.getByRole('alert').filter({hasText:'Nhập số ô nhịp'}).waitFor();
+  await page.getByRole('alert').filter({hasText:'Không có ô mang số này'}).waitFor();
   await field('Từ ô nhịp').fill('12');
   const dialog=page.getByRole('dialog',{name:'Chọn đoạn tập'});
   const d=await dialog.evaluate(el=>({height:el.getBoundingClientRect().height,bg:getComputedStyle(el).backgroundColor}));

@@ -26,6 +26,11 @@ BROWSER = ROOT / 'tests/browser/pianist'
 
 
 def main():
+    # Redirected Windows consoles may use a legacy code page. Preserve the
+    # original browser failure even when its log contains Vietnamese text.
+    for stream in (sys.stdout, sys.stderr):
+        if hasattr(stream, 'reconfigure'):
+            stream.reconfigure(encoding='utf-8')
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('mode', choices=['fast', 'browser', 'native'])
     parser.add_argument('--site', type=Path, default=ROOT / 'build.artifacts')
