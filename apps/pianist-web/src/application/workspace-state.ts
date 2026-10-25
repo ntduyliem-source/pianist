@@ -5,7 +5,7 @@ import type { ProjectRecord } from '../platform/storage';
 import type { BundledScore } from '../platform/bundled-library';
 
 export type View = 'library' | 'editor' | 'practice' | 'results' | 'history';
-export type PracticeKind = 'free' | 'grade';
+export type PracticeKind = 'free' | 'grade' | 'method';
 
 export interface TuneSelection {
   requestId: number;
@@ -41,6 +41,12 @@ export interface WorkspaceState {
   excludedScoreHashes: string[];
   practicePicker: boolean;
   practiceKind: PracticeKind;
+  methodRequest?: {
+    bookId: string;
+    lessonId: string;
+    settings?: Partial<PracticeSettings>;
+    requestId: number;
+  };
   canCancelOpen?: boolean;
   cancelOpenLabel?: string;
   engineFailed?: boolean;

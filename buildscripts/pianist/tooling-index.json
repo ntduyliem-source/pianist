@@ -21,10 +21,15 @@
       "description": "The authored G1-G8 collection; these tools do not extract the historical Q/K warehouse.",
       "files": ["abc_grade_pitches.py", "check-advanced-abc.py", "check-g2-abc.py", "check-g3-abc.py", "check-g4-abc.py", "composed-reading-bank.py", "grade_definition.py", "package-advanced-abc.py", "package-all-abc.py", "package-g1-abc.py", "package-g2-abc.py", "package-g3-abc.py", "package-g4-abc.py"]
     },
+    "methods": {
+      "status": "active",
+      "description": "Acquire pinned piano method books as unchanged two-staff MusicXML with original lesson numbering.",
+      "files": ["prepare-method-books.py"]
+    },
     "release": {
       "status": "active",
-      "description": "Package, stage, verify and publish only the selected catalog/grade manifest.",
-      "files": ["deploy-pages.py", "package-web.py", "score_format_release.py", "stage-release.py", "verify-release.py", "web_bank_release.py"]
+      "description": "Package, stage, verify and publish only the selected song, method-book and grade catalogs.",
+      "files": ["deploy-pages.py", "methods_release.py", "package-web.py", "score_format_release.py", "stage-release.py", "verify-release.py", "web_bank_release.py"]
     },
     "references": {
       "status": "maintained-reference",

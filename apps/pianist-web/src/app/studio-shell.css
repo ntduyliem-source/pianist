@@ -113,7 +113,7 @@
   height: 50px;
   top: calc(var(--app-top) + 12px);
   gap: 4px;
-  width: 340px;
+  width: 520px;
   max-width: calc(100% - 32px);
 }
 .application .practice-kind > button {
@@ -134,6 +134,15 @@
 }
 .application .practice-kind span {
   font-size: 12px;
+  white-space: nowrap;
+}
+@media (max-width: 600px) {
+  .application .practice-kind > button {
+    padding-inline: 4px;
+  }
+  .application .practice-kind .icon {
+    display: none;
+  }
 }
 .application .practice-kind + .page {
   top: calc(var(--app-top) + 76px);

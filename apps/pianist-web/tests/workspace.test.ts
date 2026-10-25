@@ -11,6 +11,23 @@ import {settingsFor} from '../../../packages/practice-engine-v2/score-adapter';
 import * as storage from '../src/platform/storage';
 import type {BundledScore} from '../src/platform/bundled-library';
 
+function navigationDom(t: {after: (cleanup: () => void) => void}) {
+  const globals = {
+    location: {hash: '/practice'},
+    document: {
+      body: {dataset: {}},
+      getElementById: () => ({inert: false, setAttribute() {}, focus() {}}),
+    },
+  };
+  for (const [name, value] of Object.entries(globals)) {
+    const previous = Object.getOwnPropertyDescriptor(globalThis, name);
+    Object.defineProperty(globalThis, name, {configurable: true, value});
+    t.after(() => previous
+      ? Object.defineProperty(globalThis, name, previous)
+      : Reflect.deleteProperty(globalThis, name));
+  }
+}
+
 
 function mockSession(workspace: Workspace, status: PracticeController['status'], dispose = () => {}) {
   if (workspace.session) { workspace.session.status = status; return; }
@@ -67,7 +84,77 @@ test('entering grade practice never replaces it with the current library score',
   await workspace.enterPractice();assert.equal(opened,1);
 });
 
-test('grade audition retains the native editor and its undo history across multiple previews',async()=>{
+test('method history resumes the exact lesson without opening a library project',async()=>{
+  const workspace=new Workspace();
+  workspace.navigate=(view)=>workspace.patch({view});
+  workspace.openProject=async()=>{throw Error('A method lesson is not an IndexedDB song');};
+  workspace.resumeMethod('method:hanon-part-1:hanon-part-1-002',{mode:'bpm',bpm:72,fromMeasure:3,toMeasure:4});
+  assert.equal(workspace.state.practiceKind,'method');
+  assert.equal(workspace.state.view,'practice');
+  assert.equal(workspace.state.methodRequest?.lessonId,'hanon-part-1-002');
+  assert.equal(workspace.state.methodRequest?.settings?.fromMeasure,3);
+  assert.equal(workspace.state.projects.length,0);
+  workspace.selectPracticeKind('free');
+  assert.equal(workspace.state.methodRequest,undefined);
+  assert.throws(()=>workspace.resumeMethod('method:../escape:bad'),/mã bài/);
+  mockSession(workspace,'paused');
+  assert.throws(()=>workspace.resumeMethod('method:hanon-part-1:hanon-part-1-001'),/Kết thúc lượt/);
+});
+
+test('method practice navbar preserves the method picker instead of the current editor score',async()=>{
+  const workspace=new Workspace();workspace.patch({practiceKind:'method'});
+  let opened=0;
+  workspace.openPractice=()=>{opened++;};workspace.practice=async()=>{throw Error('Must keep method selector');};
+  await workspace.enterPractice();assert.equal(opened,1);
+});
+
+test('leaving a pending method history request cancels it before returning through the practice navbar',async(t)=>{
+  navigationDom(t);
+  for (const destination of ['library','history'] as const) {
+    const workspace = new Workspace();
+    workspace.openProject = async () => {throw Error('A method request must not open a library project');};
+    workspace.resumeMethod('method:hanon-part-1:hanon-part-1-002',{mode:'bpm',bpm:72});
+    assert.equal(workspace.state.methodRequest?.lessonId,'hanon-part-1-002');
+    assert.equal(workspace.state.view,'practice');
+    // The method catalogue has not completed, so Methods has not consumed the intent.
+    workspace.navigate(destination);
+    assert.equal(workspace.state.view,destination);
+    assert.equal(workspace.state.methodRequest,undefined);
+    await workspace.enterPractice();
+    assert.equal(workspace.state.view,'practice');
+    assert.equal(workspace.state.practicePicker,true);
+    assert.equal(workspace.state.methodRequest,undefined);
+    // A deliberate new history click still carries the exact requested lesson.
+    workspace.resumeMethod('method:hanon-part-1:hanon-part-1-003');
+    assert.equal(workspace.snapshot().methodRequest?.lessonId,'hanon-part-1-003');
+    workspace.openPractice();
+    assert.equal(workspace.state.methodRequest,undefined);
+  }
+});
+
+test('blocked navigation during a method attempt never cancels its pending intent or releases MIDI',t=>{
+  navigationDom(t);
+  for (const status of ['counting','running','paused','interrupted'] as const) {
+    const workspace = new Workspace();
+    workspace.notice = () => {};
+    workspace.resumeMethod('method:hanon-part-1:hanon-part-1-002');
+    const request = workspace.state.methodRequest;
+    mockSession(workspace,status);
+    workspace.midi.release = () => {throw Error('Do not release MIDI when navigation is rejected');};
+    workspace.navigate('history');
+    workspace.openPractice();
+    assert.equal(workspace.state.view,'practice');
+    assert.equal(workspace.state.methodRequest,request);
+    assert.equal(workspace.session!.status,status);
+    workspace.session!.status = 'finished';
+    workspace.midi.release = () => {};
+    workspace.navigate('history');
+    assert.equal(workspace.state.methodRequest,undefined);
+  }
+});
+
+test('grade and method audition retain the native editor and its undo history across multiple previews',async()=>{
+  for (const kind of ['grade','method'] as const) {
   const workspace=new Workspace(),editor={undo:['edit'],redo:['redo']},exercise={undo:[],redo:[]};
   let active=editor,retained:typeof editor|undefined,restores=0,readOnly=false;
   const bridge={revision:7,get practiceActive(){return readOnly;},setPractice:(v:boolean)=>{readOnly=v;},audition:()=>{},auditionState:()=>({available:true}),
@@ -78,12 +165,13 @@ test('grade audition retains the native editor and its undo history across multi
     }} as unknown as EngineBridge;
   workspace.bridge=bridge;
   const project={id:'borrow-test',title:'Editor',filename:'edit.mscz',bytes:new Uint8Array([1]),revision:2,createdAt:0,updatedAt:0};
-  workspace.patch({view:'practice',practiceKind:'grade',current:project,revision:2,recoveryRevision:2});
+  workspace.patch({view:'practice',practiceKind:kind,current:project,revision:2,recoveryRevision:2});
   await workspace.exerciseAudition(new Uint8Array([4]),new AbortController().signal);
   await workspace.exerciseAudition(new Uint8Array([5]),new AbortController().signal);
   assert.equal(active,exercise);assert.equal(workspace.state.current,project);assert.equal(workspace.state.projects.length,0);
   workspace.restoreExerciseEditor();assert.equal(active,editor);assert.deepEqual(active.undo,['edit']);assert.deepEqual(active.redo,['redo']);
   workspace.restoreExerciseEditor();assert.equal(restores,1);
+  }
 });
 
 test('leaving exercise screen while native audio boots cannot publish the old exercise',async()=>{

@@ -13,6 +13,9 @@ Bản nhạc người dùng có thumbnail riêng được render khi gần vào 
 | Catalog bài hát được phát hành | `scores/library/catalog.json` | Tên, tác giả, version, URL, bytes, SHA-256; nguồn quyết định danh sách |
 | MXL từng bài hát | `scores/library/songs/<slug>.mxl` | File được catalog tham chiếu; giữ nguyên nội dung nhạc đã duyệt |
 | Lịch sử nhận/bỏ thư viện | `scores/library/IMPORT_REPORT.md` và receipts liên quan | Bằng chứng theo đợt, không thay catalog hiện hành |
+| Giáo trình và thứ tự bài | `scores/methods/catalog.json` | 7 bộ /149 bài; giữ số in trong sách và công bố phần còn thiếu |
+| MXL giáo trình nguyên bản | `scores/methods/<book-id>/<lesson-id>.mxl` | Hai khuông; tách kho bài hát/grade; giữ nốt, repeat và số ngón nguồn |
+| Nguồn giáo trình | `scores/methods/sources.json`, `NOTICE.txt` | URL/hash gốc, quyền từng bản, công thức nhập và ghi công |
 | Định nghĩa grade dùng chung | `scores/grades/definition.json` | Edition, IDs/chủ đề, 7 khoảng, quota100; Python và TypeScript đọc cùng nguồn |
 | Nội dung biên soạn gốc của grade | `scores/grades/authored/g1/` … `g8/` | Văn bản nguồn chứa các ô nhịp hai tay đã viết sẵn |
 | Từng bài ABC có tên dễ tìm | `scores/grades/generated/g1-abc/n4/g1-n4-001.abc` | Sản phẩm đóng gói từ nguồn; đổi grade/khoảng/ID theo bài cần tìm |
@@ -67,6 +70,7 @@ Thứ tự ID `001` không nhất thiết là thứ tự khó hoặc vị trí t
 - **Thư viện:** chỉ nhận piano đủ hai khuông theo dữ liệu native; một part hai khuông hoặc hai part piano mỗi part một khuông đều có thể hợp lệ, không chỉ kiểm tên file hay số part. Chuẩn bị input + báo cáo kiểm native, dùng `curate-library.py --append`/`library_import.py`; bản trùng byte bỏ qua, bản khác cùng tác phẩm có version. Khi tên/tác giả chưa đủ định danh, khai báo `workId` hoặc `newWork`. Không tự gộp các tác giả đã biết nhưng khác nhau chỉ vì cùng tên.
 - **Loại bài:** thay catalog và file được duyệt trong cùng thay đổi, lưu lý do/receipt. Yêu cầu loại bài thư viện đã được người dùng cho phép là ngoại lệ nội dung của đợt refactor; không xóa kho grade hoặc sửa nhạc để che lỗi.
 - **Grade:** sửa nội dung nguồn chỉ khi có yêu cầu đổi kho; chạy bộ duyệt grade và converter trước khi đóng gói. Không chỉnh trực tiếp file trong `build.artifacts/`. Định nghĩa edition nằm trong `scores/grades/definition.json`; đổi số grade/option/quota cần edition mới, loader và tests đồng bộ. Không tự đổi nhạc khi chỉ tổ chức thư mục.
+- **Giáo trình:** bổ sung nguồn/số bài vào `scores/methods/sources.json`, chạy `prepare-method-books.py --download` rồi `--verify`. Kiểm native bằng `method-native.cjs`; dùng snapshot thực tế chạy `grade-native-library.ts` với `PIANIST_AUDIT_DIR=artifacts/method-practice`. Không tự suy ra bài thiếu hoặc đổi số in của một bộ tuyển chọn. Xem [hướng dẫn giáo trình](../../scores/methods/README.md).
 - **Đóng gói:** `composed-reading-bank.py` đối chiếu nguồn, giữ số nốt/khuông/timing/tie, viết index + MXL + manifest. `package-web.py` và release verifier chỉ lấy những asset thuộc manifest/catalog.
 
 Các scripts Q/K và corpus cũ vẫn giữ để tra lịch sử. Không chạy lại một script lịch sử chỉ để bổ sung bài vào kho đang dùng; trước tiên xác định source, schema đầu ra và pipeline có thực sự đọc nó hay không.

@@ -1,0 +1,44 @@
+PIANIST METHOD BOOK SOURCES — acquired 2026-10-25
+
+The catalog describes available exercises, not complete books unless explicitly
+stated. Original exercise numbers and both structural staves are preserved.
+Original source MXL files are byte-identical. WhiteNote's raw XML files are
+wrapped in MXL archives without changing the XML bytes. No fingering, pitches,
+rhythms, repeats, dynamics, fonts or source rights notices were invented/rewritten.
+
+Hanon Part I, exercises 1–20; Czerny Op.599, 1–60; Czerny Op.299, 1–15:
+Source: https://www.white-note.com/app/languages/english/library.html
+Files: https://www.white-note.com/library/hanon_01_20.zip
+       https://www.white-note.com/library/czerny_opus_599.zip
+       https://www.white-note.com/library/czerny_299.zip
+WhiteNote describes its library as files made available for public use. It does
+not provide a named licence for these transcriptions and disclaims responsibility
+for submitted files' rights. The classical compositions are public domain; the
+edition's separate rights are unspecified. LicenseRef-WhiteNote-Public-Use is a
+provenance label for that statement, NOT an assertion of CC0 or another Creative
+Commons licence. Existing source rights strings remain untouched inside the XML.
+
+Burgmüller Op.100, exercises 1–18; Czerny Op.821, 1–18; Czerny Op.840, 1–10:
+Source: https://noctavepiano.com/en/composers/friedrich-burgmuller/
+        https://noctavepiano.com/en/free-library/composers/friedrich-burgmuller/
+        https://noctavepiano.com/en/composers/carl-czerny/
+        https://noctavepiano.com/en/free-library/composers/carl-czerny/
+Noctave converted the corresponding Mutopia Project editions to MusicXML.
+Each lesson records its own source URL and either CC0-1.0 or Public-Domain, as
+declared on that page and in its MusicXML rights field. Original edition credits
+including Bas Wassink, Manuel Castejon Limas and Manuela remain in each file.
+https://creativecommons.org/publicdomain/zero/1.0/
+https://creativecommons.org/publicdomain/mark/1.0/
+
+Duvernoy Op.176, exercises 1, 2, 6, 7, 9, 10, 11 and 19:
+Source: PDMX, https://zenodo.org/records/15571083
+PDMX: A Large-Scale Public Domain MusicXML Dataset for Symbolic Music Processing.
+Phillip Long, Zachary Novack, Taylor Berg-Kirkpatrick and Julian McAuley.
+https://arxiv.org/abs/2409.10831
+These individual scores are recorded as CC0 with license_conflict=False in the
+PDMX metadata. Per-score MuseScore links and exact source hashes are in catalog.json.
+The original MXL bytes from the existing local source warehouse are retained;
+the ABC round trips and generated exercise banks were not used.
+
+The app can display fingerings when the source contains them. Ordinary MIDI
+reports keys and timing, not which finger played a key; it cannot grade fingering.

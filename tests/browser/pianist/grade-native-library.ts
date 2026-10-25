@@ -9,9 +9,9 @@ import {resultFor} from '../../../packages/practice-engine-v2/results';
 import type {MidiEvent,Timeline} from '../../../packages/practice-engine-v2/model';
 
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'../../..');
-const out=path.join(root,'artifacts/two-staff-upgrade');
+const out=process.env.PIANIST_AUDIT_DIR ? path.resolve(process.env.PIANIST_AUDIT_DIR) : path.join(root,'artifacts/two-staff-upgrade');
 const audit=JSON.parse(fs.readFileSync(path.join(out,'native-audit.json'),'utf8'));
-assert(audit.passed,'Run two-staff-upgrade.cjs successfully first');
+assert(audit.passed && audit.results.length,'Run a native score audit successfully first');
 const results:any[]=[];
 function play(t:Timeline){
  const engine=new PracticeEngine(t);

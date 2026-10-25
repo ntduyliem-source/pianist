@@ -182,8 +182,8 @@ export class Workspace {
     });
     const initialView = location.hash.slice(2);
     try {
-      if (localStorage.getItem('pianist.practice-kind') === 'grade')
-        this.patch({ practiceKind: 'grade' });
+      const kind = localStorage.getItem('pianist.practice-kind');
+      if (kind === 'grade' || kind === 'method') this.patch({ practiceKind: kind });
     } catch {}
     if (initialView === 'exercises') {
       this.patch({ practiceKind: 'grade' });
@@ -232,7 +232,7 @@ export class Workspace {
     }
     this.midi.onChange = () => {
       if (
-        !(this.state.view === 'practice' && this.state.practiceKind === 'grade') &&
+        !(this.state.view === 'practice' && this.state.practiceKind !== 'free') &&
         this.state.config &&
         this.state.config.deviceId !== this.midi.deviceId &&
         (!this.session || ['ready', 'finished'].includes(this.session.status))
@@ -491,7 +491,7 @@ export class Workspace {
     // Keep an in-progress session intact when its own navbar item is pressed.
     if (this.session && !['ready', 'finished'].includes(this.session.status)) return;
     this.libraryPlayer.stop();
-    this.patch({ practicePicker: true });
+    this.patch({ practicePicker: true, methodRequest: undefined });
     this.navigate('practice');
   }
   selectPracticeKind(kind: PracticeKind): void {
@@ -499,18 +499,31 @@ export class Workspace {
     this.libraryPlayer.stop();
     this.sessions.dispose(this.session);
     this.restoreExerciseEditor();
-    this.patch({ practiceKind: kind, practicePicker: true });
+    this.patch({ practiceKind: kind, practicePicker: true, methodRequest: undefined });
     try {
       localStorage.setItem('pianist.practice-kind', kind);
     } catch {}
     this.navigate('practice');
+  }
+  resumeMethod(projectId: string, settings?: Partial<PracticeSettings>): void {
+    const match = /^method:([a-z0-9-]+):([a-z0-9-]+)$/.exec(projectId);
+    if (!match) throw Error('Không tìm thấy mã bài giáo trình.');
+    this.selectPracticeKind('method');
+    this.patch({
+      methodRequest: {
+        bookId: match[1],
+        lessonId: match[2],
+        settings,
+        requestId: ++this.operation,
+      },
+    });
   }
   async enterPractice(): Promise<void> {
     if (this.session && !['ready', 'finished'].includes(this.session.status)) {
       this.navigate('practice');
       return;
     }
-    if (this.state.practiceKind === 'grade') {
+    if (this.state.practiceKind !== 'free') {
       this.openPractice();
       return;
     }
@@ -1191,11 +1204,13 @@ export class Workspace {
       return;
     }
     if (view !== this.state.view) this.libraryPlayer.stop();
-    if (view !== 'practice' || this.state.practiceKind !== 'grade') this.restoreExerciseEditor();
+    if (view !== 'practice' || this.state.practiceKind === 'free') this.restoreExerciseEditor();
     this.midi.release();
     if (view === 'editor') this.bridge?.setPractice(false);
     else if (this.bridge) this.bridge.setPractice(true);
-    this.patch({ view });
+    // A history deep link belongs to this visit to Practice. Leaving before the
+    // catalogue loads must not reopen that abandoned lesson on a later visit.
+    this.patch({ view, ...(view !== 'practice' ? { methodRequest: undefined } : {}) });
     location.hash = '/' + view;
     const screen = document.getElementById('screen')!;
     screen.inert = view !== 'editor';
@@ -1236,8 +1251,8 @@ export class Workspace {
     const bridge = await this.ensureEngine(true);
     signal.throwIfAborted();
     this.requireInactiveSession();
-    if (this.state.view !== 'practice' || this.state.practiceKind !== 'grade')
-      throw Error('Đã rời màn tập theo grade.');
+    if (this.state.view !== 'practice' || this.state.practiceKind === 'free')
+      throw Error('Đã rời màn tập theo grade hoặc giáo trình.');
     if (soundSnapshot() === 'musescore')
       await bounded(
         bridge.api.startAudioProcessing(unlockSound()),

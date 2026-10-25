@@ -130,5 +130,37 @@ if (fs.existsSync(library+"/catalog.json")) {
         }
     }
 }
+// Method books keep their own catalog/order and do not enter the song library.
+// Copy only explicit catalog entries; never publish acquisition/pending files.
+const methods = path.resolve(ROOT, 'scores/methods');
+if (fs.existsSync(path.join(methods, 'catalog.json'))) {
+    const catalog = JSON.parse(fs.readFileSync(path.join(methods, 'catalog.json'), 'utf8'));
+    const methodsDir = path.resolve(OUTPUT_DIR, 'methods');
+    const approved = new Set(catalog.books.flatMap(book => book.lessons.map(lesson => {
+        if (!/^methods\/[a-z0-9-]+\/[a-z0-9-]+\.mxl$/.test(lesson.file)) throw new Error('Unsafe method lesson path');
+        return lesson.file.slice('methods/'.length);
+    })));
+    fs.mkdirSync(methodsDir, {recursive:true});
+    for (const book of fs.readdirSync(methodsDir, {withFileTypes:true})) {
+        if (!book.isDirectory() || !/^[a-z0-9-]+$/.test(book.name)) continue;
+        const bookDir = path.resolve(methodsDir, book.name);
+        if (path.dirname(bookDir) !== methodsDir) throw new Error('Unsafe stale method directory');
+        for (const entry of fs.readdirSync(bookDir, {withFileTypes:true})) {
+            if (!entry.isFile() || !entry.name.endsWith('.mxl') || approved.has(book.name+'/'+entry.name)) continue;
+            const target = path.resolve(bookDir, entry.name);
+            if (path.dirname(target) !== bookDir) throw new Error('Unsafe stale method lesson path');
+            fs.unlinkSync(target);
+        }
+    }
+    copyFile(path.join(methods, 'catalog.json'), path.join(methodsDir, 'catalog.json'));
+    for (const name of approved) {
+        const target = path.join(methodsDir, name);
+        fs.mkdirSync(path.dirname(target), {recursive:true});
+        copyFile(path.join(methods, name), target);
+    }
+    if (fs.existsSync(path.join(methods, 'NOTICE.txt'))) {
+        copyFile(path.join(methods, 'NOTICE.txt'), path.join(methodsDir, 'NOTICE.txt'));
+    }
+}
 fs.cpSync(ROOT+"/tests/fixtures/pianist/practice", OUTPUT_DIR+"/fixtures/practice", {recursive:true});
 

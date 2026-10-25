@@ -1,0 +1,203 @@
+.application .methods-home {
+  padding: 28px max(20px, calc((100vw - 1040px) / 2)) 60px;
+  background: var(--canvas);
+  color: var(--text);
+}
+.method-intro {
+  margin-bottom: 24px;
+}
+.method-intro h1 {
+  margin-bottom: 8px;
+}
+.method-intro p,
+.method-book-description,
+.method-picker-help {
+  color: var(--muted);
+  line-height: 1.7;
+}
+.method-picker {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 28px;
+  padding: 24px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+}
+.method-picker label {
+  font-size: 12px;
+  font-weight: 600;
+}
+.method-book-field,
+.method-lessons-field {
+  min-width: 0;
+}
+.method-book-field > select,
+.method-lessons-field > select {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+  min-height: 44px;
+}
+.method-book-description {
+  margin-top: 16px;
+  font-size: 12px;
+}
+.method-availability {
+  display: inline-flex;
+  margin-top: 12px;
+  padding: 4px 9px;
+  border-radius: 8px;
+  color: var(--blue);
+  background: var(--accent-soft);
+  font-size: 11px;
+}
+.method-lesson-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 22px;
+}
+.method-search {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex: 0 1 200px;
+  min-width: 0;
+}
+.method-search > .icon {
+  width: 16px;
+  height: 16px;
+  color: var(--muted);
+}
+.application .method-search > input {
+  width: 100%;
+  min-width: 0;
+  min-height: 30px;
+  padding: 3px 7px;
+  font-size: 12px;
+}
+.method-launch {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 20px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+.method-selection-label {
+  min-width: 0;
+  flex: 1;
+  line-height: 1.5;
+  color: var(--text);
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+.method-launch button {
+  flex: none;
+}
+.method-picker-help {
+  margin-top: 14px;
+  font-size: 11px;
+}
+.method-loading,
+.method-error {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-top: 18px;
+  flex-wrap: wrap;
+}
+.method-error {
+  color: var(--danger);
+}
+.method-lesson-nav {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex: 1;
+  min-width: 0;
+}
+.method-lesson-nav > strong {
+  min-width: 0;
+  max-width: 240px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 12px;
+}
+.method-lesson-nav > select {
+  width: 240px;
+  max-width: 45vw;
+  padding: 5px 9px;
+  min-height: 36px;
+  font-size: 12px;
+}
+.method-next-buttons {
+  display: flex;
+  gap: 4px;
+  margin-left: auto;
+}
+.application .method-next-buttons button {
+  min-width: 36px;
+  min-height: 36px;
+  padding: 6px;
+}
+.method-result {
+  font-size: 11px;
+  color: var(--muted);
+}
+.method-source a {
+  text-decoration: underline;
+}
+@media (max-width: 720px) {
+  .application .methods-home {
+    padding: 20px 12px 40px;
+  }
+  .method-intro {
+    margin-bottom: 18px;
+  }
+  .application .method-intro h1 {
+    font-size: 30px;
+  }
+  .method-picker {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+    padding: 18px;
+  }
+  .method-lessons-field {
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+  }
+  .method-book-description {
+    margin-top: 12px;
+  }
+  .method-lesson-nav {
+    gap: 6px;
+  }
+  .method-lesson-nav > strong {
+    max-width: 120px;
+    font-size: 11px;
+  }
+  .method-lesson-nav > select {
+    flex: 1;
+    width: 0;
+    max-width: none;
+    min-width: 70px;
+  }
+  .method-result {
+    flex-basis: 100%;
+  }
+}
+@media (pointer: coarse) {
+  .application .method-search > input,
+  .application .method-lesson-nav > select {
+    font-size: 16px;
+    min-height: 44px;
+  }
+  .application .method-next-buttons button {
+    min-width: 44px;
+    min-height: 44px;
+  }
+}

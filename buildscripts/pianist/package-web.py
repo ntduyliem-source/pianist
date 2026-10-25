@@ -6,6 +6,7 @@ import subprocess
 import argparse
 from score_format_release import verify_formats
 from library_release import verify_library
+from methods_release import verify_methods
 from web_bank_release import verify_web_bank
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -48,6 +49,8 @@ if (OUT / 'library/catalog.json').exists():
     if (OUT / 'library/previews/manifest.json').exists():
         paths += ['library/previews/manifest.json'] + [f['path'] for f in json.loads((OUT / 'library/previews/manifest.json').read_text(encoding='utf-8'))['files']]
 library_count = verify_library(lambda name: (OUT / name).read_bytes(), set(paths))
+methods = verify_methods(lambda name: (OUT / name).read_bytes())
+paths += methods['paths']
 bank = None
 if not (OUT / 'curriculum/manifest.json').exists():
     raise ValueError('Package the composed G1–G8 bank first: python buildscripts/pianist/composed-reading-bank.py')
@@ -65,7 +68,8 @@ for name in sorted(set(paths)):
         while chunk := stream.read(1024 * 1024):
             digest.update(chunk)
     files.append({'path': name, 'bytes': path.stat().st_size, 'sha256': digest.hexdigest(),
-                  **({'cache': 'lazy'} if name.startswith('curriculum/') and name != 'curriculum/manifest.json' else {})})
+                  **({'cache': 'lazy'} if (name.startswith('curriculum/') and name != 'curriculum/manifest.json')
+                     or (name.startswith('methods/') and name.endswith('.mxl')) else {})})
 template = (ROOT / 'src/web/appjs/viewer/sw-template.js').read_text(encoding='utf-8')
 worker_hash = hashlib.sha256(template.encode()).hexdigest()
 version = hashlib.sha256(json.dumps({'files': files, 'workerTemplateSha256': worker_hash}, sort_keys=True).encode()).hexdigest()[:20]
@@ -80,6 +84,8 @@ if renderer:
     release['renderer'] = {'optimizedLink': renderer['optimizedLink'], 'qt': renderer['qt']}
 if bank:
     release['exerciseBank'] = {k: bank[k] for k in ['releaseId', 'count', 'visibility']}
+if methods['books']:
+    release['methodBooks'] = {k: methods[k] for k in ['books', 'lessons']}
 (OUT / 'release.json').write_text(json.dumps(release, indent=2), encoding='utf-8')
 (OUT / 'sw.js').write_text(template.replace('__PIANIST_RELEASE__', json.dumps(release)), encoding='utf-8', newline='\n')
 print(f'Packaged {version}: {len(files)} files, {sum(f["bytes"] for f in files)/1024**2:.1f} MiB')

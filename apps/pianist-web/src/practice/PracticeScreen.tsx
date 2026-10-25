@@ -39,6 +39,8 @@ import './practice-v2.css';
 import type { EngineBridge } from '../../../../packages/engine-bridge';
 
 export interface ExercisePracticeContext {
+  kind?: 'grade' | 'method';
+  backLabel?: string;
   controls: React.ReactNode;
   details: React.ReactNode;
   autoStart: number;
@@ -127,6 +129,7 @@ export function Practice({
     status = session?.status ?? 'ready',
     active = !!session && !['ready', 'finished'].includes(status),
     playing = active && ['running', 'counting'].includes(status);
+  const gradeExercise = !!exercise && exercise.kind !== 'method';
   const parsed = useMemo(() => {
     try {
       return { timeline: createTimeline(snapshot, c), error: '' };
@@ -625,7 +628,7 @@ export function Practice({
         <div className="studio-practice-context">
           <button
             className="studio-back"
-            aria-label={exercise ? 'Chọn grade và độ dài' : 'Đổi bài'}
+            aria-label={exercise ? (exercise.backLabel ?? 'Chọn grade và độ dài') : 'Đổi bài'}
             title="Quay lại chọn bài"
             disabled={(!exercise && active) || stopping}
             onClick={() =>
@@ -739,13 +742,13 @@ export function Practice({
           </button>
         </div>
         <div className="studio-practice-tools">
-          {!exercise && (
+          {!gradeExercise && (
             <button
               className="v2-range"
               aria-label="Chọn đoạn"
               title={`Đoạn ô ${c.fromMeasure + 1}–${c.toMeasure + 1}`}
               aria-expanded={panel === 'range'}
-              disabled={active}
+              disabled={active || !!exercise?.loading}
               onClick={() => openPanel('range')}
             >
               A–B{' '}
@@ -922,7 +925,7 @@ export function Practice({
         onToggle={() => setPref({ keyboard: !prefs.keyboard })}
       />
 
-      {panel === 'range' && !exercise && (
+      {panel === 'range' && !gradeExercise && (
         <RangeSettings
           config={c}
           measureCount={snapshot.measures.length}
@@ -1014,8 +1017,8 @@ export function Practice({
                 </label>
               </div>
             </fieldset>
-            {!exercise && (
-              <fieldset disabled={active}>
+            {!gradeExercise && (
+              <fieldset disabled={active || !!exercise?.loading}>
                 <legend>Đoạn tập và lặp lại</legend>
                 <button onClick={() => openPanel('range')}>
                   Chọn đoạn · ô {c.fromMeasure + 1}–{c.toMeasure + 1}
@@ -1091,7 +1094,7 @@ export function Practice({
                 <label>
                   Đơn vị phách
                   <select
-                    disabled={!!exercise}
+                    disabled={gradeExercise}
                     aria-label="Đơn vị phách"
                     value={c.beatQuarter}
                     onChange={(e) => update({ beatQuarter: +e.target.value as 0.5 | 1 | 1.5 })}
@@ -1116,7 +1119,7 @@ export function Practice({
               <label>
                 Tempo
                 <select
-                  disabled={!!exercise}
+                  disabled={gradeExercise}
                   aria-label="Tempo"
                   value={c.tempoMode}
                   onChange={(e) => update({ tempoMode: e.target.value as 'fixed' | 'score' })}
@@ -1151,7 +1154,7 @@ export function Practice({
                   <label key={s.id}>
                     Khuông {s.id + 1} · {s.part}
                     <select
-                      disabled={!!exercise}
+                      disabled={gradeExercise}
                       value={c.roles[s.id]}
                       onChange={(e) =>
                         update({
@@ -1170,7 +1173,7 @@ export function Practice({
                     <label className="v2-check" key={v}>
                       <input
                         type="checkbox"
-                        disabled={!!exercise}
+                        disabled={gradeExercise}
                         checked={c.voices.includes(v)}
                         onChange={(e) =>
                           update({

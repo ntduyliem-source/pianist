@@ -6,6 +6,7 @@ Trang này là bản đồ đường đi release. Lệnh và yêu cầu GitHub P
 
 - Shell React từ `apps/pianist-web/`; native app/audio/renderer từ các target trong `buildscripts/pianist/`.
 - Thư viện gồm catalog được duyệt, đúng các MXL catalog tham chiếu và ảnh xem trước có hash/provenance trong `scores/library/previews/`.
+- Giáo trình lấy từ `scores/methods/catalog.json`, giữ số bài và chỉ sao chép MXL được catalog tham chiếu. `methods_release.py` kiểm hash/bytes, đủ hai khuông, số ngón ghi trên bản nguồn, thứ tự bài và thông tin quyền sử dụng. Cache tải nguồn/giấy phép đang chờ ngoài catalog không được đưa vào web. MXL tải khi mở bài; catalog được giữ offline cùng shell.
 - Grade chỉ gồm release được `build.artifacts/curriculum/manifest.json` trỏ tới, các index và MXL có hash khớp. Nguồn ABC được giữ trong source archive; browser tập bằng MXL đã kiểm.
 - Converter, nguồn tham khảo, giấy phép và toolchain pins theo scripts chuẩn bị và verifier.
 - `warehouse/`, corpus Q/K, ví dụ local, logs và cache không tự động được đưa vào web ZIP.
@@ -18,7 +19,7 @@ Trang này là bản đồ đường đi release. Lệnh và yêu cầu GitHub P
 | Commit source | Source sạch; kho grade giữ ID/hash/order nếu chỉ refactor; thay catalog có receipt |
 | `package-web.py` | Manifest integrity khớp toàn bộ bytes sẽ được dùng |
 | `stage-release.py` | Thư mục staging mới, source archive đúng commit, không kèm asset ngoài manifest |
-| `verify-release.py --public` | Gói public hợp lệ, nguồn/pins/notices/catalog/bank/hash đầy đủ |
+| `verify-release.py --public` | Gói public hợp lệ, nguồn/pins/notices/catalog/bank/hash đầy đủ; số giáo trình/bài khớp `release.methodBooks` |
 | GitHub Release | Tag trỏ source commit đã kiểm; web ZIP và source archive đúng bản |
 | `deploy/pages-release.json` | `tag`, `sha256`, `sourceCommit`, `version` lấy từ gói, không gõ ước lượng |
 | Workflow và kiểm online | Workflow thành công; bytes/version trên host khớp; smoke đường dùng thật |

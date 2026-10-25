@@ -3,6 +3,7 @@ import {
   ENGINE_ID,
   type SavedAttempt,
   type AttemptResult,
+  type PracticeSettings,
   assessReleases,
   attemptCsv,
   canCompare,
@@ -38,6 +39,14 @@ export function Results({ result: r }: { result: SavedAttempt }) {
   const previous = ws.state.history.find(
     (p): p is AttemptResult => p.schemaVersion === 2 && p.id !== r.id && canCompare(p, r),
   );
+  const method = r.projectId.startsWith('method:');
+  const practiceAgain = async (settings: Partial<PracticeSettings>) => {
+    if (method) ws.resumeMethod(r.projectId, settings);
+    else {
+      await ws.openProject(r.projectId, true);
+      ws.updatePracticeSettings(settings);
+    }
+  };
   return (
     <main className="page results-page">
       <div className="page-title">
@@ -57,15 +66,12 @@ export function Results({ result: r }: { result: SavedAttempt }) {
           </p>
         </div>
         <div className="button-row">
-          <button
-            onClick={run(async () => {
-              await ws.openProject(r.projectId, true);
-              ws.updatePracticeSettings(r.settings);
-            })}
-          >
-            Tập lại
-          </button>
-          <button onClick={run(() => ws.openProject(r.projectId))}>Về Editor</button>
+          <button onClick={run(() => practiceAgain(r.settings))}>Tập lại</button>
+          {method ? (
+            <button onClick={run(() => ws.selectPracticeKind('method'))}>Về giáo trình</button>
+          ) : (
+            <button onClick={run(() => ws.openProject(r.projectId))}>Về Editor</button>
+          )}
           <button onClick={() => ws.navigate('history')}>Lịch sử</button>
         </div>
       </div>
@@ -180,14 +186,13 @@ export function Results({ result: r }: { result: SavedAttempt }) {
                   </td>
                   <td>
                     <button
-                      onClick={run(async () => {
-                        await ws.openProject(r.projectId, true);
-                        ws.updatePracticeSettings({
+                      onClick={run(() =>
+                        practiceAgain({
                           ...r.settings,
                           fromMeasure: t.measure,
                           toMeasure: t.measure,
-                        });
-                      })}
+                        }),
+                      )}
                     >
                       Ô {t.measure + 1}
                     </button>

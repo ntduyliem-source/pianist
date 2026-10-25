@@ -11,6 +11,7 @@ from urllib.parse import quote, urljoin, urlparse
 from urllib.request import Request, urlopen
 from score_format_release import verify_formats
 from library_release import verify_library
+from methods_release import verify_methods
 from web_bank_release import verify_web_bank
 
 HEADERS = {'Cross-Origin-Opener-Policy': 'same-origin', 'Cross-Origin-Embedder-Policy': 'require-corp',
@@ -80,6 +81,9 @@ def main():
     formats = verify_formats(read)
     library_count = verify_library(read, seen)
     if release.get('libraryScores', 0) != library_count: raise ValueError('Bundled library count mismatch')
+    methods = verify_methods(read, seen)
+    method_counts = {k: methods[k] for k in ['books', 'lessons']}
+    if release.get('methodBooks', {'books': 0, 'lessons': 0}) != method_counts: raise ValueError('Bundled method-book count mismatch')
     if release.get('scoreFormats') != formats['version']: raise ValueError('ABC runtime version mismatch')
     if not {'score-formats/manifest.json', *('score-formats/' + e['path'] for e in formats['files'])}.issubset(seen): raise ValueError('ABC files missing from release/offline manifest')
     if release.get('renderer'):
@@ -95,7 +99,8 @@ def main():
             actual = {p.relative_to(args.directory).as_posix() for p in args.directory.rglob('*') if p.is_file()}
             if actual != seen | {'release.json', 'sw.js'}: raise ValueError('Public web root contains unlisted or missing files')
     report = {'passed': True, 'version': release['version'], 'sourceCommit': release['sourceCommit'], 'sourceDirty': release['sourceDirty'],
-              'resources': len(seen), 'bytes': total, 'scoreFormats': formats['version'], 'libraryScores': library_count, 'headersChecked': bool(base), 'customHeadersRequired': not args.github_pages, 'httpsChecked': bool(base and urlparse(base).scheme == 'https'), 'publicExamplesChecked': args.public}
+              'resources': len(seen), 'bytes': total, 'scoreFormats': formats['version'], 'libraryScores': library_count,
+              'methodBooks': method_counts, 'headersChecked': bool(base), 'customHeadersRequired': not args.github_pages, 'httpsChecked': bool(base and urlparse(base).scheme == 'https'), 'publicExamplesChecked': args.public}
     if args.report: args.report.write_text(json.dumps(report, indent=2), encoding='utf-8')
     print(json.dumps(report, indent=2))
 

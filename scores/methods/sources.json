@@ -1,0 +1,2659 @@
+{
+  "schemaVersion": 1,
+  "retrievedOn": "2026-10-25",
+  "books": [
+    {
+      "id": "hanon-part-1",
+      "title": "Hanon — Phần I",
+      "composer": "Charles-Louis Hanon",
+      "opus": "The Virtuoso Pianist · Phần I",
+      "description": "20 bài đầu của The Virtuoso Pianist, giữ nguyên bản nhạc hai khuông. Bản nguồn này chưa có ký hiệu số ngón.",
+      "expectedLessons": 20,
+      "lessons": [
+        {
+          "id": "hanon-part-1-001",
+          "number": 1,
+          "title": "Bài 01",
+          "sourceUrl": "https://www.white-note.com/app/languages/english/library.html",
+          "downloadUrl": "https://www.white-note.com/library/hanon_01_20.zip",
+          "sourceSha256": "2c9a7b3c8660b3173f285a3b51abf5fcc9336b8aab0e203fc5850a2ae51bc18f",
+          "archiveMember": "Hanon_01.xml",
+          "license": "LicenseRef-WhiteNote-Public-Use",
+          "sourceRights": {
+            "statementUrl": "https://www.white-note.com/app/languages/english/library.html",
+            "statement": "Music XML files are made available for public use by WhiteNote.",
+            "composition": "Public domain classical composition",
+            "edition": "No named redistribution licence is supplied by WhiteNote; source notices preserved."
+          },
+          "editionRights": "Unspecified; exact original XML retained."
+        },
+        {
+          "id": "hanon-part-1-002",
+          "number": 2,
+          "title": "Bài 02",
+          "sourceUrl": "https://www.white-note.com/app/languages/english/library.html",
+          "downloadUrl": "https://www.white-note.com/library/hanon_01_20.zip",
+          "sourceSha256": "2c9a7b3c8660b3173f285a3b51abf5fcc9336b8aab0e203fc5850a2ae51bc18f",
+          "archiveMember": "Hanon_02.xml",
+          "license": "LicenseRef-WhiteNote-Public-Use",
+          "sourceRights": {
+            "statementUrl": "https://www.white-note.com/app/languages/english/library.html",
+            "statement": "Music XML files are made available for public use by WhiteNote.",
+            "composition": "Public domain classical composition",
+            "edition": "No named redistribution licence is supplied by WhiteNote; source notices preserved."
+          },
+          "editionRights": "Unspecified; exact original XML retained."
+        },
+        {
+          "id": "hanon-part-1-003",
+          "number": 3,
+          "title": "Bài 03",
+          "sourceUrl": "https://www.white-note.com/app/languages/english/library.html",
+          "downloadUrl": "https://www.white-note.com/library/hanon_01_20.zip",
+          "sourceSha256": "2c9a7b3c8660b3173f285a3b51abf5fcc9336b8aab0e203fc5850a2ae51bc18f",
+          "archiveMember": "Hanon_03.xml",
+          "license": "LicenseRef-WhiteNote-Public-Use",
+          "sourceRights": {
+            "statementUrl": "https://www.white-note.com/app/languages/english/library.html",
+            "statement": "Music XML files are made available for public use by WhiteNote.",
+            "composition": "Public domain classical composition",
+            "edition": "No named redistribution licence is supplied by WhiteNote; source notices preserved."
+          },
+          "editionRights": "Unspecified; exact original XML retained."
+        },
+        {
+          "id": "hanon-part-1-004",
+          "number": 4,
+          "title": "Bài 04",
+          "sourceUrl": "https://www.white-note.com/app/languages/english/library.html",
+          "downloadUrl": "https://www.white-note.com/library/hanon_01_20.zip",
+          "sourceSha256": "2c9a7b3c8660b3173f285a3b51abf5fcc9336b8aab0e203fc5850a2ae51bc18f",
+          "archiveMember": "Hanon_04.xml",
+          "license": "LicenseRef-WhiteNote-Public-Use",
+          "sourceRights": {
+            "statementUrl": "https://www.white-note.com/app/languages/english/library.html",
+            "statement": "Music XML files are made available for public use by WhiteNote.",
+            "composition": "Public domain classical composition",
+            "edition": "No named redistribution licence is supplied by WhiteNote; source notices preserved."
+          },
+          "editionRights": "Unspecified; exact original XML retained."
+        },
+        {
+          "id": "hanon-part-1-005",
+          "number": 5,
+          "title": "Bài 05",
+          "sourceUrl": "https://www.white-note.com/app/languages/english/library.html",
+          "downloadUrl": "https://www.white-note.com/library/hanon_01_20.zip",
+          "sourceSha256": "2c9a7b3c8660b3173f285a3b51abf5fcc9336b8aab0e203fc5850a2ae51bc18f",
+          "archiveMember": "Hanon_05.xml",
+          "license": "LicenseRef-WhiteNote-Public-Use",
+          "sourceRights": {
+            "statementUrl": "https://www.white-note.com/app/languages/english/library.html",
+            "statement": "Music XML files are made available for public use by WhiteNote.",
+            "composition": "Public domain classical composition",
+            "edition": "No named redistribution licence is supplied by WhiteNote; source notices preserved."
+          },
+          "editionRights": "Unspecified; exact original XML retained."
+        },
+        {
+          "id": "hanon-part-1-006",
+          "number": 6,
+          "title": "Bài 06",
+          "sourceUrl": "https://www.white-note.com/app/languages/english/library.html",
+          "downloadUrl": "https://www.white-note.com/library/hanon_01_20.zip",
+          "sourceSha256": "2c9a7b3c8660b3173f285a3b51abf5fcc9336b8aab0e203fc5850a2ae51bc18f",
+          "archiveMember": "Hanon_06.xml",
+          "license": "LicenseRef-WhiteNote-Public-Use",
+          "sourceRights": {
+            "statementUrl": "https://www.white-note.com/app/languages/english/library.html",
+            "statement": "Music XML files are made available for public use by WhiteNote.",
+            "composition": "Public domain classical composition",
+            "edition": "No named redistribution licence is supplied by WhiteNote; source notices preserved."
+          },
+          "editionRights": "Unspecified; exact original XML retained."
+        },
+        {
+          "id": "hanon-part-1-007",
+          "number": 7,
+          "title": "Bài 07",
+          "sourceUrl": "https://www.white-note.com/app/languages/english/library.html",
+          "downloadUrl": "https://www.white-note.com/library/hanon_01_20.zip",
+          "sourceSha256": "2c9a7b3c8660b3173f285a3b51abf5fcc9336b8aab0e203fc5850a2ae51bc18f",
+          "archiveMember": "Hanon_07.xml",
+          "license": "LicenseRef-WhiteNote-Public-Use",
+          "sourceRights": {
+            "statementUrl": "https://www.white-note.com/app/languages/english/library.html",
+            "statement": "Music XML files are made available for public use by WhiteNote.",
+            "composition": "Public domain classical composition",
+            "edition": "No named redistribution licence is supplied by WhiteNote; source notices preserved."
+          },
+          "editionRights": "Unspecified; exact original XML retained."
+        },
+        {
+          "id": "hanon-part-1-008",
+          "number": 8,
+          "title": "Bài 08",
+          "sourceUrl": "https://www.white-note.com/app/languages/english/library.html",
+          "downloadUrl": "https://www.white-note.com/library/hanon_01_20.zip",
+          "sourceSha256": "2c9a7b3c8660b3173f285a3b51abf5fcc9336b8aab0e203fc5850a2ae51bc18f",
+          "archiveMember": "Hanon_08.xml",
+          "license": "LicenseRef-WhiteNote-Public-Use",
+          "sourceRights": {
+            "statementUrl": "https://www.white-note.com/app/languages/english/library.html",
+            "statement": "Music XML files are made available for public use by WhiteNote.",
+            "composition": "Public domain classical composition",
+            "edition": "No named redistribution licence is supplied by WhiteNote; source notices preserved."
+          },
+          "editionRights": "Unspecified; exact original XML retained."
+        },
+        {
+          "id": "hanon-part-1-009",
+          "number": 9,
+          "title": "Bài 09",
+          "sourceUrl": "https://www.white-note.com/app/languages/english/library.html",
+          "downloadUrl": "https://www.white-note.com/library/hanon_01_20.zip",
+          "sourceSha256": "2c9a7b3c8660b3173f285a3b51abf5fcc9336b8aab0e203fc5850a2ae51bc18f",
+          "archiveMember": "Hanon_09.xml",
+          "license": "LicenseRef-WhiteNote-Public-Use",
+          "sourceRights": {
+            "statementUrl": "https://www.white-note.com/app/languages/english/library.html",
+            "statement": "Music XML files are made available for public use by WhiteNote.",
+            "composition": "Public domain classical composition",
+            "edition": "No named redistribution licence is supplied by WhiteNote; source notices preserved."
+          },
+          "editionRights": "Unspecified; exact original XML retained."
+        },
+        {
+          "id": "hanon-part-1-010",
+          "number": 10,
+          "title": "Bài 10",
+          "sourceUrl": "https://www.white-note.com/app/languages/english/library.html",
+          "downloadUrl": "https://www.white-note.com/library/hanon_01_20.zip",
+          "sourceSha256": "2c9a7b3c8660b3173f285a3b51abf5fcc9336b8aab0e203fc5850a2ae51bc18f",
+          "archiveMember": "Hanon_10.xml",
+          "license": "LicenseRef-WhiteNote-Public-Use",
+          "sourceRights": {
+            "statementUrl": "https://www.white-note.com/app/languages/english/library.html",
+            "statement": "Music XML files are made available for public use by WhiteNote.",
+            "composition": "Public domain classical composition",
+            "edition": "No named redistribution licence is supplied by WhiteNote; source notices preserved."
+          },
+          "editionRights": "Unspecified; exact original XML retained."
+        },
+        {
+          "id": "hanon-part-1-011",
+          "number": 11,
+          "title": "Bài 11",
+          "sourceUrl": "https://www.white-note.com/app/languages/english/library.html",
+          "downloadUrl": "https://www.white-note.com/library/hanon_01_20.zip",
+          "sourceSha256": "2c9a7b3c8660b3173f285a3b51abf5fcc9336b8aab0e203fc5850a2ae51bc18f",
+          "archiveMember": "Hanon_11.xml",
+          "license": "LicenseRef-WhiteNote-Public-Use",
+          "sourceRights": {
+            "statementUrl": "https://www.white-note.com/app/languages/english/library.html",
+            "statement": "Music XML files are made available for public use by WhiteNote.",
+            "composition": "Public domain classical composition",
+            "edition": "No named redistribution licence is supplied by WhiteNote; source notices preserved."
+          },
+          "editionRights": "Unspecified; exact original XML retained."
+        },
+        {
+          "id": "hanon-part-1-012",
+          "number": 12,
+          "title": "Bài 12",
+          "sourceUrl": "https://www.white-note.com/app/languages/english/library.html",
+          "downloadUrl": "https://www.white-note.com/library/hanon_01_20.zip",
+          "sourceSha256": "2c9a7b3c8660b3173f285a3b51abf5fcc9336b8aab0e203fc5850a2ae51bc18f",
+          "archiveMember": "Hanon_12.xml",
+          "license": "LicenseRef-WhiteNote-Public-Use",
+          "sourceRights": {
+            "statementUrl": "https://www.white-note.com/app/languages/english/library.html",
+            "statement": "Music XML files are made available for public use by WhiteNote.",
+            "composition": "Public domain classical composition",
+            "edition": "No named redistribution licence is supplied by WhiteNote; source notices preserved."
+          },
+          "editionRights": "Unspecified; exact original XML retained."
+        },
+        {
+          "id": "hanon-part-1-013",
+          "number": 13,
+          "title": "Bài 13",
+          "sourceUrl": "https://www.white-note.com/app/languages/english/library.html",
+          "downloadUrl": "https://www.white-note.com/library/hanon_01_20.zip",
+          "sourceSha256": "2c9a7b3c8660b3173f285a3b51abf5fcc9336b8aab0e203fc5850a2ae51bc18f",
+          "archiveMember": "Hanon_13.xml",
+          "license": "LicenseRef-WhiteNote-Public-Use",
+          "sourceRights": {
+            "statementUrl": "https://www.white-note.com/app/languages/english/library.html",
+            "statement": "Music XML files are made available for public use by WhiteNote.",
+            "composition": "Public domain classical composition",
+            "edition": "No named redistribution licence is supplied by WhiteNote; source notices preserved."
+          },
+          "editionRights": "Unspecified; exact original XML retained."
+        },
+        {
+          "id": "hanon-part-1-014",
+          "number": 14,
+          "title": "Bài 14",
+          "sourceUrl": "https://www.white-note.com/app/languages/english/library.html",
+          "downloadUrl": "https://www.white-note.com/library/hanon_01_20.zip",
+          "sourceSha256": "2c9a7b3c8660b3173f285a3b51abf5fcc9336b8aab0e203fc5850a2ae51bc18f",
+          "archiveMember": "Hanon_14.xml",
+          "license": "LicenseRef-WhiteNote-Public-Use",
+          "sourceRights": {
+            "statementUrl": "https://www.white-note.com/app/languages/english/library.html",
+            "statement": "Music XML files are made available for public use by WhiteNote.",
+            "composition": "Public domain classical composition",
+            "edition": "No named redistribution licence is supplied by WhiteNote; source notices preserved."
+          },
+          "editionRights": "Unspecified; exact original XML retained."
+        },
+        {
+          "id": "hanon-part-1-015",
+          "number": 15,
+          "title": "Bài 15",
+          "sourceUrl": "https://www.white-note.com/app/languages/english/library.html",
+          "downloadUrl": "https://www.white-note.com/library/hanon_01_20.zip",
+          "sourceSha256": "2c9a7b3c8660b3173f285a3b51abf5fcc9336b8aab0e203fc5850a2ae51bc18f",
+          "archiveMember": "Hanon_15.xml",
+          "license": "LicenseRef-WhiteNote-Public-Use",
+          "sourceRights": {
+            "statementUrl": "https://www.white-note.com/app/languages/english/library.html",
+            "statement": "Music XML files are made available for public use by WhiteNote.",
+            "composition": "Public domain classical composition",
+            "edition": "No named redistribution licence is supplied by WhiteNote; source notices preserved."
+          },
+          "editionRights": "Unspecified; exact original XML retained."
+        },
+        {
+          "id": "hanon-part-1-016",
+          "number": 16,
+          "title": "Bài 16",
+          "sourceUrl": "https://www.white-note.com/app/languages/english/library.html",
+          "downloadUrl": "https://www.white-note.com/library/hanon_01_20.zip",
+          "sourceSha256": "2c9a7b3c8660b3173f285a3b51abf5fcc9336b8aab0e203fc5850a2ae51bc18f",
+          "archiveMember": "Hanon_16.xml",
+          "license": "LicenseRef-WhiteNote-Public-Use",
+          "sourceRights": {
+            "statementUrl": "https://www.white-note.com/app/languages/english/library.html",
+            "statement": "Music XML files are made available for public use by WhiteNote.",
+            "composition": "Public domain classical composition",
+            "edition": "No named redistribution licence is supplied by WhiteNote; source notices preserved."
+          },
+          "editionRights": "Unspecified; exact original XML retained."
+        },
+        {
+          "id": "hanon-part-1-017",
+          "number": 17,
+          "title": "Bài 17",
+          "sourceUrl": "https://www.white-note.com/app/languages/english/library.html",
+          "downloadUrl": "https://www.white-note.com/library/hanon_01_20.zip",
+          "sourceSha256": "2c9a7b3c8660b3173f285a3b51abf5fcc9336b8aab0e203fc5850a2ae51bc18f",
+          "archiveMember": "Hanon_17.xml",
+          "license": "LicenseRef-WhiteNote-Public-Use",
+          "sourceRights": {
+            "statementUrl": "https://www.white-note.com/app/languages/english/library.html",
+            "statement": "Music XML files are made available for public use by WhiteNote.",
+            "composition": "Public domain classical composition",
+            "edition": "No named redistribution licence is supplied by WhiteNote; source notices preserved."
+          },
+          "editionRights": "Unspecified; exact original XML retained."
+        },
+        {
+          "id": "hanon-part-1-018",
+          "number": 18,
+          "title": "Bài 18",
+          "sourceUrl": "https://www.white-note.com/app/languages/english/library.html",
+          "downloadUrl": "https://www.white-note.com/library/hanon_01_20.zip",
+          "sourceSha256": "2c9a7b3c8660b3173f285a3b51abf5fcc9336b8aab0e203fc5850a2ae51bc18f",
+          "archiveMember": "Hanon_18.xml",
+          "license": "LicenseRef-WhiteNote-Public-Use",
+          "sourceRights": {
+            "statementUrl": "https://www.white-note.com/app/languages/english/library.html",
+            "statement": "Music XML files are made available for public use by WhiteNote.",
+            "composition": "Public domain classical composition",
+            "edition": "No named redistribution licence is supplied by WhiteNote; source notices preserved."
+          },
+          "editionRights": "Unspecified; exact original XML retained."
+        },
+        {
+          "id": "hanon-part-1-019",
+          "number": 19,
+          "title": "Bài 19",
+          "sourceUrl": "https://www.white-note.com/app/languages/english/library.html",
+          "downloadUrl": "https://www.white-note.com/library/hanon_01_20.zip",
+          "sourceSha256": "2c9a7b3c8660b3173f285a3b51abf5fcc9336b8aab0e203fc5850a2ae51bc18f",
+          "archiveMember": "Hanon_19.xml",
+          "license": "LicenseRef-WhiteNote-Public-Use",
+          "sourceRights": {
+            "statementUrl": "https://www.white-note.com/app/languages/english/library.html",
+            "statement": "Music XML files are made available for public use by WhiteNote.",
+            "composition": "Public domain classical composition",
+            "edition": "No named redistribution licence is supplied by WhiteNote; source notices preserved."
+          },
+          "editionRights": "Unspecified; exact original XML retained."
+        },
+        {
+          "id": "hanon-part-1-020",
+          "number": 20,
+          "title": "Bài 20",
+          "sourceUrl": "https://www.white-note.com/app/languages/english/library.html",
+          "downloadUrl": "https://www.white-note.com/library/hanon_01_20.zip",
+          "sourceSha256": "2c9a7b3c8660b3173f285a3b51abf5fcc9336b8aab0e203fc5850a2ae51bc18f",
+          "archiveMember": "Hanon_20.xml",
+          "license": "LicenseRef-WhiteNote-Public-Use",
+          "sourceRights": {
+            "statementUrl": "https://www.white-note.com/app/languages/english/library.html",
+            "statement": "Music XML files are made available for public use by WhiteNote.",
+            "composition": "Public domain classical composition",
+            "edition": "No named redistribution licence is supplied by WhiteNote; source notices preserved."
+          },
+          "editionRights": "Unspecified; exact original XML retained."
+        }
+      ],
+      "sourceUrl": "https://www.white-note.com/app/languages/english/library.html",
+      "sourceRights": {
+        "statementUrl": "https://www.white-note.com/app/languages/english/library.html",
+        "statement": "Music XML files are made available for public use by WhiteNote.",
+        "composition": "Public domain classical composition",
+        "edition": "No named redistribution licence is supplied by WhiteNote; source notices preserved."
+      },
+      "editionRights": "Source shared for public use; no named licence supplied."
+    },
+    {
+      "id": "czerny-op-599",
+      "title": "Czerny — Op.599",
+      "composer": "Carl Czerny",
+      "opus": "Op.599",
+      "description": "Practical Method for Beginners. Có bài 1–60 trong bộ 100 bài; giữ thứ tự và nội dung bản nguồn.",
+      "expectedLessons": 100,
+      "lessons": [
+        {
+          "id": "czerny-op-599-001",
+          "number": 1,
+          "title": "Bài 01",
+          "sourceUrl": "https://www.white-note.com/app/languages/english/library.html",
+          "downloadUrl": "https://www.white-note.com/library/czerny_opus_599.zip",
+          "sourceSha256": "87d1cc167130e61c3af73d346c754dc377894f38c8f240110c397a0bafe03d74",
+          "archiveMember": "Etude 1.xml",
+          "license": "LicenseRef-WhiteNote-Public-Use",
+          "sourceRights": {
+            "statementUrl": "https://www.white-note.com/app/languages/english/library.html",
+            "statement": "Music XML files are made available for public use by WhiteNote.",
+            "composition": "Public domain classical composition",
+            "edition": "No named redistribution licence is supplied by WhiteNote; source notices preserved."
+          },
+          "editionRights": "Unspecified; exact original XML retained."
+        },
+        {
+          "id": "czerny-op-599-002",
+          "number": 2,
+          "title": "Bài 02",
+          "sourceUrl": "https://www.white-note.com/app/languages/english/library.html",
+          "downloadUrl": "https://www.white-note.com/library/czerny_opus_599.zip",
+          "sourceSha256": "87d1cc167130e61c3af73d346c754dc377894f38c8f240110c397a0bafe03d74",
+          "archiveMember": "Etude 2.xml",
+          "license": "LicenseRef-WhiteNote-Public-Use",
+          "sourceRights": {
+            "statementUrl": "https://www.white-note.com/app/languages/english/library.html",
+            "statement": "Music XML files are made available for public use by WhiteNote.",
+            "composition": "Public domain classical composition",
+            "edition": "No named redistribution licence is supplied by WhiteNote; source notices preserved."
+          },
+          "editionRights": "Unspecified; exact original XML retained."
+        },
+        {
+          "id": "czerny-op-599-003",
+          "number": 3,
+          "title": "Bài 03",
+          "sourceUrl": "https://www.white-note.com/app/languages/english/library.html",
+          "downloadUrl": "https://www.white-note.com/library/czerny_opus_599.zip",
+          "sourceSha256": "87d1cc167130e61c3af73d346c754dc377894f38c8f240110c397a0bafe03d74",
+          "archiveMember": "Etude 3.xml",
+          "license": "LicenseRef-WhiteNote-Public-Use",
+          "sourceRights": {
+            "statementUrl": "https://www.white-note.com/app/languages/english/library.html",
+            "statement": "Music XML files are made available for public use by WhiteNote.",
+            "composition": "Public domain classical composition",
+            "edition": "No named redistribution licence is supplied by WhiteNote; source notices preserved."
+          },
+          "editionRights": "Unspecified; exact original XML retained."
+        },
+        {
+          "id": "czerny-op-599-004",
+          "number": 4,
+          "title": "Bài 04",
+          "sourceUrl": "https://www.white-note.com/app/languages/english/library.html",
+          "downloadUrl": "https://www.white-note.com/library/czerny_opus_599.zip",
+          "sourceSha256": "87d1cc167130e61c3af73d346c754dc377894f38c8f240110c397a0bafe03d74",
+          "archiveMember": "Etude 4.xml",
+          "license": "LicenseRef-WhiteNote-Public-Use",
+          "sourceRights": {
+            "statementUrl": "https://www.white-note.com/app/languages/english/library.html",
+            "statement": "Music XML files are made available for public use by WhiteNote.",
+            "composition": "Public domain classical composition",
+            "edition": "No named redistribution licence is supplied by WhiteNote; source notices preserved."
+          },
+          "editionRights": "Unspecified; exact original XML retained."
+        },
+        {
+          "id": "czerny-op-599-005",
+          "number": 5,
+          "title": "Bài 05",
+          "sourceUrl": "https://www.white-note.com/app/languages/english/library.html",
+          "downloadUrl": "https://www.white-note.com/library/czerny_opus_599.zip",
+          "sourceSha256": "87d1cc167130e61c3af73d346c754dc377894f38c8f240110c397a0bafe03d74",
+          "archiveMember": "Etude 5.xml",
+          "license": "LicenseRef-WhiteNote-Public-Use",
+          "sourceRights": {
+            "statementUrl": "https://www.white-note.com/app/languages/english/library.html",
+            "statement": "Music XML files are made available for public use by WhiteNote.",
+            "composition": "Public domain classical composition",
+            "edition": "No named redistribution licence is supplied by WhiteNote; source notices preserved."
+          },
+          "editionRights": "Unspecified; exact original XML retained."
+        },
+        {
+          "id": "czerny-op-599-006",
+          "number": 6,
+          "title": "Bài 06",
+          "sourceUrl": "https://www.white-note.com/app/languages/english/library.html",
+          "downloadUrl": "https://www.white-note.com/library/czerny_opus_599.zip",
+          "sourceSha256": "87d1cc167130e61c3af73d346c754dc377894f38c8f240110c397a0bafe03d74",
+          "archiveMember": "Etude 6.xml",
+          "license": "LicenseRef-WhiteNote-Public-Use",
+          "sourceRights": {
+            "statementUrl": "https://www.white-note.com/app/languages/english/library.html",
+            "statement": "Music XML files are made available for public use by WhiteNote.",
+            "composition": "Public domain classical composition",
+            "edition": "No named redistribution licence is supplied by WhiteNote; source notices preserved."
+          },
+          "editionRights": "Unspecified; exact original XML retained."
+        },
+        {
+          "id": "czerny-op-599-007",
+          "number": 7,
+          "title": "Bài 07",
+          "sourceUrl": "https://www.white-note.com/app/languages/english/library.html",
+          "downloadUrl": "https://www.white-note.com/library/czerny_opus_599.zip",
+          "sourceSha256": "87d1cc167130e61c3af73d346c754dc377894f38c8f240110c397a0bafe03d74",
+          "archiveMember": "Etude 7.xml",
+          "license": "LicenseRef-WhiteNote-Public-Use",
+          "sourceRights": {
+            "statementUrl": "https://www.white-note.com/app/languages/english/library.html",
+            "statement": "Music XML files are made available for public use by WhiteNote.",
+            "composition": "Public domain classical composition",
+            "edition": "No named redistribution licence is supplied by WhiteNote; source notices preserved."
+          },
+          "editionRights": "Unspecified; exact original XML retained."
+        },
+        {
+          "id": "czerny-op-599-008",
+          "number": 8,
+          "title": "Bài 08",
+          "sourceUrl": "https://www.white-note.com/app/languages/english/library.html",
+          "downloadUrl": "https://www.white-note.com/library/czerny_opus_599.zip",
+          "sourceSha256": "87d1cc167130e61c3af73d346c754dc377894f38c8f240110c397a0bafe03d74",
+          "archiveMember": "Etude 8.xml",
+          "license": "LicenseRef-WhiteNote-Public-Use",
+          "sourceRights": {
+            "statementUrl": "https://www.white-note.com/app/languages/english/library.html",
+            "statement": "Music XML files are made available for public use by WhiteNote.",
+            "composition": "Public domain classical composition",
+            "edition": "No named redistribution licence is supplied by WhiteNote; source notices preserved."
+          },
+          "editionRights": "Unspecified; exact original XML retained."
+        },
+        {
+          "id": "czerny-op-599-009",
+          "number": 9,
+          "title": "Bài 09",
+          "sourceUrl": "https://www.white-note.com/app/languages/english/library.html",
+          "downloadUrl": "https://www.white-note.com/library/czerny_opus_599.zip",
+          "sourceSha256": "87d1cc167130e61c3af73d346c754dc377894f38c8f240110c397a0bafe03d74",
+          "archiveMember": "Etude 9.xml",
+          "license": "LicenseRef-WhiteNote-Public-Use",
+          "sourceRights": {
+            "statementUrl": "https://www.white-note.com/app/languages/english/library.html",
+            "statement": "Music XML files are made available for public use by WhiteNote.",
+            "composition": "Public domain classical composition",
+            "edition": "No named redistribution licence is supplied by WhiteNote; source notices preserved."
+          },
+          "editionRights": "Unspecified; exact original XML retained."
+        },
+        {
+          "id": "czerny-op-599-010",
+          "number": 10,
+          "title": "Bài 10",
+          "sourceUrl": "https://www.white-note.com/app/languages/english/library.html",
+          "downloadUrl": "https://www.white-note.com/library/czerny_opus_599.zip",
+          "sourceSha256": "87d1cc167130e61c3af73d346c754dc377894f38c8f240110c397a0bafe03d74",
+          "archiveMember": "Etude 10.xml",
+          "license": "LicenseRef-WhiteNote-Public-Use",
+          "sourceRights": {
+            "statementUrl": "https://www.white-note.com/app/languages/english/library.html",
+            "statement": "Music XML files are made available for public use by WhiteNote.",
+            "composition": "Public domain classical composition",
+            "edition": "No named redistribution licence is supplied by WhiteNote; source notices preserved."
+          },
+          "editionRights": "Unspecified; exact original XML retained."
+        },
+        {
+          "id": "czerny-op-599-011",
+          "number": 11,
+          "title": "Bài 11",
+          "sourceUrl": "https://www.white-note.com/app/languages/english/library.html",
+          "downloadUrl": "https://www.white-note.com/library/czerny_opus_599.zip",
+          "sourceSha256": "87d1cc167130e61c3af73d346c754dc377894f38c8f240110c397a0bafe03d74",
+          "archiveMember": "Etude 11.xml",
+          "license": "LicenseRef-WhiteNote-Public-Use",
+          "sourceRights": {
+            "statementUrl": "https://www.white-note.com/app/languages/english/library.html",
+            "statement": "Music XML files are made available for public use by WhiteNote.",
+            "composition": "Public domain classical composition",
+            "edition": "No named redistribution licence is supplied by WhiteNote; source notices preserved."
+          },
+          "editionRights": "Unspecified; exact original XML retained."
+        },
+        {
+          "id": "czerny-op-599-012",
+          "number": 12,
+          "title": "Bài 12",
+          "sourceUrl": "https://www.white-note.com/app/languages/english/library.html",
+          "downloadUrl": "https://www.white-note.com/library/czerny_opus_599.zip",
+          "sourceSha256": "87d1cc167130e61c3af73d346c754dc377894f38c8f240110c397a0bafe03d74",
+          "archiveMember": "Etude 12.xml",
+          "license": "LicenseRef-WhiteNote-Public-Use",
+          "sourceRights": {
+            "statementUrl": "https://www.white-note.com/app/languages/english/library.html",
+            "statement": "Music XML files are made available for public use by WhiteNote.",
+            "composition": "Public domain classical composition",
+            "edition": "No named redistribution licence is supplied by WhiteNote; source notices preserved."
+          },
+          "editionRights": "Unspecified; exact original XML retained."
+        },
+        {
+          "id": "czerny-op-599-013",
+          "number": 13,
+          "title": "Bài 13",
+          "sourceUrl": "https://www.white-note.com/app/languages/english/library.html",
+          "downloadUrl": "https://www.white-note.com/library/czerny_opus_599.zip",
+          "sourceSha256": "87d1cc167130e61c3af73d346c754dc377894f38c8f240110c397a0bafe03d74",
+          "archiveMember": "Etude 13.xml",
+          "license": "LicenseRef-WhiteNote-Public-Use",
+          "sourceRights": {
+            "statementUrl": "https://www.white-note.com/app/languages/english/library.html",
+            "statement": "Music XML files are made available for public use by WhiteNote.",
+            "composition": "Public domain classical composition",
+            "edition": "No named redistribution licence is supplied by WhiteNote; source notices preserved."
+          },
+          "editionRights": "Unspecified; exact original XML retained."
+        },
+        {
+          "id": "czerny-op-599-014",
+          "number": 14,
+          "title": "Bài 14",
+          "sourceUrl": "https://www.white-note.com/app/languages/english/library.html",
+          "downloadUrl": "https://www.white-note.com/library/czerny_opus_599.zip",
+          "sourceSha256": "87d1cc167130e61c3af73d346c754dc377894f38c8f240110c397a0bafe03d74",
+          "archiveMember": "Etude 14.xml",
+          "license": "LicenseRef-WhiteNote-Public-Use",
+          "sourceRights": {
+            "statementUrl": "https://www.white-note.com/app/languages/english/library.html",
+            "statement": "Music XML files are made available for public use by WhiteNote.",
+            "composition": "Public domain classical composition",
+            "edition": "No named redistribution licence is supplied by WhiteNote; source notices preserved."
+          },
+          "editionRights": "Unspecified; exact original XML retained."
+        },
+        {
+          "id": "czerny-op-599-015",
+          "number": 15,
+          "title": "Bài 15",
+          "sourceUrl": "https://www.white-note.com/app/languages/english/library.html",
+          "downloadUrl": "https://www.white-note.com/library/czerny_opus_599.zip",
+          "sourceSha256": "87d1cc167130e61c3af73d346c754dc377894f38c8f240110c397a0bafe03d74",
+          "archiveMember": "Etude 15.xml",
+          "license": "LicenseRef-WhiteNote-Public-Use",
+          "sourceRights": {
+            "statementUrl": "https://www.white-note.com/app/languages/english/library.html",
+            "statement": "Music XML files are made available for public use by WhiteNote.",
+            "composition": "Public domain classical composition",
+            "edition": "No named redistribution licence is supplied by WhiteNote; source notices preserved."
+          },
+          "editionRights": "Unspecified; exact original XML retained."
+        },
+        {
+          "id": "czerny-op-599-016",
+          "number": 16,
+          "title": "Bài 16",
+          "sourceUrl": "https://www.white-note.com/app/languages/english/library.html",
+          "downloadUrl": "https://www.white-note.com/library/czerny_opus_599.zip",
+          "sourceSha256": "87d1cc167130e61c3af73d346c754dc377894f38c8f240110c397a0bafe03d74",
+          "archiveMember": "Etude 16.xml",
+          "license": "LicenseRef-WhiteNote-Public-Use",
+          "sourceRights": {
+            "statementUrl": "https://www.white-note.com/app/languages/english/library.html",
+            "statement": "Music XML files are made available for public use by WhiteNote.",
+            "composition": "Public domain classical composition",
+            "edition": "No named redistribution licence is supplied by WhiteNote; source notices preserved."
+          },
+          "editionRights": "Unspecified; exact original XML retained."
+        },
+        {
+          "id": "czerny-op-599-017",
+          "number": 17,
+          "title": "Bài 17",
+          "sourceUrl": "https://www.white-note.com/app/languages/english/library.html",
+          "downloadUrl": "https://www.white-note.com/library/czerny_opus_599.zip",
+          "sourceSha256": "87d1cc167130e61c3af73d346c754dc377894f38c8f240110c397a0bafe03d74",
+          "archiveMember": "Etude 17.xml",
+          "license": "LicenseRef-WhiteNote-Public-Use",
+          "sourceRights": {
+            "statementUrl": "https://www.white-note.com/app/languages/english/library.html",
+            "statement": "Music XML files are made available for public use by WhiteNote.",
+            "composition": "Public domain classical composition",
+            "edition": "No named redistribution licence is supplied by WhiteNote; source notices preserved."
+          },
+          "editionRights": "Unspecified; exact original XML retained."
+        },
+        {
+          "id": "czerny-op-599-018",
+          "number": 18,
+          "title": "Bài 18",
+          "sourceUrl": "https://www.white-note.com/app/languages/english/library.html",
+          "downloadUrl": "https://www.white-note.com/library/czerny_opus_599.zip",
+          "sourceSha256": "87d1cc167130e61c3af73d346c754dc377894f38c8f240110c397a0bafe03d74",
+          "archiveMember": "Etude 18.xml",
+          "license": "LicenseRef-WhiteNote-Public-Use",
+          "sourceRights": {
+            "statementUrl": "https://www.white-note.com/app/languages/english/library.html",
+            "statement": "Music XML files are made available for public use by WhiteNote.",
+            "composition": "Public domain classical composition",
+            "edition": "No named redistribution licence is supplied by WhiteNote; source notices preserved."
+          },
+          "editionRights": "Unspecified; exact original XML retained."
+        },
+        {
+          "id": "czerny-op-599-019",
+          "number": 19,
+          "title": "Bài 19",
+          "sourceUrl": "https://www.white-note.com/app/languages/english/library.html",
+          "downloadUrl": "https://www.white-note.com/library/czerny_opus_599.zip",
+          "sourceSha256": "87d1cc167130e61c3af73d346c754dc377894f38c8f240110c397a0bafe03d74",
+          "archiveMember": "Etude 19.xml",
+          "license": "LicenseRef-WhiteNote-Public-Use",
+          "sourceRights": {
+            "statementUrl": "https://www.white-note.com/app/languages/english/library.html",
+            "statement": "Music XML files are made available for public use by WhiteNote.",
+            "composition": "Public domain classical composition",
+            "edition": "No named redistribution licence is supplied by WhiteNote; source notices preserved."
+          },
+          "editionRights": "Unspecified; exact original XML retained."
+        },
+        {
+          "id": "czerny-op-599-020",
+          "number": 20,
+          "title": "Bài 20",
+          "sourceUrl": "https://www.white-note.com/app/languages/english/library.html",
+          "downloadUrl": "https://www.white-note.com/library/czerny_opus_599.zip",
+          "sourceSha256": "87d1cc167130e61c3af73d346c754dc377894f38c8f240110c397a0bafe03d74",
+          "archiveMember": "Etude 20.xml",
+          "license": "LicenseRef-WhiteNote-Public-Use",
+          "sourceRights": {
+            "statementUrl": "https://www.white-note.com/app/languages/english/library.html",
+            "statement": "Music XML files are made available for public use by WhiteNote.",
+            "composition": "Public domain classical composition",
+            "edition": "No named redistribution licence is supplied by WhiteNote; source notices preserved."
+          },
+          "editionRights": "Unspecified; exact original XML retained."
+        },
+        {
+          "id": "czerny-op-599-021",
+          "number": 21,
+          "title": "Bài 21",
+          "sourceUrl": "https://www.white-note.com/app/languages/english/library.html",
+          "downloadUrl": "https://www.white-note.com/library/czerny_opus_599.zip",
+          "sourceSha256": "87d1cc167130e61c3af73d346c754dc377894f38c8f240110c397a0bafe03d74",
+          "archiveMember": "Etude 21.xml",
+          "license": "LicenseRef-WhiteNote-Public-Use",
+          "sourceRights": {
+            "statementUrl": "https://www.white-note.com/app/languages/english/library.html",
+            "statement": "Music XML files are made available for public use by WhiteNote.",
+            "composition": "Public domain classical composition",
+            "edition": "No named redistribution licence is supplied by WhiteNote; source notices preserved."
+          },
+          "editionRights": "Unspecified; exact original XML retained."
+        },
+        {
+          "id": "czerny-op-599-022",
+          "number": 22,
+          "title": "Bài 22",
+          "sourceUrl": "https://www.white-note.com/app/languages/english/library.html",
+          "downloadUrl": "https://www.white-note.com/library/czerny_opus_599.zip",
+          "sourceSha256": "87d1cc167130e61c3af73d346c754dc377894f38c8f240110c397a0bafe03d74",
+          "archiveMember": "Etude 22.xml",
+          "license": "LicenseRef-WhiteNote-Public-Use",
+          "sourceRights": {
+            "statementUrl": "https://www.white-note.com/app/languages/english/library.html",
+            "statement": "Music XML files are made available for public use by WhiteNote.",
+            "composition": "Public domain classical composition",
+            "edition": "No named redistribution licence is supplied by WhiteNote; source notices preserved."
+          },
+          "editionRights": "Unspecified; exact original XML retained."
+        },
+        {
+          "id": "czerny-op-599-023",
+          "number": 23,
+          "title": "Bài 23",
+          "sourceUrl": "https://www.white-note.com/app/languages/english/library.html",
+          "downloadUrl": "https://www.white-note.com/library/czerny_opus_599.zip",
+          "sourceSha256": "87d1cc167130e61c3af73d346c754dc377894f38c8f240110c397a0bafe03d74",
+          "archiveMember": "Etude 23.xml",
+          "license": "LicenseRef-WhiteNote-Public-Use",
+          "sourceRights": {
+            "statementUrl": "https://www.white-note.com/app/languages/english/library.html",
+            "statement": "Music XML files are made available for public use by WhiteNote.",
+            "composition": "Public domain classical composition",
+            "edition": "No named redistribution licence is supplied by WhiteNote; source notices preserved."
+          },
+          "editionRights": "Unspecified; exact original XML retained."
+        },
+        {
+          "id": "czerny-op-599-024",
+          "number": 24,
+          "title": "Bài 24",
+          "sourceUrl": "https://www.white-note.com/app/languages/english/library.html",
+          "downloadUrl": "https://www.white-note.com/library/czerny_opus_599.zip",
+          "sourceSha256": "87d1cc167130e61c3af73d346c754dc377894f38c8f240110c397a0bafe03d74",
+          "archiveMember": "Etude 24.xml",
+          "license": "LicenseRef-WhiteNote-Public-Use",
+          "sourceRights": {
+            "statementUrl": "https://www.white-note.com/app/languages/english/library.html",
+            "statement": "Music XML files are made available for public use by WhiteNote.",
+            "composition": "Public domain classical composition",
+            "edition": "No named redistribution licence is supplied by WhiteNote; source notices preserved."
+          },
+          "editionRights": "Unspecified; exact original XML retained."
+        },
+        {
+          "id": "czerny-op-599-025",
+          "number": 25,
+          "title": "Bài 25",
+          "sourceUrl": "https://www.white-note.com/app/languages/english/library.html",
+          "downloadUrl": "https://www.white-note.com/library/czerny_opus_599.zip",
+          "sourceSha256": "87d1cc167130e61c3af73d346c754dc377894f38c8f240110c397a0bafe03d74",
+          "archiveMember": "Etude 25.xml",
+          "license": "LicenseRef-WhiteNote-Public-Use",
+          "sourceRights": {
+            "statementUrl": "https://www.white-note.com/app/languages/english/library.html",
+            "statement": "Music XML files are made available for public use by WhiteNote.",
+            "composition": "Public domain classical composition",
+            "edition": "No named redistribution licence is supplied by WhiteNote; source notices preserved."
+          },
+          "editionRights": "Unspecified; exact original XML retained."
+        },
+        {
+          "id": "czerny-op-599-026",
+          "number": 26,
+          "title": "Bài 26",
+          "sourceUrl": "https://www.white-note.com/app/languages/english/library.html",
+          "downloadUrl": "https://www.white-note.com/library/czerny_opus_599.zip",
+          "sourceSha256": "87d1cc167130e61c3af73d346c754dc377894f38c8f240110c397a0bafe03d74",
+          "archiveMember": "Etude 26.xml",
+          "license": "LicenseRef-WhiteNote-Public-Use",
+          "sourceRights": {
+            "statementUrl": "https://www.white-note.com/app/languages/english/library.html",
+            "statement": "Music XML files are made available for public use by WhiteNote.",
+            "composition": "Public domain classical composition",
+            "edition": "No named redistribution licence is supplied by WhiteNote; source notices preserved."
+          },
+          "editionRights": "Unspecified; exact original XML retained."
+        },
+        {
+          "id": "czerny-op-599-027",
+          "number": 27,
+          "title": "Bài 27",
+          "sourceUrl": "https://www.white-note.com/app/languages/english/library.html",
+          "downloadUrl": "https://www.white-note.com/library/czerny_opus_599.zip",
+          "sourceSha256": "87d1cc167130e61c3af73d346c754dc377894f38c8f240110c397a0bafe03d74",
+          "archiveMember": "Etude 27.xml",
+          "license": "LicenseRef-WhiteNote-Public-Use",
+          "sourceRights": {
+            "statementUrl": "https://www.white-note.com/app/languages/english/library.html",
+            "statement": "Music XML files are made available for public use by WhiteNote.",
+            "composition": "Public domain classical composition",
+            "edition": "No named redistribution licence is supplied by WhiteNote; source notices preserved."
+          },
+          "editionRights": "Unspecified; exact original XML retained."
+        },
+        {
+          "id": "czerny-op-599-028",
+          "number": 28,
+          "title": "Bài 28",
+          "sourceUrl": "https://www.white-note.com/app/languages/english/library.html",
+          "downloadUrl": "https://www.white-note.com/library/czerny_opus_599.zip",
+          "sourceSha256": "87d1cc167130e61c3af73d346c754dc377894f38c8f240110c397a0bafe03d74",
+          "archiveMember": "Etude 28.xml",
+          "license": "LicenseRef-WhiteNote-Public-Use",
+          "sourceRights": {
+            "statementUrl": "https://www.white-note.com/app/languages/english/library.html",
+            "statement": "Music XML files are made available for public use by WhiteNote.",
+            "composition": "Public domain classical composition",
+            "edition": "No named redistribution licence is supplied by WhiteNote; source notices preserved."
+          },
+          "editionRights": "Unspecified; exact original XML retained."
+        },
+        {
+          "id": "czerny-op-599-029",
+          "number": 29,
+          "title": "Bài 29",
+          "sourceUrl": "https://www.white-note.com/app/languages/english/library.html",
+          "downloadUrl": "https://www.white-note.com/library/czerny_opus_599.zip",
+          "sourceSha256": "87d1cc167130e61c3af73d346c754dc377894f38c8f240110c397a0bafe03d74",
+          "archiveMember": "Etude 29.xml",
+          "license": "LicenseRef-WhiteNote-Public-Use",
+          "sourceRights": {
+            "statementUrl": "https://www.white-note.com/app/languages/english/library.html",
+            "statement": "Music XML files are made available for public use by WhiteNote.",
+            "composition": "Public domain classical composition",
+            "edition": "No named redistribution licence is supplied by WhiteNote; source notices preserved."
+          },
+          "editionRights": "Unspecified; exact original XML retained."
+        },
+        {
+          "id": "czerny-op-599-030",
+          "number": 30,
+          "title": "Bài 30",
+          "sourceUrl": "https://www.white-note.com/app/languages/english/library.html",
+          "downloadUrl": "https://www.white-note.com/library/czerny_opus_599.zip",
+          "sourceSha256": "87d1cc167130e61c3af73d346c754dc377894f38c8f240110c397a0bafe03d74",
+          "archiveMember": "Etude 30.xml",
+          "license": "LicenseRef-WhiteNote-Public-Use",
+          "sourceRights": {
+            "statementUrl": "https://www.white-note.com/app/languages/english/library.html",
+            "statement": "Music XML files are made available for public use by WhiteNote.",
+            "composition": "Public domain classical composition",
+            "edition": "No named redistribution licence is supplied by WhiteNote; source notices preserved."
+          },
+          "editionRights": "Unspecified; exact original XML retained."
+        },
+        {
+          "id": "czerny-op-599-031",
+          "number": 31,
+          "title": "Bài 31",
+          "sourceUrl": "https://www.white-note.com/app/languages/english/library.html",
+          "downloadUrl": "https://www.white-note.com/library/czerny_opus_599.zip",
+          "sourceSha256": "87d1cc167130e61c3af73d346c754dc377894f38c8f240110c397a0bafe03d74",
+          "archiveMember": "Etude 31.xml",
+          "license": "LicenseRef-WhiteNote-Public-Use",
+          "sourceRights": {
+            "statementUrl": "https://www.white-note.com/app/languages/english/library.html",
+            "statement": "Music XML files are made available for public use by WhiteNote.",
+            "composition": "Public domain classical composition",
+            "edition": "No named redistribution licence is supplied by WhiteNote; source notices preserved."
+          },
+          "editionRights": "Unspecified; exact original XML retained."
+        },
+        {
+          "id": "czerny-op-599-032",
+          "number": 32,
+          "title": "Bài 32",
+          "sourceUrl": "https://www.white-note.com/app/languages/english/library.html",
+          "downloadUrl": "https://www.white-note.com/library/czerny_opus_599.zip",
+          "sourceSha256": "87d1cc167130e61c3af73d346c754dc377894f38c8f240110c397a0bafe03d74",
+          "archiveMember": "Etude 32.xml",
+          "license": "LicenseRef-WhiteNote-Public-Use",
+          "sourceRights": {
+            "statementUrl": "https://www.white-note.com/app/languages/english/library.html",
+            "statement": "Music XML files are made available for public use by WhiteNote.",
+            "composition": "Public domain classical composition",
+            "edition": "No named redistribution licence is supplied by WhiteNote; source notices preserved."
+          },
+          "editionRights": "Unspecified; exact original XML retained."
+        },
+        {
+          "id": "czerny-op-599-033",
+          "number": 33,
+          "title": "Bài 33",
+          "sourceUrl": "https://www.white-note.com/app/languages/english/library.html",
+          "downloadUrl": "https://www.white-note.com/library/czerny_opus_599.zip",
+          "sourceSha256": "87d1cc167130e61c3af73d346c754dc377894f38c8f240110c397a0bafe03d74",
+          "archiveMember": "Etude 33.xml",
+          "license": "LicenseRef-WhiteNote-Public-Use",
+          "sourceRights": {
+            "statementUrl": "https://www.white-note.com/app/languages/english/library.html",
+            "statement": "Music XML files are made available for public use by WhiteNote.",
+            "composition": "Public domain classical composition",
+            "edition": "No named redistribution licence is supplied by WhiteNote; source notices preserved."
+          },
+          "editionRights": "Unspecified; exact original XML retained."
+        },
+        {
+          "id": "czerny-op-599-034",
+          "number": 34,
+          "title": "Bài 34",
+          "sourceUrl": "https://www.white-note.com/app/languages/english/library.html",
+          "downloadUrl": "https://www.white-note.com/library/czerny_opus_599.zip",
+          "sourceSha256": "87d1cc167130e61c3af73d346c754dc377894f38c8f240110c397a0bafe03d74",
+          "archiveMember": "Etude 34.xml",
+          "license": "LicenseRef-WhiteNote-Public-Use",
+          "sourceRights": {
+            "statementUrl": "https://www.white-note.com/app/languages/english/library.html",
+            "statement": "Music XML files are made available for public use by WhiteNote.",
+            "composition": "Public domain classical composition",
+            "edition": "No named redistribution licence is supplied by WhiteNote; source notices preserved."
+          },
+          "editionRights": "Unspecified; exact original XML retained."
+        },
+        {
+          "id": "czerny-op-599-035",
+          "number": 35,
+          "title": "Bài 35",
+          "sourceUrl": "https://www.white-note.com/app/languages/english/library.html",
+          "downloadUrl": "https://www.white-note.com/library/czerny_opus_599.zip",
+          "sourceSha256": "87d1cc167130e61c3af73d346c754dc377894f38c8f240110c397a0bafe03d74",
+          "archiveMember": "Etude 35.xml",
+          "license": "LicenseRef-WhiteNote-Public-Use",
+          "sourceRights": {
+            "statementUrl": "https://www.white-note.com/app/languages/english/library.html",
+            "statement": "Music XML files are made available for public use by WhiteNote.",
+            "composition": "Public domain classical composition",
+            "edition": "No named redistribution licence is supplied by WhiteNote; source notices preserved."
+          },
+          "editionRights": "Unspecified; exact original XML retained."
+        },
+        {
+          "id": "czerny-op-599-036",
+          "number": 36,
+          "title": "Bài 36",
+          "sourceUrl": "https://www.white-note.com/app/languages/english/library.html",
+          "downloadUrl": "https://www.white-note.com/library/czerny_opus_599.zip",
+          "sourceSha256": "87d1cc167130e61c3af73d346c754dc377894f38c8f240110c397a0bafe03d74",
+          "archiveMember": "Etude 36.xml",
+          "license": "LicenseRef-WhiteNote-Public-Use",
+          "sourceRights": {
+            "statementUrl": "https://www.white-note.com/app/languages/english/library.html",
+            "statement": "Music XML files are made available for public use by WhiteNote.",
+            "composition": "Public domain classical composition",
+            "edition": "No named redistribution licence is supplied by WhiteNote; source notices preserved."
+          },
+          "editionRights": "Unspecified; exact original XML retained."
+        },
+        {
+          "id": "czerny-op-599-037",
+          "number": 37,
+          "title": "Bài 37",
+          "sourceUrl": "https://www.white-note.com/app/languages/english/library.html",
+          "downloadUrl": "https://www.white-note.com/library/czerny_opus_599.zip",
+          "sourceSha256": "87d1cc167130e61c3af73d346c754dc377894f38c8f240110c397a0bafe03d74",
+          "archiveMember": "Etude 37.xml",
+          "license": "LicenseRef-WhiteNote-Public-Use",
+          "sourceRights": {
+            "statementUrl": "https://www.white-note.com/app/languages/english/library.html",
+            "statement": "Music XML files are made available for public use by WhiteNote.",
+            "composition": "Public domain classical composition",
+            "edition": "No named redistribution licence is supplied by WhiteNote; source notices preserved."
+          },
+          "editionRights": "Unspecified; exact original XML retained."
+        },
+        {
+          "id": "czerny-op-599-038",
+          "number": 38,
+          "title": "Bài 38",
+          "sourceUrl": "https://www.white-note.com/app/languages/english/library.html",
+          "downloadUrl": "https://www.white-note.com/library/czerny_opus_599.zip",
+          "sourceSha256": "87d1cc167130e61c3af73d346c754dc377894f38c8f240110c397a0bafe03d74",
+          "archiveMember": "Etude 38.xml",
+          "license": "LicenseRef-WhiteNote-Public-Use",
+          "sourceRights": {
+            "statementUrl": "https://www.white-note.com/app/languages/english/library.html",
+            "statement": "Music XML files are made available for public use by WhiteNote.",
+            "composition": "Public domain classical composition",
+            "edition": "No named redistribution licence is supplied by WhiteNote; source notices preserved."
+          },
+          "editionRights": "Unspecified; exact original XML retained."
+        },
+        {
+          "id": "czerny-op-599-039",
+          "number": 39,
+          "title": "Bài 39",
+          "sourceUrl": "https://www.white-note.com/app/languages/english/library.html",
+          "downloadUrl": "https://www.white-note.com/library/czerny_opus_599.zip",
+          "sourceSha256": "87d1cc167130e61c3af73d346c754dc377894f38c8f240110c397a0bafe03d74",
+          "archiveMember": "Etude 39.xml",
+          "license": "LicenseRef-WhiteNote-Public-Use",
+          "sourceRights": {
+            "statementUrl": "https://www.white-note.com/app/languages/english/library.html",
+            "statement": "Music XML files are made available for public use by WhiteNote.",
+            "composition": "Public domain classical composition",
+            "edition": "No named redistribution licence is supplied by WhiteNote; source notices preserved."
+          },
+          "editionRights": "Unspecified; exact original XML retained."
+        },
+        {
+          "id": "czerny-op-599-040",
+          "number": 40,
+          "title": "Bài 40",
+          "sourceUrl": "https://www.white-note.com/app/languages/english/library.html",
+          "downloadUrl": "https://www.white-note.com/library/czerny_opus_599.zip",
+          "sourceSha256": "87d1cc167130e61c3af73d346c754dc377894f38c8f240110c397a0bafe03d74",
+          "archiveMember": "Etude 40.xml",
+          "license": "LicenseRef-WhiteNote-Public-Use",
+          "sourceRights": {
+            "statementUrl": "https://www.white-note.com/app/languages/english/library.html",
+            "statement": "Music XML files are made available for public use by WhiteNote.",
+            "composition": "Public domain classical composition",
+            "edition": "No named redistribution licence is supplied by WhiteNote; source notices preserved."
+          },
+          "editionRights": "Unspecified; exact original XML retained."
+        },
+        {
+          "id": "czerny-op-599-041",
+          "number": 41,
+          "title": "Bài 41",
+          "sourceUrl": "https://www.white-note.com/app/languages/english/library.html",
+          "downloadUrl": "https://www.white-note.com/library/czerny_opus_599.zip",
+          "sourceSha256": "87d1cc167130e61c3af73d346c754dc377894f38c8f240110c397a0bafe03d74",
+          "archiveMember": "Etude 41.xml",
+          "license": "LicenseRef-WhiteNote-Public-Use",
+          "sourceRights": {
+            "statementUrl": "https://www.white-note.com/app/languages/english/library.html",
+            "statement": "Music XML files are made available for public use by WhiteNote.",
+            "composition": "Public domain classical composition",
+            "edition": "No named redistribution licence is supplied by WhiteNote; source notices preserved."
+          },
+          "editionRights": "Unspecified; exact original XML retained."
+        },
+        {
+          "id": "czerny-op-599-042",
+          "number": 42,
+          "title": "Bài 42",
+          "sourceUrl": "https://www.white-note.com/app/languages/english/library.html",
+          "downloadUrl": "https://www.white-note.com/library/czerny_opus_599.zip",
+          "sourceSha256": "87d1cc167130e61c3af73d346c754dc377894f38c8f240110c397a0bafe03d74",
+          "archiveMember": "Etude 42.xml",
+          "license": "LicenseRef-WhiteNote-Public-Use",
+          "sourceRights": {
+            "statementUrl": "https://www.white-note.com/app/languages/english/library.html",
+            "statement": "Music XML files are made available for public use by WhiteNote.",
+            "composition": "Public domain classical composition",
+            "edition": "No named redistribution licence is supplied by WhiteNote; source notices preserved."
+          },
+          "editionRights": "Unspecified; exact original XML retained."
+        },
+        {
+          "id": "czerny-op-599-043",
+          "number": 43,
+          "title": "Bài 43",
+          "sourceUrl": "https://www.white-note.com/app/languages/english/library.html",
+          "downloadUrl": "https://www.white-note.com/library/czerny_opus_599.zip",
+          "sourceSha256": "87d1cc167130e61c3af73d346c754dc377894f38c8f240110c397a0bafe03d74",
+          "archiveMember": "Etude 43.xml",
+          "license": "LicenseRef-WhiteNote-Public-Use",
+          "sourceRights": {
+            "statementUrl": "https://www.white-note.com/app/languages/english/library.html",
+            "statement": "Music XML files are made available for public use by WhiteNote.",
+            "composition": "Public domain classical composition",
+            "edition": "No named redistribution licence is supplied by WhiteNote; source notices preserved."
+          },
+          "editionRights": "Unspecified; exact original XML retained."
+        },
+        {
+          "id": "czerny-op-599-044",
+          "number": 44,
+          "title": "Bài 44",
+          "sourceUrl": "https://www.white-note.com/app/languages/english/library.html",
+          "downloadUrl": "https://www.white-note.com/library/czerny_opus_599.zip",
+          "sourceSha256": "87d1cc167130e61c3af73d346c754dc377894f38c8f240110c397a0bafe03d74",
+          "archiveMember": "Etude 44.xml",
+          "license": "LicenseRef-WhiteNote-Public-Use",
+          "sourceRights": {
+            "statementUrl": "https://www.white-note.com/app/languages/english/library.html",
+            "statement": "Music XML files are made available for public use by WhiteNote.",
+            "composition": "Public domain classical composition",
+            "edition": "No named redistribution licence is supplied by WhiteNote; source notices preserved."
+          },
+          "editionRights": "Unspecified; exact original XML retained."
+        },
+        {
+          "id": "czerny-op-599-045",
+          "number": 45,
+          "title": "Bài 45",
+          "sourceUrl": "https://www.white-note.com/app/languages/english/library.html",
+          "downloadUrl": "https://www.white-note.com/library/czerny_opus_599.zip",
+          "sourceSha256": "87d1cc167130e61c3af73d346c754dc377894f38c8f240110c397a0bafe03d74",
+          "archiveMember": "Etude 45.xml",
+          "license": "LicenseRef-WhiteNote-Public-Use",
+          "sourceRights": {
+            "statementUrl": "https://www.white-note.com/app/languages/english/library.html",
+            "statement": "Music XML files are made available for public use by WhiteNote.",
+            "composition": "Public domain classical composition",
+            "edition": "No named redistribution licence is supplied by WhiteNote; source notices preserved."
+          },
+          "editionRights": "Unspecified; exact original XML retained."
+        },
+        {
+          "id": "czerny-op-599-046",
+          "number": 46,
+          "title": "Bài 46",
+          "sourceUrl": "https://www.white-note.com/app/languages/english/library.html",
+          "downloadUrl": "https://www.white-note.com/library/czerny_opus_599.zip",
+          "sourceSha256": "87d1cc167130e61c3af73d346c754dc377894f38c8f240110c397a0bafe03d74",
+          "archiveMember": "Etude 46.xml",
+          "license": "LicenseRef-WhiteNote-Public-Use",
+          "sourceRights": {
+            "statementUrl": "https://www.white-note.com/app/languages/english/library.html",
+            "statement": "Music XML files are made available for public use by WhiteNote.",
+            "composition": "Public domain classical composition",
+            "edition": "No named redistribution licence is supplied by WhiteNote; source notices preserved."
+          },
+          "editionRights": "Unspecified; exact original XML retained."
+        },
+        {
+          "id": "czerny-op-599-047",
+          "number": 47,
+          "title": "Bài 47",
+          "sourceUrl": "https://www.white-note.com/app/languages/english/library.html",
+          "downloadUrl": "https://www.white-note.com/library/czerny_opus_599.zip",
+          "sourceSha256": "87d1cc167130e61c3af73d346c754dc377894f38c8f240110c397a0bafe03d74",
+          "archiveMember": "Etude 47.xml",
+          "license": "LicenseRef-WhiteNote-Public-Use",
+          "sourceRights": {
+            "statementUrl": "https://www.white-note.com/app/languages/english/library.html",
+            "statement": "Music XML files are made available for public use by WhiteNote.",
+            "composition": "Public domain classical composition",
+            "edition": "No named redistribution licence is supplied by WhiteNote; source notices preserved."
+          },
+          "editionRights": "Unspecified; exact original XML retained."
+        },
+        {
+          "id": "czerny-op-599-048",
+          "number": 48,
+          "title": "Bài 48",
+          "sourceUrl": "https://www.white-note.com/app/languages/english/library.html",
+          "downloadUrl": "https://www.white-note.com/library/czerny_opus_599.zip",
+          "sourceSha256": "87d1cc167130e61c3af73d346c754dc377894f38c8f240110c397a0bafe03d74",
+          "archiveMember": "Etude 48.xml",
+          "license": "LicenseRef-WhiteNote-Public-Use",
+          "sourceRights": {
+            "statementUrl": "https://www.white-note.com/app/languages/english/library.html",
+            "statement": "Music XML files are made available for public use by WhiteNote.",
+            "composition": "Public domain classical composition",
+            "edition": "No named redistribution licence is supplied by WhiteNote; source notices preserved."
+          },
+          "editionRights": "Unspecified; exact original XML retained."
+        },
+        {
+          "id": "czerny-op-599-049",
+          "number": 49,
+          "title": "Bài 49",
+          "sourceUrl": "https://www.white-note.com/app/languages/english/library.html",
+          "downloadUrl": "https://www.white-note.com/library/czerny_opus_599.zip",
+          "sourceSha256": "87d1cc167130e61c3af73d346c754dc377894f38c8f240110c397a0bafe03d74",
+          "archiveMember": "Etude 49.xml",
+          "license": "LicenseRef-WhiteNote-Public-Use",
+          "sourceRights": {
+            "statementUrl": "https://www.white-note.com/app/languages/english/library.html",
+            "statement": "Music XML files are made available for public use by WhiteNote.",
+            "composition": "Public domain classical composition",
+            "edition": "No named redistribution licence is supplied by WhiteNote; source notices preserved."
+          },
+          "editionRights": "Unspecified; exact original XML retained."
+        },
+        {
+          "id": "czerny-op-599-050",
+          "number": 50,
+          "title": "Bài 50",
+          "sourceUrl": "https://www.white-note.com/app/languages/english/library.html",
+          "downloadUrl": "https://www.white-note.com/library/czerny_opus_599.zip",
+          "sourceSha256": "87d1cc167130e61c3af73d346c754dc377894f38c8f240110c397a0bafe03d74",
+          "archiveMember": "Etude 50.xml",
+          "license": "LicenseRef-WhiteNote-Public-Use",
+          "sourceRights": {
+            "statementUrl": "https://www.white-note.com/app/languages/english/library.html",
+            "statement": "Music XML files are made available for public use by WhiteNote.",
+            "composition": "Public domain classical composition",
+            "edition": "No named redistribution licence is supplied by WhiteNote; source notices preserved."
+          },
+          "editionRights": "Unspecified; exact original XML retained."
+        },
+        {
+          "id": "czerny-op-599-051",
+          "number": 51,
+          "title": "Bài 51",
+          "sourceUrl": "https://www.white-note.com/app/languages/english/library.html",
+          "downloadUrl": "https://www.white-note.com/library/czerny_opus_599.zip",
+          "sourceSha256": "87d1cc167130e61c3af73d346c754dc377894f38c8f240110c397a0bafe03d74",
+          "archiveMember": "Etude 51.xml",
+          "license": "LicenseRef-WhiteNote-Public-Use",
+          "sourceRights": {
+            "statementUrl": "https://www.white-note.com/app/languages/english/library.html",
+            "statement": "Music XML files are made available for public use by WhiteNote.",
+            "composition": "Public domain classical composition",
+            "edition": "No named redistribution licence is supplied by WhiteNote; source notices preserved."
+          },
+          "editionRights": "Unspecified; exact original XML retained."
+        },
+        {
+          "id": "czerny-op-599-052",
+          "number": 52,
+          "title": "Bài 52",
+          "sourceUrl": "https://www.white-note.com/app/languages/english/library.html",
+          "downloadUrl": "https://www.white-note.com/library/czerny_opus_599.zip",
+          "sourceSha256": "87d1cc167130e61c3af73d346c754dc377894f38c8f240110c397a0bafe03d74",
+          "archiveMember": "Etude 52.xml",
+          "license": "LicenseRef-WhiteNote-Public-Use",
+          "sourceRights": {
+            "statementUrl": "https://www.white-note.com/app/languages/english/library.html",
+            "statement": "Music XML files are made available for public use by WhiteNote.",
+            "composition": "Public domain classical composition",
+            "edition": "No named redistribution licence is supplied by WhiteNote; source notices preserved."
+          },
+          "editionRights": "Unspecified; exact original XML retained."
+        },
+        {
+          "id": "czerny-op-599-053",
+          "number": 53,
+          "title": "Bài 53",
+          "sourceUrl": "https://www.white-note.com/app/languages/english/library.html",
+          "downloadUrl": "https://www.white-note.com/library/czerny_opus_599.zip",
+          "sourceSha256": "87d1cc167130e61c3af73d346c754dc377894f38c8f240110c397a0bafe03d74",
+          "archiveMember": "Etude 53.xml",
+          "license": "LicenseRef-WhiteNote-Public-Use",
+          "sourceRights": {
+            "statementUrl": "https://www.white-note.com/app/languages/english/library.html",
+            "statement": "Music XML files are made available for public use by WhiteNote.",
+            "composition": "Public domain classical composition",
+            "edition": "No named redistribution licence is supplied by WhiteNote; source notices preserved."
+          },
+          "editionRights": "Unspecified; exact original XML retained."
+        },
+        {
+          "id": "czerny-op-599-054",
+          "number": 54,
+          "title": "Bài 54",
+          "sourceUrl": "https://www.white-note.com/app/languages/english/library.html",
+          "downloadUrl": "https://www.white-note.com/library/czerny_opus_599.zip",
+          "sourceSha256": "87d1cc167130e61c3af73d346c754dc377894f38c8f240110c397a0bafe03d74",
+          "archiveMember": "Etude 54.xml",
+          "license": "LicenseRef-WhiteNote-Public-Use",
+          "sourceRights": {
+            "statementUrl": "https://www.white-note.com/app/languages/english/library.html",
+            "statement": "Music XML files are made available for public use by WhiteNote.",
+            "composition": "Public domain classical composition",
+            "edition": "No named redistribution licence is supplied by WhiteNote; source notices preserved."
+          },
+          "editionRights": "Unspecified; exact original XML retained."
+        },
+        {
+          "id": "czerny-op-599-055",
+          "number": 55,
+          "title": "Bài 55",
+          "sourceUrl": "https://www.white-note.com/app/languages/english/library.html",
+          "downloadUrl": "https://www.white-note.com/library/czerny_opus_599.zip",
+          "sourceSha256": "87d1cc167130e61c3af73d346c754dc377894f38c8f240110c397a0bafe03d74",
+          "archiveMember": "Etude 55.xml",
+          "license": "LicenseRef-WhiteNote-Public-Use",
+          "sourceRights": {
+            "statementUrl": "https://www.white-note.com/app/languages/english/library.html",
+            "statement": "Music XML files are made available for public use by WhiteNote.",
+            "composition": "Public domain classical composition",
+            "edition": "No named redistribution licence is supplied by WhiteNote; source notices preserved."
+          },
+          "editionRights": "Unspecified; exact original XML retained."
+        },
+        {
+          "id": "czerny-op-599-056",
+          "number": 56,
+          "title": "Bài 56",
+          "sourceUrl": "https://www.white-note.com/app/languages/english/library.html",
+          "downloadUrl": "https://www.white-note.com/library/czerny_opus_599.zip",
+          "sourceSha256": "87d1cc167130e61c3af73d346c754dc377894f38c8f240110c397a0bafe03d74",
+          "archiveMember": "Etude 56.xml",
+          "license": "LicenseRef-WhiteNote-Public-Use",
+          "sourceRights": {
+            "statementUrl": "https://www.white-note.com/app/languages/english/library.html",
+            "statement": "Music XML files are made available for public use by WhiteNote.",
+            "composition": "Public domain classical composition",
+            "edition": "No named redistribution licence is supplied by WhiteNote; source notices preserved."
+          },
+          "editionRights": "Unspecified; exact original XML retained."
+        },
+        {
+          "id": "czerny-op-599-057",
+          "number": 57,
+          "title": "Bài 57",
+          "sourceUrl": "https://www.white-note.com/app/languages/english/library.html",
+          "downloadUrl": "https://www.white-note.com/library/czerny_opus_599.zip",
+          "sourceSha256": "87d1cc167130e61c3af73d346c754dc377894f38c8f240110c397a0bafe03d74",
+          "archiveMember": "Etude 57.xml",
+          "license": "LicenseRef-WhiteNote-Public-Use",
+          "sourceRights": {
+            "statementUrl": "https://www.white-note.com/app/languages/english/library.html",
+            "statement": "Music XML files are made available for public use by WhiteNote.",
+            "composition": "Public domain classical composition",
+            "edition": "No named redistribution licence is supplied by WhiteNote; source notices preserved."
+          },
+          "editionRights": "Unspecified; exact original XML retained."
+        },
+        {
+          "id": "czerny-op-599-058",
+          "number": 58,
+          "title": "Bài 58",
+          "sourceUrl": "https://www.white-note.com/app/languages/english/library.html",
+          "downloadUrl": "https://www.white-note.com/library/czerny_opus_599.zip",
+          "sourceSha256": "87d1cc167130e61c3af73d346c754dc377894f38c8f240110c397a0bafe03d74",
+          "archiveMember": "Etude 58.xml",
+          "license": "LicenseRef-WhiteNote-Public-Use",
+          "sourceRights": {
+            "statementUrl": "https://www.white-note.com/app/languages/english/library.html",
+            "statement": "Music XML files are made available for public use by WhiteNote.",
+            "composition": "Public domain classical composition",
+            "edition": "No named redistribution licence is supplied by WhiteNote; source notices preserved."
+          },
+          "editionRights": "Unspecified; exact original XML retained."
+        },
+        {
+          "id": "czerny-op-599-059",
+          "number": 59,
+          "title": "Bài 59",
+          "sourceUrl": "https://www.white-note.com/app/languages/english/library.html",
+          "downloadUrl": "https://www.white-note.com/library/czerny_opus_599.zip",
+          "sourceSha256": "87d1cc167130e61c3af73d346c754dc377894f38c8f240110c397a0bafe03d74",
+          "archiveMember": "Etude 59.xml",
+          "license": "LicenseRef-WhiteNote-Public-Use",
+          "sourceRights": {
+            "statementUrl": "https://www.white-note.com/app/languages/english/library.html",
+            "statement": "Music XML files are made available for public use by WhiteNote.",
+            "composition": "Public domain classical composition",
+            "edition": "No named redistribution licence is supplied by WhiteNote; source notices preserved."
+          },
+          "editionRights": "Unspecified; exact original XML retained."
+        },
+        {
+          "id": "czerny-op-599-060",
+          "number": 60,
+          "title": "Bài 60",
+          "sourceUrl": "https://www.white-note.com/app/languages/english/library.html",
+          "downloadUrl": "https://www.white-note.com/library/czerny_opus_599.zip",
+          "sourceSha256": "87d1cc167130e61c3af73d346c754dc377894f38c8f240110c397a0bafe03d74",
+          "archiveMember": "Etude 60.xml",
+          "license": "LicenseRef-WhiteNote-Public-Use",
+          "sourceRights": {
+            "statementUrl": "https://www.white-note.com/app/languages/english/library.html",
+            "statement": "Music XML files are made available for public use by WhiteNote.",
+            "composition": "Public domain classical composition",
+            "edition": "No named redistribution licence is supplied by WhiteNote; source notices preserved."
+          },
+          "editionRights": "Unspecified; exact original XML retained."
+        }
+      ],
+      "sourceUrl": "https://www.white-note.com/app/languages/english/library.html",
+      "sourceRights": {
+        "statementUrl": "https://www.white-note.com/app/languages/english/library.html",
+        "statement": "Music XML files are made available for public use by WhiteNote.",
+        "composition": "Public domain classical composition",
+        "edition": "No named redistribution licence is supplied by WhiteNote; source notices preserved."
+      },
+      "editionRights": "Source shared for public use; no named licence supplied."
+    },
+    {
+      "id": "czerny-op-299",
+      "title": "Czerny — Op.299",
+      "composer": "Carl Czerny",
+      "opus": "Op.299",
+      "description": "The School of Velocity. Có bài 1–15 trong bộ 40 bài; số ngón chỉ hiện ở những bài có sẵn trong nguồn.",
+      "expectedLessons": 40,
+      "lessons": [
+        {
+          "id": "czerny-op-299-001",
+          "number": 1,
+          "title": "Bài 01",
+          "sourceUrl": "https://www.white-note.com/app/languages/english/library.html",
+          "downloadUrl": "https://www.white-note.com/library/czerny_299.zip",
+          "sourceSha256": "8220142bc6dcb7cce4d4b6181b552406660178d8b9d563038ee271eaba2d600d",
+          "archiveMember": "C-299-no1.xml",
+          "license": "LicenseRef-WhiteNote-Public-Use",
+          "sourceRights": {
+            "statementUrl": "https://www.white-note.com/app/languages/english/library.html",
+            "statement": "Music XML files are made available for public use by WhiteNote.",
+            "composition": "Public domain classical composition",
+            "edition": "No named redistribution licence is supplied by WhiteNote; source notices preserved."
+          },
+          "editionRights": "Unspecified; exact original XML retained."
+        },
+        {
+          "id": "czerny-op-299-002",
+          "number": 2,
+          "title": "Bài 02",
+          "sourceUrl": "https://www.white-note.com/app/languages/english/library.html",
+          "downloadUrl": "https://www.white-note.com/library/czerny_299.zip",
+          "sourceSha256": "8220142bc6dcb7cce4d4b6181b552406660178d8b9d563038ee271eaba2d600d",
+          "archiveMember": "C-299-no2.xml",
+          "license": "LicenseRef-WhiteNote-Public-Use",
+          "sourceRights": {
+            "statementUrl": "https://www.white-note.com/app/languages/english/library.html",
+            "statement": "Music XML files are made available for public use by WhiteNote.",
+            "composition": "Public domain classical composition",
+            "edition": "No named redistribution licence is supplied by WhiteNote; source notices preserved."
+          },
+          "editionRights": "Unspecified; exact original XML retained."
+        },
+        {
+          "id": "czerny-op-299-003",
+          "number": 3,
+          "title": "Bài 03",
+          "sourceUrl": "https://www.white-note.com/app/languages/english/library.html",
+          "downloadUrl": "https://www.white-note.com/library/czerny_299.zip",
+          "sourceSha256": "8220142bc6dcb7cce4d4b6181b552406660178d8b9d563038ee271eaba2d600d",
+          "archiveMember": "C-299-no3.xml",
+          "license": "LicenseRef-WhiteNote-Public-Use",
+          "sourceRights": {
+            "statementUrl": "https://www.white-note.com/app/languages/english/library.html",
+            "statement": "Music XML files are made available for public use by WhiteNote.",
+            "composition": "Public domain classical composition",
+            "edition": "No named redistribution licence is supplied by WhiteNote; source notices preserved."
+          },
+          "editionRights": "Unspecified; exact original XML retained."
+        },
+        {
+          "id": "czerny-op-299-004",
+          "number": 4,
+          "title": "Bài 04",
+          "sourceUrl": "https://www.white-note.com/app/languages/english/library.html",
+          "downloadUrl": "https://www.white-note.com/library/czerny_299.zip",
+          "sourceSha256": "8220142bc6dcb7cce4d4b6181b552406660178d8b9d563038ee271eaba2d600d",
+          "archiveMember": "C-299-no4.xml",
+          "license": "LicenseRef-WhiteNote-Public-Use",
+          "sourceRights": {
+            "statementUrl": "https://www.white-note.com/app/languages/english/library.html",
+            "statement": "Music XML files are made available for public use by WhiteNote.",
+            "composition": "Public domain classical composition",
+            "edition": "No named redistribution licence is supplied by WhiteNote; source notices preserved."
+          },
+          "editionRights": "Unspecified; exact original XML retained."
+        },
+        {
+          "id": "czerny-op-299-005",
+          "number": 5,
+          "title": "Bài 05",
+          "sourceUrl": "https://www.white-note.com/app/languages/english/library.html",
+          "downloadUrl": "https://www.white-note.com/library/czerny_299.zip",
+          "sourceSha256": "8220142bc6dcb7cce4d4b6181b552406660178d8b9d563038ee271eaba2d600d",
+          "archiveMember": "C-299-no5.xml",
+          "license": "LicenseRef-WhiteNote-Public-Use",
+          "sourceRights": {
+            "statementUrl": "https://www.white-note.com/app/languages/english/library.html",
+            "statement": "Music XML files are made available for public use by WhiteNote.",
+            "composition": "Public domain classical composition",
+            "edition": "No named redistribution licence is supplied by WhiteNote; source notices preserved."
+          },
+          "editionRights": "Unspecified; exact original XML retained."
+        },
+        {
+          "id": "czerny-op-299-006",
+          "number": 6,
+          "title": "Bài 06",
+          "sourceUrl": "https://www.white-note.com/app/languages/english/library.html",
+          "downloadUrl": "https://www.white-note.com/library/czerny_299.zip",
+          "sourceSha256": "8220142bc6dcb7cce4d4b6181b552406660178d8b9d563038ee271eaba2d600d",
+          "archiveMember": "C-299-no6.xml",
+          "license": "LicenseRef-WhiteNote-Public-Use",
+          "sourceRights": {
+            "statementUrl": "https://www.white-note.com/app/languages/english/library.html",
+            "statement": "Music XML files are made available for public use by WhiteNote.",
+            "composition": "Public domain classical composition",
+            "edition": "No named redistribution licence is supplied by WhiteNote; source notices preserved."
+          },
+          "editionRights": "Unspecified; exact original XML retained."
+        },
+        {
+          "id": "czerny-op-299-007",
+          "number": 7,
+          "title": "Bài 07",
+          "sourceUrl": "https://www.white-note.com/app/languages/english/library.html",
+          "downloadUrl": "https://www.white-note.com/library/czerny_299.zip",
+          "sourceSha256": "8220142bc6dcb7cce4d4b6181b552406660178d8b9d563038ee271eaba2d600d",
+          "archiveMember": "C-299-no7.xml",
+          "license": "LicenseRef-WhiteNote-Public-Use",
+          "sourceRights": {
+            "statementUrl": "https://www.white-note.com/app/languages/english/library.html",
+            "statement": "Music XML files are made available for public use by WhiteNote.",
+            "composition": "Public domain classical composition",
+            "edition": "No named redistribution licence is supplied by WhiteNote; source notices preserved."
+          },
+          "editionRights": "Unspecified; exact original XML retained."
+        },
+        {
+          "id": "czerny-op-299-008",
+          "number": 8,
+          "title": "Bài 08",
+          "sourceUrl": "https://www.white-note.com/app/languages/english/library.html",
+          "downloadUrl": "https://www.white-note.com/library/czerny_299.zip",
+          "sourceSha256": "8220142bc6dcb7cce4d4b6181b552406660178d8b9d563038ee271eaba2d600d",
+          "archiveMember": "C-299-no8.xml",
+          "license": "LicenseRef-WhiteNote-Public-Use",
+          "sourceRights": {
+            "statementUrl": "https://www.white-note.com/app/languages/english/library.html",
+            "statement": "Music XML files are made available for public use by WhiteNote.",
+            "composition": "Public domain classical composition",
+            "edition": "No named redistribution licence is supplied by WhiteNote; source notices preserved."
+          },
+          "editionRights": "Unspecified; exact original XML retained."
+        },
+        {
+          "id": "czerny-op-299-009",
+          "number": 9,
+          "title": "Bài 09",
+          "sourceUrl": "https://www.white-note.com/app/languages/english/library.html",
+          "downloadUrl": "https://www.white-note.com/library/czerny_299.zip",
+          "sourceSha256": "8220142bc6dcb7cce4d4b6181b552406660178d8b9d563038ee271eaba2d600d",
+          "archiveMember": "C-299-no9.xml",
+          "license": "LicenseRef-WhiteNote-Public-Use",
+          "sourceRights": {
+            "statementUrl": "https://www.white-note.com/app/languages/english/library.html",
+            "statement": "Music XML files are made available for public use by WhiteNote.",
+            "composition": "Public domain classical composition",
+            "edition": "No named redistribution licence is supplied by WhiteNote; source notices preserved."
+          },
+          "editionRights": "Unspecified; exact original XML retained."
+        },
+        {
+          "id": "czerny-op-299-010",
+          "number": 10,
+          "title": "Bài 10",
+          "sourceUrl": "https://www.white-note.com/app/languages/english/library.html",
+          "downloadUrl": "https://www.white-note.com/library/czerny_299.zip",
+          "sourceSha256": "8220142bc6dcb7cce4d4b6181b552406660178d8b9d563038ee271eaba2d600d",
+          "archiveMember": "C-299-no10.xml",
+          "license": "LicenseRef-WhiteNote-Public-Use",
+          "sourceRights": {
+            "statementUrl": "https://www.white-note.com/app/languages/english/library.html",
+            "statement": "Music XML files are made available for public use by WhiteNote.",
+            "composition": "Public domain classical composition",
+            "edition": "No named redistribution licence is supplied by WhiteNote; source notices preserved."
+          },
+          "editionRights": "Unspecified; exact original XML retained."
+        },
+        {
+          "id": "czerny-op-299-011",
+          "number": 11,
+          "title": "Bài 11",
+          "sourceUrl": "https://www.white-note.com/app/languages/english/library.html",
+          "downloadUrl": "https://www.white-note.com/library/czerny_299.zip",
+          "sourceSha256": "8220142bc6dcb7cce4d4b6181b552406660178d8b9d563038ee271eaba2d600d",
+          "archiveMember": "C-299-no11.xml",
+          "license": "LicenseRef-WhiteNote-Public-Use",
+          "sourceRights": {
+            "statementUrl": "https://www.white-note.com/app/languages/english/library.html",
+            "statement": "Music XML files are made available for public use by WhiteNote.",
+            "composition": "Public domain classical composition",
+            "edition": "No named redistribution licence is supplied by WhiteNote; source notices preserved."
+          },
+          "editionRights": "Unspecified; exact original XML retained."
+        },
+        {
+          "id": "czerny-op-299-012",
+          "number": 12,
+          "title": "Bài 12",
+          "sourceUrl": "https://www.white-note.com/app/languages/english/library.html",
+          "downloadUrl": "https://www.white-note.com/library/czerny_299.zip",
+          "sourceSha256": "8220142bc6dcb7cce4d4b6181b552406660178d8b9d563038ee271eaba2d600d",
+          "archiveMember": "C-299-no12.xml",
+          "license": "LicenseRef-WhiteNote-Public-Use",
+          "sourceRights": {
+            "statementUrl": "https://www.white-note.com/app/languages/english/library.html",
+            "statement": "Music XML files are made available for public use by WhiteNote.",
+            "composition": "Public domain classical composition",
+            "edition": "No named redistribution licence is supplied by WhiteNote; source notices preserved."
+          },
+          "editionRights": "Unspecified; exact original XML retained."
+        },
+        {
+          "id": "czerny-op-299-013",
+          "number": 13,
+          "title": "Bài 13",
+          "sourceUrl": "https://www.white-note.com/app/languages/english/library.html",
+          "downloadUrl": "https://www.white-note.com/library/czerny_299.zip",
+          "sourceSha256": "8220142bc6dcb7cce4d4b6181b552406660178d8b9d563038ee271eaba2d600d",
+          "archiveMember": "C-299-no13.xml",
+          "license": "LicenseRef-WhiteNote-Public-Use",
+          "sourceRights": {
+            "statementUrl": "https://www.white-note.com/app/languages/english/library.html",
+            "statement": "Music XML files are made available for public use by WhiteNote.",
+            "composition": "Public domain classical composition",
+            "edition": "No named redistribution licence is supplied by WhiteNote; source notices preserved."
+          },
+          "editionRights": "Unspecified; exact original XML retained."
+        },
+        {
+          "id": "czerny-op-299-014",
+          "number": 14,
+          "title": "Bài 14",
+          "sourceUrl": "https://www.white-note.com/app/languages/english/library.html",
+          "downloadUrl": "https://www.white-note.com/library/czerny_299.zip",
+          "sourceSha256": "8220142bc6dcb7cce4d4b6181b552406660178d8b9d563038ee271eaba2d600d",
+          "archiveMember": "C-299-no14.xml",
+          "license": "LicenseRef-WhiteNote-Public-Use",
+          "sourceRights": {
+            "statementUrl": "https://www.white-note.com/app/languages/english/library.html",
+            "statement": "Music XML files are made available for public use by WhiteNote.",
+            "composition": "Public domain classical composition",
+            "edition": "No named redistribution licence is supplied by WhiteNote; source notices preserved."
+          },
+          "editionRights": "Unspecified; exact original XML retained."
+        },
+        {
+          "id": "czerny-op-299-015",
+          "number": 15,
+          "title": "Bài 15",
+          "sourceUrl": "https://www.white-note.com/app/languages/english/library.html",
+          "downloadUrl": "https://www.white-note.com/library/czerny_299.zip",
+          "sourceSha256": "8220142bc6dcb7cce4d4b6181b552406660178d8b9d563038ee271eaba2d600d",
+          "archiveMember": "C-299-no15.xml",
+          "license": "LicenseRef-WhiteNote-Public-Use",
+          "sourceRights": {
+            "statementUrl": "https://www.white-note.com/app/languages/english/library.html",
+            "statement": "Music XML files are made available for public use by WhiteNote.",
+            "composition": "Public domain classical composition",
+            "edition": "No named redistribution licence is supplied by WhiteNote; source notices preserved."
+          },
+          "editionRights": "Unspecified; exact original XML retained."
+        }
+      ],
+      "sourceUrl": "https://www.white-note.com/app/languages/english/library.html",
+      "sourceRights": {
+        "statementUrl": "https://www.white-note.com/app/languages/english/library.html",
+        "statement": "Music XML files are made available for public use by WhiteNote.",
+        "composition": "Public domain classical composition",
+        "edition": "No named redistribution licence is supplied by WhiteNote; source notices preserved."
+      },
+      "editionRights": "Source shared for public use; no named licence supplied."
+    },
+    {
+      "id": "burgmuller-op-100",
+      "title": "Burgmüller — Op.100",
+      "composer": "Friedrich Burgmüller",
+      "opus": "Op.100",
+      "description": "25 études faciles et progressives. Có bài 1–18, giữ nguyên bản MusicXML và số ngón của từng bản nguồn.",
+      "expectedLessons": 25,
+      "lessons": [
+        {
+          "id": "burgmuller-op-100-001",
+          "number": 1,
+          "title": "Bài 01 · La candeur",
+          "sourceUrl": "https://noctavepiano.com/en/sheet-music/burgmuller-op100-1/",
+          "downloadUrl": "https://noctavepiano.com/partitions/burgmuller-op100-1/burgmuller-op100-1.mxl",
+          "sourceSha256": "12d71cc41353278face0dc7f6db81b026c9f8967b299c1ddb764b66b646fa534",
+          "license": "CC0-1.0",
+          "sourceRights": {
+            "statementUrl": "https://noctavepiano.com/en/sheet-music/burgmuller-op100-1/",
+            "musicxmlRights": [
+              "Noctave edition, CC0 1.0 (https://creativecommons.org/publicdomain/zero/1.0/). Composition: Friedrich Burgmüller (1806–1874), public domain. Source: Mutopia Project (Bas Wassink), d'après Collection Litolff (XIXe siècle) https://www.mutopiaproject.org/ftp/BurgmullerJFF/O100/25EF-01/. Made into this edition by Noctave (details: https://noctavepiano.com/partitions/burgmuller-op100-1/).",
+              "Public domain composition. Encoded for the Noctave project after the public domain Mutopia Project edition by Bas Wassink, CC0 1.0."
+            ]
+          },
+          "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attribution": "Noctave; original engraving from Mutopia Project. Original rights notices remain in MusicXML."
+        },
+        {
+          "id": "burgmuller-op-100-002",
+          "number": 2,
+          "title": "Bài 02 · L'arabesque",
+          "sourceUrl": "https://noctavepiano.com/en/sheet-music/burgmuller-op100-2/",
+          "downloadUrl": "https://noctavepiano.com/partitions/burgmuller-op100-2/burgmuller-op100-2.mxl",
+          "sourceSha256": "badcf826f6abf9c3255acd3219995c86abe250dbf530f7192d0cfc2335191e86",
+          "license": "CC0-1.0",
+          "sourceRights": {
+            "statementUrl": "https://noctavepiano.com/en/sheet-music/burgmuller-op100-2/",
+            "musicxmlRights": [
+              "Noctave edition, CC0 1.0 (https://creativecommons.org/publicdomain/zero/1.0/). Composition: Friedrich Burgmüller (1806–1874), public domain. Source: Mutopia Project (Bas Wassink), d'après Collection Litolff (XIXe siècle) https://www.mutopiaproject.org/ftp/BurgmullerJFF/O100/25EF-02/. Made into this edition by Noctave (details: https://noctavepiano.com/partitions/burgmuller-op100-2/).",
+              "Public domain composition. Encoded for the Noctave project after the public domain Mutopia Project edition by Bas Wassink, CC0 1.0."
+            ]
+          },
+          "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attribution": "Noctave; original engraving from Mutopia Project. Original rights notices remain in MusicXML."
+        },
+        {
+          "id": "burgmuller-op-100-003",
+          "number": 3,
+          "title": "Bài 03 · La pastorale",
+          "sourceUrl": "https://noctavepiano.com/en/sheet-music/burgmuller-op100-3/",
+          "downloadUrl": "https://noctavepiano.com/partitions/burgmuller-op100-3/burgmuller-op100-3.mxl",
+          "sourceSha256": "4f8cbf4cf31e97ae4dc6f33b4f0d39c143e32c6130be160b8fe9643fe50aaf8f",
+          "license": "CC0-1.0",
+          "sourceRights": {
+            "statementUrl": "https://noctavepiano.com/en/sheet-music/burgmuller-op100-3/",
+            "musicxmlRights": [
+              "Noctave edition, CC0 1.0 (https://creativecommons.org/publicdomain/zero/1.0/). Composition: Friedrich Burgmüller (1806–1874), public domain. Source: Mutopia Project (Bas Wassink), d'après Collection Litolff (XIXe siècle) https://www.mutopiaproject.org/ftp/BurgmullerJFF/O100/25EF-03/. Made into this edition by Noctave (details: https://noctavepiano.com/partitions/burgmuller-op100-3/).",
+              "Public domain composition. Encoded for the Noctave project after the public domain Mutopia Project edition by Bas Wassink, CC0 1.0."
+            ]
+          },
+          "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attribution": "Noctave; original engraving from Mutopia Project. Original rights notices remain in MusicXML."
+        },
+        {
+          "id": "burgmuller-op-100-004",
+          "number": 4,
+          "title": "Bài 04 · La Petite Réunion",
+          "sourceUrl": "https://noctavepiano.com/en/free-library/burgmuller-la-petite-reunion-opus-100/",
+          "downloadUrl": "https://noctavepiano.com/bibliotheque-libre/burgmuller-la-petite-reunion-opus-100/burgmuller-la-petite-reunion-opus-100.mxl",
+          "sourceSha256": "95d8401f8e8bf9aa4e4a0f8a27709015dc72c1a3e9a8d3f52c21a323cc34cc21",
+          "license": "Public-Domain",
+          "sourceRights": {
+            "statementUrl": "https://noctavepiano.com/en/free-library/burgmuller-la-petite-reunion-opus-100/",
+            "musicxmlRights": [
+              "Noctave engraving and MusicXML: public domain, like the Mutopia Project source. Composition: Friedrich Burgmüller (1806–1874), public domain. Source: Mutopia Project Mutopia-2013/01/12-219, typeset by Bas Wassink after Collection Litolff, 19th Century, https://www.mutopiaproject.org/cgibin/piece-info.cgi?id=219. Converted from its LilyPond source and checked note by note by Noctave: https://noctavepiano.com/bibliotheque-libre/burgmuller-la-petite-reunion-opus-100/"
+            ]
+          },
+          "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+          "attribution": "Noctave; original engraving from Mutopia Project. Original rights notices remain in MusicXML."
+        },
+        {
+          "id": "burgmuller-op-100-005",
+          "number": 5,
+          "title": "Bài 05 · L'innocence",
+          "sourceUrl": "https://noctavepiano.com/en/sheet-music/burgmuller-op100-5/",
+          "downloadUrl": "https://noctavepiano.com/partitions/burgmuller-op100-5/burgmuller-op100-5.mxl",
+          "sourceSha256": "73b8a09f5676b028a79d4e0c419ac927a8258769528d930e02cc1dcb3e820bc7",
+          "license": "CC0-1.0",
+          "sourceRights": {
+            "statementUrl": "https://noctavepiano.com/en/sheet-music/burgmuller-op100-5/",
+            "musicxmlRights": [
+              "Noctave edition, CC0 1.0 (https://creativecommons.org/publicdomain/zero/1.0/). Composition: Friedrich Burgmüller (1806–1874), public domain. Source: Mutopia Project (Bas Wassink), d'après Collection Litolff (XIXe siècle) https://www.mutopiaproject.org/ftp/BurgmullerJFF/O100/25EF-05/. Made into this edition by Noctave (details: https://noctavepiano.com/partitions/burgmuller-op100-5/).",
+              "Public domain composition. Encoded for the Noctave project after the public domain Mutopia Project edition by Bas Wassink, CC0 1.0."
+            ]
+          },
+          "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attribution": "Noctave; original engraving from Mutopia Project. Original rights notices remain in MusicXML."
+        },
+        {
+          "id": "burgmuller-op-100-006",
+          "number": 6,
+          "title": "Bài 06 · Le progrès",
+          "sourceUrl": "https://noctavepiano.com/en/sheet-music/burgmuller-op100-6/",
+          "downloadUrl": "https://noctavepiano.com/partitions/burgmuller-op100-6/burgmuller-op100-6.mxl",
+          "sourceSha256": "34fc9dc9d9e09724f53506836467b17eaa830fe378d5532b42da7fffcdd878c3",
+          "license": "CC0-1.0",
+          "sourceRights": {
+            "statementUrl": "https://noctavepiano.com/en/sheet-music/burgmuller-op100-6/",
+            "musicxmlRights": [
+              "Noctave edition, CC0 1.0 (https://creativecommons.org/publicdomain/zero/1.0/). Composition: Friedrich Burgmüller (1806–1874), public domain. Source: Mutopia Project (Bas Wassink), d'après Collection Litolff (XIXe siècle) https://www.mutopiaproject.org/ftp/BurgmullerJFF/O100/25EF-06/. Made into this edition by Noctave (details: https://noctavepiano.com/partitions/burgmuller-op100-6/).",
+              "Public domain composition. Encoded for the Noctave project after the public domain Mutopia Project edition by Bas Wassink, CC0 1.0."
+            ]
+          },
+          "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attribution": "Noctave; original engraving from Mutopia Project. Original rights notices remain in MusicXML."
+        },
+        {
+          "id": "burgmuller-op-100-007",
+          "number": 7,
+          "title": "Bài 07 · Le Courant Limpide",
+          "sourceUrl": "https://noctavepiano.com/en/free-library/burgmuller-le-courant-limpide-opus-100/",
+          "downloadUrl": "https://noctavepiano.com/bibliotheque-libre/burgmuller-le-courant-limpide-opus-100/burgmuller-le-courant-limpide-opus-100.mxl",
+          "sourceSha256": "72e51ee022e720351f34c91c106f7da81d5de5d76341a2ef9c0e3b2ae8f7936f",
+          "license": "Public-Domain",
+          "sourceRights": {
+            "statementUrl": "https://noctavepiano.com/en/free-library/burgmuller-le-courant-limpide-opus-100/",
+            "musicxmlRights": [
+              "Noctave engraving and MusicXML: public domain, like the Mutopia Project source. Composition: Friedrich Burgmüller (1806–1874), public domain. Source: Mutopia Project Mutopia-2013/01/12-216, typeset by Bas Wassink after Collection Litolff, 19th Century, https://www.mutopiaproject.org/cgibin/piece-info.cgi?id=216. Converted from its LilyPond source and checked note by note by Noctave: https://noctavepiano.com/bibliotheque-libre/burgmuller-le-courant-limpide-opus-100/"
+            ]
+          },
+          "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+          "attribution": "Noctave; original engraving from Mutopia Project. Original rights notices remain in MusicXML."
+        },
+        {
+          "id": "burgmuller-op-100-008",
+          "number": 8,
+          "title": "Bài 08 · La gracieuse",
+          "sourceUrl": "https://noctavepiano.com/en/sheet-music/burgmuller-op100-8/",
+          "downloadUrl": "https://noctavepiano.com/partitions/burgmuller-op100-8/burgmuller-op100-8.mxl",
+          "sourceSha256": "b18c79a8f010d3c07f5356f05ec54b10ce6dce13fd585baaca378c6a142af3ec",
+          "license": "CC0-1.0",
+          "sourceRights": {
+            "statementUrl": "https://noctavepiano.com/en/sheet-music/burgmuller-op100-8/",
+            "musicxmlRights": [
+              "Noctave edition, CC0 1.0 (https://creativecommons.org/publicdomain/zero/1.0/). Composition: Friedrich Burgmüller (1806–1874), public domain. Source: Mutopia Project (Bas Wassink), d'après Collection Litolff (XIXe siècle) https://www.mutopiaproject.org/ftp/BurgmullerJFF/O100/25EF-08/. Made into this edition by Noctave (details: https://noctavepiano.com/partitions/burgmuller-op100-8/).",
+              "Public domain composition. Encoded for the Noctave project after the public domain Mutopia Project edition by Bas Wassink, CC0 1.0."
+            ]
+          },
+          "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attribution": "Noctave; original engraving from Mutopia Project. Original rights notices remain in MusicXML."
+        },
+        {
+          "id": "burgmuller-op-100-009",
+          "number": 9,
+          "title": "Bài 09 · La Chasse",
+          "sourceUrl": "https://noctavepiano.com/en/free-library/burgmuller-la-chasse-opus-100/",
+          "downloadUrl": "https://noctavepiano.com/bibliotheque-libre/burgmuller-la-chasse-opus-100/burgmuller-la-chasse-opus-100.mxl",
+          "sourceSha256": "c0ca12dbca1b8342b2b51b44f1720627c4d106de8fdf05e2797641e85aedd657",
+          "license": "Public-Domain",
+          "sourceRights": {
+            "statementUrl": "https://noctavepiano.com/en/free-library/burgmuller-la-chasse-opus-100/",
+            "musicxmlRights": [
+              "Noctave engraving and MusicXML: public domain, like the Mutopia Project source. Composition: Friedrich Burgmüller (1806–1874), public domain. Source: Mutopia Project Mutopia-2013/01/12-220, typeset by Bas Wassink after Collection Litolff, 19th Century, https://www.mutopiaproject.org/cgibin/piece-info.cgi?id=220. Converted from its LilyPond source and checked note by note by Noctave: https://noctavepiano.com/bibliotheque-libre/burgmuller-la-chasse-opus-100/"
+            ]
+          },
+          "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+          "attribution": "Noctave; original engraving from Mutopia Project. Original rights notices remain in MusicXML."
+        },
+        {
+          "id": "burgmuller-op-100-010",
+          "number": 10,
+          "title": "Bài 10 · Tendre Fleur",
+          "sourceUrl": "https://noctavepiano.com/en/free-library/burgmuller-tendre-fleur-opus-100/",
+          "downloadUrl": "https://noctavepiano.com/bibliotheque-libre/burgmuller-tendre-fleur-opus-100/burgmuller-tendre-fleur-opus-100.mxl",
+          "sourceSha256": "0d66b1c85bde92b46c83ce6d9e34002420f4d911a50fbfe47e261fde1535cbf2",
+          "license": "Public-Domain",
+          "sourceRights": {
+            "statementUrl": "https://noctavepiano.com/en/free-library/burgmuller-tendre-fleur-opus-100/",
+            "musicxmlRights": [
+              "Noctave engraving and MusicXML: public domain, like the Mutopia Project source. Composition: Friedrich Burgmüller (1806–1874), public domain. Source: Mutopia Project Mutopia-2013/01/12-221, typeset by Bas Wassink after Collection Litolff, 19th Century, https://www.mutopiaproject.org/cgibin/piece-info.cgi?id=221. Converted from its LilyPond source and checked note by note by Noctave: https://noctavepiano.com/bibliotheque-libre/burgmuller-tendre-fleur-opus-100/"
+            ]
+          },
+          "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+          "attribution": "Noctave; original engraving from Mutopia Project. Original rights notices remain in MusicXML."
+        },
+        {
+          "id": "burgmuller-op-100-011",
+          "number": 11,
+          "title": "Bài 11 · La Bergeronnette",
+          "sourceUrl": "https://noctavepiano.com/en/free-library/burgmuller-la-bergeronnette-opus-100/",
+          "downloadUrl": "https://noctavepiano.com/bibliotheque-libre/burgmuller-la-bergeronnette-opus-100/burgmuller-la-bergeronnette-opus-100.mxl",
+          "sourceSha256": "6c5aa83869b7664cc4e426d6e5ee9b49e26e091a98c31a14da0fc2d24fadc113",
+          "license": "Public-Domain",
+          "sourceRights": {
+            "statementUrl": "https://noctavepiano.com/en/free-library/burgmuller-la-bergeronnette-opus-100/",
+            "musicxmlRights": [
+              "Noctave engraving and MusicXML: public domain, like the Mutopia Project source. Composition: Friedrich Burgmüller (1806–1874), public domain. Source: Mutopia Project Mutopia-2013/01/12-222, typeset by Bas Wassink after Collection Litolff, 19th Century, https://www.mutopiaproject.org/cgibin/piece-info.cgi?id=222. Converted from its LilyPond source and checked note by note by Noctave: https://noctavepiano.com/bibliotheque-libre/burgmuller-la-bergeronnette-opus-100/"
+            ]
+          },
+          "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+          "attribution": "Noctave; original engraving from Mutopia Project. Original rights notices remain in MusicXML."
+        },
+        {
+          "id": "burgmuller-op-100-012",
+          "number": 12,
+          "title": "Bài 12 · L'adieu",
+          "sourceUrl": "https://noctavepiano.com/en/sheet-music/burgmuller-op100-12/",
+          "downloadUrl": "https://noctavepiano.com/partitions/burgmuller-op100-12/burgmuller-op100-12.mxl",
+          "sourceSha256": "30cd1afebb29b98e30ca00b6279119da16d4768b1d4dc5688d386cb7bcf68c61",
+          "license": "CC0-1.0",
+          "sourceRights": {
+            "statementUrl": "https://noctavepiano.com/en/sheet-music/burgmuller-op100-12/",
+            "musicxmlRights": [
+              "Noctave edition, CC0 1.0 (https://creativecommons.org/publicdomain/zero/1.0/). Composition: Friedrich Burgmüller (1806–1874), public domain. Source: Mutopia Project (Bas Wassink), d'après Collection Litolff (XIXe siècle) https://www.mutopiaproject.org/ftp/BurgmullerJFF/O100/25EF-12/. Made into this edition by Noctave (details: https://noctavepiano.com/partitions/burgmuller-op100-12/).",
+              "Public domain composition. Encoded for the Noctave project after the public domain Mutopia Project edition by Bas Wassink, CC0 1.0."
+            ]
+          },
+          "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attribution": "Noctave; original engraving from Mutopia Project. Original rights notices remain in MusicXML."
+        },
+        {
+          "id": "burgmuller-op-100-013",
+          "number": 13,
+          "title": "Bài 13 · Consolation",
+          "sourceUrl": "https://noctavepiano.com/en/free-library/burgmuller-consolation-opus-100/",
+          "downloadUrl": "https://noctavepiano.com/bibliotheque-libre/burgmuller-consolation-opus-100/burgmuller-consolation-opus-100.mxl",
+          "sourceSha256": "fb7a309b3a96d90782287a5cb055cbe038be2248f20e2da9ae4d6734301aaac2",
+          "license": "Public-Domain",
+          "sourceRights": {
+            "statementUrl": "https://noctavepiano.com/en/free-library/burgmuller-consolation-opus-100/",
+            "musicxmlRights": [
+              "Noctave engraving and MusicXML: public domain, like the Mutopia Project source. Composition: Friedrich Burgmüller (1806–1874), public domain. Source: Mutopia Project Mutopia-2013/01/12-224, typeset by Bas Wassink after Collection Litolff, 19th Century, https://www.mutopiaproject.org/cgibin/piece-info.cgi?id=224. Converted from its LilyPond source and checked note by note by Noctave: https://noctavepiano.com/bibliotheque-libre/burgmuller-consolation-opus-100/"
+            ]
+          },
+          "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+          "attribution": "Noctave; original engraving from Mutopia Project. Original rights notices remain in MusicXML."
+        },
+        {
+          "id": "burgmuller-op-100-014",
+          "number": 14,
+          "title": "Bài 14 · La Styrienne",
+          "sourceUrl": "https://noctavepiano.com/en/free-library/burgmuller-la-styrienne-opus-100/",
+          "downloadUrl": "https://noctavepiano.com/bibliotheque-libre/burgmuller-la-styrienne-opus-100/burgmuller-la-styrienne-opus-100.mxl",
+          "sourceSha256": "947a5f48f6606321271cb46f73acfd0efff5c6ca47a57932d9f5cc53251e8b93",
+          "license": "Public-Domain",
+          "sourceRights": {
+            "statementUrl": "https://noctavepiano.com/en/free-library/burgmuller-la-styrienne-opus-100/",
+            "musicxmlRights": [
+              "Noctave engraving and MusicXML: public domain, like the Mutopia Project source. Composition: Friedrich Burgmüller (1806–1874), public domain. Source: Mutopia Project Mutopia-2013/01/12-225, typeset by Bas Wassink after Collection Litolff, 19th Century, https://www.mutopiaproject.org/cgibin/piece-info.cgi?id=225. Converted from its LilyPond source and checked note by note by Noctave: https://noctavepiano.com/bibliotheque-libre/burgmuller-la-styrienne-opus-100/"
+            ]
+          },
+          "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+          "attribution": "Noctave; original engraving from Mutopia Project. Original rights notices remain in MusicXML."
+        },
+        {
+          "id": "burgmuller-op-100-015",
+          "number": 15,
+          "title": "Bài 15 · Ballade",
+          "sourceUrl": "https://noctavepiano.com/en/sheet-music/burgmuller-op100-15/",
+          "downloadUrl": "https://noctavepiano.com/partitions/burgmuller-op100-15/burgmuller-op100-15.mxl",
+          "sourceSha256": "37ca79400cf85c7ddd964cb7a1d9636ca6b6a2d5f41b252e3a64c64948d81f27",
+          "license": "CC0-1.0",
+          "sourceRights": {
+            "statementUrl": "https://noctavepiano.com/en/sheet-music/burgmuller-op100-15/",
+            "musicxmlRights": [
+              "Noctave edition, CC0 1.0 (https://creativecommons.org/publicdomain/zero/1.0/). Composition: Friedrich Burgmüller (1806–1874), public domain. Source: Mutopia Project (Bas Wassink), d'après Collection Litolff (XIXe siècle) https://www.mutopiaproject.org/ftp/BurgmullerJFF/O100/25EF-15/. Made into this edition by Noctave (details: https://noctavepiano.com/partitions/burgmuller-op100-15/).",
+              "Public domain composition. Encoded for the Noctave project after the public domain Mutopia Project edition by Bas Wassink, CC0 1.0."
+            ]
+          },
+          "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attribution": "Noctave; original engraving from Mutopia Project. Original rights notices remain in MusicXML."
+        },
+        {
+          "id": "burgmuller-op-100-016",
+          "number": 16,
+          "title": "Bài 16 · Douce Plainte",
+          "sourceUrl": "https://noctavepiano.com/en/free-library/burgmuller-douce-plainte-opus-100/",
+          "downloadUrl": "https://noctavepiano.com/bibliotheque-libre/burgmuller-douce-plainte-opus-100/burgmuller-douce-plainte-opus-100.mxl",
+          "sourceSha256": "23ae546c48c8cb5f3bfad1ad85ace8d9f5c0604fe8465836ca7550695fd40fb3",
+          "license": "Public-Domain",
+          "sourceRights": {
+            "statementUrl": "https://noctavepiano.com/en/free-library/burgmuller-douce-plainte-opus-100/",
+            "musicxmlRights": [
+              "Noctave engraving and MusicXML: public domain, like the Mutopia Project source. Composition: Friedrich Burgmüller (1806–1874), public domain. Source: Mutopia Project Mutopia-2013/01/12-228, typeset by Bas Wassink after Collection Litolff, 19th Century, https://www.mutopiaproject.org/cgibin/piece-info.cgi?id=228. Converted from its LilyPond source and checked note by note by Noctave: https://noctavepiano.com/bibliotheque-libre/burgmuller-douce-plainte-opus-100/"
+            ]
+          },
+          "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+          "attribution": "Noctave; original engraving from Mutopia Project. Original rights notices remain in MusicXML."
+        },
+        {
+          "id": "burgmuller-op-100-017",
+          "number": 17,
+          "title": "Bài 17 · La Babillarde",
+          "sourceUrl": "https://noctavepiano.com/en/free-library/burgmuller-la-babillarde-opus-100/",
+          "downloadUrl": "https://noctavepiano.com/bibliotheque-libre/burgmuller-la-babillarde-opus-100/burgmuller-la-babillarde-opus-100.mxl",
+          "sourceSha256": "58aaca5fcaec8b8f339457860043a47f28df2b99e4097c37dcafb0974371c795",
+          "license": "Public-Domain",
+          "sourceRights": {
+            "statementUrl": "https://noctavepiano.com/en/free-library/burgmuller-la-babillarde-opus-100/",
+            "musicxmlRights": [
+              "Noctave engraving and MusicXML: public domain, like the Mutopia Project source. Composition: Friedrich Burgmüller (1806–1874), public domain. Source: Mutopia Project Mutopia-2013/01/12-229, typeset by Bas Wassink after Collection Litolff, 19th Century, https://www.mutopiaproject.org/cgibin/piece-info.cgi?id=229. Converted from its LilyPond source and checked note by note by Noctave: https://noctavepiano.com/bibliotheque-libre/burgmuller-la-babillarde-opus-100/"
+            ]
+          },
+          "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+          "attribution": "Noctave; original engraving from Mutopia Project. Original rights notices remain in MusicXML."
+        },
+        {
+          "id": "burgmuller-op-100-018",
+          "number": 18,
+          "title": "Bài 18 · Inquiétude",
+          "sourceUrl": "https://noctavepiano.com/en/free-library/burgmuller-inquietude-opus-100/",
+          "downloadUrl": "https://noctavepiano.com/bibliotheque-libre/burgmuller-inquietude-opus-100/burgmuller-inquietude-opus-100.mxl",
+          "sourceSha256": "b615a16708d55a91f7ca9b051afe892ebd281ac61f382dfddd7a99f02bf6e2f4",
+          "license": "Public-Domain",
+          "sourceRights": {
+            "statementUrl": "https://noctavepiano.com/en/free-library/burgmuller-inquietude-opus-100/",
+            "musicxmlRights": [
+              "Noctave engraving and MusicXML: public domain, like the Mutopia Project source. Composition: Friedrich Burgmüller (1806–1874), public domain. Source: Mutopia Project Mutopia-2013/01/12-230, typeset by Bas Wassink after Collection Litolff, 19th Century, https://www.mutopiaproject.org/cgibin/piece-info.cgi?id=230. Converted from its LilyPond source and checked note by note by Noctave: https://noctavepiano.com/bibliotheque-libre/burgmuller-inquietude-opus-100/"
+            ]
+          },
+          "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+          "attribution": "Noctave; original engraving from Mutopia Project. Original rights notices remain in MusicXML."
+        }
+      ]
+    },
+    {
+      "id": "czerny-op-821",
+      "title": "Czerny — Op.821",
+      "composer": "Carl Czerny",
+      "opus": "Op.821",
+      "description": "160 bài tập tám ô nhịp. Có bài 1–18 theo đúng số thứ tự trong sách.",
+      "expectedLessons": 160,
+      "lessons": [
+        {
+          "id": "czerny-op-821-001",
+          "number": 1,
+          "title": "Bài 01",
+          "sourceUrl": "https://noctavepiano.com/en/sheet-music/czerny-op821-1/",
+          "downloadUrl": "https://noctavepiano.com/partitions/czerny-op821-1/czerny-op821-1.mxl",
+          "sourceSha256": "ce29117e53baa73b58e98a65f6437c4572c75918a02c8c73d5d3e3a05d3da349",
+          "license": "CC0-1.0",
+          "sourceRights": {
+            "statementUrl": "https://noctavepiano.com/en/sheet-music/czerny-op821-1/",
+            "musicxmlRights": [
+              "Noctave edition, CC0 1.0 (https://creativecommons.org/publicdomain/zero/1.0/). Composition: Carl Czerny (1791–1857), public domain. Source: Mutopia Project (Manuel Castejon Limas), d'après Edition Peters, Leipzig (1888) https://www.mutopiaproject.org/ftp/CzernyC/Op_821/Czerny_Op_821_No_001/. Made into this edition by Noctave (details: https://noctavepiano.com/partitions/czerny-op821-1/).",
+              "Public domain composition. Encoded for the Noctave project after the public domain Mutopia Project edition by Manuel Castejon Limas, CC0 1.0."
+            ]
+          },
+          "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attribution": "Noctave; original engraving from Mutopia Project. Original rights notices remain in MusicXML."
+        },
+        {
+          "id": "czerny-op-821-002",
+          "number": 2,
+          "title": "Bài 02",
+          "sourceUrl": "https://noctavepiano.com/en/free-library/czerny-160-eight-measure-exercises-no-2-op-821/",
+          "downloadUrl": "https://noctavepiano.com/bibliotheque-libre/czerny-160-eight-measure-exercises-no-2-op-821/czerny-160-eight-measure-exercises-no-2-op-821.mxl",
+          "sourceSha256": "4769b1b3b89e4f9b6df570dcb03dd35619abffb9ecdcf4d56043cfbdad5571ae",
+          "license": "Public-Domain",
+          "sourceRights": {
+            "statementUrl": "https://noctavepiano.com/en/free-library/czerny-160-eight-measure-exercises-no-2-op-821/",
+            "musicxmlRights": [
+              "Noctave engraving and MusicXML: public domain, like the Mutopia Project source. Composition: Carl Czerny (1791–1857), public domain. Source: Mutopia Project Mutopia-2015/11/06-2061, typeset by Manuel Castejon Limas after IMLSP; Leipzig: Edition Peters, n.d.[1888]. Plate 6990-6993., https://www.mutopiaproject.org/cgibin/piece-info.cgi?id=2061. Converted from its LilyPond source and checked note by note by Noctave: https://noctavepiano.com/bibliotheque-libre/czerny-160-eight-measure-exercises-no-2-op-821/"
+            ]
+          },
+          "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+          "attribution": "Noctave; original engraving from Mutopia Project. Original rights notices remain in MusicXML."
+        },
+        {
+          "id": "czerny-op-821-003",
+          "number": 3,
+          "title": "Bài 03",
+          "sourceUrl": "https://noctavepiano.com/en/sheet-music/czerny-op821-3/",
+          "downloadUrl": "https://noctavepiano.com/partitions/czerny-op821-3/czerny-op821-3.mxl",
+          "sourceSha256": "7ccc07a12d215e20ee9e5b7e87e9552495e246fb699d3aac0e54055e47ca833b",
+          "license": "CC0-1.0",
+          "sourceRights": {
+            "statementUrl": "https://noctavepiano.com/en/sheet-music/czerny-op821-3/",
+            "musicxmlRights": [
+              "Noctave edition, CC0 1.0 (https://creativecommons.org/publicdomain/zero/1.0/). Composition: Carl Czerny (1791–1857), public domain. Source: Mutopia Project (Manuel Castejon Limas), d'après Edition Peters, Leipzig (1888) https://www.mutopiaproject.org/ftp/CzernyC/Op_821/Czerny_Op_821_No_003/. Made into this edition by Noctave (details: https://noctavepiano.com/partitions/czerny-op821-3/).",
+              "Public domain composition. Encoded for the Noctave project after the public domain Mutopia Project edition by Manuel Castejon Limas, CC0 1.0."
+            ]
+          },
+          "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attribution": "Noctave; original engraving from Mutopia Project. Original rights notices remain in MusicXML."
+        },
+        {
+          "id": "czerny-op-821-004",
+          "number": 4,
+          "title": "Bài 04",
+          "sourceUrl": "https://noctavepiano.com/en/free-library/czerny-160-eight-measure-exercises-no-4-op-821/",
+          "downloadUrl": "https://noctavepiano.com/bibliotheque-libre/czerny-160-eight-measure-exercises-no-4-op-821/czerny-160-eight-measure-exercises-no-4-op-821.mxl",
+          "sourceSha256": "a1e0f710cc1762812817e20b29eba10f8c0e920f599e3898fa4d4b9a6f1cbfab",
+          "license": "Public-Domain",
+          "sourceRights": {
+            "statementUrl": "https://noctavepiano.com/en/free-library/czerny-160-eight-measure-exercises-no-4-op-821/",
+            "musicxmlRights": [
+              "Noctave engraving and MusicXML: public domain, like the Mutopia Project source. Composition: Carl Czerny (1791–1857), public domain. Source: Mutopia Project Mutopia-2015/11/09-2063, typeset by Manuel Castejon Limas after IMLSP; Leipzig: Edition Peters, n.d.[1888]. Plate 6990-6993., https://www.mutopiaproject.org/cgibin/piece-info.cgi?id=2063. Converted from its LilyPond source and checked note by note by Noctave: https://noctavepiano.com/bibliotheque-libre/czerny-160-eight-measure-exercises-no-4-op-821/"
+            ]
+          },
+          "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+          "attribution": "Noctave; original engraving from Mutopia Project. Original rights notices remain in MusicXML."
+        },
+        {
+          "id": "czerny-op-821-005",
+          "number": 5,
+          "title": "Bài 05",
+          "sourceUrl": "https://noctavepiano.com/en/free-library/czerny-160-eight-measure-exercises-no-5-op-821/",
+          "downloadUrl": "https://noctavepiano.com/bibliotheque-libre/czerny-160-eight-measure-exercises-no-5-op-821/czerny-160-eight-measure-exercises-no-5-op-821.mxl",
+          "sourceSha256": "6e5af446c3dced05f515368f0efd3596d30c364d6ea61247fc876fd582d6daea",
+          "license": "Public-Domain",
+          "sourceRights": {
+            "statementUrl": "https://noctavepiano.com/en/free-library/czerny-160-eight-measure-exercises-no-5-op-821/",
+            "musicxmlRights": [
+              "Noctave engraving and MusicXML: public domain, like the Mutopia Project source. Composition: Carl Czerny (1791–1857), public domain. Source: Mutopia Project Mutopia-2015/11/11-2066, typeset by Manuel Castejon Limas after IMLSP; Leipzig: Edition Peters, n.d.1888. Plate 6990-6993., https://www.mutopiaproject.org/cgibin/piece-info.cgi?id=2066. Converted from its LilyPond source and checked note by note by Noctave: https://noctavepiano.com/bibliotheque-libre/czerny-160-eight-measure-exercises-no-5-op-821/"
+            ]
+          },
+          "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+          "attribution": "Noctave; original engraving from Mutopia Project. Original rights notices remain in MusicXML."
+        },
+        {
+          "id": "czerny-op-821-006",
+          "number": 6,
+          "title": "Bài 06",
+          "sourceUrl": "https://noctavepiano.com/en/free-library/czerny-160-eight-measure-exercises-no-6-op-821/",
+          "downloadUrl": "https://noctavepiano.com/bibliotheque-libre/czerny-160-eight-measure-exercises-no-6-op-821/czerny-160-eight-measure-exercises-no-6-op-821.mxl",
+          "sourceSha256": "d65f29cd1ae0f419c2f1a5b09727de05a7573fcd6c4ea0f623366733e8d5ac3c",
+          "license": "Public-Domain",
+          "sourceRights": {
+            "statementUrl": "https://noctavepiano.com/en/free-library/czerny-160-eight-measure-exercises-no-6-op-821/",
+            "musicxmlRights": [
+              "Noctave engraving and MusicXML: public domain, like the Mutopia Project source. Composition: Carl Czerny (1791–1857), public domain. Source: Mutopia Project Mutopia-2015/11/12-2067, typeset by Manuel Castejon Limas after IMLSP; Leipzig: Edition Peters, n.d.1888. Plate 6990-6993., https://www.mutopiaproject.org/cgibin/piece-info.cgi?id=2067. Converted from its LilyPond source and checked note by note by Noctave: https://noctavepiano.com/bibliotheque-libre/czerny-160-eight-measure-exercises-no-6-op-821/"
+            ]
+          },
+          "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+          "attribution": "Noctave; original engraving from Mutopia Project. Original rights notices remain in MusicXML."
+        },
+        {
+          "id": "czerny-op-821-007",
+          "number": 7,
+          "title": "Bài 07",
+          "sourceUrl": "https://noctavepiano.com/en/free-library/czerny-160-eight-measure-exercises-no-7-op-821/",
+          "downloadUrl": "https://noctavepiano.com/bibliotheque-libre/czerny-160-eight-measure-exercises-no-7-op-821/czerny-160-eight-measure-exercises-no-7-op-821.mxl",
+          "sourceSha256": "dc839118947ce03cb1b666b8cacf2eafe82266f0038330d2315ef4e7ee1b1bbb",
+          "license": "Public-Domain",
+          "sourceRights": {
+            "statementUrl": "https://noctavepiano.com/en/free-library/czerny-160-eight-measure-exercises-no-7-op-821/",
+            "musicxmlRights": [
+              "Noctave engraving and MusicXML: public domain, like the Mutopia Project source. Composition: Carl Czerny (1791–1857), public domain. Source: Mutopia Project Mutopia-2015/11/13-2068, typeset by Manuel Castejon Limas after IMLSP; Leipzig: Edition Peters, n.d.1888. Plate 6990-6993., https://www.mutopiaproject.org/cgibin/piece-info.cgi?id=2068. Converted from its LilyPond source and checked note by note by Noctave: https://noctavepiano.com/bibliotheque-libre/czerny-160-eight-measure-exercises-no-7-op-821/"
+            ]
+          },
+          "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+          "attribution": "Noctave; original engraving from Mutopia Project. Original rights notices remain in MusicXML."
+        },
+        {
+          "id": "czerny-op-821-008",
+          "number": 8,
+          "title": "Bài 08",
+          "sourceUrl": "https://noctavepiano.com/en/free-library/czerny-160-eight-measure-exercises-no-8-op-821/",
+          "downloadUrl": "https://noctavepiano.com/bibliotheque-libre/czerny-160-eight-measure-exercises-no-8-op-821/czerny-160-eight-measure-exercises-no-8-op-821.mxl",
+          "sourceSha256": "e496c0cd667fa4eecc3b5dc05072dc38ffc91703644c26456a149fe0ce3e43bb",
+          "license": "Public-Domain",
+          "sourceRights": {
+            "statementUrl": "https://noctavepiano.com/en/free-library/czerny-160-eight-measure-exercises-no-8-op-821/",
+            "musicxmlRights": [
+              "Noctave engraving and MusicXML: public domain, like the Mutopia Project source. Composition: Carl Czerny (1791–1857), public domain. Source: Mutopia Project Mutopia-2015/11/15-2069, typeset by Manuel Castejon Limas after IMLSP; Leipzig: Edition Peters, n.d.1888. Plate 6990-6993., https://www.mutopiaproject.org/cgibin/piece-info.cgi?id=2069. Converted from its LilyPond source and checked note by note by Noctave: https://noctavepiano.com/bibliotheque-libre/czerny-160-eight-measure-exercises-no-8-op-821/"
+            ]
+          },
+          "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+          "attribution": "Noctave; original engraving from Mutopia Project. Original rights notices remain in MusicXML."
+        },
+        {
+          "id": "czerny-op-821-009",
+          "number": 9,
+          "title": "Bài 09",
+          "sourceUrl": "https://noctavepiano.com/en/free-library/czerny-160-eight-measure-exercises-no-9-op-821/",
+          "downloadUrl": "https://noctavepiano.com/bibliotheque-libre/czerny-160-eight-measure-exercises-no-9-op-821/czerny-160-eight-measure-exercises-no-9-op-821.mxl",
+          "sourceSha256": "1ef3f70ffd1fb131c5e40d3cc484663d200b0613adc7c16bfde301c7228b599b",
+          "license": "Public-Domain",
+          "sourceRights": {
+            "statementUrl": "https://noctavepiano.com/en/free-library/czerny-160-eight-measure-exercises-no-9-op-821/",
+            "musicxmlRights": [
+              "Noctave engraving and MusicXML: public domain, like the Mutopia Project source. Composition: Carl Czerny (1791–1857), public domain. Source: Mutopia Project Mutopia-2015/11/16-2072, typeset by Manuel Castejon Limas after IMLSP; Leipzig: Edition Peters, n.d.1888. Plate 6990-6993., https://www.mutopiaproject.org/cgibin/piece-info.cgi?id=2072. Converted from its LilyPond source and checked note by note by Noctave: https://noctavepiano.com/bibliotheque-libre/czerny-160-eight-measure-exercises-no-9-op-821/"
+            ]
+          },
+          "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+          "attribution": "Noctave; original engraving from Mutopia Project. Original rights notices remain in MusicXML."
+        },
+        {
+          "id": "czerny-op-821-010",
+          "number": 10,
+          "title": "Bài 10",
+          "sourceUrl": "https://noctavepiano.com/en/free-library/czerny-160-eight-measure-exercises-no-10-op-821/",
+          "downloadUrl": "https://noctavepiano.com/bibliotheque-libre/czerny-160-eight-measure-exercises-no-10-op-821/czerny-160-eight-measure-exercises-no-10-op-821.mxl",
+          "sourceSha256": "92d3059eaf7893b960300294ec539fb286c49c6b7f9bf95603dd3aa20ef293bb",
+          "license": "Public-Domain",
+          "sourceRights": {
+            "statementUrl": "https://noctavepiano.com/en/free-library/czerny-160-eight-measure-exercises-no-10-op-821/",
+            "musicxmlRights": [
+              "Noctave engraving and MusicXML: public domain, like the Mutopia Project source. Composition: Carl Czerny (1791–1857), public domain. Source: Mutopia Project Mutopia-2015/11/16-2073, typeset by Manuel Castejon Limas after IMLSP; Leipzig: Edition Peters, n.d.[1888]. Plate 6990-6993., https://www.mutopiaproject.org/cgibin/piece-info.cgi?id=2073. Converted from its LilyPond source and checked note by note by Noctave: https://noctavepiano.com/bibliotheque-libre/czerny-160-eight-measure-exercises-no-10-op-821/"
+            ]
+          },
+          "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+          "attribution": "Noctave; original engraving from Mutopia Project. Original rights notices remain in MusicXML."
+        },
+        {
+          "id": "czerny-op-821-011",
+          "number": 11,
+          "title": "Bài 11",
+          "sourceUrl": "https://noctavepiano.com/en/sheet-music/czerny-op821-11/",
+          "downloadUrl": "https://noctavepiano.com/partitions/czerny-op821-11/czerny-op821-11.mxl",
+          "sourceSha256": "b6106bd2da543c55cf0765dfdd1c87daa257253ddaeadaa8f0acab04b1f4cf2e",
+          "license": "CC0-1.0",
+          "sourceRights": {
+            "statementUrl": "https://noctavepiano.com/en/sheet-music/czerny-op821-11/",
+            "musicxmlRights": [
+              "Noctave edition, CC0 1.0 (https://creativecommons.org/publicdomain/zero/1.0/). Composition: Carl Czerny (1791–1857), public domain. Source: Mutopia Project (Manuel Castejon Limas), d'après Edition Peters, Leipzig (1888) https://www.mutopiaproject.org/ftp/CzernyC/Op_821/Czerny_Op_821_No_011/. Made into this edition by Noctave (details: https://noctavepiano.com/partitions/czerny-op821-11/).",
+              "Public domain composition. Encoded for the Noctave project after the public domain Mutopia Project edition by Manuel Castejon Limas, CC0 1.0."
+            ]
+          },
+          "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attribution": "Noctave; original engraving from Mutopia Project. Original rights notices remain in MusicXML."
+        },
+        {
+          "id": "czerny-op-821-012",
+          "number": 12,
+          "title": "Bài 12",
+          "sourceUrl": "https://noctavepiano.com/en/free-library/czerny-160-eight-measure-exercises-no-12-op-821/",
+          "downloadUrl": "https://noctavepiano.com/bibliotheque-libre/czerny-160-eight-measure-exercises-no-12-op-821/czerny-160-eight-measure-exercises-no-12-op-821.mxl",
+          "sourceSha256": "af8dd99dfc4da490dd34f7caf8d3d9fc5c8d598130bdb7741a737c5aad6a26b1",
+          "license": "Public-Domain",
+          "sourceRights": {
+            "statementUrl": "https://noctavepiano.com/en/free-library/czerny-160-eight-measure-exercises-no-12-op-821/",
+            "musicxmlRights": [
+              "Noctave engraving and MusicXML: public domain, like the Mutopia Project source. Composition: Carl Czerny (1791–1857), public domain. Source: Mutopia Project Mutopia-2015/11/24-2077, typeset by Manuel Castejon Limas after IMLSP; Leipzig: Edition Peters, n.d.1888. Plate 6990-6993., https://www.mutopiaproject.org/cgibin/piece-info.cgi?id=2077. Converted from its LilyPond source and checked note by note by Noctave: https://noctavepiano.com/bibliotheque-libre/czerny-160-eight-measure-exercises-no-12-op-821/"
+            ]
+          },
+          "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+          "attribution": "Noctave; original engraving from Mutopia Project. Original rights notices remain in MusicXML."
+        },
+        {
+          "id": "czerny-op-821-013",
+          "number": 13,
+          "title": "Bài 13",
+          "sourceUrl": "https://noctavepiano.com/en/free-library/czerny-160-eight-measure-exercises-no-13-op-821/",
+          "downloadUrl": "https://noctavepiano.com/bibliotheque-libre/czerny-160-eight-measure-exercises-no-13-op-821/czerny-160-eight-measure-exercises-no-13-op-821.mxl",
+          "sourceSha256": "5b39839d79ce6e84a4ac1d91bf967b0e5491e1ae50b3ab5e7bc7d27bccec995e",
+          "license": "Public-Domain",
+          "sourceRights": {
+            "statementUrl": "https://noctavepiano.com/en/free-library/czerny-160-eight-measure-exercises-no-13-op-821/",
+            "musicxmlRights": [
+              "Noctave engraving and MusicXML: public domain, like the Mutopia Project source. Composition: Carl Czerny (1791–1857), public domain. Source: Mutopia Project Mutopia-2015/11/25-2078, typeset by Manuel Castejon Limas after IMLSP; Leipzig: Edition Peters, n.d.[1888]. Plate 6990-6993., https://www.mutopiaproject.org/cgibin/piece-info.cgi?id=2078. Converted from its LilyPond source and checked note by note by Noctave: https://noctavepiano.com/bibliotheque-libre/czerny-160-eight-measure-exercises-no-13-op-821/"
+            ]
+          },
+          "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+          "attribution": "Noctave; original engraving from Mutopia Project. Original rights notices remain in MusicXML."
+        },
+        {
+          "id": "czerny-op-821-014",
+          "number": 14,
+          "title": "Bài 14",
+          "sourceUrl": "https://noctavepiano.com/en/free-library/czerny-160-eight-measure-exercises-no-14-op-821/",
+          "downloadUrl": "https://noctavepiano.com/bibliotheque-libre/czerny-160-eight-measure-exercises-no-14-op-821/czerny-160-eight-measure-exercises-no-14-op-821.mxl",
+          "sourceSha256": "a3b1561bed348d76fb54b979b343e5f2925ddde0e6cbfe5080d78bb2fae30670",
+          "license": "Public-Domain",
+          "sourceRights": {
+            "statementUrl": "https://noctavepiano.com/en/free-library/czerny-160-eight-measure-exercises-no-14-op-821/",
+            "musicxmlRights": [
+              "Noctave engraving and MusicXML: public domain, like the Mutopia Project source. Composition: Carl Czerny (1791–1857), public domain. Source: Mutopia Project Mutopia-2015/11/27-2079, typeset by Manuel Castejon Limas after IMLSP; Leipzig: Edition Peters, n.d.[1888]. Plate 6990-6993., https://www.mutopiaproject.org/cgibin/piece-info.cgi?id=2079. Converted from its LilyPond source and checked note by note by Noctave: https://noctavepiano.com/bibliotheque-libre/czerny-160-eight-measure-exercises-no-14-op-821/"
+            ]
+          },
+          "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+          "attribution": "Noctave; original engraving from Mutopia Project. Original rights notices remain in MusicXML."
+        },
+        {
+          "id": "czerny-op-821-015",
+          "number": 15,
+          "title": "Bài 15",
+          "sourceUrl": "https://noctavepiano.com/en/free-library/czerny-160-eight-measure-exercises-no-15-op-821/",
+          "downloadUrl": "https://noctavepiano.com/bibliotheque-libre/czerny-160-eight-measure-exercises-no-15-op-821/czerny-160-eight-measure-exercises-no-15-op-821.mxl",
+          "sourceSha256": "313a80fbba413445cb5ea3b93fc4efcc2b7b41a560f753e987e7badc17b25a99",
+          "license": "Public-Domain",
+          "sourceRights": {
+            "statementUrl": "https://noctavepiano.com/en/free-library/czerny-160-eight-measure-exercises-no-15-op-821/",
+            "musicxmlRights": [
+              "Noctave engraving and MusicXML: public domain, like the Mutopia Project source. Composition: Carl Czerny (1791–1857), public domain. Source: Mutopia Project Mutopia-2015/12/03-2081, typeset by Manuel Castejon Limas after IMLSP; Leipzig: Edition Peters, n.d.[1888]. Plate 6990-6993., https://www.mutopiaproject.org/cgibin/piece-info.cgi?id=2081. Converted from its LilyPond source and checked note by note by Noctave: https://noctavepiano.com/bibliotheque-libre/czerny-160-eight-measure-exercises-no-15-op-821/"
+            ]
+          },
+          "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+          "attribution": "Noctave; original engraving from Mutopia Project. Original rights notices remain in MusicXML."
+        },
+        {
+          "id": "czerny-op-821-016",
+          "number": 16,
+          "title": "Bài 16",
+          "sourceUrl": "https://noctavepiano.com/en/free-library/czerny-160-eight-measure-exercises-no-16-op-821/",
+          "downloadUrl": "https://noctavepiano.com/bibliotheque-libre/czerny-160-eight-measure-exercises-no-16-op-821/czerny-160-eight-measure-exercises-no-16-op-821.mxl",
+          "sourceSha256": "39c7ddcc330df3b6dd6869d25dd2f132b45a93ca2910952cfc57530dafa08c43",
+          "license": "Public-Domain",
+          "sourceRights": {
+            "statementUrl": "https://noctavepiano.com/en/free-library/czerny-160-eight-measure-exercises-no-16-op-821/",
+            "musicxmlRights": [
+              "Noctave engraving and MusicXML: public domain, like the Mutopia Project source. Composition: Carl Czerny (1791–1857), public domain. Source: Mutopia Project Mutopia-2015/12/03-2082, typeset by Manuel Castejon Limas after IMLSP; Leipzig: Edition Peters, n.d.[1888]. Plate 6990-6993., https://www.mutopiaproject.org/cgibin/piece-info.cgi?id=2082. Converted from its LilyPond source and checked note by note by Noctave: https://noctavepiano.com/bibliotheque-libre/czerny-160-eight-measure-exercises-no-16-op-821/"
+            ]
+          },
+          "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+          "attribution": "Noctave; original engraving from Mutopia Project. Original rights notices remain in MusicXML."
+        },
+        {
+          "id": "czerny-op-821-017",
+          "number": 17,
+          "title": "Bài 17",
+          "sourceUrl": "https://noctavepiano.com/en/free-library/czerny-160-eight-measure-exercises-no-17-op-821/",
+          "downloadUrl": "https://noctavepiano.com/bibliotheque-libre/czerny-160-eight-measure-exercises-no-17-op-821/czerny-160-eight-measure-exercises-no-17-op-821.mxl",
+          "sourceSha256": "e76ee19d990269338497765c92f89e29eefdfc047f4944e10300b71a22b32840",
+          "license": "Public-Domain",
+          "sourceRights": {
+            "statementUrl": "https://noctavepiano.com/en/free-library/czerny-160-eight-measure-exercises-no-17-op-821/",
+            "musicxmlRights": [
+              "Noctave engraving and MusicXML: public domain, like the Mutopia Project source. Composition: Carl Czerny (1791–1857), public domain. Source: Mutopia Project Mutopia-2015/12/07-2083, typeset by Manuel Castejon Limas after IMLSP; Leipzig: Edition Peters, n.d.[1888]. Plate 6990-6993., https://www.mutopiaproject.org/cgibin/piece-info.cgi?id=2083. Converted from its LilyPond source and checked note by note by Noctave: https://noctavepiano.com/bibliotheque-libre/czerny-160-eight-measure-exercises-no-17-op-821/"
+            ]
+          },
+          "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+          "attribution": "Noctave; original engraving from Mutopia Project. Original rights notices remain in MusicXML."
+        },
+        {
+          "id": "czerny-op-821-018",
+          "number": 18,
+          "title": "Bài 18",
+          "sourceUrl": "https://noctavepiano.com/en/free-library/czerny-160-eight-measure-exercises-no-18-op-821/",
+          "downloadUrl": "https://noctavepiano.com/bibliotheque-libre/czerny-160-eight-measure-exercises-no-18-op-821/czerny-160-eight-measure-exercises-no-18-op-821.mxl",
+          "sourceSha256": "fc9e16fc9cc774d3ccaf3aeffe75dfd04adcbe93d964214ab9f23144561df35b",
+          "license": "Public-Domain",
+          "sourceRights": {
+            "statementUrl": "https://noctavepiano.com/en/free-library/czerny-160-eight-measure-exercises-no-18-op-821/",
+            "musicxmlRights": [
+              "Noctave engraving and MusicXML: public domain, like the Mutopia Project source. Composition: Carl Czerny (1791–1857), public domain. Source: Mutopia Project Mutopia-2015/12/07-2084, typeset by Manuel Castejon Limas after IMLSP; Leipzig: Edition Peters, n.d.[1888]. Plate 6990-6993., https://www.mutopiaproject.org/cgibin/piece-info.cgi?id=2084. Converted from its LilyPond source and checked note by note by Noctave: https://noctavepiano.com/bibliotheque-libre/czerny-160-eight-measure-exercises-no-18-op-821/"
+            ]
+          },
+          "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+          "attribution": "Noctave; original engraving from Mutopia Project. Original rights notices remain in MusicXML."
+        }
+      ]
+    },
+    {
+      "id": "czerny-op-840",
+      "title": "Czerny — Op.840",
+      "composer": "Carl Czerny",
+      "opus": "Op.840",
+      "description": "50 Melodische Übungsstücke. Có bài 1–10 theo bản Mutopia được Noctave chuyển sang MusicXML.",
+      "expectedLessons": 50,
+      "lessons": [
+        {
+          "id": "czerny-op-840-001",
+          "number": 1,
+          "title": "Bài 01",
+          "sourceUrl": "https://noctavepiano.com/en/free-library/czerny-50-melodische-ubungsstucke-no-1-op-840/",
+          "downloadUrl": "https://noctavepiano.com/bibliotheque-libre/czerny-50-melodische-ubungsstucke-no-1-op-840/czerny-50-melodische-ubungsstucke-no-1-op-840.mxl",
+          "sourceSha256": "13544d5531e878fb62157523511cc5a0eafb8724b2a97f997772f7298d74b382",
+          "license": "Public-Domain",
+          "sourceRights": {
+            "statementUrl": "https://noctavepiano.com/en/free-library/czerny-50-melodische-ubungsstucke-no-1-op-840/",
+            "musicxmlRights": [
+              "Noctave engraving and MusicXML: public domain, like the Mutopia Project source. Composition: Carl Czerny (1791–1857), public domain. Source: Mutopia Project Mutopia-2016/11/15-2146, typeset by Manuela after IMSLP; Mainz: Schott, n.d.[1855]. Plate 13253, https://www.mutopiaproject.org/cgibin/piece-info.cgi?id=2146. Converted from its LilyPond source and checked note by note by Noctave: https://noctavepiano.com/bibliotheque-libre/czerny-50-melodische-ubungsstucke-no-1-op-840/"
+            ]
+          },
+          "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+          "attribution": "Noctave; original engraving from Mutopia Project. Original rights notices remain in MusicXML."
+        },
+        {
+          "id": "czerny-op-840-002",
+          "number": 2,
+          "title": "Bài 02",
+          "sourceUrl": "https://noctavepiano.com/en/free-library/czerny-50-melodische-ubungsstucke-no-2-op-840/",
+          "downloadUrl": "https://noctavepiano.com/bibliotheque-libre/czerny-50-melodische-ubungsstucke-no-2-op-840/czerny-50-melodische-ubungsstucke-no-2-op-840.mxl",
+          "sourceSha256": "dea5595b0bb427bc150d172dbfc18adbe5dd68eac5506b0860826b3f9d2b1ad1",
+          "license": "Public-Domain",
+          "sourceRights": {
+            "statementUrl": "https://noctavepiano.com/en/free-library/czerny-50-melodische-ubungsstucke-no-2-op-840/",
+            "musicxmlRights": [
+              "Noctave engraving and MusicXML: public domain, like the Mutopia Project source. Composition: Carl Czerny (1791–1857), public domain. Source: Mutopia Project Mutopia-2016/11/15-2147, typeset by Manuela after IMSLP; Mainz: Schott, n.d.[1855]. Plate 13253, https://www.mutopiaproject.org/cgibin/piece-info.cgi?id=2147. Converted from its LilyPond source and checked note by note by Noctave: https://noctavepiano.com/bibliotheque-libre/czerny-50-melodische-ubungsstucke-no-2-op-840/"
+            ]
+          },
+          "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+          "attribution": "Noctave; original engraving from Mutopia Project. Original rights notices remain in MusicXML."
+        },
+        {
+          "id": "czerny-op-840-003",
+          "number": 3,
+          "title": "Bài 03",
+          "sourceUrl": "https://noctavepiano.com/en/free-library/czerny-50-melodische-ubungsstucke-no-3-op-840/",
+          "downloadUrl": "https://noctavepiano.com/bibliotheque-libre/czerny-50-melodische-ubungsstucke-no-3-op-840/czerny-50-melodische-ubungsstucke-no-3-op-840.mxl",
+          "sourceSha256": "985bf2b9510dd1175621e41387bbb3072f8d634065e8275f18f7dea4a9b772ed",
+          "license": "Public-Domain",
+          "sourceRights": {
+            "statementUrl": "https://noctavepiano.com/en/free-library/czerny-50-melodische-ubungsstucke-no-3-op-840/",
+            "musicxmlRights": [
+              "Noctave engraving and MusicXML: public domain, like the Mutopia Project source. Composition: Carl Czerny (1791–1857), public domain. Source: Mutopia Project Mutopia-2016/11/16-2148, typeset by Manuela after IMSLP; Mainz: Schott, n.d.[1855]. Plate 13253, https://www.mutopiaproject.org/cgibin/piece-info.cgi?id=2148. Converted from its LilyPond source and checked note by note by Noctave: https://noctavepiano.com/bibliotheque-libre/czerny-50-melodische-ubungsstucke-no-3-op-840/"
+            ]
+          },
+          "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+          "attribution": "Noctave; original engraving from Mutopia Project. Original rights notices remain in MusicXML."
+        },
+        {
+          "id": "czerny-op-840-004",
+          "number": 4,
+          "title": "Bài 04",
+          "sourceUrl": "https://noctavepiano.com/en/free-library/czerny-50-melodische-ubungsstucke-no-4-op-840/",
+          "downloadUrl": "https://noctavepiano.com/bibliotheque-libre/czerny-50-melodische-ubungsstucke-no-4-op-840/czerny-50-melodische-ubungsstucke-no-4-op-840.mxl",
+          "sourceSha256": "d1eddef09cc61716121045d4ee9a3da06f94a8743c1b13bf9728d335906c17e2",
+          "license": "Public-Domain",
+          "sourceRights": {
+            "statementUrl": "https://noctavepiano.com/en/free-library/czerny-50-melodische-ubungsstucke-no-4-op-840/",
+            "musicxmlRights": [
+              "Noctave engraving and MusicXML: public domain, like the Mutopia Project source. Composition: Carl Czerny (1791–1857), public domain. Source: Mutopia Project Mutopia-2016/11/17-2149, typeset by Manuela after IMSLP; Mainz: Schott, n.d.[1855]. Plate 13253, https://www.mutopiaproject.org/cgibin/piece-info.cgi?id=2149. Converted from its LilyPond source and checked note by note by Noctave: https://noctavepiano.com/bibliotheque-libre/czerny-50-melodische-ubungsstucke-no-4-op-840/"
+            ]
+          },
+          "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+          "attribution": "Noctave; original engraving from Mutopia Project. Original rights notices remain in MusicXML."
+        },
+        {
+          "id": "czerny-op-840-005",
+          "number": 5,
+          "title": "Bài 05",
+          "sourceUrl": "https://noctavepiano.com/en/free-library/czerny-50-melodische-ubungsstucke-no-5-op-840/",
+          "downloadUrl": "https://noctavepiano.com/bibliotheque-libre/czerny-50-melodische-ubungsstucke-no-5-op-840/czerny-50-melodische-ubungsstucke-no-5-op-840.mxl",
+          "sourceSha256": "d80919514d862d329f8a40af1941d2e4b563f141d0bd7f179f0382eb5e19eb0c",
+          "license": "Public-Domain",
+          "sourceRights": {
+            "statementUrl": "https://noctavepiano.com/en/free-library/czerny-50-melodische-ubungsstucke-no-5-op-840/",
+            "musicxmlRights": [
+              "Noctave engraving and MusicXML: public domain, like the Mutopia Project source. Composition: Carl Czerny (1791–1857), public domain. Source: Mutopia Project Mutopia-2016/11/21-2150, typeset by Manuela after IMSLP; Mainz: Schott, n.d.[1855]. Plate 13253, https://www.mutopiaproject.org/cgibin/piece-info.cgi?id=2150. Converted from its LilyPond source and checked note by note by Noctave: https://noctavepiano.com/bibliotheque-libre/czerny-50-melodische-ubungsstucke-no-5-op-840/"
+            ]
+          },
+          "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+          "attribution": "Noctave; original engraving from Mutopia Project. Original rights notices remain in MusicXML."
+        },
+        {
+          "id": "czerny-op-840-006",
+          "number": 6,
+          "title": "Bài 06",
+          "sourceUrl": "https://noctavepiano.com/en/free-library/czerny-50-melodische-ubungsstucke-no-6-op-840/",
+          "downloadUrl": "https://noctavepiano.com/bibliotheque-libre/czerny-50-melodische-ubungsstucke-no-6-op-840/czerny-50-melodische-ubungsstucke-no-6-op-840.mxl",
+          "sourceSha256": "dc6b30f4d01ff46aa0e1e29b85cf4091c9daa720ea84db26a06554ea6053914f",
+          "license": "Public-Domain",
+          "sourceRights": {
+            "statementUrl": "https://noctavepiano.com/en/free-library/czerny-50-melodische-ubungsstucke-no-6-op-840/",
+            "musicxmlRights": [
+              "Noctave engraving and MusicXML: public domain, like the Mutopia Project source. Composition: Carl Czerny (1791–1857), public domain. Source: Mutopia Project Mutopia-2016/11/21-2151, typeset by Manuela after IMSLP; Mainz: Schott, n.d.[1855]. Plate 13253, https://www.mutopiaproject.org/cgibin/piece-info.cgi?id=2151. Converted from its LilyPond source and checked note by note by Noctave: https://noctavepiano.com/bibliotheque-libre/czerny-50-melodische-ubungsstucke-no-6-op-840/"
+            ]
+          },
+          "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+          "attribution": "Noctave; original engraving from Mutopia Project. Original rights notices remain in MusicXML."
+        },
+        {
+          "id": "czerny-op-840-007",
+          "number": 7,
+          "title": "Bài 07",
+          "sourceUrl": "https://noctavepiano.com/en/free-library/czerny-50-melodische-ubungsstucke-no-7-op-840/",
+          "downloadUrl": "https://noctavepiano.com/bibliotheque-libre/czerny-50-melodische-ubungsstucke-no-7-op-840/czerny-50-melodische-ubungsstucke-no-7-op-840.mxl",
+          "sourceSha256": "043675c47d9a4e1bd14eff5697f2d524dba32a0dee3d36b415749ecfbf05ce3d",
+          "license": "Public-Domain",
+          "sourceRights": {
+            "statementUrl": "https://noctavepiano.com/en/free-library/czerny-50-melodische-ubungsstucke-no-7-op-840/",
+            "musicxmlRights": [
+              "Noctave engraving and MusicXML: public domain, like the Mutopia Project source. Composition: Carl Czerny (1791–1857), public domain. Source: Mutopia Project Mutopia-2016/11/21-2152, typeset by Manuela after IMSLP; Mainz: Schott, n.d.[1855]. Plate 13253, https://www.mutopiaproject.org/cgibin/piece-info.cgi?id=2152. Converted from its LilyPond source and checked note by note by Noctave: https://noctavepiano.com/bibliotheque-libre/czerny-50-melodische-ubungsstucke-no-7-op-840/"
+            ]
+          },
+          "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+          "attribution": "Noctave; original engraving from Mutopia Project. Original rights notices remain in MusicXML."
+        },
+        {
+          "id": "czerny-op-840-008",
+          "number": 8,
+          "title": "Bài 08",
+          "sourceUrl": "https://noctavepiano.com/en/free-library/czerny-50-melodische-ubungsstucke-no-8-op-840/",
+          "downloadUrl": "https://noctavepiano.com/bibliotheque-libre/czerny-50-melodische-ubungsstucke-no-8-op-840/czerny-50-melodische-ubungsstucke-no-8-op-840.mxl",
+          "sourceSha256": "bbc7a4a8f91b286ffd13fdb21aecd70ec1f7ff4ed3514224999b7550b1d0966f",
+          "license": "Public-Domain",
+          "sourceRights": {
+            "statementUrl": "https://noctavepiano.com/en/free-library/czerny-50-melodische-ubungsstucke-no-8-op-840/",
+            "musicxmlRights": [
+              "Noctave engraving and MusicXML: public domain, like the Mutopia Project source. Composition: Carl Czerny (1791–1857), public domain. Source: Mutopia Project Mutopia-2016/12/05-2153, typeset by Manuela after IMSLP; Mainz: Schott, n.d.[1855]. Plate 13253, https://www.mutopiaproject.org/cgibin/piece-info.cgi?id=2153. Converted from its LilyPond source and checked note by note by Noctave: https://noctavepiano.com/bibliotheque-libre/czerny-50-melodische-ubungsstucke-no-8-op-840/"
+            ]
+          },
+          "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+          "attribution": "Noctave; original engraving from Mutopia Project. Original rights notices remain in MusicXML."
+        },
+        {
+          "id": "czerny-op-840-009",
+          "number": 9,
+          "title": "Bài 09",
+          "sourceUrl": "https://noctavepiano.com/en/free-library/czerny-50-melodische-ubungsstucke-no-9-op-840/",
+          "downloadUrl": "https://noctavepiano.com/bibliotheque-libre/czerny-50-melodische-ubungsstucke-no-9-op-840/czerny-50-melodische-ubungsstucke-no-9-op-840.mxl",
+          "sourceSha256": "717767e2ab6069093dc33a9f5329e51cd7c6e6e42c0c00d656e216a7141c0182",
+          "license": "Public-Domain",
+          "sourceRights": {
+            "statementUrl": "https://noctavepiano.com/en/free-library/czerny-50-melodische-ubungsstucke-no-9-op-840/",
+            "musicxmlRights": [
+              "Noctave engraving and MusicXML: public domain, like the Mutopia Project source. Composition: Carl Czerny (1791–1857), public domain. Source: Mutopia Project Mutopia-2016/12/05-2154, typeset by Manuela after IMSLP; Mainz: Schott, n.d.[1855]. Plate 13253, https://www.mutopiaproject.org/cgibin/piece-info.cgi?id=2154. Converted from its LilyPond source and checked note by note by Noctave: https://noctavepiano.com/bibliotheque-libre/czerny-50-melodische-ubungsstucke-no-9-op-840/"
+            ]
+          },
+          "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+          "attribution": "Noctave; original engraving from Mutopia Project. Original rights notices remain in MusicXML."
+        },
+        {
+          "id": "czerny-op-840-010",
+          "number": 10,
+          "title": "Bài 10",
+          "sourceUrl": "https://noctavepiano.com/en/free-library/czerny-50-melodische-ubungsstucke-no-10-op-840/",
+          "downloadUrl": "https://noctavepiano.com/bibliotheque-libre/czerny-50-melodische-ubungsstucke-no-10-op-840/czerny-50-melodische-ubungsstucke-no-10-op-840.mxl",
+          "sourceSha256": "758ce8ce39920f0f6d1afc2e6e3d6852d7482211f80fe8f4d0afdf23b563f65b",
+          "license": "Public-Domain",
+          "sourceRights": {
+            "statementUrl": "https://noctavepiano.com/en/free-library/czerny-50-melodische-ubungsstucke-no-10-op-840/",
+            "musicxmlRights": [
+              "Noctave engraving and MusicXML: public domain, like the Mutopia Project source. Composition: Carl Czerny (1791–1857), public domain. Source: Mutopia Project Mutopia-2017/04/10-2177, typeset by Manuela after IMSLP; Mainz: Schott, n.d.[1855]. Plate 13253, https://www.mutopiaproject.org/cgibin/piece-info.cgi?id=2177. Converted from its LilyPond source and checked note by note by Noctave: https://noctavepiano.com/bibliotheque-libre/czerny-50-melodische-ubungsstucke-no-10-op-840/"
+            ]
+          },
+          "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+          "attribution": "Noctave; original engraving from Mutopia Project. Original rights notices remain in MusicXML."
+        }
+      ]
+    },
+    {
+      "id": "duvernoy-op-176",
+      "title": "Duvernoy — Op.176 · Tuyển chọn",
+      "composer": "Jean-Baptiste Duvernoy",
+      "opus": "Op.176",
+      "description": "École primaire: 25 études. Tuyển chọn các bài có bản MusicXML hai khuông đã xác minh trong PDMX; giữ nguyên số bài, không đánh số lại.",
+      "expectedLessons": 25,
+      "lessons": [
+        {
+          "id": "duvernoy-op-176-001",
+          "number": 1,
+          "title": "Bài 01",
+          "sourceUrl": "https://musescore.com/score/144446",
+          "localFile": "warehouse/PDMX/verification/candidate-mxl/PDMX__QmSKsFjf24tonfSwbfx62wkQDrbHzAnR6Tt15DAEM2RRKH__Elementary_Studies_op_176_Etude_1_by_Jean_Bap.mxl",
+          "sourceSha256": "845473ec6f8127b659cc82e5dfbe4c8db60aab5ba887037f039665777efbc396",
+          "license": "CC0-1.0",
+          "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "sourceRights": {
+            "statementUrl": "https://zenodo.org/records/15571083",
+            "dataset": "PDMX",
+            "scoreLicense": "cc-zero",
+            "archiveMember": "./mxl/10/29/QmSKsFjf24tonfSwbfx62wkQDrbHzAnR6Tt15DAEM2RRKH.mxl",
+            "licenseConflict": "False"
+          },
+          "attribution": "PDMX by Phillip Long, Zachary Novack, Taylor Berg-Kirkpatrick and Julian McAuley; individual score CC0 1.0."
+        },
+        {
+          "id": "duvernoy-op-176-002",
+          "number": 2,
+          "title": "Bài 02",
+          "sourceUrl": "https://musescore.com/score/149033",
+          "localFile": "warehouse/PDMX/mxl/PDMX__QmQTS9efHxwxbt8RMrJeiZPia9r4kSKRP696C2o7Xa4NKX__Elementary_Studies_op_176_Etude_2_by_Jean_Bap.mxl",
+          "sourceSha256": "6c4bde5d0a1bcb8e7998ee3a194b49ebd3a900d46cdc78f65fc5e8a4adce798b",
+          "license": "CC0-1.0",
+          "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "sourceRights": {
+            "statementUrl": "https://zenodo.org/records/15571083",
+            "dataset": "PDMX",
+            "scoreLicense": "cc-zero",
+            "originalSource": "https://musescore.com/score/149033",
+            "archiveMember": "mxl/8/45/QmQTS9efHxwxbt8RMrJeiZPia9r4kSKRP696C2o7Xa4NKX.mxl",
+            "licenseConflict": "False"
+          },
+          "attribution": "PDMX by Phillip Long, Zachary Novack, Taylor Berg-Kirkpatrick and Julian McAuley; individual score CC0 1.0."
+        },
+        {
+          "id": "duvernoy-op-176-006",
+          "number": 6,
+          "title": "Bài 06",
+          "sourceUrl": "https://musescore.com/score/1691766",
+          "localFile": "warehouse/PDMX/mxl/PDMX__QmX8Adb4sJp5KsY7PS6ECNa4hxci1voWafLU5p99PSygXg__Elementary_Studies_op_176_Etude_6_by_Jean_Bap.mxl",
+          "sourceSha256": "19db319e0be11bb1875f75f11530ad2a5ba8b4a28425512c79374d326886ed4b",
+          "license": "CC0-1.0",
+          "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "sourceRights": {
+            "statementUrl": "https://zenodo.org/records/15571083",
+            "dataset": "PDMX",
+            "scoreLicense": "cc-zero",
+            "originalSource": "https://musescore.com/score/1691766",
+            "archiveMember": "mxl/15/7/QmX8Adb4sJp5KsY7PS6ECNa4hxci1voWafLU5p99PSygXg.mxl",
+            "licenseConflict": "False"
+          },
+          "attribution": "PDMX by Phillip Long, Zachary Novack, Taylor Berg-Kirkpatrick and Julian McAuley; individual score CC0 1.0."
+        },
+        {
+          "id": "duvernoy-op-176-007",
+          "number": 7,
+          "title": "Bài 07",
+          "sourceUrl": "https://musescore.com/score/3275086",
+          "localFile": "warehouse/PDMX/mxl/PDMX__QmUoPiKBCbG6U7A1HQpgpKfgYMaN862Y7cEvX72TMvVu19__Elementary_Studies_op_176_Etude_7_by_Jean_Bap.mxl",
+          "sourceSha256": "df65c88b30f42b6558de1c4b288c0805e3c94c8deb7a74f5e466c83b0730b4a4",
+          "license": "CC0-1.0",
+          "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "sourceRights": {
+            "statementUrl": "https://zenodo.org/records/15571083",
+            "dataset": "PDMX",
+            "scoreLicense": "cc-zero",
+            "originalSource": "https://musescore.com/score/3275086",
+            "archiveMember": "mxl/12/35/QmUoPiKBCbG6U7A1HQpgpKfgYMaN862Y7cEvX72TMvVu19.mxl",
+            "licenseConflict": "False"
+          },
+          "attribution": "PDMX by Phillip Long, Zachary Novack, Taylor Berg-Kirkpatrick and Julian McAuley; individual score CC0 1.0."
+        },
+        {
+          "id": "duvernoy-op-176-009",
+          "number": 9,
+          "title": "Bài 09",
+          "sourceUrl": "https://musescore.com/score/5275596",
+          "localFile": "warehouse/PDMX/mxl/PDMX__QmRpxhZo8SGNNrxNEthwA6UUSE1zPMe5MMqrP6btpXduSt__Elementary_Studies_op_176_Etude_9_by_Jean_Bap.mxl",
+          "sourceSha256": "ad80d7f3a27e1842918a203fa26f00091f50085d814aa6a59a05b9161e50644a",
+          "license": "CC0-1.0",
+          "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "sourceRights": {
+            "statementUrl": "https://zenodo.org/records/15571083",
+            "dataset": "PDMX",
+            "scoreLicense": "cc-zero",
+            "originalSource": "https://musescore.com/score/5275596",
+            "archiveMember": "mxl/9/36/QmRpxhZo8SGNNrxNEthwA6UUSE1zPMe5MMqrP6btpXduSt.mxl",
+            "licenseConflict": "False"
+          },
+          "attribution": "PDMX by Phillip Long, Zachary Novack, Taylor Berg-Kirkpatrick and Julian McAuley; individual score CC0 1.0."
+        },
+        {
+          "id": "duvernoy-op-176-010",
+          "number": 10,
+          "title": "Bài 10",
+          "sourceUrl": "https://musescore.com/score/5275600",
+          "localFile": "warehouse/PDMX/mxl/PDMX__QmejRNBbCxTb1rHxbu3enM4Ch29MR7Nn2S7wyR6DNKH9Q9__Elementary_Studies_op_176_Etude_10_by_Jean_Ba.mxl",
+          "sourceSha256": "d679afd01ef678cb8ea1f1945c6d6907caab3d4451ef2bd73948366d24143858",
+          "license": "CC0-1.0",
+          "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "sourceRights": {
+            "statementUrl": "https://zenodo.org/records/15571083",
+            "dataset": "PDMX",
+            "scoreLicense": "cc-zero",
+            "originalSource": "https://musescore.com/score/5275600",
+            "archiveMember": "mxl/4/26/QmejRNBbCxTb1rHxbu3enM4Ch29MR7Nn2S7wyR6DNKH9Q9.mxl",
+            "licenseConflict": "False"
+          },
+          "attribution": "PDMX by Phillip Long, Zachary Novack, Taylor Berg-Kirkpatrick and Julian McAuley; individual score CC0 1.0."
+        },
+        {
+          "id": "duvernoy-op-176-011",
+          "number": 11,
+          "title": "Bài 11",
+          "sourceUrl": "https://musescore.com/score/5687420",
+          "localFile": "warehouse/PDMX/mxl/PDMX__QmPYtfcM5EjGQr5TnBATQte5ZW68ptkFzB9ENB3F6HAem3__Elementary_Studies_op_176_Etude_11_by_Jean_Ba.mxl",
+          "sourceSha256": "9d688bf926882778a45bd631f157325b476ef01cb85cea55a79fa2d9602c47b9",
+          "license": "CC0-1.0",
+          "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "sourceRights": {
+            "statementUrl": "https://zenodo.org/records/15571083",
+            "dataset": "PDMX",
+            "scoreLicense": "cc-zero",
+            "originalSource": "https://musescore.com/score/5687420",
+            "archiveMember": "mxl/7/55/QmPYtfcM5EjGQr5TnBATQte5ZW68ptkFzB9ENB3F6HAem3.mxl",
+            "licenseConflict": "False"
+          },
+          "attribution": "PDMX by Phillip Long, Zachary Novack, Taylor Berg-Kirkpatrick and Julian McAuley; individual score CC0 1.0."
+        },
+        {
+          "id": "duvernoy-op-176-019",
+          "number": 19,
+          "title": "Bài 19",
+          "sourceUrl": "https://musescore.com/score/6183782",
+          "localFile": "warehouse/PDMX/mxl/PDMX__QmTQNZfJ93arTcjRvXP6E4pFxXXREVpfqVvKXC65Ce28XY__Elementary_Studies_op_176_Etude_19_by_Jean_Ba.mxl",
+          "sourceSha256": "7c9b92bfe147e401c99a11b55f81a26bc6031ee94880b8aeeff6aa691482d55a",
+          "license": "CC0-1.0",
+          "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "sourceRights": {
+            "statementUrl": "https://zenodo.org/records/15571083",
+            "dataset": "PDMX",
+            "scoreLicense": "cc-zero",
+            "originalSource": "https://musescore.com/score/6183782",
+            "archiveMember": "mxl/11/39/QmTQNZfJ93arTcjRvXP6E4pFxXXREVpfqVvKXC65Ce28XY.mxl",
+            "licenseConflict": "False"
+          },
+          "attribution": "PDMX by Phillip Long, Zachary Novack, Taylor Berg-Kirkpatrick and Julian McAuley; individual score CC0 1.0."
+        }
+      ]
+    }
+  ]
+}

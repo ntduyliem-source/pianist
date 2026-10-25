@@ -13,6 +13,7 @@ import { History } from '../features/results/HistoryScreen';
 import { EditorPlayback } from '../features/editor/EditorPlayback';
 import { EditorActions } from '../features/editor/EditorActions';
 import { Exercises } from '../exercises/Exercises';
+import { Methods } from '../methods/Methods';
 import { Library } from '../features/library/LibraryScreen';
 import { PracticeHome } from '../features/library/PracticeLibraryPicker';
 import { Icon } from '../shared/ui/Icon';
@@ -263,10 +264,22 @@ export function App() {
                   Theo grade<small>Đọc nhạc từ G1 đến G8</small>
                 </span>
               </button>
+              <button
+                aria-label="Theo giáo trình"
+                aria-pressed={state.practiceKind === 'method'}
+                onClick={run(() => ws.selectPracticeKind('method'))}
+              >
+                <Icon name="score" />
+                <span>
+                  Theo giáo trình<small>Chọn giáo trình và bài học</small>
+                </span>
+              </button>
             </div>
           )}
           {state.practiceKind === 'grade' ? (
             <Exercises />
+          ) : state.practiceKind === 'method' ? (
+            <Methods />
           ) : state.practicePicker || !state.snapshot || !state.config ? (
             <PracticeHome />
           ) : (

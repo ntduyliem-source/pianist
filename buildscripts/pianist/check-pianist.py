@@ -37,6 +37,8 @@ SUITES = {
     'practice-stop': ('practice-stop.cjs', [], '?diagnostics=1#/exercises'),
     'grade-practice': ('grade-practice.cjs', [], '?diagnostics=1#/exercises'),
     'grade-route-guard': ('grade-practice.cjs', ['--route-guard'], '?diagnostics=1#/exercises'),
+    'method-practice': ('method-practice.cjs', [], '?diagnostics=1#/practice'),
+    'method-native': ('method-native.cjs', [], '?diagnostics=1#/practice'),
     'abc-practice-ui': ('abc-practice-ui.cjs', [], '?diagnostics=1#/library'),
 }
 
