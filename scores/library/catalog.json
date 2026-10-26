@@ -3156,6 +3156,183 @@
       ],
       "layoutProfile": "pianist-a4-v1",
       "normalizationRecipe": "068e334f3c06a381dd3adcc71f8b6424292c3bf4a8938d5a92bc68741b92fbbe"
+    },
+    {
+      "id": "96fd894c093092b35450b2ef2ce00b9abe8e63edc301ec4a6cbcf50938b7fd7c",
+      "sha256": "96fd894c093092b35450b2ef2ce00b9abe8e63edc301ec4a6cbcf50938b7fd7c",
+      "title": "Nữ nhi tình",
+      "filename": "Nữ nhi tình.mxl",
+      "url": "library/songs/01-nu-nhi-tinh.mxl",
+      "bytes": 7348,
+      "workId": "6548c15155a64f05893dec5c53d062ab598580409b7f5a3c58c6e1910565c63f",
+      "version": 1,
+      "arranger": "键盘侠Orz木乔",
+      "aliases": [
+        "Nữ nhi tình — 女儿情-完整好听版",
+        "女儿情"
+      ],
+      "practiceReady": true,
+      "sourceHashes": [
+        "6548c15155a64f05893dec5c53d062ab598580409b7f5a3c58c6e1910565c63f"
+      ],
+      "sourceSha256": "6548c15155a64f05893dec5c53d062ab598580409b7f5a3c58c6e1910565c63f",
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "c3be4146ec1b15bb7c71700383a977eed1d0248f38d7836f0d23a81de73b9285"
+    },
+    {
+      "id": "3f068d1e25c4fb8524f84625f12e5f99e40a85ee93352f50e6b4061c9cd4d9b5",
+      "sha256": "3f068d1e25c4fb8524f84625f12e5f99e40a85ee93352f50e6b4061c9cd4d9b5",
+      "title": "Dám hỏi đường ở nơi đâu",
+      "filename": "Dám hỏi đường ở nơi đâu.mxl",
+      "url": "library/songs/02-dam-hoi-duong-o-noi-dau.mxl",
+      "bytes": 3802,
+      "workId": "841a8054234a551c70af7a6752f94ef0b86787d1d50020136e561f489bbc4c1d",
+      "version": 1,
+      "aliases": [
+        "Dám hỏi đường ở nơi đâu — 敢问路在何方",
+        "敢问路在何方"
+      ],
+      "practiceReady": true,
+      "sourceHashes": [
+        "841a8054234a551c70af7a6752f94ef0b86787d1d50020136e561f489bbc4c1d"
+      ],
+      "sourceSha256": "841a8054234a551c70af7a6752f94ef0b86787d1d50020136e561f489bbc4c1d",
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "b82184300330f4d5be1c5408be8ad070bfa31274db66e9e2a8cfa49b9d5d4f9c"
+    },
+    {
+      "id": "d0def214e5f0f8292f7ed53526c239cc992eab7c73d466f568cf8a8f82b7fd36",
+      "sha256": "d0def214e5f0f8292f7ed53526c239cc992eab7c73d466f568cf8a8f82b7fd36",
+      "title": "Thiên Trúc thiếu nữ",
+      "filename": "Thiên Trúc thiếu nữ.mxl",
+      "url": "library/songs/03-thien-truc-thieu-nu.mxl",
+      "bytes": 6370,
+      "workId": "353d36a284d4f624ed05d31fd8fe63d41899182a73a5ffecaf6a031a93f9b999",
+      "version": 1,
+      "composer": "Hứa Kính Thanh / 许镜清",
+      "arranger": "不会弹琴的秋水",
+      "aliases": [
+        "Thiên Trúc thiếu nữ — 天竺少女",
+        "天竺少女"
+      ],
+      "practiceReady": true,
+      "sourceHashes": [
+        "353d36a284d4f624ed05d31fd8fe63d41899182a73a5ffecaf6a031a93f9b999"
+      ],
+      "sourceSha256": "353d36a284d4f624ed05d31fd8fe63d41899182a73a5ffecaf6a031a93f9b999",
+      "lyricist": "阎肃",
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "0bbd054ac3ee64fca8878180d4619379c763a070c4e9d499db2d544c200d24f0"
+    },
+    {
+      "id": "f03ac68150544b74137ab22822483ac15df2e4df6bf7450fa34f8fa8633af4d2",
+      "sha256": "f03ac68150544b74137ab22822483ac15df2e4df6bf7450fa34f8fa8633af4d2",
+      "title": "Vân cung tấn âm",
+      "filename": "Vân cung tấn âm.mxl",
+      "url": "library/songs/04-van-cung-tan-am.mxl",
+      "bytes": 11397,
+      "workId": "c6e6b160a5d8142b8ad7c3b78c1f623cbe02573269fad5bda3b9aeb0bd30181e",
+      "version": 1,
+      "composer": "Hứa Kính Thanh / 许镜清",
+      "aliases": [
+        "Vân cung tấn âm — 云宫迅音",
+        "云宫迅音"
+      ],
+      "practiceReady": true,
+      "sourceHashes": [
+        "c6e6b160a5d8142b8ad7c3b78c1f623cbe02573269fad5bda3b9aeb0bd30181e"
+      ],
+      "sourceSha256": "c6e6b160a5d8142b8ad7c3b78c1f623cbe02573269fad5bda3b9aeb0bd30181e",
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "35a3d1fe4ffd2e253b8f12eb588b6197886eb984570c9933edb1e3c34944801f"
+    },
+    {
+      "id": "c34694885d4fa96fe6bf9835597b70e625b257f5eda7da90074ed0a17af11636",
+      "sha256": "c34694885d4fa96fe6bf9835597b70e625b257f5eda7da90074ed0a17af11636",
+      "title": "Trư Bát Giới cõng vợ",
+      "filename": "Trư Bát Giới cõng vợ.mxl",
+      "url": "library/songs/05-tru-bat-gioi-cong-vo.mxl",
+      "bytes": 6131,
+      "workId": "e90f8e924d395010b0ff15131b1b713e04fbebddc4720e649a230d0c27bd58c2",
+      "version": 1,
+      "aliases": [
+        "Trư Bát Giới cõng vợ — 猪八戒背媳妇",
+        "猪八戒背媳妇"
+      ],
+      "practiceReady": true,
+      "sourceHashes": [
+        "e90f8e924d395010b0ff15131b1b713e04fbebddc4720e649a230d0c27bd58c2"
+      ],
+      "sourceSha256": "e90f8e924d395010b0ff15131b1b713e04fbebddc4720e649a230d0c27bd58c2",
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "97a18018c7e254eb7606efb1c76716f4416e501465a8d2341e794993fc90cf1f"
+    },
+    {
+      "id": "a830ef8188a68adb18308cdbf5653e7296fe8f65ea689c46b36f1b2771b25374",
+      "sha256": "a830ef8188a68adb18308cdbf5653e7296fe8f65ea689c46b36f1b2771b25374",
+      "title": "Hương lúa",
+      "filename": "Hương lúa.mxl",
+      "url": "library/songs/06-huong-lua.mxl",
+      "bytes": 10546,
+      "workId": "f15cfc8916f44dc473922d2b7fc916be4d9186cbda48e5c0d5e92537b72b753b",
+      "version": 1,
+      "composer": "Châu Kiệt Luân / 周杰伦",
+      "aliases": [
+        "Hương lúa — 稻香",
+        "稻香"
+      ],
+      "practiceReady": true,
+      "sourceHashes": [
+        "f15cfc8916f44dc473922d2b7fc916be4d9186cbda48e5c0d5e92537b72b753b"
+      ],
+      "sourceSha256": "f15cfc8916f44dc473922d2b7fc916be4d9186cbda48e5c0d5e92537b72b753b",
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "992fdcdeb576cddcb9cf6e263ca726bc76be87f45071150e729560a557b54e98"
+    },
+    {
+      "id": "23df839a19595fccac827a7cc3df7239fe1c4e978ef56622d82c13312d159832",
+      "sha256": "23df839a19595fccac827a7cc3df7239fe1c4e978ef56622d82c13312d159832",
+      "title": "Nghe lời mẹ",
+      "filename": "Nghe lời mẹ.mxl",
+      "url": "library/songs/07-nghe-loi-me.mxl",
+      "bytes": 11570,
+      "workId": "e7cfe1602a5c1b00c1945cfc7f7132d58818b3e5cd640a8c33c4c93dce4f397f",
+      "version": 1,
+      "arranger": "90okne",
+      "aliases": [
+        "Nghe lời mẹ — 听妈妈的话",
+        "听妈妈的话"
+      ],
+      "practiceReady": true,
+      "sourceHashes": [
+        "e7cfe1602a5c1b00c1945cfc7f7132d58818b3e5cd640a8c33c4c93dce4f397f"
+      ],
+      "sourceSha256": "e7cfe1602a5c1b00c1945cfc7f7132d58818b3e5cd640a8c33c4c93dce4f397f",
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "9bc293c099241d8e74ede89cbabcdf82e2db72d54a9d2195582bc058e432cf7c"
+    },
+    {
+      "id": "194dc6dd5c1bac6dc8179a01a7fdee3b0b10dff8f2c562ac68534c3a8be10538",
+      "sha256": "194dc6dd5c1bac6dc8179a01a7fdee3b0b10dff8f2c562ac68534c3a8be10538",
+      "title": "Dạ khúc",
+      "filename": "Dạ khúc.mxl",
+      "url": "library/songs/08-da-khuc.mxl",
+      "bytes": 13579,
+      "workId": "7d05e06fd3f9f49323256960b537d55675b0072175276b87d88e2cedf7bc4515",
+      "version": 1,
+      "composer": "Châu Kiệt Luân / 周杰伦",
+      "arranger": "三色光音",
+      "aliases": [
+        "夜曲 — Dạ khúc",
+        "夜曲"
+      ],
+      "practiceReady": true,
+      "sourceHashes": [
+        "7d05e06fd3f9f49323256960b537d55675b0072175276b87d88e2cedf7bc4515"
+      ],
+      "sourceSha256": "7d05e06fd3f9f49323256960b537d55675b0072175276b87d88e2cedf7bc4515",
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "b2d7262398ef07a4c96fd25f3a5f304736327d6ccc7308710ad5e54043f9ba14"
     }
   ],
   "excluded": [],

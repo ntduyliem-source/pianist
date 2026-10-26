@@ -85,6 +85,20 @@ class NormalizeTests(unittest.TestCase):
         with self.assertRaises(ValueError):validate_versions([a,{'id':'c'*64,'sourceHashes':['b'*64]}])
         with self.assertRaises(ValueError):validate_versions([{'id':'a'*64,'arranger':{'bad':'type'}}])
 
+    def test_conflicting_dynamics_keep_reviewed_coordinates_without_changing_music(self):
+        source = SCORE.replace(b'<barline>', b'''<direction placement="below"><direction-type><dynamics><ff/></dynamics></direction-type><staff>2</staff></direction>
+<direction placement="above"><direction-type><dynamics default-y="49" relative-x="-5"><mf/></dynamics></direction-type><staff>2</staff><sound dynamics="89"/></direction><barline>''')
+        data, receipt = normalize(source, {'title':'Tên bài'}, preserve_dynamic_positions=True)
+        result = parse(data)
+        dynamics = result.findall('.//dynamics')
+        self.assertEqual([n[0].tag for n in dynamics], ['ff','mf'])
+        self.assertEqual(dict(dynamics[1].attrib), {'default-y':'49','relative-x':'-5'})
+        self.assertEqual(result.find('.//sound[@dynamics]').get('dynamics'),'89')
+        self.assertIsNone(result.find('part/measure/note').get('default-x'))
+        self.assertIsNone(result.find('part/measure/print'))
+        self.assertEqual(music_signature(parse(source)),music_signature(result))
+        self.assertTrue(receipt['preservedDynamicPositions'])
+
     def test_later_batch_keeps_normalized_bytes_catalog_and_reviewed_metadata(self):
         spec=importlib.util.spec_from_file_location('normalize_library',ROOT/'buildscripts/pianist/normalize-library.py')
         pipeline=importlib.util.module_from_spec(spec);spec.loader.exec_module(pipeline)

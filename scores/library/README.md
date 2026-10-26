@@ -5,6 +5,31 @@ tác phẩm, phiên bản và hash nằm ở đây. Chuẩn hóa phần trình b
 không sửa nốt, tie hoặc thời điểm nhả pedal để ép qua bộ nhận.
 Các báo cáo `IMPORT_REPORT*.md` là lịch sử từng đợt nhập, không phải số lượng hiện tại.
 
+## Bổ sung 8 bản ngày 26/10/2026
+
+Catalog hiện có **159 phiên bản / 149 tác phẩm**. Nhận đủ tám MXL chính trong
+`8-Ban-Piano-MXL-Tu-File-Dinh-Kem.zip`: Nữ nhi tình, Dám hỏi đường ở nơi đâu,
+Thiên Trúc thiếu nữ, Vân cung tấn âm, Trư Bát Giới cõng vợ, Hương lúa, Nghe lời mẹ
+và Dạ khúc. Tất cả là tác phẩm mới, đủ hai khuông; không có bản trùng hoặc bị loại.
+Bản diễn giải khác trong `QA/alternatives/` chỉ là tài liệu đối chiếu của ZIP,
+không được tự thêm thành bài thứ chín.
+
+Tám bản đã kiểm mở/phát bằng MuseScore, giữ đúng dữ liệu nhạc trước/sau chuẩn hóa,
+ánh xạ đủ nốt nhìn thấy và dựng 27 trang/8 thumbnail. Toàn catalog được đối chiếu
+159 bản, 484 trang, không có cảnh báo tràn khung. Những bản không đổi được giữ
+nguyên byte. Nguồn nguyên byte và kết quả từng bài nằm trong
+[biên nhận lô nhập](IMPORT_RECEIPT_2026-10-26_EIGHT_PIANO.json) và
+`NORMALIZATION_RECEIPT.json`.
+
+Giữ các bất thường nguồn: Nữ nhi tình ô 30 có 4½ phách trong 4/4; Trư Bát Giới
+cõng vợ ô 17 có khoảng trống giữa hai nốt A4 được nối tie; Vân cung tấn âm ô 5
+có hai chỉ dẫn cường độ đồng thời. Riêng bản cuối giữ tọa độ ký hiệu dynamics
+để MuseScore không đổi velocity khi dàn lại trang. Không chọn hộ một cách sửa nhạc.
+Đường D.S./Coda của Nghe lời mẹ đã kiểm trực tiếp từ MuseScore: ô 1–76 → 13–35 →
+77–78, tổng 101 lượt ô nhịp. Ghi công Thiên Trúc thiếu nữ được tách đúng vai trò
+nhạc/lời theo nguồn dẫn trong `metadata-overrides.json`; tên chưa đủ chứng cứ
+vẫn để trống. Chưa đối chiếu từng nốt với ảnh gốc ngoài ZIP.
+
 ## Chuẩn metadata và MXL ngày 25/10/2026
 
 Đã áp dụng cho **151 phiên bản / 141 tác phẩm**, dựng và kiểm khung **457 trang**,
@@ -106,8 +131,8 @@ file nén lại có byte khác vẫn được đối chiếu XML với bản tr�
 
 ## Chính sách hiện hành: đủ hai khuông thì nhận
 
-Catalog local có **151 phiên bản / 141 tác phẩm** sau khi nhận **Dù cho tận thế**
-ngày 25/10/2026. Bản này chưa được phát hành online. Chỉ nhận một phiên bản tương
+Mốc ngày 25/10/2026 có **151 phiên bản / 141 tác phẩm** sau khi nhận **Dù cho tận thế**;
+đã phát hành trong release `pianist-web-2026-10-25-library-normalization`. Chỉ nhận một phiên bản tương
 thích để giữ 74 dấu Ped. và 66 hợp âm đúng vị trí dưới dạng chữ; giữ nguồn canonical
 nguyên byte và liên kết bằng `sourceSha256`. Nốt, nghỉ và nhịp không thay đổi.
 Không có tham chiếu chấm pedal vì nguồn thiếu điểm nhả. Xem

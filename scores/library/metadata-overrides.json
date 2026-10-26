@@ -2,6 +2,14 @@
   "schemaVersion": 1,
   "policy": "Per-edition corrections. Null withholds an ambiguous role; original credits remain in the audit and original MXL. Source-declared credits are not independent authorship verification.",
   "editions": {
+    "03-thien-truc-thieu-nu.mxl": {
+      "fields": {"composer": "Hứa Kính Thanh / 许镜清", "lyricist": "阎肃"},
+      "evidence": [{"source": "https://www.joox.com/th/single/qxJ1CSa6qlcthd1bw3oQFA==", "reason": "Published credits distinguish lyrics by 阎肃 and music by 许镜清. The supplied MXL labels 阎肃 as composer; correct only the work-level roles, preserving its piano arranger 不会弹琴的秋水. Bilingual composer spelling also appears in the supplied Vân cung tấn âm MXL."}]
+    },
+    "08-da-khuc.mxl": {
+      "fields": {"composer": "Châu Kiệt Luân / 周杰伦", "arranger": "三色光音"},
+      "evidence": [{"source": "identification/creator[0..1]", "reason": "Keep the same source-declared names; put Vietnamese before Chinese consistently with Hương lúa and remove the editorial parenthesis '(source attribution)' from the display name. Arrangement attribution remains a source declaration, not independently verified."}]
+    },
     "merry-go-round-of-life-easy-piano-excerpt.mxl": {
       "fields": {"title": "Merry-Go-Round of Life", "composer": "Joe Hisaishi"},
       "evidence": [{"source": "https://www.deutschegrammophon.com/en/catalogue/products/merry-go-round-of-life-joe-hisaishi-12956", "reason": "Composer and canonical English spelling from the record label; corrects Joe Hishashi."}]

@@ -108,7 +108,8 @@ def prepare(work):
                 receipt = {'profile':PROFILE, 'musicalXmlSignature':music_signature(parse(data)),
                            'allMusicalXmlPreserved':True, 'alreadyNormalized':True}
             else:
-                normalized, receipt = normalize(data, row['metadata'], preserve_breaks=layout.get('preservePrintedBreaks', False), word_layout=layout.get('words'))
+                normalized, receipt = normalize(data, row['metadata'], preserve_breaks=layout.get('preservePrintedBreaks', False),
+                                                word_layout=layout.get('words'), preserve_dynamic_positions=layout.get('preserveDynamicPositions', False))
             require_two_staff_piano(normalized)
             old_errors, new_errors = schema_errors(validator, data), schema_errors(validator, normalized)
             added_errors = new_errors - old_errors

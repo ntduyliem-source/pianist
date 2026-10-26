@@ -1,6 +1,11 @@
 {
   "schemaVersion": 1,
   "editions": {
+    "04-van-cung-tan-am.mxl": {
+      "preserveDynamicPositions": true,
+      "reason": "The source has ff and mf at the same position on staff 2 in measure 5. Removing default-y=49 and relative-x=-5 from mf changes native keyReleases velocity from 112 to 80 for 1346 notes, despite identical MPE, pitches and timing. Preserve source dynamics coordinates and recheck exact native output; do not choose or delete a conflicting dynamic.",
+      "evidence": "artifacts/library-normalization-2026-10-26-eight-piano-r1/renders/04-van-cung-tan-am/music-diff.json"
+    },
     "ai-dua-em-ve-nguyen-anh-9-ai-dua-em-ve.mxl": {
       "preservePrintedBreaks": true,
       "reason": "Native repeat traversal changes around ending 1 at written measures 45–47 if source new-system/new-page flags are removed. Isolated MuseScore imports prove that restoring only these flags preserves the original 60 measure visits and 154285.67020409423 ms at source tempo. Keep these boundaries; still normalize A4, margins, staff scale, text fonts and credits. No ending/repeat is invented or changed.",

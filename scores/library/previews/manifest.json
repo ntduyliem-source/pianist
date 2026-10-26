@@ -1059,6 +1059,62 @@
       "sha256": "9ed8babd09b518703835649f97e87684de1bd3c865bac6de7073435099065717",
       "bytes": 38814,
       "pages": 4
+    },
+    {
+      "sourceHash": "96fd894c093092b35450b2ef2ce00b9abe8e63edc301ec4a6cbcf50938b7fd7c",
+      "path": "library/previews/96fd894c093092b35450b2ef2ce00b9abe8e63edc301ec4a6cbcf50938b7fd7c.webp",
+      "sha256": "9a76c089eb5c40d2e8a2755fd3fc8e58c7a2e9f422289c7fff5ab19d270979bc",
+      "bytes": 33250,
+      "pages": 3
+    },
+    {
+      "sourceHash": "3f068d1e25c4fb8524f84625f12e5f99e40a85ee93352f50e6b4061c9cd4d9b5",
+      "path": "library/previews/3f068d1e25c4fb8524f84625f12e5f99e40a85ee93352f50e6b4061c9cd4d9b5.webp",
+      "sha256": "2974c9b6775b57d6e0ba80454b7ff1791043491b175bea7d3546107f185482f8",
+      "bytes": 30558,
+      "pages": 2
+    },
+    {
+      "sourceHash": "d0def214e5f0f8292f7ed53526c239cc992eab7c73d466f568cf8a8f82b7fd36",
+      "path": "library/previews/d0def214e5f0f8292f7ed53526c239cc992eab7c73d466f568cf8a8f82b7fd36.webp",
+      "sha256": "be8e4ea9a687bdbdc908db627b42baa49afb8f6cf3be8afe5bec44fedc6f5786",
+      "bytes": 39280,
+      "pages": 3
+    },
+    {
+      "sourceHash": "f03ac68150544b74137ab22822483ac15df2e4df6bf7450fa34f8fa8633af4d2",
+      "path": "library/previews/f03ac68150544b74137ab22822483ac15df2e4df6bf7450fa34f8fa8633af4d2.webp",
+      "sha256": "bc85831bfcfa1e6cb41e8a4534e0afb3f26501c45e19296b60f54f6e85eedab7",
+      "bytes": 43796,
+      "pages": 4
+    },
+    {
+      "sourceHash": "c34694885d4fa96fe6bf9835597b70e625b257f5eda7da90074ed0a17af11636",
+      "path": "library/previews/c34694885d4fa96fe6bf9835597b70e625b257f5eda7da90074ed0a17af11636.webp",
+      "sha256": "a2928af8fe044a8c815c854236042dcf3029283b22fdebb669475b84367958a4",
+      "bytes": 46936,
+      "pages": 2
+    },
+    {
+      "sourceHash": "a830ef8188a68adb18308cdbf5653e7296fe8f65ea689c46b36f1b2771b25374",
+      "path": "library/previews/a830ef8188a68adb18308cdbf5653e7296fe8f65ea689c46b36f1b2771b25374.webp",
+      "sha256": "70f3f9dbe0859fae327dc8e98879d4b2bd2fe5683eb832674e0b9191d96687c0",
+      "bytes": 42954,
+      "pages": 4
+    },
+    {
+      "sourceHash": "23df839a19595fccac827a7cc3df7239fe1c4e978ef56622d82c13312d159832",
+      "path": "library/previews/23df839a19595fccac827a7cc3df7239fe1c4e978ef56622d82c13312d159832.webp",
+      "sha256": "a37c2b130da5d701268ab950cdb1c786a53931178db4272fdde33bf67c591404",
+      "bytes": 35562,
+      "pages": 4
+    },
+    {
+      "sourceHash": "194dc6dd5c1bac6dc8179a01a7fdee3b0b10dff8f2c562ac68534c3a8be10538",
+      "path": "library/previews/194dc6dd5c1bac6dc8179a01a7fdee3b0b10dff8f2c562ac68534c3a8be10538.webp",
+      "sha256": "173772c463a182b4702e613132fa6339be87c65e3b1555bd245a53c49ace9eae",
+      "bytes": 40550,
+      "pages": 5
     }
   ]
 }

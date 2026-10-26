@@ -49,12 +49,16 @@ def music_signature(score):
     concert = score.find('defaults/concert-score') is not None
     return sha(str(concert).encode() + E.tostring(root, method='c14n', with_comments=False))
 
-def strip_layout(root, preserve_breaks=False):
+def strip_layout(root, preserve_breaks=False, preserve_dynamic_positions=False):
     for measure in root.findall('part/measure'):
         measure.attrib.pop('width', None)
     for node in list(root.iter()):
-        for attr in POSITION_ATTRS:
-            node.attrib.pop(attr, None)
+        # Two dynamics at the same musical position can be ordered by their
+        # source coordinates in MuseScore's legacy MIDI renderer. A reviewed
+        # edition may retain those coordinates; keep all other cleanup intact.
+        if not (preserve_dynamic_positions and node.tag == 'dynamics'):
+            for attr in POSITION_ATTRS:
+                node.attrib.pop(attr, None)
         if node.tag == 'print':
             for attr in PRINT_ATTRS:
                 if not (preserve_breaks and attr in {'new-system', 'new-page'}):
@@ -78,7 +82,7 @@ def child(parent, tag, text=None, **attrs):
         node.text = str(text)
     return node
 
-def normalize(data, metadata, preserve_breaks=False, word_layout=None):
+def normalize(data, metadata, preserve_breaks=False, word_layout=None, preserve_dynamic_positions=False):
     score = parse(data)
     original_signature = music_signature(score)
     original_credits = [E.tostring(n, encoding='unicode') for n in score.findall('credit')]
@@ -86,7 +90,7 @@ def normalize(data, metadata, preserve_breaks=False, word_layout=None):
     concert = score.find('defaults/concert-score') is not None
     score.set('version', '4.0')
     # Keep all performance data; discard only the explicit presentation allowlist.
-    strip_layout(score, preserve_breaks=preserve_breaks)
+    strip_layout(score, preserve_breaks=preserve_breaks, preserve_dynamic_positions=preserve_dynamic_positions)
     for node in score.iter():
         if node.text is not None:
             node.text = unicodedata.normalize('NFC', node.text)
@@ -184,4 +188,5 @@ def normalize(data, metadata, preserve_breaks=False, word_layout=None):
             info=zipfile.ZipInfo(name,(2000,1,1,0,0,0)); info.compress_type=zipfile.ZIP_DEFLATED; archive.writestr(info,contents)
     return output.getvalue(), {'profile':PROFILE,'sourceSha256':sha(data),'musicalXmlSignature':original_signature,
                                'allMusicalXmlPreserved':True, 'originalCreditCount':len(original_credits),
-                               'preservedPrintedBreaks':preserve_breaks}
+                               'preservedPrintedBreaks':preserve_breaks,
+                               'preservedDynamicPositions':preserve_dynamic_positions}

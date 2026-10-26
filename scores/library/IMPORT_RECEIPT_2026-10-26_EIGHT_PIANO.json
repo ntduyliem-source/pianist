@@ -1,0 +1,239 @@
+{
+  "summary": {
+    "inputs": 8,
+    "newWorks": 8,
+    "newVersions": 0,
+    "duplicates": 0,
+    "excluded": 0,
+    "editorOnly": 0,
+    "totalWorks": 149,
+    "totalVersions": 159
+  },
+  "results": [
+    {
+      "filename": "01-Nu-Nhi-Tinh.mxl",
+      "title": "Nữ nhi tình",
+      "status": "added",
+      "reason": "755 nốt; 4 trang; MuseScore playback/mapping đạt",
+      "nativeAudit": {
+        "nativeNotes": 755,
+        "sourceNotes": 755,
+        "missingGlyphs": 0,
+        "nativePlayback": true
+      },
+      "version": 1,
+      "workId": "6548c15155a64f05893dec5c53d062ab598580409b7f5a3c58c6e1910565c63f",
+      "id": "6548c15155a64f05893dec5c53d062ab598580409b7f5a3c58c6e1910565c63f",
+      "practiceReady": true,
+      "url": "library/songs/01-nu-nhi-tinh.mxl",
+      "publishedId": "96fd894c093092b35450b2ef2ce00b9abe8e63edc301ec4a6cbcf50938b7fd7c",
+      "publishedSha256": "96fd894c093092b35450b2ef2ce00b9abe8e63edc301ec4a6cbcf50938b7fd7c",
+      "sourceSha256": "6548c15155a64f05893dec5c53d062ab598580409b7f5a3c58c6e1910565c63f",
+      "normalizedPages": 3,
+      "exactNativeMusicPreserved": true
+    },
+    {
+      "filename": "02-Dam-Hoi-Duong-O-Noi-Dau.mxl",
+      "title": "Dám hỏi đường ở nơi đâu",
+      "status": "added",
+      "reason": "336 nốt; 2 trang; MuseScore playback/mapping đạt",
+      "diagnostics": [
+        "Có nốt hoa mỹ; chấm theo lịch MPE của MuseScore."
+      ],
+      "nativeAudit": {
+        "nativeNotes": 336,
+        "sourceNotes": 336,
+        "missingGlyphs": 0,
+        "nativePlayback": true
+      },
+      "version": 1,
+      "workId": "841a8054234a551c70af7a6752f94ef0b86787d1d50020136e561f489bbc4c1d",
+      "id": "841a8054234a551c70af7a6752f94ef0b86787d1d50020136e561f489bbc4c1d",
+      "practiceReady": true,
+      "url": "library/songs/02-dam-hoi-duong-o-noi-dau.mxl",
+      "publishedId": "3f068d1e25c4fb8524f84625f12e5f99e40a85ee93352f50e6b4061c9cd4d9b5",
+      "publishedSha256": "3f068d1e25c4fb8524f84625f12e5f99e40a85ee93352f50e6b4061c9cd4d9b5",
+      "sourceSha256": "841a8054234a551c70af7a6752f94ef0b86787d1d50020136e561f489bbc4c1d",
+      "normalizedPages": 2,
+      "exactNativeMusicPreserved": true
+    },
+    {
+      "filename": "03-Thien-Truc-Thieu-Nu.mxl",
+      "title": "Thiên Trúc thiếu nữ",
+      "status": "added",
+      "reason": "664 nốt; 4 trang; MuseScore playback/mapping đạt",
+      "nativeAudit": {
+        "nativeNotes": 664,
+        "sourceNotes": 664,
+        "missingGlyphs": 0,
+        "nativePlayback": true
+      },
+      "version": 1,
+      "workId": "353d36a284d4f624ed05d31fd8fe63d41899182a73a5ffecaf6a031a93f9b999",
+      "id": "353d36a284d4f624ed05d31fd8fe63d41899182a73a5ffecaf6a031a93f9b999",
+      "practiceReady": true,
+      "url": "library/songs/03-thien-truc-thieu-nu.mxl",
+      "publishedId": "d0def214e5f0f8292f7ed53526c239cc992eab7c73d466f568cf8a8f82b7fd36",
+      "publishedSha256": "d0def214e5f0f8292f7ed53526c239cc992eab7c73d466f568cf8a8f82b7fd36",
+      "sourceSha256": "353d36a284d4f624ed05d31fd8fe63d41899182a73a5ffecaf6a031a93f9b999",
+      "normalizedPages": 3,
+      "exactNativeMusicPreserved": true
+    },
+    {
+      "filename": "04-Van-Cung-Tan-Am.mxl",
+      "title": "Vân cung tấn âm",
+      "status": "added",
+      "reason": "1422 nốt; 4 trang; MuseScore playback/mapping đạt",
+      "diagnostics": [
+        "Có nốt hoa mỹ; chấm theo lịch MPE của MuseScore."
+      ],
+      "nativeAudit": {
+        "nativeNotes": 1422,
+        "sourceNotes": 1422,
+        "missingGlyphs": 0,
+        "nativePlayback": true
+      },
+      "version": 1,
+      "workId": "c6e6b160a5d8142b8ad7c3b78c1f623cbe02573269fad5bda3b9aeb0bd30181e",
+      "id": "c6e6b160a5d8142b8ad7c3b78c1f623cbe02573269fad5bda3b9aeb0bd30181e",
+      "practiceReady": true,
+      "url": "library/songs/04-van-cung-tan-am.mxl",
+      "publishedId": "f03ac68150544b74137ab22822483ac15df2e4df6bf7450fa34f8fa8633af4d2",
+      "publishedSha256": "f03ac68150544b74137ab22822483ac15df2e4df6bf7450fa34f8fa8633af4d2",
+      "sourceSha256": "c6e6b160a5d8142b8ad7c3b78c1f623cbe02573269fad5bda3b9aeb0bd30181e",
+      "normalizedPages": 4,
+      "exactNativeMusicPreserved": true
+    },
+    {
+      "filename": "05-Tru-Bat-Gioi-Cong-Vo.mxl",
+      "title": "Trư Bát Giới cõng vợ",
+      "status": "added",
+      "reason": "493 nốt; 2 trang; MuseScore playback/mapping đạt",
+      "diagnostics": [
+        "Có nốt hoa mỹ; chấm theo lịch MPE của MuseScore."
+      ],
+      "nativeAudit": {
+        "nativeNotes": 493,
+        "sourceNotes": 493,
+        "missingGlyphs": 0,
+        "nativePlayback": true
+      },
+      "version": 1,
+      "workId": "e90f8e924d395010b0ff15131b1b713e04fbebddc4720e649a230d0c27bd58c2",
+      "id": "e90f8e924d395010b0ff15131b1b713e04fbebddc4720e649a230d0c27bd58c2",
+      "practiceReady": true,
+      "url": "library/songs/05-tru-bat-gioi-cong-vo.mxl",
+      "publishedId": "c34694885d4fa96fe6bf9835597b70e625b257f5eda7da90074ed0a17af11636",
+      "publishedSha256": "c34694885d4fa96fe6bf9835597b70e625b257f5eda7da90074ed0a17af11636",
+      "sourceSha256": "e90f8e924d395010b0ff15131b1b713e04fbebddc4720e649a230d0c27bd58c2",
+      "normalizedPages": 2,
+      "exactNativeMusicPreserved": true
+    },
+    {
+      "filename": "06-Huong-Lua.mxl",
+      "title": "Hương lúa",
+      "status": "added",
+      "reason": "1264 nốt; 3 trang; MuseScore playback/mapping đạt",
+      "nativeAudit": {
+        "nativeNotes": 1264,
+        "sourceNotes": 1264,
+        "missingGlyphs": 0,
+        "nativePlayback": true
+      },
+      "version": 1,
+      "workId": "f15cfc8916f44dc473922d2b7fc916be4d9186cbda48e5c0d5e92537b72b753b",
+      "id": "f15cfc8916f44dc473922d2b7fc916be4d9186cbda48e5c0d5e92537b72b753b",
+      "practiceReady": true,
+      "url": "library/songs/06-huong-lua.mxl",
+      "publishedId": "a830ef8188a68adb18308cdbf5653e7296fe8f65ea689c46b36f1b2771b25374",
+      "publishedSha256": "a830ef8188a68adb18308cdbf5653e7296fe8f65ea689c46b36f1b2771b25374",
+      "sourceSha256": "f15cfc8916f44dc473922d2b7fc916be4d9186cbda48e5c0d5e92537b72b753b",
+      "normalizedPages": 4,
+      "exactNativeMusicPreserved": true
+    },
+    {
+      "filename": "07-Nghe-Loi-Me.mxl",
+      "title": "Nghe lời mẹ",
+      "status": "added",
+      "reason": "1331 nốt; 6 trang; MuseScore playback/mapping đạt",
+      "nativeAudit": {
+        "nativeNotes": 1331,
+        "sourceNotes": 1331,
+        "missingGlyphs": 0,
+        "nativePlayback": true
+      },
+      "version": 1,
+      "workId": "e7cfe1602a5c1b00c1945cfc7f7132d58818b3e5cd640a8c33c4c93dce4f397f",
+      "id": "e7cfe1602a5c1b00c1945cfc7f7132d58818b3e5cd640a8c33c4c93dce4f397f",
+      "practiceReady": true,
+      "url": "library/songs/07-nghe-loi-me.mxl",
+      "publishedId": "23df839a19595fccac827a7cc3df7239fe1c4e978ef56622d82c13312d159832",
+      "publishedSha256": "23df839a19595fccac827a7cc3df7239fe1c4e978ef56622d82c13312d159832",
+      "sourceSha256": "e7cfe1602a5c1b00c1945cfc7f7132d58818b3e5cd640a8c33c4c93dce4f397f",
+      "normalizedPages": 4,
+      "exactNativeMusicPreserved": true
+    },
+    {
+      "filename": "08-Da-Khuc.mxl",
+      "title": "Dạ khúc",
+      "status": "added",
+      "reason": "1493 nốt; 8 trang; MuseScore playback/mapping đạt",
+      "nativeAudit": {
+        "nativeNotes": 1493,
+        "sourceNotes": 1493,
+        "missingGlyphs": 0,
+        "nativePlayback": true
+      },
+      "version": 1,
+      "workId": "7d05e06fd3f9f49323256960b537d55675b0072175276b87d88e2cedf7bc4515",
+      "id": "7d05e06fd3f9f49323256960b537d55675b0072175276b87d88e2cedf7bc4515",
+      "practiceReady": true,
+      "url": "library/songs/08-da-khuc.mxl",
+      "publishedId": "194dc6dd5c1bac6dc8179a01a7fdee3b0b10dff8f2c562ac68534c3a8be10538",
+      "publishedSha256": "194dc6dd5c1bac6dc8179a01a7fdee3b0b10dff8f2c562ac68534c3a8be10538",
+      "sourceSha256": "7d05e06fd3f9f49323256960b537d55675b0072175276b87d88e2cedf7bc4515",
+      "normalizedPages": 5,
+      "exactNativeMusicPreserved": true
+    }
+  ],
+  "date": "2026-10-26",
+  "archive": {
+    "filename": "8-Ban-Piano-MXL-Tu-File-Dinh-Kem.zip",
+    "sha256": "c22875cc7a511ce9ba41b3fa2b607a03a59dee299e5bcdba824dc8e6c2ca8850",
+    "scope": "Eight root-level MXLs; QA/alternatives/05-Tru-Bat-Gioi-Cong-Vo-Editorial-A4.mxl is supporting editorial evidence, not a ninth import."
+  },
+  "validation": {
+    "policy": "two-staves-v2",
+    "nativePlaybackPassed": 8,
+    "normalizationProfile": "pianist-a4-v1",
+    "nativeRendererSha256": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+    "normalizedCatalogSha256": "b5ea42b9c1ce0c2586c4bba873e9f01872e14b3a8b9c03665d2ef36122bf120e",
+    "allCatalogEditions": 159,
+    "allCatalogPages": 484,
+    "newEditionPages": 27,
+    "boundsWarnings": [],
+    "nativeAuditSha256": "fdab34620ada7dd2f588c5f4f72e0f9d55536a79095585cd54fb3ee5a18dc35a",
+    "note": "Native audit compares exact music snapshots including dynamics, attacks/releases, repeat traversal, tempos, pedals and note glyphs. This does not certify every transcribed note against external source images."
+  },
+  "sourceCaveats": [
+    {
+      "filename": "01-Nu-Nhi-Tinh.mxl",
+      "measure": 30,
+      "finding": "4.5 quarter beats in 4/4; directly confirmed durations in supplied XML. Preserve source annotation and durations."
+    },
+    {
+      "filename": "05-Tru-Bat-Gioi-Cong-Vo.mxl",
+      "measure": 17,
+      "finding": "A4 eighth-note tie start, eighth forward gap, A4 quarter-note tie stop in voice 3; preserved exactly. Do not substitute supporting editorial alternative."
+    },
+    {
+      "filename": "04-Van-Cung-Tan-Am.mxl",
+      "measure": 5,
+      "finding": "Simultaneous ff and mf on staff 2. Preserving source dynamics coordinates retains exact native velocities. See layout-overrides.json."
+    },
+    {
+      "filename": "07-Nghe-Loi-Me.mxl",
+      "finding": "Native occurrence sequence verified as 1–76 -> 13–35 -> 77–78, 101 measure visits; source D.S./Coda retained."
+    }
+  ]
+}
