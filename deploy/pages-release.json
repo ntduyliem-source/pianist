@@ -1,6 +1,6 @@
 {
-  "tag": "pianist-web-2026-10-26-eight-piano",
-  "sha256": "46e0e668bea30e29b6b597cf1afdf7fe4554848920dcc430e9f09c99d0823acb",
-  "sourceCommit": "091d182249a56ec478296c2e255700c8bb99fe83",
-  "version": "cc6b545762c665bff876"
+  "tag": "pianist-web-2026-10-26-font-upgrade",
+  "sha256": "2dd2e52a69b69d67ad90b91e069ca07450c982367c6cc40a42470b6a59d2398e",
+  "sourceCommit": "3dbab8010a636bd1261fdd0f75b02644b8fdd03b",
+  "version": "c5f3320e666737dd967c"
 }
