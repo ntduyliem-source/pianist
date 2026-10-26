@@ -23,6 +23,7 @@
 
 #include <QFontDatabase>
 #include <qqml.h>
+#include "draw/types/font.h"
 
 #include "modularity/ioc.h"
 
@@ -155,7 +156,7 @@ void UiModule::onInit(const IApplication::RunMode& mode)
         return;
     }
 
-    if (QFontDatabase::addApplicationFont(":/ui/data/MusescoreIcon.ttf") == -1) {
+    if (muse::draw::Font::addApplicationFont(":/ui/data/MusescoreIcon.ttf") == -1) {
         LOGE() << "Unable load icon font: `:/ui/data/MusescoreIcon.ttf`";
     }
 

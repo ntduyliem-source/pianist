@@ -68,6 +68,15 @@ measure labels, editor playback ownership, quota-failed result recovery, offline
 worker lifecycle, and cold calibration with real audio/worker judgements. Hardware MIDI
 and a physical mobile device remain separate acceptance tasks.
 
+`native-fonts` compares actual SVG glyph paths and positions against the same
+score with bundled font names, including regular/bold/italic Vietnamese text,
+legacy MSCZ family/inline face tags and three previously broken method scores.
+It also requires unchanged native performance. `library-update` seeds a legacy
+saved edition plus newer recovery in an isolated browser profile, then verifies
+current-source Listen/Edit/Practice, preserved saved bytes, recovery reopening
+and repeated cross-score navigation. Passing a fresh-profile smoke or counting
+noteheads alone is not evidence for either of these regressions.
+
 The native gate is deliberately manual on a machine with the packaged assets;
 there is no GitHub job pretending a fresh source checkout includes the WASM.
 Run it between candidate preparation and finalization. Finalization requires its

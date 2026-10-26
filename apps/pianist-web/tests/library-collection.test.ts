@@ -20,15 +20,19 @@ test('an unrelated local score without source metadata never becomes a bundled e
   assert.equal(works[1].id, 'local');
 });
 
-test('a saved source stays one edition before and after font-only normalization', () => {
-  for (const sourceHash of [hash, originalHash]) {
-    const saved = project({ sourceHash, title: 'Tên đã sửa' });
-    const works = libraryCollection([song], [saved], 'ten da sua');
-    assert.equal(works.length, 1);
-    assert.equal(works[0].editions.length, 1);
-    assert.equal(works[0].editions[0].project, saved);
-    assert.equal(works[0].id, originalHash);
-  }
+test('the current saved source stays one edition; an older source cannot hide the updated MXL', () => {
+  const current = project({ sourceHash: hash, title: 'Tên đã sửa' });
+  assert.equal(libraryCollection([song], [current])[0].editions[0].project, current);
+  const saved = project({ sourceHash: originalHash, title: 'Tên đã sửa' });
+  const works = libraryCollection([song], [saved], 'ten da sua');
+  assert.equal(works.length, 1);
+  assert.equal(works[0].id, originalHash);
+  assert.equal(works[0].editions.length, 2);
+  assert.equal(works[0].editions[0].song, song);
+  assert.equal(works[0].editions[0].project, undefined);
+  assert.equal(works[0].editions[1].project, saved);
+  assert.match(works[0].editions[1].label, /Bản đã lưu/);
+  assert.equal(saved.sourceHash, originalHash);
 });
 
 test('Save As remains separate from its bundled source regardless of storage order', () => {
@@ -46,7 +50,7 @@ test('retiring version one keeps version two; unrelated same-title works stay se
   assert.equal(works[0].editions[0].version, 2);
 });
 
-test('multiple presentation revisions keep the saved edition and search all contributor roles without accents', () => {
+test('multiple presentation revisions retain the saved edition separately and search all contributor roles', () => {
   const intermediate = 'c'.repeat(64);
   const updated = { ...song, sourceHashes: [originalHash, intermediate], composer: 'Nhạc Sĩ',
     arranger: 'Phương Thy', aliases: ['Moon Song'] };
@@ -54,8 +58,9 @@ test('multiple presentation revisions keep the saved edition and search all cont
   for (const term of ['phuong thy', 'nhac si', 'moon song']) {
     const works = libraryCollection([updated], [saved], term);
     assert.equal(works.length, 1);
-    assert.equal(works[0].editions.length, 1);
-    assert.equal(works[0].editions[0].project, saved);
+    assert.equal(works[0].editions.length, 2);
+    assert.equal(works[0].editions[0].project, undefined);
+    assert.equal(works[0].editions[1].project, saved);
   }
   assert.equal(saved.sourceHash, intermediate);
 });

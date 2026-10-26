@@ -16,7 +16,7 @@ export interface LibraryWork {
   editions: LibraryEdition[];
 }
 
-/** One work, one card. A saved local edition replaces its bundled source in the picker. */
+/** Keep a work together, but never let an older saved source hide a catalog update. */
 export function libraryCollection(songs: BundledScore[], projects: ProjectRecord[], search = '') {
   const works = new Map<string, LibraryWork>();
   for (const song of songs) {
@@ -44,7 +44,7 @@ export function libraryCollection(songs: BundledScore[], projects: ProjectRecord
         !e.project &&
         (project.version === undefined || e.version === project.version),
     );
-    if (source && original) {
+    if (source && original && project.sourceHash === source.sha256) {
       original.project = project;
       original.label = project.title;
     } else {
@@ -54,7 +54,7 @@ export function libraryCollection(songs: BundledScore[], projects: ProjectRecord
       work.editions.push({
         id: project.id,
         version,
-        label: project.title,
+        label: source ? 'Bản đã lưu · ' + project.title : project.title,
         project,
       });
     }

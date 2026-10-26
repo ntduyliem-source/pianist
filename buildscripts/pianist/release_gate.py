@@ -20,6 +20,8 @@ SUITES = {
     'native-time-ties': ('native-time-ties.cjs', [], ''),
     'playback-sync': ('playback-sync.cjs', [], ''),
     'native-sheet-integrity': ('native-sheet-integrity.cjs', [], ''),
+    'native-fonts': ('native-fonts.cjs', [], ''),
+    'library-update': ('library-update.cjs', [], '?diagnostics=1#/library'),
     'format-integrity': ('format-integrity.cjs', [], '?diagnostics=1#/library'),
     'library-policy': ('library-policy.cjs', [], '?diagnostics=1#/library'),
     'native-preview-free': ('native-preview.cjs', ['--skip-grade'], '?diagnostics=1#/library'),

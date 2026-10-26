@@ -131,6 +131,8 @@ public:
     bool operator !=(const Font& other) const { return !this->operator ==(other); }
 
 #ifndef NO_QT_SUPPORT
+    // Register real font data, including the families available to WASM SVG export.
+    static int addApplicationFont(const QString& fileName);
     QFont toQFont() const;
     static Font fromQFont(const QFont& qf, Type type);
 #endif

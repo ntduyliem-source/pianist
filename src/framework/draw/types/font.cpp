@@ -22,6 +22,13 @@
 #include "font.h"
 #include "global/realfn.h"
 
+#ifndef NO_QT_SUPPORT
+#include <QFontDatabase>
+#ifdef Q_OS_WASM
+#include <QSet>
+#endif
+#endif
+
 using namespace muse;
 using namespace muse::draw;
 
@@ -159,16 +166,51 @@ void Font::setHinting(Hinting hinting)
 }
 
 #ifndef NO_QT_SUPPORT
+#ifdef Q_OS_WASM
+static QSet<QString> s_outlineFamilies;
+#endif
+
+int Font::addApplicationFont(const QString& fileName)
+{
+    const int id = QFontDatabase::addApplicationFont(fileName);
+#ifdef Q_OS_WASM
+    for (const QString& family : QFontDatabase::applicationFontFamilies(id)) {
+        s_outlineFamilies.insert(family.toCaseFolded());
+    }
+#endif
+    return id;
+}
+
 QFont Font::toQFont() const
 {
     QFont qf(family().id());
 #ifdef Q_OS_WASM
-    // Browser system fonts have no bundled glyph outlines for SVG export.
-    // Use the same bundled fallback as the engraving font database, while
-    // preserving the imported family name in the score and MusicXML export.
-    if (family().id().isEqualIgnoreCase(u"Courier New")) {
-        qf.setFamily(QStringLiteral("Edwin"));
+    // Qt/WASM advertises browser families (e.g. Times New Roman, Calibri)
+    // without usable native glyph outlines. Both measurement and drawing must
+    // select actual registered font data, not mix browser metrics and fallback
+    // paths. Keep the original score family untouched for desktop/export.
+    QString resolved = qf.family();
+    if (!s_outlineFamilies.contains(resolved.toCaseFolded())) {
+        QStringList candidates = QFont::substitutes(resolved);
+        candidates << (type() == Type::MusicSymbol ? QStringLiteral("Bravura")
+                       : type() == Type::MusicSymbolText ? QStringLiteral("Bravura Text")
+                       : QStringLiteral("FreeSerif"));
+        for (const QString& candidate : candidates) {
+            if (s_outlineFamilies.contains(candidate.toCaseFolded())) {
+                resolved = candidate;
+                break;
+            }
+        }
     }
+    // Explicit bundled fallbacks also cover Vietnamese/CJK in partial families
+    // such as Edwin, before Qt attempts browser-only system fallback.
+    QStringList families { resolved };
+    for (const QString& fallback : { QStringLiteral("FreeSerif"), QStringLiteral("Noto Sans CJK SC") }) {
+        if (s_outlineFamilies.contains(fallback.toCaseFolded()) && !families.contains(fallback)) {
+            families << fallback;
+        }
+    }
+    qf.setFamilies(families);
 #endif
 
     if (pointSizeF() > 0) {

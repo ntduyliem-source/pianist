@@ -50,14 +50,26 @@ test('linking a recovered bundled song cannot promote stale bytes; playback read
   const normalized = new Uint8Array([11, 21]);
   const normalizedHash = Buffer.from(await crypto.subtle.digest('SHA-256', normalized)).toString('hex');
   t.mock.method(globalThis, 'fetch', async () => new Response(normalized));
+  const importedId = crypto.randomUUID();
+  t.mock.method(ws, 'importFile', async (file: File) => {
+    const source = new Uint8Array(await file.arrayBuffer());
+    assert.deepEqual(source, normalized, 'opening an updated edition must import its current bytes');
+    const imported = { ...project, id: importedId, source, sourceName: file.name };
+    await storage.claimProject(importedId);
+    t.after(() => storage.releaseProject(importedId));
+    await storage.saveProject(imported);
+    ws.patch({ current: imported });
+  });
   await ws.openBundledScore({ id: normalizedHash, sha256: normalizedHash, sourceHashes: [hash],
     workId: hash, version: 1, bytes: normalized.length, title: 'Tên chuẩn hóa',
     arranger: 'Người Soạn', filename: 'Tên chuẩn hóa.mxl', url: 'library/songs/recovery.mxl' });
-  assert.deepEqual(loaded, [2], 'normalization keeps the already-open recovery and its undo history');
-  assert.equal(ws.state.current!.id, project.id);
-  assert.equal(ws.state.current!.title, 'Edited recovery');
-  assert.equal(ws.state.current!.sourceHash, hash, 'source hash still describes retained original bytes');
+  assert.deepEqual(loaded, [2], 'the old recovery is not silently loaded as the new source');
+  assert.equal(ws.state.current!.id, importedId);
+  assert.equal(ws.state.current!.title, 'Tên chuẩn hóa');
+  assert.equal(ws.state.current!.sourceHash, normalizedHash);
   assert.equal(ws.state.current!.arranger, 'Người Soạn');
+  assert.equal((await storage.get<storage.ProjectRecord>('projects', project.id))!.sourceHash, hash);
+  assert.deepEqual(await storage.get<storage.RecoveryRecord>('recovery', project.id), recovery);
   assert.deepEqual((await storage.get<storage.ProjectRecord>('projects', project.id))!.bytes, project.bytes);
   assert.deepEqual(await projectTrack(saved, 'V1').load(new AbortController().signal), {
     bytes: recovery.bytes, filename: recovery.filename,

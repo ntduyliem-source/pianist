@@ -74,7 +74,7 @@ int FontsDatabase::addFont(const FontDataKey& key, const io::path_t& path)
     m_fonts.push_back(FontInfo { s_fontID, key, path });
 
 #ifdef MUSE_MODULE_DRAW_USE_QTFONTMETRICS
-    QFontDatabase::addApplicationFont(path.toQString());
+    Font::addApplicationFont(path.toQString());
 #endif
 
     return s_fontID;

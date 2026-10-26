@@ -932,7 +932,7 @@ export class Workspace {
       (p) =>
         !p.archived &&
         (p.version === undefined || p.version === (score.version ?? 1)) &&
-        (isBundledSource(score, p.sourceHash) ||
+        (p.sourceHash === score.sha256 ||
           (p.sourceName === score.filename &&
             p.source?.length === bytes.length &&
             p.source.every((b, i) => b === bytes[i]))),
