@@ -1,9 +1,9 @@
 {
   "profile": "pianist-a4-v1",
-  "originalCatalogSha256": "df1ca2df027b47d9877789cd982262e83e7ad3f401393e30411d262bc26ea67f",
-  "candidateCatalogSha256": "b5ea42b9c1ce0c2586c4bba873e9f01872e14b3a8b9c03665d2ef36122bf120e",
+  "originalCatalogSha256": "7b928f698ef06727b929b95f698aa7ee092362a378c2777e8f5dd8ba95cc5b5c",
+  "candidateCatalogSha256": "cec611a7c0aa1b143e22772686ed1fa13762b21765326f7c2e4507a7ec3dc63c",
   "counts": {
-    "staged": 159
+    "staged": 162
   },
   "editions": [
     {
@@ -7349,14 +7349,27 @@
           "source": "identification/creator[0]",
           "text": "键盘侠Orz木乔",
           "confidence": "source-declared"
+        },
+        {
+          "field": "arranger",
+          "value": "键盘侠Orz木乔",
+          "source": "credit[1]",
+          "text": "Chuyển soạn piano: 键盘侠Orz木乔",
+          "confidence": "source-declared"
         }
       ],
       "sourceCredits": [
         {
-          "text": "Nữ nhi tình — 女儿情-完整好听版",
+          "text": "Nữ nhi tình",
           "source": "credit[0]",
           "role": "title",
           "recognizedContributor": false
+        },
+        {
+          "text": "Chuyển soạn piano: 键盘侠Orz木乔",
+          "source": "credit[1]",
+          "role": "composer",
+          "recognizedContributor": true
         }
       ],
       "unresolved": [],
@@ -7365,15 +7378,12 @@
       ],
       "corrections": {},
       "url": "library/songs/01-nu-nhi-tinh.mxl",
-      "originalSha256": "6548c15155a64f05893dec5c53d062ab598580409b7f5a3c58c6e1910565c63f",
+      "originalSha256": "96fd894c093092b35450b2ef2ce00b9abe8e63edc301ec4a6cbcf50938b7fd7c",
       "workId": "6548c15155a64f05893dec5c53d062ab598580409b7f5a3c58c6e1910565c63f",
       "profile": "pianist-a4-v1",
-      "sourceSha256": "6548c15155a64f05893dec5c53d062ab598580409b7f5a3c58c6e1910565c63f",
       "musicalXmlSignature": "4027688625227127b167cf1d79e721f87b3fe4998f0f2d42ef9371dfa9e8e25f",
       "allMusicalXmlPreserved": true,
-      "originalCreditCount": 1,
-      "preservedPrintedBreaks": false,
-      "preservedDynamicPositions": false,
+      "alreadyNormalized": true,
       "status": "staged",
       "existingSchemaIssues": {},
       "normalizedSha256": "96fd894c093092b35450b2ef2ce00b9abe8e63edc301ec4a6cbcf50938b7fd7c"
@@ -7387,7 +7397,14 @@
         ]
       },
       "evidence": [],
-      "sourceCredits": [],
+      "sourceCredits": [
+        {
+          "text": "Dám hỏi đường ở nơi đâu",
+          "source": "credit[0]",
+          "role": "title",
+          "recognizedContributor": false
+        }
+      ],
       "unresolved": [],
       "missing": [
         "composer",
@@ -7395,15 +7412,12 @@
       ],
       "corrections": {},
       "url": "library/songs/02-dam-hoi-duong-o-noi-dau.mxl",
-      "originalSha256": "841a8054234a551c70af7a6752f94ef0b86787d1d50020136e561f489bbc4c1d",
+      "originalSha256": "3f068d1e25c4fb8524f84625f12e5f99e40a85ee93352f50e6b4061c9cd4d9b5",
       "workId": "841a8054234a551c70af7a6752f94ef0b86787d1d50020136e561f489bbc4c1d",
       "profile": "pianist-a4-v1",
-      "sourceSha256": "841a8054234a551c70af7a6752f94ef0b86787d1d50020136e561f489bbc4c1d",
       "musicalXmlSignature": "efda89e111ca65968166c6bcfac43f2e04e84ced8ffde344de4c6781a7429053",
       "allMusicalXmlPreserved": true,
-      "originalCreditCount": 0,
-      "preservedPrintedBreaks": false,
-      "preservedDynamicPositions": false,
+      "alreadyNormalized": true,
       "status": "staged",
       "existingSchemaIssues": {},
       "normalizedSha256": "3f068d1e25c4fb8524f84625f12e5f99e40a85ee93352f50e6b4061c9cd4d9b5"
@@ -7412,45 +7426,66 @@
       "metadata": {
         "title": "Thiên Trúc thiếu nữ",
         "composer": "Hứa Kính Thanh / 许镜清",
+        "lyricist": "阎肃",
         "arranger": "不会弹琴的秋水",
         "aliases": [
           "Thiên Trúc thiếu nữ — 天竺少女",
           "天竺少女"
-        ],
-        "lyricist": "阎肃"
+        ]
       },
       "evidence": [
         {
-          "field": "arranger",
-          "value": "不会弹琴的秋水",
+          "field": "composer",
+          "value": "Hứa Kính Thanh / 许镜清",
           "source": "identification/creator[0]",
-          "text": "不会弹琴的秋水",
+          "text": "Hứa Kính Thanh / 许镜清",
           "confidence": "source-declared"
         },
         {
-          "field": "composer",
+          "field": "lyricist",
           "value": "阎肃",
           "source": "identification/creator[1]",
           "text": "阎肃",
           "confidence": "source-declared"
         },
         {
+          "field": "arranger",
+          "value": "不会弹琴的秋水",
+          "source": "identification/creator[2]",
+          "text": "不会弹琴的秋水",
+          "confidence": "source-declared"
+        },
+        {
           "field": "composer",
+          "value": "Hứa Kính Thanh / 许镜清",
+          "source": "credit[1]",
+          "text": "Nhạc: Hứa Kính Thanh / 许镜清 Lời: 阎肃 Chuyển soạn piano: 不会弹琴的秋水",
+          "confidence": "source-declared"
+        },
+        {
+          "field": "lyricist",
           "value": "阎肃",
           "source": "credit[1]",
-          "text": "阎肃",
+          "text": "Nhạc: Hứa Kính Thanh / 许镜清 Lời: 阎肃 Chuyển soạn piano: 不会弹琴的秋水",
+          "confidence": "source-declared"
+        },
+        {
+          "field": "arranger",
+          "value": "不会弹琴的秋水",
+          "source": "credit[1]",
+          "text": "Nhạc: Hứa Kính Thanh / 许镜清 Lời: 阎肃 Chuyển soạn piano: 不会弹琴的秋水",
           "confidence": "source-declared"
         }
       ],
       "sourceCredits": [
         {
-          "text": "Thiên Trúc thiếu nữ — 天竺少女",
+          "text": "Thiên Trúc thiếu nữ",
           "source": "credit[0]",
           "role": "title",
           "recognizedContributor": false
         },
         {
-          "text": "阎肃",
+          "text": "Nhạc: Hứa Kính Thanh / 许镜清 Lời: 阎肃 Chuyển soạn piano: 不会弹琴的秋水",
           "source": "credit[1]",
           "role": "composer",
           "recognizedContributor": true
@@ -7471,15 +7506,12 @@
         ]
       },
       "url": "library/songs/03-thien-truc-thieu-nu.mxl",
-      "originalSha256": "353d36a284d4f624ed05d31fd8fe63d41899182a73a5ffecaf6a031a93f9b999",
+      "originalSha256": "d0def214e5f0f8292f7ed53526c239cc992eab7c73d466f568cf8a8f82b7fd36",
       "workId": "353d36a284d4f624ed05d31fd8fe63d41899182a73a5ffecaf6a031a93f9b999",
       "profile": "pianist-a4-v1",
-      "sourceSha256": "353d36a284d4f624ed05d31fd8fe63d41899182a73a5ffecaf6a031a93f9b999",
       "musicalXmlSignature": "bec60188755843eb9b703fa5cf2fafff7d46073353a69a15f1b01bbc2b0b7ee1",
       "allMusicalXmlPreserved": true,
-      "originalCreditCount": 2,
-      "preservedPrintedBreaks": false,
-      "preservedDynamicPositions": false,
+      "alreadyNormalized": true,
       "status": "staged",
       "existingSchemaIssues": {},
       "normalizedSha256": "d0def214e5f0f8292f7ed53526c239cc992eab7c73d466f568cf8a8f82b7fd36"
@@ -7500,24 +7532,41 @@
           "source": "identification/creator[0]",
           "text": "Hứa Kính Thanh / 许镜清",
           "confidence": "source-declared"
+        },
+        {
+          "field": "composer",
+          "value": "Hứa Kính Thanh / 许镜清",
+          "source": "credit[1]",
+          "text": "Nhạc: Hứa Kính Thanh / 许镜清",
+          "confidence": "source-declared"
         }
       ],
-      "sourceCredits": [],
+      "sourceCredits": [
+        {
+          "text": "Vân cung tấn âm",
+          "source": "credit[0]",
+          "role": "title",
+          "recognizedContributor": false
+        },
+        {
+          "text": "Nhạc: Hứa Kính Thanh / 许镜清",
+          "source": "credit[1]",
+          "role": "composer",
+          "recognizedContributor": true
+        }
+      ],
       "unresolved": [],
       "missing": [
         "arranger"
       ],
       "corrections": {},
       "url": "library/songs/04-van-cung-tan-am.mxl",
-      "originalSha256": "c6e6b160a5d8142b8ad7c3b78c1f623cbe02573269fad5bda3b9aeb0bd30181e",
+      "originalSha256": "f03ac68150544b74137ab22822483ac15df2e4df6bf7450fa34f8fa8633af4d2",
       "workId": "c6e6b160a5d8142b8ad7c3b78c1f623cbe02573269fad5bda3b9aeb0bd30181e",
       "profile": "pianist-a4-v1",
-      "sourceSha256": "c6e6b160a5d8142b8ad7c3b78c1f623cbe02573269fad5bda3b9aeb0bd30181e",
       "musicalXmlSignature": "d08d62e76483c3b1e228aa3806ed0dcbbee6b4b980c0a2cfa6b04061651b3a5d",
       "allMusicalXmlPreserved": true,
-      "originalCreditCount": 0,
-      "preservedPrintedBreaks": false,
-      "preservedDynamicPositions": true,
+      "alreadyNormalized": true,
       "status": "staged",
       "existingSchemaIssues": {},
       "normalizedSha256": "f03ac68150544b74137ab22822483ac15df2e4df6bf7450fa34f8fa8633af4d2"
@@ -7531,7 +7580,14 @@
         ]
       },
       "evidence": [],
-      "sourceCredits": [],
+      "sourceCredits": [
+        {
+          "text": "Trư Bát Giới cõng vợ",
+          "source": "credit[0]",
+          "role": "title",
+          "recognizedContributor": false
+        }
+      ],
       "unresolved": [],
       "missing": [
         "composer",
@@ -7539,15 +7595,12 @@
       ],
       "corrections": {},
       "url": "library/songs/05-tru-bat-gioi-cong-vo.mxl",
-      "originalSha256": "e90f8e924d395010b0ff15131b1b713e04fbebddc4720e649a230d0c27bd58c2",
+      "originalSha256": "c34694885d4fa96fe6bf9835597b70e625b257f5eda7da90074ed0a17af11636",
       "workId": "e90f8e924d395010b0ff15131b1b713e04fbebddc4720e649a230d0c27bd58c2",
       "profile": "pianist-a4-v1",
-      "sourceSha256": "e90f8e924d395010b0ff15131b1b713e04fbebddc4720e649a230d0c27bd58c2",
       "musicalXmlSignature": "be282af00f1e060a1781174cd9eab56d8829dd3d4d81aa76a670d4e1b772d587",
       "allMusicalXmlPreserved": true,
-      "originalCreditCount": 0,
-      "preservedPrintedBreaks": false,
-      "preservedDynamicPositions": false,
+      "alreadyNormalized": true,
       "status": "staged",
       "existingSchemaIssues": {},
       "normalizedSha256": "c34694885d4fa96fe6bf9835597b70e625b257f5eda7da90074ed0a17af11636"
@@ -7568,24 +7621,41 @@
           "source": "identification/creator[0]",
           "text": "Châu Kiệt Luân / 周杰伦",
           "confidence": "source-declared"
+        },
+        {
+          "field": "composer",
+          "value": "Châu Kiệt Luân / 周杰伦",
+          "source": "credit[1]",
+          "text": "Nhạc: Châu Kiệt Luân / 周杰伦",
+          "confidence": "source-declared"
         }
       ],
-      "sourceCredits": [],
+      "sourceCredits": [
+        {
+          "text": "Hương lúa",
+          "source": "credit[0]",
+          "role": "title",
+          "recognizedContributor": false
+        },
+        {
+          "text": "Nhạc: Châu Kiệt Luân / 周杰伦",
+          "source": "credit[1]",
+          "role": "composer",
+          "recognizedContributor": true
+        }
+      ],
       "unresolved": [],
       "missing": [
         "arranger"
       ],
       "corrections": {},
       "url": "library/songs/06-huong-lua.mxl",
-      "originalSha256": "f15cfc8916f44dc473922d2b7fc916be4d9186cbda48e5c0d5e92537b72b753b",
+      "originalSha256": "a830ef8188a68adb18308cdbf5653e7296fe8f65ea689c46b36f1b2771b25374",
       "workId": "f15cfc8916f44dc473922d2b7fc916be4d9186cbda48e5c0d5e92537b72b753b",
       "profile": "pianist-a4-v1",
-      "sourceSha256": "f15cfc8916f44dc473922d2b7fc916be4d9186cbda48e5c0d5e92537b72b753b",
       "musicalXmlSignature": "6955280ee0aa5bc6d27ae85d75637a93a3e40bbfec55ee829ab56c840defd9de",
       "allMusicalXmlPreserved": true,
-      "originalCreditCount": 0,
-      "preservedPrintedBreaks": false,
-      "preservedDynamicPositions": false,
+      "alreadyNormalized": true,
       "status": "staged",
       "existingSchemaIssues": {},
       "normalizedSha256": "a830ef8188a68adb18308cdbf5653e7296fe8f65ea689c46b36f1b2771b25374"
@@ -7606,24 +7676,41 @@
           "source": "identification/creator[0]",
           "text": "90okne",
           "confidence": "source-declared"
+        },
+        {
+          "field": "arranger",
+          "value": "90okne",
+          "source": "credit[1]",
+          "text": "Chuyển soạn piano: 90okne",
+          "confidence": "source-declared"
         }
       ],
-      "sourceCredits": [],
+      "sourceCredits": [
+        {
+          "text": "Nghe lời mẹ",
+          "source": "credit[0]",
+          "role": "title",
+          "recognizedContributor": false
+        },
+        {
+          "text": "Chuyển soạn piano: 90okne",
+          "source": "credit[1]",
+          "role": "composer",
+          "recognizedContributor": true
+        }
+      ],
       "unresolved": [],
       "missing": [
         "composer"
       ],
       "corrections": {},
       "url": "library/songs/07-nghe-loi-me.mxl",
-      "originalSha256": "e7cfe1602a5c1b00c1945cfc7f7132d58818b3e5cd640a8c33c4c93dce4f397f",
+      "originalSha256": "23df839a19595fccac827a7cc3df7239fe1c4e978ef56622d82c13312d159832",
       "workId": "e7cfe1602a5c1b00c1945cfc7f7132d58818b3e5cd640a8c33c4c93dce4f397f",
       "profile": "pianist-a4-v1",
-      "sourceSha256": "e7cfe1602a5c1b00c1945cfc7f7132d58818b3e5cd640a8c33c4c93dce4f397f",
       "musicalXmlSignature": "f50bb1440bc4502a7567eeed212dab90c6aa8080a48daf15da5dffd5880df9c0",
       "allMusicalXmlPreserved": true,
-      "originalCreditCount": 0,
-      "preservedPrintedBreaks": false,
-      "preservedDynamicPositions": false,
+      "alreadyNormalized": true,
       "status": "staged",
       "existingSchemaIssues": {},
       "normalizedSha256": "23df839a19595fccac827a7cc3df7239fe1c4e978ef56622d82c13312d159832"
@@ -7641,20 +7728,47 @@
       "evidence": [
         {
           "field": "composer",
-          "value": "周杰伦 / Châu Kiệt Luân",
+          "value": "Châu Kiệt Luân / 周杰伦",
           "source": "identification/creator[0]",
-          "text": "周杰伦 / Châu Kiệt Luân",
+          "text": "Châu Kiệt Luân / 周杰伦",
           "confidence": "source-declared"
         },
         {
           "field": "arranger",
-          "value": "三色光音 (source attribution)",
+          "value": "三色光音",
           "source": "identification/creator[1]",
-          "text": "三色光音 (source attribution)",
+          "text": "三色光音",
+          "confidence": "source-declared"
+        },
+        {
+          "field": "composer",
+          "value": "Châu Kiệt Luân / 周杰伦",
+          "source": "credit[1]",
+          "text": "Nhạc: Châu Kiệt Luân / 周杰伦 Chuyển soạn piano: 三色光音",
+          "confidence": "source-declared"
+        },
+        {
+          "field": "arranger",
+          "value": "三色光音",
+          "source": "credit[1]",
+          "text": "Nhạc: Châu Kiệt Luân / 周杰伦 Chuyển soạn piano: 三色光音",
           "confidence": "source-declared"
         }
       ],
-      "sourceCredits": [],
+      "sourceCredits": [
+        {
+          "text": "Dạ khúc",
+          "source": "credit[0]",
+          "role": "title",
+          "recognizedContributor": false
+        },
+        {
+          "text": "Nhạc: Châu Kiệt Luân / 周杰伦 Chuyển soạn piano: 三色光音",
+          "source": "credit[1]",
+          "role": "composer",
+          "recognizedContributor": true
+        }
+      ],
       "unresolved": [],
       "missing": [],
       "corrections": {
@@ -7670,22 +7784,189 @@
         ]
       },
       "url": "library/songs/08-da-khuc.mxl",
-      "originalSha256": "7d05e06fd3f9f49323256960b537d55675b0072175276b87d88e2cedf7bc4515",
+      "originalSha256": "194dc6dd5c1bac6dc8179a01a7fdee3b0b10dff8f2c562ac68534c3a8be10538",
       "workId": "7d05e06fd3f9f49323256960b537d55675b0072175276b87d88e2cedf7bc4515",
       "profile": "pianist-a4-v1",
-      "sourceSha256": "7d05e06fd3f9f49323256960b537d55675b0072175276b87d88e2cedf7bc4515",
       "musicalXmlSignature": "c3af42c85596f895f627389ba475fbd5f4998e89055e83b7a771218395e8dbdf",
       "allMusicalXmlPreserved": true,
-      "originalCreditCount": 0,
+      "alreadyNormalized": true,
+      "status": "staged",
+      "existingSchemaIssues": {},
+      "normalizedSha256": "194dc6dd5c1bac6dc8179a01a7fdee3b0b10dff8f2c562ac68534c3a8be10538"
+    },
+    {
+      "metadata": {
+        "title": "Top of the World",
+        "aliases": [
+          "TOP OF THE WORLD"
+        ],
+        "composer": "Richard Carpenter",
+        "lyricist": "John Bettis"
+      },
+      "evidence": [],
+      "sourceCredits": [
+        {
+          "text": "TOP OF THE WORLD",
+          "source": "credit[0]",
+          "role": null,
+          "recognizedContributor": false
+        },
+        {
+          "text": "TRUCMY.LTTM@GMAIL.COM",
+          "source": "credit[1]",
+          "role": null,
+          "recognizedContributor": false
+        }
+      ],
+      "unresolved": [],
+      "missing": [
+        "arranger"
+      ],
+      "corrections": {
+        "fields": {
+          "title": "Top of the World",
+          "composer": "Richard Carpenter",
+          "lyricist": "John Bettis"
+        },
+        "evidence": [
+          {
+            "source": "https://www.richardandkarencarpenter.com/SN_TopOfTheWorld.htm",
+            "reason": "Official song notes identify music by Richard Carpenter and lyrics by John Bettis. The source's untyped contact credit does not establish the arranger of this piano edition."
+          }
+        ]
+      },
+      "url": "library/songs/top-of-the-world.mxl",
+      "originalSha256": "fb5e70d9b2ba711e30c60298ff157caebd697e6be2df2bc9800cba7ffc0a21d5",
+      "workId": "fb5e70d9b2ba711e30c60298ff157caebd697e6be2df2bc9800cba7ffc0a21d5",
+      "profile": "pianist-a4-v1",
+      "sourceSha256": "fb5e70d9b2ba711e30c60298ff157caebd697e6be2df2bc9800cba7ffc0a21d5",
+      "musicalXmlSignature": "c9082b09663cdd10231c88a874d9cc660c87c36df6959385eb0af710bab0a435",
+      "allMusicalXmlPreserved": true,
+      "originalCreditCount": 2,
       "preservedPrintedBreaks": false,
       "preservedDynamicPositions": false,
       "status": "staged",
       "existingSchemaIssues": {},
-      "normalizedSha256": "194dc6dd5c1bac6dc8179a01a7fdee3b0b10dff8f2c562ac68534c3a8be10538"
+      "normalizedSha256": "91e58dcd4b71ab6a3733c0fc704b9306e2647ff63a01bb63682c8407c6518a45"
+    },
+    {
+      "metadata": {
+        "title": "Yesterday Once More",
+        "composer": "Richard Carpenter",
+        "aliases": [],
+        "lyricist": "John Bettis",
+        "performer": "The Carpenters"
+      },
+      "evidence": [
+        {
+          "field": "composer",
+          "value": "The Carpenters",
+          "source": "identification/creator[0]",
+          "text": "The Carpenters",
+          "confidence": "source-declared"
+        },
+        {
+          "field": "composer",
+          "value": "The Carpenters",
+          "source": "credit[1]",
+          "text": "The Carpenters",
+          "confidence": "source-declared"
+        }
+      ],
+      "sourceCredits": [
+        {
+          "text": "Yesterday Once More",
+          "source": "credit[0]",
+          "role": "title",
+          "recognizedContributor": false
+        },
+        {
+          "text": "The Carpenters",
+          "source": "credit[1]",
+          "role": "composer",
+          "recognizedContributor": true
+        }
+      ],
+      "unresolved": [],
+      "missing": [
+        "arranger"
+      ],
+      "corrections": {
+        "fields": {
+          "composer": "Richard Carpenter",
+          "lyricist": "John Bettis",
+          "performer": "The Carpenters"
+        },
+        "evidence": [
+          {
+            "source": "https://richardandkarencarpenter.com/SN_YesterdayOnceMore.htm",
+            "reason": "Official song notes identify music by Richard Carpenter and lyrics by John Bettis. The source's composer field names the recording artist The Carpenters; preserve it as performer, without inferring this piano edition's arranger."
+          }
+        ]
+      },
+      "url": "library/songs/yesterday-once-more-the-carpenters.mxl",
+      "originalSha256": "1861a0515ae974ab638d08701af76d4d5305f8938d69526f69f1581f661494c8",
+      "workId": "1861a0515ae974ab638d08701af76d4d5305f8938d69526f69f1581f661494c8",
+      "profile": "pianist-a4-v1",
+      "sourceSha256": "1861a0515ae974ab638d08701af76d4d5305f8938d69526f69f1581f661494c8",
+      "musicalXmlSignature": "86877e372a0619395843f1d2d4496c8a89ada88d296d85fc04ff8f5e8d26785a",
+      "allMusicalXmlPreserved": true,
+      "originalCreditCount": 2,
+      "preservedPrintedBreaks": false,
+      "preservedDynamicPositions": false,
+      "status": "staged",
+      "existingSchemaIssues": {},
+      "normalizedSha256": "1b297cad236428f1da14996b2fe2fcb68266b2fd31cba4bd9adce24d1b9644e0"
+    },
+    {
+      "metadata": {
+        "title": "Yesterday Once More",
+        "aliases": [],
+        "composer": "Richard Carpenter",
+        "lyricist": "John Bettis"
+      },
+      "evidence": [],
+      "sourceCredits": [
+        {
+          "text": "Yesterday Once More",
+          "source": "credit[0]",
+          "role": "title",
+          "recognizedContributor": false
+        }
+      ],
+      "unresolved": [],
+      "missing": [
+        "arranger"
+      ],
+      "corrections": {
+        "fields": {
+          "composer": "Richard Carpenter",
+          "lyricist": "John Bettis"
+        },
+        "evidence": [
+          {
+            "source": "https://richardandkarencarpenter.com/SN_YesterdayOnceMore.htm",
+            "reason": "Official song notes identify music by Richard Carpenter and lyrics by John Bettis. No piano arranger attribution is present in this edition."
+          }
+        ]
+      },
+      "url": "library/songs/yesterday-once-more-carpenters-yesterday-once-more-v2.mxl",
+      "originalSha256": "79a99eec34675c502915fd8710c342d0c2d7de2ac2505b9703b03059c3d493fb",
+      "workId": "1861a0515ae974ab638d08701af76d4d5305f8938d69526f69f1581f661494c8",
+      "profile": "pianist-a4-v1",
+      "sourceSha256": "79a99eec34675c502915fd8710c342d0c2d7de2ac2505b9703b03059c3d493fb",
+      "musicalXmlSignature": "0df0e7da760e2fd857f193bd9727bd69e1545d4a0c94f7a8104ec22d7fcfab59",
+      "allMusicalXmlPreserved": true,
+      "originalCreditCount": 1,
+      "preservedPrintedBreaks": false,
+      "preservedDynamicPositions": false,
+      "status": "staged",
+      "existingSchemaIssues": {},
+      "normalizedSha256": "0ab1b579ea8f48025d2db87cdae2ed28f478904b423e333b5a524344a563fb99"
     }
   ],
   "nativeAudit": {
-    "candidateCatalogSha256": "b5ea42b9c1ce0c2586c4bba873e9f01872e14b3a8b9c03665d2ef36122bf120e",
+    "candidateCatalogSha256": "cec611a7c0aa1b143e22772686ed1fa13762b21765326f7c2e4507a7ec3dc63c",
     "browser": "156.0.4314.42",
     "pilot": false,
     "results": [
@@ -7733,7 +8014,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 468,
         "oldPages": 2,
@@ -7800,7 +8081,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 794,
         "oldPages": 3,
@@ -7851,7 +8132,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 346,
         "oldPages": 2,
@@ -7902,7 +8183,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 278,
         "oldPages": 2,
@@ -7953,7 +8234,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 327,
         "oldPages": 2,
@@ -8036,7 +8317,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 1592,
         "oldPages": 4,
@@ -8087,7 +8368,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 358,
         "oldPages": 2,
@@ -8154,7 +8435,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 737,
         "oldPages": 3,
@@ -8269,7 +8550,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 1706,
         "oldPages": 6,
@@ -8352,7 +8633,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 748,
         "oldPages": 4,
@@ -8435,7 +8716,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 1092,
         "oldPages": 4,
@@ -8518,7 +8799,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 986,
         "oldPages": 4,
@@ -8585,7 +8866,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 675,
         "oldPages": 3,
@@ -8668,7 +8949,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 1166,
         "oldPages": 4,
@@ -8751,7 +9032,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 783,
         "oldPages": 4,
@@ -8802,7 +9083,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 384,
         "oldPages": 2,
@@ -8901,7 +9182,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 1500,
         "oldPages": 5,
@@ -8968,7 +9249,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 1045,
         "oldPages": 3,
@@ -9083,7 +9364,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 2144,
         "oldPages": 6,
@@ -9182,7 +9463,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 1247,
         "oldPages": 5,
@@ -9249,7 +9530,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 911,
         "oldPages": 3,
@@ -9332,7 +9613,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 1306,
         "oldPages": 4,
@@ -9431,7 +9712,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 1641,
         "oldPages": 5,
@@ -9498,7 +9779,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 1080,
         "oldPages": 3,
@@ -9581,7 +9862,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 1049,
         "oldPages": 4,
@@ -9632,7 +9913,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 450,
         "oldPages": 2,
@@ -9699,7 +9980,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 648,
         "oldPages": 3,
@@ -9782,7 +10063,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 769,
         "oldPages": 4,
@@ -9833,7 +10114,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 325,
         "oldPages": 2,
@@ -9884,7 +10165,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 491,
         "oldPages": 2,
@@ -9935,7 +10216,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 404,
         "oldPages": 2,
@@ -10002,7 +10283,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 571,
         "oldPages": 3,
@@ -10053,7 +10334,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 407,
         "oldPages": 2,
@@ -10120,7 +10401,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 708,
         "oldPages": 3,
@@ -10187,7 +10468,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 886,
         "oldPages": 3,
@@ -10222,7 +10503,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 117,
         "oldPages": 1,
@@ -10289,7 +10570,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 987,
         "oldPages": 3,
@@ -10340,7 +10621,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 213,
         "oldPages": 2,
@@ -10375,7 +10656,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 119,
         "oldPages": 1,
@@ -10426,7 +10707,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 394,
         "oldPages": 2,
@@ -10461,7 +10742,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 205,
         "oldPages": 1,
@@ -10560,7 +10841,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 934,
         "oldPages": 5,
@@ -10659,7 +10940,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 2000,
         "oldPages": 5,
@@ -10726,7 +11007,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 503,
         "oldPages": 3,
@@ -10777,7 +11058,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 545,
         "oldPages": 2,
@@ -10844,7 +11125,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 701,
         "oldPages": 3,
@@ -10943,7 +11224,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 1515,
         "oldPages": 5,
@@ -10994,7 +11275,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 356,
         "oldPages": 2,
@@ -11029,7 +11310,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 133,
         "oldPages": 1,
@@ -11064,7 +11345,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 65,
         "oldPages": 1,
@@ -11099,7 +11380,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 236,
         "oldPages": 1,
@@ -11182,7 +11463,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 436,
         "oldPages": 4,
@@ -11265,7 +11546,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 826,
         "oldPages": 4,
@@ -11316,7 +11597,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 446,
         "oldPages": 2,
@@ -11367,7 +11648,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 395,
         "oldPages": 2,
@@ -11402,7 +11683,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 210,
         "oldPages": 1,
@@ -11453,7 +11734,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 371,
         "oldPages": 2,
@@ -11504,7 +11785,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 317,
         "oldPages": 2,
@@ -11571,7 +11852,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 801,
         "oldPages": 3,
@@ -11638,7 +11919,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 864,
         "oldPages": 3,
@@ -11737,7 +12018,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 1570,
         "oldPages": 5,
@@ -11804,7 +12085,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 741,
         "oldPages": 3,
@@ -11871,7 +12152,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 1086,
         "oldPages": 3,
@@ -11954,7 +12235,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 998,
         "oldPages": 4,
@@ -12053,7 +12334,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 1889,
         "oldPages": 5,
@@ -12136,7 +12417,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 1170,
         "oldPages": 4,
@@ -12187,7 +12468,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 504,
         "oldPages": 2,
@@ -12254,7 +12535,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 957,
         "oldPages": 3,
@@ -12305,7 +12586,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 315,
         "oldPages": 2,
@@ -12388,7 +12669,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 1069,
         "oldPages": 4,
@@ -12487,7 +12768,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 1442,
         "oldPages": 5,
@@ -12538,7 +12819,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 333,
         "oldPages": 2,
@@ -12589,7 +12870,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 516,
         "oldPages": 2,
@@ -12672,7 +12953,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 769,
         "oldPages": 4,
@@ -12755,7 +13036,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 1214,
         "oldPages": 4,
@@ -12822,7 +13103,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 659,
         "oldPages": 3,
@@ -12937,7 +13218,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 1535,
         "oldPages": 6,
@@ -13004,7 +13285,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 681,
         "oldPages": 3,
@@ -13039,7 +13320,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 278,
         "oldPages": 1,
@@ -13122,7 +13403,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 1336,
         "oldPages": 4,
@@ -13189,7 +13470,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 914,
         "oldPages": 3,
@@ -13272,7 +13553,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 1484,
         "oldPages": 4,
@@ -13307,7 +13588,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 217,
         "oldPages": 1,
@@ -13358,7 +13639,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 361,
         "oldPages": 2,
@@ -13409,7 +13690,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 516,
         "oldPages": 2,
@@ -13460,7 +13741,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 721,
         "oldPages": 2,
@@ -13511,7 +13792,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 521,
         "oldPages": 2,
@@ -13594,7 +13875,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 1288,
         "oldPages": 4,
@@ -13661,7 +13942,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 787,
         "oldPages": 3,
@@ -13728,7 +14009,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 716,
         "oldPages": 3,
@@ -13795,7 +14076,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 714,
         "oldPages": 3,
@@ -13846,7 +14127,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 338,
         "oldPages": 2,
@@ -13913,7 +14194,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 1040,
         "oldPages": 3,
@@ -13996,7 +14277,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 1204,
         "oldPages": 4,
@@ -14047,7 +14328,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 544,
         "oldPages": 2,
@@ -14114,7 +14395,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 1152,
         "oldPages": 3,
@@ -14165,7 +14446,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 520,
         "oldPages": 2,
@@ -14232,7 +14513,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 756,
         "oldPages": 3,
@@ -14299,7 +14580,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 871,
         "oldPages": 3,
@@ -14350,7 +14631,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 477,
         "oldPages": 2,
@@ -14433,7 +14714,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 1308,
         "oldPages": 4,
@@ -14484,7 +14765,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 366,
         "oldPages": 2,
@@ -14551,7 +14832,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 967,
         "oldPages": 3,
@@ -14618,7 +14899,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 1138,
         "oldPages": 3,
@@ -14669,7 +14950,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 507,
         "oldPages": 2,
@@ -14736,7 +15017,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 699,
         "oldPages": 3,
@@ -14787,7 +15068,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 628,
         "oldPages": 2,
@@ -14838,7 +15119,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 512,
         "oldPages": 2,
@@ -14905,7 +15186,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 1212,
         "oldPages": 3,
@@ -14972,7 +15253,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 745,
         "oldPages": 3,
@@ -15007,7 +15288,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 212,
         "oldPages": 1,
@@ -15106,7 +15387,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 1779,
         "oldPages": 5,
@@ -15157,7 +15438,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 338,
         "oldPages": 2,
@@ -15208,7 +15489,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 503,
         "oldPages": 2,
@@ -15259,7 +15540,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 525,
         "oldPages": 2,
@@ -15310,7 +15591,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 884,
         "oldPages": 2,
@@ -15361,7 +15642,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 380,
         "oldPages": 2,
@@ -15412,7 +15693,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 364,
         "oldPages": 2,
@@ -15479,7 +15760,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 1247,
         "oldPages": 3,
@@ -15530,7 +15811,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 584,
         "oldPages": 2,
@@ -15581,7 +15862,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 387,
         "oldPages": 2,
@@ -15648,7 +15929,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 820,
         "oldPages": 3,
@@ -15699,7 +15980,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 832,
         "oldPages": 2,
@@ -15782,7 +16063,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 1292,
         "oldPages": 4,
@@ -15833,7 +16114,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 441,
         "oldPages": 2,
@@ -15900,7 +16181,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 731,
         "oldPages": 3,
@@ -15967,7 +16248,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 879,
         "oldPages": 3,
@@ -16034,7 +16315,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 779,
         "oldPages": 3,
@@ -16101,7 +16382,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 1066,
         "oldPages": 3,
@@ -16152,7 +16433,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 430,
         "oldPages": 2,
@@ -16219,7 +16500,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 956,
         "oldPages": 3,
@@ -16286,7 +16567,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 1042,
         "oldPages": 3,
@@ -16353,7 +16634,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 887,
         "oldPages": 3,
@@ -16404,7 +16685,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 469,
         "oldPages": 2,
@@ -16471,7 +16752,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 574,
         "oldPages": 3,
@@ -16554,7 +16835,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 958,
         "oldPages": 4,
@@ -16621,7 +16902,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 673,
         "oldPages": 3,
@@ -16704,7 +16985,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 1279,
         "oldPages": 4,
@@ -16771,7 +17052,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 508,
         "oldPages": 3,
@@ -16838,7 +17119,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 544,
         "oldPages": 3,
@@ -16985,7 +17266,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 1819,
         "oldPages": 8,
@@ -17100,7 +17381,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 1945,
         "oldPages": 6,
@@ -17231,7 +17512,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 2519,
         "oldPages": 7,
@@ -17330,7 +17611,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 951,
         "oldPages": 5,
@@ -17413,7 +17694,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 971,
         "oldPages": 4,
@@ -17512,7 +17793,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 1300,
         "oldPages": 5,
@@ -17595,7 +17876,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 990,
         "oldPages": 4,
@@ -17646,7 +17927,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 547,
         "oldPages": 2,
@@ -17713,7 +17994,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 689,
         "oldPages": 3,
@@ -17780,7 +18061,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 1027,
         "oldPages": 3,
@@ -17863,7 +18144,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 587,
         "oldPages": 4,
@@ -17874,7 +18155,7 @@
         "url": "library/songs/01-nu-nhi-tinh.mxl",
         "title": "Nữ nhi tình",
         "sha256": "96fd894c093092b35450b2ef2ce00b9abe8e63edc301ec4a6cbcf50938b7fd7c",
-        "originalSha256": "6548c15155a64f05893dec5c53d062ab598580409b7f5a3c58c6e1910565c63f",
+        "originalSha256": "96fd894c093092b35450b2ef2ce00b9abe8e63edc301ec4a6cbcf50938b7fd7c",
         "index": 151,
         "checks": [
           "Exact native attacks/releases, pitches, durations, voices, ties, ornaments, repeat traversal, tempos and pedals",
@@ -17930,10 +18211,10 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 755,
-        "oldPages": 4,
+        "oldPages": 3,
         "newPages": 3,
         "passed": true
       },
@@ -17941,7 +18222,7 @@
         "url": "library/songs/02-dam-hoi-duong-o-noi-dau.mxl",
         "title": "Dám hỏi đường ở nơi đâu",
         "sha256": "3f068d1e25c4fb8524f84625f12e5f99e40a85ee93352f50e6b4061c9cd4d9b5",
-        "originalSha256": "841a8054234a551c70af7a6752f94ef0b86787d1d50020136e561f489bbc4c1d",
+        "originalSha256": "3f068d1e25c4fb8524f84625f12e5f99e40a85ee93352f50e6b4061c9cd4d9b5",
         "index": 152,
         "checks": [
           "Exact native attacks/releases, pitches, durations, voices, ties, ornaments, repeat traversal, tempos and pedals",
@@ -17981,7 +18262,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 336,
         "oldPages": 2,
@@ -17992,7 +18273,7 @@
         "url": "library/songs/03-thien-truc-thieu-nu.mxl",
         "title": "Thiên Trúc thiếu nữ",
         "sha256": "d0def214e5f0f8292f7ed53526c239cc992eab7c73d466f568cf8a8f82b7fd36",
-        "originalSha256": "353d36a284d4f624ed05d31fd8fe63d41899182a73a5ffecaf6a031a93f9b999",
+        "originalSha256": "d0def214e5f0f8292f7ed53526c239cc992eab7c73d466f568cf8a8f82b7fd36",
         "index": 153,
         "checks": [
           "Exact native attacks/releases, pitches, durations, voices, ties, ornaments, repeat traversal, tempos and pedals",
@@ -18048,10 +18329,10 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 664,
-        "oldPages": 4,
+        "oldPages": 3,
         "newPages": 3,
         "passed": true
       },
@@ -18059,7 +18340,7 @@
         "url": "library/songs/04-van-cung-tan-am.mxl",
         "title": "Vân cung tấn âm",
         "sha256": "f03ac68150544b74137ab22822483ac15df2e4df6bf7450fa34f8fa8633af4d2",
-        "originalSha256": "c6e6b160a5d8142b8ad7c3b78c1f623cbe02573269fad5bda3b9aeb0bd30181e",
+        "originalSha256": "f03ac68150544b74137ab22822483ac15df2e4df6bf7450fa34f8fa8633af4d2",
         "index": 154,
         "checks": [
           "Exact native attacks/releases, pitches, durations, voices, ties, ornaments, repeat traversal, tempos and pedals",
@@ -18131,7 +18412,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 1422,
         "oldPages": 4,
@@ -18142,7 +18423,7 @@
         "url": "library/songs/05-tru-bat-gioi-cong-vo.mxl",
         "title": "Trư Bát Giới cõng vợ",
         "sha256": "c34694885d4fa96fe6bf9835597b70e625b257f5eda7da90074ed0a17af11636",
-        "originalSha256": "e90f8e924d395010b0ff15131b1b713e04fbebddc4720e649a230d0c27bd58c2",
+        "originalSha256": "c34694885d4fa96fe6bf9835597b70e625b257f5eda7da90074ed0a17af11636",
         "index": 155,
         "checks": [
           "Exact native attacks/releases, pitches, durations, voices, ties, ornaments, repeat traversal, tempos and pedals",
@@ -18182,7 +18463,7 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 493,
         "oldPages": 2,
@@ -18193,7 +18474,7 @@
         "url": "library/songs/06-huong-lua.mxl",
         "title": "Hương lúa",
         "sha256": "a830ef8188a68adb18308cdbf5653e7296fe8f65ea689c46b36f1b2771b25374",
-        "originalSha256": "f15cfc8916f44dc473922d2b7fc916be4d9186cbda48e5c0d5e92537b72b753b",
+        "originalSha256": "a830ef8188a68adb18308cdbf5653e7296fe8f65ea689c46b36f1b2771b25374",
         "index": 156,
         "checks": [
           "Exact native attacks/releases, pitches, durations, voices, ties, ornaments, repeat traversal, tempos and pedals",
@@ -18265,10 +18546,10 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 1264,
-        "oldPages": 3,
+        "oldPages": 4,
         "newPages": 4,
         "passed": true
       },
@@ -18276,7 +18557,7 @@
         "url": "library/songs/07-nghe-loi-me.mxl",
         "title": "Nghe lời mẹ",
         "sha256": "23df839a19595fccac827a7cc3df7239fe1c4e978ef56622d82c13312d159832",
-        "originalSha256": "e7cfe1602a5c1b00c1945cfc7f7132d58818b3e5cd640a8c33c4c93dce4f397f",
+        "originalSha256": "23df839a19595fccac827a7cc3df7239fe1c4e978ef56622d82c13312d159832",
         "index": 157,
         "checks": [
           "Exact native attacks/releases, pitches, durations, voices, ties, ornaments, repeat traversal, tempos and pedals",
@@ -18348,10 +18629,10 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 1331,
-        "oldPages": 6,
+        "oldPages": 4,
         "newPages": 4,
         "passed": true
       },
@@ -18359,7 +18640,7 @@
         "url": "library/songs/08-da-khuc.mxl",
         "title": "Dạ khúc",
         "sha256": "194dc6dd5c1bac6dc8179a01a7fdee3b0b10dff8f2c562ac68534c3a8be10538",
-        "originalSha256": "7d05e06fd3f9f49323256960b537d55675b0072175276b87d88e2cedf7bc4515",
+        "originalSha256": "194dc6dd5c1bac6dc8179a01a7fdee3b0b10dff8f2c562ac68534c3a8be10538",
         "index": 158,
         "checks": [
           "Exact native attacks/releases, pitches, durations, voices, ties, ornaments, repeat traversal, tempos and pedals",
@@ -18447,18 +18728,171 @@
             "outside": false
           }
         ],
-        "rendererVersion": "facec40c561a11cd64446e320f23eaf98d20ea6f4941a6b6a5d55c370257b0f5",
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
         "missingGlyphs": 0,
         "notes": 1493,
-        "oldPages": 8,
+        "oldPages": 5,
         "newPages": 5,
+        "passed": true
+      },
+      {
+        "url": "library/songs/top-of-the-world.mxl",
+        "title": "Top of the World",
+        "sha256": "91e58dcd4b71ab6a3733c0fc704b9306e2647ff63a01bb63682c8407c6518a45",
+        "originalSha256": "fb5e70d9b2ba711e30c60298ff157caebd697e6be2df2bc9800cba7ffc0a21d5",
+        "index": 159,
+        "checks": [
+          "Exact native attacks/releases, pitches, durations, voices, ties, ornaments, repeat traversal, tempos and pedals",
+          "Every visible note maps to a native SVG glyph"
+        ],
+        "pages": [
+          {
+            "page": 1,
+            "bounds": {
+              "x": 0,
+              "y": 0,
+              "width": 9921.259765625,
+              "height": 14031.5
+            },
+            "view": {
+              "x": 0,
+              "y": 0,
+              "width": 9921.259765625,
+              "height": 14031.5
+            },
+            "outside": false
+          }
+        ],
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
+        "missingGlyphs": 0,
+        "notes": 249,
+        "oldPages": 2,
+        "newPages": 1,
+        "passed": true
+      },
+      {
+        "url": "library/songs/yesterday-once-more-the-carpenters.mxl",
+        "title": "Yesterday Once More",
+        "sha256": "1b297cad236428f1da14996b2fe2fcb68266b2fd31cba4bd9adce24d1b9644e0",
+        "originalSha256": "1861a0515ae974ab638d08701af76d4d5305f8938d69526f69f1581f661494c8",
+        "index": 160,
+        "checks": [
+          "Exact native attacks/releases, pitches, durations, voices, ties, ornaments, repeat traversal, tempos and pedals",
+          "Every visible note maps to a native SVG glyph"
+        ],
+        "pages": [
+          {
+            "page": 1,
+            "bounds": {
+              "x": 0,
+              "y": 0,
+              "width": 9921.259765625,
+              "height": 14031.5
+            },
+            "view": {
+              "x": 0,
+              "y": 0,
+              "width": 9921.259765625,
+              "height": 14031.5
+            },
+            "outside": false
+          },
+          {
+            "page": 2,
+            "bounds": {
+              "x": 0,
+              "y": 0,
+              "width": 9921.259765625,
+              "height": 14031.5
+            },
+            "view": {
+              "x": 0,
+              "y": 0,
+              "width": 9921.259765625,
+              "height": 14031.5
+            },
+            "outside": false
+          },
+          {
+            "page": 3,
+            "bounds": {
+              "x": 0,
+              "y": 0,
+              "width": 9921.259765625,
+              "height": 14031.5
+            },
+            "view": {
+              "x": 0,
+              "y": 0,
+              "width": 9921.259765625,
+              "height": 14031.5
+            },
+            "outside": false
+          }
+        ],
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
+        "missingGlyphs": 0,
+        "notes": 540,
+        "oldPages": 4,
+        "newPages": 3,
+        "passed": true
+      },
+      {
+        "url": "library/songs/yesterday-once-more-carpenters-yesterday-once-more-v2.mxl",
+        "title": "Yesterday Once More",
+        "sha256": "0ab1b579ea8f48025d2db87cdae2ed28f478904b423e333b5a524344a563fb99",
+        "originalSha256": "79a99eec34675c502915fd8710c342d0c2d7de2ac2505b9703b03059c3d493fb",
+        "index": 161,
+        "checks": [
+          "Exact native attacks/releases, pitches, durations, voices, ties, ornaments, repeat traversal, tempos and pedals",
+          "Every visible note maps to a native SVG glyph"
+        ],
+        "pages": [
+          {
+            "page": 1,
+            "bounds": {
+              "x": 0,
+              "y": 0,
+              "width": 9921.259765625,
+              "height": 14031.5
+            },
+            "view": {
+              "x": 0,
+              "y": 0,
+              "width": 9921.259765625,
+              "height": 14031.5
+            },
+            "outside": false
+          },
+          {
+            "page": 2,
+            "bounds": {
+              "x": 0,
+              "y": 0,
+              "width": 9921.259765625,
+              "height": 14031.5
+            },
+            "view": {
+              "x": 0,
+              "y": 0,
+              "width": 9921.259765625,
+              "height": 14031.5
+            },
+            "outside": false
+          }
+        ],
+        "rendererVersion": "000974638faa9e34fa80cb0c84efb3f70c8290cc7b9ed2967ebaad5e0acab090",
+        "missingGlyphs": 0,
+        "notes": 720,
+        "oldPages": 3,
+        "newPages": 2,
         "passed": true
       }
     ],
     "errors": [],
     "passed": true,
-    "pageCount": 484,
+    "pageCount": 490,
     "boundsWarnings": []
   },
-  "originalArchive": "originals/df1ca2df027b47d9877789cd982262e83e7ad3f401393e30411d262bc26ea67f.zip"
+  "originalArchive": "originals/7b928f698ef06727b929b95f698aa7ee092362a378c2777e8f5dd8ba95cc5b5c.zip"
 }

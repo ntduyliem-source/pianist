@@ -3333,6 +3333,71 @@
       "sourceSha256": "7d05e06fd3f9f49323256960b537d55675b0072175276b87d88e2cedf7bc4515",
       "layoutProfile": "pianist-a4-v1",
       "normalizationRecipe": "b2d7262398ef07a4c96fd25f3a5f304736327d6ccc7308710ad5e54043f9ba14"
+    },
+    {
+      "id": "91e58dcd4b71ab6a3733c0fc704b9306e2647ff63a01bb63682c8407c6518a45",
+      "sha256": "91e58dcd4b71ab6a3733c0fc704b9306e2647ff63a01bb63682c8407c6518a45",
+      "title": "Top of the World",
+      "filename": "Top of the World.mxl",
+      "url": "library/songs/top-of-the-world.mxl",
+      "bytes": 4434,
+      "workId": "fb5e70d9b2ba711e30c60298ff157caebd697e6be2df2bc9800cba7ffc0a21d5",
+      "version": 1,
+      "aliases": [
+        "TOP OF THE WORLD"
+      ],
+      "practiceReady": true,
+      "sourceHashes": [
+        "fb5e70d9b2ba711e30c60298ff157caebd697e6be2df2bc9800cba7ffc0a21d5"
+      ],
+      "sourceSha256": "fb5e70d9b2ba711e30c60298ff157caebd697e6be2df2bc9800cba7ffc0a21d5",
+      "composer": "Richard Carpenter",
+      "lyricist": "John Bettis",
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "021c88ea24db3e07562128572015f5da886309fb799b20409fc917b428204435"
+    },
+    {
+      "id": "1b297cad236428f1da14996b2fe2fcb68266b2fd31cba4bd9adce24d1b9644e0",
+      "sha256": "1b297cad236428f1da14996b2fe2fcb68266b2fd31cba4bd9adce24d1b9644e0",
+      "title": "Yesterday Once More",
+      "filename": "Yesterday Once More.mxl",
+      "url": "library/songs/yesterday-once-more-the-carpenters.mxl",
+      "bytes": 7986,
+      "workId": "1861a0515ae974ab638d08701af76d4d5305f8938d69526f69f1581f661494c8",
+      "version": 1,
+      "versionLabel": "52 ô nhịp",
+      "composer": "Richard Carpenter",
+      "practiceReady": true,
+      "sourceHashes": [
+        "1861a0515ae974ab638d08701af76d4d5305f8938d69526f69f1581f661494c8"
+      ],
+      "sourceSha256": "1861a0515ae974ab638d08701af76d4d5305f8938d69526f69f1581f661494c8",
+      "aliases": [],
+      "lyricist": "John Bettis",
+      "performer": "The Carpenters",
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "8ce3be360efbece7de52da2f9e7d8c4dd834de4c856d1fc74d505adef490416d"
+    },
+    {
+      "id": "0ab1b579ea8f48025d2db87cdae2ed28f478904b423e333b5a524344a563fb99",
+      "sha256": "0ab1b579ea8f48025d2db87cdae2ed28f478904b423e333b5a524344a563fb99",
+      "title": "Yesterday Once More",
+      "filename": "Yesterday Once More — v2.mxl",
+      "url": "library/songs/yesterday-once-more-carpenters-yesterday-once-more-v2.mxl",
+      "bytes": 6819,
+      "workId": "1861a0515ae974ab638d08701af76d4d5305f8938d69526f69f1581f661494c8",
+      "version": 2,
+      "versionLabel": "43 ô nhịp",
+      "practiceReady": true,
+      "sourceHashes": [
+        "79a99eec34675c502915fd8710c342d0c2d7de2ac2505b9703b03059c3d493fb"
+      ],
+      "sourceSha256": "79a99eec34675c502915fd8710c342d0c2d7de2ac2505b9703b03059c3d493fb",
+      "aliases": [],
+      "composer": "Richard Carpenter",
+      "lyricist": "John Bettis",
+      "layoutProfile": "pianist-a4-v1",
+      "normalizationRecipe": "010bd6936cfd6b0367a52a05660f684b9edeaf62499d517877250d6be9b78a4a"
     }
   ],
   "excluded": [],

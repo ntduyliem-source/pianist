@@ -74,6 +74,18 @@
       "fields": {"composer": null},
       "evidence": [{"source": "credit[2]", "reason": "Mimokeys / HakerProX does not distinguish composer and arranger. Composer may be inherited only from the same stable work's unambiguous edition; arranger remains unknown."}]
     },
+    "top-of-the-world.mxl": {
+      "fields": {"title": "Top of the World", "composer": "Richard Carpenter", "lyricist": "John Bettis"},
+      "evidence": [{"source": "https://www.richardandkarencarpenter.com/SN_TopOfTheWorld.htm", "reason": "Official song notes identify music by Richard Carpenter and lyrics by John Bettis. The source's untyped contact credit does not establish the arranger of this piano edition."}]
+    },
+    "yesterday-once-more-the-carpenters.mxl": {
+      "fields": {"composer": "Richard Carpenter", "lyricist": "John Bettis", "performer": "The Carpenters"},
+      "evidence": [{"source": "https://richardandkarencarpenter.com/SN_YesterdayOnceMore.htm", "reason": "Official song notes identify music by Richard Carpenter and lyrics by John Bettis. The source's composer field names the recording artist The Carpenters; preserve it as performer, without inferring this piano edition's arranger."}]
+    },
+    "yesterday-once-more-carpenters-yesterday-once-more-v2.mxl": {
+      "fields": {"composer": "Richard Carpenter", "lyricist": "John Bettis"},
+      "evidence": [{"source": "https://richardandkarencarpenter.com/SN_YesterdayOnceMore.htm", "reason": "Official song notes identify music by Richard Carpenter and lyrics by John Bettis. No piano arranger attribution is present in this edition."}]
+    },
     "let-it-go-kristen-anderson-lopez-robert-lopez.mxl": {
       "fields": {"composer": "Kristen Anderson-Lopez · Robert Lopez"},
       "evidence": [{"source": "https://video.disney.com/watch/disney-s-frozen-let-it-go-sequence-performed-by-idina-menzel-4ecd3e729706a16e5090f1de", "reason": "Disney identifies both writers of the original song. No inference about this piano arrangement."}]

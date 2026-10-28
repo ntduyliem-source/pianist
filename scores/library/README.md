@@ -5,9 +5,26 @@ tác phẩm, phiên bản và hash nằm ở đây. Chuẩn hóa phần trình b
 không sửa nốt, tie hoặc thời điểm nhả pedal để ép qua bộ nhận.
 Các báo cáo `IMPORT_REPORT*.md` là lịch sử từng đợt nhập, không phải số lượng hiện tại.
 
+## Bổ sung Carpenters ngày 28/10/2026
+
+Catalog hiện có **162 phiên bản / 151 tác phẩm**. Nhận cả ba MXL: **Top of the
+World** và **Yesterday Once More V1/V2**. Hai phiên bản Yesterday Once More được
+phân biệt bằng nhãn **52 ô nhịp** và **43 ô nhịp**; cùng tác phẩm nhưng khác bản
+phối. Không có file trùng hoặc bị loại. Cả ba đều đủ hai khuông và đã mở, phát,
+ánh xạ nốt bằng MuseScore.
+
+Chuẩn hóa ba bản mới theo `pianist-a4-v1`, giữ nguyên 159 phiên bản cũ. Toàn bộ
+162 phiên bản / 490 trang đã được đối chiếu bằng native renderer; không có
+sai khác dữ liệu biểu diễn trước/sau hoặc cảnh báo tràn khung. Sáu trang mới đã
+được xem trực tiếp. Ghi công nhạc Richard Carpenter và lời John Bettis dựa trên
+trang chính thức dẫn trong `metadata-overrides.json`; không suy đoán người soạn
+piano. File gốc, hash và kết quả kiểm nằm trong
+[biên nhận lô nhập](IMPORT_RECEIPT_2026-10-28_CARPENTERS.json) và
+`NORMALIZATION_RECEIPT.json`.
+
 ## Bổ sung 8 bản ngày 26/10/2026
 
-Catalog hiện có **159 phiên bản / 149 tác phẩm**. Nhận đủ tám MXL chính trong
+Đợt này đưa catalog lên **159 phiên bản / 149 tác phẩm**. Nhận đủ tám MXL chính trong
 `8-Ban-Piano-MXL-Tu-File-Dinh-Kem.zip`: Nữ nhi tình, Dám hỏi đường ở nơi đâu,
 Thiên Trúc thiếu nữ, Vân cung tấn âm, Trư Bát Giới cõng vợ, Hương lúa, Nghe lời mẹ
 và Dạ khúc. Tất cả là tác phẩm mới, đủ hai khuông; không có bản trùng hoặc bị loại.

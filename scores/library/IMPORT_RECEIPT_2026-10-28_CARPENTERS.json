@@ -1,0 +1,90 @@
+{
+  "summary": {
+    "inputs": 3,
+    "newWorks": 2,
+    "newVersions": 1,
+    "duplicates": 0,
+    "excluded": 0,
+    "editorOnly": 0,
+    "totalWorks": 151,
+    "totalVersions": 162
+  },
+  "results": [
+    {
+      "filename": "top-of-the-world.mxl",
+      "title": "Top of the World",
+      "status": "added",
+      "reason": "249 nốt; 2 trang; MuseScore playback/mapping đạt",
+      "nativeAudit": {
+        "nativeNotes": 249,
+        "sourceNotes": 249,
+        "missingGlyphs": 0,
+        "nativePlayback": true
+      },
+      "version": 1,
+      "workId": "fb5e70d9b2ba711e30c60298ff157caebd697e6be2df2bc9800cba7ffc0a21d5",
+      "id": "fb5e70d9b2ba711e30c60298ff157caebd697e6be2df2bc9800cba7ffc0a21d5",
+      "practiceReady": true,
+      "url": "library/songs/top-of-the-world.mxl",
+      "publishedId": "91e58dcd4b71ab6a3733c0fc704b9306e2647ff63a01bb63682c8407c6518a45",
+      "publishedSha256": "91e58dcd4b71ab6a3733c0fc704b9306e2647ff63a01bb63682c8407c6518a45",
+      "sourceSha256": "fb5e70d9b2ba711e30c60298ff157caebd697e6be2df2bc9800cba7ffc0a21d5",
+      "normalizedPages": 1,
+      "exactNativeMusicPreserved": true
+    },
+    {
+      "filename": "yesterday-once-more-the-carpenters.mxl",
+      "title": "Yesterday Once More",
+      "status": "added",
+      "reason": "540 nốt; 4 trang; MuseScore playback/mapping đạt",
+      "nativeAudit": {
+        "nativeNotes": 540,
+        "sourceNotes": 540,
+        "missingGlyphs": 0,
+        "nativePlayback": true
+      },
+      "version": 1,
+      "workId": "1861a0515ae974ab638d08701af76d4d5305f8938d69526f69f1581f661494c8",
+      "id": "1861a0515ae974ab638d08701af76d4d5305f8938d69526f69f1581f661494c8",
+      "practiceReady": true,
+      "url": "library/songs/yesterday-once-more-the-carpenters.mxl",
+      "publishedId": "1b297cad236428f1da14996b2fe2fcb68266b2fd31cba4bd9adce24d1b9644e0",
+      "publishedSha256": "1b297cad236428f1da14996b2fe2fcb68266b2fd31cba4bd9adce24d1b9644e0",
+      "sourceSha256": "1861a0515ae974ab638d08701af76d4d5305f8938d69526f69f1581f661494c8",
+      "normalizedPages": 3,
+      "exactNativeMusicPreserved": true
+    },
+    {
+      "filename": "yesterday-once-more-carpenters-yesterday-once-more.mxl",
+      "title": "Yesterday Once More",
+      "status": "version-added",
+      "reason": "720 nốt; 3 trang; MuseScore playback/mapping đạt",
+      "nativeAudit": {
+        "nativeNotes": 720,
+        "sourceNotes": 720,
+        "missingGlyphs": 0,
+        "nativePlayback": true
+      },
+      "version": 2,
+      "workId": "1861a0515ae974ab638d08701af76d4d5305f8938d69526f69f1581f661494c8",
+      "id": "79a99eec34675c502915fd8710c342d0c2d7de2ac2505b9703b03059c3d493fb",
+      "practiceReady": true,
+      "url": "library/songs/yesterday-once-more-carpenters-yesterday-once-more-v2.mxl",
+      "publishedId": "0ab1b579ea8f48025d2db87cdae2ed28f478904b423e333b5a524344a563fb99",
+      "publishedSha256": "0ab1b579ea8f48025d2db87cdae2ed28f478904b423e333b5a524344a563fb99",
+      "sourceSha256": "79a99eec34675c502915fd8710c342d0c2d7de2ac2505b9703b03059c3d493fb",
+      "normalizedPages": 2,
+      "exactNativeMusicPreserved": true
+    }
+  ],
+  "normalization": {
+    "profile": "pianist-a4-v1",
+    "catalogSha256": "cec611a7c0aa1b143e22772686ed1fa13762b21765326f7c2e4507a7ec3dc63c",
+    "originalArchive": "originals/7b928f698ef06727b929b95f698aa7ee092362a378c2777e8f5dd8ba95cc5b5c.zip",
+    "nativeEditions": 162,
+    "nativePages": 490,
+    "boundsWarnings": [],
+    "unchangedPreviousEditions": 159,
+    "newEditionPagesVisuallyReviewed": 6
+  }
+}

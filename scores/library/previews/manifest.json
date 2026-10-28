@@ -1115,6 +1115,27 @@
       "sha256": "173772c463a182b4702e613132fa6339be87c65e3b1555bd245a53c49ace9eae",
       "bytes": 40550,
       "pages": 5
+    },
+    {
+      "sourceHash": "91e58dcd4b71ab6a3733c0fc704b9306e2647ff63a01bb63682c8407c6518a45",
+      "path": "library/previews/91e58dcd4b71ab6a3733c0fc704b9306e2647ff63a01bb63682c8407c6518a45.webp",
+      "sha256": "8c7b6387d7f353a7c69baf7f5bce662bc56fade3bab48659f0cdcd203228e689",
+      "bytes": 32442,
+      "pages": 1
+    },
+    {
+      "sourceHash": "1b297cad236428f1da14996b2fe2fcb68266b2fd31cba4bd9adce24d1b9644e0",
+      "path": "library/previews/1b297cad236428f1da14996b2fe2fcb68266b2fd31cba4bd9adce24d1b9644e0.webp",
+      "sha256": "043f66506b1f2b292b512b5506a4865288a45f1ea06a90337929e85a49b2342f",
+      "bytes": 41228,
+      "pages": 3
+    },
+    {
+      "sourceHash": "0ab1b579ea8f48025d2db87cdae2ed28f478904b423e333b5a524344a563fb99",
+      "path": "library/previews/0ab1b579ea8f48025d2db87cdae2ed28f478904b423e333b5a524344a563fb99.webp",
+      "sha256": "4e7f6e0c5886daf4220038315e9930dbda4b0aedb8e6403fdc72f89faa936540",
+      "bytes": 40264,
+      "pages": 2
     }
   ]
 }
